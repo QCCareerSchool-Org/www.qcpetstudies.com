@@ -1,0 +1,5 @@
+{
+  "rewrites": [
+    { "source": "/sniffin-around-blog", "destination": "https://www.doggroomingcourse.com/sniffin-around-blog" }
+  ]
+}
