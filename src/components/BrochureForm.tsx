@@ -8,8 +8,8 @@ type Props = {
 };
 
 export const BrochureForm = ({ formId = 37, phoneNumber = true, buttonText = 'Get the Brochure', buttonClassName }: Props): ReactElement => (
-  <form method="post" action="https://qccareerschool.activehosted.com/proc.php">
-    <input type="hidden" name="u" value="615D9F7190063" />
+  <form action="https://qccareerschool.activehosted.com/proc.php">
+    <input type="hidden" name="u" value="616046046283C" />
     <input type="hidden" name="f" value={formId} />
     <input type="hidden" name="s" />
     <input type="hidden" name="c" value="0" />
@@ -37,7 +37,7 @@ export const BrochureForm = ({ formId = 37, phoneNumber = true, buttonText = 'Ge
     <input type="hidden" id="field[3][]" name="field[3][]" value="~|" />
     <div className="mb-4">
       <div className="form-check">
-        <input className="form-check-input" type="checkbox" id="emailOptIn" name="field[3][]" />
+        <input className="form-check-input" type="checkbox" id="emailOptIn" name="field[3][]" value="I agree to receive additional emails from QC, including promotions, course launches, special offers and more. Unsubscribe anytime!" />
         <label className="form-check-label" htmlFor="emailOptIn">
           I agree to receive additional emails from QC, including promotions, course launches, special offers and more. Unsubscribe anytime!
         </label>
@@ -48,7 +48,7 @@ export const BrochureForm = ({ formId = 37, phoneNumber = true, buttonText = 'Ge
         <input type="hidden" id="field[103][]" name="field[103][]" value="~|" />
         <div className="mb-4">
           <div className="form-check">
-            <input className="form-check-input" type="checkbox" id="phoneOptIn" name="field[103][]" />
+            <input className="form-check-input" type="checkbox" id="phoneOptIn" name="field[103][]" value="I agree to receive phone calls and/or text messages from a QC student advisor. Standard rates apply." />
             <label className="form-check-label" htmlFor="phoneOptIn">
               I agree to receive phone calls and/or text messages from a QC student advisor. Standard rates apply.
             </label>
