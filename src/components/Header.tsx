@@ -10,8 +10,8 @@ import { useScreenWidth } from '../hooks/useScreenWidth';
 import { useScrollPosition } from '../hooks/useScrollPosition';
 import { useToggle } from '../hooks/useToggle';
 
-import logo from '../images/logo-top-black.svg';
-import logoLight from '../images/logo-top-white.svg';
+import logoLight from '../images/qc-pet-horizontal-inverse.svg';
+import logo from '../images/qc-pet-horizontal.svg';
 import { SecondaryNav, SecondaryNavLinks } from './SecondaryNav';
 
 type Props = {
