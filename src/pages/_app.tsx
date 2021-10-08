@@ -3,6 +3,7 @@ import '../styles/global.scss';
 import type { AppProps } from 'next/app';
 import { useRouter } from 'next/router';
 import { ReactElement, useEffect } from 'react';
+import SSRProvider from 'react-bootstrap/SSRProvider';
 
 import { OntarioWarning } from '../components/OntarioWarning';
 import * as ga from '../lib/ga';
@@ -29,14 +30,16 @@ function MyApp({ Component, pageProps }: AppProps): ReactElement {
   }, [ router.events ]);
 
   return (
-    <LocationProvider>
-      <ScreenWidthProvider>
-        <ScrollPositionProvider>
-          <OntarioWarning />
-          <Component {...pageProps} />
-        </ScrollPositionProvider>
-      </ScreenWidthProvider>
-    </LocationProvider>
+    <SSRProvider>
+      <LocationProvider>
+        <ScreenWidthProvider>
+          <ScrollPositionProvider>
+            <OntarioWarning />
+            <Component {...pageProps} />
+          </ScrollPositionProvider>
+        </ScreenWidthProvider>
+      </LocationProvider>
+    </SSRProvider>
   );
 }
 
