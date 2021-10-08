@@ -4,6 +4,7 @@ import type { AppProps } from 'next/app';
 import { useRouter } from 'next/router';
 import { ReactElement, useEffect } from 'react';
 
+import { OntarioWarning } from '../components/OntarioWarning';
 import * as ga from '../lib/ga';
 import { LocationProvider } from '../providers/LocationProvider';
 import { ScreenWidthProvider } from '../providers/ScreenWidthProvider';
@@ -31,6 +32,7 @@ function MyApp({ Component, pageProps }: AppProps): ReactElement {
     <LocationProvider>
       <ScreenWidthProvider>
         <ScrollPositionProvider>
+          <OntarioWarning />
           <Component {...pageProps} />
         </ScrollPositionProvider>
       </ScreenWidthProvider>
