@@ -9,7 +9,7 @@ module.exports = withPurgeCss({
     'src/components/**/*',
   ],
   purgeCss: {
-    whitelistPatterns: () => [ /^nav-/u, /^navbar-/u, /^dropdown-/u ],
+    whitelistPatterns: () => [ /^nav-/u, /^navbar-/u, /^dropdown-/u, /^modal-/u ],
     whitelist: () => [
       'nav',
       'navbar',
@@ -17,10 +17,12 @@ module.exports = withPurgeCss({
       'tab-content',
       'tab-pane',
       'fade',
+      'modal',
       'active',
       'collapsing',
       'collapse',
       'show',
+      'btn-close',
       'bg-white',
     ],
   },

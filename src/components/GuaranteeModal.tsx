@@ -13,7 +13,7 @@ type Props = {
 
 export const GuaranteeModal = ({ show, doubleGuarantee, toggle }: Props): ReactElement => (
   <Modal show={show} onHide={toggle} size={doubleGuarantee ? 'lg' : undefined}>
-    <Modal.Header>
+    <Modal.Header closeButton>
       <Modal.Title>{doubleGuarantee ? 'The Double Guarantee' : '21-Day Money-Back Guarantee!'}</Modal.Title>
     </Modal.Header>
 
