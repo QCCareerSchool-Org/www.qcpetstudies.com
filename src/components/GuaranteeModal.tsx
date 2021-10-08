@@ -1,16 +1,17 @@
 import Image from 'next/image';
+import { ReactElement } from 'react';
 import Modal from 'react-bootstrap/Modal';
 
 import Guarantee1Year from '../images/1-year-guarantee-outlined.svg';
 import Guarantee21Days from '../images/21-day-guarantee-outlined.svg';
 
-interface Props {
+type Props = {
   show: boolean;
   doubleGuarantee: boolean;
   toggle: () => void;
-}
+};
 
-export const GuaranteeModal: React.FC<Props> = ({ show, doubleGuarantee, toggle }) => (
+export const GuaranteeModal = ({ show, doubleGuarantee, toggle }: Props): ReactElement => (
   <Modal show={show} onHide={toggle} size={doubleGuarantee ? 'lg' : undefined}>
     <Modal.Header>
       <Modal.Title>{doubleGuarantee ? 'The Double Guarantee' : '21-Day Money-Back Guarantee!'}</Modal.Title>
