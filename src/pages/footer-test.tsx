@@ -1,21 +1,11 @@
 import { NextPage } from 'next';
-import Error from 'next/error';
 import React, { useState } from 'react';
 
 import { DefaultLayout } from '../components/DefaultLayout';
 import { FooterCTAType } from '../components/Footer';
 
-type Props = {
-  production: boolean;
-};
-
-const FooterTestPage: NextPage<Props> = ({ production }) => {
+const FooterTestPage: NextPage = () => {
   const [ ctaType, setCTAType ] = useState<FooterCTAType>();
-
-  if (production) {
-    // don't show this page in production
-    return <Error statusCode={400} />;
-  }
 
   const ctaChange = (e: React.ChangeEvent<HTMLSelectElement>): void => {
     const target = e.target;
@@ -60,11 +50,6 @@ const FooterTestPage: NextPage<Props> = ({ production }) => {
 
     </DefaultLayout>
   );
-};
-
-// eslint-disable-next-line @typescript-eslint/require-await
-FooterTestPage.getInitialProps = async () => {
-  return { production: process.env.NODE_ENV === 'production' };
 };
 
 export default FooterTestPage;
