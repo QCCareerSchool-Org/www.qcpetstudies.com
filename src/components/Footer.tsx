@@ -43,7 +43,7 @@ export const Footer = ({ ctaType, className }: Props): ReactElement => {
         <div className="row align-items-center">
           <div className="col-12 col-lg-9 mb-4 mb-lg-0 text-center text-lg-start">
             <h2>Ready to Launch Your <strong>{ctaType === 'grooming' ? 'Grooming ' : ctaType === 'training' ? 'Training ' : ''}Career?</strong></h2>
-            <p className="lead mb-0">Take the first step towards a new career in the booming pet {ctaType === 'grooming' ? 'grooming ' : ctaType === 'training' ? 'training ' : ''}industry.</p>
+            <p className="lead mb-0">Take the first step towards a new career in the booming {ctaType === 'grooming' ? 'dog grooming ' : ctaType === 'training' ? 'dog training ' : 'pet'} industry.</p>
           </div>
           <div className="col-12 col-lg-3 text-center text-lg-end">
             <a href={enrollUrl}><button className="btn btn-secondary btn-lg">Enroll Online</button></a>
