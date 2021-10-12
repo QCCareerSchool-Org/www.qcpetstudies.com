@@ -63,7 +63,6 @@ export const Footer = ({ ctaType, className }: Props): ReactElement => {
                 <button className="btn btn-outline-light">Student Log In</button>
               </a>
             </div>
-            {/* {!lgOrGreater && <hr className="my-5" />} */}
           </div>
           <div id="footerColCertifications" className="col-12 col-sm-4 col-lg-2 mb-4 mb-sm-0">
             <h4 className="text-primary mb-sm-4">Certifications</h4>
