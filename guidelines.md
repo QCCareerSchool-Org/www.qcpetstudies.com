@@ -122,7 +122,7 @@ Background colors should be chosen from the available theme colors. Text colors 
 
 ### Background Images
 
-When using a a background image for a section, the image should be loaded using a `next/image` component to provide image optimization. The background color that most closely approximates the overal image color should be used as well. The `text-shadow` class should be used when it improves the legibility of the headings and text.
+When using a background image for a section, the image should be loaded using a `next/image` component to provide image optimization. The background color that most closely approximates the overal image color should be used as well. The `text-shadow` class should be used when it improves the legibility of the headings and text.
 
 ```typescript
 <section className="bg-dark text-shadow">
@@ -240,21 +240,21 @@ Additional margins should be used sparingly. Margin sizes are already defined in
 
 ❌ Incorrect:
 
-```typescript
+```html
 <h2>Heading with Extra Margin</h2>
 <!-- uses a top margin -->
 <p className="mt-4">This text is separated from the header by a larger-than-usual margin.</p>
 ```
 
-```typescript
-<h2 style={{ marginBottom: '16px' }}>Heading with Extra Margin</h2>
-<!-- uses an inline syle -->
+```html
+<h2 className="extraSpacing"}>Heading with Extra Margin</h2>
+<!-- uses a custom syle -->
 <p>This text is separated from the header by a larger-than-usual margin.</p>
 ```
 
 ✔️ Correct:
 
-```typescript
+```html
 <h2 className="mb-4">Heading with Extra Margin</h2>
 <p>This text is separated from the header by a larger-than-usual margin.</p>
 ```
