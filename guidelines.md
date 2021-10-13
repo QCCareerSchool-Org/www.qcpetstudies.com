@@ -64,6 +64,14 @@ export default ExamplePageWithNav;
 
 Every page must use the `SEO` component just inside the opening tag of the page's layout component.
 
+The following props are required:
+
+| Prop | Description |
+| --- | --- |
+| title | The title of the page (Note: do not include " - QC Pet Studies" |
+| description | The page's meta description |
+| canonical | A **relative** link to the current page |
+
 ```typescript
 import { DefaultLayout } from '../components/DefaultLayout';
 import { SEO } from '../components/SEO';
