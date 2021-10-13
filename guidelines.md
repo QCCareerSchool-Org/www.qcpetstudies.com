@@ -127,7 +127,7 @@ When using a background image for a section, the image should be loaded using a 
 ```typescript
 <section className="bg-dark text-shadow">
   <Image src={bathingBackground} layout="fill" objectFit="cover" objectPosition="center" alt="groomer bathing a dog" />
-  {/* global CSS rules will ensure that this section is overlayed on top of the image above  */}
+  {/* global CSS rules will ensure that this container is overlayed on top of the image above  */}
   <div className="container text-center">
     {/* section content */}
   </div>
@@ -247,7 +247,7 @@ Additional margins should be used sparingly. Margin sizes are already defined in
 ```
 
 ```html
-<h2 className="extraSpacing"}>Heading with Extra Margin</h2>
+<h2 className="extraSpacing">Heading with Extra Margin</h2>
 <!-- uses a custom syle -->
 <p>This text is separated from the header by a larger-than-usual margin.</p>
 ```
