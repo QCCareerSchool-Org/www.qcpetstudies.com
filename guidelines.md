@@ -79,7 +79,7 @@ export default ExamplePage;
 
 ## Sections
 
-All page content must be between `<section>` tags. Each logical section of the page must be in its own section. Each subsequent section should use a different background color or background image to distinguish it from the preceding section.
+All content must contained within `<section>` tags. Each logical section of the page must be in its own section. Each subsequent section should use a different background color or background image to distinguish it from the preceding section.
 
 Sections have a preset padding defined in the theme that should generally not be overridden.
 
@@ -89,11 +89,11 @@ In the code, sections should be separated from each other by a single line.
 
 ### Background Colors
 
-Background colors should be chosen from the available theme colors. Text colors will be applied automatically based on the global CSS. When copying content from the old Wordpress site that uses a background color, a background color from the new theme should be used in its place.
+Background colors should be chosen from the available theme colors. Text colors will be applied automatically based on the global CSS. When copying a section from the old Wordpress site that uses a background color, a background color from the new theme should be used in its place.
 
 ```typescript
 <section id="firstSection">
-  {/* this section will have the standard (white) background and standard (dark grey) text */}
+  {/* this section will have the standard (white) background and the standard (dark grey) text */}
 </section>
 
 <section className="bg-dark">
@@ -121,10 +121,14 @@ When using a a background image for a section, the image should be loaded using 
 
 ### Background Videos
 
-Background videos should be used sparingly to avoid large network requests. Use the `backgroundVideoWrapper` and `foregroundContent` classes as demonstrated below. The `text-shadow` class should be used when it improves the legibility of the headings and text.
+Background videos should be used sparingly to avoid large network requests. When laying out a section with a background video, use the `backgroundVideoWrapper` and `foregroundContent` classes as demonstrated below. The `text-shadow` class should be used when it improves the legibility of the headings and text.
+
+Content that uses background video cannot include a background color on the `<section>` tag. Doing so would obscure the video. Specify the background color on the `div.backgroundVideoWrapper` instead.
+
+Videos should include a poster image so that text is readable even if the video hasn't been loaded yet.
 
 ```typescript
-<div className="backgroundVideoWrapper">
+<div className="backgroundVideoWrapper bg-dark">
   <video autoPlay muted loop className="backgroundVideo">
     <source src={groomingVideo} type="video/mp4" />
   </video>
@@ -132,8 +136,8 @@ Background videos should be used sparingly to avoid large network requests. Use 
     {/* in this example, this is also the first section on the page and uses the firstSection id */}
     <section id="firstSection" className="text-shadow">
       <div className="container text-center">
-        <h1 className="text-light">Become a Professional<br />Dog Groomer</h1>
-        <p className="h4 text-light">Learn Online and Get Hands-On Training</p>
+        <h1>Become a Professional<br />Dog Groomer</h1>
+        <p className="h4">Learn Online and Get Hands-On Training</p>
       </div>
     </section>
   </div>
