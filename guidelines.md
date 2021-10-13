@@ -79,17 +79,17 @@ export default ExamplePage;
 
 ## Sections
 
-All page content must be between `<section>` tags. Each logical section of the page must be in it's own section. Subsequent sections should use a different background color or background image to distinguish them from preceding sections.
+All page content must be between `<section>` tags. Each logical section of the page must be in its own section. Each subsequent section should use a different background color or background image to distinguish it from the preceding section.
 
-Sections have a preset padding that should generally not be overridden.
+Sections have a preset padding defined in the theme that should generally not be overridden.
 
 The first section on a page must use the `firstSection` id to make space for the site navigation.
 
-In the code, sections should be separated from eachother by a single line.
+In the code, sections should be separated from each other by a single line.
 
 ### Background Colors
 
-Background colors should be chosen from the available theme colors. Text colors will be applied automatically based on the global CSS.
+Background colors should be chosen from the available theme colors. Text colors will be applied automatically based on the global CSS. When copying content from the old Wordpress site that uses a background color, a background color from the new theme should be used in its place.
 
 ```typescript
 <section id="firstSection">
@@ -214,4 +214,63 @@ When a section requires content to be laid out in separate columns, ensure that 
     </div>
   </div>
 </section>
+```
+
+## Margins
+
+Additional margins should be used sparingly. Margin sizes are already defined in the theme and should generally not be overridden. When adding additional margins, prefer bottom margins rather than top margins. It is strongly advised to use existing bootstrap margin classes and avoid custom classes or inline styles.
+
+❌ Incorrect
+
+```typescript
+<h2>Heading with Extra Margin</h2>
+<!-- uses a top margin -->
+<p className="mt-4">This text is separated from the header by a larger-than-usual margin.</p>
+```
+
+```typescript
+<h2 style={{ marginBottom: '16px' }}>Heading with Extra Margin</h2>
+<!-- uses an inline syle -->
+<p>This text is separated from the header by a larger-than-usual margin.</p>
+```
+
+✔️ Correct:
+
+```typescript
+<h2 className="mb-4">Heading with Extra Margin</h2>
+<p>This text is separated from the header by a larger-than-usual margin.</p>
+```
+
+## Capitalization
+
+Headings and button text should be written in title case.
+
+❌ Incorrect
+
+```html
+<h2>The quick brown fox jumps over the lazy dog</h2><!-- written in sentence case -->
+```
+
+✔️ Correct:
+
+```html
+<h2>The Quick Brown Fox Jumps Over the Lazy Dog</h2><!-- written in title case -->
+```
+
+> 📝 Small co-ordinating conjuctions should be written in lower case. The word "is" is a verb and must be written in title case.
+
+### Uppercase Elements
+
+Some HTML elements, notably buttons and some headings, are displayed in UPPERCASE. This is accomplished via the theme. Such elements should be written using normal capitalization rules.
+
+❌ Incorrect
+
+```html
+<button>LEARN MORE</button><!-- written in uppercase -->
+```
+
+✔️ Correct:
+
+```html
+<button>Learn More</button><!-- will be coverted to uppercase by the theme -->
 ```
