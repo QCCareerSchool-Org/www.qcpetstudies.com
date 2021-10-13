@@ -1,6 +1,11 @@
 # Guidelines
 
-This project has a Bootstrap-derived theme defined in `src/styles/global.scss`. This theme must be used when laying out a page. Additional styles should be avoided. If the theme cannot cover a particular layout, the team should disuss the issue to determine which steps to take.
+This project has a Bootstrap-derived theme defined in `src/styles/global.scss`. This theme must be used when laying out a page. Additional styles should be avoided. If the theme cannot cover a particular layout, the team should discuss the issue to determine which steps to take. For example,
+
+* Revise the code to work with the existing theme
+* Add local CSS to override the theme
+* Adjust the theme
+* Alter the graphic design
 
 This project's theme should take precedence over the old theme from the Wordpress site. This means colors, margins, font sizes, etc. should all be taken from the new theme. When copying content from the old site, the old styles should be ignored and only the text content should be retained. For example, the fancy bulleted lists in the WordPress theme should be avoided.
 
