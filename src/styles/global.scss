@@ -291,6 +291,7 @@ footer {
   padding: 2rem 0;
   // small { font-size: 0.625rem; }
   h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 { color: white; }
+  h4, .h4 { font-size: 1.2rem; font-weight: 600; }
   ul {
     list-style-type: none;
     padding: 0;
@@ -304,7 +305,12 @@ footer {
     margin-top: 12px;
     margin-bottom: 6px;
   }
-  .logoText { font-size: 0.75rem; text-transform: uppercase;}
+  .logoText {
+    font-size: 0.625rem;
+    // font-size: 0.75rem;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.8);
+  }
 }
 
 @media (min-width: 576px) {
@@ -326,22 +332,24 @@ footer {
 @media (min-width: 992px) {
   footer {
     #footerRow {
-      margin-right: -2rem;
-      margin-left: -2rem;
+      margin-right: -2.25rem;
+      margin-left: -2.25rem;
       > .col,
       > [class*="col-"] {
-        padding-right: 2rem;
-        padding-left: 2rem;
+        padding-right: 2.25rem;
+        padding-left: 2.25rem;
       }
     }
   }
 
-  #footerColBrand { width: 31%; }
-  #footerColCertifications { width: 23%; }
-  #footerColContactUs { width: 23%; }
-  #footerColStayInformed { width: 23%; border-left: 1px solid rgba(255, 255, 255, 0.25); }
+  #footerColBrand { width: 28%; }
+  #footerColCertifications { width: 24%; }
+  #footerColContactUs { width: 24%; }
+  #footerColStayInformed { width: 24%; border-left: 1px solid rgba(255, 255, 255, 0.25); }
 
   .spacedList > li { margin-bottom: 16px }
+
+  #footerLogInButton { width: 100%; }
 }
 
 @media (min-width: 1200px) {
@@ -357,10 +365,10 @@ footer {
     }
   }
 
-  #footerColBrand { width: 28%; }
-  #footerColCertifications { width: 24%; }
-  #footerColContactUs { width: 24%; }
-  #footerColStayInformed { width: 24%; }
+  #footerColBrand { width: 25%; }
+  #footerColCertifications { width: 25%; }
+  #footerColContactUs { width: 25%; }
+  #footerColStayInformed { width: 25%; }
 }
 
 @media (min-width: 1400px) {
@@ -375,10 +383,10 @@ footer {
       }
     }
 
-    #footerColBrand { width: 28%; }
-    #footerColCertifications { width: 24%; }
-    #footerColContactUs { width: 24%; }
-    #footerColStayInformed { width: 24%; }
+    // #footerColBrand { width: 28%; }
+    // #footerColCertifications { width: 24%; }
+    // #footerColContactUs { width: 24%; }
+    // #footerColStayInformed { width: 24%; }
   }
 }
 
