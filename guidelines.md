@@ -68,9 +68,11 @@ The following props are required:
 
 | Prop | Description |
 | --- | --- |
-| title | The title of the page (Note: do not include " - QC Pet Studies" |
+| title | The title of the page* |
 | description | The page's meta description |
 | canonical | A **relative** link to the current page |
+
+\* Note: do not include the site name in the title, e.g., "About Us", not "About Us - QC Pet Studies".
 
 ```typescript
 import { DefaultLayout } from '../components/DefaultLayout';
