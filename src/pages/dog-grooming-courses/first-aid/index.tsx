@@ -1,110 +1,182 @@
 import { NextPage } from 'next';
 import Image from 'next/image';
-
 import { DefaultLayout } from '../../../components/DefaultLayout';
-import { PriceSection } from '../../../components/PriceSection';
 import { SEO } from '../../../components/SEO';
-
-import guarantee1Year from '../../../images/1-year-guarantee-outlined.svg';
-import guarantee21Day from '../../../images/21-day-guarantee-outlined.svg';
-import tutorBackground from '../../../images/backgrounds/tutor-background.jpg';
+import dogLooking from '../../../images/dog-looking.jpg';
+import faCertificate from '../../../images/fa-certificate-desktop.jpg';
 import firstAidBook from '../../../images/first-aid-book-white.jpg';
 import firstAidLogo from '../../../images/first-aid-logo.svg';
-import scissorsSet from '../../../images/scissor-set-1.jpg';
+import viewPaymentPlan from '../../../images/view-payment-plans.svg';
 
-const secondaryNavLinks = [
-  { name: 'Foo', url: '#firstSection' },
-  { name: 'First Aid', url: '#firstAidSection' },
-  { name: 'Tutors', url: '#tutorSection' },
-];
 
 const DogGroomingPage: NextPage = () => {
   return (
-    <DefaultLayout secondaryTitle="First Aid for Groomers Course" secondaryNavLinks={secondaryNavLinks}>
+    <DefaultLayout secondaryTitle="First Aid for Groomers Course">
       <SEO
         title="First Aid for Groomers Course"
         description=""
         canonical="/dog-grooming-courses/first-aid"
       />
 
-      <section id="firstSection" className="bg-dark">
-        <Image src={tutorBackground} layout="fill" objectFit="cover" objectPosition="center" alt="dddd" />
-        <div className="container text-center">
-          <div className="row">
-            <div className="col-12 col-lg-10 offset-lg-1">
-              <h1>Lorem Ipsum</h1>
-              <p className="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section>
-        <div className="container text-center">
-          <div className="row">
-            <div className="col-12 col-md-10 offset-md-1 col-lg-8 offset-lg-2">
-              <h2>Nam Tempus Vestibulum Gravida</h2>
-              <p>Donec felis erat, eleifend eu consequat vitae, semper a lectus. Maecenas luctus nisi augue, vitae aliquam velit vestibulum sit amet. Pellentesque orci tellus, convallis nec odio at, sollicitudin scelerisque risus. Vestibulum quis blandit massa. Maecenas vitae vestibulum ligula. Quisque ut sem nec sem semper suscipit vel at lectus. Donec diam sapien, hendrerit vel velit sit amet, accumsan consectetur arcu. Etiam gravida malesuada odio, vitae tempus ipsum cursus vel. Pellentesque lobortis nibh vel erat condimentum, vitae porttitor nisi fermentum. Proin condimentum quam nec tristique ultrices. Praesent placerat erat neque, non maximus odio ornare vel. Ut commodo, nibh non malesuada eleifend, tortor turpis pretium neque, sit amet auctor felis magna nec dolor.</p>
-              <button className="btn btn-primary-dark">Maximus Odio</button>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <PriceSection courses={[ 'fa' ]} doubleGuarantee={true} />
-
-      <section>
-        <div className="container text-center">
-          <h2 className="mb-5">Suspendisse Viverra Elit Lacinia Eleifend Bibendum</h2>
-          <div className="row">
-            <div className="col-12 col-lg-6 mb-5 mb-lg-0">
-              <div className="mb-4">
-                <Image src={guarantee21Day} width={165} height={165} alt="21-Day Money-Back Guarantee" />
-              </div>
-              <h3 className="h5">Quisque Placerat Odio Lectus</h3>
-              <p>Vel sodales nunc euismod a. Sed ut diam scelerisque, consequat massa a, vulputate leo. Morbi sollicitudin fringilla ex, nec rutrum turpis porttitor vel. Duis sit amet sem commodo, hendrerit odio vel, dapibus erat. Quisque eget magna volutpat, varius velit sed, sollicitudin est. Donec sit amet erat ut orci faucibus elementum. Duis augue tellus, fringilla eu nisl id, tristique dictum diam. Morbi sit amet augue ultrices, vehicula nisl at, congue augue. Vestibulum volutpat lectus erat, quis fringilla odio cursus non.</p>
-            </div>
-            <div className="col-12 col-lg-6">
-              <div className="mb-4">
-                <Image src={guarantee1Year} width={199} height={165} alt="1-Year Money-Back Guarantee" />
-              </div>
-              <h3 className="h5">Leo Sit Amet Sollicitudin Sollicitudin</h3>
-              <p>hasellus rhoncus volutpat ex a dapibus. Aenean id purus non nisi pretium bibendum. Donec dapibus sollicitudin nunc. Ut bibendum, leo sit amet sollicitudin sollicitudin, nisl ipsum sollicitudin ante, ut imperdiet tellus elit eget ligula. In at velit quis odio sodales sollicitudin. Nullam a magna sed sem gravida iaculis vitae a quam. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus auctor risus in lorem porttitor, sed facilisis augue feugiat. Nullam et eleifend tellus.</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="bg-dark">
-        <div className="container text-center">
-          <div className="row">
-            <div className="col-12 col-md-10 offset-md-1">
-              <h2>Bonus Tools for Dog Grooming Students</h2>
-              <p className="h5">Professional Grooming Scissors</p>
-              <p>Before you begin your practical work in Unit C, you&apos;ll receive three pairs of professional grooming scissors that enable you to create a variety of looks.</p>
-              <Image src={scissorsSet} alt="scissors set" width={816} height={270} />
-              <p><em>Product may vary based on the supplier.</em></p>
-            </div>
-          </div>
-        </div>
-      </section>
-
       <section id="firstAidSection">
         <div className="container text-center">
           <div className="row align-items-center">
-            <div className="col-12 col-md-10 offset-md-1 col-lg-6 offset-lg-0 mb-2 mb-lg-0 text-lg-start">
+            <div className="col-12 pt-4">
               <Image src={firstAidLogo} alt="First Aid Course logo" width={60} height={60} />
-              <h2>Get a <strong>FREE</strong> First Aid Course</h2>
-              <p className="lead">Enroll in Dog Grooming &amp; receive the First Aid for Dog Groomers course to take your career to the next level!</p>
-              <p>Being trained in Pet First Aid prepares you to respond to emergencies and maintain a safe grooming environment. You&apos;ll learn from dog first aid experts who will teach you what you need to know to keep yourself and your furry clients out of harm&apos;s way, and how to deal with emergency situations if they arise.</p>
+              <h1><strong>First Aid</strong> Course for Groomers</h1>
             </div>
-            <div className="col-12 col-lg-6" style={{ fontSize: 0, marginBottom: '-20px' }}>
-              <Image src={firstAidBook} alt="First Aid book" width={504} height={385} />
+            <div className="col-12 col-md-10 offset-md-1 col-lg-8 offset-lg-2">
+              <p>When clients entrust you with their beloved pet, they rightfully expect their dog to be kept safe! That&apos;s why being diligent about health and safety is essential to your success as a dog groomer. This First Aid for Dog Groomers course will help you ensure your own safety as well as the safety of the dogs you work with.</p>
+              <p>Through detailed course texts and video demonstrations, you&apos;ll learn how to prevent injuries and how to respond to emergency situations in your grooming salon. Completing the first aid course will boost your confidence. You&apos;ll learn how to create a safe grooming environment for your furry friends and fellow groomers. Your First Aid for Dog Groomers Certificate will also help increase your credibility and marketability by providing your clients with peace of mind.</p>
+              <p>The First Aid for Dog Groomers course consists of two core units that include course texts, video tutorials, and self-study assignments. The entire course is completed online and at your own pace.</p>
             </div>
           </div>
         </div>
       </section>
 
+      <section>
+        <div className="container text-center">
+          <div className="row align-items-center">
+            <div className="col-12 col-lg-6">
+              <Image src={firstAidBook} alt="First Aid book" width={504} height={385} />
+            </div>
+            <div className="col-12 col-md-10 offset-md-1 col-lg-6 offset-lg-0 mb-2 mb-lg-0 text-lg-start">
+              <div className="nectar-fancy-ul">
+                <h4>You should take this course if you:</h4>
+                <ul>
+                  <li> Aspire to become a dog groomer or currently work as a professional dog groomer.</li>
+                  <li> Are motivated to create a safer grooming environment for dogs and people.</li>
+                  <li> Want to maintain your own safety to enjoy a long, healthy dog grooming career.</li>
+                  <li> Are a dog owner or animal-care professional and want to be prepared in the event of an emergency.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="firstAidSection " className="red-grad">
+        <div className="container text-center">
+          <div className="row align-items-center">
+            <div className="col-12 col-lg-6 text-white">
+              <h3 className="text-white">Tuition</h3>
+              <div className="wpb_wrapper">
+                <h6 id="priceText" className="course-price text-white">$348 or $50/mo</h6>
+              </div>
+              <div className="wpb_wrapper ">
+                <p><em>(incl. taxes, shipping, and materials!)</em></p>
+              </div>
+            </div>
+            <div className="col-12 col-md-10 offset-md-1 col-lg-6 offset-lg-0 mb-2 mb-lg-0 ">
+              <Image src={viewPaymentPlan} objectFit="cover" objectPosition="center" alt="payment plan" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div className="container text-center">
+          <div className="row align-items-center">
+            <div className="col-12 col-lg-6">
+              <h3>QC&apos;s First Aid Course Includes:</h3>
+              <div className="nectar-fancy-ul" data-list-icon="icon-ok" data-animation="false" data-animation-delay="0" data-color="extra-color-2" data-alignment="left">
+                <ul>
+                  <li> Course texts that provide in-depth information on preventing and responding to dog grooming emergencies.</li>
+                  <li> Video tutorials featuring your course tutors (including a Certified Master Groomer and a Pet First Aid instructor).</li>
+                  <li> Multiple choice quizzes to test your knowledge.</li>
+                  <li> Self-study assignments are designed to develop your skills, including your ability to work hands-on with dogs. To complete these assignments, you will need to begin building your first aid kit with a few essential items.</li>
+                </ul>
+              </div>
+            </div>
+            <div className="col-12 col-md-10 offset-md-1 col-lg-6 offset-lg-0 mb-2 mb-lg-0 text-lg-start">
+              <Image src={dogLooking} alt="First Aid book" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-dark-shade">
+        <div className="container text-center">
+          <div className="row align-items-center">
+            <div className="col-12 pt-4">
+              <h2 className="text-white">Your Professional Certification</h2>
+            </div>
+            <div className="col-12 col-md-10 offset-md-1 col-lg-8 offset-lg-2 text-white">
+              <p>Once you&apos;ve completed your Dog First Aid course, you&apos;ll graduate with the First Aid for Groomers certificate of completion. This certificate attests to your success in learning how to maintain a safe grooming environment for dogs and people.</p>
+            </div>
+          </div>
+          <Image src={faCertificate} objectFit="cover" alt="First Aid certification" />
+        </div>
+      </section>
+
+      <section>
+        <div className="container text-center">
+          <h2>Course Outline</h2>
+          <div className="row align-items-center justify-content-center">
+            <div className="col-12 col-lg-4 text-lg-start">
+              <h3>Unit A</h3>
+              <ul>
+                <li> Introduction to first aid</li>
+                <li> Building your first aid kit</li>
+                <li> Setting up your workspace</li>
+                <li> Preventing accidents and injuries</li>
+                <li> Assessing a dog&apos;s health</li>
+                <li> Responding to emergency situations</li>
+                <li> Addressing injuries to the groomer</li>
+                <li> Preventing bites and scratches</li>
+                <li> Assessing the severity of a wound</li>
+                <li> Checking a dog&apos;s vitals</li>
+              </ul>
+            </div>
+            <div className="col-12 col-md-10 offset-md-1 col-lg-4 offset-lg-0 mb-2 mb-lg-0 text-lg-start">
+              <h3>Unit B</h3>
+              <ul>
+                <li> Creating an emergency plan</li>
+                <li> Rescue breathing techniques</li>
+                <li> Performing CPR</li>
+                <li> Artificial respiration</li>
+                <li> Helping a choking dog</li>
+                <li> Wound care</li>
+                <li> Dehydration and heatstroke</li>
+                <li> Heart attacks and seizures</li>
+                <li> Cysts and parasites</li>
+                <li> Burns and bruises</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="enroll-banner">
+        <div className="container text-center">
+          <div className="row align-items-center">
+            <div className="col-12">
+              <h1 className="text-white">Receive First Aid Training <strong>FREE</strong></h1>
+              <h3 className="text-white">When You Enroll in the <a href="/online-courses/dog-grooming/">Online Dog Grooming Course</a></h3>
+              <a className="nectar-button jumbo regular regular-button" href="https://enroll.doggroomingcourse.com/course.php?c%5B%5D=dg&amp;c%5B%5D=fa" data-color-override="#57c3d7" data-hover-color-override="false" data-hover-text-color-override="#fff"><span>ENROLL NOW</span></a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <style jsx>{`
+      .red-grad{
+        background: linear-gradient(to bottom,#f0106d 0%,#a50832 100%);
+      }
+      .bg-dark-shade{
+        background-color: #999999;
+      }
+      .enroll-banner{
+        background-color: #00062b;
+      }
+      .nectar-button {
+        font-size: 14px;
+        padding: 15px 22px;
+        background-color: #57c3d7!important;
+        color:#fff;
+        font-size: 18px;
+        padding: 25px 40px;
+   }`}</style>
     </DefaultLayout>
   );
 };
