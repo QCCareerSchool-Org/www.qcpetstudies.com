@@ -8,7 +8,6 @@ import firstAidBook from '../../../images/first-aid-book-white.jpg';
 import firstAidLogo from '../../../images/first-aid-logo.svg';
 import viewPaymentPlan from '../../../images/view-payment-plans.svg';
 
-
 const DogGroomingPage: NextPage = () => {
   return (
     <DefaultLayout secondaryTitle="First Aid for Groomers Course">
@@ -41,13 +40,13 @@ const DogGroomingPage: NextPage = () => {
               <Image src={firstAidBook} alt="First Aid book" width={504} height={385} />
             </div>
             <div className="col-12 col-md-10 offset-md-1 col-lg-6 offset-lg-0 mb-2 mb-lg-0 text-lg-start">
-              <div className="nectar-fancy-ul">
+              <div className="nectar-fancy-ul animated-in">
                 <h4>You should take this course if you:</h4>
                 <ul>
-                  <li> Aspire to become a dog groomer or currently work as a professional dog groomer.</li>
-                  <li> Are motivated to create a safer grooming environment for dogs and people.</li>
-                  <li> Want to maintain your own safety to enjoy a long, healthy dog grooming career.</li>
-                  <li> Are a dog owner or animal-care professional and want to be prepared in the event of an emergency.</li>
+                  <li><i className="icon-default-style icon-ok extra-color-2"></i>Aspire to become a dog groomer or currently work as a professional dog groomer.</li>
+                  <li><i className="icon-default-style icon-ok extra-color-2"></i> Are motivated to create a safer grooming environment for dogs and people.</li>
+                  <li><i className="icon-default-style icon-ok extra-color-2"></i> Want to maintain your own safety to enjoy a long, healthy dog grooming career.</li>
+                  <li><i className="icon-default-style icon-ok extra-color-2"></i> Are a dog owner or animal-care professional and want to be prepared in the event of an emergency.</li>
                 </ul>
               </div>
             </div>
@@ -55,7 +54,7 @@ const DogGroomingPage: NextPage = () => {
         </div>
       </section>
 
-      <section id="firstAidSection " className="red-grad">
+      <section id="firstAidSection " className="bg-danger bg-gradient">
         <div className="container text-center">
           <div className="row align-items-center">
             <div className="col-12 col-lg-6 text-white">
@@ -79,7 +78,7 @@ const DogGroomingPage: NextPage = () => {
           <div className="row align-items-center">
             <div className="col-12 col-lg-6">
               <h3>QC&apos;s First Aid Course Includes:</h3>
-              <div className="nectar-fancy-ul" data-list-icon="icon-ok" data-animation="false" data-animation-delay="0" data-color="extra-color-2" data-alignment="left">
+              <div className="nectar-fancy-ul">
                 <ul>
                   <li> Course texts that provide in-depth information on preventing and responding to dog grooming emergencies.</li>
                   <li> Video tutorials featuring your course tutors (including a Certified Master Groomer and a Pet First Aid instructor).</li>
@@ -95,7 +94,7 @@ const DogGroomingPage: NextPage = () => {
         </div>
       </section>
 
-      <section className="bg-dark-shade">
+      <section className="bg-dark-gray">
         <div className="container text-center">
           <div className="row align-items-center">
             <div className="col-12 pt-4">
@@ -147,36 +146,17 @@ const DogGroomingPage: NextPage = () => {
         </div>
       </section>
 
-      <section className="enroll-banner">
+      <section className="bg-dark">
         <div className="container text-center">
           <div className="row align-items-center">
             <div className="col-12">
               <h1 className="text-white">Receive First Aid Training <strong>FREE</strong></h1>
-              <h3 className="text-white">When You Enroll in the <a href="/online-courses/dog-grooming/">Online Dog Grooming Course</a></h3>
-              <a className="nectar-button jumbo regular regular-button" href="https://enroll.doggroomingcourse.com/course.php?c%5B%5D=dg&amp;c%5B%5D=fa" data-color-override="#57c3d7" data-hover-color-override="false" data-hover-text-color-override="#fff"><span>ENROLL NOW</span></a>
+              <h3 className="text-white mt-4">When You Enroll in the <a href="/online-courses/dog-grooming/" className="text-primary text-decoration-none">Online Dog Grooming Course</a></h3>
+              <a className="btn mt-4 bg-primary btn-lg text-white" href="https://enroll.doggroomingcourse.com/course.php?c%5B%5D=dg&amp;c%5B%5D=fa"><span>ENROLL NOW</span></a>
             </div>
           </div>
         </div>
       </section>
-
-      <style jsx>{`
-      .red-grad{
-        background: linear-gradient(to bottom,#f0106d 0%,#a50832 100%);
-      }
-      .bg-dark-shade{
-        background-color: #999999;
-      }
-      .enroll-banner{
-        background-color: #00062b;
-      }
-      .nectar-button {
-        font-size: 14px;
-        padding: 15px 22px;
-        background-color: #57c3d7!important;
-        color:#fff;
-        font-size: 18px;
-        padding: 25px 40px;
-   }`}</style>
     </DefaultLayout>
   );
 };
