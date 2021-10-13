@@ -41,11 +41,11 @@ export const Footer = ({ ctaType, className }: Props): ReactElement => {
       <div className="container">
 
         <div className="row align-items-center">
-          <div className="col-12 col-lg-9 col-xl-8 col-xxl-7 mb-4 mb-lg-0 text-center text-lg-start">
+          <div className="col-12 col-lg-9 col-xl-8 mb-4 mb-lg-0 text-center text-lg-start">
             <h2>Ready to Launch Your <strong>{ctaType === 'grooming' ? <><br />Grooming </> : ctaType === 'training' ? <><br />Training </> : null}Career?</strong></h2>
             <p className="lead mb-0">Take the first step towards a new career in the booming {ctaType === 'grooming' ? 'dog grooming ' : ctaType === 'training' ? 'dog training ' : 'pet'} industry.</p>
           </div>
-          <div className="col-12 col-lg-3 text-center text-lg-end ">
+          <div className="col-12 col-lg-3 text-center text-lg-end text-xl-center">
             <a href={enrollUrl}><button className="btn btn-secondary btn-lg">Enroll Online</button></a>
           </div>
         </div>
@@ -55,7 +55,7 @@ export const Footer = ({ ctaType, className }: Props): ReactElement => {
         <div className="row" id="footerRow">
           <div id="footerColBrand" className="col-12 col-lg-6 mb-5 mb-lg-0 text-center">
             <div className="mb-4">
-              <Image id="footerLogo" src={Logo} width={228} height={22} alt="QC Pet Studies" />
+              <Image id="footerLogo" src={Logo} width={240} height={28} alt="QC Pet Studies" />
               {/* <Image id="footerLogo" src={Logo} width={186} height={18} alt="QC Pet Studies" /> */}
             </div>
             <BBBGuarantee />
