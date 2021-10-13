@@ -6,7 +6,7 @@ This project's theme should take precedence over the old theme from the Wordpres
 
 ## Page Layout Components
 
-Every page must use one of the preset page layout components found in `src/components`. By default, a page should use the `DefaultLayout` component
+Every page must use one of the preset page layout components found in `src/components`. By default, a page should use the `DefaultLayout` component.
 
 ```typescript
 import { DefaultLayout } from '../components/DefaultLayout';
@@ -17,7 +17,7 @@ const ExamplePage: NextPage = () => (
   </DefaultLayout>
 );
 
-export default ExamplePage
+export default ExamplePage;
 ```
 
 ## Page Menus
@@ -52,12 +52,12 @@ const ExamplePageWithNav: NextPage = () => (
   </DefaultLayout>
 );
 
-export default ExamplePageWithNav
+export default ExamplePageWithNav;
 ```
 
 ## SEO
 
-Each page must use the SEO component just inside the opening tag of the page's layout component
+Every page must use the `SEO` component just inside the opening tag of the page's layout component.
 
 ```typescript
 import { DefaultLayout } from '../components/DefaultLayout';
@@ -74,7 +74,7 @@ const ExamplePage: NextPage = () => (
   </DefaultLayout>
 );
 
-export default ExamplePage
+export default ExamplePage;
 ```
 
 ## Sections
@@ -85,7 +85,7 @@ Sections have a preset padding that should generally not be overridden.
 
 The first section on a page must use the `firstSection` id to make space for the site navigation.
 
-In the code, sections should be separated from each other by a single line.
+In the code, sections should be separated from eachother by a single line.
 
 ### Background Colors
 
