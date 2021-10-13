@@ -1,6 +1,6 @@
 # Guidelines
 
-This project has a Bootstrap-derived theme defined in `/src/styles/global.scss`. This theme must be used when laying out a page. Additional styles should be avoided. If the theme cannot cover a particular layout, the team should disuss the issue to determine which steps to take.
+This project has a Bootstrap-derived theme defined in `src/styles/global.scss`. This theme must be used when laying out a page. Additional styles should be avoided. If the theme cannot cover a particular layout, the team should disuss the issue to determine which steps to take.
 
 This project's theme should take precedence over the old theme from the Wordpress site. This means colors, margins, font sizes, etc. should all be taken from the new theme. When copying content from the old site, the old styles should be ignored and only the text content should be retained. For example, the fancy bulleted lists in the WordPress theme should be avoided.
 
@@ -79,7 +79,7 @@ export default ExamplePage
 
 ## Sections
 
-All page content must be between <section> tags. Each logical section of the page must be in it's own section. Subsequent sections should use a different background color or background image to distinguish them from preceding sections.
+All page content must be between `<section>` tags. Each logical section of the page must be in it's own section. Subsequent sections should use a different background color or background image to distinguish them from preceding sections.
 
 Sections have a preset padding that should generally not be overridden.
 
@@ -142,7 +142,7 @@ Background videos should be used sparingly to avoid large network requests. Use 
 
 ### Containers
 
-All content within a section must be wrapped with a <div> tag using the Bootstrap `container` class.
+All content within a section must be wrapped with a `<div>` tag using the Bootstrap `container` class.
 
 ```typescript
 <section id="firstSection">
