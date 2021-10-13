@@ -164,7 +164,7 @@ Content should be laid using Bootstrap's column system.
 
 #### Simple content
 
-Simple content should be laid out in a single column. In such cases, a Bootstrap column and its containing row can sometimes be avoided. Although it's generally preferred to wrap the content in a div with the classes `col-12 col-md-10 offset-md-1` to prevent long paragraphs from stretching too far across the screen on larger screen sizes. Such content should generally be centered.
+Simple content should be laid out in a single column. In such cases, a Bootstrap column and its containing row can _sometimes_ be avoided. Although, it's generally preferred to wrap the content in a div with the classes `col-12 col-md-10 offset-md-1` to prevent long paragraphs from stretching too far across the screen on larger screen sizes. Such content should generally be centered.
 
 ```typescript
 <section id="firstSection">
@@ -181,8 +181,7 @@ Simple content should be laid out in a single column. In such cases, a Bootstrap
 
 #### Side-by-Side Content
 
-When a section requires content to be laid out in separate columns, ensure that the layout is visually appealing at each bootstrap breakpoint (xs, sm, md, lg, xl, and xxl). In most cases, the content will have to be rearranged for smaller screen sizes so that it is laid out vertically instead. When arranging columns vertically, bottom margin spacing should be applied to the appropriate columns to keep them separated from each other.
-
+When a section requires content to be laid out in separate columns, ensure that the layout is visually appealing at each bootstrap breakpoint (xs, sm, md, lg, xl, and xxl). In most cases, the content will have to be rearranged for smaller screen sizes so that it is laid out vertically instead. When arranging columns vertically, bottom margin spacing should be applied to the appropriate columns to keep them separated from each other. Such content should generally be centered.
 
 ```typescript
 <section>
@@ -220,7 +219,7 @@ When a section requires content to be laid out in separate columns, ensure that 
 
 Additional margins should be used sparingly. Margin sizes are already defined in the theme and should generally not be overridden. When adding additional margins, prefer bottom margins rather than top margins. It is strongly advised to use existing bootstrap margin classes and avoid custom classes or inline styles.
 
-❌ Incorrect
+❌ Incorrect:
 
 ```typescript
 <h2>Heading with Extra Margin</h2>
@@ -245,7 +244,7 @@ Additional margins should be used sparingly. Margin sizes are already defined in
 
 Headings and button text should be written in title case.
 
-❌ Incorrect
+❌ Incorrect:
 
 ```html
 <h2>The quick brown fox jumps over the lazy dog</h2><!-- written in sentence case -->
@@ -263,7 +262,7 @@ Headings and button text should be written in title case.
 
 Some HTML elements, notably buttons and some headings, are displayed in UPPERCASE. This is accomplished via the theme. Such elements should be written using normal capitalization rules.
 
-❌ Incorrect
+❌ Incorrect:
 
 ```html
 <button>LEARN MORE</button><!-- written in uppercase -->
