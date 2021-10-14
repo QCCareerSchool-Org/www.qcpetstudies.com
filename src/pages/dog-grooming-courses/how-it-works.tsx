@@ -40,7 +40,7 @@ const DogGroomingHowItWorksPage: NextPage = () => {
         <div className="container text-center">
           <div className="row">
             <div className="col-12 col-lg-10 offset-lg-1">
-              <h1>How QC&apos;s Online Dog<br />Groomer Training Works</h1>
+              <h1>How QC&apos;s Online Dog Groomer Training Works</h1>
               <p>Online dog groomer training can be just as effective as in-class training. QC has over 30 years of experience in online education, and has now applied that expertise to the <Link href="/dog-grooming-courses/dog-grooming"><a className="link-primary">online dog grooming course</a></Link>! The key is to provide students with plenty of hands-on training and feedback every step of the way. Remember, just because you&apos;re learning dog grooming online doesn&apos;t mean you&apos;re learning alone!</p>
               <p>Wondering exactly how your online dog groomer education will unfold? Here&apos;s a detailed overview of how your course, assignments, grades, and graduation will work.</p>
             </div>
