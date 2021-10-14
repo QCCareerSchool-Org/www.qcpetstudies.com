@@ -140,13 +140,13 @@ const PipeSpacer = (): ReactElement => <>&nbsp;&nbsp;|&nbsp;&nbsp;</>;
 
 const BBBGuarantee = (): ReactElement => (
   <div className="row text-center sm-gutters mb-4">
-    <div className="col-3 offset-3 col-md-2 offset-md-4 col-lg-6 offset-lg-0">
+    <div className="col-4 offset-2 col-sm-3 offset-sm-3 col-md-2 offset-md-4 col-lg-6 offset-lg-0">
       <div>
         <Image src={BBBLogo} width={72} height={48} alt="BBB Better Business Bureau A+" />
       </div>
       <small className="logoText">BBB Accredited</small>
     </div>
-    <div className="col-3 col-md-2 col-lg-6">
+    <div className="col-4 col-sm-3 col-md-2 col-lg-6">
       <div>
         <Image src={GuaranteeIcon} width={46} height={48} alt="21-Day Guarantee" />
       </div>
