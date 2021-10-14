@@ -40,31 +40,25 @@ const DogGroomingPage: NextPage = () => {
               <Image src={firstAidBook} alt="First Aid book" width={504} height={385} />
             </div>
             <div className="col-12 col-md-10 offset-md-1 col-lg-6 offset-lg-0 mb-2 mb-lg-0 text-lg-start">
-              <div className="nectar-fancy-ul animated-in">
-                <h4>You should take this course if you:</h4>
-                <ul>
-                  <li><i className="icon-default-style icon-ok extra-color-2"></i>Aspire to become a dog groomer or currently work as a professional dog groomer.</li>
-                  <li><i className="icon-default-style icon-ok extra-color-2"></i> Are motivated to create a safer grooming environment for dogs and people.</li>
-                  <li><i className="icon-default-style icon-ok extra-color-2"></i> Want to maintain your own safety to enjoy a long, healthy dog grooming career.</li>
-                  <li><i className="icon-default-style icon-ok extra-color-2"></i> Are a dog owner or animal-care professional and want to be prepared in the event of an emergency.</li>
-                </ul>
-              </div>
+              <h4>You should take this course if you:</h4>
+              <ul>
+                <li>Aspire to become a dog groomer or currently work as a professional dog groomer.</li>
+                <li> Are motivated to create a safer grooming environment for dogs and people.</li>
+                <li> Want to maintain your own safety to enjoy a long, healthy dog grooming career.</li>
+                <li> Are a dog owner or animal-care professional and want to be prepared in the event of an emergency.</li>
+              </ul>
             </div>
           </div>
         </div>
       </section>
 
-      <section id="firstAidSection " className="bg-danger bg-gradient">
+      <section className="bg-secondary bg-gradient">
         <div className="container text-center">
           <div className="row align-items-center">
             <div className="col-12 col-lg-6 text-white">
               <h3 className="text-white">Tuition</h3>
-              <div className="wpb_wrapper">
-                <h6 id="priceText" className="course-price text-white">$348 or $50/mo</h6>
-              </div>
-              <div className="wpb_wrapper ">
-                <p><em>(incl. taxes, shipping, and materials!)</em></p>
-              </div>
+              <h6 className="text-white">$348 or $50/mo</h6>
+              <p><em>(incl. taxes, shipping, and materials!)</em></p>
             </div>
             <div className="col-12 col-md-10 offset-md-1 col-lg-6 offset-lg-0 mb-2 mb-lg-0 ">
               <Image src={viewPaymentPlan} objectFit="cover" objectPosition="center" alt="payment plan" />
@@ -78,14 +72,12 @@ const DogGroomingPage: NextPage = () => {
           <div className="row align-items-center">
             <div className="col-12 col-lg-6">
               <h3>QC&apos;s First Aid Course Includes:</h3>
-              <div className="nectar-fancy-ul">
-                <ul>
-                  <li> Course texts that provide in-depth information on preventing and responding to dog grooming emergencies.</li>
-                  <li> Video tutorials featuring your course tutors (including a Certified Master Groomer and a Pet First Aid instructor).</li>
-                  <li> Multiple choice quizzes to test your knowledge.</li>
-                  <li> Self-study assignments are designed to develop your skills, including your ability to work hands-on with dogs. To complete these assignments, you will need to begin building your first aid kit with a few essential items.</li>
-                </ul>
-              </div>
+              <ul>
+                <li> Course texts that provide in-depth information on preventing and responding to dog grooming emergencies.</li>
+                <li> Video tutorials featuring your course tutors (including a Certified Master Groomer and a Pet First Aid instructor).</li>
+                <li> Multiple choice quizzes to test your knowledge.</li>
+                <li> Self-study assignments are designed to develop your skills, including your ability to work hands-on with dogs. To complete these assignments, you will need to begin building your first aid kit with a few essential items.</li>
+              </ul>
             </div>
             <div className="col-12 col-md-10 offset-md-1 col-lg-6 offset-lg-0 mb-2 mb-lg-0 text-lg-start">
               <Image src={dogLooking} alt="First Aid book" />
@@ -94,7 +86,7 @@ const DogGroomingPage: NextPage = () => {
         </div>
       </section>
 
-      <section className="bg-dark-gray">
+      <section className="bg-gray">
         <div className="container text-center">
           <div className="row align-items-center">
             <div className="col-12 pt-4">
