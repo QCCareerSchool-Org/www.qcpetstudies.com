@@ -17,7 +17,7 @@ const DogGroomingPage: NextPage = () => {
         canonical="/dog-grooming-courses/first-aid"
       />
 
-      <section id="firstAidSection">
+      <section id="firstSection">
         <div className="container text-center">
           <div className="row align-items-center">
             <div className="col-12 pt-4">
