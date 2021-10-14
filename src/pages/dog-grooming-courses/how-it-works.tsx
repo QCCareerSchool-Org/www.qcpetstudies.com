@@ -158,9 +158,10 @@ const DogGroomingHowItWorksPage: NextPage = () => {
 
       <section>
         <div className="container text-center">
+          <h2 className="mb-4">Next Steps</h2>
           <div className="row">
-            <div className="col-10 offset-2 col-md-4 offset-md-0 mb-4 mb-lg-0">
-              <div className="p-4 position-relative">
+            <div className="col-10 offset-1 col-md-4 offset-md-0 mb-4 mb-lg-0">
+              <div className="py-5 px-4 position-relative text-shadow nextStepsCard d-flex align-items-center">
                 <Image src={StudentExperienceCardBackground} alt="Student Experience" objectFit="cover" layout="fill" />
                 <div className="position-relative">
                   <h3 className="text-white">Student<br />Experience</h3>
@@ -169,8 +170,8 @@ const DogGroomingHowItWorksPage: NextPage = () => {
                 </div>
               </div>
             </div>
-            <div className="col-10 offset-2 col-md-4 offset-md-0 mb-4 mb-lg-0">
-              <div className="p-4 position-relative">
+            <div className="col-10 offset-1 col-md-4 offset-md-0 mb-4 mb-lg-0">
+              <div className="py-5 px-4 position-relative text-shadow nextStepsCard d-flex align-items-center">
                 <Image src={TutorCardBackground} alt="Meet QC's Tutors" objectFit="cover" layout="fill" />
                 <div className="position-relative">
                   <h3 className="text-white">Meet QC&apos;s<br />Tutors</h3>
@@ -179,8 +180,8 @@ const DogGroomingHowItWorksPage: NextPage = () => {
                 </div>
               </div>
             </div>
-            <div className="col-10 offset-2 col-md-4 offset-md-0">
-              <div className="p-4 position-relative">
+            <div className="col-10 offset-1 col-md-4 offset-md-0">
+              <div className="py-5 px-4 position-relative text-shadow nextStepsCard d-flex align-items-center">
                 <Image src={EnrollNowCardBackground} alt="Enroll Now" objectFit="cover" layout="fill" />
                 <div className="position-relative">
                   <h3 className="text-white">Enroll<br />Now</h3>
@@ -192,6 +193,14 @@ const DogGroomingHowItWorksPage: NextPage = () => {
           </div>
         </div>
       </section>
+
+      <style jsx>{`
+        @media (min-width: 992px) {
+          .nextStepsCard {
+            min-height: 400px;
+          }
+        }
+      `}</style>
     </DefaultLayout>
   );
 };
