@@ -8,7 +8,9 @@ import checked from '../../images/checked.svg';
 import direction from '../../images/direction.svg';
 import enrollNow from '../../images/enroll-now-bg.jpg';
 import feedback from '../../images/feedback.svg';
+import findTheDog from '../../images/find-dog-bg.jpg';
 import find from '../../images/find.svg';
+import graduateBg from '../../images/graduate-bg-1.jpg';
 import studentExperiance from '../../images/student-experience-btn-1.jpg';
 import stopwatch from '../../images/time.svg';
 import tutorButton from '../../images/tutor-btn.jpg';
@@ -18,7 +20,7 @@ const DogGroomingHowItWorksPage: NextPage = () => {
   return (
     <DefaultLayout>
       <SEO
-        title="How Does Online Dog Groomer Training Work? - QC Pet Studies"
+        title="How Does Online Dog Groomer Training Work?"
         description=""
         canonical="/dog-grooming-courses/how-it-works"
       />
@@ -82,7 +84,8 @@ const DogGroomingHowItWorksPage: NextPage = () => {
           </div>
         </section>
 
-        <section className="find-dog-bg">
+        <section>
+          <Image src={findTheDog} layout="fill" objectFit="cover" objectPosition="center" alt="find the dog" />
           <div className="container text-center">
             <div className="row">
               <div className="col-12 col-md-10 offset-md-1 col-lg-8 offset-lg-2">
@@ -133,6 +136,7 @@ const DogGroomingHowItWorksPage: NextPage = () => {
         </section>
 
         <section className="bg-light bg-gradient">
+          <Image src={graduateBg} layout="fill" objectFit="cover" objectPosition="center" alt="graduate" />
           <div className="container text-center">
             <div className="row">
               <div className="col-12 mb-5 col-md-10 offset-md-1 col-lg-8 offset-lg-2">
@@ -174,22 +178,7 @@ const DogGroomingHowItWorksPage: NextPage = () => {
             </div>
           </div>
         </section>
-
       </section>
-
-      <style jsx>{`
-            .find-dog-bg {
-                background-image: url(https://www.doggroomingcourse.com/wp-content/uploads/2017/02/find-dog-bg.jpg);
-                background-repeat: no-repeat;
-                background-position: left;
-           }
-            .graduate-bg{
-                background-image: url(https://www.doggroomingcourse.com/wp-content/uploads/2017/02/graduate-bg-1.jpg);
-                background-position: right;
-                background-repeat: no-repeat;
-                background-color: #ffffff;
-           } 
-            `}</style>
     </DefaultLayout>
   );
 
