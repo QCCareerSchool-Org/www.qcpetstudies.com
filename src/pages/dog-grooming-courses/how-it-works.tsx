@@ -152,28 +152,35 @@ const DogGroomingHowItWorksPage: NextPage = () => {
         <section>
           <div className="container text-center">
             <div className="row justify-content-around">
-              <div className="col-sm-3 p-5" style={{ backgroundImage: `url(${studentExperiance})` }}>
-                <h2 className="text-white">Student<br />Experience</h2>
-                <p className="text-white">Find out what it&apos;s like to be a student at QC Pet Studies. You may be learning from home, but you won&apos;t be learning alone!</p>
-                <a className="btn mt-4 bg-transparent border-2 border-white btn-lg text-white" href="/student-experience/">
-                  <span className="text-white">LEARN MORE</span>
-                </a>
+              <div className="col-sm-3 col-10 p-5 position-relative mb-4 mb-lg-0">
+                <Image src={studentExperiance} alt="student Experiance" objectFit="cover" layout="fill" />
+                <div className="position-relative">
+                  <h2 className="text-white">Student<br />Experience</h2>
+                  <p className="text-white">Find out what it&apos;s like to be a student at QC Pet Studies. You may be learning from home, but you won&apos;t be learning alone!</p>
+                  <a className="btn mt-4 bg-transparent border-2 border-white btn-lg text-white" href="/student-experience/">
+                    <span className="text-white">LEARN MORE</span>
+                  </a>
+                </div>
               </div>
-              <div className="col-sm-3 p-5" style={{ backgroundImage: `url(${tutorButton})` }}>
-                <h2 className="text-white">Meet QC&apos;s<br />
-                  Tutors</h2>
-                <p className="text-white">Learn about QC&apos;s tutors, Certified Master Groomers Paddy Gaffney and Lisa Day. They will guide you through the course!</p>
-                <a className="btn mt-4 bg-transparent border-2 border-white btn-lg text-white" href="/tutors">
-                  <span className="text-white">LEARN MORE</span>
-                </a>
+              <div className="col-sm-3 col-10 p-5 position-relative mb-4 mb-lg-0">
+                <Image src={tutorButton} alt="student Experiance" objectFit="cover" layout="fill" />
+                <div className="position-relative">
+                  <h2 className="text-white">Meet QC&apos;s<br />Tutors</h2>
+                  <p className="text-white">Learn about QC&apos;s tutors, Certified Master Groomers Paddy Gaffney and Lisa Day. They will guide you through the course!</p>
+                  <a className="btn mt-4 bg-transparent border-2 border-white btn-lg text-white" href="/tutors">
+                    <span className="text-white">LEARN MORE</span>
+                  </a>
+                </div>
               </div>
-              <div className="col-sm-3 p-5" style={{ backgroundImage: `url(${enrollNow})` }}>
-                <h2 className="text-white"><b>Enroll</b><br />
-                  Now</h2>
-                <p className="text-white">Join QC Pet Studies and take the first step towards a career you&apos;ll love. QC accepts new students 365 days a year!</p>
-                <a className="btn mt-4 bg-transparent border-2 border-white btn-lg text-white" href="https://enroll.doggroomingcourse.com/course.php?c%5B%5D=dg&amp;c%5B%5D=fa">
-                  <span className="text-white">ENROLL ONLINE</span>
-                </a>
+              <div className="col-sm-3 col-10 p-5 position-relative mb-4 mb-lg-0">
+                <Image src={enrollNow} alt="student Experiance" objectFit="cover" layout="fill" />
+                <div className="position-relative">
+                  <h2 className="text-white"><b>Enroll</b><br />Now</h2>
+                  <p className="text-white">Join QC Pet Studies and take the first step towards a career you&apos;ll love. QC accepts new students 365 days a year!</p>
+                  <a className="btn mt-4 bg-transparent border-2 border-white btn-lg text-white" href="https://enroll.doggroomingcourse.com/course.php?c%5B%5D=dg&amp;c%5B%5D=fa">
+                    <span className="text-white">ENROLL ONLINE</span>
+                  </a>
+                </div>
               </div>
             </div>
           </div>
