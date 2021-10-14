@@ -247,14 +247,15 @@ Additional margins should be used sparingly. Margin sizes are already defined in
 ```
 
 ```html
-<h2 className="extraSpacing">Heading with Extra Margin</h2>
 <!-- uses a custom syle -->
+<h2 className="extraSpacing">Heading with Extra Margin</h2>
 <p>This text is separated from the header by a larger-than-usual margin.</p>
 ```
 
 ✔️ Correct:
 
 ```html
+<!-- uses a bottom margin -->
 <h2 className="mb-4">Heading with Extra Margin</h2>
 <p>This text is separated from the header by a larger-than-usual margin.</p>
 ```
