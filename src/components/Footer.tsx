@@ -15,11 +15,14 @@ import Logo from '../images/logo-top-white.svg';
 import SniffinArroundLogo from '../images/sniffin-around-logo-white.svg';
 import { getTelephoneNumber } from '../lib/phone';
 
+export type FooterCTAType = 'grooming' | 'training';
+
 type Props = {
+  ctaType?: FooterCTAType;
   className?: string;
 };
 
-export const Footer = ({ className }: Props): ReactElement => {
+export const Footer = ({ ctaType, className }: Props): ReactElement => {
   const location = useLocation();
   const screenWidth = useScreenWidth();
 
@@ -27,36 +30,40 @@ export const Footer = ({ className }: Props): ReactElement => {
   const smOrGreater = screenWidth >= 576;
   const lgOrGreater = screenWidth >= 992;
 
+  const enrollUrl = ctaType === 'grooming'
+    ? 'https://enroll.qcpetstudies.com?c[]=dg'
+    : ctaType === 'training'
+      ? 'https://enroll.qcpetstudies.com?c[]=dt'
+      : 'https://enroll.qcpetstudies.com';
+
   return (
     <footer style={{ borderTop: '1px solid rgb(255,255,255,0.1)' }} className={className}>
       <div className="container">
 
         <div className="row align-items-center">
-          <div className="col-12 col-lg-9 mb-4 mb-lg-0 text-center text-lg-start">
-            <h2>Ready to Launch Your <strong>Career?</strong></h2>
-            <p className="lead mb-0">Take the first step towards a new career in the booming pet industry.</p>
+          <div className="col-12 col-lg-9 col-xl-8 mb-4 mb-lg-0 text-center text-lg-start">
+            <h2>Ready to Launch Your <strong>{ctaType === 'grooming' ? <><br />Grooming </> : ctaType === 'training' ? <><br />Training </> : null}Career?</strong></h2>
+            <p className="lead mb-0">Take the first step towards a new career in the booming {ctaType === 'grooming' ? 'dog grooming ' : ctaType === 'training' ? 'dog training ' : 'pet'} industry.</p>
           </div>
-          <div className="col-12 col-lg-3 text-center text-lg-end">
-            <a href="https://enroll.qcpetstudies.com"><button className="btn btn-secondary btn-lg">Enroll Online</button></a>
+          <div className="col-12 col-lg-3 text-center text-lg-end text-xl-center">
+            <a href={enrollUrl}><button className="btn btn-secondary btn-lg">Enroll Online</button></a>
           </div>
         </div>
 
         <hr className="my-5" />
 
-        <div className="row text-center text-lg-start" id="footerRow">
-          <div id="footerColBrand" className="col-12 col-lg-6 mb-5 mb-lg-0">
+        <div className="row" id="footerRow">
+          <div id="footerColBrand" className="col-12 col-lg-6 mb-5 mb-lg-0 text-center">
             <div className="mb-4">
-              <Image src={Logo} width={342} height={33} alt="QC Pet Studies" />
+              <Image id="footerLogo" src={Logo} width={240} height={28} alt="QC Pet Studies" />
+              {/* <Image id="footerLogo" src={Logo} width={186} height={18} alt="QC Pet Studies" /> */}
             </div>
             <BBBGuarantee />
-            <div className="text-center">
-              <a href="https://studentcenter.qccareerschool.com">
-                <button className="btn btn-outline-light">Student Log In</button>
-              </a>
-            </div>
-            {/* {!lgOrGreater && <hr className="my-5" />} */}
+            <a href="https://studentcenter.qccareerschool.com">
+              <button id="footerLogInButton" className="btn btn-outline-light">Student Log In</button>
+            </a>
           </div>
-          <div id="footerColCertifications" className="col-12 col-sm-4 col-lg-2 mb-4 mb-sm-0">
+          <div id="footerColCertifications" className="col-12 col-sm-4 col-lg-2 mb-4 mb-sm-0 text-center text-lg-start">
             <h4 className="text-primary mb-sm-4">Certifications</h4>
             <ul className="spacedList">
               <li><Link href="/dog-grooming-courses/dog-grooming"><a>Dog Grooming</a></Link></li>
@@ -65,7 +72,7 @@ export const Footer = ({ className }: Props): ReactElement => {
               <li><Link href="/dog-training-courses/dog-training"><a>Dog Training</a></Link></li>
             </ul>
           </div>
-          <div id="footerColContactUs" className="col-12 col-sm-4 col-lg-2 mb-4 mb-sm-0">
+          <div id="footerColContactUs" className="col-12 col-sm-4 col-lg-2 mb-4 mb-sm-0 text-center text-lg-start">
             <h4 className="text-primary mb-sm-4">Contact Us</h4>
             <ul className="spacedList">
               <li>
@@ -88,7 +95,7 @@ export const Footer = ({ className }: Props): ReactElement => {
               </li>
             </ul>
           </div>
-          <div id="footerColStayInformed" className="col-12 col-sm-4 col-lg-2">
+          <div id="footerColStayInformed" className="col-12 col-sm-4 col-lg-2 text-center text-lg-start">
             <h4 className="text-primary">Stay Informed</h4>
             <div id="blogLogoWrapper">
               <Image src={SniffinArroundLogo} width={155} height={40} alt="Sniffin' Around Blog" />
@@ -133,13 +140,13 @@ const PipeSpacer = (): ReactElement => <>&nbsp;&nbsp;|&nbsp;&nbsp;</>;
 
 const BBBGuarantee = (): ReactElement => (
   <div className="row text-center sm-gutters mb-4">
-    <div className="col-4 offset-2 col-md-3 offset-md-3 col-lg-6 offset-lg-0">
+    <div className="col-4 offset-2 col-sm-3 offset-sm-3 col-md-2 offset-md-4 col-lg-6 offset-lg-0">
       <div>
         <Image src={BBBLogo} width={72} height={48} alt="BBB Better Business Bureau A+" />
       </div>
       <small className="logoText">BBB Accredited</small>
     </div>
-    <div className="col-4 col-md-3 col-lg-6">
+    <div className="col-4 col-sm-3 col-md-2 col-lg-6">
       <div>
         <Image src={GuaranteeIcon} width={46} height={48} alt="21-Day Guarantee" />
       </div>
