@@ -50,6 +50,7 @@ export const Header = ({ noHero, secondaryTitle, secondaryNavLinks, className }:
             <Navbar.Collapse id="main-navbar" className="justify-content-end">
               <Nav>
                 <NavDropdown title={xl || mobile ? 'Become a Dog Groomer' : 'Dog Grooming'} id="dog-groomer-dropdown">
+                  <Link href="/dog-grooming-courses/learning-and-working-during-covid"><a className="dropdown-item dropdown-item-primary">Learning &amp; Working <br /> During COVID-19</a></Link>
                   <Link href="/dog-grooming-courses/dog-grooming"><a className="dropdown-item dropdown-item-primary">Dog Grooming Course</a></Link>
                   <Link href="/dog-grooming-courses/dog-grooming#outline"><a className="dropdown-item dropdown-item-sub">Outline</a></Link>
                   <Link href="/dog-grooming-courses/dog-grooming#certification"><a className="dropdown-item dropdown-item-sub">Certification</a></Link>
