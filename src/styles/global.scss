@@ -50,12 +50,12 @@ $font-weight-bolder: 600;
  * We override $btn-border-radius directly and don't modify the more-general $border-radius
  */
 $btn-font-weight: 400;
-// $input-btn-padding-x: 0.75rem;
 $btn-border-radius: 0;
-// $input-btn-padding-x-lg: 1.5rem;
-$btn-border-radius-lg: 0;
-$input-btn-padding-x-sm: 0.875rem;
 $btn-border-radius-sm: 0;
+$btn-border-radius-lg: 0;
+$input-btn-padding-x: 1rem;
+$input-btn-padding-x-sm: 0.875rem;
+$input-btn-padding-x-lg: 1.5rem;
 
 /**
  * Navbar
@@ -299,6 +299,7 @@ footer {
   padding: 2rem 0;
   // small { font-size: 0.625rem; }
   h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 { color: white; }
+  h4, .h4 { font-weight: 600; }
   ul {
     list-style-type: none;
     padding: 0;
@@ -312,7 +313,18 @@ footer {
     margin-top: 12px;
     margin-bottom: 6px;
   }
-  .logoText { font-size: 0.75rem; text-transform: uppercase;}
+  .logoText {
+    font-size: 0.625rem;
+    // font-size: 0.75rem;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.8);
+  }
+  .footerIconWrapper {
+    display: inline-block;
+    position: relative;
+    top: 2px;
+    margin-right: 10px;
+  }
 }
 
 @media (min-width: 576px) {
@@ -333,23 +345,23 @@ footer {
 
 @media (min-width: 992px) {
   footer {
+    h4, .h4 { font-size: 1.2rem; }
     #footerRow {
-      margin-right: -2rem;
-      margin-left: -2rem;
+      margin-right: -2.25rem;
+      margin-left: -2.25rem;
       > .col,
       > [class*="col-"] {
-        padding-right: 2rem;
-        padding-left: 2rem;
+        padding-right: 2.25rem;
+        padding-left: 2.25rem;
       }
     }
+    #footerColBrand { width: 28%; }
+    #footerColCertifications { width: 24%; }
+    #footerColContactUs { width: 24%; }
+    #footerColStayInformed { width: 24%; border-left: 1px solid rgba(255, 255, 255, 0.25); }
+    .spacedList > li { margin-bottom: 16px }
+    #footerLogInButton { width: 100%; }
   }
-
-  #footerColBrand { width: 31%; }
-  #footerColCertifications { width: 23%; }
-  #footerColContactUs { width: 23%; }
-  #footerColStayInformed { width: 23%; border-left: 1px solid rgba(255, 255, 255, 0.25); }
-
-  .spacedList > li { margin-bottom: 16px }
 }
 
 @media (min-width: 1200px) {
@@ -363,12 +375,11 @@ footer {
         padding-left: 3rem;
       }
     }
+    #footerColBrand { width: 25%; }
+    #footerColCertifications { width: 25%; }
+    #footerColContactUs { width: 25%; }
+    #footerColStayInformed { width: 25%; }
   }
-
-  #footerColBrand { width: 28%; }
-  #footerColCertifications { width: 24%; }
-  #footerColContactUs { width: 24%; }
-  #footerColStayInformed { width: 24%; }
 }
 
 @media (min-width: 1400px) {
@@ -382,19 +393,7 @@ footer {
         padding-left: 3.5rem;
       }
     }
-
-    #footerColBrand { width: 28%; }
-    #footerColCertifications { width: 24%; }
-    #footerColContactUs { width: 24%; }
-    #footerColStayInformed { width: 24%; }
   }
-}
-
-.footerIconWrapper {
-  display: inline-block;
-  position: relative;
-  top: 2px;
-  margin-right: 6px;
 }
 
 ul.list-style-none, ol.list-style-none {
