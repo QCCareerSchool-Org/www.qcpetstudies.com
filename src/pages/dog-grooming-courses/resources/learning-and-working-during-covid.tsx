@@ -2,14 +2,20 @@ import { NextPage } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 import { FaInstagram, FaLaptop, FaMedkit, FaPaw, FaPencilAlt, FaTruck } from 'react-icons/fa';
-import { DefaultLayout } from './../../components/DefaultLayout';
-import { SEO } from './../../components/SEO';
-import LearningAndWorkingBackground from './../../images/backgrounds/covid-bg-pet.jpg';
-import TipsCardBackground from './../../images/backgrounds/covid-pet-bg-reverse.jpg';
-import PetWithMaskImage from './../../images/pet-covid-image.jpg';
-import CovidCareTools from './../../images/pet-covid-img-wide.jpg';
+import { DefaultLayout } from '../../../components/DefaultLayout';
+import { SEO } from '../../../components/SEO';
+import { useScreenWidth } from '../../../hooks/useScreenWidth';
+import LearningAndWorkingBackground from '../../../images/backgrounds/covid-bg-pet.jpg';
+import TipsCardBackground from '../../../images/backgrounds/pet-covid-bg-light-gray.jpg';
+import PetWithMaskImage from '../../../images/pet-covid-image.jpg';
+import CovidCareTools from '../../../images/pet-covid-img-wide.jpg';
 
 const LearningDuringCovid: NextPage = () => {
+
+  const screenWidth = useScreenWidth();
+
+  const lgOrGreater = screenWidth >= 992;
+
   return (
     <DefaultLayout secondaryTitle="First Aid for Groomers Course">
       <SEO
@@ -19,7 +25,7 @@ const LearningDuringCovid: NextPage = () => {
       />
 
       <section id="firstSection" className="bg-dark">
-        {/* <Image src={LearningAndWorkingBackground} layout="fill" objectFit="cover" objectPosition="center" alt="graduate" /> */}
+        {/* <Image src={LearningAndWorkingBackground} layout="fill" objectFit="cover" objectPosition="center" alt="Learning during covid" /> */}
         <div className="container text-center">
           <div className="row">
             <div className="col-12 col-md-10 offset-md-1 text-white">
@@ -50,18 +56,18 @@ const LearningDuringCovid: NextPage = () => {
               </ul>
               <Link href="/online-courses/"><a className="link-primary">Discover Everything You&apos;ll Learn in QC Pet Studies&apos; Courses!</a></Link>
             </div>
-            <div className="col-lg-6 d-none d-sm-block mb-4 mb-lg-0">
-              <Image src={CovidCareTools} objectFit="contain" alt="covid pet" />
+            <div className="col-lg-6 mb-lg-0">
+              {lgOrGreater && <Image src={CovidCareTools} objectFit="contain" alt="Covid care" /> }
             </div>
           </div>
         </div>
       </section>
 
       <section className="bg-light">
-        <Image src={PetWithMaskImage} alt="mask" layout="fill" objectFit="contain" objectPosition="left" className="d-none d-sm-block" />
+        {lgOrGreater && <Image src={PetWithMaskImage} alt="Mask" layout="fill" objectFit="contain" objectPosition="left" /> }
         <div className="container">
           <div className="row">
-            <div className="row col-12 col-lg-9 mb-4 mb-lg-0 offset-md-3">
+            <div className="row col-12 col-lg-9 offset-lg-3 mb-4 mb-lg-0">
               <p className="h3 mb-4">&quot;I&apos;m 2 units [into the Dog Grooming Course] and love it! It has a great background, written learning, supplies, and more! I came from a vet assisting background and wanted to open up my own grooming salon, but I have two kids, so I needed to do distance [training]. I love this course so much! I highly recommend this course and the First Aid for Groomers Course. With my background knowledge, I could tell the topics were well-researched. By far, blew me away!&quot; </p>
               <span>Mackenzie Lafleur</span><br />
               <span className="mb-4">QC Student</span><br />
@@ -80,17 +86,17 @@ const LearningDuringCovid: NextPage = () => {
             </div>
           </div>
           <div className="row justify-content-around mb-4">
-            <div className="col-12 col-lg-3 mb-4 mb-lg-0 p-5 Small shadow">
+            <div className="col-12 col-lg-3 mb-4 mb-lg-0 p-5 border border-light">
               <FaTruck className="h2 text-secondary mb-3" />
               <h4>Mobile Grooming</h4>
               <p>Consider launching a <Link href="/2020/10/dog-grooming-career-pros-and-cons-of-mobile-grooming/"><a className="link-primary">mobile grooming</a></Link> service</p>
             </div>
-            <div className="col-12 col-lg-3 mb-4 mb-lg-0 p-5 Small shadow">
+            <div className="col-12 col-lg-3 mb-4 mb-lg-0 p-5 border border-light">
               <FaLaptop className="h2 text-secondary mb-3" />
               <h4>Virtual Services</h4>
               <p>Introduce virtual services to your business, such as consultations and at-home grooming lessons</p>
             </div>
-            <div className="col-12 col-lg-3 p-5 Small shadow">
+            <div className="col-12 col-lg-3 p-5 border border-light">
               <FaMedkit className="h2 text-secondary mb-3" />
               <h4>Protection</h4>
               <p>Insist that everyone (staff and clients) wear masks at all times</p>
@@ -98,17 +104,17 @@ const LearningDuringCovid: NextPage = () => {
           </div>
 
           <div className="row justify-content-around mb-4">
-            <div className="col-12 col-lg-3 mb-4 mb-lg-0 p-5 Small shadow">
+            <div className="col-12 col-lg-3 mb-4 mb-lg-0 p-5 border border-light">
               <FaPencilAlt className="h2 text-secondary mb-3" />
               <h4>Blogging</h4>
               <p>Write for a dog grooming blog/vlog or start your own</p>
             </div>
-            <div className="col-12 col-lg-3 mb-4 mb-lg-0 p-5 Small shadow">
+            <div className="col-12 col-lg-3 mb-4 mb-lg-0 p-5 border border-light">
               <FaInstagram className="h2 text-secondary mb-3" />
               <h4>Social Media</h4>
               <p>Become an authority on dog grooming on social media</p>
             </div>
-            <div className="col-12 col-lg-3 p-5 Small shadow bg-primary text-white">
+            <div className="col-12 col-lg-3 p-5 border border-light bg-primary text-white">
               <FaPaw className="h2 text-secondary mb-3" />
               <h4 className="text-white">Sniffin&apos; Around</h4>
               <p>Visit QC&apos;s blog for articles and tips for working and expanding business in 2021</p>
@@ -118,13 +124,13 @@ const LearningDuringCovid: NextPage = () => {
       </section>
 
       <section>
-        <Image src={TipsCardBackground} layout="fill" objectFit="cover" objectPosition="center" alt="graduate" />
-        <div className="container text-white">
+        <Image src={TipsCardBackground} layout="fill" objectFit="cover" objectPosition="center" alt="Tips to keep safe" />
+        <div className="container">
           <div className="row">
             <div className="col-12 col-md-10 offset-md-1">
-              <h2 className="text-white">Tips for Keeping Yourself and Clients Safe</h2>
-              <h4 className="text-white">When working with clients in-person, you should follow strict practices to keep everyone safe.</h4>
-              <h3 className="text-white">COVID-19 Safety Protocols for Dog Groomers</h3>
+              <h2>Tips for Keeping Yourself and Clients Safe</h2>
+              <h4>When working with clients in-person, you should follow strict practices to keep everyone safe.</h4>
+              <h3>COVID-19 Safety Protocols for Dog Groomers</h3>
               <ul>
                 <li>Reschedule or cancel appointments if you or your client is feeling ill or have been recently exposed to someone who has tested positive for COVID-19</li>
                 <li>Ensure that you&apos;re always wearing a mask when working with clients</li>
@@ -142,18 +148,6 @@ const LearningDuringCovid: NextPage = () => {
         </div>
       </section>
 
-      <section className="bg-light">
-        <div className="container text-center">
-          <div className="row">
-            <div className="col-12 col-md-10 offset-md-1 text-white">
-              <h1>Start Your Journey</h1>
-              <h3>It&apos;s never too early or too late to start a career you&apos;ll love</h3>
-              <h4 className="py-3">Enroll in QC&apos;s online Dog Grooming Course today and launch a successful career as a certified groomer!</h4>
-              <Link href="https://enroll.doggroomingcourse.com/"><a className="btn p-3 btn-secondary">ENROLL NOW</a></Link>
-            </div>
-          </div>
-        </div>
-      </section>
     </DefaultLayout>
   );
 };
