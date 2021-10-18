@@ -3,6 +3,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { DefaultLayout } from '../../../components/DefaultLayout';
 import { SEO } from '../../../components/SEO';
+import RequiredDogBreedsBackground from '../../../images/backgrounds/every-breed-bg.jpg';
 import RequiredDogBreedImage from '../../../images/cards/dog-breeds-required.jpg';
 import PracticumImage1 from '../../../images/cards/practicum-1.jpg';
 import PracticumImage2 from '../../../images/cards/practicum-2.jpg';
@@ -23,7 +24,9 @@ const RequiredDogBreeds: NextPage = () => {
         canonical="/dog-grooming-courses/dog-grooming/required-dog-breeds"
       />
 
-      <section id="firstSection" className="bg-dark">
+      <section id="firstSection">
+        <div className="image-overlay-gardient"></div>
+        <Image src={RequiredDogBreedsBackground} layout="fill" objectFit="cover" objectPosition="center" alt="Learning during covid" />
         <div className="container text-center">
           <div className="row">
             <div className="col-12 col-lg-10 offset-lg-1">
@@ -67,7 +70,7 @@ const RequiredDogBreeds: NextPage = () => {
 
       <section className="bg-light">
         <div className="container">
-          <div className="d-flex flex-column flex-md-row gap-4 mb-4">
+          <div className="d-flex flex-column flex-md-row gap-3 gap-md-4 mb-3 mb-md-4">
             <div className="bg-white p-5 col-md-6">
               <h3 className="mb-4">Unit A</h3>
               <p>You will start by learning basic dog anatomy and anatomical variations within a breed. In this unit&apos;s practical assignment, you will need to identify the anatomical features on the dog of your choice.</p>
@@ -85,7 +88,7 @@ const RequiredDogBreeds: NextPage = () => {
               </ul>
             </div>
           </div>
-          <div className="d-flex flex-column flex-md-row gap-4 mb-4">
+          <div className="d-flex flex-column flex-md-row gap-3 gap-md-4 mb-3 mb-md-4">
             <div className="bg-white p-5 col-md-6">
               <h3 className="mb-4">Unit C</h3>
               <p>In this unit, you will be introduced to the various tools in your dog grooming kit. You will practice handling your tools through a variety of practice techniques, such as scissoring around a balloon, to prepare for grooming a live dog in later units.</p>
@@ -108,7 +111,7 @@ const RequiredDogBreeds: NextPage = () => {
               </h5>
             </div>
           </div>
-          <div className="d-flex flex-column flex-md-row gap-4 mb-4">
+          <div className="d-flex flex-column flex-md-row gap-3 gap-md-4 mb-3 mb-md-4">
             <div className="p-5 bg-white col-md-6">
               <h3 className="mb-4">Unit D</h3>
               <p>In this unit, you will learn how to complete basic preparatory work before cutting and styling. This includes clipping nails, bathing, and drying. You must groom two or more dogs that exhibit each of the following criteria:</p>
@@ -133,7 +136,7 @@ const RequiredDogBreeds: NextPage = () => {
               </ul>
             </div>
           </div>
-          <div className="d-flex flex-column flex-md-row gap-4 mb-4">
+          <div className="d-flex flex-column flex-md-row gap-3 gap-md-4 mb-3 mb-md-4">
             <div className="p-5 bg-white col-md-6">
               <h3 className="mb-4">Unit F</h3>
               <p>In this unit, you will learn how to groom dogs with special grooming considerations. You&apos;ll learn how to handle a puppy&apos;s first groom, senior dogs, and difficult dogs. You require the following dogs to complete this unit:</p>
