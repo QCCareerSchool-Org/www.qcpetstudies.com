@@ -49,7 +49,7 @@ export const PriceSection = ({ courses, doubleGuarantee, variant = 'dark' }: Pro
                     <Bar variant="secondary" />
                     <p className="fw-bold mb-3"><span className="h2 font-family-open-sans">{price?.currency.symbol}{formatPrice(price?.plans.part.installmentSize)}</span><br /><span className="text-muted">/ mo</span></p>
                     <p className="mb-3"><span className="lead">Deposit of {price?.currency.symbol}{formatPrice(price?.plans.part.deposit)}</span><br /><small>Then {price?.plans.part.installments} monthly payments of {price?.currency.symbol}{formatPrice(price?.plans.part.installmentSize)}</small></p>
-                    <p className="mb-0"><a href={enrollLink} className="btn btn-secondary">Enroll Now</a></p>
+                    <p className="mb-0"><a href={enrollLink} className="btn btn-outline-dark">Enroll Now</a></p>
                   </div>
                 </div>
               </div>
@@ -60,7 +60,7 @@ export const PriceSection = ({ courses, doubleGuarantee, variant = 'dark' }: Pro
                     <Bar variant="secondary" />
                     <p className="fw-bold mb-3"><span className="h2 font-family-open-sans">{price?.currency.symbol}{formatPrice(price?.plans.full.total)}</span><br /><span className="text-muted">One-time payment</span></p>
                     <p className="mb-3"><span className="lead">SAVE {price?.currency.symbol}{formatPrice(price?.plans.full.discount)}</span><br /><small>When you pay in full</small></p>
-                    <p className="mb-0"><a href={enrollLink} className="btn btn-outline-dark">Enroll Now</a></p>
+                    <p className="mb-0"><a href={enrollLink} className="btn btn-secondary">Enroll Now</a></p>
                   </div>
                 </div>
               </div>
