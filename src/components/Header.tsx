@@ -50,13 +50,13 @@ export const Header = ({ noHero, secondaryTitle, secondaryNavLinks, className }:
             <Navbar.Collapse id="main-navbar" className="justify-content-end">
               <Nav>
                 <NavDropdown title={xl || mobile ? 'Become a Dog Groomer' : 'Dog Grooming'} id="dog-groomer-dropdown">
-                  <Link href="/dog-grooming-courses/resources/class-vs-online-dog-grooming-schools"><a className="dropdown-item dropdown-item-primary">Learning In-Class vs. Online</a></Link>
                   <Link href="/dog-grooming-courses/dog-grooming"><a className="dropdown-item dropdown-item-primary">Dog Grooming Course</a></Link>
                   <Link href="/dog-grooming-courses/dog-grooming#outline"><a className="dropdown-item dropdown-item-sub">Outline</a></Link>
                   <Link href="/dog-grooming-courses/dog-grooming#certification"><a className="dropdown-item dropdown-item-sub">Certification</a></Link>
                   <Link href="/dog-grooming-courses/dog-grooming#tuition"><a className="dropdown-item dropdown-item-sub">Tuition</a></Link>
                   <Link href="/dog-grooming-courses/first-aid"><a className="dropdown-item dropdown-item-primary">First Aid Course</a></Link>
                   <Link href="/dog-grooming-courses/breed-styling"><a className="dropdown-item dropdown-item-primary">Breed Styling Course</a></Link>
+                  <Link href="/dog-grooming-courses/resources/class-vs-online-dog-grooming-schools"><a className="dropdown-item dropdown-item-primary">Learning In-Class vs.<br /> Online</a></Link>
                   <hr />
                   <Link href="/dog-grooming-courses/how-it-works"><a className="dropdown-item"><FaCog className="text-primary me-2" /> How It Works</a></Link>
                   <Link href="/dog-grooming-courses/resources"><a className="dropdown-item"><FaFolderOpen className="text-primary me-2" /> Dog Grooming Resources</a></Link>
