@@ -2,7 +2,7 @@ import type { NextPage } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 import Badge from 'react-bootstrap/Badge';
-import { FaBriefcase, FaChalkboardTeacher, FaClipboardList, FaHandHoldingUsd, FaRegCalendarCheck } from 'react-icons/fa';
+import { FaBriefcase, FaChalkboardTeacher, FaHandHoldingUsd, FaLaptopHouse, FaRegCalendarCheck } from 'react-icons/fa';
 import { DefaultLayout } from '../components/DefaultLayout';
 import { SEO } from '../components/SEO';
 import PetStudiesHomepage from '../images/backgrounds/pet-studies-homepage-bg.jpg';
@@ -120,7 +120,7 @@ const Home: NextPage = () => {
           </div>
           <div className="row mb-4">
             <div className="col-3 text-end">
-              <FaClipboardList className="h1 text-secondary mb-3" />
+              <FaLaptopHouse className="h1 text-secondary mb-3" />
             </div>
             <div className="col-9">
               <h3>A Fully Online Learning Experience</h3>
