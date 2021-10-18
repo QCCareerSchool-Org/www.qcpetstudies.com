@@ -15,8 +15,6 @@ const goldenColorFont = {
 };
 const Home: NextPage = () => {
 
-  const enrollUrl = 'https://enroll.qcpetstudies.com?c[]=dg';
-
   return (
     <DefaultLayout>
       <SEO
@@ -34,36 +32,36 @@ const Home: NextPage = () => {
 
       <section>
         <div className="container text-center">
-          <h2 className="mb-5">Course <strong>Certifications</strong></h2>
+          <h2 className="mb-4">Course <strong>Certifications</strong></h2>
           <p>Enroll today and start training for a career in dog grooming right away</p>
           <div className="row justify-content-evenly mb-5">
-            <div className="col-12 col-lg-5 mb-5 mb-lg-0 border p-4">
+            <div className="col-10 col-lg-5 mb-5 mb-lg-0 border p-4 d-flex flex-column justify-content-between">
               <div className="mb-4">
                 <Image src={IDTPCertificationGold} width={165} height={165} alt="21-Day Money-Back Guarantee" />
               </div>
               <h3><Badge pill bg="secondary">New</Badge> Dog Training | <span style={goldenColorFont}>IDTP</span></h3>
               <p>Dog trainers have never been in higher demand! It&apos;s the best time to launch a rewarding and lucrative career as a dog trainer. This course uses scientifically proven methods of dog training derived from learning theory and industry best practices. You&apos;ll gain a thorough understanding of how dogs learn, how to modify unwanted behaviors, and how to create new behaviors in all types of dogs. Don&apos;t miss out on your chance to learn from the best!</p>
-              <Link href="#"><a className="">View Course</a></Link>
+              <Link href="#"><a className="link-primary">View Course</a></Link>
             </div>
-            <div className="col-12 col-lg-5 border p-4">
+            <div className="col-10 col-lg-5 border p-4 d-flex flex-column justify-content-between">
               <div className="mb-4">
                 <Image src={IDGPCertificationGold} width={165} height={165} alt="1-Year Money-Back Guarantee" />
               </div>
               <h3>Dog Grooming | <span style={goldenColorFont}>IDGP</span> </h3>
               <p>In the first unit of the dog grooming course, you&apos;ll meet your tutor and start learning about the fundamentals of dog grooming. This introductory unit includes theoretical studies on the history of dog grooming, and how to protect your health &amp; safety as a dog groomer. You&apos;ll also learn about dog anatomy in great detail, and you&apos;ll start learning about skincare and esthetics.</p>
-              <Link href="#"><a className="">View Course</a></Link>
+              <Link href="#"><a className="link-primary">View Course</a></Link>
             </div>
           </div>
           <div className="row justify-content-evenly">
-            <div className="col-12 col-lg-5 mb-5 mb-lg-0 border p-4">
+            <div className="col-10 col-lg-5 mb-5 mb-lg-0 border p-4  d-flex flex-column justify-content-between">
               <h3>First Aid for Dog Groomers</h3>
               <p>Dog trainers have never been in higher demand! It&apos;s the best time to launch a rewarding and lucrative career as a dog trainer. This course uses scientifically proven methods of dog training derived from learning theory and industry best practices. You&apos;ll gain a thorough understanding of how dogs learn, how to modify unwanted behaviors, and how to create new behaviors in all types of dogs. Don&apos;t miss out on your chance to learn from the best!</p>
-              <Link href="#"><a className="">View Course</a></Link>
+              <Link href="#"><a className="link-primary">View Course</a></Link>
             </div>
-            <div className="col-12 col-lg-5 border p-4">
+            <div className="col-10 col-lg-5 border p-4  d-flex flex-column justify-content-between">
               <h3>Breedstyling Workshop</h3>
               <p>In the first unit of the dog grooming course, you&apos;ll meet your tutor and start learning about the fundamentals of dog grooming. This introductory unit includes theoretical studies on the history of dog grooming, and how to protect your health &amp; safety as a dog groomer. You&apos;ll also learn about dog anatomy in great detail, and you&apos;ll start learning about skincare and esthetics.</p>
-              <Link href="#"><a className="">View Course</a></Link>
+              <Link href="#"><a className="link-primary">View Course</a></Link>
             </div>
           </div>
         </div>
@@ -77,10 +75,10 @@ const Home: NextPage = () => {
             </div>
           </div>
           <div className="row mb-4">
-            <div className="col-6 offset-3 col-md-6 offset-md-0 mb-4 mb-md-0">
+            <div className="col-12 col-md-6 offset-md-0 mb-4 mb-md-0">
               <Image src={HowItWorks} alt="How It Works Icons" />
             </div>
-            <div className="col-6 offset-3 col-md-6 offset-md-0 mb-4 mb-md-0">
+            <div className="col-12 col-md-6 offset-md-0 mb-4 mb-md-0">
               <h3>Enroll Online &amp; Access Your Course Materials</h3>
               <ul>
                 <li>Enroll online at any time</li>
@@ -113,7 +111,7 @@ const Home: NextPage = () => {
             <p>When choosing to attend an online school, it can be difficult to separate legitimate educational institutions from less-than-reputable companies that are looking to make a quick buck. You want to choose a school you&apos;ll be proud to attend. One that will help you meet your career goals.</p>
           </div>
           <div className="row mb-4">
-            <div className="col-3 text-end">
+            <div className="col-2 col-md-3 d-flex align-items-center justify-content-end">
               <FaRegCalendarCheck className="h1 text-secondary mb-3" />
             </div>
             <div className="col-9">
@@ -122,7 +120,7 @@ const Home: NextPage = () => {
             </div>
           </div>
           <div className="row mb-4">
-            <div className="col-3 text-end">
+            <div className="col-2 col-md-3 d-flex align-items-center justify-content-end">
               <FaLaptopHouse className="h1 text-secondary mb-3" />
             </div>
             <div className="col-9">
@@ -131,7 +129,7 @@ const Home: NextPage = () => {
             </div>
           </div>
           <div className="row mb-4">
-            <div className="col-3 text-end">
+            <div className="col-2 col-md-3 d-flex align-items-center justify-content-end">
               <FaChalkboardTeacher className="h1 text-secondary mb-3" />
             </div>
             <div className="col-9">
@@ -140,7 +138,7 @@ const Home: NextPage = () => {
             </div>
           </div>
           <div className="row mb-4">
-            <div className="col-3 text-end">
+            <div className="col-2 col-md-3 d-flex align-items-center justify-content-end">
               <FaBriefcase className="h1 text-secondary mb-3" />
             </div>
             <div className="col-9">
@@ -149,7 +147,7 @@ const Home: NextPage = () => {
             </div>
           </div>
           <div className="row">
-            <div className="col-3 text-end">
+            <div className="col-2 col-md-3 d-flex align-items-center justify-content-end">
               <FaHandHoldingUsd className="h1 text-secondary mb-3" />
             </div>
             <div className="col-9">
@@ -157,14 +155,6 @@ const Home: NextPage = () => {
               <p>Your course tuition is the only fee you ll pay for your course or certification. Unlike other schools, when you graduate from QC your certificate is yours forever, and you ll have continued access to your student center at no additional cost. You ll never be asked to pay subscription fees, membership fees, or any other fees to keep your certification current or use your business materials.</p>
             </div>
           </div>
-        </div>
-      </section>
-
-      <section className="bg-light">
-        <div className="container text-center">
-          <h2>Enroll Online</h2>
-          <p>Are you ready to take the first step towards a new career in dog grooming?</p>
-          <a href={enrollUrl}><button className="btn btn-secondary btn-lg">Enroll Online</button></a>
         </div>
       </section>
 
