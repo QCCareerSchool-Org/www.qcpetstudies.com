@@ -2,7 +2,7 @@ import type { NextPage } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 import Badge from 'react-bootstrap/Badge';
-import { FaCheck, FaClipboardList, FaGraduationCap, FaLaptop } from 'react-icons/fa';
+import { FaBriefcase, FaChalkboardTeacher, FaClipboardList, FaHandHoldingUsd, FaRegCalendarCheck } from 'react-icons/fa';
 import { DefaultLayout } from '../components/DefaultLayout';
 import { SEO } from '../components/SEO';
 import PetStudiesHomepage from '../images/backgrounds/pet-studies-homepage-bg.jpg';
@@ -111,7 +111,7 @@ const Home: NextPage = () => {
           </div>
           <div className="row mb-4">
             <div className="col-3 text-end">
-              <FaLaptop className="h1 text-secondary mb-3" />
+              <FaRegCalendarCheck className="h1 text-secondary mb-3" />
             </div>
             <div className="col-9">
               <h3>Proven Track Record</h3>
@@ -129,7 +129,7 @@ const Home: NextPage = () => {
           </div>
           <div className="row mb-4">
             <div className="col-3 text-end">
-              <FaCheck className="h1 text-secondary mb-3" />
+              <FaChalkboardTeacher className="h1 text-secondary mb-3" />
             </div>
             <div className="col-9">
               <h3>Expert Tutors to Guide You</h3>
@@ -138,7 +138,7 @@ const Home: NextPage = () => {
           </div>
           <div className="row mb-4">
             <div className="col-3 text-end">
-              <FaGraduationCap className="h1 text-secondary mb-3" />
+              <FaBriefcase className="h1 text-secondary mb-3" />
             </div>
             <div className="col-9">
               <h3>Business Training You can Use</h3>
@@ -147,7 +147,7 @@ const Home: NextPage = () => {
           </div>
           <div className="row">
             <div className="col-3 text-end">
-              <FaGraduationCap className="h1 text-secondary mb-3" />
+              <FaHandHoldingUsd className="h1 text-secondary mb-3" />
             </div>
             <div className="col-9">
               <h3>No Additional or Hidden Fees</h3>
