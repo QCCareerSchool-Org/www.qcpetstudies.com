@@ -10,6 +10,9 @@ import HowItWorks from '../images/how-it-works-png.png';
 import IDGPCertificationGold from '../images/IDGP-certification-gold.svg';
 import IDTPCertificationGold from '../images/IDTP-certification-gold.svg';
 
+const goldenColorFont = {
+  color: '#C9952C',
+};
 const Home: NextPage = () => {
 
   const enrollUrl = 'https://enroll.qcpetstudies.com?c[]=dg';
@@ -34,11 +37,11 @@ const Home: NextPage = () => {
           <h2 className="mb-5">Course <strong>Certifications</strong></h2>
           <p>Enroll today and start training for a career in dog grooming right away</p>
           <div className="row">
-            <div className="col-12 col-lg-6 mb-5 mb-lg-0 border mr-4">
+            <div className="col-12 col-lg-6 mb-5 mr-5 mb-lg-0 border mr-4">
               <div className="mb-4">
                 <Image src={IDTPCertificationGold} width={165} height={165} alt="21-Day Money-Back Guarantee" />
               </div>
-              <h3><Badge pill bg="secondary">New</Badge> Dog Training | IDTP</h3>
+              <h3><Badge pill bg="secondary">New</Badge> Dog Training | <span style={goldenColorFont}>IDTP</span></h3>
               <p>Dog trainers have never been in higher demand! It&apos;s the best time to launch a rewarding and lucrative career as a dog trainer. This course uses scientifically proven methods of dog training derived from learning theory and industry best practices. You&apos;ll gain a thorough understanding of how dogs learn, how to modify unwanted behaviors, and how to create new behaviors in all types of dogs. Don&apos;t miss out on your chance to learn from the best!</p>
               <Link href="#"><a className="">View Course</a></Link>
             </div>
@@ -46,7 +49,7 @@ const Home: NextPage = () => {
               <div className="mb-4">
                 <Image src={IDGPCertificationGold} width={165} height={165} alt="1-Year Money-Back Guarantee" />
               </div>
-              <h3>Dog Grooming | IDGP</h3>
+              <h3>Dog Grooming | <span style={goldenColorFont}>IDGP</span> </h3>
               <p>In the first unit of the dog grooming course, you&apos;ll meet your tutor and start learning about the fundamentals of dog grooming. This introductory unit includes theoretical studies on the history of dog grooming, and how to protect your health &amp; safety as a dog groomer. You&apos;ll also learn about dog anatomy in great detail, and you&apos;ll start learning about skincare and esthetics.</p>
               <Link href="#"><a className="">View Course</a></Link>
             </div>
