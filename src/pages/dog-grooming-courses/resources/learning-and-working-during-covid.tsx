@@ -17,10 +17,10 @@ const LearningDuringCovid: NextPage = () => {
   const lgOrGreater = screenWidth >= 992;
 
   return (
-    <DefaultLayout secondaryTitle="First Aid for Groomers Course">
+    <DefaultLayout>
       <SEO
         title="Learning &amp; Working During COVID-19"
-        description=""
+        description="Learning &amp; Working During COVID-19"
         canonical="dog-grooming-courses/learning-and-working-during-covid"
       />
 
