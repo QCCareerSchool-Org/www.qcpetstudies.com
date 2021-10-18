@@ -36,8 +36,8 @@ const Home: NextPage = () => {
         <div className="container text-center">
           <h2 className="mb-5">Course <strong>Certifications</strong></h2>
           <p>Enroll today and start training for a career in dog grooming right away</p>
-          <div className="row">
-            <div className="col-12 col-lg-6 mb-5 mr-5 mb-lg-0 border mr-4">
+          <div className="row justify-content-evenly mb-5">
+            <div className="col-12 col-lg-5 mb-5 mb-lg-0 border p-4">
               <div className="mb-4">
                 <Image src={IDTPCertificationGold} width={165} height={165} alt="21-Day Money-Back Guarantee" />
               </div>
@@ -45,7 +45,7 @@ const Home: NextPage = () => {
               <p>Dog trainers have never been in higher demand! It&apos;s the best time to launch a rewarding and lucrative career as a dog trainer. This course uses scientifically proven methods of dog training derived from learning theory and industry best practices. You&apos;ll gain a thorough understanding of how dogs learn, how to modify unwanted behaviors, and how to create new behaviors in all types of dogs. Don&apos;t miss out on your chance to learn from the best!</p>
               <Link href="#"><a className="">View Course</a></Link>
             </div>
-            <div className="col-12 col-lg-6 border">
+            <div className="col-12 col-lg-5 border p-4">
               <div className="mb-4">
                 <Image src={IDGPCertificationGold} width={165} height={165} alt="1-Year Money-Back Guarantee" />
               </div>
@@ -54,13 +54,13 @@ const Home: NextPage = () => {
               <Link href="#"><a className="">View Course</a></Link>
             </div>
           </div>
-          <div className="row">
-            <div className="col-12 col-lg-6 mb-5 mb-lg-0 border mr-4">
+          <div className="row justify-content-evenly">
+            <div className="col-12 col-lg-5 mb-5 mb-lg-0 border p-4">
               <h3>First Aid for Dog Groomers</h3>
               <p>Dog trainers have never been in higher demand! It&apos;s the best time to launch a rewarding and lucrative career as a dog trainer. This course uses scientifically proven methods of dog training derived from learning theory and industry best practices. You&apos;ll gain a thorough understanding of how dogs learn, how to modify unwanted behaviors, and how to create new behaviors in all types of dogs. Don&apos;t miss out on your chance to learn from the best!</p>
               <Link href="#"><a className="">View Course</a></Link>
             </div>
-            <div className="col-12 col-lg-6 border">
+            <div className="col-12 col-lg-5 border p-4">
               <h3>Breedstyling Workshop</h3>
               <p>In the first unit of the dog grooming course, you&apos;ll meet your tutor and start learning about the fundamentals of dog grooming. This introductory unit includes theoretical studies on the history of dog grooming, and how to protect your health &amp; safety as a dog groomer. You&apos;ll also learn about dog anatomy in great detail, and you&apos;ll start learning about skincare and esthetics.</p>
               <Link href="#"><a className="">View Course</a></Link>
