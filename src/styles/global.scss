@@ -387,3 +387,18 @@ footer {
     }
   }
 }
+
+.image-overlay-gardient {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  content: ' ';
+  z-index: 2;
+  backface-visibility: hidden;
+  background: linear-gradient(to bottom,#57c3d7 0%,#056091 100%);
+  opacity: 0.5;
+
+}
