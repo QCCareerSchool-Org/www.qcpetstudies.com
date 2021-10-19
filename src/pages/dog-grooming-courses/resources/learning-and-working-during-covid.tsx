@@ -21,7 +21,7 @@ const LearningDuringCovid: NextPage = () => {
       <SEO
         title="Learning &amp; Working During COVID-19"
         description="Learning &amp; Working During COVID-19"
-        canonical="dog-grooming-courses/learning-and-working-during-covid"
+        canonical="dog-grooming-courses/resources/learning-and-working-during-covid"
       />
 
       <section id="firstSection" className="bg-dark">
