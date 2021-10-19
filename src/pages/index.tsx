@@ -15,24 +15,29 @@ const iconSize = 145;
 const HomePage: NextPage = () => (
   <DefaultLayout>
     <SEO
-      title="QC Pet Studies"
-      description="Get the training to become a professional dog groomer with QC's affordable online dog grooming course. Learn from the experts and start your career today!"
+      title="Become a Pet Care Professional"
+      description="Start an exciting career in the pet care industry! Become a certified dog groomer or certified dog trainer with QC’s Internationally-recognized online courses!"
       canonical="/"
     />
 
     <section id="firstSection" className="bg-dark">
       <Image src={PetStudiesHomepage} layout="fill" objectFit="cover" objectPosition="center" alt="groomer bathing a dog" />
       <div className="container text-center text-shadow">
-        <h1>Start an Exciting Career in the <strong>Pet Care Industry</strong></h1>
+        <div className="row">
+          <div className="col-12 col-lg-10 offset-lg-1">
+            <h1>Start an Exciting Career in the <strong>Pet Care Industry</strong></h1>
+            <p className="lead">Whether you want to become a dog groomer, trainer, pet sitter, or all of the above, you&apos;ll gain the certification needed to become successful in your chosen career. Enroll with QC and get an internationally-recognized certification. Start your new career in no time!</p>
+          </div>
+        </div>
       </div>
     </section>
 
     <section>
       <div className="container text-center">
         <h2 className="mb-3">Course <strong>Certifications</strong></h2>
-        <p className="lead mb-4">Enroll today and start training for a career in dog grooming right away</p>
-        <div className="row mb-g align-items-stretch">
-          <div className="col-10 offset-1 col-md-6 offset-md-0 col-xl-5 offset-xl-1 col-xxl-4 offset-xxl-2 mb-g d-flex align-items-stretch">
+        <p className="lead mb-5">Enroll today and start training for a career in dog grooming right away</p>
+        <div id="cardRow" className="row align-items-stretch">
+          <div className="col-10 offset-1 col-lg-6 offset-lg-0 col-xl-5 offset-xl-1 col-xxl-4 offset-xxl-2 d-flex align-items-stretch">
             <div className="card">
               <div className="card-body">
                 <div className="mb-3">
@@ -44,32 +49,32 @@ const HomePage: NextPage = () => (
               </div>
             </div>
           </div>
-          <div className="col-10 offset-1 col-md-6 offset-md-0 col-xl-5 col-xxl-4 mb-g d-flex align-items-stretch">
+          <div className="col-10 offset-1 col-lg-6 offset-lg-0 col-xl-5 col-xxl-4 d-flex align-items-stretch">
             <div className="card">
               <div className="card-body">
                 <div className="mb-3">
                   <Image src={IDGPCertificationGold} width={iconSize} height={iconSize} alt="1-Year Money-Back Guarantee" />
                 </div>
                 <h3>Dog Grooming | <em className="gold">IDGP</em></h3>
-                <p>In the first unit of the dog grooming course, you&apos;ll meet your tutor and start learning about the fundamentals of dog grooming. This introductory unit includes theoretical studies on the history of dog grooming, and how to protect your health &amp; safety as a dog groomer. You&apos;ll also learn about dog anatomy in great detail, and you&apos;ll start learning about skincare and esthetics.</p>
+                <p>Become a professional dog groomer. There&apos;s more to grooming than just bathing and brushing dogs! In this course you&apos;ll learn all about dog anatomy and behavior, how to use grooming tools safely and effectively, and how to competently groom any breed of dog. You&apos;ll also get a chance to launch your dog grooming business if that&apos;s your goal!</p>
                 <Link href="/dog-grooming-courses/dog-grooming"><a className="link-primary">View Course</a></Link>
               </div>
             </div>
           </div>
-          <div className="col-10 offset-1 col-md-6 offset-md-0 col-xl-5 offset-xl-1 col-xxl-4 offset-xxl-2 mb-g mb-md-0 d-flex align-items-stretch">
+          <div className="col-10 offset-1 col-lg-6 offset-lg-0 col-xl-5 offset-xl-1 col-xxl-4 offset-xxl-2 mb-lg-0 d-flex align-items-stretch">
             <div className="card">
               <div className="card-body">
                 <h3>First Aid for Dog Groomers</h3>
-                <p>Dog trainers have never been in higher demand! It&apos;s the best time to launch a rewarding and lucrative career as a dog trainer. This course uses scientifically proven methods of dog training derived from learning theory and industry best practices. You&apos;ll gain a thorough understanding of how dogs learn, how to modify unwanted behaviors, and how to create new behaviors in all types of dogs. Don&apos;t miss out on your chance to learn from the best!</p>
+                <p>A well-educated dog groomer is trained to prevent most emergency situations, but accidents still happen sometimes. The First Aid for Groomers course will give you the skills and confidence to address medical emergencies in the grooming salon if and when they arise. Note, this course is offered for FREE with QC&apos;s dog grooming course.</p>
                 <Link href="/dog-grooming-courses/first-aid"><a className="link-primary">View Course</a></Link>
               </div>
             </div>
           </div>
-          <div className="col-10 offset-1 col-md-6 offset-md-0 col-xl-5 col-xxl-4 d-flex align-items-stretch">
+          <div className="col-10 offset-1 col-lg-6 offset-lg-0 col-xl-5 col-xxl-4 mb-0 d-flex align-items-stretch">
             <div className="card">
               <div className="card-body">
-                <h3>Breedstyling Workshop</h3>
-                <p>In the first unit of the dog grooming course, you&apos;ll meet your tutor and start learning about the fundamentals of dog grooming. This introductory unit includes theoretical studies on the history of dog grooming, and how to protect your health &amp; safety as a dog groomer. You&apos;ll also learn about dog anatomy in great detail, and you&apos;ll start learning about skincare and esthetics.</p>
+                <h3>Breed Styling Workshop</h3>
+                <p>An advanced workshop for experienced grooming professionals. This course skips the basic skills training and goes straight into developing additional skills in styling specific dog breeds including poodles, terriers, non-sporting breeds and more.</p>
                 <Link href="/dog-grooming-courses/breed-styling"><a className="link-primary">View Course</a></Link>
               </div>
             </div>
@@ -84,7 +89,7 @@ const HomePage: NextPage = () => (
           <div className="col-12 col-lg-10 offset-lg-1 mb-md-4 text-center">
             <h2>How Online <strong>Learning Works</strong></h2>
           </div>
-          <div className="col-12 col-md-6 mb-md-4">
+          <div className="col-12 col-md-6 mb-4 mb-md-0">
             <Image src={HowItWorks} alt="Dog looking at tablet" />
           </div>
           <div className="col-12 col-md-6">
@@ -96,15 +101,15 @@ const HomePage: NextPage = () => (
             </ul>
             <h3>Study &amp; Complete Assignments</h3>
             <ul>
-              <li>Receive your Certificate of Completion in the mail</li>
-              <li>Get lifetime access to course materials and updated content</li>
-              <li>Enjoy a 50% discount on all additional courses you take with QC</li>
-            </ul>
-            <h3>Graduate &amp; Receive your Certificationf</h3>
-            <ul>
               <li>Read course texts and watch instructional videos</li>
               <li>Complete theoretical and practical assignments</li>
               <li>Get personalized feedback from your tutor</li>
+            </ul>
+            <h3>Graduate &amp; Receive your Certificationf</h3>
+            <ul>
+              <li>Receive your Certificate of Completion in the mail</li>
+              <li>Get lifetime access to course materials and updated content</li>
+              <li>Enjoy a 50% discount on all additional courses you take with QC</li>
             </ul>
           </div>
         </div>
@@ -114,9 +119,9 @@ const HomePage: NextPage = () => (
     <section>
       <div className="container">
         <div className="row">
-          <div className="col-12 col-lg-10 offset-lg-1 text-center">
+          <div className="col-12 col-lg-10 offset-lg-1 col-xl-8 offset-xl-2 text-center">
             <h2 className="mb-4">Why Choose <strong>QC</strong></h2>
-            <p className="mb-5">When choosing to attend an online school, it can be difficult to separate legitimate educational institutions from less-than-reputable companies that are looking to make a quick buck. You want to choose a school you&apos;ll be proud to attend. One that will help you meet your career goals.</p>
+            <p className="mb-5">When choosing to attend an online school, it can be difficult to separate legitimate educational institutions from less-than-reputable companies that are looking to make a quick buck. You want to choose a school you&apos;ll be proud to attend. One that will help you meet your career goals. Welcome to QC!</p>
           </div>
         </div>
         <div className="row mb-4">
@@ -151,8 +156,8 @@ const HomePage: NextPage = () => (
             <FaBriefcase className="h1 text-secondary mb-3" />
           </div>
           <div className="col-9">
-            <h3>Business Training You can Use</h3>
-            <p>Each course comes complete with optional business training where you ll work with your tutor to come up with a business name, create a marketing strategy, start building your website, and get access to templates that will help get your career off the ground from day one!</p>
+            <h3>Business Training You Can Use</h3>
+            <p>Each course comes complete with optional business training where you&apos;ll work with your tutor to come up with a business name, create a marketing strategy, start building your website, and get access to templates that will help get your career off the ground from day one!</p>
           </div>
         </div>
         <div className="row">
@@ -161,7 +166,7 @@ const HomePage: NextPage = () => (
           </div>
           <div className="col-9">
             <h3>No Additional or Hidden Fees</h3>
-            <p>Your course tuition is the only fee you ll pay for your course or certification. Unlike other schools, when you graduate from QC your certificate is yours forever, and you ll have continued access to your student center at no additional cost. You ll never be asked to pay subscription fees, membership fees, or any other fees to keep your certification current or use your business materials.</p>
+            <p>Your course tuition is the only fee you&apos;ll pay for your course or certification. Unlike other schools, when you graduate from QC your certificate is yours forever, and you&apos;ll have continued access to your student center at no additional cost. you&apos;ll never be asked to pay subscription fees, membership fees, or any other fees to keep your certification current or use your business materials.</p>
           </div>
         </div>
       </div>
@@ -169,6 +174,15 @@ const HomePage: NextPage = () => (
 
     <style jsx>{`
       .gold { color: #C9952C; }
+      #cardRow {
+        margin-right: -1.5rem;
+        margin-left: -1.5rem;
+      }
+      #cardRow > .col, #cardRow > [class*="col-"] {
+        padding-right: 1.5rem;
+        padding-left: 1.5rem;
+        margin-bottom: 3rem;
+      }
     `}</style>
 
   </DefaultLayout>
