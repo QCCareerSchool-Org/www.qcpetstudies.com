@@ -177,18 +177,18 @@ section > div.container {
 }
 
 // gutter-sized margins
-.mb-g { margin-bottom: 30px }
+.mb-g { margin-bottom: 24px }
 @media (min-width: 576px) {
-  .mb-sm-g { margin-bottom: 30px }
+  .mb-sm-g { margin-bottom: 24px }
 }
 @media (min-width: 768px) {
-  .mb-md-g { margin-bottom: 30px }
+  .mb-md-g { margin-bottom: 24px }
 }
 @media (min-width: 992px) {
-  .mb-ld-g { margin-bottom: 30px }
+  .mb-ld-g { margin-bottom: 24px }
 }
 @media (min-width: 1200px) {
-  .mb-xl-g { margin-bottom: 30px }
+  .mb-xl-g { margin-bottom: 24px }
 }
 
 .py-section {
