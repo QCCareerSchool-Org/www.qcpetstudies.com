@@ -388,7 +388,7 @@ footer {
   }
 }
 
-.image-overlay-gardient {
+.image-overlay-gradient {
   display: block;
   position: absolute;
   top: 0;
@@ -397,6 +397,6 @@ footer {
   height: 100%;
   content: ' ';
   backface-visibility: hidden;
-  background: linear-gradient(to bottom,#57c3d7 0%,#056091 100%);
+  background: linear-gradient(to bottom, #00798c 0%, #056091 100%);
   opacity: 0.8;
 }
