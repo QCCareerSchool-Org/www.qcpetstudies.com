@@ -7,9 +7,10 @@
   "primary": #57c3d7,
   "primary-dark": #006c7f,
   "secondary": #ff0074,
-  "gray": #9095a5,
+  "gray": #999,
   "light": #e9e9e9,
   "dark": #2b313c,
+  "navy": #061f3a,
 );
 
 $body-color: #324F54;
@@ -73,6 +74,8 @@ $navbar-toggler-border-radius:      $border-radius;
 
 $input-padding-x: 0.75rem; // set back to its original value (don't copy $input-btn-padding-x)
 
+$link-decoration: none;
+
 @import "bootstrap/scss/bootstrap";
 
 // Then add additional custom code here
@@ -120,12 +123,25 @@ h4, .h4, h5, .h5, h6, .h6 {
   h6, .h6 { font-size: 1rem }
 }
 
-.bg-dark {
+.card.bg-light, .card.bg-white {
+  h1, .h1 { color: #122022; }
+  h2, .h2 { color: #122022;}
+  h3, .h3 { color: #324F54; }
+  h4, .h4, h5, .h5, h6, .h6 { color: #122022; }
+  color: #324F54;
+}
+
+.bg-dark, .bg-gray, .card.bg-dark, .card-bg-gray {
   h1, .h1 { color: #e8e8e8; }
   h2, .h2 { color: #e8e8e8;}
   h3, .h3 { color: #ddd; }
   h4, .h4, h5, .h5, h6, .h6 { color: white; }
   color: #ddd;
+}
+
+.bg-navy {
+  color: white;
+  h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 { color: white; }
 }
 
 .btn { text-transform: uppercase; }
@@ -285,12 +301,8 @@ pre { color: inherit }
 }
 
 footer {
-  background-color: #061f3a;
-  color: white;
   font-weight: 400;
   padding: 2rem 0;
-  // small { font-size: 0.625rem; }
-  h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 { color: white; }
   h4, .h4 { font-weight: 600; }
   ul {
     list-style-type: none;
@@ -338,19 +350,11 @@ footer {
 @media (min-width: 992px) {
   footer {
     h4, .h4 { font-size: 1.2rem; }
-    #footerRow {
-      margin-right: -2.25rem;
-      margin-left: -2.25rem;
-      > .col,
-      > [class*="col-"] {
-        padding-right: 2.25rem;
-        padding-left: 2.25rem;
-      }
-    }
-    #footerColBrand { width: 28%; }
-    #footerColCertifications { width: 24%; }
-    #footerColContactUs { width: 24%; }
-    #footerColStayInformed { width: 24%; border-left: 1px solid rgba(255, 255, 255, 0.25); }
+    // increase the horizontal padding on the columns to 2.25rem and tweak the column widths
+    #footerColBrand { width: 28%; padding-right: 2.25rem; }
+    #footerColCertifications { width: 24%; padding-left: 2.25rem; padding-right: 2.25rem; }
+    #footerColContactUs { width: 24%; padding-left: 2.25rem; padding-right: 2.25rem; }
+    #footerColStayInformed { width: 24%; padding-left: 2.25rem; border-left: 1px solid rgba(255, 255, 255, 0.25); }
     .spacedList > li { margin-bottom: 16px }
     #footerLogInButton { width: 100%; }
   }
@@ -358,33 +362,42 @@ footer {
 
 @media (min-width: 1200px) {
   footer {
-    #footerRow {
-      margin-right: -3rem;
-      margin-left: -3rem;
-      > .col,
-      > [class*="col-"] {
-        padding-right: 3rem;
-        padding-left: 3rem;
-      }
-    }
-    #footerColBrand { width: 25%; }
-    #footerColCertifications { width: 25%; }
-    #footerColContactUs { width: 25%; }
-    #footerColStayInformed { width: 25%; }
+    // increase the horizontal padding on the columns to 4rem and restore the normal column widths
+    #footerColBrand { width: 25%; padding-right: 4rem; }
+    #footerColCertifications { width: 25%; padding-left: 4rem; padding-right: 4rem; }
+    #footerColContactUs { width: 25%; padding-left: 4rem; padding-right: 4rem; }
+    #footerColStayInformed { width: 25%; padding-left: 4rem; }
   }
 }
 
 @media (min-width: 1400px) {
   footer {
-    #footerRow {
-      margin-right: -3.5rem;
-      margin-left: -3.5rem;
-      > .col,
-      > [class*="col-"] {
-        padding-right: 3.5rem;
-        padding-left: 3.5rem;
-      }
-    }
+    // increase the horizontal padding on the columns to 5rem
+    #footerColBrand { padding-right: 5rem; }
+    #footerColCertifications { padding-left: 5rem; padding-right: 5rem; }
+    #footerColContactUs { padding-left: 5rem; padding-right: 5rem; }
+    #footerColStayInformed { padding-left: 5rem; }
+  }
+}
+
+ul.list-style-none, ol.list-style-none {
+  list-style-type: none;
+  padding: 0;
+}
+
+ul.no-indent, ol.no-indent {
+  padding-left: 1rem;
+}
+
+hr.bar {
+  height: 0.5rem;
+  width: 4rem;
+  margin: 0 auto 1rem;
+  opacity: 1;
+  transition: width 1s;
+
+  &.collapsed {
+    width: 1rem;
   }
 }
 
