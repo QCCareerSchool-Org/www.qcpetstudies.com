@@ -1,13 +1,13 @@
 import { NextPage } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
-
+import { Bar } from '../../components/Bar';
 import { DefaultLayout } from '../../components/DefaultLayout';
 import { SEO } from '../../components/SEO';
 import { useScreenWidth } from '../../hooks/useScreenWidth';
-
 import GraduateBackground from '../../images/backgrounds/dog-in-graduatation-cap.jpg';
 import DogOnGroomingTableBackground from '../../images/backgrounds/dog-on-grooming-table.jpg';
+import HowItWorksBackground from '../../images/backgrounds/pet-studies-how-works-bg.jpg';
 import YorkieBackground from '../../images/backgrounds/yorkie-on-left-looking-up.jpg';
 
 import EnrollNowCardBackground from '../../images/cards/enroll-now.jpg';
@@ -36,11 +36,13 @@ const DogGroomingHowItWorksPage: NextPage = () => {
         canonical="/dog-grooming-courses/how-it-works"
       />
 
-      <section id="firstSection" className="bg-dark">
-        <div className="container text-center">
+      <section id="firstSection">
+        <Image src={HowItWorksBackground} layout="fill" objectFit="cover" objectPosition="center" alt="Learning during COVID" />
+        <div className="image-overlay-gradient"></div>
+        <div className="container text-center text-white">
           <div className="row">
             <div className="col-12 col-lg-10 offset-lg-1">
-              <h1>How QC&apos;s Online Dog Groomer Training Works</h1>
+              <h1 className="text-white">How QC&apos;s Online Dog Groomer Training Works</h1>
               <p>Online dog groomer training can be just as effective as in-class training. QC has over 30 years of experience in online education, and has now applied that expertise to the <Link href="/dog-grooming-courses/dog-grooming"><a className="link-primary">online dog grooming course</a></Link>! The key is to provide students with plenty of hands-on training and feedback every step of the way. Remember, just because you&apos;re learning dog grooming online doesn&apos;t mean you&apos;re learning alone!</p>
               <p>Wondering exactly how your online dog groomer education will unfold? Here&apos;s a detailed overview of how your course, assignments, grades, and graduation will work.</p>
             </div>
@@ -77,11 +79,13 @@ const DogGroomingHowItWorksPage: NextPage = () => {
           <div className="row mb-4">
             <div className="col-12 col-lg-6 col-xl-5 offset-xl-1 mb-4 mb-lg-0">
               <h3 className="mb-4">Theory-Based Assignments</h3>
+              <Bar variant="primary"></Bar>
               <p>In order to be a qualified professional groomer, you need to master dog grooming theory. Throughout your online grooming course you&apos;ll learn everything from grooming tools, to dog behavior and temperaments, to the unique challenges of working with puppies, seniors, and other dogs who have special needs, and <Link href="/dog-grooming-courses"><a className="link-primary">much more</a></Link>.</p>
               <p>Your knowledge in these areas will be tested with quizzes, case studies and other theoretical assignments, which will all be graded by your personal tutor. As you progress through the course, you&apos;ll become more and more comfortable with dog grooming theory, and you&apos;ll shift your focus to your practical grooming assignments.</p>
             </div>
             <div className="col-12 col-lg-6 col-xl-5">
               <h3 className="mb-4">Practical Assignments</h3>
+              <Bar variant="primary"></Bar>
               <p>Getting a chance to practice your skills on real dogs is an essential part of any good dog grooming program, and QC&apos;s online course is no exception. At the start of your course, practical assignments will focus on getting comfortable with dogs and the grooming environment, and you&apos;ll progress to completing partial grooms focusing on specific elements. During your <Link href="/dog-grooming-courses/dog-grooming#course-outline"><a className="link-primary">practicum units</a></Link>, you&apos;ll be completing several start-to-finish breed standard grooms.</p>
               <p>you&apos;ll take step-by-step pictures or videos of your work as you go, and upload them to your online student center. Your tutor will evaluate your work and provide you with detailed feedback on what you did well and where you could improve.</p>
             </div>
