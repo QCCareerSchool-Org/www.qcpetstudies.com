@@ -25,14 +25,14 @@ const RequiredDogBreeds: NextPage = () => {
       />
 
       <section id="firstSection">
-        <div className="image-overlay-gardient"></div>
         <Image src={RequiredDogBreedsBackground} layout="fill" objectFit="cover" objectPosition="center" alt="Learning during covid" />
+        <div className="image-overlay-gradient"></div>
         <div className="container text-center">
           <div className="row">
-            <div className="col-12 col-lg-10 offset-lg-1">
-              <h1>DOG BREEDS YOU&apos;LL NEED</h1>
-              <h2>for Your Dog Grooming Course</h2>
-              <h4>Throughout your online grooming course, you will be asked to groom a number of dogs of different breeds</h4>
+            <div className="col-12 text-white col-lg-10 offset-lg-1">
+              <h1 className="text-white">DOG BREEDS YOU&apos;LL NEED</h1>
+              <h2 className="text-white">for Your Dog Grooming Course</h2>
+              <h4 className="text-white">Throughout your online grooming course, you will be asked to groom a number of dogs of different breeds</h4>
               <p>You&apos;ll start by practicing basic techniques, such as scissoring and clipping, before undertaking head-to-tail grooms. You&apos;ll conclude the course with five hands-on practicum units to test your knowledge and complete your certification!</p>
             </div>
           </div>
