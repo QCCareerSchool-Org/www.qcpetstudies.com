@@ -94,10 +94,10 @@ const BreedStylingPage: NextPage = () => {
         <div className="container text-center">
           <div className="row">
             <div className="col-12 col-md-10 offset-md-1 col-lg-8 offset-lg-2">
-              <h2>  Who will benefit from this workshop?</h2>
-              <p className="t-align"><span className="span-2">&#8212;</span>&nbsp; &nbsp; Grooming assistants who want to expand their skillset into styling services</p>
-              <p className="t-align"><span className="span-2">&#8212;</span>&nbsp; &nbsp;Dog groomers who are comfortable with basic services but want to enter conformation grooming competitions</p>
-              <p className="t-align"><span className="span-2">&#8212;</span>&nbsp; &nbsp;Experienced dog groomers who have never received professional education on interpreting and implementing breed standards</p>
+              <h2>Who will benefit from this workshop?</h2>
+              <p>&#8212; Grooming assistants who want to expand their skillset into styling services</p>
+              <p>&#8212; Dog groomers who are comfortable with basic services but want to enter conformation grooming competitions</p>
+              <p>&#8212; Experienced dog groomers who have never received professional education on interpreting and implementing breed standards</p>
               <p>Fundamental pet service knowledge is a prerequisite for this workshop. You won&apos;t spend time reviewing grooming tools, hair clipping, bathing, drying, and brushing. Instead, skip right to grooming techniques for a variety of breeds. If you&apos;d like a refresher in these areas, we recommend the Dog Grooming course which covers the fundamentals and everything included in the Breed Styling Workshop.</p>
             </div>
           </div>
@@ -176,7 +176,7 @@ const BreedStylingPage: NextPage = () => {
         </div>
       </section>
 
-      <section>
+      <section className="bg-light">
         <div className="container text-center">
 
           <Accordion>
