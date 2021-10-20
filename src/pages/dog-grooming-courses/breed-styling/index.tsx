@@ -78,7 +78,7 @@ const BreedStylingPage: NextPage = () => {
               <h2>QC&apos;s Breed Styling Workshop Includes:</h2>
               <ul>
                 <li>1 manual consisting of 9 course texts covering essential information regarding dog anatomy and grooming procedures </li>
-                <li>5 hours of video tutorials featuring Certified Master Groomers working on numerous breeds </li>
+                <li>5 hours of video tutorials featuring <Link href="/tutors/"><a className="link-primary">Certified Master Groomers</a></Link> working on numerous breeds </li>
                 <li>4 practicum units that enable you to complete a number of breed cuts from start to finish </li>
                 <li>Free first aid training that provides you with the knowledge to prevent and respond to emergency situations </li>
               </ul>
@@ -95,10 +95,14 @@ const BreedStylingPage: NextPage = () => {
           <h2 className="mb-3">Who will benefit from this workshop?</h2>
           <div className="row">
             <div className="col-12 col-md-10 offset-md-1 col-lg-8 offset-lg-2 text-start">
-              <p>&#8212; Grooming assistants who want to expand their skillset into styling services</p>
-              <p>&#8212; Dog groomers who are comfortable with basic services but want to enter conformation grooming competitions</p>
-              <p>&#8212; Experienced dog groomers who have never received professional education on interpreting and implementing breed standards</p>
-              <p>Fundamental pet service knowledge is a prerequisite for this workshop. You won&apos;t spend time reviewing grooming tools, hair clipping, bathing, drying, and brushing. Instead, skip right to grooming techniques for a variety of breeds. If you&apos;d like a refresher in these areas, we recommend the Dog Grooming course which covers the fundamentals and everything included in the Breed Styling Workshop.</p>
+              <ul>
+                <li>Grooming assistants who want to expand their skillset into styling services</li>
+                <li>Dog groomers who are comfortable with basic services but want to enter conformation grooming competitions</li>
+                <li>Experienced dog groomers who have never received professional education on interpreting and implementing breed standards</li>
+              </ul>
+              <p>Fundamental pet service knowledge is a prerequisite for this workshop. You won&apos;t spend time reviewing grooming tools, hair clipping, bathing, drying, and brushing. Instead, skip right to grooming techniques for a variety of breeds. If you&apos;d like a refresher in these areas, we recommend the
+                <Link href="/online-courses/dog-grooming/"><a className="link-primary"> Dog Grooming course </a></Link>
+                which covers the fundamentals and everything included in the Breed Styling Workshop.</p>
             </div>
           </div>
         </div>
@@ -123,9 +127,9 @@ const BreedStylingPage: NextPage = () => {
         <div className="container text-center">
           <div className="row">
             <div className="col-12 col-lg-10 offset-lg-1">
-              <h2>Your Certificate of Completion</h2>
-              <p>Upon graduation, you&apos;ll receive your Breed Styling Workshop certificate. You&apos;ll also receive the International Dog Grooming Professional (IDGP) designation. These qualifications attest to your success in learning how to expertly groom a dog of any breed.</p>
-              <Image src={BreedStylingCertificate} layout="responsive" alt="Breed Styling certification" />
+              <h2 className="mb-2">Your Certificate of Completion</h2>
+              <p className="mb-5">Upon graduation, you&apos;ll receive your Breed Styling Workshop certificate. You&apos;ll also receive the International Dog Grooming Professional (IDGP) designation. These qualifications attest to your success in learning how to expertly groom a dog of any breed.</p>
+              <Image src={BreedStylingCertificate} objectPosition="bottom" alt="Breed Styling certification" />
             </div>
           </div>
         </div>
@@ -136,7 +140,7 @@ const BreedStylingPage: NextPage = () => {
           <h2>Tools to succeed</h2>
           <p> To complete the assignments in the course, you&apos;ll need the following tools:</p>
           <div className="row justify-content-evenly">
-            <div className="col-4 text-lg-start">
+            <div className="col-11 col-lg-4 text-start">
               <ul>
                 <li>A selection of grooming brushes and combs </li>
                 <li>Dematting tools </li>
@@ -149,7 +153,7 @@ const BreedStylingPage: NextPage = () => {
               </ul>
             </div>
 
-            <div className="col-4  text-lg-start">
+            <div className="col-11 col-lg-4 text-start">
               <ul>
                 <li>Ear powder </li>
                 <li>Restraints </li>
