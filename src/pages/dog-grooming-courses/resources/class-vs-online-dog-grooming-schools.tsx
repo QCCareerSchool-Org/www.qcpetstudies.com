@@ -15,17 +15,18 @@ const ClassVsOnlineLearning: NextPage = () => {
         canonical="dog-grooming-courses/resources/class-vs-online-dog-grooming-schools"
       />
 
-      <section id="firstSection" className="bg-dark bg-gradiant">
-        {/* <Image src={FirstSectionBackground} layout="fill" objectFit="cover" objectPosition="center" alt="Learning during covid" /> */}
+      <section id="firstSection">
+        <Image src={FirstSectionBackground} layout="fill" objectFit="cover" objectPosition="center" alt="Learning during covid" />
+        <div className="image-overlay-gradient"></div>
         <div className="container text-center">
-          <div className="row">
-            <div className="col-12 col-md-10 offset-md-1 text-white">
+          <div className="row text-white">
+            <div className="col-12 col-md-10 offset-md-1">
               <FaGraduationCap className="h1 text-primary mb-3" />
-              <h1>In-Class vs. Online Dog Grooming Schools</h1>
+              <h1 className="text-white">In-Class vs. Online Dog Grooming Schools</h1>
               <p>Learning dog grooming online can be a difficult concept to wrap your head around. After all, dog grooming is a very &quot;hands-on&quot; profession. Surely it needs to be taught in-class by an instructor, no?</p>
               <p>Definitely not. With the advancement of online learning in recent years, online dog grooming schools can be just as effective (if not more!) than in-class training. No one can dispute that online learning is far more convenient than in class.
                 The key is to find an online dog grooming school that allows you the same (if not more!) hands-on practice that a classroom curriculum would.</p>
-              <h4>Below is a comparison of a typical in-class dog grooming school vs. an online grooming school like QC Pet Studies.</h4>
+              <h4 className="text-white">Below is a comparison of a typical in-class dog grooming school vs. an online grooming school like QC Pet Studies.</h4>
             </div>
           </div>
         </div>
