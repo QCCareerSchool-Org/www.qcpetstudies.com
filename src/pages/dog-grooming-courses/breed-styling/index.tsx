@@ -92,9 +92,9 @@ const BreedStylingPage: NextPage = () => {
 
       <section className="bg-light">
         <div className="container text-center">
+          <h2 className="mb-3">Who will benefit from this workshop?</h2>
           <div className="row">
-            <div className="col-12 col-md-10 offset-md-1 col-lg-8 offset-lg-2">
-              <h2>Who will benefit from this workshop?</h2>
+            <div className="col-12 col-md-10 offset-md-1 col-lg-8 offset-lg-2 text-start">
               <p>&#8212; Grooming assistants who want to expand their skillset into styling services</p>
               <p>&#8212; Dog groomers who are comfortable with basic services but want to enter conformation grooming competitions</p>
               <p>&#8212; Experienced dog groomers who have never received professional education on interpreting and implementing breed standards</p>
