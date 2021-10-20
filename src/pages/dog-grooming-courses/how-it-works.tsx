@@ -159,52 +159,6 @@ const DogGroomingHowItWorksPage: NextPage = () => {
           </div>
         </div>
       </section>
-
-      <section>
-        <div className="container text-center">
-          <h2 className="mb-4">Next Steps</h2>
-          <div className="row">
-            <div className="col-10 offset-1 col-md-4 offset-md-0 mb-4 mb-lg-0">
-              <div className="py-5 px-4 position-relative text-shadow nextStepsCard d-flex align-items-center">
-                <Image src={StudentExperienceCardBackground} alt="Student Experience" objectFit="cover" layout="fill" />
-                <div className="position-relative">
-                  <h3 className="text-white">Student<br />Experience</h3>
-                  <p className="text-white">Find out what it&apos;s like to be a student at QC Pet Studies. You may be learning from home, but you won&apos;t be learning alone!</p>
-                  <Link href="/dog-grooming-courses/resources#student-experience"><a className="btn btn-outline-light">Learn More</a></Link>
-                </div>
-              </div>
-            </div>
-            <div className="col-10 offset-1 col-md-4 offset-md-0 mb-4 mb-lg-0">
-              <div className="py-5 px-4 position-relative text-shadow nextStepsCard d-flex align-items-center">
-                <Image src={TutorCardBackground} alt="Meet QC's Tutors" objectFit="cover" layout="fill" />
-                <div className="position-relative">
-                  <h3 className="text-white">Meet QC&apos;s<br />Tutors</h3>
-                  <p className="text-white">Learn about QC&apos;s tutors, Certified Master Groomers Paddy Gaffney and Lisa Day. They will guide you through the course!</p>
-                  <Link href="/dog-grooming-courses/dog-grooming#tutors"><a className="btn btn-outline-light">Learn More</a></Link>
-                </div>
-              </div>
-            </div>
-            <div className="col-10 offset-1 col-md-4 offset-md-0">
-              <div className="py-5 px-4 position-relative text-shadow nextStepsCard d-flex align-items-center">
-                <Image src={EnrollNowCardBackground} alt="Enroll Now" objectFit="cover" layout="fill" />
-                <div className="position-relative">
-                  <h3 className="text-white">Enroll<br />Now</h3>
-                  <p className="text-white">Join QC Pet Studies and take the first step towards a career you&apos;ll love. QC accepts new students 365 days a year!</p>
-                  <Link href="https://enroll.qcpetstudies.com?c[]=dg&c[]=fa"><a className="btn btn-outline-light">Learn More</a></Link>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <style jsx>{`
-        @media (min-width: 992px) {
-          .nextStepsCard {
-            min-height: 400px;
-          }
-        }
-      `}</style>
     </DefaultLayout>
   );
 };
