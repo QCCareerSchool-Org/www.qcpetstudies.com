@@ -1,26 +1,55 @@
 import { NextPage } from 'next';
 import Image from 'next/image';
+import Link from 'next/link';
 
+import { ReactElement, useContext } from 'react';
+import Accordion from 'react-bootstrap/Accordion';
+import { useAccordionButton } from 'react-bootstrap/AccordionButton';
+import AccordionContext from 'react-bootstrap/AccordionContext';
+import { FaAngleDown, FaMinusCircle, FaPlusCircle, FaSearch } from 'react-icons/fa';
 import { DefaultLayout } from '../../../components/DefaultLayout';
 import { PriceSection } from '../../../components/PriceSection';
 import { SEO } from '../../../components/SEO';
 
-import guarantee1Year from '../../../images/1-year-guarantee-outlined.svg';
-import guarantee21Day from '../../../images/21-day-guarantee-outlined.svg';
-import tutorBackground from '../../../images/backgrounds/tutor-background.jpg';
-import firstAidBook from '../../../images/first-aid-book-white.jpg';
-import firstAidLogo from '../../../images/first-aid-logo.svg';
-import scissorsSet from '../../../images/scissor-set-1.jpg';
+import Guarantee21Day from '../../../images/21-day-guarantee-outlined.svg';
 
-const secondaryNavLinks = [
-  { name: 'Foo', url: '#firstSection' },
-  { name: 'First Aid', url: '#firstAidSection' },
-  { name: 'Tutors', url: '#tutorSection' },
-];
+import BreedStandards from '../../../images/backgrounds/breed-standards.jpg';
+import BreedStylingCertificate from '../../../images/breed-styling-certificate.png';
+import CourseIconBadge from '../../../images/course-icon-badge.svg';
+import Part1 from '../../../images/part-1.jpg';
+import Part2 from '../../../images/part-2.jpg';
+import Part3 from '../../../images/part-3.jpg';
+
+type Props = {
+  eventKey: string;
+  title: string;
+};
+
+const CustomToggle = ({ title, eventKey }: Props): ReactElement => {
+
+  const { activeEventKey } = useContext(AccordionContext);
+
+  const decoratedOnClick = useAccordionButton(eventKey);
+
+  const isOpen = activeEventKey === eventKey;
+
+  return (
+
+    <div className="row justify-content-between border-bottom pb-3 mb-3" onClick={decoratedOnClick}>
+      <div className="col-6 text-start">
+        <h3>{title}</h3>
+      </div>
+      <div className="col-6 text-end">
+        {isOpen ? <FaMinusCircle /> : <FaPlusCircle />}
+      </div>
+    </div>
+
+  );
+};
 
 const DogGroomingPage: NextPage = () => {
   return (
-    <DefaultLayout secondaryTitle="Breed Styling Course" secondaryNavLinks={secondaryNavLinks}>
+    <DefaultLayout secondaryTitle="Breed Styling Course">
       <SEO
         title="Breed Styling Course"
         description=""
@@ -28,12 +57,15 @@ const DogGroomingPage: NextPage = () => {
       />
 
       <section id="firstSection" className="bg-dark">
-        <Image src={tutorBackground} layout="fill" objectFit="cover" objectPosition="center" alt="dddd" />
         <div className="container text-center">
+          <Image src={CourseIconBadge} alt="Cource Icon Badge" width={60} height={60} />
+          <h1><strong>BREED STYLING WORKSHOP</strong></h1>
           <div className="row">
             <div className="col-12 col-lg-10 offset-lg-1">
-              <h1>Lorem Ipsum</h1>
-              <p className="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+              <p>Do you already have some grooming experience? If you want to upgrade your professional skillset and learn how to groom every breed, the Breed Styling Workshop is an excellent fit for you. Learn advanced styling techniques for purebred breeds without having to relearn the basics like grooming preparation, and scissor and clipper techniques.</p>
+              <p>The Breed Styling Workshop starts with the fundamentals of dog anatomy and behavior. You&apos;ll learn professional grooming practices before moving on to your practical units where you&apos;ll groom a terrier, a non-sporting breed, a mixed breed, and a breed of your choice!</p>
+              <p>Learn from certified master groomers who have over five decades of combined grooming experience. Our expert tutors will give you professional insight and feedback on your work to ensure your success in the workshop. Upon graduation, you&apos;ll receive the Breed Styling Workshop certificate of completion as well as the International Dog Grooming Professional (IDGP) designation. Your qualifications prove to clients and employers that you&apos;ve completed professional training.</p>
+              <p>This workshop prepares students to take the optional NDGAA or Canadian Pet Stylists certification exams. Earn additional accreditations and advance your career!</p>
             </div>
           </div>
         </div>
@@ -41,11 +73,32 @@ const DogGroomingPage: NextPage = () => {
 
       <section>
         <div className="container text-center">
+          <div className="row align-items-center">
+            <div className="col-12 col-lg-6 mb-5 mb-lg-0 text-start">
+              <h2>QC&apos;s Breed Styling Workshop Includes:</h2>
+              <ul>
+                <li>1 manual consisting of 9 course texts covering essential information regarding dog anatomy and grooming procedures </li>
+                <li>5 hours of video tutorials featuring Certified Master Groomers working on numerous breeds </li>
+                <li>4 practicum units that enable you to complete a number of breed cuts from start to finish </li>
+                <li>Free first aid training that provides you with the knowledge to prevent and respond to emergency situations </li>
+              </ul>
+            </div>
+            <div className="col-12 col-lg-6">
+              <Image src={BreedStandards} alt="First Aid book" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-light">
+        <div className="container text-center">
           <div className="row">
             <div className="col-12 col-md-10 offset-md-1 col-lg-8 offset-lg-2">
-              <h2>Nam Tempus Vestibulum Gravida</h2>
-              <p>Donec felis erat, eleifend eu consequat vitae, semper a lectus. Maecenas luctus nisi augue, vitae aliquam velit vestibulum sit amet. Pellentesque orci tellus, convallis nec odio at, sollicitudin scelerisque risus. Vestibulum quis blandit massa. Maecenas vitae vestibulum ligula. Quisque ut sem nec sem semper suscipit vel at lectus. Donec diam sapien, hendrerit vel velit sit amet, accumsan consectetur arcu. Etiam gravida malesuada odio, vitae tempus ipsum cursus vel. Pellentesque lobortis nibh vel erat condimentum, vitae porttitor nisi fermentum. Proin condimentum quam nec tristique ultrices. Praesent placerat erat neque, non maximus odio ornare vel. Ut commodo, nibh non malesuada eleifend, tortor turpis pretium neque, sit amet auctor felis magna nec dolor.</p>
-              <button className="btn btn-primary-dark">Maximus Odio</button>
+              <h2>  Who will benefit from this workshop?</h2>
+              <p className="t-align"><span className="span-2">&#8212;</span>&nbsp; &nbsp; Grooming assistants who want to expand their skillset into styling services</p>
+              <p className="t-align"><span className="span-2">&#8212;</span>&nbsp; &nbsp;Dog groomers who are comfortable with basic services but want to enter conformation grooming competitions</p>
+              <p className="t-align"><span className="span-2">&#8212;</span>&nbsp; &nbsp;Experienced dog groomers who have never received professional education on interpreting and implementing breed standards</p>
+              <p>Fundamental pet service knowledge is a prerequisite for this workshop. You won&apos;t spend time reviewing grooming tools, hair clipping, bathing, drying, and brushing. Instead, skip right to grooming techniques for a variety of breeds. If you&apos;d like a refresher in these areas, we recommend the Dog Grooming course which covers the fundamentals and everything included in the Breed Styling Workshop.</p>
             </div>
           </div>
         </div>
@@ -55,53 +108,152 @@ const DogGroomingPage: NextPage = () => {
 
       <section>
         <div className="container text-center">
-          <h2 className="mb-5">Suspendisse Viverra Elit Lacinia Eleifend Bibendum</h2>
+          <h2>You&apos;ll Be Covered by QC&apos;s Money-Back Guarantee</h2>
+          <Image src={Guarantee21Day} alt="First Aid book" />
           <div className="row">
-            <div className="col-12 col-lg-6 mb-5 mb-lg-0">
-              <div className="mb-4">
-                <Image src={guarantee21Day} width={165} height={165} alt="21-Day Money-Back Guarantee" />
-              </div>
-              <h3 className="h5">Quisque Placerat Odio Lectus</h3>
-              <p>Vel sodales nunc euismod a. Sed ut diam scelerisque, consequat massa a, vulputate leo. Morbi sollicitudin fringilla ex, nec rutrum turpis porttitor vel. Duis sit amet sem commodo, hendrerit odio vel, dapibus erat. Quisque eget magna volutpat, varius velit sed, sollicitudin est. Donec sit amet erat ut orci faucibus elementum. Duis augue tellus, fringilla eu nisl id, tristique dictum diam. Morbi sit amet augue ultrices, vehicula nisl at, congue augue. Vestibulum volutpat lectus erat, quis fringilla odio cursus non.</p>
-            </div>
-            <div className="col-12 col-lg-6">
-              <div className="mb-4">
-                <Image src={guarantee1Year} width={199} height={165} alt="1-Year Money-Back Guarantee" />
-              </div>
-              <h3 className="h5">Leo Sit Amet Sollicitudin Sollicitudin</h3>
-              <p>hasellus rhoncus volutpat ex a dapibus. Aenean id purus non nisi pretium bibendum. Donec dapibus sollicitudin nunc. Ut bibendum, leo sit amet sollicitudin sollicitudin, nisl ipsum sollicitudin ante, ut imperdiet tellus elit eget ligula. In at velit quis odio sodales sollicitudin. Nullam a magna sed sem gravida iaculis vitae a quam. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus auctor risus in lorem porttitor, sed facilisis augue feugiat. Nullam et eleifend tellus.</p>
+            <div className="col-12 col-md-10 offset-md-1 col-lg-8 offset-lg-2">
+              <strong><h2>The 21-Day Money Back Guarantee</h2></strong>
+              <p>Try the course risk-free for 21 days. This gives you time to receive your course materials and evaluate whether the Breed Styling Workshop is right for you.  If you decide it&apos;s not a good fit, simply contact QC to arrange a return of your course materials for a refund. It&apos;s that easy! Note: All materials must be returned unused and in their original condition in order to get a full refund. </p>
             </div>
           </div>
+        </div>
+      </section>
+
+      <section className="bg-gray pb-0">
+        <div className="container text-center">
+          <div className="row">
+            <div className="col-12 col-lg-10 offset-lg-1">
+              <h2>Your Certificate of Completion</h2>
+              <p>Upon graduation, you&apos;ll receive your Breed Styling Workshop certificate. You&apos;ll also receive the International Dog Grooming Professional (IDGP) designation. These qualifications attest to your success in learning how to expertly groom a dog of any breed.</p>
+              <Image src={BreedStylingCertificate} layout="responsive" alt="Breed Styling certification" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div className="container text-center">
+          <h2>Tools to succeed</h2>
+          <p> To complete the assignments in the course, you&apos;ll need the following tools:</p>
+          <div className="row justify-content-evenly">
+            <div className="col-4 text-lg-start">
+              <ul>
+                <li>A selection of grooming brushes and combs </li>
+                <li>Dematting tools </li>
+                <li>Nail clippers </li>
+                <li>Styptic product </li>
+                <li>Hemostats </li>
+                <li>A selection of professional scissors </li>
+                <li>Professional clippers with a selection of blades or blade settings </li>
+                <li>Shampoos and conditioners </li>
+              </ul>
+            </div>
+
+            <div className="col-4  text-lg-start">
+              <ul>
+                <li>Ear powder </li>
+                <li>Restraints </li>
+                <li>Grooming table </li>
+                <li>Bathing setup </li>
+                <li>High-velocity dryer and/or stand dryer </li>
+                <li>Towels </li>
+                <li>Face mask </li>
+                <li>Ear protection </li>
+              </ul>
+            </div>
+          </div>
+          <p className="fst-italic">*Please note that you&apos;ll need to purchase these tools yourself if you don&apos;t already own them. As a student of QC Pet Studies, take advantage of discounts from established dog grooming brands.</p>
+          <Link href="/your-dog-grooming-career/discounts-for-grooming-students"><a className="link-primary">See the list here!</a></Link>
         </div>
       </section>
 
       <section className="bg-dark">
         <div className="container text-center">
-          <div className="row">
-            <div className="col-12 col-md-10 offset-md-1">
-              <h2>Bonus Tools for Dog Grooming Students</h2>
-              <p className="h5">Professional Grooming Scissors</p>
-              <p>Before you begin your practical work in Unit C, you&apos;ll receive three pairs of professional grooming scissors that enable you to create a variety of looks.</p>
-              <Image src={scissorsSet} alt="scissors set" width={816} height={270} />
-              <p><em>Product may vary based on the supplier.</em></p>
-            </div>
-          </div>
+          <FaSearch className="h1 text-primary mb-3" />
+          <h2>Breed Styling Course At-A-Glance</h2>
+          <p>Click on each part below for a quick overview of QC Pet Studies&apos; Breed Styling Workshop.</p>
+          <FaAngleDown className="h1 text-primary" />
         </div>
       </section>
 
-      <section id="firstAidSection">
+      <section>
         <div className="container text-center">
-          <div className="row align-items-center">
-            <div className="col-12 col-md-10 offset-md-1 col-lg-6 offset-lg-0 mb-2 mb-lg-0 text-lg-start">
-              <Image src={firstAidLogo} alt="First Aid Course logo" width={60} height={60} />
-              <h2>Get a <strong>FREE</strong> First Aid Course</h2>
-              <p className="lead">Enroll in Dog Grooming &amp; receive the First Aid for Dog Groomers course to take your career to the next level!</p>
-              <p>Being trained in Pet First Aid prepares you to respond to emergencies and maintain a safe grooming environment. You&apos;ll learn from dog first aid experts who will teach you what you need to know to keep yourself and your furry clients out of harm&apos;s way, and how to deal with emergency situations if they arise.</p>
-            </div>
-            <div className="col-12 col-lg-6" style={{ fontSize: 0, marginBottom: '-20px' }}>
-              <Image src={firstAidBook} alt="First Aid book" width={504} height={385} />
-            </div>
-          </div>
+
+          <Accordion>
+            <CustomToggle title="Part 1 – Theoretical Foundations" eventKey="0" />
+            <Accordion.Collapse eventKey="0">
+              <div className="row align-items-center">
+                <div className="col-12 col-lg-6 mb-5 mb-lg-0 text-start">
+                  <p>In the first part of the course, you&apos;ll review your knowledge of dog anatomy, skincare, and dog behavior. You&apos;ll learn all about the basics of working with canines and keeping yourself safe in the grooming environment.</p>
+                  <h3>Dog Anatomy</h3>
+                  <ul>
+                    <li>Learn how a dog&apos;s skeletal and muscular structure informs you on interpreting grooming patterns. You&apos;ll also discover the physical variations between breeds that define appropriate cut and styling options.</li>
+                  </ul>
+
+                  <h3>Dog Skincare and Esthetics</h3>
+                  <ul>
+                    <li>Examine hair types and learn how to work with owners to maintain healthy skin and hair. You&apos;ll also touch on skin condition symptoms, causes, and treatments. You can&apos;t diagnose skin conditions (that&apos;s left to veterinarians), but groomers play a role in identifying potential abnormalities during appointments.</li>
+                  </ul>
+
+                  <h3>Dog Behavior</h3>
+                  <ul>
+                    <li>Focus on dog behavior as well as understanding dog temperaments. You&apos;ll learn about reading physical distress signals and how to adapt your own behavior to ease them into the grooming procedure.</li>
+                  </ul>
+
+                  <h3>Personal Health and Safety</h3>
+                  <ul>
+                    <li>Prevent illness and injury to yourself by learning all about handling grooming tools, preventing muscle strain, and maintaining a clean workspace.</li>
+                  </ul>
+                </div>
+                <div className="col-12 col-lg-6">
+                  <Image src={Part1} alt="First Aid book" />
+                </div>
+              </div>
+            </Accordion.Collapse>
+          </Accordion>
+
+          <Accordion>
+            <CustomToggle title="Part 2 – Dog First Aid Course" eventKey="0" />
+            <Accordion.Collapse eventKey="0">
+              <div className="row align-items-center">
+                <div className="col-12 col-lg-6 mb-5 mb-lg-0 text-start">
+                  <p>The second part of the course covers foundational dog first aid training. Understand how to prevent illness and accidents and treat basic injuries in this condensed version of QC&apos;s Dog First Aid course.</p>
+                  <h3>Safety Assessment and First Aid</h3>
+                  <ul>
+                    <li>Learn about pet afflictions and assessing symptoms. Then, learn how to properly check vitals, treat wounds, and perform rescue procedures.</li>
+                  </ul>
+                </div>
+                <div className="col-12 col-lg-6">
+                  <Image src={Part2} alt="First Aid book" />
+                </div>
+              </div>
+            </Accordion.Collapse>
+          </Accordion>
+
+          <Accordion>
+            <CustomToggle title="Part 3 – Practicum" eventKey="0" />
+            <Accordion.Collapse eventKey="0">
+              <div className="row align-items-center">
+                <div className="col-12 col-lg-6 mb-5 mb-lg-0 text-start">
+                  <p>The last third of the course is broken up into four units. Learn all about interpreting breed standards and applying them to a variety of breeds. You&apos;ll complete a series of practical assignments grooming each dog from start to finish. Be tested on how well you adhere to official breed standards to bring out a dog&apos;s best features.</p>
+                  <h3>Groom a different dog for each unit</h3>
+                  <ul>
+                    <li>Prepare and groom the head, body, limbs, rear, and tail of a variety of breeds most often tested in a certification exam.
+                      <ul>
+                        <li>Terrier</li>
+                        <li>Non-sporting breed</li>
+                        <li>Mixed breed</li>
+                      </ul>
+                    </li>
+                    <li>Complete the course by researching and grooming a breed of your own choice</li>
+                  </ul>
+                </div>
+                <div className="col-12 col-lg-6">
+                  <Image src={Part3} alt="First Aid book" />
+                </div>
+              </div>
+            </Accordion.Collapse>
+          </Accordion>
         </div>
       </section>
 
