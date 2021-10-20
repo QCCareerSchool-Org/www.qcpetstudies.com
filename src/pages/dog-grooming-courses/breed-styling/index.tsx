@@ -47,7 +47,7 @@ const CustomToggle = ({ title, eventKey }: Props): ReactElement => {
   );
 };
 
-const DogGroomingPage: NextPage = () => {
+const BreedStylingPage: NextPage = () => {
   return (
     <DefaultLayout secondaryTitle="Breed Styling Course">
       <SEO
@@ -261,4 +261,4 @@ const DogGroomingPage: NextPage = () => {
   );
 };
 
-export default DogGroomingPage;
+export default BreedStylingPage;
