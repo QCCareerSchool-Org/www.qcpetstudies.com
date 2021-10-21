@@ -134,6 +134,16 @@ h4, .h4, h5, .h5, h6, .h6 {
   color: #324F54;
 }
 
+.bg-light {
+  $darker-link-color: #49a4b5;
+  .link-primary {
+    color: $darker-link-color;
+    &:hover, &:focus {
+      color: shift-color($darker-link-color, $link-shade-percentage);
+    }
+  }
+}
+
 .bg-dark, .bg-gray, .card.bg-dark, .card-bg-gray {
   h1, .h1 { color: #e8e8e8; }
   h2, .h2 { color: #e8e8e8;}
