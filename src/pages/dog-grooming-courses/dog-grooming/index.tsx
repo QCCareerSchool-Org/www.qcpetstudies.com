@@ -11,6 +11,7 @@ import DogGroomingBackground from '../../../images/backgrounds/dog-grooming.jpg'
 import ContentCutImage from '../../../images/content-cut.jpg';
 import DogCourseMaterialsImage from '../../../images/dg-course-materials-manuals-kit-white.jpg';
 import GroomingKitDetailImage from '../../../images/grooming-kit-details.jpg';
+import CertificationGoldImage from '../../../images/IDGP-certification-gold.svg';
 import MasterGroomerLisaImage from '../../../images/lisa-video-thumbnail.jpg';
 
 import MovieClapperImage from '../../../images/movie-clapper.svg';
@@ -36,6 +37,7 @@ const DogGroomingPage: NextPage = () => {
         <Image src={DogGroomingBackground} layout="fill" objectFit="cover" objectPosition="center" alt="Dog Grooming" />
         <div className="container text-center">
           <div className="row mb-4">
+            <Image src={CertificationGoldImage} alt="Certification Gold" height="125" width="250" />
             <h1>Dog Grooming</h1>
             <h4>Get Started For Only <strong>$99</strong></h4>
             <i>See tuition details</i>
