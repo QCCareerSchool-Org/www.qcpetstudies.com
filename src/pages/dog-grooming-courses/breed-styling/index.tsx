@@ -136,7 +136,7 @@ const BreedStylingPage: NextPage = () => {
           <h2>Tools to succeed</h2>
           <p> To complete the assignments in the course, you&apos;ll need the following tools:</p>
           <div className="row justify-content-evenly">
-            <div className="col-11 col-lg-4 text-start">
+            <div className="col-12 col-lg-4 text-start">
               <ul>
                 <li>A selection of grooming brushes and combs </li>
                 <li>Dematting tools </li>
@@ -149,7 +149,7 @@ const BreedStylingPage: NextPage = () => {
               </ul>
             </div>
 
-            <div className="col-11 col-lg-4 text-start">
+            <div className="col-12 col-lg-4 text-start">
               <ul>
                 <li>Ear powder </li>
                 <li>Restraints </li>
@@ -183,25 +183,25 @@ const BreedStylingPage: NextPage = () => {
             <CustomToggle title="Part 1 – Theoretical Foundations" eventKey="0" />
             <Accordion.Collapse eventKey="0">
               <div className="row align-items-center">
-                <div className="col-12 col-lg-6 mb-4 mb-lg-0 text-start">
-                  <p>In the first part of the course, you&apos;ll review your knowledge of dog anatomy, skincare, and dog behavior. You&apos;ll learn all about the basics of working with canines and keeping yourself safe in the grooming environment.</p>
-                  <h3>Dog Anatomy</h3>
-                  <ul>
+                <div className="col-12 col-lg-6 mb-4 text-start">
+                  <p className="mb-4">In the first part of the course, you&apos;ll review your knowledge of dog anatomy, skincare, and dog behavior. You&apos;ll learn all about the basics of working with canines and keeping yourself safe in the grooming environment.</p>
+                  <h3 className="mb-3">Dog Anatomy</h3>
+                  <ul className="mb-4">
                     <li>Learn how a dog&apos;s skeletal and muscular structure informs you on interpreting grooming patterns. You&apos;ll also discover the physical variations between breeds that define appropriate cut and styling options.</li>
                   </ul>
 
-                  <h3>Dog Skincare and Esthetics</h3>
-                  <ul>
+                  <h3 className="mb-3">Dog Skincare and Esthetics</h3>
+                  <ul className="mb-4">
                     <li>Examine hair types and learn how to work with owners to maintain healthy skin and hair. You&apos;ll also touch on skin condition symptoms, causes, and treatments. You can&apos;t diagnose skin conditions (that&apos;s left to veterinarians), but groomers play a role in identifying potential abnormalities during appointments.</li>
                   </ul>
 
-                  <h3>Dog Behavior</h3>
-                  <ul>
+                  <h3 className="mb-3">Dog Behavior</h3>
+                  <ul className="mb-4">
                     <li>Focus on dog behavior as well as understanding dog temperaments. You&apos;ll learn about reading physical distress signals and how to adapt your own behavior to ease them into the grooming procedure.</li>
                   </ul>
 
-                  <h3>Personal Health and Safety</h3>
-                  <ul>
+                  <h3 className="mb-3">Personal Health and Safety</h3>
+                  <ul className="mb-4">
                     <li>Prevent illness and injury to yourself by learning all about handling grooming tools, preventing muscle strain, and maintaining a clean workspace.</li>
                   </ul>
                 </div>
@@ -217,8 +217,8 @@ const BreedStylingPage: NextPage = () => {
             <Accordion.Collapse eventKey="0">
               <div className="row align-items-center">
                 <div className="col-12 col-lg-6 mb-4 mb-lg-0 text-start">
-                  <p>The second part of the course covers foundational dog first aid training. Understand how to prevent illness and accidents and treat basic injuries in this condensed version of QC&apos;s Dog First Aid course.</p>
-                  <h3>Safety Assessment and First Aid</h3>
+                  <p className="mb-4">The second part of the course covers foundational dog first aid training. Understand how to prevent illness and accidents and treat basic injuries in this condensed version of QC&apos;s Dog First Aid course.</p>
+                  <h3 className="mb-3">Safety Assessment and First Aid</h3>
                   <ul>
                     <li>Learn about pet afflictions and assessing symptoms. Then, learn how to properly check vitals, treat wounds, and perform rescue procedures.</li>
                   </ul>
@@ -235,8 +235,8 @@ const BreedStylingPage: NextPage = () => {
             <Accordion.Collapse eventKey="0">
               <div className="row align-items-center">
                 <div className="col-12 col-lg-6 mb-4 mb-lg-0 text-start">
-                  <p>The last third of the course is broken up into four units. Learn all about interpreting breed standards and applying them to a variety of breeds. You&apos;ll complete a series of practical assignments grooming each dog from start to finish. Be tested on how well you adhere to official breed standards to bring out a dog&apos;s best features.</p>
-                  <h3>Groom a different dog for each unit</h3>
+                  <p className="mb-4">The last third of the course is broken up into four units. Learn all about interpreting breed standards and applying them to a variety of breeds. You&apos;ll complete a series of practical assignments grooming each dog from start to finish. Be tested on how well you adhere to official breed standards to bring out a dog&apos;s best features.</p>
+                  <h3 className="mb-3">Groom a different dog for each unit</h3>
                   <ul>
                     <li>Prepare and groom the head, body, limbs, rear, and tail of a variety of breeds most often tested in a certification exam.
                       <ul>
