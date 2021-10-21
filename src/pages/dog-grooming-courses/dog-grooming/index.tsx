@@ -197,7 +197,7 @@ const DogGroomingPage: NextPage = () => {
               </div>
               <div className="col-12 col-md-5 d-flex flex-column gap-5">
                 <div className="d-flex gap-4 align-items-center">
-                  <Image src={MasterGroomerLisaImage} alt="Master groomer" width={200} height={150} />
+                  <Image src={MasterGroomerLisaImage} alt="Master groomer Lisa" objectFit="none" width="180px" height="170px" />
                   <div>
                     <h3>Lisa Day</h3>
                     <h4>Certified Master Groomer</h4>
@@ -205,7 +205,7 @@ const DogGroomingPage: NextPage = () => {
                   </div>
                 </div>
                 <div className="d-flex gap-4 align-items-center">
-                  <Image src={MasterGroomerPaddyImage} alt="Master groomer" width={200} height={150} />
+                  <Image src={MasterGroomerPaddyImage} alt="Master groomer Paddy" objectFit="none" width="180px" height="170px" />
                   <div>
                     <h3>Paddy Gaffney</h3>
                     <h4>Certified Master Groomer</h4>
