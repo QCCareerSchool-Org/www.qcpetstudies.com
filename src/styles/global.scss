@@ -187,18 +187,18 @@ section > div.container {
 }
 
 // gutter-sized margins
-.mb-g { margin-bottom: 30px }
+.mb-g { margin-bottom: 24px }
 @media (min-width: 576px) {
-  .mb-sm-g { margin-bottom: 30px }
+  .mb-sm-g { margin-bottom: 24px }
 }
 @media (min-width: 768px) {
-  .mb-md-g { margin-bottom: 30px }
+  .mb-md-g { margin-bottom: 24px }
 }
 @media (min-width: 992px) {
-  .mb-ld-g { margin-bottom: 30px }
+  .mb-ld-g { margin-bottom: 24px }
 }
 @media (min-width: 1200px) {
-  .mb-xl-g { margin-bottom: 30px }
+  .mb-xl-g { margin-bottom: 24px }
 }
 
 .py-section {
@@ -409,4 +409,17 @@ hr.bar {
   &.collapsed {
     width: 1rem;
   }
+}
+
+.image-overlay-gradient {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  content: ' ';
+  backface-visibility: hidden;
+  background: linear-gradient(to bottom, #00798c 0%, #056091 100%);
+  opacity: 0.8;
 }
