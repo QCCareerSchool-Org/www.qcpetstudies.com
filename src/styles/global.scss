@@ -76,6 +76,9 @@ $input-padding-x: 0.75rem; // set back to its original value (don't copy $input-
 
 $link-decoration: none;
 
+$card-spacer-y: 2rem;
+$card-spacer-x: 2rem;
+
 @import "bootstrap/scss/bootstrap";
 
 // Then add additional custom code here

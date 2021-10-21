@@ -56,6 +56,7 @@ export const Header = ({ noHero, secondaryTitle, secondaryNavLinks, className }:
                   <Link href="/dog-grooming-courses/dog-grooming#tuition"><a className="dropdown-item dropdown-item-sub">Tuition</a></Link>
                   <Link href="/dog-grooming-courses/first-aid"><a className="dropdown-item dropdown-item-primary">First Aid Course</a></Link>
                   <Link href="/dog-grooming-courses/breed-styling"><a className="dropdown-item dropdown-item-primary">Breed Styling Course</a></Link>
+                  <Link href="/dog-grooming-courses/resources/class-vs-online-dog-grooming-schools"><a className="dropdown-item dropdown-item-primary">Learning In-Class vs.<br /> Online</a></Link>
                   <hr />
                   <Link href="/dog-grooming-courses/how-it-works"><a className="dropdown-item"><FaCog className="text-primary me-2" /> How It Works</a></Link>
                   <Link href="/dog-grooming-courses/resources/required-dog-breeds"><a className="dropdown-item"><FaCut className="text-primary me-2" /> Required Dog Breeds</a></Link>
