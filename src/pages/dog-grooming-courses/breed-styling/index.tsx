@@ -9,13 +9,13 @@ import { FaAngleDown, FaMinusCircle, FaPlusCircle, FaSearch } from 'react-icons/
 import { DefaultLayout } from '../../../components/DefaultLayout';
 import { PriceSection } from '../../../components/PriceSection';
 import { SEO } from '../../../components/SEO';
-import Guarantee21Day from '../../../images/21-day-guarantee-outlined.svg';
-import BreedStandards from '../../../images/backgrounds/breed-standards.jpg';
-import BreedStylingCertificate from '../../../images/breed-styling-certificate.png';
+import Guarantee21DayImage from '../../../images/21-day-guarantee-outlined.svg';
+import BreedStandardsImage from '../../../images/backgrounds/breed-standards.jpg';
+import BreedStylingCertificateImage from '../../../images/breed-styling-certificate.png';
 import CourseIconBadge from '../../../images/course-icon-badge.svg';
-import DogAnatomy from '../../../images/part-1.jpg';
-import SafetyAndFirstaid from '../../../images/part-2.jpg';
-import Practicum from '../../../images/part-3.jpg';
+import DogAnatomyImage from '../../../images/part-1.jpg';
+import SafetyAndFirstaidImage from '../../../images/part-2.jpg';
+import PracticumImage from '../../../images/part-3.jpg';
 
 type Props = {
   eventKey: string;
@@ -80,7 +80,7 @@ const BreedStylingPage: NextPage = () => {
               </ul>
             </div>
             <div className="col-12 col-lg-6">
-              <Image src={BreedStandards} alt="Breed standards" />
+              <Image src={BreedStandardsImage} alt="Breed standards" />
             </div>
           </div>
         </div>
@@ -109,7 +109,7 @@ const BreedStylingPage: NextPage = () => {
       <section>
         <div className="container text-center">
           <h2>You&apos;ll Be Covered by QC&apos;s Money-Back Guarantee</h2>
-          <Image src={Guarantee21Day} alt="21 Day Money Back Guarantee" />
+          <Image src={Guarantee21DayImage} alt="21 Day Money Back Guarantee" />
           <div className="row">
             <div className="col-12 col-md-10 offset-md-1 col-lg-8 offset-lg-2">
               <strong><h2>The 21-Day Money Back Guarantee</h2></strong>
@@ -125,7 +125,7 @@ const BreedStylingPage: NextPage = () => {
             <div className="col-12 col-lg-10 offset-lg-1">
               <h2 className="mb-2">Your Certificate of Completion</h2>
               <p className="mb-4">Upon graduation, you&apos;ll receive your Breed Styling Workshop certificate. You&apos;ll also receive the International Dog Grooming Professional (IDGP) designation. These qualifications attest to your success in learning how to expertly groom a dog of any breed.</p>
-              <Image src={BreedStylingCertificate} objectPosition="bottom" alt="Breed Styling certification" />
+              <Image src={BreedStylingCertificateImage} objectPosition="bottom" alt="Breed Styling certification" />
             </div>
           </div>
         </div>
@@ -206,7 +206,7 @@ const BreedStylingPage: NextPage = () => {
                   </ul>
                 </div>
                 <div className="col-12 col-lg-6">
-                  <Image src={DogAnatomy} alt="Dog Anatomy" />
+                  <Image src={DogAnatomyImage} alt="Dog Anatomy" />
                 </div>
               </div>
             </Accordion.Collapse>
@@ -224,7 +224,7 @@ const BreedStylingPage: NextPage = () => {
                   </ul>
                 </div>
                 <div className="col-12 col-lg-6">
-                  <Image src={SafetyAndFirstaid} alt="Safety Assessment and First Aid" />
+                  <Image src={SafetyAndFirstaidImage} alt="Safety Assessment and First Aid" />
                 </div>
               </div>
             </Accordion.Collapse>
@@ -249,7 +249,7 @@ const BreedStylingPage: NextPage = () => {
                   </ul>
                 </div>
                 <div className="col-12 col-lg-6">
-                  <Image src={Practicum} alt="Practicum" />
+                  <Image src={PracticumImage} alt="Practicum" />
                 </div>
               </div>
             </Accordion.Collapse>
