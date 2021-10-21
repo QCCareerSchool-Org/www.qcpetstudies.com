@@ -1,15 +1,16 @@
 import { NextPage } from 'next';
 import Image from 'next/image';
-
+import { useState } from 'react';
+import { Button, Modal } from 'react-bootstrap';
 import { DefaultLayout } from '../../../components/DefaultLayout';
 import { PriceSection } from '../../../components/PriceSection';
 import { SEO } from '../../../components/SEO';
-
 import PersnolizeFeedbackImage from '../../../images/account-multiple-check-outline.svg';
 import LifeTimeAccessImage from '../../../images/all-inclusive.svg';
 import DogGroomingBackground from '../../../images/backgrounds/dog-grooming.jpg';
 import ContentCutImage from '../../../images/content-cut.jpg';
 import DogCourseMaterialsImage from '../../../images/dg-course-materials-manuals-kit-white.jpg';
+import GroomingKitDetailImage from '../../../images/grooming-kit-details.jpg';
 import MasterGroomerLisaImage from '../../../images/lisa-video-thumbnail.jpg';
 
 import MovieClapperImage from '../../../images/movie-clapper.svg';
@@ -22,6 +23,7 @@ import CourseMaterialsImage from '../../../images/playlist-check.svg';
 const DogGroomingPage: NextPage = () => {
   const headerIconSize = 20;
   const iconSize30 = 30;
+  const [ show, setshow ] = useState(false);
   return (
     <DefaultLayout>
       <SEO
@@ -79,7 +81,15 @@ const DogGroomingPage: NextPage = () => {
             <Image src={ContentCutImage} width={iconSize30} height={iconSize30} alt="Content Cut" />
             <h3>Professional-Grade Grooming Starter Kit</h3>
             <p>When you enroll, you&apos;ll receive a kit of dog grooming tools to help you complete your studies and start your career. This kit includes cordless WAHL clippers and combs, three grooming scissors, an assortment of brushes and combs, and more!</p>
-            <a href="#" className="text-uppercase"><strong> View Kit Details </strong></a>
+            <a onClick={() => setshow(true)} className="text-uppercase"><strong> View Kit Details </strong></a>
+            <Modal show={show}>
+              <Modal.Body>
+                <Image src={GroomingKitDetailImage} layout="responsive" alt="Groomiing kit details" />
+              </Modal.Body>
+              <Modal.Footer>
+                <Button onClick={() => setshow(false)}>Close</Button>
+              </Modal.Footer>
+            </Modal>
           </div>
           <div className="row">
             <div className="d-flex flex-column flex-md-row gap-4">
