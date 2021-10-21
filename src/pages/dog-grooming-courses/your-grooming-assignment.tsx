@@ -1,13 +1,14 @@
 import { NextPage } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
+import { Ratio } from 'react-bootstrap';
 import { BsBook } from 'react-icons/bs';
 import { DefaultLayout } from '../../components/DefaultLayout';
 import { SEO } from '../../components/SEO';
 import AssignmentBackground from '../../images/backgrounds/your-career-bg.jpg';
-import Camera from '../../images/camera.svg';
-import Checked from '../../images/checked.svg';
-import RedDesktop from '../../images/desktop-red.svg';
+import CameraIcon from '../../images/camera.svg';
+import CheckedIcon from '../../images/checked.svg';
+import RedDesktopIcon from '../../images/desktop-red.svg';
 
 const GroomingAssignment: NextPage = () => {
 
@@ -20,13 +21,13 @@ const GroomingAssignment: NextPage = () => {
       />
 
       <section id="firstSection" className="bg-dark">
-        <Image src={AssignmentBackground} layout="fill" objectFit="cover" objectPosition="center" alt="Learning during COVID" />
+        <Image src={AssignmentBackground} layout="fill" objectFit="cover" objectPosition="center" alt="Assignment background" />
         <div className="image-overlay-gradient"></div>
         <div className="container text-center">
           <div className="row">
             <div className="col-12 col-md-10 offset-md-1">
               <BsBook className="h1 mb-3" />
-              <h1 className="mb-5">Your Grooming Assignments</h1>
+              <h1 className="mb-4">Your Grooming Assignments</h1>
               <h2>Complete Your Dog Groomer Training</h2>
               <p>View sample assignments from your online dog grooming course, and find out how you&apos;ll put your theory work into practice. Discover how you&apos;ll develop skills as a groomer by building up to your practicum units.</p>
             </div>
@@ -36,13 +37,13 @@ const GroomingAssignment: NextPage = () => {
 
       <section>
         <div className="container text-center">
-          <div className="row mb-5">
+          <div className="row mb-4">
             <div className="col-12 col-md-10 offset-md-1">
               <h2>Learn Online&nbsp;With</h2>
               <h2>Hands-On Training</h2>
             </div>
           </div>
-          <div className="row mb-5">
+          <div className="row mb-4">
             <div className="col-12 col-md-10 offset-md-1">
               <p>&nbsp;Become a dog groomer with online learning combined with practical hands-on assignments. you&apos;ll perform your practical assignments at home, and submit photos and videos of your work.</p>
               <p>From there, your personal tutor will evaluate your grooming techniques and provide you with detailed feedback. you&apos;ll gain insight into where your skills lie, and what you need to improve on for the next unit of your
@@ -53,17 +54,17 @@ const GroomingAssignment: NextPage = () => {
 
           <div className="row justify-content-around">
             <div className="col-12 col-lg-3 mb-4 mb-lg-0">
-              <Image src={RedDesktop} objectFit="cover" objectPosition="center" alt="Learning during COVID" />
+              <Image src={RedDesktopIcon} objectFit="cover" objectPosition="center" alt="Desktop icon" />
               <h3 className="my-3">Study Online</h3>
               <p>Study your material online, or use your physical course texts. Master the course theory and develop an understanding of proper practices, techniques, and industry knowledge.</p>
             </div>
             <div className="col-12 col-lg-3 mb-4 mb-lg-0">
-              <Image src={Camera} objectFit="cover" objectPosition="center" alt="Learning during COVID" />
+              <Image src={CameraIcon} objectFit="cover" objectPosition="center" alt="Camera icon" />
               <h3 className="my-3">Complete Assignments</h3>
               <p>Your theory assignments are&nbsp;completed online by simply filling out the&nbsp;assignment template. For practical assignments, you&apos;ll submit clear photos and videos of your work.</p>
             </div>
             <div className="col-12 col-lg-3">
-              <Image src={Checked} objectFit="cover" objectPosition="center" alt="Learning during COVID" />
+              <Image src={CheckedIcon} objectFit="cover" objectPosition="center" alt="Checked icon" />
               <h3 className="my-3">Receive Feedback</h3>
               <p>Your tutor reviews your work and provides detailed feedback, which you&apos;ll use to improve on your next unit. you&apos;ll receive a letter grade for each unit based on your knowledge and technical skills.</p>
             </div>
@@ -73,12 +74,12 @@ const GroomingAssignment: NextPage = () => {
 
       <section className="bg-light">
         <div className="container text-center">
-          <div className="row mb-5">
+          <div className="row mb-4">
             <div className="col-12 col-md-10 offset-md-1">
               <h2>Assignment Samples</h2>
             </div>
           </div>
-          <div className="row mb-5">
+          <div className="row mb-4">
             <div className="col-12 col-md-10 offset-md-1">
               <p>View the assignment samples below to find out more about how you&apos;ll learn dog grooming online. Your practicum assignments are completed near the end of your grooming course after you&apos;ve mastered the theory and skills taught in earlier units.</p>
               <p>As a student of QC Pet Studies, you&apos;ll have access to the interactive assignment templates on the Online Student Center.&nbsp;you&apos;ll download PDFs and fill out the templates on your computer by choosing from drop-down lists, typing directly on the&nbsp;assignment,
@@ -123,7 +124,7 @@ const GroomingAssignment: NextPage = () => {
               <h2 className="mb-4">Your Grooming Instructions</h2>
               <p>In your online dog grooming class, you&apos;ll have access to interactive PDF assignment templates.&nbsp;For&nbsp;practical assignments, your templates contain videos clips to demonstrate proper framing to capture your work.</p>
 
-              <p className="mb-5">Since QC&apos;s interactive assignments are only available to current students and graduates, you can view the video clip below to see how you&apos;ll film your work.</p>
+              <p className="mb-4">Since QC&apos;s interactive assignments are only available to current students and graduates, you can view the video clip below to see how you&apos;ll film your work.</p>
 
               <h3>&nbsp;Preparation for a Groom</h3>
               <p><strong><em>The video below is a sample from QC&apos;s dog grooming course assignments. Students can watch these clips on their assignment templates in the Online Student Center.</em></strong></p>
@@ -131,10 +132,12 @@ const GroomingAssignment: NextPage = () => {
           </div>
           <div className="row">
             <div className="col-12 col-md-10 offset-md-1">
-              <video className="mb-4" controls>
-                <source src="https://www.doggroomingcourse.com/wp-content/uploads/2017/09/Practicum_optimized_smaller_1.mp4" type="video/mp4" />
-                Your browser does not support the video tag.
-              </video>
+              <Ratio aspectRatio="16x9">
+                <video className="mb-4" controls>
+                  <source src="https://www.doggroomingcourse.com/wp-content/uploads/2017/09/Practicum_optimized_smaller_1.mp4" type="video/mp4" />
+                  Your browser does not support the video tag.
+                </video>
+              </Ratio>
             </div>
           </div>
 
