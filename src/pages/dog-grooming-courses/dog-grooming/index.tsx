@@ -118,9 +118,9 @@ const DogGroomingPage: NextPage = () => {
         <div className="row d-flex justify-content-center">
           <div className="col-10">
             <div className="card-header d-flex justify-content-between align-items-center p-3">
-              <h3 className="mb-0">Part 1</h3>
-              <a className="btn btn-primary" data-bs-togle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">+</a>
-              <div className="collapse" id="collapseExample">
+              <h3 className="mb-0">Introductory Units</h3>
+              <a className="btn btn-primary" data-bs-toggle="collapse" data-target="collapse1" aria-controls="collapse1" href="#collapse1" role="button" aria-expanded="true">+</a>
+              <div className="collapse" id="collapse1">
                 <div className="card card-body">
                   <p className="lead"><strong>Units A-C</strong></p>
                   <p>The first few units in this course will introduce you to the fundamental concepts of dog grooming. In these units, you&apos;ll cover health and safety, basic dog anatomy, skincare, behavior, the tools of the trade and more.</p>
@@ -134,9 +134,9 @@ const DogGroomingPage: NextPage = () => {
         <div className="row d-flex justify-content-center">
           <div className="col-10">
             <div className="card-header d-flex justify-content-between align-items-center p-3">
-              <h3 className="mb-0">Part 2</h3>
-              <a className="btn btn-primary" data-bs-togle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">+</a>
-              <div className="collapse" id="collapseExample">
+              <h3 className="mb-0">Dog First Aid Course</h3>
+              <a className="btn btn-primary" data-bs-togle="collapse" href="#part2" role="button" aria-expanded="false" aria-controls="collapseExample">+</a>
+              <div className="collapse" id="part2">
                 <div className="card card-body">
                   <p>In order to provide you with the resources to learn your craft safely, your grooming course also comes with a two-unit course on dog first aid. This course covers emergency situations that may occur in a grooming environment and prepares you to respond calmly and effectively in any emergency.</p>
                   <p>You must complete both units of the First Aid course before proceeding to the next unit in the dog grooming course.</p>
@@ -148,9 +148,9 @@ const DogGroomingPage: NextPage = () => {
         <div className="row d-flex justify-content-center">
           <div className="col-10">
             <div className="card-header d-flex justify-content-between align-items-center p-3">
-              <h3 className="mb-0">Part 3</h3>
-              <a className="btn btn-primary" data-bs-togle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">+</a>
-              <div className="collapse" id="collapseExample">
+              <h3 className="mb-0">Hands-On units</h3>
+              <a className="btn btn-primary" data-bs-togle="collapse" href="#part3" role="button" aria-expanded="false" aria-controls="collapseExample">+</a>
+              <div className="collapse" id="part3">
                 <div className="card card-body">
                   <p>Once you understand the basics of dog grooming and dog first aid, you will move on to units that teach you the hands-on skills involved in grooming. In these units, you&apos;ll cover nail trimming, ear cleaning, brushing, de-matting, bathing, drying, coat types, pet cuts, breed standards and more. You&apos;ll complete a number of basic practical assignments that will prepare you to start your practicum.</p>
                 </div>
@@ -161,9 +161,9 @@ const DogGroomingPage: NextPage = () => {
         <div className="row d-flex justify-content-center">
           <div className="col-10">
             <div className="card-header d-flex justify-content-between align-items-center p-3">
-              <h3 className="mb-0">Part 4</h3>
-              <a className="btn btn-primary" data-bs-togle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">+</a>
-              <div className="collapse" id="collapseExample">
+              <h3 className="mb-0">Practicum </h3>
+              <a className="btn btn-primary" data-bs-togle="collapse" href="#part4" role="button" aria-expanded="false" aria-controls="collapseExample">+</a>
+              <div className="collapse" id="part4">
                 <div className="card card-body">
                   <p>Dog grooming as a profession requires a lot of background knowledge, but ultimately your success will depend on your ability to safely and skillfully groom dogs. Your practicum is designed to allow you to practice and receive feedback on these essential skills. The units within the practicum involve intensive practical assignments that draw on the content you&apos;ve mastered throughout the course. You&apos;ll have a chance to receive feedback from your tutors on your bathing and drying skills, in addition to the pet cuts and breed cuts you&apos;ll create throughout your career.</p>
                 </div>
@@ -174,9 +174,9 @@ const DogGroomingPage: NextPage = () => {
         <div className="row d-flex justify-content-center">
           <div className="col-10">
             <div className="card-header d-flex justify-content-between align-items-center p-3">
-              <h3 className="mb-0">Part 5</h3>
-              <a className="btn btn-primary" data-bs-togle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">+</a>
-              <div className="collapse" id="collapseExample">
+              <h3 className="mb-0">Dog Grooming Business Essentials</h3>
+              <a className="btn btn-primary" data-bs-togle="collapse" href="#part5" role="button" aria-expanded="false" aria-controls="collapseExample">+</a>
+              <div className="collapse" id="part5">
                 <div className="card card-body">
                   <p>Dog grooming as a profession requires a lot of background knowledge, but ultimately your success will depend on your ability to safely and skillfully groom dogs. Your practicum is designed to allow you to practice and receive feedback on these essential skills. The units within the practicum involve intensive practical assignments that draw on the content you&apos;ve mastered throughout the course. You&apos;ll have a chance to receive feedback from your tutors on your bathing and drying skills, in addition to the pet cuts and breed cuts you&apos;ll create throughout your career.</p>
                 </div>
