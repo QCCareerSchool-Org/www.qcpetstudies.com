@@ -57,7 +57,7 @@ const LicenseVsCertification: NextPage = () => {
       <section className="bg-light">
         <div className="container">
           <div className="row justify-content-center">
-            <div className="col-10 col-sm-8 col-md-6 col-lg-5 mb-4 mb-md-0 row align-items-strech">
+            <div className="col-10 col-md-10 col-lg-6 mb-4 mb-md-0 row align-items-strech">
               <h2>Dog Grooming <strong>License</strong></h2>
               <p>There is no international standard that defines what a dog grooming license is. However, it&apos;s considered a reputable document that proves you&apos;re fit to groom dogs.</p>
               <p>In certain areas, a freelance groomer running their own business will require a Pet Grooming Facility License or regional certification for their facility. The groomer themselves might not need that license, but their <em>business </em>will.</p>
