@@ -76,6 +76,9 @@ $input-padding-x: 0.75rem; // set back to its original value (don't copy $input-
 
 $link-decoration: none;
 
+$card-spacer-y: 2rem;
+$card-spacer-x: 2rem;
+
 @import "bootstrap/scss/bootstrap";
 
 // Then add additional custom code here
@@ -129,6 +132,16 @@ h4, .h4, h5, .h5, h6, .h6 {
   h3, .h3 { color: #324F54; }
   h4, .h4, h5, .h5, h6, .h6 { color: #122022; }
   color: #324F54;
+}
+
+.bg-light {
+  $darker-link-color: #49a4b5;
+  .link-primary {
+    color: $darker-link-color;
+    &:hover, &:focus {
+      color: shift-color($darker-link-color, $link-shade-percentage);
+    }
+  }
 }
 
 .bg-dark, .bg-gray, .card.bg-dark, .card-bg-gray {
