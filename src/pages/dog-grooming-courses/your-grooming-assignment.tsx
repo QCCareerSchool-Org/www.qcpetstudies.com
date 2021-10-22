@@ -39,6 +39,7 @@ const GroomingAssignment: NextPage = () => {
         <div className="container text-center">
           <h2>Learn Online&nbsp;With</h2>
           <h2>Hands-On Training</h2>
+          <Bar variant="primary"></Bar>
           <div className="row justify-content-center">
             <div className="col-10 col-sm-8 mb-4">
               <p>&nbsp;Become a dog groomer with online learning combined with practical hands-on assignments. you&apos;ll perform your practical assignments at home, and submit photos and videos of your work.</p>
