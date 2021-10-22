@@ -29,44 +29,35 @@ const LicenseVsCertification: NextPage = () => {
         <Image src={firstSectionBackgrouround} layout="fill" objectFit="cover" objectPosition="center" alt="Learning during covid" />
         <div className="image-overlay-gradient"></div>
         <div className="container text-center">
-          <div className="row">
-            <div className="col-12 col-md-10 offset-md-1 text-white">
-              <h1 className="text-white">Dog Grooming License vs. Certification</h1>
-              <h4>What&apos;s the difference between a dog grooming license and a dog grooming certificate?</h4>
-            </div>
-          </div>
+          <h1>Dog Grooming License vs. Certification</h1>
+          <h4>What&apos;s the difference between a dog grooming license and a dog grooming certificate?</h4>
         </div>
       </section>
 
       <section>
         <div className="container">
-          <div className="row mb-5 text-center">
-            <div className="col-12 col-md-10 offset-md-1">
-              <h2>Is Training Required to be a <strong>Dog Groomer?</strong></h2>
-            </div>
-          </div>
-          <div className="row">
-            <div className="col-12 col-lg-6 mb-4 mb-lg-0">
+          <h2 className="mb-4 text-center">Is Training Required to be a <strong>Dog Groomer?</strong></h2>
+          <div className="row justify-content-center">
+            <div className="col-10 col-md-8 col-lg-5 mb-4 mb-md-0 row align-items-strech">
               <p>In many places, there are no formal licensing or training requirements to be a professional dog groomer. It all depends on where you live and varies from region to region.
                 Some places require a license or certification in order to operate a grooming business. Others will require nothing at all.</p>
-              <p className="my-3">Be sure to research local regulations to best determine what is required in order to start a dog grooming career in your city or town.</p>
+              <p>Be sure to research local regulations to best determine what is required in order to start a dog grooming career in your city or town.</p>
               <h4>Even if education is not required,
-                <Link href="https://www.doggroomingcourse.com/2020/11/el-paso-requires-dog-groomer-certification-as-of-january-1st/"><a className="link-primary">click here</a></Link>
+                <Link href="https://www.doggroomingcourse.com/2020/11/el-paso-requires-dog-groomer-certification-as-of-january-1st/"><a className="link-primary">click here </a></Link>
                 to discover the many advantages of getting professionally trained and certified!
               </h4>
             </div>
-            <div className="col-12 col-lg-6 mb-4 mb-lg-0">
-              <Image src={DogToy} objectFit="contain" objectPosition="center" alt="Dog toy" />
-            </div>
+            {lgOrGreater && <div className="col-10 col-md-6 col-lg-5">
+              <Image src={DogToy} objectFit="fill" objectPosition="center" alt="Dog toy" />
+            </div>}
           </div>
         </div>
       </section>
 
       <section className="bg-light">
-        { lgOrGreater && <Image src={DogTowel} layout="fill" objectFit="contain" objectPosition="right" alt="Dog towel" /> }
         <div className="container">
-          <div className="row">
-            <div className="col-12 col-lg-6 mb-4 mb-lg-0">
+          <div className="row justify-content-center">
+            <div className="col-10 col-sm-8 col-md-6 col-lg-5 mb-4 mb-md-0 row align-items-strech">
               <h2>Dog Grooming <strong>License</strong></h2>
               <p>There is no international standard that defines what a dog grooming license is. However, it&apos;s considered a reputable document that proves you&apos;re fit to groom dogs.</p>
               <p>In certain areas, a freelance groomer running their own business will require a Pet Grooming Facility License or regional certification for their facility. The groomer themselves might not need that license, but their <em>business </em>will.</p>
@@ -76,51 +67,57 @@ const LicenseVsCertification: NextPage = () => {
                 <Link href="/learning-online/class-vs-online-dog-grooming-schools/"><a className="link-primary">Discover the difference between in-person and online certification courses here!</a></Link>
               </p>
             </div>
+            {lgOrGreater && <div className="col-10 col-md-6 col-lg-5 row justify-content-center">
+              <Image src={DogTowel} objectFit="contain" alt="Dog toy" />
+            </div>}
           </div>
         </div>
       </section>
 
       <section>
-        <div className="container">
-          <div className="row mb-5 text-center">
-            <div className="col-12 col-md-10 offset-md-1">
-              <h2>Dog Grooming <strong>Certification</strong></h2>
+        <div className="container text-center">
+          <h2 className="">Dog Grooming <strong>Certification</strong></h2>
+          <div className="row justify-content-center">
+            <div className="col-10 col-sm-8 mb-4 mb-md-0 d-flex align-items-stretch">
               <p>A certification is earned after successfully completing a professional dog grooming certification course. Unlike a dog grooming license, a certification represents the training, education, and knowledge you have in the field of dog grooming.</p>
             </div>
           </div>
-          <div className="row d-flex align-items-center">
-            <div className="col-12 col-lg-6 mb-4 mb-lg-0">
+
+          <div className="row justify-content-center">
+            <div className="col-10 col-sm-8 col-md-6 col-lg-4 mb-4 mb-md-0 d-flex align-items-stretch">
               <Image src={DogTowel1} objectFit="contain" objectPosition="center" alt="Dog towel" />
             </div>
-            <div className="col-12 col-lg-6 mb-4 mb-lg-0">
-              <h4>Dog grooming certification courses will teach you:</h4>
-              <ul className="mb-4">
-                <li> Breed standards</li>
-                <li> Grooming techniques</li>
-                <li> Dog anatomy</li>
-                <li> How to create various haircuts and styles</li>
-                <li> How to use and sanitize equipment</li>
-                <li> Dog behavior</li>
-                <li> First Aid training</li>
-                <li> Business training</li>
-                <li> And more!</li>
-              </ul>
-              <p>To truly be the best dog groomer you can be, proper training from a certification course is essential!</p>
-              <a className="btn btn-primary" target="_blank" href="/online-courses/">VIEW ONLINE COURSES</a>
+            <div className="col-10 col-sm-8 col-md-6 col-lg-4 d-flex align-items-stretch">
+              <div className="text-start">
+                <h4>Dog grooming certification courses will teach you:</h4>
+                <ul className="mb-4">
+                  <li> Breed standards</li>
+                  <li> Grooming techniques</li>
+                  <li> Dog anatomy</li>
+                  <li> How to create various haircuts and styles</li>
+                  <li> How to use and sanitize equipment</li>
+                  <li> Dog behavior</li>
+                  <li> First Aid training</li>
+                  <li> Business training</li>
+                  <li> And more!</li>
+                </ul>
+                <p>To truly be the best dog groomer you can be, proper training from a certification course is essential!</p>
+                <a className="btn btn-primary" target="_blank" href="/online-courses/">VIEW ONLINE COURSES</a>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
       <section className="bg-dark">
-        { lgOrGreater && <Image src={PetTestimonial} layout="fill" objectFit="contain" objectPosition="right" alt="Dog towel" /> }
+        {lgOrGreater && <Image src={PetTestimonial} layout="fill" objectFit="contain" objectPosition="right" alt="Dog towel" />}
         <div className="container">
-          <div className="row justify-content-md-start justify-content-center">
-            <div className="col-12 col-lg-9 mb-4 mb-lg-0 py-4 px-5">
+          <div className="row justify-content-lg-start justify-content-center">
+            <div className="col-10 col-sm-8 col-md-6 mb-4 mb-md-0 py-4 px-5">
               <p>&quot;QC Pet Studies offered exactly what I wanted! There were lots of instructional videos that I could watch over and over again and the practical assignments offered lots of hands-on training. The valuable tutor feedback I received throughout the course was the most important thing to me...&quot; </p>
               <div className="d-flex gap-3 align-items-center mb-4">
                 <Image src={AprilCostigan} className="rounded-circle" width="50px" height="50px" alt="April costigan" />
-                <span className="d-flex flex-column col-6 col-md-2">
+                <span className="d-flex flex-column">
                   <span>April Costigan</span>
                   <span className="small text-light">QC Graduate</span>
                 </span>
