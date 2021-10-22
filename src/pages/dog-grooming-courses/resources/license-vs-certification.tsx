@@ -38,7 +38,7 @@ const LicenseVsCertification: NextPage = () => {
         <div className="container">
           <h2 className="mb-4 text-center">Is Training Required to be a <strong>Dog Groomer?</strong></h2>
           <div className="row justify-content-center">
-            <div className="col-10 col-md-8 col-lg-5 mb-4 mb-md-0 row align-items-strech">
+            <div className="col-10 col-md-12 col-lg-5 mb-4 mb-md-0 row align-items-strech">
               <p>In many places, there are no formal licensing or training requirements to be a professional dog groomer. It all depends on where you live and varies from region to region.
                 Some places require a license or certification in order to operate a grooming business. Others will require nothing at all.</p>
               <p>Be sure to research local regulations to best determine what is required in order to start a dog grooming career in your city or town.</p>
@@ -57,7 +57,7 @@ const LicenseVsCertification: NextPage = () => {
       <section className="bg-light">
         <div className="container">
           <div className="row justify-content-center">
-            <div className="col-10 col-md-10 col-lg-6 mb-4 mb-md-0 row align-items-strech">
+            <div className="col-10 col-md-12 col-lg-6 mb-4 mb-md-0 row align-items-strech">
               <h2>Dog Grooming <strong>License</strong></h2>
               <p>There is no international standard that defines what a dog grooming license is. However, it&apos;s considered a reputable document that proves you&apos;re fit to groom dogs.</p>
               <p>In certain areas, a freelance groomer running their own business will require a Pet Grooming Facility License or regional certification for their facility. The groomer themselves might not need that license, but their <em>business </em>will.</p>
@@ -78,16 +78,16 @@ const LicenseVsCertification: NextPage = () => {
         <div className="container text-center">
           <h2 className="">Dog Grooming <strong>Certification</strong></h2>
           <div className="row justify-content-center">
-            <div className="col-10 col-sm-8 mb-4 mb-md-0 d-flex align-items-stretch">
+            <div className="col-10 col-sm-12 mb-4 mb-md-0 d-flex align-items-stretch">
               <p>A certification is earned after successfully completing a professional dog grooming certification course. Unlike a dog grooming license, a certification represents the training, education, and knowledge you have in the field of dog grooming.</p>
             </div>
           </div>
 
           <div className="row justify-content-center">
-            <div className="col-10 col-sm-8 col-md-6 col-lg-4 mb-4 mb-md-0 d-flex align-items-stretch">
+            <div className="col-10 col-sm-12 col-md-6 col-lg-4 mb-4 mb-md-0 d-flex align-items-stretch">
               <Image src={DogTowel1} objectFit="contain" objectPosition="center" alt="Dog towel" />
             </div>
-            <div className="col-10 col-sm-8 col-md-6 col-lg-4 d-flex align-items-stretch">
+            <div className="col-10 col-sm-12 col-md-6 col-lg-4 d-flex align-items-stretch">
               <div className="text-start">
                 <h4>Dog grooming certification courses will teach you:</h4>
                 <ul className="mb-4">
@@ -113,7 +113,7 @@ const LicenseVsCertification: NextPage = () => {
         {lgOrGreater && <Image src={PetTestimonial} layout="fill" objectFit="contain" objectPosition="right" alt="Dog towel" />}
         <div className="container">
           <div className="row justify-content-lg-start justify-content-center">
-            <div className="col-10 col-sm-8 col-md-6 mb-4 mb-md-0 py-4 px-5">
+            <div className="col-10 col-sm-12 col-md-12 mb-4 mb-md-0 py-4 px-5">
               <p>&quot;QC Pet Studies offered exactly what I wanted! There were lots of instructional videos that I could watch over and over again and the practical assignments offered lots of hands-on training. The valuable tutor feedback I received throughout the course was the most important thing to me...&quot; </p>
               <div className="d-flex gap-3 align-items-center mb-4">
                 <Image src={AprilCostigan} className="rounded-circle" width="50px" height="50px" alt="April costigan" />
