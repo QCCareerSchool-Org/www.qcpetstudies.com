@@ -49,21 +49,21 @@ const GroomingAssignment: NextPage = () => {
             </div>
           </div>
           <div className="row justify-content-center">
-            <div className="col-10 col-md-4 d-flex align-items-strech">
+            <div className="col-12 col-md-4 d-flex align-items-strech">
               <div>
                 <Image src={RedDesktopIcon} objectFit="cover" objectPosition="center" alt="Desktop icon" />
                 <h3 className="my-3">Study Online</h3>
                 <p>Study your material online, or use your physical course texts. Master the course theory and develop an understanding of proper practices, techniques, and industry knowledge.</p>
               </div>
             </div>
-            <div className="col-10 col-md-4 d-flex align-items-strech">
+            <div className="col-12 col-md-4 d-flex align-items-strech">
               <div>
                 <Image src={CameraIcon} objectFit="cover" objectPosition="center" alt="Camera icon" />
                 <h3 className="my-3">Complete Assignments</h3>
                 <p>Your theory assignments are&nbsp;completed online by simply filling out the&nbsp;assignment template. For practical assignments, you&apos;ll submit clear photos and videos of your work.</p>
               </div>
             </div>
-            <div className="col-10 col-md-4 d-flex align-items-strech">
+            <div className="col-12 col-md-4 d-flex align-items-strech">
               <div><Image src={CheckedIcon} objectFit="cover" objectPosition="center" alt="Checked icon" />
                 <h3 className="my-3">Receive Feedback</h3>
                 <p>Your tutor reviews your work and provides detailed feedback, which you&apos;ll use to improve on your next unit. you&apos;ll receive a letter grade for each unit based on your knowledge and technical skills.</p>
