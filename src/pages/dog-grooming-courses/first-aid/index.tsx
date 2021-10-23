@@ -20,13 +20,13 @@ const DogGroomingPage: NextPage = () => {
         canonical="/dog-grooming-courses/first-aid"
       />
 
-      <section id="firstSection">
+      <section id="firstSection" className="bg-dark">
         <Image src={FirstAidBackground} layout="fill" objectFit="cover" objectPosition="center" alt="First aid" />
         <div className="image-overlay-gradient"></div>
         <div className="container text-center">
           <Image src={firstAidLogo} alt="First Aid Course logo" width={60} height={60} />
-          <h1 className="text-white"><strong>First Aid</strong> Course for Groomers</h1>
-          <div className="row text-white">
+          <h1><strong>First Aid</strong> Course for Groomers</h1>
+          <div className="row">
             <div className="col-12 col-lg-10 offset-lg-1">
               <p>When clients entrust you with their beloved pet, they rightfully expect their dog to be kept safe! That&apos;s why being diligent about health and safety is essential to your success as a dog groomer. This First Aid for Dog Groomers course will help you ensure your own safety as well as the safety of the dogs you work with.</p>
               <p>Through detailed course texts and video demonstrations, you&apos;ll learn how to prevent injuries and how to respond to emergency situations in your grooming salon. Completing the first aid course will boost your confidence. You&apos;ll learn how to create a safe grooming environment for your furry friends and fellow groomers. Your First Aid for Dog Groomers Certificate will also help increase your credibility and marketability by providing your clients with peace of mind.</p>
