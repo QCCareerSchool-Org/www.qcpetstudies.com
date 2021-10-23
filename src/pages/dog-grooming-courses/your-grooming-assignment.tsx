@@ -78,7 +78,7 @@ const GroomingAssignment: NextPage = () => {
           <h2>Assignment Samples</h2>
           <Bar variant="primary"></Bar>
           <div className="row justify-content-center">
-            <div className="col-10 col-sm-8 mb-4">
+            <div className="col-12 col-md-10 mb-4">
               <p>View the assignment samples below to find out more about how you&apos;ll learn dog grooming online. Your practicum assignments are completed near the end of your grooming course after you&apos;ve mastered the theory and skills taught in earlier units.</p>
               <p className="mb-4">As a student of QC Pet Studies, you&apos;ll have access to the interactive assignment templates on the Online Student Center.&nbsp;you&apos;ll download PDFs and fill out the templates on your computer by choosing from drop-down lists, typing directly on the&nbsp;assignment,
                 and then uploading your completed version to submit!</p>
@@ -131,7 +131,7 @@ const GroomingAssignment: NextPage = () => {
         <div className="container text-center">
           <h2 className="mb-4">Your Grooming Instructions</h2>
           <div className="row justify-content-center">
-            <div className="col-10 col-sm-8 mb-4">
+            <div className="col-12 col-md-10 mb-4">
               <p>In your online dog grooming class, you&apos;ll have access to interactive PDF assignment templates.&nbsp;For&nbsp;practical assignments, your templates contain videos clips to demonstrate proper framing to capture your work.</p>
               <p className="mb-4">Since QC&apos;s interactive assignments are only available to current students and graduates, you can view the video clip below to see how you&apos;ll film your work.</p>
               <h3>&nbsp;Preparation for a Groom</h3>
@@ -139,7 +139,7 @@ const GroomingAssignment: NextPage = () => {
             </div>
           </div>
           <div className="row justify-content-center">
-            <div className="col-10 col-sm-8 mb-4">
+            <div className="col-12 col-md-10 mb-4">
               <Ratio aspectRatio="16x9">
                 <video className="mb-4" controls>
                   <source src="https://www.doggroomingcourse.com/wp-content/uploads/2017/09/Practicum_optimized_smaller_1.mp4" type="video/mp4" />
