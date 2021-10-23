@@ -23,8 +23,8 @@ const DogGroomingKitPage: NextPage = () => {
       <section id="firstSection" className="bg-dark">
         <Image src={GroomingKitBackground} layout="fill" objectFit="cover" objectPosition="center" alt="grooming kit" />
         <div className="container text-center">
-          <h1>DOG GROOMING KIT</h1>
-          <p className="lead">INCLUDED WITH YOUR ONLINE COURSE!</p>
+          <h1>Dog grooming kit</h1>
+          <p className="lead text-uppercase">Included with your online course!</p>
         </div>
       </section>
 
