@@ -6,7 +6,7 @@ import { FaBriefcase, FaChalkboardTeacher, FaHandHoldingUsd, FaLaptopHouse, FaRe
 import { DefaultLayout } from '../components/DefaultLayout';
 import { SEO } from '../components/SEO';
 import PetStudiesHomepage from '../images/backgrounds/pet-studies-homepage-bg.jpg';
-import HowItWorks from '../images/how-it-works-png.png';
+import HowItWorks from '../images/how-it-works.png';
 import IDGPCertificationGold from '../images/IDGP-certification-gold.svg';
 import IDTPCertificationGold from '../images/IDTP-certification-gold.svg';
 
