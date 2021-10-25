@@ -167,15 +167,15 @@ h4, .h4, h5, .h5, h6, .h6 {
 .dropdown-item-primary { font-weight: 600 }
 .dropdown-item-sub { padding-left: 2rem }
 
-section {
+section, .section {
   padding: 2rem 0;
   position: relative; /* in case we use a cover image */
   overflow: hidden; /* in case we use a cover image */
 }
-section#firstSection { padding-top: 6rem }
+#firstSection { padding-top: 6rem }
 @media (min-width: 768px) {
-  section { padding: 5rem 0 }
-  section#firstSection { padding-top: 11.5rem }
+  section, .section { padding: 5rem 0 }
+  #firstSection { padding-top: 11.5rem }
 }
 
 section > div.container {
@@ -425,4 +425,54 @@ hr.bar {
   backface-visibility: hidden;
   background: linear-gradient(to bottom, #00798c 0%, #056091 100%);
   opacity: 0.8;
+}
+
+
+.col-fluid {
+  width: 540px;
+  @media (min-width: 768px) {
+    width: 720px;
+  }
+  @media (min-width: 992px) {
+    width: 960px;
+  }
+  @media (min-width: 1200px) {
+    width: 1140px;
+  }
+  @media (min-width: 1400px) {
+    width: 1320px;
+  }
+}
+
+.col-fluid-lg-6 {
+  @media (min-width: 992px) {
+    width: 480px;
+  }
+  @media (min-width: 1200px) {
+    width: 570px;
+  }
+  @media (min-width: 1400px) {
+    width: 660px;
+  }
+}
+
+.col-fluid-lg-8 {
+  @media (min-width: 992px) {
+    width: calc(480px + 16.66666667%);
+  }
+  @media (min-width: 1200px) {
+    width: calc(570px + 16.66666667%);
+  }
+  @media (min-width: 1400px) {
+    width: calc(660px + 16.66666667%);
+  }
+}
+
+.col-fluid-xl-9 {
+  @media (min-width: 1200px) {
+    width: calc(570px + 25%);
+  }
+  @media (min-width: 1400px) {
+    width: calc(660px + 25%);
+  }
 }
