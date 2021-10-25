@@ -57,7 +57,7 @@ const DogGroomingKitPage: NextPage = () => {
             <div className="col-10  col-md-6 mb-4 mb-md-0 d-flex align-items-stretch">
               <div className="card">
                 <div className="card-body py-5 text-center">
-                  <h3>WAHL 5-in-1 Cordless Clippers &amp; Comb Attachments</h3>
+                  <h3 className="mb-4">WAHL 5-in-1 Cordless Clippers &amp; Comb Attachments</h3>
                   <Image className="mb-4" src={ClipperCombsImage} alt="cipper combo" />
                   <p>A good pair of clippers are a must for any professional dog groomer and most will tell you that WAHL makes the best clippers around. These convenient cordless clippers allow you the freedom to move around the dog and trim its fur comfortably, without having to worry about a pesky cord getting in the way.</p>
                   <p>The set comes with 9 attachment combs of varying lengths, so you can achieve almost any look with the handy toolkit!</p>
@@ -67,9 +67,9 @@ const DogGroomingKitPage: NextPage = () => {
             <div className="col-10 col-md-6 d-flex align-items-stretch">
               <div className="card">
                 <div className="card-body py-5 text-center">
-                  <h3>Professional Grooming<br /> Scissors</h3>
+                  <h3 className="mb-4">Professional Grooming<br /> Scissors</h3>
                   <Image className="mb-4" src={GroomingScissorsImage} alt="grooming scissors" />
-                  <p>Grooming scissors (or shears) are a groomer&apos;s best friend. With the right scissors, you can create just about any look on a dog – from the cutest teddy bear cut to the perfect golden retriever tail and everything in between. As part of your kit, you’ll receive a set of three professional-grade grooming scissors and comb! The kit includes a straight blade, a curved blade, and thinning scissors, wrapped in a beautiful leather case for portability and convenience. (Product may vary based on the supplier.)</p>
+                  <p>Grooming scissors (or shears) are a groomer&apos;s best friend. With the right scissors, you can create just about any look on a dog – from the cutest teddy bear cut to the perfect golden retriever tail and everything in between. As part of your kit, you&apos;ll receive a set of three professional-grade grooming scissors and comb! The kit includes a straight blade, a curved blade, and thinning scissors, wrapped in a beautiful leather case for portability and convenience. (Product may vary based on the supplier.)</p>
                 </div>
               </div>
             </div>
@@ -81,7 +81,7 @@ const DogGroomingKitPage: NextPage = () => {
               <Image objectFit="contain" src={StarterKitImage} alt="Strater kit" />
             </div>
             <div className="col-12 col-lg-6">
-              <p>Some routine tools of the trade that all groomers need are provided in this starter kit. &nbsp;You’ll learn to expertly use every one of these tools in your course, and you’ll probably use them every day throughout your dog grooming career! This 11-piece set includes:</p>
+              <p>Some routine tools of the trade that all groomers need are provided in this starter kit. You&apos;ll learn to expertly use every one of these tools in your course, and you&apos;ll probably use them every day throughout your dog grooming career! This 11-piece set includes:</p>
               <ul>
                 <li>2 Slicker Brushes (soft and hard)</li>
                 <li>2 Nail Clippers (large and small)</li>
