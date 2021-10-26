@@ -241,7 +241,7 @@ const DogGroomingPage: NextPage = () => {
               </div>
               <div className="d-flex align-items-center gap-4">
                 <Image src={MasterGroomerPaddyImage} alt="master groomer Paddy" objectFit="contain" width="190px" height="170px" />
-                <div>
+                <div className="col-6">
                   <h3>Paddy Gaffney</h3>
                   <h4>Certified Master Groomer</h4>
                   <i>20 Years of Experience</i>
