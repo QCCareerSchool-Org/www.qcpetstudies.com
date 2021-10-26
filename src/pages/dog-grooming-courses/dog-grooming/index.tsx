@@ -91,7 +91,7 @@ const DogGroomingPage: NextPage = () => {
       <section>
         <div className="container text-center">
           <div className="row justify-content-center">
-            <div className="col-12 col-md-10">
+            <div className="col-12 col-lg-10">
               <h2>Become a <strong>Certified Dog Groomer</strong></h2>
               <p className="lead"><strong>International Dog Grooming Professional | </strong> <p className="d-inline"> <i>IDGP </i></p></p>
               <p>Get your International Dog Groomer Certification in less than a year with QC&apos;s interactive online training. Study at your own pace. Watch instructional videos and complete hands-on assignments to grow your grooming skills.  Graduate with all the knowledge and skills you need to succeed in the dog grooming industry!</p>
@@ -107,43 +107,43 @@ const DogGroomingPage: NextPage = () => {
         <div className="container text-center">
           <h2 className="mb-2 mb-md-4">Included in <strong>Your Course</strong></h2>
           <Image src={DogCourseMaterialsImage} width={830} height={550} alt="Dg Course Materials" />
-          <div className="text-center mb-4">
-            <Image src={ContentCutImage} width={iconSize30} height={iconSize30} alt="Content Cut" />
-            <h3>Professional-Grade Grooming Starter Kit</h3>
-            <p>When you enroll, you&apos;ll receive a kit of dog grooming tools to help you complete your studies and start your career. This kit includes cordless WAHL clippers and combs, three grooming scissors, an assortment of brushes and combs, and more!</p>
-            <a onClick={() => setshow(true)} className="text-uppercase"><strong> View Kit Details </strong></a>
-            <Modal show={show}>
-              <Modal.Body>
-                <Image src={GroomingKitDetailImage} layout="responsive" alt="Groomiing kit details" />
-              </Modal.Body>
-              <Modal.Footer>
-                <Button onClick={() => setshow(false)}>Close</Button>
-              </Modal.Footer>
-            </Modal>
+          <div className="row justify-content-center mb-4">
+            <div className="col-12">
+              <Image src={ContentCutImage} width={iconSize30} height={iconSize30} alt="Content Cut" />
+              <h3>Professional-Grade Grooming Starter Kit</h3>
+              <p>When you enroll, you&apos;ll receive a kit of dog grooming tools to help you complete your studies and start your career. This kit includes cordless WAHL clippers and combs, three grooming scissors, an assortment of brushes and combs, and more!</p>
+              <a onClick={() => setshow(true)} className="text-uppercase"><strong> View Kit Details </strong></a>
+              <Modal show={show}>
+                <Modal.Body>
+                  <Image src={GroomingKitDetailImage} layout="responsive" alt="Groomiing kit details" />
+                </Modal.Body>
+                <Modal.Footer>
+                  <Button onClick={() => setshow(false)}>Close</Button>
+                </Modal.Footer>
+              </Modal>
+            </div>
           </div>
-          <div className="row">
-            <div className="d-flex flex-column flex-md-row gap-4">
-              <div>
-                <div className="mb-2 mb-md-4">
-                  <Image src={CourseMaterialsImage} width={iconSize30} height={iconSize30} alt="Newest Course Materials" />
-                </div>
-                <h3>Newest Course Materials</h3>
-                <p>Your course materials are always available online and are always being updated with the latest industry standards.  Refer to your updated training guides throughout your career!</p>
+          <div className="row justify-content-center">
+            <div className="col-12 col-md-4">
+              <div className="mb-2 mb-md-4">
+                <Image src={CourseMaterialsImage} width={iconSize30} height={iconSize30} alt="Newest Course Materials" />
               </div>
-              <div>
-                <div className="mb-2 mb-md-4">
-                  <Image src={PersnolizeFeedbackImage} width={iconSize30} height={iconSize30} alt="Personalized Feedback" />
-                </div>
-                <h3>Personalized Feedback</h3>
-                <p>Just because you&apos;re learning online doesn&apos;t mean you&apos;re learning alone.  You&apos;ll receive personalized audio feedback from your tutor on every dog grooming assignment you submit.</p>
+              <h3>Newest Course Materials</h3>
+              <p>Your course materials are always available online and are always being updated with the latest industry standards.  Refer to your updated training guides throughout your career!</p>
+            </div>
+            <div className="col-12 col-md-4">
+              <div className="mb-2 mb-md-4">
+                <Image src={PersnolizeFeedbackImage} width={iconSize30} height={iconSize30} alt="Personalized Feedback" />
               </div>
-              <div>
-                <div className="mb-2 mb-md-4">
-                  <Image src={LifeTimeAccessImage} width={iconSize30} height={iconSize30} alt="Lifetime Access" />
-                </div>
-                <h3>Lifetime Access</h3>
-                <p>Once you&apos;re a member of the QC family you &apos;ll have lifetime access to all the tools and resources available to QC students. This includes discounts on industry products and so much more!</p>
+              <h3>Personalized Feedback</h3>
+              <p>Just because you&apos;re learning online doesn&apos;t mean you&apos;re learning alone.  You&apos;ll receive personalized audio feedback from your tutor on every dog grooming assignment you submit.</p>
+            </div>
+            <div className="col-12 col-md-4">
+              <div className="mb-2 mb-md-4">
+                <Image src={LifeTimeAccessImage} width={iconSize30} height={iconSize30} alt="Lifetime Access" />
               </div>
+              <h3>Lifetime Access</h3>
+              <p>Once you&apos;re a member of the QC family you &apos;ll have lifetime access to all the tools and resources available to QC students. This includes discounts on industry products and so much more!</p>
             </div>
           </div>
         </div>
