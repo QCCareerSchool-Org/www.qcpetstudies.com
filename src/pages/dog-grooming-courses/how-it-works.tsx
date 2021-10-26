@@ -62,7 +62,7 @@ const DogGroomingHowItWorksPage: NextPage = () => {
 
       <section className="bg-light">
         <div className="container text-center">
-          <div className="row mb-5">
+          <div className="row mb-4">
             <div className="col-12 col-lg-10 offset-lg-1">
               <div className="mb-2">
                 <Image src={IconAssignment} width={iconSize} height={iconSize} alt="assignment" />
