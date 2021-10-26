@@ -16,11 +16,12 @@ const DogTrainingResourcesPage: NextPage = () => {
         description="Learn about how to become a professional dog trainer with QC’s online courses."
         canonical="/dog-training-courses/resources"
       />
+
       <section id="firstSection" className="bg-dark">
-        <Image src={DogTrainingResourcesBackground} layout="fill" objectFit="cover" objectPosition="center" alt="Dog Training Resources" />
+        <Image src={DogTrainingResourcesBackground} layout="fill" objectFit="cover" objectPosition="center" alt="dog training resources" />
         <div className="container text-center">
-          <div className="row">
-            <div className="col-12 col-lg-10 offset-lg-1">
+          <div className="row justify-content-center">
+            <div className="col-12 col-lg-10">
               <h1>Dog Training Resources</h1>
             </div>
           </div>
@@ -35,10 +36,10 @@ const DogTrainingResourcesPage: NextPage = () => {
               <p>Learn more about QC Pet Studies and how your dog training course will help you achieve your goals!</p>
             </div>
           </div>
-          <div className="row mb-5 justify-content-center">
-            <div className="col-12 col-sm-8 offset-sm-2 col-lg-4 offset-lg-0 mb-4 mb-lg-0 d-flex align-items-stretch">
+          <div className="row justify-content-center mb-5">
+            <div className="col-12 col-sm-8 col-lg-4 mb-4 mb-lg-0 d-flex align-items-stretch">
               <div className="card">
-                <Image className="card-img-top" src={DogTrainingCareer} alt="Your Dog Grooming Career" />
+                <Image className="card-img-top" src={DogTrainingCareer} alt="your dog grooming career" />
                 <div className="card-body">
                   <h3 className="card-title">Your Dog Training Career</h3>
                   <p className="card-text">Find out how you can launch a successful full-time or part-time career as a professional dog trainer. Read about salary expectations, time commitment, and more.</p>
@@ -46,7 +47,7 @@ const DogTrainingResourcesPage: NextPage = () => {
                 </div>
               </div>
             </div>
-            <div className="col-12 col-sm-8 offset-sm-2 col-lg-4 offset-lg-0 mb-4 mb-lg-0 d-flex align-items-stretch">
+            <div className="col-12 col-sm-8 col-lg-4 mb-4 mb-lg-0 d-flex align-items-stretch">
               <div className="card">
                 <Image src={StudentGrad} alt="Dog Training Course Outline" className="card-img-top" />
                 <div className="card-body">
@@ -56,7 +57,7 @@ const DogTrainingResourcesPage: NextPage = () => {
                 </div>
               </div>
             </div>
-            <div className="col-12 col-sm-8 offset-sm-2 col-lg-4 offset-lg-0 d-flex align-items-stretch">
+            <div className="col-12 col-sm-8 col-lg-4 d-flex align-items-stretch">
               <div className="card">
                 <Image src={LearningInClassOnline} alt="Learning in-class vs Online<" className="card-img-top" />
                 <div className="card-body">
@@ -68,9 +69,9 @@ const DogTrainingResourcesPage: NextPage = () => {
             </div>
           </div>
           <div className="row justify-content-center">
-            <h3>Additional links</h3>
-            <div className="col-6">
-              <ul className="text-start">
+            <div className="col-12 col-lg-6 text-start">
+              <h3>Additional links</h3>
+              <ul>
                 <li><Link href=""><a className="link-primary">Frequently Asked Questions about the Dog Training Course</a></Link></li>
                 <li><Link href=""><a className="link-primary">Information about QC&apos;s 21-day guarantee</a></Link></li>
                 <li><Link href=""><a className="link-primary">Preview the Dog Training Course for free</a></Link></li>
