@@ -175,6 +175,8 @@ section {
 section#firstSection { padding-top: 6rem }
 @media (min-width: 768px) {
   section { padding: 5rem 0 }
+}
+@media (min-width: 992px) {
   section#firstSection { padding-top: 11.5rem }
 }
 
