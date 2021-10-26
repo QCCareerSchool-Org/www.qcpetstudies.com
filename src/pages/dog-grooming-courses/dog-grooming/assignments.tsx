@@ -145,7 +145,7 @@ const GroomingAssignment: NextPage = () => {
                   <h3 className="mb-4">Preparation for a Groom</h3>
                   <p className="mb-4"><em>The video below is a sample from QC&apos;s dog grooming course assignments. Students can watch these clips on their assignment templates in the Online Student Center.</em></p>
                   <div className="ratio ratio-16x9">
-                    <video className="mb-4" controls>
+                    <video controls>
                       <source src="https://www.doggroomingcourse.com/wp-content/uploads/2017/09/Practicum_optimized_smaller_1.mp4" type="video/mp4" />
                       Your browser does not support the video tag.
                     </video>
