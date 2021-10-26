@@ -34,7 +34,7 @@ const CustomToggle = ({ title, eventKey }: Props): ReactElement => {
   const isOpen = activeEventKey === eventKey;
 
   return (
-    <div className="row justify-content-between align-items-center py-3 mb-3 card-header" onClick={decoratedOnClick}>
+    <div className="row justify-content-between align-items-center py-4 card-header" onClick={decoratedOnClick}>
       <div className="col-6 text-start">
         <h3 className="mb-0">{title}</h3>
       </div>
@@ -58,29 +58,29 @@ const DogGroomingPage: NextPage = () => {
       />
 
       <section id="firstSection" className="bg-dark">
-        <Image src={DogGroomingBackground} layout="fill" objectFit="cover" objectPosition="center" alt="Dog Grooming" />
+        <Image src={DogGroomingBackground} layout="fill" objectFit="cover" objectPosition="center" alt="dog grooming" />
         <div className="container text-center">
           <div className="row mb-4">
-            <Image src={CertificationGoldImage} alt="Certification Gold" height="125" width="250" />
+            <Image src={CertificationGoldImage} alt="certification gold" height="125" width="250" />
             <h1>Dog Grooming</h1>
             <h4>Get Started For Only <strong>$99</strong></h4>
             <i>See tuition details</i>
           </div>
-          <div className="row text-center mb-4">
+          <div className="row mb-4">
             <a href="#"><button className="btn btn-secondary btn-lg">Enroll Online</button></a>
           </div>
           <div className="row justify-content-center">
             <div className="col-12 col-md-6 d-flex">
               <div className="col text-uppercase">
-                <Image src={MovieClapperImage} alt="Movie Clapper" width={headerIconSize} height={headerIconSize} />
+                <Image src={MovieClapperImage} alt="movie clapper" width={headerIconSize} height={headerIconSize} />
                 <p><strong>Trailer</strong></p>
               </div>
               <div className="col text-uppercase">
-                <Image src={OutlineImage} alt="Outline" width={headerIconSize} height={headerIconSize} />
+                <Image src={OutlineImage} alt="outline" width={headerIconSize} height={headerIconSize} />
                 <p><strong>Outline</strong></p>
               </div>
               <div className="col text-uppercase">
-                <Image src={PlayBtnImage} alt="Play Button" width={headerIconSize} height={headerIconSize} />
+                <Image src={PlayBtnImage} alt="play button" width={headerIconSize} height={headerIconSize} />
                 <p><strong>Sample</strong></p>
               </div>
             </div>
@@ -106,16 +106,16 @@ const DogGroomingPage: NextPage = () => {
       <section>
         <div className="container text-center">
           <h2 className="mb-2 mb-md-4">Included in <strong>Your Course</strong></h2>
-          <Image src={DogCourseMaterialsImage} width={830} height={550} alt="Dg Course Materials" />
+          <Image src={DogCourseMaterialsImage} width={830} height={550} alt="course materials" />
           <div className="row justify-content-center mb-4">
             <div className="col-12">
-              <Image src={ContentCutImage} width={iconSize30} height={iconSize30} alt="Content Cut" />
+              <Image src={ContentCutImage} width={iconSize30} height={iconSize30} alt="content cut" />
               <h3>Professional-Grade Grooming Starter Kit</h3>
               <p>When you enroll, you&apos;ll receive a kit of dog grooming tools to help you complete your studies and start your career. This kit includes cordless WAHL clippers and combs, three grooming scissors, an assortment of brushes and combs, and more!</p>
               <a onClick={() => setshow(true)} className="text-uppercase"><strong> View Kit Details </strong></a>
               <Modal show={show}>
                 <Modal.Body>
-                  <Image src={GroomingKitDetailImage} layout="responsive" alt="Groomiing kit details" />
+                  <Image src={GroomingKitDetailImage} layout="responsive" alt="groomiing kit details" />
                 </Modal.Body>
                 <Modal.Footer>
                   <Button onClick={() => setshow(false)}>Close</Button>
@@ -126,21 +126,21 @@ const DogGroomingPage: NextPage = () => {
           <div className="row justify-content-center">
             <div className="col-12 col-md-4">
               <div className="mb-2 mb-md-4">
-                <Image src={CourseMaterialsImage} width={iconSize30} height={iconSize30} alt="Newest Course Materials" />
+                <Image src={CourseMaterialsImage} width={iconSize30} height={iconSize30} alt="newest course materials" />
               </div>
               <h3>Newest Course Materials</h3>
               <p>Your course materials are always available online and are always being updated with the latest industry standards.  Refer to your updated training guides throughout your career!</p>
             </div>
             <div className="col-12 col-md-4">
               <div className="mb-2 mb-md-4">
-                <Image src={PersnolizeFeedbackImage} width={iconSize30} height={iconSize30} alt="Personalized Feedback" />
+                <Image src={PersnolizeFeedbackImage} width={iconSize30} height={iconSize30} alt="personalized feedback" />
               </div>
               <h3>Personalized Feedback</h3>
               <p>Just because you&apos;re learning online doesn&apos;t mean you&apos;re learning alone.  You&apos;ll receive personalized audio feedback from your tutor on every dog grooming assignment you submit.</p>
             </div>
             <div className="col-12 col-md-4">
               <div className="mb-2 mb-md-4">
-                <Image src={LifeTimeAccessImage} width={iconSize30} height={iconSize30} alt="Lifetime Access" />
+                <Image src={LifeTimeAccessImage} width={iconSize30} height={iconSize30} alt="lifetime access" />
               </div>
               <h3>Lifetime Access</h3>
               <p>Once you&apos;re a member of the QC family you &apos;ll have lifetime access to all the tools and resources available to QC students. This includes discounts on industry products and so much more!</p>
@@ -159,10 +159,10 @@ const DogGroomingPage: NextPage = () => {
           </div>
           <div className="row justify-content-center">
             <Accordion>
-              <CustomToggle title="Part 1 – Introductory Units" eventKey="0" />
+              <CustomToggle title="Introductory Units" eventKey="0" />
               <Accordion.Collapse eventKey="0">
-                <div className="row align-items-center">
-                  <div className="col-12 col-lg-12 mb-4 text-start">
+                <div className="row p-4">
+                  <div className="col-12 text-start">
                     <h3 className="mb-3">Units A-C</h3>
                     <p>The first few units in this course will introduce you to the fundamental concepts of dog grooming. In these units, you&apos;ll cover health and safety, basic dog anatomy, skincare, behavior, the tools of the trade and more.</p>
                     <p>During these units it is recommended that you start considering your grooming workspace so that you are prepared for the practical assignments later in the course. Unit C will be particularly helpful in selecting appropriate tools, equipment and products.</p>
@@ -172,10 +172,10 @@ const DogGroomingPage: NextPage = () => {
               </Accordion.Collapse>
             </Accordion>
             <Accordion>
-              <CustomToggle title="Part 2 – Dog First Aid Course" eventKey="0" />
+              <CustomToggle title="Dog First Aid Course" eventKey="0" />
               <Accordion.Collapse eventKey="0">
-                <div className="row align-items-center">
-                  <div className="col-12 col-lg-12 mb-4 text-start">
+                <div className="row p-4">
+                  <div className="col-12 text-start">
                     <p>In order to provide you with the resources to learn your craft safely, your grooming course also comes with a two-unit course on dog first aid. This course covers emergency situations that may occur in a grooming environment and prepares you to respond calmly and effectively in any emergency.</p>
                     <p>You must complete both units of the First Aid course before proceeding to the next unit in the dog grooming course.</p>
                   </div>
@@ -183,20 +183,20 @@ const DogGroomingPage: NextPage = () => {
               </Accordion.Collapse>
             </Accordion>
             <Accordion>
-              <CustomToggle title="Part 3 – Hands-On units" eventKey="0" />
+              <CustomToggle title="Hands-On units" eventKey="0" />
               <Accordion.Collapse eventKey="0">
-                <div className="row align-items-center">
-                  <div className="col-12 col-lg-12 mb-4 text-start">
+                <div className="row p-4">
+                  <div className="col-12 text-start">
                     Once you understand the basics of dog grooming and dog first aid, you will move on to units that teach you the hands-on skills involved in grooming. In these units, you&apos;ll cover nail trimming, ear cleaning, brushing, de-matting, bathing, drying, coat types, pet cuts, breed standards and more. You&apos;ll complete a number of basic practical assignments that will prepare you to start your practicum.
                   </div>
                 </div>
               </Accordion.Collapse>
             </Accordion>
             <Accordion>
-              <CustomToggle title="Part 4 – Practicum" eventKey="0" />
+              <CustomToggle title="Practicum" eventKey="0" />
               <Accordion.Collapse eventKey="0">
-                <div className="row align-items-center">
-                  <div className="col-12 col-lg-12 mb-4 text-start">
+                <div className="row p-4">
+                  <div className="col-12 text-start">
                     <p>Dog grooming as a profession requires a lot of background knowledge, but ultimately your success will depend on your ability to safely and skillfully groom dogs.</p>
                     <p>Your practicum is designed to allow you to practice and receive feedback on these essential skills. The units within the practicum involve intensive practical assignments that draw on the content you&apos;ve mastered throughout the course. You&apos;ll have a chance to receive feedback from your tutors on your bathing and drying skills, in addition to the pet cuts and breed cuts you&apos;ll create throughout your career.
                     </p>
@@ -205,10 +205,10 @@ const DogGroomingPage: NextPage = () => {
               </Accordion.Collapse>
             </Accordion>
             <Accordion>
-              <CustomToggle title="Part 5 – Dog Grooming Business Essentials" eventKey="0" />
+              <CustomToggle title="Dog Grooming Business Essentials" eventKey="0" />
               <Accordion.Collapse eventKey="0">
-                <div className="row align-items-center">
-                  <div className="col-12 col-lg-12 mb-4 text-start">
+                <div className="row p-4">
+                  <div className="col-12 text-start">
                     <h3 className="mb-3">Units A-C</h3>
                     <p>Dog grooming as a profession requires a lot of background knowledge, but ultimately your success will depend on your ability to safely and skillfully groom dogs.
                     </p>
@@ -224,29 +224,27 @@ const DogGroomingPage: NextPage = () => {
 
       <section>
         <div className="container">
-          <div className="row">
-            <div className="d-flex flex-column flex-md-row justify-content-center gap-4">
-              <div className="col-12 col-md-5">
-                <h2>Learne from Certified <strong>Master Groomers</strong></h2>
-                <p>When you enroll with QC Pet Studies, you&apos;ll be matched with an industry professional currently working in the field who will review your work and provide you with in-depth feedback and advice on every assignment. These accomplished tutors are Certified Master Groomers who have decades of experience in the grooming industry and are eager to share their professional insight to help you succeed.</p>
-                <p>Your personal tutor will provide you with in-depth audio feedback on each assignment to let you know what you did well and how you could improve. Use this feedback to guide you through the next unit in your course.</p>
-              </div>
-              <div className="col-12 col-md-5 d-flex flex-column gap-5">
-                <div className="d-flex gap-4 align-items-center">
-                  <Image src={MasterGroomerLisaImage} alt="Master groomer Lisa" objectFit="contain" width="190px" height="170px" />
-                  <div>
-                    <h3>Lisa Day</h3>
-                    <h4>Certified Master Groomer</h4>
-                    <i>40+ Years of Experience</i>
-                  </div>
+          <div className="row justify-content-center">
+            <div className="col-12 col-md-6">
+              <h2>Learne from Certified <strong>Master Groomers</strong></h2>
+              <p>When you enroll with QC Pet Studies, you&apos;ll be matched with an industry professional currently working in the field who will review your work and provide you with in-depth feedback and advice on every assignment. These accomplished tutors are Certified Master Groomers who have decades of experience in the grooming industry and are eager to share their professional insight to help you succeed.</p>
+              <p>Your personal tutor will provide you with in-depth audio feedback on each assignment to let you know what you did well and how you could improve. Use this feedback to guide you through the next unit in your course.</p>
+            </div>
+            <div className="col-12 col-md-6 d-flex flex-column">
+              <div className="d-flex align-items-center gap-4">
+                <Image src={MasterGroomerLisaImage} alt="master groomer Lisa" objectFit="contain" width="190px" height="170px" />
+                <div className="col-6">
+                  <h3>Lisa Day</h3>
+                  <h4>Certified Master Groomer</h4>
+                  <i>40+ Years of Experience</i>
                 </div>
-                <div className="d-flex gap-4 align-items-center">
-                  <Image src={MasterGroomerPaddyImage} alt="Master groomer Paddy" objectFit="contain" width="190px" height="170px" />
-                  <div>
-                    <h3>Paddy Gaffney</h3>
-                    <h4>Certified Master Groomer</h4>
-                    <i>20 Years of Experience</i>
-                  </div>
+              </div>
+              <div className="d-flex align-items-center gap-4">
+                <Image src={MasterGroomerPaddyImage} alt="master groomer Paddy" objectFit="contain" width="190px" height="170px" />
+                <div>
+                  <h3>Paddy Gaffney</h3>
+                  <h4>Certified Master Groomer</h4>
+                  <i>20 Years of Experience</i>
                 </div>
               </div>
             </div>
