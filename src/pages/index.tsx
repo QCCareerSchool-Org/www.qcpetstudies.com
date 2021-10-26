@@ -6,7 +6,7 @@ import { FaBriefcase, FaChalkboardTeacher, FaHandHoldingUsd, FaLaptopHouse, FaRe
 import { DefaultLayout } from '../components/DefaultLayout';
 import { SEO } from '../components/SEO';
 import PetStudiesHomepage from '../images/backgrounds/pet-studies-homepage-bg.jpg';
-import HowItWorks from '../images/how-it-works-png.png';
+import HowItWorks from '../images/how-it-works.png';
 import IDGPCertificationGold from '../images/IDGP-certification-gold.svg';
 import IDTPCertificationGold from '../images/IDTP-certification-gold.svg';
 
@@ -105,7 +105,7 @@ const HomePage: NextPage = () => (
               <li>Complete theoretical and practical assignments</li>
               <li>Get personalized feedback from your tutor</li>
             </ul>
-            <h3>Graduate &amp; Receive your Certificationf</h3>
+            <h3>Graduate &amp; Receive your Certification</h3>
             <ul>
               <li>Receive your Certificate of Completion in the mail</li>
               <li>Get lifetime access to course materials and updated content</li>
