@@ -31,7 +31,7 @@ const DogGroomingKitPage: NextPage = () => {
       <section>
         <div className="container text-center">
           <div className="row justify-content-center">
-            <div className="col-12 col-md-10 col-lg-8">
+            <div className="col-12 col-lg-10">
               <p>When you enroll in QC&apos;s online
                 <Link href="/online-courses/dog-grooming/"><a className="link-primary">&nbsp;dog grooming course</a></Link> , you&apos;ll receive a toolkit with the essential items you need to get started. These items will be shipped to you after you submit your Unit B before you begin your practical work in Unit C.</p>
               <p>Your kit includes a WAHL ARCO 5-in-1 Cordless Clipper, a stainless steel attachment guide comb kit, professional-grade grooming scissors, brushes, combs, and nail clippers.</p>
