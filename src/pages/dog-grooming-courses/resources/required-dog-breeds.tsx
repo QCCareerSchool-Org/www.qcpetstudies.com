@@ -26,7 +26,7 @@ const RequiredDogBreeds: NextPage = () => {
     <DefaultLayout>
       <SEO
         title="Every Dog Breed You Must Groom in Your Dog Grooming Course"
-        description=""
+        description="Find out what types of dog breeds you'll need in order to complete your online dog groomer training with QC"
         canonical="/dog-grooming-courses/dog-grooming/required-dog-breeds"
       />
 
