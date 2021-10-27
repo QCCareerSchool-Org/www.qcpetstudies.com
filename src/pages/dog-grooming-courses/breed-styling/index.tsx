@@ -148,7 +148,6 @@ const BreedStylingPage: NextPage = () => {
                 <li>Shampoos and conditioners </li>
               </ul>
             </div>
-
             <div className="col-12 col-lg-4 text-start">
               <ul>
                 <li>Ear powder </li>
@@ -169,16 +168,17 @@ const BreedStylingPage: NextPage = () => {
 
       <section className="bg-dark">
         <div className="container text-center">
-          <FaSearch className="h1 text-primary mb-3" />
-          <h2>Breed Styling Course At-A-Glance</h2>
-          <p>Click on each part below for a quick overview of QC Pet Studies&apos; Breed Styling Workshop.</p>
-          <FaAngleDown className="h1 text-primary" />
+          <div className="row justify-content-center">
+            <FaSearch className="h1 text-primary mb-3" />
+            <h2>Breed Styling Course At-A-Glance</h2>
+            <p>Click on each part below for a quick overview of QC Pet Studies&apos; Breed Styling Workshop.</p>
+            <FaAngleDown className="h1 text-primary" />
+          </div>
         </div>
       </section>
 
       <section className="bg-light">
         <div className="container text-center">
-
           <Accordion>
             <CustomToggle title="Part 1 – Theoretical Foundations" eventKey="0" />
             <Accordion.Collapse eventKey="0">
