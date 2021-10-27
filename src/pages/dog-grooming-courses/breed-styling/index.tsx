@@ -29,11 +29,11 @@ const CustomToggle = ({ title, eventKey }: Props): ReactElement => {
   const isOpen = activeEventKey === eventKey;
 
   return (
-    <div className="row justify-content-between border-bottom pb-3 mb-3" onClick={decoratedOnClick}>
-      <div className="col-6 text-start">
+    <div className="row border-bottom pb-3 mb-3" onClick={decoratedOnClick}>
+      <div className="col-10 text-start">
         <h3>{title}</h3>
       </div>
-      <div className="col-6 text-end">
+      <div className="col-2 text-end">
         {isOpen ? <FaMinusCircle /> : <FaPlusCircle />}
       </div>
     </div>
