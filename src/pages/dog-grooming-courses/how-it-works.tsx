@@ -2,18 +2,14 @@ import { NextPage } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 
+import { Bar } from '../../components/Bar';
 import { DefaultLayout } from '../../components/DefaultLayout';
 import { SEO } from '../../components/SEO';
 import { useScreenWidth } from '../../hooks/useScreenWidth';
 
 import GraduateBackground from '../../images/backgrounds/dog-in-graduatation-cap.jpg';
-import DogOnGroomingTableBackground from '../../images/backgrounds/dog-on-grooming-table.jpg';
+import HowItWorksBackground from '../../images/backgrounds/pet-studies-how-works-bg.jpg';
 import YorkieBackground from '../../images/backgrounds/yorkie-on-left-looking-up.jpg';
-
-import EnrollNowCardBackground from '../../images/cards/enroll-now.jpg';
-import StudentExperienceCardBackground from '../../images/cards/student-experience.jpg';
-import TutorCardBackground from '../../images/cards/tutor.jpg';
-
 import IconAssignment from '../../images/icon-assignment.svg';
 import IconChecked from '../../images/icon-checked.svg';
 import IconCompass from '../../images/icon-compass.svg';
@@ -25,7 +21,6 @@ const iconSize = 50;
 
 const DogGroomingHowItWorksPage: NextPage = () => {
   const screenWidth = useScreenWidth();
-
   const lgOrGreater = screenWidth >= 992;
 
   return (
@@ -37,6 +32,8 @@ const DogGroomingHowItWorksPage: NextPage = () => {
       />
 
       <section id="firstSection" className="bg-dark">
+        <Image src={HowItWorksBackground} layout="fill" objectFit="cover" objectPosition="center" alt="Learning during COVID" />
+        <div className="image-overlay-gradient"></div>
         <div className="container text-center">
           <div className="row">
             <div className="col-12 col-lg-10 offset-lg-1">
@@ -56,8 +53,8 @@ const DogGroomingHowItWorksPage: NextPage = () => {
                 <Image src={IconTime} width={iconSize} height={iconSize} alt="timer" />
               </div>
               <h2>Starting the Dog Grooming Course</h2>
-              <p>The first thing you&apos;ll do after enrolling is log in to your personal account in the Online Student Center. From there you&apos;ll be able to access your dog grooming course guides, lesson texts, assignment templates and video tutorials. Within 7-10 business days of enrolling, you&apos;ll also receive hard copy versions of your course materials along with your grooming tools.</p>
-              <p className="lead">View a <Link href="/dog-grooming-courses/dog-grooming#course-outline"><a className="link-primary">detailed course outline</a></Link> to learn more about your dog groomer training.</p>
+              <p>The first thing you&apos;ll do after enrolling is log in to your personal account in the Online Student Center. From there you&apos;ll be able to access your dog grooming course guides, lesson texts, assignment templates and video tutorials. Within 7 to 10 business days of enrolling, you&apos;ll also receive hard copy versions of your course materials along with your grooming tools.</p>
+              <p className="lead mb-0">View a <Link href="/dog-grooming-courses/dog-grooming#course-outline"><a className="link-primary">detailed course outline</a></Link> to learn more about your dog groomer training.</p>
             </div>
           </div>
         </div>
@@ -65,7 +62,7 @@ const DogGroomingHowItWorksPage: NextPage = () => {
 
       <section className="bg-light">
         <div className="container text-center">
-          <div className="row mb-5">
+          <div className="row mb-4">
             <div className="col-12 col-lg-10 offset-lg-1">
               <div className="mb-2">
                 <Image src={IconAssignment} width={iconSize} height={iconSize} alt="assignment" />
@@ -77,37 +74,39 @@ const DogGroomingHowItWorksPage: NextPage = () => {
           <div className="row mb-4">
             <div className="col-12 col-lg-6 col-xl-5 offset-xl-1 mb-4 mb-lg-0">
               <h3 className="mb-4">Theory-Based Assignments</h3>
+              <Bar variant="primary" />
               <p>In order to be a qualified professional groomer, you need to master dog grooming theory. Throughout your online grooming course you&apos;ll learn everything from grooming tools, to dog behavior and temperaments, to the unique challenges of working with puppies, seniors, and other dogs who have special needs, and <Link href="/dog-grooming-courses"><a className="link-primary">much more</a></Link>.</p>
               <p>Your knowledge in these areas will be tested with quizzes, case studies and other theoretical assignments, which will all be graded by your personal tutor. As you progress through the course, you&apos;ll become more and more comfortable with dog grooming theory, and you&apos;ll shift your focus to your practical grooming assignments.</p>
             </div>
             <div className="col-12 col-lg-6 col-xl-5">
               <h3 className="mb-4">Practical Assignments</h3>
+              <Bar variant="primary" />
               <p>Getting a chance to practice your skills on real dogs is an essential part of any good dog grooming program, and QC&apos;s online course is no exception. At the start of your course, practical assignments will focus on getting comfortable with dogs and the grooming environment, and you&apos;ll progress to completing partial grooms focusing on specific elements. During your <Link href="/dog-grooming-courses/dog-grooming#course-outline"><a className="link-primary">practicum units</a></Link>, you&apos;ll be completing several start-to-finish breed standard grooms.</p>
               <p>you&apos;ll take step-by-step pictures or videos of your work as you go, and upload them to your online student center. Your tutor will evaluate your work and provide you with detailed feedback on what you did well and where you could improve.</p>
             </div>
           </div>
-          <p className="lead">View sample assignments from QC&apos;s dog grooming course!</p>
+          <p className="lead mb-4">View sample assignments from QC&apos;s dog grooming course!</p>
           <Link href="/dog-grooming-courses/dog-grooming/your-grooming-assignments"><a className="btn btn-primary">View Assignments</a></Link>
         </div>
       </section>
 
       <section>
-        {lgOrGreater && <Image src={YorkieBackground} layout="fill" objectFit="cover" objectPosition="center" alt="find the dog" />}
+        {lgOrGreater && <Image src={YorkieBackground} layout="fill" objectFit="cover" objectPosition="center" alt="a Yorkshire Terrier looking up" />}
         <div className="container text-center">
-          <div className="row">
-            <div className="col-12 col-lg-8 offset-lg-2 col-xl-6 offset-xl-3">
+          <div className="row justify-content-center">
+            <div className="col-12 col-lg-7 col-xl-6">
               <div className="mb-2">
                 <Image src={IconMagnifyingGlass} width={iconSize} height={iconSize} alt="magnifying glass" />
               </div>
-              <h2 className="pt-4">Finding Dogs for Grooming Assignments</h2>
+              <h2>Finding Dogs for Grooming Assignments</h2>
               <p>Throughout your dog groomer training you&apos;ll have the chance to work with many different dogs. You can work with your own dog, your friends&apos; or family members&apos; dogs, or you can reach out to your local animal shelter or a nearby rescue. After all, it&apos;s never too hard to find people who will be happy to have their dogs groomed for free! If you get stuck, just contact the student support team: <strong>they&apos;re ready to provide you with additional suggestions.</strong></p>
-              <p className="lead">Wondering how online dog grooming schools differ from in-class programs? <Link href="/dog-grooming-courses/resources#online-vs-in-class"><a className="link-primary">Find out here</a></Link>!</p>
+              <p className="lead mb-0">Wondering how online dog grooming schools differ from in-class programs? <Link href="/dog-grooming-courses/resources#online-vs-in-class"><a className="link-primary">Find out here</a></Link>!</p>
             </div>
           </div>
         </div>
       </section>
 
-      <section className="bg-light pb-0">
+      <section className="bg-light">
         <div className="container text-center">
           <div className="row">
             <div className="col-12 col-lg-10 offset-lg-1">
@@ -122,7 +121,6 @@ const DogGroomingHowItWorksPage: NextPage = () => {
           </div>
         </div>
       </section>
-      <Image src={DogOnGroomingTableBackground} layout="responsive" alt="Dog ready to be groomed" />
 
       <section>
         <div className="container text-center">
@@ -150,57 +148,11 @@ const DogGroomingHowItWorksPage: NextPage = () => {
               </div>
               <h2 className="mb-4">Graduation</h2>
               <p>Once you&apos;ve completed your dog groomer training and your tuition has been paid in full, you&apos;ll be all set to graduate. Your professional dog groomer certificate of completion will be sent straight to your home.</p>
-              <p className="lead">Please keep in touch, we&apos;d love to hear how you&apos;re doing!</p>
+              <p className="lead mb-0">Please keep in touch, we&apos;d love to hear how you&apos;re doing!</p>
             </div>
           </div>
         </div>
       </section>
-
-      <section>
-        <div className="container text-center">
-          <h2 className="mb-4">Next Steps</h2>
-          <div className="row">
-            <div className="col-10 offset-1 col-md-4 offset-md-0 mb-4 mb-lg-0">
-              <div className="py-5 px-4 position-relative text-shadow nextStepsCard d-flex align-items-center">
-                <Image src={StudentExperienceCardBackground} alt="Student Experience" objectFit="cover" layout="fill" />
-                <div className="position-relative">
-                  <h3 className="text-white">Student<br />Experience</h3>
-                  <p className="text-white">Find out what it&apos;s like to be a student at QC Pet Studies. You may be learning from home, but you won&apos;t be learning alone!</p>
-                  <Link href="/dog-grooming-courses/resources#student-experience"><a className="btn btn-outline-light">Learn More</a></Link>
-                </div>
-              </div>
-            </div>
-            <div className="col-10 offset-1 col-md-4 offset-md-0 mb-4 mb-lg-0">
-              <div className="py-5 px-4 position-relative text-shadow nextStepsCard d-flex align-items-center">
-                <Image src={TutorCardBackground} alt="Meet QC's Tutors" objectFit="cover" layout="fill" />
-                <div className="position-relative">
-                  <h3 className="text-white">Meet QC&apos;s<br />Tutors</h3>
-                  <p className="text-white">Learn about QC&apos;s tutors, Certified Master Groomers Paddy Gaffney and Lisa Day. They will guide you through the course!</p>
-                  <Link href="/dog-grooming-courses/dog-grooming#tutors"><a className="btn btn-outline-light">Learn More</a></Link>
-                </div>
-              </div>
-            </div>
-            <div className="col-10 offset-1 col-md-4 offset-md-0">
-              <div className="py-5 px-4 position-relative text-shadow nextStepsCard d-flex align-items-center">
-                <Image src={EnrollNowCardBackground} alt="Enroll Now" objectFit="cover" layout="fill" />
-                <div className="position-relative">
-                  <h3 className="text-white">Enroll<br />Now</h3>
-                  <p className="text-white">Join QC Pet Studies and take the first step towards a career you&apos;ll love. QC accepts new students 365 days a year!</p>
-                  <Link href="https://enroll.qcpetstudies.com?c[]=dg&c[]=fa"><a className="btn btn-outline-light">Learn More</a></Link>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <style jsx>{`
-        @media (min-width: 992px) {
-          .nextStepsCard {
-            min-height: 400px;
-          }
-        }
-      `}</style>
     </DefaultLayout>
   );
 };
