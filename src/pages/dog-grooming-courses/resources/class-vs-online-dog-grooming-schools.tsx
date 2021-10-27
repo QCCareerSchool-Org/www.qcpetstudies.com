@@ -18,7 +18,7 @@ const ClassVsOnlineLearning: NextPage = () => {
 
       <section id="firstSection" className="bg-dark">
         <Image src={FirstSectionBackground} layout="fill" objectFit="cover" objectPosition="center" alt="Learning during covid" />
-        <div className="image-overlay-gradient"></div>
+        <div className="image-overlay-gradient" />
         <div className="container text-center">
           <div className="row text-white">
             <div className="col-12 col-md-10 offset-md-1">

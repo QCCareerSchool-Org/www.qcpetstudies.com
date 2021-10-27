@@ -203,6 +203,7 @@ module.exports = {
     'react/no-unescaped-entities': [ 'error', { forbid: [ '>', '"', '\'', '}', '“', '”', '‘', '’' ] } ],
     'react/prop-types': 'off',
     'react/react-in-jsx-scope': 'off',
+    'react/self-closing-comp': 'error',
 
     // import rules
     'import/order': [ 'error', { alphabetize: { order: 'asc', caseInsensitive: true } } ],
