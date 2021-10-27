@@ -3,9 +3,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import React, { ReactElement } from 'react';
 import { BsTagsFill } from 'react-icons/bs';
-import { FaBriefcase, FaClipboard, FaRegFileAlt } from 'react-icons/fa';
-import { IoMdWifi } from 'react-icons/io';
-
+import { FaBriefcase, FaClipboard, FaRegFileAlt, FaRss } from 'react-icons/fa';
 import { DefaultLayout } from '../../../components/DefaultLayout';
 import { SEO } from '../../../components/SEO';
 import { useScreenWidth } from '../../../hooks/useScreenWidth';
@@ -13,6 +11,7 @@ import ReviewDogGroomingCourse from '../../../images/a-review-of-dog-grooming-co
 import AssociationLogo from '../../../images/association-logo.png';
 import CareerBackground from '../../../images/backgrounds/your-dog-grooming-carrer.jpg';
 import MobileGroomerImage from '../../../images/become-a-mobile-dog-groomer.jpg';
+import CompassIcon from '../../../images/compass.svg';
 import DogGroomingAssociations from '../../../images/dog-grooming-associations.jpg';
 import ExploreDogIndustryImage from '../../../images/explore-the-dog-industry.jpg';
 import OwnDogGroomingSaloon from '../../../images/run-your-own-dog-grooming-salon.jpg';
@@ -36,11 +35,12 @@ const DogGroomingCareerPage: NextPage = () => {
         <Image src={CareerBackground} layout="fill" objectFit="cover" objectPosition="center" alt="your dog grooming carrer" />
         <div className="image-overlay-gradient"></div>
         <div className="container text-center">
-          <div className="row">
-            <div className="col-12 col-lg-10 offset-lg-1">
-              <h1>Your Dog Grooming Carrer</h1>
+          <div className="row justify-content-center">
+            <Image src={CompassIcon} alt="Compass Icon" />
+            <h1>Your Dog Grooming Carrer</h1>
+            <div className="col-12 col-lg-10">
               <h2 className="mb-4">Career Paths for Professional Dog Groomers</h2>
-              <p><strong>Dog grooming is a diverse industry with a variety of exciting career possibilities. Whether you enjoy working from home or aspire to open your own business, you&apos;re sure to find a career path that works for you.</strong></p>
+              <p>Dog grooming is a diverse industry with a variety of exciting career possibilities. Whether you enjoy working from home or aspire to open your own business, you&apos;re sure to find a career path that works for you.</p>
             </div>
           </div>
         </div>
@@ -109,7 +109,7 @@ const DogGroomingCareerPage: NextPage = () => {
 
       <section>
         <div className="container text-center">
-          <FaClipboard className="h2 text-secondary mb-3" />
+          <FaClipboard className="h2 text-primary mb-3" />
           <h2>Career Resources for <br /> Grooming Students and Graduates</h2>
           <p className="lead mb-5"><strong>As a student of QC Pet Studies, you&apos;ll be provided with resources to build a profitable and <br /> enjoyable career as a professional dog groomer.</strong></p>
           <div className="row align-items-center mb-5">
@@ -118,17 +118,17 @@ const DogGroomingCareerPage: NextPage = () => {
             </div>
             <div className="col-12 col-lg-8 text-start">
               <h3>Free Business Training</h3>
-              <p>QC&apos;s comprehensive <a href=""><strong>Online Dog Grooming Class</strong></a> comes with complete business training at no extra cost! This training will teach you the skills you&apos;ll need to start a successful dog grooming business!</p>
+              <p>QC&apos;s comprehensive<Link href=""><a className="link-primary"> Online Dog Grooming Class </a></Link>comes with complete business training at no extra cost! This training will teach you the skills you&apos;ll need to start a successful dog grooming business!</p>
             </div>
           </div>
 
           <div className="row align-items-center mb-5">
             <div className="col-12 col-lg-2">
-              <IoMdWifi className="h2 text-secondary mb-3" />
+              <FaRss className="h2 text-secondary mb-3" />
             </div>
             <div className="col-12 col-lg-8 text-start">
               <h3>A Blog for Groomers</h3>
-              <p>The Sniffin&apos;Around <a href=""><strong>dog grooming blog</strong></a> is full of articles that will help you thrive in your chosen career path. From adding accessories to setting your grooming prices to designing your business logo, the blog content aims to help you succeed as a professional dog groomer and business owner.</p>
+              <p>The Sniffin&apos;Around<Link href=""><a className="link-primary"> dog grooming blog </a></Link>is full of articles that will help you thrive in your chosen career path. From adding accessories to setting your grooming prices to designing your business logo, the blog content aims to help you succeed as a professional dog groomer and business owner.</p>
             </div>
           </div>
 
@@ -138,7 +138,8 @@ const DogGroomingCareerPage: NextPage = () => {
             </div>
             <div className="col-12 col-lg-8 text-start">
               <h3>Exclusive Discounts from Vendors</h3>
-              <p>Investing in professional-grade dog grooming tools and materials enables you to do your best work. Students of QC Pet Studies receive <a href=""><strong>exclusive discounts to some of the best pet retailers.</strong></a> You&apos;ll be able to build your grooming toolkit with quality products and equipment at a fraction of the cost!</p>
+              <p>Investing in professional-grade dog grooming tools and materials enables you to do your best work. Students of QC Pet Studies receive
+                <Link href=""><a className="link-primary"> exclusive discounts to some of the best pet retailers. </a></Link> You&apos;ll be able to build your grooming toolkit with quality products and equipment at a fraction of the cost!</p>
             </div>
           </div>
 
@@ -164,16 +165,16 @@ const DogGroomingCareerPage: NextPage = () => {
         </div>
       </section>
 
-      <section id="firstSection" className="bg-dark">
+      <section className="bg-dark">
         <Image src={DogGroomingAssociations} layout="fill" objectFit="cover" objectPosition="center" alt="dog grooming associations" />
         <div className="image-overlay-gradient"></div>
         <div className="container text-center">
           <Image className="text-secondary" src={AssociationLogo} alt="associations logo" />
-          <h2>Dog Grooming Associations</h2>
-          <div className="row">
-            <div className="col-12 col-lg-10 offset-lg-1">
-              <p><strong>As you progress in your dog grooming career, you may decide to become a registered and/or certified member of a dog grooming association. These associations are entirely optional and joining them is not mandatory to work or succeed as a dog groomer. However, you may decide that joining an association will help you grow your network and stand out from the competition.</strong></p>
-              <p><strong>The National Dog Grooming Association of America (NDGAA) and the Canadian Professional Pet Stylists (CPPS) associations have standardized exams they use to certify members. QC&apos;s Dog Grooming course prepares you to take these exams.</strong></p>
+          <h2 className="mb-4">Dog Grooming Associations</h2>
+          <div className="row justify-content-center">
+            <div className="col-12 col-lg-10">
+              <p>As you progress in your dog grooming career, you may decide to become a registered and/or certified member of a dog grooming association. These associations are entirely optional and joining them is not mandatory to work or succeed as a dog groomer. However, you may decide that joining an association will help you grow your network and stand out from the competition.</p>
+              <p>The National Dog Grooming Association of America (NDGAA) and the Canadian Professional Pet Stylists (CPPS) associations have standardized exams they use to certify members. QC&apos;s Dog Grooming course prepares you to take these exams.</p>
             </div>
           </div>
         </div>
