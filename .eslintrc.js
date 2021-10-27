@@ -182,7 +182,7 @@ module.exports = {
     '@typescript-eslint/no-use-before-define': 'off', // override CRA's default
     '@typescript-eslint/object-curly-spacing': [ 'error', 'always' ],
     '@typescript-eslint/quotes': [ 'error', 'single' ],
-    '@typescript-eslint/require-await': 'error',
+    '@typescript-eslint/require-await': 'warning',
     '@typescript-eslint/return-await': 'error',
     '@typescript-eslint/semi': 'error',
     '@typescript-eslint/space-before-function-paren': [ 'error', { anonymous: 'always', named: 'never', asyncArrow: 'always' } ],
@@ -203,6 +203,7 @@ module.exports = {
     'react/no-unescaped-entities': [ 'error', { forbid: [ '>', '"', '\'', '}', '“', '”', '‘', '’' ] } ],
     'react/prop-types': 'off',
     'react/react-in-jsx-scope': 'off',
+    'react/self-closing-comp': 'error',
 
     // import rules
     'import/order': [ 'error', { alphabetize: { order: 'asc', caseInsensitive: true } } ],
