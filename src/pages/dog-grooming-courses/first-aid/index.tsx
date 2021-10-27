@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { DefaultLayout } from '../../../components/DefaultLayout';
 import { PriceSection } from '../../../components/PriceSection';
 import { SEO } from '../../../components/SEO';
-
+import FirstAidBackground from '../../../images/backgrounds/hero-first-aid-bg.jpg';
 import dogLooking from '../../../images/dog-looking.jpg';
 import faCertificate from '../../../images/fa-certificate-desktop.jpg';
 import firstAidBook from '../../../images/first-aid-book-white.jpg';
@@ -21,6 +21,8 @@ const DogGroomingPage: NextPage = () => {
       />
 
       <section id="firstSection" className="bg-dark">
+        <Image src={FirstAidBackground} layout="fill" objectFit="cover" objectPosition="center" alt="First aid" />
+        <div className="image-overlay-gradient"></div>
         <div className="container text-center">
           <Image src={firstAidLogo} alt="First Aid Course logo" width={60} height={60} />
           <h1><strong>First Aid</strong> Course for Groomers</h1>
