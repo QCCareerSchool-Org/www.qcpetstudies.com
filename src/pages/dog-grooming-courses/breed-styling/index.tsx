@@ -55,7 +55,7 @@ const BreedStylingPage: NextPage = () => {
       <section id="firstSection" className="bg-dark">
         <div className="container text-center">
           <Image src={CourseIconBadge} alt="Cource Icon Badge" />
-          <h1><strong>BREED STYLING WORKSHOP</strong></h1>
+          <h1><strong> Breed Styling Workshop</strong></h1>
           <div className="row justify-content-center">
             <div className="col-12 col-lg-10">
               <p>Do you already have some grooming experience? If you want to upgrade your professional skillset and learn how to groom every breed, the Breed Styling Workshop is an excellent fit for you. Learn advanced styling techniques for purebred breeds without having to relearn the basics like grooming preparation, and scissor and clipper techniques.</p>
