@@ -107,47 +107,34 @@ const DogGroomingCareerPage: NextPage = () => {
 
       <section>
         <div className="container text-center">
+
           <FaClipboard className="h2 text-primary mb-3" />
           <h2>Career Resources for <br /> Grooming Students and Graduates</h2>
           <p className="lead mb-5"><strong>As a student of QC Pet Studies, you&apos;ll be provided with resources to build a profitable and <br /> enjoyable career as a professional dog groomer.</strong></p>
-          <div className="row align-items-center mb-5">
-            <div className="col-12 col-lg-2">
-              <FaBriefcase className="h2 text-secondary mb-3" />
-            </div>
-            <div className="col-12 col-lg-8 text-start">
-              <h3>Free Business Training</h3>
-              <p>QC&apos;s comprehensive<Link href=""><a className="link-primary"> Online Dog Grooming Class </a></Link>comes with complete business training at no extra cost! This training will teach you the skills you&apos;ll need to start a successful dog grooming business!</p>
-            </div>
-          </div>
 
-          <div className="row align-items-center mb-5">
-            <div className="col-12 col-lg-2">
-              <FaRss className="h2 text-secondary mb-3" />
-            </div>
-            <div className="col-12 col-lg-8 text-start">
-              <h3>A Blog for Groomers</h3>
-              <p>The Sniffin&apos;Around<Link href=""><a className="link-primary"> dog grooming blog </a></Link>is full of articles that will help you thrive in your chosen career path. From adding accessories to setting your grooming prices to designing your business logo, the blog content aims to help you succeed as a professional dog groomer and business owner.</p>
-            </div>
-          </div>
+          <CareerResources
+            title={'Free Business Training'}
+            icon={<FaBriefcase className="h2 text-secondary mb-3" />}
+            body={<p>QC&apos;s comprehensive<Link href=""><a className="link-primary"> Online Dog Grooming Class </a></Link>comes with complete business training at no extra cost! This training will teach you the skills you&apos;ll need to start a successful dog grooming business!</p>}
+          />
 
-          <div className="row align-items-center mb-5">
-            <div className="col-12 col-lg-2">
-              <FaTags className="h2 text-secondary mb-3" />
-            </div>
-            <div className="col-12 col-lg-8 text-start">
-              <h3>Exclusive Discounts from Vendors</h3>
-              <p>Investing in professional-grade dog grooming tools and materials enables you to do your best work. Students of QC Pet Studies receive
-                <Link href=""><a className="link-primary"> exclusive discounts to some of the best pet retailers. </a></Link> You&apos;ll be able to build your grooming toolkit with quality products and equipment at a fraction of the cost!</p>
-            </div>
-          </div>
+          <CareerResources
+            title={'A Blog for Groomers'}
+            icon={<FaRss className="h2 text-secondary mb-3" />}
+            body={<p>The Sniffin&apos;Around<Link href=""><a className="link-primary"> dog grooming blog </a></Link>is full of articles that will help you thrive in your chosen career path. From adding accessories to setting your grooming prices to designing your business logo, the blog content aims to help you succeed as a professional dog groomer and business owner.</p>}
+          />
 
-          <div className="row align-items-center">
-            <div className="col-12 col-lg-2">
-              <FaRegFileAlt className="h2 text-secondary mb-3" />
-            </div>
-            <div className="col-12 col-lg-8 text-start">
-              <h3>Dog Grooming Business Resources</h3>
-              <p>QC Students are provided with templates and reference sheets to help them write business plans, manage client information, and make quick and accurate decisions in the grooming environment. You&apos;ll be able to download all of the following from the Online Student Center:</p>
+          <CareerResources
+            title={'Exclusive Discounts from Vendors'}
+            icon={<FaTags className="h2 text-secondary mb-3" />}
+            body={<p>Investing in professional-grade dog grooming tools and materials enables you to do your best work. Students of QC Pet Studies receive
+              <Link href=""><a className="link-primary"> exclusive discounts to some of the best pet retailers. </a></Link> You&apos;ll be able to build your grooming toolkit with quality products and equipment at a fraction of the cost!</p>}
+          />
+
+          <CareerResources
+            title={'Dog Grooming Business Resources'}
+            icon={<FaRegFileAlt className="h2 text-secondary mb-3" />}
+            body={<><p>QC Students are provided with templates and reference sheets to help them write business plans, manage client information, and make quick and accurate decisions in the grooming environment. You&apos;ll be able to download all of the following from the Online Student Center:</p>
               <ul>
                 <li>Business plan template</li>
                 <li>Service pricing guide</li>
@@ -157,9 +144,8 @@ const DogGroomingCareerPage: NextPage = () => {
                 <li>Clipper blades chart</li>
                 <li>Needs analysis reference sheet</li>
                 <li>Tiered emergency plan</li>
-              </ul>
-            </div>
-          </div>
+              </ul></>}
+          />
         </div>
       </section>
 
@@ -193,6 +179,12 @@ export default DogGroomingCareerPage;
    className?: string;
  };
 
+ type CareerResourcesProps = {
+   title: string;
+   icon: ReactElement;
+   body: ReactElement;
+ };
+
 const CareerSection = ({ title, subTitle, imgSrc, para, secondPara, className }: CareerSectionProps): ReactElement => (
   <section className={className}>
     <div className="container text-center">
@@ -209,4 +201,16 @@ const CareerSection = ({ title, subTitle, imgSrc, para, secondPara, className }:
       </div>
     </div>
   </section>
+);
+
+const CareerResources = ({ title, icon, body }: CareerResourcesProps): ReactElement => (
+  <div className="row align-items-center mb-5">
+    <div className="col-12 col-lg-2">
+      {icon}
+    </div>
+    <div className="col-12 col-lg-8 text-start">
+      <h3>{title}</h3>
+      {body}
+    </div>
+  </div>
 );
