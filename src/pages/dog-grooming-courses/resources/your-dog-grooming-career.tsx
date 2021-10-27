@@ -2,8 +2,7 @@ import { NextPage } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 import React, { ReactElement } from 'react';
-import { BsTagsFill } from 'react-icons/bs';
-import { FaBriefcase, FaClipboard, FaRegFileAlt, FaRss } from 'react-icons/fa';
+import { FaBriefcase, FaClipboard, FaRegFileAlt, FaRss, FaTags } from 'react-icons/fa';
 import { DefaultLayout } from '../../../components/DefaultLayout';
 import { SEO } from '../../../components/SEO';
 import { useScreenWidth } from '../../../hooks/useScreenWidth';
@@ -36,7 +35,7 @@ const DogGroomingCareerPage: NextPage = () => {
         <div className="image-overlay-gradient"></div>
         <div className="container text-center">
           <div className="row justify-content-center">
-            <Image src={CompassIcon} alt="Compass Icon" />
+            <div className="mb-4"> <Image src={CompassIcon} alt="Compass Icon" /></div>
             <h1>Your Dog Grooming Carrer</h1>
             <div className="col-12 col-lg-10">
               <h2 className="mb-4">Career Paths for Professional Dog Groomers</h2>
@@ -79,7 +78,6 @@ const DogGroomingCareerPage: NextPage = () => {
         imgSrc={ExploreDogIndustryImage}
         para={'Once you have an education and experience in dog grooming, you can always branch out into other areas of the animal care industry. Many dog groomers try their hand at teaching, obedience training, or even competition dog grooming!'}
         secondPara={'Regardless of your career aspirations, QC Pet Studies will provide you with the skills and support you need to succeed.'}
-
       />
 
       <section className="bg-dark py-0">{/* override padding */}
@@ -134,7 +132,7 @@ const DogGroomingCareerPage: NextPage = () => {
 
           <div className="row align-items-center mb-5">
             <div className="col-12 col-lg-2">
-              <BsTagsFill className="h2 text-secondary mb-3" />
+              <FaTags className="h2 text-secondary mb-3" />
             </div>
             <div className="col-12 col-lg-8 text-start">
               <h3>Exclusive Discounts from Vendors</h3>
