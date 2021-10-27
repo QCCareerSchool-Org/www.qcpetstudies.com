@@ -9,6 +9,7 @@ import { FaAngleDown, FaMinusCircle, FaPlusCircle, FaSearch } from 'react-icons/
 import { DefaultLayout } from '../../../components/DefaultLayout';
 import { PriceSection } from '../../../components/PriceSection';
 import { SEO } from '../../../components/SEO';
+import { useScreenWidth } from '../../../hooks/useScreenWidth';
 import Guarantee21DayImage from '../../../images/21-day-guarantee-outlined.svg';
 import BreedStandardsImage from '../../../images/backgrounds/breed-standards.jpg';
 import BreedStylingCertificateImage from '../../../images/breed-styling-certificate.png';
@@ -23,11 +24,8 @@ type Props = {
 };
 
 const CustomToggle = ({ title, eventKey }: Props): ReactElement => {
-
   const { activeEventKey } = useContext(AccordionContext);
-
   const decoratedOnClick = useAccordionButton(eventKey);
-
   const isOpen = activeEventKey === eventKey;
 
   return (
@@ -44,6 +42,8 @@ const CustomToggle = ({ title, eventKey }: Props): ReactElement => {
 };
 
 const BreedStylingPage: NextPage = () => {
+  const screenWidth = useScreenWidth();
+  const lgOrGreater = screenWidth >= 992;
   return (
     <DefaultLayout secondaryTitle="Breed Styling Course">
       <SEO
@@ -183,7 +183,7 @@ const BreedStylingPage: NextPage = () => {
             <CustomToggle title="Part 1 – Theoretical Foundations" eventKey="0" />
             <Accordion.Collapse eventKey="0">
               <div className="row">
-                <div className="col-12 col-lg-6 mb-4 text-start">
+                <div className="col-12 col-lg-8 mb-4 text-start">
                   <p className="mb-4">In the first part of the course, you&apos;ll review your knowledge of dog anatomy, skincare, and dog behavior. You&apos;ll learn all about the basics of working with canines and keeping yourself safe in the grooming environment.</p>
                   <h3 className="mb-3">Dog Anatomy</h3>
                   <ul className="mb-4">
@@ -205,9 +205,10 @@ const BreedStylingPage: NextPage = () => {
                     <li>Prevent illness and injury to yourself by learning all about handling grooming tools, preventing muscle strain, and maintaining a clean workspace.</li>
                   </ul>
                 </div>
-                <div className="col-12 col-lg-6 mb-4 mb-lg-0">
-                  <Image src={DogAnatomyImage} alt="Dog Anatomy" />
+                { lgOrGreater && <div className="col-lg-3">
+                  <Image src={DogAnatomyImage} alt="Dog Anatomy" height="215" width="322" />
                 </div>
+                }
               </div>
             </Accordion.Collapse>
           </Accordion>
@@ -216,16 +217,17 @@ const BreedStylingPage: NextPage = () => {
             <CustomToggle title="Part 2 – Dog First Aid Course" eventKey="0" />
             <Accordion.Collapse eventKey="0">
               <div className="row">
-                <div className="col-12 col-lg-6 mb-4 mb-lg-0 text-start">
+                <div className="col-12 col-lg-8 mb-4 mb-lg-0 text-start">
                   <p className="mb-4">The second part of the course covers foundational dog first aid training. Understand how to prevent illness and accidents and treat basic injuries in this condensed version of QC&apos;s Dog First Aid course.</p>
                   <h3 className="mb-3">Safety Assessment and First Aid</h3>
                   <ul>
                     <li>Learn about pet afflictions and assessing symptoms. Then, learn how to properly check vitals, treat wounds, and perform rescue procedures.</li>
                   </ul>
                 </div>
-                <div className="col-12 col-lg-6 mb-4 mb-lg-0">
-                  <Image src={SafetyAndFirstaidImage} alt="Safety Assessment and First Aid" />
+                { lgOrGreater && <div className="col-lg-3">
+                  <Image src={SafetyAndFirstaidImage} alt="Safety Assessment and First Aid" height="215" width="322" />
                 </div>
+                }
               </div>
             </Accordion.Collapse>
           </Accordion>
@@ -234,7 +236,7 @@ const BreedStylingPage: NextPage = () => {
             <CustomToggle title="Part 3 – Practicum" eventKey="0" />
             <Accordion.Collapse eventKey="0">
               <div className="row">
-                <div className="col-12 col-lg-6 mb-4 mb-lg-0 text-start">
+                <div className="col-12 col-lg-8 mb-4 mb-lg-0 text-start">
                   <p className="mb-4">The last third of the course is broken up into four units. Learn all about interpreting breed standards and applying them to a variety of breeds. You&apos;ll complete a series of practical assignments grooming each dog from start to finish. Be tested on how well you adhere to official breed standards to bring out a dog&apos;s best features.</p>
                   <h3 className="mb-3">Groom a different dog for each unit</h3>
                   <ul>
@@ -248,9 +250,9 @@ const BreedStylingPage: NextPage = () => {
                     <li>Complete the course by researching and grooming a breed of your own choice</li>
                   </ul>
                 </div>
-                <div className="col-12 col-lg-6 mb-4 mb-lg-0">
-                  <Image src={PracticumImage} alt="Practicum" />
-                </div>
+                { lgOrGreater && <div className="col-lg-3">
+                  <Image src={PracticumImage} alt="Practicum" height="215" width="322" />
+                </div>}
               </div>
             </Accordion.Collapse>
           </Accordion>
