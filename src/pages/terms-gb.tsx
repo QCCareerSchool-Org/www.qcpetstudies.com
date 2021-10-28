@@ -35,8 +35,6 @@ const TermsGBPage: NextPage = () => (
     <p>We use cookies to keep track of advertisements and compile aggregate data about site traffic and site interaction so that we can offer better site experiences and tools in the future. We may contract with third-party service providers to assist us in better understanding our site visitors. These service providers are not permitted to use the information collected on our behalf except to help us conduct and improve our business.</p>
     <h2>Do we disclose any information to outside parties?</h2>
     <p>We do not sell, trade, or otherwise transfer to outside parties your personally identifiable information. This does not include trusted third parties who assist us in operating our website, conducting our business, or servicing you, so long as those parties agree to keep this information confidential. We may also release your information when we believe release is appropriate to comply with the law, enforce our site policies, or protect ours or others rights, property, or safety. However, non-personally identifiable visitor information may be provided to other parties for marketing, advertising, or other uses.</p>
-    <h2>Children&apos;s Online Privacy Protection Act Compliance</h2>
-    <p>We are in compliance with the requirements of COPPA (Children&apos;s Online Privacy Protection Act). We do not collect any information from anyone under 13 years of age. Our website, products and services are all directed to people who are at least 13 years old or older.</p>
     <h2>Your Consent</h2>
     <p>By using our site, you consent to our web site privacy policy.</p>
     <h2>Changes to our Privacy Policy</h2>
@@ -46,7 +44,7 @@ const TermsGBPage: NextPage = () => (
     <p>If there are any questions regarding this privacy policy you may contact us using the information below.</p>
     <p>QC Quality of Course Ltd<br />R+<br />2 Blagrave Street<br />READING<br />RG1 1AZ</p>
     <p>Email: info@qccareerschool.com</p>
-    <p>Phone: 1-613-749-8248</p>
+    <p>Phone: 0800&nbsp;066&nbsp;4734</p>
     <p><i>This policy is powered by Free Privacy Policy and Rhino Support helpdesk software.</i></p>
   </TextLayout>
 );
