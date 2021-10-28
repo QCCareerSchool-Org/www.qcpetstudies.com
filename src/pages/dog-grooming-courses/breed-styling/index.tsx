@@ -78,7 +78,7 @@ const BreedStylingPage: NextPage = () => {
                 <li>Dog groomers who are comfortable with basic services but want to enter conformation grooming competitions</li>
                 <li>Experienced dog groomers who have never received professional education on interpreting and implementing breed standards</li>
               </ul>
-              <p>Fundamental pet service knowledge is a prerequisite for this workshop. You won&apos;t spend time reviewing grooming tools, hair clipping, bathing, drying, and brushing. Instead, skip right to grooming techniques for a variety of breeds. If you&apos;d like a refresher in these areas, we recommend the <Link href="/dog-grooming-courses/dog-grooming"><a className="link-primary"> Dog Grooming course </a></Link> which covers the fundamentals and everything included in the Breed Styling Workshop.</p>
+              <p className="mb-0">Fundamental pet service knowledge is a prerequisite for this workshop. You won&apos;t spend time reviewing grooming tools, hair clipping, bathing, drying, and brushing. Instead, skip right to grooming techniques for a variety of breeds. If you&apos;d like a refresher in these areas, we recommend the <Link href="/dog-grooming-courses/dog-grooming"><a className="link-primary"> Dog Grooming course </a></Link> which covers the fundamentals and everything included in the Breed Styling Workshop.</p>
             </div>
           </div>
         </div>
@@ -95,7 +95,7 @@ const BreedStylingPage: NextPage = () => {
             </div>
             <div className="col-12 col-md-10 col-lg-8 col-xl-6">
               <h3>The 21-Day Money Back Guarantee</h3>
-              <p>Try the course risk-free for 21 days. This gives you time to receive your course materials and evaluate whether the Breed Styling Workshop is right for you.  If you decide it&apos;s not a good fit, simply contact QC to arrange a return of your course materials for a refund. It&apos;s that easy! Note: All materials must be returned unused and in their original condition in order to get a full refund. </p>
+              <p className="mb-0">Try the course risk-free for 21 days. This gives you time to receive your course materials and evaluate whether the Breed Styling Workshop is right for you.  If you decide it&apos;s not a good fit, simply contact QC to arrange a return of your course materials for a refund. It&apos;s that easy! Note: All materials must be returned unused and in their original condition in order to get a full refund. </p>
             </div>
           </div>
         </div>
