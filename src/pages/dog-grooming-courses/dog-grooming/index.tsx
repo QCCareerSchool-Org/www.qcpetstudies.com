@@ -1,5 +1,6 @@
 import { NextPage } from 'next';
 import Image from 'next/image';
+import Link from 'next/link';
 import { Accordion, Modal } from 'react-bootstrap';
 import { BsCardChecklist, BsPeopleFill, BsScissors } from 'react-icons/bs';
 import { IoMdInfinite } from 'react-icons/io';
@@ -183,6 +184,18 @@ const DogGroomingPage: NextPage = () => {
         </div>
       </section>
 
+      <section id="sampleSection" className="bg-light">
+        <div className="container text-center">
+          <div className="row justify-content-center">
+            <div className="col-12 col-lg-8">
+              <h2>Free Course Preview</h2>
+              <p>If you&apos;d like to see a more detailed course syllabus, view sample videos and download assignment examples, you can preview the dog grooming course for free!</p>
+              <Link href="/dog-grooming-courses/dog-grooming/preview"><a className="btn btn-secondary">Preview the Course</a></Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section>
         <div className="container">
           <div className="row justify-content-center">
@@ -238,10 +251,6 @@ const DogGroomingPage: NextPage = () => {
             </div>
           </Modal.Body>
         </Modal>
-      </section>
-
-      <section id="sampleSection">
-        <h2>Sample</h2>
       </section>
 
       <style jsx>{`
