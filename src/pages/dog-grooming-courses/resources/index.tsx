@@ -85,8 +85,8 @@ const DogGroomingResourcesPage: NextPage = () => {
 
       <section className="bg-light">
         <div className="container">
-          <div className="row mb-5">
-            <div className="col-12 col-lg-10 offset-lg-2 mb-4 text-center">
+          <div className="row mb-4 justify-content-center">
+            <div className="col-12 col-lg-10 mb-4 text-center">
               <h2>Free <strong>Downloads</strong></h2>
               <p>Download the free ebooks to keep handy during your career as a professional groomer.</p>
             </div>
