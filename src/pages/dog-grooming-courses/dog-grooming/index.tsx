@@ -59,7 +59,7 @@ const DogGroomingPage: NextPage = () => {
             </div>
             <h1>Dog Grooming</h1>
             {price && price.plans.part.deposit > 0 && <h4>Get Started for Only <strong>{price.currency.symbol}{formatPrice(price.plans.part.deposit)}</strong></h4>}
-            <p className="mb-4"><em>See tuition details</em></p>
+            <p><em><a href="#tuitionSection" className="text-white">See tuition details</a></em></p>
             <a href="https://enroll.qcpetstudies.com?c[]=dg"><button className="btn btn-secondary btn-lg">Enroll Online</button></a>
           </div>
           <div className="row justify-content-center">
@@ -79,7 +79,7 @@ const DogGroomingPage: NextPage = () => {
             </div>
           </div>
         </div>
-        <Modal show={trailerPopupVisible} onHide={trailerPopupToggle}>
+        <Modal show={trailerPopupVisible} onHide={trailerPopupToggle} size="lg">
           <Modal.Header closeButton>Dog Grooming Course</Modal.Header>
           <Modal.Body>
             <div className="ratio ratio-16x9">
@@ -217,21 +217,21 @@ const DogGroomingPage: NextPage = () => {
             </div>
           </div>
         </div>
-        <Modal show={lisaPopupVisible} onHide={lisaPopupToggle}>
+        <Modal show={lisaPopupVisible} onHide={lisaPopupToggle} size="lg">
           <Modal.Header closeButton>Lisa Day</Modal.Header>
           <Modal.Body>
             <div className="ratio ratio-16x9">
-              <video controls autoPlay>
+              <video controls autoPlay preload="metadata">
                 <source src="https://89b45d42c17e11dd3d57-62a1fc0bf60a98e1d5e980348a7de3b7.ssl.cf1.rackcdn.com/interview-lisa.mp4" type="video/mp4" />
               </video>
             </div>
           </Modal.Body>
         </Modal>
-        <Modal show={paddyPopupVisible} onHide={paddyPopupToggle}>
+        <Modal show={paddyPopupVisible} onHide={paddyPopupToggle} size="lg">
           <Modal.Header closeButton>Paddy Gaffney</Modal.Header>
           <Modal.Body>
             <div className="ratio ratio-16x9">
-              <video controls autoPlay>
+              <video controls autoPlay preload="metadata">
                 <source src="https://89b45d42c17e11dd3d57-62a1fc0bf60a98e1d5e980348a7de3b7.ssl.cf1.rackcdn.com/interview-paddy.mp4" type="video/mp4" />
               </video>
             </div>
@@ -244,6 +244,7 @@ const DogGroomingPage: NextPage = () => {
       </section>
 
       <style jsx>{`
+        .tutionButton { padding: 0; border: none; margin: 0 0 1rem; font-style: italic; background: none; color: white; font-weight: 300; }
         #outlineSection { background-color: #f7f7f7 !important; }
         .courseContentIcon { color: #ccc; margin-bottom: 0.5rem; }
       `}</style>
