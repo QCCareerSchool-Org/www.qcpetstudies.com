@@ -182,7 +182,7 @@ module.exports = {
     '@typescript-eslint/no-use-before-define': 'off', // override CRA's default
     '@typescript-eslint/object-curly-spacing': [ 'error', 'always' ],
     '@typescript-eslint/quotes': [ 'error', 'single' ],
-    '@typescript-eslint/require-await': 'warning',
+    '@typescript-eslint/require-await': 'warn',
     '@typescript-eslint/return-await': 'error',
     '@typescript-eslint/semi': 'error',
     '@typescript-eslint/space-before-function-paren': [ 'error', { anonymous: 'always', named: 'never', asyncArrow: 'always' } ],
