@@ -29,10 +29,13 @@ const headerIconSize = 20;
 const iconSize = 36;
 
 const DogGroomingPage: NextPage = () => {
-  const [ popup, toggle ] = useToggle();
   const screenWidth = useScreenWidth();
   const location = useLocation();
   const price = usePrice([ 'dg' ], location?.countryCode, location?.provinceCode);
+  const [ kitPopupVisible, kitPopupToggle ] = useToggle();
+  const [ trailerPopupVisible, trailerPopupToggle ] = useToggle();
+  const [ lisaPopupVisible, lisaPopupToggle ] = useToggle();
+  const [ paddyPopupVisible, paddyPopupToggle ] = useToggle();
 
   const mdOrGreater = screenWidth >= 768;
   const lgOrGreater = screenWidth >= 992;
@@ -62,20 +65,30 @@ const DogGroomingPage: NextPage = () => {
           <div className="row justify-content-center">
             <div className="col-12 col-md-6 d-flex">
               <div className="col text-uppercase">
-                <Image src={MovieClapperImage} alt="movie clapper" width={headerIconSize} height={headerIconSize} />
+                <button onClick={trailerPopupToggle} className="btn btn-link"><Image src={MovieClapperImage} alt="movie clapper" width={headerIconSize} height={headerIconSize} /></button>
                 <p><strong>Trailer</strong></p>
               </div>
               <div className="col text-uppercase">
-                <Image src={OutlineImage} alt="outline" width={headerIconSize} height={headerIconSize} />
+                <a href="#outlineSection"><Image src={OutlineImage} alt="outline" width={headerIconSize} height={headerIconSize} /></a>
                 <p><strong>Outline</strong></p>
               </div>
               <div className="col text-uppercase">
-                <Image src={PlayBtnImage} alt="play button" width={headerIconSize} height={headerIconSize} />
+                <a href="#sampleSection"><Image src={PlayBtnImage} alt="play button" width={headerIconSize} height={headerIconSize} /></a>
                 <p><strong>Sample</strong></p>
               </div>
             </div>
           </div>
         </div>
+        <Modal show={trailerPopupVisible} onHide={trailerPopupToggle}>
+          <Modal.Header closeButton>Dog Grooming Course</Modal.Header>
+          <Modal.Body>
+            <div className="ratio ratio-16x9">
+              <video controls autoPlay>
+                <source src="https://89b45d42c17e11dd3d57-62a1fc0bf60a98e1d5e980348a7de3b7.ssl.cf1.rackcdn.com/interview-paddy.mp4" type="video/mp4" />
+              </video>
+            </div>
+          </Modal.Body>
+        </Modal>
       </section>
 
       <section>
@@ -102,13 +115,7 @@ const DogGroomingPage: NextPage = () => {
               <div className="courseContentIcon"><BsScissors size={iconSize} /></div>
               <h3>Professional-Grade Grooming Starter Kit</h3>
               <p>When you enroll, you&apos;ll receive a kit of dog grooming tools to help you complete your studies and start your career. This kit includes cordless WAHL clippers and combs, three grooming scissors, an assortment of brushes and combs, and more!</p>
-              <button onClick={toggle} className="btn btn-link link-primary">View Kit Details</button>
-              <Modal show={popup} onHide={toggle}>
-                <Modal.Header closeButton>Dog Grooming Kit</Modal.Header>
-                <Modal.Body>
-                  <Image src={GroomingKitDetailImage} layout="responsive" alt="groomiing kit details" />
-                </Modal.Body>
-              </Modal>
+              <button onClick={kitPopupToggle} className="btn btn-link link-primary">View Kit Details</button>
             </div>
             <div className="col-12 col-md-4 mb-4 mb-md-0">
               <div className="courseContentIcon"><BsCardChecklist size={iconSize} /></div>
@@ -127,6 +134,12 @@ const DogGroomingPage: NextPage = () => {
             </div>
           </div>
         </div>
+        <Modal show={kitPopupVisible} onHide={kitPopupToggle}>
+          <Modal.Header closeButton>Dog Grooming Kit</Modal.Header>
+          <Modal.Body>
+            <Image src={GroomingKitDetailImage} layout="responsive" alt="groomiing kit details" />
+          </Modal.Body>
+        </Modal>
       </section>
 
       <section id="outlineSection" className="bg-light">
@@ -183,7 +196,7 @@ const DogGroomingPage: NextPage = () => {
             <div className="col-12 col-lg-6 d-flex flex-column justify-content-around">
               <div className="d-flex align-items-center">
                 <div className="me-4 mb-4 mb-lg-0">
-                  <Image src={MasterGroomerLisaImage} alt="Master Groomer Lisa" width="250" height="141" />
+                  <button onClick={lisaPopupToggle} className="btn btn-link"><Image src={MasterGroomerLisaImage} alt="Master Groomer Lisa" width="250" height="141" /></button>
                 </div>
                 <div className="d-flex flex-column">
                   <h3>Lisa Day</h3>
@@ -193,7 +206,7 @@ const DogGroomingPage: NextPage = () => {
               </div>
               <div className="d-flex align-items-center">
                 <div className="me-4">
-                  <Image src={MasterGroomerPaddyImage} alt="Master Groomer Paddy" width="250" height="141" />
+                  <button onClick={paddyPopupToggle} className="btn btn-link"><Image src={MasterGroomerPaddyImage} alt="Master Groomer Paddy" width="250" height="141" /></button>
                 </div>
                 <div className="d-flex flex-column">
                   <h3>Paddy Gaffney</h3>
@@ -204,6 +217,30 @@ const DogGroomingPage: NextPage = () => {
             </div>
           </div>
         </div>
+        <Modal show={lisaPopupVisible} onHide={lisaPopupToggle}>
+          <Modal.Header closeButton>Lisa Day</Modal.Header>
+          <Modal.Body>
+            <div className="ratio ratio-16x9">
+              <video controls autoPlay>
+                <source src="https://89b45d42c17e11dd3d57-62a1fc0bf60a98e1d5e980348a7de3b7.ssl.cf1.rackcdn.com/interview-lisa.mp4" type="video/mp4" />
+              </video>
+            </div>
+          </Modal.Body>
+        </Modal>
+        <Modal show={paddyPopupVisible} onHide={paddyPopupToggle}>
+          <Modal.Header closeButton>Paddy Gaffney</Modal.Header>
+          <Modal.Body>
+            <div className="ratio ratio-16x9">
+              <video controls autoPlay>
+                <source src="https://89b45d42c17e11dd3d57-62a1fc0bf60a98e1d5e980348a7de3b7.ssl.cf1.rackcdn.com/interview-paddy.mp4" type="video/mp4" />
+              </video>
+            </div>
+          </Modal.Body>
+        </Modal>
+      </section>
+
+      <section id="sampleSection">
+        <h2>Sample</h2>
       </section>
 
       <style jsx>{`
