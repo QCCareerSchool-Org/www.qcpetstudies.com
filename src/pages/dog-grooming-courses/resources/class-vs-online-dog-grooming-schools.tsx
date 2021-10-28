@@ -79,7 +79,7 @@ const ClassVsOnlineLearning: NextPage = () => {
 
       <ComparisonSection
         title="Program Completion"
-        inClass="6 months – 2 years (depends on the program)"
+        inClass="6 months to 2 years (depends on the program)"
         online={<>Flexible&mdash;<strong>Complete the program at your own pace.</strong> (average 6 months to 1 year)</>}
         className="bg-light"
       />
@@ -92,8 +92,8 @@ const ClassVsOnlineLearning: NextPage = () => {
 
       <ComparisonSection
         title="Tuition Cost"
-        inClass={<>$3,000 – $5,000<br />(average)</>}
-        online={<>$1,000 – $3,000<br />(average)</>}
+        inClass={<>$3,000 to $5,000<br />(average)</>}
+        online={<>$1,000 to $3,000<br />(average)</>}
         className="bg-light"
       />
 

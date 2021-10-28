@@ -200,7 +200,7 @@ const BreedStylingPage: NextPage = () => {
             </div>
           </div>
           <Accordion defaultActiveKey="0">
-            <AccordionToggle title="Part 1 – Theoretical Foundations" eventKey="0" />
+            <AccordionToggle title="Part 1: Theoretical Foundations" eventKey="0" />
             <AccordionSection eventKey="0">
               <div className="row">
                 <div className="col-12 col-lg-8">
@@ -222,7 +222,7 @@ const BreedStylingPage: NextPage = () => {
                 )}
               </div>
             </AccordionSection>
-            <AccordionToggle title="Part 2 – Dog First Aid Course" eventKey="1" />
+            <AccordionToggle title="Part 2: Dog First Aid Course" eventKey="1" />
             <AccordionSection eventKey="1">
               <div className="row">
                 <div className="col-12 col-lg-8">
@@ -238,7 +238,7 @@ const BreedStylingPage: NextPage = () => {
                 )}
               </div>
             </AccordionSection>
-            <AccordionToggle title="Part 3 – Practicum" eventKey="2" />
+            <AccordionToggle title="Part 3: Practicum" eventKey="2" />
             <AccordionSection eventKey="2">
               <div className="row">
                 <div className="col-12 col-lg-8">
