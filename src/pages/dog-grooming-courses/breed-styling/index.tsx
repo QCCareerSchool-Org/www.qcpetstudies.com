@@ -1,63 +1,24 @@
 import { NextPage } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
-import { ReactElement, useContext } from 'react';
 import Accordion from 'react-bootstrap/Accordion';
-import { useAccordionButton } from 'react-bootstrap/AccordionButton';
-import AccordionContext from 'react-bootstrap/AccordionContext';
-import { FaAngleDown, FaMinusCircle, FaPlusCircle, FaSearch } from 'react-icons/fa';
-import { Bar } from '../../../components/Bar';
 
+import { AccordionSection } from '../../../components/AccordionSection';
+import { AccordionToggle } from '../../../components/AccordionToggle';
+import { Bar } from '../../../components/Bar';
 import { DefaultLayout } from '../../../components/DefaultLayout';
 import { PriceSection } from '../../../components/PriceSection';
 import { SecondaryNavLinks } from '../../../components/SecondaryNav';
 import { SEO } from '../../../components/SEO';
 import { useScreenWidth } from '../../../hooks/useScreenWidth';
+
 import Guarantee21DayImage from '../../../images/21-day-guarantee-outlined.svg';
 import BreedStandardsBook from '../../../images/books/breed-standards.jpg';
 import BreedStylingCertificateImage from '../../../images/breed-styling-certificate.png';
 import CourseIconBadge from '../../../images/course-icon-badge.svg';
-import DogAnatomyImage from '../../../images/part-1.jpg';
-import SafetyAndFirstaidImage from '../../../images/part-2.jpg';
-import PracticumImage from '../../../images/part-3.jpg';
-
-type Props = {
-  eventKey: string;
-  title: string;
-};
-
-const CustomToggle = ({ title, eventKey }: Props): ReactElement => {
-  const { activeEventKey } = useContext(AccordionContext);
-  const decoratedOnClick = useAccordionButton(eventKey);
-  const isOpen = activeEventKey === eventKey;
-
-  return (
-    <>
-      <button className="btn btn-link toggleWrapper" onClick={decoratedOnClick}>
-        <div className="d-flex align-items-center justify-content-between">
-          <h3 className="m-0">{title}</h3>
-          <div className="text-secondary">
-            {isOpen ? <FaMinusCircle /> : <FaPlusCircle />}
-          </div>
-        </div>
-      </button>
-      <style jsx>{`
-        .toggleWrapper {
-          width: 100%;
-          background-color: #ededed;
-          border-left: 1px solid #ddd;
-          border-bottom: 1px solid #ddd;
-          border-right: 1px solid #ddd;
-          text-transform: none;
-          padding: 1rem 1.625rem;
-        }
-        .toggleWrapper:first-of-type {
-          border-top: 1px solid #ddd;
-        }
-      `}</style>
-    </>
-  );
-};
+import OutlinePart1 from '../../../images/ds-outlline-part-1-anatomy.jpg';
+import OutlinePart2 from '../../../images/ds-outlline-part-2-first-aid.jpg';
+import OutlinePart3 from '../../../images/ds-outlline-part-3-grooming.jpg';
 
 const secondaryNavLinks: SecondaryNavLinks = [];
 
@@ -159,7 +120,7 @@ const BreedStylingPage: NextPage = () => {
               <p>To complete the assignments in the course, you&apos;ll need the following tools:</p>
             </div>
             {lgOrGreater
-              ? (
+              ? ( // display in two columns in cards
                 <>
                   <div className="col-12 col-lg-4 text-start mb-4 d-flex">
                     <div className="card">
@@ -180,7 +141,7 @@ const BreedStylingPage: NextPage = () => {
                     <div className="card">
                       <div className="card-body">
                         <ul className="no-indent mb-0">
-                        <li>Shampoos and conditioners</li>
+                          <li>Shampoos and conditioners</li>
                           <li>Ear powder</li>
                           <li>Restraints</li>
                           <li>Grooming table</li>
@@ -195,7 +156,7 @@ const BreedStylingPage: NextPage = () => {
                   </div>
                 </>
               )
-              : (
+              : ( // display in a single column
                 <div className="col-10 col-sm-8 text-start mb-4">
                   <ul className="mb-0">
                     <li>A selection of grooming brushes and combs</li>
@@ -236,72 +197,66 @@ const BreedStylingPage: NextPage = () => {
             </div>
           </div>
           <Accordion defaultActiveKey="0">
-            <CustomToggle title="Part 1 – Theoretical Foundations" eventKey="0" />
-            <Accordion.Collapse eventKey="0">
-              <div className="accordionWrapper">
-                <div className="row">
-                  <div className="col-12 col-lg-8">
-                    <p className="lead">In the first part of the course, you&apos;ll review your knowledge of dog anatomy, skincare, and dog behavior. You&apos;ll learn all about the basics of working with canines and keeping yourself safe in the grooming environment.</p>
-                    <Bar variant="primary" align="start" />
-                    <h4>Dog Anatomy</h4>
-                    <p>Learn how a dog&apos;s skeletal and muscular structure informs you on interpreting grooming patterns. You&apos;ll also discover the physical variations between breeds that define appropriate cut and styling options.</p>
-                    <h4>Dog Skincare and Esthetics</h4>
-                    <p>Examine hair types and learn how to work with owners to maintain healthy skin and hair. You&apos;ll also touch on skin condition symptoms, causes, and treatments. You can&apos;t diagnose skin conditions (that&apos;s left to veterinarians), but groomers play a role in identifying potential abnormalities during appointments.</p>
-                    <h4>Dog Behavior</h4>
-                    <p>Focus on dog behavior as well as understanding dog temperaments. You&apos;ll learn about reading physical distress signals and how to adapt your own behavior to ease them into the grooming procedure.</p>
-                    <h4>Personal Health and Safety</h4>
-                    <p className="mb-0">Prevent illness and injury to yourself by learning all about handling grooming tools, preventing muscle strain, and maintaining a clean workspace.</p>
-                  </div>
-                  {lgOrGreater && (
-                    <div className="col-lg-4">
-                      <Image src={DogAnatomyImage} alt="Dog Anatomy" layout="responsive" />
-                    </div>
-                  )}
+            <AccordionToggle title="Part 1 – Theoretical Foundations" eventKey="0" />
+            <AccordionSection eventKey="0">
+              <div className="row">
+                <div className="col-12 col-lg-8">
+                  <p className="lead">In the first part of the course, you&apos;ll review your knowledge of dog anatomy, skincare, and dog behavior. You&apos;ll learn all about the basics of working with canines and keeping yourself safe in the grooming environment.</p>
+                  <Bar variant="primary" align="start" />
+                  <h4>Dog Anatomy</h4>
+                  <p>Learn how a dog&apos;s skeletal and muscular structure informs you on interpreting grooming patterns. You&apos;ll also discover the physical variations between breeds that define appropriate cut and styling options.</p>
+                  <h4>Dog Skincare and Esthetics</h4>
+                  <p>Examine hair types and learn how to work with owners to maintain healthy skin and hair. You&apos;ll also touch on skin condition symptoms, causes, and treatments. You can&apos;t diagnose skin conditions (that&apos;s left to veterinarians), but groomers play a role in identifying potential abnormalities during appointments.</p>
+                  <h4>Dog Behavior</h4>
+                  <p>Focus on dog behavior as well as understanding dog temperaments. You&apos;ll learn about reading physical distress signals and how to adapt your own behavior to ease them into the grooming procedure.</p>
+                  <h4>Personal Health and Safety</h4>
+                  <p className="mb-0">Prevent illness and injury to yourself by learning all about handling grooming tools, preventing muscle strain, and maintaining a clean workspace.</p>
                 </div>
-              </div>
-            </Accordion.Collapse>
-            <CustomToggle title="Part 2 – Dog First Aid Course" eventKey="1" />
-            <Accordion.Collapse eventKey="1">
-              <div className="accordionWrapper">
-                <div className="row">
-                  <div className="col-12 col-lg-8">
-                    <p className="lead">The second part of the course covers foundational dog first aid training. Understand how to prevent illness and accidents and treat basic injuries in this condensed version of QC&apos;s Dog First Aid course.</p>
-                    <Bar variant="primary" align="start" />
-                    <h4>Safety Assessment and First Aid</h4>
-                    <p className="mb-0">Learn about pet afflictions and assessing symptoms. Then, learn how to properly check vitals, treat wounds, and perform rescue procedures.</p>
+                {lgOrGreater && (
+                  <div className="col-lg-4">
+                    <Image src={OutlinePart1} alt="Dog Anatomy" layout="responsive" />
                   </div>
-                  {lgOrGreater && (
-                    <div className="col-lg-4">
-                      <Image src={SafetyAndFirstaidImage} alt="Safety Assessment and First Aid" layout="responsive" />
-                    </div>
-                  )}
-                </div>
+                )}
               </div>
-            </Accordion.Collapse>
-            <CustomToggle title="Part 3 – Practicum" eventKey="2" />
-            <Accordion.Collapse eventKey="2">
-              <div className="accordionWrapper">
-                <div className="row">
-                  <div className="col-12 col-lg-8">
-                    <p className="lead">The last third of the course is broken up into four units. Learn all about interpreting breed standards and applying them to a variety of breeds. You&apos;ll complete a series of practical assignments grooming each dog from start to finish. Be tested on how well you adhere to official breed standards to bring out a dog&apos;s best features.</p>
-                    <Bar variant="primary" align="start" />
-                    <h4>Groom a different dog for each unit</h4>
-                    <p>Prepare and groom the head, body, limbs, rear, and tail of a variety of breeds most often tested in a certification exam.</p>
-                    <ul>
-                      <li>Terrier</li>
-                      <li>Non-sporting breed</li>
-                      <li>Mixed breed</li>
-                    </ul>
-                    <p className="mb-0">Complete the course by researching and grooming a breed of your own choice</p>
+            </AccordionSection>
+            <AccordionToggle title="Part 2 – Dog First Aid Course" eventKey="1" />
+            <AccordionSection eventKey="1">
+              <div className="row">
+                <div className="col-12 col-lg-8">
+                  <p className="lead">The second part of the course covers foundational dog first aid training. Understand how to prevent illness and accidents and treat basic injuries in this condensed version of QC&apos;s Dog First Aid course.</p>
+                  <Bar variant="primary" align="start" />
+                  <h4>Safety Assessment and First Aid</h4>
+                  <p className="mb-0">Learn about pet afflictions and assessing symptoms. Then, learn how to properly check vitals, treat wounds, and perform rescue procedures.</p>
+                </div>
+                {lgOrGreater && (
+                  <div className="col-lg-4">
+                    <Image src={OutlinePart2} alt="Safety Assessment and First Aid" layout="responsive" />
                   </div>
-                  {lgOrGreater && (
-                    <div className="col-lg-4">
-                      <Image src={PracticumImage} alt="Practicum" layout="responsive" />
-                    </div>
-                  )}
-                </div>
+                )}
               </div>
-            </Accordion.Collapse>
+            </AccordionSection>
+            <AccordionToggle title="Part 3 – Practicum" eventKey="2" />
+            <AccordionSection eventKey="2">
+              <div className="row">
+                <div className="col-12 col-lg-8">
+                  <p className="lead">The last third of the course is broken up into four units. Learn all about interpreting breed standards and applying them to a variety of breeds. You&apos;ll complete a series of practical assignments grooming each dog from start to finish. Be tested on how well you adhere to official breed standards to bring out a dog&apos;s best features.</p>
+                  <Bar variant="primary" align="start" />
+                  <h4>Groom a different dog for each unit</h4>
+                  <p>Prepare and groom the head, body, limbs, rear, and tail of a variety of breeds most often tested in a certification exam.</p>
+                  <ul>
+                    <li>Terrier</li>
+                    <li>Non-sporting breed</li>
+                    <li>Mixed breed</li>
+                  </ul>
+                  <p className="mb-0">Complete the course by researching and grooming a breed of your own choice</p>
+                </div>
+                {lgOrGreater && (
+                  <div className="col-lg-4">
+                    <Image src={OutlinePart3} alt="Practicum" layout="responsive" />
+                  </div>
+                )}
+              </div>
+            </AccordionSection>
           </Accordion>
         </div>
       </section>
