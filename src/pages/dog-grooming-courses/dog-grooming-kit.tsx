@@ -50,7 +50,7 @@ const DogGroomingKitPage: NextPage = () => (
       <div className="container">
         <div className="text-center mb-4">
           <h2>What&apos;s in Your Dog Grooming Kit</h2>
-          <Bar variant="secondary"></Bar>
+          <Bar variant="secondary" />
         </div>
         <div className="row justify-content-center mb-4">
           <div className="col-12 col-sm-10 col-md-6 mb-4 mb-md-0 d-flex">

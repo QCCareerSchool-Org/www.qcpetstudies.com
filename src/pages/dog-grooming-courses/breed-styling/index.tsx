@@ -84,7 +84,7 @@ const BreedStylingPage: NextPage = () => {
         </div>
       </section>
 
-      <PriceSection courses={['ds']} doubleGuarantee={false} />
+      <PriceSection courses={[ 'ds' ]} doubleGuarantee={false} />
 
       <section>
         <div className="container text-center">
@@ -266,13 +266,6 @@ const BreedStylingPage: NextPage = () => {
 
       <style jsx>{`
         #outlineSection { background-color: #f7f7f7 !important; }
-        .accordionWrapper {
-          padding: 1.625rem;
-          border-left: 1px solid #ddd;
-          border-bottom: 1px solid #ddd;
-          border-right: 1px solid #ddd;
-          background-color: white;
-        }
       `}</style>
     </DefaultLayout>
   );

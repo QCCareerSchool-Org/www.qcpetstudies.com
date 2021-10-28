@@ -26,7 +26,7 @@ export const PriceSection = ({ courses, doubleGuarantee, variant = 'dark' }: Pro
   const enrollLink = `https://enroll.qcpetstudies.com/?${courses.map(c => `c[]=${encodeURIComponent(c)}`).join('&')}`;
 
   return (
-    <section className={variant === 'dark' ? 'bg-navy' : 'bg-light'}>
+    <section id="tuitionSection" className={variant === 'dark' ? 'bg-navy' : 'bg-light'}>
       {price && price.courses.length > 0 && (
         <>
           <GuaranteeModal show={popup} doubleGuarantee={doubleGuarantee} toggle={toggle} />
