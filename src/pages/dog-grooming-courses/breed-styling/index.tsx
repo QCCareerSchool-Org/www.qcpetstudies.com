@@ -177,8 +177,8 @@ const BreedStylingPage: NextPage = () => {
                     <li>Ear protection</li>
                   </ul>
                 </div>
-              )}
-
+              )
+            }
             <div className="col-12 col-lg-10">
               <p className="fst-italic">Please note that you&apos;ll need to purchase these tools yourself if you don&apos;t already own them. As a student of QC Pet Studies, take advantage of discounts from established dog grooming brands.</p>
               <Link href="/your-dog-grooming-career/discounts-for-grooming-students"><a className="link-primary">See the list here!</a></Link>
@@ -271,8 +271,7 @@ const BreedStylingPage: NextPage = () => {
           background-color: white;
         }
       `}</style>
-
-    </DefaultLayout >
+    </DefaultLayout>
   );
 };
 
