@@ -37,7 +37,7 @@ const DogGroomingResourcesPage: NextPage = () => {
           <h2>Useful <strong>Links</strong></h2>
           <p>Learn more about QC Pet Studies and how your dog grooming course will help you achieve your goals!</p>
           <div className="row mb-5">
-            <div className="col-12 col-sm-8 col-lg-4 mb-4 mb-lg-0 d-flex align-items-stretch">
+            <div className="col-12 col-sm-8 col-lg-4 mb-4 mb-lg-0 d-flex">
               <div className="card">
                 <Image className="card-img-top" src={DogGroomerCareerImage} alt="Your Dog Grooming Career" />
                 <div className="card-body">
@@ -47,7 +47,7 @@ const DogGroomingResourcesPage: NextPage = () => {
                 </div>
               </div>
             </div>
-            <div className="col-12 col-sm-8 col-lg-4 mb-4 mb-lg-0 d-flex align-items-stretch">
+            <div className="col-12 col-sm-8 col-lg-4 mb-4 mb-lg-0 d-flex">
               <div className="card">
                 <Image src={StudentGradFeaturesImage} alt="Student and Graduate Features" className="card-img-top" />
                 <div className="card-body">
@@ -57,12 +57,12 @@ const DogGroomingResourcesPage: NextPage = () => {
                 </div>
               </div>
             </div>
-            <div className="col-12 col-sm-8 col-lg-4 d-flex align-items-stretch">
+            <div className="col-12 col-sm-8 col-lg-4 d-flex">
               <div className="card">
                 <Image src={LearningInClassOnlineImage} alt="Learning in-class vs. Online<" className="card-img-top" />
                 <div className="card-body">
                   <h5 className="card-title">Learning in-class vs. Online</h5>
-                  <p className="card-text">Learning dog grooming online is just as effective as learning it in a classroom. <br /> Find out how!</p>
+                  <p className="card-text">Learning dog grooming online is just as effective as learning it in a classroom. Find out how!</p>
                   <Link href="/dog-grooming-courses/resources/learning-in-class-vs-online"><a className="link-primary">Learn More</a></Link>
                 </div>
               </div>
@@ -103,7 +103,7 @@ const DogGroomingResourcesPage: NextPage = () => {
             </div>
             <div className="col-12 col-md-8 col-lg-6 col-xl-5 text-center text-md-start mb-4 mb-lg-0">
               <h3 className="mb-4">Becoming a Dog Groomer</h3>
-              <p> Find out what is required to become a successful dog groomer from start to finish.</p>
+              <p>Find out what is required to become a successful dog groomer from start to finish.</p>
               <a href="/documents/becoming-a-dog-groomer.pdf" className="link-primary" target="_blank">Download</a>
             </div>
             <div className="col-6 offset-3 col-md-4 offset-md-0 offset-lg-1 col-xl-3 offset-xl-2">
@@ -111,7 +111,7 @@ const DogGroomingResourcesPage: NextPage = () => {
             </div>
             <div className="col-12 col-md-8 col-lg-6 col-xl-5 text-center text-md-start">
               <h3 className="mb-4">Pros &amp; Cons:<br />Your Dog Grooming Certificate</h3>
-              <p> Find out how a dog grooming certification can help you succeed in the industry, and ways in which it might hold you back.</p>
+              <p>Find out how a dog grooming certification can help you succeed in the industry, and ways in which it might hold you back.</p>
               <a href="/documents/dog-grooming-certification-pros-and-cons.pdf" className="link-primary" target="_blank">Download</a>
             </div>
           </div>

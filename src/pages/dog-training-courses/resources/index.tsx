@@ -1,6 +1,7 @@
 import { NextPage } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
+
 import { DefaultLayout } from '../../../components/DefaultLayout';
 import { SEO } from '../../../components/SEO';
 import DogTrainingResourcesBackground from '../../../images/backgrounds/dt-resources.jpg';
@@ -37,7 +38,7 @@ const DogTrainingResourcesPage: NextPage = () => {
             </div>
           </div>
           <div className="row justify-content-center mb-5">
-            <div className="col-12 col-sm-8 col-lg-4 mb-4 mb-lg-0 d-flex align-items-stretch">
+            <div className="col-12 col-sm-8 col-lg-4 mb-4 mb-lg-0 d-flex">
               <div className="card">
                 <Image className="card-img-top" src={DogTrainingCareer} alt="your dog grooming career" />
                 <div className="card-body">
@@ -47,7 +48,7 @@ const DogTrainingResourcesPage: NextPage = () => {
                 </div>
               </div>
             </div>
-            <div className="col-12 col-sm-8 col-lg-4 mb-4 mb-lg-0 d-flex align-items-stretch">
+            <div className="col-12 col-sm-8 col-lg-4 mb-4 mb-lg-0 d-flex">
               <div className="card">
                 <Image src={StudentGrad} alt="Dog Training Course Outline" className="card-img-top" />
                 <div className="card-body">
@@ -57,9 +58,9 @@ const DogTrainingResourcesPage: NextPage = () => {
                 </div>
               </div>
             </div>
-            <div className="col-12 col-sm-8 col-lg-4 d-flex align-items-stretch">
+            <div className="col-12 col-sm-8 col-lg-4 d-flex">
               <div className="card">
-                <Image src={LearningInClassOnline} alt="Learning in-class vs Online<" className="card-img-top" />
+                <Image src={LearningInClassOnline} alt="Learning in-class vs Online" className="card-img-top" />
                 <div className="card-body">
                   <h3 className="card-title">Learning In Class vs Online</h3>
                   <p className="card-text">Is learning dog training online as effective as learning it in a classroom? It might even be better! Read about the pros and cons of online learning to decide if it&apos;s right for you.</p>
@@ -75,7 +76,7 @@ const DogTrainingResourcesPage: NextPage = () => {
                 <li><Link href=""><a className="link-primary">Frequently Asked Questions about the Dog Training Course</a></Link></li>
                 <li><Link href=""><a className="link-primary">Information about QC&apos;s 21-day guarantee</a></Link></li>
                 <li><Link href=""><a className="link-primary">Preview the Dog Training Course for free</a></Link></li>
-                <li><Link href=""><a className="link-primary">QUIZ: Do you know your calming signals? (blog link)</a></Link></li>
+                <li><Link href=""><a className="link-primary">Quiz: Do you know your calming signals? (blog link)</a></Link></li>
               </ul>
             </div>
           </div>
