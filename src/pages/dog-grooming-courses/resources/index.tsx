@@ -24,8 +24,8 @@ const DogGroomingResourcesPage: NextPage = () => {
       <section id="firstSection" className="bg-dark">
         <Image src={DogGroomingResourcesBackground} layout="fill" objectFit="cover" objectPosition="center" alt="Learning during covid" />
         <div className="container">
-          <div className="row">
-            <div className="col-12 col-lg-10 offset-lg-1">
+          <div className="row justify-content-center">
+            <div className="col-12 col-lg-10 text-center">
               <h1>Dog Grooming Resources</h1>
             </div>
           </div>
@@ -83,8 +83,8 @@ const DogGroomingResourcesPage: NextPage = () => {
 
       <section className="bg-light">
         <div className="container">
-          <div className="row mb-4">
-            <div className="col-12 col-lg-10 offset-lg-2 mb-4 text-center">
+          <div className="row mb-4 justify-content-center">
+            <div className="col-12 col-lg-10 mb-4 text-center">
               <h2>Free <strong>Downloads</strong></h2>
               <p>Download the free ebooks to keep handy during your career as a professional groomer.</p>
             </div>
