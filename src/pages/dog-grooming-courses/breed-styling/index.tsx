@@ -25,6 +25,7 @@ const secondaryNavLinks: SecondaryNavLinks = [];
 const BreedStylingPage: NextPage = () => {
   const screenWidth = useScreenWidth();
   const lgOrGreater = screenWidth >= 992;
+
   return (
     <DefaultLayout secondaryTitle="Breed Styling Workshop" secondaryNavLinks={secondaryNavLinks}>
       <SEO
