@@ -68,7 +68,7 @@ const DogGroomingKitPage: NextPage = () => (
               <Image src={GroomingScissorsImage} className="card-img-top" alt="grooming scissors" />
               <div className="card-body">
                 <h3 className="card-text">Professional Grooming Scissors</h3>
-                <p className="card-text">Grooming scissors (or shears) are a groomer&apos;s best friend. With the right scissors, you can create just about any look on a dog – from the cutest teddy bear cut to the perfect golden retriever tail and everything in between. As part of your kit, you&apos;ll receive a set of three professional-grade grooming scissors and comb! The kit includes a straight blade, a curved blade, and thinning scissors, wrapped in a beautiful leather case for portability and convenience. (Product may vary based on the supplier.)</p>
+                <p className="card-text">Grooming scissors (or shears) are a groomer&apos;s best friend. With the right scissors, you can create just about any look on a dog&mdash;from the cutest teddy bear cut to the perfect golden retriever tail and everything in between. As part of your kit, you&apos;ll receive a set of three professional-grade grooming scissors and comb! The kit includes a straight blade, a curved blade, and thinning scissors, wrapped in a beautiful leather case for portability and convenience. (Product may vary based on the supplier.)</p>
               </div>
             </div>
           </div>
