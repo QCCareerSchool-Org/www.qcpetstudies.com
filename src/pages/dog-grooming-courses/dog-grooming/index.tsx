@@ -108,10 +108,10 @@ const DogGroomingPage: NextPage = () => {
 
       <section>
         <div className="container text-center">
-          <h2 className="mb-2 mb-md-4">Included in <strong>Your Course</strong></h2>
-          <Image src={DogCourseMaterialsImage} width={830} height={550} alt="course materials" />
           <div className="row justify-content-center">
-            <div className="col-12 mb-4">
+            <div className="col-12 col-lg-10 mb-4">
+              <h2 className="mb-2 mb-md-4">Included in <strong>Your Course</strong></h2>
+              <Image src={DogCourseMaterialsImage} width={830} height={550} alt="course materials" />
               <div className="courseContentIcon"><BsScissors size={iconSize} /></div>
               <h3>Professional-Grade Grooming Starter Kit</h3>
               <p>When you enroll, you&apos;ll receive a kit of dog grooming tools to help you complete your studies and start your career. This kit includes cordless WAHL clippers and combs, three grooming scissors, an assortment of brushes and combs, and more!</p>
@@ -195,7 +195,7 @@ const DogGroomingPage: NextPage = () => {
             </div>
             <div className="col-12 col-lg-6 d-flex flex-column justify-content-around">
               <div className="d-flex align-items-center">
-                <div className="me-4 mb-4 mb-lg-0">
+                <div className="me-4">
                   <button onClick={lisaPopupToggle} className="btn btn-link"><Image src={MasterGroomerLisaImage} alt="Master Groomer Lisa" width="250" height="141" /></button>
                 </div>
                 <div className="d-flex flex-column">
@@ -204,6 +204,7 @@ const DogGroomingPage: NextPage = () => {
                   <i>40+ Years of Experience</i>
                 </div>
               </div>
+              {!lgOrGreater && <div className="mb-4" />}
               <div className="d-flex align-items-center">
                 <div className="me-4">
                   <button onClick={paddyPopupToggle} className="btn btn-link"><Image src={MasterGroomerPaddyImage} alt="Master Groomer Paddy" width="250" height="141" /></button>
