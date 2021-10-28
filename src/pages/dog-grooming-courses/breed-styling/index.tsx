@@ -88,10 +88,12 @@ const BreedStylingPage: NextPage = () => {
 
       <section>
         <div className="container text-center">
-          <h2>You&apos;ll Be Covered by QC&apos;s Money-Back Guarantee</h2>
-          <Image src={Guarantee21DayImage} alt="21 Day Money Back Guarantee" />
           <div className="row justify-content-center">
-            <div className="col-12 col-lg-10">
+            <div className="col-12 col-lg-10 mb-4">
+              <h2 className="mb-4">You&apos;ll Be Covered by QC&apos;s <strong>Money-Back Guarantee</strong></h2>
+              <Image src={Guarantee21DayImage} alt="21 Day Money Back Guarantee" />
+            </div>
+            <div className="col-12 col-md-10 col-lg-8 col-xl-6">
               <h3>The 21-Day Money Back Guarantee</h3>
               <p>Try the course risk-free for 21 days. This gives you time to receive your course materials and evaluate whether the Breed Styling Workshop is right for you.  If you decide it&apos;s not a good fit, simply contact QC to arrange a return of your course materials for a refund. It&apos;s that easy! Note: All materials must be returned unused and in their original condition in order to get a full refund. </p>
             </div>
