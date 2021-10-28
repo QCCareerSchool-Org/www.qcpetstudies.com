@@ -3,7 +3,7 @@ import { NextPage } from 'next';
 import { SEO } from '../components/SEO';
 import { TextLayout } from '../components/TextLayout';
 
-const TermsPage: NextPage = () => (
+const TermsGBPage: NextPage = () => (
   <TextLayout>
     <SEO
       title="Privacy Policy"
@@ -44,11 +44,11 @@ const TermsPage: NextPage = () => (
     <p>This policy was last modified on March 10, 2017.</p>
     <h2>Contacting Us</h2>
     <p>If there are any questions regarding this privacy policy you may contact us using the information below.</p>
-    <p>QC Career School<br />38 McArthur Ave<br />Ottawa ON&nbsp; K1L 6R2<br />Canada</p>
+    <p>QC Quality of Course Ltd<br />R+<br />2 Blagrave Street<br />READING<br />RG1 1AZ</p>
     <p>Email: info@qccareerschool.com</p>
     <p>Phone: 1-613-749-8248</p>
     <p><i>This policy is powered by Free Privacy Policy and Rhino Support helpdesk software.</i></p>
   </TextLayout>
 );
 
-export default TermsPage;
+export default TermsGBPage;
