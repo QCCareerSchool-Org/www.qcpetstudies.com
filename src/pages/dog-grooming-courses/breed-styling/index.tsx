@@ -14,7 +14,7 @@ import { SecondaryNavLinks } from '../../../components/SecondaryNav';
 import { SEO } from '../../../components/SEO';
 import { useScreenWidth } from '../../../hooks/useScreenWidth';
 import Guarantee21DayImage from '../../../images/21-day-guarantee-outlined.svg';
-import BreedStandardsImage from '../../../images/backgrounds/breed-standards.jpg';
+import BreedStandardsBook from '../../../images/books/breed-standards.jpg';
 import BreedStylingCertificateImage from '../../../images/breed-styling-certificate.png';
 import CourseIconBadge from '../../../images/course-icon-badge.svg';
 import DogAnatomyImage from '../../../images/part-1.jpg';
@@ -100,7 +100,7 @@ const BreedStylingPage: NextPage = () => {
               </ul>
             </div>
             <div className="col-12 col-lg-6">
-              <Image src={BreedStandardsImage} alt="Breed standards" />
+              <Image src={BreedStandardsBook} alt="Breed Standards course text" />
             </div>
           </div>
         </div>
@@ -122,7 +122,7 @@ const BreedStylingPage: NextPage = () => {
         </div>
       </section>
 
-      <PriceSection courses={[ 'ds' ]} doubleGuarantee={false} />
+      <PriceSection courses={['ds']} doubleGuarantee={false} />
 
       <section>
         <div className="container text-center">
@@ -158,30 +158,66 @@ const BreedStylingPage: NextPage = () => {
               <h2>Tools to succeed</h2>
               <p>To complete the assignments in the course, you&apos;ll need the following tools:</p>
             </div>
-            <div className="col-12 col-lg-4 text-start mb-lg-4">
-              <ul className="mb-0">
-                <li>A selection of grooming brushes and combs</li>
-                <li>Dematting tools</li>
-                <li>Nail clippers</li>
-                <li>Styptic product</li>
-                <li>Hemostats</li>
-                <li>A selection of professional scissors</li>
-                <li>Professional clippers with a selection of blades or blade settings</li>
-                <li>Shampoos and conditioners</li>
-              </ul>
-            </div>
-            <div className="col-12 col-lg-4 text-start mb-4">
-              <ul className="mb-0">
-                <li>Ear powder</li>
-                <li>Restraints</li>
-                <li>Grooming table</li>
-                <li>Bathing setup</li>
-                <li>High-velocity dryer and/or stand dryer</li>
-                <li>Towels</li>
-                <li>Face mask</li>
-                <li>Ear protection</li>
-              </ul>
-            </div>
+            {lgOrGreater
+              ? (
+                <>
+                  <div className="col-12 col-lg-4 text-start mb-4 d-flex">
+                    <div className="card">
+                      <div className="card-body">
+                        <ul className="no-indent mb-0">
+                          <li>A selection of grooming brushes and combs</li>
+                          <li>Dematting tools</li>
+                          <li>Nail clippers</li>
+                          <li>Styptic product</li>
+                          <li>Hemostats</li>
+                          <li>A selection of professional scissors</li>
+                          <li>Professional clippers with a selection of blades or blade settings</li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="col-12 col-lg-4 text-start mb-4 d-flex">
+                    <div className="card">
+                      <div className="card-body">
+                        <ul className="no-indent mb-0">
+                        <li>Shampoos and conditioners</li>
+                          <li>Ear powder</li>
+                          <li>Restraints</li>
+                          <li>Grooming table</li>
+                          <li>Bathing setup</li>
+                          <li>High-velocity dryer and/or stand dryer</li>
+                          <li>Towels</li>
+                          <li>Face mask</li>
+                          <li>Ear protection</li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </>
+              )
+              : (
+                <div className="col-10 col-sm-8 text-start mb-4">
+                  <ul className="mb-0">
+                    <li>A selection of grooming brushes and combs</li>
+                    <li>Dematting tools</li>
+                    <li>Nail clippers</li>
+                    <li>Styptic product</li>
+                    <li>Hemostats</li>
+                    <li>A selection of professional scissors</li>
+                    <li>Professional clippers with a selection of blades or blade settings</li>
+                    <li>Shampoos and conditioners</li>
+                    <li>Ear powder</li>
+                    <li>Restraints</li>
+                    <li>Grooming table</li>
+                    <li>Bathing setup</li>
+                    <li>High-velocity dryer and/or stand dryer</li>
+                    <li>Towels</li>
+                    <li>Face mask</li>
+                    <li>Ear protection</li>
+                  </ul>
+                </div>
+              )}
+
             <div className="col-12 col-lg-10">
               <p className="fst-italic">Please note that you&apos;ll need to purchase these tools yourself if you don&apos;t already own them. As a student of QC Pet Studies, take advantage of discounts from established dog grooming brands.</p>
               <Link href="/your-dog-grooming-career/discounts-for-grooming-students"><a className="link-primary">See the list here!</a></Link>
@@ -190,19 +226,15 @@ const BreedStylingPage: NextPage = () => {
         </div>
       </section>
 
-      <section className="bg-dark">
-        <div className="container text-center">
-          <div className="row justify-content-center">
-            <FaSearch className="h1 text-primary mb-3" />
-            <h2>Breed Styling Course at a Glance</h2>
-            <p>Click on each part below for a quick overview of QC Pet Studies&apos; Breed Styling Workshop.</p>
-            <FaAngleDown className="h1 text-primary" />
-          </div>
-        </div>
-      </section>
-
       <section id="outlineSection" className="bg-light">
         <div className="container">
+          <div className="row justify-content-center">
+            <div className="col-12 col-10-lg mb-4 text-center">
+              <h2>Course <strong>Outline</strong></h2>
+              <p className="lead">The Breed Styling Wokshop is split into 3 parts, each containing individual training units.</p>
+              <p>You must complete a unit with a satisfactory grade before you can submit assignments for the next units.</p>
+            </div>
+          </div>
           <Accordion defaultActiveKey="0">
             <CustomToggle title="Part 1 – Theoretical Foundations" eventKey="0" />
             <Accordion.Collapse eventKey="0">
@@ -285,7 +317,7 @@ const BreedStylingPage: NextPage = () => {
         }
       `}</style>
 
-    </DefaultLayout>
+    </DefaultLayout >
   );
 };
 
