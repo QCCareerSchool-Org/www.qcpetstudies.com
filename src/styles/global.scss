@@ -175,7 +175,9 @@ section, .section {
 #firstSection { padding-top: 6rem }
 @media (min-width: 768px) {
   section, .section { padding: 5rem 0 }
-  #firstSection { padding-top: 11.5rem }
+}
+@media (min-width: 992px) {
+  #firstSection { padding-top: 11.5rem } /* to make space for the header */
 }
 
 section > div.container {

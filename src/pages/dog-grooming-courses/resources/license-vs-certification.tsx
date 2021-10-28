@@ -27,7 +27,7 @@ const LicenseVsCertification: NextPage = () => {
 
       <section id="firstSection" className="bg-dark">
         <Image src={firstSectionBackgrouround} layout="fill" objectFit="cover" objectPosition="center" alt="Learning during covid" />
-        <div className="image-overlay-gradient"></div>
+        <div className="image-overlay-gradient" />
         <div className="container text-center">
           <h1>Dog Grooming License vs. Certification</h1>
           <p className="lead">What&apos;s the difference between a dog grooming license and a dog grooming certificate?</p>
