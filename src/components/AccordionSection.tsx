@@ -1,10 +1,10 @@
-import { ReactNode, ReactElement } from 'react'
+import { ReactElement, ReactNode } from 'react';
 import Accordion from 'react-bootstrap/Accordion';
 
 type Props = {
   eventKey: string;
   children: ReactNode;
-}
+};
 
 export const AccordionSection = ({ eventKey, children }: Props): ReactElement => (
   <>
