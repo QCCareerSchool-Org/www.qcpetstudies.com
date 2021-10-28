@@ -1,7 +1,7 @@
 import { ReactElement } from 'react';
 import { BsShieldFillCheck } from 'react-icons/bs';
 import { FaInfinity } from 'react-icons/fa';
-import { IoMdInfinite, IoMdSend } from 'react-icons/io';
+import { IoMdSend } from 'react-icons/io';
 
 import { useLocation } from '../hooks/useLocation';
 import { usePrice } from '../hooks/usePrice';
