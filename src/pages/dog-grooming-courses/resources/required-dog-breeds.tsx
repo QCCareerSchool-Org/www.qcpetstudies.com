@@ -26,13 +26,13 @@ const RequiredDogBreeds: NextPage = () => {
     <DefaultLayout>
       <SEO
         title="Every Dog Breed You Must Groom in Your Dog Grooming Course"
-        description=""
+        description="Find out what types of dog breeds you'll need in order to complete your online dog groomer training with QC"
         canonical="/dog-grooming-courses/dog-grooming/required-dog-breeds"
       />
 
       <section id="firstSection" className="bg-dark">
         <Image src={RequiredDogBreedsBackground} layout="fill" objectFit="cover" objectPosition="center" alt="Learning during covid" />
-        <div className="image-overlay-gradient"></div>
+        <div className="image-overlay-gradient" />
         <div className="container text-center">
           <div className="row">
             <div className="col-12 col-lg-10 offset-lg-1">
