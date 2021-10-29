@@ -52,3 +52,7 @@ export const getAddress = (countryCode: string): string[] => {
 export const needsProvince = (countryCode: string): boolean => {
   return [ 'CA', 'US', 'AU' ].includes(countryCode);
 };
+
+export const gbCountry = (countryCode: string): boolean => {
+  return [ 'GB', 'IM', 'GG', 'JE' ].includes(countryCode);
+};
