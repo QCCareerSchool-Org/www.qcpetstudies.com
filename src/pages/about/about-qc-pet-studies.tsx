@@ -11,6 +11,7 @@ const AboutPage: NextPage = () => {
 
   return (
     <DefaultLayout>
+
       <section id="firstSection" className="bg-dark text-light">
         <Image src={QcBackground} layout="fill" objectFit="cover" objectPosition="center" alt="qc pet studies backgrpund image" />
         <div className="container">
@@ -20,8 +21,8 @@ const AboutPage: NextPage = () => {
 
       <section>
         <div className="container px-lg-5">
-          <div className="row mb-4 align-items-center">
-            <div className="col-12 col-lg-2">
+          <div className="row mb-4 align-items-center ">
+            <div className="col-12 col-lg-2 d-flex justify-content-center">
               <Image src={Qc35Year} alt="qc 35 year" width="120" height="120" />
             </div>
             <div className="col-12 col-lg-10">
@@ -85,16 +86,16 @@ const AboutPage: NextPage = () => {
               </div>
             </div>
             <div>
-              <h4 style={{ color: 'red' }}><u>Questions? Contact Us</u></h4>
+              <h4 className="text-secondary"><u>Questions? Contact Us</u></h4>
             </div>
           </div>
         </div>
       </section>
 
       <section>
-        <div className="container">
+        <div className="container p-lg-5">
           <h2 className="mb-4 text-center">QC Pet Studies&apos; <strong>Core Values</strong></h2>
-          <div className="row col-10 mb-5 align-items-center text-lg-start text-center">
+          <div className="row mb-5 align-items-center text-lg-start px-0 px-lg-5 text-center">
             <div className="col-12 col-lg-1">
               <FaStar className="h2 text-primary mb-3" />
             </div>
@@ -105,8 +106,7 @@ const AboutPage: NextPage = () => {
               <p>QC offers the highest quality dog grooming course materials and student services available. From lesson texts to video tutorials to grooming tools, you&apos;ll see quality in every aspect of your course.</p>
             </div>
           </div>
-
-          <div className="row mb-5 align-items-center text-lg-start text-center">
+          <div className="row mb-5 align-items-center text-lg-start px-lg-5 text-center">
             <div className="col-12 col-lg-1">
               <FaHeadphones className="h2 text-primary mb-3" />
             </div>
@@ -117,8 +117,7 @@ const AboutPage: NextPage = () => {
               <p>Student Support Specialists are here to answer any questions you have about the course, the grooming industry or your career. We take pride in providing you with unparalleled service before and during your course. and even after you graduate.</p>
             </div>
           </div>
-
-          <div className="row align-items-center text-lg-start text-center mb-5">
+          <div className="row align-items-center text-lg-start px-lg-5 text-center mb-5">
             <div className="col-12 col-lg-1">
               <FaLightbulb className="h2 text-primary mb-3" />
             </div>
@@ -129,7 +128,7 @@ const AboutPage: NextPage = () => {
               <p>QC offers the highest quality dog grooming course materials and student services available. From lesson texts to video tutorials to grooming tools, you&apos;ll see quality in every aspect of your course.</p>
             </div>
           </div>
-          <div className="row align-items-center text-lg-start text-center mb-5">
+          <div className="row align-items-center text-lg-start px-lg-5 text-center mb-5">
             <div className="col-12 col-lg-1">
               <FaBookOpen className="h2 text-primary mb-3" />
             </div>
@@ -140,7 +139,7 @@ const AboutPage: NextPage = () => {
               <p>QC offers the highest quality dog grooming course materials and student services available. From lesson texts to video tutorials to grooming tools, you&apos;ll see quality in every aspect of your course.</p>
             </div>
           </div>
-          <div className="row align-items-center text-lg-start text-center mb-5">
+          <div className="row align-items-center text-lg-start px-lg-5 text-center mb-5">
             <div className="col-12 col-lg-4">
               <Image src={SPCALogo} alt="student experience" width="340" height="120" />
               <p><strong>In partnership with SPCA International</strong></p>
@@ -151,6 +150,7 @@ const AboutPage: NextPage = () => {
           </div>
         </div>
       </section>
+
     </DefaultLayout>
   );
 };
