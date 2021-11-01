@@ -1,43 +1,94 @@
 import { NextPage } from 'next';
 import Image from 'next/image';
-import React, { Fragment, ReactElement } from 'react';
-
+import React from 'react';
 import { DefaultLayout } from '../components/DefaultLayout';
-import { useLocation } from '../hooks/useLocation';
-import tutorBackground from '../images/backgrounds/tutor-background.jpg';
-import { getAddress } from '../lib/address';
-import { getTelephoneNumber } from '../lib/phone';
+import { SEO } from '../components/SEO';
+import ContactUsBackground from '../images/backgrounds/contact-us-bg.jpg';
+import ContactByChatImage from '../images/chat.svg';
+import ContactByEmailImage from '../images/email.svg';
+import ContactByPhoneImage from '../images/headset.svg';
+import ScheduleCallImage from '../images/schedule-call-contact.png';
 
 const ContactUsPage: NextPage = () => {
-  const location = useLocation();
-  const countryCode = location?.countryCode ?? 'US';
-
-  const address = getAddress(countryCode);
-  const telephoneNumber = getTelephoneNumber(countryCode);
 
   return (
     <DefaultLayout>
+      <SEO
+        title="Contact Us"
+        description="This is Contact Us page"
+        canonical="/contact-us"
+      />
+
       <section id="firstSection" className="bg-dark text-light">
-        <Image src={tutorBackground} layout="fill" objectFit="cover" objectPosition="center" alt="dddd" />
+        <Image src={ContactUsBackground} layout="fill" objectFit="cover" objectPosition="center" alt="dddd" />
         <div className="container">
-          <h1>Contact Us</h1>
-          <Address lines={address} />
-          <p>{telephoneNumber}</p>
+          <h2 className="text-uppercase">Contact <br /><strong>QC Pet <br />Studies</strong></h2>
+        </div>
+      </section>
+
+      <section>
+        <div className="container text-center">
+          <h2 className="mb-4">Contact <strong>Us</strong></h2>
+          <p className="lead">We want to hear from you!</p>
+          <p>Whether you are a prospective student wondering about QC&apos;s courses or tuition, or a current student with <br />questions about an assignment, we&apos;re here to help you in any way we can. Contact QC&apos;s Student Support <br />Specialists by phone, email, or Live Chat!</p>
+          <div className="row justify-content-center">
+            <div className="col-12 col-sm-10 col-lg-4 d-flex align-items-strech">
+              <div className="w-100">
+                <div className="card-body">
+                  <Image height="80px" width="64px" src={ContactByPhoneImage} alt="contact by phone" />
+                  <h3>By Phone</h3>
+                  <div className="mb-3">
+                    <a href="">1-833 600-3751</a>
+                  </div>
+                  <p>Speak with a student advisor about <br />enrolling with QC or for assistance <br />with your courses and assignments.</p>
+                </div>
+              </div>
+            </div>
+            <div className="col-12 col-sm-10 col-lg-4 d-flex align-items-strech">
+              <div className="w-100">
+                <div className="card-body">
+                  <Image height="80px" width="64px" src={ContactByEmailImage} alt="contact by phone" />
+                  <h3>By Email</h3>
+                  <div className="mb-3">
+                    <a href="">info@qcpetstudies.com</a>
+                  </div>
+                  <p>Send us an email at any time <br />and we&apos;ll get back to you as <br />soon as possible!</p>
+                </div>
+              </div>
+            </div>
+            <div className="col-12 col-sm-10 col-lg-4 d-flex align-items-strech">
+              <div className="w-100">
+                <div className="card-body">
+                  <Image height="80px" width="64px" src={ContactByChatImage} alt="contact by phone" />
+                  <h3>LiveChat</h3>
+                  <div className="mb-3">
+                    <a href="">Click here to chat</a>
+                  </div>
+                  <p>Do you have a question you want <br />to be answered right away? Our Student <br />Support Specialists are ready to chat!</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-light">
+        <div className="container text-lg-start text-center">
+          <div className="row">
+            <div className="col-12 col-lg-6">
+              <h2>Schedule a Call with <br /><strong>a Student Advisor</strong></h2>
+              <p className="lead"><strong>Would you like to speak to a student advisor <br /> about your options with QC Pet Studies?</strong></p>
+              <p className="mb-4">Please note: QC&apos;s offices are not open 24/7. We&apos;ll do our <br />best to call you at the specific times you request, but if our <br />offices will be closed at the time you request, we&apos;ll contact <br />you via email to reschedule!</p>
+              <a href=""><button className="btn btn-outline-secondary mb-4 mb-lg-0">Schedule a Call</button></a>
+            </div>
+            <div className="col-12 col-lg-6">
+              <Image src={ScheduleCallImage} alt="dog looking to the left" objectFit="contain" />
+            </div>
+          </div>
         </div>
       </section>
     </DefaultLayout>
   );
 };
-
-type AddressProps = {
-  lines: string[];
-};
-
-const Address = ({ lines }: AddressProps): ReactElement => (
-  <p>
-    {/* show the first element and then show all the subsequent element with <br /> tags preceding them */}
-    {lines.map((line, i) => (i === 0 ? <Fragment key={0}>{line}</Fragment> : <Fragment key={i}><br />{line}</Fragment>))}
-  </p>
-);
 
 export default ContactUsPage;
