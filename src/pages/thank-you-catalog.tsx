@@ -6,7 +6,7 @@ import { DefaultLayout } from '../components/DefaultLayout';
 import { SEO } from '../components/SEO';
 import CatalogBackground from '../images/backgrounds/CC-Thankyou-bg.jpg';
 
-const ContactUsPage: NextPage = () => {
+const ThankYouCatalogPage: NextPage = () => {
 
   return (
     <DefaultLayout>
@@ -37,4 +37,4 @@ const ContactUsPage: NextPage = () => {
   );
 };
 
-export default ContactUsPage;
+export default ThankYouCatalogPage;
