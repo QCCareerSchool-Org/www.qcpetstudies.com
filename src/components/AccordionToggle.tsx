@@ -17,7 +17,7 @@ export const AccordionToggle = ({ title, eventKey }: Props): ReactElement => {
     <>
       <button className="btn btn-link toggleWrapper" onClick={decoratedOnClick}>
         <div className="d-flex align-items-center justify-content-between">
-          <h3 className="m-0">{title}</h3>
+          <h3 className="m-0 pe-2">{title}</h3>
           <div className="text-secondary">
             {isOpen ? <FaMinusCircle /> : <FaPlusCircle />}
           </div>
@@ -32,6 +32,7 @@ export const AccordionToggle = ({ title, eventKey }: Props): ReactElement => {
           border-right: 1px solid #ddd;
           text-transform: none;
           padding: 1rem 1.625rem;
+          text-align: left;
         }
         .toggleWrapper:first-of-type {
           border-top: 1px solid #ddd;
