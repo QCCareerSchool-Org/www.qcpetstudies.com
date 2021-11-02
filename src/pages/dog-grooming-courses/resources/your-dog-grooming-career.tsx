@@ -48,7 +48,7 @@ const DogGroomingCareerPage: NextPage = () => {
 
       <CareerSection
         title="Run Your Own Dog Grooming Salon"
-        subTitle="Be Your Own Boss!"
+        subtitle="Be Your Own Boss!"
         imgSrc={OwnDogGroomingSaloon}
         imgAlt="groomer bathing a dog"
         text="Dog grooming is a great industry for aspiring entrepreneurs who want to run the show. When you enroll in the Dog Grooming course, you’ll also be trained in the essentials of running a dog grooming business. This optional training prepares you to launch your own business and grow your clientele."
@@ -64,7 +64,7 @@ const DogGroomingCareerPage: NextPage = () => {
 
       <CareerSection
         title="Work as a Dog Groomer from Home"
-        subTitle="Want to cut the commute?"
+        subtitle="Want to cut the commute?"
         imgSrc={WorkFromHomeImage}
         imgAlt="dog having its nails trimmed"
         text="QC Pet Studies prepares you to start a grooming business in the comfort of your home. You’ll be able to run your own business and set your own hours without worrying about additional retail and location costs. Work part-time or full-time, the choice is completely up to you!"
@@ -164,7 +164,7 @@ export default DogGroomingCareerPage;
 
 type CareerSectionProps = {
   title: string;
-  subTitle?: string;
+  subtitle?: string;
   imgSrc: string;
   imgAlt: string;
   text: string;
@@ -172,7 +172,7 @@ type CareerSectionProps = {
   className?: string;
 };
 
-const CareerSection = ({ title, subTitle, imgSrc, imgAlt, text, extraText, className }: CareerSectionProps): ReactElement => (
+const CareerSection = ({ title, subtitle, imgSrc, imgAlt, text, extraText, className }: CareerSectionProps): ReactElement => (
   <section className={className}>
     <div className="container text-center">
       <div className="row">
@@ -181,7 +181,7 @@ const CareerSection = ({ title, subTitle, imgSrc, imgAlt, text, extraText, class
         </div>
         <div className="col-12 col-lg-6 text-lg-start">
           <h2>{title}</h2>
-          {subTitle && <h4>{subTitle}</h4>}
+          {subtitle && <h4>{subtitle}</h4>}
           <p>{text}</p>
           {extraText && <p className="lead">{extraText}</p>}
         </div>
