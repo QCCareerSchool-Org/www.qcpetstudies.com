@@ -27,7 +27,7 @@ const LicenseVsCertification: NextPage = () => {
 
       <section id="firstSection" className="bg-dark">
         <Image src={firstSectionBackgrouround} layout="fill" objectFit="cover" objectPosition="center" alt="Learning during covid" />
-        <div className="image-overlay-gradient"></div>
+        <div className="image-overlay-gradient" />
         <div className="container text-center">
           <h1>Dog Grooming License vs. Certification</h1>
           <p className="lead">What&apos;s the difference between a dog grooming license and a dog grooming certificate?</p>
@@ -38,7 +38,7 @@ const LicenseVsCertification: NextPage = () => {
         <div className="container">
           <div className="row align-items-center">
             <div className="col-12 col-lg-6">
-              <h2 className="mb-4">Is Training Required to be a <strong>Dog Groomer?</strong></h2>
+              <h2 className="mb-4">Is Training Required to Be a <strong>Dog Groomer?</strong></h2>
               <p>In many places, there are no formal licensing or training requirements to be a professional dog groomer. It all depends on where you live and varies from region to region. Some places require a license or certification in order to operate a grooming business. Others will require nothing at all.</p>
               <p>Be sure to research local regulations to best determine what is required in order to start a dog grooming career in your city or town.</p>
               <p className="lead">Even if education is not required, discover the many <Link href="/2020/11/el-paso-requires-dog-groomer-certification-as-of-january-1st"><a className="link-primary">advantages of getting professionally trained and certified</a></Link>!</p>
