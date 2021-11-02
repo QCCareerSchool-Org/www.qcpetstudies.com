@@ -90,7 +90,7 @@ const LicenseVsCertification: NextPage = () => {
                   <li>How to create various haircuts and styles</li>
                   <li>How to use and sanitize equipment</li>
                   <li>Dog behavior</li>
-                  <li>First Aid training</li>
+                  <li>First aid training</li>
                   <li>Business training</li>
                   <li>And more!</li>
                 </ul>
