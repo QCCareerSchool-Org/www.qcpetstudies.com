@@ -53,13 +53,13 @@ const FAQPage: NextPage = () => {
                 </QuestionAnswer>
                 <QuestionAnswer question="How does the money back guarantee work?" index={index.current++}>
                   <p>QC&apos;s 21-day guarantee is there to help you make an informed decision about your education. From the day you receive your online student center login, you have a full three weeks to review the course guides, books, and assignments in order to decide whether your course is right for you. If you decide that it&apos;s not a good fit, simply contact the school to arrange a refund of your tuition. You&apos;ll be asked to return any course material you have to the school, and these must be unused.</p>
-                  <p className="mb-0"><em>Note: that since the 21-day guarantee is made for you to decide whether to take the course or not, a full tuition refund cannot be granted if you&apos;ve already completed and submitted course work to your tutor.</em></p>
+                  <p className="mb-0"><em>Note: that since the 21-day guarantee is made for you to decide whether to take the course or not. A full tuition refund cannot be granted if you&apos;ve already completed and submitted course work to your tutor.</em></p>
                 </QuestionAnswer>
                 <QuestionAnswer question="What if I miss a tuition payment?" index={index.current++}>
                   <p>Sometimes life gets in the way, and that&apos;s okay! If you know in advance that you won&apos;t be able to make a tuition payment, simply contact your student advisor who will be happy to work with you to update your payment schedule. </p>
                   <p>If you need to take a break from tuition payments for a month or two, that&apos;s perfectly fine! Again, just call your student advisor to make those arrangements ahead of time.</p>
                   <p>If you forget and an attempted monthly payment doesn&apos;t go through, a student advisor will contact you to make arrangements to get you back on track.</p>
-                  <p className="mb-0"><em>Note: students can only access their online student center if their account is in good standing. If payments are missed, the student center is placed &ldquo;on hold&rdquo; until payments are caught up.While you won&apos;t lose any work, you won&apos;t be able to submit assignments to your tutor during this time.</em></p>
+                  <p className="mb-0"><em>Note: students can only access their online student center if their account is in good standing. If payments are missed, the student center is placed &ldquo;on hold&rdquo; until payments are caught up. While you won&apos;t lose any work, you won&apos;t be able to submit assignments to your tutor during this time.</em></p>
                 </QuestionAnswer>
                 <QuestionAnswer question="Are there any technology requirements to complete my online courses with QC?" index={index.current++}>
                   <p>To complete any online course with QC Pet Studies, you must have access to the following:</p>
