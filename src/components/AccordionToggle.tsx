@@ -3,12 +3,15 @@ import { useAccordionButton } from 'react-bootstrap/AccordionButton';
 import AccordionContext from 'react-bootstrap/AccordionContext';
 import { FaMinusCircle, FaPlusCircle } from 'react-icons/fa';
 
+type Variant = 'primary' | 'secondary';
+
 type Props = {
   eventKey: string;
   title: string;
+  variant?: Variant;
 };
 
-export const AccordionToggle = ({ title, eventKey }: Props): ReactElement => {
+export const AccordionToggle = ({ title, eventKey, variant = 'secondary' }: Props): ReactElement => {
   const { activeEventKey } = useContext(AccordionContext);
   const decoratedOnClick = useAccordionButton(eventKey);
   const isOpen = activeEventKey === eventKey;
@@ -18,7 +21,7 @@ export const AccordionToggle = ({ title, eventKey }: Props): ReactElement => {
       <button className="btn btn-link toggleWrapper" onClick={decoratedOnClick}>
         <div className="d-flex align-items-center justify-content-between">
           <h3 className="m-0 pe-2">{title}</h3>
-          <div className="text-secondary">
+          <div className={`text-${variant}`}>
             {isOpen ? <FaMinusCircle /> : <FaPlusCircle />}
           </div>
         </div>
