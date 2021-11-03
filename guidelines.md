@@ -412,3 +412,19 @@ Line breaks should not have extra spaces around them.
 ```html
 <p>38 McArthur Ave<br />Ottawa ON K1L 6R2<br />Canada</p><!-- no unnecessary spaces -->
 ```
+
+## Image Alt Text
+
+The `alt` attribute must be specified for all images and should accurately describe the contents of the image for accessibility.
+
+❌ Incorrect:
+
+```html
+<Image src={DogWithStick} alt="About QC Pet Studies" /><!-- alt text doesn't describe the picture -->
+```
+
+✔️ Correct:
+
+```html
+<Image src={DogWithStick} alt="dog carrying a stick" /><!-- alt text accurately describes the picture -->
+```
