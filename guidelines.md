@@ -200,12 +200,12 @@ Simple content should be laid out in a single column. In such cases, a Bootstrap
 
 ##### Bootstrap 5 method
 
-Bootstrap 5 has a new method for centering columns that can be easier to understand than using the offset-* classes. Since rows use flexbox layout by default, a row with the `justify-content-center` class will center the rows inside of it without having to add offsets to them.
+Bootstrap 5 has a new method for centering columns that can be easier to understand than using the offset-* classes. Since rows use flexbox layout by default, a row with the `justify-content-center` class will center the columns inside of it without having to add offsets to them.
 
 ```javascript
 <div className="container text-center">
   <div className="row justify-content-center">{/* .justify-content-center */}
-    <div className="col-12 col-lg-10">
+    <div className="col-12 col-lg-10">{/* no .offset-lg-1 needed */}
       <h2>Simple Section</h2>
       <p>This is how we lay out a simple section. Long lines of text will be wrapped on larger screen sizes</p>
     </div>
