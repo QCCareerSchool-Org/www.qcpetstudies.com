@@ -179,7 +179,7 @@ All content within a section must be wrapped with a `<div>` tag using the Bootst
 
 ### Columns
 
-Content should be laid using Bootstrap's column system.
+Content should generally be laid using Bootstrap's column system.
 
 #### Simple content
 
@@ -251,7 +251,7 @@ When a section requires content to be laid out in separate columns, ensure that 
 
 ##### Images in Side-by-Side Content
 
-Images laid out in a column next to text should fill the width of the column they are in. This can be accomplished using the next/image component's responsive layout option. Filling the width of each column ensures a consistant gutter width.
+Images laid out in a column next to text should fill the width of the column they are in. This can be accomplished using the next/image component's responsive layout option. Filling the width of each column ensures a consistent gutter width.
 
 ```javascript
 <div className="row justify-content-center">
