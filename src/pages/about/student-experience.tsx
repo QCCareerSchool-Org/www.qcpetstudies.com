@@ -24,7 +24,7 @@ const StudentExperiencePage: NextPage = () => (
       <Image src={StudentExperienceBackground} layout="fill" objectFit="cover" objectPosition="center" alt="student experince background" />
       <div className="container">
         <div className="row">
-          <h2 className="text-uppercase">Student <br /><strong>Experience</strong></h2>
+          <h2 className="text-uppercase">Student<br /><strong>Experience</strong></h2>
         </div>
       </div>
     </section>
@@ -37,7 +37,7 @@ const StudentExperiencePage: NextPage = () => (
             <p>When you enroll, you gain access to QC&apos;s friendly and experienced Student Support Specialists who are ready to assist you and answer your questions. As you work through your course, you&apos;ll be guided by a certified master groomer with years of experience in the industry. Even after you graduate, you&apos;ll remain an essential member of the QC community. You&apos;ll build relationships with other groomers and be connected with business resources that will help you succeed in your dog grooming career.</p>
           </div>
           <div className="col-12 col-lg-4">
-            <Image src={IntroImage} alt="student experience intro image" height="255" width="255" />
+            <Image src={IntroImage} alt="student introduction" height="255" width="255" />
           </div>
         </div>
       </div>
@@ -47,10 +47,10 @@ const StudentExperiencePage: NextPage = () => (
       <div className="container-fluid">
         <div className="row">
           <div className="col-12 col-lg-6" style={{ position: 'relative' }}>
-            <Image src={SupportImage} layout="fill" objectFit="cover" objectPosition="center" alt="a dog sitting on a staircase" />
+            <Image src={SupportImage} layout="fill" objectFit="cover" objectPosition="center" alt="Dog sitting on a staircase" />
           </div>
           <div className="col-12 col-lg-6 d-flex flex-column align-items-center align-items-lg-start p-5">
-            <h2>Get Help When <br /><strong>You Need it</strong></h2>
+            <h2>Get Help When<br /><strong>You Need it</strong></h2>
             <p className="lead">QCs student support team is here to help.</p>
             <p className="mb-5">Reach out as often as you need to discuss your course materials or to ask questions about your assignments. Whether you&apos;re a student, a graduate or are considering enrolling, we are always happy to hear from you. Contact QC Pet Studies by phone, email or Live Chat whichever you prefer!</p>
             <h3><u>Contact Us</u></h3>
@@ -63,12 +63,12 @@ const StudentExperiencePage: NextPage = () => (
       <div className="container text-center text-lg-start">
         <div className="row justify-content-center">
           <div className="col-12 col-lg-6">
-            <h2>Learn from Certified <br /><strong>Industry Experts</strong></h2>
+            <h2>Learn from Certified<br /><strong>Industry Experts</strong></h2>
             <p className="lead"><strong>To be the best, you need to learn from the best.</strong></p>
             <p>At QC Pet Studies, you ll be paired with a tutor who is a certified master groomer with years of industry experience. Your tutor will review your work and provide you with personalized audio feedback on your dog grooming assignments. They ll help you develop your knowledge, perfect your technique and grow your confidence as you work through your online dog grooming course. You ll benefit from your tutor s insight and experience, as well as their drive to help you succeed.</p>
           </div>
           <div className="col-12 col-lg-6">
-            <Image src={CertifiedExpertImage} alt="certified expert image" />
+            <Image src={CertifiedExpertImage} alt="Certified expert" />
           </div>
         </div>
       </div>
@@ -98,7 +98,7 @@ const StudentExperiencePage: NextPage = () => (
               Education is essential to your success as a dog groomer even after you graduate. That s why you ll have lifetime access to the Online Student Center and be able to access new course texts and video tutorials as soon as they re available.
               And you can always reach out to the QC team with questions about your career or the dog grooming industry.</p>
             <p className="lead">At QC Pet Studies, <strong>we re with you for the journey</strong></p>
-            <Image src={SocialCommunityImage} alt="social community covered image" />
+            <Image src={SocialCommunityImage} alt="Social community" />
           </div>
         </div>
       </div>
