@@ -24,7 +24,7 @@ const ContactUsPage: NextPage = () => {
       />
 
       <section id="firstSection" className="bg-dark text-light">
-        <Image src={ContactUsBackground} layout="fill" objectFit="cover" objectPosition="center" alt="Contact us background" />
+        <Image src={ContactUsBackground} layout="fill" objectFit="cover" objectPosition="center" alt="happy dog" />
         <div className="container">
           <h1>Contact<br />QC Pet Studies</h1>
         </div>
@@ -67,7 +67,7 @@ const ContactUsPage: NextPage = () => {
       </section>
 
       <section className="bg-light">
-        <div className="container text-lg-start text-center">
+        <div className="container text-center text-lg-start">
           <div className="row justify-content-center">
             <div className="col-12 col-lg-6 col-xl-7 mb-4 mb-lg-0">
               <h2><strong>Schedule a Call</strong> with a Student Advisor</h2>
