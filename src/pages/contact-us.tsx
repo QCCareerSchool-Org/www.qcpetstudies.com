@@ -1,5 +1,6 @@
 import { NextPage } from 'next';
 import Image from 'next/image';
+import { useEffect, useState } from 'react';
 
 import { DefaultLayout } from '../components/DefaultLayout';
 import { SEO } from '../components/SEO';
@@ -13,7 +14,14 @@ import { getTelephoneNumber } from '../lib/phone';
 
 const ContactUsPage: NextPage = () => {
   const location = useLocation();
+  const [ emailAddress, setEmailAddress ] = useState('');
   const telephoneNumber = getTelephoneNumber(location?.countryCode ?? 'US');
+
+  // add the correct email address after the component has loaded to fool simple scrapers
+  useEffect(() => {
+    // eslint-disable-next-line no-useless-concat
+    setEmailAddress('info' + '@' + 'qcpetstudies.com');
+  }, []);
 
   return (
     <DefaultLayout>
@@ -36,7 +44,7 @@ const ContactUsPage: NextPage = () => {
             <div className="col-12 col-lg-10 mb-5">
               <h2>Contact <strong>Us</strong></h2>
               <p className="lead">We want to hear from you!</p>
-              <p className="mb-0">Whether you are a prospective student wondering about QC&apos;s courses or tuition, or a current student with questions about an assignment, we&apos;re here to help you in any way we can. Contact QC&apos;s Student Support Specialists by phone, email, or Live Chat!</p>
+              <p className="mb-0">Whether you are a prospective student wondering about QC&apos;s courses or tuition, or a current student with questions about an assignment, we&apos;re here to help you in any way we can. Contact QC&apos;s student support specialists by phone, email, or live chat!</p>
             </div>
             <div className="col-12 col-sm-10 col-md-8 col-lg-4 mb-4 mb-lg-0">
               <div className="px-lg-4">
@@ -50,16 +58,16 @@ const ContactUsPage: NextPage = () => {
               <div className="px-lg-4">
                 <Image src={ContactByEmailImage} height="80" width="64" alt="email icon" />
                 <h3>By Email</h3>
-                <p className="mb-lg-4"><a href="mailto:info@qcpetstudies.com" className="link-primary">info@qcpetstudies.com</a></p>
+                <p className="mb-lg-4"><a href={`mailto:${emailAddress}`} className="link-primary">{emailAddress}</a></p>
                 <p className="mb-0">Send us an email at any time and we&apos;ll get back to you as soon as possible!</p>
               </div>
             </div>
             <div className="col-12 col-sm-10 col-md-8 col-lg-4">
               <div className="px-lg-4">
                 <Image src={ContactByChatImage} height="80" width="64" alt="chat icon" />
-                <h3>LiveChat</h3>
+                <h3>By Live Chat</h3>
                 <p className="mb-lg-4"><a className="link-primary">Click here to chat</a></p>
-                <p className="mb-0">Do you have a question you want to be answered right away? Our Student Support Specialists are ready to chat!</p>
+                <p className="mb-0">Do you have a question you want to be answered right away? Our student support specialists are ready to chat!</p>
               </div>
             </div>
           </div>
