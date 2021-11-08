@@ -25,7 +25,7 @@ const StudentDiscountsPage: NextPage = () => {
       <section id="firstSection" className="bg-dark">
         <Image src={StudentDiscountBackground} layout="fill" objectFit="cover" objectPosition="center" alt="Dog looking at you" />
         <div className="container">
-          <h1>QC Student<br />Discounts</h1>
+          <h2 className="text-uppercase">QC Student<br /><strong>Discounts</strong></h2>
         </div>
       </section>
 
