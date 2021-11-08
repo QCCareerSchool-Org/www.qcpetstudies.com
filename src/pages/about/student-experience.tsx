@@ -1,6 +1,5 @@
 import { NextPage } from 'next';
 import Image from 'next/image';
-import React from 'react';
 import { DefaultLayout } from '../../components/DefaultLayout';
 import { SEO } from '../../components/SEO';
 import StudentExperienceBackground from '../../images/backgrounds/student-experience-hero.jpg';
@@ -21,7 +20,7 @@ const StudentExperiencePage: NextPage = () => (
     />
 
     <section id="firstSection" className="bg-dark">
-      <Image src={StudentExperienceBackground} layout="fill" objectFit="cover" objectPosition="center" alt="student experince background" />
+      <Image src={StudentExperienceBackground} layout="fill" objectFit="cover" objectPosition="center" alt="Dog looking at  you" />
       <div className="container">
         <div className="row">
           <h2 className="text-uppercase">Student<br /><strong>Experience</strong></h2>
@@ -32,7 +31,7 @@ const StudentExperiencePage: NextPage = () => (
     <section>
       <div className="container text-center text-lg-start">
         <div className="row justify-content-center">
-          <div className="col-12 col-lg-8 px-5">
+          <div className="col-12 col-lg-8">
             <h3>As a QC Pet Studies Student, you&apos;ll get help through <strong>every step of your education.</strong></h3>
             <p>When you enroll, you gain access to QC&apos;s friendly and experienced Student Support Specialists who are ready to assist you and answer your questions. As you work through your course, you&apos;ll be guided by a certified master groomer with years of experience in the industry. Even after you graduate, you&apos;ll remain an essential member of the QC community. You&apos;ll build relationships with other groomers and be connected with business resources that will help you succeed in your dog grooming career.</p>
           </div>
@@ -49,10 +48,10 @@ const StudentExperiencePage: NextPage = () => (
           <div className="col-12 col-lg-6" style={{ position: 'relative' }}>
             <Image src={SupportImage} layout="fill" objectFit="cover" objectPosition="center" alt="Dog sitting on a staircase" />
           </div>
-          <div className="col-12 col-lg-6 d-flex flex-column align-items-center align-items-lg-start p-5">
+          <div className="col-12 col-lg-6 p-lg-5 p-2 text-lg-start text-center">
             <h2>Get Help When<br /><strong>You Need it</strong></h2>
             <p className="lead">QCs student support team is here to help.</p>
-            <p className="mb-5">Reach out as often as you need to discuss your course materials or to ask questions about your assignments. Whether you&apos;re a student, a graduate or are considering enrolling, we are always happy to hear from you. Contact QC Pet Studies by phone, email or Live Chat whichever you prefer!</p>
+            <p className="mb-4">Reach out as often as you need to discuss your course materials or to ask questions about your assignments. Whether you&apos;re a student, a graduate or are considering enrolling, we are always happy to hear from you. Contact QC Pet Studies by phone, email or Live Chat whichever you prefer!</p>
             <h3><u>Contact Us</u></h3>
           </div>
         </div>
@@ -85,9 +84,9 @@ const StudentExperiencePage: NextPage = () => (
         </div>
         <div className="row justify-content-center mb-5">
           <div className="col-12 col-lg-8 d-flex justify-content-around">
-            <Image src={facebookImage} height="33" width="43" alt="facebook image" />
-            <Image src={RssImage} height="33" width="43" alt="facebook image" />
-            <Image src={InstagramImage} height="33" width="43" alt="facebook image" />
+            <Image src={facebookImage} height="33" width="43" alt="facebook logo" />
+            <Image src={RssImage} height="33" width="43" alt="rss logo" />
+            <Image src={InstagramImage} height="33" width="43" alt="instagram logo" />
           </div>
         </div>
         <div className="row justify-content-center">
