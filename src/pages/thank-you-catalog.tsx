@@ -1,6 +1,5 @@
 import { NextPage } from 'next';
 import Image from 'next/image';
-import React from 'react';
 import { FaPaw } from 'react-icons/fa';
 import { DefaultLayout } from '../components/DefaultLayout';
 import { SEO } from '../components/SEO';
@@ -16,16 +15,16 @@ const ThankYouCatalogPage: NextPage = () => {
         canonical="/thank-you-catalog"
       />
 
-      <section id="firstSection" className="bg-dark text-light">
+      <section id="firstSection" className="bg-dark">
         <Image src={CatalogBackground} layout="fill" objectFit="cover" objectPosition="center" alt="Dog looking at you" />
         <div className="container text-center">
           <h1 className="mb-4">Your course catalog</h1>
           <h2>Thank You For Your Interest!</h2>
-          <p className="lead"><strong>Find out what a career in dog grooming can do for you, and how <br /> you can get started with QC&apos;s Dog Grooming course.</strong></p>
+          <p className="lead"><strong>Find out what a career in dog grooming can do for you, and how you can get started with QC&apos;s Dog Grooming course.</strong></p>
           <div className="row justify-content-center">
             <h4 className="my-4">Download your course catalog here:</h4>
             <a href="">
-              <button className="btn btn-outline-secondary btn-lg text-center text-white">Download&nbsp;&nbsp;
+              <button className="btn btn-outline-secondary btn-lg text-white">Download&nbsp;&nbsp;
                 <FaPaw />
               </button>
             </a>
