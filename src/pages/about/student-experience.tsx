@@ -25,7 +25,7 @@ const StudentExperiencePage: NextPage = () => {
       />
 
       <section id="firstSection" className="bg-dark">
-        <Image src={StudentExperienceBackground} layout="fill" objectFit="cover" objectPosition="center" alt="dog" />
+        <Image src={StudentExperienceBackground} layout="fill" objectFit="cover" objectPosition="center" placeholder="blur" alt="dog" />
         <div className="container text-center">
           <div className="row">
             <h1>Student Experience</h1>
@@ -54,7 +54,7 @@ const StudentExperiencePage: NextPage = () => {
         <div className="container-fluid text-center">
           <div className="row">
             <div className="col-12 col-lg-6" style={{ position: 'relative' }}>
-              <Image src={WomanUsingLaptopImage} layout="fill" objectFit="cover" objectPosition="center" alt="woman using a laptop with a Chihuahua on her lap" />
+              <Image src={WomanUsingLaptopImage} layout="fill" objectFit="cover" objectPosition="center" placeholder="blur" alt="woman using a laptop with a Chihuahua on her lap" />
             </div>
             <div className="col-12 col-lg-6 text-lg-start">
               <div className="section px-lg-5">
