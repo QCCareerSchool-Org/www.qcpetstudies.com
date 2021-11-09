@@ -31,7 +31,7 @@ const RequiredDogBreeds: NextPage = () => {
       />
 
       <section id="firstSection" className="bg-dark">
-        <Image src={RequiredDogBreedsBackground} layout="fill" objectFit="cover" objectPosition="center" alt="Learning during covid" />
+        <Image src={RequiredDogBreedsBackground} layout="fill" objectFit="cover" objectPosition="center" placeholder="blur" alt="dog in a towel after a bath" />
         <div className="image-overlay-gradient" />
         <div className="container text-center">
           <div className="row">

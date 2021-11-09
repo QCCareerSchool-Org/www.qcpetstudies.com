@@ -28,7 +28,7 @@ const DogGroomingPage: NextPage = () => {
       />
 
       <section id="firstSection" className="bg-dark">
-        <Image src={tutorBackground} layout="fill" objectFit="cover" objectPosition="center" alt="dddd" />
+        <Image src={tutorBackground} layout="fill" objectFit="cover" objectPosition="center" placeholder="blur" alt="dddd" />
         <div className="container text-center">
           <div className="row">
             <div className="col-12 col-lg-10 offset-lg-1">

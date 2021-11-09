@@ -21,7 +21,7 @@ const DogGroomingPage: NextPage = () => {
       />
 
       <section id="firstSection" className="bg-dark">
-        <Image src={FirstAidBackground} layout="fill" objectFit="cover" objectPosition="center" alt="First aid" />
+        <Image src={FirstAidBackground} layout="fill" objectFit="cover" objectPosition="center" placeholder="blur" alt="groomer preparing apply gauze on a dog" />
         <div className="image-overlay-gradient" />
         <div className="container text-center">
           <Image src={firstAidLogo} alt="First Aid Course logo" width={60} height={60} />

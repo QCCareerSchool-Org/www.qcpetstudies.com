@@ -32,7 +32,7 @@ const DogGroomingCourseOutlinePage: NextPage = () => (
     />
 
     <section id="firstSection" className="bg-dark">
-      <Image src={CourseOutlineBackground} layout="fill" objectFit="cover" objectPosition="center" alt="dog getting a haircut" />
+      <Image src={CourseOutlineBackground} layout="fill" objectFit="cover" objectPosition="center" placeholder="blur" alt="dog getting a haircut" />
       <div className="image-overlay-gradient" />
       <div className="container text-center">
         <div className="row justify-content-center">
