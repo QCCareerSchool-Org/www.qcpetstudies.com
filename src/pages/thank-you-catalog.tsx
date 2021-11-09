@@ -5,7 +5,7 @@ import { FaPaw } from 'react-icons/fa';
 import { DefaultLayout } from '../components/DefaultLayout';
 import { SEO } from '../components/SEO';
 import { useScreenWidth } from '../hooks/useScreenWidth';
-import CatalogBackground from '../images/backgrounds/white-poodle-circle-cut.jpg';
+import CatalogBackground from '../images/backgrounds/white-bichon-frisee-circle-cut.jpg';
 
 const ThankYouCatalogPage: NextPage = () => {
   const screenWidth = useScreenWidth();
@@ -20,7 +20,7 @@ const ThankYouCatalogPage: NextPage = () => {
       />
 
       <section id="firstSection" className="bg-black">
-        {mdOrGreater && <Image src={CatalogBackground} layout="fill" objectFit="cover" objectPosition="right" placeholder="blur" alt="white poodle with circle cut" />}
+        {mdOrGreater && <Image src={CatalogBackground} layout="fill" objectFit="cover" objectPosition="right" placeholder="blur" alt="white Bichon Frisee with circle cut" />}
         <div className="container text-center text-md-start">
           <div className="row">
             <div className="col-12 col-md-6 col-lg-7 col-xl-8">
