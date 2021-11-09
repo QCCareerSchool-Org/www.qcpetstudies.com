@@ -97,7 +97,7 @@ const DogTrainingHowItWorksPage: NextPage = () => {
       </section>
 
       <section className="bg-light py-0">
-        <div className="container-fluid">
+        <div className="container-fluid text-lg-start text-center">
           <div className="row justify-content-center justify-content-lg-end">
             <div className="col-12 col-lg-8 col-xl-8 col-fluid col-fluid-lg-8 col-fluid-xl-8">
               <div className="section pe-lg-5">
