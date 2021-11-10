@@ -30,9 +30,11 @@ const DogGroomingCatalogPage: NextPage = () => {
 
       <section id="firstSection" className="">
         <div className="container">
-          <h2 className="mb-5 text-center">Become a Professional Dog Groomer</h2>
           <div className="row justify-content-center align-items-center">
-            <div className="col-12 col-sm-10 col-md-8 col-lg-6 mb-4 mb-lg-0">
+            <div className="col-12 col-sm-11 col-md-10 col-lg-10 mb-4 mb-lg-5">
+              <h2 className="text-center">Become a Professional Dog Groomer</h2>
+            </div>
+            <div className="col-12 col-sm-11 col-md-10 col-lg-6 mb-4 mb-lg-0">
               <div className="card bg-light">
                 <div className="card-body">
                   <p className="text-center lead">Get Started with a <strong>Free Course Catalog</strong></p>
@@ -40,7 +42,7 @@ const DogGroomingCatalogPage: NextPage = () => {
                 </div>
               </div>
             </div>
-            <div className="col-12 col-sm-10 col-md-8 col-lg-6">
+            <div className="col-12 col-sm-11 col-md-10 col-lg-6">
               {lgOrGreater && (
                 <div className="px-5 mb-4">
                   <Image src={CatalogImage} layout="responsive" alt="tablet with dog image" />
