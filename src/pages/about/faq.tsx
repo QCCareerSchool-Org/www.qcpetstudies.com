@@ -29,7 +29,7 @@ const FAQPage: NextPage = () => {
       />
 
       <section id="firstSection" className="bg-dark">
-        <Image src={FaqBgImage} layout="fill" objectFit="cover" objectPosition="center" alt="faq" />
+        <Image src={FaqBgImage} layout="fill" objectFit="cover" objectPosition="center" placeholder="blur" alt="dog in a dog bed, holding a stick" />
         <div className="container text-center">
           <div className="row justify-content-center">
             <div className="col-12 col-lg-10 text-white">
