@@ -5,7 +5,7 @@ import { FaBriefcase, FaChalkboardTeacher, FaHandHoldingUsd, FaLaptopHouse, FaRe
 
 import { DefaultLayout } from '../components/DefaultLayout';
 import { SEO } from '../components/SEO';
-import PetStudiesHomepage from '../images/backgrounds/pet-studies-homepage-bg.jpg';
+import HappyPuppyRunning from '../images/backgrounds/happy-puppy-running.jpg';
 import HowItWorks from '../images/how-it-works.png';
 import IDGPCertificationGold from '../images/IDGP-certification-gold.svg';
 import IDTPCertificationGold from '../images/IDTP-certification-gold.svg';
@@ -21,7 +21,7 @@ const HomePage: NextPage = () => (
     />
 
     <section id="firstSection" className="bg-dark">
-      <Image src={PetStudiesHomepage} layout="fill" objectFit="cover" objectPosition="center" placeholder="blur" alt="groomer bathing a dog" />
+      <Image src={HappyPuppyRunning} layout="fill" objectFit="cover" objectPosition="center" placeholder="blur" alt="happy puppy running" />
       <div className="container text-center text-shadow">
         <div className="row">
           <div className="col-12 col-lg-10 offset-lg-1">

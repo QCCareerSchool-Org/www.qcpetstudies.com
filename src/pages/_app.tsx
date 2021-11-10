@@ -11,7 +11,14 @@ import { LocationProvider } from '../providers/LocationProvider';
 import { ScreenWidthProvider } from '../providers/ScreenWidthProvider';
 import { ScrollPositionProvider } from '../providers/ScrollPositionProvider';
 
-function MyApp({ Component, pageProps }: AppProps): ReactElement {
+declare global {
+  interface Window {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    dataLayer: any[];
+  }
+}
+
+const QCPetStudiesApp = ({ Component, pageProps }: AppProps): ReactElement => {
   const router = useRouter();
 
   useEffect(() => {
@@ -41,6 +48,6 @@ function MyApp({ Component, pageProps }: AppProps): ReactElement {
       </LocationProvider>
     </SSRProvider>
   );
-}
+};
 
-export default MyApp;
+export default QCPetStudiesApp;

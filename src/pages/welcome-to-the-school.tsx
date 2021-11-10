@@ -12,6 +12,7 @@ import AlexSignature from '../images/alex-myers.png';
 import HappyPuppyRunning from '../images/backgrounds/happy-puppy-running.jpg';
 import { addToActiveCampaign } from '../lib/addToActiveCampaign';
 import { addToGoogleAnalytics } from '../lib/addToGoogleAnaltytics';
+import { addToIDevAffiliate } from '../lib/addToIDevAffiliate';
 import { getEnrollment } from '../lib/getEnrollment';
 import { getTelephoneNumber } from '../lib/phone';
 import { sendEnrollmentEmail } from '../lib/sendEnrollmentEmail';
@@ -25,7 +26,7 @@ type Props = {
   errorCode?: number;
 };
 
-const InternalWelcomePage: NextPage<Props> = ({ data, errorCode }) => {
+const WelcomeToTheSchoolPage: NextPage<Props> = ({ data, errorCode }) => {
   const [ emailAddress, setEmailAddress ] = useState('');
   const location = useLocation();
   const telephoneNumber = getTelephoneNumber(location?.countryCode ?? 'US');
@@ -35,12 +36,14 @@ const InternalWelcomePage: NextPage<Props> = ({ data, errorCode }) => {
     setEmailAddress('info' + '@' + 'qcpetstudies.com');
   }, []);
 
+  // perform this on the client side so that the client's IP address is used
   useEffect(() => {
     if (typeof data === 'undefined') {
       return;
     }
     if (!data.enrollment.emailed) {
       addToActiveCampaign(data.enrollment).catch(() => { /* */ });
+      addToIDevAffiliate(data.enrollment).catch(() => { /* */ });
       addToGoogleAnalytics(data.enrollment);
     }
   }, [ data ]);
@@ -58,7 +61,8 @@ const InternalWelcomePage: NextPage<Props> = ({ data, errorCode }) => {
       <SEO
         title="Welcome to the School"
         description="Your enrollment has been received and will be processed quickly. You will receive an email within the next business day containing login information to your online student center."
-        canonical="/welcome-to-the-school"
+        canonical="/internal-welcome"
+        noIndex={true}
       />
 
       <section id="firstSection" className="bg-dark">
@@ -126,4 +130,4 @@ export const getServerSideProps: GetServerSideProps = async ({ req, res, query }
   }
 };
 
-export default InternalWelcomePage;
+export default WelcomeToTheSchoolPage;
