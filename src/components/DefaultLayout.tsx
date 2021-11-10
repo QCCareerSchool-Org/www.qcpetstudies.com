@@ -13,7 +13,7 @@ type Props = {
 };
 
 export const DefaultLayout = ({ noHero, secondaryTitle, secondaryNavLinks, footerCTAType, children }: Props): ReactElement => (
-  <div className="d-flex flex-column vh-100">
+  <div id="defaultPage" className="d-flex flex-column vh-100">
     <Header noHero={noHero} secondaryTitle={secondaryTitle} secondaryNavLinks={secondaryNavLinks} className="flex-shrink-0 fixed-top" />
     <main className="flex-shrink-0">
       {children}
