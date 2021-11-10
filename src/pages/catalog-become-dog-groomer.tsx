@@ -2,19 +2,19 @@ import { NextPage } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 import { BsStarFill } from 'react-icons/bs';
-import { BrochureForm } from '../../components/BrochureForm';
 
-import { LandingPageLayout } from '../../components/LandingPageLayout';
-import { SEO } from '../../components/SEO';
-import { useScreenWidth } from '../../hooks/useScreenWidth';
-import TestiminialBackground from '../../images/backgrounds/testimonials-bg.jpg';
-import ProfileImage from '../../images/casey-bechard.png';
-import CatalogImage from '../../images/course-catalog-tablet.jpg';
-import GroomingKitImage from '../../images/dog-grooming-kit.jpg';
-import FirstAidLogo from '../../images/first-aid-logo.svg';
-import Step1EnrollImage from '../../images/step-1-enroll.svg';
-import Step2SubmitImage from '../../images/step-2-submit.svg';
-import Step3CertificateImage from '../../images/step-3-certificate.svg';
+import { BrochureForm } from '../components/BrochureForm';
+import { LandingPageLayout } from '../components/LandingPageLayout';
+import { SEO } from '../components/SEO';
+import { useScreenWidth } from '../hooks/useScreenWidth';
+import TestiminialBackground from '../images/backgrounds/testimonials-bg.jpg';
+import ProfileImage from '../images/casey-bechard.png';
+import CatalogImage from '../images/course-catalog-tablet.jpg';
+import GroomingKitImage from '../images/dog-grooming-kit.jpg';
+import FirstAidLogo from '../images/first-aid-logo.svg';
+import Step1EnrollImage from '../images/step-1-enroll.svg';
+import Step2SubmitImage from '../images/step-2-submit.svg';
+import Step3CertificateImage from '../images/step-3-certificate.svg';
 
 const DogGroomingCatalogPage: NextPage = () => {
   const screenWidth = useScreenWidth();
@@ -23,9 +23,9 @@ const DogGroomingCatalogPage: NextPage = () => {
   return (
     <LandingPageLayout>
       <SEO
-        title="Catalog of Become A Dog Groomer"
-        description="This is a Catalog of Become a Dog Groomer"
-        canonical="/dog-grooming-courses/catalog-dog-groomer"
+        title="Become a Professional Dog Groomer"
+        description=""
+        canonical="/catalog-become-a-dog-groomer"
       />
 
       <section id="firstSection" className="">
