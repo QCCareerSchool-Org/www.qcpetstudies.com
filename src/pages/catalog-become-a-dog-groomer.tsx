@@ -87,7 +87,7 @@ const DogGroomingCatalogPage: NextPage = () => {
       </section>
 
       <section className="bg-dark text-white">
-        <Image src={TestiminialBackground} layout="fill" objectFit="cover" objectPosition="center" alt="happy dog with open mouth" />
+        <Image src={TestiminialBackground} layout="fill" objectFit="cover" objectPosition="right" alt="happy dog with open mouth" />
         <div className="container text-center">
           <div className="row justify-content-center">
             <div className="col-12 col-lg-10 mb-4">
@@ -98,8 +98,8 @@ const DogGroomingCatalogPage: NextPage = () => {
               <BsStarFill size={32} className="text-primary mx-2" />
             </div>
             <div className="col-12 col-lg-8">
-              <p>&quot;Loved having the opportunity to learn dog grooming and dog first aid through this program. It&apos;s awesome being able to work at my own pace and taking the time to practice and use my assignments in my everyday job. Highly recommend!&quot;</p>
-              <Image src={ProfileImage} alt="Casey bechard profile image" width="85" height="86" />
+              <p>&ldquo;Loved having the opportunity to learn dog grooming and dog first aid through this program. It&apos;s awesome being able to work at my own pace and taking the time to practice and use my assignments in my everyday job. Highly recommend!&rdquo;</p>
+              <Image src={ProfileImage} alt="Casey bechard profile image" width="85" height="85" />
               <p className="lead mb-0"><strong>Casey Bechard</strong><br />QC Pet Studies Graduate</p>
             </div>
           </div>
