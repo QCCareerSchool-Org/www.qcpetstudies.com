@@ -7,7 +7,7 @@ type Props = {
   buttonClassName?: string;
 };
 
-export const BrochureForm = ({ formId = 37, phoneNumber = true, buttonText = 'Get the Brochure', buttonClassName }: Props): ReactElement => (
+export const BrochureForm = ({ formId = 37, phoneNumber = true, buttonText = 'Get the Catalog', buttonClassName }: Props): ReactElement => (
   <form action="https://qccareerschool.activehosted.com/proc.php">
     <input type="hidden" name="u" value="616046046283C" />
     <input type="hidden" name="f" value={formId} />

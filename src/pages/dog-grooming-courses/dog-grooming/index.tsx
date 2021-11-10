@@ -52,7 +52,7 @@ const DogGroomingPage: NextPage = () => {
       />
 
       <section id="firstSection" className="bg-dark">
-        <Image src={DogGroomingBackground} layout="fill" objectFit="cover" objectPosition="center" alt="dog grooming" />
+        <Image src={DogGroomingBackground} layout="fill" objectFit="cover" objectPosition="center" placeholder="blur" alt="Bichon Frisee getting a haircut" />
         <div className="container text-center">
           <div className="row mb-4">
             <div className="mb-4">

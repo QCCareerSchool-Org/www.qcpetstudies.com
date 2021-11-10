@@ -21,7 +21,7 @@ const HomePage: NextPage = () => (
     />
 
     <section id="firstSection" className="bg-dark">
-      <Image src={PetStudiesHomepage} layout="fill" objectFit="cover" objectPosition="center" alt="groomer bathing a dog" />
+      <Image src={PetStudiesHomepage} layout="fill" objectFit="cover" objectPosition="center" placeholder="blur" alt="groomer bathing a dog" />
       <div className="container text-center text-shadow">
         <div className="row">
           <div className="col-12 col-lg-10 offset-lg-1">
