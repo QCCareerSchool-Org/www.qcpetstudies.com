@@ -26,8 +26,8 @@ const iconSize = 50;
 const DogGroomingCourseOutlinePage: NextPage = () => (
   <DefaultLayout>
     <SEO
-      title="Dog Grooming Course-Outline"
-      description="Become a Certified Dog Grooming Professional with QC's Interactive Online Course. Get Started Today!"
+      title="Dog Grooming Course Outline"
+      description="Become a certified dog grooming professional with QC's interactive online course. Get started today!"
       canonical="/dog-grooming-courses/dog-grooming/course-outline"
     />
 
@@ -82,7 +82,7 @@ const DogGroomingCourseOutlinePage: NextPage = () => (
       <div className="container">
         <div className="row justify-content-center">
           <div className="col-12 col-xl-10 col-xxl-9">
-            <Accordion className="mb-4">
+            <Accordion defaultActiveKey="0" className="mb-4">
               <AccordionToggle title="Unit A" eventKey="0" variant="primary" />
               <AccordionSection eventKey="0">
                 <div className="row">
@@ -319,15 +319,15 @@ const DogGroomingCourseOutlinePage: NextPage = () => (
                     <table className="unitStatsTable">
                       <tbody>
                         <tr><th scope="row">Readings:</th><td>1 to 2 hours</td></tr>
-                        <tr><th scope="row">Videos:</th><td>9 Videos (5 hours)</td></tr>
+                        <tr><th scope="row">Videos:</th><td>9 (5 hours)</td></tr>
                         <tr><th scope="row">Assignments:</th><td>1 (1 hour)</td></tr>
                       </tbody>
                     </table>
                     <hr />
                     <p className="lead">Required Grooming Equipment:</p>
                     <p>None until practicum units</p>
-                    <p className="lead mb-0">Required Dogs:</p>
-                    <p>None until practicum units</p>
+                    <p className="lead">Required Dogs:</p>
+                    <p className="mb-0">None until practicum units</p>
                   </div>
                 </div>
               </AccordionSection>
@@ -336,7 +336,7 @@ const DogGroomingCourseOutlinePage: NextPage = () => (
                 <div className="row">
                   <div className="col-12 col-lg-6 mb-4">
                     <p>In your practicum units, you&apos;ll follow a series of assignments that will have you grooming full dogs from start to finish.  This is where all your knowledge from the course will come to a head. For best results, you&apos;ll want to complete a groom on several dogs before submitting your work for grading. It&apos;s only with practice that you will truly become a competent and successful professional dog groomer!</p>
-                    <div className="alert alert-primary mb-0">Unit Total: 11-20 hours + Practice</div>
+                    <div className="alert alert-primary mb-0">Unit Total: 11 to 20 hours + Practice</div>
                   </div>
                   <div className="col-12 col-lg-6 mb-4">
                     <Image src={PracticumUnitImage} layout="responsive" alt="wet dog being toweled off" />
