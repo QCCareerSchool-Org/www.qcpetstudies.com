@@ -25,7 +25,7 @@ const FAQPage: NextPage = () => {
       <SEO
         title="FAQ"
         description="If you have any questions about QC's online programs in dog grooming or dog training, find your answers here!"
-        canonical="/dog-grooming-courses/breed-styling"
+        canonical="/about/faq"
       />
 
       <section id="firstSection" className="bg-dark">
