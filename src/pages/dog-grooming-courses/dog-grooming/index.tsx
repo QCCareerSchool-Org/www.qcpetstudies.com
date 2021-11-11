@@ -19,10 +19,10 @@ import DogGroomingBackground from '../../../images/backgrounds/dog-grooming.jpg'
 import DogCourseMaterialsImage from '../../../images/dg-course-materials-manuals-kit-white.jpg';
 import GroomingKitDetailImage from '../../../images/grooming-kit-details.jpg';
 import CertificationGoldImage from '../../../images/IDGP-certification-gold.svg';
-import MasterGroomerLisaImage from '../../../images/lisa-video-thumbnail.jpg';
+import MasterGroomerLisaImage from '../../../images/lisa-video-thumbnail.png';
 import MovieClapperImage from '../../../images/movie-clapper.svg';
 import OutlineImage from '../../../images/outline.svg';
-import MasterGroomerPaddyImage from '../../../images/paddy-video-thumbnail.jpg';
+import MasterGroomerPaddyImage from '../../../images/paddy-video-thumbnail.png';
 import PlayBtnImage from '../../../images/play-btn.svg';
 import { formatPrice } from '../../../lib/formatPrice';
 
@@ -209,7 +209,7 @@ const DogGroomingPage: NextPage = () => {
             <div className="col-12 col-lg-6 d-flex flex-column justify-content-around">
               <div className="d-flex align-items-center">
                 <div className="me-4">
-                  <button onClick={lisaPopupToggle} className="btn btn-link"><Image src={MasterGroomerLisaImage} alt="Master Groomer Lisa" width="250" height="141" /></button>
+                  <button onClick={lisaPopupToggle} className="btn btn-link"><Image src={MasterGroomerLisaImage} alt="Master Groomer Lisa" width="230" height="150" /></button>
                 </div>
                 <div className="d-flex flex-column">
                   <h3>Lisa Day</h3>
@@ -220,7 +220,7 @@ const DogGroomingPage: NextPage = () => {
               {!lgOrGreater && <div className="mb-4" />}
               <div className="d-flex align-items-center">
                 <div className="me-4">
-                  <button onClick={paddyPopupToggle} className="btn btn-link"><Image src={MasterGroomerPaddyImage} alt="Master Groomer Paddy" width="250" height="141" /></button>
+                  <button onClick={paddyPopupToggle} className="btn btn-link"><Image src={MasterGroomerPaddyImage} alt="Master Groomer Paddy" width="230" height="150" /></button>
                 </div>
                 <div className="d-flex flex-column">
                   <h3>Paddy Gaffney</h3>
