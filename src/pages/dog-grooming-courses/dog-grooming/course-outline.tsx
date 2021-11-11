@@ -26,8 +26,8 @@ const iconSize = 50;
 const DogGroomingCourseOutlinePage: NextPage = () => (
   <DefaultLayout>
     <SEO
-      title="Dog Grooming Course-Outline"
-      description="................................."
+      title="Dog Grooming Course Outline"
+      description="Become a certified dog grooming professional with QC's interactive online course. Get started today!"
       canonical="/dog-grooming-courses/dog-grooming/course-outline"
     />
 
@@ -82,7 +82,7 @@ const DogGroomingCourseOutlinePage: NextPage = () => (
       <div className="container">
         <div className="row justify-content-center">
           <div className="col-12 col-xl-10 col-xxl-9">
-            <Accordion className="mb-4">
+            <Accordion defaultActiveKey="0" className="mb-4">
               <AccordionToggle title="Unit A" eventKey="0" variant="primary" />
               <AccordionSection eventKey="0">
                 <div className="row">
@@ -181,7 +181,7 @@ const DogGroomingCourseOutlinePage: NextPage = () => (
                     <p className="mb-0">In Unit D, you&apos;ll learn about all the basic preparatory work that goes into a grooming session, from clipping nails to bathing and drying. These skills will form the foundation of all the grooming work you&apos;ll perform later in the course and in your career.</p>
                   </div>
                   <div className="col-12 col-lg-6 mb-4">
-                    <div className="alert alert-primary">Unit Total: 8 to 15 Hours</div>
+                    <div className="alert alert-primary">Unit Total: 8 to 15 Hours + Practice</div>
                     <table className="unitStatsTable">
                       <tbody>
                         <tr><th scope="row">Readings:</th><td>1 to 2 hours</td></tr>
@@ -310,7 +310,8 @@ const DogGroomingCourseOutlinePage: NextPage = () => (
                 <div className="row">
                   <div className="col-12 col-lg-6 mb-4 mb-lg-0">
                     <Image src={UnitGImage} className="mb-4" layout="responsive" alt="longhaired dog getting a trim" />
-                    <p>In the first unit of the dog grooming course, you&apos;ll meet your tutor and start learning about the fundamentals of dog grooming. This introductory unit includes theoretical studies on the history of dog grooming, and how to protect your health &amp; safety as a dog groomer.  You&apos;ll also learn about dog anatomy in great detail, and you&apos;ll start learning about skincare and esthetics.</p>
+                    <p>In this final mandatory unit before your practicum, you&apos;ll learn the guidelines for styling and showing purebred dogs. These are the standards that give different dog breeds their unique looks.</p>
+                    <p>Unit G guides you through the process of adapting breed standards to practical pet cuts for a number of common breeds. You&apos;ll return to the information in this unit over and over again throughout your grooming career!</p>
                     <p className="mb-0">Note: This unit is the lead-up to your practicum, therefore there are no practical assignments in this unit.</p>
                   </div>
                   <div className="col-12 col-lg-6">
@@ -325,7 +326,8 @@ const DogGroomingCourseOutlinePage: NextPage = () => (
                     <hr />
                     <p className="lead">Required Grooming Equipment:</p>
                     <p>None until practicum units</p>
-                    <p className="lead mb-0">Required Dogs: One (any breed)</p>
+                    <p className="lead">Required Dogs:</p>
+                    <p className="mb-0">None until practicum units</p>
                   </div>
                 </div>
               </AccordionSection>
@@ -334,7 +336,7 @@ const DogGroomingCourseOutlinePage: NextPage = () => (
                 <div className="row">
                   <div className="col-12 col-lg-6 mb-4">
                     <p>In your practicum units, you&apos;ll follow a series of assignments that will have you grooming full dogs from start to finish.  This is where all your knowledge from the course will come to a head. For best results, you&apos;ll want to complete a groom on several dogs before submitting your work for grading. It&apos;s only with practice that you will truly become a competent and successful professional dog groomer!</p>
-                    <div className="alert alert-primary mb-0">Unit Total: 6 to 8 Hours</div>
+                    <div className="alert alert-primary mb-0">Unit Total: 11 to 20 hours + Practice</div>
                   </div>
                   <div className="col-12 col-lg-6 mb-4">
                     <Image src={PracticumUnitImage} layout="responsive" alt="wet dog being toweled off" />
