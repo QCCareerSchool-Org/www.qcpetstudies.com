@@ -553,3 +553,12 @@ ul.list-style-none, ol.list-style-none {
     }
   }
 }
+
+.imageShadowWrapper {
+  span {
+      overflow: visible !important;
+  }
+  img {
+    box-shadow: 12px 12px 12px 0 rgba(0, 0, 0, 0.10);
+  }
+}
