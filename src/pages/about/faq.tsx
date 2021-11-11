@@ -46,9 +46,7 @@ const FAQPage: NextPage = () => {
               <h2 className="text-center mb-4">Questions About QC Pet Studies</h2>
               <Accordion>
                 <QuestionAnswer question="Is QC Pet Studies an accredited online school?" index={i++}>
-                  <p className="mb-0">Yes. QC Pet Studies is a faculty of QC Career School, which is an accredited business with the Better Business Bureau. QC holds the highest possible consumer satisfaction standing (A+) with the BBB.
-                    <Link href="https://www.bbb.org/ottawa/business-reviews/correspondence-schools/qc-career-school-in-ottawa-on-4175"><a className="link text-primary"> View more about QC&apos;s accreditation status.</a></Link>
-                  </p>
+                  <p className="mb-0">Yes. QC Pet Studies is a faculty of QC Career School, which is an accredited business with the Better Business Bureau. QC holds the <a href="https://www.bbb.org/ottawa/business-reviews/correspondence-schools/qc-career-school-in-ottawa-on-4175" className="link-primary">highest possible consumer satisfaction standing (A+) with the BBB</a>.</p>
                 </QuestionAnswer>
                 <QuestionAnswer question="What type of payment plans does QC offer?" index={i++}>
                   <p className="mb-0">When you enroll with QC, you can choose to either receive a discount to pay your tuition in full OR opt for a tuition payment plan. On a payment plan, you pay an initial deposit to enroll, then regular monthly payments. Monthly payments are withdrawn on the date of your choosing so you can schedule your payments to coincide with your budget.</p>
@@ -66,10 +64,10 @@ const FAQPage: NextPage = () => {
                 <QuestionAnswer question="Are there any technology requirements to complete my online courses with QC?" index={i++}>
                   <p>To complete any online course with QC Pet Studies, you must have access to the following:</p>
                   <ul className="mb-0">
-                    <li>A desktop computer, laptop or tablet</li>
+                    <li>A desktop computer, laptop, or tablet</li>
                     <li>A smart phone and/or camera with photograph and video capability</li>
-                    <li>Up-to-date Internet browser</li>
-                    <li>Up-to-date <Link href="https://get.adobe.com/reader/?promoid=KQZEN"><a className="link text-primary">Adobe Reader program</a></Link></li>
+                    <li>An up-to-date web browser</li>
+                    <li>An up-to-date PDF reader, such as <a href="https://get.adobe.com/reader" className="link-primary">Adobe Reader</a></li>
                   </ul>
                 </QuestionAnswer>
                 <QuestionAnswer question="What do I do if I get stuck on a course assignment?" index={i++}>
