@@ -29,10 +29,12 @@ import { formatPrice } from '../../../lib/formatPrice';
 const headerIconSize = 20;
 const iconSize = 36;
 
+const courseCodes = [ 'dg' ];
+
 const DogGroomingPage: NextPage = () => {
   const screenWidth = useScreenWidth();
   const location = useLocation();
-  const price = usePrice([ 'dg' ], location?.countryCode, location?.provinceCode);
+  const price = usePrice(courseCodes, location?.countryCode, location?.provinceCode);
   const [ kitPopupVisible, kitPopupToggle ] = useToggle();
   const [ trailerPopupVisible, trailerPopupToggle ] = useToggle();
   const [ lisaPopupVisible, lisaPopupToggle ] = useToggle();
@@ -105,7 +107,7 @@ const DogGroomingPage: NextPage = () => {
         </div>
       </section>
 
-      <PriceSection courses={[ 'dg' ]} doubleGuarantee={true} />
+      <PriceSection courses={courseCodes} doubleGuarantee={true} />
 
       <section>
         <div className="container text-center">
@@ -207,9 +209,9 @@ const DogGroomingPage: NextPage = () => {
               </div>
             </div>
             <div className="col-12 col-lg-6 d-flex flex-column justify-content-around">
-              <div className="d-flex align-items-center">
+              <div className="d-flex align-items-center mb-lg-4">
                 <div className="me-4">
-                  <button onClick={lisaPopupToggle} className="btn btn-link"><Image src={MasterGroomerLisaImage} alt="Master Groomer Lisa" width="250" height="141" /></button>
+                  <button onClick={lisaPopupToggle} className="btn btn-link"><div className="imageShadowWrapper"><Image src={MasterGroomerLisaImage} alt="Master Groomer Lisa" width="250" height="166" placeholder="blur" /></div></button>
                 </div>
                 <div className="d-flex flex-column">
                   <h3>Lisa Day</h3>
@@ -220,7 +222,7 @@ const DogGroomingPage: NextPage = () => {
               {!lgOrGreater && <div className="mb-4" />}
               <div className="d-flex align-items-center">
                 <div className="me-4">
-                  <button onClick={paddyPopupToggle} className="btn btn-link"><Image src={MasterGroomerPaddyImage} alt="Master Groomer Paddy" width="250" height="141" /></button>
+                  <button onClick={paddyPopupToggle} className="btn btn-link"><div className="imageShadowWrapper"><Image src={MasterGroomerPaddyImage} alt="Master Groomer Paddy" width="250" height="166" placeholder="blur" /></div></button>
                 </div>
                 <div className="d-flex flex-column">
                   <h3>Paddy Gaffney</h3>
@@ -235,7 +237,7 @@ const DogGroomingPage: NextPage = () => {
           <Modal.Header closeButton>Lisa Day</Modal.Header>
           <Modal.Body>
             <div className="ratio ratio-16x9">
-              <video controls autoPlay preload="metadata">
+              <video controls autoPlay>
                 <source src="https://89b45d42c17e11dd3d57-62a1fc0bf60a98e1d5e980348a7de3b7.ssl.cf1.rackcdn.com/interview-lisa.mp4" type="video/mp4" />
               </video>
             </div>
@@ -245,7 +247,7 @@ const DogGroomingPage: NextPage = () => {
           <Modal.Header closeButton>Paddy Gaffney</Modal.Header>
           <Modal.Body>
             <div className="ratio ratio-16x9">
-              <video controls autoPlay preload="metadata">
+              <video controls autoPlay>
                 <source src="https://89b45d42c17e11dd3d57-62a1fc0bf60a98e1d5e980348a7de3b7.ssl.cf1.rackcdn.com/interview-paddy.mp4" type="video/mp4" />
               </video>
             </div>
@@ -257,6 +259,9 @@ const DogGroomingPage: NextPage = () => {
         .tutionButton { padding: 0; border: none; margin: 0 0 1rem; font-style: italic; background: none; color: white; font-weight: 300; }
         #outlineSection { background-color: #f7f7f7 !important; }
         .courseContentIcon { color: #ccc; margin-bottom: 0.5rem; }
+        .imageShadowWrapper {
+          padding-right: 12px; // to offset the shadow
+        }
       `}</style>
 
     </DefaultLayout>
