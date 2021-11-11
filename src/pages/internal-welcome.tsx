@@ -83,7 +83,7 @@ const InternalWelcomePage: NextPage<Props> = ({ data, errorCode }) => {
               <p>Remember, we want to develop a personal relationship with you and be readily available for you whenever you need us.</p>
               <p><strong>Best of luck with your studies!</strong></p>
               <p>Sincerely,</p>
-              <p><Image src={AlexSignature} alt="Alex Myers" /><br />Director<br /><strong>QC Career School</strong></p>
+              <p><Image src={AlexSignature} alt="Alex Myers" /><br /><div style={{ marginTop: -14 }}>Director<br /><strong>QC Career School</strong></div></p>
             </div>
           </div>
         </div>
