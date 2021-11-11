@@ -1,7 +1,7 @@
 import { NextPage } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
-import { ReactElement } from 'react';
+import { ReactElement, ReactNode } from 'react';
 import { FaBookOpen, FaHeadphones, FaLightbulb, FaStar } from 'react-icons/fa';
 
 import { DefaultLayout } from '../../components/DefaultLayout';
@@ -150,8 +150,8 @@ const AboutPage: NextPage = () => {
 };
 
 type CoreValueProps = {
-  left: ReactElement;
-  right: ReactElement;
+  left: ReactNode;
+  right: ReactNode;
 };
 
 const CoreValue = ({ left, right }: CoreValueProps): ReactElement => (
