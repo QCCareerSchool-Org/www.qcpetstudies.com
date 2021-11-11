@@ -23,8 +23,8 @@ const FAQPage: NextPage = () => {
   return (
     <DefaultLayout secondaryTitle="FAQ" secondaryNavLinks={secondaryNavLinks}>
       <SEO
-        title="Breed Styling Course"
-        description="If you're already a professional dog groomer, the breed styling workshop will take your grooming skills to the next level. Start today!"
+        title="FAQ"
+        description="If you have any questions about QC's online programs in dog grooming or dog training, find your answers here!"
         canonical="/dog-grooming-courses/breed-styling"
       />
 
@@ -46,7 +46,9 @@ const FAQPage: NextPage = () => {
               <h2 className="text-center mb-4">Questions About QC Pet Studies</h2>
               <Accordion>
                 <QuestionAnswer question="Is QC Pet Studies an accredited online school?" index={i++}>
-                  <p className="mb-0">Yes. QC Pet Studies is a faculty of QC Career School, which is an accredited business with the Better Business Bureau. QC holds the highest possible consumer satisfaction standing (A+) with the BBB. View more about QC&apos;s accreditation status.</p>
+                  <p className="mb-0">Yes. QC Pet Studies is a faculty of QC Career School, which is an accredited business with the Better Business Bureau. QC holds the highest possible consumer satisfaction standing (A+) with the BBB.
+                    <Link href="https://www.bbb.org/ottawa/business-reviews/correspondence-schools/qc-career-school-in-ottawa-on-4175"><a className="link text-primary"> View more about QC&apos;s accreditation status.</a></Link>
+                  </p>
                 </QuestionAnswer>
                 <QuestionAnswer question="What type of payment plans does QC offer?" index={i++}>
                   <p className="mb-0">When you enroll with QC, you can choose to either receive a discount to pay your tuition in full OR opt for a tuition payment plan. On a payment plan, you pay an initial deposit to enroll, then regular monthly payments. Monthly payments are withdrawn on the date of your choosing so you can schedule your payments to coincide with your budget.</p>
@@ -67,7 +69,7 @@ const FAQPage: NextPage = () => {
                     <li>A desktop computer, laptop or tablet</li>
                     <li>A smart phone and/or camera with photograph and video capability</li>
                     <li>Up-to-date Internet browser</li>
-                    <li>Up-to-date Adobe Reader program</li>
+                    <li>Up-to-date <Link href="https://get.adobe.com/reader/?promoid=KQZEN"><a className="link text-primary">Adobe Reader program</a></Link></li>
                   </ul>
                 </QuestionAnswer>
                 <QuestionAnswer question="What do I do if I get stuck on a course assignment?" index={i++}>
