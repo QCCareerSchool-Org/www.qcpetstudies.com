@@ -14,7 +14,6 @@ import { useLocation } from '../../../hooks/useLocation';
 import { usePrice } from '../../../hooks/usePrice';
 import { useScreenWidth } from '../../../hooks/useScreenWidth';
 import { useToggle } from '../../../hooks/useToggle';
-
 import DogGroomingBackground from '../../../images/backgrounds/bichon-frise-getting-haircut.jpg';
 import DogCourseMaterialsImage from '../../../images/dg-course-materials-manuals-kit-white.jpg';
 import GroomingKitDetailImage from '../../../images/grooming-kit-details.jpg';
@@ -54,7 +53,7 @@ const DogGroomingPage: NextPage = () => {
       />
 
       <section id="firstSection" className="bg-dark">
-        <Image src={DogGroomingBackground} layout="fill" objectFit="cover" objectPosition="80% 50%" placeholder="blur" alt="Bichon Frise getting a haircut" />
+        <Image src={DogGroomingBackground} layout="fill" objectFit="cover" objectPosition="right" placeholder="blur" alt="Bichon Frise getting a haircut" />
         <div className="container text-center">
           <div className="row mb-4">
             <div className="mb-4">
@@ -209,8 +208,8 @@ const DogGroomingPage: NextPage = () => {
               </div>
             </div>
             <div className="col-12 col-lg-6 d-flex flex-column justify-content-around">
-              <div className="d-flex align-items-center mb-lg-4">
-                <div className="me-4">
+              <div className="d-flex flex-column flex-sm-row align-items-center mb-2 mb-sm-0 mb-lg-4">
+                <div className="me-sm-4 mb-1 mb-sm-0">
                   <button onClick={lisaPopupToggle} className="btn btn-link"><div className="imageShadowWrapper"><Image src={MasterGroomerLisaImage} alt="Master Groomer Lisa" width="250" height="166" placeholder="blur" /></div></button>
                 </div>
                 <div className="d-flex flex-column">
@@ -220,8 +219,8 @@ const DogGroomingPage: NextPage = () => {
                 </div>
               </div>
               {!lgOrGreater && <div className="mb-4" />}
-              <div className="d-flex align-items-center">
-                <div className="me-4">
+              <div className="d-flex flex-column flex-sm-row align-items-center">
+                <div className="me-sm-4 mb-1 mb-sm-0">
                   <button onClick={paddyPopupToggle} className="btn btn-link"><div className="imageShadowWrapper"><Image src={MasterGroomerPaddyImage} alt="Master Groomer Paddy" width="250" height="166" placeholder="blur" /></div></button>
                 </div>
                 <div className="d-flex flex-column">
@@ -260,7 +259,12 @@ const DogGroomingPage: NextPage = () => {
         #outlineSection { background-color: #f7f7f7 !important; }
         .courseContentIcon { color: #ccc; margin-bottom: 0.5rem; }
         .imageShadowWrapper {
-          padding-right: 12px; // to offset the shadow
+          padding: 0 0 12px; // to offset the shadow
+        }
+        @media (min-width: 576px) {
+          .imageShadowWrapper {
+            padding: 0 12px 0 0; // to offset the shadow
+          }
         }
       `}</style>
 
