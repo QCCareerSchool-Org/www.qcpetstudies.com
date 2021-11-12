@@ -15,7 +15,7 @@ import { usePrice } from '../../../hooks/usePrice';
 import { useScreenWidth } from '../../../hooks/useScreenWidth';
 import { useToggle } from '../../../hooks/useToggle';
 
-import DogGroomingBackground from '../../../images/backgrounds/dog-grooming.jpg';
+import DogGroomingBackground from '../../../images/backgrounds/bichon-frise-getting-haircut.jpg';
 import DogCourseMaterialsImage from '../../../images/dg-course-materials-manuals-kit-white.jpg';
 import GroomingKitDetailImage from '../../../images/grooming-kit-details.jpg';
 import CertificationGoldImage from '../../../images/IDGP-certification-gold.svg';
