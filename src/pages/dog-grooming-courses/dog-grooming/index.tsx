@@ -54,7 +54,7 @@ const DogGroomingPage: NextPage = () => {
       />
 
       <section id="firstSection" className="bg-dark">
-        <Image src={DogGroomingBackground} layout="fill" objectFit="cover" objectPosition="center" placeholder="blur" alt="Bichon Frise getting a haircut" />
+        <Image src={DogGroomingBackground} layout="fill" objectFit="cover" objectPosition="80% 50%" placeholder="blur" alt="Bichon Frise getting a haircut" />
         <div className="container text-center">
           <div className="row mb-4">
             <div className="mb-4">
