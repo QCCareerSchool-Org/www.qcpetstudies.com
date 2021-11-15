@@ -6,8 +6,8 @@ import { PriceSection } from '../../components/PriceSection';
 import { SEO } from '../../components/SEO';
 import QcYearGuaratnteeLogo from '../../images/1-year-guarantee-outlined.svg';
 import QcDayGuaratnteeLogo from '../../images/21-day-guarantee-outlined.svg';
-import DreamCareerBackground from '../../images/backgrounds/dry-bg.jpg';
-import firstAidBook from '../../images/first-aid-book-white.jpg';
+import DreamCareerBackground from '../../images/backgrounds/drying-dog-bg.jpg';
+import FirstAidBookImage from '../../images/first-aid-book-white.jpg';
 import FirstAidLogo from '../../images/first-aid-logo.svg';
 import FullKitImage from '../../images/Full-Kit-Pro-Scissors.jpg';
 import MagnifyingGLassImage from '../../images/icon-magnifying-glass.svg';
@@ -18,13 +18,13 @@ const StartYourDreamCareerPage: NextPage = () => {
   return (
     <DefaultLayout>
       <SEO
-        title="Start Your Dream Career - QC Pet Studies"
-        description=""
+        title="Start Your Dream Career"
+        description="Start Your Dream Career"
         canonical="/dog-grooming-courses/start-your-dream-career-rm"
       />
 
       <section id="firstSection" className="bg-dark">
-        <Image src={DreamCareerBackground} layout="fill" objectFit="cover" objectPosition="center" alt="First aid" />
+        <Image src={DreamCareerBackground} layout="fill" objectFit="cover" objectPosition="center" alt="drying dog with dryer" />
         <div className="image-overlay-gradient" />
         <div className="container text-center">
           <h2 className="mb-3">Start Your Dream Career in<br /><strong className="text-uppercase">Dog Grooming</strong></h2>
@@ -48,35 +48,33 @@ const StartYourDreamCareerPage: NextPage = () => {
             </div>
           </div>
           <div className="mb-5">
-            <Image src={FullKitImage} alt="Course Material Image" width="724" height="374" />
+            <Image src={FullKitImage} alt="Course Material" width="724" height="374" />
           </div>
           <h2 className="mb-5">You&apos;ll Be Covered by QC&apos;s Double Guarantee</h2>
-          <div className="mb-5">
-            <div className="row">
-              <div className="col-12 col-lg-6 d-flex mb-3">
-                <div className="card bg-light">
-                  <div className="card-body">
-                    <div className="w-100">
-                      <div className="mb-3">
-                        <Image src={QcDayGuaratnteeLogo} alt="Qc 21 Day Money Back Guarantee Logo" />
-                      </div>
-                      <p className="lead"><strong>The 21-Day Money Back Guarantee</strong></p>
-                      <p>Try the course risk-free for 21 days.  This gives you time to receive your course materials and evaluate whether the dog grooming course is right for you.  If you decide it&apos;s not a good fit, simply contact QC to arrange a return of your course materials for a refund. It&apos;s that easy! Note: For sanitary reasons, the clippers and attachment combs provided with the course cannot be refunded (value $200 US)</p>
+          <div className="row">
+            <div className="col-12 col-lg-6 d-flex mb-3">
+              <div className="card bg-light">
+                <div className="card-body">
+                  <div className="w-100">
+                    <div className="mb-3">
+                      <Image src={QcDayGuaratnteeLogo} alt="Qc 21 Day Money Back Guarantee" />
                     </div>
+                    <p className="lead"><strong>The 21-Day Money Back Guarantee</strong></p>
+                    <p>Try the course risk-free for 21 days.  This gives you time to receive your course materials and evaluate whether the dog grooming course is right for you.  If you decide it&apos;s not a good fit, simply contact QC to arrange a return of your course materials for a refund. It&apos;s that easy! Note: For sanitary reasons, the clippers and attachment combs provided with the course cannot be refunded (value $200 US)</p>
                   </div>
                 </div>
               </div>
-              <div className="col-12 col-lg-6 d-flex mb-3">
-                <div className="card bg-light">
-                  <div className="card-body">
-                    <div className="w-100">
-                      <div className="mb-3">
-                        <Image src={QcYearGuaratnteeLogo} alt="Qc 1 Year Money Back Guarantee Logo" />
-                      </div>
-                      <p className="lead"><strong>The 1-Year Money Back Guarantee</strong></p>
-                      <p><em>This course will pay for itself within two years, that&apos;s a promise.</em></p>
-                      <p>That&apos;s right.  If after two years of receiving your certificate of completion, you haven&apos;t earned the equivalent of your tuition fees in dog grooming fees or salary, your dog grooming course tuition will be refunded in full. All you have to do is provide proof that you&apos;ve made a reasonable effort to find work as a dog groomer.</p>
+            </div>
+            <div className="col-12 col-lg-6 d-flex mb-3">
+              <div className="card bg-light">
+                <div className="card-body">
+                  <div className="w-100">
+                    <div className="mb-3">
+                      <Image src={QcYearGuaratnteeLogo} alt="Qc 1 Year Money Back Guarantee" />
                     </div>
+                    <p className="lead"><strong>The 1-Year Money Back Guarantee</strong></p>
+                    <p><em>This course will pay for itself within two years, that&apos;s a promise.</em></p>
+                    <p>That&apos;s right.  If after two years of receiving your certificate of completion, you haven&apos;t earned the equivalent of your tuition fees in dog grooming fees or salary, your dog grooming course tuition will be refunded in full. All you have to do is provide proof that you&apos;ve made a reasonable effort to find work as a dog groomer.</p>
                   </div>
                 </div>
               </div>
@@ -86,7 +84,6 @@ const StartYourDreamCareerPage: NextPage = () => {
       </section>
 
       <PriceSection courses={courseCodes} doubleGuarantee={true} />
-
 
       <section className="bg-light">
         <div className="container text-center">
@@ -123,14 +120,14 @@ const StartYourDreamCareerPage: NextPage = () => {
           <div className="row align-items-center">
             <div className="col-12 col-lg-6 text-lg-start">
               <div className="text-center mb-4">
-                <Image src={FirstAidLogo} alt="First Aid Logo" />
+                <Image src={FirstAidLogo} alt="First Aid plus Logo" />
               </div>
               <h2>Get a <strong>FREE</strong> First Aid Course</h2>
               <p className="lead">Enroll in Dog Grooming &amp; receive the First Aid for Dog Groomers course to take your career to the next level!</p>
               <p>Learn from first aid experts who will guide you through the course. You&apos;ll learn how to keep yourself and your furry clients out of harm&apos;s way.</p>
             </div>
             <div className="col-12 col-lg-6 mb-5 mb-lg-0">
-              <Image src={firstAidBook} alt="First Aid Book" />
+              <Image src={FirstAidBookImage} alt="Dog grooming first aid book" />
             </div>
           </div>
         </div>
