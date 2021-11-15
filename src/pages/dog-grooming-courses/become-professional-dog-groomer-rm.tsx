@@ -4,7 +4,7 @@ import { BsCalendarCheck, BsCheckCircle, BsFillCloudArrowDownFill } from 'react-
 import { DefaultLayout } from '../../components/DefaultLayout';
 import { SEO } from '../../components/SEO';
 import CourseCatalogImage from '../../images/bottom-ipad-shepard.jpg';
-import firstAidBook from '../../images/first-aid-book-white.jpg';
+import FirstAidBookImage from '../../images/first-aid-book-white.jpg';
 import FirstAidLogo from '../../images/first-aid-logo.svg';
 import MagnifyingGLassImage from '../../images/icon-magnifying-glass-2.svg';
 import FullKitImage from '../../images/Kit-Blue-bg.jpg';
@@ -22,7 +22,7 @@ const ProfessionalDogGroomerPage: NextPage = () => {
         <div className="container text-center py-5">
           <h2>Become A <strong>Professional</strong> Dog Groomer</h2>
           <p className="lead">Start your <strong>dream career</strong> as a professional dog groomer online with QC&apos;s Dog Grooming course!</p>
-          <div className="row justify-content-center mb-5">
+          <div className="row justify-content-center mb-4">
             <div className="col-12 col-lg-8">
               <p>Learning dog grooming online is just as effective as in-class dog groomer training. And it&apos;s way more convenient! You&apos;ll complete your training from home with practical and theoretical assignments, while receiving guidance from certified master groomers every step of the way! When you graduate, you will receive a certificate of completion to prove that you have completed training in dog grooming.</p>
             </div>
@@ -36,13 +36,13 @@ const ProfessionalDogGroomerPage: NextPage = () => {
                     <p>Before you begin your practical work in Unit C, you&apos;ll receive a toolkit with the essential items you need to get started.</p>
                     <p>Your kit includes a WAHL ARCO 5-in-1 Cordless Clipper, a stainless steel attachment guide comb kit, professional-grade grooming scissors, brushes, combs, and nail clippers.</p>
                     <p><em>Grooming Kit Estimated value: $200</em></p>
-                    <Image src={FullKitImage} alt="Dog Grooming Starter Full Kit Image" />
+                    <Image src={FullKitImage} alt="Dog Grooming Starter Full Kit" />
                   </div>
                 </div>
               </div>
             </div>
             <div className="col-12 col-lg-6 d-flex">
-              <div className="card" style={{ backgroundColor: '#3e4557' }}>
+              <div className="card bg-grayish-blue">
                 <div className="card-body">
                   <div className="w-100">
                     <h3 className="mb-3 text-center">Download a Free Course Catalog!</h3>
@@ -55,12 +55,12 @@ const ProfessionalDogGroomerPage: NextPage = () => {
                     </ul>
                     <form className="mx-2 d-grid gap-3">
                       <div>
-                        <input type="text" className="form-control" id="fname" placeholder="First Name" style={{ backgroundColor: '#3e4557' }} />
+                        <input type="text" className="form-control bg-grayish-blue text-white" id="fname" placeholder="First Name" />
                       </div>
                       <div>
-                        <input type="email" className="form-control" id="email" placeholder="Email Address" style={{ backgroundColor: '#3e4557' }} />
+                        <input type="email" className="form-control bg-grayish-blue text-white" id="email" placeholder="Email Address" />
                       </div>
-                      <div className="form-check">
+                      <div className="form-check text-lg-start">
                         <input type="checkbox" className="form-check-input" id="exampleCheck1" />
                         <p>Send me special offers, prices, and updates. Unsubscribe anytime.</p>
                       </div>
@@ -81,14 +81,14 @@ const ProfessionalDogGroomerPage: NextPage = () => {
           <div className="row align-items-center">
             <div className="col-12 col-lg-6 text-lg-start">
               <div className="text-center mb-4">
-                <Image src={FirstAidLogo} alt="First Aid Logo" />
+                <Image src={FirstAidLogo} alt="First Aid logo" />
               </div>
               <h2>Get a <strong>FREE</strong> First Aid Course</h2>
               <p className="lead">Enroll in Dog Grooming &amp; receive the First Aid for Dog Groomers course to take your career to the next level!</p>
               <p>Learn from first aid experts who will guide you through the course. You&apos;ll learn how to keep yourself and your furry clients out of harm&apos;s way.</p>
             </div>
             <div className="col-12 col-lg-6 mb-5 mb-lg-0">
-              <Image src={firstAidBook} alt="First Aid Book" />
+              <Image src={FirstAidBookImage} alt="First aid book" />
             </div>
           </div>
         </div>
@@ -110,7 +110,7 @@ const ProfessionalDogGroomerPage: NextPage = () => {
             </div>
             <div className="col-12 col-lg-3">
               <div className="mb-3">
-                <Image src={MagnifyingGLassImage} alt="Magnifying Glass Icon" height="50px" width="50px" />
+                <Image src={MagnifyingGLassImage} alt="Magnifying glass" height="50px" width="50px" />
               </div>
               <h3>Review Your<br /><strong>Feedback</strong></h3>
               <p>Get audio feedback from your tutor, a professional dog groomer, after each unit you submit.</p>
@@ -133,21 +133,21 @@ const ProfessionalDogGroomerPage: NextPage = () => {
             </div>
           </div>
           <div className="row" style={{ marginBottom: '-50px' }}>
-            <Image src={CourseCatalogImage} alt="Free Course Catalog Image" objectFit="contain" />
+            <Image src={CourseCatalogImage} alt="Dog looking at you" objectFit="contain" />
           </div>
-          <div className="row justify-content-center" style={{ backgroundColor: '#262e41' }}>
+          <div className="row justify-content-center bg-desaturated-blue">
             <div className="col-12 col-lg-6 " style={{ marginTop: '50px' }}>
               <div className="d-grid">
                 <form className="mx-2 mb-4 d-grid gap-3">
                   <div>
-                    <input type="text" className="form-control" id="fname" placeholder="First Name" style={{ backgroundColor: '#3e4557' }} />
+                    <input type="text" className="form-control bg-grayish-blue text-white" id="fname" placeholder="First Name" />
                   </div>
                   <div>
-                    <input type="email" className="form-control" id="email" placeholder="Email Address" style={{ backgroundColor: '#3e4557' }} />
+                    <input type="email" className="form-control bg-grayish-blue text-white" id="email" placeholder="Email Address" />
                   </div>
                   <div className="form-check">
                     <input type="checkbox" className="form-check-input" id="exampleCheck1" />
-                    <p style={{ color: 'white' }} className="text-start"><strong>Send me special offers, prices, and updates. Unsubscribe anytime.</strong></p>
+                    <p className="text-white text-md-start"><strong>Send me special offers, prices, and updates. Unsubscribe anytime.</strong></p>
                   </div>
                   <div>
                     <button type="submit" className="btn btn-outline-primary btn-lg">Download Catalog</button>
@@ -158,6 +158,14 @@ const ProfessionalDogGroomerPage: NextPage = () => {
           </div>
         </div>
       </section>
+      <style jsx>{`
+      .bg-grayish-blue {
+       background:#3e4557;
+      }
+      .bg-desaturated-blue{
+        background:#262e41;
+      }
+    `}</style>
 
     </DefaultLayout>
   );
