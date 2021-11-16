@@ -1,6 +1,7 @@
 import { NextPage } from 'next';
 import Image from 'next/image';
 import { BsCalendarCheck, BsCheckCircle, BsFillCloudArrowDownFill } from 'react-icons/bs';
+import { BrochureForm } from '../../components/BrochureForm';
 import { DefaultLayout } from '../../components/DefaultLayout';
 import { SEO } from '../../components/SEO';
 import CourseCatalogImage from '../../images/bottom-ipad-shepard.jpg';
@@ -27,48 +28,30 @@ const ProfessionalDogGroomerPage: NextPage = () => {
               <p>Learning dog grooming online is just as effective as in-class dog groomer training. And it&apos;s way more convenient! You&apos;ll complete your training from home with practical and theoretical assignments, while receiving guidance from certified master groomers every step of the way! When you graduate, you will receive a certificate of completion to prove that you have completed training in dog grooming.</p>
             </div>
           </div>
-          <div className="row justify-content-center">
+          <div className="row">
             <div className="col-12 col-lg-6 d-flex">
               <div className="card bg-dark border-0">
                 <div className="card-body">
-                  <div className="w-100">
-                    <h3 className="mb-3">Free Dog Grooming Starter Kit</h3>
-                    <p>Before you begin your practical work in Unit C, you&apos;ll receive a toolkit with the essential items you need to get started.</p>
-                    <p>Your kit includes a WAHL ARCO 5-in-1 Cordless Clipper, a stainless steel attachment guide comb kit, professional-grade grooming scissors, brushes, combs, and nail clippers.</p>
-                    <p><em>Grooming Kit Estimated value: $200</em></p>
-                    <Image src={FullKitImage} alt="Dog Grooming Starter Full Kit" />
-                  </div>
+                  <h3 className="mb-4">Free Dog Grooming Starter Kit</h3>
+                  <p>Before you begin your practical work in Unit C, you&apos;ll receive a toolkit with the essential items you need to get started.</p>
+                  <p>Your kit includes a WAHL ARCO 5-in-1 Cordless Clipper, a stainless steel attachment guide comb kit, professional-grade grooming scissors, brushes, combs, and nail clippers.</p>
+                  <p><em>Grooming Kit Estimated value: $200</em></p>
+                  <Image src={FullKitImage} alt="Dog Grooming Starter Full Kit" />
                 </div>
               </div>
             </div>
-            <div className="col-12 col-lg-6 d-flex">
+            <div className="col-12 col-lg-6 d-flex text-start">
               <div className="card bg-grayish-blue">
                 <div className="card-body">
-                  <div className="w-100">
-                    <h3 className="mb-3 text-center">Download a Free Course Catalog!</h3>
-                    <ul className="text-start gap-1 mb-4">
-                      <li>Find out if a career in dog grooming is right for you</li>
-                      <li>Learn about the many careers you can pursue as a dog groomer</li>
-                      <li>View the course curriculum, watch course videos, and look at sample assignments</li>
-                      <li>Find out about tuition information including finding a payment plan that works well for you</li>
-                      <li>Learn how you can&apos;t go wrong with QC&apos;s money back guarantee!</li>
-                    </ul>
-                    <form className="mx-2 d-grid gap-3">
-                      <div>
-                        <input type="text" className="form-control bg-grayish-blue text-white" id="fname" placeholder="First Name" />
-                      </div>
-                      <div>
-                        <input type="email" className="form-control bg-grayish-blue text-white" id="email" placeholder="Email Address" />
-                      </div>
-                      <div className="form-check text-lg-start">
-                        <input type="checkbox" className="form-check-input" id="exampleCheck1" />
-                        <p>Send me special offers, prices, and updates. Unsubscribe anytime.</p>
-                      </div>
-                      <div>
-                        <button type="submit" className="btn btn-outline-primary btn-lg">Download Catalog</button>
-                      </div>
-                    </form>
-                  </div>
+                  <h3 className="mb-3 text-center">Download a Free Course Catalog!</h3>
+                  <ul className="gap-1 mb-4">
+                    <li>Find out if a career in dog grooming is right for you</li>
+                    <li>Learn about the many careers you can pursue as a dog groomer</li>
+                    <li>View the course curriculum, watch course videos, and look at sample assignments</li>
+                    <li>Find out about tuition information including finding a payment plan that works well for you</li>
+                    <li>Learn how you can&apos;t go wrong with QC&apos;s money back guarantee!</li>
+                  </ul>
+                  <BrochureForm buttonClassName="btn btn-outline-primary" buttonText="Download Catalog" />
                 </div>
               </div>
             </div>
@@ -77,17 +60,17 @@ const ProfessionalDogGroomerPage: NextPage = () => {
       </section>
 
       <section>
-        <div className="container text-center">
+        <div className="container text-center text-lg-start">
           <div className="row align-items-center">
-            <div className="col-12 col-lg-6 text-lg-start">
-              <div className="text-center mb-4">
+            <div className="col-12 col-lg-6">
+              <div className="mb-4 text-center">
                 <Image src={FirstAidLogo} alt="First Aid logo" />
               </div>
               <h2>Get a <strong>FREE</strong> First Aid Course</h2>
               <p className="lead">Enroll in Dog Grooming &amp; receive the First Aid for Dog Groomers course to take your career to the next level!</p>
               <p>Learn from first aid experts who will guide you through the course. You&apos;ll learn how to keep yourself and your furry clients out of harm&apos;s way.</p>
             </div>
-            <div className="col-12 col-lg-6 mb-5 mb-lg-0">
+            <div className="col-12 col-lg-6 mb-4 mb-lg-0">
               <Image src={FirstAidBookImage} alt="First aid book" />
             </div>
           </div>
@@ -127,7 +110,7 @@ const ProfessionalDogGroomerPage: NextPage = () => {
       <section className="py-0">
         <div className="contaner text-center">
           <h2 className="my-4">Get Started with a <strong>Free Course Catalog</strong></h2>
-          <div className="row justify-content-center">
+          <div className="row justify-content-center px-2">
             <div className="col-12 col-lg-6">
               <p>Request a free course catalog today to learn more about how you can become a professional dog groomer with QC&apos;s online training! Catalog includes course curriculum, tuition information, sample course video and assignments, and your career outlook.</p>
             </div>
@@ -135,25 +118,9 @@ const ProfessionalDogGroomerPage: NextPage = () => {
           <div className="row" style={{ marginBottom: '-50px' }}>
             <Image src={CourseCatalogImage} alt="Dog looking at you" objectFit="contain" />
           </div>
-          <div className="row justify-content-center bg-desaturated-blue">
-            <div className="col-12 col-lg-6 " style={{ marginTop: '50px' }}>
-              <div className="d-grid">
-                <form className="mx-2 mb-4 d-grid gap-3">
-                  <div>
-                    <input type="text" className="form-control bg-grayish-blue text-white" id="fname" placeholder="First Name" />
-                  </div>
-                  <div>
-                    <input type="email" className="form-control bg-grayish-blue text-white" id="email" placeholder="Email Address" />
-                  </div>
-                  <div className="form-check">
-                    <input type="checkbox" className="form-check-input" id="exampleCheck1" />
-                    <p className="text-white text-md-start"><strong>Send me special offers, prices, and updates. Unsubscribe anytime.</strong></p>
-                  </div>
-                  <div>
-                    <button type="submit" className="btn btn-outline-primary btn-lg">Download Catalog</button>
-                  </div>
-                </form>
-              </div>
+          <div className="row justify-content-center bg-desaturated-blue text-white">
+            <div className="col-12 col-lg-6 mb-4 px-5" style={{ marginTop: '50px' }}>
+              <BrochureForm buttonClassName="btn btn-outline-primary" buttonText="Download Free Catalog" />
             </div>
           </div>
         </div>
