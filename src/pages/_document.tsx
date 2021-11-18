@@ -24,6 +24,26 @@ class MyDocument extends Document {
               gtag('config', '${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}', { page_path: window.location.pathname });
             ` }}
           />
+          <script
+            dangerouslySetInnerHTML={{ __html: `
+            piAId = '948642';
+            piCId = '34913';
+            piHostname = 'pi.pardot.com';
+
+            (function() {
+              function async_load() {
+                var s = document.createElement('script'); s.type = 'text/javascript';
+                s.src = ('https:' == document.location.protocol ? 'https://pi' : 'http://cdn') + '.pardot.com/pd.js';
+                var c = document.getElementsByTagName('script')[0]; c.parentNode.insertBefore(s, c);
+              }
+              if (window.attachEvent) {
+                window.attachEvent('onload', async_load);
+              } else {
+                window.addEventListener('load', async_load, false);
+              }
+            })();
+            ` }}
+          />
           <link rel="preconnect" href="https://fonts.googleapis.com" />
           <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
           <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Raleway:ital,wght@0,200;0,400;0,600;1,200;1,400;1,600&display=swap" rel="stylesheet" />
