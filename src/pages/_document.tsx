@@ -28,7 +28,7 @@ class MyDocument extends Document {
             dangerouslySetInnerHTML={{ __html: `
             piAId = '948642';
             piCId = '34913';
-            piHostname = 'pi.pardot.com';
+            piHostname = 'go.qcpetstudies.com';
 
             (function() {
               function async_load() {
