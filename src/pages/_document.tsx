@@ -45,6 +45,7 @@ class MyDocument extends Document {
             ` }}
           />
           <script
+            async
             dangerouslySetInnerHTML={{ __html: `
             window.__lc = window.__lc || { };
             window.__lc.license = 1056788;
