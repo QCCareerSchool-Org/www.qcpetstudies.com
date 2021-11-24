@@ -118,7 +118,7 @@ const DogGroomingCourseOutlinePage: NextPage = () => (
                       <tbody>
                         <tr><th scope="row">Readings:</th><td>1 to 2 hours</td></tr>
                         <tr><th scope="row">Videos:</th><td>3 (65 minutes)</td></tr>
-                        <tr><th scope="row">Assignments:</th><td>9 (3-6 hours)</td></tr>
+                        <tr><th scope="row">Assignments:</th><td>9 (3 to 6 hours)</td></tr>
                       </tbody>
                     </table>
                     <hr />
@@ -186,7 +186,7 @@ const DogGroomingCourseOutlinePage: NextPage = () => (
                       <tbody>
                         <tr><th scope="row">Readings:</th><td>1 to 2 hours</td></tr>
                         <tr><th scope="row">Videos:</th><td>8 (3 hours)</td></tr>
-                        <tr><th scope="row">Assignments:</th><td>12 (4-8 hours)</td></tr>
+                        <tr><th scope="row">Assignments:</th><td>12 (4 to 8 hours)</td></tr>
                       </tbody>
                     </table>
                   </div>
@@ -443,7 +443,7 @@ const DogGroomingCourseOutlinePage: NextPage = () => (
                   </div>
                 </div>
               </AccordionSection>
-              <AccordionToggle title="Unit H - Optional" eventKey="9" variant="primary" />
+              <AccordionToggle title="Unit H (Optional)" eventKey="9" variant="primary" />
               <AccordionSection eventKey="9">
                 <div className="row">
                   <div className="col-12 col-lg-6 mb-4 mb-lg-0">

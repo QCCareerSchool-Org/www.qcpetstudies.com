@@ -159,7 +159,7 @@ const DogTrainingPage: NextPage = () => {
                     <li>learning theory</li>
                     <li>applying learning theory</li>
                   </ul>
-                  <p className="mb-0"><Link href="course-outline"><a className="link-primary">View a more-detailed course syllabus</a></Link></p>
+                  <p className="mb-0"><Link href="/dog-training-courses/dog-training/course-outline"><a className="link-primary">View a more-detailed course syllabus</a></Link></p>
                 </div>
                 {lgOrGreater && (
                   <div className="col-6 col-xl-5">
@@ -190,7 +190,7 @@ const DogTrainingPage: NextPage = () => {
                     <li>training tools</li>
                     <li>addressing unwanted behaviors</li>
                   </ul>
-                  <p className="mb-0"><Link href="course-outline"><a className="link-primary">View a more-detailed course syllabus</a></Link></p>
+                  <p className="mb-0"><Link href="/dog-training-courses/dog-training/course-outline"><a className="link-primary">View a more-detailed course syllabus</a></Link></p>
                 </div>
                 {lgOrGreater && (
                   <div className="col-6 col-xl-5">
@@ -221,7 +221,7 @@ const DogTrainingPage: NextPage = () => {
                       </ul>
                     </li>
                   </ul>
-                  <p className="mb-0"><Link href="course-outline"><a className="link-primary">View a more-detailed course syllabus</a></Link></p>
+                  <p className="mb-0"><Link href="/dog-training-courses/dog-training/course-outline"><a className="link-primary">View a more-detailed course syllabus</a></Link></p>
                 </div>
                 {lgOrGreater && (
                   <div className="col-6 col-xl-5">
@@ -244,7 +244,7 @@ const DogTrainingPage: NextPage = () => {
                     <li>marketing techniques</li>
                     <li>selling your services</li>
                   </ul>
-                  <p className="mb-0"><Link href="course-outline"><a className="link-primary">View a more-detailed course syllabus</a></Link></p>
+                  <p className="mb-0"><Link href="/dog-training-courses/dog-training/course-outline"><a className="link-primary">View a more-detailed course syllabus</a></Link></p>
                 </div>
                 {lgOrGreater && (
                   <div className="col-6 col-xl-5">
