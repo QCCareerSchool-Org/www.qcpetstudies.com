@@ -136,7 +136,7 @@ const DogTrainingPage: NextPage = () => {
           <div className="row justify-content-center mb-4">
             <div className="col12 col-lg-10 text-center">
               <h2>Course <strong>Outline</strong></h2>
-              <p className="lead mb-0"><strong>The Dog training Course is split into four parts, each containing individual training units.</strong></p>
+              <p className="lead mb-0">The Dog training Course is split into four parts, each containing individual training units.</p>
             </div>
           </div>
           <Accordion defaultActiveKey="0">
