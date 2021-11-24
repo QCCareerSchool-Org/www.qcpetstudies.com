@@ -48,17 +48,25 @@ const DogGroomingCourseOutlinePage: NextPage = () => (
     <section>
       <div className="container text-center">
         <div className="row justify-content-center mb-4">
-          <div className="col-12 col-lg-6 mb-4 mb-lg-0">
-            <div className="mb-4">
-              <Image src={IconTime} width={iconSize} height={iconSize} alt="clock icon" />
+          <div className="col-12 col-sm-10 col-md-8 col-lg-6 col-xl-5 d-flex mb-4 mb-lg-0">
+            <div className="card">
+              <div className="card-body">
+                <div className="mb-2">
+                  <Image src={IconTime} width={iconSize} height={iconSize} alt="clock icon" />
+                </div>
+                <p>The course should take between <strong>80 and 130 hours</strong> to study and complete assignments from start to finish.  This time does not include the time you will take to practice and develop your skills before you complete an assignment.</p>
+              </div>
             </div>
-            <p>The course should take between <strong>80 and 130 hours</strong> to study and complete assignments from start to finish.  This time does not include the time you will take to practice and develop your skills before you complete an assignment.</p>
           </div>
-          <div className="col-12 col-lg-6">
-            <div className="mb-4">
-              <Image src={calendarIcon} width={iconSize} height={iconSize} alt="calendar icon" />
+          <div className="col-12 col-sm-10 col-md-8 col-lg-6 col-xl-5 d-flex">
+            <div className="card">
+              <div className="card-body">
+                <div className="mb-2">
+                  <Image src={calendarIcon} width={iconSize} height={iconSize} alt="calendar icon" />
+                </div>
+                <p>On average, most QC students work on their course for a few hours per week, and complete the online dog grooming course within about <strong>6 months to a year.</strong>  You&apos;ll have up to two years to complete the program, so lots of time!</p>
+              </div>
             </div>
-            <p>On average, most QC students work on their course for a few hours per week, and complete the online dog grooming course within about <strong>6 months to a year.</strong>  You&apos;ll have up to two years to complete the program, so lots of time!</p>
           </div>
         </div>
         <div className="alert alert-primary mb-0">

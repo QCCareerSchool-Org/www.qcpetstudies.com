@@ -3,6 +3,7 @@ import Image from 'next/image';
 import { ReactElement, useState } from 'react';
 import { Accordion, Modal } from 'react-bootstrap';
 import { BsBookHalf, BsPencilSquare, BsPlayCircle } from 'react-icons/bs';
+import { FaBars } from 'react-icons/fa';
 
 import { AccordionSection } from '../../../components/AccordionSection';
 import { AccordionToggle } from '../../../components/AccordionToggle';
@@ -21,7 +22,7 @@ import UnitFImage from '../../../images/unit-image-6.jpg';
 import UnitGImage from '../../../images/unit-image-7.jpg';
 import UnitHImage from '../../../images/unit-image-8.jpg';
 
-const iconSize = 40;
+const iconSize = 50;
 
 const CourseOutlinePage: NextPage = () => {
   const screenWidth = useScreenWidth();
@@ -41,9 +42,10 @@ const CourseOutlinePage: NextPage = () => {
       <section id="firstSection" className="bg-dark">
         <Image src={CourseOutlineBackground} layout="fill" objectFit="cover" objectPosition="center" placeholder="blur" alt="Dog with man" />
         <div className="image-overlay-gradient" />
-        <div className="container">
-          <div className="row">
-            <div className="col-12 col-lg-8">
+        <div className="container text-center">
+          <div className="row justify-content-center">
+            <div className="col-12 col-lg-10">
+              <FaBars size={iconSize} className="mb-4" />
               <h1>Dog Training Course Outline</h1>
               <p className="mb-0">Here&apos;s a detailed outline of the entire online dog training course offered by QC Pet Studies, including the length of each unit and any special considerations you&apos;ll need to complete each unit&apos;s assignments.</p>
             </div>
@@ -58,9 +60,9 @@ const CourseOutlinePage: NextPage = () => {
               <div className="card">
                 <div className="card-body">
                   <div className="mb-2">
-                    <Image src={calendarIcon} width={iconSize} height={iconSize} alt="Calendar Icon" />
+                    <Image src={IconTime} width={iconSize} height={iconSize} alt="Clock Icon" />
                   </div>
-                  <p className="mb-0">The course should take about <strong>30 hours</strong> to study and complete assignments from start to finish. This time does not include the time you will take to practice and develop your skills before you complete an assignment.</p>
+                  <p className="card-text">The course should take about <strong>30 hours</strong> to study and complete assignments from start to finish. This time does not include the time you will take to practice and develop your skills before you complete an assignment.</p>
                 </div>
               </div>
             </div>
@@ -68,9 +70,9 @@ const CourseOutlinePage: NextPage = () => {
               <div className="card">
                 <div className="card-body">
                   <div className="mb-2">
-                    <Image src={IconTime} width={iconSize} height={iconSize} alt="Clock Icon" />
+                    <Image src={calendarIcon} width={iconSize} height={iconSize} alt="Calendar Icon" />
                   </div>
-                  <p className="mb-0">On average, most QC Students work on their course for a few hours per week, and complete the online dog training course within <strong>three to six months</strong>. You&apos;ll have up to two years to complete the program&mdash;lots of time!</p>
+                  <p className="card-text">On average, most QC Students work on their course for a few hours per week, and complete the online dog training course within <strong>three to six months</strong>. You&apos;ll have up to two years to complete the program&mdash;lots of time!</p>
                 </div>
               </div>
             </div>
