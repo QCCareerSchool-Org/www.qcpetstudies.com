@@ -255,7 +255,6 @@ const DogGroomingPage: NextPage = () => {
       </section>
 
       <style jsx>{`
-        .tutionButton { padding: 0; border: none; margin: 0 0 1rem; font-style: italic; background: none; color: white; font-weight: 300; }
         #outlineSection { background-color: #f7f7f7 !important; }
         .courseContentIcon { color: #ccc; margin-bottom: 0.5rem; }
         .imageShadowWrapper {
