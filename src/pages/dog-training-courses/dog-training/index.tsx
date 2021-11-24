@@ -1,112 +1,309 @@
 import { NextPage } from 'next';
 import Image from 'next/image';
+import Link from 'next/link';
+import { Accordion, Modal } from 'react-bootstrap';
+import { BsCardChecklist, BsPeopleFill } from 'react-icons/bs';
+import { IoMdInfinite } from 'react-icons/io';
 
+import { AccordionSection } from '../../../components/AccordionSection';
+import { AccordionToggle } from '../../../components/AccordionToggle';
 import { DefaultLayout } from '../../../components/DefaultLayout';
 import { PriceSection } from '../../../components/PriceSection';
 import { SEO } from '../../../components/SEO';
+import { useLocation } from '../../../hooks/useLocation';
+import { usePrice } from '../../../hooks/usePrice';
+import { useScreenWidth } from '../../../hooks/useScreenWidth';
+import { useToggle } from '../../../hooks/useToggle';
+import CertificationGoldImage from '../../../images/IDTP-certification-gold-2.svg';
+import MovieClapperImage from '../../../images/movie-clapper.svg';
+import OutlineImage from '../../../images/outline.svg';
+import IntroductoryUnitsImage from '../../../images/part-1-image.jpg';
+import ApplyingTrainingPrinciplesImage from '../../../images/part-2-image.jpg';
+import TeachingPeopleImage from '../../../images/part-3-image.jpg';
+import DogTrainingBusinessImage from '../../../images/part-4-image.jpg';
+import PlaceHolderImage from '../../../images/placeholder.jpg';
+import PlayBtnImage from '../../../images/play-btn.svg';
+import { formatPrice } from '../../../lib/formatPrice';
 
-import guarantee1Year from '../../../images/1-year-guarantee-outlined.svg';
-import guarantee21Day from '../../../images/21-day-guarantee-outlined.svg';
-import tutorBackground from '../../../images/backgrounds/tutor-background.jpg';
-import firstAidBook from '../../../images/first-aid-book-white.jpg';
-import firstAidLogo from '../../../images/first-aid-logo.svg';
-import scissorsSet from '../../../images/scissor-set-1.jpg';
+const headerIconSize = 20;
+const iconSize = 36;
 
-const secondaryNavLinks = [
-  { name: 'Foo', url: '#firstSection' },
-  { name: 'First Aid', url: '#firstAidSection' },
-  { name: 'Tutors', url: '#tutorSection' },
-];
+const courseCodes = [ 'dt' ];
 
-const DogGroomingPage: NextPage = () => {
+const DogTrainingPage: NextPage = () => {
+  const screenWidth = useScreenWidth();
+  const location = useLocation();
+  const price = usePrice(courseCodes, location?.countryCode, location?.provinceCode);
+  const [ trailerPopupVisible, trailerPopupToggle ] = useToggle();
+
+  const mdOrGreater = screenWidth >= 768;
+  const lgOrGreater = screenWidth >= 992;
+
+  const md = mdOrGreater && !lgOrGreater;
+
   return (
-    <DefaultLayout secondaryTitle="Dog Training Course" secondaryNavLinks={secondaryNavLinks}>
+    <DefaultLayout secondaryTitle="Dog Training Course">
       <SEO
         title="Dog Training Course"
         description=""
-        canonical="/dog-traingin-courses/dog-training"
+        canonical="/dog-training-courses/dog-training"
       />
 
       <section id="firstSection" className="bg-dark">
-        <Image src={tutorBackground} layout="fill" objectFit="cover" objectPosition="center" placeholder="blur" alt="dddd" />
+        <Image src={PlaceHolderImage} layout="fill" objectFit="cover" objectPosition="center" placeholder="blur" alt="Dog Grooming Background" />
+        <div className="image-overlay-gradient" />
         <div className="container text-center">
-          <div className="row">
-            <div className="col-12 col-lg-10 offset-lg-1">
-              <h1>Lorem Ipsum</h1>
-              <p className="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          <div className="row mb-4">
+            <div className="mb-4">
+              <Image src={CertificationGoldImage} alt="International Dog Training Professional IDTP Certification" height="125" width="125" />
+            </div>
+            <h1>Dog Training</h1>
+            {price && price.plans.part.deposit > 0 && <h4>Get Started for Only <strong>{price.currency.symbol}{formatPrice(price.plans.part.deposit)}</strong></h4>}
+            <p><em><a href="#tuitionSection" className="text-white">See tuition details</a></em></p>
+            <a href="https://enroll.qcpetstudies.com?c[]=dt"><button className="btn btn-secondary btn-lg">Enroll Online</button></a>
+          </div>
+          <div className="row justify-content-center">
+            <div className="col-12 col-md-6 d-flex">
+              <div className="col text-uppercase">
+                <button onClick={trailerPopupToggle} className="btn btn-link"><Image src={MovieClapperImage} alt="movie clapper" width={headerIconSize} height={headerIconSize} /></button>
+                <p><strong>Trailer</strong></p>
+              </div>
+              <div className="col text-uppercase">
+                <a href="#outlineSection"><Image src={OutlineImage} alt="outline" width={headerIconSize} height={headerIconSize} /></a>
+                <p><strong>Outline</strong></p>
+              </div>
+              <div className="col text-uppercase">
+                <a href="#sampleSection"><Image src={PlayBtnImage} alt="play button" width={headerIconSize} height={headerIconSize} /></a>
+                <p><strong>Sample</strong></p>
+              </div>
             </div>
           </div>
+        </div>
+        <Modal show={trailerPopupVisible} onHide={trailerPopupToggle} size="lg">
+          <Modal.Header closeButton>Dog Training Course</Modal.Header>
+          <Modal.Body>
+            <div className="ratio ratio-16x9">
+              <video controls autoPlay>
+                <source src="https://89b45d42c17e11dd3d57-62a1fc0bf60a98e1d5e980348a7de3b7.ssl.cf1.rackcdn.com/interview-paddy.mp4" type="video/mp4" />
+              </video>
+            </div>
+          </Modal.Body>
+        </Modal>
+      </section>
+
+      <section>
+        <div className="container text-center">
+          <div className="row justify-content-center">
+            <div className="col-12 col-lg-10">
+              <h2>Become a <strong>Certified Dog Trainer</strong></h2>
+              <p className="lead"><strong>International Dog Training Professional&trade;</strong> | <i>IDTP&trade;</i></p>
+              <p>Dog training is a booming industry! Owners need help more than ever in working with their dogs to become members of the family, and they want someone qualified to help them achieve this task.  Whether you want to work in a training school, launch your own dog training business, or freelance as a private dog trainer, you&apos;ll graduate with all the knowledge and skills you need to succeed in the dog training industry!</p>
+              <p className="lead mb-0">Are you ready to start an amazing career?</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <PriceSection courses={courseCodes} doubleGuarantee={true} />
+
+      <section>
+        <div className="container text-center">
+          <div className="row justify-content-center">
+            <div className="col-12 col-lg-10 mb-4">
+              <h2 className="mb-2 mb-md-4">Included in <strong>Your Course</strong></h2>
+            </div>
+            <div className="col-12 col-md-4 mb-4 mb-md-0">
+              <div className="courseContentIcon"><BsCardChecklist size={iconSize} /></div>
+              <h3>Newest{md ? <br /> : ' '}Course Materials</h3>
+              <p className="mb-0">Your course materials are always available online and are always being updated with the latest science-based industry standards. Refer to your updated training guides throughout your career!</p>
+            </div>
+            <div className="col-12 col-md-4 mb-4 mb-md-0">
+              <div className="courseContentIcon"><BsPeopleFill size={iconSize} /></div>
+              <h3>Personalized{md ? <br /> : ' '}Feedback</h3>
+              <p className="mb-0">Just because you&apos;re learning online doesn&apos;t mean you&apos;re learning alone. You&apos;ll receive personalized audio feedback from your tutor on every dog training assignment you submit. Use this feedback to improve and succeed!</p>
+            </div>
+            <div className="col-12 col-md-4">
+              <div className="courseContentIcon"><IoMdInfinite size={iconSize} /></div>
+              <h3>Lifetime{md ? <br /> : ' '}Access</h3>
+              <p className="mb-0">Once you&apos;re a member of the QC family you&apos;ll have lifetime access to all the tools and resources available to QC students. This includes discounts on industry products and so much more!</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="outlineSection" className="bg-light">
+        <div className="container">
+          <div className="row justify-content-center mb-4">
+            <div className="col12 col-lg-10 text-center">
+              <h2>Course <strong>Outline</strong></h2>
+              <p className="lead mb-0"><strong>The Dog training Course is split into four parts, each containing individual training units.</strong></p>
+            </div>
+          </div>
+          <Accordion defaultActiveKey="0">
+            <AccordionToggle title="Introductory Units" eventKey="0" />
+            <AccordionSection eventKey="0">
+              <div className="row">
+                <div className="col-12 col-lg-6 col-xl-7">
+                  <p>Before you learn about how to train dogs, you have to learn about dogs. This includes breed types and characteristics, how dogs communicate with each other and with humans, what constitutes normal and abnormal canine behaviors, and&mdash;most importantly&mdash;how dogs actually learn. Once you become an expert in canine behavior and communication, you&apos;ll be in excellent shape to start working with dogs to teach new behaviors and correct unwanted behaviors!</p>
+                  <p>What you&apos;ll learn:</p>
+                  <ul>
+                    <li>guiding principles of dog training</li>
+                    <li>fundamentals of safe training</li>
+                    <li>ethology</li>
+                    <li>stages of development</li>
+                    <li>socialization stages</li>
+                    <li>canine communication</li>
+                    <li>calming signals</li>
+                    <li>fear responses</li>
+                    <li>problem solving</li>
+                    <li>learning theory</li>
+                    <li>applying learning theory</li>
+                  </ul>
+                  <p className="mb-0"><Link href="course-outline"><a className="link-primary">View a more-detailed course syllabus</a></Link></p>
+                </div>
+                {lgOrGreater && (
+                  <div className="col-6 col-xl-5">
+                    <Image src={IntroductoryUnitsImage} alt="Dog runing" layout="responsive" />
+                  </div>
+                )}
+              </div>
+            </AccordionSection>
+            <AccordionToggle title="Applying Training Principles" eventKey="1" />
+            <AccordionSection eventKey="1">
+              <div className="row">
+                <div className="col-12 col-lg-6 col-xl-7">
+                  <p>Now that you have a deep understanding of how dogs learn and communicate, you&apos;re ready to start applying training techniques to teach new behaviors and address unwanted behaviors. This course teaches scientifically-proven techniques and methods based on learning theory. You&apos;ll learn how to apply classical and operant conditioning principles to any type of training situation. Always remember: There is no magic formula that works for every dog, but every dog has a formula that will work for them.</p>
+                  <p>What you&apos;ll learn:</p>
+                  <ul>
+                    <li>training methods
+                      <ul>
+                        <li>luring</li>
+                        <li>shaping</li>
+                        <li>targeting</li>
+                        <li>modelling</li>
+                        <li>capturing</li>
+                        <li>mimicry</li>
+                      </ul>
+                    </li>
+                    <li>motivations</li>
+                    <li>reinforcement schedules</li>
+                    <li>training tools</li>
+                    <li>addressing unwanted behaviors</li>
+                  </ul>
+                  <p className="mb-0"><Link href="course-outline"><a className="link-primary">View a more-detailed course syllabus</a></Link></p>
+                </div>
+                {lgOrGreater && (
+                  <div className="col-6 col-xl-5">
+                    <Image src={ApplyingTrainingPrinciplesImage} alt="Dog learning from human" />
+                  </div>
+                )}
+              </div>
+            </AccordionSection>
+            <AccordionToggle title="Teaching People" eventKey="2" />
+            <AccordionSection eventKey="2">
+              <div className="row">
+                <div className="col-12 col-lg-6 col-xl-7">
+                  <p>A dog trainer&apos;s job isn&apos;t just to train dogs. As a trainer a big part of your job will be to teach people how to train their own dogs!  This requires a whole set of skills in their own rights. You have to understand how people learn and how to communicate your expertise to dog owners who are looking for help. This part of the dog trainer course will help you learn those skills!</p>
+                  <p>What you&apos;ll learn:</p>
+                  <ul>
+                    <li>how to work as a trainer
+                      <ul>
+                        <li>facilitating learning for clients</li>
+                        <li>teaching private lessons</li>
+                        <li>teaching group classes</li>
+                      </ul>
+                    </li>
+                    <li>teaching skills
+                      <ul>
+                        <li>strategies for teaching people</li>
+                        <li>communicating with dog owners</li>
+                        <li>preparing yourself for working with clients</li>
+                      </ul>
+                    </li>
+                  </ul>
+                  <p className="mb-0"><Link href="course-outline"><a className="link-primary">View a more-detailed course syllabus</a></Link></p>
+                </div>
+                {lgOrGreater && (
+                  <div className="col-6 col-xl-5">
+                    <Image src={TeachingPeopleImage} alt="person training dog" />
+                  </div>
+                )}
+              </div>
+            </AccordionSection>
+            <AccordionToggle title="Starting your Dog Training Business" eventKey="3" />
+            <AccordionSection eventKey="3">
+              <div className="row">
+                <div className="col-12 col-lg-6 col-xl-7">
+                  <p>You&apos;ve learned and practiced all the skills you need to successfully work as a dog trainer. Now it&apos;s time to turn your finely honed skills into a business! The business training offered in this course is optional. However, this training will be hugely beneficial to your career if you intend to start your own training business, or if you&apos;re looking to get a job working for an established trainer.</p>
+                  <p>What you&apos;ll learn:</p>
+                  <ul>
+                    <li>how to get your business started</li>
+                    <li>choosing a name for your business</li>
+                    <li>business insurance requirements and recommendations</li>
+                    <li>creating a business plan</li>
+                    <li>marketing techniques</li>
+                    <li>selling your services</li>
+                  </ul>
+                  <p className="mb-0"><Link href="course-outline"><a className="link-primary">View a more-detailed course syllabus</a></Link></p>
+                </div>
+                {lgOrGreater && (
+                  <div className="col-6 col-xl-5">
+                    <Image src={DogTrainingBusinessImage} alt="person working on laptop" />
+                  </div>
+                )}
+              </div>
+            </AccordionSection>
+          </Accordion>
         </div>
       </section>
 
       <section>
         <div className="container text-center">
-          <div className="row">
-            <div className="col-12 col-md-10 offset-md-1 col-lg-8 offset-lg-2">
-              <h2>Nam Tempus Vestibulum Gravida</h2>
-              <p>Donec felis erat, eleifend eu consequat vitae, semper a lectus. Maecenas luctus nisi augue, vitae aliquam velit vestibulum sit amet. Pellentesque orci tellus, convallis nec odio at, sollicitudin scelerisque risus. Vestibulum quis blandit massa. Maecenas vitae vestibulum ligula. Quisque ut sem nec sem semper suscipit vel at lectus. Donec diam sapien, hendrerit vel velit sit amet, accumsan consectetur arcu. Etiam gravida malesuada odio, vitae tempus ipsum cursus vel. Pellentesque lobortis nibh vel erat condimentum, vitae porttitor nisi fermentum. Proin condimentum quam nec tristique ultrices. Praesent placerat erat neque, non maximus odio ornare vel. Ut commodo, nibh non malesuada eleifend, tortor turpis pretium neque, sit amet auctor felis magna nec dolor.</p>
-              <button className="btn btn-primary-dark">Maximus Odio</button>
+          <div className="row justify-content-center">
+            <div className="col-12 col-lg-10">
+              <h2>Learn from <strong>Dog Training Experts</strong></h2>
+              <p className="lead">QC&apos;s dog training course was developed with the assistance of Kim Cooper.</p>
+              <p className="mb-5">Kim Cooper is the owner and senior instructor at Best Friends Dog Training. Kim pursued her passion to become a professional dog trainer after earning a degree in aerospace engineering and serving as an officer in the Air Force for fourteen successful years. Now, with 35 years of training experience, Kim competes in obedience, agility, tracking, and other sports with her own dogs&mdash;all using motivational, reward-based training methods. In particular, Kim loves to foster the special partnership that exists between a working dog and its handler, and specializes in training search-and-rescue dogs. Kim and her dogs have earned many search-and-rescue certifications as well as obedience and agility titles.</p>
+              <h3 className="mb-4">Your Dog Training Tutors</h3>
             </div>
-          </div>
-        </div>
-      </section>
-
-      <PriceSection courses={[ 'dt' ]} doubleGuarantee={false} />
-
-      <section>
-        <div className="container text-center">
-          <h2 className="mb-5">Suspendisse Viverra Elit Lacinia Eleifend Bibendum</h2>
-          <div className="row">
-            <div className="col-12 col-lg-6 mb-5 mb-lg-0">
-              <div className="mb-4">
-                <Image src={guarantee21Day} width={165} height={165} alt="21-Day Money-Back Guarantee" />
+            <div className="col-12 col-lg-6 text-lg-start align-item-center mb-2">
+              <div className="mb-2">
+                <Image src={PlaceHolderImage} layout="responsive" placeholder="blur" alt="dog-training expert, Shannon Noonan" />
               </div>
-              <h3 className="h5">Quisque Placerat Odio Lectus</h3>
-              <p>Vel sodales nunc euismod a. Sed ut diam scelerisque, consequat massa a, vulputate leo. Morbi sollicitudin fringilla ex, nec rutrum turpis porttitor vel. Duis sit amet sem commodo, hendrerit odio vel, dapibus erat. Quisque eget magna volutpat, varius velit sed, sollicitudin est. Donec sit amet erat ut orci faucibus elementum. Duis augue tellus, fringilla eu nisl id, tristique dictum diam. Morbi sit amet augue ultrices, vehicula nisl at, congue augue. Vestibulum volutpat lectus erat, quis fringilla odio cursus non.</p>
+              <p className="lead"><strong>Shannon Noonan</strong></p>
+              <p>Certified Dog Trainer<br /><em>20 Years of Experience</em></p>
+              <p className="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet risus quis urna tincidunt viverra elementum vitae sapien. Pellentesque luctus vestibulum mattis. Duis dignissim maximus sapien sed consequat. Vivamus gravida pulvinar leo non vestibulum. Integer elementum leo neque, eget aliquam ligula venenatis eu. Phasellus quis rutrum nunc. Etiam in facilisis est. Aliquam facilisis, nunc non vehicula consectetur, ante arcu lacinia dui, quis suscipit nibh mi in ante. Curabitur nec maximus metus, ac gravida risus. Cras euismod ornare dui, eu semper lacus venenatis viverra.</p>
             </div>
-            <div className="col-12 col-lg-6">
-              <div className="mb-4">
-                <Image src={guarantee1Year} width={199} height={165} alt="1-Year Money-Back Guarantee" />
+            <div className="col-12 col-lg-6 text-lg-start">
+              <div className="mb-2">
+                <Image src={PlaceHolderImage} layout="responsive" placeholder="blur" alt="dog-training expert, Susan Read" />
               </div>
-              <h3 className="h5">Leo Sit Amet Sollicitudin Sollicitudin</h3>
-              <p>hasellus rhoncus volutpat ex a dapibus. Aenean id purus non nisi pretium bibendum. Donec dapibus sollicitudin nunc. Ut bibendum, leo sit amet sollicitudin sollicitudin, nisl ipsum sollicitudin ante, ut imperdiet tellus elit eget ligula. In at velit quis odio sodales sollicitudin. Nullam a magna sed sem gravida iaculis vitae a quam. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus auctor risus in lorem porttitor, sed facilisis augue feugiat. Nullam et eleifend tellus.</p>
+              <p className="lead"><strong>Susan Read</strong></p>
+              <p>Certified Dog Trainer<br /><em>20 Years of Experience</em></p>
+              <p className="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed dictum leo eget turpis molestie, a tincidunt odio tempus. Nam consequat elit quis elit pretium tincidunt vitae nec est. Praesent lobortis fermentum neque sed tristique. Nulla velit neque, porta convallis consectetur ut, vehicula in nibh. Maecenas enim metus, consequat sit amet eleifend ut, eleifend feugiat turpis. Vestibulum feugiat in lorem ac semper. Duis diam neque, posuere at felis vel, molestie gravida dui.</p>
             </div>
           </div>
         </div>
       </section>
 
-      <section className="bg-dark">
+      <section className="bg-light">
         <div className="container text-center">
-          <div className="row">
-            <div className="col-12 col-md-10 offset-md-1">
-              <h2>Bonus Tools for Dog Grooming Students</h2>
-              <p className="h5">Professional Grooming Scissors</p>
-              <p>Before you begin your practical work in Unit C, you&apos;ll receive three pairs of professional grooming scissors that enable you to create a variety of looks.</p>
-              <Image src={scissorsSet} alt="scissors set" width={816} height={270} />
-              <p><em>Product may vary based on the supplier.</em></p>
+          <div className="row justify-content-center">
+            <div className="col-12 col-lg-10">
+              <h2><strong>Preview</strong> the Course for Free</h2>
+              <p>If you&apos;d like to see a more detailed course outline, sample videos and examples of assignments, you can preview the dog training course for free at any time!</p>
+              <Link href=""><a className="btn btn-outline-navy">Course Preview</a></Link>
             </div>
           </div>
         </div>
       </section>
 
-      <section id="firstAidSection">
-        <div className="container text-center">
-          <div className="row align-items-center">
-            <div className="col-12 col-md-10 offset-md-1 col-lg-6 offset-lg-0 mb-2 mb-lg-0 text-lg-start">
-              <Image src={firstAidLogo} alt="First Aid Course logo" width={60} height={60} />
-              <h2>Get a <strong>FREE</strong> First Aid Course</h2>
-              <p className="lead">Enroll in Dog Grooming &amp; receive the First Aid for Dog Groomers course to take your career to the next level!</p>
-              <p>Being trained in Pet First Aid prepares you to respond to emergencies and maintain a safe grooming environment. You&apos;ll learn from dog first aid experts who will teach you what you need to know to keep yourself and your furry clients out of harm&apos;s way, and how to deal with emergency situations if they arise.</p>
-            </div>
-            <div className="col-12 col-lg-6" style={{ fontSize: 0, marginBottom: '-20px' }}>
-              <Image src={firstAidBook} alt="First Aid book" width={504} height={385} />
-            </div>
-          </div>
-        </div>
-      </section>
+      <style jsx>{`
+        #outlineSection { background-color: #f7f7f7 !important; }
+      `}</style>
 
     </DefaultLayout>
   );
 };
 
-export default DogGroomingPage;
+export default DogTrainingPage;
