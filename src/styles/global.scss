@@ -197,16 +197,16 @@ section, .section {
   position: relative; /* in case we use a cover image */
   overflow: hidden; /* in case we use a cover image */
 }
-#firstSection { padding-top: 6rem }
+#defaultPage #firstSection { padding-top: 6rem }
 @media (min-width: 576px) {
   section, .section { padding: 3rem 0 }
 }
 @media (min-width: 768px) {
-  section, .section { padding: 4rem 0 }
+  section, .section { padding: 3.5rem 0 }
 }
 @media (min-width: 992px) {
-  section, .section { padding: 5rem 0 }
-  #firstSection { padding-top: 11.5rem } /* to make space for the header */
+  section, .section { padding: 4rem 0 }
+  #defaultPage #firstSection { padding-top: 10.5rem } /* to make space for the header */
 }
 
 section > div.container {
@@ -344,7 +344,7 @@ pre { color: inherit }
   z-index: 1;
 }
 
-footer {
+#defaultPage footer {
   font-weight: 400;
   padding: 2rem 0;
   h4, .h4 { font-weight: 600; }
@@ -376,7 +376,7 @@ footer {
 }
 
 @media (min-width: 576px) {
-  footer {
+  #defaultPage footer {
     .spacedList > li { margin-bottom: 16px; }
     #blogLogoWrapper {
       margin-top: 16px;
@@ -386,13 +386,13 @@ footer {
 }
 
 @media (min-width: 768px) {
-  footer {
+  #defaultPage footer {
     padding: 4rem 0;
   }
 }
 
 @media (min-width: 992px) {
-  footer {
+  #defaultPage footer {
     h4, .h4 { font-size: 1.2rem; }
     // increase the horizontal padding on the columns to 2.25rem and tweak the column widths
     #footerColBrand { width: 28%; padding-right: 2.25rem; }
@@ -405,7 +405,7 @@ footer {
 }
 
 @media (min-width: 1200px) {
-  footer {
+  #defaultPage footer {
     // increase the horizontal padding on the columns to 4rem and restore the normal column widths
     #footerColBrand { width: 25%; padding-right: 4rem; }
     #footerColCertifications { width: 25%; padding-left: 4rem; padding-right: 4rem; }
@@ -415,7 +415,7 @@ footer {
 }
 
 @media (min-width: 1400px) {
-  footer {
+  #defaultPage footer {
     // increase the horizontal padding on the columns to 5rem
     #footerColBrand { padding-right: 5rem; }
     #footerColCertifications { padding-left: 5rem; padding-right: 5rem; }
@@ -551,5 +551,14 @@ ul.list-style-none, ol.list-style-none {
       line-height: 20px;
       margin-bottom: 20px;
     }
+  }
+}
+
+.imageShadowWrapper {
+  span {
+      overflow: visible !important;
+  }
+  img {
+    box-shadow: 12px 12px 12px 0 rgba(0, 0, 0, 0.10);
   }
 }

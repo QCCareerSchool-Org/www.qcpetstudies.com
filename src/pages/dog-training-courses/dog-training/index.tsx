@@ -34,7 +34,7 @@ const DogTrainingPage: NextPage = () => {
       />
 
       <section id="firstSection" className="bg-dark">
-        <Image src={DogGroomingBackground} layout="fill" objectFit="cover" objectPosition="center" alt="Dog Grooming Background" />
+        <Image src={DogGroomingBackground} layout="fill" objectFit="cover" objectPosition="center" placeholder="blur" alt="Dog Grooming Background" />
         <div className="container text-center">
           <div className="row mb-4">
             <div className="mb-4">

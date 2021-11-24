@@ -7,16 +7,25 @@ import SSRProvider from 'react-bootstrap/SSRProvider';
 
 import { OntarioWarning } from '../components/OntarioWarning';
 import * as ga from '../lib/ga';
+import * as salesforce from '../lib/salesforce';
 import { LocationProvider } from '../providers/LocationProvider';
 import { ScreenWidthProvider } from '../providers/ScreenWidthProvider';
 import { ScrollPositionProvider } from '../providers/ScrollPositionProvider';
 
-function MyApp({ Component, pageProps }: AppProps): ReactElement {
+declare global {
+  interface Window {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    dataLayer: any[];
+  }
+}
+
+const QCPetStudiesApp = ({ Component, pageProps }: AppProps): ReactElement => {
   const router = useRouter();
 
   useEffect(() => {
     const handleRouteChange = (url: string): void => {
       ga.pageview(url);
+      salesforce.pageview(url);
     };
     // When the component is mounted, subscribe to router changes
     // and log those page views
@@ -41,6 +50,6 @@ function MyApp({ Component, pageProps }: AppProps): ReactElement {
       </LocationProvider>
     </SSRProvider>
   );
-}
+};
 
-export default MyApp;
+export default QCPetStudiesApp;

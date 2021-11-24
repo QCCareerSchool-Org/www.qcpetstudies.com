@@ -32,7 +32,7 @@ const DogGroomingHowItWorksPage: NextPage = () => {
       />
 
       <section id="firstSection" className="bg-dark">
-        <Image src={HowItWorksBackground} layout="fill" objectFit="cover" objectPosition="center" alt="Learning during COVID" />
+        <Image src={HowItWorksBackground} layout="fill" objectFit="cover" objectPosition="center" placeholder="blur" alt="hand reaching toward a happy dog" />
         <div className="image-overlay-gradient" />
         <div className="container text-center">
           <div className="row">
