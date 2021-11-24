@@ -10,7 +10,16 @@ module.exports = withPurgeCss({
     'src/components/**/*',
   ],
   purgeCss: {
-    whitelistPatterns: () => [ /^nav-/u, /^navbar-/u, /^dropdown-/u, /^modal-/u, /^bg-/u ],
+    whitelistPatterns: () => [
+      /^nav-/u,
+      /^navbar-/u,
+      /^dropdown-/u,
+      /^modal-/u,
+      /^bg-/u,
+    ],
+    whitelistPatternsChildren: () => [
+      /^imageShadowWrapper/u,
+    ],
     whitelist: () => [
       'nav',
       'navbar',

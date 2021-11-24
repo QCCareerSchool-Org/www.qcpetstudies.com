@@ -17,7 +17,7 @@
 
 # misc
 .DS_Store
-*.pem
+# *.pem # we need these deployed
 
 # debug
 npm-debug.log*

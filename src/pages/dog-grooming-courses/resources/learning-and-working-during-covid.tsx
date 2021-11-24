@@ -26,7 +26,7 @@ const LearningDuringCovidPage: NextPage = () => {
       />
 
       <section id="firstSection" className="bg-dark">
-        <Image src={LearningAndWorkingBackground} layout="fill" objectFit="cover" objectPosition="center" alt="Learning during COVID" />
+        <Image src={LearningAndWorkingBackground} layout="fill" objectFit="cover" objectPosition="center" placeholder="blur" alt="groomer wire brushing a dog" />
         <div className="image-overlay-gradient" />
         <div className="container text-center">
           <div className="row">

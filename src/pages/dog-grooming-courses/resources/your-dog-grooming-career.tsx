@@ -32,7 +32,7 @@ const DogGroomingCareerPage: NextPage = () => {
       />
 
       <section id="firstSection" className="bg-dark">
-        <Image src={CareerBackground} layout="fill" objectFit="cover" objectPosition="center" alt="your dog grooming carrer" />
+        <Image src={CareerBackground} layout="fill" objectFit="cover" objectPosition="center" placeholder="blur" alt="groomer trimming a dog's hair" />
         <div className="image-overlay-gradient" />
         <div className="container text-center">
           <div className="row justify-content-center">

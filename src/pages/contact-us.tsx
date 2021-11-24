@@ -32,7 +32,7 @@ const ContactUsPage: NextPage = () => {
       />
 
       <section id="firstSection" className="bg-dark text-light">
-        <Image src={ContactUsBackground} layout="fill" objectFit="cover" objectPosition="center" alt="happy dog" />
+        <Image src={ContactUsBackground} layout="fill" objectFit="cover" objectPosition="center" placeholder="blur" alt="happy dog" />
         <div className="container">
           <h1>Contact<br />QC Pet Studies</h1>
         </div>
