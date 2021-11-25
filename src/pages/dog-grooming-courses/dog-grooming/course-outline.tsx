@@ -75,20 +75,13 @@ const DogGroomingCourseOutlinePage: NextPage = () => (
       </div>
     </section>
 
-    <section className="bg-dark">
-      <div className="container text-center">
-        <div className="row justify-content-center">
-          <div className="col-12 col-lg-10">
-            <h2 className="mb-4">Unit-by-Unit Breakdown</h2>
-            <p className="lead">Below is an outline of each unit of the online dog grooming course. Expand each section to find out what you&apos;ll learn in each unit, along with each unit&apos;s expected length and the required dogs/equipment to complete your assignments.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
     <section id="outlineSection" className="bg-light">
       <div className="container">
         <div className="row justify-content-center">
+          <div className="col-12 col-lg-10 mb-4 text-center">
+            <h2 className="mb-4">Unit-by-Unit Breakdown</h2>
+            <p className="mb-0">Below is an outline of each unit of the online dog grooming course. Expand each section to find out what you&apos;ll learn in each unit, along with each unit&apos;s expected length and the required dogs/equipment to complete your assignments.</p>
+          </div>
           <div className="col-12 col-xl-10 col-xxl-9">
             <Accordion defaultActiveKey="0" className="mb-4">
               <AccordionToggle title="Unit A" eventKey="0" variant="primary" />

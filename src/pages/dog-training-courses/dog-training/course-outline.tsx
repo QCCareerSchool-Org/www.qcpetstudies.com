@@ -2,13 +2,13 @@ import { NextPage } from 'next';
 import Image from 'next/image';
 import { ReactElement, useState } from 'react';
 import { Accordion, Modal } from 'react-bootstrap';
-import { BsBookHalf, BsPencilSquare, BsPlayCircle } from 'react-icons/bs';
 import { FaBars } from 'react-icons/fa';
 
 import { AccordionSection } from '../../../components/AccordionSection';
 import { AccordionToggle } from '../../../components/AccordionToggle';
 import { DefaultLayout } from '../../../components/DefaultLayout';
 import { SEO } from '../../../components/SEO';
+import { UnitStats } from '../../../components/UnitStats';
 import { useScreenWidth } from '../../../hooks/useScreenWidth';
 import CourseOutlineBackground from '../../../images/backgrounds/aki-with-man.jpg';
 import calendarIcon from '../../../images/calendar.svg';
@@ -82,11 +82,10 @@ const CourseOutlinePage: NextPage = () => {
 
       <section id="outlineSection" className="bg-light">
         <div className="container">
-          <div className="row justify-content-center mb-5 text-center">
-            <div className="col-12 col-lg-10">
+          <div className="row justify-content-center">
+            <div className="col-12 col-lg-10 mb-5 text-center">
               <h2>Unit-by-Unit Breakdown</h2>
-              <p className="lead">Below is an outline of each unit of the online dog training course.</p>
-              <p className="mb-0">Expand each section to find out what you&apos;ll learn in each unit, along with each unit&apos;s expected length and the required dogs to complete your assignments.</p>
+              <p className="mb-0">Below is an outline of each unit of the online dog training course. Expand each section to find out what you&apos;ll learn in each unit, along with each unit&apos;s expected length and the required dogs to complete your assignments.</p>
             </div>
           </div>
           <Accordion defaultActiveKey="0">
@@ -95,11 +94,7 @@ const CourseOutlinePage: NextPage = () => {
               <div className="row">
                 <div className="col-12 col-lg-6 col-xl-7">
                   <div className="alert alert-primary mb-4">Unit Total: 9999 hours</div>
-                  <div className="d-flex mb-3">
-                    <div className="d-flex me-4"><AssignmentsIcon />5 (1 hour)</div>
-                    <div className="d-flex me-4"><LessonsIcon />1 to 2 hours</div>
-                    <div className="d-flex"><VideosIcon />3 (15 minutes)</div>
-                  </div>
+                  <UnitStats assignmentsCount={5} assignmentsTime="1 hour" readingsTime="1 to 2 hours" videosCount={3} videosTime="15 minutes" />
                   <p>In the first unit of the dog training course, you&apos;ll meet your tutor and learn about the fundamentals of dog training. This introductory unit includes an overview of the dog training industry and a background in the fundamentals of ethical and safe training. </p>
                   <p><em>You&apos;ll have the option to tell your tutor about your dog, or a dog you&apos;ll be working with to complete your course work! Then you can practice a safe dog introduction.</em></p>
                   <button onClick={() => setUnit('A')} className="btn btn-primary">View Details</button>
@@ -122,12 +117,8 @@ const CourseOutlinePage: NextPage = () => {
               <div className="row">
                 <div className="col-12 col-lg-6 col-xl-7">
                   <div className="alert alert-primary mb-4">Unit Total: 9999 hours</div>
-                  <div className="d-flex mb-3">
-                    <div className="d-flex me-4"><AssignmentsIcon />5 (1 hour)</div>
-                    <div className="d-flex me-4"><LessonsIcon />2 hours</div>
-                    <div className="d-flex"><VideosIcon />3 (25 minutes)</div>
-                  </div>
-                  <p>In this unit, you&apos;ll begin to learn about canine behavior. Unit B will introduce you to canine ethology – the study of natural canine behavior. You&apos;ll discover how a dog&apos;s breeding history and stage of development will affect his behavior. In particular, you&apos;ll learn about how effective socialization as a puppy can impact a dog&apos;s behavior throughout his whole life.</p>
+                  <UnitStats assignmentsCount={5} assignmentsTime="1 hour" readingsTime="2 hours" videosCount={3} videosTime="25 minutes" />
+                  <p>In this unit, you&apos;ll begin to learn about canine behavior. Unit B will introduce you to canine ethology&mdash;the study of natural canine behavior. You&apos;ll discover how a dog&apos;s breeding history and stage of development will affect his behavior. In particular, you&apos;ll learn about how effective socialization as a puppy can impact a dog&apos;s behavior throughout his whole life.</p>
                   <p><em>You&apos;ll have the chance to research your own dog, or a friend or family member&apos;s dog to learn about its breed characteristics!</em></p>
                   <button onClick={() => setUnit('B')} className="btn btn-primary">View Details</button>
                   <Modal show={unit === 'B'} onHide={closeModal} size="lg">
@@ -149,11 +140,7 @@ const CourseOutlinePage: NextPage = () => {
               <div className="row">
                 <div className="col-12 col-lg-6 col-xl-7">
                   <div className="alert alert-primary mb-4">Unit Total: 9999 hours</div>
-                  <div className="d-flex mb-3">
-                    <div className="d-flex me-4"><AssignmentsIcon />5 (99999 hours)</div>
-                    <div className="d-flex me-4"><LessonsIcon />1 hours</div>
-                    <div className="d-flex"><VideosIcon />2 (25 minutes)</div>
-                  </div>
+                  <UnitStats assignmentsCount={5} assignmentsTime="999 hours" readingsTime="1 hour" videosCount={2} videosTime="25 minutes" />
                   <p>Unit C of your dog training course focuses on canine communication. You&apos;ll learn all about the signals that dogs use to communicate. Explore how you can use these signals to improve your training methods and provide a safe, comfortable training space for dogs. This unit will also each you how to use canine communication to improve the relationships between dogs and their owners.</p>
                   <p><em>Spend some quality time with your own dog, or a friend or family member&apos;s dog to practice reading canine communication!</em></p>
                   <button onClick={() => setUnit('C')} className="btn btn-primary">View Details</button>
@@ -176,10 +163,7 @@ const CourseOutlinePage: NextPage = () => {
               <div className="row">
                 <div className="col-12 col-lg-6 col-xl-7">
                   <div className="alert alert-primary mb-4">Unit Total: 9999 hours</div>
-                  <div className="d-flex mb-3">
-                    <div className="d-flex me-4"><AssignmentsIcon />5 (99999 hours)</div>
-                    <div className="d-flex"><VideosIcon />11 (100 minutes)</div>
-                  </div>
+                  <UnitStats assignmentsCount={5} assignmentsTime="999 hours" videosCount={11} videosTime="100 minutes" />
                   <p>In Unit D of your dog training course, you&apos;ll learn about the learning theory behind effective dog training methods. You&apos;ll discover how dogs learn by making associations between different stimuli and by understanding the consequences associated with their own actions. Then you&apos;ll explore how to apply this learning theory to your training programs. You&apos;ll learn positive reinforcement methods, clicker training and much more!</p>
                   <button onClick={() => setUnit('D')} className="btn btn-primary">View Details</button>
                   <Modal show={unit === 'D'} onHide={closeModal} size="lg">
@@ -201,10 +185,7 @@ const CourseOutlinePage: NextPage = () => {
               <div className="row">
                 <div className="col-12 col-lg-6 col-xl-7">
                   <div className="alert alert-primary mb-4">Unit Total: 9999 hours</div>
-                  <div className="d-flex mb-3">
-                    <div className="d-flex me-4"><AssignmentsIcon />5 (99999 hours)</div>
-                    <div className="d-flex"><VideosIcon />8 (75 minutes)</div>
-                  </div>
+                  <UnitStats assignmentsCount={5} assignmentsTime="999 hours" videosCount={8} videosTime="75 minutes" />
                   <p>Once you reach Unit E of your online dog training course, you&apos;re ready to put everything you&apos;ve learned into action. You&apos;ll learn about the six training methods, all based in positive reinforcement, you can use to teach dogs new behaviors. Discover how to effectively motivate dogs to perform these behaviors and how to use reinforcement schedules in dog training.</p>
                   <button onClick={() => setUnit('E')} className="btn btn-primary">View Details</button>
                   <Modal show={unit === 'E'} onHide={closeModal} size="lg">
@@ -226,10 +207,7 @@ const CourseOutlinePage: NextPage = () => {
               <div className="row">
                 <div className="col-12 col-lg-6 col-xl-7">
                   <div className="alert alert-primary mb-4">Unit Total: 9999 hours</div>
-                  <div className="d-flex mb-3">
-                    <div className="d-flex me-4"><AssignmentsIcon />5 (99999 hours)</div>
-                    <div className="d-flex"><VideosIcon />5 (50 minutes)</div>
-                  </div>
+                  <UnitStats assignmentsCount={5} assignmentsTime="999 hours" videosCount={5} videosTime="50 minutes" />
                   <p>In Unit F, you&apos;ll learn how to safely use common training tools when you work with dogs. You&apos;ll discover common tools to help with leash training and crate training and learn how to teach your clients to use these tools at home. You&apos;ll also learn how experienced trainers use these tools and other techniques to change a dog&apos;s unwanted behaviors.</p>
                   <button onClick={() => setUnit('F')} className="btn btn-primary">View Details</button>
                   <Modal show={unit === 'F'} onHide={closeModal} size="lg">
@@ -251,10 +229,7 @@ const CourseOutlinePage: NextPage = () => {
               <div className="row">
                 <div className="col-12 col-lg-6 col-xl-7">
                   <div className="alert alert-primary mb-4">Unit Total: 9999 hours</div>
-                  <div className="d-flex mb-3">
-                    <div className="d-flex me-4"><AssignmentsIcon />5 (99999 hours)</div>
-                    <div className="d-flex"><VideosIcon />3 (25 minutes)</div>
-                  </div>
+                  <UnitStats assignmentsCount={5} assignmentsTime="999 hours" videosCount={3} videosTime="25 minutes" />
                   <p>You&apos;ve learned all about training dogs. Now in Unit G you&apos;ll learn to teach dog owners. You&apos;ll discover what it takes to develop a training program and set up a safe training space to facilitate learning in your training sessions. You&apos;ll learn essential teaching skills to help your students work effectively to train their dogs.</p>
                   <button onClick={() => setUnit('G')} className="btn btn-primary">View Details</button>
                   <Modal show={unit === 'G'} onHide={closeModal} size="lg">
@@ -276,10 +251,7 @@ const CourseOutlinePage: NextPage = () => {
               <div className="row">
                 <div className="col-12 col-lg-6 col-xl-7">
                   <div className="alert alert-primary mb-4">Unit Total: 9999 hours</div>
-                  <div className="d-flex mb-3">
-                    <div className="d-flex me-4"><AssignmentsIcon />5 (99999 hours)</div>
-                    <div className="d-flex"><VideosIcon />3 (20 minutes)</div>
-                  </div>
+                  <UnitStats assignmentsCount={5} assignmentsTime="999 hours" videosCount={3} videosTime="20 minutes" />
                   <p>You&apos;ve learned and practiced all the skills you need to successfully work as a dog trainer. Now it&apos;s time to turn your finely honed skills into a business! The business training offered in this course is optional. However, this training will be hugely beneficial to your career if you intend to start your own training business, or if you&apos;re looking to get a job working for an established trainer.</p>
                   <p>In this unit, you&apos;ll learn to get your business off the ground. We&apos;ll cover important first steps, such as naming your business, finding insurance and creating a business plan. You&apos;ll learn all about different marketing techniques and how to use them effectively. You&apos;ll read up on essential skills for working with clients and selling your services. Even if launching your business isn&apos;t in your immediate future, take advantage of wonderful opportunity to kickstart your business when you&apos;re ready to take that step.</p>
                   <button onClick={() => setUnit('H')} className="btn btn-primary">View Details</button>
@@ -312,18 +284,6 @@ const CourseOutlinePage: NextPage = () => {
 };
 
 export default CourseOutlinePage;
-
-const AssignmentsIcon = (): ReactElement => (
-  <div className="me-2"><BsPencilSquare title="Assignments" /></div>
-);
-
-const LessonsIcon = (): ReactElement => (
-  <div className="me-2"><BsBookHalf title="Lessons" /></div>
-);
-
-const VideosIcon = (): ReactElement => (
-  <div className="me-2"><BsPlayCircle title="Videos" /></div>
-);
 
 const UnitADetails = (): ReactElement => (
   <>
@@ -392,7 +352,7 @@ const UnitEDetails = (): ReactElement => (
     <p><strong>Training Methods</strong></p>
     <p>In this text, you&apos;ll learn about the six methods that trainers use to teach dogs new behaviors. You&apos;ll discover how to use luring, shaping, targeting, modelling, capturing and mimicry in different training contexts. We&apos;ll cover common canine behaviors and the best training method for each one.</p>
     <p><strong>Motivations and Reinforcement</strong></p>
-    <p>Discover the tools you&apos;ll use for reinforcement: motivators and reinforcement schedules. In this text, you&apos;ll learn about why dogs choose to perform a behavior – their motivation – and when they should be rewarded for it – the reinforcement schedules.</p>
+    <p>Discover the tools you&apos;ll use for reinforcement: motivators and reinforcement schedules. In this text, you&apos;ll learn about why dogs choose to perform a behavior&mdash;their motivation&mdash;and when they should be rewarded for it&mdash;the reinforcement schedules.</p>
     <p><strong>Unit E Assignments</strong></p>
     <p className="mb-0">It&apos;s time to start training! In Unit E you&apos;ll practice using the six training methods to teach dogs new behaviors. You&apos;ll record training videos for your tutor to examine your technique and provide feedback to help you improve. You&apos;ll use different motivators and consider reinforcement schedules to learn how these factors affect training.</p>
   </>
