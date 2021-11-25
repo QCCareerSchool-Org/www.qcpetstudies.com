@@ -45,9 +45,9 @@ const CourseOutlinePage: NextPage = () => {
         <div className="container text-center">
           <div className="row justify-content-center">
             <div className="col-12 col-lg-10">
-              <FaBars size={iconSize} className="mb-4" />
-              <h1>Dog Training Course Outline</h1>
-              <p className="mb-0">Here&apos;s a detailed outline of the entire online dog training course offered by QC Pet Studies, including the length of each unit and any special considerations you&apos;ll need to complete each unit&apos;s assignments.</p>
+              <FaBars size={iconSize} className="mb-2" />
+              <h1 className="fw-normal">Dog Training<br /><strong>Course Outline</strong></h1>
+              <p className="lead mb-0">Here&apos;s a detailed outline of the entire online dog training course offered by QC Pet Studies, including the length of each unit and any special considerations you&apos;ll need to complete each unit&apos;s assignments.</p>
             </div>
           </div>
         </div>
@@ -85,7 +85,7 @@ const CourseOutlinePage: NextPage = () => {
           <div className="row justify-content-center">
             <div className="col-12 col-lg-10 mb-5 text-center">
               <h2>Unit-by-Unit Breakdown</h2>
-              <p className="mb-0">Below is an outline of each unit of the online dog training course. Expand each section to find out what you&apos;ll learn in each unit, along with each unit&apos;s expected length and the required dogs to complete your assignments.</p>
+              <p className="mb-0">Below is an outline of each unit of the online dog training course. Expand each section to find out what you&apos;ll learn in each unit.</p>
             </div>
           </div>
           <Accordion defaultActiveKey="0">
@@ -107,7 +107,7 @@ const CourseOutlinePage: NextPage = () => {
                 </div>
                 {lgOrGreater && (
                   <div className="col-12 col-lg-6 col-xl-5">
-                    <Image src={UnitAImage} layout="responsive" alt="Dog running" />
+                    <Image src={UnitAImage} layout="responsive" alt="two dogs running in a field" />
                   </div>
                 )}
               </div>
@@ -130,7 +130,7 @@ const CourseOutlinePage: NextPage = () => {
                 </div>
                 {lgOrGreater && (
                   <div className="col-12 col-lg-6 col-xl-5">
-                    <Image src={UnitBImage} layout="responsive" alt="Dog running" />
+                    <Image src={UnitBImage} layout="responsive" alt="a leashed dog and a man going for a walk" />
                   </div>
                 )}
               </div>
@@ -153,7 +153,7 @@ const CourseOutlinePage: NextPage = () => {
                 </div>
                 {lgOrGreater && (
                   <div className="col-12 col-lg-6 col-xl-5">
-                    <Image src={UnitCImage} layout="responsive" alt="dog resting on a mat" />
+                    <Image src={UnitCImage} layout="responsive" alt="white puppy with a toy lying on a dog bed" />
                   </div>
                 )}
               </div>
@@ -175,7 +175,7 @@ const CourseOutlinePage: NextPage = () => {
                 </div>
                 {lgOrGreater && (
                   <div className="col-12 col-lg-6 col-xl-5">
-                    <Image src={UnitDImage} layout="responsive" alt="dog looking at person" />
+                    <Image src={UnitDImage} layout="responsive" alt="trainer using a clicker and treat to reward a German Shepherd puppy" />
                   </div>
                 )}
               </div>
@@ -197,7 +197,7 @@ const CourseOutlinePage: NextPage = () => {
                 </div>
                 {lgOrGreater && (
                   <div className="col-12 col-lg-6 col-xl-5">
-                    <Image src={UnitEImage} layout="responsive" alt="dog playing" />
+                    <Image src={UnitEImage} layout="responsive" alt="trainer and a dog practicing for an obstacle course" />
                   </div>
                 )}
               </div>
@@ -219,7 +219,7 @@ const CourseOutlinePage: NextPage = () => {
                 </div>
                 {lgOrGreater && (
                   <div className="col-12 col-lg-6 col-xl-5">
-                    <Image src={UnitFImage} layout="responsive" alt="dog growling at another dog" />
+                    <Image src={UnitFImage} layout="responsive" alt="dog snarling at another dog" />
                   </div>
                 )}
               </div>
@@ -241,7 +241,7 @@ const CourseOutlinePage: NextPage = () => {
                 </div>
                 {lgOrGreater && (
                   <div className="col-12 col-lg-6 col-xl-5">
-                    <Image src={UnitGImage} layout="responsive" alt="dog sitting next to a dog trainer" />
+                    <Image src={UnitGImage} layout="responsive" alt="white dog sitting next to a dog trainer" />
                   </div>
                 )}
               </div>
@@ -264,7 +264,7 @@ const CourseOutlinePage: NextPage = () => {
                 </div>
                 {lgOrGreater && (
                   <div className="col-12 col-lg-6 col-xl-5">
-                    <Image src={UnitHImage} layout="responsive" alt="dog and trainer shaking hands" />
+                    <Image src={UnitHImage} layout="responsive" alt="dog and a trainer shaking hands" />
                   </div>
                 )}
               </div>
@@ -287,7 +287,7 @@ export default CourseOutlinePage;
 
 const UnitADetails = (): ReactElement => (
   <>
-    <p>Unit A will introduce you to the world of dog training and the many career paths available to you.</p>
+    <p className="lead">Unit A will introduce you to the world of dog training and the many career paths available to you.</p>
     <p>You&apos;ll learn about what it means to work as a dog trainer. This unit will delve into the foundational principles of training that guide this course and will help you to build a successful career.</p>
     <p><strong>Introduction to Dog Training</strong></p>
     <p>Learn about the evolution of dog training and the relationship between canines and humans. Discover how dog training developed into the high-demand, lucrative industry it is today. Explore the many services you can provide as a dog trainer and the paths you might take to expand your career down the road.</p>
@@ -302,7 +302,7 @@ const UnitADetails = (): ReactElement => (
 
 const UnitBDetails = (): ReactElement => (
   <>
-    <p>In Unit B, you&apos;ll learn all about canine behavior. You&apos;ll discover why dogs do the things they do by examining characteristics and canine development.</p>
+    <p className="lead">In Unit B, you&apos;ll learn all about canine behavior. You&apos;ll discover why dogs do the things they do by examining characteristics and canine development.</p>
     <p>We&apos;ll cover important factors that affect canine behavior and explain how you can influence this behavior through training.</p>
     <p><strong>Introduction to Ethology</strong></p>
     <p>Learn about the scientific study of animal behavior. Discover which canine behaviors are normal and which ones are abnormal. Many behaviors that seem problematic to dog owners are actually normal and healthy for dogs. You&apos;ll learn to help your clients understand their dogs&apos; behavior. You&apos;ll also learn to identify abnormal dog behaviors that could indicate a medical condition.</p>
@@ -319,7 +319,7 @@ const UnitBDetails = (): ReactElement => (
 
 const UnitCDetails = (): ReactElement => (
   <>
-    <p>The third unit of Dog Training will explore canine communication.</p>
+    <p className="lead">The third unit of Dog Training will explore canine communication.</p>
     <p>You&apos;ll learn about the signals that dogs use to communicate, and how interpreting those signals correctly will improve the training experience for you, your clients and their dogs.</p>
     <p><strong>Canine Communication</strong></p>
     <p>This text will cover how dogs use sounds, facial expressions and body language to express themselves. You&apos;ll learn the signals that dogs use to express excitement, fear, contentment, discomfort and more. You&apos;ll even discover and dispel the many misconceptions that humans have about canine communication.</p>
@@ -334,7 +334,7 @@ const UnitCDetails = (): ReactElement => (
 
 const UnitDDetails = (): ReactElement => (
   <>
-    <p>Unit D will introduce you to the learning theories that explain how dogs learn, and why our training methods work.</p>
+    <p className="lead">Unit D will introduce you to the learning theories that explain how dogs learn, and why our training methods work.</p>
     <p>By studying learning theory, you&apos;ll discover how you can teach dogs new behaviors and how to discourage undesirable behaviors with effective, dog-friendly training methods.</p>
     <p><strong>Learning Theory</strong></p>
     <p>This text will explain how dogs learn by making associations and understanding consequences. You&apos;ll learn about classical conditioning&mdash;also known as associative learning. Then you&apos;ll learn about operant condition, which is how dogs learn that their behaviors have consequences. Discover how you can use consequences in the form of reinforcement, reward markers and punishment to change a dog&apos;s behavior.</p>
@@ -347,7 +347,7 @@ const UnitDDetails = (): ReactElement => (
 
 const UnitEDetails = (): ReactElement => (
   <>
-    <p>In Unit E, you&apos;ll put everything you&apos;ve learned into practice and begin working with dogs to teach them new behaviors.</p>
+    <p className="lead">In Unit E, you&apos;ll put everything you&apos;ve learned into practice and begin working with dogs to teach them new behaviors.</p>
     <p>You&apos;ll learn about the six training methods you can use to teach dogs new behaviors and how to motivate and reinforce those behaviors.</p>
     <p><strong>Training Methods</strong></p>
     <p>In this text, you&apos;ll learn about the six methods that trainers use to teach dogs new behaviors. You&apos;ll discover how to use luring, shaping, targeting, modelling, capturing and mimicry in different training contexts. We&apos;ll cover common canine behaviors and the best training method for each one.</p>
@@ -360,7 +360,7 @@ const UnitEDetails = (): ReactElement => (
 
 const UnitFDetails = (): ReactElement => (
   <>
-    <p>Unit F will teach you how to safely use common training tools, and how to use effectively and ethically use punishment to change a dog&apos;s behavior.</p>
+    <p className="lead">Unit F will teach you how to safely use common training tools, and how to use effectively and ethically use punishment to change a dog&apos;s behavior.</p>
     <p>With help from your tutor, you&apos;ll learn important information to help you keep dogs safe in your training sessions. The ability to safely, effectively and appropriately use training tools and punishment in dog training is essential to your work.</p>
     <p><strong>Training Tools</strong></p>
     <p>Discover the common tools, such as leashes, collars and crates, that you can recommend to clients to aid in dog training. You&apos;ll learn to safely and effectively use these tools to make training effective and fun for your clients and their dogs. You&apos;ll also learn about the safe use of aversive tools and their limited place in training.</p>
@@ -373,7 +373,7 @@ const UnitFDetails = (): ReactElement => (
 
 const UnitGDetails = (): ReactElement => (
   <>
-    <p>Working as a dog trainer requires you to teach people as well as dogs. In this unit of your online course, you&apos;ll focus on working with clients to teach them how to train their dogs.</p>
+    <p className="lead">Working as a dog trainer requires you to teach people as well as dogs. In this unit of your online course, you&apos;ll focus on working with clients to teach them how to train their dogs.</p>
     <p>You&apos;ll learn how to develop effective training programs for different types of classes and study keys skills for teaching people.</p>
     <p><strong>Working as a Trainer</strong></p>
     <p>In this text, you&apos;ll study the day-to-day tasks of a dog trainer. You&apos;ll learn the steps you&apos;ll take to facilitate learning for your clients, whether you&apos;re teaching a group class or a private session. You&apos;ll study how to develop a training program and create a safe training space.</p>
@@ -386,7 +386,7 @@ const UnitGDetails = (): ReactElement => (
 
 const UnitHDetails = (): ReactElement => (
   <>
-    <p>This online business unit is optional for those who want to start and run a successful dog training business.</p>
+    <p className="lead">This online business unit is optional for those who want to start and run a successful dog training business.</p>
     <p>You&apos;ll learn how to kickstart your business and promote your training services, and study the ins and outs of developing positive client relationships.</p>
     <p><strong>Starting Your Own Business</strong></p>
     <p>Prepare to launch a successful dog training business. This text will guide you through the initial stages of setting up your business, from choosing a name to registering your business. You&apos;ll learn about the different types of business structures and regulations. You&apos;ll also learn helpful tips to help you manage your finances and develop a business plan.</p>

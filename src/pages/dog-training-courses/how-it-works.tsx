@@ -19,7 +19,7 @@ const DogTrainingHowItWorksPage: NextPage = () => {
   return (
     <DefaultLayout>
       <SEO
-        title="How the Dog Training Course Works"
+        title="How QC's Online Dog Training Course Works"
         description="Become a certified dog trainer online. Find out how QC’s online professional dog trainer course works!"
         canonical="/dog-training-courses/how-it-works"
       />
@@ -27,7 +27,11 @@ const DogTrainingHowItWorksPage: NextPage = () => {
       <section id="firstSection" className="bg-dark">
         <Image src={HandReachingTowardDog} layout="fill" objectFit="cover" objectPosition="center" placeholder="blur" alt="a hand reaching out to pet a happy dog" />
         <div className="container">
-          <h1 className="mb-0">How QC&apos;s Online Dog training Course works</h1>
+          <div className="row">
+            <div className="col-12 col-md-10 col-lg-8">
+              <h1 className="fw-normal mb-0">How QC&apos;s Online<br /><strong>Dog Training Course Works</strong></h1>
+            </div>
+          </div>
         </div>
       </section>
 

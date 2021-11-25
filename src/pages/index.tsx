@@ -25,7 +25,7 @@ const HomePage: NextPage = () => (
       <div className="container text-center text-shadow">
         <div className="row">
           <div className="col-12 col-lg-10 offset-lg-1">
-            <h1>Start an Exciting Career in the <strong>Pet Care Industry</strong></h1>
+            <h1 className="fw-normal">Start an Exciting Career in the <strong>Pet Care Industry</strong></h1>
             <p className="lead">Whether you want to become a dog groomer, trainer, pet sitter, or all of the above, you&apos;ll gain the certification needed to become successful in your chosen career. Enroll with QC and get an internationally-recognized certification. Start your new career in no time!</p>
           </div>
         </div>
