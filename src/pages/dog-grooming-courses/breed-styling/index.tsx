@@ -30,7 +30,7 @@ const BreedStylingPage: NextPage = () => {
     <DefaultLayout secondaryTitle="Breed Styling Workshop" secondaryNavLinks={secondaryNavLinks}>
       <SEO
         title="Breed Styling Workshop"
-        description="If you're already a professional dog groomer, the breed styling workshop will take your grooming skills to the next level. Start today!"
+        description="If you're already"
         canonical="/dog-grooming-courses/breed-styling"
       />
 
