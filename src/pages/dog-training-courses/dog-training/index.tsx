@@ -203,7 +203,7 @@ const DogTrainingPage: NextPage = () => {
             <AccordionSection eventKey="2">
               <div className="row">
                 <div className="col-12 col-lg-6 col-xl-7">
-                  <p>A dog trainer&apos;s job isn&apos;t just to train dogs. As a trainer a big part of your job will be to teach people how to train their own dogs!  This requires a unique set of skills that you'll have to develop. You have to understand how people learn and how to communicate your expertise to dog owners who are looking for help. This part of the dog trainer course will help you learn those skills!</p>
+                  <p>A dog trainer&apos;s job isn&apos;t just to train dogs. As a trainer a big part of your job will be to teach people how to train their own dogs!  This requires a unique set of skills that you&apos;ll have to develop. You have to understand how people learn and how to communicate your expertise to dog owners who are looking for help. This part of the dog trainer course will help you learn those skills!</p>
                   <p>What you&apos;ll learn:</p>
                   <ul>
                     <li>how to work as a trainer
@@ -262,7 +262,7 @@ const DogTrainingPage: NextPage = () => {
                   <ul>
                     <li>Information about the Certified Proessional Dog Trainers (CPDT) Exam</li>
                     <li>Useful tips to help you prepare for your exam</li>
-                    <li>A practice quiz to help make sure you're ready!</li>
+                    <li>A practice quiz to help make sure you&apos;re ready!</li>
                   </ul>
                   <p className="mb-0"><Link href="/dog-training-courses/dog-training/course-outline"><a className="link-primary">View a more-detailed course syllabus</a></Link></p>
                 </div>
@@ -292,7 +292,7 @@ const DogTrainingPage: NextPage = () => {
               </div>
               <p className="lead"><strong>Shannon Noonan</strong></p>
               <p>Certified Dog Trainer (CPDT-KA)<br /><em>10 Years of Experience</em></p>
-              <p className="mb-0">Shannon first started working with dogs when she started fostering with Ottawa Dog Rescue. Through this organization, Shannon adopted her first dog - Blue, a Great Dane/Pointer mix. Shannon and Blue learned about formal dog training together. This pair went on to found the first official Therapy Dog program at Carleton University, a program that remains popular today. Now, Shannon is a Certified Professional Dog Trainer - Knowledge Assessed, and owns her own dog training business with her Dalmatian, Elroy. Shannon and Elroy share a passion for teaching other humans and dogs about training, obedience and agility. Shannon is excited to ignite this same passion for training in QC's dog training students.</p>
+              <p className="mb-0">Shannon first started working with dogs when she started fostering with Ottawa Dog Rescue. Through this organization, Shannon adopted her first dog - Blue, a Great Dane/Pointer mix. Shannon and Blue learned about formal dog training together. This pair went on to found the first official Therapy Dog program at Carleton University, a program that remains popular today. Now, Shannon is a Certified Professional Dog Trainer - Knowledge Assessed, and owns her own dog training business with her Dalmatian, Elroy. Shannon and Elroy share a passion for teaching other humans and dogs about training, obedience and agility. Shannon is excited to ignite this same passion for training in QC&apos;s dog training students.</p>
             </div>
             <div className="col-12 col-lg-6 text-lg-start">
               <div className="mb-2">
@@ -300,7 +300,7 @@ const DogTrainingPage: NextPage = () => {
               </div>
               <p className="lead"><strong>Susan Read</strong></p>
               <p>Certified Dog Trainer<br /><em>35 Years of Experience</em></p>
-              <p className="mb-0">Susan has been training dogs for over 35 years. She specializes in Search and Rescue (SAR) work, but Susan's experience extends to competitive obedience, rally and agility training as well. Susan has been teaching tracking for many years, and conducts workshops across Ontario. She has been involved with K9 SAR since 2000, and is now the head K9 trainer and handler with Georgian Bay SAR. Susan is also the Provincial K9 Coordinator and sits on the Ontario Search and Rescue Volunteer Association (OSARVA) Board of Directors. Susan is currently the only OPP/OSARVA certified dog handler in Central Ontario with her live find dog, Zena. She has also worked with Human Remains Detection K9 with her dog, Zappa, since 2014. As a former school teacher and a highly experienced dog training instructor, Susan looks forward to using her significant teaching experience to benefit QC's dog training students.</p>
+              <p className="mb-0">Susan has been training dogs for over 35 years. She specializes in Search and Rescue (SAR) work, but Susan&apos;s experience extends to competitive obedience, rally and agility training as well. Susan has been teaching tracking for many years, and conducts workshops across Ontario. She has been involved with K9 SAR since 2000, and is now the head K9 trainer and handler with Georgian Bay SAR. Susan is also the Provincial K9 Coordinator and sits on the Ontario Search and Rescue Volunteer Association (OSARVA) Board of Directors. Susan is currently the only OPP/OSARVA certified dog handler in Central Ontario with her live find dog, Zena. She has also worked with Human Remains Detection K9 with her dog, Zappa, since 2014. As a former school teacher and a highly experienced dog training instructor, Susan looks forward to using her significant teaching experience to benefit QC&apos;s dog training students.</p>
             </div>
           </div>
         </div>
@@ -311,7 +311,7 @@ const DogTrainingPage: NextPage = () => {
           <div className="row justify-content-center">
             <div className="col-12 col-lg-10">
               <h2>21-Day<strong> Guarantee</strong></h2>
-              <p>When you enroll in QC's Dog Training Course, you have 21 days to review the course and decide if it's the right program for you.  If you don't like what you see, simply contact the school to arrange a full refund of your tuition, no questions asked!</p>
+              <p>When you enroll in QC&apos;s Dog Training Course, you have 21 days to review the course and decide if it&apos;s the right program for you.  If you don&apos;t like what you see, simply contact the school to arrange a full refund of your tuition, no questions asked!</p>
               <Link href="/about/about-qc-pet-studies#guarantee"><a className="btn btn-outline-navy">Guarantee</a></Link>
             </div>
           </div>
