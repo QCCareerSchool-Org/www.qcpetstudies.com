@@ -54,7 +54,7 @@ const GroomingAssignment: NextPage = () => {
               <p className="lead mb-0">If this list describes your personality, then you&apos;re in the right place!</p>
             </div>
             <div className="col-12 col-md-6">
-              <div className="card bg-lighter">
+              <div className="card bg-lighter border-lighter">
                 <div className="card-body">
                   <p className="card-text">QC&apos;s online dog grooming course will prepare you in every way for a successful dog grooming career. You will learn everything from dog behavior and safety practices to tools of the trade, to specific grooming techniques and the most popular cuts.</p>
                   <p className="card-text">Whether your goal is to launch your own grooming business, work in a grooming salon, or just groom your own dog, you&apos;ll gain all the skills to achieve your goals.</p>
@@ -90,7 +90,7 @@ const GroomingAssignment: NextPage = () => {
                 <p className="lead">The Dog Grooming Course is split into five parts, each containing individual training units.</p>
                 <p className="mb-4">You must complete a unit with a satisfactory grade before you can submit assignments for the next units.</p>
               </div>
-              <div className="card bg-lighter">
+              <div className="card bg-lighter border-lighter">
                 <div className="card-body">
                   <div className="row">
                     <div className="col-12 col-lg-6 mb-4 mb-lg-0">
@@ -103,8 +103,8 @@ const GroomingAssignment: NextPage = () => {
                       <Preview
                         videoContent={(
                           <div className="ratio ratio-16x9">
-                            <video controls preload="auto">
-                              <source src="https://89b45d42c17e11dd3d57-62a1fc0bf60a98e1d5e980348a7de3b7.ssl.cf1.rackcdn.com/interview-paddy.mp4" type="video/mp4" />
+                            <video controls preload="metadata" poster="https://89b45d42c17e11dd3d57-62a1fc0bf60a98e1d5e980348a7de3b7.ssl.cf1.rackcdn.com/unit-screenshots-a.jpg">
+                              <source src="https://89b45d42c17e11dd3d57-62a1fc0bf60a98e1d5e980348a7de3b7.ssl.cf1.rackcdn.com/unit-a.mp4" type="video/mp4" />
                             </video>
                           </div>
                         )}
@@ -143,7 +143,7 @@ const GroomingAssignment: NextPage = () => {
             </div>
 
             <div className="col-12">
-              <div className="card bg-lighter">
+              <div className="card bg-lighter border-lighter">
                 <div className="card-body">
                   <div className="row">
                     <div className="col-12 col-lg-6 mb-4 mb-lg-0">
@@ -180,7 +180,7 @@ const GroomingAssignment: NextPage = () => {
             </div>
 
             <div className="col-12 mb-5">
-              <div className="card bg-lighter">
+              <div className="card bg-lighter border-lighter">
                 <div className="card-body">
                   <div className="row">
                     <div className="col-12 col-lg-6 mb-4 mb-lg-0">
@@ -238,7 +238,7 @@ const GroomingAssignment: NextPage = () => {
             </div>
 
             <div className="col-12 mb-5">
-              <div className="card bg-lighter">
+              <div className="card bg-lighter border-lighter">
                 <div className="card-body">
                   <div className="row">
                     <div className="col-12 col-lg-6 mb-4 mb-lg-0">
@@ -300,7 +300,7 @@ const GroomingAssignment: NextPage = () => {
             </div>
 
             <div className="col-12">
-              <div className="card bg-lighter">
+              <div className="card bg-lighter border-lighter">
                 <div className="card-body">
                   <div className="row">
                     <div className="col-12 col-lg-6 mb-4 mb-lg-0">
