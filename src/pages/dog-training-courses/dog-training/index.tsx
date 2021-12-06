@@ -98,7 +98,7 @@ const DogTrainingPage: NextPage = () => {
               <h2>Become a <strong>Certified Dog Trainer</strong></h2>
               <p className="lead"><strong>International Dog Training Professional&trade;</strong> | <i>IDTP&trade;</i></p>
               <p>Dog training is a booming industry! Owners need help more than ever in working with their dogs to become members of the family, and they want someone qualified to help them achieve this task.  Whether you want to work in a training school, launch your own dog training business, or freelance as a private dog trainer, you&apos;ll graduate with all the knowledge and skills you need to succeed in the dog training industry!</p>
-              <p className="lead mb-0">Are you ready to start an amazing career?</p>
+              <p className="lead mb-0">Are you ready to start an amazing career? aergafvd</p>
             </div>
           </div>
         </div>
