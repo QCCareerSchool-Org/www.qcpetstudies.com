@@ -48,7 +48,6 @@ type AccessTokenResponse = {
 
 export const getAccessToken = async (): Promise<AccessTokenResponse> => {
   const jsonWebToken = await createSaleforceJWT();
-  console.log(jsonWebToken);
   const body = {
     grant_type: 'urn:ietf:params:oauth:grant-type:jwt-bearer', // eslint-disable-line camelcase
     assertion: jsonWebToken,
@@ -77,7 +76,6 @@ export const getVisitor = async (id: number, token: string): Promise<VisitorData
     },
   });
   const data = await response.json();
-  console.log(data);
   return data;
 };
 

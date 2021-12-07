@@ -30,7 +30,7 @@ const BreedStylingPage: NextPage = () => {
     <DefaultLayout secondaryTitle="Breed Styling Workshop" secondaryNavLinks={secondaryNavLinks}>
       <SEO
         title="Breed Styling Workshop"
-        description="If you're already"
+        description="If you're already a professional dog groomer, the breed styling workshop will take your grooming skills to the next level. Start today!"
         canonical="/dog-grooming-courses/breed-styling"
       />
 
@@ -184,7 +184,7 @@ const BreedStylingPage: NextPage = () => {
             }
             <div className="col-12 col-lg-10">
               <p className="fst-italic">Please note that you&apos;ll need to purchase these tools yourself if you don&apos;t already own them. As a student of QC Pet Studies, take advantage of discounts from established dog grooming brands.</p>
-              <Link href="/your-dog-grooming-career/discounts-for-grooming-students"><a className="link-primary">See the list here!</a></Link>
+              <Link href="/about/student-discounts"><a className="link-primary">See the list here!</a></Link>
             </div>
           </div>
         </div>
@@ -251,7 +251,7 @@ const BreedStylingPage: NextPage = () => {
                     <li>Non-sporting breed</li>
                     <li>Mixed breed</li>
                   </ul>
-                  <p className="mb-0">Complete the course by researching and grooming a breed of your own choice</p>
+                  <p className="mb-0">Complete the course by researching and grooming a breed of your own choice.</p>
                 </div>
                 {lgOrGreater && (
                   <div className="col-lg-4">
