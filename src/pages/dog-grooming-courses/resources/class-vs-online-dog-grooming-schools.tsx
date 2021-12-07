@@ -20,13 +20,13 @@ const ClassVsOnlineLearning: NextPage = () => {
         <Image src={FirstSectionBackground} layout="fill" objectFit="cover" objectPosition="center" placeholder="blur" alt="happy Yorkie" />
         <div className="image-overlay-gradient" />
         <div className="container text-center">
-          <div className="row text-white">
+          <div className="row">
             <div className="col-12 col-md-10 offset-md-1">
               <FaGraduationCap className="h1 text-primary mb-3" />
               <h1>In-Class vs. Online Dog Grooming Schools</h1>
               <p>Learning dog grooming online can be a difficult concept to wrap your head around. After all, dog grooming is a very &quot;hands-on&quot; profession. Surely it needs to be taught in-class by an instructor, no?</p>
               <p>Definitely not. With the advancement of online learning in recent years, online dog grooming schools can be just as effective (if not more!) than in-class training. No one can dispute that online learning is far more convenient than in class. The key is to find an online dog grooming school that allows you the same (if not more!) hands-on practice that a classroom curriculum would.</p>
-              <p className="lead">Below is a comparison of a typical in-class dog grooming school vs. an online grooming school like QC Pet Studies.</p>
+              <p className="lead mb-0">Below is a comparison of a typical in-class dog grooming school vs. an online grooming school like QC Pet Studies.</p>
             </div>
           </div>
         </div>

@@ -34,16 +34,15 @@ const ContactUsPage: NextPage = () => {
       <section id="firstSection" className="bg-dark text-light">
         <Image src={ContactUsBackground} layout="fill" objectFit="cover" objectPosition="center" placeholder="blur" alt="happy dog" />
         <div className="container">
-          <h1>Contact<br />QC Pet Studies</h1>
+          <h1 className="fw-normal"><strong>Contact</strong><br />QC Pet Studies</h1>
         </div>
       </section>
 
       <section>
         <div className="container text-center">
           <div className="row justify-content-center">
-            <div className="col-12 col-lg-10 mb-5">
-              <h2>Contact <strong>Us</strong></h2>
-              <p className="lead">We want to hear from you!</p>
+            <div className="col-12 col-lg-10 mb-4">
+              <h2>We Want to Hear From You</h2>
               <p className="mb-0">Whether you are a prospective student wondering about QC&apos;s courses or tuition, or a current student with questions about an assignment, we&apos;re here to help you in any way we can. Contact QC&apos;s student support specialists by phone, email, or live chat!</p>
             </div>
             <div className="col-12 col-sm-10 col-md-8 col-lg-4 mb-4 mb-lg-0">

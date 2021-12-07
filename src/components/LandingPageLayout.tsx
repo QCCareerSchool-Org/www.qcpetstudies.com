@@ -5,7 +5,7 @@ import { ReactElement, ReactNode } from 'react';
 import { useLocation } from '../hooks/useLocation';
 import { useScreenWidth } from '../hooks/useScreenWidth';
 import logo from '../images/qc-pet-horizontal.svg';
-import { gbCountry } from '../lib/address';
+import { isGBPCountry } from '../lib/address';
 import { getTelephoneNumber } from '../lib/phone';
 
 type Props = {
@@ -20,7 +20,7 @@ export const LandingPageLayout = ({ children }: Props): ReactElement => {
 
   const smOrGreater = screenWidth >= 576;
 
-  const termsLink = gbCountry(location?.countryCode ?? 'US') ? '/terms-gb' : '/terms';
+  const termsLink = isGBPCountry(location?.countryCode ?? 'US') ? '/terms-gb' : '/terms';
 
   return (
     <div id="landingPage" className="d-flex flex-column vh-100">
