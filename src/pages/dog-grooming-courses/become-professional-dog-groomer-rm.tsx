@@ -14,7 +14,7 @@ import FullKitImage from '../../images/Kit-Blue-bg.jpg';
 import { getRandomIntInclusive } from '../../lib/randomInt';
 
 const formAction = 'https://go.qcpetstudies.com/l/947642/2021-12-05/6h9rv';
-const testGroup = getRandomIntInclusive(0, 1); // only generate once (will regenerate on app reload)
+const testGroup = getRandomIntInclusive(1, 12); // only generate once (will regenerate on app reload)
 const hiddenFields = [ { key: 'testGroup', value: testGroup } ];
 
 const ProfessionalDogGroomerPage: NextPage = () => {
@@ -40,7 +40,7 @@ const ProfessionalDogGroomerPage: NextPage = () => {
             <div className="col-12 col-lg-6 text-lg-start mb-4 mb-lg-0">
               <h3>Free Dog Grooming Starter Kit</h3>
               <p>Before you begin your practical work in Unit C, you&apos;ll receive a toolkit with the essential items you need to get started.</p>
-              <p>Your kit includes a WAHL ARCO 5-in-1 Cordless Clipper, a stainless steel attachment guide comb kit, professional-grade grooming scissors, brushes, combs, and nail clippers.</p>
+              <p>Your kit includes a WAHL ARCO 5-in-1 cordless clipper, a stainless steel attachment guide comb kit, professional-grade grooming scissors, brushes, combs, and nail clippers.</p>
               <p><em>Grooming Kit Estimated value: $200</em></p>
               <Image src={FullKitImage} alt="Dog Grooming Starter Full Kit" />
             </div>
@@ -128,7 +128,7 @@ const ProfessionalDogGroomerPage: NextPage = () => {
       </section>
 
       <div className="container" style={{ marginBottom: -56 }}>
-        <Image src={CourseCatalogImage} objectFit="contain" alt="Dog looking at you" className="zIndex100" />
+        <Image src={CourseCatalogImage} objectFit="contain" alt="Dog looking at you" className="formImage" />
       </div>
       <section className="bg-navy bg-desaturated-blue pt-3">
         <div className="container">
@@ -152,7 +152,7 @@ const ProfessionalDogGroomerPage: NextPage = () => {
         .bg-desaturated-blue {
           background: #262e41 !important;
         }
-        .zIndex100 { z-index: 100; }
+        .formImage { z-index: 100; }
       `}</style>
     </DefaultLayout>
   );

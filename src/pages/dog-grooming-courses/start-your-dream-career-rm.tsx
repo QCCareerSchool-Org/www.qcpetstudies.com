@@ -48,7 +48,7 @@ const StartYourDreamCareerPage: NextPage = () => {
             <div className="col-12 col-lg-10">
               <h2 className="mb-3">Your <strong>Course</strong> Materials</h2>
               <p>Before you begin your practical work in Unit C, you&apos;ll receive a toolkit with the essential items you need to get started.</p>
-              <p>Your kit includes a WAHL ARCO 5-in-1 Cordless Clipper, a stainless steel attachment guide comb kit, professional-grade grooming scissors, brushes, combs, and nail clippers.</p>
+              <p>Your kit includes a WAHL ARCO 5-in-1 cordless clipper, a stainless steel attachment guide comb kit, professional-grade grooming scissors, brushes, combs, and nail clippers.</p>
               <p className="lead"><strong>These professional-grade tools have a $200 value!</strong></p>
             </div>
           </div>
