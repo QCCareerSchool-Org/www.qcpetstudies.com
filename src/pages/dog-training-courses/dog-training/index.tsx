@@ -69,11 +69,11 @@ const DogTrainingPage: NextPage = () => {
                 <p><strong>Trailer</strong></p>
               </div>
               <div className="col text-uppercase">
-                <a href="#outlineSection"><Image src={OutlineImage} alt="outline" width={headerIconSize} height={headerIconSize} /></a>
+                <a href="#outline"><Image src={OutlineImage} alt="outline" width={headerIconSize} height={headerIconSize} /></a>
                 <p><strong>Outline</strong></p>
               </div>
               <div className="col text-uppercase">
-                <a href="#sampleSection"><Image src={PlayBtnImage} alt="play button" width={headerIconSize} height={headerIconSize} /></a>
+                <a href="#guarantee"><Image src={PlayBtnImage} alt="play button" width={headerIconSize} height={headerIconSize} /></a>
                 <p><strong>Guarantee</strong></p>
               </div>
             </div>
@@ -131,7 +131,7 @@ const DogTrainingPage: NextPage = () => {
         </div>
       </section>
 
-      <section id="outlineSection" className="bg-light">
+      <section id="outline" className="bg-lighter">
         <div className="container">
           <div className="row justify-content-center mb-4">
             <div className="col12 col-lg-10 text-center">
@@ -306,21 +306,17 @@ const DogTrainingPage: NextPage = () => {
         </div>
       </section>
 
-      <section className="bg-light">
+      <section id="guarantee" className="bg-light">
         <div className="container text-center">
           <div className="row justify-content-center">
             <div className="col-12 col-lg-10">
-              <h2>21-Day<strong> Guarantee</strong></h2>
+              <h2>21-Day <strong>Guarantee</strong></h2>
               <p>When you enroll in QC&apos;s Dog Training Course, you have 21 days to review the course and decide if it&apos;s the right program for you.  If you don&apos;t like what you see, simply contact the school to arrange a full refund of your tuition, no questions asked!</p>
-              <Link href="/about/about-qc-pet-studies#guarantee"><a className="btn btn-outline-navy">Guarantee</a></Link>
+              <Link href="/about/about-qc-pet-studies#guarantee"><a className="btn btn-outline-navy">Learn More</a></Link>
             </div>
           </div>
         </div>
       </section>
-
-      <style jsx>{`
-        #outlineSection { background-color: #f7f7f7 !important; }
-      `}</style>
 
     </DefaultLayout>
   );
