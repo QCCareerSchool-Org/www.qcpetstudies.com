@@ -38,7 +38,7 @@ const DogGroomingCatalogPage: NextPage = () => {
               <div className="card bg-light">
                 <div className="card-body">
                   <p className="text-center lead">Get Started with a <strong>Free Course Catalog</strong></p>
-                  <BrochureForm />
+                  <BrochureForm action="https://go.qcpetstudies.com/l/947642/2021-11-18/6b85q" />
                 </div>
               </div>
             </div>
@@ -137,7 +137,7 @@ const DogGroomingCatalogPage: NextPage = () => {
           <div className="row justify-content-center">
             <div className="col-12 col-lg-10">
               <h2 className="text-white mb-4">Take the First Step Towards a New and Exciting Career</h2>
-              <Link href="#firstSection"><a className="btn btn-outline-light">Download The Free Catalog</a></Link>
+              <Link href="#firstSection"><a className="btn btn-outline-light">Download the Free Catalog</a></Link>
             </div>
           </div>
         </div>

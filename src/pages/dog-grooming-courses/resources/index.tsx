@@ -26,7 +26,7 @@ const DogGroomingResourcesPage: NextPage = () => {
         <div className="container text-center">
           <div className="row justify-content-center">
             <div className="col-12 col-lg-10">
-              <h1>Dog Grooming Resources</h1>
+              <h1 className="fw-normal mb-0">Dog Grooming<br /><strong>Resources</strong></h1>
             </div>
           </div>
         </div>
@@ -59,11 +59,11 @@ const DogGroomingResourcesPage: NextPage = () => {
             </div>
             <div className="col-12 col-sm-8 col-lg-4 d-flex">
               <div className="card">
-                <Image src={LearningInClassOnlineImage} alt="Learning in-class vs. Online<" className="card-img-top" />
+                <Image src={LearningInClassOnlineImage} alt="Learning in Class vs. Online" className="card-img-top" />
                 <div className="card-body">
-                  <h5 className="card-title">Learning in-class vs. Online</h5>
+                  <h5 className="card-title">Learning in Class vs. Online</h5>
                   <p className="card-text">Learning dog grooming online is just as effective as learning it in a classroom. Find out how!</p>
-                  <Link href="/dog-grooming-courses/resources/learning-in-class-vs-online"><a className="link-primary">Learn More</a></Link>
+                  <Link href="/dog-grooming-courses/resources/class-vs-online-dog-grooming-schools"><a className="link-primary">Learn More</a></Link>
                 </div>
               </div>
             </div>

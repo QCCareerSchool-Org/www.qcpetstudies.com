@@ -33,7 +33,7 @@ const FAQPage: NextPage = () => {
         <div className="container text-center">
           <div className="row justify-content-center">
             <div className="col-12 col-lg-10 text-white">
-              <h1>Frequently Asked Questions about QC Pet Studies</h1>
+              <h1 className="fw-normal mb-0"><strong>Frequently Asked Questions</strong> about QC Pet Studies</h1>
             </div>
           </div>
         </div>

@@ -53,6 +53,6 @@ export const needsProvince = (countryCode: string): boolean => {
   return [ 'CA', 'US', 'AU' ].includes(countryCode);
 };
 
-export const gbCountry = (countryCode: string): boolean => {
+export const isGBPCountry = (countryCode: string): boolean => {
   return [ 'GB', 'IM', 'GG', 'JE' ].includes(countryCode);
 };

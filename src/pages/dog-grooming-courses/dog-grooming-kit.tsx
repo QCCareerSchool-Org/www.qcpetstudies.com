@@ -6,10 +6,9 @@ import React from 'react';
 import { Bar } from '../../components/Bar';
 import { DefaultLayout } from '../../components/DefaultLayout';
 import { SEO } from '../../components/SEO';
-
 import GroomingKitBackground from '../../images/backgrounds/Pro-Grooming-Scissors-Blue-Overlay.jpg';
 import ClipperCombsImage from '../../images/clippers-combs-kit-550.jpg';
-import FullKitImage from '../../images/Full-Kit-Pro-Scissors.jpg';
+import FullKitImage from '../../images/dog-grooming-kit.jpg';
 import GroomingScissorsImage from '../../images/Pro-Grooming-Scissors-550x550.jpg';
 import StarterKitImage from '../../images/starter-kit.jpg';
 

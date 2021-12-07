@@ -13,7 +13,7 @@ import PhoneIcon from '../images/footer-icons-phone.svg';
 import GuaranteeIcon from '../images/guarantee-icon-fill.svg';
 import Logo from '../images/logo-top-white.svg';
 import SniffinArroundLogo from '../images/sniffin-around-logo-white.svg';
-import { gbCountry } from '../lib/address';
+import { isGBPCountry } from '../lib/address';
 import { getTelephoneNumber } from '../lib/phone';
 
 export type FooterCTAType = 'grooming' | 'training';
@@ -117,7 +117,7 @@ export const Footer = ({ ctaType, className }: Props): ReactElement => {
             <small>
               &copy; {new Date().getFullYear()} QC Pet Studies
               <PipeSpacer />
-              <Link href={gbCountry(location?.countryCode ?? 'US') ? '/terms-gb' : '/terms'}><a>Privacy Policy</a></Link>
+              <Link href={isGBPCountry(location?.countryCode ?? 'US') ? '/terms-gb' : '/terms'}><a>Privacy Policy</a></Link>
               {smOrGreater && (
                 <>
                   <PipeSpacer />

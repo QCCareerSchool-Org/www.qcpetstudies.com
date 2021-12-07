@@ -96,6 +96,7 @@ body {
 h1, .h1 {
   color: #122022;
   text-transform: uppercase;
+  &.fw-normal { font-weight: 200 !important; }
 }
 h2, .h2 {
   color: #122022;
@@ -118,37 +119,37 @@ h4, .h4, h5, .h5, h6, .h6 {
 }
 
 /* static font sizes for different breakpoints, rather than dynamic font size */
-h1, .h1 { font-size: 2.25rem }
-h2, .h2 { font-size: 1.75rem }
-h3, .h3 { font-size: 1.25rem }
-h4, .h4, h5, .h5, h6, .h6 { font-size: 1rem }
+h1, .h1 { font-size: 2.25rem; line-height: 2.25rem; margin-bottom: 1rem; /* extra margin-bottom to make up for smaller line-height */ }
+h2, .h2 { font-size: 1.75rem; }
+h3, .h3 { font-size: 1.25rem; }
+h4, .h4, h5, .h5, h6, .h6 { font-size: 1rem; }
 
 @media (min-width: 576px) {
-  h1, .h1 { font-size: 2.5rem }
-  h2, .h2 { font-size: 2rem }
-  h3, .h3 { font-size: 1.33333333rem }
-  h4, .h4, h5, .h5, h6, .h6 { font-size: 1rem }
+  h1, .h1 { font-size: 2.5rem; line-height: 2.5rem; }
+  h2, .h2 { font-size: 2rem; }
+  h3, .h3 { font-size: 1.33333333rem; }
+  h4, .h4, h5, .h5, h6, .h6 { font-size: 1rem; }
 }
 
 @media (min-width: 768px) {
-  h1, .h1 { font-size: 2.75rem }
-  h2, .h2 { font-size: 2.25rem }
-  h3, .h3 { font-size: 1.5rem }
-  h4, .h4, h5, .h5, h6, .h6 { font-size: 1rem }
+  h1, .h1 { font-size: 2.75rem; line-height: 2.75rem; }
+  h2, .h2 { font-size: 2.25rem; }
+  h3, .h3 { font-size: 1.5rem; }
+  h4, .h4, h5, .h5, h6, .h6 { font-size: 1rem; }
 }
 
 @media (min-width: 992px) {
-  h1, .h1 { font-size: 3.25rem }
-  h2, .h2 { font-size: 2.75rem }
-  h3, .h3 { font-size: 1.5rem }
-  h4, .h4, h5, .h5, h6, .h6 { font-size: 1rem }
+  h1, .h1 { font-size: 3.25rem; line-height: 3.25rem; }
+  h2, .h2 { font-size: 2.75rem; }
+  h3, .h3 { font-size: 1.5rem; }
+  h4, .h4, h5, .h5, h6, .h6 { font-size: 1rem; }
 }
 
 @media (min-width: 1200px) {
-  h1, .h1 { font-size: 3.75rem }
-  h2, .h2 { font-size: 3rem }
-  h3, .h3 { font-size: 1.5rem }
-  h4, .h4, h5, .h5, h6, .h6 { font-size: 1rem }
+  h1, .h1 { font-size: 3.75rem; line-height: 3.75rem; }
+  h2, .h2 { font-size: 3rem; }
+  h3, .h3 { font-size: 1.5rem; }
+  h4, .h4, h5, .h5, h6, .h6 { font-size: 1rem; }
 }
 
 .card.bg-light, .card.bg-white {
