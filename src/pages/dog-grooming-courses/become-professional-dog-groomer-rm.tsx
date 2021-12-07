@@ -47,7 +47,7 @@ const ProfessionalDogGroomerPage: NextPage = () => {
             <div className="col-12 col-lg-6 d-flex text-start">
               <div className="card bg-desaturated-blue">
                 <div className="card-body">
-                  <h3 className="text-center">Download a Free Course Catalog!</h3>
+                  <h3>Download a Free Course Catalog!</h3>
                   <ul className="no-indent">
                     <li>Find out if a career in dog grooming is right for you</li>
                     <li>Learn about the many careers you can pursue as a dog groomer</li>
@@ -127,7 +127,7 @@ const ProfessionalDogGroomerPage: NextPage = () => {
         </div>
       </section>
 
-      <div style={{ marginBottom: -56 }}>
+      <div className="container" style={{ marginBottom: -56 }}>
         <Image src={CourseCatalogImage} objectFit="contain" alt="Dog looking at you" className="zIndex100" />
       </div>
       <section className="bg-navy bg-desaturated-blue pt-3">
