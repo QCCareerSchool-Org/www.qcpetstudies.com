@@ -57,7 +57,7 @@ const AboutPage: NextPage = () => {
         </div>
       </section>
 
-      <section className="bg-light">
+      <section id="guarantee" className="bg-light">
         <div className="container text-center">
           <div className="row justify-content-center">
             <div className="col-12 col-lg-10">
