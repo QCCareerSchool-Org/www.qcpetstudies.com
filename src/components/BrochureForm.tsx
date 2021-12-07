@@ -19,6 +19,7 @@ export const BrochureForm = ({ action, phoneNumber = false, buttonText = 'Get th
 
   return (
     <form action={action} method="post">
+      <input type="hidden" name="school" value="QC Pet Studies" />
       {hiddenFields?.map(h => (
         <input key={h.key} type="hidden" name={h.key} value={h.value} />
       ))}
@@ -44,7 +45,7 @@ export const BrochureForm = ({ action, phoneNumber = false, buttonText = 'Get th
       )}
       <div className="mb-4">
         <div className="form-check">
-          <input className="form-check-input" type="checkbox" id="emailOptIn" name="emailOptIn" />
+          <input className="form-check-input" type="checkbox" id="emailOptIn" name="emailOptIn" value="yes" />
           <label className="form-check-label" htmlFor="emailOptIn">
             I agree to receive additional emails from QC, including promotions, course launches, special offers and more. Unsubscribe anytime!
           </label>
@@ -54,7 +55,7 @@ export const BrochureForm = ({ action, phoneNumber = false, buttonText = 'Get th
         <>
           <div className="mb-4">
             <div className="form-check">
-              <input className="form-check-input" type="checkbox" id="telephoneOptIn" name="telephoneOptIn" />
+              <input className="form-check-input" type="checkbox" id="telephoneOptIn" name="telephoneOptIn" value="yes" />
               <label className="form-check-label" htmlFor="telephoneOptIn">
                 I agree to receive phone calls and/or text messages from a QC student advisor. Standard rates apply.
               </label>

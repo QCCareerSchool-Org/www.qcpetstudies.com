@@ -48,7 +48,7 @@ const StartYourDreamCareerPage: NextPage = () => {
             <div className="col-12 col-lg-10">
               <h2 className="mb-3">Your <strong>Course</strong> Materials</h2>
               <p>Before you begin your practical work in Unit C, you&apos;ll receive a toolkit with the essential items you need to get started.</p>
-              <p>Your kit includes a WAHL ARCO 5-in-1 Cordless Clipper, a stainless steel attachment guide comb kit, professional-grade grooming scissors, brushes, combs, and nail clippers.</p>
+              <p>Your kit includes a WAHL ARCO 5-in-1 cordless clipper, a stainless steel attachment guide comb kit, professional-grade grooming scissors, brushes, combs, and nail clippers.</p>
               <p className="lead"><strong>These professional-grade tools have a $200 value!</strong></p>
             </div>
           </div>
@@ -65,7 +65,7 @@ const StartYourDreamCareerPage: NextPage = () => {
                 <div className="card-body">
                   <div className="w-100">
                     <div className="mb-3">
-                      <Image src={QcDayGuaratnteeLogo} alt="Qc 21 Day Money Back Guarantee" />
+                      <Image src={QcDayGuaratnteeLogo} alt="21-day money-back guarantee logo" />
                     </div>
                     <h4>The 21-Day Money-Back Guarantee</h4>
                     <p className="card-text">Try the course risk-free for 21 days. This gives you time to receive your course materials and evaluate whether the dog grooming course is right for you. If you decide it&apos;s not a good fit, simply contact QC to arrange a return of your course materials for a refund. It&apos;s that easy! Note: For sanitary reasons, the clippers and attachment combs provided with the course cannot be refunded (value $200 US)</p>
@@ -78,7 +78,7 @@ const StartYourDreamCareerPage: NextPage = () => {
                 <div className="card-body">
                   <div className="w-100">
                     <div className="mb-3">
-                      <Image src={QcYearGuaratnteeLogo} alt="Qc 1 Year Money Back Guarantee" />
+                      <Image src={QcYearGuaratnteeLogo} alt="1-year money-back guarantee logo" />
                     </div>
                     <h4>The 1-Year Money-Back Guarantee</h4>
                     <p className="card-text lead"><em>This course will pay for itself within two years. That&apos;s a promise.</em></p>
@@ -95,7 +95,7 @@ const StartYourDreamCareerPage: NextPage = () => {
 
       <section className="bg-light">
         <div className="container text-center">
-          <h2 className="mb-5">How the <strong>Courses</strong> Work</h2>
+          <h2 className="mb-4">How the <strong>Courses</strong> Work</h2>
           <div className="row justify-content-center">
             <div className="col-12 col-sm-8 col-md-6 col-lg-3 mb-4 mb-lg-0">
               <BsCalendarCheck className="h2 text-secondary mb-4" />
@@ -127,7 +127,7 @@ const StartYourDreamCareerPage: NextPage = () => {
         <div className="container text-center">
           <div className="row align-items-center">
             <div className="col-12 col-lg-6 mb-4 mb-lg-0 text-lg-start">
-              <div className="text-center mb-4">
+              <div className="text-center mb-2">
                 <Image src={FirstAidLogo} alt="First Aid plus Logo" />
               </div>
               <h2>Get a <strong>FREE</strong> First Aid Course</h2>
