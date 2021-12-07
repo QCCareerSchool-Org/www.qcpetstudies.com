@@ -29,12 +29,12 @@ const LearningDuringCovidPage: NextPage = () => {
         <Image src={LearningAndWorkingBackground} layout="fill" objectFit="cover" objectPosition="center" placeholder="blur" alt="groomer wire brushing a dog" />
         <div className="image-overlay-gradient" />
         <div className="container text-center">
-          <div className="row">
-            <div className="col-12 col-lg-10 offset-lg-1">
+          <div className="row justify-content-center">
+            <div className="col-12 col-lg-10">
               <h1>Learning &amp; Working During COVID</h1>
               <h2 className="mb-4">Dog Grooming in a Pandemic</h2>
               <p className="lead">See how you can earn your certification and run your dog grooming business during COVID-19!</p>
-              <p>Learn from the safety of home with QC&apos;s online dog grooming courses</p>
+              <p className="mb-0">Learn from the safety of home with QC&apos;s online dog grooming courses</p>
             </div>
           </div>
         </div>
