@@ -18,12 +18,31 @@ type Props = {
   variant?: Variant;
 };
 
+const invalid = (courses: string[], countryCode?: string, provinceCode?: string | null): boolean => {
+  return countryCode === 'CA' && provinceCode === 'ON' && (courses.includes('dg') || courses.includes('fa'));
+};
+
 export const PriceSection = ({ courses, doubleGuarantee, variant = 'dark' }: Props): ReactElement => {
   const location = useLocation();
   const price = usePrice(courses, location?.countryCode, location?.provinceCode);
   const [ popup, toggle ] = useToggle();
 
   const enrollLink = `https://enroll.qcpetstudies.com/?${courses.map(c => `c[]=${encodeURIComponent(c)}`).join('&')}`;
+
+  if (invalid(courses, location?.countryCode, location?.provinceCode)) {
+    return (
+      <section id="tuitionSection" className={variant === 'dark' ? 'bg-navy' : 'bg-light'}>
+        <div className="container text-center">
+          <div className="row justify-content-center">
+            <div className="col-12 col-lg-10">
+              <h2 className="mb-3">Tuition &amp; Payment Plans</h2>
+              <p>Unfortunately this course is not available in your location.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    );
+  }
 
   return (
     <section id="tuitionSection" className={variant === 'dark' ? 'bg-navy' : 'bg-light'}>
