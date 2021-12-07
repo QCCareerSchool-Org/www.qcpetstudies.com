@@ -20,7 +20,7 @@ const StudentExperiencePage: NextPage = () => {
     <DefaultLayout>
       <SEO
         title="Student Experience"
-        description="This is Student Experience page"
+        description="Learn what it's like to be a student of QC Pet Studies!"
         canonical="/about/student-experience"
       />
 
@@ -39,7 +39,7 @@ const StudentExperiencePage: NextPage = () => {
             <div className="col-12 col-lg-8 mb-4 mb-lg-0">
               <h2>Setting You Up for Success</h2>
               <p className="lead">As a QC Pet Studies Student, you&apos;ll get help through <strong>every step of your education.</strong></p>
-              <p className="mb-0">When you enroll, you gain access to QC&apos;s friendly and experienced Student Support Specialists who are ready to assist you and answer your questions. As you work through your course, you&apos;ll be guided by a certified master groomer with years of experience in the industry. Even after you graduate, you&apos;ll remain an essential member of the QC community. You&apos;ll build relationships with other groomers and be connected with business resources that will help you succeed in your dog grooming career.</p>
+              <p className="mb-0">When you enroll, you gain access to QC&apos;s friendly and experienced Student Support Specialists who are ready to assist you and answer your questions. As you work through your course, you&apos;ll be guided by a certified professional with years of experience in the industry. Even after you graduate, you&apos;ll remain an essential member of the QC community. You&apos;ll build relationships with other groomers and trainers, and be connected with business resources that will help you succeed in your career.</p>
             </div>
             {!xlOrGreater && (
               <div className="col-12 col-sm-10 col-md-8 col-lg-4">
@@ -74,7 +74,7 @@ const StudentExperiencePage: NextPage = () => {
             <div className="col-12 col-lg-6 col-xl-8 col-xxl-9 mb-4 mb-lg-0">
               <h2>Learn from Certified<br /><strong>Industry Experts</strong></h2>
               <p className="lead">To be the best, you need to learn from the best.</p>
-              <p className="mb-0">At QC Pet Studies, you ll be paired with a tutor who is a certified master groomer with years of industry experience. Your tutor will review your work and provide you with personalized audio feedback on your dog grooming assignments. They ll help you develop your knowledge, perfect your technique and grow your confidence as you work through your online dog grooming course. You ll benefit from your tutor&apos;s insight and experience, as well as their drive to help you succeed.</p>
+              <p className="mb-0">At QC Pet Studies, you ll be paired with a tutor who is a certified professional with years of industry experience. Your tutor will review your work and provide you with personalized audio feedback on every assignment you submit. They ll help you develop your knowledge, perfect your technique and grow your confidence as you work through your online course. You&apos;ll benefit from your tutor&apos;s insight and experience, as well as their drive to help you succeed.</p>
             </div>
             <div className="col-12 col-sm-10 col-md-8 col-lg-6 col-xl-4 col-xxl-3">
               <Image src={CertifiedExpertImage} layout="responsive" alt="collage of dogs" />
@@ -89,7 +89,7 @@ const StudentExperiencePage: NextPage = () => {
           <div className="row justify-content-center">
             <div className="col-12 col-lg-10 mb-5">
               <h3>We&apos;re social!</h3>
-              <p className="mb-0">From the latest grooming tools to the best pet accessories, QC&apos;s online communities are a great resource to stay on top of industry trends. You can get in touch with the QC team, access career advice, network with other groomers, and get inspired by pictures of impressive grooming works. Join the conversation today:</p>
+              <p className="mb-0">From the latest grooming tools to the best training techniques, QC&apos;s online communities are a great resource to stay on top of industry trends. You can get in touch with the QC team, access career advice, network with other professionals, and get inspired by pictures of impressive grooming works or fun dog trick videos. Join the conversation today:</p>
             </div>
             <div className="col-12 col-md-10 col-lg-8 mb-5">
               <div className="d-flex justify-content-around text-secondary">
@@ -99,8 +99,8 @@ const StudentExperiencePage: NextPage = () => {
               </div>
             </div>
             <div className="col-12 col-lg-10">
-              <h3>Connect with fellow dog grooming students!</h3>
-              <p className="mb-5">The Student Forum is a hub for dog grooming students to socialize and support one another. Ask questions about tools and techniques, swap stories about your best and worst canine clients, and be inspired by like-minded individuals. Education is essential to your success as a dog groomer even after you graduate. That&apos;s why you ll have lifetime access to the Online Student Center and be able to access new course texts and video tutorials as soon as they&apos;re available. And you can always reach out to the QC team with questions about your career or the dog grooming industry.</p>
+              <h3>Connect with fellow QC students!</h3>
+              <p className="mb-5">The Student Forum is a hub for dog grooming and dog training students to socialize and support one another. Ask questions about tools and techniques, swap stories about your best and worst canine clients, and be inspired by like-minded individuals. Education is essential to your success as a pet care professional, even after you graduate. That&apos;s why you ll have lifetime access to the Online Student Center and be able to access new course texts and video tutorials as soon as they&apos;re available. And you can always reach out to the QC team with questions about your career or the pet care industry.</p>
               <p className="lead">At QC Pet Studies, <strong>we&apos;re with you for the journey</strong></p>
               <Image src={LineOfDogsImage} alt="a line of nine dogs standing side to side" />
             </div>

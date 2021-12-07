@@ -18,7 +18,7 @@ const StudentDiscountsPage: NextPage = () => (
   <DefaultLayout>
     <SEO
       title="Student Discounts"
-      description="This is Student Discount page"
+      description="QC Students get access to a number of discounts on pet industry tools and services!"
       canonical="/about/student-discounts"
     />
 
