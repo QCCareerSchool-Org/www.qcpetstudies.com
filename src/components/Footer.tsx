@@ -65,7 +65,7 @@ export const Footer = ({ ctaType, className }: Props): ReactElement => {
             </a>
           </div>
           <div id="footerColCertifications" className="col-12 col-sm-4 col-lg-2 mb-4 mb-sm-0 text-center text-lg-start">
-            <h4 className="text-primary mb-sm-4">Certifications</h4>
+            <h2 className="h4 text-primary mb-sm-4">Certifications</h2>
             <ul className="spacedList">
               <li><Link href="/dog-grooming-courses/dog-grooming"><a>Dog Grooming</a></Link></li>
               <li className="text-muted"><Link href="/dog-grooming-courses/first-aid"><a>First Aid</a></Link></li>
@@ -74,7 +74,7 @@ export const Footer = ({ ctaType, className }: Props): ReactElement => {
             </ul>
           </div>
           <div id="footerColContactUs" className="col-12 col-sm-4 col-lg-2 mb-4 mb-sm-0 text-center text-lg-start">
-            <h4 className="text-primary mb-sm-4">Contact Us</h4>
+            <h2 className="h4 text-primary mb-sm-4">Contact Us</h2>
             <ul className="spacedList">
               <li>
                 <Link href="/about/about-qc-pet-studies"><a>
@@ -97,7 +97,7 @@ export const Footer = ({ ctaType, className }: Props): ReactElement => {
             </ul>
           </div>
           <div id="footerColStayInformed" className="col-12 col-sm-4 col-lg-2 text-center text-lg-start">
-            <h4 className="text-primary">Stay Informed</h4>
+            <h2 className="h4 text-primary">Stay Informed</h2>
             <div id="blogLogoWrapper">
               <Image src={SniffinArroundLogo} width={155} height={40} alt="Sniffin' Around Blog" />
             </div>
