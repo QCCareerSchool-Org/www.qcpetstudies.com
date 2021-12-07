@@ -1,4 +1,4 @@
-import { ReactElement } from 'react';
+import { ReactElement, useEffect } from 'react';
 import { useLocation } from '../hooks/useLocation';
 
 type Props = {
@@ -19,6 +19,7 @@ export const BrochureForm = ({ action, phoneNumber = false, buttonText = 'Get th
 
   return (
     <form action={action} method="post">
+      <input type="hidden" name="school" value="QC Pet Studies" />
       {hiddenFields?.map(h => (
         <input key={h.key} type="hidden" name={h.key} value={h.value} />
       ))}

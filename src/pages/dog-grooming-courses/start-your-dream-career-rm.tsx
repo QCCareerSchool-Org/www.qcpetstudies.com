@@ -95,7 +95,7 @@ const StartYourDreamCareerPage: NextPage = () => {
 
       <section className="bg-light">
         <div className="container text-center">
-          <h2 className="mb-5">How the <strong>Courses</strong> Work</h2>
+          <h2 className="mb-4">How the <strong>Courses</strong> Work</h2>
           <div className="row justify-content-center">
             <div className="col-12 col-sm-8 col-md-6 col-lg-3 mb-4 mb-lg-0">
               <BsCalendarCheck className="h2 text-secondary mb-4" />
@@ -127,7 +127,7 @@ const StartYourDreamCareerPage: NextPage = () => {
         <div className="container text-center">
           <div className="row align-items-center">
             <div className="col-12 col-lg-6 mb-4 mb-lg-0 text-lg-start">
-              <div className="text-center mb-4">
+              <div className="text-center mb-2">
                 <Image src={FirstAidLogo} alt="First Aid plus Logo" />
               </div>
               <h2>Get a <strong>FREE</strong> First Aid Course</h2>
