@@ -9,6 +9,7 @@
   "secondary": #ff0074,
   "gray": #999,
   "light": #e9e9e9,
+  "lighter": #f7f7f7,
   "dark": #2b313c,
   "navy": #061f3a,
 );
@@ -40,20 +41,18 @@ $font-weight-bolder: 600;
 
 /**
  * Border Radius
- * Unchanged, but included here so the variables can be used below
  */
- $border-radius:    .25rem;
- $border-radius-lg: .75rem;
- $border-radius-sm: .2rem;
+ $border-radius:    0; //.25rem;
+ $border-radius-lg: 0; // .75rem;
+ $border-radius-sm: 0; // .2rem;
 
 /**
  * Buttons
- * We override $btn-border-radius directly and don't modify the more-general $border-radius
  */
 $btn-font-weight: 400;
-$btn-border-radius: 0;
-$btn-border-radius-sm: 0;
-$btn-border-radius-lg: 0;
+// $btn-border-radius: 0;
+// $btn-border-radius-sm: 0;
+// $btn-border-radius-lg: 0;
 $input-btn-padding-x: 1rem;
 $input-btn-padding-x-sm: 0.875rem;
 $input-btn-padding-x-lg: 1.5rem;
