@@ -13,7 +13,7 @@ import GroomingScissorsImage from '../../images/Pro-Grooming-Scissors-550x550.jp
 import StarterKitImage from '../../images/starter-kit.jpg';
 
 const DogGroomingKitPage: NextPage = () => (
-  <DefaultLayout secondaryTitle="Dog Grooming Kit">
+  <DefaultLayout>
     <SEO
       title="Dog Grooming Kit"
       description="Take a look at the grooming starter kit you'll receive when you enroll in QC's dog grooming course!"
@@ -28,21 +28,20 @@ const DogGroomingKitPage: NextPage = () => (
       </div>
     </section>
 
-    <section>
+    <section className="bg-light">
       <div className="container text-center">
         <div className="row justify-content-center">
-          <div className="col-12 col-lg-10">
+          <div className="col-12 col-lg-10 mb-4">
             <p>When you enroll in QC&apos;s online <Link href="/dog-grooming-courses/dog-grooming/"><a className="link-primary">dog grooming course</a></Link>, you&apos;ll receive a toolkit with the essential items you need to get started. These items will be shipped to you after you submit your Unit B before you begin your practical work in Unit C.</p>
             <p>Your kit includes a WAHL ARCO 5-in-1 cordless clipper, a stainless steel attachment guide comb kit, professional-grade grooming scissors, brushes, combs, and nail clippers.</p>
             <p>This starter kit will go a long way not only to help you complete your online course but also to enter the industry as a fully equipped dog grooming professional!</p>
             <p className="lead mb-0">The dog grooming kit has an estimated value of over $200!</p>
           </div>
+          <div className="col-12 col-lg-8">
+            <Image src={FullKitImage} layout="responsive" objectFit="contain" alt="Full Kit" />
+          </div>
         </div>
       </div>
-    </section>
-
-    <section className="p-0">
-      <Image src={FullKitImage} layout="responsive" objectFit="contain" alt="Full Kit" />
     </section>
 
     <section>
