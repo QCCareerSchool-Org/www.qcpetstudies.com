@@ -29,8 +29,6 @@ export const PriceSection = ({ courses, doubleGuarantee, variant = 'dark' }: Pro
 
   const enrollLink = `https://enroll.qcpetstudies.com/?${courses.map(c => `c[]=${encodeURIComponent(c)}`).join('&')}`;
 
-  console.log(location, courses);
-
   if (invalid(courses, location?.countryCode, location?.provinceCode)) {
     return (
       <section id="tuitionSection" className={variant === 'dark' ? 'bg-navy' : 'bg-light'}>
