@@ -59,7 +59,7 @@ const DogTrainingPage: NextPage = () => {
             </div>
             <h1>Dog Training</h1>
             {price && price.plans.part.deposit > 0 && <h4>Get Started for Only <strong>{price.currency.symbol}{formatPrice(price.plans.part.deposit)}</strong></h4>}
-            <p><em><a href="#tuitionSection" className="text-white">See tuition details</a></em></p>
+            <p><em><a href="#tuition" className="text-white">See tuition details</a></em></p>
             <a href="https://enroll.qcpetstudies.com?c[]=dt"><button className="btn btn-secondary btn-lg">Enroll Online</button></a>
           </div>
           <div className="row justify-content-center">
