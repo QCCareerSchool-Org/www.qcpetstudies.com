@@ -45,7 +45,7 @@ const DogTrainingPage: NextPage = () => {
     <DefaultLayout secondaryTitle="Dog Training Course">
       <SEO
         title="Dog Training Course"
-        description=""
+        description="Become a Professional Dog Trainer with QC's online dog training course. Study Online with Hands-On Learning!"
         canonical="/dog-training-courses/dog-training"
       />
 
@@ -59,7 +59,7 @@ const DogTrainingPage: NextPage = () => {
             </div>
             <h1>Dog Training</h1>
             {price && price.plans.part.deposit > 0 && <h4>Get Started for Only <strong>{price.currency.symbol}{formatPrice(price.plans.part.deposit)}</strong></h4>}
-            <p><em><a href="#tuitionSection" className="text-white">See tuition details</a></em></p>
+            <p><em><a href="#tuition" className="text-white">See tuition details</a></em></p>
             <a href="https://enroll.qcpetstudies.com?c[]=dt"><button className="btn btn-secondary btn-lg">Enroll Online</button></a>
           </div>
           <div className="row justify-content-center">
@@ -69,12 +69,12 @@ const DogTrainingPage: NextPage = () => {
                 <p><strong>Trailer</strong></p>
               </div>
               <div className="col text-uppercase">
-                <a href="#outlineSection"><Image src={OutlineImage} alt="outline" width={headerIconSize} height={headerIconSize} /></a>
+                <a href="#outline"><Image src={OutlineImage} alt="outline" width={headerIconSize} height={headerIconSize} /></a>
                 <p><strong>Outline</strong></p>
               </div>
               <div className="col text-uppercase">
-                <a href="#sampleSection"><Image src={PlayBtnImage} alt="play button" width={headerIconSize} height={headerIconSize} /></a>
-                <p><strong>Sample</strong></p>
+                <a href="#guarantee"><Image src={PlayBtnImage} alt="play button" width={headerIconSize} height={headerIconSize} /></a>
+                <p><strong>Guarantee</strong></p>
               </div>
             </div>
           </div>
@@ -97,7 +97,7 @@ const DogTrainingPage: NextPage = () => {
             <div className="col-12 col-lg-10">
               <h2>Become a <strong>Certified Dog Trainer</strong></h2>
               <p className="lead"><strong>International Dog Training Professional&trade;</strong> | <i>IDTP&trade;</i></p>
-              <p>Dog training is a booming industry! Owners need help more than ever in working with their dogs to become members of the family, and they want someone qualified to help them achieve this task.  Whether you want to work in a training school, launch your own dog training business, or freelance as a private dog trainer, you&apos;ll graduate with all the knowledge and skills you need to succeed in the dog training industry!</p>
+              <p>Dog training is a booming industry! Owners need help to turn their dogs into well-behaved members of the family, and they want someone qualified to help them achieve this goal.  Whether you want to work in a training school, launch your own dog training business, or freelance as a private dog trainer, you&apos;ll graduate with all the knowledge and skills you need to succeed in the dog training industry!</p>
               <p className="lead mb-0">Are you ready to start an amazing career?</p>
             </div>
           </div>
@@ -131,7 +131,7 @@ const DogTrainingPage: NextPage = () => {
         </div>
       </section>
 
-      <section id="outlineSection" className="bg-light">
+      <section id="outline" className="bg-lighter">
         <div className="container">
           <div className="row justify-content-center mb-4">
             <div className="col12 col-lg-10 text-center">
@@ -203,7 +203,7 @@ const DogTrainingPage: NextPage = () => {
             <AccordionSection eventKey="2">
               <div className="row">
                 <div className="col-12 col-lg-6 col-xl-7">
-                  <p>A dog trainer&apos;s job isn&apos;t just to train dogs. As a trainer a big part of your job will be to teach people how to train their own dogs!  This requires a whole set of skills in their own rights. You have to understand how people learn and how to communicate your expertise to dog owners who are looking for help. This part of the dog trainer course will help you learn those skills!</p>
+                  <p>A dog trainer&apos;s job isn&apos;t just to train dogs. As a trainer a big part of your job will be to teach people how to train their own dogs!  This requires a unique set of skills that you&apos;ll have to develop. You have to understand how people learn and how to communicate your expertise to dog owners who are looking for help. This part of the dog trainer course will help you learn those skills!</p>
                   <p>What you&apos;ll learn:</p>
                   <ul>
                     <li>how to work as a trainer
@@ -253,6 +253,26 @@ const DogTrainingPage: NextPage = () => {
                 )}
               </div>
             </AccordionSection>
+            <AccordionToggle title="CPDT Exam Prep" eventKey="4" />
+            <AccordionSection eventKey="4">
+              <div className="row">
+                <div className="col-12 col-lg-6 col-xl-7">
+                  <p>Many profeeional dog trainers strive to pass the Certified Professional Dog Trainer (CPDT) exam from the Certification Council for Professional Dog Trainers.  The CPDT is the gold-standard for dog trainers who have the knowledge and skills to train dogs using scientifically-proven methods. Your QC Dog training course teaches you everything you need to know to pass your CPDT exam. As an added bonus, you have access to an extra optional unit to help prepare you to write the CPDT exam! </p>
+                  <p>This optional unit includes:</p>
+                  <ul>
+                    <li>Information about the Certified Proessional Dog Trainers (CPDT) Exam</li>
+                    <li>Useful tips to help you prepare for your exam</li>
+                    <li>A practice quiz to help make sure you&apos;re ready!</li>
+                  </ul>
+                  <p className="mb-0"><Link href="/dog-training-courses/dog-training/course-outline"><a className="link-primary">View a more-detailed course syllabus</a></Link></p>
+                </div>
+                {lgOrGreater && (
+                  <div className="col-6 col-xl-5">
+                    <Image src={IntroductoryUnitsImage} alt="Dog runing" layout="responsive" />
+                  </div>
+                )}
+              </div>
+            </AccordionSection>
           </Accordion>
         </div>
       </section>
@@ -271,36 +291,32 @@ const DogTrainingPage: NextPage = () => {
                 <Image src={PlaceHolderImage} layout="responsive" placeholder="blur" alt="dog-training expert, Shannon Noonan" />
               </div>
               <p className="lead"><strong>Shannon Noonan</strong></p>
-              <p>Certified Dog Trainer<br /><em>20 Years of Experience</em></p>
-              <p className="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet risus quis urna tincidunt viverra elementum vitae sapien. Pellentesque luctus vestibulum mattis. Duis dignissim maximus sapien sed consequat. Vivamus gravida pulvinar leo non vestibulum. Integer elementum leo neque, eget aliquam ligula venenatis eu. Phasellus quis rutrum nunc. Etiam in facilisis est. Aliquam facilisis, nunc non vehicula consectetur, ante arcu lacinia dui, quis suscipit nibh mi in ante. Curabitur nec maximus metus, ac gravida risus. Cras euismod ornare dui, eu semper lacus venenatis viverra.</p>
+              <p>Certified Dog Trainer (CPDT-KA)<br /><em>10 Years of Experience</em></p>
+              <p className="mb-0">Shannon first started working with dogs when she started fostering with Ottawa Dog Rescue. Through this organization, Shannon adopted her first dog - Blue, a Great Dane/Pointer mix. Shannon and Blue learned about formal dog training together. This pair went on to found the first official Therapy Dog program at Carleton University, a program that remains popular today. Now, Shannon is a Certified Professional Dog Trainer - Knowledge Assessed, and owns her own dog training business with her Dalmatian, Elroy. Shannon and Elroy share a passion for teaching other humans and dogs about training, obedience and agility. Shannon is excited to ignite this same passion for training in QC&apos;s dog training students.</p>
             </div>
             <div className="col-12 col-lg-6 text-lg-start">
               <div className="mb-2">
                 <Image src={PlaceHolderImage} layout="responsive" placeholder="blur" alt="dog-training expert, Susan Read" />
               </div>
               <p className="lead"><strong>Susan Read</strong></p>
-              <p>Certified Dog Trainer<br /><em>20 Years of Experience</em></p>
-              <p className="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed dictum leo eget turpis molestie, a tincidunt odio tempus. Nam consequat elit quis elit pretium tincidunt vitae nec est. Praesent lobortis fermentum neque sed tristique. Nulla velit neque, porta convallis consectetur ut, vehicula in nibh. Maecenas enim metus, consequat sit amet eleifend ut, eleifend feugiat turpis. Vestibulum feugiat in lorem ac semper. Duis diam neque, posuere at felis vel, molestie gravida dui.</p>
+              <p>Certified Dog Trainer<br /><em>35 Years of Experience</em></p>
+              <p className="mb-0">Susan has been training dogs for over 35 years. She specializes in Search and Rescue (SAR) work, but Susan&apos;s experience extends to competitive obedience, rally and agility training as well. Susan has been teaching tracking for many years, and conducts workshops across Ontario. She has been involved with K9 SAR since 2000, and is now the head K9 trainer and handler with Georgian Bay SAR. Susan is also the Provincial K9 Coordinator and sits on the Ontario Search and Rescue Volunteer Association (OSARVA) Board of Directors. Susan is currently the only OPP/OSARVA certified dog handler in Central Ontario with her live find dog, Zena. She has also worked with Human Remains Detection K9 with her dog, Zappa, since 2014. As a former school teacher and a highly experienced dog training instructor, Susan looks forward to using her significant teaching experience to benefit QC&apos;s dog training students.</p>
             </div>
           </div>
         </div>
       </section>
 
-      <section className="bg-light">
+      <section id="guarantee" className="bg-light">
         <div className="container text-center">
           <div className="row justify-content-center">
             <div className="col-12 col-lg-10">
-              <h2><strong>Preview</strong> the Course for Free</h2>
-              <p>If you&apos;d like to see a more detailed course outline, sample videos and examples of assignments, you can preview the dog training course for free at any time!</p>
-              <Link href=""><a className="btn btn-outline-navy">Course Preview</a></Link>
+              <h2>21-Day <strong>Guarantee</strong></h2>
+              <p>When you enroll in QC&apos;s Dog Training Course, you have 21 days to review the course and decide if it&apos;s the right program for you.  If you don&apos;t like what you see, simply contact the school to arrange a full refund of your tuition, no questions asked!</p>
+              <Link href="/about/about-qc-pet-studies#guarantee"><a className="btn btn-outline-navy">Learn More</a></Link>
             </div>
           </div>
         </div>
       </section>
-
-      <style jsx>{`
-        #outlineSection { background-color: #f7f7f7 !important; }
-      `}</style>
 
     </DefaultLayout>
   );

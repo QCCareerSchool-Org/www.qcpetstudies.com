@@ -17,7 +17,7 @@ const DogGroomingResourcesPage: NextPage = () => {
     <DefaultLayout>
       <SEO
         title="Dog Gromming Resources"
-        description="Dog Gromming Resources"
+        description="Resources and Downloads to help you get through your online dog grooming class."
         canonical="/dog-grooming-courses/resources"
       />
 
@@ -43,15 +43,15 @@ const DogGroomingResourcesPage: NextPage = () => {
                 <div className="card-body">
                   <h5 className="card-title">Your Dog Grooming Career</h5>
                   <p className="card-text">Learn what you can expect from a career in dog grooming including salary expectations, potential career paths and more.</p>
-                  <Link href="/dog-grooming-courses/how-it-works"><a className="link-primary">Learn More</a></Link>
+                  <Link href="/dog-grooming-courses/resources/your-dog-grooming-career"><a className="link-primary">Learn More</a></Link>
                 </div>
               </div>
             </div>
             <div className="col-12 col-sm-8 col-lg-4 mb-4 mb-lg-0 d-flex">
               <div className="card">
-                <Image src={StudentGradFeaturesImage} alt="Student and Graduate Features" className="card-img-top" />
+                <Image src={StudentGradFeaturesImage} alt="Featured Students" className="card-img-top" />
                 <div className="card-body">
-                  <h5 className="card-title">Student and Graduate Features</h5>
+                  <h5 className="card-title">Featured Students</h5>
                   <p className="card-text">Follow in the footsteps of other QC students and graduates who are now enjoying their professional dog grooming careers!</p>
                   <Link href="/category/student-features"><a className="link-primary">Learn More</a></Link>
                 </div>
@@ -72,11 +72,11 @@ const DogGroomingResourcesPage: NextPage = () => {
             <div className="col-12 col-lg-6 text-start">
               <h3>Additional links</h3>
               <ul>
-                <li><Link href="/dog-grooming-courses/resources/required-dog-breeds"><a className="link-primary">Required Dog Breeds</a></Link></li>
+                <li><Link href="/dog-grooming-courses/resources/required-dog-breeds"><a className="link-primary">Required Dog Breeds to Complete Your Course</a></Link></li>
                 <li><Link href="/dog-grooming-courses/resources/learning-and-working-during-covid"><a className="link-primary">Learning and working during COVID-19</a></Link></li>
-                <li><Link href=""><a className="link-primary">Frequently Asked Questions about QC Pet Studies, Dog Grooming, and More</a></Link></li>
-                <li><Link href=""><a className="link-primary">Information about QC Pet Studies&apos; Double Guarantee</a></Link></li>
-                <li><Link href=""><a className="link-primary">Discounts available for QC Pet Studies students and graduates</a></Link></li>
+                <li><Link href="/about/faq"><a className="link-primary">Frequently Asked Questions</a></Link></li>
+                <li><Link href="/about/about-qc-pet-studies#guarantee"><a className="link-primary">Information about QC Pet Studies&apos; Double Guarantee</a></Link></li>
+                <li><Link href="/about/student-discounts"><a className="link-primary">Discounts available for QC Pet Studies students and graduates</a></Link></li>
               </ul>
             </div>
           </div>
@@ -113,19 +113,6 @@ const DogGroomingResourcesPage: NextPage = () => {
               <h3 className="mb-4">Pros &amp; Cons:<br />Your Dog Grooming Certificate</h3>
               <p>Find out how a dog grooming certification can help you succeed in the industry, and ways in which it might hold you back.</p>
               <a href="/documents/dog-grooming-certification-pros-and-cons.pdf" className="link-primary" target="_blank">Download</a>
-            </div>
-          </div>
-          <div className="row justify-content-center">
-            <div className="col-12 col-lg-6 text-start">
-              <h3>Additional Downloads</h3>
-              <ul>
-                <li><a className="link-primary" target="_blank">10 Commandments of Dog Grooming</a></li>
-                <li><a className="link-primary" target="_blank">Quick Guide: Dog Coat Types</a></li>
-                <li><a className="link-primary" target="_blank">Pet Grooming Checklist</a></li>
-                <li><a className="link-primary" target="_blank">Quick Guide: Dog Breed Groups</a></li>
-                <li><a className="link-primary" target="_blank">Quick Guide: Grooming Tools</a></li>
-                <li><a className="link-primary" target="_blank">Dog Behavior: Cheat Sheet</a></li>
-              </ul>
             </div>
           </div>
         </div>
