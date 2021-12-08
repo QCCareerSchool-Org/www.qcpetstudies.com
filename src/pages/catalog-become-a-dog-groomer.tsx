@@ -48,7 +48,7 @@ const DogGroomingCatalogPage: NextPage = () => {
                   <Image src={CatalogImage} layout="responsive" alt="tablet with dog image" />
                 </div>
               )}
-              <p className="lead">Get access to a free preview of the online dog grooming course to:</p>
+              <p className="lead">Get access to a free preview of the online dog grooming course to</p>
               <ul>
                 <li>Find out if a career in dog grooming is right for you</li>
                 <li>Learn about the many careers you can pursue as a dog groomer</li>
@@ -137,7 +137,7 @@ const DogGroomingCatalogPage: NextPage = () => {
           <div className="row justify-content-center">
             <div className="col-12 col-lg-10">
               <h2 className="text-white mb-4">Take the First Step Towards a New and Exciting Career</h2>
-              <Link href="#firstSection"><a className="btn btn-outline-light">Preivew the Course</a></Link>
+              <Link href="#firstSection"><a className="btn btn-outline-light">Preview the Course</a></Link>
             </div>
           </div>
         </div>
