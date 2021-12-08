@@ -9,6 +9,7 @@ import { IoMdInfinite } from 'react-icons/io';
 import { AccordionSection } from '../../../components/AccordionSection';
 import { AccordionToggle } from '../../../components/AccordionToggle';
 import { DefaultLayout } from '../../../components/DefaultLayout';
+import { GuaranteeSection } from '../../../components/GuaranteeSection';
 import { PriceSection } from '../../../components/PriceSection';
 import { SEO } from '../../../components/SEO';
 import { useLocation } from '../../../hooks/useLocation';
@@ -144,7 +145,7 @@ const DogGroomingPage: NextPage = () => {
         </Modal>
       </section>
 
-      <section id="outlineSection" className="bg-light">
+      <section id="outline" className="bg-lighter">
         <div className="container">
           <div className="row justify-content-center">
             <div className="col-12 col-lg-10 mb-4 text-center">
@@ -184,22 +185,11 @@ const DogGroomingPage: NextPage = () => {
         </div>
       </section>
 
-      <section id="sampleSection" className="bg-light">
-        <div className="container text-center">
-          <div className="row justify-content-center">
-            <div className="col-12 col-lg-8">
-              <h2>Course Syllabus</h2>
-              <p>If you&apos;d like to see a more detailed course syllabus, learn more about the length of the course, the types of dogs and tools required for each unit and more, you can access a more detailed course outline below!</p>
-              <Link href="/dog-grooming-courses/dog-grooming/course-outline"><a className="btn btn-secondary">Full Course Outline</a></Link>
-            </div>
-          </div>
-        </div>
-      </section>
+      <GuaranteeSection className="bg-light" />
 
       <TutorSection />
 
       <style jsx>{`
-        #outlineSection { background-color: #f7f7f7 !important; }
         .courseContentIcon { color: #ccc; margin-bottom: 0.5rem; }
         .imageShadowWrapper {
           padding: 0 0 12px; // to offset the shadow
