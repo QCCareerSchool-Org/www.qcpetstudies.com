@@ -19,7 +19,7 @@ const ThankYouCatalogPage: NextPage = () => {
         canonical="/thank-you-training-course-preview"
       />
 
-      <section id="firstSection" className="bg-black">
+      <section id="top" className="bg-black">
         {mdOrGreater && <Image src={CatalogBackground} layout="fill" objectFit="cover" objectPosition="right" placeholder="blur" alt="white Bichon Frise with circle cut" />}
         <div className="container text-center text-md-start">
           <div className="row">

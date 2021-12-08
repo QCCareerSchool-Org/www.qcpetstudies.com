@@ -31,7 +31,7 @@ const DogGroomingCareerPage: NextPage = () => {
         canonical="/dog-grooming-courses/resources/your-dog-grooming-career"
       />
 
-      <section id="firstSection" className="bg-dark">
+      <section id="top" className="bg-dark">
         <Image src={CareerBackground} layout="fill" objectFit="cover" objectPosition="center" placeholder="blur" alt="groomer trimming a dog's hair" />
         <div className="image-overlay-gradient" />
         <div className="container text-center">

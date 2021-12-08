@@ -20,7 +20,7 @@ const AboutPage: NextPage = () => {
         canonical="/about/about-qc-pet-studies"
       />
 
-      <section id="firstSection" className="bg-dark">
+      <section id="top" className="bg-dark">
         <Image src={QcBackground} layout="fill" objectFit="cover" objectPosition="center" placeholder="blur" alt="happy dog panting" />
         <div className="container">
           <h1 className="fw-normal"><strong>About</strong><br />QC Pet Studies</h1>

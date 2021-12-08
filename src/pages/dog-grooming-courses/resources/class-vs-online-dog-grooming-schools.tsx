@@ -16,7 +16,7 @@ const ClassVsOnlineLearning: NextPage = () => {
         canonical="dog-grooming-courses/resources/class-vs-online-dog-grooming-schools"
       />
 
-      <section id="firstSection" className="bg-dark">
+      <section id="top" className="bg-dark">
         <Image src={FirstSectionBackground} layout="fill" objectFit="cover" objectPosition="center" placeholder="blur" alt="happy Yorkie" />
         <div className="image-overlay-gradient" />
         <div className="container text-center">

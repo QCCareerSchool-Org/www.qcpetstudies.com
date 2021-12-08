@@ -30,7 +30,7 @@ const RequiredDogBreeds: NextPage = () => {
         canonical="/dog-grooming-courses/dog-grooming/required-dog-breeds"
       />
 
-      <section id="firstSection" className="bg-dark">
+      <section id="top" className="bg-dark">
         <Image src={RequiredDogBreedsBackground} layout="fill" objectFit="cover" objectPosition="center" placeholder="blur" alt="dog in a towel after a bath" />
         <div className="image-overlay-gradient" />
         <div className="container text-center">

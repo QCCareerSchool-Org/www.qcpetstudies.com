@@ -28,7 +28,7 @@ const FAQPage: NextPage = () => {
         canonical="/about/faq"
       />
 
-      <section id="firstSection" className="bg-dark">
+      <section id="top" className="bg-dark">
         <Image src={FaqBgImage} layout="fill" objectFit="cover" objectPosition="center" placeholder="blur" alt="dog in a dog bed, holding a stick" />
         <div className="container text-center">
           <div className="row justify-content-center">

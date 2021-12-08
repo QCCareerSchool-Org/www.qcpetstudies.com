@@ -31,7 +31,7 @@ const DogGroomingHowItWorksPage: NextPage = () => {
         canonical="/dog-grooming-courses/how-it-works"
       />
 
-      <section id="firstSection" className="bg-dark">
+      <section id="top" className="bg-dark">
         <Image src={HowItWorksBackground} layout="fill" objectFit="cover" objectPosition="center" placeholder="blur" alt="hand reaching toward a happy dog" />
         <div className="image-overlay-gradient" />
         <div className="container text-center">

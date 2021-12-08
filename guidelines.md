@@ -34,7 +34,7 @@ import { DefaultLayout } from '../components/DefaultLayout';
 
 // this is declared outside the component so that we have a constant reference
 const secondaryNavLinks = [
-  { name: 'Overview', url: '#firstSection' },
+  { name: 'Overview', url: '#top' },
   { name: 'First Aid', url: '#firstAidSection' },
   { name: 'Tutors', url: '#tutorSection' },
 ];
@@ -42,7 +42,7 @@ const secondaryNavLinks = [
 const ExamplePageWithNav: NextPage = () => (
   <DefaultLayout secondaryTitle="Example Page" secondaryNavLinks={secondaryNavLinks}>
 
-    <section id="firstSection">
+    <section id="top">
       {/* section content */}
     </section>
 
@@ -98,7 +98,7 @@ All content must contained within `<section>` tags. Each logical section of the 
 
 Sections have a preset padding defined in the theme that should generally not be overridden.
 
-The first section on a page must use the `firstSection` id to make space for the site navigation.
+The first section on a page must use the `top` id to make space for the site navigation.
 
 In the code, sections should be separated from each other by a single line.
 
@@ -107,7 +107,7 @@ In the code, sections should be separated from each other by a single line.
 Background colors should be chosen from the available theme colors. Text colors will be applied automatically based on the global CSS. When copying a section from the old Wordpress site that uses a background color, a background color from the new theme should be used in its place.
 
 ```javascript
-<section id="firstSection">
+<section id="top">
   {/* this section will have the standard (white) background and the standard (dark grey) text */}
 </section>
 
@@ -148,8 +148,8 @@ Videos should include a poster image so that text is readable even if the video 
     <source src={groomingVideo} type="video/mp4" />
   </video>
   <div className="foregroundContent">
-    {/* in this example, this is also the first section on the page and uses the firstSection id */}
-    <section id="firstSection" className="text-shadow">
+    {/* in this example, this is also the first section on the page and uses the top id */}
+    <section id="top" className="text-shadow">
       <div className="container text-center">
         <h1>Become a Professional<br />Dog Groomer</h1>
         <p className="h4">Learn Online and Get Hands-On Training</p>
@@ -164,7 +164,7 @@ Videos should include a poster image so that text is readable even if the video 
 All content within a section must be wrapped with a `<div>` tag using the Bootstrap `container` class.
 
 ```javascript
-<section id="firstSection">
+<section id="top">
   <div className="container">
     {/* section content */}
   </div>
@@ -186,7 +186,7 @@ Content should generally be laid using Bootstrap's column system.
 Simple content should be laid out in a single column. In such cases, a Bootstrap column and its containing row can _sometimes_ be avoided. Although, it's generally preferred to wrap the content in a div with the classes `col-12 col-lg-10 offset-lg-1` to prevent long paragraphs from stretching too far across the screen on larger screen sizes. Such content should generally be centered.
 
 ```javascript
-<section id="firstSection">
+<section id="top">
   <div className="container text-center">
     <div className="row">
       <div className="col-12 col-lg-10 offset-lg-1">

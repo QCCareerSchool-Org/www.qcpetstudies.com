@@ -34,7 +34,7 @@ const BreedStylingPage: NextPage = () => {
         canonical="/dog-grooming-courses/breed-styling"
       />
 
-      <section id="firstSection" className="bg-dark">
+      <section id="top" className="bg-dark">
         <div className="container text-center">
           <Image src={CourseIconBadge} alt="Cource Icon Badge" />
           <h1>Breed Styling Workshop</h1>

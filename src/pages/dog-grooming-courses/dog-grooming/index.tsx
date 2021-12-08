@@ -49,7 +49,7 @@ const DogGroomingPage: NextPage = () => {
         canonical="/dog-grooming-courses/dog-grooming"
       />
 
-      <section id="firstSection" className="bg-dark">
+      <section id="top" className="bg-dark">
         <Image src={DogGroomingBackground} layout="fill" objectFit="cover" objectPosition="right" placeholder="blur" alt="Bichon Frise getting a haircut" />
         <div className="container text-center">
           <div className="row mb-4">

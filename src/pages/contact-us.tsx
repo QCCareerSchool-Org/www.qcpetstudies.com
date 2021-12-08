@@ -31,7 +31,7 @@ const ContactUsPage: NextPage = () => {
         canonical="/contact-us"
       />
 
-      <section id="firstSection" className="bg-dark text-light">
+      <section id="top" className="bg-dark text-light">
         <Image src={ContactUsBackground} layout="fill" objectFit="cover" objectPosition="center" placeholder="blur" alt="happy dog" />
         <div className="container">
           <h1 className="fw-normal"><strong>Contact</strong><br />QC Pet Studies</h1>

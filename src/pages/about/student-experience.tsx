@@ -24,7 +24,7 @@ const StudentExperiencePage: NextPage = () => {
         canonical="/about/student-experience"
       />
 
-      <section id="firstSection" className="bg-dark">
+      <section id="top" className="bg-dark">
         <Image src={StudentExperienceBackground} layout="fill" objectFit="cover" objectPosition="center" placeholder="blur" alt="dog" />
         <div className="container text-center">
           <div className="row">

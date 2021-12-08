@@ -28,7 +28,7 @@ const DogGroomingCatalogPage: NextPage = () => {
         canonical="/catalog-become-a-dog-groomer"
       />
 
-      <section id="firstSection" className="">
+      <section id="top">
         <div className="container">
           <div className="row justify-content-center align-items-center">
             <div className="col-12 col-sm-11 col-md-10 col-lg-10 mb-4 mb-lg-5">
@@ -137,7 +137,7 @@ const DogGroomingCatalogPage: NextPage = () => {
           <div className="row justify-content-center">
             <div className="col-12 col-lg-10">
               <h2 className="text-white mb-4">Take the First Step Towards a New and Exciting Career</h2>
-              <Link href="#firstSection"><a className="btn btn-outline-light">Preview the Course</a></Link>
+              <Link href="#top"><a className="btn btn-outline-light">Preview the Course</a></Link>
             </div>
           </div>
         </div>

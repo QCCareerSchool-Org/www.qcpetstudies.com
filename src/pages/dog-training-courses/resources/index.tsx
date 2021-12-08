@@ -17,7 +17,7 @@ const DogTrainingResourcesPage: NextPage = () => (
       canonical="/dog-training-courses/resources"
     />
 
-    <section id="firstSection" className="bg-dark">
+    <section id="top" className="bg-dark">
       <Image src={DogTrainingResourcesBackground} layout="fill" objectFit="cover" objectPosition="center" placeholder="blur" alt="dog with tongue out" />
       <div className="container text-center">
         <div className="row justify-content-center">

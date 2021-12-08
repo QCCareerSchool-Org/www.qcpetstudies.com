@@ -19,7 +19,7 @@ const DogGroomingCatalogPage: NextPage = () => {
         canonical="/become-a-dog-trainer-course-preview"
       />
 
-      <section id="firstSection" className="">
+      <section id="top">
         <div className="container">
           <div className="row justify-content-center align-items-center">
             <div className="col-12 col-sm-11 col-md-10 col-lg-10 mb-4 mb-lg-5">

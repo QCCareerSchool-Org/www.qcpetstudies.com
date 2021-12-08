@@ -25,7 +25,7 @@ const LearningDuringCovidPage: NextPage = () => {
         canonical="/dog-grooming-courses/resources/learning-and-working-during-covid"
       />
 
-      <section id="firstSection" className="bg-dark">
+      <section id="top" className="bg-dark">
         <Image src={LearningAndWorkingBackground} layout="fill" objectFit="cover" objectPosition="center" placeholder="blur" alt="groomer wire brushing a dog" />
         <div className="image-overlay-gradient" />
         <div className="container text-center">

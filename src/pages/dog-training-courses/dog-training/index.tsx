@@ -49,7 +49,7 @@ const DogTrainingPage: NextPage = () => {
         canonical="/dog-training-courses/dog-training"
       />
 
-      <section id="firstSection" className="bg-dark">
+      <section id="top" className="bg-dark">
         <Image src={PlaceHolderImage} layout="fill" objectFit="cover" objectPosition="center" placeholder="blur" alt="Dog Grooming Background" />
         <div className="image-overlay-gradient" />
         <div className="container text-center">

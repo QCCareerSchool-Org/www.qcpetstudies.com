@@ -22,7 +22,7 @@ const SuccessGuaranteedPage: NextPage = () => (
       canonical="/dog-grooming-courses/success-guaranteed"
     />
 
-    <section id="firstSection" className="bg-dark">
+    <section id="top" className="bg-dark">
       <Image src={DryingDogBg} layout="fill" objectFit="cover" objectPosition="center" alt="Person drying dog with dryer" />
       <div className="image-overlay-gradient" />
       <div className="container text-center">

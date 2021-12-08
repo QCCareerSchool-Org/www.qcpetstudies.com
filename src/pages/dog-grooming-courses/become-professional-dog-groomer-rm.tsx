@@ -22,7 +22,7 @@ const ProfessionalDogGroomerPage: NextPage = () => (
       canonical="/dog-grooming-courses/become-professional-dog-groomer-rm"
     />
 
-    <section id="firstSection" className="bg-dark bg-grayish-blue">
+    <section id="top" className="bg-dark bg-grayish-blue">
       <div className="container text-center">
         <div className="row justify-content-center">
           <div className="col-12 col-lg-10 mb-4">

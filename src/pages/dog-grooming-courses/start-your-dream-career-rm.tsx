@@ -21,7 +21,7 @@ const StartYourDreamCareerPage: NextPage = () => (
       canonical="/dog-grooming-courses/start-your-dream-career-rm"
     />
 
-    <section id="firstSection" className="bg-dark">
+    <section id="top" className="bg-dark">
       <Image src={DreamCareerBackground} layout="fill" objectFit="cover" objectPosition="center" alt="dog getting blow dried" />
       <div className="image-overlay-gradient" />
       <div className="container text-center">

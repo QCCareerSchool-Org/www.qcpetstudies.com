@@ -20,7 +20,7 @@ const HomePage: NextPage = () => (
       canonical="/"
     />
 
-    <section id="firstSection" className="bg-dark">
+    <section id="top" className="bg-dark">
       <Image src={HappyPuppyRunning} layout="fill" objectFit="cover" objectPosition="center" placeholder="blur" alt="happy puppy running" />
       <div className="container text-center text-shadow">
         <div className="row">

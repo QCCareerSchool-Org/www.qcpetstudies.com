@@ -61,7 +61,7 @@ const InternalWelcomePage: NextPage<Props> = ({ data, errorCode }) => {
         canonical="/welcome-to-the-school"
       />
 
-      <section id="firstSection" className="bg-dark">
+      <section id="top" className="bg-dark">
         <Image src={HappyPuppyRunning} layout="fill" objectFit="cover" objectPosition="center" placeholder="blur" alt="happy puppy running" />
         <div className="container text-center">
           <div className="row justify-content-center">

@@ -24,7 +24,7 @@ const DogTrainingHowItWorksPage: NextPage = () => {
         canonical="/dog-training-courses/how-it-works"
       />
 
-      <section id="firstSection" className="bg-dark">
+      <section id="top" className="bg-dark">
         <Image src={HandReachingTowardDog} layout="fill" objectFit="cover" objectPosition="center" placeholder="blur" alt="a hand reaching out to pet a happy dog" />
         <div className="container">
           <div className="row">
