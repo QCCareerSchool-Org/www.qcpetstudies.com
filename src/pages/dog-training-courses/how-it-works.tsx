@@ -59,7 +59,7 @@ const DogTrainingHowItWorksPage: NextPage = () => {
               <h2>Starting the <strong>Dog Training Course</strong></h2>
               <p>After you enroll online, you&apos;ll receive login instructions for your online student center within one business day. Follow the instructions to start your dog training journey!</p>
               <p>Your online student center will contain all your course materials: Your course guides, lesson texts, assignment templates and video tutorials are all in the student center. This is also where you&apos;re going to upload your assignments and review your tutor&apos;s feedback.</p>
-              <p className="mb-0">View a <Link href="course-outline"><a className="link-primary">detailed course outline</a></Link> to learn more about your dog trainer course.</p>
+              <p className="mb-0">View a <Link href="/dog-training-courses/dog-training/course-outline"><a className="link-primary">detailed course outline</a></Link> to learn more about your dog trainer course.</p>
             </div>
             <div className="col-12 col-sm-10 col-md-8 col-lg-4 col-xl-3">
               <div className="d-flex justify-content-center">
@@ -111,7 +111,7 @@ const DogTrainingHowItWorksPage: NextPage = () => {
                 <h2>Receiving Feedback From <strong>Your Tutor</strong></h2>
                 <p className="lead">You&apos;ll receive advice and detailed feedback from your tutor after every unit you complete.</p>
                 <p>Your tutor truly cares about your success and will encourage you to submit your very best work. After each unit of the dog training course, you&apos;ll receive an audio file where your tutor explains what you did well, and where you should focus to improve your skills even further. See how your skills and confidence improve as you work your way through the course!</p>
-                <p className="mb-0"><Link href="meet-our-experts"><a className="btn btn-outline-secondary">Meet Your Tutor</a></Link></p>
+                <p className="mb-0"><Link href="/dog-training-courses/dog-training#tutors"><a className="btn btn-outline-secondary">Meet Your Tutor</a></Link></p>
               </div>
             </div>
             {lgOrGreater && (
