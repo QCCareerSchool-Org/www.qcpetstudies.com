@@ -1,6 +1,5 @@
 import { NextPage } from 'next';
 import Image from 'next/image';
-import Link from 'next/link';
 import { Accordion, Modal } from 'react-bootstrap';
 import { BsCardChecklist, BsPeopleFill, BsScissors } from 'react-icons/bs';
 import { IoMdInfinite } from 'react-icons/io';
@@ -9,6 +8,7 @@ import { AccordionSection } from '../../../components/AccordionSection';
 import { AccordionToggle } from '../../../components/AccordionToggle';
 import { DefaultLayout } from '../../../components/DefaultLayout';
 import { DGTutorSection } from '../../../components/DGTutorSection';
+import { GuaranteeSection } from '../../../components/GuaranteeSection';
 import { PriceSection } from '../../../components/PriceSection';
 import { SEO } from '../../../components/SEO';
 import { useLocation } from '../../../hooks/useLocation';
@@ -45,7 +45,7 @@ const DogGroomingPage: NextPage = () => {
     <DefaultLayout>
       <SEO
         title="Dog Grooming Course"
-        description=""
+        description="Become a Certified Dog Groomer with Interactive Online Training!"
         canonical="/dog-grooming-courses/dog-grooming"
       />
 
@@ -72,8 +72,8 @@ const DogGroomingPage: NextPage = () => {
                 <p><strong>Outline</strong></p>
               </div>
               <div className="col text-uppercase">
-                <a href="#syllabus"><Image src={PlayBtnImage} alt="play button" width={headerIconSize} height={headerIconSize} /></a>
-                <p><strong>Sample</strong></p>
+                <a href="#guarantee"><Image src={PlayBtnImage} alt="play button" width={headerIconSize} height={headerIconSize} /></a>
+                <p><strong>Guarantee</strong></p>
               </div>
             </div>
           </div>
@@ -96,6 +96,7 @@ const DogGroomingPage: NextPage = () => {
             <div className="col-12 col-lg-10">
               <h2>Become a <strong>Certified Dog Groomer</strong></h2>
               <p className="lead"><strong>International Dog Grooming Professional&trade;</strong> | <i>IDGP&trade;</i></p>
+              <p>There&apos;s never been a better time to start a career as a dog groomer. Groomers all over the country have waiting lists or are simply refusing new clients. What an amazing opportunity to start a new and lucrative career!</p>
               <p>Get your International Dog Groomer Certification in less than a year with QC&apos;s interactive online training. Study at your own pace. Watch instructional videos and complete hands-on assignments to grow your grooming skills.  Graduate with all the knowledge and skills you need to succeed in the dog grooming industry!</p>
               <p className="mb-0">Are you ready to start an amazing career?</p>
             </div>
@@ -174,25 +175,14 @@ const DogGroomingPage: NextPage = () => {
             </AccordionSection>
             <AccordionToggle title="Dog Grooming Business Essentials" eventKey="4" />
             <AccordionSection eventKey="4">
-              <h4>Units A&ndash;C</h4>
-              <p>Dog grooming as a profession requires a lot of background knowledge, but ultimately your success will depend on your ability to safely and skillfully groom dogs.</p>
-              <p className="mb-0">Your practicum is designed to allow you to practice and receive feedback on these essential skills. The units within the practicum involve intensive practical assignments that draw on the content you&apos;ve mastered throughout the course. You&apos;ll have a chance to receive feedback from your tutors on your bathing and drying skills, in addition to the pet cuts and breed cuts you&apos;ll create throughout your career.</p>
+              <h4>(Optional Unit)</h4>
+              <p>Dog grooming is a creative career, but it&apos;s also a business. After completing your practicum you can choose to complete the optional Business Essentials unit. This unit will help you develop the skills you need to run your own successful dog grooming business, from building your brand to constructing a business plan to setting your prices.</p>
             </AccordionSection>
           </Accordion>
         </div>
       </section>
 
-      <section id="syllabus" className="bg-light">
-        <div className="container text-center">
-          <div className="row justify-content-center">
-            <div className="col-12 col-lg-8">
-              <h2>Free Course Preview</h2>
-              <p>If you&apos;d like to see a more detailed course syllabus, view sample videos and download assignment examples, you can preview the dog grooming course for free!</p>
-              <Link href="/dog-grooming-courses/dog-grooming/preview"><a className="btn btn-secondary">Preview the Course</a></Link>
-            </div>
-          </div>
-        </div>
-      </section>
+      <GuaranteeSection className="bg-light" double={true} />
 
       <DGTutorSection />
 
