@@ -14,7 +14,7 @@ const DogTrainingResourcesPage: NextPage = () => {
     <DefaultLayout>
       <SEO
         title="Dog Training Resources"
-        description="Ues these resources to decide if a career in dog training is right for you!"
+        description="Use these resources to decide if a career in dog training is right for you!"
         canonical="/dog-training-courses/resources"
       />
 
