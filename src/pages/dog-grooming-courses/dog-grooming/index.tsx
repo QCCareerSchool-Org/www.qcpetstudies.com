@@ -58,7 +58,7 @@ const DogGroomingPage: NextPage = () => {
             </div>
             <h1>Dog Grooming</h1>
             {price && price.plans.part.deposit > 0 && <h4>Get Started for Only <strong>{price.currency.symbol}{formatPrice(price.plans.part.deposit)}</strong></h4>}
-            <p><em><a href="#tuitionSection" className="text-white">See tuition details</a></em></p>
+            <p><em><a href="#tuition" className="text-white">See tuition details</a></em></p>
             <a href="https://enroll.qcpetstudies.com?c[]=dg"><button className="btn btn-secondary btn-lg">Enroll Online</button></a>
           </div>
           <div className="row justify-content-center">
@@ -68,11 +68,11 @@ const DogGroomingPage: NextPage = () => {
                 <p><strong>Trailer</strong></p>
               </div>
               <div className="col text-uppercase">
-                <a href="#outlineSection"><Image src={OutlineImage} alt="outline" width={headerIconSize} height={headerIconSize} /></a>
+                <a href="#outline"><Image src={OutlineImage} alt="outline" width={headerIconSize} height={headerIconSize} /></a>
                 <p><strong>Outline</strong></p>
               </div>
               <div className="col text-uppercase">
-                <a href="#sampleSection"><Image src={PlayBtnImage} alt="play button" width={headerIconSize} height={headerIconSize} /></a>
+                <a href="#syllabus"><Image src={PlayBtnImage} alt="play button" width={headerIconSize} height={headerIconSize} /></a>
                 <p><strong>Sample</strong></p>
               </div>
             </div>
@@ -141,7 +141,7 @@ const DogGroomingPage: NextPage = () => {
         </Modal>
       </section>
 
-      <section id="outlineSection" className="bg-light">
+      <section id="outline" className="bg-lighter">
         <div className="container">
           <div className="row justify-content-center">
             <div className="col-12 col-lg-10 mb-4 text-center">
@@ -182,7 +182,7 @@ const DogGroomingPage: NextPage = () => {
         </div>
       </section>
 
-      <section id="sampleSection" className="bg-light">
+      <section id="syllabus" className="bg-light">
         <div className="container text-center">
           <div className="row justify-content-center">
             <div className="col-12 col-lg-8">
@@ -197,7 +197,6 @@ const DogGroomingPage: NextPage = () => {
       <DGTutorSection />
 
       <style jsx>{`
-        #outlineSection { background-color: #f7f7f7 !important; }
         .courseContentIcon { color: #ccc; margin-bottom: 0.5rem; }
         .imageShadowWrapper {
           padding: 0 0 12px; // to offset the shadow
