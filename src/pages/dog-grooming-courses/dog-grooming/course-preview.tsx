@@ -6,12 +6,12 @@ import { FaBars, FaPlay } from 'react-icons/fa';
 
 import { Bar } from '../../../components/Bar';
 import { DefaultLayout } from '../../../components/DefaultLayout';
+import { DGTutorSection } from '../../../components/DGTutorSection';
 import { PriceSection } from '../../../components/PriceSection';
 import { SEO } from '../../../components/SEO';
 import { TabGroup } from '../../../components/TabGroup';
 import AssignmentBackground from '../../../images/backgrounds/your-career-bg.jpg';
 import IDGPCertificationLogo from '../../../images/IDGP-certification-gold.svg';
-import { TutorSection } from '.';
 
 const courseCodes = [ 'dg' ];
 
@@ -341,7 +341,7 @@ const GroomingAssignment: NextPage = () => {
         </div>
       </section>
 
-      <TutorSection className="bg-light" />
+      <DGTutorSection className="bg-light" />
 
       <PriceSection courses={courseCodes} doubleGuarantee={true} />
 

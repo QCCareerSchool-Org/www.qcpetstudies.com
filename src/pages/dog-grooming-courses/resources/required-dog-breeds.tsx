@@ -205,7 +205,7 @@ const RequiredDogBreeds: NextPage = () => {
               <p>A dog suitable for a teddy bear cut with a coat that&apos;s at least 2 inches long Miniature poodle mix, Havanese mix, etc.</p>
             </div>
             <div className="col-12 col-sm-10 offset-1 col-md-6 offset-md-0 mb-4">
-              <Image src={PracticumImage4} layout="responsive" alt="Dog lying down" />
+              <Image src={PracticumImage5} layout="responsive" alt="Dog lying down" />
             </div>
             <div className="col-12 col-md-6 text-center text-md-start mb-4">
               <h3 className="mb-4">Practicum Unit 4</h3>
@@ -213,7 +213,7 @@ const RequiredDogBreeds: NextPage = () => {
               <p>A purebred Miniature Schnauzer, a Standard Schnauzer, a West Highland White Terrier, or Airedale Terrier</p>
             </div>
             <div className="col-12 col-sm-10 offset-1 col-md-6 offset-md-0 mb-4 mb-md-0">
-              <Image src={PracticumImage5} layout="responsive" alt="Dog lying down" />
+              <Image src={PracticumImage4} layout="responsive" alt="Dog lying down" />
             </div>
             <div className="col-12 col-md-6 text-center text-md-start">
               <h3 className="mb-4">Practicum Unit 5</h3>
