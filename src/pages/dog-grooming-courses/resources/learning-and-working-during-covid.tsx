@@ -6,7 +6,7 @@ import { FaInstagram, FaLaptop, FaMedkit, FaPaw, FaPencilAlt, FaTruck } from 're
 import { DefaultLayout } from '../../../components/DefaultLayout';
 import { SEO } from '../../../components/SEO';
 import { useScreenWidth } from '../../../hooks/useScreenWidth';
-import LearningAndWorkingBackground from '../../../images/backgrounds/covid-bg-pet.jpg';
+import LearningAndWorkingBackground from '../../../images/backgrounds/groomer-wearing-face-mask.jpg';
 import TipsCardBackground from '../../../images/backgrounds/pet-covid-bg-light-gray.jpg';
 import PetWithMaskImage from '../../../images/pet-covid-image.jpg';
 import CovidCareTools from '../../../images/pet-covid-img-wide.jpg';
@@ -21,7 +21,7 @@ const LearningDuringCovidPage: NextPage = () => {
     <DefaultLayout>
       <SEO
         title="Learning &amp; Working During COVID-19"
-        description="Learning &amp; Working During COVID-19"
+        description="Starting a new career during a pandemic can be challenging! Find out how online training can help."
         canonical="/dog-grooming-courses/resources/learning-and-working-during-covid"
       />
 
@@ -56,7 +56,7 @@ const LearningDuringCovidPage: NextPage = () => {
                 <li>Learn First Aid for dogs</li>
                 <li>Receive informative business training that will allow you to implement best practices both in person and online</li>
               </ul>
-              <Link href="/online-courses"><a className="link-primary">Discover Everything You&apos;ll Learn in QC Pet Studies&apos; Courses!</a></Link>
+              <Link href="/dog-grooming-courses/dog-grooming/"><a className="link-primary">Discover Everything You&apos;ll Learn in the Dog Grooming Course!</a></Link>
             </div>
             {lgOrGreater && (
               <div className="col-6 col-xl-5">
@@ -74,7 +74,7 @@ const LearningDuringCovidPage: NextPage = () => {
             <div className="col-12 col-xl-8 offset-xl-4 offset-xxl-3">
               <p className="lead mb-4">&quot;I&apos;m 2 units [into the Dog Grooming Course] and love it! It has a great background, written learning, supplies, and more! I came from a vet assisting background and wanted to open up my own grooming salon, but I have two kids, so I needed to do distance [training]. I love this course so much! I highly recommend this course and the First Aid for Groomers Course. With my background knowledge, I could tell the topics were well-researched. By far, blew me away!&quot; </p>
               <p className="mb-4">Mackenzie Lafleur<br /><span className="text-muted">QC Student</span></p>
-              <p>Read other reviews like this one by checking out our <Link href="#"><a className="link-secondary">Student &amp; Graduate Features</a></Link>!</p>
+              <p>Read other reviews like this one by checking out our <Link href="/category/student-features/"><a className="link-secondary">Student &amp; Graduate Features</a></Link>!</p>
             </div>
           </div>
         </div>
