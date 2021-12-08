@@ -43,7 +43,6 @@ const QCPetStudiesApp = ({ Component, pageProps }: AppProps): ReactElement => {
       <LocationProvider>
         <ScreenWidthProvider>
           <ScrollPositionProvider>
-            <OntarioWarning />
             <Component {...pageProps} />
           </ScrollPositionProvider>
         </ScreenWidthProvider>

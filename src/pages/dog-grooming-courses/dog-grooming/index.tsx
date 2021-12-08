@@ -1,6 +1,5 @@
 import { NextPage } from 'next';
 import Image from 'next/image';
-import Link from 'next/link';
 import { Accordion, Modal } from 'react-bootstrap';
 import { BsCardChecklist, BsPeopleFill, BsScissors } from 'react-icons/bs';
 import { IoMdInfinite } from 'react-icons/io';
@@ -8,6 +7,8 @@ import { IoMdInfinite } from 'react-icons/io';
 import { AccordionSection } from '../../../components/AccordionSection';
 import { AccordionToggle } from '../../../components/AccordionToggle';
 import { DefaultLayout } from '../../../components/DefaultLayout';
+import { DGTutorSection } from '../../../components/DGTutorSection';
+import { GuaranteeSection } from '../../../components/GuaranteeSection';
 import { PriceSection } from '../../../components/PriceSection';
 import { SEO } from '../../../components/SEO';
 import { useLocation } from '../../../hooks/useLocation';
@@ -18,10 +19,8 @@ import DogGroomingBackground from '../../../images/backgrounds/bichon-frise-gett
 import DogCourseMaterialsImage from '../../../images/dg-course-materials-manuals-kit-white.jpg';
 import GroomingKitDetailImage from '../../../images/grooming-kit-details.jpg';
 import CertificationGoldImage from '../../../images/IDGP-certification-gold.svg';
-import MasterGroomerLisaImage from '../../../images/lisa-video-thumbnail.jpg';
 import MovieClapperImage from '../../../images/movie-clapper.svg';
 import OutlineImage from '../../../images/outline.svg';
-import MasterGroomerPaddyImage from '../../../images/paddy-video-thumbnail.jpg';
 import PlayBtnImage from '../../../images/play-btn.svg';
 import { formatPrice } from '../../../lib/formatPrice';
 
@@ -36,8 +35,6 @@ const DogGroomingPage: NextPage = () => {
   const price = usePrice(courseCodes, location?.countryCode, location?.provinceCode);
   const [ kitPopupVisible, kitPopupToggle ] = useToggle();
   const [ trailerPopupVisible, trailerPopupToggle ] = useToggle();
-  const [ lisaPopupVisible, lisaPopupToggle ] = useToggle();
-  const [ paddyPopupVisible, paddyPopupToggle ] = useToggle();
 
   const mdOrGreater = screenWidth >= 768;
   const lgOrGreater = screenWidth >= 992;
@@ -48,7 +45,7 @@ const DogGroomingPage: NextPage = () => {
     <DefaultLayout>
       <SEO
         title="Dog Grooming Course"
-        description=""
+        description="Become a Certified Dog Groomer with Interactive Online Training!"
         canonical="/dog-grooming-courses/dog-grooming"
       />
 
@@ -61,7 +58,7 @@ const DogGroomingPage: NextPage = () => {
             </div>
             <h1>Dog Grooming</h1>
             {price && price.plans.part.deposit > 0 && <h4>Get Started for Only <strong>{price.currency.symbol}{formatPrice(price.plans.part.deposit)}</strong></h4>}
-            <p><em><a href="#tuitionSection" className="text-white">See tuition details</a></em></p>
+            <p><em><a href="#tuition" className="text-white">See tuition details</a></em></p>
             <a href="https://enroll.qcpetstudies.com?c[]=dg"><button className="btn btn-secondary btn-lg">Enroll Online</button></a>
           </div>
           <div className="row justify-content-center">
@@ -71,12 +68,12 @@ const DogGroomingPage: NextPage = () => {
                 <p><strong>Trailer</strong></p>
               </div>
               <div className="col text-uppercase">
-                <a href="#outlineSection"><Image src={OutlineImage} alt="outline" width={headerIconSize} height={headerIconSize} /></a>
+                <a href="#outline"><Image src={OutlineImage} alt="outline" width={headerIconSize} height={headerIconSize} /></a>
                 <p><strong>Outline</strong></p>
               </div>
               <div className="col text-uppercase">
-                <a href="#sampleSection"><Image src={PlayBtnImage} alt="play button" width={headerIconSize} height={headerIconSize} /></a>
-                <p><strong>Sample</strong></p>
+                <a href="#guarantee"><Image src={PlayBtnImage} alt="play button" width={headerIconSize} height={headerIconSize} /></a>
+                <p><strong>Guarantee</strong></p>
               </div>
             </div>
           </div>
@@ -99,6 +96,7 @@ const DogGroomingPage: NextPage = () => {
             <div className="col-12 col-lg-10">
               <h2>Become a <strong>Certified Dog Groomer</strong></h2>
               <p className="lead"><strong>International Dog Grooming Professional&trade;</strong> | <i>IDGP&trade;</i></p>
+              <p>There&apos;s never been a better time to start a career as a dog groomer. Groomers all over the country have waiting lists or are simply refusing new clients. What an amazing opportunity to start a new and lucrative career!</p>
               <p>Get your International Dog Groomer Certification in less than a year with QC&apos;s interactive online training. Study at your own pace. Watch instructional videos and complete hands-on assignments to grow your grooming skills.  Graduate with all the knowledge and skills you need to succeed in the dog grooming industry!</p>
               <p className="mb-0">Are you ready to start an amazing career?</p>
             </div>
@@ -144,7 +142,7 @@ const DogGroomingPage: NextPage = () => {
         </Modal>
       </section>
 
-      <section id="outlineSection" className="bg-light">
+      <section id="outline" className="bg-lighter">
         <div className="container">
           <div className="row justify-content-center">
             <div className="col-12 col-lg-10 mb-4 text-center">
@@ -177,85 +175,18 @@ const DogGroomingPage: NextPage = () => {
             </AccordionSection>
             <AccordionToggle title="Dog Grooming Business Essentials" eventKey="4" />
             <AccordionSection eventKey="4">
-              <h4>Units A&ndash;C</h4>
-              <p>Dog grooming as a profession requires a lot of background knowledge, but ultimately your success will depend on your ability to safely and skillfully groom dogs.</p>
-              <p className="mb-0">Your practicum is designed to allow you to practice and receive feedback on these essential skills. The units within the practicum involve intensive practical assignments that draw on the content you&apos;ve mastered throughout the course. You&apos;ll have a chance to receive feedback from your tutors on your bathing and drying skills, in addition to the pet cuts and breed cuts you&apos;ll create throughout your career.</p>
+              <h4>(Optional Unit)</h4>
+              <p>Dog grooming is a creative career, but it&apos;s also a business. After completing your practicum you can choose to complete the optional Business Essentials unit. This unit will help you develop the skills you need to run your own successful dog grooming business, from building your brand to constructing a business plan to setting your prices.</p>
             </AccordionSection>
           </Accordion>
         </div>
       </section>
 
-      <section id="sampleSection" className="bg-light">
-        <div className="container text-center">
-          <div className="row justify-content-center">
-            <div className="col-12 col-lg-8">
-              <h2>Free Course Preview</h2>
-              <p>If you&apos;d like to see a more detailed course syllabus, view sample videos and download assignment examples, you can preview the dog grooming course for free!</p>
-              <Link href="/dog-grooming-courses/dog-grooming/preview"><a className="btn btn-secondary">Preview the Course</a></Link>
-            </div>
-          </div>
-        </div>
-      </section>
+      <GuaranteeSection className="bg-light" double={true} />
 
-      <section>
-        <div className="container">
-          <div className="row justify-content-center">
-            <div className="col-12 col-lg-6 mb-4 mb-lg-0">
-              <div className="pe-lg-4">
-                <h2>Learn from Certified <strong>Master Groomers</strong></h2>
-                <p>When you enroll with QC Pet Studies, you&apos;ll be matched with an industry professional currently working in the field who will review your work and provide you with in-depth feedback and advice on every assignment. These accomplished tutors are Certified Master Groomers who have decades of experience in the grooming industry and are eager to share their professional insight to help you succeed.</p>
-                <p className="mb-0">Your personal tutor will provide you with in-depth audio feedback on each assignment to let you know what you did well and how you could improve. Use this feedback to guide you through the next unit in your course.</p>
-              </div>
-            </div>
-            <div className="col-12 col-lg-6 d-flex flex-column justify-content-around">
-              <div className="d-flex flex-column flex-sm-row align-items-center mb-2 mb-sm-0 mb-lg-4">
-                <div className="me-sm-4 mb-1 mb-sm-0">
-                  <button onClick={lisaPopupToggle} className="btn btn-link"><div className="imageShadowWrapper"><Image src={MasterGroomerLisaImage} alt="Master Groomer Lisa" width="250" height="166" placeholder="blur" /></div></button>
-                </div>
-                <div className="d-flex flex-column">
-                  <h3>Lisa Day</h3>
-                  <h4>Certified Master Groomer</h4>
-                  <i>40+ Years of Experience</i>
-                </div>
-              </div>
-              {!lgOrGreater && <div className="mb-4" />}
-              <div className="d-flex flex-column flex-sm-row align-items-center">
-                <div className="me-sm-4 mb-1 mb-sm-0">
-                  <button onClick={paddyPopupToggle} className="btn btn-link"><div className="imageShadowWrapper"><Image src={MasterGroomerPaddyImage} alt="Master Groomer Paddy" width="250" height="166" placeholder="blur" /></div></button>
-                </div>
-                <div className="d-flex flex-column">
-                  <h3>Paddy Gaffney</h3>
-                  <h4>Certified Master Groomer</h4>
-                  <i>20 Years of Experience</i>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <Modal show={lisaPopupVisible} onHide={lisaPopupToggle} size="lg">
-          <Modal.Header closeButton>Lisa Day</Modal.Header>
-          <Modal.Body>
-            <div className="ratio ratio-16x9">
-              <video controls autoPlay>
-                <source src="https://89b45d42c17e11dd3d57-62a1fc0bf60a98e1d5e980348a7de3b7.ssl.cf1.rackcdn.com/interview-lisa.mp4" type="video/mp4" />
-              </video>
-            </div>
-          </Modal.Body>
-        </Modal>
-        <Modal show={paddyPopupVisible} onHide={paddyPopupToggle} size="lg">
-          <Modal.Header closeButton>Paddy Gaffney</Modal.Header>
-          <Modal.Body>
-            <div className="ratio ratio-16x9">
-              <video controls autoPlay>
-                <source src="https://89b45d42c17e11dd3d57-62a1fc0bf60a98e1d5e980348a7de3b7.ssl.cf1.rackcdn.com/interview-paddy.mp4" type="video/mp4" />
-              </video>
-            </div>
-          </Modal.Body>
-        </Modal>
-      </section>
+      <DGTutorSection />
 
       <style jsx>{`
-        #outlineSection { background-color: #f7f7f7 !important; }
         .courseContentIcon { color: #ccc; margin-bottom: 0.5rem; }
         .imageShadowWrapper {
           padding: 0 0 12px; // to offset the shadow

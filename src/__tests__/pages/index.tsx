@@ -8,6 +8,8 @@ import React from 'react';
 
 import Page from '../../pages/index';
 
+jest.mock('../../hooks/useLocation');
+
 describe('/', () => {
 
   it('shouldn\'t have any usability violations', async () => {
