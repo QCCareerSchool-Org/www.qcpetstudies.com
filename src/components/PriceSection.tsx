@@ -18,7 +18,7 @@ type Props = {
   variant?: Variant;
 };
 
-const invalid = (courses: string[], countryCode?: string, provinceCode?: string | null): boolean => {
+export const invalidCourse = (courses: string[], countryCode?: string, provinceCode?: string | null): boolean => {
   return countryCode === 'CA' && provinceCode === 'ON' && (courses.includes('dg') || courses.includes('fa'));
 };
 
@@ -29,16 +29,14 @@ export const PriceSection = ({ courses, doubleGuarantee, variant = 'dark' }: Pro
 
   const enrollLink = `https://enroll.qcpetstudies.com/?${courses.map(c => `c[]=${encodeURIComponent(c)}`).join('&')}`;
 
-  console.log(location, courses);
-
-  if (invalid(courses, location?.countryCode, location?.provinceCode)) {
+  if (invalidCourse(courses, location?.countryCode, location?.provinceCode)) {
     return (
-      <section id="tuitionSection" className={variant === 'dark' ? 'bg-navy' : 'bg-light'}>
+      <section id="tuition" className={variant === 'dark' ? 'bg-navy' : 'bg-light'}>
         <div className="container text-center">
           <div className="row justify-content-center">
             <div className="col-12 col-lg-10">
               <h2 className="mb-3">Tuition &amp; Payment Plans</h2>
-              <p>Unfortunately this course is not available in your location.</p>
+              <p>Unfortunately the Dog Grooming and First Aid for Groomers courses are not available in Ontario</p>
             </div>
           </div>
         </div>
@@ -47,7 +45,7 @@ export const PriceSection = ({ courses, doubleGuarantee, variant = 'dark' }: Pro
   }
 
   return (
-    <section id="tuitionSection" className={variant === 'dark' ? 'bg-navy' : 'bg-light'}>
+    <section id="tuition" className={variant === 'dark' ? 'bg-navy' : 'bg-light'}>
       <div className="container">
         <div className="row">
           <div className="col-12 col-lg-4 mb-4 mb-lg-0">
