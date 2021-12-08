@@ -24,7 +24,7 @@ const DogGroomingCatalogPage: NextPage = () => {
     <LandingPageLayout>
       <SEO
         title="Become a Professional Dog Groomer"
-        description=""
+        description="Request a free preview of the online dog grooming course."
         canonical="/catalog-become-a-dog-groomer"
       />
 
@@ -37,7 +37,7 @@ const DogGroomingCatalogPage: NextPage = () => {
             <div className="col-12 col-sm-11 col-md-10 col-lg-6 mb-4 mb-lg-0">
               <div className="card bg-light">
                 <div className="card-body">
-                  <p className="text-center lead">Get Started with a <strong>Free Course Catalog</strong></p>
+                  <p className="text-center lead">Get Started with a <strong>Free Course Preview</strong></p>
                   <BrochureForm action="https://go.qcpetstudies.com/l/947642/2021-11-18/6b85q" />
                 </div>
               </div>
@@ -48,7 +48,7 @@ const DogGroomingCatalogPage: NextPage = () => {
                   <Image src={CatalogImage} layout="responsive" alt="tablet with dog image" />
                 </div>
               )}
-              <p className="lead">Download a free course catalog to</p>
+              <p className="lead">Get access to a free preview of the online dog grooming course to</p>
               <ul>
                 <li>Find out if a career in dog grooming is right for you</li>
                 <li>Learn about the many careers you can pursue as a dog groomer</li>
@@ -137,7 +137,7 @@ const DogGroomingCatalogPage: NextPage = () => {
           <div className="row justify-content-center">
             <div className="col-12 col-lg-10">
               <h2 className="text-white mb-4">Take the First Step Towards a New and Exciting Career</h2>
-              <Link href="#firstSection"><a className="btn btn-outline-light">Download the Free Catalog</a></Link>
+              <Link href="#firstSection"><a className="btn btn-outline-light">Preview the Course</a></Link>
             </div>
           </div>
         </div>
