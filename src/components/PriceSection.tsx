@@ -31,7 +31,7 @@ export const PriceSection = ({ courses, doubleGuarantee, variant = 'dark' }: Pro
 
   if (invalidCourse(courses, location?.countryCode, location?.provinceCode)) {
     return (
-      <section id="tuitionSection" className={variant === 'dark' ? 'bg-navy' : 'bg-light'}>
+      <section id="tuition" className={variant === 'dark' ? 'bg-navy' : 'bg-light'}>
         <div className="container text-center">
           <div className="row justify-content-center">
             <div className="col-12 col-lg-10">
@@ -45,7 +45,7 @@ export const PriceSection = ({ courses, doubleGuarantee, variant = 'dark' }: Pro
   }
 
   return (
-    <section id="tuitionSection" className={variant === 'dark' ? 'bg-navy' : 'bg-light'}>
+    <section id="tuition" className={variant === 'dark' ? 'bg-navy' : 'bg-light'}>
       <div className="container">
         <div className="row">
           <div className="col-12 col-lg-4 mb-4 mb-lg-0">
