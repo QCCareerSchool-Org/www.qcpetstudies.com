@@ -1,6 +1,5 @@
 import { NextPage } from 'next';
 import Image from 'next/image';
-import Link from 'next/link';
 import { Accordion, Modal } from 'react-bootstrap';
 import { BsCardChecklist, BsPeopleFill, BsScissors } from 'react-icons/bs';
 import { IoMdInfinite } from 'react-icons/io';
@@ -8,8 +7,8 @@ import { IoMdInfinite } from 'react-icons/io';
 import { AccordionSection } from '../../../components/AccordionSection';
 import { AccordionToggle } from '../../../components/AccordionToggle';
 import { DefaultLayout } from '../../../components/DefaultLayout';
-import { GuaranteeSection } from '../../../components/GuaranteeSection';
 import { DGTutorSection } from '../../../components/DGTutorSection';
+import { GuaranteeSection } from '../../../components/GuaranteeSection';
 import { PriceSection } from '../../../components/PriceSection';
 import { SEO } from '../../../components/SEO';
 import { useLocation } from '../../../hooks/useLocation';
@@ -73,8 +72,8 @@ const DogGroomingPage: NextPage = () => {
                 <p><strong>Outline</strong></p>
               </div>
               <div className="col text-uppercase">
-                <a href="#syllabus"><Image src={PlayBtnImage} alt="play button" width={headerIconSize} height={headerIconSize} /></a>
-                <p><strong>Sample</strong></p>
+                <a href="#guarantee"><Image src={PlayBtnImage} alt="play button" width={headerIconSize} height={headerIconSize} /></a>
+                <p><strong>Guarantee</strong></p>
               </div>
             </div>
           </div>
@@ -183,7 +182,7 @@ const DogGroomingPage: NextPage = () => {
         </div>
       </section>
 
-      <GuaranteeSection className="bg-light" />
+      <GuaranteeSection className="bg-light" double={true} />
 
       <DGTutorSection />
 
