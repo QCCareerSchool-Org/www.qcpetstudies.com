@@ -8,7 +8,6 @@ import { AccordionToggle } from '../../../components/AccordionToggle';
 import { Bar } from '../../../components/Bar';
 import { DefaultLayout } from '../../../components/DefaultLayout';
 import { PriceSection } from '../../../components/PriceSection';
-import { SecondaryNavLinks } from '../../../components/SecondaryNav';
 import { SEO } from '../../../components/SEO';
 import { useScreenWidth } from '../../../hooks/useScreenWidth';
 
@@ -31,7 +30,7 @@ type Props = {
   price: PriceResult;
 };
 
-const BreedStylingPage: NextPage<Props> = ({ location, price }) => {
+const BreedStylingPage: NextPage<Props> = ({ price }) => {
   const screenWidth = useScreenWidth();
   const lgOrGreater = screenWidth >= 992;
 

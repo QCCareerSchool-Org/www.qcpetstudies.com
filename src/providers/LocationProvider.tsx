@@ -1,4 +1,5 @@
 import fetch from 'isomorphic-unfetch';
+import Cookies from 'js-cookie';
 import React, { ReactElement, ReactNode, useEffect, useState } from 'react';
 
 import { Location } from '../models/location';
@@ -11,19 +12,24 @@ type Props = {
 };
 
 const getLocation = async (): Promise<Location> => {
-  if (window.sessionStorage) {
-    const storedCountryCode = sessionStorage.getItem('countryCode');
-    if (storedCountryCode !== null) {
-      return { countryCode: storedCountryCode, provinceCode: sessionStorage.getItem('provinceCode') };
-    }
+  const storedLocation = Cookies.get('location');
+  if (storedLocation) {
+    try {
+      const parsed = JSON.parse(storedLocation);
+      if (typeof parsed.countryCode === 'string' && (typeof parsed.provinceCode === 'string' || parsed.provinceCode === null)) {
+        return parsed;
+      }
+    } catch (err) { /* ignore */ }
   }
   try {
-    const url = 'https://api.qccareerschool.com/geoLocation/clientIp?q=';
+    const url = 'https://api.qccareerschool.com/geoLocation/ip';
     const response = await fetch(url);
     if (!response.ok) {
       throw Error('Unable to fetch location');
     }
-    return await response.json();
+    const fetchedLocation = await response.json();
+    Cookies.set('location', JSON.stringify(fetchedLocation), { secure: true, sameSite: 'strict' });
+    return fetchedLocation;
   } catch (err) {
     return { countryCode: 'US', provinceCode: 'MD' };
   }

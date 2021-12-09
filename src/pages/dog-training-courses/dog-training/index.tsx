@@ -37,7 +37,7 @@ type Props = {
   price: PriceResult;
 };
 
-const DogTrainingPage: NextPage<Props> = ({ location, price }) => {
+const DogTrainingPage: NextPage<Props> = ({ price }) => {
   const screenWidth = useScreenWidth();
   const [ trailerPopupVisible, trailerPopupToggle ] = useToggle();
 
