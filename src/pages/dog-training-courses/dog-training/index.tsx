@@ -14,15 +14,19 @@ import { useLocation } from '../../../hooks/useLocation';
 import { usePrice } from '../../../hooks/usePrice';
 import { useScreenWidth } from '../../../hooks/useScreenWidth';
 import { useToggle } from '../../../hooks/useToggle';
+import DTBackgroundImage from '../../../images/backgrounds/australian-shepherd-attentive.jpg';
+import CPDTPrepImage from '../../../images/german-shepherd-puppy-sitting.jpg';
 import CertificationGoldImage from '../../../images/IDTP-certification-gold-2.svg';
+import KimCooperImage from '../../../images/kim-cooper.jpg';
 import MovieClapperImage from '../../../images/movie-clapper.svg';
 import OutlineImage from '../../../images/outline.svg';
 import IntroductoryUnitsImage from '../../../images/part-1-image.jpg';
 import ApplyingTrainingPrinciplesImage from '../../../images/part-2-image.jpg';
 import TeachingPeopleImage from '../../../images/part-3-image.jpg';
 import DogTrainingBusinessImage from '../../../images/part-4-image.jpg';
-import PlaceHolderImage from '../../../images/placeholder.jpg';
 import PlayBtnImage from '../../../images/play-btn.svg';
+import ShannonNoonanImage from '../../../images/shannon-noonan.jpg';
+import SusanReadImage from '../../../images/susan-read.jpg';
 import { formatPrice } from '../../../lib/formatPrice';
 
 const headerIconSize = 20;
@@ -50,7 +54,7 @@ const DogTrainingPage: NextPage = () => {
       />
 
       <section id="top" className="bg-dark">
-        <Image src={PlaceHolderImage} layout="fill" objectFit="cover" objectPosition="center" placeholder="blur" alt="Dog Grooming Background" />
+        <Image src={DTBackgroundImage} layout="fill" objectFit="cover" objectPosition="center" placeholder="blur" alt="Attentive Australian Shepherd Dog" />
         <div className="image-overlay-gradient" />
         <div className="container text-center">
           <div className="row mb-4">
@@ -268,7 +272,7 @@ const DogTrainingPage: NextPage = () => {
                 </div>
                 {lgOrGreater && (
                   <div className="col-6 col-xl-5">
-                    <Image src={IntroductoryUnitsImage} alt="Dog runing" layout="responsive" />
+                    <Image src={CPDTPrepImage} alt="German Shepherd Puppy" layout="responsive" />
                   </div>
                 )}
               </div>
@@ -288,7 +292,7 @@ const DogTrainingPage: NextPage = () => {
             </div>
             <div className="col-12 col-lg-6 text-lg-start align-item-center mb-2">
               <div className="mb-2">
-                <Image src={PlaceHolderImage} layout="responsive" placeholder="blur" alt="dog-training expert, Shannon Noonan" />
+                <Image src={ShannonNoonanImage} layout="responsive" placeholder="blur" alt="dog-training expert, Shannon Noonan" />
               </div>
               <p className="lead"><strong>Shannon Noonan</strong></p>
               <p>Certified Dog Trainer (CPDT-KA)<br /><em>10 Years of Experience</em></p>
@@ -296,7 +300,7 @@ const DogTrainingPage: NextPage = () => {
             </div>
             <div className="col-12 col-lg-6 text-lg-start">
               <div className="mb-2">
-                <Image src={PlaceHolderImage} layout="responsive" placeholder="blur" alt="dog-training expert, Susan Read" />
+                <Image src={SusanReadImage} layout="responsive" placeholder="blur" alt="dog-training expert, Susan Read" />
               </div>
               <p className="lead"><strong>Susan Read</strong></p>
               <p>Certified Dog Trainer<br /><em>35 Years of Experience</em></p>
