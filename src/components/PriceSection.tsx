@@ -32,7 +32,7 @@ export const PriceSection = ({ courses, price, doubleGuarantee, variant = 'dark'
           <div className="row">
             <div className="col-12 col-lg-4 mb-4 mb-lg-0">
               <h2 className="mb-3">Tuition &amp; Payment Plans</h2>
-              <p className="lead">Includes everything you need to get certified!</p>
+              <p className="lead">Includes everything you need to get started!</p>
               <hr className="my-4" />
               <ul className="list-style-none">
                 <li className="mb-3 d-flex align-items-center"><FaStar size={iconSize} className="text-primary me-2" />Certification upon graduation</li>
