@@ -21,7 +21,7 @@ export const GuaranteeSection = ({ className, double = false, id = 'guarantee' }
               <Image src={QcGuarantee} alt="qc guarantee" width="140" height="140" />
             </div>
             <h2>QC Pet Studies&apos; <strong>Guarantee{double ? 's' : ''}</strong></h2>
-            <p className="mb-4">QC means Quality of Course, and we stand behind that promise. That&apos;s why QC Pet Studies offers a money-back <strong>{double ? 'double ' : ''}guarantee</strong>.</p>
+            <p className="mb-4">QC means Quality of Course, and we stand behind that promise. That&apos;s why QC Pet Studies offers a <strong>money-back guarantee</strong>.</p>
           </div>
           <div className="col-12 col-lg-5 mb-4 d-flex">
             <div className="card">
