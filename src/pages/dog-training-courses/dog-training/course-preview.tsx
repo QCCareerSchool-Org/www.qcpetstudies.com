@@ -6,12 +6,11 @@ import { FaBars, FaPlay } from 'react-icons/fa';
 
 import { Bar } from '../../../components/Bar';
 import { DefaultLayout } from '../../../components/DefaultLayout';
-import { DGTutorSection } from '../../../components/DGTutorSection';
 import { DTTutorSection } from '../../../components/DTTutorSection';
 import { PriceSection } from '../../../components/PriceSection';
 import { SEO } from '../../../components/SEO';
 import { TabGroup } from '../../../components/TabGroup';
-import AssignmentBackground from '../../../images/backgrounds/golden-retriever-sitting-next-to-computer.jpg';
+import GoldenRetrieverComputerBackground from '../../../images/backgrounds/golden-retriever-sitting-next-to-computer.jpg';
 import IDTPCertificationLogo from '../../../images/IDTP-certification-gold.svg';
 import { getLocation } from '../../../lib/getLocation';
 import { lookupPrices } from '../../../lib/lookupPrices';
@@ -34,8 +33,8 @@ const DogTrainingCoursePreviewPage: NextPage<Props> = ({ price }) => {
         canonical="/dog-training-courses/dog-training/course-preview"
       />
 
-      <section id="firstSection" className="bg-dark">
-        <Image src={AssignmentBackground} layout="fill" objectFit="cover" objectPosition="center" placeholder="blur" alt="dog getting a haircut" />
+      <section id="top" className="bg-dark">
+        <Image src={GoldenRetrieverComputerBackground} layout="fill" objectFit="cover" objectPosition="center" placeholder="blur" alt="dog getting a haircut" />
         <div className="image-overlay-gradient" />
         <div className="container text-center">
           <div className="row justify-content-center">
