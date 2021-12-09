@@ -78,7 +78,8 @@ export const getServerSideProps: GetServerSideProps = async context => {
   }
   if (typeof testGroup === 'undefined') {
     testGroup = getRandomIntInclusive(1, 12);
-    context.res.setHeader('Set-Cookie', `testGroup=${testGroup}; Path=/; Secure; SameSite=Strict`);
+    const maxAge = 60 * 60 * 24 * 365;
+    context.res.setHeader('Set-Cookie', `testGroup=${testGroup}; Max-Age=${maxAge}; Path=/; Secure; SameSite=Strict`);
   }
   return { props: { testGroup } };
 };

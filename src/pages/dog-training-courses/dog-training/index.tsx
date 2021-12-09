@@ -14,15 +14,17 @@ import { PriceSection } from '../../../components/PriceSection';
 import { SEO } from '../../../components/SEO';
 import { useScreenWidth } from '../../../hooks/useScreenWidth';
 import { useToggle } from '../../../hooks/useToggle';
+import DTBackgroundImage from '../../../images/backgrounds/australian-shepherd-attentive.jpg';
 import IntroductoryUnitsImage from '../../../images/dt-outline-part-1-image.jpg';
 import ApplyingTrainingPrinciplesImage from '../../../images/dt-outline-part-2-image.jpg';
 import TeachingPeopleImage from '../../../images/dt-outline-part-3-image.jpg';
 import DogTrainingBusinessImage from '../../../images/dt-outline-part-4-image.jpg';
+import CPDTPrepImage from '../../../images/german-shepherd-puppy-sitting.jpg';
 import CertificationGoldImage from '../../../images/IDTP-certification-gold-2.svg';
 import MovieClapperImage from '../../../images/movie-clapper.svg';
 import OutlineImage from '../../../images/outline.svg';
-import PlaceHolderImage from '../../../images/placeholder.jpg';
 import PlayBtnImage from '../../../images/play-btn.svg';
+
 import { formatPrice } from '../../../lib/formatPrice';
 import { getLocation } from '../../../lib/getLocation';
 import { lookupPrices } from '../../../lib/lookupPrices';
@@ -57,7 +59,7 @@ const DogTrainingPage: NextPage<Props> = ({ price }) => {
       />
 
       <section id="top" className="bg-dark">
-        <Image src={PlaceHolderImage} layout="fill" objectFit="cover" objectPosition="center" placeholder="blur" alt="Dog Grooming Background" />
+        <Image src={DTBackgroundImage} layout="fill" objectFit="cover" objectPosition="center" placeholder="blur" alt="Attentive Australian Shepherd Dog" />
         <div className="image-overlay-gradient" />
         <div className="container text-center">
           <div className="row mb-4">
@@ -175,7 +177,7 @@ const DogTrainingPage: NextPage<Props> = ({ price }) => {
                 </div>
                 {lgOrGreater && (
                   <div className="col-6 col-xl-5">
-                    <Image src={IntroductoryUnitsImage} alt="Dog runing" layout="responsive" />
+                    <Image src={IntroductoryUnitsImage} layout="responsive" alt="Dog runing" />
                   </div>
                 )}
               </div>
@@ -206,7 +208,7 @@ const DogTrainingPage: NextPage<Props> = ({ price }) => {
                 </div>
                 {lgOrGreater && (
                   <div className="col-6 col-xl-5">
-                    <Image src={ApplyingTrainingPrinciplesImage} alt="Dog learning from human" />
+                    <Image src={ApplyingTrainingPrinciplesImage} layout="responsive" alt="Dog learning from human" />
                   </div>
                 )}
               </div>
@@ -237,7 +239,7 @@ const DogTrainingPage: NextPage<Props> = ({ price }) => {
                 </div>
                 {lgOrGreater && (
                   <div className="col-6 col-xl-5">
-                    <Image src={TeachingPeopleImage} alt="person training dog" />
+                    <Image src={TeachingPeopleImage} layout="responsive" alt="person training dog" />
                   </div>
                 )}
               </div>
@@ -260,7 +262,7 @@ const DogTrainingPage: NextPage<Props> = ({ price }) => {
                 </div>
                 {lgOrGreater && (
                   <div className="col-6 col-xl-5">
-                    <Image src={DogTrainingBusinessImage} alt="person working on laptop" />
+                    <Image src={DogTrainingBusinessImage} layout="responsive" alt="person working on laptop" />
                   </div>
                 )}
               </div>
@@ -280,7 +282,7 @@ const DogTrainingPage: NextPage<Props> = ({ price }) => {
                 </div>
                 {lgOrGreater && (
                   <div className="col-6 col-xl-5">
-                    <Image src={IntroductoryUnitsImage} alt="Dog runing" layout="responsive" />
+                    <Image src={CPDTPrepImage} layout="responsive" alt="German Shepherd puppy" />
                   </div>
                 )}
               </div>
