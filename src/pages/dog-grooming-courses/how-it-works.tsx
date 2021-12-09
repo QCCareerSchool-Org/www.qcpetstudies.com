@@ -6,7 +6,6 @@ import { Bar } from '../../components/Bar';
 import { DefaultLayout } from '../../components/DefaultLayout';
 import { SEO } from '../../components/SEO';
 import { useScreenWidth } from '../../hooks/useScreenWidth';
-
 import GraduateBackground from '../../images/backgrounds/dog-in-graduatation-cap.jpg';
 import HowItWorksBackground from '../../images/backgrounds/pet-studies-how-works-bg.jpg';
 import YorkieBackground from '../../images/backgrounds/yorkie-on-left-looking-up.jpg';

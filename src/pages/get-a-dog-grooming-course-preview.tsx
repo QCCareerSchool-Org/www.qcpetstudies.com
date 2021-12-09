@@ -1,6 +1,7 @@
-import { NextPage } from 'next';
+import { GetServerSideProps, NextPage } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
+import { useMemo } from 'react';
 import { BsStarFill } from 'react-icons/bs';
 
 import { BrochureForm } from '../components/BrochureForm';
@@ -15,8 +16,16 @@ import FirstAidLogo from '../images/first-aid-logo.svg';
 import Step1EnrollImage from '../images/step-1-enroll.svg';
 import Step2SubmitImage from '../images/step-2-submit.svg';
 import Step3CertificateImage from '../images/step-3-certificate.svg';
+import { getRandomIntInclusive } from '../lib/randomInt';
 
-const DogGroomingCatalogPage: NextPage = () => {
+const formAction = 'https://go.qcpetstudies.com/l/947642/2021-12-05/6h9rv';
+
+type Props = {
+  testGroup: number;
+};
+
+const DogGroomingCatalogPage: NextPage<Props> = ({ testGroup }) => {
+  const hiddenFields = useMemo(() => ([ { key: 'testGroup', value: testGroup } ]), [ testGroup ]);
   const screenWidth = useScreenWidth();
   const lgOrGreater = screenWidth >= 992;
 
@@ -25,7 +34,7 @@ const DogGroomingCatalogPage: NextPage = () => {
       <SEO
         title="Become a Professional Dog Groomer"
         description="Request a free preview of the online dog grooming course."
-        canonical="/catalog-become-a-dog-groomer"
+        canonical="/get-a-dog-grooming-course-preview"
       />
 
       <section id="top">
@@ -38,7 +47,10 @@ const DogGroomingCatalogPage: NextPage = () => {
               <div className="card bg-light">
                 <div className="card-body">
                   <p className="text-center lead">Get Started with a <strong>Free Course Preview</strong></p>
-                  <BrochureForm action="https://go.qcpetstudies.com/l/947642/2021-11-18/6b85q" />
+                  <BrochureForm
+                    action={formAction}
+                    hiddenFields={hiddenFields}
+                  />
                 </div>
               </div>
             </div>
@@ -137,13 +149,29 @@ const DogGroomingCatalogPage: NextPage = () => {
           <div className="row justify-content-center">
             <div className="col-12 col-lg-10">
               <h2 className="text-white mb-4">Take the First Step Towards a New and Exciting Career</h2>
-              <Link href="#top"><a className="btn btn-outline-light">Preview the Course</a></Link>
+              <Link href="#"><a className="btn btn-outline-light">Preview the Course</a></Link>
             </div>
           </div>
         </div>
       </section>
     </LandingPageLayout>
   );
+};
+
+export const getServerSideProps: GetServerSideProps = async context => {
+  let testGroup: number | undefined;
+  const storedTestGroup = context.req.cookies.testGroup;
+  if (typeof storedTestGroup !== 'undefined') {
+    const parsed = parseInt(storedTestGroup, 10);
+    if (!isNaN(parsed)) {
+      testGroup = parsed;
+    }
+  }
+  if (typeof testGroup === 'undefined') {
+    testGroup = getRandomIntInclusive(1, 12);
+    context.res.setHeader('Set-Cookie', `testGroup=${testGroup}; Path=/; Secure; SameSite=Strict`);
+  }
+  return { props: { testGroup } };
 };
 
 export default DogGroomingCatalogPage;

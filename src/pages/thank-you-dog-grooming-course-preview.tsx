@@ -16,7 +16,7 @@ const ThankYouCatalogPage: NextPage = () => {
       <SEO
         title="Here's Your Course Preview"
         description="Get your Dog Grooming Course Preview Now"
-        canonical="/thank-you-catalog"
+        canonical="/thank-you-dog-grooming-course-preview"
       />
 
       <section id="top" className="bg-black">

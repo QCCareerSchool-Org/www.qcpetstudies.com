@@ -1,20 +1,20 @@
 import { GetServerSideProps, NextPage } from 'next';
 import Image from 'next/image';
 
-import { DefaultLayout } from '../../components/DefaultLayout';
-import { FreeFirstAidSection } from '../../components/FreeFirstAidSection';
-import { HowTheCoursesWorkSection } from '../../components/HowTheCoursesWorkSection';
-import { PriceSection } from '../../components/PriceSection';
-import { PriceSectionDisabled } from '../../components/PriceSectionDisabled';
-import { SEO } from '../../components/SEO';
-import QcYearGuaratnteeLogo from '../../images/1-year-guarantee-outlined.svg';
-import QcDayGuaratnteeLogo from '../../images/21-day-guarantee-outlined.svg';
-import DreamCareerBackground from '../../images/backgrounds/drying-dog-bg.jpg';
-import FullKitImage from '../../images/dog-grooming-kit.jpg';
-import { getLocation } from '../../lib/getLocation';
-import { lookupPrices } from '../../lib/lookupPrices';
-import { Location } from '../../models/location';
-import { PriceResult } from '../../models/price';
+import { DefaultLayout } from '../../../components/DefaultLayout';
+import { FreeFirstAidSection } from '../../../components/FreeFirstAidSection';
+import { HowTheCoursesWorkSection } from '../../../components/HowTheCoursesWorkSection';
+import { PriceSection } from '../../../components/PriceSection';
+import { PriceSectionDisabled } from '../../../components/PriceSectionDisabled';
+import { SEO } from '../../../components/SEO';
+import QcYearGuaratnteeLogo from '../../../images/1-year-guarantee-outlined.svg';
+import QcDayGuaratnteeLogo from '../../../images/21-day-guarantee-outlined.svg';
+import DreamCareerBackground from '../../../images/backgrounds/drying-dog-bg.jpg';
+import FullKitImage from '../../../images/dog-grooming-kit.jpg';
+import { getLocation } from '../../../lib/getLocation';
+import { lookupPrices } from '../../../lib/lookupPrices';
+import type { Location } from '../../../models/location';
+import type { PriceResult } from '../../../models/price';
 
 const courseCodes = [ 'dg' ];
 
@@ -28,7 +28,7 @@ const StartYourDreamCareerPage: NextPage<Props> = ({ location, price }) => (
     <SEO
       title="Start Your Dream Career"
       description="Start Your Dream Career"
-      canonical="/dog-grooming-courses/start-your-dream-career-rm"
+      canonical="/dog-grooming-courses/rm/start-your-dream-career"
     />
 
     <section id="top" className="bg-dark">

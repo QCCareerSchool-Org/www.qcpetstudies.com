@@ -18,14 +18,13 @@ import DogGroomingBackground from '../../../images/backgrounds/bichon-frise-gett
 import DogCourseMaterialsImage from '../../../images/dg-course-materials-manuals-kit-white.jpg';
 import GroomingKitDetailImage from '../../../images/grooming-kit-details.jpg';
 import CertificationGoldImage from '../../../images/IDGP-certification-gold.svg';
-import MovieClapperImage from '../../../images/movie-clapper.svg';
 import OutlineImage from '../../../images/outline.svg';
 import PlayBtnImage from '../../../images/play-btn.svg';
 import { formatPrice } from '../../../lib/formatPrice';
 import { getLocation } from '../../../lib/getLocation';
 import { lookupPrices } from '../../../lib/lookupPrices';
-import { Location } from '../../../models/location';
-import { PriceResult } from '../../../models/price';
+import type { Location } from '../../../models/location';
+import type { PriceResult } from '../../../models/price';
 
 const headerIconSize = 20;
 const iconSize = 36;
@@ -40,7 +39,6 @@ type Props = {
 const DogGroomingPage: NextPage<Props> = ({ location, price }) => {
   const screenWidth = useScreenWidth();
   const [ kitPopupVisible, kitPopupToggle ] = useToggle();
-  const [ trailerPopupVisible, trailerPopupToggle ] = useToggle();
 
   const mdOrGreater = screenWidth >= 768;
   const lgOrGreater = screenWidth >= 992;
@@ -62,17 +60,13 @@ const DogGroomingPage: NextPage<Props> = ({ location, price }) => {
             <div className="mb-4">
               <Image src={CertificationGoldImage} alt="International Dog Grooming Professional IDGP certification" height="125" width="125" />
             </div>
-            <h1>Dog Grooming</h1>
+            <h1>Dog Grooming Course</h1>
             {price && price.plans.part.deposit > 0 && <h4>Get Started for Only <strong>{price.currency.symbol}{formatPrice(price.plans.part.deposit)}</strong></h4>}
             <p><em><a href="#tuition" className="text-white">See tuition details</a></em></p>
             <a href="https://enroll.qcpetstudies.com?c[]=dg"><button className="btn btn-secondary btn-lg">Enroll Online</button></a>
           </div>
           <div className="row justify-content-center">
             <div className="col-12 col-md-6 d-flex">
-              <div className="col text-uppercase">
-                <button onClick={trailerPopupToggle} className="btn btn-link"><Image src={MovieClapperImage} alt="movie clapper" width={headerIconSize} height={headerIconSize} /></button>
-                <p><strong>Trailer</strong></p>
-              </div>
               <div className="col text-uppercase">
                 <a href="#outline"><Image src={OutlineImage} alt="outline" width={headerIconSize} height={headerIconSize} /></a>
                 <p><strong>Outline</strong></p>
@@ -81,19 +75,13 @@ const DogGroomingPage: NextPage<Props> = ({ location, price }) => {
                 <a href="#guarantee"><Image src={PlayBtnImage} alt="play button" width={headerIconSize} height={headerIconSize} /></a>
                 <p><strong>Guarantee</strong></p>
               </div>
+              <div className="col text-uppercase">
+                <a href="#tutors"><Image src={PlayBtnImage} alt="play button" width={headerIconSize} height={headerIconSize} /></a>
+                <p><strong>Tutors</strong></p>
+              </div>
             </div>
           </div>
         </div>
-        <Modal show={trailerPopupVisible} onHide={trailerPopupToggle} size="lg">
-          <Modal.Header closeButton>Dog Grooming Course</Modal.Header>
-          <Modal.Body>
-            <div className="ratio ratio-16x9">
-              <video controls autoPlay>
-                <source src="https://89b45d42c17e11dd3d57-62a1fc0bf60a98e1d5e980348a7de3b7.ssl.cf1.rackcdn.com/interview-paddy.mp4" type="video/mp4" />
-              </video>
-            </div>
-          </Modal.Body>
-        </Modal>
       </section>
 
       <section>

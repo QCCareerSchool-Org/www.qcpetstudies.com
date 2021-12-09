@@ -20,8 +20,8 @@ import OutlinePart2 from '../../../images/ds-outlline-part-2-first-aid.jpg';
 import OutlinePart3 from '../../../images/ds-outlline-part-3-grooming.jpg';
 import { getLocation } from '../../../lib/getLocation';
 import { lookupPrices } from '../../../lib/lookupPrices';
-import { Location } from '../../../models/location';
-import { PriceResult } from '../../../models/price';
+import type { Location } from '../../../models/location';
+import type { PriceResult } from '../../../models/price';
 
 const courseCodes = [ 'ds' ];
 

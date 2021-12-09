@@ -17,9 +17,11 @@ export const GuaranteeSection = ({ className, double = false, id = 'guarantee' }
       <div className="container text-center">
         <div className="row justify-content-center">
           <div className="col-12 col-lg-10 justify-content-center">
-            <div className="mb-2">
-              <Image src={QcGuarantee} alt="qc guarantee" width="140" height="140" />
-            </div>
+            {double && (
+              <div className="mb-2">
+                <Image src={QcGuarantee} alt="qc guarantee" width="140" height="140" />
+              </div>
+            )}
             <h2>QC Pet Studies&apos; <strong>Guarantee{double ? 's' : ''}</strong></h2>
             <p className="mb-4">QC means Quality of Course, and we stand behind that promise. That&apos;s why QC Pet Studies offers a <strong>money-back guarantee</strong>.</p>
           </div>
@@ -38,7 +40,7 @@ export const GuaranteeSection = ({ className, double = false, id = 'guarantee' }
                 <div className="card-body">
                   <h3 className="card-title">The 1-Year Money-Back Guarantee</h3>
                   <p className="card-text">Your online course will pay for itself within two years. That&apos;s a promise. If after two years of receiving your certificate of completion, you haven&apos;t earned the equivalent of your tuition fees in your professional salary, your course tuition will be refunded in full. All you have to do is provide proof that you&apos;ve made a reasonable effort to find work as a dog groomer or dog trainer.</p>
-                  <p className="card-text"><strong>Note:</strong> This guarantee is only valid for graduates of the online dog grooming or online dog training courses.</p>
+                  <p className="card-text"><strong>Note:</strong> This guarantee is only valid for graduates of the Dog Grooming Course.</p>
                 </div>
               </div>
             </div>

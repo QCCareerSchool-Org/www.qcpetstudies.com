@@ -14,8 +14,8 @@ import DryingDogBg from '../../images/backgrounds/drying-dog-bg.jpg';
 import FullKitWithManualsImage from '../../images/dg-course-materials-manuals-kit-white.jpg';
 import { getLocation } from '../../lib/getLocation';
 import { lookupPrices } from '../../lib/lookupPrices';
-import { Location } from '../../models/location';
-import { PriceResult } from '../../models/price';
+import type { Location } from '../../models/location';
+import type { PriceResult } from '../../models/price';
 
 const courseCodes = [ 'dg' ];
 

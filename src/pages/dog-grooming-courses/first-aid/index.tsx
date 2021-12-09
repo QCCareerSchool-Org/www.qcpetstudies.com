@@ -13,8 +13,8 @@ import firstAidBook from '../../../images/first-aid-book-white.jpg';
 import firstAidLogo from '../../../images/first-aid-logo.svg';
 import { getLocation } from '../../../lib/getLocation';
 import { lookupPrices } from '../../../lib/lookupPrices';
-import { Location } from '../../../models/location';
-import { PriceResult } from '../../../models/price';
+import type { Location } from '../../../models/location';
+import type { PriceResult } from '../../../models/price';
 
 const courseCodes = [ 'fa' ];
 
