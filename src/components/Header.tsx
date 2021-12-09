@@ -51,9 +51,9 @@ export const Header = ({ noHero, secondaryTitle, secondaryNavLinks, className }:
               <Nav>
                 <NavDropdown title={xlOrGreater || !lgOrGreater ? 'Become a Dog Groomer' : 'Dog Grooming'} id="dog-groomer-dropdown">
                   <Link href="/dog-grooming-courses/dog-grooming"><a className="dropdown-item dropdown-item-primary">Dog Grooming Course</a></Link>
-                  <Link href="/dog-grooming-courses/dog-grooming#outline"><a className="dropdown-item dropdown-item-sub">Outline</a></Link>
-                  <Link href="/dog-grooming-courses/dog-grooming#certification"><a className="dropdown-item dropdown-item-sub">Certification</a></Link>
                   <Link href="/dog-grooming-courses/dog-grooming#tuition"><a className="dropdown-item dropdown-item-sub">Tuition</a></Link>
+                  <Link href="/dog-grooming-courses/dog-grooming#outline"><a className="dropdown-item dropdown-item-sub">Outline</a></Link>
+                  <Link href="/dog-grooming-courses/dog-grooming#guarantee"><a className="dropdown-item dropdown-item-sub">Guarantee</a></Link>
                   <Link href="/dog-grooming-courses/first-aid"><a className="dropdown-item dropdown-item-primary">First Aid Course</a></Link>
                   <Link href="/dog-grooming-courses/breed-styling"><a className="dropdown-item dropdown-item-primary">Breed Styling Workshop</a></Link>
                   <hr />
@@ -64,9 +64,9 @@ export const Header = ({ noHero, secondaryTitle, secondaryNavLinks, className }:
                 </NavDropdown>
                 <NavDropdown title={xlOrGreater || !lgOrGreater ? 'Become a Dog Trainer' : 'Dog Training'} id="dog-trainer-dropdown">
                   <Link href="/dog-training-courses/dog-training"><a className="dropdown-item dropdown-item-primary">Dog Training Course</a></Link>
-                  <Link href="/dog-training-courses/dog-training#outline"><a className="dropdown-item dropdown-item-sub">Outline</a></Link>
-                  <Link href="/dog-training-courses/dog-training#certification"><a className="dropdown-item dropdown-item-sub">Certification</a></Link>
                   <Link href="/dog-training-courses/dog-training#tuition"><a className="dropdown-item dropdown-item-sub">Tuition</a></Link>
+                  <Link href="/dog-training-courses/dog-training#outline"><a className="dropdown-item dropdown-item-sub">Outline</a></Link>
+                  <Link href="/dog-training-courses/dog-training#guarantee"><a className="dropdown-item dropdown-item-sub">Guarantee</a></Link>
                   <hr />
                   <Link href="/dog-training-courses/how-it-works"><a className="dropdown-item"><FaCog className="text-primary me-2" /> How It Works</a></Link>
                   <Link href="/dog-training-courses/resources"><a className="dropdown-item"><FaFolderOpen className="text-primary me-2" /> Dog Training Resources</a></Link>

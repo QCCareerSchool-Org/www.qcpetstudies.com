@@ -70,7 +70,7 @@ export const EnrollmentDetails = ({ enrollment }: Props): ReactElement => {
                       </tr>
                     )}
                     <tr>
-                      <td><strong>Today&apos;s Deposit</strong></td>
+                      <td><strong>Today's Deposit</strong></td>
                       <td>{enrollment.currencySymbol}{c.deposit.toFixed(2)}</td>
                     </tr>
                     <tr>

@@ -1,4 +1,4 @@
-import { NextPage } from 'next';
+import { GetServerSideProps, NextPage } from 'next';
 import Image from 'next/image';
 import { Accordion, Modal } from 'react-bootstrap';
 import { BsCardChecklist, BsPeopleFill, BsScissors } from 'react-icons/bs';
@@ -10,31 +10,35 @@ import { DefaultLayout } from '../../../components/DefaultLayout';
 import { DGTutorSection } from '../../../components/DGTutorSection';
 import { GuaranteeSection } from '../../../components/GuaranteeSection';
 import { PriceSection } from '../../../components/PriceSection';
+import { PriceSectionDisabled } from '../../../components/PriceSectionDisabled';
 import { SEO } from '../../../components/SEO';
-import { useLocation } from '../../../hooks/useLocation';
-import { usePrice } from '../../../hooks/usePrice';
 import { useScreenWidth } from '../../../hooks/useScreenWidth';
 import { useToggle } from '../../../hooks/useToggle';
 import DogGroomingBackground from '../../../images/backgrounds/bichon-frise-getting-haircut.jpg';
 import DogCourseMaterialsImage from '../../../images/dg-course-materials-manuals-kit-white.jpg';
 import GroomingKitDetailImage from '../../../images/grooming-kit-details.jpg';
 import CertificationGoldImage from '../../../images/IDGP-certification-gold.svg';
-import MovieClapperImage from '../../../images/movie-clapper.svg';
 import OutlineImage from '../../../images/outline.svg';
 import PlayBtnImage from '../../../images/play-btn.svg';
 import { formatPrice } from '../../../lib/formatPrice';
+import { getLocation } from '../../../lib/getLocation';
+import { lookupPrices } from '../../../lib/lookupPrices';
+import type { Location } from '../../../models/location';
+import type { PriceResult } from '../../../models/price';
 
 const headerIconSize = 20;
 const iconSize = 36;
 
 const courseCodes = [ 'dg' ];
 
-const DogGroomingPage: NextPage = () => {
+type Props = {
+  location: Location;
+  price: PriceResult;
+};
+
+const DogGroomingPage: NextPage<Props> = ({ location, price }) => {
   const screenWidth = useScreenWidth();
-  const location = useLocation();
-  const price = usePrice(courseCodes, location?.countryCode, location?.provinceCode);
   const [ kitPopupVisible, kitPopupToggle ] = useToggle();
-  const [ trailerPopupVisible, trailerPopupToggle ] = useToggle();
 
   const mdOrGreater = screenWidth >= 768;
   const lgOrGreater = screenWidth >= 992;
@@ -56,17 +60,13 @@ const DogGroomingPage: NextPage = () => {
             <div className="mb-4">
               <Image src={CertificationGoldImage} alt="International Dog Grooming Professional IDGP certification" height="125" width="125" />
             </div>
-            <h1>Dog Grooming</h1>
+            <h1>Dog Grooming Course</h1>
             {price && price.plans.part.deposit > 0 && <h4>Get Started for Only <strong>{price.currency.symbol}{formatPrice(price.plans.part.deposit)}</strong></h4>}
             <p><em><a href="#tuition" className="text-white">See tuition details</a></em></p>
             <a href="https://enroll.qcpetstudies.com?c[]=dg"><button className="btn btn-secondary btn-lg">Enroll Online</button></a>
           </div>
           <div className="row justify-content-center">
             <div className="col-12 col-md-6 d-flex">
-              <div className="col text-uppercase">
-                <button onClick={trailerPopupToggle} className="btn btn-link"><Image src={MovieClapperImage} alt="movie clapper" width={headerIconSize} height={headerIconSize} /></button>
-                <p><strong>Trailer</strong></p>
-              </div>
               <div className="col text-uppercase">
                 <a href="#outline"><Image src={OutlineImage} alt="outline" width={headerIconSize} height={headerIconSize} /></a>
                 <p><strong>Outline</strong></p>
@@ -75,19 +75,13 @@ const DogGroomingPage: NextPage = () => {
                 <a href="#guarantee"><Image src={PlayBtnImage} alt="play button" width={headerIconSize} height={headerIconSize} /></a>
                 <p><strong>Guarantee</strong></p>
               </div>
+              <div className="col text-uppercase">
+                <a href="#tutors"><Image src={PlayBtnImage} alt="play button" width={headerIconSize} height={headerIconSize} /></a>
+                <p><strong>Tutors</strong></p>
+              </div>
             </div>
           </div>
         </div>
-        <Modal show={trailerPopupVisible} onHide={trailerPopupToggle} size="lg">
-          <Modal.Header closeButton>Dog Grooming Course</Modal.Header>
-          <Modal.Body>
-            <div className="ratio ratio-16x9">
-              <video controls autoPlay>
-                <source src="https://89b45d42c17e11dd3d57-62a1fc0bf60a98e1d5e980348a7de3b7.ssl.cf1.rackcdn.com/interview-paddy.mp4" type="video/mp4" />
-              </video>
-            </div>
-          </Modal.Body>
-        </Modal>
       </section>
 
       <section>
@@ -96,15 +90,18 @@ const DogGroomingPage: NextPage = () => {
             <div className="col-12 col-lg-10">
               <h2>Become a <strong>Certified Dog Groomer</strong></h2>
               <p className="lead"><strong>International Dog Grooming Professional&trade;</strong> | <i>IDGP&trade;</i></p>
-              <p>There&apos;s never been a better time to start a career as a dog groomer. Groomers all over the country have waiting lists or are simply refusing new clients. What an amazing opportunity to start a new and lucrative career!</p>
-              <p>Get your International Dog Groomer Certification in less than a year with QC&apos;s interactive online training. Study at your own pace. Watch instructional videos and complete hands-on assignments to grow your grooming skills.  Graduate with all the knowledge and skills you need to succeed in the dog grooming industry!</p>
+              <p>There's never been a better time to start a career as a dog groomer. Groomers all over the country have waiting lists or are simply refusing new clients. What an amazing opportunity to start a new and lucrative career!</p>
+              <p>Get your International Dog Groomer Certification in less than a year with QC's interactive online training. Study at your own pace. Watch instructional videos and complete hands-on assignments to grow your grooming skills.  Graduate with all the knowledge and skills you need to succeed in the dog grooming industry!</p>
               <p className="mb-0">Are you ready to start an amazing career?</p>
             </div>
           </div>
         </div>
       </section>
 
-      <PriceSection courses={courseCodes} doubleGuarantee={true} />
+      {location.countryCode === 'CA' && location.provinceCode === 'ON'
+        ? <PriceSectionDisabled />
+        : <PriceSection courses={courseCodes} price={price} doubleGuarantee={true} />
+      }
 
       <section>
         <div className="container text-center">
@@ -114,7 +111,7 @@ const DogGroomingPage: NextPage = () => {
               <Image src={DogCourseMaterialsImage} width={830} height={550} alt="course materials" />
               <div className="courseContentIcon"><BsScissors size={iconSize} /></div>
               <h3>Professional-Grade Grooming Starter Kit</h3>
-              <p>When you enroll, you&apos;ll receive a kit of dog grooming tools to help you complete your studies and start your career. This kit includes cordless WAHL clippers and combs, three grooming scissors, an assortment of brushes and combs, and more!</p>
+              <p>When you enroll, you'll receive a kit of dog grooming tools to help you complete your studies and start your career. This kit includes cordless WAHL clippers and combs, three grooming scissors, an assortment of brushes and combs, and more!</p>
               <button onClick={kitPopupToggle} className="btn btn-link link-primary">View Kit Details</button>
             </div>
             <div className="col-12 col-md-4 mb-4 mb-md-0">
@@ -125,12 +122,12 @@ const DogGroomingPage: NextPage = () => {
             <div className="col-12 col-md-4 mb-4 mb-md-0">
               <div className="courseContentIcon"><BsPeopleFill size={iconSize} /></div>
               <h3>Personalized{md ? <br /> : ' '}Feedback</h3>
-              <p className="mb-0">Just because you&apos;re learning online doesn&apos;t mean you&apos;re learning alone. You&apos;ll receive personalized audio feedback from your tutor on every dog grooming assignment you submit.</p>
+              <p className="mb-0">Just because you're learning online doesn't mean you're learning alone. You'll receive personalized audio feedback from your tutor on every dog grooming assignment you submit.</p>
             </div>
             <div className="col-12 col-md-4">
               <div className="courseContentIcon"><IoMdInfinite size={iconSize} /></div>
               <h3>Lifetime{md ? <br /> : ' '}Access</h3>
-              <p className="mb-0">Once you&apos;re a member of the QC family you &apos;ll have lifetime access to all the tools and resources available to QC students. This includes discounts on industry products and so much more!</p>
+              <p className="mb-0">Once you're a member of the QC family you 'll have lifetime access to all the tools and resources available to QC students. This includes discounts on industry products and so much more!</p>
             </div>
           </div>
         </div>
@@ -142,7 +139,8 @@ const DogGroomingPage: NextPage = () => {
         </Modal>
       </section>
 
-      <section id="outline" className="bg-lighter">
+      <div id="outline" className="sectionAnchor" />
+      <section className="bg-lighter">
         <div className="container">
           <div className="row justify-content-center">
             <div className="col-12 col-lg-10 mb-4 text-center">
@@ -155,7 +153,7 @@ const DogGroomingPage: NextPage = () => {
             <AccordionToggle title="Introductory Units" eventKey="0" />
             <AccordionSection eventKey="0">
               <h4>Units A&ndash;C</h4>
-              <p>The first few units in this course will introduce you to the fundamental concepts of dog grooming. In these units, you&apos;ll cover health and safety, basic dog anatomy, skincare, behavior, the tools of the trade and more.</p>
+              <p>The first few units in this course will introduce you to the fundamental concepts of dog grooming. In these units, you'll cover health and safety, basic dog anatomy, skincare, behavior, the tools of the trade and more.</p>
               <p>During these units it is recommended that you start considering your grooming workspace so that you are prepared for the practical assignments later in the course. Unit C will be particularly helpful in selecting appropriate tools, equipment and products.</p>
               <p className="mb-0">It is also recommended that you start seeking out dog owners who are willing to let you use their dogs in practical assignments later in the course.</p>
             </AccordionSection>
@@ -166,17 +164,17 @@ const DogGroomingPage: NextPage = () => {
             </AccordionSection>
             <AccordionToggle title="Hands-On units" eventKey="2" />
             <AccordionSection eventKey="2">
-              <p className="mb-0">Once you understand the basics of dog grooming and dog first aid, you will move on to units that teach you the hands-on skills involved in grooming. In these units, you&apos;ll cover nail trimming, ear cleaning, brushing, de-matting, bathing, drying, coat types, pet cuts, breed standards and more. You&apos;ll complete a number of basic practical assignments that will prepare you to start your practicum.</p>
+              <p className="mb-0">Once you understand the basics of dog grooming and dog first aid, you will move on to units that teach you the hands-on skills involved in grooming. In these units, you'll cover nail trimming, ear cleaning, brushing, de-matting, bathing, drying, coat types, pet cuts, breed standards and more. You'll complete a number of basic practical assignments that will prepare you to start your practicum.</p>
             </AccordionSection>
             <AccordionToggle title="Practicum" eventKey="3" />
             <AccordionSection eventKey="3">
               <p>Dog grooming as a profession requires a lot of background knowledge, but ultimately your success will depend on your ability to safely and skillfully groom dogs.</p>
-              <p className="mb-0">Your practicum is designed to allow you to practice and receive feedback on these essential skills. The units within the practicum involve intensive practical assignments that draw on the content you&apos;ve mastered throughout the course. You&apos;ll have a chance to receive feedback from your tutors on your bathing and drying skills, in addition to the pet cuts and breed cuts you&apos;ll create throughout your career.</p>
+              <p className="mb-0">Your practicum is designed to allow you to practice and receive feedback on these essential skills. The units within the practicum involve intensive practical assignments that draw on the content you've mastered throughout the course. You'll have a chance to receive feedback from your tutors on your bathing and drying skills, in addition to the pet cuts and breed cuts you'll create throughout your career.</p>
             </AccordionSection>
             <AccordionToggle title="Dog Grooming Business Essentials" eventKey="4" />
             <AccordionSection eventKey="4">
               <h4>(Optional Unit)</h4>
-              <p>Dog grooming is a creative career, but it&apos;s also a business. After completing your practicum you can choose to complete the optional Business Essentials unit. This unit will help you develop the skills you need to run your own successful dog grooming business, from building your brand to constructing a business plan to setting your prices.</p>
+              <p>Dog grooming is a creative career, but it's also a business. After completing your practicum you can choose to complete the optional Business Essentials unit. This unit will help you develop the skills you need to run your own successful dog grooming business, from building your brand to constructing a business plan to setting your prices.</p>
             </AccordionSection>
           </Accordion>
         </div>
@@ -188,18 +186,16 @@ const DogGroomingPage: NextPage = () => {
 
       <style jsx>{`
         .courseContentIcon { color: #ccc; margin-bottom: 0.5rem; }
-        .imageShadowWrapper {
-          padding: 0 0 12px; // to offset the shadow
-        }
-        @media (min-width: 576px) {
-          .imageShadowWrapper {
-            padding: 0 12px 0 0; // to offset the shadow
-          }
-        }
       `}</style>
 
     </DefaultLayout>
   );
+};
+
+export const getServerSideProps: GetServerSideProps = async context => {
+  const location = await getLocation(context);
+  const price = await lookupPrices(courseCodes, location.countryCode, location.provinceCode);
+  return { props: { location, price } };
 };
 
 export default DogGroomingPage;

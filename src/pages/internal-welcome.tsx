@@ -67,7 +67,7 @@ const InternalWelcomePage: NextPage<Props> = ({ data, errorCode }) => {
           <div className="row justify-content-center">
             <div className="col-12 col-lg-10">
               <h1>Welcome to the School</h1>
-              <p className="lead mb-0">Whether you want to become a dog groomer, trainer, pet sitter, or all of the above, you&apos;ll gain the certification needed to become successful in your chosen career.</p>
+              <p className="lead mb-0">Whether you want to become a dog groomer, trainer, pet sitter, or all of the above, you'll gain the certification needed to become successful in your chosen career.</p>
             </div>
           </div>
         </div>
@@ -78,7 +78,7 @@ const InternalWelcomePage: NextPage<Props> = ({ data, errorCode }) => {
           <div className="row justify-content-center">
             <div className="col-12 col-lg-10">
               <h2>Thank You for Enrolling with <strong>QC Pet Studies!</strong></h2>
-              <p>Your enrollment has been received and will be processed quickly. You will receive an email within the next business day containing login information to your online student center. If you don&apos;t see an email from us, please check your spam folder.</p>
+              <p>Your enrollment has been received and will be processed quickly. You will receive an email within the next business day containing login information to your online student center. If you don't see an email from us, please check your spam folder.</p>
               <p>If you have any questions regarding the course, or if you want to discuss your goals, our friendly and knowledgeable student support advisors are available 7 days a week by email at <a href={`mailto:${emailAddress}`} className="link-primary">{emailAddress}</a> or by phone at {telephoneNumber}. We would be delighted to speak with you and assist you in any way we can. We hope your learning experience with us will be enjoyable, interesting, and valuable.</p>
               <p>Remember, we want to develop a personal relationship with you and be readily available for you whenever you need us.</p>
               <p><strong>Best of luck with your studies!</strong></p>

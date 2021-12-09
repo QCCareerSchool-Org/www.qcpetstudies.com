@@ -42,7 +42,7 @@ const DogTrainingResourcesPage: NextPage = () => (
               <Image className="card-img-top" src={DogTrainingCareer} alt="your dog grooming career" />
               <div className="card-body">
                 <h3 className="card-title">Dog Training Course Outline</h3>
-                <p className="card-text">Read a detailed outline of the online dog training course. Find out what you&apos;ll need to be successful, and how long the course will take you to complete.</p>
+                <p className="card-text">Read a detailed outline of the online dog training course. Find out what you'll need to be successful, and how long the course will take you to complete.</p>
                 <Link href="/dog-training-courses/dog-training/course-outline"><a className="link-primary">Learn More</a></Link>
               </div>
             </div>
@@ -72,7 +72,7 @@ const DogTrainingResourcesPage: NextPage = () => (
           <div className="col-12 col-lg-6 text-start">
             <h3>Additional links</h3>
             <ul>
-              <li><Link href="/about/about-qc-pet-studies#guarantee"><a className="link-primary">Information about QC&apos;s 21-day guarantee</a></Link></li>
+              <li><Link href="/about/about-qc-pet-studies#guarantee"><a className="link-primary">Information about QC's 21-day guarantee</a></Link></li>
               <li><Link href="/dog-training-courses/dog-training/course-preview/"><a className="link-primary">Preview the Dog Training Course for free</a></Link></li>
               <li><Link href="/2021/07/dog-training-quiz-do-you-know-your-calming-signals/"><a className="link-primary">Quiz: Do you know your calming signals? (blog link)</a></Link></li>
             </ul>

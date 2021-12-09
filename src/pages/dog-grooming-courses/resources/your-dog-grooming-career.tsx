@@ -40,7 +40,7 @@ const DogGroomingCareerPage: NextPage = () => {
               <div className="mb-4"><Image src={CompassIcon} alt="Compass Icon" /></div>
               <h1>Your Dog Grooming Career</h1>
               <p className="lead mb-4">Career Paths for Professional Dog Groomers</p>
-              <p className="mb-0">Dog grooming is a diverse industry with a variety of exciting career possibilities. Whether you enjoy working from home or aspire to open your own business, you&apos;re sure to find a career path that works for you.</p>
+              <p className="mb-0">Dog grooming is a diverse industry with a variety of exciting career possibilities. Whether you enjoy working from home or aspire to open your own business, you're sure to find a career path that works for you.</p>
             </div>
           </div>
         </div>
@@ -93,7 +93,7 @@ const DogGroomingCareerPage: NextPage = () => {
               <div className="section pe-lg-5">{/* re-add section padding, and add right padding on lg or greater */}
                 <div id="quoteWrapper" className="d-flex align-items-center">
                   <div>
-                    <p className="lead mb-4">I&apos;m 2 units [into the Dog Grooming Course] and love it! It has a great background, written learning, supplies, and more! I came from a vet assisting background and wanted to open up my own grooming salon, but I have two kids, so I needed to do distance [training]. I love this course so much! I highly recommend this course and the First Aid for Groomers Course. With my background knowledge, I could tell the topics were well-researched. By far, blew me away!</p>
+                    <p className="lead mb-4">I'm 2 units [into the Dog Grooming Course] and love it! It has a great background, written learning, supplies, and more! I came from a vet assisting background and wanted to open up my own grooming salon, but I have two kids, so I needed to do distance [training]. I love this course so much! I highly recommend this course and the First Aid for Groomers Course. With my background knowledge, I could tell the topics were well-researched. By far, blew me away!</p>
                     <div className="d-flex mb-4">
                       <p>Mackenzie Lafleur<br /><span className="text-muted">QC Graduate</span></p>
                     </div>
@@ -115,18 +115,18 @@ const DogGroomingCareerPage: NextPage = () => {
         <div className="container text-center">
           <FaClipboard className="h2 text-primary mb-3" />
           <h2>Career Resources for<br />Grooming Students and Graduates</h2>
-          <p className="lead">As a student of QC Pet Studies, you&apos;ll be provided with resources to build a profitable and<br />enjoyable career as a professional dog groomer.</p>
+          <p className="lead">As a student of QC Pet Studies, you'll be provided with resources to build a profitable and<br />enjoyable career as a professional dog groomer.</p>
           <CareerResources title="Free Business Training" icon={<FaBriefcase />}>
-            <p className="mb-0">QC&apos;s comprehensive <Link href="/dog-grooming-courses/dog-grooming/"><a className="link-primary">Online Dog Grooming Class</a></Link> comes with complete business training at no extra cost! This training will teach you the skills you&apos;ll need to start a successful dog grooming business!</p>
+            <p className="mb-0">QC's comprehensive <Link href="/dog-grooming-courses/dog-grooming/"><a className="link-primary">Online Dog Grooming Class</a></Link> comes with complete business training at no extra cost! This training will teach you the skills you'll need to start a successful dog grooming business!</p>
           </CareerResources>
           <CareerResources title="A Blog for Groomers" icon={<FaRss />}>
-            <p className="mb-0">The Sniffin&apos;Around <Link href="/sniffin-around-blog/"><a className="link-primary">dog grooming blog</a></Link> is full of articles that will help you thrive in your chosen career path. From adding accessories to setting your grooming prices to designing your business logo, the blog content aims to help you succeed as a professional dog groomer and business owner.</p>
+            <p className="mb-0">The Sniffin'Around <Link href="/sniffin-around-blog/"><a className="link-primary">dog grooming blog</a></Link> is full of articles that will help you thrive in your chosen career path. From adding accessories to setting your grooming prices to designing your business logo, the blog content aims to help you succeed as a professional dog groomer and business owner.</p>
           </CareerResources>
           <CareerResources title="Exclusive Discounts from Vendors" icon={<FaTags />}>
-            <p className="mb-0">Investing in professional-grade dog grooming tools and materials enables you to do your best work. Students of QC Pet Studies receive <Link href="/about/student-discounts/"><a className="link-primary">exclusive discounts to some of the best pet retailers.</a></Link> You&apos;ll be able to build your grooming toolkit with quality products and equipment at a fraction of the cost!</p>
+            <p className="mb-0">Investing in professional-grade dog grooming tools and materials enables you to do your best work. Students of QC Pet Studies receive <Link href="/about/student-discounts/"><a className="link-primary">exclusive discounts to some of the best pet retailers.</a></Link> You'll be able to build your grooming toolkit with quality products and equipment at a fraction of the cost!</p>
           </CareerResources>
           <CareerResources title="Dog Grooming Business Resources" icon={<FaRegFileAlt />}>
-            <p>QC Students are provided with templates and reference sheets to help them write business plans, manage client information, and make quick and accurate decisions in the grooming environment. You&apos;ll be able to download all of the following from the Online Student Center:</p>
+            <p>QC Students are provided with templates and reference sheets to help them write business plans, manage client information, and make quick and accurate decisions in the grooming environment. You'll be able to download all of the following from the Online Student Center:</p>
             <ul className="mb-0">
               <li>Business plan template</li>
               <li>Service pricing guide</li>
@@ -150,7 +150,7 @@ const DogGroomingCareerPage: NextPage = () => {
               <Image className="text-secondary" src={AssociationLogo} alt="associations logo" />
               <h2 className="mb-4">Dog Grooming Associations</h2>
               <p>As you progress in your dog grooming career, you may decide to become a registered and/or certified member of a dog grooming association. These associations are entirely optional and joining them is not mandatory to work or succeed as a dog groomer. However, you may decide that joining an association will help you grow your network and stand out from the competition.</p>
-              <p className="mb-0">The National Dog Grooming Association of America (NDGAA) and the Canadian Professional Pet Stylists (CPPS) associations have standardized exams they use to certify members. QC&apos;s Dog Grooming course prepares you to take these exams.</p>
+              <p className="mb-0">The National Dog Grooming Association of America (NDGAA) and the Canadian Professional Pet Stylists (CPPS) associations have standardized exams they use to certify members. QC's Dog Grooming course prepares you to take these exams.</p>
             </div>
           </div>
         </div>

@@ -5,7 +5,6 @@ import { useRouter } from 'next/router';
 import { ReactElement, useEffect } from 'react';
 import SSRProvider from 'react-bootstrap/SSRProvider';
 
-import { OntarioWarning } from '../components/OntarioWarning';
 import * as ga from '../lib/ga';
 import * as salesforce from '../lib/salesforce';
 import { LocationProvider } from '../providers/LocationProvider';
