@@ -26,7 +26,7 @@ const ThankYouCatalogPage: NextPage = () => {
             <div className="col-12 col-md-6 col-lg-7 col-xl-8">
               <h1>Your Course Preview</h1>
               <h2>Thank You for Your Interest!</h2>
-              <p className="lead">Find out what a career in dog grooming can do for you, and how you can get started with QC&apos;s Dog Grooming course.</p>
+              <p className="lead">Find out what a career in dog grooming can do for you, and how you can get started with QC's Dog Grooming course.</p>
               <h4 className="mb-4">Access your free course preview here:</h4>
               <a href="" className="btn btn-outline-secondary btn-lg">Get Preview&nbsp;&nbsp;<FaPaw style={{ position: 'relative', top: -2 }} /></a>
             </div>

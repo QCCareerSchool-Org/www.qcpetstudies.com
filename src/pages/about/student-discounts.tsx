@@ -29,7 +29,7 @@ const StudentDiscountsPage: NextPage = () => (
           <div className="col-12 col-lg-10">
             <h1>QC Student Discounts</h1>
             <p className="lead">QC partners with top quality vendors to provide amazing discounts for our students.</p>
-            <p className="mb-0">Below you&apos;ll find a list of QC&apos;s preferred partners who offer special discounts to QC Pet Studies&apos; students and graduates. In most cases, these offers are available to you as soon as you enroll!</p>
+            <p className="mb-0">Below you'll find a list of QC's preferred partners who offer special discounts to QC Pet Studies' students and graduates. In most cases, these offers are available to you as soon as you enroll!</p>
           </div>
         </div>
       </div>
@@ -42,7 +42,7 @@ const StudentDiscountsPage: NextPage = () => (
             <h2 className="mb-4">Pet Business <strong>Discounts</strong></h2>
             <Supplier imageSrc={DaySmartPetLogo} imageWidth={170} imageHeight={46} imageAlt="DaySmart Pet" className="mb-5">
               <h3>DaySmart Pet</h3>
-              <p>DaySmart Pet develops, delivers, and supports powerful business management software that runs thousands of pet businesses around the world. You&apos;ll be able to run your dog grooming business efficiently and grow your business with unique software features!</p>
+              <p>DaySmart Pet develops, delivers, and supports powerful business management software that runs thousands of pet businesses around the world. You'll be able to run your dog grooming business efficiently and grow your business with unique software features!</p>
               <p className="mb-0"><em>QC Pet Studies students receive a 50% off discount for 2 months</em></p>
             </Supplier>
             <Supplier imageSrc={MyTimeLogo} imageWidth={170} imageHeight={69} imageAlt="MyTime" className="mb-5">
@@ -68,7 +68,7 @@ const StudentDiscountsPage: NextPage = () => (
             </Supplier>
             <Supplier imageSrc={EpiPetLogo} imageWidth={170} imageHeight={81} imageAlt="Epi-Pet" className="mb-5">
               <h3>Epi-Pet</h3>
-              <p>Epi-Pet offers a variety of products that can help the professional groomer provide a complete and healthy groom and promote overall health for their clients&apos; pets. The Epi Pet Shampoo is multifunctional and promotes healthy skin and coat. The Epi Pet Ear Cleaner cleanses, enriches and refreshes the ear by gently removing dirt, grime and wax.</p>
+              <p>Epi-Pet offers a variety of products that can help the professional groomer provide a complete and healthy groom and promote overall health for their clients' pets. The Epi Pet Shampoo is multifunctional and promotes healthy skin and coat. The Epi Pet Ear Cleaner cleanses, enriches and refreshes the ear by gently removing dirt, grime and wax.</p>
               <p className="mb-0"><em>QC Pet Studies students receive 50% off products purchased on the Epi-Pet website</em></p>
             </Supplier>
             <Supplier imageSrc={DirectLogo} imageWidth={170} imageHeight={49} imageAlt="Direct Animal Products" className="mb-5">
@@ -78,7 +78,7 @@ const StudentDiscountsPage: NextPage = () => (
             </Supplier>
             <Supplier imageSrc={ZenDogLogo} imageWidth={170} imageHeight={174} imageAlt="Zen Dog">
               <h3>ZenDog</h3>
-              <p>ZenDog sells earthly inspired aromatherapy shampoos, sprays, and gels that never contain synthetic fragrances, colors, bleaches, or dyes. They&apos;re formulated exclusively with 100% pure, therapeutic class essential oils. Their products are created by professional groomers for professional groomers.</p>
+              <p>ZenDog sells earthly inspired aromatherapy shampoos, sprays, and gels that never contain synthetic fragrances, colors, bleaches, or dyes. They're formulated exclusively with 100% pure, therapeutic class essential oils. Their products are created by professional groomers for professional groomers.</p>
               <p className="mb-0"><em>QC Pet Studies students receive an Aromatherapy Package worth $160 for only $99. The package includes 10 different aromatherapy healing shampoos, sprays and gels</em></p>
             </Supplier>
           </div>

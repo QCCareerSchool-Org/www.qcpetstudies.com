@@ -34,7 +34,7 @@ const LearningDuringCovidPage: NextPage = () => {
               <h1>Learning &amp; Working During COVID</h1>
               <h2 className="mb-4">Dog Grooming in a Pandemic</h2>
               <p className="lead">See how you can earn your certification and run your dog grooming business during COVID-19!</p>
-              <p className="mb-0">Learn from the safety of home with QC&apos;s online dog grooming courses</p>
+              <p className="mb-0">Learn from the safety of home with QC's online dog grooming courses</p>
             </div>
           </div>
         </div>
@@ -45,7 +45,7 @@ const LearningDuringCovidPage: NextPage = () => {
           <div className="row align-items-center">
             <div className="col-12 col-lg-6 col-xl-7">
               <h2 className="mb-4">How to Learn Dog Grooming During a Pandemic</h2>
-              <p className="lead mb-4">QC&apos;s courses are very flexible! Train at your own pace, from the comfort of your own home.</p>
+              <p className="lead mb-4">QC's courses are very flexible! Train at your own pace, from the comfort of your own home.</p>
               <h3>How QC Sets You Up to Succeed</h3>
               <ul className="mb-4">
                 <li>Study from wherever you are most comfortable with a fully online course</li>
@@ -56,7 +56,7 @@ const LearningDuringCovidPage: NextPage = () => {
                 <li>Learn First Aid for dogs</li>
                 <li>Receive informative business training that will allow you to implement best practices both in person and online</li>
               </ul>
-              <Link href="/dog-grooming-courses/dog-grooming/"><a className="link-primary">Discover Everything You&apos;ll Learn in the Dog Grooming Course!</a></Link>
+              <Link href="/dog-grooming-courses/dog-grooming/"><a className="link-primary">Discover Everything You'll Learn in the Dog Grooming Course!</a></Link>
             </div>
             {lgOrGreater && (
               <div className="col-6 col-xl-5">
@@ -72,7 +72,7 @@ const LearningDuringCovidPage: NextPage = () => {
         <div className="container">
           <div className="row">
             <div className="col-12 col-xl-8 offset-xl-4 offset-xxl-3">
-              <p className="lead mb-4">&quot;I&apos;m 2 units [into the Dog Grooming Course] and love it! It has a great background, written learning, supplies, and more! I came from a vet assisting background and wanted to open up my own grooming salon, but I have two kids, so I needed to do distance [training]. I love this course so much! I highly recommend this course and the First Aid for Groomers Course. With my background knowledge, I could tell the topics were well-researched. By far, blew me away!&quot; </p>
+              <p className="lead mb-4">&quot;I'm 2 units [into the Dog Grooming Course] and love it! It has a great background, written learning, supplies, and more! I came from a vet assisting background and wanted to open up my own grooming salon, but I have two kids, so I needed to do distance [training]. I love this course so much! I highly recommend this course and the First Aid for Groomers Course. With my background knowledge, I could tell the topics were well-researched. By far, blew me away!&quot; </p>
               <p className="mb-4">Mackenzie Lafleur<br /><span className="text-muted">QC Student</span></p>
               <p>Read other reviews like this one by checking out our <Link href="/category/student-features/"><a className="link-secondary">Student &amp; Graduate Features</a></Link>!</p>
             </div>
@@ -119,8 +119,8 @@ const LearningDuringCovidPage: NextPage = () => {
             </div>
             <div className="col-10 col-lg-3 p-5 border border-light bg-primary text-white">
               <FaPaw className="h2 text-secondary mb-3" />
-              <h4 className="text-white">Sniffin&apos; Around</h4>
-              <p>Visit QC&apos;s blog for articles and tips for working and expanding business in 2021</p>
+              <h4 className="text-white">Sniffin' Around</h4>
+              <p>Visit QC's blog for articles and tips for working and expanding business in 2021</p>
             </div>
           </div>
         </div>
@@ -136,11 +136,11 @@ const LearningDuringCovidPage: NextPage = () => {
               <h3>COVID-19 Safety Protocols for Dog Groomers</h3>
               <ul>
                 <li>Reschedule or cancel appointments if you or your client is feeling ill or have been recently exposed to someone who has tested positive for COVID-19</li>
-                <li>Ensure that you&apos;re always wearing a mask when working with clients</li>
+                <li>Ensure that you're always wearing a mask when working with clients</li>
                 <li>Insist that clients also wear masks</li>
                 <li>Consider reducing your overall grooming capacity to ensure a limited amount of people in your workspace</li>
                 <li>Do not permit clients to wait for their dog on the premises. Consider meeting clients out in the parking lot to collect/deliver their dog</li>
-                <li>Implement an online payment system so clients aren&apos;t required to linger in the salon for payment</li>
+                <li>Implement an online payment system so clients aren't required to linger in the salon for payment</li>
                 <li>Socially distance whenever possible and enforce a maximum occupancy limit</li>
                 <li>Wash your hands before and after working with a client, grooming their dog, or touching communal surfaces</li>
                 <li>Disinfect all <Link href="/2018/08/learning-about-your-dog-grooming-kit-brushes-combs-and-dematting-tools"><a className="link-primary">grooming tools</a></Link> before and after use</li>

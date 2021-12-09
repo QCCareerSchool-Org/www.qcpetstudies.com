@@ -75,7 +75,7 @@ const DogGroomingResourcesPage: NextPage = () => {
                 <li><Link href="/dog-grooming-courses/resources/required-dog-breeds"><a className="link-primary">Required Dog Breeds to Complete Your Course</a></Link></li>
                 <li><Link href="/dog-grooming-courses/resources/learning-and-working-during-covid"><a className="link-primary">Learning and working during COVID-19</a></Link></li>
                 <li><Link href="/about/faq"><a className="link-primary">Frequently Asked Questions</a></Link></li>
-                <li><Link href="/about/about-qc-pet-studies#guarantee"><a className="link-primary">Information about QC Pet Studies&apos; Double Guarantee</a></Link></li>
+                <li><Link href="/about/about-qc-pet-studies#guarantee"><a className="link-primary">Information about QC Pet Studies' Double Guarantee</a></Link></li>
                 <li><Link href="/about/student-discounts"><a className="link-primary">Discounts available for QC Pet Studies students and graduates</a></Link></li>
               </ul>
             </div>
@@ -95,7 +95,7 @@ const DogGroomingResourcesPage: NextPage = () => {
             </div>
             <div className="col-12 col-md-8 col-lg-6 col-xl-5 text-center text-md-start mb-4 mb-lg-0">
               <h3 className="mb-4">Getting Started Guide</h3>
-              <p>learn exactly what tools and equipment you&apos;ll need to start your dog groomer training with QC.</p>
+              <p>learn exactly what tools and equipment you'll need to start your dog groomer training with QC.</p>
               <a href="/documents/grooming-what-you-need-to-get-started.pdf" className="link-primary" target="_blank">Download</a>
             </div>
             <div className="col-6 offset-3 col-md-4 offset-md-0 offset-lg-1 col-xl-3 offset-xl-2">

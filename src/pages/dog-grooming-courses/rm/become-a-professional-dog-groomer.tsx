@@ -33,12 +33,12 @@ const ProfessionalDogGroomerPage: NextPage<Props> = ({ testGroup }) => {
           <div className="row justify-content-center">
             <div className="col-12 col-lg-10 mb-4">
               <h1 className="fw-normal">Become a <strong>Professional</strong> Dog Groomer</h1>
-              <p className="lead">Start your <strong>dream career</strong> as a professional dog groomer online with QC&apos;s Dog Grooming course!</p>
-              <p>Learning dog grooming online is just as effective as in-class dog groomer training. And it&apos;s way more convenient! You&apos;ll complete your training from home with practical and theoretical assignments, while receiving guidance from certified master groomers every step of the way! When you graduate, you will receive a certificate of completion to prove that you have completed training in dog grooming.</p>
+              <p className="lead">Start your <strong>dream career</strong> as a professional dog groomer online with QC's Dog Grooming course!</p>
+              <p>Learning dog grooming online is just as effective as in-class dog groomer training. And it's way more convenient! You'll complete your training from home with practical and theoretical assignments, while receiving guidance from certified master groomers every step of the way! When you graduate, you will receive a certificate of completion to prove that you have completed training in dog grooming.</p>
             </div>
             <div className="col-12 col-lg-6 text-lg-start mb-4 mb-lg-0">
               <h3>Free Dog Grooming Starter Kit</h3>
-              <p>Before you begin your practical work in Unit C, you&apos;ll receive a toolkit with the essential items you need to get started.</p>
+              <p>Before you begin your practical work in Unit C, you'll receive a toolkit with the essential items you need to get started.</p>
               <p>Your kit includes a WAHL ARCO 5-in-1 cordless clipper, a stainless steel attachment guide comb kit, professional-grade grooming scissors, brushes, combs, and nail clippers.</p>
               <p><em>Grooming Kit Estimated value: $200</em></p>
               <Image src={FullKitImage} alt="Dog Grooming Starter Full Kit" />
@@ -52,7 +52,7 @@ const ProfessionalDogGroomerPage: NextPage<Props> = ({ testGroup }) => {
                     <li>Learn about the many careers you can pursue as a dog groomer</li>
                     <li>View the course curriculum, watch course videos, and look at sample assignments</li>
                     <li>Find out about tuition information including finding a payment plan that works well for you</li>
-                    <li>Learn how you can&apos;t go wrong with QC&apos;s money back guarantee!</li>
+                    <li>Learn how you can't go wrong with QC's money back guarantee!</li>
                   </ul>
                   <BrochureForm
                     action={formAction}
@@ -76,7 +76,7 @@ const ProfessionalDogGroomerPage: NextPage<Props> = ({ testGroup }) => {
           <div className="row justify-content-center">
             <div className="col-12 col-lg-10">
               <h2 className="mb-4">Get Started with a <strong>Free Course Catalog</strong></h2>
-              <p className="mb-0">Request a free course catalog today to learn more about how you can become a professional dog groomer with QC&apos;s online training! Catalog includes course curriculum, tuition information, sample course video and assignments, and your career outlook.</p>
+              <p className="mb-0">Request a free course catalog today to learn more about how you can become a professional dog groomer with QC's online training! Catalog includes course curriculum, tuition information, sample course video and assignments, and your career outlook.</p>
             </div>
           </div>
         </div>

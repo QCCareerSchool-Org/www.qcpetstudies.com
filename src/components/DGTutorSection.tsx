@@ -28,7 +28,7 @@ export const DGTutorSection = ({ className, id = 'tutors' }: Props): ReactElemen
             <div className="col-12 col-lg-6 mb-4 mb-lg-0">
               <div className="pe-lg-4">
                 <h2>Learn from Certified <strong>Master Groomers</strong></h2>
-                <p>When you enroll with QC Pet Studies, you&apos;ll be matched with an industry professional currently working in the field who will review your work and provide you with in-depth feedback and advice on every assignment. These accomplished tutors are Certified Master Groomers who have decades of experience in the grooming industry and are eager to share their professional insight to help you succeed.</p>
+                <p>When you enroll with QC Pet Studies, you'll be matched with an industry professional currently working in the field who will review your work and provide you with in-depth feedback and advice on every assignment. These accomplished tutors are Certified Master Groomers who have decades of experience in the grooming industry and are eager to share their professional insight to help you succeed.</p>
                 <p className="mb-0">Your personal tutor will provide you with in-depth audio feedback on each assignment to let you know what you did well and how you could improve. Use this feedback to guide you through the next unit in your course.</p>
               </div>
             </div>

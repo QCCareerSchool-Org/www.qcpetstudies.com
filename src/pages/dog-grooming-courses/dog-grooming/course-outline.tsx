@@ -39,7 +39,7 @@ const DogGroomingCourseOutlinePage: NextPage = () => (
           <div className="col-12 col-lg-10">
             <FaBars size={iconSize} className="mb-2" />
             <h1 className="fw-normal">Dog Grooming<br /><strong>Course Outline</strong></h1>
-            <p className="lead mb-0">Here&apos;s a detailed outline of the entire online dog grooming course offered by QC Pet Studies, including the length of each unit and the materials/dogs required to complete your grooming assignments.</p>
+            <p className="lead mb-0">Here's a detailed outline of the entire online dog grooming course offered by QC Pet Studies, including the length of each unit and the materials/dogs required to complete your grooming assignments.</p>
           </div>
         </div>
       </div>
@@ -64,7 +64,7 @@ const DogGroomingCourseOutlinePage: NextPage = () => (
                 <div className="mb-2">
                   <Image src={calendarIcon} width={iconSize} height={iconSize} alt="calendar icon" />
                 </div>
-                <p>On average, most QC students work on their course for a few hours per week, and complete the online dog grooming course within about <strong>6 months to a year.</strong>  You&apos;ll have up to two years to complete the program, so lots of time!</p>
+                <p>On average, most QC students work on their course for a few hours per week, and complete the online dog grooming course within about <strong>6 months to a year.</strong>  You'll have up to two years to complete the program, so lots of time!</p>
               </div>
             </div>
           </div>
@@ -80,7 +80,7 @@ const DogGroomingCourseOutlinePage: NextPage = () => (
         <div className="row justify-content-center">
           <div className="col-12 col-lg-10 mb-4 text-center">
             <h2 className="mb-4">Unit-by-Unit Breakdown</h2>
-            <p className="mb-0">Below is an outline of each unit of the online dog grooming course. Expand each section to find out what you&apos;ll learn in each unit, along with each unit&apos;s expected length and the required dogs/equipment to complete your assignments.</p>
+            <p className="mb-0">Below is an outline of each unit of the online dog grooming course. Expand each section to find out what you'll learn in each unit, along with each unit's expected length and the required dogs/equipment to complete your assignments.</p>
           </div>
           <div className="col-12 col-xl-10 col-xxl-9">
             <Accordion defaultActiveKey="0" className="mb-4">
@@ -89,7 +89,7 @@ const DogGroomingCourseOutlinePage: NextPage = () => (
                 <div className="row">
                   <div className="col-12 col-lg-6 mb-4 mb-lg-0">
                     <Image src={UnitAImage} className="mb-4" layout="responsive" alt="groomer examining a dog's coat" />
-                    <p className="mb-0">In the first unit of the dog grooming course, you&apos;ll meet your tutor and start learning about the fundamentals of dog grooming. This introductory unit includes theoretical studies on the history of dog grooming, and how to protect your health &amp; safety as a dog groomer.  You&apos;ll also learn about dog anatomy in great detail, and you&apos;ll start learning about skincare and esthetics.</p>
+                    <p className="mb-0">In the first unit of the dog grooming course, you'll meet your tutor and start learning about the fundamentals of dog grooming. This introductory unit includes theoretical studies on the history of dog grooming, and how to protect your health &amp; safety as a dog groomer.  You'll also learn about dog anatomy in great detail, and you'll start learning about skincare and esthetics.</p>
                   </div>
                   <div className="col-12 col-lg-6">
                     <div className="alert alert-primary">Unit Total: 4 to 7 Hours</div>
@@ -111,7 +111,7 @@ const DogGroomingCourseOutlinePage: NextPage = () => (
                 <div className="row">
                   <div className="col-12 col-lg-6 mb-4 mb-lg-0">
                     <Image src={UnitBImage} className="mb-4" layout="responsive" alt="groomer combing a dog's head" />
-                    <p className="mb-0">In this second unit, you&apos;ll focus on how to work with dogs in a grooming environment. You&apos;ll learn about dog behaviors and temperaments, and you&apos;ll find out more about how dogs learn and communicate with humans.  You&apos;ll then learn about how you can keep the dog and yourself safe during a grooming appointment, and how to conduct an effective needs analysis when meeting a dog grooming client.</p>
+                    <p className="mb-0">In this second unit, you'll focus on how to work with dogs in a grooming environment. You'll learn about dog behaviors and temperaments, and you'll find out more about how dogs learn and communicate with humans.  You'll then learn about how you can keep the dog and yourself safe during a grooming appointment, and how to conduct an effective needs analysis when meeting a dog grooming client.</p>
                   </div>
                   <div className="col-12 col-lg-6">
                     <div className="alert alert-primary">Unit Total: 5 to 10 Hours</div>
@@ -133,7 +133,7 @@ const DogGroomingCourseOutlinePage: NextPage = () => (
                 <div className="row">
                   <div className="col-12 col-lg-6 mb-4 mb-lg-0">
                     <Image src={UnitCImage} className="mb-4" layout="responsive" alt="assorted dog grooming tools" />
-                    <p className="mb-0">The third dog grooming unit will help you become intimately familiar with your grooming tools. You&apos;ll learn all about brushes, scissors, clippers, and you&apos;ll start to practice techniques to use these tools effectively.  You&apos;ll also learn how to properly set up your grooming environment, and how to keep it clean and safe!</p>
+                    <p className="mb-0">The third dog grooming unit will help you become intimately familiar with your grooming tools. You'll learn all about brushes, scissors, clippers, and you'll start to practice techniques to use these tools effectively.  You'll also learn how to properly set up your grooming environment, and how to keep it clean and safe!</p>
                   </div>
                   <div className="col-12 col-lg-6">
                     <div className="alert alert-primary">Unit Total: 5 to 10 Hours</div>
@@ -156,7 +156,7 @@ const DogGroomingCourseOutlinePage: NextPage = () => (
                 <div className="row">
                   <div className="col-12 col-lg-6 mb-4 mb-lg-0">
                     <Image src={FirstAidCourse} className="mb-4" layout="responsive" alt="groomer bandaging a dog's paw" />
-                    <p className="mb-0">Starting in Unit D, you&apos;ll be completing grooming assignments on dogs. Before you proceed to Unit D, however, you&apos;ll take a break and complete the full First Aid for Dog Groomers Course.  This will ensure that you are fully prepared and ready to address any type of grooming emergency.  The First Aid units will teach you how to prevent accidents and injuries, and to respond to these situations should they occur. You&apos;ll also learn to build your Groomer&apos;s First Aid Kit, assess a dog&apos;s vitals, and perform life-saving procedures.  Being able to quickly respond to these situations will make you a better and more confident groomer!</p>
+                    <p className="mb-0">Starting in Unit D, you'll be completing grooming assignments on dogs. Before you proceed to Unit D, however, you'll take a break and complete the full First Aid for Dog Groomers Course.  This will ensure that you are fully prepared and ready to address any type of grooming emergency.  The First Aid units will teach you how to prevent accidents and injuries, and to respond to these situations should they occur. You'll also learn to build your Groomer's First Aid Kit, assess a dog's vitals, and perform life-saving procedures.  Being able to quickly respond to these situations will make you a better and more confident groomer!</p>
                   </div>
                   <div className="col-12 col-lg-6">
                     <div className="alert alert-primary">Unit Total: 8 to 15 Hours</div>
@@ -169,7 +169,7 @@ const DogGroomingCourseOutlinePage: NextPage = () => (
                     </table>
                     <hr />
                     <p className="lead">Required Grooming Equipment:</p>
-                    <p>First aid kit (you&apos;ll build this during the unit)</p>
+                    <p>First aid kit (you'll build this during the unit)</p>
                     <p className="lead mb-0">Required Dogs: One (any breed)</p>
                   </div>
                 </div>
@@ -178,8 +178,8 @@ const DogGroomingCourseOutlinePage: NextPage = () => (
               <AccordionSection eventKey="4">
                 <div className="row">
                   <div className="col-12 col-lg-6 mb-4">
-                    <p>Now that you have basic dog grooming theory and First Aid under your belt, you&apos;re going to start working on dogs and practicing your practical dog grooming skills!</p>
-                    <p className="mb-0">In Unit D, you&apos;ll learn about all the basic preparatory work that goes into a grooming session, from clipping nails to bathing and drying. These skills will form the foundation of all the grooming work you&apos;ll perform later in the course and in your career.</p>
+                    <p>Now that you have basic dog grooming theory and First Aid under your belt, you're going to start working on dogs and practicing your practical dog grooming skills!</p>
+                    <p className="mb-0">In Unit D, you'll learn about all the basic preparatory work that goes into a grooming session, from clipping nails to bathing and drying. These skills will form the foundation of all the grooming work you'll perform later in the course and in your career.</p>
                   </div>
                   <div className="col-12 col-lg-6 mb-4">
                     <div className="alert alert-primary">Unit Total: 8 to 15 Hours + Practice</div>
@@ -230,7 +230,7 @@ const DogGroomingCourseOutlinePage: NextPage = () => (
               <AccordionSection eventKey="5">
                 <div className="row">
                   <div className="col-12 col-lg-6 mb-4">
-                    <p className="mb-0">This unit is all about different coat types in dogs. You&apos;ll learn how to handle every coat type including the necessary care and maintenance of these coats.  You&apos;ll also be introduced to some indispensable pet cuts, and techniques for creating eye-catching finishing touches to top off a stylish groom in any dog!</p>
+                    <p className="mb-0">This unit is all about different coat types in dogs. You'll learn how to handle every coat type including the necessary care and maintenance of these coats.  You'll also be introduced to some indispensable pet cuts, and techniques for creating eye-catching finishing touches to top off a stylish groom in any dog!</p>
                   </div>
                   <div className="col-12 col-lg-6 mb-4">
                     <div className="alert alert-primary">Unit Total: 7 to 14 hours + Practice</div>
@@ -258,7 +258,7 @@ const DogGroomingCourseOutlinePage: NextPage = () => (
                       <div className="card-body">
                         <h4>Required Dogs:</h4>
                         <ul className="card-text">
-                          <li>Any dog that isn&apos;t hairless and doesn&apos;t have a short, flat coat</li>
+                          <li>Any dog that isn't hairless and doesn't have a short, flat coat</li>
                           <li>A dog with enough hair on his head for a topknot (example: Poodle, Shih Tzu)</li>
                           <li>A short-coated dog that also has a double coat (example: Lab, Australian Cattle Dog)</li>
                         </ul>
@@ -271,7 +271,7 @@ const DogGroomingCourseOutlinePage: NextPage = () => (
               <AccordionSection eventKey="6">
                 <div className="row">
                   <div className="col-12 col-lg-6 mb-4">
-                    <p className="mb-0">You&apos;ll now start to work with dogs that require special accommodations or considerations when grooming. This includes introducing puppies to the grooming process, grooming seniors and other dogs who might have health issues to consider when grooming, and dogs that may have behavioral issues that make them particularly difficult to groom.</p>
+                    <p className="mb-0">You'll now start to work with dogs that require special accommodations or considerations when grooming. This includes introducing puppies to the grooming process, grooming seniors and other dogs who might have health issues to consider when grooming, and dogs that may have behavioral issues that make them particularly difficult to groom.</p>
                   </div>
                   <div className="col-12 col-lg-6 mb-4">
                     <div className="alert alert-primary">Unit Total: 8 to 16 Hours + Practice</div>
@@ -288,7 +288,7 @@ const DogGroomingCourseOutlinePage: NextPage = () => (
                       <div className="card-body">
                         <h4>Required Grooming Equipment:</h4>
                         <ul className="mb-0">
-                          <li>Grooming tools appropriate for the dog breed you&apos;re working with (brushes, combs, clippers, nail tools, etc.)</li>
+                          <li>Grooming tools appropriate for the dog breed you're working with (brushes, combs, clippers, nail tools, etc.)</li>
                         </ul>
                       </div>
                     </div>
@@ -311,8 +311,8 @@ const DogGroomingCourseOutlinePage: NextPage = () => (
                 <div className="row">
                   <div className="col-12 col-lg-6 mb-4 mb-lg-0">
                     <Image src={UnitGImage} className="mb-4" layout="responsive" alt="longhaired dog getting a trim" />
-                    <p>In this final mandatory unit before your practicum, you&apos;ll learn the guidelines for styling and showing purebred dogs. These are the standards that give different dog breeds their unique looks.</p>
-                    <p>Unit G guides you through the process of adapting breed standards to practical pet cuts for a number of common breeds. You&apos;ll return to the information in this unit over and over again throughout your grooming career!</p>
+                    <p>In this final mandatory unit before your practicum, you'll learn the guidelines for styling and showing purebred dogs. These are the standards that give different dog breeds their unique looks.</p>
+                    <p>Unit G guides you through the process of adapting breed standards to practical pet cuts for a number of common breeds. You'll return to the information in this unit over and over again throughout your grooming career!</p>
                     <p className="mb-0">Note: This unit is the lead-up to your practicum, therefore there are no practical assignments in this unit.</p>
                   </div>
                   <div className="col-12 col-lg-6">
@@ -336,7 +336,7 @@ const DogGroomingCourseOutlinePage: NextPage = () => (
               <AccordionSection eventKey="8">
                 <div className="row">
                   <div className="col-12 col-lg-6 mb-4">
-                    <p>In your practicum units, you&apos;ll follow a series of assignments that will have you grooming full dogs from start to finish.  This is where all your knowledge from the course will come to a head. For best results, you&apos;ll want to complete a groom on several dogs before submitting your work for grading. It&apos;s only with practice that you will truly become a competent and successful professional dog groomer!</p>
+                    <p>In your practicum units, you'll follow a series of assignments that will have you grooming full dogs from start to finish.  This is where all your knowledge from the course will come to a head. For best results, you'll want to complete a groom on several dogs before submitting your work for grading. It's only with practice that you will truly become a competent and successful professional dog groomer!</p>
                     <div className="alert alert-primary mb-0">Unit Total: 11 to 20 hours + Practice</div>
                   </div>
                   <div className="col-12 col-lg-6 mb-4">
@@ -347,12 +347,12 @@ const DogGroomingCourseOutlinePage: NextPage = () => (
                       <div className="card-body">
                         <h4 className="card-title"><strong>Practicum Unit 1:</strong></h4>
                         <p className="card-text lead">The Bath</p>
-                        <p className="card-text">In this first practicum unit, you&apos;ll bathe a dog from head to tail. This will include prepping the dog for bathing, choosing the right tools for the job, giving the dog a thorough wash, and drying the dog afterward.</p>
+                        <p className="card-text">In this first practicum unit, you'll bathe a dog from head to tail. This will include prepping the dog for bathing, choosing the right tools for the job, giving the dog a thorough wash, and drying the dog afterward.</p>
                         <h4 className="card-title">Required Equipment:</h4>
                         <ul className="card-text">
                           <li>All appropriate equipment for prep work</li>
                           <li>Grooming tub with restraints and a water supply</li>
-                          <li>Dog shampoo &amp; conditioner appropriate for the dog&apos;s fur/skin type</li>
+                          <li>Dog shampoo &amp; conditioner appropriate for the dog's fur/skin type</li>
                           <li>Towels</li>
                           <li>High-velocity dryer</li>
                         </ul>
@@ -366,11 +366,11 @@ const DogGroomingCourseOutlinePage: NextPage = () => (
                       <div className="card-body">
                         <h4 className="card-title"><strong>Practicum Unit 2:</strong></h4>
                         <p className="card-text lead">Grooming a Natural Breed</p>
-                        <p className="card-text">This practicum unit will have you groom a natural breed dog, such as a purebred Golden Retriever or Shetland Sheepdog. Throughout 6 individual assignments, you&apos;ll go through the process of grooming the entire dog from prep work to grooming each body part and then putting the finishing touches on the dog.</p>
+                        <p className="card-text">This practicum unit will have you groom a natural breed dog, such as a purebred Golden Retriever or Shetland Sheepdog. Throughout 6 individual assignments, you'll go through the process of grooming the entire dog from prep work to grooming each body part and then putting the finishing touches on the dog.</p>
                         <h4 className="card-title">Required Equipment:</h4>
                         <ul className="card-text">
                           <li>Appropriate equipment for prep work</li>
-                          <li>Brushes &amp; combs appropriate for the dog&apos;s coat type &amp; needs.</li>
+                          <li>Brushes &amp; combs appropriate for the dog's coat type &amp; needs.</li>
                           <li>Clippers &amp; appropriate clipper blades</li>
                           <li>Appropriate grooming scissors</li>
                           <li>Other grooming equipment appropriate for the dog</li>
@@ -385,11 +385,11 @@ const DogGroomingCourseOutlinePage: NextPage = () => (
                       <div className="card-body">
                         <h4 className="card-title"><strong>Practicum Unit 3:</strong></h4>
                         <p className="card-text lead">The Teddy Bear Cut</p>
-                        <p className="card-text">The teddy bear cut will be among the most popular cuts requested by your grooming clients.  This is the type of cut anyone with a cute little fluffy dog will want to have!  So you&apos;ll want to take your time and practice to get this one right.  A groomer can make a good living on the teddy bear cut alone!</p>
+                        <p className="card-text">The teddy bear cut will be among the most popular cuts requested by your grooming clients.  This is the type of cut anyone with a cute little fluffy dog will want to have!  So you'll want to take your time and practice to get this one right.  A groomer can make a good living on the teddy bear cut alone!</p>
                         <h4 className="card-title">Required Equipment:</h4>
                         <ul className="card-text">
                           <li>Appropriate equipment for prep work</li>
-                          <li>Brushes &amp; combs appropriate for the dog&apos;s coat type &amp; needs.</li>
+                          <li>Brushes &amp; combs appropriate for the dog's coat type &amp; needs.</li>
                           <li>Clippers &amp; appropriate clipper blades</li>
                           <li>Appropriate grooming scissors</li>
                           <li>Other grooming equipment appropriate for the dog</li>
@@ -404,11 +404,11 @@ const DogGroomingCourseOutlinePage: NextPage = () => (
                       <div className="card-body">
                         <h4 className="card-title"><strong>Practicum Unit 4:</strong></h4>
                         <p className="card-text lead">Grooming a Terrier</p>
-                        <p className="card-text">The terrier group hosts a pretty specific range of dog breeds, all of whom require frequent and regular grooming not only to stay looking their best but to stay healthy as well!  In this practicum unit, you&apos;ll groom a terrier from start to finish.</p>
+                        <p className="card-text">The terrier group hosts a pretty specific range of dog breeds, all of whom require frequent and regular grooming not only to stay looking their best but to stay healthy as well!  In this practicum unit, you'll groom a terrier from start to finish.</p>
                         <h4 className="card-title">Required Equipment:</h4>
                         <ul className="card-text">
                           <li>Appropriate equipment for prep work</li>
-                          <li>Brushes &amp; combs appropriate for the dog&apos;s coat type &amp; needs.</li>
+                          <li>Brushes &amp; combs appropriate for the dog's coat type &amp; needs.</li>
                           <li>Clippers &amp; appropriate clipper blades</li>
                           <li>Appropriate grooming scissors</li>
                           <li>Other grooming equipment appropriate for the dog</li>
@@ -423,11 +423,11 @@ const DogGroomingCourseOutlinePage: NextPage = () => (
                       <div className="card-body">
                         <h4 className="card-title"><strong>Practicum Unit 5:</strong></h4>
                         <p className="card-text lead">Grooming a Non-Sporting Breed</p>
-                        <p className="card-text">The non-sporting class of dogs is one with a wide range of breeds. For this practicum unit, you&apos;ll focus on two non-sporting breeds that are among the most often seen in a grooming salon: the Poodle and the Bichon Frise. You&apos;ll groom one of these breeds (or both!) from head to tail. Don&apos;t forget your finishing touches!</p>
+                        <p className="card-text">The non-sporting class of dogs is one with a wide range of breeds. For this practicum unit, you'll focus on two non-sporting breeds that are among the most often seen in a grooming salon: the Poodle and the Bichon Frise. You'll groom one of these breeds (or both!) from head to tail. Don't forget your finishing touches!</p>
                         <h4 className="card-title">Required Equipment:</h4>
                         <ul className="card-text">
                           <li>Appropriate equipment for prep work</li>
-                          <li>Brushes &amp; combs appropriate for the dog&apos;s coat type &amp; needs.</li>
+                          <li>Brushes &amp; combs appropriate for the dog's coat type &amp; needs.</li>
                           <li>Clippers &amp; appropriate clipper blades</li>
                           <li>Appropriate grooming scissors</li>
                           <li>Other grooming equipment appropriate for the dog</li>
@@ -448,8 +448,8 @@ const DogGroomingCourseOutlinePage: NextPage = () => (
               <AccordionSection eventKey="9">
                 <div className="row">
                   <div className="col-12 col-lg-6 mb-4 mb-lg-0">
-                    <p>By this point in the dog grooming class, you&apos;ve completed all your theoretical and practical work, and are feeling pretty confident in your grooming abilities! Now it&apos;s time to use those abilities in the real-world and turn your passion into a career.  The business training offered in this course is optional, however, it will be hugely beneficial if you want to freelance your services, if you intend on starting your own dog grooming business or salon, or if you&apos;re looking to get a job in an established salon.</p>
-                    <p>You&apos;ll work with your tutor to name your dog grooming business and establish a business plan.  You&apos;ll learn all about different marketing techniques and how to use them effectively. You&apos;ll also read up on the most effective networking techniques and find out how to apply them to your business or job search.  Even if launching your business isn&apos;t in your immediate future, take advantage of this wonderful opportunity, and complete this optional unit of your course!</p>
+                    <p>By this point in the dog grooming class, you've completed all your theoretical and practical work, and are feeling pretty confident in your grooming abilities! Now it's time to use those abilities in the real-world and turn your passion into a career.  The business training offered in this course is optional, however, it will be hugely beneficial if you want to freelance your services, if you intend on starting your own dog grooming business or salon, or if you're looking to get a job in an established salon.</p>
+                    <p>You'll work with your tutor to name your dog grooming business and establish a business plan.  You'll learn all about different marketing techniques and how to use them effectively. You'll also read up on the most effective networking techniques and find out how to apply them to your business or job search.  Even if launching your business isn't in your immediate future, take advantage of this wonderful opportunity, and complete this optional unit of your course!</p>
                     <div className="alert alert-primary mb-0">Unit Total: 9 to 16 Hours</div>
                   </div>
                   <div className="col-12 col-lg-6">
@@ -458,7 +458,7 @@ const DogGroomingCourseOutlinePage: NextPage = () => (
                 </div>
               </AccordionSection>
             </Accordion>
-            <p className="text-center lead">View <Link href=""><a className="text-primary">Sample Assignments</a></Link> from QC&apos;s Online Dog Grooming Course</p>
+            <p className="text-center lead">View <Link href=""><a className="text-primary">Sample Assignments</a></Link> from QC's Online Dog Grooming Course</p>
           </div>
         </div>
       </div>

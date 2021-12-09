@@ -90,8 +90,8 @@ const DogGroomingPage: NextPage<Props> = ({ location, price }) => {
             <div className="col-12 col-lg-10">
               <h2>Become a <strong>Certified Dog Groomer</strong></h2>
               <p className="lead"><strong>International Dog Grooming Professional&trade;</strong> | <i>IDGP&trade;</i></p>
-              <p>There&apos;s never been a better time to start a career as a dog groomer. Groomers all over the country have waiting lists or are simply refusing new clients. What an amazing opportunity to start a new and lucrative career!</p>
-              <p>Get your International Dog Groomer Certification in less than a year with QC&apos;s interactive online training. Study at your own pace. Watch instructional videos and complete hands-on assignments to grow your grooming skills.  Graduate with all the knowledge and skills you need to succeed in the dog grooming industry!</p>
+              <p>There's never been a better time to start a career as a dog groomer. Groomers all over the country have waiting lists or are simply refusing new clients. What an amazing opportunity to start a new and lucrative career!</p>
+              <p>Get your International Dog Groomer Certification in less than a year with QC's interactive online training. Study at your own pace. Watch instructional videos and complete hands-on assignments to grow your grooming skills.  Graduate with all the knowledge and skills you need to succeed in the dog grooming industry!</p>
               <p className="mb-0">Are you ready to start an amazing career?</p>
             </div>
           </div>
@@ -111,7 +111,7 @@ const DogGroomingPage: NextPage<Props> = ({ location, price }) => {
               <Image src={DogCourseMaterialsImage} width={830} height={550} alt="course materials" />
               <div className="courseContentIcon"><BsScissors size={iconSize} /></div>
               <h3>Professional-Grade Grooming Starter Kit</h3>
-              <p>When you enroll, you&apos;ll receive a kit of dog grooming tools to help you complete your studies and start your career. This kit includes cordless WAHL clippers and combs, three grooming scissors, an assortment of brushes and combs, and more!</p>
+              <p>When you enroll, you'll receive a kit of dog grooming tools to help you complete your studies and start your career. This kit includes cordless WAHL clippers and combs, three grooming scissors, an assortment of brushes and combs, and more!</p>
               <button onClick={kitPopupToggle} className="btn btn-link link-primary">View Kit Details</button>
             </div>
             <div className="col-12 col-md-4 mb-4 mb-md-0">
@@ -122,12 +122,12 @@ const DogGroomingPage: NextPage<Props> = ({ location, price }) => {
             <div className="col-12 col-md-4 mb-4 mb-md-0">
               <div className="courseContentIcon"><BsPeopleFill size={iconSize} /></div>
               <h3>Personalized{md ? <br /> : ' '}Feedback</h3>
-              <p className="mb-0">Just because you&apos;re learning online doesn&apos;t mean you&apos;re learning alone. You&apos;ll receive personalized audio feedback from your tutor on every dog grooming assignment you submit.</p>
+              <p className="mb-0">Just because you're learning online doesn't mean you're learning alone. You'll receive personalized audio feedback from your tutor on every dog grooming assignment you submit.</p>
             </div>
             <div className="col-12 col-md-4">
               <div className="courseContentIcon"><IoMdInfinite size={iconSize} /></div>
               <h3>Lifetime{md ? <br /> : ' '}Access</h3>
-              <p className="mb-0">Once you&apos;re a member of the QC family you &apos;ll have lifetime access to all the tools and resources available to QC students. This includes discounts on industry products and so much more!</p>
+              <p className="mb-0">Once you're a member of the QC family you 'll have lifetime access to all the tools and resources available to QC students. This includes discounts on industry products and so much more!</p>
             </div>
           </div>
         </div>
@@ -153,7 +153,7 @@ const DogGroomingPage: NextPage<Props> = ({ location, price }) => {
             <AccordionToggle title="Introductory Units" eventKey="0" />
             <AccordionSection eventKey="0">
               <h4>Units A&ndash;C</h4>
-              <p>The first few units in this course will introduce you to the fundamental concepts of dog grooming. In these units, you&apos;ll cover health and safety, basic dog anatomy, skincare, behavior, the tools of the trade and more.</p>
+              <p>The first few units in this course will introduce you to the fundamental concepts of dog grooming. In these units, you'll cover health and safety, basic dog anatomy, skincare, behavior, the tools of the trade and more.</p>
               <p>During these units it is recommended that you start considering your grooming workspace so that you are prepared for the practical assignments later in the course. Unit C will be particularly helpful in selecting appropriate tools, equipment and products.</p>
               <p className="mb-0">It is also recommended that you start seeking out dog owners who are willing to let you use their dogs in practical assignments later in the course.</p>
             </AccordionSection>
@@ -164,17 +164,17 @@ const DogGroomingPage: NextPage<Props> = ({ location, price }) => {
             </AccordionSection>
             <AccordionToggle title="Hands-On units" eventKey="2" />
             <AccordionSection eventKey="2">
-              <p className="mb-0">Once you understand the basics of dog grooming and dog first aid, you will move on to units that teach you the hands-on skills involved in grooming. In these units, you&apos;ll cover nail trimming, ear cleaning, brushing, de-matting, bathing, drying, coat types, pet cuts, breed standards and more. You&apos;ll complete a number of basic practical assignments that will prepare you to start your practicum.</p>
+              <p className="mb-0">Once you understand the basics of dog grooming and dog first aid, you will move on to units that teach you the hands-on skills involved in grooming. In these units, you'll cover nail trimming, ear cleaning, brushing, de-matting, bathing, drying, coat types, pet cuts, breed standards and more. You'll complete a number of basic practical assignments that will prepare you to start your practicum.</p>
             </AccordionSection>
             <AccordionToggle title="Practicum" eventKey="3" />
             <AccordionSection eventKey="3">
               <p>Dog grooming as a profession requires a lot of background knowledge, but ultimately your success will depend on your ability to safely and skillfully groom dogs.</p>
-              <p className="mb-0">Your practicum is designed to allow you to practice and receive feedback on these essential skills. The units within the practicum involve intensive practical assignments that draw on the content you&apos;ve mastered throughout the course. You&apos;ll have a chance to receive feedback from your tutors on your bathing and drying skills, in addition to the pet cuts and breed cuts you&apos;ll create throughout your career.</p>
+              <p className="mb-0">Your practicum is designed to allow you to practice and receive feedback on these essential skills. The units within the practicum involve intensive practical assignments that draw on the content you've mastered throughout the course. You'll have a chance to receive feedback from your tutors on your bathing and drying skills, in addition to the pet cuts and breed cuts you'll create throughout your career.</p>
             </AccordionSection>
             <AccordionToggle title="Dog Grooming Business Essentials" eventKey="4" />
             <AccordionSection eventKey="4">
               <h4>(Optional Unit)</h4>
-              <p>Dog grooming is a creative career, but it&apos;s also a business. After completing your practicum you can choose to complete the optional Business Essentials unit. This unit will help you develop the skills you need to run your own successful dog grooming business, from building your brand to constructing a business plan to setting your prices.</p>
+              <p>Dog grooming is a creative career, but it's also a business. After completing your practicum you can choose to complete the optional Business Essentials unit. This unit will help you develop the skills you need to run your own successful dog grooming business, from building your brand to constructing a business plan to setting your prices.</p>
             </AccordionSection>
           </Accordion>
         </div>

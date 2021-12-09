@@ -40,8 +40,8 @@ const DogGroomingPage: NextPage<Props> = ({ location, price }) => {
           <h1><strong>First Aid</strong> Course for Groomers</h1>
           <div className="row">
             <div className="col-12 col-lg-10 offset-lg-1">
-              <p>When clients entrust you with their beloved pet, they rightfully expect their dog to be kept safe! That&apos;s why being diligent about health and safety is essential to your success as a dog groomer. This First Aid for Dog Groomers course will help you ensure your own safety as well as the safety of the dogs you work with.</p>
-              <p>Through detailed course texts and video demonstrations, you&apos;ll learn how to prevent injuries and how to respond to emergency situations in your grooming salon. Completing the first aid course will boost your confidence. You&apos;ll learn how to create a safe grooming environment for your furry friends and fellow groomers. Your First Aid for Dog Groomers Certificate will also help increase your credibility and marketability by providing your clients with peace of mind.</p>
+              <p>When clients entrust you with their beloved pet, they rightfully expect their dog to be kept safe! That's why being diligent about health and safety is essential to your success as a dog groomer. This First Aid for Dog Groomers course will help you ensure your own safety as well as the safety of the dogs you work with.</p>
+              <p>Through detailed course texts and video demonstrations, you'll learn how to prevent injuries and how to respond to emergency situations in your grooming salon. Completing the first aid course will boost your confidence. You'll learn how to create a safe grooming environment for your furry friends and fellow groomers. Your First Aid for Dog Groomers Certificate will also help increase your credibility and marketability by providing your clients with peace of mind.</p>
               <p>The First Aid for Dog Groomers course consists of two core units that include course texts, video tutorials, and self-study assignments. The entire course is completed online and at your own pace.</p>
             </div>
           </div>
@@ -76,7 +76,7 @@ const DogGroomingPage: NextPage<Props> = ({ location, price }) => {
         <div className="container text-center">
           <div className="row align-items-center">
             <div className="col-12 col-lg-6 mb-5 mb-lg-0 text-start">
-              <h2>QC&apos;s First Aid Course Includes</h2>
+              <h2>QC's First Aid Course Includes</h2>
               <ul>
                 <li>Course texts that provide in-depth information on preventing and responding to dog grooming emergencies.</li>
                 <li>Video tutorials featuring your course tutors (including a Certified Master Groomer and a Pet First Aid instructor).</li>
@@ -96,7 +96,7 @@ const DogGroomingPage: NextPage<Props> = ({ location, price }) => {
           <div className="row">
             <div className="col-12 col-lg-10 offset-lg-1">
               <h2>Your Professional Certification</h2>
-              <p>Once you&apos;ve completed your Dog First Aid course, you&apos;ll graduate with the First Aid for Groomers certificate of completion. This certificate attests to your success in learning how to maintain a safe grooming environment for dogs and people.</p>
+              <p>Once you've completed your Dog First Aid course, you'll graduate with the First Aid for Groomers certificate of completion. This certificate attests to your success in learning how to maintain a safe grooming environment for dogs and people.</p>
             </div>
           </div>
         </div>
@@ -117,12 +117,12 @@ const DogGroomingPage: NextPage<Props> = ({ location, price }) => {
                     <li>Building your first aid kit</li>
                     <li>Setting up your workspace</li>
                     <li>Preventing accidents and injuries</li>
-                    <li>Assessing a dog&apos;s health</li>
+                    <li>Assessing a dog's health</li>
                     <li>Responding to emergency situations</li>
                     <li>Addressing injuries to the groomer</li>
                     <li>Preventing bites and scratches</li>
                     <li>Assessing the severity of a wound</li>
-                    <li>Checking a dog&apos;s vitals</li>
+                    <li>Checking a dog's vitals</li>
                   </ul>
                 </div>
               </div>

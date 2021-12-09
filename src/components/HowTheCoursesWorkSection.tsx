@@ -26,7 +26,7 @@ export const HowTheCoursesWorkSection = ({ className }: Props): ReactElement => 
           <div className="col-12 col-sm-8 col-md-6 col-lg-3 mb-4 mb-lg-0">
             <BsFillCloudArrowDownFill className="h2 text-secondary mb-4" />
             <h3>Submit Your{lgOrGreater ? <br /> : ' '}<strong>Assignments</strong></h3>
-            <p className="mb-0">Use your computer, phone, or tablet to upload your work to QC&apos;s Online Student Center.</p>
+            <p className="mb-0">Use your computer, phone, or tablet to upload your work to QC's Online Student Center.</p>
           </div>
           <div className="col-12 col-sm-8 col-md-6 col-lg-3 mb-4 mb-md-0">
             <div className="mb-3">
