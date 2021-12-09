@@ -110,8 +110,6 @@ const DogGroomingPage: NextPage<Props> = ({ location, price }) => {
         </div>
       </section>
 
-      <p>{JSON.stringify(location)}</p>
-
       {location.countryCode === 'CA' && location.provinceCode === 'ON'
         ? <PriceSectionDisabled />
         : <PriceSection courses={courseCodes} price={price} doubleGuarantee={true} />
