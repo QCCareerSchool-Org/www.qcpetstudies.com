@@ -1,7 +1,9 @@
 import Image from 'next/image';
 import { ReactElement } from 'react';
 
-import PlaceHolderImage from '../images/placeholder.jpg';
+import KimCooperImage from '../images/kim-cooper.jpg';
+import ShannonNoonanImage from '../images/shannon-noonan.jpg';
+import SusanReadImage from '../images/susan-read.jpg';
 
 type Props = {
   className?: string;
@@ -24,7 +26,7 @@ export const DTTutorSection = ({ className, id = 'tutors' }: Props): ReactElemen
             </div>
             <div className="col-12 col-lg-6 text-lg-start align-item-center mb-2">
               <div className="mb-2">
-                <Image src={PlaceHolderImage} layout="responsive" placeholder="blur" alt="dog-training expert, Shannon Noonan" />
+                <Image src={ShannonNoonanImage} layout="responsive" placeholder="blur" alt="dog-training expert, Shannon Noonan" />
               </div>
               <p className="lead"><strong>Shannon Noonan</strong></p>
               <p>Certified Dog Trainer (CPDT-KA)<br /><em>10 Years of Experience</em></p>
@@ -32,7 +34,7 @@ export const DTTutorSection = ({ className, id = 'tutors' }: Props): ReactElemen
             </div>
             <div className="col-12 col-lg-6 text-lg-start">
               <div className="mb-2">
-                <Image src={PlaceHolderImage} layout="responsive" placeholder="blur" alt="dog-training expert, Susan Read" />
+                <Image src={SusanReadImage} layout="responsive" placeholder="blur" alt="dog-training expert, Susan Read" />
               </div>
               <p className="lead"><strong>Susan Read</strong></p>
               <p>Certified Dog Trainer<br /><em>35 Years of Experience</em></p>

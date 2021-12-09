@@ -12,6 +12,7 @@ import { SEO } from '../../../components/SEO';
 import { useScreenWidth } from '../../../hooks/useScreenWidth';
 
 import Guarantee21DayImage from '../../../images/21-day-guarantee-outlined.svg';
+import StylingBackground from '../../../images/backgrounds/black-medium-size-poodle.jpg';
 import BreedStandardsBook from '../../../images/books/breed-standards.jpg';
 import BreedStylingCertificateImage from '../../../images/breed-styling-certificate.png';
 import CourseIconBadge from '../../../images/course-icon-badge.svg';
@@ -43,6 +44,8 @@ const BreedStylingPage: NextPage<Props> = ({ price }) => {
       />
 
       <section id="top" className="bg-dark">
+        <Image src={StylingBackground} layout="fill" objectFit="cover" objectPosition="center" placeholder="blur" alt="dog getting a haircut" />
+        <div className="image-overlay-gradient" />
         <div className="container text-center">
           <Image src={CourseIconBadge} alt="Cource Icon Badge" />
           <h1>Breed Styling Workshop</h1>
