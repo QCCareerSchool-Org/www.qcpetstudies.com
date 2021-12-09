@@ -31,7 +31,7 @@ const DogGroomingCourseOutlinePage: NextPage = () => (
       canonical="/dog-grooming-courses/dog-grooming/course-outline"
     />
 
-    <section id="firstSection" className="bg-dark">
+    <section id="top" className="bg-dark">
       <Image src={CourseOutlineBackground} layout="fill" objectFit="cover" objectPosition="center" placeholder="blur" alt="dog getting a haircut" />
       <div className="image-overlay-gradient" />
       <div className="container text-center">

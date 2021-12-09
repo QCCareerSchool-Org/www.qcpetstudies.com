@@ -6,7 +6,6 @@ import { Bar } from '../../components/Bar';
 import { DefaultLayout } from '../../components/DefaultLayout';
 import { SEO } from '../../components/SEO';
 import { useScreenWidth } from '../../hooks/useScreenWidth';
-
 import GraduateBackground from '../../images/backgrounds/dog-in-graduatation-cap.jpg';
 import HowItWorksBackground from '../../images/backgrounds/pet-studies-how-works-bg.jpg';
 import YorkieBackground from '../../images/backgrounds/yorkie-on-left-looking-up.jpg';
@@ -31,7 +30,7 @@ const DogGroomingHowItWorksPage: NextPage = () => {
         canonical="/dog-grooming-courses/how-it-works"
       />
 
-      <section id="firstSection" className="bg-dark">
+      <section id="top" className="bg-dark">
         <Image src={HowItWorksBackground} layout="fill" objectFit="cover" objectPosition="center" placeholder="blur" alt="hand reaching toward a happy dog" />
         <div className="image-overlay-gradient" />
         <div className="container text-center">
@@ -54,7 +53,7 @@ const DogGroomingHowItWorksPage: NextPage = () => {
               </div>
               <h2>Starting the Dog Grooming Course</h2>
               <p>The first thing you&apos;ll do after enrolling is log in to your personal account in the Online Student Center. From there you&apos;ll be able to access your dog grooming course guides, lesson texts, assignment templates and video tutorials. Within 7 to 10 business days of enrolling, you&apos;ll also receive hard copy versions of your course materials along with your grooming tools.</p>
-              <p className="lead mb-0">View a <Link href="/dog-grooming-courses/dog-grooming#course-outline"><a className="link-primary">detailed course outline</a></Link> to learn more about your dog groomer training.</p>
+              <p className="lead mb-0">View a <Link href="/dog-grooming-courses/dog-grooming/course-outline"><a className="link-primary">detailed course outline</a></Link> to learn more about your dog groomer training.</p>
             </div>
           </div>
         </div>
@@ -86,7 +85,7 @@ const DogGroomingHowItWorksPage: NextPage = () => {
             </div>
           </div>
           <p className="lead mb-4">View sample assignments from QC&apos;s dog grooming course!</p>
-          <Link href="/dog-grooming-courses/dog-grooming/your-grooming-assignments"><a className="btn btn-primary">View Assignments</a></Link>
+          <Link href="/dog-grooming-courses/dog-grooming/assignments"><a className="btn btn-primary">View Assignments</a></Link>
         </div>
       </section>
 
@@ -100,7 +99,7 @@ const DogGroomingHowItWorksPage: NextPage = () => {
               </div>
               <h2>Finding Dogs for Grooming Assignments</h2>
               <p>Throughout your dog groomer training you&apos;ll have the chance to work with many different dogs. You can work with your own dog, your friends&apos; or family members&apos; dogs, or you can reach out to your local animal shelter or a nearby rescue. After all, it&apos;s never too hard to find people who will be happy to have their dogs groomed for free! If you get stuck, just contact the student support team: <strong>they&apos;re ready to provide you with additional suggestions.</strong></p>
-              <p className="lead mb-0">Wondering how online dog grooming schools differ from in-class programs? <Link href="/dog-grooming-courses/resources#online-vs-in-class"><a className="link-primary">Find out here</a></Link>!</p>
+              <p className="lead mb-0">Wondering how online dog grooming schools differ from in-class programs? <Link href="/dog-grooming-courses/resources/class-vs-online-dog-grooming-schools"><a className="link-primary">Find out here</a></Link>!</p>
             </div>
           </div>
         </div>

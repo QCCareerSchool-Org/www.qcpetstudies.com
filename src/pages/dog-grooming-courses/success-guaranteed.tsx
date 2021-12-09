@@ -1,4 +1,4 @@
-import { NextPage } from 'next';
+import { GetServerSideProps, NextPage } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -6,15 +6,25 @@ import { DefaultLayout } from '../../components/DefaultLayout';
 import { FreeFirstAidSection } from '../../components/FreeFirstAidSection';
 import { HowTheCoursesWorkSection } from '../../components/HowTheCoursesWorkSection';
 import { PriceSection } from '../../components/PriceSection';
+import { PriceSectionDisabled } from '../../components/PriceSectionDisabled';
 import { SEO } from '../../components/SEO';
 import QcYearGuaratnteeLogo from '../../images/1-year-guarantee-outlined.svg';
 import QcDayGuaratnteeLogo from '../../images/21-day-guarantee-outlined.svg';
 import DryingDogBg from '../../images/backgrounds/drying-dog-bg.jpg';
 import FullKitWithManualsImage from '../../images/dg-course-materials-manuals-kit-white.jpg';
+import { getLocation } from '../../lib/getLocation';
+import { lookupPrices } from '../../lib/lookupPrices';
+import type { Location } from '../../models/location';
+import type { PriceResult } from '../../models/price';
 
 const courseCodes = [ 'dg' ];
 
-const SuccessGuaranteedPage: NextPage = () => (
+type Props = {
+  location: Location;
+  price: PriceResult;
+};
+
+const SuccessGuaranteedPage: NextPage<Props> = ({ location, price }) => (
   <DefaultLayout>
     <SEO
       title="Success Guaranteed"
@@ -22,7 +32,7 @@ const SuccessGuaranteedPage: NextPage = () => (
       canonical="/dog-grooming-courses/success-guaranteed"
     />
 
-    <section id="firstSection" className="bg-dark">
+    <section id="top" className="bg-dark">
       <Image src={DryingDogBg} layout="fill" objectFit="cover" objectPosition="center" alt="Person drying dog with dryer" />
       <div className="image-overlay-gradient" />
       <div className="container text-center">
@@ -61,7 +71,10 @@ const SuccessGuaranteedPage: NextPage = () => (
       </div>
     </section>
 
-    <PriceSection courses={courseCodes} doubleGuarantee={true} />
+    {location.countryCode === 'CA' && location.provinceCode === 'ON'
+      ? <PriceSectionDisabled />
+      : <PriceSection courses={courseCodes} price={price} doubleGuarantee={true} />
+    }
 
     <HowTheCoursesWorkSection className="bg-light" />
 
@@ -69,5 +82,11 @@ const SuccessGuaranteedPage: NextPage = () => (
 
   </DefaultLayout>
 );
+
+export const getServerSideProps: GetServerSideProps = async context => {
+  const location = await getLocation(context);
+  const price = await lookupPrices(courseCodes, location.countryCode, location.provinceCode);
+  return { props: { location, price } };
+};
 
 export default SuccessGuaranteedPage;

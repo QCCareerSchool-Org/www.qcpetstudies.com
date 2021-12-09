@@ -7,7 +7,7 @@ import { SEO } from '../../../components/SEO';
 import { useScreenWidth } from '../../../hooks/useScreenWidth';
 
 import AprilCostigan from '../../../images/april-costigan-300x300.jpg';
-import firstSectionBackground from '../../../images/backgrounds/license-vs-certification-bg.jpg';
+import GroomerDemattingBackground from '../../../images/backgrounds/license-vs-certification-bg.jpg';
 import DogDriedOffByTowel from '../../../images/dog-dried-off-by-towel.jpg';
 import DogStaircase from '../../../images/dog-on-staircase.jpg';
 import DogSittingOnTowel from '../../../images/dog-sitting-on-towel.jpg';
@@ -25,8 +25,8 @@ const LicenseVsCertification: NextPage = () => {
         canonical="/dog-grooming-courses/resources/license-vs-certification"
       />
 
-      <section id="firstSection" className="bg-dark">
-        <Image src={firstSectionBackground} layout="fill" objectFit="cover" objectPosition="center" placeholder="blur" alt="groomer dematting a dog" />
+      <section id="top" className="bg-dark">
+        <Image src={GroomerDemattingBackground} layout="fill" objectFit="cover" objectPosition="center" placeholder="blur" alt="groomer dematting a dog" />
         <div className="image-overlay-gradient" />
         <div className="container text-center">
           <h1>Dog Grooming License vs. Certification</h1>

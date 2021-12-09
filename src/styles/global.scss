@@ -197,7 +197,7 @@ section, .section {
   position: relative; /* in case we use a cover image */
   overflow: hidden; /* in case we use a cover image */
 }
-#defaultPage #firstSection { padding-top: 6rem }
+#defaultPage section#top { padding-top: 6rem }
 @media (min-width: 576px) {
   section, .section { padding: 3rem 0 }
 }
@@ -206,7 +206,7 @@ section, .section {
 }
 @media (min-width: 992px) {
   section, .section { padding: 4rem 0 }
-  #defaultPage #firstSection { padding-top: 10.5rem } /* to make space for the header */
+  #defaultPage section#top { padding-top: 10.5rem } /* to make space for the header */
 }
 
 section > div.container {
@@ -561,4 +561,9 @@ ul.list-style-none, ol.list-style-none {
   img {
     box-shadow: 12px 12px 12px 0 rgba(0, 0, 0, 0.10);
   }
+}
+
+.sectionAnchor {
+  position: relative;
+  top: -56px;
 }

@@ -1,27 +1,37 @@
-import { NextPage } from 'next';
+import { GetServerSideProps, NextPage } from 'next';
 import Image from 'next/image';
 
-import { DefaultLayout } from '../../components/DefaultLayout';
-import { FreeFirstAidSection } from '../../components/FreeFirstAidSection';
-import { HowTheCoursesWorkSection } from '../../components/HowTheCoursesWorkSection';
-import { PriceSection } from '../../components/PriceSection';
-import { SEO } from '../../components/SEO';
-import QcYearGuaratnteeLogo from '../../images/1-year-guarantee-outlined.svg';
-import QcDayGuaratnteeLogo from '../../images/21-day-guarantee-outlined.svg';
-import DreamCareerBackground from '../../images/backgrounds/drying-dog-bg.jpg';
-import FullKitImage from '../../images/dog-grooming-kit.jpg';
+import { DefaultLayout } from '../../../components/DefaultLayout';
+import { FreeFirstAidSection } from '../../../components/FreeFirstAidSection';
+import { HowTheCoursesWorkSection } from '../../../components/HowTheCoursesWorkSection';
+import { PriceSection } from '../../../components/PriceSection';
+import { PriceSectionDisabled } from '../../../components/PriceSectionDisabled';
+import { SEO } from '../../../components/SEO';
+import QcYearGuaratnteeLogo from '../../../images/1-year-guarantee-outlined.svg';
+import QcDayGuaratnteeLogo from '../../../images/21-day-guarantee-outlined.svg';
+import DreamCareerBackground from '../../../images/backgrounds/drying-dog-bg.jpg';
+import FullKitImage from '../../../images/dog-grooming-kit.jpg';
+import { getLocation } from '../../../lib/getLocation';
+import { lookupPrices } from '../../../lib/lookupPrices';
+import type { Location } from '../../../models/location';
+import type { PriceResult } from '../../../models/price';
 
 const courseCodes = [ 'dg' ];
 
-const StartYourDreamCareerPage: NextPage = () => (
+type Props = {
+  location: Location;
+  price: PriceResult;
+};
+
+const StartYourDreamCareerPage: NextPage<Props> = ({ location, price }) => (
   <DefaultLayout>
     <SEO
       title="Start Your Dream Career"
       description="Start Your Dream Career"
-      canonical="/dog-grooming-courses/start-your-dream-career-rm"
+      canonical="/dog-grooming-courses/rm/start-your-dream-career"
     />
 
-    <section id="firstSection" className="bg-dark">
+    <section id="top" className="bg-dark">
       <Image src={DreamCareerBackground} layout="fill" objectFit="cover" objectPosition="center" alt="dog getting blow dried" />
       <div className="image-overlay-gradient" />
       <div className="container text-center">
@@ -84,7 +94,10 @@ const StartYourDreamCareerPage: NextPage = () => (
       </div>
     </section>
 
-    <PriceSection courses={courseCodes} doubleGuarantee={true} />
+    {location.countryCode === 'CA' && location.provinceCode === 'ON'
+      ? <PriceSectionDisabled />
+      : <PriceSection courses={courseCodes} price={price} doubleGuarantee={true} />
+    }
 
     <HowTheCoursesWorkSection className="bg-light" />
 
@@ -92,5 +105,11 @@ const StartYourDreamCareerPage: NextPage = () => (
 
   </DefaultLayout>
 );
+
+export const getServerSideProps: GetServerSideProps = async context => {
+  const location = await getLocation(context);
+  const price = await lookupPrices(courseCodes, location.countryCode, location.provinceCode);
+  return { props: { location, price } };
+};
 
 export default StartYourDreamCareerPage;

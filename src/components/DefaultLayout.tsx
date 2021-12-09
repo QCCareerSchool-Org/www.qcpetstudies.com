@@ -1,4 +1,3 @@
-import Link from 'next/link';
 import { ReactElement, ReactNode } from 'react';
 
 import { Footer, FooterCTAType } from './Footer';

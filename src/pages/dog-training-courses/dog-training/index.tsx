@@ -1,4 +1,4 @@
-import { NextPage } from 'next';
+import { GetServerSideProps, NextPage } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 import { Accordion, Modal } from 'react-bootstrap';
@@ -8,32 +8,38 @@ import { IoMdInfinite } from 'react-icons/io';
 import { AccordionSection } from '../../../components/AccordionSection';
 import { AccordionToggle } from '../../../components/AccordionToggle';
 import { DefaultLayout } from '../../../components/DefaultLayout';
+import { GuaranteeSection } from '../../../components/GuaranteeSection';
 import { PriceSection } from '../../../components/PriceSection';
 import { SEO } from '../../../components/SEO';
-import { useLocation } from '../../../hooks/useLocation';
-import { usePrice } from '../../../hooks/usePrice';
 import { useScreenWidth } from '../../../hooks/useScreenWidth';
 import { useToggle } from '../../../hooks/useToggle';
+import IntroductoryUnitsImage from '../../../images/dt-outline-part-1-image.jpg';
+import ApplyingTrainingPrinciplesImage from '../../../images/dt-outline-part-2-image.jpg';
+import TeachingPeopleImage from '../../../images/dt-outline-part-3-image.jpg';
+import DogTrainingBusinessImage from '../../../images/dt-outline-part-4-image.jpg';
 import CertificationGoldImage from '../../../images/IDTP-certification-gold-2.svg';
 import MovieClapperImage from '../../../images/movie-clapper.svg';
 import OutlineImage from '../../../images/outline.svg';
-import IntroductoryUnitsImage from '../../../images/part-1-image.jpg';
-import ApplyingTrainingPrinciplesImage from '../../../images/part-2-image.jpg';
-import TeachingPeopleImage from '../../../images/part-3-image.jpg';
-import DogTrainingBusinessImage from '../../../images/part-4-image.jpg';
 import PlaceHolderImage from '../../../images/placeholder.jpg';
 import PlayBtnImage from '../../../images/play-btn.svg';
 import { formatPrice } from '../../../lib/formatPrice';
+import { getLocation } from '../../../lib/getLocation';
+import { lookupPrices } from '../../../lib/lookupPrices';
+import type { Location } from '../../../models/location';
+import type { PriceResult } from '../../../models/price';
 
 const headerIconSize = 20;
 const iconSize = 36;
 
 const courseCodes = [ 'dt' ];
 
-const DogTrainingPage: NextPage = () => {
+type Props = {
+  location: Location;
+  price: PriceResult;
+};
+
+const DogTrainingPage: NextPage<Props> = ({ price }) => {
   const screenWidth = useScreenWidth();
-  const location = useLocation();
-  const price = usePrice(courseCodes, location?.countryCode, location?.provinceCode);
   const [ trailerPopupVisible, trailerPopupToggle ] = useToggle();
 
   const mdOrGreater = screenWidth >= 768;
@@ -49,7 +55,7 @@ const DogTrainingPage: NextPage = () => {
         canonical="/dog-training-courses/dog-training"
       />
 
-      <section id="firstSection" className="bg-dark">
+      <section id="top" className="bg-dark">
         <Image src={PlaceHolderImage} layout="fill" objectFit="cover" objectPosition="center" placeholder="blur" alt="Dog Grooming Background" />
         <div className="image-overlay-gradient" />
         <div className="container text-center">
@@ -57,7 +63,7 @@ const DogTrainingPage: NextPage = () => {
             <div className="mb-4">
               <Image src={CertificationGoldImage} alt="International Dog Training Professional IDTP Certification" height="125" width="125" />
             </div>
-            <h1>Dog Training</h1>
+            <h1>Dog Training Course</h1>
             {price && price.plans.part.deposit > 0 && <h4>Get Started for Only <strong>{price.currency.symbol}{formatPrice(price.plans.part.deposit)}</strong></h4>}
             <p><em><a href="#tuition" className="text-white">See tuition details</a></em></p>
             <a href="https://enroll.qcpetstudies.com?c[]=dt"><button className="btn btn-secondary btn-lg">Enroll Online</button></a>
@@ -75,6 +81,10 @@ const DogTrainingPage: NextPage = () => {
               <div className="col text-uppercase">
                 <a href="#guarantee"><Image src={PlayBtnImage} alt="play button" width={headerIconSize} height={headerIconSize} /></a>
                 <p><strong>Guarantee</strong></p>
+              </div>
+              <div className="col text-uppercase">
+                <a href="#tutors"><Image src={PlayBtnImage} alt="play button" width={headerIconSize} height={headerIconSize} /></a>
+                <p><strong>Tutors</strong></p>
               </div>
             </div>
           </div>
@@ -104,7 +114,7 @@ const DogTrainingPage: NextPage = () => {
         </div>
       </section>
 
-      <PriceSection courses={courseCodes} doubleGuarantee={true} />
+      <PriceSection courses={courseCodes} price={price} doubleGuarantee={true} />
 
       <section>
         <div className="container text-center">
@@ -131,7 +141,8 @@ const DogTrainingPage: NextPage = () => {
         </div>
       </section>
 
-      <section id="outline" className="bg-lighter">
+      <div id="outline" className="sectionAnchor" />
+      <section className="bg-lighter">
         <div className="container">
           <div className="row justify-content-center mb-4">
             <div className="col12 col-lg-10 text-center">
@@ -277,6 +288,7 @@ const DogTrainingPage: NextPage = () => {
         </div>
       </section>
 
+      <div id="tutors" className="sectionAnchor" />
       <section>
         <div className="container text-center">
           <div className="row justify-content-center">
@@ -306,20 +318,16 @@ const DogTrainingPage: NextPage = () => {
         </div>
       </section>
 
-      <section id="guarantee" className="bg-light">
-        <div className="container text-center">
-          <div className="row justify-content-center">
-            <div className="col-12 col-lg-10">
-              <h2>21-Day <strong>Guarantee</strong></h2>
-              <p>When you enroll in QC&apos;s Dog Training Course, you have 21 days to review the course and decide if it&apos;s the right program for you.  If you don&apos;t like what you see, simply contact the school to arrange a full refund of your tuition, no questions asked!</p>
-              <Link href="/about/about-qc-pet-studies#guarantee"><a className="btn btn-outline-navy">Learn More</a></Link>
-            </div>
-          </div>
-        </div>
-      </section>
+      <GuaranteeSection className="bg-light" />
 
     </DefaultLayout>
   );
+};
+
+export const getServerSideProps: GetServerSideProps = async context => {
+  const location = await getLocation(context);
+  const price = await lookupPrices(courseCodes, location.countryCode, location.provinceCode);
+  return { props: { location, price } };
 };
 
 export default DogTrainingPage;

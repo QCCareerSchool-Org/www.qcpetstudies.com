@@ -1,4 +1,4 @@
-import { NextPage } from 'next';
+import { GetServerSideProps, NextPage } from 'next';
 import Image from 'next/image';
 import { ReactElement } from 'react';
 import { BsBook } from 'react-icons/bs';
@@ -8,14 +8,24 @@ import { Bar } from '../../../components/Bar';
 import { DefaultLayout } from '../../../components/DefaultLayout';
 import { DGTutorSection } from '../../../components/DGTutorSection';
 import { PriceSection } from '../../../components/PriceSection';
+import { PriceSectionDisabled } from '../../../components/PriceSectionDisabled';
 import { SEO } from '../../../components/SEO';
 import { TabGroup } from '../../../components/TabGroup';
 import AssignmentBackground from '../../../images/backgrounds/your-career-bg.jpg';
 import IDGPCertificationLogo from '../../../images/IDGP-certification-gold.svg';
+import { getLocation } from '../../../lib/getLocation';
+import { lookupPrices } from '../../../lib/lookupPrices';
+import { Location } from '../../../models/location';
+import { PriceResult } from '../../../models/price';
 
 const courseCodes = [ 'dg' ];
 
-const GroomingAssignment: NextPage = () => {
+type Props = {
+  location: Location;
+  price: PriceResult;
+};
+
+const GroomingAssignment: NextPage<Props> = ({ location, price }) => {
   return (
     <DefaultLayout>
       <SEO
@@ -24,7 +34,7 @@ const GroomingAssignment: NextPage = () => {
         canonical="/dog-grooming-courses/dog-grooming/course-preview"
       />
 
-      <section id="firstSection" className="bg-dark">
+      <section id="top" className="bg-dark">
         <Image src={AssignmentBackground} layout="fill" objectFit="cover" objectPosition="center" placeholder="blur" alt="dog getting a haircut" />
         <div className="image-overlay-gradient" />
         <div className="container text-center">
@@ -343,10 +353,19 @@ const GroomingAssignment: NextPage = () => {
 
       <DGTutorSection className="bg-light" />
 
-      <PriceSection courses={courseCodes} doubleGuarantee={true} />
+      {location.countryCode === 'CA' && location.provinceCode === 'ON'
+        ? <PriceSectionDisabled />
+        : <PriceSection courses={courseCodes} price={price} doubleGuarantee={true} />
+      }
 
     </DefaultLayout>
   );
+};
+
+export const getServerSideProps: GetServerSideProps = async context => {
+  const location = await getLocation(context);
+  const price = await lookupPrices(courseCodes, location.countryCode, location.provinceCode);
+  return { props: { location, price } };
 };
 
 const VideoTab = (): ReactElement => (

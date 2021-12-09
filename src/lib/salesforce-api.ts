@@ -105,7 +105,7 @@ export type VisitorData = {
       type: string | null;
       query: string | null;
     };
-    visitor_activities: { visitor_activity: any }; // eslint-disable-line camelcase
+    visitor_activities: { visitor_activity: unknown }; // eslint-disable-line camelcase
   };
 };
 

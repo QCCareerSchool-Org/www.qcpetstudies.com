@@ -20,7 +20,7 @@ const DogGroomingKitPage: NextPage = () => (
       canonical="/dog-grooming-courses/dog-grooming-kit"
     />
 
-    <section id="firstSection" className="bg-dark">
+    <section id="top" className="bg-dark">
       <Image src={GroomingKitBackground} layout="fill" objectFit="cover" objectPosition="center" placeholder="blur" alt="grooming kit" />
       <div className="container text-center">
         <h1>Dog grooming kit</h1>

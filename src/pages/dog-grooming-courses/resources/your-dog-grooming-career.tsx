@@ -26,12 +26,12 @@ const DogGroomingCareerPage: NextPage = () => {
   return (
     <DefaultLayout>
       <SEO
-        title="Dog Grooming Career"
-        description="Dog Grooming Career"
+        title="Your Dog Grooming Career"
+        description="There are different career paths a professional dog groomer can take. Choose the path that's right for you!"
         canonical="/dog-grooming-courses/resources/your-dog-grooming-career"
       />
 
-      <section id="firstSection" className="bg-dark">
+      <section id="top" className="bg-dark">
         <Image src={CareerBackground} layout="fill" objectFit="cover" objectPosition="center" placeholder="blur" alt="groomer trimming a dog's hair" />
         <div className="image-overlay-gradient" />
         <div className="container text-center">
@@ -97,7 +97,7 @@ const DogGroomingCareerPage: NextPage = () => {
                     <div className="d-flex mb-4">
                       <p>Mackenzie Lafleur<br /><span className="text-muted">QC Graduate</span></p>
                     </div>
-                    <p className="lead mb-0"><Link href=""><a className="link-primary">Read other reviews like this one by checking out our Student &amp; Graduate Features!</a></Link></p>
+                    <p className="lead mb-0"><Link href="/category/student-features/"><a className="link-primary">Read other reviews like this one by checking out our Student &amp; Graduate Features!</a></Link></p>
                   </div>
                 </div>
               </div>
@@ -117,13 +117,13 @@ const DogGroomingCareerPage: NextPage = () => {
           <h2>Career Resources for<br />Grooming Students and Graduates</h2>
           <p className="lead">As a student of QC Pet Studies, you&apos;ll be provided with resources to build a profitable and<br />enjoyable career as a professional dog groomer.</p>
           <CareerResources title="Free Business Training" icon={<FaBriefcase />}>
-            <p className="mb-0">QC&apos;s comprehensive <Link href=""><a className="link-primary">Online Dog Grooming Class</a></Link> comes with complete business training at no extra cost! This training will teach you the skills you&apos;ll need to start a successful dog grooming business!</p>
+            <p className="mb-0">QC&apos;s comprehensive <Link href="/dog-grooming-courses/dog-grooming/"><a className="link-primary">Online Dog Grooming Class</a></Link> comes with complete business training at no extra cost! This training will teach you the skills you&apos;ll need to start a successful dog grooming business!</p>
           </CareerResources>
           <CareerResources title="A Blog for Groomers" icon={<FaRss />}>
-            <p className="mb-0">The Sniffin&apos;Around <Link href=""><a className="link-primary">dog grooming blog</a></Link> is full of articles that will help you thrive in your chosen career path. From adding accessories to setting your grooming prices to designing your business logo, the blog content aims to help you succeed as a professional dog groomer and business owner.</p>
+            <p className="mb-0">The Sniffin&apos;Around <Link href="/sniffin-around-blog/"><a className="link-primary">dog grooming blog</a></Link> is full of articles that will help you thrive in your chosen career path. From adding accessories to setting your grooming prices to designing your business logo, the blog content aims to help you succeed as a professional dog groomer and business owner.</p>
           </CareerResources>
           <CareerResources title="Exclusive Discounts from Vendors" icon={<FaTags />}>
-            <p className="mb-0">Investing in professional-grade dog grooming tools and materials enables you to do your best work. Students of QC Pet Studies receive <Link href=""><a className="link-primary">exclusive discounts to some of the best pet retailers.</a></Link> You&apos;ll be able to build your grooming toolkit with quality products and equipment at a fraction of the cost!</p>
+            <p className="mb-0">Investing in professional-grade dog grooming tools and materials enables you to do your best work. Students of QC Pet Studies receive <Link href="/about/student-discounts/"><a className="link-primary">exclusive discounts to some of the best pet retailers.</a></Link> You&apos;ll be able to build your grooming toolkit with quality products and equipment at a fraction of the cost!</p>
           </CareerResources>
           <CareerResources title="Dog Grooming Business Resources" icon={<FaRegFileAlt />}>
             <p>QC Students are provided with templates and reference sheets to help them write business plans, manage client information, and make quick and accurate decisions in the grooming environment. You&apos;ll be able to download all of the following from the Online Student Center:</p>
