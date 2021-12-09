@@ -1,4 +1,4 @@
-import { NextPage } from 'next';
+import { GetServerSideProps, NextPage } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 import Accordion from 'react-bootstrap/Accordion';
@@ -19,15 +19,24 @@ import CourseIconBadge from '../../../images/course-icon-badge.svg';
 import OutlinePart1 from '../../../images/ds-outlline-part-1-anatomy.jpg';
 import OutlinePart2 from '../../../images/ds-outlline-part-2-first-aid.jpg';
 import OutlinePart3 from '../../../images/ds-outlline-part-3-grooming.jpg';
+import { getLocation } from '../../../lib/getLocation';
+import { lookupPrices } from '../../../lib/lookupPrices';
+import { Location } from '../../../models/location';
+import { PriceResult } from '../../../models/price';
 
-const secondaryNavLinks: SecondaryNavLinks = [];
+const courseCodes = [ 'ds' ];
 
-const BreedStylingPage: NextPage = () => {
+type Props = {
+  location: Location;
+  price: PriceResult;
+};
+
+const BreedStylingPage: NextPage<Props> = ({ location, price }) => {
   const screenWidth = useScreenWidth();
   const lgOrGreater = screenWidth >= 992;
 
   return (
-    <DefaultLayout secondaryTitle="Breed Styling Workshop" secondaryNavLinks={secondaryNavLinks}>
+    <DefaultLayout>
       <SEO
         title="Breed Styling Workshop"
         description="If you're already a professional dog groomer, the breed styling workshop will take your grooming skills to the next level. Start today!"
@@ -84,7 +93,7 @@ const BreedStylingPage: NextPage = () => {
         </div>
       </section>
 
-      <PriceSection courses={[ 'ds' ]} doubleGuarantee={false} />
+      <PriceSection courses={courseCodes} price={price} doubleGuarantee={true} />
 
       <section>
         <div className="container text-center">
@@ -190,12 +199,12 @@ const BreedStylingPage: NextPage = () => {
         </div>
       </section>
 
-      <section id="outlineSection" className="bg-light">
+      <section className="bg-lighter">
         <div className="container">
           <div className="row justify-content-center">
             <div className="col-12 col-10-lg mb-4 text-center">
               <h2>Course <strong>Outline</strong></h2>
-              <p className="lead">The Breed Styling Wokshop is split into 3 parts, each containing individual training units.</p>
+              <p className="lead">The Breed Styling Wokshop is split into three parts, each containing individual training units.</p>
               <p>You must complete a unit with a satisfactory grade before you can submit assignments for the next units.</p>
             </div>
           </div>
@@ -263,12 +272,14 @@ const BreedStylingPage: NextPage = () => {
           </Accordion>
         </div>
       </section>
-
-      <style jsx>{`
-        #outlineSection { background-color: #f7f7f7 !important; }
-      `}</style>
     </DefaultLayout>
   );
+};
+
+export const getServerSideProps: GetServerSideProps = async context => {
+  const location = await getLocation(context);
+  const price = await lookupPrices(courseCodes, location.countryCode, location.provinceCode);
+  return { props: { location, price } };
 };
 
 export default BreedStylingPage;

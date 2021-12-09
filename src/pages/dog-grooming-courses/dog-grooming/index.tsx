@@ -1,4 +1,4 @@
-import { NextPage } from 'next';
+import { GetServerSideProps, NextPage } from 'next';
 import Image from 'next/image';
 import { Accordion, Modal } from 'react-bootstrap';
 import { BsCardChecklist, BsPeopleFill, BsScissors } from 'react-icons/bs';
@@ -10,9 +10,8 @@ import { DefaultLayout } from '../../../components/DefaultLayout';
 import { DGTutorSection } from '../../../components/DGTutorSection';
 import { GuaranteeSection } from '../../../components/GuaranteeSection';
 import { PriceSection } from '../../../components/PriceSection';
+import { PriceSectionDisabled } from '../../../components/PriceSectionDisabled';
 import { SEO } from '../../../components/SEO';
-import { useLocation } from '../../../hooks/useLocation';
-import { usePrice } from '../../../hooks/usePrice';
 import { useScreenWidth } from '../../../hooks/useScreenWidth';
 import { useToggle } from '../../../hooks/useToggle';
 import DogGroomingBackground from '../../../images/backgrounds/bichon-frise-getting-haircut.jpg';
@@ -23,16 +22,23 @@ import MovieClapperImage from '../../../images/movie-clapper.svg';
 import OutlineImage from '../../../images/outline.svg';
 import PlayBtnImage from '../../../images/play-btn.svg';
 import { formatPrice } from '../../../lib/formatPrice';
+import { getLocation } from '../../../lib/getLocation';
+import { lookupPrices } from '../../../lib/lookupPrices';
+import { Location } from '../../../models/location';
+import { PriceResult } from '../../../models/price';
 
 const headerIconSize = 20;
 const iconSize = 36;
 
 const courseCodes = [ 'dg' ];
 
-const DogGroomingPage: NextPage = () => {
+type Props = {
+  location: Location;
+  price: PriceResult;
+};
+
+const DogGroomingPage: NextPage<Props> = ({ location, price }) => {
   const screenWidth = useScreenWidth();
-  const location = useLocation();
-  const price = usePrice(courseCodes, location?.countryCode, location?.provinceCode);
   const [ kitPopupVisible, kitPopupToggle ] = useToggle();
   const [ trailerPopupVisible, trailerPopupToggle ] = useToggle();
 
@@ -104,7 +110,12 @@ const DogGroomingPage: NextPage = () => {
         </div>
       </section>
 
-      <PriceSection courses={courseCodes} doubleGuarantee={true} />
+      <p>{JSON.stringify(location)}</p>
+
+      {location.countryCode === 'CA' && location.provinceCode === 'ON'
+        ? <PriceSectionDisabled />
+        : <PriceSection courses={courseCodes} price={price} doubleGuarantee={true} />
+      }
 
       <section>
         <div className="container text-center">
@@ -142,7 +153,8 @@ const DogGroomingPage: NextPage = () => {
         </Modal>
       </section>
 
-      <section id="outline" className="bg-lighter">
+      <div id="outline" className="sectionAnchor" />
+      <section className="bg-lighter">
         <div className="container">
           <div className="row justify-content-center">
             <div className="col-12 col-lg-10 mb-4 text-center">
@@ -188,18 +200,16 @@ const DogGroomingPage: NextPage = () => {
 
       <style jsx>{`
         .courseContentIcon { color: #ccc; margin-bottom: 0.5rem; }
-        .imageShadowWrapper {
-          padding: 0 0 12px; // to offset the shadow
-        }
-        @media (min-width: 576px) {
-          .imageShadowWrapper {
-            padding: 0 12px 0 0; // to offset the shadow
-          }
-        }
       `}</style>
 
     </DefaultLayout>
   );
+};
+
+export const getServerSideProps: GetServerSideProps = async context => {
+  const location = await getLocation(context);
+  const price = await lookupPrices(courseCodes, location.countryCode, location.provinceCode);
+  return { props: { location, price } };
 };
 
 export default DogGroomingPage;

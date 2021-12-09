@@ -1,4 +1,4 @@
-import { NextPage } from 'next';
+import { GetServerSideProps, NextPage } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 import { Accordion, Modal } from 'react-bootstrap';
@@ -10,8 +10,6 @@ import { AccordionToggle } from '../../../components/AccordionToggle';
 import { DefaultLayout } from '../../../components/DefaultLayout';
 import { PriceSection } from '../../../components/PriceSection';
 import { SEO } from '../../../components/SEO';
-import { useLocation } from '../../../hooks/useLocation';
-import { usePrice } from '../../../hooks/usePrice';
 import { useScreenWidth } from '../../../hooks/useScreenWidth';
 import { useToggle } from '../../../hooks/useToggle';
 import CertificationGoldImage from '../../../images/IDTP-certification-gold-2.svg';
@@ -24,16 +22,23 @@ import DogTrainingBusinessImage from '../../../images/part-4-image.jpg';
 import PlaceHolderImage from '../../../images/placeholder.jpg';
 import PlayBtnImage from '../../../images/play-btn.svg';
 import { formatPrice } from '../../../lib/formatPrice';
+import { getLocation } from '../../../lib/getLocation';
+import { lookupPrices } from '../../../lib/lookupPrices';
+import { Location } from '../../../models/location';
+import { PriceResult } from '../../../models/price';
 
 const headerIconSize = 20;
 const iconSize = 36;
 
 const courseCodes = [ 'dt' ];
 
-const DogTrainingPage: NextPage = () => {
+type Props = {
+  location: Location;
+  price: PriceResult;
+};
+
+const DogTrainingPage: NextPage<Props> = ({ location, price }) => {
   const screenWidth = useScreenWidth();
-  const location = useLocation();
-  const price = usePrice(courseCodes, location?.countryCode, location?.provinceCode);
   const [ trailerPopupVisible, trailerPopupToggle ] = useToggle();
 
   const mdOrGreater = screenWidth >= 768;
@@ -104,7 +109,7 @@ const DogTrainingPage: NextPage = () => {
         </div>
       </section>
 
-      <PriceSection courses={courseCodes} doubleGuarantee={true} />
+      <PriceSection courses={courseCodes} price={price} doubleGuarantee={true} />
 
       <section>
         <div className="container text-center">
@@ -131,7 +136,8 @@ const DogTrainingPage: NextPage = () => {
         </div>
       </section>
 
-      <section id="outline" className="bg-lighter">
+      <div id="outline" className="sectionAnchor" />
+      <section className="bg-lighter">
         <div className="container">
           <div className="row justify-content-center mb-4">
             <div className="col12 col-lg-10 text-center">
@@ -306,7 +312,8 @@ const DogTrainingPage: NextPage = () => {
         </div>
       </section>
 
-      <section id="guarantee" className="bg-light">
+      <div id="guarantee" className="sectionAnchor" />
+      <section className="bg-light">
         <div className="container text-center">
           <div className="row justify-content-center">
             <div className="col-12 col-lg-10">
@@ -320,6 +327,12 @@ const DogTrainingPage: NextPage = () => {
 
     </DefaultLayout>
   );
+};
+
+export const getServerSideProps: GetServerSideProps = async context => {
+  const location = await getLocation(context);
+  const price = await lookupPrices(courseCodes, location.countryCode, location.provinceCode);
+  return { props: { location, price } };
 };
 
 export default DogTrainingPage;

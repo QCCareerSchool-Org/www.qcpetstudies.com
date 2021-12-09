@@ -1,17 +1,29 @@
-import { NextPage } from 'next';
+import { GetServerSideProps, NextPage } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 
 import { DefaultLayout } from '../../../components/DefaultLayout';
 import { PriceSection } from '../../../components/PriceSection';
+import { PriceSectionDisabled } from '../../../components/PriceSectionDisabled';
 import { SEO } from '../../../components/SEO';
 import FirstAidBackground from '../../../images/backgrounds/hero-first-aid-bg.jpg';
 import dogLooking from '../../../images/dog-looking.jpg';
 import faCertificate from '../../../images/fa-certificate-desktop.jpg';
 import firstAidBook from '../../../images/first-aid-book-white.jpg';
 import firstAidLogo from '../../../images/first-aid-logo.svg';
+import { getLocation } from '../../../lib/getLocation';
+import { lookupPrices } from '../../../lib/lookupPrices';
+import { Location } from '../../../models/location';
+import { PriceResult } from '../../../models/price';
 
-const DogGroomingPage: NextPage = () => {
+const courseCodes = [ 'fa' ];
+
+type Props = {
+  location: Location;
+  price: PriceResult;
+};
+
+const DogGroomingPage: NextPage<Props> = ({ location, price }) => {
   return (
     <DefaultLayout secondaryTitle="First Aid for Groomers Course">
       <SEO
@@ -55,7 +67,10 @@ const DogGroomingPage: NextPage = () => {
         </div>
       </section>
 
-      <PriceSection courses={[ 'fa' ]} doubleGuarantee={false} />
+      {location.countryCode === 'CA' && location.provinceCode === 'ON'
+        ? <PriceSectionDisabled />
+        : <PriceSection courses={courseCodes} price={price} doubleGuarantee={true} />
+      }
 
       <section>
         <div className="container text-center">
@@ -149,6 +164,12 @@ const DogGroomingPage: NextPage = () => {
 
     </DefaultLayout>
   );
+};
+
+export const getServerSideProps: GetServerSideProps = async context => {
+  const location = await getLocation(context);
+  const price = await lookupPrices(courseCodes, location.countryCode, location.provinceCode);
+  return { props: { location, price } };
 };
 
 export default DogGroomingPage;

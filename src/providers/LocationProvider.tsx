@@ -18,7 +18,7 @@ const getLocation = async (): Promise<Location> => {
     }
   }
   try {
-    const url = 'https://api.qccareerschool.com/geoLocation/ip';
+    const url = 'https://api.qccareerschool.com/geoLocation/clientIp?q=';
     const response = await fetch(url);
     if (!response.ok) {
       throw Error('Unable to fetch location');
