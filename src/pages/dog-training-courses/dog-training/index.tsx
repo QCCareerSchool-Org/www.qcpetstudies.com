@@ -24,7 +24,6 @@ import CertificationGoldImage from '../../../images/IDTP-certification-gold-2.sv
 import MovieClapperImage from '../../../images/movie-clapper.svg';
 import OutlineImage from '../../../images/outline.svg';
 import PlayBtnImage from '../../../images/play-btn.svg';
-
 import { formatPrice } from '../../../lib/formatPrice';
 import { getLocation } from '../../../lib/getLocation';
 import { lookupPrices } from '../../../lib/lookupPrices';
