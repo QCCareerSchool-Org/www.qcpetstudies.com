@@ -30,7 +30,7 @@ const LicenseVsCertification: NextPage = () => {
         <div className="image-overlay-gradient" />
         <div className="container text-center">
           <h1>Dog Grooming License vs. Certification</h1>
-          <p className="lead">What&apos;s the difference between a dog grooming license and a dog grooming certificate?</p>
+          <p className="lead">What's the difference between a dog grooming license and a dog grooming certificate?</p>
         </div>
       </section>
 
@@ -56,10 +56,10 @@ const LicenseVsCertification: NextPage = () => {
             <div className="col-12 col-lg-6 col-fluid col-fluid-lg-6">
               <div className="section py-lg-5 pe-lg-4">{/* re-add section padding, but override on lg or greater, and add right padding on lg or greater */}
                 <h2>Dog Grooming <strong>License</strong></h2>
-                <p>There is no international standard that defines what a dog grooming license is. However, it&apos;s considered a reputable document that proves you&apos;re fit to groom dogs.</p>
+                <p>There is no international standard that defines what a dog grooming license is. However, it's considered a reputable document that proves you're fit to groom dogs.</p>
                 <p>In certain areas, a freelance groomer running their own business will require a Pet Grooming Facility License or regional certification for their facility. The groomer themselves might not need that license, but their <em>business </em>will.</p>
                 <p>Obtaining a dog grooming license varies by location. It might be as simple as sending in an application or taking a written exam. To know for sure, call your local government to find out the regulations in your area!</p>
-                <p className="lead"><strong>Keep in mind:</strong> a dog grooming license won&apos;t teach you <em>how</em> to be a groomer. It&apos;s strongly recommended that you pair your license with a professional certification course.</p>
+                <p className="lead"><strong>Keep in mind:</strong> a dog grooming license won't teach you <em>how</em> to be a groomer. It's strongly recommended that you pair your license with a professional certification course.</p>
                 <p className="mb-0"><Link href="/learning-online/class-vs-online-dog-grooming-schools"><a className="link-primary">Discover the difference between in-person and online certification courses here!</a></Link></p>
               </div>
             </div>
@@ -116,7 +116,7 @@ const LicenseVsCertification: NextPage = () => {
                       </div>
                       <p>April Costigan<br /><span className="text-muted">QC Graduate</span></p>
                     </div>
-                    <p className="lead mb-0"><Link href="/2021/01/qc-pet-studies-graduate-feature-april-costigan"><a className="link-primary">Read April&apos;s full Graduate Feature on QC&apos;s blog!</a></Link></p>
+                    <p className="lead mb-0"><Link href="/2021/01/qc-pet-studies-graduate-feature-april-costigan"><a className="link-primary">Read April's full Graduate Feature on QC's blog!</a></Link></p>
                   </div>
                 </div>
               </div>

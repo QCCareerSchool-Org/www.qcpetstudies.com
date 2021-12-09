@@ -36,10 +36,10 @@ const RequiredDogBreeds: NextPage = () => {
         <div className="container text-center">
           <div className="row">
             <div className="col-12 col-lg-10 offset-lg-1">
-              <h1>Dog Breeds You&apos;ll Need</h1>
+              <h1>Dog Breeds You'll Need</h1>
               <h2 className="mb-4">For Your Dog Grooming Course</h2>
               <p className="lead">Throughout your online grooming course, you will be asked to groom a number of dogs of different breeds</p>
-              <p>You&apos;ll start by practicing basic techniques, such as scissoring and clipping, before undertaking head-to-tail grooms. You&apos;ll conclude the course with five hands-on practicum units to test your knowledge and complete your certification!</p>
+              <p>You'll start by practicing basic techniques, such as scissoring and clipping, before undertaking head-to-tail grooms. You'll conclude the course with five hands-on practicum units to test your knowledge and complete your certification!</p>
             </div>
           </div>
         </div>
@@ -54,7 +54,7 @@ const RequiredDogBreeds: NextPage = () => {
               </div>
             )}
             <div className="col-12 col-lg-8">
-              <p>For Units A to C, you&apos;re expected to work with a coated dog of any breed. For the rest of the units, you will groom dogs that exhibit a variety of different conditions.</p>
+              <p>For Units A to C, you're expected to work with a coated dog of any breed. For the rest of the units, you will groom dogs that exhibit a variety of different conditions.</p>
               <p className="lead mb-4">Worried about finding dogs for your assignments? Check out these guides on how to recruit dogs for your online grooming assignments!</p>
               <ul>
                 <li><Link href="/2017/07/finding-dogs-online-grooming-assignments/"><a className="link-secondary">Finding Dogs for Your Online Grooming Assignments</a></Link></li>
@@ -73,7 +73,7 @@ const RequiredDogBreeds: NextPage = () => {
               <div className="card bg-white">
                 <div className="card-body">
                   <h3 className="mb-4">Unit A</h3>
-                  <p>You will start by learning basic dog anatomy and anatomical variations within a breed. In this unit&apos;s practical assignment, you will need to identify the anatomical features on the dog of your choice.</p>
+                  <p>You will start by learning basic dog anatomy and anatomical variations within a breed. In this unit's practical assignment, you will need to identify the anatomical features on the dog of your choice.</p>
                   <h4>Required Dogs</h4>
                   <ul>
                     <li>Any coated dog</li>
@@ -85,7 +85,7 @@ const RequiredDogBreeds: NextPage = () => {
               <div className="card bg-white">
                 <div className="card-body">
                   <h3 className="mb-4">Unit B</h3>
-                  <p>Unit B focuses on dog behavior and how to identify a dog&apos;s grooming needs. In the two last assignments of this unit, you will be asked to conduct a needs analysis and a physical assessment of a coated dog.</p>
+                  <p>Unit B focuses on dog behavior and how to identify a dog's grooming needs. In the two last assignments of this unit, you will be asked to conduct a needs analysis and a physical assessment of a coated dog.</p>
                   <h4>Required Dogs</h4>
                   <ul>
                     <li>Any coated dog</li>
@@ -112,8 +112,8 @@ const RequiredDogBreeds: NextPage = () => {
                   <Image src={IconFirstAidLogo} width={iconSize} height={iconSize} alt="first aid" />
                 </div>
                 <h3 className="mb-4">First Aid Training</h3>
-                <p>Before you can move onto the practical units of the dog grooming course, you will need to complete the First Aid for Groomer&apos;s course. This course is included at no extra charge with every Dog Grooming Course enrollment. You will learn how to work safely with dogs and deal with any potential complications during the grooming appointment.</p>
-                <p className="lead"><Link href="/online-courses/first-aid-for-groomers/"><a className="link-primary">Learn more about the First Aid for Groomers&apos; Course</a></Link></p>
+                <p>Before you can move onto the practical units of the dog grooming course, you will need to complete the First Aid for Groomer's course. This course is included at no extra charge with every Dog Grooming Course enrollment. You will learn how to work safely with dogs and deal with any potential complications during the grooming appointment.</p>
+                <p className="lead"><Link href="/online-courses/first-aid-for-groomers/"><a className="link-primary">Learn more about the First Aid for Groomers' Course</a></Link></p>
               </div>
             </div>
             <div className="col-12 col-md-6 mb-g d-flex align-items-stretch">
@@ -151,7 +151,7 @@ const RequiredDogBreeds: NextPage = () => {
               <div className="card bg-white">
                 <div className="card-body">
                   <h3 className="mb-4">Unit F</h3>
-                  <p>In this unit, you will learn how to groom dogs with special grooming considerations. You&apos;ll learn how to handle a puppy&apos;s first groom, senior dogs, and difficult dogs. You require the following dogs to complete this unit:</p>
+                  <p>In this unit, you will learn how to groom dogs with special grooming considerations. You'll learn how to handle a puppy's first groom, senior dogs, and difficult dogs. You require the following dogs to complete this unit:</p>
                   <h4>Required Dogs</h4>
                   <ul>
                     <li>A senior dog</li>
@@ -176,7 +176,7 @@ const RequiredDogBreeds: NextPage = () => {
         <div className="container">
           <div className="row text-center">
             <h2>Practicum Units</h2>
-            <p className="lead">There are a total of 5 Hands-on Practicum Units in QC&apos;s online dog grooming course.</p>
+            <p className="lead">There are a total of 5 Hands-on Practicum Units in QC's online dog grooming course.</p>
             <p>In Unit 1 of the Practicum Unit, you will bath and dry a dog. For Units 2 to 5, you will be required to complete grooms from start to finish.</p>
           </div>
           <div className="row align-items-center">
@@ -202,7 +202,7 @@ const RequiredDogBreeds: NextPage = () => {
             <div className="col-12 col-md-6 text-center text-md-start mb-4">
               <h3 className="mb-4">Practicum Unit 3</h3>
               <h4>The Teddy Bear Cut</h4>
-              <p>A dog suitable for a teddy bear cut with a coat that&apos;s at least 2 inches long Miniature poodle mix, Havanese mix, etc.</p>
+              <p>A dog suitable for a teddy bear cut with a coat that's at least 2 inches long Miniature poodle mix, Havanese mix, etc.</p>
             </div>
             <div className="col-12 col-sm-10 offset-1 col-md-6 offset-md-0 mb-4">
               <Image src={PracticumImage5} layout="responsive" alt="Dog lying down" />

@@ -66,7 +66,7 @@ const DogGroomingCatalogPage: NextPage<Props> = ({ testGroup }) => {
                 <li>Learn about the many careers you can pursue as a dog groomer</li>
                 <li>View the course curriculum, course videos, and sample assignments</li>
                 <li>Find out about tuition information and choose a payment plan</li>
-                <li>Learn how you can&apos;t go wrong with QC&apos;s money back guarantee!</li>
+                <li>Learn how you can't go wrong with QC's money back guarantee!</li>
               </ul>
             </div>
           </div>
@@ -87,7 +87,7 @@ const DogGroomingCatalogPage: NextPage<Props> = ({ testGroup }) => {
             <div className="col-12 col-lg-4">
               <Image src={Step2SubmitImage} alt="Complete assignment and submit" />
               <p className="lead">Complete Assignments{lgOrGreater ? <br /> : ' '}&amp; Review Feedback</p>
-              <p className="mb-0">Complete your theoretical and practical assignments. Receive advice and detailed feedback from your tutor after every unit you complete. Review your tutor&apos;s advice to improve your skills for the next unit.</p>
+              <p className="mb-0">Complete your theoretical and practical assignments. Receive advice and detailed feedback from your tutor after every unit you complete. Review your tutor's advice to improve your skills for the next unit.</p>
             </div>
             <div className="col-12 col-lg-4">
               <Image src={Step3CertificateImage} alt="Get your certificate" />
@@ -110,7 +110,7 @@ const DogGroomingCatalogPage: NextPage<Props> = ({ testGroup }) => {
               <BsStarFill size={32} className="text-primary mx-2" />
             </div>
             <div className="col-12 col-lg-8">
-              <p>&ldquo;Loved having the opportunity to learn dog grooming and dog first aid through this program. It&apos;s awesome being able to work at my own pace and taking the time to practice and use my assignments in my everyday job. Highly recommend!&rdquo;</p>
+              <p>&ldquo;Loved having the opportunity to learn dog grooming and dog first aid through this program. It's awesome being able to work at my own pace and taking the time to practice and use my assignments in my everyday job. Highly recommend!&rdquo;</p>
               <Image src={ProfileImage} alt="Casey bechard profile image" width="85" height="85" />
               <p className="lead mb-0"><strong>Casey Bechard</strong><br />QC Pet Studies Graduate</p>
             </div>
@@ -125,7 +125,7 @@ const DogGroomingCatalogPage: NextPage<Props> = ({ testGroup }) => {
               <Image src={FirstAidLogo} alt="First Aid course logo" />
               <h2>Free First Aid Course</h2>
               <p className="lead">Enroll in the Dog Grooming course and get the First Aid for Dog Groomers course <strong>FREE! ($348 value)</strong></p>
-              <p className="mb-0">Being trained in pet first aid prepares you to respond to emergencies and to maintain a safe grooming environment. In this course, you&apos;ll learn how to prevent injuries and how to respond to emergency situations in your grooming salon.</p>
+              <p className="mb-0">Being trained in pet first aid prepares you to respond to emergencies and to maintain a safe grooming environment. In this course, you'll learn how to prevent injuries and how to respond to emergency situations in your grooming salon.</p>
             </div>
           </div>
         </div>
@@ -137,7 +137,7 @@ const DogGroomingCatalogPage: NextPage<Props> = ({ testGroup }) => {
             <div className="col-12 col-lg-10">
               <h2>Dog Grooming Kit</h2>
               <p className="lead">Included with your course <strong>(valued at $200!)</strong></p>
-              <p className="mb-4">Receive a dog grooming starter kit when you enroll. It contains some of the key tools and equipment you&apos;ll need to groom dogs professionally.</p>
+              <p className="mb-4">Receive a dog grooming starter kit when you enroll. It contains some of the key tools and equipment you'll need to groom dogs professionally.</p>
             </div>
           </div>
           <Image src={GroomingKitImage} layout="responsive" alt="Dog grooming kit" />

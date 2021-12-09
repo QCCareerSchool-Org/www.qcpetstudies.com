@@ -32,7 +32,7 @@ const DogGroomingKitPage: NextPage = () => (
       <div className="container text-center">
         <div className="row justify-content-center">
           <div className="col-12 col-lg-10 mb-4">
-            <p>When you enroll in QC&apos;s online <Link href="/dog-grooming-courses/dog-grooming/"><a className="link-primary">dog grooming course</a></Link>, you&apos;ll receive a toolkit with the essential items you need to get started. These items will be shipped to you after you submit your Unit B before you begin your practical work in Unit C.</p>
+            <p>When you enroll in QC's online <Link href="/dog-grooming-courses/dog-grooming/"><a className="link-primary">dog grooming course</a></Link>, you'll receive a toolkit with the essential items you need to get started. These items will be shipped to you after you submit your Unit B before you begin your practical work in Unit C.</p>
             <p>Your kit includes a WAHL ARCO 5-in-1 cordless clipper, a stainless steel attachment guide comb kit, professional-grade grooming scissors, brushes, combs, and nail clippers.</p>
             <p>This starter kit will go a long way not only to help you complete your online course but also to enter the industry as a fully equipped dog grooming professional!</p>
             <p className="lead mb-0">The dog grooming kit has an estimated value of over $200!</p>
@@ -47,7 +47,7 @@ const DogGroomingKitPage: NextPage = () => (
     <section>
       <div className="container">
         <div className="text-center mb-4">
-          <h2>What&apos;s in Your Dog Grooming Kit</h2>
+          <h2>What's in Your Dog Grooming Kit</h2>
           <Bar variant="secondary" />
         </div>
         <div className="row justify-content-center mb-4">
@@ -66,7 +66,7 @@ const DogGroomingKitPage: NextPage = () => (
               <Image src={GroomingScissorsImage} className="card-img-top" alt="grooming scissors" />
               <div className="card-body">
                 <h3 className="card-text">Professional Grooming Scissors</h3>
-                <p className="card-text">Grooming scissors (or shears) are a groomer&apos;s best friend. With the right scissors, you can create just about any look on a dog&mdash;from the cutest teddy bear cut to the perfect golden retriever tail and everything in between. As part of your kit, you&apos;ll receive a set of three professional-grade grooming scissors and comb! The kit includes a straight blade, a curved blade, and thinning scissors, wrapped in a beautiful leather case for portability and convenience. (Product may vary based on the supplier.)</p>
+                <p className="card-text">Grooming scissors (or shears) are a groomer's best friend. With the right scissors, you can create just about any look on a dog&mdash;from the cutest teddy bear cut to the perfect golden retriever tail and everything in between. As part of your kit, you'll receive a set of three professional-grade grooming scissors and comb! The kit includes a straight blade, a curved blade, and thinning scissors, wrapped in a beautiful leather case for portability and convenience. (Product may vary based on the supplier.)</p>
               </div>
             </div>
           </div>
@@ -77,7 +77,7 @@ const DogGroomingKitPage: NextPage = () => (
           </div>
           <div className="col-12 col-lg-6">
             <h3>Grooming Tools Starter Kit</h3>
-            <p>Some routine tools of the trade that all groomers need are provided in this starter kit. You&apos;ll learn to expertly use every one of these tools in your course, and you&apos;ll probably use them every day throughout your dog grooming career! This 11-piece set includes:</p>
+            <p>Some routine tools of the trade that all groomers need are provided in this starter kit. You'll learn to expertly use every one of these tools in your course, and you'll probably use them every day throughout your dog grooming career! This 11-piece set includes:</p>
             <ul>
               <li>2 Slicker Brushes (soft and hard)</li>
               <li>2 Nail Clippers (large and small)</li>

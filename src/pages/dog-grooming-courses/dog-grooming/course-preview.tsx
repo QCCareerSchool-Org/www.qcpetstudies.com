@@ -55,21 +55,21 @@ const GroomingAssignment: NextPage<Props> = ({ location, price }) => {
               <p>Becoming a dog groomer is not for everyone! But if you have the right set of passion and skills, it can be an extremely rewarding and profitable career! Does this sound like you?</p>
               <ul>
                 <li>You love all dogs, big and small</li>
-                <li>You&apos;re able to interact with all types of dogs calmly and carefully</li>
-                <li>You&apos;re good with your hands and are able to stand on your feet for hours at a time</li>
+                <li>You're able to interact with all types of dogs calmly and carefully</li>
+                <li>You're good with your hands and are able to stand on your feet for hours at a time</li>
                 <li>You have good people skills</li>
-                <li>You&apos;re driven and ambitious</li>
-                <li>You&apos;re willing to continue learning throughout your career</li>
+                <li>You're driven and ambitious</li>
+                <li>You're willing to continue learning throughout your career</li>
               </ul>
-              <p className="lead mb-0">If this list describes your personality, then you&apos;re in the right place!</p>
+              <p className="lead mb-0">If this list describes your personality, then you're in the right place!</p>
             </div>
             <div className="col-12 col-md-6">
               <div className="card bg-lighter border-lighter">
                 <div className="card-body">
-                  <p className="card-text">QC&apos;s online dog grooming course will prepare you in every way for a successful dog grooming career. You will learn everything from dog behavior and safety practices to tools of the trade, to specific grooming techniques and the most popular cuts.</p>
-                  <p className="card-text">Whether your goal is to launch your own grooming business, work in a grooming salon, or just groom your own dog, you&apos;ll gain all the skills to achieve your goals.</p>
-                  <p className="card-text">Even though you&apos;re learning online, you&apos;ll get plenty of hands-on experience every step of the way! You&apos;ll complete tons of hands-on assignments designed to enhance your grooming skills, and will have support from your own personal tutor, a Certified Master Groomer!</p>
-                  <p className="card-text">Don&apos;t miss out on this amazing opportunity to work with an expert to develop your skills!</p>
+                  <p className="card-text">QC's online dog grooming course will prepare you in every way for a successful dog grooming career. You will learn everything from dog behavior and safety practices to tools of the trade, to specific grooming techniques and the most popular cuts.</p>
+                  <p className="card-text">Whether your goal is to launch your own grooming business, work in a grooming salon, or just groom your own dog, you'll gain all the skills to achieve your goals.</p>
+                  <p className="card-text">Even though you're learning online, you'll get plenty of hands-on experience every step of the way! You'll complete tons of hands-on assignments designed to enhance your grooming skills, and will have support from your own personal tutor, a Certified Master Groomer!</p>
+                  <p className="card-text">Don't miss out on this amazing opportunity to work with an expert to develop your skills!</p>
                 </div>
               </div>
             </div>
@@ -81,11 +81,11 @@ const GroomingAssignment: NextPage<Props> = ({ location, price }) => {
         <div className="container">
           <div className="d-flex flex-column flex-md-row justify-contents-center align-items-center">
             <div className="flex-shrink-0 mb-4 mb-md-0 me-md-4">
-              <Image src={IDGPCertificationLogo} alt="IDGP International Dog Grooming Professional logo" />
+              <Image src={IDGPCertificationLogo} width={200} height={200} alt="IDGP International Dog Grooming Professional logo" />
             </div>
             <div className="text-center text-md-start">
               <h2>Your <strong>Certification</strong></h2>
-              <p className="lead mb-0">Upon graduation, you&apos;ll receive the International Dog Grooming Professional&trade; (IDGP&trade;) Certification. With your certification and professional title, you&apos;ll be ready to start your own business or work for an established grooming salon right away!</p>
+              <p className="lead mb-0">Upon graduation, you'll receive the International Dog Grooming Professional&trade; (IDGP&trade;) Certification. With your certification and professional title, you'll be ready to start your own business or work for an established grooming salon right away!</p>
             </div>
           </div>
         </div>
@@ -105,7 +105,7 @@ const GroomingAssignment: NextPage<Props> = ({ location, price }) => {
                   <div className="row">
                     <div className="col-12 col-lg-6 mb-4 mb-lg-0">
                       <h3 className="fw-normal"><strong>Part 1:</strong> Units A&ndash;C</h3>
-                      <p>The first few units in this course will introduce you to the fundamental concepts of dog grooming. In these units, you&apos;ll cover health and safety, basic dog anatomy, skincare, behavior, the tools of the trade, and more.</p>
+                      <p>The first few units in this course will introduce you to the fundamental concepts of dog grooming. In these units, you'll cover health and safety, basic dog anatomy, skincare, behavior, the tools of the trade, and more.</p>
                       <p>During these units, it is recommended that you start considering your grooming workspace so that you are prepared for the practical assignments later in the course. Unit C will be particularly helpful in selecting appropriate tools, equipment, and products.</p>
                       <p className="mb-0">It is also recommended that you start seeking out dog owners who are willing to let you use their dogs in practical assignments later in the course.</p>
                     </div>
@@ -122,7 +122,7 @@ const GroomingAssignment: NextPage<Props> = ({ location, price }) => {
                           <>
                             <h4>Assignment A3</h4>
                             <p className="lead">Topical Structure</p>
-                            <p className="mb-4">View the assignment sample below to discover more about what you&apos;ll learn in Unit A. Click on the labels to see how you&apos;ll complete your assignments online.</p>
+                            <p className="mb-4">View the assignment sample below to discover more about what you'll learn in Unit A. Click on the labels to see how you'll complete your assignments online.</p>
                             <a href="" className="btn btn-primary">View Assignment</a>
                           </>
                         )}
@@ -135,17 +135,17 @@ const GroomingAssignment: NextPage<Props> = ({ location, price }) => {
             <div className="col-12 col-lg-6 mb-4">
               <Bar variant="primary" align="start" />
               <h4>Unit A</h4>
-              <p className="mb-0">In the first unit of the dog grooming course, you&apos;ll meet your tutor and start learning about the fundamentals of dog grooming. This introductory unit includes theoretical studies on the history of dog grooming, and how to protect your health &amp; safety as a dog groomer. You&apos;ll also learn about dog anatomy in great detail, and you&apos;ll start learning about skincare and esthetics.</p>
+              <p className="mb-0">In the first unit of the dog grooming course, you'll meet your tutor and start learning about the fundamentals of dog grooming. This introductory unit includes theoretical studies on the history of dog grooming, and how to protect your health &amp; safety as a dog groomer. You'll also learn about dog anatomy in great detail, and you'll start learning about skincare and esthetics.</p>
             </div>
             <div className="col-12 col-lg-6 mb-4">
               <Bar variant="primary" align="start" />
               <h4>Unit B</h4>
-              <p className="mb-0">In this second unit, you&apos;ll focus on how to work with dogs in a grooming environment. You&apos;ll learn about dog behaviors and temperaments, and you&apos;ll find out more about how dogs learn and communicate with humans. You&apos;ll then learn about how you can keep the dog and yourself safe during a grooming appointment, and how to conduct an effective needs analysis when meeting a dog grooming client for the first time.</p>
+              <p className="mb-0">In this second unit, you'll focus on how to work with dogs in a grooming environment. You'll learn about dog behaviors and temperaments, and you'll find out more about how dogs learn and communicate with humans. You'll then learn about how you can keep the dog and yourself safe during a grooming appointment, and how to conduct an effective needs analysis when meeting a dog grooming client for the first time.</p>
             </div>
             <div className="col-12 col-lg-6">
               <Bar variant="primary" align="start" />
               <h4>Unit C</h4>
-              <p className="mb-0">The third dog grooming unit will help you become intimately familiar with your grooming tools. You&apos;ll learn all about brushes, scissors, clippers, and you&apos;ll start to practice techniques to use these tools effectively. You&apos;ll also learn how to properly set up your grooming environment, and how to keep it clean and safe!</p>
+              <p className="mb-0">The third dog grooming unit will help you become intimately familiar with your grooming tools. You'll learn all about brushes, scissors, clippers, and you'll start to practice techniques to use these tools effectively. You'll also learn how to properly set up your grooming environment, and how to keep it clean and safe!</p>
             </div>
 
             <div className="col-12">
@@ -159,14 +159,14 @@ const GroomingAssignment: NextPage<Props> = ({ location, price }) => {
                     <div className="col-12 col-lg-6 mb-4 mb-lg-0">
                       <h3 className="fw-normal"><strong>Part 2:</strong> First Aid</h3>
                       <p>In order to provide you with the resources to learn your craft safely, your grooming course also comes with a two-unit course on dog first aid. This course covers emergency situations that may occur in a grooming environment and prepares you to respond calmly and effectively in any emergency.</p>
-                      <p className="mb-0">In two units of the First Aid course, you&apos;ll learn how to deal with a number of injuries or accidents that might occur while grooming dogs, but you&apos;ll also learn how to do everything you can to prevent those emergencies from occurring!</p>
+                      <p className="mb-0">In two units of the First Aid course, you'll learn how to deal with a number of injuries or accidents that might occur while grooming dogs, but you'll also learn how to do everything you can to prevent those emergencies from occurring!</p>
                     </div>
                     <div className="col-12 col-lg-6">
                       <Preview
                         videoContent={(
                           <div className="ratio ratio-16x9">
-                            <video controls preload="auto">
-                              <source src="https://89b45d42c17e11dd3d57-62a1fc0bf60a98e1d5e980348a7de3b7.ssl.cf1.rackcdn.com/interview-paddy.mp4" type="video/mp4" />
+                            <video controls preload="metadata" poster="https://89b45d42c17e11dd3d57-62a1fc0bf60a98e1d5e980348a7de3b7.ssl.cf1.rackcdn.com/unit-screenshots-fa.jpg">
+                              <source src="https://89b45d42c17e11dd3d57-62a1fc0bf60a98e1d5e980348a7de3b7.ssl.cf1.rackcdn.com/unit-first-aid.mp4" type="video/mp4" />
                             </video>
                           </div>
                         )}
@@ -174,7 +174,7 @@ const GroomingAssignment: NextPage<Props> = ({ location, price }) => {
                           <>
                             <h4>Self Study B2</h4>
                             <p className="lead">Conducting a Physical Evaluation</p>
-                            <p className="mb-4">View the assignment sample below to see how you&apos;ll practice emergency response throughout your First Aid Unit.</p>
+                            <p className="mb-4">View the assignment sample below to see how you'll practice emergency response throughout your First Aid Unit.</p>
                             <a href="" className="btn btn-primary">View Assignment</a>
                           </>
                         )}
@@ -195,14 +195,14 @@ const GroomingAssignment: NextPage<Props> = ({ location, price }) => {
                   <div className="row">
                     <div className="col-12 col-lg-6 mb-4 mb-lg-0">
                       <h3 className="fw-normal"><strong>Part 3:</strong> Units D&ndash;G</h3>
-                      <p className="mb-0">Once you understand the basics of dog grooming and dog first aid, you will move on to units that teach you the hands-on skills involved in grooming. In these units, you&apos;ll cover nail trimming, ear cleaning, brushing, de-matting, bathing, drying, coat types, pet cuts, breed standards, and more. You&apos;ll complete a number of basic practical assignments that will prepare you to start your practicum.</p>
+                      <p className="mb-0">Once you understand the basics of dog grooming and dog first aid, you will move on to units that teach you the hands-on skills involved in grooming. In these units, you'll cover nail trimming, ear cleaning, brushing, de-matting, bathing, drying, coat types, pet cuts, breed standards, and more. You'll complete a number of basic practical assignments that will prepare you to start your practicum.</p>
                     </div>
                     <div className="col-12 col-lg-6">
                       <Preview
                         videoContent={(
                           <div className="ratio ratio-16x9">
-                            <video controls preload="auto">
-                              <source src="https://89b45d42c17e11dd3d57-62a1fc0bf60a98e1d5e980348a7de3b7.ssl.cf1.rackcdn.com/interview-paddy.mp4" type="video/mp4" />
+                            <video controls preload="metadata" poster="https://89b45d42c17e11dd3d57-62a1fc0bf60a98e1d5e980348a7de3b7.ssl.cf1.rackcdn.com/unit-screenshots-d.jpg">
+                              <source src="https://89b45d42c17e11dd3d57-62a1fc0bf60a98e1d5e980348a7de3b7.ssl.cf1.rackcdn.com/unit-d.mp4" type="video/mp4" />
                             </video>
                           </div>
                         )}
@@ -210,7 +210,7 @@ const GroomingAssignment: NextPage<Props> = ({ location, price }) => {
                           <>
                             <h4>Assignment D2</h4>
                             <p className="lead">Clipping White Nails</p>
-                            <p className="mb-4">View the assignment sample below to find out how you&apos;ll be assessed in your abilities to prep a dog for the groom.</p>
+                            <p className="mb-4">View the assignment sample below to find out how you'll be assessed in your abilities to prep a dog for the groom.</p>
                             <a href="" className="btn btn-primary">View Assignment</a>
                           </>
                         )}
@@ -223,24 +223,24 @@ const GroomingAssignment: NextPage<Props> = ({ location, price }) => {
             <div className="col-12 col-lg-6 mb-4">
               <Bar variant="primary" align="start" />
               <h4>Unit D</h4>
-              <p>Now that you have basic dog grooming theory and First Aid under your belt, you&apos;re going to start working on dogs and practicing your practical dog grooming skills!</p>
-              <p className="mb-0">In Unit D, you&apos;ll learn about all the basic preparatory work that goes into a grooming session, from clipping nails to bathing and drying. These skills will form the foundation of all the grooming work you&apos;ll perform later in the course and in your career.</p>
+              <p>Now that you have basic dog grooming theory and First Aid under your belt, you're going to start working on dogs and practicing your practical dog grooming skills!</p>
+              <p className="mb-0">In Unit D, you'll learn about all the basic preparatory work that goes into a grooming session, from clipping nails to bathing and drying. These skills will form the foundation of all the grooming work you'll perform later in the course and in your career.</p>
             </div>
             <div className="col-12 col-lg-6 mb-4">
               <Bar variant="primary" align="start" />
               <h4>Unit E</h4>
-              <p className="mb-0">This unit is all about different coat types in dogs. You&apos;ll learn how to handle every coat type including the necessary care and maintenance of these coats. You&apos;ll also be introduced to some indispensable pet cuts, and techniques for creating eye-catching finishing touches to top off a stylish groom in any dog!</p>
+              <p className="mb-0">This unit is all about different coat types in dogs. You'll learn how to handle every coat type including the necessary care and maintenance of these coats. You'll also be introduced to some indispensable pet cuts, and techniques for creating eye-catching finishing touches to top off a stylish groom in any dog!</p>
             </div>
             <div className="col-12 col-lg-6 mb-4 mb-lg-0">
               <Bar variant="primary" align="start" />
               <h4>Unit F</h4>
-              <p className="mb-0">You&apos;ll now start to work with dogs that require special accommodations or considerations when grooming. This includes introducing puppies to the grooming process, grooming seniors and other dogs who might have health issues to consider when grooming, and dogs that may have behavioral issues that make them particularly difficult to groom.</p>
+              <p className="mb-0">You'll now start to work with dogs that require special accommodations or considerations when grooming. This includes introducing puppies to the grooming process, grooming seniors and other dogs who might have health issues to consider when grooming, and dogs that may have behavioral issues that make them particularly difficult to groom.</p>
             </div>
             <div className="col-12 col-lg-6">
               <Bar variant="primary" align="start" />
               <h4>Unit G</h4>
-              <p>In this final mandatory unit before your practicum, you&apos;ll learn the guidelines for styling and showing purebred dogs. These are the standards that give different dog breeds their unique looks.</p>
-              <p className="mb-0">Unit G guides you through the process of adapting breed standards to practical pet cuts for a number of common breeds. You&apos;ll return to the information in this unit over and over again throughout your grooming career!</p>
+              <p>In this final mandatory unit before your practicum, you'll learn the guidelines for styling and showing purebred dogs. These are the standards that give different dog breeds their unique looks.</p>
+              <p className="mb-0">Unit G guides you through the process of adapting breed standards to practical pet cuts for a number of common breeds. You'll return to the information in this unit over and over again throughout your grooming career!</p>
             </div>
 
             <div className="col-12">
@@ -254,14 +254,14 @@ const GroomingAssignment: NextPage<Props> = ({ location, price }) => {
                     <div className="col-12 col-lg-6 mb-4 mb-lg-0">
                       <h3 className="fw-normal"><strong>Part 4:</strong> Practicum</h3>
                       <p>Dog grooming as a profession requires a lot of background knowledge, but ultimately your success will depend on your ability to safely and skillfully groom dogs.</p>
-                      <p className="mb-0">Your practicum is designed to allow you to practice and receive feedback on these essential skills. The units within the practicum involve intensive practical assignments that draw on the content you&apos;ve mastered throughout the course. You&apos;ll have a chance to receive feedback from your tutors on your bathing and drying skills, in addition to the pet cuts and breed cuts you&apos;ll create throughout your career.</p>
+                      <p className="mb-0">Your practicum is designed to allow you to practice and receive feedback on these essential skills. The units within the practicum involve intensive practical assignments that draw on the content you've mastered throughout the course. You'll have a chance to receive feedback from your tutors on your bathing and drying skills, in addition to the pet cuts and breed cuts you'll create throughout your career.</p>
                     </div>
                     <div className="col-12 col-lg-6">
                       <Preview
                         videoContent={(
                           <div className="ratio ratio-16x9">
-                            <video controls preload="auto">
-                              <source src="https://89b45d42c17e11dd3d57-62a1fc0bf60a98e1d5e980348a7de3b7.ssl.cf1.rackcdn.com/interview-paddy.mp4" type="video/mp4" />
+                            <video controls preload="metadata" poster="https://89b45d42c17e11dd3d57-62a1fc0bf60a98e1d5e980348a7de3b7.ssl.cf1.rackcdn.com/unit-screenshots-practicum.jpg">
+                              <source src="https://89b45d42c17e11dd3d57-62a1fc0bf60a98e1d5e980348a7de3b7.ssl.cf1.rackcdn.com/practicum.mp4" type="video/mp4" />
                             </video>
                           </div>
                         )}
@@ -269,7 +269,7 @@ const GroomingAssignment: NextPage<Props> = ({ location, price }) => {
                           <>
                             <h4>Assignment C1</h4>
                             <p className="lead">The Teddy Bear Cut: Preparation</p>
-                            <p className="mb-4">View the assignment sample below to see how you&apos;ll complete your practicum assignments, as well as how you&apos;ll submit your work to be assessed.</p>
+                            <p className="mb-4">View the assignment sample below to see how you'll complete your practicum assignments, as well as how you'll submit your work to be assessed.</p>
                             <a href="" className="btn btn-primary">View Assignment</a>
                           </>
                         )}
@@ -282,7 +282,7 @@ const GroomingAssignment: NextPage<Props> = ({ location, price }) => {
             <div className="col-12 col-lg-6 mb-4">
               <Bar variant="primary" align="start" />
               <h4>PRACTICUM A<span className="fw-normal">&mdash;The Bath</span></h4>
-              <p className="mb-0">Practice wetting a dog with the ideal water temperature and pressure, and then choosing a suitable shampoo to lather and cleanse his coat. Next, thoroughly rinse the dog and check for any leftover dirt or debris. Finally, select an appropriate dryer to thoroughly dry and straighten the dog&apos;s coat.</p>
+              <p className="mb-0">Practice wetting a dog with the ideal water temperature and pressure, and then choosing a suitable shampoo to lather and cleanse his coat. Next, thoroughly rinse the dog and check for any leftover dirt or debris. Finally, select an appropriate dryer to thoroughly dry and straighten the dog's coat.</p>
             </div>
             <div className="col-12 col-lg-6 mb-4">
               <Bar variant="primary" align="start" />
@@ -292,7 +292,7 @@ const GroomingAssignment: NextPage<Props> = ({ location, price }) => {
             <div className="col-12 col-lg-6 mb-4">
               <Bar variant="primary" align="start" />
               <h4>PRACTICUM C<span className="fw-normal">&mdash;Creating the Teddy Bear Cut</span></h4>
-              <p className="mb-0">The teddy bear cut can be a groomer&apos;s bread and butter. In this unit you&apos;ll complete 6 individual assignments where your tutor will evaluate your take on the teddy bear cut, from prep work through execution and finishing touches.</p>
+              <p className="mb-0">The teddy bear cut can be a groomer's bread and butter. In this unit you'll complete 6 individual assignments where your tutor will evaluate your take on the teddy bear cut, from prep work through execution and finishing touches.</p>
             </div>
             <div className="col-12 col-lg-6 mb-4">
               <Bar variant="primary" align="start" />
@@ -315,7 +315,7 @@ const GroomingAssignment: NextPage<Props> = ({ location, price }) => {
                   <div className="row">
                     <div className="col-12 col-lg-6 mb-4 mb-lg-0">
                       <h3 className="fw-normal"><strong>Part 5:</strong> Business Essentials</h3>
-                      <p className="mb-0">Dog grooming is a creative career, but it&apos;s also a business. After completing your practicum you can choose to complete the optional Business Essentials unit. This unit will help you develop the skills you need to run your own successful dog grooming business, from building your brand, to constructing a business plan, to setting your prices.</p>
+                      <p className="mb-0">Dog grooming is a creative career, but it's also a business. After completing your practicum you can choose to complete the optional Business Essentials unit. This unit will help you develop the skills you need to run your own successful dog grooming business, from building your brand, to constructing a business plan, to setting your prices.</p>
                     </div>
                     <div className="col-12 col-lg-6">
                       <TabGroup
@@ -351,12 +351,12 @@ const GroomingAssignment: NextPage<Props> = ({ location, price }) => {
         </div>
       </section>
 
-      <DGTutorSection className="bg-light" />
-
       {location.countryCode === 'CA' && location.provinceCode === 'ON'
         ? <PriceSectionDisabled />
         : <PriceSection courses={courseCodes} price={price} doubleGuarantee={true} />
       }
+
+      <DGTutorSection className="bg-light" />
 
     </DefaultLayout>
   );

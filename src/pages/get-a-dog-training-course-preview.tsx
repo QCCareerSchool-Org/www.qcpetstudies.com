@@ -57,7 +57,7 @@ const DogTrainingCatalogPage: NextPage<Props> = ({ testGroup }) => {
                 <li>Learn about the many careers you can pursue as a dog trainer</li>
                 <li>View the course curriculum, course videos, and sample assignments</li>
                 <li>Find out about tuition information and choose a payment plan</li>
-                <li>Learn how you can&apos;t go wrong with QC&apos;s money back guarantee!</li>
+                <li>Learn how you can't go wrong with QC's money back guarantee!</li>
               </ul>
             </div>
           </div>

@@ -40,8 +40,8 @@ const SuccessGuaranteedPage: NextPage<Props> = ({ location, price }) => (
           <div className="col-12 col-lg-10 mb-5">
             <h1 className="fw-normal">Your Success,<br /><strong>Guaranteed</strong></h1>
             <p className="lead">QC means Quality of Course, and we stand behind that promise.</p>
-            <p className="lead">Study with confidence thanks to QC&apos;s double guarantee.</p>
-            <p className="mb-4">First, try the course risk free for 21 days. Then, if you don&apos;t earn back your tuition in dog grooming fees within one year of graduating, you&apos;ll receive a full tuition refund!</p>
+            <p className="lead">Study with confidence thanks to QC's double guarantee.</p>
+            <p className="mb-4">First, try the course risk free for 21 days. Then, if you don't earn back your tuition in dog grooming fees within one year of graduating, you'll receive a full tuition refund!</p>
             <Link href="/about/about-qc-pet-studies#guarantee"><a className="btn btn-outline-light">Find Out More</a></Link>
           </div>
           <div className="col-12 col-lg-3 mb-4">
@@ -60,7 +60,7 @@ const SuccessGuaranteedPage: NextPage<Props> = ({ location, price }) => (
         <div className="row justify-content-center">
           <div className="col-12 col-lg-10">
             <h2>Your Course Materials</h2>
-            <p>Before you begin your practical work in Unit C, you&apos;ll receive a toolkit with the essential items you need to get started.</p>
+            <p>Before you begin your practical work in Unit C, you'll receive a toolkit with the essential items you need to get started.</p>
             <p>Your kit includes a WAHL ARCO 5-in-1 cordless clipper, a stainless steel attachment guide comb kit, professional-grade grooming scissors, brushes, combs, and nail clippers.</p>
             <p className="lead mb-0">These professional-grade tools have a $200 value!</p>
           </div>

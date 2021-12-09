@@ -34,7 +34,7 @@ const ClassVsOnlineLearning: NextPage = () => {
 
       <ComparisonSection
         title="Admissions"
-        inClass="Enroll by a specific date for the next year&apos;s classes"
+        inClass="Enroll by a specific date for the next year's classes"
         online={<><strong>Enroll at any time.</strong> No admission dates or class schedules.</>}
       />
 
@@ -48,7 +48,7 @@ const ClassVsOnlineLearning: NextPage = () => {
       <ComparisonSection
         title="Instruction"
         inClass="Teacher gives in-person lectures on a strict schedule, and students read/study course books as homework."
-        online={<>Students watch instructors on video (DVD or online) and read course books <strong>whenever it&apos;s convenient</strong>.</>}
+        online={<>Students watch instructors on video (DVD or online) and read course books <strong>whenever it's convenient</strong>.</>}
       />
 
       <ComparisonSection
