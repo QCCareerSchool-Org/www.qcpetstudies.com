@@ -1,13 +1,13 @@
 import { ReactElement } from 'react';
-import { BsShieldFillCheck } from 'react-icons/bs';
-import { FaInfinity } from 'react-icons/fa';
-import { IoMdSend } from 'react-icons/io';
+import { FaClock, FaLock, FaStar } from 'react-icons/fa';
 
 import { useToggle } from '../hooks/useToggle';
 import { formatPrice } from '../lib/formatPrice';
 import { PriceResult } from '../models/price';
 import { Bar } from './Bar';
 import { GuaranteeModal } from './GuaranteeModal';
+
+const iconSize = 24;
 
 type Variant = 'dark' | 'light';
 
@@ -33,11 +33,11 @@ export const PriceSection = ({ courses, price, doubleGuarantee, variant = 'dark'
             <div className="col-12 col-lg-4 mb-4 mb-lg-0">
               <h2 className="mb-3">Tuition &amp; Payment Plans</h2>
               <p className="lead">Includes everything you need to get certified!</p>
-              <hr className="my-5" />
+              <hr className="my-4" />
               <ul className="list-style-none">
-                <li className="mb-3"><IoMdSend className="text-primary me-2" />Free shipping &amp; handling</li>
-                <li className="mb-3"><BsShieldFillCheck className="text-primary me-2" />21-day money-back guarantee</li>
-                <li><FaInfinity className="text-primary me-2" />Lifetime access</li>
+                <li className="mb-3 d-flex align-items-center"><FaStar size={iconSize} className="text-primary me-2" />Certification upon graduation</li>
+                <li className="mb-3 d-flex align-items-center"><FaLock size={iconSize} className="text-primary me-2" />21-day money-back guarantee</li>
+                <li className="d-flex align-items-center"><FaClock size={iconSize} className="text-primary me-2" />Lifetime access</li>
               </ul>
             </div>
             <div className="col-10 offset-1 col-sm-8 offset-sm-2 col-md-6 offset-md-0 col-lg-4 mb-4 mb-md-0 d-flex">
