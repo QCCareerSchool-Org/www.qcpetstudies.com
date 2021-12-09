@@ -12,6 +12,7 @@ class MyDocument extends Document {
     return (
       <Html lang="en" className="h-100" prefix="og: http://ogp.me/ns#">
         <Head>
+          <meta name="viewport" content="minimum-scale=1" />
           <script
             async
             src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}`}
