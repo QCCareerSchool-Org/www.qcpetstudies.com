@@ -62,7 +62,7 @@ const CourseOutlinePage: NextPage = () => {
                   <div className="mb-2">
                     <Image src={IconTime} width={iconSize} height={iconSize} alt="Clock Icon" />
                   </div>
-                  <p className="card-text">The course should take about <strong>30-35 hours</strong> to study and complete assignments from start to finish. This time does not include the time you will take to practice and develop your skills before you complete an assignment.</p>
+                  <p className="card-text">The course should take about <strong>30 to 35 hours</strong> to study and complete assignments from start to finish. This time does not include the time you will take to practice and develop your skills before you complete an assignment.</p>
                 </div>
               </div>
             </div>
