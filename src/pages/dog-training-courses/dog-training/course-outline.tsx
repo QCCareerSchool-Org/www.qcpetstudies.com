@@ -13,14 +13,14 @@ import { useScreenWidth } from '../../../hooks/useScreenWidth';
 import CourseOutlineBackground from '../../../images/backgrounds/aki-with-man.jpg';
 import calendarIcon from '../../../images/calendar.svg';
 import IconTime from '../../../images/clock.svg';
-import UnitAImage from '../../../images/unit-image-1.jpg';
-import UnitBImage from '../../../images/unit-image-2.jpg';
-import UnitCImage from '../../../images/unit-image-3.jpg';
-import UnitDImage from '../../../images/unit-image-4.jpg';
-import UnitEImage from '../../../images/unit-image-5.jpg';
-import UnitFImage from '../../../images/unit-image-6.jpg';
-import UnitGImage from '../../../images/unit-image-7.jpg';
-import UnitHImage from '../../../images/unit-image-8.jpg';
+import UnitAImage from '../../../images/dt-full-outline-unit-a.jpg';
+import UnitBImage from '../../../images/dt-full-outline-unit-b.jpg';
+import UnitCImage from '../../../images/dt-full-outline-unit-c.jpg';
+import UnitDImage from '../../../images/dt-full-outline-unit-d.jpg';
+import UnitEImage from '../../../images/dt-full-outline-unit-e.jpg';
+import UnitFImage from '../../../images/dt-full-outline-unit-f.jpg';
+import UnitGImage from '../../../images/dt-full-outline-unit-g.jpg';
+import UnitHImage from '../../../images/dt-full-outline-unit-h.jpg';
 
 const iconSize = 50;
 
