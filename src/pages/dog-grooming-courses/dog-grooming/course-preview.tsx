@@ -5,8 +5,8 @@ import { BsBook } from 'react-icons/bs';
 import { FaBars, FaPlay } from 'react-icons/fa';
 
 import { Bar } from '../../../components/Bar';
-import { DefaultLayout } from '../../../components/DefaultLayout';
 import { DGTutorSection } from '../../../components/DGTutorSection';
+import { LandingPageLayout } from '../../../components/LandingPageLayout';
 import { PriceSection } from '../../../components/PriceSection';
 import { PriceSectionDisabled } from '../../../components/PriceSectionDisabled';
 import { SEO } from '../../../components/SEO';
@@ -28,7 +28,7 @@ export type Props = {
 
 const GroomingAssignment: NextPage<Props> = ({ location, price, enrollPath }) => {
   return (
-    <DefaultLayout enrollPath={enrollPath}>
+    <LandingPageLayout enrollPath={enrollPath}>
       <SEO
         title="Dog Grooming Certification Course"
         description=""
@@ -359,7 +359,7 @@ const GroomingAssignment: NextPage<Props> = ({ location, price, enrollPath }) =>
 
       <DGTutorSection className="bg-light" />
 
-    </DefaultLayout>
+    </LandingPageLayout>
   );
 };
 
