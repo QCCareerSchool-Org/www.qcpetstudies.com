@@ -131,9 +131,9 @@ export const Footer = ({ ctaType, enrollPath = '/', className }: Props): ReactEl
             </small>
           </div>
           <div className="col-12 col-sm-3 text-center text-sm-end">
-            <a href="https://www.facebook.com/qcpetstudies"><FaFacebookF className="me-3" /></a>
-            <a href="https://twitter.com/qcpetstudies"><FaTwitter className="me-3" /></a>
-            <a href="https://www.instagram.com/qcpetstudies"><FaInstagram /></a>
+            <a href="https://www.facebook.com/qcpetstudies" target="_blank" rel="noopener noreferrer"><FaFacebookF className="me-3" /></a>
+            <a href="https://twitter.com/qcpetstudies" target="_blank" rel="noopener noreferrer"><FaTwitter className="me-3" /></a>
+            <a href="https://www.instagram.com/qcpetstudies" target="_blank" rel="noopener noreferrer"><FaInstagram /></a>
           </div>
         </div>
       </div>
