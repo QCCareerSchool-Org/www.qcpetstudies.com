@@ -22,12 +22,13 @@ export const courseCodes = [ 'dt' ];
 export type Props = {
   location: Location;
   price: PriceResult;
+  secondaryNav: boolean;
   enrollPath: string;
 };
 
-const DogTrainingCoursePreviewPage: NextPage<Props> = ({ price, enrollPath }) => {
+const DogTrainingCoursePreviewPage: NextPage<Props> = ({ price, secondaryNav, enrollPath }) => {
   return (
-    <LandingPageLayout enrollPath={enrollPath}>
+    <LandingPageLayout secondaryNav={secondaryNav} enrollPath={enrollPath}>
       <SEO
         title="Professional Dog Trainer Course"
         description=""
@@ -317,7 +318,7 @@ const DogTrainingCoursePreviewPage: NextPage<Props> = ({ price, enrollPath }) =>
 export const getServerSideProps: GetServerSideProps = async context => {
   const location = await getLocation(context);
   const price = await lookupPrices(courseCodes, location.countryCode, location.provinceCode);
-  return { props: { location, price, enrollPath: '/' } };
+  return { props: { location, price, secondaryNav: true, enrollPath: '/' } };
 };
 
 const VideoTab = (): ReactElement => (
