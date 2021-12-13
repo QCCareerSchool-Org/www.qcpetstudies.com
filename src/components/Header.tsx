@@ -10,8 +10,8 @@ import { useScreenWidth } from '../hooks/useScreenWidth';
 import { useScrollPosition } from '../hooks/useScrollPosition';
 import { useToggle } from '../hooks/useToggle';
 
-import logo from '../images/logo-top-black.svg';
-import logoLight from '../images/logo-top-white.svg';
+import logoLight from '../images/qc-pet-horizontal-inverse.svg';
+import logo from '../images/qc-pet-horizontal.svg';
 import { SecondaryNav, SecondaryNavLinks } from './SecondaryNav';
 
 type Props = {
@@ -29,8 +29,8 @@ export const Header = ({ noHero, secondaryTitle, secondaryNavLinks, className }:
   const maxPosition = 20;
   const scrolled = scrollPosition > maxPosition;
 
-  const xl = screenWidth >= 1200;
-  const mobile = screenWidth < 992;
+  const lgOrGreater = screenWidth >= 992;
+  const xlOrGreater = screenWidth >= 1200;
 
   return (
     <>
@@ -39,7 +39,7 @@ export const Header = ({ noHero, secondaryTitle, secondaryNavLinks, className }:
         bg={scrolled ? 'white' : noHero ? 'dark' : undefined}
         variant={scrolled ? undefined : 'dark'}
         expand="lg"
-        className={`${scrolled && !secondaryNavLinks ? 'shadow-sm' : ''} ${mobileMenu && mobile ? 'opened' : 'closed'} ${mobile ? 'mobile' : 'desktop'} ${secondaryNavLinks ? '.with-secondary' : ''} ${className}`}
+        className={`${scrolled && !secondaryNavLinks ? 'shadow-sm' : ''} ${mobileMenu && !lgOrGreater ? 'opened' : 'closed'} ${!lgOrGreater ? 'mobile' : 'desktop'} ${secondaryNavLinks ? '.with-secondary' : ''} ${className}`}
       >
         <div className="container">
           <div id="nav-wrapper">
@@ -49,24 +49,24 @@ export const Header = ({ noHero, secondaryTitle, secondaryNavLinks, className }:
             <Navbar.Toggle aria-controls="main-navbar" onClick={() => toggleMobileMenu()} />
             <Navbar.Collapse id="main-navbar" className="justify-content-end">
               <Nav>
-                <NavDropdown title={xl || mobile ? 'Become a Dog Groomer' : 'Dog Grooming'} id="dog-groomer-dropdown">
+                <NavDropdown title={xlOrGreater || !lgOrGreater ? 'Become a Dog Groomer' : 'Dog Grooming'} id="dog-groomer-dropdown">
                   <Link href="/dog-grooming-courses/dog-grooming"><a className="dropdown-item dropdown-item-primary">Dog Grooming Course</a></Link>
-                  <Link href="/dog-grooming-courses/dog-grooming#outline"><a className="dropdown-item dropdown-item-sub">Outline</a></Link>
-                  <Link href="/dog-grooming-courses/dog-grooming#certification"><a className="dropdown-item dropdown-item-sub">Certification</a></Link>
                   <Link href="/dog-grooming-courses/dog-grooming#tuition"><a className="dropdown-item dropdown-item-sub">Tuition</a></Link>
+                  <Link href="/dog-grooming-courses/dog-grooming#outline"><a className="dropdown-item dropdown-item-sub">Outline</a></Link>
+                  <Link href="/dog-grooming-courses/dog-grooming#guarantee"><a className="dropdown-item dropdown-item-sub">Guarantee</a></Link>
                   <Link href="/dog-grooming-courses/first-aid"><a className="dropdown-item dropdown-item-primary">First Aid Course</a></Link>
-                  <Link href="/dog-grooming-courses/breed-styling"><a className="dropdown-item dropdown-item-primary">Breed Styling Course</a></Link>
+                  <Link href="/dog-grooming-courses/breed-styling"><a className="dropdown-item dropdown-item-primary">Breed Styling Workshop</a></Link>
                   <hr />
                   <Link href="/dog-grooming-courses/how-it-works"><a className="dropdown-item"><FaCog className="text-primary me-2" /> How It Works</a></Link>
                   <Link href="/dog-grooming-courses/resources"><a className="dropdown-item"><FaFolderOpen className="text-primary me-2" /> Dog Grooming Resources</a></Link>
                   <Link href="/dog-grooming-courses/meet-our-experts"><a className="dropdown-item"><FaUser className="text-primary me-2" /> Meet Our Experts</a></Link>
                   <Link href="/dog-grooming-courses/dog-grooming-kit"><a className="dropdown-item"><FaCut className="text-primary me-2" /> Dog Grooming Kit</a></Link>
                 </NavDropdown>
-                <NavDropdown title={xl || mobile ? 'Become a Dog Trainer' : 'Dog Training'} id="dog-trainer-dropdown">
+                <NavDropdown title={xlOrGreater || !lgOrGreater ? 'Become a Dog Trainer' : 'Dog Training'} id="dog-trainer-dropdown">
                   <Link href="/dog-training-courses/dog-training"><a className="dropdown-item dropdown-item-primary">Dog Training Course</a></Link>
-                  <Link href="/dog-training-courses/dog-training#outline"><a className="dropdown-item dropdown-item-sub">Outline</a></Link>
-                  <Link href="/dog-training-courses/dog-training#certification"><a className="dropdown-item dropdown-item-sub">Certification</a></Link>
                   <Link href="/dog-training-courses/dog-training#tuition"><a className="dropdown-item dropdown-item-sub">Tuition</a></Link>
+                  <Link href="/dog-training-courses/dog-training#outline"><a className="dropdown-item dropdown-item-sub">Outline</a></Link>
+                  <Link href="/dog-training-courses/dog-training#guarantee"><a className="dropdown-item dropdown-item-sub">Guarantee</a></Link>
                   <hr />
                   <Link href="/dog-training-courses/how-it-works"><a className="dropdown-item"><FaCog className="text-primary me-2" /> How It Works</a></Link>
                   <Link href="/dog-training-courses/resources"><a className="dropdown-item"><FaFolderOpen className="text-primary me-2" /> Dog Training Resources</a></Link>
@@ -80,7 +80,7 @@ export const Header = ({ noHero, secondaryTitle, secondaryNavLinks, className }:
                   <Link href="/sniffin-around-blog"><a className="dropdown-item">Blog</a></Link>
                 </NavDropdown>
                 <Link href="/contact-us"><a className="nav-link">Contact Us</a></Link>
-                {mobile
+                {!lgOrGreater
                   ? <a href="https://enroll.qcpetstudies.com" className="nav-link">Enroll Online</a>
                   : <a href="https://enroll.qcpetstudies.com" className="mt-1 ms-3 ms-xxl-5"><button className="btn btn-primary btn-sm">Enroll Online</button></a>
                 }
@@ -89,7 +89,7 @@ export const Header = ({ noHero, secondaryTitle, secondaryNavLinks, className }:
           </div>
         </div>
       </Navbar>
-      {secondaryNavLinks && <SecondaryNav title={secondaryTitle} nav={secondaryNavLinks} scrolled={scrolled} mobile={mobile} />}
+      {secondaryNavLinks && <SecondaryNav title={secondaryTitle} nav={secondaryNavLinks} scrolled={scrolled} mobile={!lgOrGreater} />}
     </>
   );
 };

@@ -4,12 +4,14 @@
  * Colors
  */
  $theme-colors: (
-  "primary": #56c2d6,
+  "primary": #57c3d7,
   "primary-dark": #006c7f,
   "secondary": #ff0074,
-  "gray": #9095a5,
+  "gray": #999,
   "light": #e9e9e9,
+  "lighter": #f7f7f7,
   "dark": #2b313c,
+  "navy": #061f3a,
 );
 
 $body-color: #324F54;
@@ -39,26 +41,21 @@ $font-weight-bolder: 600;
 
 /**
  * Border Radius
- * Unchanged, but included here so the variables can be used below
  */
- $border-radius:    .25rem;
- $border-radius-lg: .75rem;
- $border-radius-sm: .2rem;
+ $border-radius:    0; //.25rem;
+ $border-radius-lg: 0; // .75rem;
+ $border-radius-sm: 0; // .2rem;
 
 /**
  * Buttons
- * We override $btn-border-radius directly and don't modify the more-general $border-radius
  */
 $btn-font-weight: 400;
-// $input-btn-padding-y: 0.375rem;
-$input-btn-padding-x: 1.3875rem;
-$btn-border-radius: 1.3875rem;
-// $input-btn-padding-y-lg: .5rem;
+// $btn-border-radius: 0;
+// $btn-border-radius-sm: 0;
+// $btn-border-radius-lg: 0;
+$input-btn-padding-x: 1rem;
+$input-btn-padding-x-sm: 0.875rem;
 $input-btn-padding-x-lg: 1.5rem;
-$btn-border-radius-lg: 1.5rem;
-// $input-btn-padding-y-sm: .25rem;
-$input-btn-padding-x-sm: .96875rem;
-$btn-border-radius-sm: .96875rem;
 
 /**
  * Navbar
@@ -75,6 +72,11 @@ $navbar-toggler-border-radius:      $border-radius;
 // $dropdown-padding-y: 1rem; // might be needed if we have a larger border radius
 
 $input-padding-x: 0.75rem; // set back to its original value (don't copy $input-btn-padding-x)
+
+$link-decoration: none;
+
+$card-spacer-y: 2rem;
+$card-spacer-x: 2rem;
 
 @import "bootstrap/scss/bootstrap";
 
@@ -93,6 +95,7 @@ body {
 h1, .h1 {
   color: #122022;
   text-transform: uppercase;
+  &.fw-normal { font-weight: 200 !important; }
 }
 h2, .h2 {
   color: #122022;
@@ -114,21 +117,69 @@ h4, .h4, h5, .h5, h6, .h6 {
   letter-spacing: 1px;
 }
 
-@media (max-width: 575px) {
-  h1, .h1 { font-size: 2.25rem }
-  h2, .h2 { font-size: 2rem }
-  h3, .h3 { font-size: 1.5rem }
-  h4, .h4 { font-size: 1rem }
-  h5, .h5 { font-size: 1rem }
-  h6, .h6 { font-size: 1rem }
+/* static font sizes for different breakpoints, rather than dynamic font size */
+h1, .h1 { font-size: 2.25rem; line-height: 2.25rem; margin-bottom: 1rem; /* extra margin-bottom to make up for smaller line-height */ }
+h2, .h2 { font-size: 1.75rem; }
+h3, .h3 { font-size: 1.25rem; }
+h4, .h4, h5, .h5, h6, .h6 { font-size: 1rem; }
+
+@media (min-width: 576px) {
+  h1, .h1 { font-size: 2.5rem; line-height: 2.5rem; }
+  h2, .h2 { font-size: 2rem; }
+  h3, .h3 { font-size: 1.33333333rem; }
+  h4, .h4, h5, .h5, h6, .h6 { font-size: 1rem; }
 }
 
-.bg-dark {
+@media (min-width: 768px) {
+  h1, .h1 { font-size: 2.75rem; line-height: 2.75rem; }
+  h2, .h2 { font-size: 2.25rem; }
+  h3, .h3 { font-size: 1.5rem; }
+  h4, .h4, h5, .h5, h6, .h6 { font-size: 1rem; }
+}
+
+@media (min-width: 992px) {
+  h1, .h1 { font-size: 3.25rem; line-height: 3.25rem; }
+  h2, .h2 { font-size: 2.75rem; }
+  h3, .h3 { font-size: 1.5rem; }
+  h4, .h4, h5, .h5, h6, .h6 { font-size: 1rem; }
+}
+
+@media (min-width: 1200px) {
+  h1, .h1 { font-size: 3.75rem; line-height: 3.75rem; }
+  h2, .h2 { font-size: 3rem; }
+  h3, .h3 { font-size: 1.5rem; }
+  h4, .h4, h5, .h5, h6, .h6 { font-size: 1rem; }
+}
+
+.card.bg-light, .card.bg-white {
+  h1, .h1 { color: #122022; }
+  h2, .h2 { color: #122022;}
+  h3, .h3 { color: #324F54; }
+  h4, .h4, h5, .h5, h6, .h6 { color: #122022; }
+  color: #324F54;
+}
+
+.bg-light {
+  $darker-link-color: #49a4b5;
+  .link-primary {
+    color: $darker-link-color;
+    &:hover, &:focus {
+      color: shift-color($darker-link-color, $link-shade-percentage);
+    }
+  }
+}
+
+.bg-dark, .bg-gray, .bg-black, .card.bg-dark, .card-bg-gray {
   h1, .h1 { color: #e8e8e8; }
   h2, .h2 { color: #e8e8e8;}
   h3, .h3 { color: #ddd; }
   h4, .h4, h5, .h5, h6, .h6 { color: white; }
   color: #ddd;
+}
+
+.bg-navy {
+  color: white;
+  h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 { color: white; }
 }
 
 .btn { text-transform: uppercase; }
@@ -141,15 +192,21 @@ h4, .h4, h5, .h5, h6, .h6 {
 .dropdown-item-primary { font-weight: 600 }
 .dropdown-item-sub { padding-left: 2rem }
 
-section {
+section, .section {
   padding: 2rem 0;
   position: relative; /* in case we use a cover image */
   overflow: hidden; /* in case we use a cover image */
 }
-section#firstSection { padding-top: 6rem }
+#defaultPage section#top { padding-top: 6rem }
+@media (min-width: 576px) {
+  section, .section { padding: 3rem 0 }
+}
 @media (min-width: 768px) {
-  section { padding: 5rem 0 }
-  section#firstSection { padding-top: 11.5rem }
+  section, .section { padding: 3.5rem 0 }
+}
+@media (min-width: 992px) {
+  section, .section { padding: 4rem 0 }
+  #defaultPage section#top { padding-top: 10.5rem } /* to make space for the header */
 }
 
 section > div.container {
@@ -164,18 +221,18 @@ section > div.container {
 }
 
 // gutter-sized margins
-.mb-g { margin-bottom: 30px }
+.mb-g { margin-bottom: 24px }
 @media (min-width: 576px) {
-  .mb-sm-g { margin-bottom: 30px }
+  .mb-sm-g { margin-bottom: 24px }
 }
 @media (min-width: 768px) {
-  .mb-md-g { margin-bottom: 30px }
+  .mb-md-g { margin-bottom: 24px }
 }
 @media (min-width: 992px) {
-  .mb-ld-g { margin-bottom: 30px }
+  .mb-ld-g { margin-bottom: 24px }
 }
 @media (min-width: 1200px) {
-  .mb-xl-g { margin-bottom: 30px }
+  .mb-xl-g { margin-bottom: 24px }
 }
 
 .py-section {
@@ -252,7 +309,6 @@ ul.sm-indent, ol.sm-indent { padding-inline-start: 0rem; padding-left: 1.5rem; }
   transition: opacity 500ms;
 }
 
-
 @media (max-width: 575px) {
   .display-1 { font-size: 6rem }
   .display-2 { font-size: 5rem }
@@ -260,13 +316,8 @@ ul.sm-indent, ol.sm-indent { padding-inline-start: 0rem; padding-left: 1.5rem; }
   .display-4 { font-size: 3rem }
 }
 
-.btn.caps { text-transform: uppercase; letter-spacing: 1px }
-.btn.btn-lg.caps { letter-spacing: 1.5px }
-
 .btn.btn-link { padding: 0 }
 .btn.btn-link:focus { box-shadow: none }
-
-.nav-tabs { border-bottom: 1px solid #e9ecef }
 
 pre { color: inherit }
 
@@ -291,4 +342,228 @@ pre { color: inherit }
 .backgroundVideoWrapper .foregroundContent {
   position: relative;
   z-index: 1;
+}
+
+#defaultPage footer {
+  font-weight: 400;
+  padding: 2rem 0;
+  h4, .h4 { font-weight: 600; }
+  ul {
+    list-style-type: none;
+    padding: 0;
+    text-transform: uppercase;
+    margin-bottom: 0;
+  }
+  a { text-decoration: none; color: inherit; }
+  a:visited { color: inherit; }
+  a:hover, a:active { color: #bbb; }
+  #blogLogoWrapper {
+    margin-top: 12px;
+    margin-bottom: 6px;
+  }
+  .logoText {
+    font-size: 0.625rem;
+    // font-size: 0.75rem;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.8);
+  }
+  .footerIconWrapper {
+    display: inline-block;
+    position: relative;
+    top: 2px;
+    margin-right: 10px;
+  }
+}
+
+@media (min-width: 576px) {
+  #defaultPage footer {
+    .spacedList > li { margin-bottom: 16px; }
+    #blogLogoWrapper {
+      margin-top: 16px;
+      margin-bottom: 10px;
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  #defaultPage footer {
+    padding: 4rem 0;
+  }
+}
+
+@media (min-width: 992px) {
+  #defaultPage footer {
+    h4, .h4 { font-size: 1.2rem; }
+    // increase the horizontal padding on the columns to 2.25rem and tweak the column widths
+    #footerColBrand { width: 28%; padding-right: 2.25rem; }
+    #footerColCertifications { width: 24%; padding-left: 2.25rem; padding-right: 2.25rem; }
+    #footerColContactUs { width: 24%; padding-left: 2.25rem; padding-right: 2.25rem; }
+    #footerColStayInformed { width: 24%; padding-left: 2.25rem; border-left: 1px solid rgba(255, 255, 255, 0.25); }
+    .spacedList > li { margin-bottom: 16px }
+    #footerLogInButton { width: 100%; }
+  }
+}
+
+@media (min-width: 1200px) {
+  #defaultPage footer {
+    // increase the horizontal padding on the columns to 4rem and restore the normal column widths
+    #footerColBrand { width: 25%; padding-right: 4rem; }
+    #footerColCertifications { width: 25%; padding-left: 4rem; padding-right: 4rem; }
+    #footerColContactUs { width: 25%; padding-left: 4rem; padding-right: 4rem; }
+    #footerColStayInformed { width: 25%; padding-left: 4rem; }
+  }
+}
+
+@media (min-width: 1400px) {
+  #defaultPage footer {
+    // increase the horizontal padding on the columns to 5rem
+    #footerColBrand { padding-right: 5rem; }
+    #footerColCertifications { padding-left: 5rem; padding-right: 5rem; }
+    #footerColContactUs { padding-left: 5rem; padding-right: 5rem; }
+    #footerColStayInformed { padding-left: 5rem; }
+  }
+}
+
+ul.list-style-none, ol.list-style-none {
+  list-style-type: none;
+  padding: 0;
+}
+
+.image-overlay-gradient {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  content: ' ';
+  backface-visibility: hidden;
+  background: linear-gradient(to bottom, #00798c 0%, #056091 100%);
+  opacity: 0.8;
+}
+
+
+.col-fluid {
+  width: 540px;
+  @media (min-width: 768px) {
+    width: 720px;
+  }
+  @media (min-width: 992px) {
+    width: 960px;
+  }
+  @media (min-width: 1200px) {
+    width: 1140px;
+  }
+  @media (min-width: 1400px) {
+    width: 1320px;
+  }
+}
+
+.col-fluid-lg-6 {
+  @media (min-width: 992px) {
+    width: 480px;
+  }
+  @media (min-width: 1200px) {
+    width: 570px;
+  }
+  @media (min-width: 1400px) {
+    width: 660px;
+  }
+}
+
+.col-fluid-lg-8 {
+  @media (min-width: 992px) {
+    width: calc(480px + 16.66666667%);
+  }
+  @media (min-width: 1200px) {
+    width: calc(570px + 16.66666667%);
+  }
+  @media (min-width: 1400px) {
+    width: calc(660px + 16.66666667%);
+  }
+}
+
+.col-fluid-xl-9 {
+  @media (min-width: 1200px) {
+    width: calc(570px + 25%);
+  }
+  @media (min-width: 1400px) {
+    width: calc(660px + 25%);
+  }
+}
+
+.textLayout {
+  font-family: 'Fira Mono', Consolas, 'Courier New', Courier, monospace;
+  padding: 20px;
+  max-width:640px;
+  margin:0 auto;
+  h1 {
+    font-family: 'Fira Mono', Consolas, 'Courier New', Courier, monospace;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 18px;
+    margin: 18px 0 18px 0;
+    text-transform: uppercase;
+    padding-bottom: 18px;
+    border-bottom: 1px solid black;
+  }
+  h2 {
+    font-family: 'Fira Mono', Consolas, 'Courier New', Courier, monospace;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 18px;
+    margin: 0 0 18px 0;
+  }
+  h3 {
+    font-family: 'Fira Mono', Consolas, 'Courier New', Courier, monospace;
+    font-weight: normal;
+    font-style: italic;
+    font-size: 14px;
+    line-height: 18px;
+    margin: 0 0 18px 0;
+  }
+  p, li {
+    font-family: 'Fira Mono', Consolas, 'Courier New', Courier, monospace;
+    font-size: 14px;
+    line-height: 18px;
+    margin: 0 0 18px 0;
+  }
+  @media screen and (min-width: 1024px) {
+	  max-width: 920px;
+    h1 {
+      font-size: 16px;
+      line-height: 20px;
+      margin-bottom: 20px;
+      padding-bottom: 20px;
+    }
+  	h2 {
+      font-size: 16px;
+      line-height: 20px;
+      margin-bottom: 20px;
+    }
+	  h3 {
+      font-size: 16px;
+      line-height: 20px;
+      margin-bottom: 20px;
+    }
+	  p, li {
+      font-size: 16px;
+      line-height: 20px;
+      margin-bottom: 20px;
+    }
+  }
+}
+
+.imageShadowWrapper {
+  span {
+      overflow: visible !important;
+  }
+  img {
+    box-shadow: 12px 12px 12px 0 rgba(0, 0, 0, 0.10);
+  }
+}
+
+.sectionAnchor {
+  position: relative;
+  top: -56px;
 }

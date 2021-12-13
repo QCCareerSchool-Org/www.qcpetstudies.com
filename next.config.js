@@ -4,12 +4,22 @@ const withPurgeCss = require('next-purgecss');
 
 module.exports = withPurgeCss({
   reactStrictMode: true,
+  swcMinify: true,
   purgeCssPaths: [
     'src/pages/**/*',
     'src/components/**/*',
   ],
   purgeCss: {
-    whitelistPatterns: () => [ /^nav-/u, /^navbar-/u, /^dropdown-/u ],
+    whitelistPatterns: () => [
+      /^nav-/u,
+      /^navbar-/u,
+      /^dropdown-/u,
+      /^modal-/u,
+      /^bg-/u,
+    ],
+    whitelistPatternsChildren: () => [
+      /^imageShadowWrapper/u,
+    ],
     whitelist: () => [
       'nav',
       'navbar',
@@ -17,11 +27,12 @@ module.exports = withPurgeCss({
       'tab-content',
       'tab-pane',
       'fade',
+      'modal',
       'active',
       'collapsing',
       'collapse',
       'show',
-      'bg-white',
+      'btn-close',
     ],
   },
 });

@@ -15,7 +15,7 @@ const TypographyPage: NextPage<Props> = ({ production }: Props) => {
 
   return (
     <DefaultLayout>
-      <section id="firstSection" className="bg-dark text-light">
+      <section id="top" className="bg-dark text-light">
         <div className="container">
           <div className="row">
             <div className="col-12 col-lg-10 offset-lg-1">
