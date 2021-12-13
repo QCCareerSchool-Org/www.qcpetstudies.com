@@ -5,8 +5,8 @@ import { BsBook } from 'react-icons/bs';
 import { FaBars, FaPlay } from 'react-icons/fa';
 
 import { Bar } from '../../../components/Bar';
-import { DefaultLayout } from '../../../components/DefaultLayout';
 import { DTTutorSection } from '../../../components/DTTutorSection';
+import { LandingPageLayout } from '../../../components/LandingPageLayout';
 import { PriceSection } from '../../../components/PriceSection';
 import { SEO } from '../../../components/SEO';
 import { TabGroup } from '../../../components/TabGroup';
@@ -27,7 +27,7 @@ export type Props = {
 
 const DogTrainingCoursePreviewPage: NextPage<Props> = ({ price, enrollPath }) => {
   return (
-    <DefaultLayout enrollPath={enrollPath}>
+    <LandingPageLayout enrollPath={enrollPath}>
       <SEO
         title="Professional Dog Trainer Course"
         description=""
@@ -310,7 +310,7 @@ const DogTrainingCoursePreviewPage: NextPage<Props> = ({ price, enrollPath }) =>
 
       <DTTutorSection className="bg-light" />
 
-    </DefaultLayout>
+    </LandingPageLayout>
   );
 };
 

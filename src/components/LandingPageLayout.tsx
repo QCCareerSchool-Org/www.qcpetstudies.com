@@ -9,10 +9,11 @@ import { isGBPCountry } from '../lib/address';
 import { getTelephoneNumber } from '../lib/phone';
 
 type Props = {
+  enrollPath?: string;
   children: ReactNode;
 };
 
-export const LandingPageLayout = ({ children }: Props): ReactElement => {
+export const LandingPageLayout = ({ enrollPath = '/', children }: Props): ReactElement => {
   const screenWidth = useScreenWidth();
   const location = useLocation();
 
@@ -29,8 +30,8 @@ export const LandingPageLayout = ({ children }: Props): ReactElement => {
           <div className="container">
             <div className="d-flex justify-content-end align-items-center text-uppercase">
               <a href={`tel:${telephoneNumber}`} className="link-primary me-5">Call{smOrGreater ? ` ${telephoneNumber}` : ''}</a>
-              <Link href="/catalog-become-dog-groomer"><a className="link-primary me-5">Get Catalog</a></Link>
-              <a href="https://enroll.qcpetstudies.com" className="btn btn-primary">Enroll</a>
+              {/* <Link href="/catalog-become-dog-groomer"><a className="link-primary me-5">Get Catalog</a></Link> */}
+              <a href={`https://enroll.qcpetstudies.com${enrollPath}`} className="btn btn-primary">Enroll</a>
             </div>
           </div>
         </div>
