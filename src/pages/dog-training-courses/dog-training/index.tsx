@@ -25,7 +25,6 @@ import TeachingPeopleImage from '../../../images/dt-outline-part-3-image.jpg';
 import DogTrainingBusinessImage from '../../../images/dt-outline-part-4-image.jpg';
 import CPDTPrepImage from '../../../images/german-shepherd-puppy-sitting.jpg';
 import CertificationGoldImage from '../../../images/IDTP-certification-gold-2.svg';
-import PlayBtnImage from '../../../images/play-btn.svg';
 import { formatPrice } from '../../../lib/formatPrice';
 import { getLocation } from '../../../lib/getLocation';
 import { lookupPrices } from '../../../lib/lookupPrices';
@@ -98,7 +97,7 @@ const DogTrainingPage: NextPage<Props> = ({ price }) => {
           <Modal.Body>
             <div className="ratio ratio-16x9">
               <video controls autoPlay>
-                <source src="https://89b45d42c17e11dd3d57-62a1fc0bf60a98e1d5e980348a7de3b7.ssl.cf1.rackcdn.com/interview-paddy.mp4" type="video/mp4" />
+                <source src="https://89b45d42c17e11dd3d57-62a1fc0bf60a98e1d5e980348a7de3b7.ssl.cf1.rackcdn.com/dog-training-trailer.mp4" type="video/mp4" />
               </video>
             </div>
           </Modal.Body>

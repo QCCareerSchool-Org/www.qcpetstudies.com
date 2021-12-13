@@ -17,9 +17,9 @@ import { lookupPrices } from '../../../lib/lookupPrices';
 import { Location } from '../../../models/location';
 import { PriceResult } from '../../../models/price';
 
-const courseCodes = [ 'dt' ];
+export const courseCodes = [ 'dt' ];
 
-type Props = {
+export type Props = {
   location: Location;
   price: PriceResult;
 };
@@ -65,8 +65,8 @@ const DogTrainingCoursePreviewPage: NextPage<Props> = ({ price }) => {
             <div className="col-12 col-md-6">
               <div className="card bg-lighter border-lighter">
                 <div className="card-body">
-                  <p className="card-text">QC's online dog training course will prepare you in every way for a successful career as a professional dog trainer.  You'll learn everything from dog behavior and communication to scientifically-proven training methods to addressing unwanted behaviors in dogs.</p>
-                  <p className="card-text">This is not a paint-by-numbers course.  You will take the time to learn and understand how dogs learn so that you can then decipher the best method to teach any dog.  Using a Least Intrusive, Minimally Aversive (LIMA) approach, you'll become an expert problem solver who can handle any training situation.</p>
+                  <p className="card-text">QC's online dog training course will prepare you in every way for a successful career as a professional dog trainer. You'll learn everything from dog behavior and communication to scientifically proven training methods to addressing unwanted behaviors in dogs.</p>
+                  <p className="card-text">This is not a paint-by-numbers course. You will take the time to learn and understand how dogs learn so that you can then decipher the best method to teach any dog. Using a Least Intrusive, Minimally Aversive (LIMA) approach, you'll become an expert problem solver who can handle any training situation.</p>
                   <p className="card-text">Whether your goal is to launch your own dog training business, work for an established training school, freelance your services, or simply become an expert to train your own dog(s), you'll gain all the skills to achieve your goals.</p>
                   <p className="card-text">Even though this is an online course, you'll complete tons of hands-on assignments designed to enhance your training experience. Don't miss out on this amazing opportunity to work with an expert to develop your skills!</p>
                 </div>
@@ -113,7 +113,7 @@ const DogTrainingCoursePreviewPage: NextPage<Props> = ({ price }) => {
                         videoContent={(
                           <div className="ratio ratio-16x9">
                             <video controls preload="metadata" poster="https://89b45d42c17e11dd3d57-62a1fc0bf60a98e1d5e980348a7de3b7.ssl.cf1.rackcdn.com/unit-screenshots-a.jpg">
-                              <source src="https://89b45d42c17e11dd3d57-62a1fc0bf60a98e1d5e980348a7de3b7.ssl.cf1.rackcdn.com/unit-a.mp4" type="video/mp4" />
+                              <source src="https://89b45d42c17e11dd3d57-62a1fc0bf60a98e1d5e980348a7de3b7.ssl.cf1.rackcdn.com/dog-training-preview/guiding-principals.mp4" type="video/mp4" />
                             </video>
                           </div>
                         )}
@@ -122,7 +122,7 @@ const DogTrainingCoursePreviewPage: NextPage<Props> = ({ price }) => {
                             <h4>Assignment C1</h4>
                             <p className="lead">Reading Signals</p>
                             <p className="mb-4">View the assignment sample below to discover more about what you'll learn in Part 1 of the course. Click on the labels to see how you'll complete your assignments online.</p>
-                            <a href="" className="btn btn-primary">View Assignment</a>
+                            <a href="/documents/dog-training/C1.pdf" target="_blank" rel="noopener noreferrer" className="btn btn-primary">View Assignment</a>
                           </>
                         )}
                       />
@@ -171,16 +171,16 @@ const DogTrainingCoursePreviewPage: NextPage<Props> = ({ price }) => {
                         videoContent={(
                           <div className="ratio ratio-16x9">
                             <video controls preload="auto">
-                              <source src="https://89b45d42c17e11dd3d57-62a1fc0bf60a98e1d5e980348a7de3b7.ssl.cf1.rackcdn.com/interview-paddy.mp4" type="video/mp4" />
+                              <source src="https://89b45d42c17e11dd3d57-62a1fc0bf60a98e1d5e980348a7de3b7.ssl.cf1.rackcdn.com/dog-training-preview/luring.mp4" type="video/mp4" />
                             </video>
                           </div>
                         )}
                         assignmentContent={(
                           <>
-                            <h4>Assignment XX</h4>
+                            <h4>Assignment F3</h4>
                             <p className="lead">something something unwanted behaviors</p>
                             <p className="mb-4">View the assignment sample below to see how you'll practice training methods in this part of the course.</p>
-                            <a href="" className="btn btn-primary">View Assignment</a>
+                            <a href="/documents/dog-training/F3.pdf" target="_blank" rel="noopener noreferrer" className="btn btn-primary">View Assignment</a>
                           </>
                         )}
                       />
@@ -219,16 +219,16 @@ const DogTrainingCoursePreviewPage: NextPage<Props> = ({ price }) => {
                         videoContent={(
                           <div className="ratio ratio-16x9">
                             <video controls preload="auto">
-                              <source src="https://89b45d42c17e11dd3d57-62a1fc0bf60a98e1d5e980348a7de3b7.ssl.cf1.rackcdn.com/interview-paddy.mp4" type="video/mp4" />
+                              <source src="https://89b45d42c17e11dd3d57-62a1fc0bf60a98e1d5e980348a7de3b7.ssl.cf1.rackcdn.com/dog-training-preview/teaching-people.mp4" type="video/mp4" />
                             </video>
                           </div>
                         )}
                         assignmentContent={(
                           <>
-                            <h4>Assignment G???</h4>
+                            <h4>Assignment G6</h4>
                             <p className="lead">Teaching a Group Class</p>
                             <p className="mb-4">View the assignment sample below to find out how you'll be assessed in your abilities to teach people to train their own dogs.</p>
-                            <a href="" className="btn btn-primary">View Assignment</a>
+                            <a href="/documents/dog-training/G6.pdf" target="_blank" rel="noopener noreferrer" className="btn btn-primary">View Assignment</a>
                           </>
                         )}
                       />
@@ -256,16 +256,16 @@ const DogTrainingCoursePreviewPage: NextPage<Props> = ({ price }) => {
                         videoContent={(
                           <div className="ratio ratio-16x9">
                             <video controls preload="auto">
-                              <source src="https://89b45d42c17e11dd3d57-62a1fc0bf60a98e1d5e980348a7de3b7.ssl.cf1.rackcdn.com/interview-paddy.mp4" type="video/mp4" />
+                              <source src="https://89b45d42c17e11dd3d57-62a1fc0bf60a98e1d5e980348a7de3b7.ssl.cf1.rackcdn.com/dog-training-preview/marketing-dog-training-services.mp4" type="video/mp4" />
                             </video>
                           </div>
                         )}
                         assignmentContent={(
                           <>
-                            <h4>Assignment H???</h4>
+                            <h4>Assignment H3</h4>
                             <p className="lead">Creating a Business Plan</p>
                             <p className="mb-4">View the assignment sample below to see how the course will help you answer key questions before launching your dog training business.</p>
-                            <a href="" className="btn btn-primary">View Assignment</a>
+                            <a href="/documents/dog-training/H3.pdf" target="_blank" rel="noopener noreferrer" className="btn btn-primary">View Assignment</a>
                           </>
                         )}
                       />
