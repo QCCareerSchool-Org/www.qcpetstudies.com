@@ -113,8 +113,8 @@ const DogTrainingCoursePreviewPage: NextPage<Props> = ({ price, enrollPath }) =>
                       <Preview
                         videoContent={(
                           <div className="ratio ratio-16x9">
-                            <video controls preload="metadata" poster="https://89b45d42c17e11dd3d57-62a1fc0bf60a98e1d5e980348a7de3b7.ssl.cf1.rackcdn.com/unit-screenshots-a.jpg">
-                              <source src="https://89b45d42c17e11dd3d57-62a1fc0bf60a98e1d5e980348a7de3b7.ssl.cf1.rackcdn.com/dog-training-preview/guiding-principals.mp4" type="video/mp4" />
+                            <video controls preload="metadata" poster="https://89b45d42c17e11dd3d57-62a1fc0bf60a98e1d5e980348a7de3b7.ssl.cf1.rackcdn.com/dog-training-preview/guiding-principles.jpg">
+                              <source src="https://89b45d42c17e11dd3d57-62a1fc0bf60a98e1d5e980348a7de3b7.ssl.cf1.rackcdn.com/dog-training-preview/guiding-principles.mp4" type="video/mp4" />
                             </video>
                           </div>
                         )}
@@ -171,7 +171,7 @@ const DogTrainingCoursePreviewPage: NextPage<Props> = ({ price, enrollPath }) =>
                       <Preview
                         videoContent={(
                           <div className="ratio ratio-16x9">
-                            <video controls preload="auto">
+                            <video controls preload="metadata" poster="https://89b45d42c17e11dd3d57-62a1fc0bf60a98e1d5e980348a7de3b7.ssl.cf1.rackcdn.com/dog-training-preview/luring.jpg">
                               <source src="https://89b45d42c17e11dd3d57-62a1fc0bf60a98e1d5e980348a7de3b7.ssl.cf1.rackcdn.com/dog-training-preview/luring.mp4" type="video/mp4" />
                             </video>
                           </div>
@@ -219,7 +219,7 @@ const DogTrainingCoursePreviewPage: NextPage<Props> = ({ price, enrollPath }) =>
                       <Preview
                         videoContent={(
                           <div className="ratio ratio-16x9">
-                            <video controls preload="auto">
+                            <video controls preload="metadata" poster="https://89b45d42c17e11dd3d57-62a1fc0bf60a98e1d5e980348a7de3b7.ssl.cf1.rackcdn.com/dog-training-preview/teaching-people.jpg">
                               <source src="https://89b45d42c17e11dd3d57-62a1fc0bf60a98e1d5e980348a7de3b7.ssl.cf1.rackcdn.com/dog-training-preview/teaching-people.mp4" type="video/mp4" />
                             </video>
                           </div>
@@ -256,7 +256,7 @@ const DogTrainingCoursePreviewPage: NextPage<Props> = ({ price, enrollPath }) =>
                       <Preview
                         videoContent={(
                           <div className="ratio ratio-16x9">
-                            <video controls preload="auto">
+                            <video controls preload="metadata" poster="https://89b45d42c17e11dd3d57-62a1fc0bf60a98e1d5e980348a7de3b7.ssl.cf1.rackcdn.com/dog-training-preview/marketing-dog-training-services.jpg">
                               <source src="https://89b45d42c17e11dd3d57-62a1fc0bf60a98e1d5e980348a7de3b7.ssl.cf1.rackcdn.com/dog-training-preview/marketing-dog-training-services.mp4" type="video/mp4" />
                             </video>
                           </div>

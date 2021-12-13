@@ -19,6 +19,6 @@ export const DefaultLayout = ({ noHero, secondaryTitle, secondaryNavLinks, foote
     <main className="flex-shrink-0">
       {children}
     </main>
-    <Footer ctaType={footerCTAType} className="bg-navy mt-auto" />
+    <Footer ctaType={footerCTAType} enrollPath={enrollPath} className="bg-navy mt-auto" />
   </div>
 );
