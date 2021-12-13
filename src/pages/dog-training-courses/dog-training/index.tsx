@@ -15,14 +15,16 @@ import { SEO } from '../../../components/SEO';
 import { useScreenWidth } from '../../../hooks/useScreenWidth';
 import { useToggle } from '../../../hooks/useToggle';
 import DTBackgroundImage from '../../../images/backgrounds/australian-shepherd-attentive.jpg';
+import GuaranteeIcon from '../../../images/course-overview-icons/guarantee.svg';
+import MovieClapperIcon from '../../../images/course-overview-icons/movie-clapper.svg';
+import OutlineIcon from '../../../images/course-overview-icons/outline.svg';
+import TutorIcon from '../../../images/course-overview-icons/tutor.svg';
 import IntroductoryUnitsImage from '../../../images/dt-outline-part-1-image.jpg';
 import ApplyingTrainingPrinciplesImage from '../../../images/dt-outline-part-2-image.jpg';
 import TeachingPeopleImage from '../../../images/dt-outline-part-3-image.jpg';
 import DogTrainingBusinessImage from '../../../images/dt-outline-part-4-image.jpg';
 import CPDTPrepImage from '../../../images/german-shepherd-puppy-sitting.jpg';
 import CertificationGoldImage from '../../../images/IDTP-certification-gold-2.svg';
-import MovieClapperImage from '../../../images/movie-clapper.svg';
-import OutlineImage from '../../../images/outline.svg';
 import PlayBtnImage from '../../../images/play-btn.svg';
 import { formatPrice } from '../../../lib/formatPrice';
 import { getLocation } from '../../../lib/getLocation';
@@ -71,21 +73,21 @@ const DogTrainingPage: NextPage<Props> = ({ price }) => {
             <a href="https://enroll.qcpetstudies.com?c[]=dt"><button className="btn btn-secondary btn-lg">Enroll Online</button></a>
           </div>
           <div className="row justify-content-center">
-            <div className="col-12 col-md-6 d-flex">
+            <div className="col-12 col-md-8 col-lg-6 d-flex">
               <div className="col text-uppercase">
-                <button onClick={trailerPopupToggle} className="btn btn-link"><Image src={MovieClapperImage} alt="movie clapper" width={headerIconSize} height={headerIconSize} /></button>
+                <button onClick={trailerPopupToggle} className="btn btn-link"><Image src={MovieClapperIcon} alt="movie clapper" width={headerIconSize} height={headerIconSize} /></button>
                 <p><strong>Trailer</strong></p>
               </div>
               <div className="col text-uppercase">
-                <a href="#outline"><Image src={OutlineImage} alt="outline" width={headerIconSize} height={headerIconSize} /></a>
+                <a href="#outline"><Image src={OutlineIcon} alt="outline" width={headerIconSize} height={headerIconSize} /></a>
                 <p><strong>Outline</strong></p>
               </div>
               <div className="col text-uppercase">
-                <a href="#guarantee"><Image src={PlayBtnImage} alt="play button" width={headerIconSize} height={headerIconSize} /></a>
+                <a href="#guarantee"><Image src={GuaranteeIcon} alt="play button" width={headerIconSize} height={headerIconSize} /></a>
                 <p><strong>Guarantee</strong></p>
               </div>
               <div className="col text-uppercase">
-                <a href="#tutors"><Image src={PlayBtnImage} alt="play button" width={headerIconSize} height={headerIconSize} /></a>
+                <a href="#tutors"><Image src={TutorIcon} alt="play button" width={headerIconSize} height={headerIconSize} /></a>
                 <p><strong>Tutors</strong></p>
               </div>
             </div>
