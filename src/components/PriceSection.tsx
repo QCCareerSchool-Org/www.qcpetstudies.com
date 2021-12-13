@@ -17,6 +17,7 @@ type Props = {
   doubleGuarantee: boolean;
   variant?: Variant;
   id?: string;
+  /** custom path for the shopping cart (include leading slash) */
   enrollPath?: string;
 };
 
