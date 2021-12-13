@@ -123,7 +123,7 @@ const GroomingAssignment: NextPage<Props> = ({ location, price }) => {
                             <h4>Assignment A3</h4>
                             <p className="lead">Topical Structure</p>
                             <p className="mb-4">View the assignment sample below to discover more about what you'll learn in Unit A. Click on the labels to see how you'll complete your assignments online.</p>
-                            <a href="" className="btn btn-primary">View Assignment</a>
+                            <a href="/documents/dog-grooming/A3.pdf" target="_blank" rel="noopener noreferrer" className="btn btn-primary">View Assignment</a>
                           </>
                         )}
                       />
@@ -175,7 +175,7 @@ const GroomingAssignment: NextPage<Props> = ({ location, price }) => {
                             <h4>Self Study B2</h4>
                             <p className="lead">Conducting a Physical Evaluation</p>
                             <p className="mb-4">View the assignment sample below to see how you'll practice emergency response throughout your First Aid Unit.</p>
-                            <a href="" className="btn btn-primary">View Assignment</a>
+                            <a href="/documents/dog-grooming/FA-SS-2.pdf" target="_blank" rel="noopener noreferrer" className="btn btn-primary">View Assignment</a>
                           </>
                         )}
                       />
@@ -211,7 +211,7 @@ const GroomingAssignment: NextPage<Props> = ({ location, price }) => {
                             <h4>Assignment D2</h4>
                             <p className="lead">Clipping White Nails</p>
                             <p className="mb-4">View the assignment sample below to find out how you'll be assessed in your abilities to prep a dog for the groom.</p>
-                            <a href="" className="btn btn-primary">View Assignment</a>
+                            <a href="/documents/dog-grooming/D2.pdf" target="_blank" rel="noopener noreferrer" className="btn btn-primary">View Assignment</a>
                           </>
                         )}
                       />
@@ -270,7 +270,7 @@ const GroomingAssignment: NextPage<Props> = ({ location, price }) => {
                             <h4>Assignment C1</h4>
                             <p className="lead">The Teddy Bear Cut: Preparation</p>
                             <p className="mb-4">View the assignment sample below to see how you'll complete your practicum assignments, as well as how you'll submit your work to be assessed.</p>
-                            <a href="" className="btn btn-primary">View Assignment</a>
+                            <a href="/documents/dog-grooming/P3.1.pdf" target="_blank" rel="noopener noreferrer" className="btn btn-primary">View Assignment</a>
                           </>
                         )}
                       />
@@ -327,7 +327,7 @@ const GroomingAssignment: NextPage<Props> = ({ location, price }) => {
                                 <h4>Assignment H1</h4>
                                 <p className="lead">Choose Your Business</p>
                                 <p className="mb-4">View the assignment sample below to learn more about how your course will guide you in starting your own dog grooming business.</p>
-                                <a href="" className="btn btn-primary">View Assignment</a>
+                                <a href="/documents/dog-grooming/H1.pdf" target="_blank" rel="noopener noreferrer" className="btn btn-primary">View Assignment</a>
                               </>
                             ),
                           },

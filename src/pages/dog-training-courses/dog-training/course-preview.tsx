@@ -65,8 +65,8 @@ const DogTrainingCoursePreviewPage: NextPage<Props> = ({ price }) => {
             <div className="col-12 col-md-6">
               <div className="card bg-lighter border-lighter">
                 <div className="card-body">
-                  <p className="card-text">QC's online dog training course will prepare you in every way for a successful career as a professional dog trainer.  You'll learn everything from dog behavior and communication to scientifically-proven training methods to addressing unwanted behaviors in dogs.</p>
-                  <p className="card-text">This is not a paint-by-numbers course.  You will take the time to learn and understand how dogs learn so that you can then decipher the best method to teach any dog.  Using a Least Intrusive, Minimally Aversive (LIMA) approach, you'll become an expert problem solver who can handle any training situation.</p>
+                  <p className="card-text">QC's online dog training course will prepare you in every way for a successful career as a professional dog trainer. You'll learn everything from dog behavior and communication to scientifically proven training methods to addressing unwanted behaviors in dogs.</p>
+                  <p className="card-text">This is not a paint-by-numbers course. You will take the time to learn and understand how dogs learn so that you can then decipher the best method to teach any dog. Using a Least Intrusive, Minimally Aversive (LIMA) approach, you'll become an expert problem solver who can handle any training situation.</p>
                   <p className="card-text">Whether your goal is to launch your own dog training business, work for an established training school, freelance your services, or simply become an expert to train your own dog(s), you'll gain all the skills to achieve your goals.</p>
                   <p className="card-text">Even though this is an online course, you'll complete tons of hands-on assignments designed to enhance your training experience. Don't miss out on this amazing opportunity to work with an expert to develop your skills!</p>
                 </div>
