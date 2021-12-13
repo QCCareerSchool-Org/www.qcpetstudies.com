@@ -2,18 +2,17 @@ import { NextPage } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 
-import { DefaultLayout } from '../../../components/DefaultLayout';
-import { SEO } from '../../../components/SEO';
-import { useScreenWidth } from '../../../hooks/useScreenWidth';
-
-import RequiredDogBreedsBackground from '../../../images/backgrounds/every-breed-bg.jpg';
-import RequiredDogBreedImage from '../../../images/dog-breeds-required.jpg';
-import PracticumImage1 from '../../../images/dogs/practicum-1.jpg';
-import PracticumImage2 from '../../../images/dogs/practicum-2.jpg';
-import PracticumImage3 from '../../../images/dogs/practicum-3.jpg';
-import PracticumImage4 from '../../../images/dogs/practicum-4.jpg';
-import PracticumImage5 from '../../../images/dogs/practicum-5.jpg';
-import IconFirstAidLogo from '../../../images/first-aid-logo.svg';
+import { DefaultLayout } from '../../components/DefaultLayout';
+import { SEO } from '../../components/SEO';
+import { useScreenWidth } from '../../hooks/useScreenWidth';
+import RequiredDogBreedsBackground from '../../images/backgrounds/every-breed-bg.jpg';
+import RequiredDogBreedImage from '../../images/dog-breeds-required.jpg';
+import PracticumImage1 from '../../images/dogs/practicum-1.jpg';
+import PracticumImage2 from '../../images/dogs/practicum-2.jpg';
+import PracticumImage3 from '../../images/dogs/practicum-3.jpg';
+import PracticumImage4 from '../../images/dogs/practicum-4.jpg';
+import PracticumImage5 from '../../images/dogs/practicum-5.jpg';
+import IconFirstAidLogo from '../../images/first-aid-logo.svg';
 
 const iconSize = 50;
 
@@ -27,7 +26,7 @@ const RequiredDogBreeds: NextPage = () => {
       <SEO
         title="Every Dog Breed You Must Groom in Your Dog Grooming Course"
         description="Find out what types of dog breeds you'll need in order to complete your online dog groomer training with QC"
-        canonical="/dog-grooming-courses/dog-grooming/required-dog-breeds"
+        canonical="/dog-grooming/required-dog-breeds"
       />
 
       <section id="top" className="bg-dark">
