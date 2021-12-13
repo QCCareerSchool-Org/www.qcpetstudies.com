@@ -10,6 +10,7 @@ import ContactByChatImage from '../images/contact-chat.svg';
 import ContactByEmailImage from '../images/contact-email.svg';
 import ContactByPhoneImage from '../images/contact-headset.svg';
 import ScheduleCallImage from '../images/schedule-call-contact.png';
+import { openLiveChat } from '../lib/livechat';
 import { getTelephoneNumber } from '../lib/phone';
 
 const ContactUsPage: NextPage = () => {
@@ -65,7 +66,7 @@ const ContactUsPage: NextPage = () => {
               <div className="px-lg-4">
                 <Image src={ContactByChatImage} height="80" width="64" alt="chat icon" />
                 <h3>By Live Chat</h3>
-                <p className="mb-lg-4"><a className="link-primary">Click here to chat</a></p>
+                <p className="mb-lg-4"><a onClick={openLiveChat} className="link-primary">Click here to chat</a></p>
                 <p className="mb-0">Do you have a question you want to be answered right away? Our student support specialists are ready to chat!</p>
               </div>
             </div>

@@ -14,6 +14,7 @@ import GuaranteeIcon from '../images/guarantee-icon-fill.svg';
 import Logo from '../images/logo-top-white.svg';
 import SniffinArroundLogo from '../images/sniffin-around-logo-white.svg';
 import { isGBPCountry } from '../lib/address';
+import { openLiveChat } from '../lib/livechat';
 import { getTelephoneNumber } from '../lib/phone';
 
 export type FooterCTAType = 'grooming' | 'training';
@@ -88,7 +89,9 @@ export const Footer = ({ ctaType, enrollPath = '/', className }: Props): ReactEl
                 </a>
               </li>
               <li>
-                {lgOrGreater && <div className="footerIconWrapper"><Image src={ChatIcon} width={16} height={16} alt="Chat" /></div>}Chat
+                <a onClick={openLiveChat} title="Open Chat Window">
+                  {lgOrGreater && <div className="footerIconWrapper"><Image src={ChatIcon} width={16} height={16} alt="Chat" /></div>}Chat
+                </a>
               </li>
               <li>
                 <a href={`tel:${phoneNumber}`}>
@@ -128,9 +131,9 @@ export const Footer = ({ ctaType, enrollPath = '/', className }: Props): ReactEl
             </small>
           </div>
           <div className="col-12 col-sm-3 text-center text-sm-end">
-            <FaFacebookF className="me-3" />
-            <FaTwitter className="me-3" />
-            <FaInstagram />
+            <a href="https://www.facebook.com/qcpetstudies"><FaFacebookF className="me-3" /></a>
+            <a href="https://twitter.com/qcpetstudies"><FaTwitter className="me-3" /></a>
+            <a href="https://www.instagram.com/qcpetstudies"><FaInstagram /></a>
           </div>
         </div>
       </div>
