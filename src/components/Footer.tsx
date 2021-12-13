@@ -20,10 +20,11 @@ export type FooterCTAType = 'grooming' | 'training';
 
 type Props = {
   ctaType?: FooterCTAType;
+  enrollPath?: string;
   className?: string;
 };
 
-export const Footer = ({ ctaType, className }: Props): ReactElement => {
+export const Footer = ({ ctaType, enrollPath = '/', className }: Props): ReactElement => {
   const location = useLocation();
   const screenWidth = useScreenWidth();
 
@@ -32,10 +33,10 @@ export const Footer = ({ ctaType, className }: Props): ReactElement => {
   const lgOrGreater = screenWidth >= 992;
 
   const enrollUrl = ctaType === 'grooming'
-    ? 'https://enroll.qcpetstudies.com?c[]=dg'
+    ? `https://enroll.qcpetstudies.com${enrollPath}?c[]=dg&c[]=fa`
     : ctaType === 'training'
-      ? 'https://enroll.qcpetstudies.com?c[]=dt'
-      : 'https://enroll.qcpetstudies.com';
+      ? `https://enroll.qcpetstudies.com${enrollPath}?c[]=dt`
+      : `https://enroll.qcpetstudies.com${enrollPath}`;
 
   return (
     <footer style={{ borderTop: '1px solid rgb(255,255,255,0.1)' }} className={className}>
