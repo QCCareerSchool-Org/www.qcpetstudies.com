@@ -9,12 +9,14 @@ import { isGBPCountry } from '../lib/address';
 import { getTelephoneNumber } from '../lib/phone';
 
 type Props = {
+  link?: boolean;
+  reloadApp?: boolean;
   secondaryNav?: boolean;
   enrollPath?: string;
   children: ReactNode;
 };
 
-export const LandingPageLayout = ({ secondaryNav = true, enrollPath = '/', children }: Props): ReactElement => {
+export const LandingPageLayout = ({ link = true, reloadApp = false, secondaryNav = true, enrollPath = '/', children }: Props): ReactElement => {
   const screenWidth = useScreenWidth();
   const location = useLocation();
 
@@ -40,7 +42,13 @@ export const LandingPageLayout = ({ secondaryNav = true, enrollPath = '/', child
         )}
         <div className="mainNav">
           <div className="container text-center">
-            <Link href="/"><a><Image src={logo} alt="QC Pet Studies" width="300" height="28" /></a></Link>
+            {link
+              ? reloadApp
+                // eslint-disable-next-line @next/next/no-html-link-for-pages
+                ? <a href="/"><Image src={logo} alt="QC Pet Studies" width="300" height="28" /></a>
+                : <Link href="/"><a><Image src={logo} alt="QC Pet Studies" width="300" height="28" /></a></Link>
+              : <Image src={logo} alt="QC Pet Studies" width="300" height="28" />
+            }
           </div>
         </div>
       </header>
