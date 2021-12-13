@@ -1,7 +1,7 @@
 import { NextPage } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
-import { FaFacebookF, FaInstagram, FaRss } from 'react-icons/fa';
+import { FaFacebookF, FaInstagram, FaTwitter } from 'react-icons/fa';
 
 import { DefaultLayout } from '../../components/DefaultLayout';
 import { SEO } from '../../components/SEO';
@@ -61,7 +61,7 @@ const StudentExperiencePage: NextPage = () => {
                 <h2>Get Help When <strong>You Need it</strong></h2>
                 <p className="lead">QCs student support team is here to help.</p>
                 <p className="mb-4">Reach out as often as you need to discuss your course materials or to ask questions about your assignments. Whether you're a student, a graduate or are considering enrolling, we are always happy to hear from you. Contact QC Pet Studies by phone, email or Live Chat whichever you prefer!</p>
-                <p className="mb-0"><Link href="/contact"><a className="btn btn-outline-secondary">Contact Us</a></Link></p>
+                <p className="mb-0"><Link href="/contact-us"><a className="btn btn-outline-secondary">Contact Us</a></Link></p>
               </div>
             </div>
           </div>
@@ -93,15 +93,15 @@ const StudentExperiencePage: NextPage = () => {
             </div>
             <div className="col-12 col-md-10 col-lg-8 mb-5">
               <div className="d-flex justify-content-around text-secondary">
-                <FaFacebookF size={44} />
-                <FaRss size={44} />
-                <FaInstagram size={44} />
+                <a href="https://www.facebook.com/qcpetstudies" target="_blank" rel="noopener noreferrer" className="link-secondary"><FaFacebookF size={44} /></a>
+                <a href="https://twitter.com/qcpetstudies" target="_blank" rel="noopener noreferrer" className="link-secondary"><FaTwitter size={44} /></a>
+                <a href="https://www.instagram.com/qcpetstudies" target="_blank" rel="noopener noreferrer" className="link-secondary"><FaInstagram size={44} /></a>
               </div>
             </div>
             <div className="col-12 col-lg-10">
               <h3>Connect with fellow dog grooming students!</h3>
               <p className="mb-5">The Student Forum is a hub for dog grooming students to socialize and support one another. Ask questions about tools and techniques, swap stories about your best and worst canine clients, and be inspired by like-minded individuals. Education is essential to your success as a dog groomer even after you graduate. That's why you ll have lifetime access to the Online Student Center and be able to access new course texts and video tutorials as soon as they're available. And you can always reach out to the QC team with questions about your career or the dog grooming industry.</p>
-              <p className="lead">At QC Pet Studies, <strong>we're with you for the journey</strong></p>
+              <p className="lead">At QC Pet Studies, <strong>we're with you for the journey.</strong></p>
               <Image src={LineOfDogsImage} alt="a line of nine dogs standing side to side" />
             </div>
           </div>
