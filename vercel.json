@@ -28,6 +28,6 @@
     { "source": "/:year(\\d{4})/:match*", "destination": "/blog/:year/:match*" }
   ],
   "rewrites": [
-    { "source": "/blog", "destination": "https://www.doggroomingcourse.com/blog" }
+    { "source": "/blog/:match*", "destination": "https://www.doggroomingcourse.com/blog/:match*" }
   ]
 }
