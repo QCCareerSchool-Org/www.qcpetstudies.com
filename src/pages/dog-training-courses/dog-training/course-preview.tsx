@@ -17,9 +17,9 @@ import { lookupPrices } from '../../../lib/lookupPrices';
 import { Location } from '../../../models/location';
 import { PriceResult } from '../../../models/price';
 
-const courseCodes = [ 'dt' ];
+export const courseCodes = [ 'dt' ];
 
-type Props = {
+export type Props = {
   location: Location;
   price: PriceResult;
 };
