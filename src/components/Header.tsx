@@ -18,10 +18,11 @@ type Props = {
   noHero?: boolean;
   secondaryTitle?: string;
   secondaryNavLinks?: SecondaryNavLinks;
+  enrollPath?: string;
   className?: string;
 };
 
-export const Header = ({ noHero, secondaryTitle, secondaryNavLinks, className }: Props): ReactElement => {
+export const Header = ({ noHero, secondaryTitle, secondaryNavLinks, enrollPath = '/', className }: Props): ReactElement => {
   const screenWidth = useScreenWidth();
   const scrollPosition = useScrollPosition();
   const [ mobileMenu, toggleMobileMenu ] = useToggle(false);
@@ -81,8 +82,8 @@ export const Header = ({ noHero, secondaryTitle, secondaryNavLinks, className }:
                 </NavDropdown>
                 <Link href="/contact-us"><a className="nav-link">Contact Us</a></Link>
                 {!lgOrGreater
-                  ? <a href="https://enroll.qcpetstudies.com" className="nav-link">Enroll Online</a>
-                  : <a href="https://enroll.qcpetstudies.com" className="mt-1 ms-3 ms-xxl-5"><button className="btn btn-primary btn-sm">Enroll Online</button></a>
+                  ? <a href={`https://enroll.qcpetstudies.com${enrollPath}`} className="nav-link">Enroll Online</a>
+                  : <a href={`https://enroll.qcpetstudies.com${enrollPath}`} className="mt-1 ms-3 ms-xxl-5"><button className="btn btn-primary btn-sm">Enroll Online</button></a>
                 }
               </Nav>
             </Navbar.Collapse>

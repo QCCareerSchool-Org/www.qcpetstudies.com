@@ -17,12 +17,13 @@ type Props = {
   doubleGuarantee: boolean;
   variant?: Variant;
   id?: string;
+  enrollPath?: string;
 };
 
-export const PriceSection = ({ courses, price, doubleGuarantee, variant = 'dark', id = 'tuition' }: Props): ReactElement => {
+export const PriceSection = ({ courses, price, doubleGuarantee, variant = 'dark', id = 'tuition', enrollPath = '/' }: Props): ReactElement => {
   const [ popup, toggle ] = useToggle();
 
-  const enrollLink = `https://enroll.qcpetstudies.com/?${courses.map(c => `c[]=${encodeURIComponent(c)}`).join('&')}`;
+  const enrollLink = `https://enroll.qcpetstudies.com${enrollPath}?${courses.map(c => `c[]=${encodeURIComponent(c)}`).join('&')}`;
 
   return (
     <>
