@@ -1,8 +1,12 @@
 import { NextPage } from 'next';
+import { DeadlineFunnelScript } from '../../../components/DeadlineFunnelScript';
 import CoursePreview, { getServerSideProps, Props } from './course-preview';
 
 const Page: NextPage<Props> = props => (
-  <CoursePreview {...props} />
+  <>
+    <DeadlineFunnelScript />
+    <CoursePreview {...props} />
+  </>
 );
 
 export { getServerSideProps };
