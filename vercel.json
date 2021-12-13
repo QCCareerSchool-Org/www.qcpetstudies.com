@@ -1,5 +1,6 @@
 {
   "rewrites": [
-    { "source": "/sniffin-around-blog", "destination": "https://www.doggroomingcourse.com/sniffin-around-blog" }
+    { "source": "/sniffin-around-blog", "destination": "https://www.doggroomingcourse.com/sniffin-around-blog" },
+    { "source": "/2021/:match*", "destination": "https://www.doggroomingcourse.com/2021/:match*" }
   ]
 }
