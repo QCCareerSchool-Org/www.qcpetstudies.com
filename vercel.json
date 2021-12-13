@@ -24,8 +24,8 @@
     { "source": "/start-your-dream-career-rm", "destination": "/dog-grooming-courses/rm/start-your-dream-career" },
     { "source": "/become-professional-dog-groomer-rm", "destination": "/dog-grooming-courses/rm/become-a-professional-dog-groomer" },
     { "source": "/sniffin-around-blog", "destination": "/blog/sniffin-around-blog" },
-    { "source": "/category", "destination": "/blog/category" },
-    { "source": "/2021/:match*", "destination": "/blog/2021/:match*" }
+    { "source": "/category/:match*", "destination": "/blog/category/:match*" },
+    { "source": "/:year(\\d{4})/:match*", "destination": "/blog/:year/:match*" }
   ],
   "rewrites": [
     { "source": "/blog", "destination": "https://www.doggroomingcourse.com/blog" }
