@@ -23,11 +23,12 @@ export const courseCodes = [ 'dg' ];
 export type Props = {
   location: Location;
   price: PriceResult;
+  enrollPath: string;
 };
 
-const GroomingAssignment: NextPage<Props> = ({ location, price }) => {
+const GroomingAssignment: NextPage<Props> = ({ location, price, enrollPath }) => {
   return (
-    <DefaultLayout>
+    <DefaultLayout enrollPath={enrollPath}>
       <SEO
         title="Dog Grooming Certification Course"
         description=""
@@ -353,7 +354,7 @@ const GroomingAssignment: NextPage<Props> = ({ location, price }) => {
 
       {location.countryCode === 'CA' && location.provinceCode === 'ON'
         ? <PriceSectionDisabled />
-        : <PriceSection courses={courseCodes} price={price} doubleGuarantee={true} />
+        : <PriceSection courses={courseCodes} price={price} doubleGuarantee={true} enrollPath={enrollPath} />
       }
 
       <DGTutorSection className="bg-light" />
@@ -365,7 +366,7 @@ const GroomingAssignment: NextPage<Props> = ({ location, price }) => {
 export const getServerSideProps: GetServerSideProps = async context => {
   const location = await getLocation(context);
   const price = await lookupPrices(courseCodes, location.countryCode, location.provinceCode);
-  return { props: { location, price } };
+  return { props: { location, price, enrollPath: '/' } };
 };
 
 const VideoTab = (): ReactElement => (
