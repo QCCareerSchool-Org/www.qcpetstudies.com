@@ -9,11 +9,12 @@ import { isGBPCountry } from '../lib/address';
 import { getTelephoneNumber } from '../lib/phone';
 
 type Props = {
+  secondaryNav?: boolean;
   enrollPath?: string;
   children: ReactNode;
 };
 
-export const LandingPageLayout = ({ enrollPath = '/', children }: Props): ReactElement => {
+export const LandingPageLayout = ({ secondaryNav = true, enrollPath = '/', children }: Props): ReactElement => {
   const screenWidth = useScreenWidth();
   const location = useLocation();
 
@@ -26,15 +27,17 @@ export const LandingPageLayout = ({ enrollPath = '/', children }: Props): ReactE
   return (
     <div id="landingPage" className="d-flex flex-column vh-100">
       <header className="flex-shrink-0">
-        <div className="secondaryNav">
-          <div className="container">
-            <div className="d-flex justify-content-end align-items-center text-uppercase">
-              <a href={`tel:${telephoneNumber}`} className="link-primary me-5">Call{smOrGreater ? ` ${telephoneNumber}` : ''}</a>
-              {/* <Link href="/catalog-become-dog-groomer"><a className="link-primary me-5">Get Catalog</a></Link> */}
-              <a href={`https://enroll.qcpetstudies.com${enrollPath}`} className="btn btn-primary">Enroll</a>
+        {secondaryNav && (
+          <div className="secondaryNav">
+            <div className="container">
+              <div className="d-flex justify-content-end align-items-center text-uppercase">
+                <a href={`tel:${telephoneNumber}`} className="link-primary me-5">Call{smOrGreater ? ` ${telephoneNumber}` : ''}</a>
+                {/* <Link href="/catalog-become-dog-groomer"><a className="link-primary me-5">Get Catalog</a></Link> */}
+                <a href={`https://enroll.qcpetstudies.com${enrollPath}`} className="btn btn-primary">Enroll</a>
+              </div>
             </div>
           </div>
-        </div>
+        )}
         <div className="mainNav">
           <div className="container text-center">
             <Link href="/"><a><Image src={logo} alt="QC Pet Studies" width="300" height="28" /></a></Link>

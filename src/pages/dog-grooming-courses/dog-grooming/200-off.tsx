@@ -5,7 +5,7 @@ import CoursePreview, { getServerSideProps, Props } from './course-preview';
 const Page: NextPage<Props> = props => (
   <>
     <DeadlineFunnelScript />
-    <CoursePreview {...props} enrollPath="/grooming-200-off" />
+    <CoursePreview {...props} secondaryNav={false} enrollPath="/grooming-200-off" />
   </>
 );
 
