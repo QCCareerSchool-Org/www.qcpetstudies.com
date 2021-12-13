@@ -18,6 +18,7 @@ type Props = {
   noHero?: boolean;
   secondaryTitle?: string;
   secondaryNavLinks?: SecondaryNavLinks;
+  /** custom path for the shopping cart (include leading slash) */
   enrollPath?: string;
   className?: string;
 };

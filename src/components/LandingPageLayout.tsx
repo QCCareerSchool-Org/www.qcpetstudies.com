@@ -12,6 +12,7 @@ type Props = {
   link?: boolean;
   reloadApp?: boolean;
   secondaryNav?: boolean;
+  /** custom path for the shopping cart (include leading slash) */
   enrollPath?: string;
   children: ReactNode;
 };
@@ -41,7 +42,7 @@ export const LandingPageLayout = ({ link = true, reloadApp = false, secondaryNav
           </div>
         )}
         <div className="mainNav">
-          <div className="container text-center">
+          <div className="container text-center d-flex justify-content-center">
             {link
               ? reloadApp
                 // eslint-disable-next-line @next/next/no-html-link-for-pages
