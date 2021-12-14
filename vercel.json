@@ -1,6 +1,33 @@
 {
+  "redirects": [
+    { "source": "/online-courses/dog-grooming", "destination": "/dog-grooming-courses/dog-grooming" },
+    { "source": "/online-courses/dog-grooming/course-outline", "destination": "/dog-grooming-courses/dog-grooming/course-outline" },
+    { "source": "/online-courses/dog-grooming/course-preview", "destination": "/dog-grooming-courses/dog-grooming/course-outline" },
+    { "source": "/online-courses/first-aid-for-groomers", "destination": "/dog-grooming-courses/first-aid" },
+    { "source": "/online-courses/breed-styling-workshop", "destination": "/dog-grooming-courses/breed-styling" },
+    { "source": "/learning-online/how-it-works", "destination": "/dog-grooming-courses/how-it-works" },
+    { "source": "/learning-online/dog-grooming-kit", "destination": "/dog-grooming-courses/dog-grooming-kit" },
+    { "source": "/your-grooming-assignments", "destination": "/dog-grooming-courses/dog-grooming/assignments" },
+    { "source": "/online-courses/dog-grooming/every-dog-breed-dog-grooming-school", "destination": "/resources/required-dog-breeds" },
+    { "source": "/learning-online/class-vs-online-dog-grooming-schools", "destination": "/resources/class-vs-online-dog-grooming-schools" },
+    { "source": "/learning-online/dog-grooming-learning-working-during-covid-19", "destination": "/resources/learning-and-working-during-covid" },
+    { "source": "/dog-grooming-license-vs-certification", "destination": "/resources/license-vs-certification" },
+    { "source": "/about", "destination": "/about/about-qc-pet-studies" },
+    { "source": "/student-experience", "destination": "/about/student-experience" },
+    { "source": "/your-dog-grooming-career/discounts-for-grooming-students", "destination": "/about/student-discounts" },
+    { "source": "/faq", "destination": "/about/faq" },
+    { "source": "/thank-you-course-catalog", "destination": "/thank-you-dog-grooming-course-preview" },
+    { "source": "/thank-you-course-catalog-web", "destination": "/thank-you-dog-grooming-course-preview" },
+    { "source": "/dog-grooming-course-catalog", "destination": "/get-a-dog-grooming-course-preview" },
+    { "source": "/free-course-catalog", "destination": "/get-a-dog-grooming-course-preview" },
+    { "source": "/get-free-course-catalog", "destination": "/get-a-dog-grooming-course-preview" },
+    { "source": "/start-your-dream-career-rm", "destination": "/dog-grooming-courses/rm/start-your-dream-career" },
+    { "source": "/become-professional-dog-groomer-rm", "destination": "/dog-grooming-courses/rm/become-a-professional-dog-groomer" },
+    { "source": "/sniffin-around-blog", "destination": "/blog/sniffin-around-blog" },
+    { "source": "/category/:match*", "destination": "/blog/category/:match*" },
+    { "source": "/:year(\\d{4})/:match*", "destination": "/blog/:year/:match*" }
+  ],
   "rewrites": [
-    { "source": "/sniffin-around-blog", "destination": "https://www.doggroomingcourse.com/sniffin-around-blog" },
-    { "source": "/2021/:match*", "destination": "https://www.doggroomingcourse.com/2021/:match*" }
+    { "source": "/blog/:match*", "destination": "https://www.doggroomingcourse.com/blog/:match*" }
   ]
 }

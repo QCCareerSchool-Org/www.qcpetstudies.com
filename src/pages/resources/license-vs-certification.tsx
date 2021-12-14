@@ -2,16 +2,15 @@ import { NextPage } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 
-import { DefaultLayout } from '../../../components/DefaultLayout';
-import { SEO } from '../../../components/SEO';
-import { useScreenWidth } from '../../../hooks/useScreenWidth';
-
-import AprilCostigan from '../../../images/april-costigan-300x300.jpg';
-import GroomerDemattingBackground from '../../../images/backgrounds/license-vs-certification-bg.jpg';
-import DogDriedOffByTowel from '../../../images/dog-dried-off-by-towel.jpg';
-import DogStaircase from '../../../images/dog-on-staircase.jpg';
-import DogSittingOnTowel from '../../../images/dog-sitting-on-towel.jpg';
-import DogToy from '../../../images/dog-toy.jpg';
+import { DefaultLayout } from '../../components/DefaultLayout';
+import { SEO } from '../../components/SEO';
+import { useScreenWidth } from '../../hooks/useScreenWidth';
+import AprilCostigan from '../../images/april-costigan-300x300.jpg';
+import GroomerDemattingBackground from '../../images/backgrounds/license-vs-certification-bg.jpg';
+import DogDriedOffByTowel from '../../images/dog-dried-off-by-towel.jpg';
+import DogStaircase from '../../images/dog-on-staircase.jpg';
+import DogSittingOnTowel from '../../images/dog-sitting-on-towel.jpg';
+import DogToy from '../../images/dog-toy.jpg';
 
 const LicenseVsCertification: NextPage = () => {
   const screenWidth = useScreenWidth();
@@ -22,7 +21,7 @@ const LicenseVsCertification: NextPage = () => {
       <SEO
         title="Dog Grooming License vs. Certification"
         description="Dog Grooming License vs. Certification"
-        canonical="/dog-grooming-courses/resources/license-vs-certification"
+        canonical="/resources/license-vs-certification"
       />
 
       <section id="top" className="bg-dark">

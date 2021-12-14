@@ -2,15 +2,15 @@ import { NextPage } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 
-import { DefaultLayout } from '../../../components/DefaultLayout';
-import { SEO } from '../../../components/SEO';
-import DogGroomingResourcesBackground from '../../../images/backgrounds/dog-grooming-resources.jpg';
-import BecomingDogGroomerBookImage from '../../../images/books/becoming-a-dog-groomer.png';
-import DogGroomingProsAndConsBookImage from '../../../images/books/dog-grooming-pros-cons.png';
-import DogGroomingToolsBookImage from '../../../images/books/dog-grooming-tools.png';
-import DogGroomerCareerImage from '../../../images/cards/dog-groomer-career.jpg';
-import LearningInClassOnlineImage from '../../../images/cards/learning-in-class-online.jpg';
-import StudentGradFeaturesImage from '../../../images/cards/student-grad-features.jpg';
+import { DefaultLayout } from '../../components/DefaultLayout';
+import { SEO } from '../../components/SEO';
+import DogGroomingResourcesBackground from '../../images/backgrounds/dog-grooming-resources.jpg';
+import BecomingDogGroomerBookImage from '../../images/books/becoming-a-dog-groomer.png';
+import DogGroomingProsAndConsBookImage from '../../images/books/dog-grooming-pros-cons.png';
+import DogGroomingToolsBookImage from '../../images/books/dog-grooming-tools.png';
+import DogGroomerCareerImage from '../../images/cards/dog-groomer-career.jpg';
+import LearningInClassOnlineImage from '../../images/cards/learning-in-class-online.jpg';
+import StudentGradFeaturesImage from '../../images/cards/student-grad-features.jpg';
 
 const DogGroomingResourcesPage: NextPage = () => {
   return (
@@ -43,7 +43,7 @@ const DogGroomingResourcesPage: NextPage = () => {
                 <div className="card-body">
                   <h5 className="card-title">Your Dog Grooming Career</h5>
                   <p className="card-text">Learn what you can expect from a career in dog grooming including salary expectations, potential career paths and more.</p>
-                  <Link href="/dog-grooming-courses/resources/your-dog-grooming-career"><a className="link-primary">Learn More</a></Link>
+                  <Link href="/resources/your-dog-grooming-career"><a className="link-primary">Learn More</a></Link>
                 </div>
               </div>
             </div>
@@ -53,7 +53,7 @@ const DogGroomingResourcesPage: NextPage = () => {
                 <div className="card-body">
                   <h5 className="card-title">Featured Students</h5>
                   <p className="card-text">Follow in the footsteps of other QC students and graduates who are now enjoying their professional dog grooming careers!</p>
-                  <Link href="/category/student-features"><a className="link-primary">Learn More</a></Link>
+                  <Link href="/blog/category/student-features"><a className="link-primary">Learn More</a></Link>
                 </div>
               </div>
             </div>
@@ -63,7 +63,7 @@ const DogGroomingResourcesPage: NextPage = () => {
                 <div className="card-body">
                   <h5 className="card-title">Learning in Class vs. Online</h5>
                   <p className="card-text">Learning dog grooming online is just as effective as learning it in a classroom. Find out how!</p>
-                  <Link href="/dog-grooming-courses/resources/class-vs-online-dog-grooming-schools"><a className="link-primary">Learn More</a></Link>
+                  <Link href="/resources/class-vs-online-dog-grooming-schools"><a className="link-primary">Learn More</a></Link>
                 </div>
               </div>
             </div>
@@ -72,8 +72,8 @@ const DogGroomingResourcesPage: NextPage = () => {
             <div className="col-12 col-lg-6 text-start">
               <h3>Additional links</h3>
               <ul>
-                <li><Link href="/dog-grooming-courses/resources/required-dog-breeds"><a className="link-primary">Required Dog Breeds to Complete Your Course</a></Link></li>
-                <li><Link href="/dog-grooming-courses/resources/learning-and-working-during-covid"><a className="link-primary">Learning and working during COVID-19</a></Link></li>
+                <li><Link href="/resources/required-dog-breeds"><a className="link-primary">Required Dog Breeds to Complete Your Course</a></Link></li>
+                <li><Link href="/resources/learning-and-working-during-covid"><a className="link-primary">Learning and working during COVID-19</a></Link></li>
                 <li><Link href="/about/faq"><a className="link-primary">Frequently Asked Questions</a></Link></li>
                 <li><Link href="/about/about-qc-pet-studies#guarantee"><a className="link-primary">Information about QC Pet Studies' Double Guarantee</a></Link></li>
                 <li><Link href="/about/student-discounts"><a className="link-primary">Discounts available for QC Pet Studies students and graduates</a></Link></li>

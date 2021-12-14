@@ -2,9 +2,10 @@ import { NextPage } from 'next';
 import Image from 'next/image';
 import { ReactElement } from 'react';
 import { FaGraduationCap, FaLaptop, FaUniversity } from 'react-icons/fa';
-import { DefaultLayout } from '../../../components/DefaultLayout';
-import { SEO } from '../../../components/SEO';
-import FirstSectionBackground from '../../../images/backgrounds/inclass_vs_online_bg.jpg';
+
+import { DefaultLayout } from '../../components/DefaultLayout';
+import { SEO } from '../../components/SEO';
+import FirstSectionBackground from '../../images/backgrounds/inclass_vs_online_bg.jpg';
 
 const ClassVsOnlineLearning: NextPage = () => {
 
@@ -13,7 +14,7 @@ const ClassVsOnlineLearning: NextPage = () => {
       <SEO
         title="In-Class vs. Online Dog Grooming Schools"
         description="In-Class vs. Online Dog Grooming Schools"
-        canonical="dog-grooming-courses/resources/class-vs-online-dog-grooming-schools"
+        canonical="/resources/class-vs-online-dog-grooming-schools"
       />
 
       <section id="top" className="bg-dark">

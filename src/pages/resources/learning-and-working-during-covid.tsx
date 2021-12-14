@@ -3,13 +3,13 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { FaInstagram, FaLaptop, FaMedkit, FaPaw, FaPencilAlt, FaTruck } from 'react-icons/fa';
 
-import { DefaultLayout } from '../../../components/DefaultLayout';
-import { SEO } from '../../../components/SEO';
-import { useScreenWidth } from '../../../hooks/useScreenWidth';
-import LearningAndWorkingBackground from '../../../images/backgrounds/groomer-wearing-face-mask.jpg';
-import TipsCardBackground from '../../../images/backgrounds/pet-covid-bg-light-gray.jpg';
-import PetWithMaskImage from '../../../images/pet-covid-image.jpg';
-import CovidCareTools from '../../../images/pet-covid-img-wide.jpg';
+import { DefaultLayout } from '../../components/DefaultLayout';
+import { SEO } from '../../components/SEO';
+import { useScreenWidth } from '../../hooks/useScreenWidth';
+import LearningAndWorkingBackground from '../../images/backgrounds/groomer-wearing-face-mask.jpg';
+import TipsCardBackground from '../../images/backgrounds/pet-covid-bg-light-gray.jpg';
+import PetWithMaskImage from '../../images/pet-covid-image.jpg';
+import CovidCareTools from '../../images/pet-covid-img-wide.jpg';
 
 const LearningDuringCovidPage: NextPage = () => {
   const screenWidth = useScreenWidth();
@@ -22,7 +22,7 @@ const LearningDuringCovidPage: NextPage = () => {
       <SEO
         title="Learning &amp; Working During COVID-19"
         description="Starting a new career during a pandemic can be challenging! Find out how online training can help."
-        canonical="/dog-grooming-courses/resources/learning-and-working-during-covid"
+        canonical="/resources/learning-and-working-during-covid"
       />
 
       <section id="top" className="bg-dark">

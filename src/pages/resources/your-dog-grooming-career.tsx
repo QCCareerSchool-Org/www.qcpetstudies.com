@@ -2,22 +2,21 @@ import { NextPage } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 import { ReactElement, ReactNode } from 'react';
-
 import { FaBriefcase, FaClipboard, FaRegFileAlt, FaRss, FaTags } from 'react-icons/fa';
-import { DefaultLayout } from '../../../components/DefaultLayout';
-import { SEO } from '../../../components/SEO';
-import { useScreenWidth } from '../../../hooks/useScreenWidth';
 
-import ReviewDogGroomingCourse from '../../../images/a-review-of-dog-grooming-course.jpg';
-import AssociationLogo from '../../../images/association-logo.png';
-import CareerBackground from '../../../images/backgrounds/your-dog-grooming-carrer.jpg';
-import MobileGroomerImage from '../../../images/become-a-mobile-dog-groomer.jpg';
-import CompassIcon from '../../../images/compass.svg';
-import DogGroomingAssociations from '../../../images/dog-grooming-associations.jpg';
-import ExploreDogIndustryImage from '../../../images/explore-the-dog-industry.jpg';
-import OwnDogGroomingSaloon from '../../../images/run-your-own-dog-grooming-salon.jpg';
-import WorkFromHomeImage from '../../../images/work-as-a-dog-groomer-from-home.jpg';
-import WorkSaloonImage from '../../../images/work-for-a-grooming-salon-or-pet-retailer.jpg';
+import { DefaultLayout } from '../../components/DefaultLayout';
+import { SEO } from '../../components/SEO';
+import { useScreenWidth } from '../../hooks/useScreenWidth';
+import ReviewDogGroomingCourse from '../../images/a-review-of-dog-grooming-course.jpg';
+import AssociationLogo from '../../images/association-logo.png';
+import CareerBackground from '../../images/backgrounds/your-dog-grooming-carrer.jpg';
+import MobileGroomerImage from '../../images/become-a-mobile-dog-groomer.jpg';
+import CompassIcon from '../../images/compass.svg';
+import DogGroomingAssociations from '../../images/dog-grooming-associations.jpg';
+import ExploreDogIndustryImage from '../../images/explore-the-dog-industry.jpg';
+import OwnDogGroomingSaloon from '../../images/run-your-own-dog-grooming-salon.jpg';
+import WorkFromHomeImage from '../../images/work-as-a-dog-groomer-from-home.jpg';
+import WorkSaloonImage from '../../images/work-for-a-grooming-salon-or-pet-retailer.jpg';
 
 const DogGroomingCareerPage: NextPage = () => {
   const screenWidth = useScreenWidth();
@@ -28,7 +27,7 @@ const DogGroomingCareerPage: NextPage = () => {
       <SEO
         title="Your Dog Grooming Career"
         description="There are different career paths a professional dog groomer can take. Choose the path that's right for you!"
-        canonical="/dog-grooming-courses/resources/your-dog-grooming-career"
+        canonical="/resources/your-dog-grooming-career"
       />
 
       <section id="top" className="bg-dark">
