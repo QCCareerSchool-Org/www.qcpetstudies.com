@@ -25,6 +25,8 @@
     { "source": "/become-professional-dog-groomer-rm", "destination": "/dog-grooming-courses/rm/become-a-professional-dog-groomer" }
   ],
   "rewrites": [
-    { "source": "/blog/:match*", "destination": "https://www.doggroomingcourse.com/blog/:match*" }
+    { "source": "/sniffin-around-blog", "destination": "https://www.doggroomingcourse.com/sniffin-around-blog" },
+    { "source": "/:year(\\d{4})/:match*", "destination": "https://www.doggroomingcourse.com/:year/:match*" },
+    { "source": "/category/:match*", "destination": "https://www.doggroomingcourse.com/category/:match*" }
   ]
 }
