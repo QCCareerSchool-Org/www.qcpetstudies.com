@@ -106,10 +106,10 @@ export const Footer = ({ ctaType, enrollPath = '/', className }: Props): ReactEl
               <Image src={SniffinArroundLogo} width={155} height={40} alt="Sniffin' Around Blog" />
             </div>
             <ul>
-              <li><Link href="/sniffin-around-blog/category/dog-grooming"><a>Dog Grooming</a></Link></li>
-              <li><Link href="/sniffin-around-blog/category/dog-training"><a>Dog Training</a></Link></li>
-              <li><Link href="/sniffin-around-blog/category/student-features"><a>Student Features</a></Link></li>
-              <li><Link href="/sniffin-around-blog/category/career-advice"><a>Career Advice</a></Link></li>
+              <li><Link href="/blog/category/dog-grooming"><a>Dog Grooming</a></Link></li>
+              <li><Link href="/blog/category/dog-training"><a>Dog Training</a></Link></li>
+              <li><Link href="/blog/category/student-features"><a>Student Features</a></Link></li>
+              <li><Link href="/blog/category/career-advice"><a>Career Advice</a></Link></li>
             </ul>
           </div>
         </div>
