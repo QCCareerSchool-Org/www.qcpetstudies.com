@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <sitemap>
+    <loc>https://www.doggroomingcourse.com/sitemap.xml</loc>
+  </sitemap>
+  <sitemap>
+		<loc>https://www.doggroomingcourse.com/post-sitemap.xml</loc>
+	</sitemap>
+	<sitemap>
+		<loc>https://www.doggroomingcourse.com/category-sitemap.xml</loc>
+	</sitemap>
+	<sitemap>
+		<loc>https://www.doggroomingcourse.com/post_tag-sitemap.xml</loc>
+	</sitemap>
+	<sitemap>
+		<loc>https://www.doggroomingcourse.com/author-sitemap.xml</loc>
+	</sitemap>
+</sitemapindex>
