@@ -28,6 +28,7 @@
     { "source": "/sniffin-around-blog", "destination": "https://www.doggroomingcourse.com/sniffin-around-blog" },
     { "source": "/:year(\\d{4})/:match*", "destination": "https://www.doggroomingcourse.com/:year/:match*" },
     { "source": "/category/:match*", "destination": "https://www.doggroomingcourse.com/category/:match*" },
-    { "source": "/wp-content/:match*", "destination": "https://www.doggroomingcourse.com/wp-content/:match*" }
+    { "source": "/wp-content/:match*", "destination": "https://www.doggroomingcourse.com/wp-content/:match*" },
+    { "source": "/wp-includes/:match*", "destination": "https://www.doggroomingcourse.com/wp-includes/:match*" }
   ]
 }
