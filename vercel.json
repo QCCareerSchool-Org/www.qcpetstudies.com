@@ -25,6 +25,17 @@
     { "source": "/become-professional-dog-groomer-rm", "destination": "/dog-grooming-courses/rm/become-a-professional-dog-groomer" }
   ],
   "rewrites": [
-    { "source": "/blog/:match*", "destination": "https://blog.qcpetstudies.com/:match" }
+    { "source": "/:match(wp-.*)", "destination": "https://blog.qcpetstudies.com/:match" },
+    { "source": "/wp-admin/:match*", "destination": "https://blog.qcpetstudies.com/wp-admin/:match*" },
+    { "source": "/wp-content/:match*", "destination": "https://blog.qcpetstudies.com/wp-content/:match*" },
+    { "source": "/wp-includes/:match*", "destination": "https://blog.qcpetstudies.com/wp-includes/:match*" },
+    { "source": "/sniffin-around-blog", "destination": "https://blog.qcpetstudies.com/sniffin-around-blog" },
+    { "source": "/:year(\\d{4})/:match*", "destination": "https://blog.qcpetstudies.com/:year/:match*" },
+    { "source": "/category/:match*", "destination": "https://blog.qcpetstudies.com/category/:match*" },
+    { "source": "/author/:match*", "destination": "https://blog.qcpetstudies.com/author/:match*" },
+    { "source": "/post-sitemap.xml", "destination": "https://blog.qcpetstudies.com/post-sitemap.xml" },
+    { "source": "/category-sitemap.xml", "destination": "https://blog.qcpetstudies.com/category-sitemap.xml" },
+    { "source": "/post_tag-sitemap.xml", "destination": "https://blog.qcpetstudies.com/post_tag-sitemap.xml" },
+    { "source": "/author-sitemap.xml", "destination": "https://blog.qcpetstudies.com/author-sitemap.xml" }
   ]
 }
