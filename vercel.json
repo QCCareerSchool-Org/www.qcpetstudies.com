@@ -25,6 +25,7 @@
     { "source": "/become-professional-dog-groomer-rm", "destination": "/dog-grooming-courses/rm/become-a-professional-dog-groomer" }
   ],
   "rewrites": [
+    { "source": "/blog/:match*", "destination": "https://blog.qcpetstudies.com/blog/:match" },
     { "source": "/:match(wp-.*)", "destination": "https://blog.qcpetstudies.com/:match" },
     { "source": "/wp-admin/:match*", "destination": "https://blog.qcpetstudies.com/wp-admin/:match*" },
     { "source": "/wp-content/:match*", "destination": "https://blog.qcpetstudies.com/wp-content/:match*" },
