@@ -25,17 +25,6 @@
     { "source": "/become-professional-dog-groomer-rm", "destination": "/dog-grooming-courses/rm/become-a-professional-dog-groomer" }
   ],
   "rewrites": [
-    { "source": "/:match(wp-.*)", "destination": "https://www.doggroomingcourse.com/:match" },
-    { "source": "/wp-admin/:match*", "destination": "https://www.doggroomingcourse.com/wp-admin/:match*" },
-    { "source": "/wp-content/:match*", "destination": "https://www.doggroomingcourse.com/wp-content/:match*" },
-    { "source": "/wp-includes/:match*", "destination": "https://www.doggroomingcourse.com/wp-includes/:match*" },
-    { "source": "/sniffin-around-blog", "destination": "https://www.doggroomingcourse.com/sniffin-around-blog" },
-    { "source": "/:year(\\d{4})/:match*", "destination": "https://www.doggroomingcourse.com/:year/:match*" },
-    { "source": "/category/:match*", "destination": "https://www.doggroomingcourse.com/category/:match*" },
-    { "source": "/author/:match*", "destination": "https://www.doggroomingcourse.com/author/:match*" },
-    { "source": "/post-sitemap.xml", "destination": "https://www.doggroomingcourse.com/post-sitemap.xml" },
-    { "source": "/category-sitemap.xml", "destination": "https://www.doggroomingcourse.com/category-sitemap.xml" },
-    { "source": "/post_tag-sitemap.xml", "destination": "https://www.doggroomingcourse.com/post_tag-sitemap.xml" },
-    { "source": "/author-sitemap.xml", "destination": "https://www.doggroomingcourse.com/author-sitemap.xml" }
+    { "source": "/blog/:match*", "destination": "https://blog.qcpetstudies.com/:match" }
   ]
 }
