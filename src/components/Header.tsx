@@ -79,7 +79,7 @@ export const Header = ({ noHero, secondaryTitle, secondaryNavLinks, enrollPath =
                   <Link href="/about/student-experience"><a className="dropdown-item">Student Experience</a></Link>
                   <Link href="/about/student-discounts"><a className="dropdown-item">Student Discounts</a></Link>
                   <Link href="/about/faq"><a className="dropdown-item">FAQ</a></Link>
-                  <Link href="/sniffin-around-blog"><a className="dropdown-item">Blog</a></Link>
+                  <Link href="/blog/sniffin-around-blog"><a className="dropdown-item">Blog</a></Link>
                 </NavDropdown>
                 <Link href="/contact-us"><a className="nav-link">Contact Us</a></Link>
                 {!lgOrGreater
