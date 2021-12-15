@@ -55,6 +55,7 @@ export const getServerSideProps: GetServerSideProps = async context => {
   const builder = new XMLBuilder({ ignoreAttributes: false });
   const xmlContent = builder.build(siteMapIndexObj);
 
+  context.res.setHeader('Cache-Control', 'public, max-age=86400, must-revalidate');
   context.res.setHeader('Content-Type', 'text/xml');
   context.res.write(`<?xml version="1.0" encoding="UTF-8"?>${xmlContent}`);
   context.res.end();
