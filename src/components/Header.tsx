@@ -61,7 +61,7 @@ export const Header = ({ noHero, secondaryTitle, secondaryNavLinks, enrollPath =
                   <hr />
                   <Link href="/dog-grooming-courses/how-it-works"><a className="dropdown-item"><FaCog className="text-primary me-2" /> How It Works</a></Link>
                   <Link href="/dog-grooming-courses/resources"><a className="dropdown-item"><FaFolderOpen className="text-primary me-2" /> Dog Grooming Resources</a></Link>
-                  <Link href="/dog-grooming-courses/meet-our-experts"><a className="dropdown-item"><FaUser className="text-primary me-2" /> Meet Our Experts</a></Link>
+                  {/* <Link href="/dog-grooming-courses/meet-our-experts"><a className="dropdown-item"><FaUser className="text-primary me-2" /> Meet Our Experts</a></Link> */}
                   <Link href="/dog-grooming-courses/dog-grooming-kit"><a className="dropdown-item"><FaCut className="text-primary me-2" /> Dog Grooming Kit</a></Link>
                 </NavDropdown>
                 <NavDropdown title={xlOrGreater || !lgOrGreater ? 'Become a Dog Trainer' : 'Dog Training'} id="dog-trainer-dropdown">
@@ -72,7 +72,7 @@ export const Header = ({ noHero, secondaryTitle, secondaryNavLinks, enrollPath =
                   <hr />
                   <Link href="/dog-training-courses/how-it-works"><a className="dropdown-item"><FaCog className="text-primary me-2" /> How It Works</a></Link>
                   <Link href="/dog-training-courses/resources"><a className="dropdown-item"><FaFolderOpen className="text-primary me-2" /> Dog Training Resources</a></Link>
-                  <Link href="/dog-training-courses/meet-our-experts"><a className="dropdown-item"><FaUser className="text-primary me-2" /> Meet Our Experts</a></Link>
+                  {/* <Link href="/dog-training-courses/meet-our-experts"><a className="dropdown-item"><FaUser className="text-primary me-2" /> Meet Our Experts</a></Link> */}
                 </NavDropdown>
                 <NavDropdown title="About" id="about-dropdown">
                   <Link href="/about/about-qc-pet-studies"><a className="dropdown-item">About QC Pet Studies</a></Link>

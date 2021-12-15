@@ -9,7 +9,7 @@ type SiteMapIndex = {
   sitemapindex: {
     sitemap: Array<{
       loc: string;
-      lasmod?: string;
+      lastmod?: string;
     }>;
   };
 };
@@ -33,17 +33,22 @@ const getRemoteSiteMapIndex = async (): Promise<SiteMapIndex> => {
   }
 };
 
-const getLocalSiteMapLastModTime = async (): Promise<Date> => {
-  const data = await fs.stat(path.join(__dirname, '../../../public/sitemap.xml'));
-  return data.mtime;
+const getLocalSiteMapLastModTime = async (): Promise<Date | void> => {
+  try {
+    const sitemap = path.resolve('./public/sitemap.xml');
+    const data = await fs.stat(path.join(sitemap));
+    return data.mtime;
+  } catch (err) { console.log(err); /* empty */ }
 };
 
 export const getServerSideProps: GetServerSideProps = async context => {
   const siteMapIndexObj = await getRemoteSiteMapIndex();
 
+  const lastMod = await getLocalSiteMapLastModTime();
+
   siteMapIndexObj.sitemapindex.sitemap.push({
     loc: 'https://www.qcpetstudies.com/sitemap.xml',
-    lasmod: (await getLocalSiteMapLastModTime()).toISOString(),
+    lastmod: lastMod?.toISOString(),
   });
 
   const builder = new XMLBuilder({});
