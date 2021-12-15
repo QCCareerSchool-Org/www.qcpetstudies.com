@@ -1,8 +1,13 @@
 {
   "redirects": [
+    { "source": "/online-courses", "destination": "/dog-grooming-courses/dog-grooming" },
+    { "source": "/tuition", "destination": "/dog-grooming-courses/dog-grooming" },
+    { "source": "/tutors", "destination": "/dog-grooming-courses/dog-grooming" },
+    { "source": "/learning-online", "destination": "/dog-grooming-courses/how-it-works" },
+
     { "source": "/online-courses/dog-grooming", "destination": "/dog-grooming-courses/dog-grooming" },
     { "source": "/online-courses/dog-grooming/course-outline", "destination": "/dog-grooming-courses/dog-grooming/course-outline" },
-    { "source": "/online-courses/dog-grooming/course-preview", "destination": "/dog-grooming-courses/dog-grooming/course-outline" },
+    { "source": "/online-courses/dog-grooming/course-preview", "destination": "/dog-grooming-courses/dog-grooming/course-preview" },
     { "source": "/online-courses/first-aid-for-groomers", "destination": "/dog-grooming-courses/first-aid" },
     { "source": "/online-courses/breed-styling-workshop", "destination": "/dog-grooming-courses/breed-styling" },
     { "source": "/learning-online/how-it-works", "destination": "/dog-grooming-courses/how-it-works" },
