@@ -35,9 +35,10 @@ const getRemoteSiteMapIndex = async (): Promise<SiteMapIndex> => {
 
 const getLocalSiteMapLastModTime = async (): Promise<Date | void> => {
   try {
-    const data = await fs.stat(path.join(__dirname, '../../../public/sitemap.xml'));
+    const sitemap = path.resolve('./public/sitemap.xml');
+    const data = await fs.stat(path.join(sitemap));
     return data.mtime;
-  } catch (err) { /* empty */ }
+  } catch (err) { console.log(err); /* empty */ }
 };
 
 export const getServerSideProps: GetServerSideProps = async context => {
