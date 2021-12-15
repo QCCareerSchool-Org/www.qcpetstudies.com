@@ -22,7 +22,8 @@ const getRemoteSiteMapIndex = async (): Promise<SiteMapIndex> => {
       throw Error('Could not fetch remote sitemap index');
     }
     const data = await response.text();
-    const parser = new XMLParser();
+    console.log(data);
+    const parser = new XMLParser({ ignoreAttributes: false });
     return parser.parse(data.replace(/<\?xml.*\?>/u, ''));
   } catch (err) {
     return {
@@ -51,7 +52,7 @@ export const getServerSideProps: GetServerSideProps = async context => {
     lastmod: lastMod?.toISOString(),
   });
 
-  const builder = new XMLBuilder({});
+  const builder = new XMLBuilder({ ignoreAttributes: false });
   const xmlContent = builder.build(siteMapIndexObj);
 
   context.res.setHeader('Content-Type', 'text/xml');
