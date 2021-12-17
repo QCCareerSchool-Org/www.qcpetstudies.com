@@ -2,6 +2,7 @@ import * as HttpStatus from '@qccareerschool/http-status';
 import { GetServerSideProps, NextPage } from 'next';
 import ErrorPage from 'next/error';
 import Image from 'next/image';
+import Script from 'next/script';
 import { useEffect, useState } from 'react';
 
 import { DefaultLayout } from '../components/DefaultLayout';
@@ -64,7 +65,12 @@ const WelcomeToTheSchoolPage: NextPage<Props> = ({ data, errorCode }) => {
         canonical="/internal-welcome"
         noIndex={true}
       />
-
+      <Script
+        id="adwordsSale"
+        dangerouslySetInnerHTML={{ __html: `
+          gtag('event', 'conversion', { 'send_to': 'AW-1071836607/xFpdCJ3DpW8Qv9uL_wM', 'value': ${data.enrollment.cost}, 'currency': '${data.enrollment.currencyCode}', 'transaction_id': '${data.enrollment.id}' });
+        ` }}
+      />
       <section id="top" className="bg-dark">
         <Image src={HappyPuppyRunning} layout="fill" objectFit="cover" objectPosition="center" placeholder="blur" alt="happy puppy running" />
         <div className="container text-center">
