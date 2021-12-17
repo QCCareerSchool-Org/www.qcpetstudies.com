@@ -1,6 +1,7 @@
 import { NextPage } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
+import Script from 'next/script';
 import { FaPaw } from 'react-icons/fa';
 
 import { DefaultLayout } from '../components/DefaultLayout';
@@ -18,6 +19,12 @@ const ThankYouCatalogPage: NextPage = () => {
         title="Here's Your Course Preview"
         description="Get your Dog Training Course Preview Now"
         canonical="/thank-you-dog-training-course-preview"
+      />
+      <Script
+        id="adwordsLead"
+        dangerouslySetInnerHTML={{ __html: `
+          gtag('event', 'conversion', { send_to: 'AW-1071836607/yZtFCL_BpW8Qv9uL_wM' });
+        ` }}
       />
 
       <section id="top" className="bg-black">
