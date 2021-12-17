@@ -1,5 +1,6 @@
 import { NextPage } from 'next';
 import Image from 'next/image';
+import Link from 'next/link';
 import { FaPaw } from 'react-icons/fa';
 
 import { DefaultLayout } from '../components/DefaultLayout';
@@ -28,7 +29,7 @@ const ThankYouCatalogPage: NextPage = () => {
               <h2>Thank You for Your Interest!</h2>
               <p className="lead">Find out what a career in dog grooming can do for you, and how you can get started with QC's Dog Grooming course.</p>
               <h4 className="mb-4">Access your free course preview here:</h4>
-              <a href="" className="btn btn-outline-secondary btn-lg">Get Preview&nbsp;&nbsp;<FaPaw style={{ position: 'relative', top: -2 }} /></a>
+              <Link href="/dog-grooming-courses/dog-grooming/course-preview"><a className="btn btn-outline-secondary btn-lg">Get Preview&nbsp;&nbsp;<FaPaw style={{ position: 'relative', top: -2 }} /></a></Link>
             </div>
           </div>
         </div>
