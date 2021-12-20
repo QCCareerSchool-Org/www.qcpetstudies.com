@@ -5,7 +5,7 @@ import { useRouter } from 'next/router';
 import { ReactElement, useEffect } from 'react';
 import SSRProvider from 'react-bootstrap/SSRProvider';
 
-import * as ga from '../lib/ga';
+import { gaPageview } from '../lib/ga';
 import * as salesforce from '../lib/salesforce';
 import { LocationProvider } from '../providers/LocationProvider';
 import { ScreenWidthProvider } from '../providers/ScreenWidthProvider';
@@ -23,7 +23,7 @@ const QCPetStudiesApp = ({ Component, pageProps }: AppProps): ReactElement => {
 
   useEffect(() => {
     const handleRouteChange = (url: string): void => {
-      ga.pageview(url);
+      gaPageview(url);
       salesforce.pageview(url);
     };
     // When the component is mounted, subscribe to router changes

@@ -1,7 +1,8 @@
 import { GetServerSideProps, NextPage } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
-import { Accordion, Modal } from 'react-bootstrap';
+import { ReactEventHandler, useEffect, useState } from 'react';
+import { Accordion } from 'react-bootstrap';
 import { BsCardChecklist, BsPeopleFill } from 'react-icons/bs';
 import { IoMdInfinite } from 'react-icons/io';
 
@@ -12,11 +13,10 @@ import { DTTutorSection } from '../../../components/DTTutorSection';
 import { GuaranteeSection } from '../../../components/GuaranteeSection';
 import { PriceSection } from '../../../components/PriceSection';
 import { SEO } from '../../../components/SEO';
+import { usePrevious } from '../../../hooks/usePrevious';
 import { useScreenWidth } from '../../../hooks/useScreenWidth';
-import { useToggle } from '../../../hooks/useToggle';
 import DTBackgroundImage from '../../../images/backgrounds/australian-shepherd-attentive.jpg';
 import GuaranteeIcon from '../../../images/course-overview-icons/guarantee.svg';
-import MovieClapperIcon from '../../../images/course-overview-icons/movie-clapper.svg';
 import OutlineIcon from '../../../images/course-overview-icons/outline.svg';
 import TutorIcon from '../../../images/course-overview-icons/tutor.svg';
 import IntroductoryUnitsImage from '../../../images/dt-outline-part-1-image.jpg';
@@ -26,6 +26,7 @@ import DogTrainingBusinessImage from '../../../images/dt-outline-part-4-image.jp
 import CPDTPrepImage from '../../../images/german-shepherd-puppy-sitting.jpg';
 import CertificationGoldImage from '../../../images/IDTP-certification-gold-2.svg';
 import { formatPrice } from '../../../lib/formatPrice';
+import { gaEvent } from '../../../lib/ga';
 import { getLocation } from '../../../lib/getLocation';
 import { lookupPrices } from '../../../lib/lookupPrices';
 import type { Location } from '../../../models/location';
@@ -43,12 +44,46 @@ type Props = {
 
 const DogTrainingPage: NextPage<Props> = ({ price }) => {
   const screenWidth = useScreenWidth();
-  const [ trailerPopupVisible, trailerPopupToggle ] = useToggle();
+  const [ videoPercentage, setVideoPercentage ] = useState(0);
 
   const mdOrGreater = screenWidth >= 768;
   const lgOrGreater = screenWidth >= 992;
 
   const md = mdOrGreater && !lgOrGreater;
+
+  const videoPlay: ReactEventHandler<HTMLVideoElement> = e => {
+    // eslint-disable-next-line camelcase
+    gaEvent('Play', { event_category: 'Video', event_label: 'DT Trailer' });
+  };
+
+  const videoEnded: ReactEventHandler<HTMLVideoElement> = e => {
+    // eslint-disable-next-line camelcase
+    gaEvent('End', { event_category: 'Video', event_label: 'DT Trailer' });
+  };
+
+  const videoUpdate: ReactEventHandler<HTMLVideoElement> = e => {
+    const target = e.target as HTMLVideoElement;
+    const percentage = Math.round((target.currentTime / target.duration) * 100);
+    setVideoPercentage(percentage);
+  };
+
+  const prevVideoPercentage = usePrevious<number>(videoPercentage);
+
+  useEffect(() => {
+    if (typeof prevVideoPercentage === 'undefined') {
+      return;
+    }
+    if (videoPercentage >= 75 && prevVideoPercentage < 75) {
+      // eslint-disable-next-line camelcase
+      gaEvent('75%', { event_category: 'Video', event_label: 'DT Trailer' });
+    } else if (videoPercentage >= 50 && prevVideoPercentage < 50) {
+      // eslint-disable-next-line camelcase
+      gaEvent('50%', { event_category: 'Video', event_label: 'DT Trailer' });
+    } else if (videoPercentage >= 25 && prevVideoPercentage < 25) {
+      // eslint-disable-next-line camelcase
+      gaEvent('25%', { event_category: 'Video', event_label: 'DT Trailer' });
+    }
+  }, [ videoPercentage, prevVideoPercentage ]);
 
   return (
     <DefaultLayout secondaryTitle="Dog Training Course">
@@ -72,11 +107,7 @@ const DogTrainingPage: NextPage<Props> = ({ price }) => {
             <a href="https://enroll.qcpetstudies.com?c[]=dt"><button className="btn btn-secondary btn-lg">Enroll Online</button></a>
           </div>
           <div className="row justify-content-center">
-            <div className="col-12 col-md-8 col-lg-6 d-flex">
-              <div className="col text-uppercase">
-                <button onClick={trailerPopupToggle} className="btn btn-link"><Image src={MovieClapperIcon} alt="movie clapper" width={headerIconSize} height={headerIconSize} /></button>
-                <p><strong>Trailer</strong></p>
-              </div>
+            <div className="col-12 col-md-6 col-lg-6 d-flex">
               <div className="col text-uppercase">
                 <a href="#outline"><Image src={OutlineIcon} alt="outline" width={headerIconSize} height={headerIconSize} /></a>
                 <p><strong>Outline</strong></p>
@@ -92,21 +123,18 @@ const DogTrainingPage: NextPage<Props> = ({ price }) => {
             </div>
           </div>
         </div>
-        <Modal show={trailerPopupVisible} onHide={trailerPopupToggle} size="lg">
-          <Modal.Header closeButton>Dog Training Course</Modal.Header>
-          <Modal.Body>
-            <div className="ratio ratio-16x9">
-              <video controls autoPlay>
-                <source src="https://89b45d42c17e11dd3d57-62a1fc0bf60a98e1d5e980348a7de3b7.ssl.cf1.rackcdn.com/dog-training-trailer.mp4" type="video/mp4" />
-              </video>
-            </div>
-          </Modal.Body>
-        </Modal>
       </section>
 
       <section>
         <div className="container text-center">
           <div className="row justify-content-center">
+            <div className="col-12 col-lg-8 mb-4">
+              <div className="ratio ratio-16x9">
+                <video onTimeUpdate={videoUpdate} onEnded={videoEnded} onPlay={videoPlay} controls preload="metadata" poster="https://89b45d42c17e11dd3d57-62a1fc0bf60a98e1d5e980348a7de3b7.ssl.cf1.rackcdn.com/dog-training-trailer-poster.png">
+                  <source src="https://89b45d42c17e11dd3d57-62a1fc0bf60a98e1d5e980348a7de3b7.ssl.cf1.rackcdn.com/dog-training-trailer.mp4" type="video/mp4" />
+                </video>
+              </div>
+            </div>
             <div className="col-12 col-lg-10">
               <h2>Become a <strong>Certified Dog Trainer</strong></h2>
               <p className="lead"><strong>International Dog Training Professional&trade;</strong> | <i>IDTP&trade;</i></p>
