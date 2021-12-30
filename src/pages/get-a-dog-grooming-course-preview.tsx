@@ -10,9 +10,9 @@ import { SEO } from '../components/SEO';
 import { useScreenWidth } from '../hooks/useScreenWidth';
 import TestiminialBackground from '../images/backgrounds/testimonials-bg.jpg';
 import ProfileImage from '../images/casey-bechard.png';
-import CatalogImage from '../images/course-catalog-tablet.jpg';
 import GroomingKitImage from '../images/dog-grooming-kit.jpg';
 import FirstAidLogo from '../images/first-aid-logo.svg';
+import CatalogImage from '../images/preview-landing-page-grooming.jpg';
 import Step1EnrollImage from '../images/step-1-enroll.svg';
 import Step2SubmitImage from '../images/step-2-submit.svg';
 import Step3CertificateImage from '../images/step-3-certificate.svg';
@@ -41,7 +41,7 @@ const DogGroomingCatalogPage: NextPage<Props> = ({ testGroup }) => {
         <div className="container">
           <div className="row justify-content-center align-items-center">
             <div className="col-12 col-sm-11 col-md-10 col-lg-10 mb-4 mb-lg-5">
-              <h2 className="text-center">Become a Professional Dog Groomer</h2>
+              <h2 className="text-center mb-0">Become a Professional Dog Groomer</h2>
             </div>
             <div className="col-12 col-sm-11 col-md-10 col-lg-6 mb-4 mb-lg-0">
               <div className="card bg-light">
@@ -56,7 +56,7 @@ const DogGroomingCatalogPage: NextPage<Props> = ({ testGroup }) => {
             </div>
             <div className="col-12 col-sm-11 col-md-10 col-lg-6">
               {lgOrGreater && (
-                <div className="px-5 mb-4">
+                <div className="px-5 mb-2">
                   <Image src={CatalogImage} layout="responsive" alt="tablet with dog image" />
                 </div>
               )}
@@ -158,6 +158,7 @@ const DogGroomingCatalogPage: NextPage<Props> = ({ testGroup }) => {
   );
 };
 
+// eslint-disable-next-line @typescript-eslint/require-await
 export const getServerSideProps: GetServerSideProps = async context => {
   let testGroup: number | undefined;
   const storedTestGroup = context.req.cookies.testGroup;
