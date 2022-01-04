@@ -1,7 +1,6 @@
 import Image from 'next/image';
 import { ReactElement } from 'react';
 
-import KimCooperImage from '../images/kim-cooper.jpg';
 import ShannonNoonanImage from '../images/shannon-noonan.jpg';
 import SusanReadImage from '../images/susan-read.jpg';
 
