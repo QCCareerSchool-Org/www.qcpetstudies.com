@@ -116,13 +116,17 @@ export const getServerSideProps: GetServerSideProps = async ({ req, res, query }
 
     const enrollment = await getEnrollment(enrollmentId, code);
 
+    console.log('emailed: ', enrollment.emailed);
+
     if (!enrollment.complete || !enrollment.success) {
       throw new HttpStatus.NotFound();
     }
 
     if (!enrollment.emailed) {
       // don't await the promise here because of vercel's serverless function time limit
-      sendEnrollmentEmail(enrollmentId, code).catch(() => { /* */ });
+      sendEnrollmentEmail(enrollmentId, code).catch((err: unknown) => {
+        console.error(err);
+      });
     }
 
     const ipAddress = Array.isArray(req.headers['x-real-ip']) ? req.headers['x-real-ip']?.[0] : req.headers['x-real-ip'];

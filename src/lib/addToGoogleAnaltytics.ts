@@ -4,6 +4,13 @@ import type { Enrollment } from '../models/enrollment';
 
 const precision = 2;
 
+declare global {
+  interface Window {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    dataLayer: any[];
+  }
+}
+
 export const addToGoogleAnalytics = (enrollment: Enrollment): void => {
   window.dataLayer = window.dataLayer || [];
   window.dataLayer.push({
