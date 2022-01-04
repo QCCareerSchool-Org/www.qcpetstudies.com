@@ -7,8 +7,8 @@ const TermsPage: NextPage = () => (
   <TextLayout>
     <SEO
       title="Privacy Policy"
-      description="This is Terms Page"
-      canonical="/about/terms"
+      description="QC Pet Studies website privacy policy and terms of service"
+      canonical="/terms"
     />
 
     <h1>Privacy Policy</h1>

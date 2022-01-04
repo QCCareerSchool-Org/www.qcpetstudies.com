@@ -22,8 +22,8 @@ import { Enrollment } from '../models/enrollment';
 type Props = {
   data?: {
     enrollment: Enrollment;
-    ipAddress: string | null;
     code: string;
+    ipAddress: string | null;
   };
   errorCode?: number;
 };
@@ -119,8 +119,6 @@ export const getServerSideProps: GetServerSideProps = async ({ req, res, query }
     const code = query.code;
 
     const enrollment = await getEnrollment(enrollmentId, code);
-
-    console.log('emailed: ', enrollment.emailed);
 
     if (!enrollment.complete || !enrollment.success) {
       throw new HttpStatus.NotFound();

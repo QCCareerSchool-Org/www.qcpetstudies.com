@@ -21,8 +21,8 @@ import { Enrollment } from '../models/enrollment';
 type Props = {
   data?: {
     enrollment: Enrollment;
-    ipAddress: string | null;
     code: string;
+    ipAddress: string | null;
   };
   errorCode?: number;
 };
