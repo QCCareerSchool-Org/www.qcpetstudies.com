@@ -12,14 +12,6 @@ import { LocationProvider } from '../providers/LocationProvider';
 import { ScreenWidthProvider } from '../providers/ScreenWidthProvider';
 import { ScrollPositionProvider } from '../providers/ScrollPositionProvider';
 
-const googleAnalyticsScript = `
-window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
-gtag('config', '${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}', { page_path: window.location.pathname });
-gtag('config', 'AW-1071836607');
-`;
-
 const QCPetStudiesApp = ({ Component, pageProps }: AppProps): ReactElement => {
   const router = useRouter();
 
@@ -43,15 +35,6 @@ const QCPetStudiesApp = ({ Component, pageProps }: AppProps): ReactElement => {
       <LocationProvider>
         <ScreenWidthProvider>
           <ScrollPositionProvider>
-            <Script
-              strategy="afterInteractive"
-              src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}`}
-            />
-            <Script
-              id="gtag-init"
-              strategy="afterInteractive"
-              dangerouslySetInnerHTML={{ __html: googleAnalyticsScript }}
-            />
             <Component {...pageProps} />
           </ScrollPositionProvider>
         </ScreenWidthProvider>
