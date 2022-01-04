@@ -2,7 +2,6 @@ import '../styles/global.scss';
 
 import type { AppProps, NextWebVitalsMetric } from 'next/app';
 import { useRouter } from 'next/router';
-import Script from 'next/script';
 import { ReactElement, useEffect } from 'react';
 import SSRProvider from 'react-bootstrap/SSRProvider';
 

@@ -23,10 +23,11 @@ type Props = {
     enrollment: Enrollment;
     ipAddress: string | null;
   };
+  code?: string;
   errorCode?: number;
 };
 
-const InternalWelcomePage: NextPage<Props> = ({ data, errorCode }) => {
+const InternalWelcomePage: NextPage<Props> = ({ data, code, errorCode }) => {
   const [ emailAddress, setEmailAddress ] = useState('');
   const location = useLocation();
   const telephoneNumber = getTelephoneNumber(location?.countryCode ?? 'US');
@@ -43,8 +44,11 @@ const InternalWelcomePage: NextPage<Props> = ({ data, errorCode }) => {
     if (!data.enrollment.emailed) {
       addToActiveCampaign(data.enrollment).catch(() => { /* */ });
       addToGoogleAnalytics(data.enrollment);
+      if (code) {
+        sendEnrollmentEmail(data.enrollment.id, code).catch((err: unknown) => { console.error(err); });
+      }
     }
-  }, [ data ]);
+  }, [ data, code ]);
 
   if (typeof errorCode !== 'undefined') {
     return <ErrorPage statusCode={errorCode} />;
@@ -117,14 +121,9 @@ export const getServerSideProps: GetServerSideProps = async ({ req, res, query }
       throw new HttpStatus.NotFound();
     }
 
-    if (!enrollment.emailed) {
-      // don't await the promise here because of vercel's serverless function time limit
-      sendEnrollmentEmail(enrollmentId, code).catch(() => { /* */ });
-    }
-
     const ipAddress = Array.isArray(req.headers['x-real-ip']) ? req.headers['x-real-ip']?.[0] : req.headers['x-real-ip'];
 
-    return { props: { data: { enrollment, ipAddress: ipAddress ?? null } } };
+    return { props: { data: { enrollment, code, ipAddress: ipAddress ?? null } } };
   } catch (err) {
     const internalServerError = 500;
     const errorCode = err instanceof HttpStatus.HttpResponse ? err.statusCode : internalServerError;
