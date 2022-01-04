@@ -43,6 +43,7 @@ const WelcomeToTheSchoolPage: NextPage<Props> = ({ data, code, errorCode }) => {
     if (typeof data === 'undefined') {
       return;
     }
+    console.log('useEffect', data, code);
     if (!data.enrollment.emailed) {
       addToActiveCampaign(data.enrollment).catch(() => { /* */ });
       addToIDevAffiliate(data.enrollment).catch(() => { /* */ });
