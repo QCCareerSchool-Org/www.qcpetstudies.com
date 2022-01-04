@@ -113,6 +113,7 @@ const ProfessionalDogGroomerPage: NextPage<Props> = ({ testGroup }) => {
   );
 };
 
+// eslint-disable-next-line @typescript-eslint/require-await
 export const getServerSideProps: GetServerSideProps = async context => {
   let testGroup: number | undefined;
   const storedTestGroup = context.req.cookies.testGroup;

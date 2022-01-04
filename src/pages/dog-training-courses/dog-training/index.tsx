@@ -51,12 +51,12 @@ const DogTrainingPage: NextPage<Props> = ({ price }) => {
 
   const md = mdOrGreater && !lgOrGreater;
 
-  const videoPlay: ReactEventHandler<HTMLVideoElement> = e => {
+  const videoPlay: ReactEventHandler<HTMLVideoElement> = () => {
     // eslint-disable-next-line camelcase
     gaEvent('Play', { event_category: 'Video', event_label: 'DT Trailer' });
   };
 
-  const videoEnded: ReactEventHandler<HTMLVideoElement> = e => {
+  const videoEnded: ReactEventHandler<HTMLVideoElement> = () => {
     // eslint-disable-next-line camelcase
     gaEvent('End', { event_category: 'Video', event_label: 'DT Trailer' });
   };

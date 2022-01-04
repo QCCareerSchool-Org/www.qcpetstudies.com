@@ -4,7 +4,7 @@ import { ReactElement } from 'react';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
-import { FaCog, FaCut, FaFolderOpen, FaUser } from 'react-icons/fa';
+import { FaCog, FaCut, FaFolderOpen } from 'react-icons/fa';
 
 import { useScreenWidth } from '../hooks/useScreenWidth';
 import { useScrollPosition } from '../hooks/useScrollPosition';
