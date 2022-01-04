@@ -11,13 +11,7 @@ export const gaPageview = (url: string): void => {
   });
 };
 
-type EventParams = {
-  event_category?: string; // eslint-disable-line camelcase
-  event_label?: string; // eslint-disable-line camelcase
-  value?: number;
-};
-
 // log specific events happening.
-export const gaEvent = (action: string, params?: EventParams): void => {
+export const gaEvent = (action: string, params?: unknown): void => {
   window.gtag('event', action, params);
 };

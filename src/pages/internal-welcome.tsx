@@ -21,13 +21,13 @@ import { Enrollment } from '../models/enrollment';
 type Props = {
   data?: {
     enrollment: Enrollment;
+    code: string;
     ipAddress: string | null;
   };
-  code?: string;
   errorCode?: number;
 };
 
-const InternalWelcomePage: NextPage<Props> = ({ data, code, errorCode }) => {
+const InternalWelcomePage: NextPage<Props> = ({ data, errorCode }) => {
   const [ emailAddress, setEmailAddress ] = useState('');
   const location = useLocation();
   const telephoneNumber = getTelephoneNumber(location?.countryCode ?? 'US');
@@ -44,11 +44,11 @@ const InternalWelcomePage: NextPage<Props> = ({ data, code, errorCode }) => {
     if (!data.enrollment.emailed) {
       addToActiveCampaign(data.enrollment).catch(() => { /* */ });
       addToGoogleAnalytics(data.enrollment);
-      if (code) {
-        sendEnrollmentEmail(data.enrollment.id, code).catch((err: unknown) => { console.error(err); });
-      }
+      sendEnrollmentEmail(data.enrollment.id, data.code).catch((err: unknown) => {
+        console.error(err);
+      });
     }
-  }, [ data, code ]);
+  }, [ data ]);
 
   if (typeof errorCode !== 'undefined') {
     return <ErrorPage statusCode={errorCode} />;

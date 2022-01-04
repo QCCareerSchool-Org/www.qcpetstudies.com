@@ -4,7 +4,6 @@
     { "source": "/tuition", "destination": "/dog-grooming-courses/dog-grooming" },
     { "source": "/tutors", "destination": "/dog-grooming-courses/dog-grooming" },
     { "source": "/learning-online", "destination": "/dog-grooming-courses/how-it-works" },
-
     { "source": "/online-courses/dog-grooming", "destination": "/dog-grooming-courses/dog-grooming" },
     { "source": "/online-courses/dog-grooming/course-outline", "destination": "/dog-grooming-courses/dog-grooming/course-outline" },
     { "source": "/online-courses/dog-grooming/course-preview", "destination": "/dog-grooming-courses/dog-grooming/course-preview" },
@@ -27,7 +26,11 @@
     { "source": "/free-course-catalog", "destination": "/get-a-dog-grooming-course-preview" },
     { "source": "/get-free-course-catalog", "destination": "/get-a-dog-grooming-course-preview" },
     { "source": "/start-your-dream-career-rm", "destination": "/dog-grooming-courses/rm/start-your-dream-career" },
-    { "source": "/become-professional-dog-groomer-rm", "destination": "/dog-grooming-courses/rm/become-a-professional-dog-groomer" }
+    { "source": "/become-professional-dog-groomer-rm", "destination": "/dog-grooming-courses/rm/become-a-professional-dog-groomer" },
+    { "source": "/terms.html", "destination": "/terms" },
+    { "source": "/terms-gb.html", "destination": "/terms-gb" },
+    { "source": "/enrollment-agreement.html", "destination": "/enrollment-agreement" },
+    { "source": "/enrollment-agreement-gb.html", "destination": "/enrollment-agreement-gb" }
   ],
   "rewrites": [
     { "source": "/blog/:match*", "destination": "https://blog.qcpetstudies.com/blog/:match" }

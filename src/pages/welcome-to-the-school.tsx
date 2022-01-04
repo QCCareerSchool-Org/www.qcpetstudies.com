@@ -22,13 +22,13 @@ import { Enrollment } from '../models/enrollment';
 type Props = {
   data?: {
     enrollment: Enrollment;
+    code: string;
     ipAddress: string | null;
   };
-  code?: string;
   errorCode?: number;
 };
 
-const WelcomeToTheSchoolPage: NextPage<Props> = ({ data, code, errorCode }) => {
+const WelcomeToTheSchoolPage: NextPage<Props> = ({ data, errorCode }) => {
   const [ emailAddress, setEmailAddress ] = useState('');
   const location = useLocation();
   const telephoneNumber = getTelephoneNumber(location?.countryCode ?? 'US');
@@ -47,13 +47,11 @@ const WelcomeToTheSchoolPage: NextPage<Props> = ({ data, code, errorCode }) => {
       addToActiveCampaign(data.enrollment).catch(() => { /* */ });
       addToIDevAffiliate(data.enrollment).catch(() => { /* */ });
       addToGoogleAnalytics(data.enrollment);
-      if (code) {
-        sendEnrollmentEmail(data.enrollment.id, code).catch((err: unknown) => {
-          console.error(err);
-        });
-      }
+      sendEnrollmentEmail(data.enrollment.id, data.code).catch((err: unknown) => {
+        console.error(err);
+      });
     }
-  }, [ data, code ]);
+  }, [ data ]);
 
   if (typeof errorCode !== 'undefined') {
     return <ErrorPage statusCode={errorCode} />;
@@ -121,8 +119,6 @@ export const getServerSideProps: GetServerSideProps = async ({ req, res, query }
     const code = query.code;
 
     const enrollment = await getEnrollment(enrollmentId, code);
-
-    console.log('emailed: ', enrollment.emailed);
 
     if (!enrollment.complete || !enrollment.success) {
       throw new HttpStatus.NotFound();
