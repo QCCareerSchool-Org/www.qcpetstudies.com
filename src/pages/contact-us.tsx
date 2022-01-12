@@ -9,7 +9,7 @@ import ContactUsBackground from '../images/backgrounds/contact-us-bg.jpg';
 import ContactByChatImage from '../images/contact-chat.svg';
 import ContactByEmailImage from '../images/contact-email.svg';
 import ContactByPhoneImage from '../images/contact-headset.svg';
-import ScheduleCallImage from '../images/schedule-call-contact.png';
+// import ScheduleCallImage from '../images/schedule-call-contact.png';
 import { openLiveChat } from '../lib/livechat';
 import { getTelephoneNumber } from '../lib/phone';
 
@@ -74,7 +74,7 @@ const ContactUsPage: NextPage = () => {
         </div>
       </section>
 
-      <section className="bg-light">
+      {/* <section className="bg-light">
         <div className="container text-center text-lg-start">
           <div className="row justify-content-center">
             <div className="col-12 col-lg-6 col-xl-7 mb-4 mb-lg-0">
@@ -88,7 +88,7 @@ const ContactUsPage: NextPage = () => {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
     </DefaultLayout>
   );
 };

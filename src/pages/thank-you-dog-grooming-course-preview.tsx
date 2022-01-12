@@ -1,10 +1,10 @@
 import { NextPage } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
-import Script from 'next/script';
 import { FaPaw } from 'react-icons/fa';
 
 import { DefaultLayout } from '../components/DefaultLayout';
+import { GoogleAdsLeadScript } from '../components/GoogleAdsLeadScript';
 import { SEO } from '../components/SEO';
 import { useScreenWidth } from '../hooks/useScreenWidth';
 import CatalogBackground from '../images/backgrounds/white-bichon-frise-circle-cut.jpg';
@@ -20,12 +20,7 @@ const ThankYouCatalogPage: NextPage = () => {
         description="Get your Dog Grooming Course Preview Now"
         canonical="/thank-you-dog-grooming-course-preview"
       />
-      <Script
-        id="adwordsLead"
-        dangerouslySetInnerHTML={{ __html: `
-          gtag('event', 'conversion', { send_to: 'AW-1071836607/yZtFCL_BpW8Qv9uL_wM' });
-        ` }}
-      />
+      <GoogleAdsLeadScript />
       <section id="top" className="bg-black">
         {mdOrGreater && <Image src={CatalogBackground} layout="fill" objectFit="cover" objectPosition="right" placeholder="blur" alt="white Bichon Frise with circle cut" />}
         <div className="container text-center text-md-start">

@@ -11,6 +11,19 @@ gtag('js', new Date());
 gtag('config', '${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}', { page_path: window.location.pathname });
 gtag('config', 'AW-1071836607');`;
 
+const uetScript = `(function(w,d,t,r,u) {
+  var f, n, i;
+  w[u] = w[u] || [], f = function() {
+    var o = { ti: " 5751420" };
+    o.q = w[u], w[u] = new UET(o), w[u].push("pageLoad")
+  },
+  n = d.createElement(t), n.src = r, n.async = 1, n.onload = n.onreadystatechange = function() {
+    var s = this.readyState;
+    s && s !== "loaded" && s !== "complete" || (f(), n.onload = n.onreadystatechange = null)
+  },
+  i = d.getElementsByTagName(t)[0], i.parentNode.insertBefore(n, i)
+})(window, document, "script", "//bat.bing.com/bat.js", "uetq");`;
+
 const pardotScript = `
 piAId = '948642';
 piCId = '34913';
@@ -49,6 +62,7 @@ class MyDocument extends Document {
         <Head>
           <script async src={googleAnalyticsSrc} />
           <script dangerouslySetInnerHTML={{ __html: googleAnalyticsScript }} />
+          <script dangerouslySetInnerHTML={{ __html: uetScript }} />
           <script dangerouslySetInnerHTML={{ __html: pardotScript }} />
           <script dangerouslySetInnerHTML={{ __html: livechatScript }} />
           <noscript><a href="https://www.livechatinc.com/chat-with/1056788/" rel="nofollow">Chat with us</a>, powered by <a href="https://www.livechatinc.com/?welcome" rel="noopener nofollow noreferrer" target="_blank">LiveChat</a></noscript>
