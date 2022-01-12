@@ -11,7 +11,8 @@ gtag('js', new Date());
 gtag('config', '${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}', { page_path: window.location.pathname });
 gtag('config', 'AW-1071836607');`;
 
-const uetScript = `(function(w,d,t,r,u) {
+const uetScript = `
+(function(w,d,t,r,u) {
   var f, n, i;
   w[u] = w[u] || [], f = function() {
     var o = { ti: " 5751420" };
@@ -23,6 +24,18 @@ const uetScript = `(function(w,d,t,r,u) {
   },
   i = d.getElementsByTagName(t)[0], i.parentNode.insertBefore(n, i)
 })(window, document, "script", "//bat.bing.com/bat.js", "uetq");`;
+
+const facebookScript = `
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1725004270923176');
+fbq('track', 'PageView');`;
 
 const pardotScript = `
 piAId = '948642';
@@ -63,6 +76,8 @@ class MyDocument extends Document {
           <script async src={googleAnalyticsSrc} />
           <script dangerouslySetInnerHTML={{ __html: googleAnalyticsScript }} />
           <script dangerouslySetInnerHTML={{ __html: uetScript }} />
+          <script dangerouslySetInnerHTML={{ __html: facebookScript }} />
+          <noscript><img height="1" width="1" style={{ display: 'none' }} src="https://www.facebook.com/tr?id=1725004270923176&ev=PageView&noscript=1" /></noscript>{ /* eslint-disable-line @next/next/no-img-element,jsx-a11y/alt-text */ }
           <script dangerouslySetInnerHTML={{ __html: pardotScript }} />
           <script dangerouslySetInnerHTML={{ __html: livechatScript }} />
           <noscript><a href="https://www.livechatinc.com/chat-with/1056788/" rel="nofollow">Chat with us</a>, powered by <a href="https://www.livechatinc.com/?welcome" rel="noopener nofollow noreferrer" target="_blank">LiveChat</a></noscript>

@@ -14,6 +14,7 @@ import HappyPuppyRunning from '../images/backgrounds/happy-puppy-running.jpg';
 import { addToActiveCampaign } from '../lib/addToActiveCampaign';
 import { addToGoogleAnalytics } from '../lib/addToGoogleAnaltytics';
 import { addToIDevAffiliate } from '../lib/addToIDevAffiliate';
+import { fbqSale } from '../lib/fbq';
 import { getEnrollment } from '../lib/getEnrollment';
 import { getTelephoneNumber } from '../lib/phone';
 import { sendEnrollmentEmail } from '../lib/sendEnrollmentEmail';
@@ -47,6 +48,7 @@ const WelcomeToTheSchoolPage: NextPage<Props> = ({ data, errorCode }) => {
       addToActiveCampaign(data.enrollment).catch(() => { /* */ });
       addToIDevAffiliate(data.enrollment).catch(() => { /* */ });
       addToGoogleAnalytics(data.enrollment);
+      fbqSale(data.enrollment.cost, data.enrollment.currencyCode);
       sendEnrollmentEmail(data.enrollment.id, data.code).catch((err: unknown) => {
         console.error(err);
       });

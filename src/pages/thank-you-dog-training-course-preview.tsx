@@ -1,6 +1,7 @@
 import { NextPage } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
+import { useEffect } from 'react';
 import { FaPaw } from 'react-icons/fa';
 
 import { DefaultLayout } from '../components/DefaultLayout';
@@ -8,10 +9,15 @@ import { GoogleAdsLeadScript } from '../components/GoogleAdsLeadScript';
 import { SEO } from '../components/SEO';
 import { useScreenWidth } from '../hooks/useScreenWidth';
 import CatalogBackground from '../images/backgrounds/white-bichon-frise-circle-cut.jpg';
+import { fbqLead } from '../lib/fbq';
 
 const ThankYouCatalogPage: NextPage = () => {
   const screenWidth = useScreenWidth();
   const mdOrGreater = screenWidth >= 768;
+
+  useEffect(() => {
+    fbqLead();
+  }, []);
 
   return (
     <DefaultLayout>

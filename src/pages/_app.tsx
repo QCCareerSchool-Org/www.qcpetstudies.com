@@ -5,6 +5,7 @@ import { useRouter } from 'next/router';
 import { ReactElement, useEffect } from 'react';
 import SSRProvider from 'react-bootstrap/SSRProvider';
 
+import { fbqPageview } from '../lib/fbq';
 import { gaPageview } from '../lib/ga';
 import * as salesforce from '../lib/salesforce';
 import { uetPageview } from '../lib/uet';
@@ -19,6 +20,7 @@ const QCPetStudiesApp = ({ Component, pageProps }: AppProps): ReactElement => {
     const handleRouteChange = (url: string): void => {
       gaPageview(url);
       uetPageview(url);
+      fbqPageview(url);
       salesforce.pageview(url);
     };
 
