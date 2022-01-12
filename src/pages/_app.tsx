@@ -7,7 +7,7 @@ import SSRProvider from 'react-bootstrap/SSRProvider';
 
 import { fbqPageview } from '../lib/fbq';
 import { gaPageview } from '../lib/ga';
-import * as salesforce from '../lib/salesforce';
+import { pardotPageview } from '../lib/pardot';
 import { uetPageview } from '../lib/uet';
 import { LocationProvider } from '../providers/LocationProvider';
 import { ScreenWidthProvider } from '../providers/ScreenWidthProvider';
@@ -21,7 +21,7 @@ const QCPetStudiesApp = ({ Component, pageProps }: AppProps): ReactElement => {
       gaPageview(url);
       uetPageview(url);
       fbqPageview(url);
-      salesforce.pageview(url);
+      pardotPageview(url);
     };
 
     // When the component is mounted, subscribe to router changes and log those page views
