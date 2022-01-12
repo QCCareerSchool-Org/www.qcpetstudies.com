@@ -7,6 +7,7 @@ import SSRProvider from 'react-bootstrap/SSRProvider';
 
 import { gaPageview } from '../lib/ga';
 import * as salesforce from '../lib/salesforce';
+import { uetPageview } from '../lib/uet';
 import { LocationProvider } from '../providers/LocationProvider';
 import { ScreenWidthProvider } from '../providers/ScreenWidthProvider';
 import { ScrollPositionProvider } from '../providers/ScrollPositionProvider';
@@ -17,6 +18,7 @@ const QCPetStudiesApp = ({ Component, pageProps }: AppProps): ReactElement => {
   useEffect(() => {
     const handleRouteChange = (url: string): void => {
       gaPageview(url);
+      uetPageview(url);
       salesforce.pageview(url);
     };
 
