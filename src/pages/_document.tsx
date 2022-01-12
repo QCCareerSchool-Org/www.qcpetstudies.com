@@ -77,10 +77,8 @@ class MyDocument extends Document {
           <script dangerouslySetInnerHTML={{ __html: googleAnalyticsScript }} />
           <script dangerouslySetInnerHTML={{ __html: uetScript }} />
           <script dangerouslySetInnerHTML={{ __html: facebookScript }} />
-          <noscript><img height="1" width="1" style={{ display: 'none' }} src="https://www.facebook.com/tr?id=1725004270923176&ev=PageView&noscript=1" /></noscript>{ /* eslint-disable-line @next/next/no-img-element,jsx-a11y/alt-text */ }
           <script dangerouslySetInnerHTML={{ __html: pardotScript }} />
           <script dangerouslySetInnerHTML={{ __html: livechatScript }} />
-          <noscript><a href="https://www.livechatinc.com/chat-with/1056788/" rel="nofollow">Chat with us</a>, powered by <a href="https://www.livechatinc.com/?welcome" rel="noopener nofollow noreferrer" target="_blank">LiveChat</a></noscript>
           <link rel="preconnect" href="https://fonts.googleapis.com" />
           <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
           <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Raleway:ital,wght@0,200;0,300;0,400;0,600;1,200;1,300;1,400;1,600&display=swap" rel="stylesheet" />
@@ -93,6 +91,8 @@ class MyDocument extends Document {
           <meta name="theme-color" content="#ffffff" />
         </Head>
         <body className="d-flex flex-column h-100">
+          <noscript><img height="1" width="1" style={{ display: 'none' }} src="https://www.facebook.com/tr?id=1725004270923176&ev=PageView&noscript=1" /></noscript>{ /* eslint-disable-line @next/next/no-img-element,jsx-a11y/alt-text */ }
+          <noscript><a href="https://www.livechatinc.com/chat-with/1056788/" rel="nofollow">Chat with us</a>, powered by <a href="https://www.livechatinc.com/?welcome" rel="noopener nofollow noreferrer" target="_blank">LiveChat</a></noscript>
           <Main />
           <NextScript />
         </body>
