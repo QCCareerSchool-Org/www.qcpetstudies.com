@@ -1,3 +1,5 @@
+import type { Enrollment } from '../models/enrollment';
+
 type FBQ = {
   (action: 'track', type: 'PageView' | 'Lead'): void;
   (action: 'track', type: 'Purchase', params: { value: number; currency: string }): void;
@@ -21,6 +23,6 @@ export const fbqLead = (): void => {
 };
 
 // log a sale
-export const fbqSale = (value: number, currency: string): void => {
-  window.fbq('track', 'Purchase', { value, currency });
+export const fbqSale = (enrollment: Enrollment): void => {
+  window.fbq('track', 'Purchase', { value: enrollment.cost, currency: enrollment.currencyCode });
 };
