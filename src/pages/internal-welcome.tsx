@@ -12,7 +12,8 @@ import { useLocation } from '../hooks/useLocation';
 import AlexSignature from '../images/alex-myers.png';
 import HappyPuppyRunning from '../images/backgrounds/happy-puppy-running.jpg';
 import { addToActiveCampaign } from '../lib/addToActiveCampaign';
-import { addToGoogleAnalytics } from '../lib/addToGoogleAnaltytics';
+import { fbqSale } from '../lib/fbq';
+import { gaSale } from '../lib/ga';
 import { getEnrollment } from '../lib/getEnrollment';
 import { getTelephoneNumber } from '../lib/phone';
 import { sendEnrollmentEmail } from '../lib/sendEnrollmentEmail';
@@ -43,7 +44,8 @@ const InternalWelcomePage: NextPage<Props> = ({ data, errorCode }) => {
     }
     if (!data.enrollment.emailed) {
       addToActiveCampaign(data.enrollment).catch(() => { /* */ });
-      addToGoogleAnalytics(data.enrollment);
+      gaSale(data.enrollment);
+      fbqSale(data.enrollment);
       sendEnrollmentEmail(data.enrollment.id, data.code).catch((err: unknown) => {
         console.error(err);
       });
