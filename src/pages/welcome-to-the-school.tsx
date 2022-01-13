@@ -122,6 +122,7 @@ export const getServerSideProps: GetServerSideProps = async ({ req, res, query }
     const code = query.code;
 
     const enrollment = await getEnrollment(enrollmentId, code);
+    console.log(enrollment);
 
     if (!enrollment.complete || !enrollment.success) {
       throw new HttpStatus.NotFound();
