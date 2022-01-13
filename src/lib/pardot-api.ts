@@ -138,6 +138,7 @@ export type VisitorData = {
 export const setPardotProspectAsStudent = async (emailAddress: string, token: string): Promise<void> => {
   const url = `/api/prospect/version/4/do/update/email/${emailAddress}?is_a_Student=1`;
   const response = await fetch(`${url}?format=json`, {
+    method: 'post',
     headers: {
       'Authorization': `Bearer ${token}`,
       'Pardot-Business-Unit-Id': '0Uv5f000000GmcFCAS',
