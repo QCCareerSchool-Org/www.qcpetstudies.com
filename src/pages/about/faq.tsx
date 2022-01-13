@@ -8,8 +8,7 @@ import { AccordionSection } from '../../components/AccordionSection';
 import { AccordionToggle } from '../../components/AccordionToggle';
 import { DefaultLayout } from '../../components/DefaultLayout';
 import { SEO } from '../../components/SEO';
-
-import FaqBgImage from '../../images/backgrounds/faq-background.jpg';
+import DoGInBedWithStick from '../../images/backgrounds/dog-in-bed-with-stick.jpg';
 
 const secondaryNavLinks = [
   { name: 'About QC Pet Studies', url: '#about' },
@@ -29,7 +28,7 @@ const FAQPage: NextPage = () => {
       />
 
       <section id="top" className="bg-dark">
-        <Image src={FaqBgImage} layout="fill" objectFit="cover" objectPosition="center" placeholder="blur" alt="dog in a dog bed, holding a stick" />
+        <Image src={DoGInBedWithStick} layout="fill" objectFit="cover" objectPosition="right" placeholder="blur" alt="dog in a dog bed, holding a stick" />
         <div className="container text-center">
           <div className="row justify-content-center">
             <div className="col-12 col-lg-10 text-white">
