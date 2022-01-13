@@ -93,7 +93,7 @@ export const getPardotAccessToken = async (): Promise<AccessTokenResponse> => {
   throw Error('invalid response');
 };
 
-export const getPardotVisitor = async (id: number, token: string): Promise<VisitorData> => {
+export const getVisitor = async (id: number, token: string): Promise<VisitorData> => {
   const url = `https://pi.pardot.com/api/visitor/version/4/do/read/id/${id}/`;
   const response = await fetch(`${url}?format=json`, {
     headers: {
@@ -103,6 +103,29 @@ export const getPardotVisitor = async (id: number, token: string): Promise<Visit
   });
   const data = await response.json();
   return data;
+};
+
+export const getProspectByEmail = async (emailAddress: string, token: string): Promise<ProspectData> => {
+  const url = `https://pi.pardot.com/api/prospect/version/4/do/read/email/${encodeURIComponent(emailAddress)}`;
+  const response = await fetch(`${url}?format=json`, {
+    headers: {
+      'Authorization': `Bearer ${token}`,
+      'Pardot-Business-Unit-Id': '0Uv5f000000GmcFCAS',
+    },
+  });
+  const data = await response.json();
+  return data;
+};
+
+export const setProspectAsStudent = async (id: number, token: string): Promise<void> => {
+  const url = `https://pi.pardot.com/api/prospect/version/4/do/update/id/${id}?is_a_Student=Yes`;
+  await fetch(url, {
+    method: 'post',
+    headers: {
+      'Authorization': `Bearer ${token}`,
+      'Pardot-Business-Unit-Id': '0Uv5f000000GmcFCAS',
+    },
+  });
 };
 
 export type VisitorData = {
@@ -135,15 +158,79 @@ export type VisitorData = {
   };
 };
 
-export const setPardotProspectAsStudent = async (emailAddress: string, token: string): Promise<void> => {
-  const url = `/api/prospect/version/4/do/update/email/${emailAddress}?is_a_Student=1`;
-  const response = await fetch(`${url}?format=json`, {
-    method: 'post',
-    headers: {
-      'Authorization': `Bearer ${token}`,
-      'Pardot-Business-Unit-Id': '0Uv5f000000GmcFCAS',
-    },
-  });
-  const data = await response.json();
-  return data;
+export type ProspectData = {
+  '@attributes': { stat: string; version: number };
+  prospect: {
+    id: number;
+    campaign_id: number; // eslint-disable-line camelcase
+    salutation: string | null;
+    first_name: string | null; // eslint-disable-line camelcase
+    last_name: string | null; // eslint-disable-line camelcase
+    email: string;
+    password: string | null;
+    company: string | null;
+    website: string | null;
+    job_title: string | null; // eslint-disable-line camelcase
+    department: string | null;
+    country: string | null;
+    address_one: string | null; // eslint-disable-line camelcase
+    address_two: string | null; // eslint-disable-line camelcase
+    city: string | null;
+    state: string | null;
+    territory: string | null;
+    zip: string | null;
+    phone: string | null;
+    fax: string | null;
+    source: string | null;
+    annual_revenue: number | null; // eslint-disable-line camelcase
+    employees: number | null;
+    industry: string | null;
+    years_in_business: number | null; // eslint-disable-line camelcase
+    comments: string | null;
+    notes: string | null;
+    score: number;
+    grade: string | null;
+    /** string date */
+    last_activity_at: string; // eslint-disable-line camelcase
+    recent_interaction: string; // eslint-disable-line camelcase
+    crm_lead_fid: string | null; // eslint-disable-line camelcase
+    crm_contact_fid: string | null; // eslint-disable-line camelcase
+    crm_owner_fid: string | null; // eslint-disable-line camelcase
+    crm_account_fid: string | null; // eslint-disable-line camelcase
+    salesforce_fid: string | null; // eslint-disable-line camelcase
+    /** string date */
+    crm_last_sync: string | null; // eslint-disable-line camelcase
+    crm_url: string | null; // eslint-disable-line camelcase
+    is_do_not_email: boolean | null; // eslint-disable-line camelcase
+    is_do_not_call: boolean | null; // eslint-disable-line camelcase
+    opted_out: boolean | null; // eslint-disable-line camelcase
+    is_reviewed: boolean | null; // eslint-disable-line camelcase
+    is_starred: boolean | null; // eslint-disable-line camelcase
+    /** string date */
+    created_at: string | null; // eslint-disable-line camelcase
+    /** string date */
+    updated_at: string | null; // eslint-disable-line camelcase
+    campaign: {
+      id: number;
+      name: string;
+      crm_fid: string; // eslint-disable-line camelcase
+    } | null;
+    last_activity: { // eslint-disable-line camelcase
+      visitor_activity: unknown; // eslint-disable-line camelcase
+    };
+    profile: {
+      id: number;
+      name: string;
+      profile_criteria: unknown[]; // eslint-disable-line camelcase
+    } | null;
+    visitors: {
+      visitor: unknown[];
+    };
+    visitor_activities: { // eslint-disable-line camelcase
+      visitor_activity: unknown[]; // eslint-disable-line camelcase
+    };
+    lists: {
+      list_subscription: unknown; // eslint-disable-line camelcase
+    };
+  };
 };

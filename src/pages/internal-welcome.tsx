@@ -15,7 +15,7 @@ import { addToActiveCampaign } from '../lib/addToActiveCampaign';
 import { fbqSale } from '../lib/fbq';
 import { gaSale } from '../lib/ga';
 import { getEnrollment } from '../lib/getEnrollment';
-import { getPardotAccessToken, setPardotProspectAsStudent } from '../lib/pardot-api';
+import { getPardotAccessToken, getProspectByEmail, setProspectAsStudent } from '../lib/pardot-api';
 import { getTelephoneNumber } from '../lib/phone';
 import { sendEnrollmentEmail } from '../lib/sendEnrollmentEmail';
 import { Enrollment } from '../models/enrollment';
@@ -128,8 +128,10 @@ export const getServerSideProps: GetServerSideProps = async ({ req, res, query }
 
     try {
       // update the prospect's student status
-      const token = await getPardotAccessToken();
-      await setPardotProspectAsStudent(enrollment.emailAddress, token.access_token);
+      let token = await getPardotAccessToken();
+      const { prospect } = await getProspectByEmail(enrollment.emailAddress, token.access_token);
+      token = await getPardotAccessToken();
+      await setProspectAsStudent(prospect.id, token.access_token);
     } catch (err) {
       console.error(err);
     }
