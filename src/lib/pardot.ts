@@ -5,6 +5,6 @@ declare global {
 }
 
 // log the pageview with their URL
-export const pageview = (url: string): void => {
+export const pardotPageview = (url: string): void => {
   window.piTracker(url);
 };

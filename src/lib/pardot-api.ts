@@ -1,3 +1,9 @@
+/**
+ * Pardot API
+ *
+ * ONLY USE ON THE BACK END!
+ */
+
 import fs from 'fs';
 import jwt from 'jsonwebtoken';
 
