@@ -18,6 +18,7 @@ import { gaSale } from '../lib/ga';
 import { getEnrollment } from '../lib/getEnrollment';
 import { getTelephoneNumber } from '../lib/phone';
 import { sendEnrollmentEmail } from '../lib/sendEnrollmentEmail';
+import { setStudent } from '../lib/setStudent';
 import { Enrollment } from '../models/enrollment';
 
 type Props = {
@@ -50,6 +51,9 @@ const WelcomeToTheSchoolPage: NextPage<Props> = ({ data, errorCode }) => {
       gaSale(data.enrollment);
       fbqSale(data.enrollment);
       sendEnrollmentEmail(data.enrollment.id, data.code).catch((err: unknown) => {
+        console.error(err);
+      });
+      setStudent(data.enrollment.id, data.code).catch((err: unknown) => {
         console.error(err);
       });
     }
