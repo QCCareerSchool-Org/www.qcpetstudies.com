@@ -16,6 +16,7 @@ import { addToIDevAffiliate } from '../lib/addToIDevAffiliate';
 import { fbqSale } from '../lib/fbq';
 import { gaSale } from '../lib/ga';
 import { getEnrollment } from '../lib/getEnrollment';
+import { getPardotAccessToken, setPardotProspectAsStudent } from '../lib/pardot-api';
 import { getTelephoneNumber } from '../lib/phone';
 import { sendEnrollmentEmail } from '../lib/sendEnrollmentEmail';
 import { Enrollment } from '../models/enrollment';
@@ -127,6 +128,14 @@ export const getServerSideProps: GetServerSideProps = async ({ req, res, query }
     }
 
     const ipAddress = Array.isArray(req.headers['x-real-ip']) ? req.headers['x-real-ip']?.[0] : req.headers['x-real-ip'];
+
+    try {
+      // update the prospect's student status
+      const token = await getPardotAccessToken();
+      await setPardotProspectAsStudent(enrollment.emailAddress, token.access_token);
+    } catch (err) {
+      console.error(err);
+    }
 
     return { props: { data: { enrollment, code, ipAddress: ipAddress ?? null } } };
   } catch (err) {

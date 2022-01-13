@@ -2,6 +2,26 @@
  * Pardot API
  *
  * ONLY USE ON THE BACK END!
+ *
+ * Example:
+ *
+ * type Props = {
+ *   data: VisitorData | null;
+ * };
+ *
+ * export const getServerSideProps: GetServerSideProps<Props> = async ({ req }) => {
+ *   const visitorId = req.cookies.visitor_id947642;
+ *   if (visitorId) {
+ *     try {
+ *       const accessToken = await getPardotAccessToken();
+ *       const data = await getPardotVisitor(parseInt(visitorId, 10), accessToken.access_token);
+ *       return { props: { data } };
+ *     } catch (err) {
+ *       console.error(err);
+ *     }
+ *   }
+ *   return { props: { data: null } };
+ * };
  */
 
 import fs from 'fs';
@@ -35,7 +55,7 @@ export const createJWT = async (payload: string | Record<string, unknown> | Buff
   });
 };
 
-export const createSaleforceJWT = async (): Promise<string> => {
+export const createPardotJWT = async (): Promise<string> => {
   const payload = {
     iss: appId,
     aud: authDomain,
@@ -52,8 +72,8 @@ type AccessTokenResponse = {
   token_type: string; // eslint-disable-line camelcase
 };
 
-export const getAccessToken = async (): Promise<AccessTokenResponse> => {
-  const jsonWebToken = await createSaleforceJWT();
+export const getPardotAccessToken = async (): Promise<AccessTokenResponse> => {
+  const jsonWebToken = await createPardotJWT();
   const body = {
     grant_type: 'urn:ietf:params:oauth:grant-type:jwt-bearer', // eslint-disable-line camelcase
     assertion: jsonWebToken,
@@ -73,7 +93,7 @@ export const getAccessToken = async (): Promise<AccessTokenResponse> => {
   throw Error('invalid response');
 };
 
-export const getVisitor = async (id: number, token: string): Promise<VisitorData> => {
+export const getPardotVisitor = async (id: number, token: string): Promise<VisitorData> => {
   const url = `https://pi.pardot.com/api/visitor/version/4/do/read/id/${id}/`;
   const response = await fetch(`${url}?format=json`, {
     headers: {
@@ -115,24 +135,14 @@ export type VisitorData = {
   };
 };
 
-/**
- * Example:
- *
- * type Props = {
- *   data: VisitorData | null;
- * };
- *
- * export const getServerSideProps: GetServerSideProps<Props> = async ({ req }) => {
- *   const visitorId = req.cookies.visitor_id947642;
- *   if (visitorId) {
- *     try {
- *       const accessToken = await getAccessToken();
- *       const data = await getVisitor(parseInt(visitorId, 10), accessToken.access_token);
- *       return { props: { data } };
- *     } catch (err) {
- *       console.error(err);
- *     }
- *   }
- *   return { props: { data: null } };
- * };
- */
+export const setPardotProspectAsStudent = async (emailAddress: string, token: string): Promise<void> => {
+  const url = `/api/prospect/version/4/do/update/email/${emailAddress}?is_a_Student=1`;
+  const response = await fetch(`${url}?format=json`, {
+    headers: {
+      'Authorization': `Bearer ${token}`,
+      'Pardot-Business-Unit-Id': '0Uv5f000000GmcFCAS',
+    },
+  });
+  const data = await response.json();
+  return data;
+};
