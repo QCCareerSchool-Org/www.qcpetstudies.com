@@ -2,7 +2,7 @@ import * as HttpStatus from '@qccareerschool/http-status';
 
 export const setStudent = async (enrollmentId: number, code: string): Promise<void> => {
   const payload = { enrollmentId, code };
-  const url = '/api/setStudent';
+  const url = 'https://api.qccareerschool.com/pardot/setStudent';
   const response = await fetch(url, {
     method: 'post',
     headers: {
