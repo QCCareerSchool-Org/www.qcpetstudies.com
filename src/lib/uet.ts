@@ -1,6 +1,6 @@
 declare global {
   interface Window {
-    uetq?: any[];
+    uetq?: unknown[];
   }
 }
 
