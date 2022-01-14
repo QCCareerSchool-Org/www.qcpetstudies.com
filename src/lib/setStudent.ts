@@ -5,9 +5,6 @@ export const setStudent = async (enrollmentId: number, code: string): Promise<vo
   const url = 'https://api.qccareerschool.com/pardot/setStudent';
   const response = await fetch(url, {
     method: 'post',
-    headers: {
-      'Content-Type': 'application/json',
-    },
     body: JSON.stringify(payload),
   });
   if (!response.ok) {
