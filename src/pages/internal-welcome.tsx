@@ -15,9 +15,9 @@ import { addToActiveCampaign } from '../lib/addToActiveCampaign';
 import { fbqSale } from '../lib/fbq';
 import { gaSale } from '../lib/ga';
 import { getEnrollment } from '../lib/getEnrollment';
-import { getPardotAccessToken, getProspectByEmail, setProspectAsStudent } from '../lib/pardot-api';
 import { getTelephoneNumber } from '../lib/phone';
 import { sendEnrollmentEmail } from '../lib/sendEnrollmentEmail';
+import { setStudent } from '../lib/setStudent';
 import { Enrollment } from '../models/enrollment';
 
 type Props = {
@@ -48,6 +48,9 @@ const InternalWelcomePage: NextPage<Props> = ({ data, errorCode }) => {
       gaSale(data.enrollment);
       fbqSale(data.enrollment);
       sendEnrollmentEmail(data.enrollment.id, data.code).catch((err: unknown) => {
+        console.error(err);
+      });
+      setStudent(data.enrollment.id, data.code).catch((err: unknown) => {
         console.error(err);
       });
     }
@@ -125,16 +128,6 @@ export const getServerSideProps: GetServerSideProps = async ({ req, res, query }
     }
 
     const ipAddress = Array.isArray(req.headers['x-real-ip']) ? req.headers['x-real-ip']?.[0] : req.headers['x-real-ip'];
-
-    try {
-      // update the prospect's student status
-      let token = await getPardotAccessToken();
-      const { prospect } = await getProspectByEmail(enrollment.emailAddress, token.access_token);
-      token = await getPardotAccessToken();
-      await setProspectAsStudent(prospect.id, token.access_token);
-    } catch (err) {
-      console.error(err);
-    }
 
     return { props: { data: { enrollment, code, ipAddress: ipAddress ?? null } } };
   } catch (err) {

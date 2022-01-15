@@ -7,6 +7,7 @@ export const getEnrollment = async (enrollmentId: number, code: string): Promise
   const response = await fetch(url, {
     headers: { 'X-API-Version': '2' },
   });
+  console.log('response.ok', response.ok);
   if (!response.ok) {
     throw new HttpStatus.HttpResponse(response.status, response.statusText);
   }
