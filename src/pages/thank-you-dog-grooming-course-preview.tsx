@@ -26,7 +26,7 @@ const ThankYouCatalogPage: NextPage = () => {
         description="Get your Dog Grooming Course Preview Now"
         canonical="/thank-you-dog-grooming-course-preview"
       />
-      <GoogleAdsLeadScript />
+      <GoogleAdsLeadScript conversionLabel="yZtFCL_BpW8Qv9uL_wM" />
       <section id="top" className="bg-black">
         {mdOrGreater && <Image src={CatalogBackground} layout="fill" objectFit="cover" objectPosition="right" placeholder="blur" alt="white Bichon Frise with circle cut" />}
         <div className="container text-center text-md-start">

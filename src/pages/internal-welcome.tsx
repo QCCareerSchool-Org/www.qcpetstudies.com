@@ -2,11 +2,11 @@ import * as HttpStatus from '@qccareerschool/http-status';
 import { GetServerSideProps, NextPage } from 'next';
 import ErrorPage from 'next/error';
 import Image from 'next/image';
-import Script from 'next/script';
 import { useEffect, useState } from 'react';
 
 import { DefaultLayout } from '../components/DefaultLayout';
 import { EnrollmentDetails } from '../components/EnrollmentDetails';
+import { GoogleAdsSaleScript } from '../components/GoogleAdsSaleScript';
 import { SEO } from '../components/SEO';
 import { useLocation } from '../hooks/useLocation';
 import AlexSignature from '../images/alex-myers.png';
@@ -71,12 +71,7 @@ const InternalWelcomePage: NextPage<Props> = ({ data, errorCode }) => {
         description="Your enrollment has been received and will be processed quickly. You will receive an email within the next business day containing login information to your online student center."
         canonical="/welcome-to-the-school"
       />
-      <Script
-        id="adwordsSale"
-        dangerouslySetInnerHTML={{ __html: `
-          gtag('event', 'conversion', { 'send_to': 'AW-1071836607/xFpdCJ3DpW8Qv9uL_wM', 'value': ${data.enrollment.cost}, 'currency': '${data.enrollment.currencyCode}', 'transaction_id': '${data.enrollment.id}' });
-        ` }}
-      />
+      <GoogleAdsSaleScript conversionLabel="xFpdCJ3DpW8Qv9uL_wM" enrollment={data.enrollment} />
 
       <section id="top" className="bg-dark">
         <Image src={HappyPuppyRunning} layout="fill" objectFit="cover" objectPosition="center" placeholder="blur" alt="happy puppy running" />

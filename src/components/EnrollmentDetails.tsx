@@ -1,4 +1,5 @@
 import { Fragment, ReactElement } from 'react';
+
 import { formatDate } from '../lib/formatDate';
 import type { Enrollment } from '../models/enrollment';
 
