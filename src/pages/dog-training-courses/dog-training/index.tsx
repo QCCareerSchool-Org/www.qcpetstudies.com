@@ -299,7 +299,7 @@ const DogTrainingPage: NextPage<Props> = ({ price }) => {
             <AccordionSection eventKey="4">
               <div className="row">
                 <div className="col-12 col-lg-6 col-xl-7">
-                  <p>Many profeeional dog trainers strive to pass the Certified Professional Dog Trainer (CPDT) exam from the Certification Council for Professional Dog Trainers.  The CPDT is the gold-standard for dog trainers who have the knowledge and skills to train dogs using scientifically-proven methods. Your QC Dog training course teaches you everything you need to know to pass your CPDT exam. As an added bonus, you have access to an extra optional unit to help prepare you to write the CPDT exam! </p>
+                  <p>Many professional dog trainers strive to pass the Certified Professional Dog Trainer (CPDT) exam from the Certification Council for Professional Dog Trainers. The CPDT is the gold-standard for dog trainers who have the knowledge and skills to train dogs using scientifically-proven methods. Your QC Dog training course teaches you everything you need to know to pass your CPDT exam. As an added bonus, you have access to an extra optional unit to help prepare you to write the CPDT exam! </p>
                   <p>This optional unit includes:</p>
                   <ul>
                     <li>Information about the Certified Proessional Dog Trainers (CPDT) Exam</li>
