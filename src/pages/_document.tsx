@@ -9,7 +9,7 @@ window.dataLayer = window.dataLayer || [];
 function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
 gtag('config', '${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}', { page_path: window.location.pathname });
-gtag('config', 'AW-1071836607');`;
+gtag('config', 'AW-1071836607', { allow_enhanced_conversions: true });`;
 
 const uetScript = `
 (function(w,d,t,r,u) {

@@ -1,4 +1,4 @@
-import { NextPage } from 'next';
+import { GetServerSideProps, NextPage } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useEffect } from 'react';
@@ -11,7 +11,11 @@ import { useScreenWidth } from '../hooks/useScreenWidth';
 import CatalogBackground from '../images/backgrounds/white-bichon-frise-circle-cut.jpg';
 import { fbqLead } from '../lib/fbq';
 
-const ThankYouCatalogPage: NextPage = () => {
+type Props = {
+  emailAddress: string | null;
+};
+
+const ThankYouCatalogPage: NextPage<Props> = ({ emailAddress }) => {
   const screenWidth = useScreenWidth();
   const mdOrGreater = screenWidth >= 768;
 
@@ -26,7 +30,7 @@ const ThankYouCatalogPage: NextPage = () => {
         description="Get your Dog Training Course Preview Now"
         canonical="/thank-you-dog-training-course-preview"
       />
-      <GoogleAdsLeadScript conversionLabel="yZtFCL_BpW8Qv9uL_wM" />
+      <GoogleAdsLeadScript conversionLabel="yZtFCL_BpW8Qv9uL_wM" emailAddress={emailAddress} />
       <section id="top" className="bg-black">
         {mdOrGreater && <Image src={CatalogBackground} layout="fill" objectFit="cover" objectPosition="right" placeholder="blur" alt="white Bichon Frise with circle cut" />}
         <div className="container text-center text-md-start">
@@ -43,6 +47,12 @@ const ThankYouCatalogPage: NextPage = () => {
       </section>
     </DefaultLayout>
   );
+};
+
+// eslint-disable-next-line @typescript-eslint/require-await
+export const getServerSideProps: GetServerSideProps = async ({ query }) => {
+  const emailAddress = typeof query.emailAddress === 'string' ? query.emailAddress : null;
+  return { props: { emailAddress } };
 };
 
 export default ThankYouCatalogPage;
