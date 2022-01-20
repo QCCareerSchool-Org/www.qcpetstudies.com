@@ -1,3 +1,5 @@
+import { promisify } from 'util';
+import { urlencoded } from 'body-parser';
 import { GetServerSideProps, NextPage } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -10,6 +12,8 @@ import { SEO } from '../components/SEO';
 import { useScreenWidth } from '../hooks/useScreenWidth';
 import CatalogBackground from '../images/backgrounds/white-bichon-frise-circle-cut.jpg';
 import { fbqLead } from '../lib/fbq';
+
+const urlencodedAsync = promisify(urlencoded());
 
 type Props = {
   emailAddress: string | null;
@@ -50,9 +54,14 @@ const ThankYouCatalogPage: NextPage<Props> = ({ emailAddress }) => {
 };
 
 // eslint-disable-next-line @typescript-eslint/require-await
-export const getServerSideProps: GetServerSideProps = async ({ query }) => {
-  const emailAddress = typeof query.emailAddress === 'string' ? query.emailAddress : null;
-  return { props: { emailAddress } };
+export const getServerSideProps: GetServerSideProps = async ({ req, res }) => {
+  if (req.method === 'POST') {
+    await urlencodedAsync(req, res);
+    type RequestWithBody = typeof req & { body: any };
+    const body = (req as RequestWithBody).body;
+    return { props: { emailAddress: body.emailAddress ?? null } };
+  }
+  return { props: { emailAddress: null } };
 };
 
 export default ThankYouCatalogPage;
