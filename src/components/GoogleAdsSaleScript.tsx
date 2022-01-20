@@ -9,7 +9,14 @@ type Props = {
   enrollment: Enrollment;
 };
 
+const createScript = (conversionId: number, conversionLabel: string, enrollment: Enrollment): string => {
+  let script = '';
+  script += `var enhanced_conversion_data = { email: '${enrollment.emailAddress}' };\n`;
+  script += `gtag('event', 'conversion', { send_to: 'AW-${conversionId}/${conversionLabel}', value: ${enrollment.cost}, currency: '${enrollment.currencyCode}', transaction_id: '${enrollment.id}'  });\n`;
+  return script;
+};
+
 export const GoogleAdsSaleScript = ({ conversionId = 1071836607, conversionLabel, enrollment }: Props): ReactElement => {
-  const script = useMemo(() => `gtag('event', 'conversion', { send_to: 'AW-${conversionId}/${conversionLabel}', value: ${enrollment.cost}, currency: '${enrollment.currencyCode}', transaction_id: '${enrollment.id}'  });`, [ conversionId, conversionLabel, enrollment ]);
+  const script = useMemo(() => createScript(conversionId, conversionLabel, enrollment), [ conversionId, conversionLabel, enrollment ]);
   return <Script id="adwordsSale" dangerouslySetInnerHTML={{ __html: script }} />;
 };
