@@ -59,7 +59,7 @@ export const getServerSideProps: GetServerSideProps = async ({ req, res }) => {
     await urlencodedAsync(req, res);
     type RequestWithBody = typeof req & { body: any };
     const body = (req as RequestWithBody).body;
-    return { props: { emailAddress: body.emailAddress ?? null } };
+    return { props: { emailAddress: body?.emailAddress ?? null } };
   }
   return { props: { emailAddress: null } };
 };
