@@ -10,7 +10,7 @@ type Props = {
 const createScript = (conversionId: number, conversionLabel: string, emailAddress: string | null): string => {
   let script = '';
   if (emailAddress !== null) {
-    script += `var enhanced_conversion_data = { emailAddress: '${emailAddress}' };\n`;
+    script += `var enhanced_conversion_data = { email: '${emailAddress}' };\n`;
   }
   script += `gtag('event', 'conversion', { send_to: 'AW-${conversionId}/${conversionLabel}' });\n`;
   return script;
