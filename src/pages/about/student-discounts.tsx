@@ -2,7 +2,6 @@ import { NextPage } from 'next';
 import Image from 'next/image';
 import { ReactElement, ReactNode } from 'react';
 
-import { DefaultLayout } from '../../components/DefaultLayout';
 import { SEO } from '../../components/SEO';
 import StudentDiscountBackground from '../../images/backgrounds/student-discounts-bg.jpg';
 import DaySmartPetLogo from '../../images/logos/day-smart-pet.svg';
@@ -15,7 +14,7 @@ import SharkFinLogo from '../../images/logos/shark-fin.jpg';
 import ZenDogLogo from '../../images/logos/zen-dog.jpg';
 
 const StudentDiscountsPage: NextPage = () => (
-  <DefaultLayout>
+  <>
     <SEO
       title="Student Discounts"
       description="This is Student Discount page"
@@ -85,7 +84,7 @@ const StudentDiscountsPage: NextPage = () => (
         </div>
       </div>
     </section>
-  </DefaultLayout>
+  </>
 );
 
 type SupplierProps = {

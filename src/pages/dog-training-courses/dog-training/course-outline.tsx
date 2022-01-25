@@ -1,4 +1,3 @@
-import { NextPage } from 'next';
 import Image from 'next/image';
 import { ReactElement, useState } from 'react';
 import { Accordion, Modal } from 'react-bootstrap';
@@ -21,10 +20,11 @@ import UnitEImage from '../../../images/dt-full-outline-unit-e.jpg';
 import UnitFImage from '../../../images/dt-full-outline-unit-f.jpg';
 import UnitGImage from '../../../images/dt-full-outline-unit-g.jpg';
 import UnitHImage from '../../../images/dt-full-outline-unit-h.jpg';
+import type { NextPageWithLayout } from '../../_app';
 
 const iconSize = 50;
 
-const CourseOutlinePage: NextPage = () => {
+const CourseOutlinePage: NextPageWithLayout = () => {
   const screenWidth = useScreenWidth();
   const lgOrGreater = screenWidth >= 992;
 
@@ -32,7 +32,7 @@ const CourseOutlinePage: NextPage = () => {
   const closeModal = (): void => setUnit(null);
 
   return (
-    <DefaultLayout>
+    <>
       <SEO
         title="Course Outline"
         description=""
@@ -278,10 +278,11 @@ const CourseOutlinePage: NextPage = () => {
           background-color: #f7f7f7 !important;
         }
       `}</style>
-
-    </DefaultLayout>
+    </>
   );
 };
+
+CourseOutlinePage.getLayout = page => <DefaultLayout footerCTAType="training">{page}</DefaultLayout>;
 
 export default CourseOutlinePage;
 

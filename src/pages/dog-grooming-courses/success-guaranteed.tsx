@@ -1,4 +1,4 @@
-import { GetServerSideProps, NextPage } from 'next';
+import { GetServerSideProps } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -16,6 +16,7 @@ import { getLocation } from '../../lib/getLocation';
 import { lookupPrices } from '../../lib/lookupPrices';
 import type { Location } from '../../models/location';
 import type { PriceResult } from '../../models/price';
+import type { NextPageWithLayout } from '../_app';
 
 const courseCodes = [ 'dg' ];
 
@@ -24,8 +25,8 @@ type Props = {
   price: PriceResult;
 };
 
-const SuccessGuaranteedPage: NextPage<Props> = ({ location, price }) => (
-  <DefaultLayout>
+const SuccessGuaranteedPage: NextPageWithLayout<Props> = ({ location, price }) => (
+  <>
     <SEO
       title="Success Guaranteed"
       description="Success Guaranteed"
@@ -79,11 +80,12 @@ const SuccessGuaranteedPage: NextPage<Props> = ({ location, price }) => (
     <HowTheCoursesWorkSection className="bg-light" />
 
     <FreeFirstAidSection />
-
-  </DefaultLayout>
+  </>
 );
 
-export const getServerSideProps: GetServerSideProps = async context => {
+SuccessGuaranteedPage.getLayout = page => <DefaultLayout footerCTAType="grooming">{page}</DefaultLayout>;
+
+export const getServerSideProps: GetServerSideProps<Props> = async context => {
   const location = await getLocation(context);
   const price = await lookupPrices(courseCodes, location.countryCode, location.provinceCode);
   return { props: { location, price } };

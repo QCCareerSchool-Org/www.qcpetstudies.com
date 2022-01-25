@@ -1,10 +1,10 @@
-import { NextPage } from 'next';
 import { useEffect, useState } from 'react';
 
 import { SEO } from '../components/SEO';
 import { TextLayout } from '../components/TextLayout';
+import type { NextPageWithLayout } from './_app';
 
-const AgreementPage: NextPage = () => {
+const AgreementPage: NextPageWithLayout = () => {
   const [ emailAddress, setEmailAddress ] = useState('');
 
   useEffect(() => {
@@ -13,7 +13,7 @@ const AgreementPage: NextPage = () => {
   }, []);
 
   return (
-    <TextLayout>
+    <>
       <SEO
         title="Enrollment Agreement"
         description="The agreement for enrolling with QC Pet Studies"
@@ -109,8 +109,10 @@ const AgreementPage: NextPage = () => {
       <p>38 McArthur Ave<br />Ottawa ON&nbsp; K1L 6R2<br />Canada</p>
       <h3>Registered Office</h3>
       <p>2026 Delmar Crt<br />Ottawa ON&nbsp;  K1H 5R6<br />Canada</p>
-    </TextLayout>
+    </>
   );
 };
+
+AgreementPage.getLayout = page => <TextLayout>{page}</TextLayout>;
 
 export default AgreementPage;

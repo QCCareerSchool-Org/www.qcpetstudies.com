@@ -1,4 +1,4 @@
-import { GetServerSideProps, NextPage } from 'next';
+import { GetServerSideProps } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 import { ReactEventHandler, useEffect, useState } from 'react';
@@ -31,6 +31,7 @@ import { getLocation } from '../../../lib/getLocation';
 import { lookupPrices } from '../../../lib/lookupPrices';
 import type { Location } from '../../../models/location';
 import type { PriceResult } from '../../../models/price';
+import type { NextPageWithLayout } from '../../_app';
 
 const headerIconSize = 20;
 const iconSize = 36;
@@ -42,7 +43,7 @@ type Props = {
   price: PriceResult;
 };
 
-const DogTrainingPage: NextPage<Props> = ({ price }) => {
+const DogTrainingPage: NextPageWithLayout<Props> = ({ price }) => {
   const screenWidth = useScreenWidth();
   const [ videoPercentage, setVideoPercentage ] = useState(0);
 
@@ -86,7 +87,7 @@ const DogTrainingPage: NextPage<Props> = ({ price }) => {
   }, [ videoPercentage, prevVideoPercentage ]);
 
   return (
-    <DefaultLayout secondaryTitle="Dog Training Course">
+    <>
       <SEO
         title="Dog Training Course"
         description="Become a Professional Dog Trainer with QC's online dog training course. Study Online with Hands-On Learning!"
@@ -322,12 +323,13 @@ const DogTrainingPage: NextPage<Props> = ({ price }) => {
       <DTTutorSection />
 
       <GuaranteeSection className="bg-light" />
-
-    </DefaultLayout>
+    </>
   );
 };
 
-export const getServerSideProps: GetServerSideProps = async context => {
+DogTrainingPage.getLayout = page => <DefaultLayout footerCTAType="training" secondaryTitle="Dog Training Course">{page}</DefaultLayout>;
+
+export const getServerSideProps: GetServerSideProps<Props> = async context => {
   const location = await getLocation(context);
   const price = await lookupPrices(courseCodes, location.countryCode, location.provinceCode);
   return { props: { location, price } };

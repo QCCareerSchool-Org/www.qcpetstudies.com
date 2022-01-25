@@ -1,4 +1,4 @@
-import { GetServerSideProps, NextPage } from 'next';
+import { GetServerSideProps } from 'next';
 import Image from 'next/image';
 import { ReactElement } from 'react';
 import { BsBook } from 'react-icons/bs';
@@ -16,20 +16,19 @@ import { getLocation } from '../../../lib/getLocation';
 import { lookupPrices } from '../../../lib/lookupPrices';
 import { Location } from '../../../models/location';
 import { PriceResult } from '../../../models/price';
+import type { NextPageWithLayout } from '../../_app';
 
 export const courseCodes = [ 'dt' ];
 
 export type Props = {
   location: Location;
   price: PriceResult;
-  headerLink: boolean;
-  secondaryNav: boolean;
   enrollPath: string;
 };
 
-const DogTrainingCoursePreviewPage: NextPage<Props> = ({ price, headerLink, secondaryNav, enrollPath }) => {
+const DogTrainingCoursePreviewPage: NextPageWithLayout<Props> = ({ price, enrollPath }) => {
   return (
-    <LandingPageLayout link={headerLink} secondaryNav={secondaryNav} enrollPath={enrollPath}>
+    <>
       <SEO
         title="Professional Dog Trainer Course"
         description=""
@@ -311,15 +310,18 @@ const DogTrainingCoursePreviewPage: NextPage<Props> = ({ price, headerLink, seco
       <PriceSection courses={courseCodes} price={price} doubleGuarantee={true} enrollPath={enrollPath} />
 
       <DTTutorSection className="bg-light" />
-
-    </LandingPageLayout>
+    </>
   );
 };
 
-export const getServerSideProps: GetServerSideProps = async context => {
+DogTrainingCoursePreviewPage.getLayout = page => (
+  <LandingPageLayout link={true} secondaryNav={true} enrollPath="/">{page}</LandingPageLayout>
+);
+
+export const getServerSideProps: GetServerSideProps<Props> = async context => {
   const location = await getLocation(context);
   const price = await lookupPrices(courseCodes, location.countryCode, location.provinceCode);
-  return { props: { location, price, headerLink: true, secondaryNav: true, enrollPath: '/' } };
+  return { props: { location, price, enrollPath: '/' } };
 };
 
 const VideoTab = (): ReactElement => (

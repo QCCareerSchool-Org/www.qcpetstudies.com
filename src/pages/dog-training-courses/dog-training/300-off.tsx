@@ -1,12 +1,17 @@
-import { NextPage } from 'next';
 import { DeadlineFunnelScript } from '../../../components/DeadlineFunnelScript';
+import { LandingPageLayout } from '../../../components/LandingPageLayout';
+import type { NextPageWithLayout } from '../../_app';
 import CoursePreview, { getServerSideProps, Props } from './course-preview';
 
-const Page: NextPage<Props> = props => (
+const Page: NextPageWithLayout<Props> = props => (
   <>
     <DeadlineFunnelScript />
-    <CoursePreview {...props} headerLink={false} secondaryNav={false} enrollPath="/training-300-off" />
+    <CoursePreview {...props} enrollPath="/training-300-off" />
   </>
+);
+
+Page.getLayout = page => (
+  <LandingPageLayout link={false} secondaryNav={false} enrollPath="/training-300-off">{page}</LandingPageLayout>
 );
 
 export { getServerSideProps };

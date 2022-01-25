@@ -1,4 +1,3 @@
-import { NextPage } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
@@ -11,9 +10,10 @@ import ClipperCombsImage from '../../images/clippers-combs-kit-550.jpg';
 import FullKitImage from '../../images/dog-grooming-kit.jpg';
 import GroomingScissorsImage from '../../images/Pro-Grooming-Scissors-550x550.jpg';
 import StarterKitImage from '../../images/starter-kit.jpg';
+import type { NextPageWithLayout } from '../_app';
 
-const DogGroomingKitPage: NextPage = () => (
-  <DefaultLayout>
+const DogGroomingKitPage: NextPageWithLayout = () => (
+  <>
     <SEO
       title="Dog Grooming Kit"
       description="Take a look at the grooming starter kit you'll receive when you enroll in QC's dog grooming course!"
@@ -91,8 +91,9 @@ const DogGroomingKitPage: NextPage = () => (
         </div>
       </div>
     </section>
-
-  </DefaultLayout>
+  </>
 );
+
+DogGroomingKitPage.getLayout = page => <DefaultLayout footerCTAType="grooming">{page}</DefaultLayout>;
 
 export default DogGroomingKitPage;

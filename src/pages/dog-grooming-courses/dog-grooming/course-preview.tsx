@@ -1,4 +1,4 @@
-import { GetServerSideProps, NextPage } from 'next';
+import { GetServerSideProps } from 'next';
 import Image from 'next/image';
 import { ReactElement } from 'react';
 import { BsBook } from 'react-icons/bs';
@@ -17,20 +17,19 @@ import { getLocation } from '../../../lib/getLocation';
 import { lookupPrices } from '../../../lib/lookupPrices';
 import { Location } from '../../../models/location';
 import { PriceResult } from '../../../models/price';
+import type { NextPageWithLayout } from '../../_app';
 
 export const courseCodes = [ 'dg' ];
 
 export type Props = {
   location: Location;
   price: PriceResult;
-  headerLink: boolean;
-  secondaryNav: boolean;
   enrollPath: string;
 };
 
-const GroomingAssignment: NextPage<Props> = ({ location, price, headerLink, secondaryNav, enrollPath }) => {
+const GroomingCoursePreviewPage: NextPageWithLayout<Props> = ({ location, price, enrollPath }) => {
   return (
-    <LandingPageLayout link={headerLink} secondaryNav={secondaryNav} enrollPath={enrollPath}>
+    <>
       <SEO
         title="Dog Grooming Certification Course"
         description=""
@@ -360,15 +359,18 @@ const GroomingAssignment: NextPage<Props> = ({ location, price, headerLink, seco
       }
 
       <DGTutorSection className="bg-light" />
-
-    </LandingPageLayout>
+    </>
   );
 };
 
-export const getServerSideProps: GetServerSideProps = async context => {
+GroomingCoursePreviewPage.getLayout = page => (
+  <LandingPageLayout link={true} secondaryNav={true} enrollPath="/">{page}</LandingPageLayout>
+);
+
+export const getServerSideProps: GetServerSideProps<Props> = async context => {
   const location = await getLocation(context);
   const price = await lookupPrices(courseCodes, location.countryCode, location.provinceCode);
-  return { props: { location, price, headerLink: true, secondaryNav: true, nrollPath: '/' } };
+  return { props: { location, price, enrollPath: '/' } };
 };
 
 const VideoTab = (): ReactElement => (
@@ -405,4 +407,4 @@ const Preview = ({ videoContent, assignmentContent }: PreviewProps): ReactElemen
   />
 );
 
-export default GroomingAssignment;
+export default GroomingCoursePreviewPage;

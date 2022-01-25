@@ -1,4 +1,4 @@
-import { GetServerSideProps, NextPage } from 'next';
+import { GetServerSideProps } from 'next';
 import Image from 'next/image';
 
 import { DefaultLayout } from '../../../components/DefaultLayout';
@@ -15,6 +15,7 @@ import { getLocation } from '../../../lib/getLocation';
 import { lookupPrices } from '../../../lib/lookupPrices';
 import type { Location } from '../../../models/location';
 import type { PriceResult } from '../../../models/price';
+import type { NextPageWithLayout } from '../../_app';
 
 const courseCodes = [ 'dg' ];
 
@@ -23,8 +24,8 @@ type Props = {
   price: PriceResult;
 };
 
-const StartYourDreamCareerPage: NextPage<Props> = ({ location, price }) => (
-  <DefaultLayout>
+const StartYourDreamCareerPage: NextPageWithLayout<Props> = ({ location, price }) => (
+  <>
     <SEO
       title="Start Your Dream Career"
       description="Start Your Dream Career"
@@ -102,11 +103,12 @@ const StartYourDreamCareerPage: NextPage<Props> = ({ location, price }) => (
     <HowTheCoursesWorkSection className="bg-light" />
 
     <FreeFirstAidSection />
-
-  </DefaultLayout>
+  </>
 );
 
-export const getServerSideProps: GetServerSideProps = async context => {
+StartYourDreamCareerPage.getLayout = page => <DefaultLayout footerCTAType="grooming">{page}</DefaultLayout>;
+
+export const getServerSideProps: GetServerSideProps<Props> = async context => {
   const location = await getLocation(context);
   const price = await lookupPrices(courseCodes, location.countryCode, location.provinceCode);
   return { props: { location, price } };
