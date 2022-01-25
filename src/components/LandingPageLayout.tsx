@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { ReactElement, ReactNode } from 'react';
+import { ReactElement, ReactNode, useEffect, useState } from 'react';
 
 import { useLocation } from '../hooks/useLocation';
 import { useScreenWidth } from '../hooks/useScreenWidth';
@@ -26,6 +26,15 @@ export const LandingPageLayout = ({ link = true, reloadApp = false, secondaryNav
   const smOrGreater = screenWidth >= 576;
 
   const termsLink = isGBPCountry(location?.countryCode ?? 'US') ? '/terms-gb' : '/terms';
+
+  const [ count, setCount ] = useState(0);
+
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      setCount(c => c + 1);
+    }, 1000);
+    return () => clearInterval(intervalId);
+  }, []);
 
   return (
     <div id="landingPage" className="d-flex flex-column vh-100">
@@ -55,6 +64,12 @@ export const LandingPageLayout = ({ link = true, reloadApp = false, secondaryNav
       </header>
       <main className="flex-shrink-0">
         {children}
+        <section>
+          <h1>{count}</h1>
+          <Link href="/"><a>home</a></Link> |
+          <Link href="/dog-training-courses/dog-training/course-preview"><a>default</a></Link> |
+          <Link href="/dog-training-courses/dog-training/150-off"><a>150</a></Link>
+        </section>
       </main>
       <footer className="bg-dark">
         <section>

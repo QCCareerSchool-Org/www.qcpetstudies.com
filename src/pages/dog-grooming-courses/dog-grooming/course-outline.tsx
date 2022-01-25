@@ -6,9 +6,7 @@ import { FaBars } from 'react-icons/fa';
 import { AccordionSection } from '../../../components/AccordionSection';
 import { AccordionToggle } from '../../../components/AccordionToggle';
 
-import { DefaultLayout } from '../../../components/DefaultLayout';
 import { SEO } from '../../../components/SEO';
-
 import CourseOutlineBackground from '../../../images/backgrounds/course-outline.jpg';
 import calendarIcon from '../../../images/calendar.svg';
 import IconTime from '../../../images/clock.svg';
@@ -24,7 +22,7 @@ import UnitHImage from '../../../images/dg-full-outline-unit-h-image.jpg';
 const iconSize = 50;
 
 const DogGroomingCourseOutlinePage: NextPage = () => (
-  <DefaultLayout>
+  <>
     <SEO
       title="Dog Grooming Course Outline"
       description="Become a certified dog grooming professional with QC's interactive online course. Get started today!"
@@ -482,8 +480,7 @@ const DogGroomingCourseOutlinePage: NextPage = () => (
         padding-bottom: 0.25rem;
       }
     `}</style>
-
-  </DefaultLayout>
+  </>
 );
 
 export default DogGroomingCourseOutlinePage;

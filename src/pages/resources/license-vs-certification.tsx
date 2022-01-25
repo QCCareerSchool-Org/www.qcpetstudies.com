@@ -2,7 +2,6 @@ import { NextPage } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 
-import { DefaultLayout } from '../../components/DefaultLayout';
 import { SEO } from '../../components/SEO';
 import { useScreenWidth } from '../../hooks/useScreenWidth';
 import AprilCostigan from '../../images/april-costigan-300x300.jpg';
@@ -17,7 +16,7 @@ const LicenseVsCertification: NextPage = () => {
   const lgOrGreater = screenWidth >= 992;
 
   return (
-    <DefaultLayout>
+    <>
       <SEO
         title="Dog Grooming License vs. Certification"
         description="Dog Grooming License vs. Certification"
@@ -136,8 +135,7 @@ const LicenseVsCertification: NextPage = () => {
         }
       }
       `}</style>
-
-    </DefaultLayout>
+    </>
   );
 };
 

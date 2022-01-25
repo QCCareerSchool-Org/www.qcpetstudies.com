@@ -4,7 +4,6 @@ import Link from 'next/link';
 import React from 'react';
 
 import { Bar } from '../../components/Bar';
-import { DefaultLayout } from '../../components/DefaultLayout';
 import { SEO } from '../../components/SEO';
 import GroomingKitBackground from '../../images/backgrounds/yorkie-on-a-grooming-table.jpg';
 import ClipperCombsImage from '../../images/clippers-combs-kit-550.jpg';
@@ -13,7 +12,7 @@ import GroomingScissorsImage from '../../images/Pro-Grooming-Scissors-550x550.jp
 import StarterKitImage from '../../images/starter-kit.jpg';
 
 const DogGroomingKitPage: NextPage = () => (
-  <DefaultLayout>
+  <>
     <SEO
       title="Dog Grooming Kit"
       description="Take a look at the grooming starter kit you'll receive when you enroll in QC's dog grooming course!"
@@ -91,8 +90,7 @@ const DogGroomingKitPage: NextPage = () => (
         </div>
       </div>
     </section>
-
-  </DefaultLayout>
+  </>
 );
 
 export default DogGroomingKitPage;

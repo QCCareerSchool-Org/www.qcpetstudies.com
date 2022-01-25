@@ -3,7 +3,6 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { FaFacebookF, FaInstagram, FaTwitter } from 'react-icons/fa';
 
-import { DefaultLayout } from '../../components/DefaultLayout';
 import { SEO } from '../../components/SEO';
 import { useScreenWidth } from '../../hooks/useScreenWidth';
 import StudentExperienceBackground from '../../images/backgrounds/student-experience-hero.jpg';
@@ -17,7 +16,7 @@ const StudentExperiencePage: NextPage = () => {
   const xlOrGreater = screenWidth >= 1200;
 
   return (
-    <DefaultLayout>
+    <>
       <SEO
         title="Student Experience"
         description="This is Student Experience page"
@@ -107,7 +106,7 @@ const StudentExperiencePage: NextPage = () => {
           </div>
         </div>
       </section>
-    </DefaultLayout>
+    </>
   );
 };
 

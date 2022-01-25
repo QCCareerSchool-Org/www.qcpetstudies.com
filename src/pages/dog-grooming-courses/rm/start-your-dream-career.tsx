@@ -1,7 +1,6 @@
 import { GetServerSideProps, NextPage } from 'next';
 import Image from 'next/image';
 
-import { DefaultLayout } from '../../../components/DefaultLayout';
 import { FreeFirstAidSection } from '../../../components/FreeFirstAidSection';
 import { HowTheCoursesWorkSection } from '../../../components/HowTheCoursesWorkSection';
 import { PriceSection } from '../../../components/PriceSection';
@@ -24,7 +23,7 @@ type Props = {
 };
 
 const StartYourDreamCareerPage: NextPage<Props> = ({ location, price }) => (
-  <DefaultLayout>
+  <>
     <SEO
       title="Start Your Dream Career"
       description="Start Your Dream Career"
@@ -102,11 +101,10 @@ const StartYourDreamCareerPage: NextPage<Props> = ({ location, price }) => (
     <HowTheCoursesWorkSection className="bg-light" />
 
     <FreeFirstAidSection />
-
-  </DefaultLayout>
+  </>
 );
 
-export const getServerSideProps: GetServerSideProps = async context => {
+export const getServerSideProps: GetServerSideProps<Props> = async context => {
   const location = await getLocation(context);
   const price = await lookupPrices(courseCodes, location.countryCode, location.provinceCode);
   return { props: { location, price } };

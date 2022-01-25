@@ -3,7 +3,6 @@ import Image from 'next/image';
 import { useMemo } from 'react';
 
 import { BrochureForm } from '../../../components/BrochureForm';
-import { DefaultLayout } from '../../../components/DefaultLayout';
 import { FreeFirstAidSection } from '../../../components/FreeFirstAidSection';
 import { HowTheCoursesWorkSection } from '../../../components/HowTheCoursesWorkSection';
 import { SEO } from '../../../components/SEO';
@@ -21,7 +20,7 @@ const ProfessionalDogGroomerPage: NextPage<Props> = ({ testGroup }) => {
   const hiddenFields = useMemo(() => ([ { key: 'testGroup', value: testGroup } ]), [ testGroup ]);
 
   return (
-    <DefaultLayout>
+    <>
       <SEO
         title="Become a Professional Dog Groomer"
         description="Become a Professional Dog Groomer"
@@ -109,12 +108,12 @@ const ProfessionalDogGroomerPage: NextPage<Props> = ({ testGroup }) => {
         }
         .formImage { z-index: 100; }
       `}</style>
-    </DefaultLayout>
+    </>
   );
 };
 
 // eslint-disable-next-line @typescript-eslint/require-await
-export const getServerSideProps: GetServerSideProps = async context => {
+export const getServerSideProps: GetServerSideProps<Props> = async context => {
   let testGroup: number | undefined;
   const storedTestGroup = context.req.cookies.testGroup;
   if (typeof storedTestGroup !== 'undefined') {

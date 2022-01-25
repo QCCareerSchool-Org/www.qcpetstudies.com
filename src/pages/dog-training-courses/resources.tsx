@@ -2,7 +2,6 @@ import { NextPage } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 
-import { DefaultLayout } from '../../components/DefaultLayout';
 import { SEO } from '../../components/SEO';
 import DogTrainingResourcesBackground from '../../images/backgrounds/working-at-home-office-with-dog.jpg';
 import DogTrainingCareer from '../../images/cards/dog-training-career.jpg';
@@ -10,7 +9,7 @@ import LearningInClassOnline from '../../images/cards/learning-in-class-online.j
 import StudentGrad from '../../images/cards/student-grad.jpg';
 
 const DogTrainingResourcesPage: NextPage = () => (
-  <DefaultLayout>
+  <>
     <SEO
       title="Dog Training Resources"
       description="Use these resources to decide if a career in dog training is right for you!"
@@ -80,7 +79,7 @@ const DogTrainingResourcesPage: NextPage = () => (
         </div>
       </div>
     </section>
-  </DefaultLayout>
+  </>
 );
 
 export default DogTrainingResourcesPage;

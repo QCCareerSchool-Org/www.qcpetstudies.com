@@ -3,7 +3,6 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { FaBriefcase, FaChalkboardTeacher, FaHandHoldingUsd, FaLaptopHouse, FaRegCalendarCheck } from 'react-icons/fa';
 
-import { DefaultLayout } from '../components/DefaultLayout';
 import { SEO } from '../components/SEO';
 import HappyPuppyRunning from '../images/backgrounds/happy-puppy-running.jpg';
 import HowItWorks from '../images/how-it-works.png';
@@ -13,7 +12,7 @@ import IDTPCertificationGold from '../images/IDTP-certification-gold.svg';
 const iconSize = 145;
 
 const HomePage: NextPage = () => (
-  <DefaultLayout>
+  <>
     <SEO
       title="Become a Pet Care Professional"
       description="Start an exciting career in the pet care industry! Become a certified dog groomer or certified dog trainer with QC’s Internationally-recognized online courses!"
@@ -184,8 +183,7 @@ const HomePage: NextPage = () => (
         margin-bottom: 3rem;
       }
     `}</style>
-
-  </DefaultLayout>
+  </>
 );
 
 export default HomePage;

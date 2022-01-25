@@ -6,7 +6,6 @@ import { FaBars } from 'react-icons/fa';
 
 import { AccordionSection } from '../../../components/AccordionSection';
 import { AccordionToggle } from '../../../components/AccordionToggle';
-import { DefaultLayout } from '../../../components/DefaultLayout';
 import { SEO } from '../../../components/SEO';
 import { UnitStats } from '../../../components/UnitStats';
 import { useScreenWidth } from '../../../hooks/useScreenWidth';
@@ -32,7 +31,7 @@ const CourseOutlinePage: NextPage = () => {
   const closeModal = (): void => setUnit(null);
 
   return (
-    <DefaultLayout>
+    <>
       <SEO
         title="Course Outline"
         description=""
@@ -278,8 +277,7 @@ const CourseOutlinePage: NextPage = () => {
           background-color: #f7f7f7 !important;
         }
       `}</style>
-
-    </DefaultLayout>
+    </>
   );
 };
 

@@ -3,7 +3,6 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 import { Bar } from '../../components/Bar';
-import { DefaultLayout } from '../../components/DefaultLayout';
 import { SEO } from '../../components/SEO';
 import { useScreenWidth } from '../../hooks/useScreenWidth';
 import GraduateBackground from '../../images/backgrounds/dog-in-graduatation-cap.jpg';
@@ -23,7 +22,7 @@ const DogGroomingHowItWorksPage: NextPage = () => {
   const lgOrGreater = screenWidth >= 992;
 
   return (
-    <DefaultLayout>
+    <>
       <SEO
         title="How Does Online Dog Groomer Training Work?"
         description="It's easy to learn dog grooming online! Find out how QC's Online Dog Groomer Training works, from course books to practical assignments and tutor feedback!"
@@ -152,7 +151,7 @@ const DogGroomingHowItWorksPage: NextPage = () => {
           </div>
         </div>
       </section>
-    </DefaultLayout>
+    </>
   );
 };
 

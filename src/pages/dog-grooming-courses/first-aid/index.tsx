@@ -1,4 +1,4 @@
-import { GetServerSideProps, NextPage } from 'next';
+import { GetServerSideProps } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -15,6 +15,7 @@ import { getLocation } from '../../../lib/getLocation';
 import { lookupPrices } from '../../../lib/lookupPrices';
 import type { Location } from '../../../models/location';
 import type { PriceResult } from '../../../models/price';
+import { NextPageWithLayout } from '../../_app';
 
 const courseCodes = [ 'fa' ];
 
@@ -23,9 +24,9 @@ type Props = {
   price: PriceResult;
 };
 
-const DogGroomingPage: NextPage<Props> = ({ location, price }) => {
+const DogGroomingPage: NextPageWithLayout<Props> = ({ location, price }) => {
   return (
-    <DefaultLayout secondaryTitle="First Aid for Groomers Course">
+    <>
       <SEO
         title="First Aid for Groomers Course"
         description="Learn how to create a safe environment and how to respond to emergencies. The First Aid for Groomers course is for new and experienced groomers alike!"
@@ -161,12 +162,13 @@ const DogGroomingPage: NextPage<Props> = ({ location, price }) => {
           </div>
         </div>
       </section>
-
-    </DefaultLayout>
+    </>
   );
 };
 
-export const getServerSideProps: GetServerSideProps = async context => {
+DogGroomingPage.getLayout = page => <DefaultLayout secondaryTitle="First Aid for Groomers Course">{page}</DefaultLayout>;
+
+export const getServerSideProps: GetServerSideProps<Props> = async context => {
   const location = await getLocation(context);
   const price = await lookupPrices(courseCodes, location.countryCode, location.provinceCode);
   return { props: { location, price } };

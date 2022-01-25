@@ -4,7 +4,6 @@ import ErrorPage from 'next/error';
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
 
-import { DefaultLayout } from '../components/DefaultLayout';
 import { EnrollmentDetails } from '../components/EnrollmentDetails';
 import { GoogleAdsSaleScript } from '../components/GoogleAdsSaleScript';
 import { SEO } from '../components/SEO';
@@ -65,7 +64,7 @@ const InternalWelcomePage: NextPage<Props> = ({ data, errorCode }) => {
   }
 
   return (
-    <DefaultLayout>
+    <>
       <SEO
         title="Welcome to the School"
         description="Your enrollment has been received and will be processed quickly. You will receive an email within the next business day containing login information to your online student center."
@@ -102,12 +101,11 @@ const InternalWelcomePage: NextPage<Props> = ({ data, errorCode }) => {
       </section>
 
       <EnrollmentDetails enrollment={data.enrollment} />
-
-    </DefaultLayout>
+    </>
   );
 };
 
-export const getServerSideProps: GetServerSideProps = async ({ req, res, query }) => {
+export const getServerSideProps: GetServerSideProps<Props> = async ({ req, res, query }) => {
   try {
     if (typeof query.enrollmentId !== 'string' || typeof query.code !== 'string') {
       throw new HttpStatus.BadRequest();

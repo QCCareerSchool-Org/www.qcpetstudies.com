@@ -42,7 +42,7 @@ const getLocalSiteMapLastModTime = async (): Promise<Date | void> => {
   } catch (err) { console.log(err); /* empty */ }
 };
 
-export const getServerSideProps: GetServerSideProps = async context => {
+export const getServerSideProps: GetServerSideProps<Record<string, never>> = async context => {
   const siteMapIndexObj = await getRemoteSiteMapIndex();
 
   const lastMod = await getLocalSiteMapLastModTime();

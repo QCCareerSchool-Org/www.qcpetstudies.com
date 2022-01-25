@@ -4,7 +4,6 @@ import Link from 'next/link';
 import { BsBook } from 'react-icons/bs';
 
 import { Bar } from '../../../components/Bar';
-import { DefaultLayout } from '../../../components/DefaultLayout';
 import { SEO } from '../../../components/SEO';
 import { useScreenWidth } from '../../../hooks/useScreenWidth';
 
@@ -22,7 +21,7 @@ const GroomingAssignment: NextPage = () => {
   const lg = lgOrLarger && !xlOrLarger;
 
   return (
-    <DefaultLayout>
+    <>
       <SEO
         title="Your Grooming Assignments"
         description="Your Grooming Assignments"
@@ -156,8 +155,7 @@ const GroomingAssignment: NextPage = () => {
           </div>
         </div>
       </section>
-
-    </DefaultLayout>
+    </>
   );
 };
 

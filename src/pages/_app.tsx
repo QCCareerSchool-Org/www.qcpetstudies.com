@@ -1,10 +1,12 @@
 import '../styles/global.scss';
 
+import { NextPage } from 'next';
 import type { AppProps, NextWebVitalsMetric } from 'next/app';
 import { useRouter } from 'next/router';
-import { ReactElement, useEffect } from 'react';
+import { ReactElement, ReactNode, useEffect } from 'react';
 import SSRProvider from 'react-bootstrap/SSRProvider';
 
+import { DefaultLayout } from '../components/DefaultLayout';
 import { fbqPageview } from '../lib/fbq';
 import { gaPageview } from '../lib/ga';
 import { pardotPageview } from '../lib/pardot';
@@ -13,7 +15,16 @@ import { LocationProvider } from '../providers/LocationProvider';
 import { ScreenWidthProvider } from '../providers/ScreenWidthProvider';
 import { ScrollPositionProvider } from '../providers/ScrollPositionProvider';
 
-const QCPetStudiesApp = ({ Component, pageProps }: AppProps): ReactElement => {
+// eslint-disable-next-line @typescript-eslint/ban-types
+export type NextPageWithLayout<P = {}, IP = P> = NextPage<P, IP> & {
+  getLayout?: (page: ReactElement) => ReactNode;
+};
+
+type AppPropsWithLayout = AppProps & {
+  Component: NextPageWithLayout;
+};
+
+const QCPetStudiesApp = ({ Component, pageProps }: AppPropsWithLayout): ReactElement => {
   const router = useRouter();
 
   useEffect(() => {
@@ -33,12 +44,15 @@ const QCPetStudiesApp = ({ Component, pageProps }: AppProps): ReactElement => {
     };
   }, [ router.events ]);
 
+  // Use the layout defined at the page level, if available
+  const getLayout = Component.getLayout ?? (page => <DefaultLayout>{page}</DefaultLayout>);
+
   return (
     <SSRProvider>
       <LocationProvider>
         <ScreenWidthProvider>
           <ScrollPositionProvider>
-            <Component {...pageProps} />
+            {getLayout(<Component {...pageProps} />)}
           </ScrollPositionProvider>
         </ScreenWidthProvider>
       </LocationProvider>

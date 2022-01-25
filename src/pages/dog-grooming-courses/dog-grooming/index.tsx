@@ -7,7 +7,6 @@ import { IoMdInfinite } from 'react-icons/io';
 
 import { AccordionSection } from '../../../components/AccordionSection';
 import { AccordionToggle } from '../../../components/AccordionToggle';
-import { DefaultLayout } from '../../../components/DefaultLayout';
 import { DGTutorSection } from '../../../components/DGTutorSection';
 import { GuaranteeSection } from '../../../components/GuaranteeSection';
 import { PriceSection } from '../../../components/PriceSection';
@@ -48,7 +47,7 @@ const DogGroomingPage: NextPage<Props> = ({ location, price }) => {
   const md = mdOrGreater && !lgOrGreater;
 
   return (
-    <DefaultLayout>
+    <>
       <SEO
         title="Dog Grooming Course"
         description="Become a Certified Dog Groomer with Interactive Online Training!"
@@ -193,13 +192,12 @@ const DogGroomingPage: NextPage<Props> = ({ location, price }) => {
 
       <style jsx>{`
         .courseContentIcon { color: #ccc; margin-bottom: 0.5rem; }
-      `}</style>
-
-    </DefaultLayout>
+      `}</style>0
+    </>
   );
 };
 
-export const getServerSideProps: GetServerSideProps = async context => {
+export const getServerSideProps: GetServerSideProps<Props> = async context => {
   const location = await getLocation(context);
   const price = await lookupPrices(courseCodes, location.countryCode, location.provinceCode);
   return { props: { location, price } };

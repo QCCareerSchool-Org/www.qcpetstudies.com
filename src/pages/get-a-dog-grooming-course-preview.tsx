@@ -1,4 +1,4 @@
-import { GetServerSideProps, NextPage } from 'next';
+import { GetServerSideProps } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useMemo } from 'react';
@@ -17,6 +17,7 @@ import Step1EnrollImage from '../images/step-1-enroll.svg';
 import Step2SubmitImage from '../images/step-2-submit.svg';
 import Step3CertificateImage from '../images/step-3-certificate.svg';
 import { getRandomIntInclusive } from '../lib/randomInt';
+import { NextPageWithLayout } from './_app';
 
 const formAction = 'https://go.qcpetstudies.com/l/947642/2021-12-05/6h9rv';
 
@@ -24,13 +25,13 @@ type Props = {
   testGroup: number;
 };
 
-const DogGroomingCatalogPage: NextPage<Props> = ({ testGroup }) => {
+const DogGroomingCatalogPage: NextPageWithLayout<Props> = ({ testGroup }) => {
   const hiddenFields = useMemo(() => ([ { key: 'testGroup', value: testGroup } ]), [ testGroup ]);
   const screenWidth = useScreenWidth();
   const lgOrGreater = screenWidth >= 992;
 
   return (
-    <LandingPageLayout>
+    <>
       <SEO
         title="Become a Professional Dog Groomer"
         description="Request a free preview of the online dog grooming course."
@@ -154,12 +155,14 @@ const DogGroomingCatalogPage: NextPage<Props> = ({ testGroup }) => {
           </div>
         </div>
       </section>
-    </LandingPageLayout>
+    </>
   );
 };
 
+DogGroomingCatalogPage.getLayout = page => <LandingPageLayout>{page}</LandingPageLayout>;
+
 // eslint-disable-next-line @typescript-eslint/require-await
-export const getServerSideProps: GetServerSideProps = async context => {
+export const getServerSideProps: GetServerSideProps<Props> = async context => {
   let testGroup: number | undefined;
   const storedTestGroup = context.req.cookies.testGroup;
   if (typeof storedTestGroup !== 'undefined') {

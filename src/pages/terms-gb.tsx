@@ -1,10 +1,9 @@
-import { NextPage } from 'next';
-
 import { SEO } from '../components/SEO';
 import { TextLayout } from '../components/TextLayout';
+import { NextPageWithLayout } from './_app';
 
-const TermsGBPage: NextPage = () => (
-  <TextLayout>
+const TermsGBPage: NextPageWithLayout = () => (
+  <>
     <SEO
       title="Privacy Policy"
       description="QC Pet Studies website privacy policy and terms of service"
@@ -46,7 +45,9 @@ const TermsGBPage: NextPage = () => (
     <p>Email: info@qccareerschool.com</p>
     <p>Phone: 0800&nbsp;066&nbsp;4734</p>
     <p><i>This policy is powered by Free Privacy Policy and Rhino Support helpdesk software.</i></p>
-  </TextLayout>
+  </>
 );
+
+TermsGBPage.getLayout = page => <TextLayout>{page}</TextLayout>;
 
 export default TermsGBPage;

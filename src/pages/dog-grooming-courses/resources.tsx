@@ -2,7 +2,6 @@ import { NextPage } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 
-import { DefaultLayout } from '../../components/DefaultLayout';
 import { SEO } from '../../components/SEO';
 import DogGroomingResourcesBackground from '../../images/backgrounds/dog-grooming-resources.jpg';
 import BecomingDogGroomerBookImage from '../../images/books/becoming-a-dog-groomer.png';
@@ -14,7 +13,7 @@ import StudentGradFeaturesImage from '../../images/cards/student-grad-features.j
 
 const DogGroomingResourcesPage: NextPage = () => {
   return (
-    <DefaultLayout>
+    <>
       <SEO
         title="Dog Gromming Resources"
         description="Resources and Downloads to help you get through your online dog grooming class."
@@ -117,8 +116,7 @@ const DogGroomingResourcesPage: NextPage = () => {
           </div>
         </div>
       </section>
-
-    </DefaultLayout>
+    </>
   );
 };
 

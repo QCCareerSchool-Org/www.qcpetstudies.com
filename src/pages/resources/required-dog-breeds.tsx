@@ -2,7 +2,6 @@ import { NextPage } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 
-import { DefaultLayout } from '../../components/DefaultLayout';
 import { SEO } from '../../components/SEO';
 import { useScreenWidth } from '../../hooks/useScreenWidth';
 import RequiredDogBreedsBackground from '../../images/backgrounds/every-breed-bg.jpg';
@@ -22,7 +21,7 @@ const RequiredDogBreeds: NextPage = () => {
   const lgOrGreater = screenWidth >= 992;
 
   return (
-    <DefaultLayout>
+    <>
       <SEO
         title="Every Dog Breed You Must Groom in Your Dog Grooming Course"
         description="Find out what types of dog breeds you'll need in order to complete your online dog groomer training with QC"
@@ -228,8 +227,7 @@ const RequiredDogBreeds: NextPage = () => {
           padding: 2rem;
         }
       `}</style>
-
-    </DefaultLayout>
+    </>
   );
 };
 

@@ -6,11 +6,9 @@ import Accordion from 'react-bootstrap/Accordion';
 import { AccordionSection } from '../../../components/AccordionSection';
 import { AccordionToggle } from '../../../components/AccordionToggle';
 import { Bar } from '../../../components/Bar';
-import { DefaultLayout } from '../../../components/DefaultLayout';
 import { PriceSection } from '../../../components/PriceSection';
 import { SEO } from '../../../components/SEO';
 import { useScreenWidth } from '../../../hooks/useScreenWidth';
-
 import Guarantee21DayImage from '../../../images/21-day-guarantee-outlined.svg';
 import StylingBackground from '../../../images/backgrounds/black-medium-size-poodle.jpg';
 import BreedStandardsBook from '../../../images/books/breed-standards.jpg';
@@ -36,7 +34,7 @@ const BreedStylingPage: NextPage<Props> = ({ price }) => {
   const lgOrGreater = screenWidth >= 992;
 
   return (
-    <DefaultLayout>
+    <>
       <SEO
         title="Breed Styling Workshop"
         description="If you're already a professional dog groomer, the breed styling workshop will take your grooming skills to the next level. Start today!"
@@ -274,11 +272,11 @@ const BreedStylingPage: NextPage<Props> = ({ price }) => {
           </Accordion>
         </div>
       </section>
-    </DefaultLayout>
+    </>
   );
 };
 
-export const getServerSideProps: GetServerSideProps = async context => {
+export const getServerSideProps: GetServerSideProps<Props> = async context => {
   const location = await getLocation(context);
   const price = await lookupPrices(courseCodes, location.countryCode, location.provinceCode);
   return { props: { location, price } };
