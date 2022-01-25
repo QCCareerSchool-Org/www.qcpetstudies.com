@@ -1,6 +1,5 @@
 import { NextPage } from 'next';
 import Error from 'next/error';
-import { DefaultLayout } from '../components/DefaultLayout';
 
 type Props = {
   production: boolean;
@@ -14,7 +13,7 @@ const TypographyPage: NextPage<Props> = ({ production }: Props) => {
   }
 
   return (
-    <DefaultLayout>
+    <>
       <section id="top" className="bg-dark text-light">
         <div className="container">
           <div className="row">
@@ -90,8 +89,7 @@ const TypographyPage: NextPage<Props> = ({ production }: Props) => {
           </div>
         </div>
       </section>
-
-    </DefaultLayout>
+    </>
   );
 };
 

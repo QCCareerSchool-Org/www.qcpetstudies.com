@@ -1,14 +1,12 @@
-import { NextPage } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 import Accordion from 'react-bootstrap/Accordion';
 import { FaBars } from 'react-icons/fa';
+
 import { AccordionSection } from '../../../components/AccordionSection';
 import { AccordionToggle } from '../../../components/AccordionToggle';
-
 import { DefaultLayout } from '../../../components/DefaultLayout';
 import { SEO } from '../../../components/SEO';
-
 import CourseOutlineBackground from '../../../images/backgrounds/course-outline.jpg';
 import calendarIcon from '../../../images/calendar.svg';
 import IconTime from '../../../images/clock.svg';
@@ -20,11 +18,12 @@ import UnitBImage from '../../../images/dg-full-outline-unit-b-image.jpg';
 import UnitCImage from '../../../images/dg-full-outline-unit-c-image.jpg';
 import UnitGImage from '../../../images/dg-full-outline-unit-g-image.jpg';
 import UnitHImage from '../../../images/dg-full-outline-unit-h-image.jpg';
+import type { NextPageWithLayout } from '../../_app';
 
 const iconSize = 50;
 
-const DogGroomingCourseOutlinePage: NextPage = () => (
-  <DefaultLayout>
+const DogGroomingCourseOutlinePage: NextPageWithLayout = () => (
+  <>
     <SEO
       title="Dog Grooming Course Outline"
       description="Become a certified dog grooming professional with QC's interactive online course. Get started today!"
@@ -482,8 +481,9 @@ const DogGroomingCourseOutlinePage: NextPage = () => (
         padding-bottom: 0.25rem;
       }
     `}</style>
-
-  </DefaultLayout>
+  </>
 );
+
+DogGroomingCourseOutlinePage.getLayout = page => <DefaultLayout footerCTAType="grooming">{page}</DefaultLayout>;
 
 export default DogGroomingCourseOutlinePage;

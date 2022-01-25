@@ -1,4 +1,4 @@
-import { GetServerSideProps, NextPage } from 'next';
+import { GetServerSideProps } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 import Accordion from 'react-bootstrap/Accordion';
@@ -10,7 +10,6 @@ import { DefaultLayout } from '../../../components/DefaultLayout';
 import { PriceSection } from '../../../components/PriceSection';
 import { SEO } from '../../../components/SEO';
 import { useScreenWidth } from '../../../hooks/useScreenWidth';
-
 import Guarantee21DayImage from '../../../images/21-day-guarantee-outlined.svg';
 import StylingBackground from '../../../images/backgrounds/black-medium-size-poodle.jpg';
 import BreedStandardsBook from '../../../images/books/breed-standards.jpg';
@@ -23,6 +22,7 @@ import { getLocation } from '../../../lib/getLocation';
 import { lookupPrices } from '../../../lib/lookupPrices';
 import type { Location } from '../../../models/location';
 import type { PriceResult } from '../../../models/price';
+import type { NextPageWithLayout } from '../../_app';
 
 const courseCodes = [ 'ds' ];
 
@@ -31,12 +31,12 @@ type Props = {
   price: PriceResult;
 };
 
-const BreedStylingPage: NextPage<Props> = ({ price }) => {
+const BreedStylingPage: NextPageWithLayout<Props> = ({ price }) => {
   const screenWidth = useScreenWidth();
   const lgOrGreater = screenWidth >= 992;
 
   return (
-    <DefaultLayout>
+    <>
       <SEO
         title="Breed Styling Workshop"
         description="If you're already a professional dog groomer, the breed styling workshop will take your grooming skills to the next level. Start today!"
@@ -274,11 +274,13 @@ const BreedStylingPage: NextPage<Props> = ({ price }) => {
           </Accordion>
         </div>
       </section>
-    </DefaultLayout>
+    </>
   );
 };
 
-export const getServerSideProps: GetServerSideProps = async context => {
+BreedStylingPage.getLayout = page => <DefaultLayout footerCTAType="grooming">{page}</DefaultLayout>;
+
+export const getServerSideProps: GetServerSideProps<Props> = async context => {
   const location = await getLocation(context);
   const price = await lookupPrices(courseCodes, location.countryCode, location.provinceCode);
   return { props: { location, price } };

@@ -2,7 +2,6 @@ import { NextPage } from 'next';
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
 
-import { DefaultLayout } from '../components/DefaultLayout';
 import { SEO } from '../components/SEO';
 import { useLocation } from '../hooks/useLocation';
 import ContactUsBackground from '../images/backgrounds/contact-us-bg.jpg';
@@ -25,7 +24,7 @@ const ContactUsPage: NextPage = () => {
   }, []);
 
   return (
-    <DefaultLayout>
+    <>
       <SEO
         title="Contact Us"
         description="This is Contact Us page"
@@ -89,7 +88,7 @@ const ContactUsPage: NextPage = () => {
           </div>
         </div>
       </section> */}
-    </DefaultLayout>
+    </>
   );
 };
 

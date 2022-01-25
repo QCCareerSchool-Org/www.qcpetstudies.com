@@ -2,11 +2,10 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { ReactElement } from 'react';
 
-import { DefaultLayout } from '../components/DefaultLayout';
 import DoGInBedWithStick from '../images/backgrounds/dog-in-bed-with-stick.jpg';
 
 const Custom404 = (): ReactElement => (
-  <DefaultLayout>
+  <>
     <section id="top" className="bg-dark">
       <Image src={DoGInBedWithStick} layout="fill" objectFit="cover" objectPosition="right" placeholder="blur" alt="dog in a dog bed, holding a stick" />
       <div className="container text-center text-shadow">
@@ -19,7 +18,7 @@ const Custom404 = (): ReactElement => (
         </div>
       </div>
     </section>
-  </DefaultLayout>
+  </>
 );
 
 export default Custom404;

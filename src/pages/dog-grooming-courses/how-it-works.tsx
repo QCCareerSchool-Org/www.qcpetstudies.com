@@ -1,4 +1,3 @@
-import { NextPage } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -15,15 +14,16 @@ import IconCompass from '../../images/icon-compass.svg';
 import IconMagnifyingGlass from '../../images/icon-magnifying-glass.svg';
 import IconMegaphone from '../../images/icon-megaphone.svg';
 import IconTime from '../../images/icon-time.svg';
+import type { NextPageWithLayout } from '../_app';
 
 const iconSize = 50;
 
-const DogGroomingHowItWorksPage: NextPage = () => {
+const DogGroomingHowItWorksPage: NextPageWithLayout = () => {
   const screenWidth = useScreenWidth();
   const lgOrGreater = screenWidth >= 992;
 
   return (
-    <DefaultLayout>
+    <>
       <SEO
         title="How Does Online Dog Groomer Training Work?"
         description="It's easy to learn dog grooming online! Find out how QC's Online Dog Groomer Training works, from course books to practical assignments and tutor feedback!"
@@ -152,8 +152,10 @@ const DogGroomingHowItWorksPage: NextPage = () => {
           </div>
         </div>
       </section>
-    </DefaultLayout>
+    </>
   );
 };
+
+DogGroomingHowItWorksPage.getLayout = page => <DefaultLayout footerCTAType="grooming">{page}</DefaultLayout>;
 
 export default DogGroomingHowItWorksPage;

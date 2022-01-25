@@ -3,7 +3,6 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { FaInstagram, FaLaptop, FaMedkit, FaPaw, FaPencilAlt, FaTruck } from 'react-icons/fa';
 
-import { DefaultLayout } from '../../components/DefaultLayout';
 import { SEO } from '../../components/SEO';
 import { useScreenWidth } from '../../hooks/useScreenWidth';
 import LearningAndWorkingBackground from '../../images/backgrounds/groomer-wearing-face-mask.jpg';
@@ -18,7 +17,7 @@ const LearningDuringCovidPage: NextPage = () => {
   const xlOrGreater = screenWidth >= 1200;
 
   return (
-    <DefaultLayout>
+    <>
       <SEO
         title="Learning &amp; Working During COVID-19"
         description="Starting a new career during a pandemic can be challenging! Find out how online training can help."
@@ -150,8 +149,7 @@ const LearningDuringCovidPage: NextPage = () => {
           </div>
         </div>
       </section>
-
-    </DefaultLayout>
+    </>
   );
 };
 

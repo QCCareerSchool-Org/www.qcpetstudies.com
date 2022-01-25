@@ -1,4 +1,3 @@
-import { NextPage } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -11,13 +10,14 @@ import Clicker from '../../images/clicker-on-laynard-light-background.jpg';
 import GraduationCertificateImage from '../../images/IDTP-certification-gold.svg';
 import ManAndDogWalking from '../../images/man-and-white-dog-walking-in-a-field.jpg';
 import PuppyOnBack from '../../images/puppy-lying-on-back.jpg';
+import type { NextPageWithLayout } from '../_app';
 
-const DogTrainingHowItWorksPage: NextPage = () => {
+const DogTrainingHowItWorksPage: NextPageWithLayout = () => {
   const screenWidth = useScreenWidth();
   const lgOrGreater = screenWidth >= 992;
 
   return (
-    <DefaultLayout>
+    <>
       <SEO
         title="How QC's Online Dog Training Course Works"
         description="Become a certified dog trainer online. Find out how QC’s online professional dog trainer course works!"
@@ -137,8 +137,10 @@ const DogTrainingHowItWorksPage: NextPage = () => {
           </div>
         </div>
       </section>
-    </DefaultLayout>
+    </>
   );
 };
+
+DogTrainingHowItWorksPage.getLayout = page => <DefaultLayout footerCTAType="training">{page}</DefaultLayout>;
 
 export default DogTrainingHowItWorksPage;

@@ -1,4 +1,4 @@
-import { GetServerSideProps, NextPage } from 'next';
+import { GetServerSideProps } from 'next';
 import Image from 'next/image';
 import { useMemo } from 'react';
 
@@ -8,6 +8,7 @@ import { SEO } from '../components/SEO';
 import { useScreenWidth } from '../hooks/useScreenWidth';
 import CatalogImage from '../images/preview-landing-page-training.jpg';
 import { getRandomIntInclusive } from '../lib/randomInt';
+import type { NextPageWithLayout } from './_app';
 
 const formAction = 'https://go.qcpetstudies.com/l/947642/2021-12-05/6h9rx';
 
@@ -15,13 +16,13 @@ type Props = {
   testGroup: number;
 };
 
-const DogTrainingCatalogPage: NextPage<Props> = ({ testGroup }) => {
+const DogTrainingCatalogPage: NextPageWithLayout<Props> = ({ testGroup }) => {
   const hiddenFields = useMemo(() => ([ { key: 'testGroup', value: testGroup } ]), [ testGroup ]);
   const screenWidth = useScreenWidth();
   const lgOrGreater = screenWidth >= 992;
 
   return (
-    <LandingPageLayout>
+    <>
       <SEO
         title="Become a Professional Dog Trainer"
         description="Request a free preview of the online dog trainer course."
@@ -63,12 +64,14 @@ const DogTrainingCatalogPage: NextPage<Props> = ({ testGroup }) => {
           </div>
         </div>
       </section>
-    </LandingPageLayout>
+    </>
   );
 };
 
+DogTrainingCatalogPage.getLayout = page => <LandingPageLayout>{page}</LandingPageLayout>;
+
 // eslint-disable-next-line @typescript-eslint/require-await
-export const getServerSideProps: GetServerSideProps = async context => {
+export const getServerSideProps: GetServerSideProps<Props> = async context => {
   let testGroup: number | undefined;
   const storedTestGroup = context.req.cookies.testGroup;
   if (typeof storedTestGroup !== 'undefined') {

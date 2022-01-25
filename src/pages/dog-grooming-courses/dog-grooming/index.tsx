@@ -1,4 +1,4 @@
-import { GetServerSideProps, NextPage } from 'next';
+import { GetServerSideProps } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 import { Accordion, Modal } from 'react-bootstrap';
@@ -27,6 +27,7 @@ import { getLocation } from '../../../lib/getLocation';
 import { lookupPrices } from '../../../lib/lookupPrices';
 import type { Location } from '../../../models/location';
 import type { PriceResult } from '../../../models/price';
+import type { NextPageWithLayout } from '../../_app';
 
 const headerIconSize = 20;
 const iconSize = 36;
@@ -38,7 +39,7 @@ type Props = {
   price: PriceResult;
 };
 
-const DogGroomingPage: NextPage<Props> = ({ location, price }) => {
+const DogGroomingPage: NextPageWithLayout<Props> = ({ location, price }) => {
   const screenWidth = useScreenWidth();
   const [ kitPopupVisible, kitPopupToggle ] = useToggle();
 
@@ -48,7 +49,7 @@ const DogGroomingPage: NextPage<Props> = ({ location, price }) => {
   const md = mdOrGreater && !lgOrGreater;
 
   return (
-    <DefaultLayout>
+    <>
       <SEO
         title="Dog Grooming Course"
         description="Become a Certified Dog Groomer with Interactive Online Training!"
@@ -194,12 +195,13 @@ const DogGroomingPage: NextPage<Props> = ({ location, price }) => {
       <style jsx>{`
         .courseContentIcon { color: #ccc; margin-bottom: 0.5rem; }
       `}</style>
-
-    </DefaultLayout>
+    </>
   );
 };
 
-export const getServerSideProps: GetServerSideProps = async context => {
+DogGroomingPage.getLayout = page => <DefaultLayout footerCTAType="grooming">{page}</DefaultLayout>;
+
+export const getServerSideProps: GetServerSideProps<Props> = async context => {
   const location = await getLocation(context);
   const price = await lookupPrices(courseCodes, location.countryCode, location.provinceCode);
   return { props: { location, price } };

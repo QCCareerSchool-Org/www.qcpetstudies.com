@@ -1,4 +1,3 @@
-import { NextPage } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 import { ReactElement, ReactNode } from 'react';
@@ -9,6 +8,7 @@ import { AccordionToggle } from '../../components/AccordionToggle';
 import { DefaultLayout } from '../../components/DefaultLayout';
 import { SEO } from '../../components/SEO';
 import DoGInBedWithStick from '../../images/backgrounds/dog-in-bed-with-stick.jpg';
+import type { NextPageWithLayout } from '../_app';
 
 const secondaryNavLinks = [
   { name: 'About QC Pet Studies', url: '#about' },
@@ -16,11 +16,11 @@ const secondaryNavLinks = [
   { name: 'Dog Training FAQ', url: '#training' },
 ];
 
-const FAQPage: NextPage = () => {
+const FAQPage: NextPageWithLayout = () => {
   let i = 0;
 
   return (
-    <DefaultLayout secondaryTitle="FAQ" secondaryNavLinks={secondaryNavLinks}>
+    <>
       <SEO
         title="FAQ"
         description="If you have any questions about QC's online programs in dog grooming or dog training, find your answers here!"
@@ -100,7 +100,7 @@ const FAQPage: NextPage = () => {
                   <p className="mb-0">No, you do not need any previous experience in the dog grooming industry to succeed in the QC Pet Studies courses. The online dog grooming course is comprehensive and will teach you all the fundamentals of dog grooming before moving on to more advanced techniques. To learn more, visit the <Link href="/online-courses/dog-grooming"><a className="link text-primary">dog grooming course overview</a></Link> page.</p>
                 </QuestionAnswer>
                 <QuestionAnswer question="Will I need to purchase anything else to complete the dog groomer course?" index={i++}>
-                  <p className="mb-0">Yes. You will need some additional tools and products to complete your practical assignments, all of which will be valuable investments for your career. Find a list of all the items you need in the <Link href="https://www.doggroomingcourse.com/wp-content/uploads/2017/03/What-You-Need-to-Get-Started.pdf"><a className="link text-primary">Getting Started Guide</a></Link>.</p>
+                  <p className="mb-0">Yes. You will need some additional tools and products to complete your practical assignments, all of which will be valuable investments for your career. Find a list of all the items you need in the <a href="/what-you-need-to-get-started.pdf" className="link text-primary">Getting Started Guide</a>.</p>
                 </QuestionAnswer>
                 <QuestionAnswer question="How long will it take to complete my online dog grooming class?" index={i++}>
                   <p>With QC's online courses, you work at your own pace. You decide how much time per week you want to spend developing your grooming skills. QC's flexible dog groomer training has no deadlines for completing course assignments. Typically, students who work on their grooming assignments for a short period each week will complete their online course within six months to a year.</p>
@@ -155,10 +155,10 @@ const FAQPage: NextPage = () => {
                 <QuestionAnswer question="Do I need a state or provincial dog training license to work in the industry?" index={i++}>
                   <p>Dog training is an unregulated field in most states and provinces. You should always double-check local regulations, but odds are you do not need any kind of dog training license or specific education (including a minimum number of training hours) in order to become a dog trainer.</p>
                   <p>The Certification Council for Professional Dog Trainers (CCPDT) is an independent certifying organization for professional dog trainers and is highly regarded as the gold standard in dog training. There are two certifications most trainers aspire to achieve in their career: The CPDT-KA (Certified Professional Dog Trainer - Knowledge Assessed) and CPDT-KSA (Certified Professional Dog Trainer - Knowledge and Skills Assessed).</p>
-                  <p className="mb-0">The online dog training course provided by QC was developed to prepare students for the CPDT-KA exam. You can learn more about obtaining your CPDT certification <Link href="https://www.ccpdt.org/certification/dog-trainer-certification/about-the-examination/"><a className="link text-primary">here</a></Link>.</p>
+                  <p className="mb-0">The online dog training course provided by QC was developed to prepare students for the CPDT-KA exam. You can learn more about obtaining your CPDT certification <a href="https://www.ccpdt.org/certification/dog-trainer-certification/about-the-examination/" className="link text-primary">here</a>.</p>
                 </QuestionAnswer>
                 <QuestionAnswer question="Will I be able to receive discounts toward dog training tools and equipment as a student or graduate?" index={i++}>
-                  <p className="mb-0">Yes! QC Pet Studies students and graduates are eligible to receive discounts from a variety of pet retailers. Find a full list of preferred suppliers <Link href=" https://www.doggroomingcourse.com/your-dog-grooming-career/discounts-for-grooming-students/"><a className="link text-primary">here</a></Link>.</p>
+                  <p className="mb-0">Yes! QC Pet Studies students and graduates are eligible to receive discounts from a variety of pet retailers. Find a full list of preferred suppliers <Link href="/resources/your-dog-grooming-career/discounts-for-grooming-students"><a className="link text-primary">here</a></Link>.</p>
                 </QuestionAnswer>
                 <QuestionAnswer question="How much can you earn as a professional dog trainer?" index={i++}>
                   <p>A professional dog trainer's salary varies depending on the level of experience, skill, location, and the type of services you offer. A dog trainer can expect to earn between $21,550 and $62,040 US per year.</p>
@@ -173,9 +173,13 @@ const FAQPage: NextPage = () => {
       <style jsx>{`
         #grooming { background-color: #f7f7f7 !important; }
       `}</style>
-    </DefaultLayout>
+    </>
   );
 };
+
+FAQPage.getLayout = page => (
+  <DefaultLayout secondaryTitle="FAQ" secondaryNavLinks={secondaryNavLinks}>{page}</DefaultLayout>
+);
 
 type QuestionAnswerProps = {
   question: string;

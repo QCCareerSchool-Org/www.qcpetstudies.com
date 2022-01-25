@@ -4,7 +4,6 @@ import Link from 'next/link';
 import { ReactElement, ReactNode } from 'react';
 import { FaBriefcase, FaClipboard, FaRegFileAlt, FaRss, FaTags } from 'react-icons/fa';
 
-import { DefaultLayout } from '../../components/DefaultLayout';
 import { SEO } from '../../components/SEO';
 import { useScreenWidth } from '../../hooks/useScreenWidth';
 import ReviewDogGroomingCourse from '../../images/a-review-of-dog-grooming-course.jpg';
@@ -23,7 +22,7 @@ const DogGroomingCareerPage: NextPage = () => {
   const lgOrGreater = screenWidth >= 992;
 
   return (
-    <DefaultLayout>
+    <>
       <SEO
         title="Your Dog Grooming Career"
         description="There are different career paths a professional dog groomer can take. Choose the path that's right for you!"
@@ -154,8 +153,7 @@ const DogGroomingCareerPage: NextPage = () => {
           </div>
         </div>
       </section>
-
-    </DefaultLayout>
+    </>
   );
 };
 

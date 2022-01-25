@@ -1,4 +1,3 @@
-import { NextPage } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -11,10 +10,11 @@ import DogGroomingToolsBookImage from '../../images/books/dog-grooming-tools.png
 import DogGroomerCareerImage from '../../images/cards/dog-groomer-career.jpg';
 import LearningInClassOnlineImage from '../../images/cards/learning-in-class-online.jpg';
 import StudentGradFeaturesImage from '../../images/cards/student-grad-features.jpg';
+import type { NextPageWithLayout } from '../_app';
 
-const DogGroomingResourcesPage: NextPage = () => {
+const DogGroomingResourcesPage: NextPageWithLayout = () => {
   return (
-    <DefaultLayout>
+    <>
       <SEO
         title="Dog Gromming Resources"
         description="Resources and Downloads to help you get through your online dog grooming class."
@@ -117,9 +117,10 @@ const DogGroomingResourcesPage: NextPage = () => {
           </div>
         </div>
       </section>
-
-    </DefaultLayout>
+    </>
   );
 };
+
+DogGroomingResourcesPage.getLayout = page => <DefaultLayout footerCTAType="grooming">{page}</DefaultLayout>;
 
 export default DogGroomingResourcesPage;

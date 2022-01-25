@@ -6,14 +6,13 @@ import Link from 'next/link';
 import { useEffect } from 'react';
 import { FaPaw } from 'react-icons/fa';
 
-import { DefaultLayout } from '../components/DefaultLayout';
 import { GoogleAdsLeadScript } from '../components/GoogleAdsLeadScript';
 import { SEO } from '../components/SEO';
 import { useScreenWidth } from '../hooks/useScreenWidth';
 import CatalogBackground from '../images/backgrounds/white-bichon-frise-circle-cut.jpg';
 import { fbqLead } from '../lib/fbq';
 
-const urlencodedAsync = promisify(urlencoded());
+const urlencodedAsync = promisify(urlencoded({ extended: false }));
 
 type Props = {
   emailAddress: string | null;
@@ -28,7 +27,7 @@ const ThankYouCatalogPage: NextPage<Props> = ({ emailAddress }) => {
   }, []);
 
   return (
-    <DefaultLayout>
+    <>
       <SEO
         title="Here's Your Course Preview"
         description="Get your Dog Training Course Preview Now"
@@ -49,17 +48,18 @@ const ThankYouCatalogPage: NextPage<Props> = ({ emailAddress }) => {
           </div>
         </div>
       </section>
-    </DefaultLayout>
+    </>
   );
 };
 
 // eslint-disable-next-line @typescript-eslint/require-await
-export const getServerSideProps: GetServerSideProps = async ({ req, res }) => {
+export const getServerSideProps: GetServerSideProps<Props> = async ({ req, res }) => {
   if (req.method === 'POST') {
     await urlencodedAsync(req, res);
-    type RequestWithBody = typeof req & { body: any };
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    type RequestWithBody = typeof req & { body: Record<string, any> };
     const body = (req as RequestWithBody).body;
-    return { props: { emailAddress: body?.emailAddress ?? null } };
+    return { props: { emailAddress: typeof body?.emailAddress === 'string' ? body?.emailAddress : null } };
   }
   return { props: { emailAddress: null } };
 };

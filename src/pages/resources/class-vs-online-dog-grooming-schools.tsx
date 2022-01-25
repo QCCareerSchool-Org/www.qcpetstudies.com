@@ -3,14 +3,13 @@ import Image from 'next/image';
 import { ReactElement } from 'react';
 import { FaGraduationCap, FaLaptop, FaUniversity } from 'react-icons/fa';
 
-import { DefaultLayout } from '../../components/DefaultLayout';
 import { SEO } from '../../components/SEO';
 import FirstSectionBackground from '../../images/backgrounds/inclass_vs_online_bg.jpg';
 
 const ClassVsOnlineLearning: NextPage = () => {
 
   return (
-    <DefaultLayout>
+    <>
       <SEO
         title="In-Class vs. Online Dog Grooming Schools"
         description="In-Class vs. Online Dog Grooming Schools"
@@ -103,7 +102,7 @@ const ClassVsOnlineLearning: NextPage = () => {
         inClass="Industry-Recognized Certificate of Completion"
         online={<strong>Industry-Recognized Certificate of Completion</strong>}
       />
-    </DefaultLayout>
+    </>
   );
 };
 
