@@ -1,18 +1,18 @@
-import { NextPage } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 import { BsBook } from 'react-icons/bs';
 
 import { Bar } from '../../../components/Bar';
+import { DefaultLayout } from '../../../components/DefaultLayout';
 import { SEO } from '../../../components/SEO';
 import { useScreenWidth } from '../../../hooks/useScreenWidth';
-
 import AssignmentBackground from '../../../images/backgrounds/your-career-bg.jpg';
 import CameraIcon from '../../../images/camera.svg';
 import CheckedIcon from '../../../images/checked.svg';
 import RedDesktopIcon from '../../../images/desktop-red.svg';
+import type { NextPageWithLayout } from '../../_app';
 
-const GroomingAssignment: NextPage = () => {
+const GroomingAssignment: NextPageWithLayout = () => {
   const screenWidth = useScreenWidth();
   const mdOrLarger = screenWidth >= 768;
   const lgOrLarger = screenWidth >= 992;
@@ -158,5 +158,7 @@ const GroomingAssignment: NextPage = () => {
     </>
   );
 };
+
+GroomingAssignment.getLayout = page => <DefaultLayout footerCTAType="grooming">{page}</DefaultLayout>;
 
 export default GroomingAssignment;

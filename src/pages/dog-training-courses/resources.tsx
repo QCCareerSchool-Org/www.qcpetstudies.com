@@ -1,14 +1,15 @@
-import { NextPage } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 
+import { DefaultLayout } from '../../components/DefaultLayout';
 import { SEO } from '../../components/SEO';
 import DogTrainingResourcesBackground from '../../images/backgrounds/working-at-home-office-with-dog.jpg';
 import DogTrainingCareer from '../../images/cards/dog-training-career.jpg';
 import LearningInClassOnline from '../../images/cards/learning-in-class-online.jpg';
 import StudentGrad from '../../images/cards/student-grad.jpg';
+import type { NextPageWithLayout } from '../_app';
 
-const DogTrainingResourcesPage: NextPage = () => (
+const DogTrainingResourcesPage: NextPageWithLayout = () => (
   <>
     <SEO
       title="Dog Training Resources"
@@ -81,5 +82,7 @@ const DogTrainingResourcesPage: NextPage = () => (
     </section>
   </>
 );
+
+DogTrainingResourcesPage.getLayout = page => <DefaultLayout footerCTAType="training">{page}</DefaultLayout>;
 
 export default DogTrainingResourcesPage;

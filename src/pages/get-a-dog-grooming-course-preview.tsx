@@ -17,7 +17,7 @@ import Step1EnrollImage from '../images/step-1-enroll.svg';
 import Step2SubmitImage from '../images/step-2-submit.svg';
 import Step3CertificateImage from '../images/step-3-certificate.svg';
 import { getRandomIntInclusive } from '../lib/randomInt';
-import { NextPageWithLayout } from './_app';
+import type { NextPageWithLayout } from './_app';
 
 const formAction = 'https://go.qcpetstudies.com/l/947642/2021-12-05/6h9rv';
 

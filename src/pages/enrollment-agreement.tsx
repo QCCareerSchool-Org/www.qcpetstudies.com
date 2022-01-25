@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 
 import { SEO } from '../components/SEO';
 import { TextLayout } from '../components/TextLayout';
-import { NextPageWithLayout } from './_app';
+import type { NextPageWithLayout } from './_app';
 
 const AgreementPage: NextPageWithLayout = () => {
   const [ emailAddress, setEmailAddress ] = useState('');

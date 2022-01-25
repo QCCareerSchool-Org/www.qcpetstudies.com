@@ -1,7 +1,7 @@
-import { NextPage } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 
+import { DefaultLayout } from '../../components/DefaultLayout';
 import { SEO } from '../../components/SEO';
 import DogGroomingResourcesBackground from '../../images/backgrounds/dog-grooming-resources.jpg';
 import BecomingDogGroomerBookImage from '../../images/books/becoming-a-dog-groomer.png';
@@ -10,8 +10,9 @@ import DogGroomingToolsBookImage from '../../images/books/dog-grooming-tools.png
 import DogGroomerCareerImage from '../../images/cards/dog-groomer-career.jpg';
 import LearningInClassOnlineImage from '../../images/cards/learning-in-class-online.jpg';
 import StudentGradFeaturesImage from '../../images/cards/student-grad-features.jpg';
+import type { NextPageWithLayout } from '../_app';
 
-const DogGroomingResourcesPage: NextPage = () => {
+const DogGroomingResourcesPage: NextPageWithLayout = () => {
   return (
     <>
       <SEO
@@ -119,5 +120,7 @@ const DogGroomingResourcesPage: NextPage = () => {
     </>
   );
 };
+
+DogGroomingResourcesPage.getLayout = page => <DefaultLayout footerCTAType="grooming">{page}</DefaultLayout>;
 
 export default DogGroomingResourcesPage;

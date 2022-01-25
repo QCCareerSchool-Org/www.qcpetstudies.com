@@ -1,4 +1,4 @@
-import { GetServerSideProps, NextPage } from 'next';
+import { GetServerSideProps } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 import Accordion from 'react-bootstrap/Accordion';
@@ -6,6 +6,7 @@ import Accordion from 'react-bootstrap/Accordion';
 import { AccordionSection } from '../../../components/AccordionSection';
 import { AccordionToggle } from '../../../components/AccordionToggle';
 import { Bar } from '../../../components/Bar';
+import { DefaultLayout } from '../../../components/DefaultLayout';
 import { PriceSection } from '../../../components/PriceSection';
 import { SEO } from '../../../components/SEO';
 import { useScreenWidth } from '../../../hooks/useScreenWidth';
@@ -21,6 +22,7 @@ import { getLocation } from '../../../lib/getLocation';
 import { lookupPrices } from '../../../lib/lookupPrices';
 import type { Location } from '../../../models/location';
 import type { PriceResult } from '../../../models/price';
+import type { NextPageWithLayout } from '../../_app';
 
 const courseCodes = [ 'ds' ];
 
@@ -29,7 +31,7 @@ type Props = {
   price: PriceResult;
 };
 
-const BreedStylingPage: NextPage<Props> = ({ price }) => {
+const BreedStylingPage: NextPageWithLayout<Props> = ({ price }) => {
   const screenWidth = useScreenWidth();
   const lgOrGreater = screenWidth >= 992;
 
@@ -275,6 +277,8 @@ const BreedStylingPage: NextPage<Props> = ({ price }) => {
     </>
   );
 };
+
+BreedStylingPage.getLayout = page => <DefaultLayout footerCTAType="grooming">{page}</DefaultLayout>;
 
 export const getServerSideProps: GetServerSideProps<Props> = async context => {
   const location = await getLocation(context);

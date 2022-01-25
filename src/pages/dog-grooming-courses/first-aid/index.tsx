@@ -15,7 +15,7 @@ import { getLocation } from '../../../lib/getLocation';
 import { lookupPrices } from '../../../lib/lookupPrices';
 import type { Location } from '../../../models/location';
 import type { PriceResult } from '../../../models/price';
-import { NextPageWithLayout } from '../../_app';
+import type { NextPageWithLayout } from '../../_app';
 
 const courseCodes = [ 'fa' ];
 

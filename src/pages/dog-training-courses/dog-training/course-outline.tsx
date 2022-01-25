@@ -1,4 +1,3 @@
-import { NextPage } from 'next';
 import Image from 'next/image';
 import { ReactElement, useState } from 'react';
 import { Accordion, Modal } from 'react-bootstrap';
@@ -6,6 +5,7 @@ import { FaBars } from 'react-icons/fa';
 
 import { AccordionSection } from '../../../components/AccordionSection';
 import { AccordionToggle } from '../../../components/AccordionToggle';
+import { DefaultLayout } from '../../../components/DefaultLayout';
 import { SEO } from '../../../components/SEO';
 import { UnitStats } from '../../../components/UnitStats';
 import { useScreenWidth } from '../../../hooks/useScreenWidth';
@@ -20,10 +20,11 @@ import UnitEImage from '../../../images/dt-full-outline-unit-e.jpg';
 import UnitFImage from '../../../images/dt-full-outline-unit-f.jpg';
 import UnitGImage from '../../../images/dt-full-outline-unit-g.jpg';
 import UnitHImage from '../../../images/dt-full-outline-unit-h.jpg';
+import type { NextPageWithLayout } from '../../_app';
 
 const iconSize = 50;
 
-const CourseOutlinePage: NextPage = () => {
+const CourseOutlinePage: NextPageWithLayout = () => {
   const screenWidth = useScreenWidth();
   const lgOrGreater = screenWidth >= 992;
 
@@ -280,6 +281,8 @@ const CourseOutlinePage: NextPage = () => {
     </>
   );
 };
+
+CourseOutlinePage.getLayout = page => <DefaultLayout footerCTAType="training">{page}</DefaultLayout>;
 
 export default CourseOutlinePage;
 

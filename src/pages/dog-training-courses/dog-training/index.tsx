@@ -31,7 +31,7 @@ import { getLocation } from '../../../lib/getLocation';
 import { lookupPrices } from '../../../lib/lookupPrices';
 import type { Location } from '../../../models/location';
 import type { PriceResult } from '../../../models/price';
-import { NextPageWithLayout } from '../../_app';
+import type { NextPageWithLayout } from '../../_app';
 
 const headerIconSize = 20;
 const iconSize = 36;
@@ -327,7 +327,7 @@ const DogTrainingPage: NextPageWithLayout<Props> = ({ price }) => {
   );
 };
 
-DogTrainingPage.getLayout = page => <DefaultLayout secondaryTitle="Dog Training Course">{page}</DefaultLayout>;
+DogTrainingPage.getLayout = page => <DefaultLayout footerCTAType="training" secondaryTitle="Dog Training Course">{page}</DefaultLayout>;
 
 export const getServerSideProps: GetServerSideProps<Props> = async context => {
   const location = await getLocation(context);

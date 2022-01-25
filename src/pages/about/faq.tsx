@@ -8,7 +8,7 @@ import { AccordionToggle } from '../../components/AccordionToggle';
 import { DefaultLayout } from '../../components/DefaultLayout';
 import { SEO } from '../../components/SEO';
 import DoGInBedWithStick from '../../images/backgrounds/dog-in-bed-with-stick.jpg';
-import { NextPageWithLayout } from '../_app';
+import type { NextPageWithLayout } from '../_app';
 
 const secondaryNavLinks = [
   { name: 'About QC Pet Studies', url: '#about' },

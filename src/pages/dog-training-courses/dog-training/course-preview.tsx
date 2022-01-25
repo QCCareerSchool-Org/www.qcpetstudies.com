@@ -16,7 +16,7 @@ import { getLocation } from '../../../lib/getLocation';
 import { lookupPrices } from '../../../lib/lookupPrices';
 import { Location } from '../../../models/location';
 import { PriceResult } from '../../../models/price';
-import { NextPageWithLayout } from '../../_app';
+import type { NextPageWithLayout } from '../../_app';
 
 export const courseCodes = [ 'dt' ];
 

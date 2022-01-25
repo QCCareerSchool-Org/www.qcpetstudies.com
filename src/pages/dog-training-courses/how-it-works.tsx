@@ -1,8 +1,8 @@
-import { NextPage } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 
 import { Bar } from '../../components/Bar';
+import { DefaultLayout } from '../../components/DefaultLayout';
 import { SEO } from '../../components/SEO';
 import { useScreenWidth } from '../../hooks/useScreenWidth';
 import HandReachingTowardDog from '../../images/backgrounds/hand-reaching-toward-dog.jpg';
@@ -10,8 +10,9 @@ import Clicker from '../../images/clicker-on-laynard-light-background.jpg';
 import GraduationCertificateImage from '../../images/IDTP-certification-gold.svg';
 import ManAndDogWalking from '../../images/man-and-white-dog-walking-in-a-field.jpg';
 import PuppyOnBack from '../../images/puppy-lying-on-back.jpg';
+import type { NextPageWithLayout } from '../_app';
 
-const DogTrainingHowItWorksPage: NextPage = () => {
+const DogTrainingHowItWorksPage: NextPageWithLayout = () => {
   const screenWidth = useScreenWidth();
   const lgOrGreater = screenWidth >= 992;
 
@@ -139,5 +140,7 @@ const DogTrainingHowItWorksPage: NextPage = () => {
     </>
   );
 };
+
+DogTrainingHowItWorksPage.getLayout = page => <DefaultLayout footerCTAType="training">{page}</DefaultLayout>;
 
 export default DogTrainingHowItWorksPage;

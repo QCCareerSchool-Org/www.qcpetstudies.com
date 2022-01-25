@@ -1,8 +1,8 @@
-import { NextPage } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 
 import { Bar } from '../../components/Bar';
+import { DefaultLayout } from '../../components/DefaultLayout';
 import { SEO } from '../../components/SEO';
 import { useScreenWidth } from '../../hooks/useScreenWidth';
 import GraduateBackground from '../../images/backgrounds/dog-in-graduatation-cap.jpg';
@@ -14,10 +14,11 @@ import IconCompass from '../../images/icon-compass.svg';
 import IconMagnifyingGlass from '../../images/icon-magnifying-glass.svg';
 import IconMegaphone from '../../images/icon-megaphone.svg';
 import IconTime from '../../images/icon-time.svg';
+import type { NextPageWithLayout } from '../_app';
 
 const iconSize = 50;
 
-const DogGroomingHowItWorksPage: NextPage = () => {
+const DogGroomingHowItWorksPage: NextPageWithLayout = () => {
   const screenWidth = useScreenWidth();
   const lgOrGreater = screenWidth >= 992;
 
@@ -154,5 +155,7 @@ const DogGroomingHowItWorksPage: NextPage = () => {
     </>
   );
 };
+
+DogGroomingHowItWorksPage.getLayout = page => <DefaultLayout footerCTAType="grooming">{page}</DefaultLayout>;
 
 export default DogGroomingHowItWorksPage;

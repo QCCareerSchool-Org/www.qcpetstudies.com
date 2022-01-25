@@ -1,14 +1,16 @@
-import { GetServerSideProps, NextPage } from 'next';
+import { GetServerSideProps } from 'next';
 import Image from 'next/image';
 import { useMemo } from 'react';
 
 import { BrochureForm } from '../../../components/BrochureForm';
+import { DefaultLayout } from '../../../components/DefaultLayout';
 import { FreeFirstAidSection } from '../../../components/FreeFirstAidSection';
 import { HowTheCoursesWorkSection } from '../../../components/HowTheCoursesWorkSection';
 import { SEO } from '../../../components/SEO';
 import CourseCatalogImage from '../../../images/bottom-ipad-shepard.jpg';
 import FullKitImage from '../../../images/Kit-Blue-bg.jpg';
 import { getRandomIntInclusive } from '../../../lib/randomInt';
+import type { NextPageWithLayout } from '../../_app';
 
 const formAction = 'https://go.qcpetstudies.com/l/947642/2021-12-05/6h9rv';
 
@@ -16,7 +18,7 @@ type Props = {
   testGroup: number;
 };
 
-const ProfessionalDogGroomerPage: NextPage<Props> = ({ testGroup }) => {
+const ProfessionalDogGroomerPage: NextPageWithLayout<Props> = ({ testGroup }) => {
   const hiddenFields = useMemo(() => ([ { key: 'testGroup', value: testGroup } ]), [ testGroup ]);
 
   return (
@@ -111,6 +113,8 @@ const ProfessionalDogGroomerPage: NextPage<Props> = ({ testGroup }) => {
     </>
   );
 };
+
+ProfessionalDogGroomerPage.getLayout = page => <DefaultLayout footerCTAType="grooming">{page}</DefaultLayout>;
 
 // eslint-disable-next-line @typescript-eslint/require-await
 export const getServerSideProps: GetServerSideProps<Props> = async context => {

@@ -1,17 +1,18 @@
-import { NextPage } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
 
 import { Bar } from '../../components/Bar';
+import { DefaultLayout } from '../../components/DefaultLayout';
 import { SEO } from '../../components/SEO';
 import GroomingKitBackground from '../../images/backgrounds/yorkie-on-a-grooming-table.jpg';
 import ClipperCombsImage from '../../images/clippers-combs-kit-550.jpg';
 import FullKitImage from '../../images/dog-grooming-kit.jpg';
 import GroomingScissorsImage from '../../images/Pro-Grooming-Scissors-550x550.jpg';
 import StarterKitImage from '../../images/starter-kit.jpg';
+import type { NextPageWithLayout } from '../_app';
 
-const DogGroomingKitPage: NextPage = () => (
+const DogGroomingKitPage: NextPageWithLayout = () => (
   <>
     <SEO
       title="Dog Grooming Kit"
@@ -92,5 +93,7 @@ const DogGroomingKitPage: NextPage = () => (
     </section>
   </>
 );
+
+DogGroomingKitPage.getLayout = page => <DefaultLayout footerCTAType="grooming">{page}</DefaultLayout>;
 
 export default DogGroomingKitPage;

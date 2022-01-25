@@ -1,6 +1,6 @@
 import { DeadlineFunnelScript } from '../../../components/DeadlineFunnelScript';
 import { LandingPageLayout } from '../../../components/LandingPageLayout';
-import { NextPageWithLayout } from '../../_app';
+import type { NextPageWithLayout } from '../../_app';
 import CoursePreview, { getServerSideProps, Props } from './course-preview';
 
 const Page: NextPageWithLayout<Props> = props => (

@@ -8,7 +8,7 @@ import { SEO } from '../components/SEO';
 import { useScreenWidth } from '../hooks/useScreenWidth';
 import CatalogImage from '../images/preview-landing-page-training.jpg';
 import { getRandomIntInclusive } from '../lib/randomInt';
-import { NextPageWithLayout } from './_app';
+import type { NextPageWithLayout } from './_app';
 
 const formAction = 'https://go.qcpetstudies.com/l/947642/2021-12-05/6h9rx';
 

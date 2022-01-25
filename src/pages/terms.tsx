@@ -1,6 +1,6 @@
 import { SEO } from '../components/SEO';
 import { TextLayout } from '../components/TextLayout';
-import { NextPageWithLayout } from './_app';
+import type { NextPageWithLayout } from './_app';
 
 const TermsPage: NextPageWithLayout = () => (
   <>
