@@ -45,7 +45,7 @@ const FAQPage: NextPageWithLayout = () => {
               <h2 className="text-center mb-4">Questions About QC Pet Studies</h2>
               <Accordion>
                 <QuestionAnswer question="Is QC Pet Studies an accredited online school?" index={i++}>
-                  <p className="mb-0">Yes. QC Pet Studies is a faculty of QC Career School, which is an accredited business with the Better Business Bureau. QC holds the <a href="https://www.bbb.org/ottawa/business-reviews/correspondence-schools/qc-career-school-in-ottawa-on-4175" className="link-primary">highest possible consumer satisfaction standing (A+) with the BBB</a>.</p>
+                  <p className="mb-0">Yes. QC Pet Studies is a faculty of QC Career School, which is an accredited business with the Better Business Bureau. QC holds the <a href="https://www.bbb.org/ottawa/business-reviews/correspondence-schools/qc-career-school-in-ottawa-on-4175" target="_blank" rel="noopener noreferrer" className="link-primary">highest possible consumer satisfaction standing (A+) with the BBB</a>.</p>
                 </QuestionAnswer>
                 <QuestionAnswer question="What type of payment plans does QC offer?" index={i++}>
                   <p className="mb-0">When you enroll with QC, you can choose to either receive a discount to pay your tuition in full OR opt for a tuition payment plan. On a payment plan, you pay an initial deposit to enroll, then regular monthly payments. Monthly payments are withdrawn on the date of your choosing so you can schedule your payments to coincide with your budget.</p>
@@ -66,7 +66,7 @@ const FAQPage: NextPageWithLayout = () => {
                     <li>A desktop computer, laptop, or tablet</li>
                     <li>A smart phone and/or camera with photograph and video capability</li>
                     <li>An up-to-date web browser</li>
-                    <li>An up-to-date PDF reader, such as <a href="https://get.adobe.com/reader" className="link-primary">Adobe Reader</a></li>
+                    <li>An up-to-date PDF reader, such as <a href="https://get.adobe.com/reader" target="_blank" rel="noopener noreferrer" className="link-primary">Adobe Reader</a></li>
                   </ul>
                 </QuestionAnswer>
                 <QuestionAnswer question="What do I do if I get stuck on a course assignment?" index={i++}>
@@ -100,7 +100,7 @@ const FAQPage: NextPageWithLayout = () => {
                   <p className="mb-0">No, you do not need any previous experience in the dog grooming industry to succeed in the QC Pet Studies courses. The online dog grooming course is comprehensive and will teach you all the fundamentals of dog grooming before moving on to more advanced techniques. To learn more, visit the <Link href="/online-courses/dog-grooming"><a className="link text-primary">dog grooming course overview</a></Link> page.</p>
                 </QuestionAnswer>
                 <QuestionAnswer question="Will I need to purchase anything else to complete the dog groomer course?" index={i++}>
-                  <p className="mb-0">Yes. You will need some additional tools and products to complete your practical assignments, all of which will be valuable investments for your career. Find a list of all the items you need in the <a href="/what-you-need-to-get-started.pdf" className="link text-primary">Getting Started Guide</a>.</p>
+                  <p className="mb-0">Yes. You will need some additional tools and products to complete your practical assignments, all of which will be valuable investments for your career. Find a list of all the items you need in the <a href="/documents/grooming-what-you-need-to-get-started.pdf" target="_blank" rel="noopener noreferrer" className="link text-primary">Getting Started Guide</a>.</p>
                 </QuestionAnswer>
                 <QuestionAnswer question="How long will it take to complete my online dog grooming class?" index={i++}>
                   <p>With QC's online courses, you work at your own pace. You decide how much time per week you want to spend developing your grooming skills. QC's flexible dog groomer training has no deadlines for completing course assignments. Typically, students who work on their grooming assignments for a short period each week will complete their online course within six months to a year.</p>
@@ -115,7 +115,7 @@ const FAQPage: NextPageWithLayout = () => {
                   <p className="mb-0">There are a number of dog grooming associations that you can usually join by paying an annual membership fee. In most cases, these associations also have their own certification/qualification exams or requirements. QC's online dog grooming course was written to meet the requirements of the National Dog Groomers Association of America. Completing the online dog grooming course will not only train you to become a successful professional dog groomer but will also prepare you to take the NDGAA Certification Exam, should you choose to take it.</p>
                 </QuestionAnswer>
                 <QuestionAnswer question="Will I be able to receive discounts toward dog grooming tools and equipment as a student or graduate?" index={i++}>
-                  <p className="mb-0">Yes! QC Pet Studies students and graduates are eligible to receive discounts from a variety of pet retailers. Find a full list of preferred dog grooming suppliers <Link href="https://www.doggroomingcourse.com/your-dog-grooming-career/discounts-for-grooming-students/"><a className="link text-primary">here</a></Link>.</p>
+                  <p className="mb-0">Yes! QC Pet Studies students and graduates are eligible to receive discounts from a variety of pet retailers. Find a full list of preferred dog grooming suppliers <Link href="/about/student-discounts"><a className="link text-primary">here</a></Link>.</p>
                 </QuestionAnswer>
                 <QuestionAnswer question="How much can you earn as a professional dog groomer?" index={i++}>
                   <p>A professional dog groomer's salary varies depending on the level of experience, skill, location, and the number of dogs groomed per day. A dog groomer can expect to earn between $25,000 and $45,000 US per year.</p>
@@ -155,7 +155,7 @@ const FAQPage: NextPageWithLayout = () => {
                 <QuestionAnswer question="Do I need a state or provincial dog training license to work in the industry?" index={i++}>
                   <p>Dog training is an unregulated field in most states and provinces. You should always double-check local regulations, but odds are you do not need any kind of dog training license or specific education (including a minimum number of training hours) in order to become a dog trainer.</p>
                   <p>The Certification Council for Professional Dog Trainers (CCPDT) is an independent certifying organization for professional dog trainers and is highly regarded as the gold standard in dog training. There are two certifications most trainers aspire to achieve in their career: The CPDT-KA (Certified Professional Dog Trainer - Knowledge Assessed) and CPDT-KSA (Certified Professional Dog Trainer - Knowledge and Skills Assessed).</p>
-                  <p className="mb-0">The online dog training course provided by QC was developed to prepare students for the CPDT-KA exam. You can learn more about obtaining your CPDT certification <a href="https://www.ccpdt.org/certification/dog-trainer-certification/about-the-examination/" className="link text-primary">here</a>.</p>
+                  <p className="mb-0">The online dog training course provided by QC was developed to prepare students for the CPDT-KA exam. You can learn more about obtaining your CPDT certification <a href="https://www.ccpdt.org/certification/dog-trainer-certification/about-the-examination/" target="_blank" rel="noopener noreferrer" className="link text-primary">here</a>.</p>
                 </QuestionAnswer>
                 <QuestionAnswer question="Will I be able to receive discounts toward dog training tools and equipment as a student or graduate?" index={i++}>
                   <p className="mb-0">Yes! QC Pet Studies students and graduates are eligible to receive discounts from a variety of pet retailers. Find a full list of preferred suppliers <Link href="/resources/your-dog-grooming-career/discounts-for-grooming-students"><a className="link text-primary">here</a></Link>.</p>
