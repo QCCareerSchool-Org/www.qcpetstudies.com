@@ -24,7 +24,7 @@ const StudentExperiencePage: NextPage = () => {
       />
 
       <section id="top" className="bg-dark">
-        <Image src={StudentExperienceBackground} layout="fill" objectFit="cover" objectPosition="center" placeholder="blur" alt="dog" />
+        <Image src={StudentExperienceBackground} layout="fill" objectFit="cover" objectPosition="center" placeholder="blur" alt="dog" priority />
         <div className="container text-center">
           <div className="row">
             <h1>Student Experience</h1>

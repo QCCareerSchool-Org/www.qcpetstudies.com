@@ -34,7 +34,7 @@ const SuccessGuaranteedPage: NextPageWithLayout<Props> = ({ location, price }) =
     />
 
     <section id="top" className="bg-dark">
-      <Image src={DryingDogBg} layout="fill" objectFit="cover" objectPosition="center" alt="Person drying dog with dryer" />
+      <Image src={DryingDogBg} layout="fill" objectFit="cover" objectPosition="center" alt="Person drying dog with dryer" priority />
       <div className="image-overlay-gradient" />
       <div className="container text-center">
         <div className="row justify-content-center">

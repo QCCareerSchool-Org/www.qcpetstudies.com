@@ -7,7 +7,7 @@ import DoGInBedWithStick from '../images/backgrounds/dog-in-bed-with-stick.jpg';
 const Custom404 = (): ReactElement => (
   <>
     <section id="top" className="bg-dark">
-      <Image src={DoGInBedWithStick} layout="fill" objectFit="cover" objectPosition="right" placeholder="blur" alt="dog in a dog bed, holding a stick" />
+      <Image src={DoGInBedWithStick} layout="fill" objectFit="cover" objectPosition="right" placeholder="blur" alt="dog in a dog bed, holding a stick" priority />
       <div className="container text-center text-shadow">
         <div className="row">
           <div className="col-12 col-lg-10 offset-lg-1">

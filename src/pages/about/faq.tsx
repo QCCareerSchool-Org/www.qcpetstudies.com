@@ -28,7 +28,7 @@ const FAQPage: NextPageWithLayout = () => {
       />
 
       <section id="top" className="bg-dark">
-        <Image src={DoGInBedWithStick} layout="fill" objectFit="cover" objectPosition="right" placeholder="blur" alt="dog in a dog bed, holding a stick" />
+        <Image src={DoGInBedWithStick} layout="fill" objectFit="cover" objectPosition="right" placeholder="blur" alt="dog in a dog bed, holding a stick" priority />
         <div className="container text-center">
           <div className="row justify-content-center">
             <div className="col-12 col-lg-10 text-white">

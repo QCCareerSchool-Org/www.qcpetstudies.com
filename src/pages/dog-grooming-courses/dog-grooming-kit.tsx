@@ -21,7 +21,7 @@ const DogGroomingKitPage: NextPageWithLayout = () => (
     />
 
     <section id="top" className="bg-dark">
-      <Image src={GroomingKitBackground} layout="fill" objectFit="cover" objectPosition="center" placeholder="blur" alt="grooming kit" />
+      <Image src={GroomingKitBackground} layout="fill" objectFit="cover" objectPosition="center" placeholder="blur" alt="grooming kit" priority />
       <div className="container text-center">
         <h1>Dog grooming kit</h1>
         <p className="lead mb-0">Included with your online course!</p>

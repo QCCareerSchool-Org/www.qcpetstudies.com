@@ -40,7 +40,7 @@ const CourseOutlinePage: NextPageWithLayout = () => {
       />
 
       <section id="top" className="bg-dark">
-        <Image src={CourseOutlineBackground} layout="fill" objectFit="cover" objectPosition="center" placeholder="blur" alt="Dog with man" />
+        <Image src={CourseOutlineBackground} layout="fill" objectFit="cover" objectPosition="center" placeholder="blur" alt="Dog with man" priority />
         <div className="image-overlay-gradient" />
         <div className="container text-center">
           <div className="row justify-content-center">

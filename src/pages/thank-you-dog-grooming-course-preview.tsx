@@ -35,7 +35,7 @@ const ThankYouCatalogPage: NextPage<Props> = ({ emailAddress }) => {
       />
       <GoogleAdsLeadScript conversionLabel="yZtFCL_BpW8Qv9uL_wM" emailAddress={emailAddress} />
       <section id="top" className="bg-black">
-        {mdOrGreater && <Image src={CatalogBackground} layout="fill" objectFit="cover" objectPosition="right" placeholder="blur" alt="white Bichon Frise with circle cut" />}
+        {mdOrGreater && <Image src={CatalogBackground} layout="fill" objectFit="cover" objectPosition="right" placeholder="blur" alt="white Bichon Frise with circle cut" priority />}
         <div className="container text-center text-md-start">
           <div className="row">
             <div className="col-12 col-md-6 col-lg-7 col-xl-8">

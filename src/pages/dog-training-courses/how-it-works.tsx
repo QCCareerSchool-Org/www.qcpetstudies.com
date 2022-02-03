@@ -25,7 +25,7 @@ const DogTrainingHowItWorksPage: NextPageWithLayout = () => {
       />
 
       <section id="top" className="bg-dark">
-        <Image src={HandReachingTowardDog} layout="fill" objectFit="cover" objectPosition="center" placeholder="blur" alt="a hand reaching out to pet a happy dog" />
+        <Image src={HandReachingTowardDog} layout="fill" objectFit="cover" objectPosition="center" placeholder="blur" alt="a hand reaching out to pet a happy dog" priority />
         <div className="container">
           <div className="row">
             <div className="col-12 col-md-10 col-lg-8">

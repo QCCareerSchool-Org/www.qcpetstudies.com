@@ -22,7 +22,7 @@ const StudentDiscountsPage: NextPage = () => (
     />
 
     <section id="top" className="bg-dark">
-      <Image src={StudentDiscountBackground} layout="fill" objectFit="cover" objectPosition="center" placeholder="blur" alt="Yorkie sticking out its tongue" />
+      <Image src={StudentDiscountBackground} layout="fill" objectFit="cover" objectPosition="center" placeholder="blur" alt="Yorkie sticking out its tongue" priority />
       <div className="container text-center">
         <div className="row justify-content-center">
           <div className="col-12 col-lg-10">

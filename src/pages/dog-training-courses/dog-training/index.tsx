@@ -95,7 +95,7 @@ const DogTrainingPage: NextPageWithLayout<Props> = ({ price }) => {
       />
 
       <section id="top" className="bg-dark">
-        <Image src={DTBackgroundImage} layout="fill" objectFit="cover" objectPosition="center" placeholder="blur" alt="Attentive Australian Shepherd Dog" />
+        <Image src={DTBackgroundImage} layout="fill" objectFit="cover" objectPosition="center" placeholder="blur" alt="Attentive Australian Shepherd Dog" priority />
         <div className="image-overlay-gradient" />
         <div className="container text-center">
           <div className="row mb-4">
