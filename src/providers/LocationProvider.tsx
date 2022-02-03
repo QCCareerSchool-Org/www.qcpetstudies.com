@@ -1,4 +1,3 @@
-import fetch from 'isomorphic-unfetch';
 import Cookies from 'js-cookie';
 import React, { ReactElement, ReactNode, useEffect, useState } from 'react';
 
