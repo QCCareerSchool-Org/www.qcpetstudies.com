@@ -8,21 +8,21 @@ type FBQ = {
 
 declare global {
   interface Window {
-    fbq: FBQ;
+    fbq?: FBQ;
   }
 }
 
 // log the page view with a specific URL
 export const fbqPageview = (url: string): void => {
-  window.fbq('trackCustom', 'VirtualPageView', { url });
+  window.fbq?.('trackCustom', 'VirtualPageView', { url });
 };
 
 // log the conversion
 export const fbqLead = (): void => {
-  window.fbq('track', 'Lead');
+  window.fbq?.('track', 'Lead');
 };
 
 // log a sale
 export const fbqSale = (enrollment: Enrollment): void => {
-  window.fbq('track', 'Purchase', { value: enrollment.cost, currency: enrollment.currencyCode });
+  window.fbq?.('track', 'Purchase', { value: enrollment.cost, currency: enrollment.currencyCode });
 };
