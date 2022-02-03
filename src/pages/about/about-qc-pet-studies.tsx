@@ -18,7 +18,7 @@ const AboutPage: NextPage = () => (
     />
 
     <section id="top" className="bg-dark">
-      <Image src={QcBackground} layout="fill" objectFit="cover" objectPosition="center" placeholder="blur" alt="happy dog panting" />
+      <Image src={QcBackground} layout="fill" objectFit="cover" objectPosition="center" placeholder="blur" alt="happy dog panting" priority />
       <div className="container">
         <h1 className="fw-normal"><strong>About</strong><br />QC Pet Studies</h1>
       </div>

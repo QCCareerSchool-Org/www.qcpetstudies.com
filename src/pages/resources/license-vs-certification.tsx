@@ -24,7 +24,7 @@ const LicenseVsCertification: NextPage = () => {
       />
 
       <section id="top" className="bg-dark">
-        <Image src={GroomerDemattingBackground} layout="fill" objectFit="cover" objectPosition="center" placeholder="blur" alt="groomer dematting a dog" />
+        <Image src={GroomerDemattingBackground} layout="fill" objectFit="cover" objectPosition="center" placeholder="blur" alt="groomer dematting a dog" priority />
         <div className="image-overlay-gradient" />
         <div className="container text-center">
           <h1>Dog Grooming License vs. Certification</h1>

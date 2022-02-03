@@ -77,7 +77,7 @@ const WelcomeToTheSchoolPage: NextPage<Props> = ({ data, errorCode }) => {
       <GoogleAdsSaleScript conversionLabel="xFpdCJ3DpW8Qv9uL_wM" enrollment={data.enrollment} />
 
       <section id="top" className="bg-dark">
-        <Image src={HappyPuppyRunning} layout="fill" objectFit="cover" objectPosition="center" placeholder="blur" alt="happy puppy running" />
+        <Image src={HappyPuppyRunning} layout="fill" objectFit="cover" objectPosition="center" placeholder="blur" alt="happy puppy running" priority />
         <div className="container text-center">
           <div className="row justify-content-center">
             <div className="col-12 col-lg-10">

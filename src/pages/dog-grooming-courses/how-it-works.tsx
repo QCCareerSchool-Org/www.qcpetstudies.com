@@ -31,7 +31,7 @@ const DogGroomingHowItWorksPage: NextPageWithLayout = () => {
       />
 
       <section id="top" className="bg-dark">
-        <Image src={HowItWorksBackground} layout="fill" objectFit="cover" objectPosition="center" placeholder="blur" alt="hand reaching toward a happy dog" />
+        <Image src={HowItWorksBackground} layout="fill" objectFit="cover" objectPosition="center" placeholder="blur" alt="hand reaching toward a happy dog" priority />
         <div className="image-overlay-gradient" />
         <div className="container text-center">
           <div className="row">

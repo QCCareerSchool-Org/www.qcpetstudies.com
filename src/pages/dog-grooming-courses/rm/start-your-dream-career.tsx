@@ -33,7 +33,7 @@ const StartYourDreamCareerPage: NextPageWithLayout<Props> = ({ location, price }
     />
 
     <section id="top" className="bg-dark">
-      <Image src={DreamCareerBackground} layout="fill" objectFit="cover" objectPosition="center" alt="dog getting blow dried" />
+      <Image src={DreamCareerBackground} layout="fill" objectFit="cover" objectPosition="center" alt="dog getting blow dried" priority />
       <div className="image-overlay-gradient" />
       <div className="container text-center">
         <div className="row justify-content-center">

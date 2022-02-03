@@ -18,7 +18,7 @@ const DogTrainingResourcesPage: NextPageWithLayout = () => (
     />
 
     <section id="top" className="bg-dark">
-      <Image src={DogTrainingResourcesBackground} layout="fill" objectFit="cover" objectPosition="center" placeholder="blur" alt="dog with tongue out" />
+      <Image src={DogTrainingResourcesBackground} layout="fill" objectFit="cover" objectPosition="center" placeholder="blur" alt="dog with tongue out" priority />
       <div className="container text-center">
         <div className="row justify-content-center">
           <div className="col-12 col-lg-10">

@@ -57,7 +57,7 @@ const DogGroomingPage: NextPageWithLayout<Props> = ({ location, price }) => {
       />
 
       <section id="top" className="bg-dark">
-        <Image src={DogGroomingBackground} layout="fill" objectFit="cover" objectPosition="right" placeholder="blur" alt="Bichon Frise getting a haircut" />
+        <Image src={DogGroomingBackground} layout="fill" objectFit="cover" objectPosition="right" placeholder="blur" alt="Bichon Frise getting a haircut" priority />
         <div className="container text-center">
           <div className="row mb-4">
             <div className="mb-4">

@@ -11,9 +11,7 @@ import { fbqPageview } from '../lib/fbq';
 import { gaPageview } from '../lib/ga';
 import { pardotPageview } from '../lib/pardot';
 import { uetPageview } from '../lib/uet';
-import { LocationProvider } from '../providers/LocationProvider';
-import { ScreenWidthProvider } from '../providers/ScreenWidthProvider';
-import { ScrollPositionProvider } from '../providers/ScrollPositionProvider';
+import { Provider } from '../providers';
 
 // eslint-disable-next-line @typescript-eslint/ban-types
 export type NextPageWithLayout<P = {}, IP = P> = NextPage<P, IP> & {
@@ -49,13 +47,9 @@ const QCPetStudiesApp = ({ Component, pageProps }: AppPropsWithLayout): ReactEle
 
   return (
     <SSRProvider>
-      <LocationProvider>
-        <ScreenWidthProvider>
-          <ScrollPositionProvider>
-            {getLayout(<Component {...pageProps} />)}
-          </ScrollPositionProvider>
-        </ScreenWidthProvider>
-      </LocationProvider>
+      <Provider>
+        {getLayout(<Component {...pageProps} />)}
+      </Provider>
     </SSRProvider>
   );
 };
@@ -63,7 +57,7 @@ const QCPetStudiesApp = ({ Component, pageProps }: AppPropsWithLayout): ReactEle
 export const reportWebVitals = ({ id, name, label, value }: NextWebVitalsMetric): void => {
   // Use `window.gtag` if you initialized Google Analytics as this example:
   // https://github.com/vercel/next.js/blob/canary/examples/with-google-analytics/pages/_app.js
-  window.gtag('event', name, {
+  window.gtag?.('event', name, {
     // eslint-disable-next-line camelcase
     event_category: label === 'web-vital' ? 'Web Vitals' : 'Next.js custom metric',
     value: Math.round(name === 'CLS' ? value * 1000 : value), // values must be integers

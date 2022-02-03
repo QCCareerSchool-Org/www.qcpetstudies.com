@@ -22,7 +22,7 @@ const DogGroomingResourcesPage: NextPageWithLayout = () => {
       />
 
       <section id="top" className="bg-dark">
-        <Image src={DogGroomingResourcesBackground} layout="fill" objectFit="cover" objectPosition="center" placeholder="blur" alt="happy dog" />
+        <Image src={DogGroomingResourcesBackground} layout="fill" objectFit="cover" objectPosition="center" placeholder="blur" alt="happy dog" priority />
         <div className="container text-center">
           <div className="row justify-content-center">
             <div className="col-12 col-lg-10">
