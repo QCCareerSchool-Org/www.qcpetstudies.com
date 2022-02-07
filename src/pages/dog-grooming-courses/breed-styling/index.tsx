@@ -12,9 +12,9 @@ import { SEO } from '../../../components/SEO';
 import { useScreenWidth } from '../../../hooks/useScreenWidth';
 import Guarantee21DayImage from '../../../images/21-day-guarantee-outlined.svg';
 import StylingBackground from '../../../images/backgrounds/black-medium-size-poodle.jpg';
-import BreedStandardsBook from '../../../images/books/breed-standards.jpg';
 import BreedStylingCertificateImage from '../../../images/breed-styling-certificate.png';
 import CourseIconBadge from '../../../images/course-icon-badge.svg';
+import CourseMaterials from '../../../images/course-materials-breed-styling.jpg';
 import OutlinePart1 from '../../../images/ds-outlline-part-1-anatomy.jpg';
 import OutlinePart2 from '../../../images/ds-outlline-part-2-first-aid.jpg';
 import OutlinePart3 from '../../../images/ds-outlline-part-3-grooming.jpg';
@@ -73,7 +73,7 @@ const BreedStylingPage: NextPageWithLayout<Props> = ({ price }) => {
               </ul>
             </div>
             <div className="col-12 col-lg-6">
-              <Image src={BreedStandardsBook} alt="Breed Standards course text" />
+              <Image src={CourseMaterials} alt="Breed Standards course text" />
             </div>
           </div>
         </div>
