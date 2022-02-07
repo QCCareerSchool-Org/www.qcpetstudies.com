@@ -66,7 +66,7 @@ const BreedStylingPage: NextPageWithLayout<Props> = ({ price }) => {
             <div className="col-12 col-lg-6 mb-4 mb-lg-0 text-start">
               <h2>QC's Breed Styling Workshop Includes</h2>
               <ul>
-                <li>1 manual consisting of 9 course texts covering essential information regarding dog anatomy and grooming procedures</li>
+                <li>9 online course texts covering essential information regarding dog anatomy and grooming procedures</li>
                 <li>5 hours of video tutorials featuring <Link href="/tutors/"><a className="link-primary">Certified Master Groomers</a></Link> working on numerous breeds</li>
                 <li>4 practicum units that enable you to complete a number of breed cuts from start to finish</li>
                 <li>Free first aid training that provides you with the knowledge to prevent and respond to emergency situations</li>

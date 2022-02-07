@@ -52,7 +52,7 @@ const DogGroomingHowItWorksPage: NextPageWithLayout = () => {
                 <Image src={IconTime} width={iconSize} height={iconSize} alt="timer" />
               </div>
               <h2>Starting the Dog Grooming Course</h2>
-              <p>The first thing you'll do after enrolling is log in to your personal account in the Online Student Center. From there you'll be able to access your dog grooming course guides, lesson texts, assignment templates and video tutorials. Within 7 to 10 business days of enrolling, you'll also receive hard copy versions of your course materials along with your grooming tools.</p>
+              <p>The first thing you'll do after enrolling is log in to your personal account in the Online Student Center. From there you'll be able to access your dog grooming course guides, lesson texts, assignment templates and video tutorials. Within 7 to 10 business days of enrolling, you'll receive your grooming tools.</p>
               <p className="lead mb-0">View a <Link href="/dog-grooming-courses/dog-grooming/course-outline"><a className="link-primary">detailed course outline</a></Link> to learn more about your dog groomer training.</p>
             </div>
           </div>

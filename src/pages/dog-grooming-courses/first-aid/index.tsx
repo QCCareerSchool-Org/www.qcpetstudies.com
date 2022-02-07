@@ -79,7 +79,7 @@ const DogGroomingPage: NextPageWithLayout<Props> = ({ location, price }) => {
             <div className="col-12 col-lg-6 mb-5 mb-lg-0 text-start">
               <h2>QC's First Aid Course Includes</h2>
               <ul>
-                <li>Course texts that provide in-depth information on preventing and responding to dog grooming emergencies.</li>
+                <li>Online course texts that provide in-depth information on preventing and responding to dog grooming emergencies.</li>
                 <li>Video tutorials featuring your course tutors (including a Certified Master Groomer and a Pet First Aid instructor).</li>
                 <li>Multiple choice quizzes to test your knowledge.</li>
                 <li>Self-study assignments are designed to develop your skills, including your ability to work hands-on with dogs. To complete these assignments, you will need to begin building your first aid kit with a few essential items.</li>
