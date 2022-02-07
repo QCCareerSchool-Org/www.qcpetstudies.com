@@ -7,9 +7,9 @@ import { PriceSection } from '../../../components/PriceSection';
 import { PriceSectionDisabled } from '../../../components/PriceSectionDisabled';
 import { SEO } from '../../../components/SEO';
 import FirstAidBackground from '../../../images/backgrounds/hero-first-aid-bg.jpg';
+import CourseMaterials from '../../../images/course-materials-first-aid.jpg';
 import dogLooking from '../../../images/dog-looking.jpg';
 import faCertificate from '../../../images/fa-certificate-desktop.jpg';
-import firstAidBook from '../../../images/first-aid-book-white.jpg';
 import firstAidLogo from '../../../images/first-aid-logo.svg';
 import { getLocation } from '../../../lib/getLocation';
 import { lookupPrices } from '../../../lib/lookupPrices';
@@ -53,7 +53,7 @@ const DogGroomingPage: NextPageWithLayout<Props> = ({ location, price }) => {
         <div className="container text-center">
           <div className="row align-items-center">
             <div className="col-12 col-lg-6 mb-5 mb-lg-0">
-              <Image src={firstAidBook} alt="First Aid book" />
+              <Image src={CourseMaterials} alt="First Aid course materials" />
             </div>
             <div className="col-12 col-lg-6 text-start">
               <p className="lead">You should take this course if you</p>
@@ -79,7 +79,7 @@ const DogGroomingPage: NextPageWithLayout<Props> = ({ location, price }) => {
             <div className="col-12 col-lg-6 mb-5 mb-lg-0 text-start">
               <h2>QC's First Aid Course Includes</h2>
               <ul>
-                <li>Course texts that provide in-depth information on preventing and responding to dog grooming emergencies.</li>
+                <li>Online course texts that provide in-depth information on preventing and responding to dog grooming emergencies.</li>
                 <li>Video tutorials featuring your course tutors (including a Certified Master Groomer and a Pet First Aid instructor).</li>
                 <li>Multiple choice quizzes to test your knowledge.</li>
                 <li>Self-study assignments are designed to develop your skills, including your ability to work hands-on with dogs. To complete these assignments, you will need to begin building your first aid kit with a few essential items.</li>
