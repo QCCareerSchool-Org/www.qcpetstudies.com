@@ -23,30 +23,22 @@ const AgreementGBPage: NextPageWithLayout = () => {
       <h1>Enrollment Agreement</h1>
 
       <h2>1. Shipping Policy</h2>
-      <p>All course books and DVDs will be shipped within two business days of the date of enrollment. Materials will be shipped via courier, and are expected to be delivered within 10 business days.</p>
+      <p>All applicable course books and DVDs will be shipped within two business days of the date of enrollment. Materials will be shipped via courier, and are expected to be delivered within 10 business days.</p>
       <p>For students in good standing, Wahl-ARCO 5-in-1 cordless clippers, matching comb set, set of 3 grooming scissors, and the grooming starter kit will be automatically sent to you after you have submitted Unit B of the Dog Grooming course in the Online Student Center.</p>
       <p>Students who opt into online-only learning, or who are in countries that QC does not ship to due to international shipping restrictions, will not receive any physical course materials or dog grooming supplies.</p>
 
       <h2>2. Money-Back Guarantee</h2>
       <h3>21-Day Money-Back Guarantee</h3>
       <p>You have 21 days from the date of enrollment to examine the course and materials. If you are not entirely satisfied or choose not to complete the course, contact the School within this 21-day period, either by phone or email.</p>
+      <p>If your course includes physical materials, you must return them to receive a refund:</p>
       <ul>
         <li>QC will provide you with shipping instructions and ask you to return the physical course materials, postage paid and with a tracking number. QC is not responsible for lost return shipments that do not have a valid tracking number.</li>
         <li>Your course fees will be refunded in full once QC has received your returned materials. Note that return shipping fees will not be covered or refunded by QC.</li>
         <li>Returned course materials must be unused and in their original condition. A full refund cannot be issued if any materials have been used or are not in their original condition.</li>
-        <li>A full refund cannot be granted if you have already submitted course work to your tutor for grading. In this case, a partial tuition refund may be offered instead.</li>
       </ul>
+      <p>A full refund cannot be granted if you have already submitted course work to your tutor for grading. In this case, a partial tuition refund may be offered instead.</p>
       <h3>Non-Refundable Materials</h3>
       <p>Please note that the clippers and attachment combs that are provided as part of the Professional Dog Grooming Course cannot be refunded if the box has been opened (seal broken).  These have a value of $200 (US). If you wish to withdraw from the course but have opened these materials, you will be required to pay the cost of those materials (and keep them), while returning the rest of the unused course.</p>
-      <h3>Other Material Costs</h3>
-      <p>Should you wish to keep any other course materials when you withdraw from the course, here are the associated costs:</p>
-      <ul>
-        <li>17 Course Books: $425 (US)</li>
-        <li>11 DVDs: $275 (US)</li>
-        <li>Interpreting Breed Standards Book: $118 (US)</li>
-        <li>Set of 3 Grooming Scissors: $200 (US)</li>
-        <li>Grooming Starter Kit: $50 (US)</li>
-      </ul>
       <h3>1-Year Money-Back Guarantee</h3>
       <p>QC's Dog Grooming Course offers a 1-year money back guarantee. If, after graduation, you do not earn the equivalent of your course tuition in professional dog grooming fees, you will be eligible for a full refund of your tuition. In order to qualify for this refund, you must demonstrate that you have made a reasonable effort to obtain clients.</p>
       <p>Graduates who request a refund under the 1-year guarantee must contact the School within 13-18 months post-graduation and provide proof that they:</p>
