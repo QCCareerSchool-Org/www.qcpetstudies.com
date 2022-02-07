@@ -7,10 +7,10 @@ import { AccordionSection } from '../../../components/AccordionSection';
 import { AccordionToggle } from '../../../components/AccordionToggle';
 import { Bar } from '../../../components/Bar';
 import { DefaultLayout } from '../../../components/DefaultLayout';
+import { GuaranteeSection } from '../../../components/GuaranteeSection';
 import { PriceSection } from '../../../components/PriceSection';
 import { SEO } from '../../../components/SEO';
 import { useScreenWidth } from '../../../hooks/useScreenWidth';
-import Guarantee21DayImage from '../../../images/21-day-guarantee-outlined.svg';
 import StylingBackground from '../../../images/backgrounds/black-medium-size-poodle.jpg';
 import BreedStylingCertificateImage from '../../../images/breed-styling-certificate.png';
 import CourseIconBadge from '../../../images/course-icon-badge.svg';
@@ -67,7 +67,7 @@ const BreedStylingPage: NextPageWithLayout<Props> = ({ price }) => {
               <h2>QC's Breed Styling Workshop Includes</h2>
               <ul>
                 <li>9 online course texts covering essential information regarding dog anatomy and grooming procedures</li>
-                <li>5 hours of video tutorials featuring <Link href="/tutors/"><a className="link-primary">Certified Master Groomers</a></Link> working on numerous breeds</li>
+                <li>5 hours of video tutorials featuring certified master groomers working on numerous breeds</li>
                 <li>4 practicum units that enable you to complete a number of breed cuts from start to finish</li>
                 <li>Free first aid training that provides you with the knowledge to prevent and respond to emergency situations</li>
               </ul>
@@ -97,20 +97,7 @@ const BreedStylingPage: NextPageWithLayout<Props> = ({ price }) => {
 
       <PriceSection courses={courseCodes} price={price} doubleGuarantee={true} />
 
-      <section>
-        <div className="container text-center">
-          <div className="row justify-content-center">
-            <div className="col-12 col-lg-10 mb-4">
-              <h2 className="mb-4">You'll Be Covered by QC's <strong>Money-Back Guarantee</strong></h2>
-              <Image src={Guarantee21DayImage} alt="21 Day Money Back Guarantee" />
-            </div>
-            <div className="col-12 col-md-10 col-lg-8 col-xl-6">
-              <h3>The 21-Day Money Back Guarantee</h3>
-              <p className="mb-0">Try the course risk-free for 21 days. This gives you time to receive your course materials and evaluate whether the Breed Styling Workshop is right for you.  If you decide it's not a good fit, simply contact QC to arrange a return of your course materials for a refund. It's that easy! Note: All materials must be returned unused and in their original condition in order to get a full refund. </p>
-            </div>
-          </div>
-        </div>
-      </section>
+      <GuaranteeSection />
 
       <section className="bg-gray pb-0">
         <div className="container text-center">

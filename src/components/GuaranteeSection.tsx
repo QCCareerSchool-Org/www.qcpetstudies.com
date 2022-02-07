@@ -2,6 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { ReactElement } from 'react';
 
+import Guarantee21DayImage from '../images/21-day-guarantee-outlined.svg';
 import QcGuarantee from '../images/double-guarantee.svg';
 
 type Props = {
@@ -17,11 +18,12 @@ export const GuaranteeSection = ({ className, double = false, id = 'guarantee' }
       <div className="container text-center">
         <div className="row justify-content-center">
           <div className="col-12 col-lg-10 justify-content-center">
-            {double && (
-              <div className="mb-2">
-                <Image src={QcGuarantee} alt="qc guarantee" width="140" height="140" />
-              </div>
-            )}
+            <div className="mb-2">
+              {double
+                ? <Image src={QcGuarantee} alt="qc guarantee" width="140" height="140" />
+                : <Image src={Guarantee21DayImage} alt="21 Day Money Back Guarantee" />
+              }
+            </div>
             <h2>QC Pet Studies' <strong>Guarantee{double ? 's' : ''}</strong></h2>
             <p className="mb-4">QC means Quality of Course, and we stand behind that promise. That's why QC Pet Studies offers a <strong>money-back guarantee</strong>.</p>
           </div>
