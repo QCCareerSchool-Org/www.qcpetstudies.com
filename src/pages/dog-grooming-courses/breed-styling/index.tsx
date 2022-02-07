@@ -62,7 +62,7 @@ const BreedStylingPage: NextPageWithLayout<Props> = ({ price }) => {
 
       <section>
         <div className="container text-center">
-          <div className="row align-items-center">
+          <div className="row align-items-xl-center">
             <div className="col-12 col-lg-6 mb-4 mb-lg-0 text-start">
               <h2>QC's Breed Styling Workshop Includes</h2>
               <ul>

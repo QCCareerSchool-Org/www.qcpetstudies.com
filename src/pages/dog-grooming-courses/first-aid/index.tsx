@@ -51,7 +51,7 @@ const DogGroomingPage: NextPageWithLayout<Props> = ({ location, price }) => {
 
       <section>
         <div className="container text-center">
-          <div className="row align-items-center">
+          <div className="row align-items-xl-center">
             <div className="col-12 col-lg-6 mb-5 mb-lg-0">
               <Image src={CourseMaterials} alt="First Aid course materials" />
             </div>
