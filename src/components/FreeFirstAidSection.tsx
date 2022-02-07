@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import { ReactElement } from 'react';
 
-import FirstAidBookImage from '../images/first-aid-book-white.jpg';
+import CourseMaterials from '../images/course-materials-first-aid.jpg';
 import FirstAidLogo from '../images/first-aid-logo.svg';
 
 type Props = {
@@ -21,7 +21,7 @@ export const FreeFirstAidSection = ({ className }: Props): ReactElement => (
           <p className="mb-0">Learn from first aid experts who will guide you through the course. You'll learn how to keep yourself and your furry clients out of harm's way.</p>
         </div>
         <div className="col-12 col-lg-6">
-          <Image src={FirstAidBookImage} alt="Dog grooming first aid book" />
+          <Image src={CourseMaterials} alt="Dog grooming first aid book" />
         </div>
       </div>
     </div>
