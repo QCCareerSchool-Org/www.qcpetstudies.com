@@ -13,7 +13,7 @@ import PhoneIcon from '../images/footer-icons-phone.svg';
 import GuaranteeIcon from '../images/guarantee-icon-fill.svg';
 import Logo from '../images/logo-top-white.svg';
 import SniffinArroundLogo from '../images/sniffin-around-logo-white.svg';
-import { isGBPCountry } from '../lib/address';
+import { getAddress, isGBPCountry } from '../lib/address';
 import { openLiveChat } from '../lib/livechat';
 import { getTelephoneNumber } from '../lib/phone';
 
@@ -28,6 +28,8 @@ type Props = {
 export const Footer = ({ ctaType, enrollPath = '/', className }: Props): ReactElement => {
   const location = useLocation();
   const screenWidth = useScreenWidth();
+
+  const address = getAddress(location?.countryCode ?? 'US');
 
   const phoneNumber = getTelephoneNumber(location?.countryCode);
   const smOrGreater = screenWidth >= 576;
@@ -118,7 +120,7 @@ export const Footer = ({ ctaType, enrollPath = '/', className }: Props): ReactEl
 
         <div className="row">
           <div className="col-12 col-sm-9 text-center text-sm-start mb-2 mb-sm-0">
-            <small>
+            <div className="small">
               &copy; {new Date().getFullYear()} QC Pet Studies
               <PipeSpacer />
               <Link href={isGBPCountry(location?.countryCode ?? 'US') ? '/terms-gb' : '/terms'}><a>Privacy Policy</a></Link>
@@ -128,7 +130,8 @@ export const Footer = ({ ctaType, enrollPath = '/', className }: Props): ReactEl
                   <Link href="/about/faq"><a>FAQ</a></Link>
                 </>
               )}
-            </small>
+            </div>
+            <div className="small">{address.join(', ')}</div>
           </div>
           <div className="col-12 col-sm-3 text-center text-sm-end">
             <a href="https://www.facebook.com/qcpetstudies" target="_blank" rel="noopener noreferrer"><FaFacebookF className="me-3" /></a>
