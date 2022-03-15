@@ -1,13 +1,17 @@
 import type { NextPage } from 'next';
+import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
 import { FaBriefcase, FaChalkboardTeacher, FaHandHoldingUsd, FaLaptopHouse, FaRegCalendarCheck } from 'react-icons/fa';
+import { jsonLdScriptProps } from 'react-schemaorg';
+import { EducationalOrganization } from 'schema-dts';
 
 import { SEO } from '../components/SEO';
 import HappyPuppyRunning from '../images/backgrounds/happy-puppy-running.jpg';
 import HowItWorks from '../images/how-it-works.png';
 import IDGPCertificationGold from '../images/IDGP-certification-gold.svg';
 import IDTPCertificationGold from '../images/IDTP-certification-gold.svg';
+import { qcPetStudiesEducationalOrganization } from '../qcPetStudiesEducationalOrganization';
 
 const iconSize = 145;
 
@@ -18,6 +22,10 @@ const HomePage: NextPage = () => (
       description="Start an exciting career in the pet care industry! Become a certified dog groomer or certified dog trainer with QC’s Internationally-recognized online courses!"
       canonical="/"
     />
+
+    <Head>
+      <script {...jsonLdScriptProps<EducationalOrganization>(qcPetStudiesEducationalOrganization)} />
+    </Head>
 
     <section id="top" className="bg-dark">
       <Image src={HappyPuppyRunning} layout="fill" objectFit="cover" objectPosition="center" placeholder="blur" alt="happy puppy running" priority />
@@ -172,16 +180,16 @@ const HomePage: NextPage = () => (
     </section>
 
     <style jsx>{`
-      .gold { color: #C9952C; }
-      #cardRow {
-        margin-right: -1.5rem;
-        margin-left: -1.5rem;
-      }
-      #cardRow > .col, #cardRow > [class*="col-"] {
-        padding-right: 1.5rem;
-        padding-left: 1.5rem;
-        margin-bottom: 3rem;
-      }
+    .gold { color: #C9952C; }
+    #cardRow {
+      margin-right: -1.5rem;
+      margin-left: -1.5rem;
+    }
+    #cardRow > .col, #cardRow > [class*="col-"] {
+      padding-right: 1.5rem;
+      padding-left: 1.5rem;
+      margin-bottom: 3rem;
+    }
     `}</style>
   </>
 );
