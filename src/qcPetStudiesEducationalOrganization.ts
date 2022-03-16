@@ -66,7 +66,7 @@ export const qcPetStudiesEducationalOrganization: WithContext<EducationalOrganiz
     {
       '@type': 'PostalAddress',
       'streetAddress': '78 Williams Street, Suite 23',
-      'addressLocality': 'Bethesda',
+      'addressLocality': 'Sydney',
       'addressRegion': 'NSW',
       'postalCode': '2011',
       'addressCountry': 'AU',
