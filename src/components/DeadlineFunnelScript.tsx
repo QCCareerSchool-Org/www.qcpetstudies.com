@@ -37,5 +37,5 @@ var dfParentUrl = (parent !== window) ? ("/" + SendUrlToDeadlineFunnel(dfParentU
 })();`;
 
 export const DeadlineFunnelScript = (): ReactElement => (
-  <Script id="deadlineFunnel" data-cfasync="false" dangerouslySetInnerHTML={{ __html: script }} />
+  <Script id="deadlineFunnel" strategy="lazyOnload" data-cfasync="false" dangerouslySetInnerHTML={{ __html: script }} />
 );
