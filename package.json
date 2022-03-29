@@ -1,6 +1,6 @@
 {
   "name": "www.petstudies.com",
-  "version": "0.3.12",
+  "version": "0.3.13",
   "license": "UNLICENSED",
   "private": true,
   "scripts": {
@@ -31,7 +31,9 @@
     "react-icons": "^4.3.1",
     "react-schemaorg": "^2.0.0",
     "react-use-count-up": "^1.0.1",
-    "schema-dts": "^1.1.0"
+    "schema-dts": "^1.1.0",
+    "trackjs": "^3.10.1",
+    "trackjs-node": "^1.0.1"
   },
   "devDependencies": {
     "@testing-library/jest-dom": "^5.16.2",
