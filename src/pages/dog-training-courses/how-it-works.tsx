@@ -84,7 +84,7 @@ const DogTrainingHowItWorksPage: NextPageWithLayout = () => {
                   <h3>Theory-Based Assignments</h3>
                   <p className="card-text">Being a dog trainer requires a high level of theoretical knowledge of a wide range of topics. You have to become an expert in learning theory, stages of development, dog breed characteristics, training methods, and much more.</p>
                   <p className="card-text">Through a series of quizzes, short answer assignments and case studies, your knowledge of dog training theory will be put to the test. As you work through your online course, the first few units will focus heavily on theory-based assignments. Your knowledge and skills will improve during this time, and you'll gradually notice a shift toward more and more practical assignments in the later units of the course.</p>
-                  <p className="card-text mt-auto"><Link href=""><a className="link-primary">View Sample Assignment</a></Link></p>
+                  <p className="card-text mt-auto"><a href="/documents/dog-training/C1.pdf" className="link-primary" target="_blank">View Sample Assignment</a></p>
                 </div>
               </div>
             </div>
@@ -95,7 +95,7 @@ const DogTrainingHowItWorksPage: NextPageWithLayout = () => {
                   <h3>Practical Assignments</h3>
                   <p className="card-text">Once you're familiar with dog training fundamentals, you need to practice your skills on actual live dogs. Luckily in dog training, you can use your own dog(s) to practice methods and skills.</p>
                   <p className="card-text">At the start of your course, your practical assignments will focus on interpreting behaviors exhibited by dogs in your household and environment. As you progress through your training, your practical assignments will evolve to teaching dogs new behaviors using different methods and techniques, and modifying common unwanted behaviors. You'll take videos of you working with dogs so that your tutor can evaluate your work!</p>
-                  <p className="card-text mt-auto"><Link href=""><a className="link-primary">View Sample Assignment</a></Link></p>
+                  <p className="card-text mt-auto"><a href="/documents/dog-training/G6.pdf" className="link-primary" target="_blank">View Sample Assignment</a></p>
                 </div>
               </div>
             </div>
