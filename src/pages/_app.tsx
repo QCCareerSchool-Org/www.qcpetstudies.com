@@ -7,6 +7,8 @@ import { ReactElement, ReactNode, useEffect } from 'react';
 import SSRProvider from 'react-bootstrap/SSRProvider';
 
 import { DefaultLayout } from '../components/DefaultLayout';
+import { ErrorBoundary } from '../components/ErrorBoundary';
+import { ErrorPage } from '../components/ErrorPage';
 import { fbqPageview } from '../lib/fbq';
 import { gaPageview } from '../lib/ga';
 import { pardotPageview } from '../lib/pardot';
@@ -54,11 +56,13 @@ const QCPetStudiesApp = ({ Component, pageProps }: AppPropsWithLayout): ReactEle
   const getLayout = Component.getLayout ?? (page => <DefaultLayout>{page}</DefaultLayout>);
 
   return (
-    <SSRProvider>
-      <Provider>
-        {getLayout(<Component {...pageProps} />)}
-      </Provider>
-    </SSRProvider>
+    <ErrorBoundary fallback={<ErrorPage />}>
+      <SSRProvider>
+        <Provider>
+          {getLayout(<Component {...pageProps} />)}
+        </Provider>
+      </SSRProvider>
+    </ErrorBoundary>
   );
 };
 

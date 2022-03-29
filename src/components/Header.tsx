@@ -8,7 +8,6 @@ import { FaCog, FaCut, FaFolderOpen } from 'react-icons/fa';
 
 import { useScreenWidth } from '../hooks/useScreenWidth';
 import { useScrollPosition } from '../hooks/useScrollPosition';
-import { useToggle } from '../hooks/useToggle';
 import logoLight from '../images/qc-pet-horizontal-inverse.svg';
 import logo from '../images/qc-pet-horizontal.svg';
 import { SecondaryNav, SecondaryNavLinks } from './SecondaryNav';
