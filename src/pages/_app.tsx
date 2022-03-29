@@ -10,8 +10,16 @@ import { DefaultLayout } from '../components/DefaultLayout';
 import { fbqPageview } from '../lib/fbq';
 import { gaPageview } from '../lib/ga';
 import { pardotPageview } from '../lib/pardot';
+import { TrackJS } from '../lib/trackjs-isomorphic';
 import { uetPageview } from '../lib/uet';
 import { Provider } from '../providers';
+
+if (!TrackJS.isInstalled()) {
+  TrackJS.install({
+    token: '0377457a8a0c41c2a11da5e34f786bba',
+    application: 'qc-pet-studies',
+  });
+}
 
 // eslint-disable-next-line @typescript-eslint/ban-types
 export type NextPageWithLayout<P = {}, IP = P> = NextPage<P, IP> & {
