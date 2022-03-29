@@ -32,7 +32,7 @@ const AboutPage: NextPage = () => (
               <div className="me-4 flex-shrink-0 mb-2 mb-md-0" style={{ width: '120px' }}>
                 <Image src={Qc35Year} layout="responsive" alt="distance education for over 35 years" />
               </div>
-              <p className="lead mb-0">QC Pet Studies is a faculty of QC Career School. We're an online, international school that's been offering distance education courses since 1984, and in this time weve mastered the art of delivering quality course content online.</p>
+              <p className="lead mb-0">QC Pet Studies is a faculty of QC Career School. We're an online, international school that's been offering distance education courses since 1984, and in this time we&apos;ve mastered the art of delivering quality course content online.</p>
             </div>
             <p>QC Pet Studies offers the most comprehensive online dog grooming course available. Through lesson texts, video tutorials, hands on assignments, and personalized feedback from industry professionals, our students receive the skills and resources they need to build successful careers in dog grooming and dog training.</p>
             <p>We combine our premium course content with our outstanding student support system. You can contact us anytime via phone, email, or Live Chat whichever you prefer. We are here to ensure that your course runs smoothly and that all of your needs are met with great care. Even after you graduate, we encourage you to stay in touch with us. We want to hear how you're doing and are always happy to provide you with career advice. When you enroll with QC Pet Studies, you join a supportive and ongoing community that is dedicated to helping you reach your goals.</p>
