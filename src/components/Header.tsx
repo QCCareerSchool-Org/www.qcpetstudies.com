@@ -64,8 +64,6 @@ export const Header = ({ noHero, secondaryTitle, secondaryNavLinks, enrollPath =
                   <Link href="/dog-grooming-courses/dog-grooming#tuition"><a onClick={resetMenu} className="dropdown-item dropdown-item-sub">Tuition</a></Link>
                   <Link href="/dog-grooming-courses/dog-grooming#outline"><a onClick={resetMenu} className="dropdown-item dropdown-item-sub">Outline</a></Link>
                   <Link href="/dog-grooming-courses/dog-grooming#guarantee"><a onClick={resetMenu} className="dropdown-item dropdown-item-sub">Guarantee</a></Link>
-                  <Link href="/dog-grooming-courses/first-aid"><a onClick={resetMenu} className="dropdown-item dropdown-item-primary">First Aid Course</a></Link>
-                  <Link href="/dog-grooming-courses/breed-styling"><a onClick={resetMenu} className="dropdown-item dropdown-item-primary">Breed Styling Workshop</a></Link>
                   <hr />
                   <Link href="/dog-grooming-courses/how-it-works"><a onClick={resetMenu} className="dropdown-item"><FaCog className="text-primary me-2" /> How It Works</a></Link>
                   <Link href="/dog-grooming-courses/resources"><a onClick={resetMenu} className="dropdown-item"><FaFolderOpen className="text-primary me-2" /> Dog Grooming Resources</a></Link>
