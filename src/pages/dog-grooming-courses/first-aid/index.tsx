@@ -68,10 +68,7 @@ const DogGroomingPage: NextPageWithLayout<Props> = ({ location, price }) => {
         </div>
       </section>
 
-      {location.countryCode === 'CA' && location.provinceCode === 'ON'
-        ? <PriceSectionDisabled />
-        : <PriceSection courses={courseCodes} price={price} doubleGuarantee={true} />
-      }
+      <PriceSection courses={courseCodes} price={price} doubleGuarantee={true} />
 
       <section>
         <div className="container text-center">
