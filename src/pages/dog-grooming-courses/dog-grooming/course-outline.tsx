@@ -457,7 +457,7 @@ const DogGroomingCourseOutlinePage: NextPageWithLayout = () => (
                 </div>
               </AccordionSection>
             </Accordion>
-            <p className="text-center lead">View <Link href=""><a className="text-primary">Sample Assignments</a></Link> from QC's Online Dog Grooming Course</p>
+            <p className="text-center lead">View <Link href="/dog-grooming-courses/dog-grooming/course-preview"><a className="text-primary">Sample Assignments</a></Link> from QC's Online Dog Grooming Course</p>
           </div>
         </div>
       </div>
