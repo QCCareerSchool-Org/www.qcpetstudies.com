@@ -60,8 +60,7 @@ export const Footer = ({ ctaType, enrollPath = '/', className }: Props): ReactEl
         <div className="row" id="footerRow">
           <div id="footerColBrand" className="col-12 col-lg-6 mb-5 mb-lg-0 text-center">
             <div className="mb-4">
-              <Image id="footerLogo" src={Logo} width={240} height={28} alt="QC Pet Studies" />
-              {/* <Image id="footerLogo" src={Logo} width={186} height={18} alt="QC Pet Studies" /> */}
+              <Image id="footerLogo" src={Logo as StaticImageData} width={240} height={28} alt="QC Pet Studies" />
             </div>
             <BBBGuarantee />
             <a href="https://studentcenter.qccareerschool.com">
@@ -81,22 +80,22 @@ export const Footer = ({ ctaType, enrollPath = '/', className }: Props): ReactEl
             <ul className="spacedList">
               <li>
                 <Link href="/about/about-qc-pet-studies"><a>
-                  {lgOrGreater && <div className="footerIconWrapper"><Image src={InfoIcon} width={16} height={16} alt="About" /></div>}About QC
+                  {lgOrGreater && <div className="footerIconWrapper"><Image src={InfoIcon as StaticImageData} width={16} height={16} alt="About" /></div>}About QC
                 </a></Link>
               </li>
               <li>
                 <a href="mailto:info@qcpetstudies.com">
-                  {lgOrGreater && <div className="footerIconWrapper"><Image src={EmailIcon} width={16} height={16} alt="Email" /></div>}Email Us
+                  {lgOrGreater && <div className="footerIconWrapper"><Image src={EmailIcon as StaticImageData} width={16} height={16} alt="Email" /></div>}Email Us
                 </a>
               </li>
               <li>
                 <a onClick={openLiveChat} title="Open Chat Window">
-                  {lgOrGreater && <div className="footerIconWrapper"><Image src={ChatIcon} width={16} height={16} alt="Chat" /></div>}Chat
+                  {lgOrGreater && <div className="footerIconWrapper"><Image src={ChatIcon as StaticImageData} width={16} height={16} alt="Chat" /></div>}Chat
                 </a>
               </li>
               <li>
                 <a href={`tel:${phoneNumber}`}>
-                  {lgOrGreater && <div className="footerIconWrapper"><Image src={PhoneIcon} width={16} height={16} alt="Phone" /></div>}{phoneNumber}
+                  {lgOrGreater && <div className="footerIconWrapper"><Image src={PhoneIcon as StaticImageData} width={16} height={16} alt="Phone" /></div>}{phoneNumber}
                 </a>
               </li>
             </ul>
@@ -104,7 +103,7 @@ export const Footer = ({ ctaType, enrollPath = '/', className }: Props): ReactEl
           <div id="footerColStayInformed" className="col-12 col-sm-4 col-lg-2 text-center text-lg-start">
             <h2 className="h4 text-primary">Stay Informed</h2>
             <div id="blogLogoWrapper">
-              <Image src={SniffinArroundLogo} width={155} height={40} alt="Sniffin' Around Blog" />
+              <Image src={SniffinArroundLogo as StaticImageData} width={155} height={40} alt="Sniffin' Around Blog" />
             </div>
             <ul>
               <li><Link href="/blog/category/dog-grooming"><a>Dog Grooming</a></Link></li>
@@ -149,13 +148,13 @@ const BBBGuarantee = (): ReactElement => (
   <div className="row text-center sm-gutters mb-4">
     <div className="col-4 offset-2 col-sm-3 offset-sm-3 col-md-2 offset-md-4 col-lg-6 offset-lg-0">
       <div>
-        <Image src={BBBLogo} width={72} height={48} alt="BBB Better Business Bureau A+" />
+        <Image src={BBBLogo as StaticImageData} width={72} height={48} alt="BBB Better Business Bureau A+" />
       </div>
       <small className="logoText">BBB Accredited</small>
     </div>
     <div className="col-4 col-sm-3 col-md-2 col-lg-6">
       <div>
-        <Image src={GuaranteeIcon} width={46} height={48} alt="21-Day Guarantee" />
+        <Image src={GuaranteeIcon as StaticImageData} width={46} height={48} alt="21-Day Guarantee" />
       </div>
       <small className="logoText">21-Day Guarantee</small>
     </div>

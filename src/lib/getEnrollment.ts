@@ -11,5 +11,5 @@ export const getEnrollment = async (enrollmentId: number, code: string): Promise
   if (!response.ok) {
     throw new HttpStatus.HttpResponse(response.status, response.statusText);
   }
-  return response.json();
+  return response.json() as Promise<Enrollment>;
 };

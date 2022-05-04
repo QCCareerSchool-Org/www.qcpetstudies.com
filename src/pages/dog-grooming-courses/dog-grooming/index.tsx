@@ -11,7 +11,6 @@ import { DefaultLayout } from '../../../components/DefaultLayout';
 import { DGTutorSection } from '../../../components/DGTutorSection';
 import { GuaranteeSection } from '../../../components/GuaranteeSection';
 import { PriceSection } from '../../../components/PriceSection';
-import { PriceSectionDisabled } from '../../../components/PriceSectionDisabled';
 import { SEO } from '../../../components/SEO';
 import { useScreenWidth } from '../../../hooks/useScreenWidth';
 import { useToggle } from '../../../hooks/useToggle';
@@ -39,7 +38,7 @@ type Props = {
   price: PriceResult;
 };
 
-const DogGroomingPage: NextPageWithLayout<Props> = ({ location, price }) => {
+const DogGroomingPage: NextPageWithLayout<Props> = ({ price }) => {
   const screenWidth = useScreenWidth();
   const [ kitPopupVisible, kitPopupToggle ] = useToggle();
 
@@ -61,7 +60,7 @@ const DogGroomingPage: NextPageWithLayout<Props> = ({ location, price }) => {
         <div className="container text-center">
           <div className="row mb-4">
             <div className="mb-4">
-              <Image src={CertificationGoldImage} alt="International Dog Grooming Professional IDGP certification" height="125" width="125" />
+              <Image src={CertificationGoldImage as StaticImageData} alt="International Dog Grooming Professional IDGP certification" height="125" width="125" />
             </div>
             <h1>Dog Grooming Course</h1>
             {price && price.plans.part.deposit > 0 && <h4>Get Started for Only <strong>{price.currency.symbol}{formatPrice(price.plans.part.deposit)}</strong></h4>}
@@ -71,15 +70,15 @@ const DogGroomingPage: NextPageWithLayout<Props> = ({ location, price }) => {
           <div className="row justify-content-center">
             <div className="col-12 col-md-6 d-flex">
               <div className="col text-uppercase">
-                <a href="#outline"><Image src={OutlineIcon} alt="outline" width={headerIconSize} height={headerIconSize} /></a>
+                <a href="#outline"><Image src={OutlineIcon as StaticImageData} alt="outline" width={headerIconSize} height={headerIconSize} /></a>
                 <p><strong>Outline</strong></p>
               </div>
               <div className="col text-uppercase">
-                <a href="#guarantee"><Image src={GuaranteeIcon} alt="play button" width={headerIconSize} height={headerIconSize} /></a>
+                <a href="#guarantee"><Image src={GuaranteeIcon as StaticImageData} alt="play button" width={headerIconSize} height={headerIconSize} /></a>
                 <p><strong>Guarantee</strong></p>
               </div>
               <div className="col text-uppercase">
-                <a href="#tutors"><Image src={TutorIcon} alt="play button" width={headerIconSize} height={headerIconSize} /></a>
+                <a href="#tutors"><Image src={TutorIcon as StaticImageData} alt="play button" width={headerIconSize} height={headerIconSize} /></a>
                 <p><strong>Tutors</strong></p>
               </div>
             </div>

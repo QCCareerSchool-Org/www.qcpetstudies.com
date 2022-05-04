@@ -2,13 +2,13 @@
 import Document, { DocumentContext, DocumentInitialProps, Head, Html, Main, NextScript } from 'next/document';
 import { ReactElement } from 'react';
 
-const googleAnalyticsSrc = `https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}`;
+const googleAnalyticsSrc = `https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS ?? ''}`;
 
 const googleAnalyticsScript = `
 window.dataLayer = window.dataLayer || [];
 function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
-gtag('config', '${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}', { page_path: window.location.pathname });
+gtag('config', '${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS ?? ''}', { page_path: window.location.pathname });
 gtag('config', 'AW-1071836607', { allow_enhanced_conversions: true });`;
 
 const uetScript = `

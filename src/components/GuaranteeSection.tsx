@@ -20,8 +20,8 @@ export const GuaranteeSection = ({ className, double = false, id = 'guarantee' }
           <div className="col-12 col-lg-10 justify-content-center">
             <div className="mb-2">
               {double
-                ? <Image src={QcGuarantee} alt="qc guarantee" width="140" height="140" />
-                : <Image src={Guarantee21DayImage} alt="21 Day Money Back Guarantee" />
+                ? <Image src={QcGuarantee as StaticImageData} alt="qc guarantee" width="140" height="140" />
+                : <Image src={Guarantee21DayImage as StaticImageData} alt="21 Day Money Back Guarantee" />
               }
             </div>
             <h2>QC Pet Studies' <strong>Guarantee{double ? 's' : ''}</strong></h2>

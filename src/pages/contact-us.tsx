@@ -47,7 +47,7 @@ const ContactUsPage: NextPage = () => {
             </div>
             <div className="col-12 col-sm-10 col-md-8 col-lg-4 mb-4 mb-lg-0">
               <div className="px-lg-4">
-                <Image src={ContactByPhoneImage} height="80" width="64" alt="telephone icon" />
+                <Image src={ContactByPhoneImage as StaticImageData} height="80" width="64" alt="telephone icon" />
                 <h3>By Phone</h3>
                 <p className="mb-lg-4"><a href={`tel:${telephoneNumber}`} className="link-primary">{telephoneNumber}</a></p>
                 <p className="mb-0">Speak with a student advisor about enrolling with QC or for assistance with your courses and assignments.</p>
@@ -55,7 +55,7 @@ const ContactUsPage: NextPage = () => {
             </div>
             <div className="col-12 col-sm-10 col-md-8 col-lg-4 mb-4 mb-lg-0">
               <div className="px-lg-4">
-                <Image src={ContactByEmailImage} height="80" width="64" alt="email icon" />
+                <Image src={ContactByEmailImage as StaticImageData} height="80" width="64" alt="email icon" />
                 <h3>By Email</h3>
                 <p className="mb-lg-4"><a href={`mailto:${emailAddress}`} className="link-primary">{emailAddress}</a></p>
                 <p className="mb-0">Send us an email at any time and we'll get back to you as soon as possible!</p>
@@ -63,7 +63,7 @@ const ContactUsPage: NextPage = () => {
             </div>
             <div className="col-12 col-sm-10 col-md-8 col-lg-4">
               <div className="px-lg-4">
-                <Image src={ContactByChatImage} height="80" width="64" alt="chat icon" />
+                <Image src={ContactByChatImage as StaticImageData} height="80" width="64" alt="chat icon" />
                 <h3>By Live Chat</h3>
                 <p className="mb-lg-4"><a onClick={openLiveChat} className="link-primary">Click here to chat</a></p>
                 <p className="mb-0">Do you have a question you want to be answered right away? Our student support specialists are ready to chat!</p>

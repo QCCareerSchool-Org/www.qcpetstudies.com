@@ -10,5 +10,5 @@ export const lookupPrices = async (courses: string[], countryCode: string, provi
   if (!response.ok) {
     throw Error('Unable to fetch prices');
   }
-  return response.json();
+  return response.json() as Promise<PriceResult>;
 };

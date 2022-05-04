@@ -24,12 +24,13 @@ export class ErrorBoundary extends Component<Props, State> {
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   public componentDidCatch(error: any, errorInfo: any): void {
-    if (errorInfo?.componentStack) {
+    if (hasComponentStack(errorInfo)) {
       // The component stack is sometimes useful in development mode
       // In production it can be somewhat obfuscated, so feel free to omit this line.
       console.log(errorInfo.componentStack);
     }
 
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
     TrackJS.track(error);
   }
 
@@ -39,3 +40,7 @@ export class ErrorBoundary extends Component<Props, State> {
       : this.props.children;
   }
 }
+
+const hasComponentStack = (val: unknown): val is { componentStack: unknown } => {
+  return typeof val === 'object' && val !== null && 'componentStack' in val;
+};

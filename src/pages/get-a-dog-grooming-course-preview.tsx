@@ -81,17 +81,17 @@ const DogGroomingCatalogPage: NextPageWithLayout<Props> = ({ testGroup }) => {
               <h2>How the Courses Work</h2>
             </div>
             <div className="col-12 col-lg-4">
-              <Image src={Step1EnrollImage} alt="Enroll today" />
+              <Image src={Step1EnrollImage as StaticImageData} alt="Enroll today" />
               <p className="lead">Enroll Today &amp; Access Your{lgOrGreater ? <br /> : ' '}Course Materials</p>
               <p className="mb-0">Receive online access to a course within 48 hours. Receive your physical course books and grooming kit in 5 to 10 business days.</p>
             </div>
             <div className="col-12 col-lg-4">
-              <Image src={Step2SubmitImage} alt="Complete assignment and submit" />
+              <Image src={Step2SubmitImage as StaticImageData} alt="Complete assignment and submit" />
               <p className="lead">Complete Assignments{lgOrGreater ? <br /> : ' '}&amp; Review Feedback</p>
               <p className="mb-0">Complete your theoretical and practical assignments. Receive advice and detailed feedback from your tutor after every unit you complete. Review your tutor's advice to improve your skills for the next unit.</p>
             </div>
             <div className="col-12 col-lg-4">
-              <Image src={Step3CertificateImage} alt="Get your certificate" />
+              <Image src={Step3CertificateImage as StaticImageData} alt="Get your certificate" />
               <p className="lead">Graduate as an International{lgOrGreater ? <br /> : ' '}Dog Grooming Professional&trade;</p>
               <p className="mb-0">Receive your IDGP&trade; certification and your career as a professional dog groomer. Enjoy lifetime access to your course materials. Be protected by our 1-year money-back guarantee.</p>
             </div>
@@ -123,7 +123,7 @@ const DogGroomingCatalogPage: NextPageWithLayout<Props> = ({ testGroup }) => {
         <div className="container text-center">
           <div className="row justify-content-center">
             <div className="col-12 col-lg-10">
-              <Image src={FirstAidLogo} alt="First Aid course logo" />
+              <Image src={FirstAidLogo as StaticImageData} alt="First Aid course logo" />
               <h2>Free First Aid Course</h2>
               <p className="lead">Enroll in the Dog Grooming course and get the First Aid for Dog Groomers course <strong>FREE! ($348 value)</strong></p>
               <p className="mb-0">Being trained in pet first aid prepares you to respond to emergencies and to maintain a safe grooming environment. In this course, you'll learn how to prevent injuries and how to respond to emergency situations in your grooming salon.</p>

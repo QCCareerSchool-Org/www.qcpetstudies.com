@@ -69,7 +69,7 @@ const StartYourDreamCareerPage: NextPageWithLayout<Props> = ({ location, price }
               <div className="card-body">
                 <div className="w-100">
                   <div className="mb-3">
-                    <Image src={QcDayGuaratnteeLogo} alt="21-day money-back guarantee logo" />
+                    <Image src={QcDayGuaratnteeLogo as StaticImageData} alt="21-day money-back guarantee logo" />
                   </div>
                   <h4>The 21-Day Money-Back Guarantee</h4>
                   <p className="card-text">Try the course risk-free for 21 days. This gives you time to receive your course materials and evaluate whether the dog grooming course is right for you. If you decide it's not a good fit, simply contact QC to arrange a return of your course materials for a refund. It's that easy! Note: For sanitary reasons, the clippers and attachment combs provided with the course cannot be refunded (value $200 US)</p>
@@ -82,7 +82,7 @@ const StartYourDreamCareerPage: NextPageWithLayout<Props> = ({ location, price }
               <div className="card-body">
                 <div className="w-100">
                   <div className="mb-3">
-                    <Image src={QcYearGuaratnteeLogo} alt="1-year money-back guarantee logo" />
+                    <Image src={QcYearGuaratnteeLogo as StaticImageData} alt="1-year money-back guarantee logo" />
                   </div>
                   <h4>The 1-Year Money-Back Guarantee</h4>
                   <p className="card-text lead"><em>This course will pay for itself within two years. That's a promise.</em></p>

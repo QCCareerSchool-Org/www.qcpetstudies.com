@@ -51,7 +51,7 @@ const DogGroomingCourseOutlinePage: NextPageWithLayout = () => (
             <div className="card">
               <div className="card-body">
                 <div className="mb-2">
-                  <Image src={IconTime} width={iconSize} height={iconSize} alt="clock icon" />
+                  <Image src={IconTime as StaticImageData} width={iconSize} height={iconSize} alt="clock icon" />
                 </div>
                 <p>The course should take between <strong>80 and 130 hours</strong> to study and complete assignments from start to finish.  This time does not include the time you will take to practice and develop your skills before you complete an assignment.</p>
               </div>
@@ -61,7 +61,7 @@ const DogGroomingCourseOutlinePage: NextPageWithLayout = () => (
             <div className="card">
               <div className="card-body">
                 <div className="mb-2">
-                  <Image src={calendarIcon} width={iconSize} height={iconSize} alt="calendar icon" />
+                  <Image src={calendarIcon as StaticImageData} width={iconSize} height={iconSize} alt="calendar icon" />
                 </div>
                 <p>On average, most QC students work on their course for a few hours per week, and complete the online dog grooming course within about <strong>6 months to a year.</strong>  You'll have up to two years to complete the program, so lots of time!</p>
               </div>

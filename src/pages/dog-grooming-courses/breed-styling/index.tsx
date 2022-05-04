@@ -47,7 +47,7 @@ const BreedStylingPage: NextPageWithLayout<Props> = ({ price }) => {
         <Image src={StylingBackground} layout="fill" objectFit="cover" objectPosition="center" placeholder="blur" alt="dog getting a haircut" priority />
         <div className="image-overlay-gradient" />
         <div className="container text-center">
-          <Image src={CourseIconBadge} alt="Cource Icon Badge" />
+          <Image src={CourseIconBadge as StaticImageData} alt="Cource Icon Badge" />
           <h1>Breed Styling Workshop</h1>
           <div className="row justify-content-center">
             <div className="col-12 col-lg-10">
