@@ -74,7 +74,7 @@ const DogGroomingHowItWorksPage: NextPageWithLayout = () => {
             <div className="col-12 col-lg-6 col-xl-5 offset-xl-1 mb-4 mb-lg-0">
               <h3 className="mb-4">Theory-Based Assignments</h3>
               <Bar variant="primary" />
-              <p>In order to be a qualified professional groomer, you need to master dog grooming theory. Throughout your online grooming course you'll learn everything from grooming tools, to dog behavior and temperaments, to the unique challenges of working with puppies, seniors, and other dogs who have special needs, and <Link href="/dog-grooming-courses"><a className="link-primary">much more</a></Link>.</p>
+              <p>In order to be a qualified professional groomer, you need to master dog grooming theory. Throughout your online grooming course you'll learn everything from grooming tools, to dog behavior and temperaments, to the unique challenges of working with puppies, seniors, and other dogs who have special needs, and <Link href="/dog-grooming-courses/dog-grooming/course-outline"><a className="link-primary">much more</a></Link>.</p>
               <p>Your knowledge in these areas will be tested with quizzes, case studies and other theoretical assignments, which will all be graded by your personal tutor. As you progress through the course, you'll become more and more comfortable with dog grooming theory, and you'll shift your focus to your practical grooming assignments.</p>
             </div>
             <div className="col-12 col-lg-6 col-xl-5">
