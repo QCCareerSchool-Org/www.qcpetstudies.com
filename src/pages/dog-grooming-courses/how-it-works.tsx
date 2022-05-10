@@ -49,7 +49,7 @@ const DogGroomingHowItWorksPage: NextPageWithLayout = () => {
           <div className="row">
             <div className="col-12 col-lg-10 offset-lg-1">
               <div className="mb-2">
-                <Image src={IconTime} width={iconSize} height={iconSize} alt="timer" />
+                <Image src={IconTime as StaticImageData} width={iconSize} height={iconSize} alt="timer" />
               </div>
               <h2>Starting the Dog Grooming Course</h2>
               <p>The first thing you'll do after enrolling is log in to your personal account in the Online Student Center. From there you'll be able to access your dog grooming course guides, lesson texts, assignment templates and video tutorials. You'll automatically be sent your grooming tools when you've completed Unit B and you're ready to begin your practical work.</p>
@@ -64,7 +64,7 @@ const DogGroomingHowItWorksPage: NextPageWithLayout = () => {
           <div className="row mb-4">
             <div className="col-12 col-lg-10 offset-lg-1">
               <div className="mb-2">
-                <Image src={IconAssignment} width={iconSize} height={iconSize} alt="assignment" />
+                <Image src={IconAssignment as StaticImageData} width={iconSize} height={iconSize} alt="assignment" />
               </div>
               <h2 className="mb-4">Your Dog Grooming Assignments</h2>
               <p>Throughout your course, you'll complete a variety of theoretical and practical assignments that are designed to test your knowledge and develop your dog grooming techniques.</p>
@@ -74,7 +74,7 @@ const DogGroomingHowItWorksPage: NextPageWithLayout = () => {
             <div className="col-12 col-lg-6 col-xl-5 offset-xl-1 mb-4 mb-lg-0">
               <h3 className="mb-4">Theory-Based Assignments</h3>
               <Bar variant="primary" />
-              <p>In order to be a qualified professional groomer, you need to master dog grooming theory. Throughout your online grooming course you'll learn everything from grooming tools, to dog behavior and temperaments, to the unique challenges of working with puppies, seniors, and other dogs who have special needs, and <Link href="/dog-grooming-courses"><a className="link-primary">much more</a></Link>.</p>
+              <p>In order to be a qualified professional groomer, you need to master dog grooming theory. Throughout your online grooming course you'll learn everything from grooming tools, to dog behavior and temperaments, to the unique challenges of working with puppies, seniors, and other dogs who have special needs, and <Link href="/dog-grooming-courses/dog-grooming/course-outline"><a className="link-primary">much more</a></Link>.</p>
               <p>Your knowledge in these areas will be tested with quizzes, case studies and other theoretical assignments, which will all be graded by your personal tutor. As you progress through the course, you'll become more and more comfortable with dog grooming theory, and you'll shift your focus to your practical grooming assignments.</p>
             </div>
             <div className="col-12 col-lg-6 col-xl-5">
@@ -95,7 +95,7 @@ const DogGroomingHowItWorksPage: NextPageWithLayout = () => {
           <div className="row justify-content-center">
             <div className="col-12 col-lg-7 col-xl-6">
               <div className="mb-2">
-                <Image src={IconMagnifyingGlass} width={iconSize} height={iconSize} alt="magnifying glass" />
+                <Image src={IconMagnifyingGlass as StaticImageData} width={iconSize} height={iconSize} alt="magnifying glass" />
               </div>
               <h2>Finding Dogs for Grooming Assignments</h2>
               <p>Throughout your dog groomer training you'll have the chance to work with many different dogs. You can work with your own dog, your friends' or family members' dogs, or you can reach out to your local animal shelter or a nearby rescue. After all, it's never too hard to find people who will be happy to have their dogs groomed for free! If you get stuck, just contact the student support team: <strong>they're ready to provide you with additional suggestions.</strong></p>
@@ -110,7 +110,7 @@ const DogGroomingHowItWorksPage: NextPageWithLayout = () => {
           <div className="row">
             <div className="col-12 col-lg-10 offset-lg-1">
               <div className="mb-2">
-                <Image src={IconCompass} width={iconSize} height={iconSize} alt="compass" />
+                <Image src={IconCompass as StaticImageData} width={iconSize} height={iconSize} alt="compass" />
               </div>
               <h2>Where to Groom Dogs for Assignments</h2>
               <p>You will need to set up an at-home workspace to groom dogs and develop your practical skills. Your course materials include step-by-step instructions for setting up a safe and functional grooming workspace at home. You will submit a photograph of your workspace so your tutor can provide you with feedback and ensure your setup is secure before starting practical assignments.</p>
@@ -126,7 +126,7 @@ const DogGroomingHowItWorksPage: NextPageWithLayout = () => {
           <div className="row">
             <div className="col-12 col-lg-10 offset-lg-1">
               <div className="mb-2">
-                <Image src={IconMegaphone} width={iconSize} height={iconSize} alt="megaphone" />
+                <Image src={IconMegaphone as StaticImageData} width={iconSize} height={iconSize} alt="megaphone" />
               </div>
               <h2>Receiving Feedback from your Tutor</h2>
               <p className="lead">You'll receive advice and detailed feedback from your tutor after every unit you complete.</p>
@@ -143,7 +143,7 @@ const DogGroomingHowItWorksPage: NextPageWithLayout = () => {
           <div className="row">
             <div className="col-12 col-lg-6 offset-lg-3">
               <div className="mb-2">
-                <Image src={IconChecked} width={iconSize} height={iconSize} alt="checkmark" />
+                <Image src={IconChecked as StaticImageData} width={iconSize} height={iconSize} alt="checkmark" />
               </div>
               <h2 className="mb-4">Graduation</h2>
               <p>Once you've completed your dog groomer training and your tuition has been paid in full, you'll be all set to graduate. Your professional dog groomer certificate of completion will be sent straight to your home.</p>

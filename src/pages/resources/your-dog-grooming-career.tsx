@@ -35,7 +35,7 @@ const DogGroomingCareerPage: NextPage = () => {
         <div className="container text-center">
           <div className="row justify-content-center">
             <div className="col-12 col-lg-10">
-              <div className="mb-4"><Image src={CompassIcon} alt="Compass Icon" /></div>
+              <div className="mb-4"><Image src={CompassIcon as StaticImageData} alt="Compass Icon" /></div>
               <h1>Your Dog Grooming Career</h1>
               <p className="lead mb-4">Career Paths for Professional Dog Groomers</p>
               <p className="mb-0">Dog grooming is a diverse industry with a variety of exciting career possibilities. Whether you enjoy working from home or aspire to open your own business, you're sure to find a career path that works for you.</p>
@@ -162,7 +162,7 @@ export default DogGroomingCareerPage;
 type CareerSectionProps = {
   title: string;
   subtitle?: string;
-  imgSrc: string;
+  imgSrc: StaticImageData;
   imgAlt: string;
   text: string;
   extraText?: string;

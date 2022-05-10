@@ -60,7 +60,7 @@ const CourseOutlinePage: NextPageWithLayout = () => {
               <div className="card">
                 <div className="card-body">
                   <div className="mb-2">
-                    <Image src={IconTime} width={iconSize} height={iconSize} alt="Clock Icon" />
+                    <Image src={IconTime as StaticImageData} width={iconSize} height={iconSize} alt="Clock Icon" />
                   </div>
                   <p className="card-text">The course should take about <strong>30 to 35 hours</strong> to study and complete assignments from start to finish. This time does not include the time you will take to practice and develop your skills before you complete an assignment.</p>
                 </div>
@@ -70,7 +70,7 @@ const CourseOutlinePage: NextPageWithLayout = () => {
               <div className="card">
                 <div className="card-body">
                   <div className="mb-2">
-                    <Image src={calendarIcon} width={iconSize} height={iconSize} alt="Calendar Icon" />
+                    <Image src={calendarIcon as StaticImageData} width={iconSize} height={iconSize} alt="Calendar Icon" />
                   </div>
                   <p className="card-text">On average, most QC Students work on their course for a few hours per week, and complete the online dog training course within <strong>three to six months</strong>. You'll have up to two years to complete the program&mdash;lots of time!</p>
                 </div>

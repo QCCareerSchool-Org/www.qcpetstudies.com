@@ -8,7 +8,7 @@ const getStoredLocation = (context: GetServerSidePropsContext): Location | undef
   const storedLocation: string | undefined = context.req.cookies.location;
   if (typeof storedLocation !== 'undefined') {
     try {
-      const data = JSON.parse(storedLocation);
+      const data = JSON.parse(storedLocation) as Location;
       if (typeof data.countryCode === 'string' && (typeof data.provinceCode === 'string' || data.provinceCode === null)) {
         return {
           countryCode: data.countryCode,

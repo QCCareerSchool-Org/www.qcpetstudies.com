@@ -1,17 +1,17 @@
+type QueryStringValue = string | number | boolean;
+
 /**
  * Creates a query string from an object
  *
- * Supports plain values and arrays, but doesn't support nested keys
+ * Supports plain values and arrays, but doesn't support nested arrays
  *
- * @param params the query string values
+ * @param params the query string values in object form
  */
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-export const createQueryString = (params: { [key: string]: any }): string => {
+export const createQueryString = (params: { [key: string]: QueryStringValue | QueryStringValue[] }): string => {
   return Object.keys(params).map(k => {
     const param = params[k];
     if (Array.isArray(param)) {
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      return param.map((val: any) => `${encodeURIComponent(k)}[]=${encodeURIComponent(val)}`).join('&');
+      return param.map(val => `${encodeURIComponent(k)}[]=${encodeURIComponent(val)}`).join('&');
     }
     return `${encodeURIComponent(k)}=${encodeURIComponent(param)}`;
   }).join('&');

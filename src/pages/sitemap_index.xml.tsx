@@ -24,7 +24,7 @@ const getRemoteSiteMapIndex = async (): Promise<SiteMapIndex> => {
     const data = await response.text();
     console.log(data);
     const parser = new XMLParser({ ignoreAttributes: false });
-    return parser.parse(data.replace(/<\?xml.*\?>/u, ''));
+    return parser.parse(data.replace(/<\?xml.*\?>/u, '')) as SiteMapIndex;
   } catch (err) {
     return {
       sitemapindex: {
@@ -53,7 +53,7 @@ export const getServerSideProps: GetServerSideProps<Record<string, never>> = asy
   });
 
   const builder = new XMLBuilder({ ignoreAttributes: false });
-  const xmlContent = builder.build(siteMapIndexObj);
+  const xmlContent = builder.build(siteMapIndexObj) as string;
 
   context.res.setHeader('Cache-Control', 'public, max-age=86400, must-revalidate');
   context.res.setHeader('Content-Type', 'text/xml');

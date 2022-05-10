@@ -7,7 +7,7 @@ export const lookupLocation = async (ipAddress: string): Promise<Location> => {
     if (!response.ok) {
       throw Error('Unable to fetch location');
     }
-    return await response.json();
+    return await response.json() as Location;
   } catch (err) {
     return { countryCode: 'US', provinceCode: 'MD' };
   }

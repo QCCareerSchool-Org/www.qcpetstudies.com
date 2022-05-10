@@ -9,7 +9,7 @@ type Props = {
   description: string;
   canonical: string;
   image?: {
-    src: any; // eslint-disable-line @typescript-eslint/no-explicit-any
+    data: StaticImageData; // eslint-disable-line @typescript-eslint/no-explicit-any
     alt: string;
   };
   twitterCardType?: TwitterCardType;
@@ -49,7 +49,7 @@ export const SEO = ({ title, description, canonical, image, twitterCardType, twi
       <meta property="og:title" content={title} />
       <meta property="og:description" content={description} />
       <meta property="og:type" content="website" />
-      <meta property="og:image" content={image?.src ? image.src : '/placeholder.jpg'} />
+      <meta property="og:image" content={image?.data ? image.data.src : '/placeholder.jpg'} />
       <meta property="og:image:alt" content={image?.alt ? image.alt : 'the QC Pet Studies logo'} />
       <link rel="canonical" href={baseUrl + canonical} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
