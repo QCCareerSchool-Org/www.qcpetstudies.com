@@ -27,7 +27,7 @@ const ContactUsPage: NextPage = () => {
     <>
       <SEO
         title="Contact Us"
-        description="This is Contact Us page"
+        description="How to contact QC Pet Studies"
         canonical="/contact-us"
       />
 
