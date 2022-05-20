@@ -14,9 +14,9 @@ const OfferExpiredPage: NextPage = () => {
   return (
     <>
       <SEO
-        title="Contact Us"
-        description="This is Contact Us page"
-        canonical="/contact-us"
+        title="Offer Expired"
+        description="Your offer has expired, but there may be something else we can do for you. Talk to one of our student advisors."
+        canonical="/offer-expired"
       />
 
       <section id="top" className="bg-dark text-light">
