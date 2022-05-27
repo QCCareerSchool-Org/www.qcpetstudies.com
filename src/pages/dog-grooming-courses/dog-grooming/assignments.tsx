@@ -59,7 +59,7 @@ const GroomingAssignment: NextPageWithLayout = () => {
                 <Image src={RedDesktopIcon as StaticImageData} objectFit="cover" objectPosition="center" alt="Desktop icon" />
               </div>
               <h3>Study{md ? <br /> : ' '}Online</h3>
-              <p className="mb-0">Study your material online, or use your physical course texts. Master the course theory and develop an understanding of proper practices, techniques, and industry knowledge.</p>
+              <p className="mb-0">Study your material online. Master the course theory and develop an understanding of proper practices, techniques, and industry knowledge.</p>
             </div>
             <div className="col-12 col-md-4 mb-4 mb-md-0">
               <div className="mb-2">
@@ -97,7 +97,7 @@ const GroomingAssignment: NextPageWithLayout = () => {
                   <h4><em>Topical Structure</em></h4>
                   <p className="small">In this assignment, you'll use your knowledge of topical structure to correctly label the given breed's topical features.</p>
                   <div className="flex-fill d-flex align-items-end justify-content-center">{/* flex-fill to use all remaining space */}
-                    <a href="/wp-content/uploads/2017/09/A3-Flat.pdf" target="_blank" className="btn btn-outline-secondary">View Assignments</a>
+                    <a href="/documents/dog-grooming/A3.pdf" target="_blank" className="btn btn-outline-secondary">View Assignments</a>
                   </div>
                 </div>
               </div>
@@ -110,7 +110,7 @@ const GroomingAssignment: NextPageWithLayout = () => {
                   <h4><em>Clipping White Nails</em></h4>
                   <p className="small">In this assignment, you'll prepare for your practicum units by practicing clipping the nails of a dog with white nails.</p>
                   <div className="flex-fill d-flex align-items-end justify-content-center">{/* flex-fill to use all remaining space */}
-                    <a href="/wp-content/uploads/2017/09/A3-Flat.pdf" target="_blank" className="btn btn-outline-secondary">View Assignments</a>
+                    <a href="/documents/dog-grooming/D2.pdf" target="_blank" className="btn btn-outline-secondary">View Assignments</a>
                   </div>
                 </div>
               </div>
@@ -123,7 +123,7 @@ const GroomingAssignment: NextPageWithLayout = () => {
                   <h4><em>Preparation for a Teddy Bear Cut</em></h4>
                   <p className="small">In this practicum assignment, you'll prepare a dog to receive a classic teddy bear cut. Show the dog fully prepared by following the instructions provided.</p>
                   <div className="flex-fill d-flex align-items-end justify-content-center">{/* flex-fill to use all remaining space */}
-                    <a href="/wp-content/uploads/2017/09/A3-Flat.pdf" target="_blank" className="btn btn-outline-secondary">View Assignments</a>
+                    <a href="/documents/dog-grooming/P3.1.pdf" target="_blank" className="btn btn-outline-secondary">View Assignments</a>
                   </div>
                 </div>
               </div>
