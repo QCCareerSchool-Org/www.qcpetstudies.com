@@ -73,7 +73,7 @@ const StudentExperiencePage: NextPage = () => {
             <div className="col-12 col-lg-6 col-xl-8 col-xxl-9 mb-4 mb-lg-0">
               <h2>Learn from Certified<br /><strong>Industry Experts</strong></h2>
               <p className="lead">To be the best, you need to learn from the best.</p>
-              <p className="mb-0">At QC Pet Studies, you ll be paired with a tutor who is a certified master groomer with years of industry experience. Your tutor will review your work and provide you with personalized audio feedback on your dog grooming assignments. They ll help you develop your knowledge, perfect your technique and grow your confidence as you work through your online dog grooming course. You ll benefit from your tutor's insight and experience, as well as their drive to help you succeed.</p>
+              <p className="mb-0">At QC Pet Studies, you'll be paired with a tutor who is a certified master groomer with years of industry experience. Your tutor will review your work and provide you with personalized audio feedback on your dog grooming assignments. They'll help you develop your knowledge, perfect your technique and grow your confidence as you work through your online dog grooming course. You'll benefit from your tutor's insight and experience, as well as their drive to help you succeed.</p>
             </div>
             <div className="col-12 col-sm-10 col-md-8 col-lg-6 col-xl-4 col-xxl-3">
               <Image src={CertifiedExpertImage} layout="responsive" alt="collage of dogs" />
@@ -99,7 +99,7 @@ const StudentExperiencePage: NextPage = () => {
             </div>
             <div className="col-12 col-lg-10">
               <h3>Connect with fellow dog grooming students!</h3>
-              <p className="mb-5">The Student Forum is a hub for dog grooming students to socialize and support one another. Ask questions about tools and techniques, swap stories about your best and worst canine clients, and be inspired by like-minded individuals. Education is essential to your success as a dog groomer even after you graduate. That's why you ll have lifetime access to the Online Student Center and be able to access new course texts and video tutorials as soon as they're available. And you can always reach out to the QC team with questions about your career or the dog grooming industry.</p>
+              <p className="mb-5">The Student Forum is a hub for dog grooming students to socialize and support one another. Ask questions about tools and techniques, swap stories about your best and worst canine clients, and be inspired by like-minded individuals. Education is essential to your success as a dog groomer even after you graduate. That's why you'll have lifetime access to the Online Student Center and be able to access new course texts and video tutorials as soon as they're available. And you can always reach out to the QC team with questions about your career or the dog grooming industry.</p>
               <p className="lead">At QC Pet Studies, <strong>we're with you for the journey.</strong></p>
               <Image src={LineOfDogsImage} alt="a line of nine dogs standing side to side" />
             </div>
