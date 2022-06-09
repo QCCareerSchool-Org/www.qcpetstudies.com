@@ -10,7 +10,7 @@ declare global {
 
 // log the page view with a specific URL
 export const gaPageview = (url: string): void => {
-  window.gtag?.('config', process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS, {
+  window.gtag?.('config', process.env.GOOGLE_ANALYTICS_ID, {
     page_path: url, // eslint-disable-line camelcase
   });
 };
