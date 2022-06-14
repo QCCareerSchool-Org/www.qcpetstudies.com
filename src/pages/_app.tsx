@@ -12,6 +12,7 @@ import { ErrorPage } from '../components/ErrorPage';
 import { fbqPageview } from '../lib/fbq';
 import { gaPageview } from '../lib/ga';
 import { pardotPageview } from '../lib/pardot';
+import { getRegistration } from '../lib/serviceWorker';
 import { TrackJS } from '../lib/trackjs-isomorphic';
 import { uetPageview } from '../lib/uet';
 import { Provider } from '../providers';
@@ -34,6 +35,10 @@ type AppPropsWithLayout = AppProps & {
 
 const QCPetStudiesApp = ({ Component, pageProps }: AppPropsWithLayout): ReactElement => {
   const router = useRouter();
+
+  useEffect(() => {
+    getRegistration().catch(() => { /* empty */ });
+  }, []);
 
   useEffect(() => {
     const handleRouteChange = (url: string): void => {
