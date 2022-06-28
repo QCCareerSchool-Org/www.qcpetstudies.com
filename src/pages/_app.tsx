@@ -11,6 +11,7 @@ import { ErrorBoundary } from '../components/ErrorBoundary';
 import { ErrorPage } from '../components/ErrorPage';
 import { fbqPageview } from '../lib/fbq';
 import { gaPageview } from '../lib/ga';
+import { resetOptInMonster } from '../lib/optInMonster';
 import { pardotPageview } from '../lib/pardot';
 import { getRegistration } from '../lib/serviceWorker';
 import { TrackJS } from '../lib/trackjs-isomorphic';
@@ -46,6 +47,7 @@ const QCPetStudiesApp = ({ Component, pageProps }: AppPropsWithLayout): ReactEle
       uetPageview(url);
       fbqPageview(url);
       pardotPageview(url);
+      // resetOptInMonster();
     };
 
     // When the component is mounted, subscribe to router changes and log those page views

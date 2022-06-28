@@ -4,15 +4,15 @@
  */
 export const getAddress = (countryCode: string): string[] => {
   switch (countryCode) {
-    case 'GB':
-    case 'IM':
-    case 'GG':
-    case 'JE':
-      return [
-        '186 St. Albans Road',
-        'Suite 18',
-        'Watford WD24 4AS',
-      ];
+    // case 'GB':
+    // case 'IM':
+    // case 'GG':
+    // case 'JE':
+    //   return [
+    //     '186 St. Albans Road',
+    //     'Suite 18',
+    //     'Watford WD24 4AS',
+    //   ];
     case 'AU':
     case 'CX':
     case 'CC':

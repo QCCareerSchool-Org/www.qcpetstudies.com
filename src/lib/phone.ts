@@ -62,9 +62,9 @@ export const getTelephoneNumber = (countryCode?: string): string => {
     case ukCode:
       return '0800 066 4734';
     case auCode:
-      return '0800-451-979';
-    case nzCode:
       return '1800 531 923';
+    case nzCode:
+      return '0800 451 979';
     default:
       return '+1 613-749-8248';
   }
