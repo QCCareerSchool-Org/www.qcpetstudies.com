@@ -47,7 +47,7 @@ const QCPetStudiesApp = ({ Component, pageProps }: AppPropsWithLayout): ReactEle
       uetPageview(url);
       fbqPageview(url);
       pardotPageview(url);
-      // resetOptInMonster();
+      resetOptInMonster();
     };
 
     // When the component is mounted, subscribe to router changes and log those page views

@@ -103,7 +103,7 @@ class MyDocument extends Document {
           <noscript><a href="https://www.livechatinc.com/chat-with/1056788/" rel="nofollow">Chat with us</a>, powered by <a href="https://www.livechatinc.com/?welcome" rel="noopener nofollow noreferrer" target="_blank">LiveChat</a></noscript>
           <Main />
           <NextScript />
-          {/* <script dangerouslySetInnerHTML={{ __html: optInMonsterScript }} /> */}
+          <script dangerouslySetInnerHTML={{ __html: optInMonsterScript }} />
         </body>
       </Html>
     );
