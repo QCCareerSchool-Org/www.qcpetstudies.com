@@ -45,10 +45,10 @@ const SuccessGuaranteedPage: NextPageWithLayout<Props> = ({ location, price }) =
             <Link href="/about/about-qc-pet-studies#guarantee"><a className="btn btn-outline-light">Find Out More</a></Link>
           </div>
           <div className="col-12 col-lg-3 mb-4">
-            <Image src={QcDayGuaratnteeLogo as StaticImageData} alt="21-day money-back guaratntee logo" />
+            <Image src={QcDayGuaratnteeLogo} alt="21-day money-back guaratntee logo" />
           </div>
           <div className="col-12 col-lg-3 mb-4">
-            <Image src={QcYearGuaratnteeLogo as StaticImageData} alt="1-year money-back guaratntee logo" />
+            <Image src={QcYearGuaratnteeLogo} alt="1-year money-back guaratntee logo" />
           </div>
         </div>
         <a href="https://enroll.qcpetstudies.com" className="btn btn-light">Enroll Today</a>

@@ -48,7 +48,7 @@ const HomePage: NextPage = () => (
             <div className="card">
               <div className="card-body">
                 <div className="mb-3">
-                  <Image src={IDTPCertificationGold as StaticImageData} width={iconSize} height={iconSize} alt="21-Day Money-Back Guarantee" />
+                  <Image src={IDTPCertificationGold} width={iconSize} height={iconSize} alt="21-Day Money-Back Guarantee" />
                 </div>
                 <h3><span className="badge rounded-pill bg-secondary">New</span> Dog Training | <em className="gold">IDTP&trade;</em></h3>
                 <p>Dog trainers have never been in higher demand! It's the best time to launch a rewarding and lucrative career as a dog trainer. This course uses scientifically proven methods of dog training derived from learning theory and industry best practices. You'll gain a thorough understanding of how dogs learn, how to modify unwanted behaviors, and how to create new behaviors in all types of dogs. Don't miss out on your chance to learn from the best!</p>
@@ -60,7 +60,7 @@ const HomePage: NextPage = () => (
             <div className="card">
               <div className="card-body">
                 <div className="mb-3">
-                  <Image src={IDGPCertificationGold as StaticImageData} width={iconSize} height={iconSize} alt="1-Year Money-Back Guarantee" />
+                  <Image src={IDGPCertificationGold} width={iconSize} height={iconSize} alt="1-Year Money-Back Guarantee" />
                 </div>
                 <h3>Dog Grooming | <em className="gold">IDGP&trade;</em></h3>
                 <p>Become a professional dog groomer. There's more to grooming than just bathing and brushing dogs! In this course you'll learn all about dog anatomy and behavior, how to use grooming tools safely and effectively, and how to competently groom any breed of dog. You'll also get a chance to launch your dog grooming business if that's your goal! Get plenty of hands-on groomer training without ever leaving your home. Start today!</p>

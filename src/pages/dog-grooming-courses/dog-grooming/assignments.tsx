@@ -56,21 +56,21 @@ const GroomingAssignment: NextPageWithLayout = () => {
           <div className="row justify-content-center">
             <div className="col-12 col-md-4 mb-4 mb-md-0">
               <div className="mb-2">
-                <Image src={RedDesktopIcon as StaticImageData} objectFit="cover" objectPosition="center" alt="Desktop icon" />
+                <Image src={RedDesktopIcon} objectFit="cover" objectPosition="center" alt="Desktop icon" />
               </div>
               <h3>Study{md ? <br /> : ' '}Online</h3>
               <p className="mb-0">Study your material online. Master the course theory and develop an understanding of proper practices, techniques, and industry knowledge.</p>
             </div>
             <div className="col-12 col-md-4 mb-4 mb-md-0">
               <div className="mb-2">
-                <Image src={CameraIcon as StaticImageData} objectFit="cover" objectPosition="center" alt="Camera icon" />
+                <Image src={CameraIcon} objectFit="cover" objectPosition="center" alt="Camera icon" />
               </div>
               <h3>Complete{md ? <br /> : ' '}Assignments</h3>
               <p className="mb-0">Your theory assignments are completed online by simply filling out the assignment template. For practical assignments, you'll submit clear photos and videos of your work.</p>
             </div>
             <div className="col-12 col-md-4">
               <div className="mb-2">
-                <Image src={CheckedIcon as StaticImageData} objectFit="cover" objectPosition="center" alt="Checked icon" />
+                <Image src={CheckedIcon} objectFit="cover" objectPosition="center" alt="Checked icon" />
               </div>
               <h3>Receive{md ? <br /> : ' '}Feedback</h3>
               <p className="mb-0">Your tutor reviews your work and provides detailed feedback, which you'll use to improve on your next unit. you'll receive a letter grade for each unit based on your knowledge and technical skills.</p>

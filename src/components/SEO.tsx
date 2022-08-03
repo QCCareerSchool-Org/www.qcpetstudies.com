@@ -1,4 +1,5 @@
 import Head from 'next/head';
+import { StaticImageData } from 'next/image';
 import { ReactElement } from 'react';
 
 type TwitterCardType = 'card' | 'summary_large_image';
@@ -9,7 +10,7 @@ type Props = {
   description: string;
   canonical: string;
   image?: {
-    data: StaticImageData; // eslint-disable-line @typescript-eslint/no-explicit-any
+    data: StaticImageData;
     alt: string;
   };
   twitterCardType?: TwitterCardType;
