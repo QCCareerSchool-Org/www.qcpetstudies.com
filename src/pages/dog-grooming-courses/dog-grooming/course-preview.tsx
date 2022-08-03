@@ -8,7 +8,6 @@ import { Bar } from '../../../components/Bar';
 import { DGTutorSection } from '../../../components/DGTutorSection';
 import { LandingPageLayout } from '../../../components/LandingPageLayout';
 import { PriceSection } from '../../../components/PriceSection';
-import { PriceSectionDisabled } from '../../../components/PriceSectionDisabled';
 import { SEO } from '../../../components/SEO';
 import { TabGroup } from '../../../components/TabGroup';
 import AssignmentBackground from '../../../images/backgrounds/your-career-bg.jpg';
@@ -353,10 +352,7 @@ const GroomingCoursePreviewPage: NextPageWithLayout<Props> = ({ location, price,
         </div>
       </section>
 
-      {location.countryCode === 'CA' && location.provinceCode === 'ON'
-        ? <PriceSectionDisabled />
-        : <PriceSection courses={courseCodes} price={price} doubleGuarantee={true} enrollPath={enrollPath} />
-      }
+      <PriceSection courses={courseCodes} price={price} doubleGuarantee={true} enrollPath={enrollPath} />
 
       <DGTutorSection className="bg-light" />
     </>

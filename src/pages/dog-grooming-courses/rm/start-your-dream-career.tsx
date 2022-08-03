@@ -5,7 +5,6 @@ import { DefaultLayout } from '../../../components/DefaultLayout';
 import { FreeFirstAidSection } from '../../../components/FreeFirstAidSection';
 import { HowTheCoursesWorkSection } from '../../../components/HowTheCoursesWorkSection';
 import { PriceSection } from '../../../components/PriceSection';
-import { PriceSectionDisabled } from '../../../components/PriceSectionDisabled';
 import { SEO } from '../../../components/SEO';
 import QcYearGuaratnteeLogo from '../../../images/1-year-guarantee-outlined.svg';
 import QcDayGuaratnteeLogo from '../../../images/21-day-guarantee-outlined.svg';
@@ -95,10 +94,7 @@ const StartYourDreamCareerPage: NextPageWithLayout<Props> = ({ location, price }
       </div>
     </section>
 
-    {location.countryCode === 'CA' && location.provinceCode === 'ON'
-      ? <PriceSectionDisabled />
-      : <PriceSection courses={courseCodes} price={price} doubleGuarantee={true} />
-    }
+    <PriceSection courses={courseCodes} price={price} doubleGuarantee={true} />
 
     <HowTheCoursesWorkSection className="bg-light" />
 
