@@ -89,4 +89,4 @@ export const LandingPageLayout = ({ link = true, reloadApp = false, secondaryNav
   );
 };
 
-const Logo = (): ReactElement => <Image src={logo as StaticImageData} alt="QC Pet Studies" width="300" height="28" />;
+const Logo = (): ReactElement => <Image src={logo} alt="QC Pet Studies" width="300" height="28" />;

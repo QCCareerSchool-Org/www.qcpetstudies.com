@@ -36,7 +36,7 @@ const DogGroomingPage: NextPageWithLayout<Props> = ({ price }) => {
         <Image src={FirstAidBackground} layout="fill" objectFit="cover" objectPosition="center" placeholder="blur" alt="groomer preparing apply gauze on a dog" priority />
         <div className="image-overlay-gradient" />
         <div className="container text-center">
-          <Image src={firstAidLogo as StaticImageData} alt="First Aid Course logo" width={60} height={60} />
+          <Image src={firstAidLogo} alt="First Aid Course logo" width={60} height={60} />
           <h1><strong>First Aid</strong> Course for Groomers</h1>
           <div className="row">
             <div className="col-12 col-lg-10 offset-lg-1">

@@ -30,7 +30,7 @@ const AboutPage: NextPage = () => (
           <div className="col-12 col-lg-10">
             <div className="d-flex flex-column flex-md-row justify-content-start align-items-center mb-4">
               <div className="me-4 flex-shrink-0 mb-2 mb-md-0" style={{ width: '120px' }}>
-                <Image src={Qc35Year as StaticImageData} layout="responsive" alt="distance education for over 35 years" />
+                <Image src={Qc35Year} layout="responsive" alt="distance education for over 35 years" />
               </div>
               <p className="lead mb-0">QC Pet Studies is a faculty of QC Career School. We're an online, international school that's been offering distance education courses since 1984, and in this time we&apos;ve mastered the art of delivering quality course content online.</p>
             </div>
@@ -98,7 +98,7 @@ const AboutPage: NextPage = () => (
             />
           </div>
           <div className="col-10 col-sm-8 col-lg-4 mb-4 mb-lg-0 text-center">
-            <Image src={SPCALogo as StaticImageData} layout="responsive" alt="SPCA logo" />
+            <Image src={SPCALogo} layout="responsive" alt="SPCA logo" />
             <p className="mb-0"><small>In partnership with SPCA International</small></p>
           </div>
           <div className="col-12 col-lg-6">

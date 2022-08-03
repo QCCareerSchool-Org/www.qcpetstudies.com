@@ -6,6 +6,18 @@ import { Location } from '../models/location';
 export const LocationStateContext = React.createContext<Location | null | undefined>(undefined);
 export const LocationDispatchContext = React.createContext<((location: Location) => void) | undefined>(undefined);
 
+const isLocation = (obj: unknown): obj is Location => {
+  if (typeof obj === 'object' && obj !== null) {
+    if ('countryCode' in obj && 'provinceCode' in obj) {
+      const location = obj as { countryCode: unknown; provinceCode: unknown };
+      if (typeof location.countryCode === 'string' && (typeof location.provinceCode === 'string' || location.provinceCode === null)) {
+        return true;
+      }
+    }
+  }
+  return false;
+};
+
 type Props = {
   children: ReactNode;
 };
@@ -14,8 +26,8 @@ const getLocation = async (): Promise<Location> => {
   const storedLocation = Cookies.get('location');
   if (storedLocation) {
     try {
-      const parsed = JSON.parse(storedLocation);
-      if (typeof parsed.countryCode === 'string' && (typeof parsed.provinceCode === 'string' || parsed.provinceCode === null)) {
+      const parsed: unknown = JSON.parse(storedLocation);
+      if (isLocation(parsed)) {
         return parsed;
       }
     } catch (err) { /* ignore */ }
@@ -26,9 +38,10 @@ const getLocation = async (): Promise<Location> => {
     if (!response.ok) {
       throw Error('Unable to fetch location');
     }
-    const fetchedLocation = await response.json();
-    Cookies.set('location', JSON.stringify(fetchedLocation), { secure: true, sameSite: 'strict' });
-    return fetchedLocation;
+    const fetchedLocation: unknown = await response.json();
+    const location = isLocation(fetchedLocation) ? fetchedLocation : { countryCode: 'US', provinceCode: 'MD' };
+    Cookies.set('location', JSON.stringify(location), { secure: true, sameSite: 'strict' });
+    return location;
   } catch (err) {
     return { countryCode: 'US', provinceCode: 'MD' };
   }

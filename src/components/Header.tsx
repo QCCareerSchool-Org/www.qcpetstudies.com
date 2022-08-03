@@ -54,7 +54,7 @@ export const Header = ({ noHero, secondaryTitle, secondaryNavLinks, enrollPath =
         <div className="container">
           <div id="nav-wrapper">
             <Navbar.Brand>
-              <Link href="/"><a onClick={resetMenu}><Image src={(scrolled ? logo : logoLight) as StaticImageData} alt="QC Pet Studies" width="176" height="17" /></a></Link>
+              <Link href="/"><a onClick={resetMenu}><Image src={(scrolled ? logo : logoLight)} alt="QC Pet Studies" width="176" height="17" /></a></Link>
             </Navbar.Brand>
             <Navbar.Toggle aria-controls="main-navbar" />
             <Navbar.Collapse id="main-navbar" className="justify-content-end">

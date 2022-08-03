@@ -128,7 +128,7 @@ const DogTrainingHowItWorksPage: NextPageWithLayout = () => {
           <div className="row justify-content-center">
             <div className="col-12 col-lg-8">
               <div className="mb-2">
-                <Image src={GraduationCertificateImage as StaticImageData} alt="IDTP™ Certification logo" height="180" width="180" />
+                <Image src={GraduationCertificateImage} alt="IDTP™ Certification logo" height="180" width="180" />
               </div>
               <h2>Your <strong>Graduation</strong></h2>
               <p>Once you've completed your dog training course and your tuition has been paid in full, you'll be all set to graduate. Your professional dog trainer certificate will be sent straight to your home!</p>
