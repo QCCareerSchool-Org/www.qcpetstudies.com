@@ -23,6 +23,7 @@ export const Bar = ({ variant, align = 'center' }: Props): ReactElement => {
       <hr ref={ref} className={className} />
       <style jsx>{`
         .bar {
+          border: none;
           height: 0.5rem;
           width: 4rem;
           margin: 0 ${align === 'end' ? 0 : 'auto'} 1.5rem ${align === 'start' ? 0 : 'auto'};

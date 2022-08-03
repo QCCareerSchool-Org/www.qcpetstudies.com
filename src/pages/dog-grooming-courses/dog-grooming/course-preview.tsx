@@ -372,14 +372,14 @@ export const getServerSideProps: GetServerSideProps<Props> = async context => {
 const VideoTab = (): ReactElement => (
   <div className="d-flex flex-column align-items-center">
     <FaPlay size={20} className="mb-2" />
-    Video Sample
+    <span>Video<span className="d-none d-sm-inline"> Sample</span></span>
   </div>
 );
 
 const AssignmentTab = (): ReactElement => (
   <div className="d-flex flex-column align-items-center">
     <FaBars size={20} className="mb-2" />
-    Assignment Sample
+    <span>Assignment<span className="d-none d-sm-inline"> Sample</span></span>
   </div>
 );
 
