@@ -50,8 +50,8 @@ export const PriceSection = ({ courses, price, doubleGuarantee, variant = 'dark'
                   {price.courses.length > 0
                     ? (
                       <>
-                        <p className="mb-3">Get Started for Only<br /><span className="h2 font-family-open-sans">{price?.currency.symbol}{formatPrice(price?.plans.part.deposit)}</span></p>
-                        <p className="mb-3"><span className="lead">Deposit of {price?.currency.symbol}{formatPrice(price?.plans.part.deposit)}</span><br /><small>{price?.plans.part.installments} monthly payments of {price?.currency.symbol}{formatPrice(price?.plans.part.installmentSize)}</small></p>
+                        <p className="mb-3">Get Started for Only<br /><span className="h2 font-family-open-sans">{price.currency.symbol}{formatPrice(price.plans.part.deposit)}</span></p>
+                        <p className="mb-3"><span className="lead">Deposit of {price?.currency.symbol}{formatPrice(price.plans.part.deposit)}</span><br /><small>{price.plans.part.installments} monthly payments of {price.currency.symbol}{formatPrice(price.plans.part.installmentSize)}</small></p>
                         <p className="mb-0"><a href={enrollLink} className="btn btn-outline-dark">Enroll Now</a></p>
                       </>
                     )
@@ -68,8 +68,11 @@ export const PriceSection = ({ courses, price, doubleGuarantee, variant = 'dark'
                   {price.courses.length > 0
                     ? (
                       <>
-                        <p className="mb-3">One-Time Payment<br /><span className="h2 font-family-open-sans">{price?.currency.symbol}{formatPrice(price?.plans.full.total)}</span></p>
-                        <p className="mb-3"><span className="lead">SAVE {price?.currency.symbol}{formatPrice(price?.plans.full.discount)}</span><br /><small>When you pay in full</small></p>
+                        <p className="mb-3">One-Time Payment<br /><span className="h2 font-family-open-sans">{price.currency.symbol}{formatPrice(price.plans.full.total)}</span></p>
+                        {price.plans.full.discount > 0
+                          ? <p className="mb-3"><span className="lead">SAVE {price.currency.symbol}{formatPrice(price.plans.full.discount)}</span><br /><small>When you pay in full</small></p>
+                          : <p className="mb-3"><span className="lead">&nbsp;</span><br /><small>&nbsp;</small></p>
+                        }
                         <p className="mb-0"><a href={enrollLink} className="btn btn-secondary">Enroll Now</a></p>
                       </>
                     )
