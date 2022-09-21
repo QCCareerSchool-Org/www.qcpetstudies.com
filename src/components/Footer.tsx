@@ -72,7 +72,7 @@ export const Footer = ({ ctaType, enrollPath = '/', className }: Props): ReactEl
             <ul className="spacedList">
               <li><Link href="/dog-grooming-courses/dog-grooming"><a>Dog Grooming</a></Link></li>
               <li><Link href="/dog-training-courses/dog-training"><a>Dog Training</a></Link></li>
-              <li className="text-muted"><Link href="/dog-grooming-courses/first-aid"><a>First Aid</a></Link></li>
+              {/* <li className="text-muted"><Link href="/dog-grooming-courses/first-aid"><a>First Aid</a></Link></li> */}
             </ul>
           </div>
           <div id="footerColContactUs" className="col-12 col-sm-4 col-lg-2 mb-4 mb-sm-0 text-center text-lg-start">
