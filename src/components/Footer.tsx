@@ -1,11 +1,11 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { ReactElement } from 'react';
+import { FC } from 'react';
 import { FaFacebookF, FaInstagram, FaTwitter } from 'react-icons/fa';
 
 import { useLocation } from '../hooks/useLocation';
 import { useScreenWidth } from '../hooks/useScreenWidth';
-import BBBLogo from '../images/bbb-a.svg';
+import BBBLogo from '../images/a-plus-left-pad.svg';
 import ChatIcon from '../images/footer-icons-chat.svg';
 import EmailIcon from '../images/footer-icons-email.svg';
 import InfoIcon from '../images/footer-icons-info.svg';
@@ -25,7 +25,7 @@ type Props = {
   className?: string;
 };
 
-export const Footer = ({ ctaType, enrollPath = '/', className }: Props): ReactElement => {
+export const Footer: FC<Props> = ({ ctaType, enrollPath = '/', className }) => {
   const location = useLocation();
   const screenWidth = useScreenWidth();
 
@@ -142,13 +142,15 @@ export const Footer = ({ ctaType, enrollPath = '/', className }: Props): ReactEl
   );
 };
 
-const PipeSpacer = (): ReactElement => <>&nbsp;&nbsp;|&nbsp;&nbsp;</>;
+const PipeSpacer: FC = () => <>&nbsp;&nbsp;|&nbsp;&nbsp;</>;
 
-const BBBGuarantee = (): ReactElement => (
+const BBBGuarantee: FC = () => (
   <div className="row text-center sm-gutters mb-4">
     <div className="col-4 offset-2 col-sm-3 offset-sm-3 col-md-2 offset-md-4 col-lg-6 offset-lg-0">
       <div>
-        <Image src={BBBLogo} width={72} height={48} alt="BBB Better Business Bureau A+" />
+        <a href="https://www.bbb.org/ca/on/ottawa/profile/correspondence-schools/qc-career-school-0117-4175/#sealclick" target="_blank" rel="noreferrer">
+          <Image src={BBBLogo} width={75} height={48} alt="BBB Better Business Bureau A+" />
+        </a>
       </div>
       <small className="logoText">BBB Accredited</small>
     </div>
