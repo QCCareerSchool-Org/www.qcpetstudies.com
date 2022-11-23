@@ -42,9 +42,10 @@ type Props = {
   label: string;
   options: Option[];
   multiLine?: boolean;
+  sm?: boolean;
 };
 
-export const SearchBox: FC<Props> = ({ label, options, multiLine = false }) => {
+export const SearchBox: FC<Props> = ({ label, options, multiLine = false, sm = false }) => {
   const [ state, dispatch ] = useReducer(reducer, initialState);
   const [ url, setUrl ] = useState<string | null>(null);
   const router = useRouter();
@@ -83,29 +84,25 @@ export const SearchBox: FC<Props> = ({ label, options, multiLine = false }) => {
     <>
       <div className={`searchBox d-flex ${multiLine ? 'flex-column' : 'align-items-center'}`}>
         <div className="text flex-shrink-0">{label}</div>
-        <div className="d-flex align-items-center flex-grow-1">
-          <div className="search flex-grow-1">
-            <select onChange={handleChange} value={url ?? ''} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} className="form-select" style={{ fontWeight: 600 }}>
-              <option value="">{state.text}</option>
-              {options.map(o => <option key={o.id} value={o.url}>{o.text}</option>)}
-            </select>
-          </div>
-          <div className="flex-shrink-0">
-            <button onClick={handleClick} className="btn btn-sm btn-dark" disabled={url === null}>Learn More</button>
-          </div>
+        <div className="search flex-grow-1">
+          <select onChange={handleChange} value={url ?? ''} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} className={`form-select ${sm ? 'form-select-sm' : ''}`} style={{ fontWeight: 600 }}>
+            <option value="">{state.text}</option>
+            {options.map(o => <option key={o.id} value={o.url}>{o.text}</option>)}
+          </select>
+        </div>
+        <div className="flex-shrink-0">
+          <button onClick={handleClick} className="btn btn-sm btn-dark" disabled={url === null}>Learn More</button>
         </div>
       </div>
       <style jsx>{`
         .searchBox {
-          background: rgba(255, 255, 255, 0.75);
-          padding: ${multiLine ? '1rem 1rem' : '0.125rem 0.75rem 0.125rem 1rem'};
-          ${multiLine ? '' : 'height: 3rem;'}
+          ${multiLine ? 'background: rgba(255, 255, 255, 0.75); padding: 0.5rem 1rem 1rem;' : 'background: rgba(255, 255, 255, 0.75); padding: 0.625rem 1.25rem 0.625rem 1.5rem; height: 4rem;'}
         }
         .text {
           ${multiLine ? `margin-bottom: 0.5rem;` : `padding-right: 1rem; border-right: 1px solid black; margin-right: 0.5rem;`}
         }
         .search {
-          ${multiLine ? 'margin-right: 1rem' : ''}
+          ${multiLine ? 'margin-bottom: 1rem;' : ''}
         }
         .form-select {
           ${multiLine ? '' : 'border: 0; background-color: inherit;'}

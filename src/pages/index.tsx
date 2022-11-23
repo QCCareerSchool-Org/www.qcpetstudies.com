@@ -21,26 +21,18 @@ import { NextPageWithLayout } from './_app';
 
 const iconSize = 145;
 
+const options = [
+  { id: 'groomer', text: 'become a professional dog groomer', url: '/dog-grooming-courses/dog-grooming' },
+  { id: 'trainer', text: 'become a professional dog trainer', url: '/dog-training-courses/dog-training' },
+  // { id: 'daycare', text: 'become a dog daycare professional', url: '/dog-grooming-courses/dog-grooming' },
+];
+
 const HomePage: NextPageWithLayout = () => {
   const screenWidth = useScreenWidth();
 
   const lg = screenWidth >= 992;
   const md = screenWidth >= 768;
-
-  const options = useMemo(() => {
-    if (md) {
-      return [
-        { id: 'groomer', text: 'become a professional dog groomer', url: '/dog-grooming-courses/dog-grooming' },
-        { id: 'trainer', text: 'become a professional dog trainer', url: '/dog-training-courses/dog-training' },
-        // { id: 'daycare', text: 'become a dog daycare professional', url: '/dog-grooming-courses/dog-grooming' },
-      ];
-    }
-    return [
-      { id: 'groomer', text: 'professional dog groomer', url: '/dog-grooming-courses/dog-grooming' },
-      { id: 'trainer', text: 'professional dog trainer', url: '/dog-training-courses/dog-training' },
-      // { id: 'daycare', text: 'dog daycare professional', url: '/dog-grooming-courses/dog-grooming' },
-    ];
-  }, [ md ]);
+  const sm = screenWidth >= 576;
 
   return (
     <>
@@ -70,9 +62,10 @@ const HomePage: NextPageWithLayout = () => {
             <div className="col-12 col-lg-8 col-xl-7 col-xxl-6">
               <div className="searchBoxWrapper">
                 <SearchBox
-                  label={md ? 'I\'m ready to' : 'I\'m ready to become a'}
+                  label="I'm ready to"
                   options={options}
                   multiLine={!md}
+                  sm={!sm}
                 />
               </div>
             </div>
@@ -233,7 +226,7 @@ const HomePage: NextPageWithLayout = () => {
         margin-bottom: 3rem;
       }
       .searchBoxWrapper {
-        margin-top: 3rem;
+        margin-top: 5rem;
       }
       .heroContainer {
         margin-bottom: 16rem;
