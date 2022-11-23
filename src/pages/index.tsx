@@ -1,7 +1,7 @@
 import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
-import { CSSProperties, FC } from 'react';
+import { CSSProperties, FC, useMemo } from 'react';
 import { FaBriefcase, FaChalkboardTeacher, FaHandHoldingUsd, FaLaptopHouse, FaRegCalendarCheck } from 'react-icons/fa';
 import { IoMdRibbon } from 'react-icons/io';
 import { jsonLdScriptProps } from 'react-schemaorg';
@@ -21,23 +21,32 @@ import { NextPageWithLayout } from './_app';
 
 const iconSize = 145;
 
-const options = [
-  { id: 'groomer', text: 'become a professional dog groomer', url: '/dog-grooming-courses/dog-grooming' },
-  { id: 'trainer', text: 'become a professional dog trainer', url: '/dog-training-courses/dog-training' },
-  // { id: 'daycare', text: 'become a dog daycare professional', url: '/dog-grooming-courses/dog-grooming' },
-];
-
 const HomePage: NextPageWithLayout = () => {
   const screenWidth = useScreenWidth();
 
   const lg = screenWidth >= 992;
   const md = screenWidth >= 768;
 
+  const options = useMemo(() => {
+    if (md) {
+      return [
+        { id: 'groomer', text: 'become a professional dog groomer', url: '/dog-grooming-courses/dog-grooming' },
+        { id: 'trainer', text: 'become a professional dog trainer', url: '/dog-training-courses/dog-training' },
+        // { id: 'daycare', text: 'become a dog daycare professional', url: '/dog-grooming-courses/dog-grooming' },
+      ];
+    }
+    return [
+      { id: 'groomer', text: 'professional dog groomer', url: '/dog-grooming-courses/dog-grooming' },
+      { id: 'trainer', text: 'professional dog trainer', url: '/dog-training-courses/dog-training' },
+      // { id: 'daycare', text: 'dog daycare professional', url: '/dog-grooming-courses/dog-grooming' },
+    ];
+  }, [ md ]);
+
   return (
     <>
       <SEO
         title="Become a Pet Care Professional"
-        description="Start an exciting career in the pet care industry! Become a certified dog groomer or certified dog trainer with QC’s Internationally-recognized online courses!"
+        description="Start a successful career in the pet care industry! Become a certified dog groomer or certified dog trainer with QC’s internationally recognized online courses!"
         canonical="/"
       />
 
@@ -61,7 +70,7 @@ const HomePage: NextPageWithLayout = () => {
             <div className="col-12 col-lg-8 col-xl-7 col-xxl-6">
               <div className="searchBoxWrapper">
                 <SearchBox
-                  label="I'm ready to"
+                  label={md ? 'I\'m ready to' : 'I\'m ready to become a'}
                   options={options}
                   multiLine={!md}
                 />
