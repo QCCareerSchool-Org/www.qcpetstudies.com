@@ -14,6 +14,7 @@ import { SecondaryNav, SecondaryNavLinks } from './SecondaryNav';
 
 type Props = {
   noHero?: boolean;
+  inverseNav?: boolean;
   secondaryTitle?: string;
   secondaryNavLinks?: SecondaryNavLinks;
   /** custom path for the shopping cart (include leading slash) */
@@ -21,7 +22,7 @@ type Props = {
   className?: string;
 };
 
-export const Header = ({ noHero, secondaryTitle, secondaryNavLinks, enrollPath = '/', className }: Props): ReactElement => {
+export const Header = ({ noHero, inverseNav, secondaryTitle, secondaryNavLinks, enrollPath = '/', className }: Props): ReactElement => {
   const screenWidth = useScreenWidth();
   const scrollPosition = useScrollPosition();
   const [ expanded, setExpanded ] = useState(false);
@@ -48,13 +49,13 @@ export const Header = ({ noHero, secondaryTitle, secondaryNavLinks, enrollPath =
         bg={scrolled ? 'white' : noHero ? 'dark' : undefined}
         variant={scrolled ? undefined : 'dark'}
         expand="lg"
-        className={`${scrolled && !secondaryNavLinks ? 'shadow-sm' : ''} ${expanded && !lgOrGreater ? 'opened' : 'closed'} ${!lgOrGreater ? 'mobile' : 'desktop'} ${secondaryNavLinks ? '.with-secondary' : ''} ${className ?? ''}`}
+        className={`${inverseNav ? 'inverse' : ''} ${scrolled && !secondaryNavLinks ? 'shadow-sm' : ''} ${expanded && !lgOrGreater ? 'opened' : 'closed'} ${!lgOrGreater ? 'mobile' : 'desktop'} ${secondaryNavLinks ? '.with-secondary' : ''} ${className ?? ''}`}
         onToggle={setExpanded}
       >
         <div className="container">
           <div id="nav-wrapper">
             <Navbar.Brand>
-              <Link href="/"><a onClick={resetMenu}><Image src={(scrolled ? logo : logoLight)} alt="QC Pet Studies" width="176" height="17" /></a></Link>
+              <Link href="/"><a onClick={resetMenu}><Image src={(scrolled || (inverseNav && !expanded) ? logo : logoLight)} alt="QC Pet Studies" width="176" height="17" /></a></Link>
             </Navbar.Brand>
             <Navbar.Toggle aria-controls="main-navbar" />
             <Navbar.Collapse id="main-navbar" className="justify-content-end">

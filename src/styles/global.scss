@@ -95,15 +95,17 @@ body {
 h1, .h1 {
   color: #122022;
   text-transform: uppercase;
-  &.fw-normal { font-weight: 200 !important; }
+  font-weight: 700;
+  &.fw-normal { font-weight: 300 !important; }
 }
 h2, .h2 {
   color: #122022;
   letter-spacing: -0.055rem;
-  font-weight: 200;
+  font-weight: 300;
+  text-transform: none;
   // because we set a non-standard font weight, we explicitly specify the font weight for bold
   b, strong, &.fw-bold {
-    font-weight: 600;
+    font-weight: 700;
   }
 }
 // h2 strong, h2.bold h2 .bold, .h2 strong, .h2.bold .h2 .bold { font-weight: 600 }
@@ -275,6 +277,10 @@ ul.sm-indent, ol.sm-indent { padding-inline-start: 0rem; padding-left: 1.5rem; }
 .navbar-nav { z-index: 10 }
 
 #main-nav { padding-bottom: 0; padding-top: 0 }
+
+#main-nav.desktop.inverse .nav-link { color: black }
+
+#main-nav.desktop.inverse #nav-wrapper { border-color: rgba(0,0,0,0); }
 
 #secondary-nav { margin-top: 56px }
 
