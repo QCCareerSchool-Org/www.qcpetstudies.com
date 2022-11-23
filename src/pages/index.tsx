@@ -37,7 +37,7 @@ const HomePage: NextPageWithLayout = () => {
     <>
       <SEO
         title="Become a Pet Care Professional"
-        description="Start an exciting career in the pet care industry! Become a certified dog groomer or certified dog trainer with QC’s Internationally-recognized online courses!"
+        description="Start a successful career in the pet care industry! Become a certified dog groomer or certified dog trainer with QC’s internationally recognized online courses!"
         canonical="/"
       />
 
