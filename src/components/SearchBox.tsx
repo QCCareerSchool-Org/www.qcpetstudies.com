@@ -1,5 +1,6 @@
 import { useRouter } from 'next/router';
 import { ChangeEventHandler, FC, MouseEventHandler, useEffect, useReducer, useState } from 'react';
+import { gaEvent } from '../lib/ga';
 
 type State = {
   step: number;
@@ -68,6 +69,7 @@ export const SearchBox: FC<Props> = ({ label, options, multiLine = false, sm = f
   const handleChange: ChangeEventHandler<HTMLSelectElement> = e => {
     console.log(e.target.value);
     if (e.target.value) {
+      gaEvent('search_box_changed', { url });
       setUrl(e.target.value);
     } else {
       setUrl(null);
@@ -76,6 +78,7 @@ export const SearchBox: FC<Props> = ({ label, options, multiLine = false, sm = f
 
   const handleClick: MouseEventHandler<HTMLButtonElement> = e => {
     if (url) {
+      gaEvent('search_box_completed', { url });
       void router.push(url);
     }
   };
