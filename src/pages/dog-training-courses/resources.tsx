@@ -52,7 +52,7 @@ const DogTrainingResourcesPage: NextPageWithLayout = () => (
               <Image src={StudentGrad} alt="Dog Training Course Outline" className="card-img-top" />
               <div className="card-body">
                 <h3 className="card-title">Frequently Asked Questions</h3>
-                <p className="card-text">Do you have questions about taking the online dog training course? Read this list of FAQs to lear more about your tuition options, how the online course works, and more.</p>
+                <p className="card-text">Do you have questions about taking the online dog training course? Read this list of FAQs to learn more about your tuition options, how the online course works, and more.</p>
                 <Link href="/about/faq/"><a className="link-primary">Learn More</a></Link>
               </div>
             </div>

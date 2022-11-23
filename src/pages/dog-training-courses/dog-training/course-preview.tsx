@@ -57,7 +57,7 @@ const DogTrainingCoursePreviewPage: NextPageWithLayout<Props> = ({ price, enroll
               <p>Do you have what it takes to become a professional dog trainer? Does this sound like you?</p>
               <ul>
                 <li>You love all dogs, big and small</li>
-                <li>You're able to interacti with all types of dogs calmly and carefully</li>
+                <li>You're able to interact with all types of dogs calmly and carefully</li>
                 <li>You're agile and are able to stand on your feet for hours at a time</li>
                 <li>You understand that dogs are individuals with their own needs and wants, and are willing to learn how to work with them</li>
                 <li>You're good with people too, and are eager to teach people as well as dogs</li>
