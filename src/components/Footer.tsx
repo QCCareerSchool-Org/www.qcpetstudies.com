@@ -17,7 +17,7 @@ import { getAddress, isGBPCountry } from '../lib/address';
 import { openLiveChat } from '../lib/livechat';
 import { getTelephoneNumber } from '../lib/phone';
 
-export type FooterCTAType = 'grooming' | 'training';
+export type FooterCTAType = 'grooming' | 'training' | 'care';
 
 type Props = {
   ctaType?: FooterCTAType;
@@ -36,10 +36,12 @@ export const Footer: FC<Props> = ({ ctaType, enrollPath = '/', className }) => {
   const lgOrGreater = screenWidth >= 992;
 
   const enrollUrl = ctaType === 'grooming'
-    ? `https://enroll.qcpetstudies.com${enrollPath}?c[]=dg&c[]=fa`
+    ? `https://enroll.qcpetstudies.com${enrollPath}?c[]=dg`
     : ctaType === 'training'
       ? `https://enroll.qcpetstudies.com${enrollPath}?c[]=dt`
-      : `https://enroll.qcpetstudies.com${enrollPath}`;
+      : ctaType === 'care'
+        ? `https://enroll.qcpetstudies.com${enrollPath}?c[]=dd`
+        : `https://enroll.qcpetstudies.com${enrollPath}`;
 
   return (
     <footer style={{ borderTop: '1px solid rgb(255,255,255,0.1)' }} className={className}>
@@ -72,7 +74,7 @@ export const Footer: FC<Props> = ({ ctaType, enrollPath = '/', className }) => {
             <ul className="spacedList">
               <li><Link href="/certification-courses/dog-grooming"><a>Dog Grooming</a></Link></li>
               <li><Link href="/certification-courses/dog-training"><a>Dog Training</a></Link></li>
-              {/* <li className="text-muted"><Link href="/certification-courses/first-aid"><a>First Aid</a></Link></li> */}
+              <li><Link href="/certification-courses/dog-care"><a>Dog Care</a></Link></li>
             </ul>
           </div>
           <div id="footerColContactUs" className="col-12 col-sm-4 col-lg-2 mb-4 mb-sm-0 text-center text-lg-start">

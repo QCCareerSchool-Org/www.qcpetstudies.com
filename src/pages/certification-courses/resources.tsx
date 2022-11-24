@@ -1,15 +1,14 @@
+import { NextPage } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 
-import { DefaultLayout } from '../../components/DefaultLayout';
 import { SEO } from '../../components/SEO';
 import DogTrainingResourcesBackground from '../../images/backgrounds/working-at-home-office-with-dog.jpg';
 import DogTrainingCareer from '../../images/cards/dog-training-career.jpg';
 import LearningInClassOnline from '../../images/cards/learning-in-class-online.jpg';
 import StudentGrad from '../../images/cards/student-grad.jpg';
-import type { NextPageWithLayout } from '../_app';
 
-const DogTrainingResourcesPage: NextPageWithLayout = () => (
+const LearningResourcesPage: NextPage = () => (
   <>
     <SEO
       title="Dog Training Resources"
@@ -22,7 +21,7 @@ const DogTrainingResourcesPage: NextPageWithLayout = () => (
       <div className="container text-center">
         <div className="row justify-content-center">
           <div className="col-12 col-lg-10">
-            <h1 className="fw-normal mb-0">Dog Training<br /><strong>Resources</strong></h1>
+            <h1 className="mb-0">Learning Resources</h1>
           </div>
         </div>
       </div>
@@ -83,6 +82,4 @@ const DogTrainingResourcesPage: NextPageWithLayout = () => (
   </>
 );
 
-DogTrainingResourcesPage.getLayout = page => <DefaultLayout footerCTAType="training">{page}</DefaultLayout>;
-
-export default DogTrainingResourcesPage;
+export default LearningResourcesPage;

@@ -63,9 +63,10 @@ export const Header = ({ noHero, inverseNav, secondaryTitle, secondaryNavLinks, 
                 <NavDropdown title="Certification Courses" id="courses-dropdown">
                   <Link href="/certification-courses/dog-grooming"><a onClick={resetMenu} className="dropdown-item">Dog Grooming Course</a></Link>
                   <Link href="/certification-courses/dog-training"><a onClick={resetMenu} className="dropdown-item">Dog Training Course</a></Link>
+                  <Link href="/certification-courses/dog-care"><a onClick={resetMenu} className="dropdown-item">Dog Care Course</a></Link>
                   <hr />
                   <Link href="/certification-courses/how-it-works"><a onClick={resetMenu} className="dropdown-item"><FaCog className="text-primary me-2" /> How It Works</a></Link>
-                  <Link href="/certification-courses/resources"><a onClick={resetMenu} className="dropdown-item"><FaFolderOpen className="text-primary me-2" /> Dog Grooming Resources</a></Link>
+                  <Link href="/certification-courses/resources"><a onClick={resetMenu} className="dropdown-item"><FaFolderOpen className="text-primary me-2" /> Learning Resources</a></Link>
                   {/* <Link href="/certification-courses/meet-our-experts"><a onClick={resetMenu} className="dropdown-item"><FaUser className="text-primary me-2" /> Meet Our Experts</a></Link> */}
                   <Link href="/certification-courses/dog-grooming-kit"><a onClick={resetMenu} className="dropdown-item"><FaCut className="text-primary me-2" /> Dog Grooming Kit</a></Link>
                 </NavDropdown>
