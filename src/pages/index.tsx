@@ -1,7 +1,7 @@
 import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
-import { CSSProperties, FC, useMemo } from 'react';
+import { CSSProperties, FC } from 'react';
 import { FaBriefcase, FaChalkboardTeacher, FaHandHoldingUsd, FaLaptopHouse, FaRegCalendarCheck } from 'react-icons/fa';
 import { IoMdRibbon } from 'react-icons/io';
 import { jsonLdScriptProps } from 'react-schemaorg';
@@ -22,9 +22,9 @@ import { NextPageWithLayout } from './_app';
 const iconSize = 145;
 
 const options = [
-  { id: 'groomer', text: 'become a professional dog groomer', url: '/dog-grooming-courses/dog-grooming' },
-  { id: 'trainer', text: 'become a professional dog trainer', url: '/dog-training-courses/dog-training' },
-  // { id: 'daycare', text: 'become a dog daycare professional', url: '/dog-grooming-courses/dog-grooming' },
+  { id: 'groomer', text: 'become a professional dog groomer', url: '/certification-courses/dog-grooming' },
+  { id: 'trainer', text: 'become a professional dog trainer', url: '/certification-courses/dog-training' },
+  // { id: 'daycare', text: 'become a dog daycare professional', url: '/certification-courses/dog-grooming' },
 ];
 
 const HomePage: NextPageWithLayout = () => {
