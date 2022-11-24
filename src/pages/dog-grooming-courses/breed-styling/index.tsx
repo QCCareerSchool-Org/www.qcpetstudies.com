@@ -40,7 +40,7 @@ const BreedStylingPage: NextPageWithLayout<Props> = ({ price }) => {
       <SEO
         title="Breed Styling Workshop"
         description="If you're already a professional dog groomer, the breed styling workshop will take your grooming skills to the next level. Start today!"
-        canonical="/dog-grooming-courses/breed-styling"
+        canonical="/certification-courses/breed-styling"
       />
 
       <section id="top" className="bg-dark">
@@ -89,7 +89,7 @@ const BreedStylingPage: NextPageWithLayout<Props> = ({ price }) => {
                 <li>Dog groomers who are comfortable with basic services but want to enter conformation grooming competitions</li>
                 <li>Experienced dog groomers who have never received professional education on interpreting and implementing breed standards</li>
               </ul>
-              <p className="mb-0">Fundamental pet service knowledge is a prerequisite for this workshop. You won't spend time reviewing grooming tools, hair clipping, bathing, drying, and brushing. Instead, skip right to grooming techniques for a variety of breeds. If you'd like a refresher in these areas, we recommend the <Link href="/dog-grooming-courses/dog-grooming"><a className="link-primary"> Dog Grooming course </a></Link> which covers the fundamentals and everything included in the Breed Styling Workshop.</p>
+              <p className="mb-0">Fundamental pet service knowledge is a prerequisite for this workshop. You won't spend time reviewing grooming tools, hair clipping, bathing, drying, and brushing. Instead, skip right to grooming techniques for a variety of breeds. If you'd like a refresher in these areas, we recommend the <Link href="/certification-courses/dog-grooming"><a className="link-primary"> Dog Grooming course </a></Link> which covers the fundamentals and everything included in the Breed Styling Workshop.</p>
             </div>
           </div>
         </div>

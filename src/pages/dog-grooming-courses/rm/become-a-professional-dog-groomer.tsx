@@ -26,7 +26,7 @@ const ProfessionalDogGroomerPage: NextPageWithLayout<Props> = ({ testGroup }) =>
       <SEO
         title="Become a Professional Dog Groomer"
         description="Become a Professional Dog Groomer"
-        canonical="/dog-grooming-courses/rm/become-a-professional-dog-groomer"
+        canonical="/certification-courses/rm/become-a-professional-dog-groomer"
       />
 
       <section id="top" className="bg-dark bg-grayish-blue">

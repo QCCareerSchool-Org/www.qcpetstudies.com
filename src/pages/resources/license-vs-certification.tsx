@@ -93,7 +93,7 @@ const LicenseVsCertification: NextPage = () => {
                   <li>And more!</li>
                 </ul>
                 <p>To truly be the best dog groomer you can be, proper training from a certification course is essential!</p>
-                <Link href="/dog-grooming-courses/dog-grooming"><a className="btn btn-primary">View The Dog Grooming Course</a></Link>
+                <Link href="/certification-courses/dog-grooming"><a className="btn btn-primary">View The Dog Grooming Course</a></Link>
               </div>
             </div>
           </div>

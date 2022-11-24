@@ -18,7 +18,7 @@ const DogGroomingResourcesPage: NextPageWithLayout = () => {
       <SEO
         title="Dog Grooming Resources"
         description="Resources and downloads to help you get through your online dog grooming class."
-        canonical="/dog-grooming-courses/resources"
+        canonical="/certification-courses/resources"
       />
 
       <section id="top" className="bg-dark">

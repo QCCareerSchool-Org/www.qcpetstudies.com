@@ -91,7 +91,7 @@ const DogTrainingPage: NextPageWithLayout<Props> = ({ price }) => {
       <SEO
         title="Dog Training Course"
         description="Become a Professional Dog Trainer with QC's online dog training course. Study Online with Hands-On Learning!"
-        canonical="/dog-training-courses/dog-training"
+        canonical="/certification-courses/dog-training"
       />
 
       <section id="top" className="bg-dark">
@@ -202,7 +202,7 @@ const DogTrainingPage: NextPageWithLayout<Props> = ({ price }) => {
                     <li>learning theory</li>
                     <li>applying learning theory</li>
                   </ul>
-                  <p className="mb-0"><Link href="/dog-training-courses/dog-training/course-outline"><a className="link-primary">View a more-detailed course syllabus</a></Link></p>
+                  <p className="mb-0"><Link href="/certification-courses/dog-training/course-outline"><a className="link-primary">View a more-detailed course syllabus</a></Link></p>
                 </div>
                 {lgOrGreater && (
                   <div className="col-6 col-xl-5">
@@ -233,7 +233,7 @@ const DogTrainingPage: NextPageWithLayout<Props> = ({ price }) => {
                     <li>training tools</li>
                     <li>addressing unwanted behaviors</li>
                   </ul>
-                  <p className="mb-0"><Link href="/dog-training-courses/dog-training/course-outline"><a className="link-primary">View a more-detailed course syllabus</a></Link></p>
+                  <p className="mb-0"><Link href="/certification-courses/dog-training/course-outline"><a className="link-primary">View a more-detailed course syllabus</a></Link></p>
                 </div>
                 {lgOrGreater && (
                   <div className="col-6 col-xl-5">
@@ -264,7 +264,7 @@ const DogTrainingPage: NextPageWithLayout<Props> = ({ price }) => {
                       </ul>
                     </li>
                   </ul>
-                  <p className="mb-0"><Link href="/dog-training-courses/dog-training/course-outline"><a className="link-primary">View a more-detailed course syllabus</a></Link></p>
+                  <p className="mb-0"><Link href="/certification-courses/dog-training/course-outline"><a className="link-primary">View a more-detailed course syllabus</a></Link></p>
                 </div>
                 {lgOrGreater && (
                   <div className="col-6 col-xl-5">
@@ -287,7 +287,7 @@ const DogTrainingPage: NextPageWithLayout<Props> = ({ price }) => {
                     <li>marketing techniques</li>
                     <li>selling your services</li>
                   </ul>
-                  <p className="mb-0"><Link href="/dog-training-courses/dog-training/course-outline"><a className="link-primary">View a more-detailed course syllabus</a></Link></p>
+                  <p className="mb-0"><Link href="/certification-courses/dog-training/course-outline"><a className="link-primary">View a more-detailed course syllabus</a></Link></p>
                 </div>
                 {lgOrGreater && (
                   <div className="col-6 col-xl-5">
@@ -307,7 +307,7 @@ const DogTrainingPage: NextPageWithLayout<Props> = ({ price }) => {
                     <li>Useful tips to help you prepare for your exam</li>
                     <li>A practice quiz to help make sure you're ready!</li>
                   </ul>
-                  <p className="mb-0"><Link href="/dog-training-courses/dog-training/course-outline"><a className="link-primary">View a more-detailed course syllabus</a></Link></p>
+                  <p className="mb-0"><Link href="/certification-courses/dog-training/course-outline"><a className="link-primary">View a more-detailed course syllabus</a></Link></p>
                 </div>
                 {lgOrGreater && (
                   <div className="col-6 col-xl-5">

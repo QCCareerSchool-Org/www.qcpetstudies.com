@@ -27,7 +27,7 @@ const DogGroomingCourseOutlinePage: NextPageWithLayout = () => (
     <SEO
       title="Dog Grooming Course Outline"
       description="Become a certified dog grooming professional with QC's interactive online course. Get started today!"
-      canonical="/dog-grooming-courses/dog-grooming/course-outline"
+      canonical="/certification-courses/dog-grooming/course-outline"
     />
 
     <section id="top" className="bg-dark">
@@ -457,7 +457,7 @@ const DogGroomingCourseOutlinePage: NextPageWithLayout = () => (
                 </div>
               </AccordionSection>
             </Accordion>
-            <p className="text-center lead">View <Link href="/dog-grooming-courses/dog-grooming/course-preview"><a className="text-primary">Sample Assignments</a></Link> from QC's Online Dog Grooming Course</p>
+            <p className="text-center lead">View <Link href="/certification-courses/dog-grooming/course-preview"><a className="text-primary">Sample Assignments</a></Link> from QC's Online Dog Grooming Course</p>
           </div>
         </div>
       </div>

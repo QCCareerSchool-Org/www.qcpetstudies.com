@@ -14,7 +14,7 @@ const DogTrainingResourcesPage: NextPageWithLayout = () => (
     <SEO
       title="Dog Training Resources"
       description="Use these resources to decide if a career in dog training is right for you!"
-      canonical="/dog-training-courses/resources"
+      canonical="/certification-courses/resources"
     />
 
     <section id="top" className="bg-dark">
@@ -43,7 +43,7 @@ const DogTrainingResourcesPage: NextPageWithLayout = () => (
               <div className="card-body">
                 <h3 className="card-title">Dog Training Course Outline</h3>
                 <p className="card-text">Read a detailed outline of the online dog training course. Find out what you'll need to be successful, and how long the course will take you to complete.</p>
-                <Link href="/dog-training-courses/dog-training/course-outline"><a className="link-primary">Learn More</a></Link>
+                <Link href="/certification-courses/dog-training/course-outline"><a className="link-primary">Learn More</a></Link>
               </div>
             </div>
           </div>
@@ -63,7 +63,7 @@ const DogTrainingResourcesPage: NextPageWithLayout = () => (
               <div className="card-body">
                 <h3 className="card-title">How the Dog Training Course Works</h3>
                 <p className="card-text">Learning online is much more convenient than learning in the classroom, but is it as effective? It can be! Find out more about how the online Dog Training course works. </p>
-                <Link href="/dog-training-courses/how-it-works/"><a className="link-primary">Learn More</a></Link>
+                <Link href="/certification-courses/how-it-works/"><a className="link-primary">Learn More</a></Link>
               </div>
             </div>
           </div>
@@ -73,7 +73,7 @@ const DogTrainingResourcesPage: NextPageWithLayout = () => (
             <h3>Additional links</h3>
             <ul>
               <li><Link href="/about/about-qc-pet-studies#guarantee"><a className="link-primary">Information about QC's 21-day guarantee</a></Link></li>
-              <li><Link href="/dog-training-courses/dog-training/course-preview/"><a className="link-primary">Preview the Dog Training Course for free</a></Link></li>
+              <li><Link href="/certification-courses/dog-training/course-preview/"><a className="link-primary">Preview the Dog Training Course for free</a></Link></li>
               <li><Link href="/2021/07/dog-training-quiz-do-you-know-your-calming-signals/"><a className="link-primary">Quiz: Do you know your calming signals? (blog link)</a></Link></li>
             </ul>
           </div>

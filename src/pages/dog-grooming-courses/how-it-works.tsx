@@ -27,7 +27,7 @@ const DogGroomingHowItWorksPage: NextPageWithLayout = () => {
       <SEO
         title="How Does Online Dog Groomer Training Work?"
         description="It's easy to learn dog grooming online! Find out how QC's Online Dog Groomer Training works, from course books to practical assignments and tutor feedback!"
-        canonical="/dog-grooming-courses/how-it-works"
+        canonical="/certification-courses/how-it-works"
       />
 
       <section id="top" className="bg-dark">
@@ -37,7 +37,7 @@ const DogGroomingHowItWorksPage: NextPageWithLayout = () => {
           <div className="row">
             <div className="col-12 col-lg-10 offset-lg-1">
               <h1>How QC's Online Dog Groomer Training Works</h1>
-              <p>Online dog groomer training can be just as effective as in-class training. QC has over 30 years of experience in online education, and has now applied that expertise to the <Link href="/dog-grooming-courses/dog-grooming"><a className="link-primary">online dog grooming course</a></Link>! The key is to provide students with plenty of hands-on training and feedback every step of the way. Remember, just because you're learning dog grooming online doesn't mean you're learning alone!</p>
+              <p>Online dog groomer training can be just as effective as in-class training. QC has over 30 years of experience in online education, and has now applied that expertise to the <Link href="/certification-courses/dog-grooming"><a className="link-primary">online dog grooming course</a></Link>! The key is to provide students with plenty of hands-on training and feedback every step of the way. Remember, just because you're learning dog grooming online doesn't mean you're learning alone!</p>
               <p>Wondering exactly how your online dog groomer education will unfold? Here's a detailed overview of how your course, assignments, grades, and graduation will work.</p>
             </div>
           </div>
@@ -53,7 +53,7 @@ const DogGroomingHowItWorksPage: NextPageWithLayout = () => {
               </div>
               <h2>Starting the Dog Grooming Course</h2>
               <p>The first thing you'll do after enrolling is log in to your personal account in the Online Student Center. From there you'll be able to access your dog grooming course guides, lesson texts, assignment templates and video tutorials. You'll automatically be sent your grooming tools when you've completed Unit B and you're ready to begin your practical work.</p>
-              <p className="lead mb-0">View a <Link href="/dog-grooming-courses/dog-grooming/course-outline"><a className="link-primary">detailed course outline</a></Link> to learn more about your dog groomer training.</p>
+              <p className="lead mb-0">View a <Link href="/certification-courses/dog-grooming/course-outline"><a className="link-primary">detailed course outline</a></Link> to learn more about your dog groomer training.</p>
             </div>
           </div>
         </div>
@@ -74,18 +74,18 @@ const DogGroomingHowItWorksPage: NextPageWithLayout = () => {
             <div className="col-12 col-lg-6 col-xl-5 offset-xl-1 mb-4 mb-lg-0">
               <h3 className="mb-4">Theory-Based Assignments</h3>
               <Bar variant="primary" />
-              <p>In order to be a qualified professional groomer, you need to master dog grooming theory. Throughout your online grooming course you'll learn everything from grooming tools, to dog behavior and temperaments, to the unique challenges of working with puppies, seniors, and other dogs who have special needs, and <Link href="/dog-grooming-courses/dog-grooming/course-outline"><a className="link-primary">much more</a></Link>.</p>
+              <p>In order to be a qualified professional groomer, you need to master dog grooming theory. Throughout your online grooming course you'll learn everything from grooming tools, to dog behavior and temperaments, to the unique challenges of working with puppies, seniors, and other dogs who have special needs, and <Link href="/certification-courses/dog-grooming/course-outline"><a className="link-primary">much more</a></Link>.</p>
               <p>Your knowledge in these areas will be tested with quizzes, case studies and other theoretical assignments, which will all be graded by your personal tutor. As you progress through the course, you'll become more and more comfortable with dog grooming theory, and you'll shift your focus to your practical grooming assignments.</p>
             </div>
             <div className="col-12 col-lg-6 col-xl-5">
               <h3 className="mb-4">Practical Assignments</h3>
               <Bar variant="primary" />
-              <p>Getting a chance to practice your skills on real dogs is an essential part of any good dog grooming program, and QC's online course is no exception. At the start of your course, practical assignments will focus on getting comfortable with dogs and the grooming environment, and you'll progress to completing partial grooms focusing on specific elements. During your <Link href="/dog-grooming-courses/dog-grooming#course-outline"><a className="link-primary">practicum units</a></Link>, you'll be completing several start-to-finish breed standard grooms.</p>
+              <p>Getting a chance to practice your skills on real dogs is an essential part of any good dog grooming program, and QC's online course is no exception. At the start of your course, practical assignments will focus on getting comfortable with dogs and the grooming environment, and you'll progress to completing partial grooms focusing on specific elements. During your <Link href="/certification-courses/dog-grooming#course-outline"><a className="link-primary">practicum units</a></Link>, you'll be completing several start-to-finish breed standard grooms.</p>
               <p>you'll take step-by-step pictures or videos of your work as you go, and upload them to your online student center. Your tutor will evaluate your work and provide you with detailed feedback on what you did well and where you could improve.</p>
             </div>
           </div>
           <p className="lead mb-4">View sample assignments from QC's dog grooming course!</p>
-          <Link href="/dog-grooming-courses/dog-grooming/assignments"><a className="btn btn-primary">View Assignments</a></Link>
+          <Link href="/certification-courses/dog-grooming/assignments"><a className="btn btn-primary">View Assignments</a></Link>
         </div>
       </section>
 
@@ -99,7 +99,7 @@ const DogGroomingHowItWorksPage: NextPageWithLayout = () => {
               </div>
               <h2>Finding Dogs for Grooming Assignments</h2>
               <p>Throughout your dog groomer training you'll have the chance to work with many different dogs. You can work with your own dog, your friends' or family members' dogs, or you can reach out to your local animal shelter or a nearby rescue. After all, it's never too hard to find people who will be happy to have their dogs groomed for free! If you get stuck, just contact the student support team: <strong>they're ready to provide you with additional suggestions.</strong></p>
-              <p className="lead mb-0">Wondering how online dog grooming schools differ from in-class programs? <Link href="/dog-grooming-courses/resources/class-vs-online-dog-grooming-schools"><a className="link-primary">Find out here</a></Link>!</p>
+              <p className="lead mb-0">Wondering how online dog grooming schools differ from in-class programs? <Link href="/certification-courses/resources/class-vs-online-dog-grooming-schools"><a className="link-primary">Find out here</a></Link>!</p>
             </div>
           </div>
         </div>
@@ -131,7 +131,7 @@ const DogGroomingHowItWorksPage: NextPageWithLayout = () => {
               <h2>Receiving Feedback from your Tutor</h2>
               <p className="lead">You'll receive advice and detailed feedback from your tutor after every unit you complete.</p>
               <p>Your tutor truly cares about your success and will encourage you to submit your very best work. After each unit of the dog grooming course, you'll receive an audio file where your tutor explains what you did well, and where you should focus to improve your skills even further. See how your skills and confidence improve as you work your way through the course!</p>
-              <Link href="/dog-grooming-courses/dog-grooming#tutors"><a className="btn btn-primary">Meet QC's Tutors</a></Link>
+              <Link href="/certification-courses/dog-grooming#tutors"><a className="btn btn-primary">Meet QC's Tutors</a></Link>
             </div>
           </div>
         </div>

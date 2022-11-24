@@ -32,7 +32,7 @@ const GroomingCoursePreviewPage: NextPageWithLayout<Props> = ({ location, price,
       <SEO
         title="Dog Grooming Certification Course"
         description=""
-        canonical="/dog-grooming-courses/dog-grooming/course-preview"
+        canonical="/certification-courses/dog-grooming/course-preview"
       />
 
       <section id="top" className="bg-dark">

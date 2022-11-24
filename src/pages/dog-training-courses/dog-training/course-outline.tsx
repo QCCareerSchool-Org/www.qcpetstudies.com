@@ -36,7 +36,7 @@ const CourseOutlinePage: NextPageWithLayout = () => {
       <SEO
         title="Course Outline"
         description=""
-        canonical="/dog-training-courses/dog-training/course-outline"
+        canonical="/certification-courses/dog-training/course-outline"
       />
 
       <section id="top" className="bg-dark">

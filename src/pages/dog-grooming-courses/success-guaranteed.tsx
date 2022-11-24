@@ -29,7 +29,7 @@ const SuccessGuaranteedPage: NextPageWithLayout<Props> = ({ location, price }) =
     <SEO
       title="Success Guaranteed"
       description="Study with confidence thanks to QC's double guarantee"
-      canonical="/dog-grooming-courses/success-guaranteed"
+      canonical="/certification-courses/success-guaranteed"
     />
 
     <section id="top" className="bg-dark">

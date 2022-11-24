@@ -28,7 +28,7 @@ const StartYourDreamCareerPage: NextPageWithLayout<Props> = ({ price }) => (
     <SEO
       title="Start Your Dream Career"
       description="Start Your Dream Career"
-      canonical="/dog-grooming-courses/rm/start-your-dream-career"
+      canonical="/certification-courses/rm/start-your-dream-career"
     />
 
     <section id="top" className="bg-dark">

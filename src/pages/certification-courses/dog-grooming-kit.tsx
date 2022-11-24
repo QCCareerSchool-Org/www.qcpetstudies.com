@@ -17,7 +17,7 @@ const DogGroomingKitPage: NextPageWithLayout = () => (
     <SEO
       title="Dog Grooming Kit"
       description="Take a look at the grooming starter kit you'll receive when you enroll in QC's dog grooming course!"
-      canonical="/dog-grooming-courses/dog-grooming-kit"
+      canonical="/certification-courses/dog-grooming-kit"
     />
 
     <section id="top" className="bg-dark">
@@ -32,7 +32,7 @@ const DogGroomingKitPage: NextPageWithLayout = () => (
       <div className="container text-center">
         <div className="row justify-content-center">
           <div className="col-12 col-lg-10 mb-4">
-            <p>When you enroll in QC's online <Link href="/dog-grooming-courses/dog-grooming/"><a className="link-primary">dog grooming course</a></Link>, you'll receive a toolkit with the essential items you need to get started. These items will be shipped to you after you submit your Unit B before you begin your practical work in Unit C.</p>
+            <p>When you enroll in QC's online <Link href="/certification-courses/dog-grooming/"><a className="link-primary">dog grooming course</a></Link>, you'll receive a toolkit with the essential items you need to get started. These items will be shipped to you after you submit your Unit B before you begin your practical work in Unit C.</p>
             <p>Your kit includes a WAHL ARCO 5-in-1 cordless clipper, a stainless steel attachment guide comb kit, professional-grade grooming scissors, brushes, combs, and nail clippers.</p>
             <p>This starter kit will go a long way not only to help you complete your online course but also to enter the industry as a fully equipped dog grooming professional!</p>
             <p className="lead mb-0">The dog grooming kit has an estimated value of over $200!</p>
