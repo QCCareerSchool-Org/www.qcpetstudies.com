@@ -1,7 +1,7 @@
 import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
-import { CSSProperties, FC } from 'react';
+import { CSSProperties, FC, ReactNode } from 'react';
 import { FaBriefcase, FaChalkboardTeacher, FaHandHoldingUsd, FaLaptopHouse, FaRegCalendarCheck } from 'react-icons/fa';
 import { IoMdRibbon } from 'react-icons/io';
 import { jsonLdScriptProps } from 'react-schemaorg';
@@ -80,47 +80,41 @@ const HomePage: NextPageWithLayout = () => {
           <h2 className="mb-3">Course <strong>Certifications</strong></h2>
           <p className="lead mb-5">Enroll today and start training for your new career right away!</p>
           <div className="row align-items-stretch justify-content-center">
-            <div className="col-10 col-lg-6 col-xxl-4 d-flex align-items-stretch mb-4 mb-xxl-0">
-              <div className="card">
-                <div className="card-body d-flex flex-column justify-content-between">
-                  <div>
-                    <div className="mb-3">
-                      <Image src={IDTPCertificationGold} width={iconSize} height={iconSize} alt="21-Day Money-Back Guarantee" />
-                    </div>
-                    <h3>Dog Training | <em className="gold">IDTP&trade;</em></h3>
-                    <p>Dog trainers have never been in higher demand! It's the best time to launch a rewarding and lucrative career as a dog trainer. This course uses scientifically proven methods of dog training derived from learning theory and industry best practices. You'll gain a thorough understanding of how dogs learn, how to modify unwanted behaviors, and how to create new behaviors in all types of dogs. Don't miss out on your chance to learn from the best!</p>
+            <div className="col-10 col-lg-6 col-xxl-4 d-flex align-items-stretch mb-5 mb-lg-4 mb-xxl-0">
+              <CertificationCard show={lg}>
+                <div>
+                  <div className="mb-3">
+                    <Image src={IDTPCertificationGold} width={iconSize} height={iconSize} alt="21-Day Money-Back Guarantee" />
                   </div>
-                  <Link href="/certification-courses/dog-training"><a className="link-primary">View Course</a></Link>
+                  <h3>Dog Training | <em className="gold">IDTP&trade;</em></h3>
+                  <p>Dog trainers have never been in higher demand! It's the best time to launch a rewarding and lucrative career as a dog trainer. This course uses scientifically proven methods of dog training derived from learning theory and industry best practices. You'll gain a thorough understanding of how dogs learn, how to modify unwanted behaviors, and how to create new behaviors in all types of dogs. Don't miss out on your chance to learn from the best!</p>
                 </div>
-              </div>
+                <Link href="/certification-courses/dog-training"><a className="link-primary">View Course</a></Link>
+              </CertificationCard>
             </div>
-            <div className="col-10 col-lg-6 col-xxl-4 d-flex align-items-stretch mb-4 mb-xxl-0">
-              <div className="card">
-                <div className="card-body d-flex flex-column justify-content-between">
-                  <div>
-                    <div className="mb-3">
-                      <Image src={IDGPCertificationGold} width={iconSize} height={iconSize} alt="1-Year Money-Back Guarantee" />
-                    </div>
-                    <h3>Dog Grooming | <em className="gold">IDGP&trade;</em></h3>
-                    <p>Become a professional dog groomer. There's more to grooming than just bathing and brushing dogs! In this course you'll learn all about dog anatomy and behavior, how to use grooming tools safely and effectively, and how to competently groom any breed of dog. You'll also get a chance to launch your dog grooming business if that's your goal! Get plenty of hands-on groomer training without ever leaving your home. Start today!</p>
+            <div className="col-10 col-lg-6 col-xxl-4 d-flex align-items-stretch mb-5 mb-lg-4 mb-xxl-0">
+              <CertificationCard show={lg}>
+                <div>
+                  <div className="mb-3">
+                    <Image src={IDGPCertificationGold} width={iconSize} height={iconSize} alt="1-Year Money-Back Guarantee" />
                   </div>
-                  <Link href="/certification-courses/dog-grooming"><a className="link-primary">View Course</a></Link>
+                  <h3>Dog Grooming | <em className="gold">IDGP&trade;</em></h3>
+                  <p>Become a professional dog groomer. There's more to grooming than just bathing and brushing dogs! In this course you'll learn all about dog anatomy and behavior, how to use grooming tools safely and effectively, and how to competently groom any breed of dog. You'll also get a chance to launch your dog grooming business if that's your goal! Get plenty of hands-on groomer training without ever leaving your home. Start today!</p>
                 </div>
-              </div>
+                <Link href="/certification-courses/dog-grooming"><a className="link-primary">View Course</a></Link>
+              </CertificationCard>
             </div>
             <div className="col-10 col-lg-6 col-xxl-4 d-flex align-items-stretch">
-              <div className="card">
-                <div className="card-body d-flex flex-column justify-content-between">
-                  <div>
-                    <div className="mb-3">
-                      <Image src={IDCPCertificationGold} width={iconSize} height={iconSize} alt="21-Day Money-Back Guarantee" />
-                    </div>
-                    <h3><span className="badge rounded-pill bg-secondary">New</span> Dog Daycare | <em className="gold">IDCP&trade;</em></h3>
-                    <p>Dog walkers and daycare facilities are booked solid! Demand is high which means it&apos;s an incredible time to launch a rewarding and lucrative career as a dog care professional. This course will teach you everything from basic dog behavior and communication to business and marketing tips that will help you grow your clientele. You&apos;ll gain a thorough understanding of proper handling, hygiene, and safety techniques to become a trusted expert in your field. Don&apos;t miss out on your chance to launch a lucrative new career!</p>
+              <CertificationCard show={lg}>
+                <div>
+                  <div className="mb-3">
+                    <Image src={IDCPCertificationGold} width={iconSize} height={iconSize} alt="21-Day Money-Back Guarantee" />
                   </div>
-                  <Link href="/certification-courses/dog-daycare"><a className="link-primary">View Course</a></Link>
+                  <h3><span className="badge rounded-pill bg-secondary">New</span> Dog Daycare | <em className="gold">IDCP&trade;</em></h3>
+                  <p>Dog walkers and daycare facilities are booked solid! Demand is high which means it&apos;s an incredible time to launch a rewarding and lucrative career as a dog care professional. This course will teach you everything from basic dog behavior and communication to business and marketing tips that will help you grow your clientele. You&apos;ll gain a thorough understanding of proper handling, hygiene, and safety techniques to become a trusted expert in your field. Don&apos;t miss out on your chance to launch a lucrative new career!</p>
                 </div>
-              </div>
+                <Link href="/certification-courses/dog-daycare"><a className="link-primary">View Course</a></Link>
+              </CertificationCard>
             </div>
           </div>
         </div>
@@ -281,4 +275,22 @@ const RibbonInCircle: FC<RibbonInCircleProps> = ({ size = 48, background = 'whit
       `}</style>
     </>
   );
+};
+
+type CertificationCardProps = {
+  show: boolean;
+  children: ReactNode;
+};
+
+const CertificationCard: FC<CertificationCardProps> = ({ show, children }) => {
+  if (show) {
+    return (
+      <div className="card">
+        <div className="card-body d-flex flex-column justify-content-between">
+          {children}
+        </div>
+      </div>
+    );
+  }
+  return <div>{children}</div>;
 };
