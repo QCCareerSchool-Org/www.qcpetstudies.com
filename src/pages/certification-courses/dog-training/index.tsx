@@ -24,7 +24,7 @@ import ApplyingTrainingPrinciplesImage from '../../../images/dt-outline-part-2-i
 import TeachingPeopleImage from '../../../images/dt-outline-part-3-image.jpg';
 import DogTrainingBusinessImage from '../../../images/dt-outline-part-4-image.jpg';
 import CPDTPrepImage from '../../../images/german-shepherd-puppy-sitting.jpg';
-import CertificationGoldImage from '../../../images/IDTP-certification-gold-2.svg';
+import CertificationGoldImage from '../../../images/IDTP-certification-yellow.svg';
 import { formatPrice } from '../../../lib/formatPrice';
 import { gaEvent } from '../../../lib/ga';
 import { getLocation } from '../../../lib/getLocation';
