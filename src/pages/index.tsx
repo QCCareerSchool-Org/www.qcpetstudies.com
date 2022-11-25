@@ -14,6 +14,7 @@ import { useScreenWidth } from '../hooks/useScreenWidth';
 import MaltipuBegging from '../images/backgrounds/maltipu-begging.jpg';
 import MaltipuJumping from '../images/backgrounds/maltipu-jumping.jpg';
 import HowItWorks from '../images/how-it-works.png';
+import IDCPCertificationGold from '../images/IDCP-certification-gold.svg';
 import IDGPCertificationGold from '../images/IDGP-certification-gold.svg';
 import IDTPCertificationGold from '../images/IDTP-certification-gold.svg';
 import { qcPetStudiesEducationalOrganization } from '../qcPetStudiesEducationalOrganization';
@@ -78,46 +79,46 @@ const HomePage: NextPageWithLayout = () => {
         <div className="container text-center">
           <h2 className="mb-3">Course <strong>Certifications</strong></h2>
           <p className="lead mb-5">Enroll today and start training for your new career right away!</p>
-          <div id="cardRow" className="row align-items-stretch">
-            <div className="col-10 offset-1 col-lg-6 offset-lg-0 col-xl-5 offset-xl-1 col-xxl-4 offset-xxl-2 d-flex align-items-stretch">
+          <div className="row align-items-stretch justify-content-center">
+            <div className="col-10 col-lg-6 col-xxl-4 d-flex align-items-stretch mb-4 mb-xxl-0">
               <div className="card">
-                <div className="card-body">
-                  <div className="mb-3">
-                    <Image src={IDTPCertificationGold} width={iconSize} height={iconSize} alt="21-Day Money-Back Guarantee" />
+                <div className="card-body d-flex flex-column justify-content-between">
+                  <div>
+                    <div className="mb-3">
+                      <Image src={IDTPCertificationGold} width={iconSize} height={iconSize} alt="21-Day Money-Back Guarantee" />
+                    </div>
+                    <h3>Dog Training | <em className="gold">IDTP&trade;</em></h3>
+                    <p>Dog trainers have never been in higher demand! It's the best time to launch a rewarding and lucrative career as a dog trainer. This course uses scientifically proven methods of dog training derived from learning theory and industry best practices. You'll gain a thorough understanding of how dogs learn, how to modify unwanted behaviors, and how to create new behaviors in all types of dogs. Don't miss out on your chance to learn from the best!</p>
                   </div>
-                  <h3><span className="badge rounded-pill bg-secondary">New</span> Dog Training | <em className="gold">IDTP&trade;</em></h3>
-                  <p>Dog trainers have never been in higher demand! It's the best time to launch a rewarding and lucrative career as a dog trainer. This course uses scientifically proven methods of dog training derived from learning theory and industry best practices. You'll gain a thorough understanding of how dogs learn, how to modify unwanted behaviors, and how to create new behaviors in all types of dogs. Don't miss out on your chance to learn from the best!</p>
                   <Link href="/certification-courses/dog-training"><a className="link-primary">View Course</a></Link>
                 </div>
               </div>
             </div>
-            <div className="col-10 offset-1 col-lg-6 offset-lg-0 col-xl-5 col-xxl-4 d-flex align-items-stretch">
+            <div className="col-10 col-lg-6 col-xxl-4 d-flex align-items-stretch mb-4 mb-xxl-0">
               <div className="card">
-                <div className="card-body">
-                  <div className="mb-3">
-                    <Image src={IDGPCertificationGold} width={iconSize} height={iconSize} alt="1-Year Money-Back Guarantee" />
+                <div className="card-body d-flex flex-column justify-content-between">
+                  <div>
+                    <div className="mb-3">
+                      <Image src={IDGPCertificationGold} width={iconSize} height={iconSize} alt="1-Year Money-Back Guarantee" />
+                    </div>
+                    <h3>Dog Grooming | <em className="gold">IDGP&trade;</em></h3>
+                    <p>Become a professional dog groomer. There's more to grooming than just bathing and brushing dogs! In this course you'll learn all about dog anatomy and behavior, how to use grooming tools safely and effectively, and how to competently groom any breed of dog. You'll also get a chance to launch your dog grooming business if that's your goal! Get plenty of hands-on groomer training without ever leaving your home. Start today!</p>
                   </div>
-                  <h3>Dog Grooming | <em className="gold">IDGP&trade;</em></h3>
-                  <p>Become a professional dog groomer. There's more to grooming than just bathing and brushing dogs! In this course you'll learn all about dog anatomy and behavior, how to use grooming tools safely and effectively, and how to competently groom any breed of dog. You'll also get a chance to launch your dog grooming business if that's your goal! Get plenty of hands-on groomer training without ever leaving your home. Start today!</p>
                   <Link href="/certification-courses/dog-grooming"><a className="link-primary">View Course</a></Link>
                 </div>
               </div>
             </div>
-            <div className="col-10 offset-1 col-lg-6 offset-lg-0 col-xl-5 offset-xl-1 col-xxl-4 offset-xxl-2 mb-lg-0 d-flex align-items-stretch">
+            <div className="col-10 col-lg-6 col-xxl-4 d-flex align-items-stretch">
               <div className="card">
-                <div className="card-body">
-                  <h3>First Aid for Dog Groomers</h3>
-                  <p>A well-educated dog groomer is trained to prevent most emergency situations, but accidents still happen sometimes. The First Aid for Groomers course will give you the skills and confidence to address medical emergencies in the grooming salon if and when they arise. This course is offered for FREE with QC's dog grooming course.</p>
-                  <Link href="/certification-courses/first-aid"><a className="link-primary">View Course</a></Link>
-                </div>
-              </div>
-            </div>
-            <div className="col-10 offset-1 col-lg-6 offset-lg-0 col-xl-5 col-xxl-4 mb-0 d-flex align-items-stretch">
-              <div className="card">
-                <div className="card-body">
-                  <h3>Breed Styling Workshop</h3>
-                  <p>An advanced workshop for experienced grooming professionals. This course skips the basic skills training and goes straight into developing additional skills in styling specific dog breeds including poodles, terriers, non-sporting breeds and more.</p>
-                  <Link href="/certification-courses/breed-styling"><a className="link-primary">View Course</a></Link>
+                <div className="card-body d-flex flex-column justify-content-between">
+                  <div>
+                    <div className="mb-3">
+                      <Image src={IDCPCertificationGold} width={iconSize} height={iconSize} alt="21-Day Money-Back Guarantee" />
+                    </div>
+                    <h3><span className="badge rounded-pill bg-secondary">New</span> Dog Daycare | <em className="gold">IDCP&trade;</em></h3>
+                    <p>Dog trainers have never been in higher demand! It's the best time to launch a rewarding and lucrative career as a dog trainer. This course uses scientifically proven methods of dog training derived from learning theory and industry best practices. You'll gain a thorough understanding of how dogs learn, how to modify unwanted behaviors, and how to create new behaviors in all types of dogs. Don't miss out on your chance to learn from the best!</p>
+                  </div>
+                  <Link href="/certification-courses/dog-daycare"><a className="link-primary">View Course</a></Link>
                 </div>
               </div>
             </div>
@@ -216,15 +217,6 @@ const HomePage: NextPageWithLayout = () => {
 
       <style jsx>{`
       .gold { color: #C9952C; }
-      #cardRow {
-        margin-right: -1.5rem;
-        margin-left: -1.5rem;
-      }
-      #cardRow > .col, #cardRow > [class*="col-"] {
-        padding-right: 1.5rem;
-        padding-left: 1.5rem;
-        margin-bottom: 3rem;
-      }
       .searchBoxWrapper {
         margin-top: 5rem;
       }
