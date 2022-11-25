@@ -21,7 +21,7 @@ import IntroductoryUnitsImage from '../../../images/dd-outline-part-1.jpg';
 import ActivitiesImage from '../../../images/dd-outline-part-2.jpg';
 import ServicesImage from '../../../images/dd-outline-part-3.jpg';
 import DogCareBusinessImage from '../../../images/dd-outline-part-4.jpg';
-import CertificationGoldImage from '../../../images/IDCP-certification-gold.svg';
+import CertificationGoldImage from '../../../images/IDCP-certification-yellow.svg';
 import { formatPrice } from '../../../lib/formatPrice';
 import { getLocation } from '../../../lib/getLocation';
 import { lookupPrices } from '../../../lib/lookupPrices';
