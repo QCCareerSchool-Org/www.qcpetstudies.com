@@ -24,7 +24,7 @@ const iconSize = 145;
 const options = [
   { id: 'groomer', text: 'become a professional dog groomer', url: '/certification-courses/dog-grooming' },
   { id: 'trainer', text: 'become a professional dog trainer', url: '/certification-courses/dog-training' },
-  { id: 'care', text: 'become a dog daycare professional', url: '/certification-courses/dog-care' },
+  { id: 'care', text: 'become a dog daycare professional', url: '/certification-courses/dog-daycare' },
 ];
 
 const HomePage: NextPageWithLayout = () => {

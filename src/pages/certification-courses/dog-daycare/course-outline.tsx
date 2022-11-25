@@ -32,9 +32,9 @@ const DDCourseOutlinePage: NextPageWithLayout = () => {
   return (
     <>
       <SEO
-        title="Course Outline"
+        title="Dog Daycare Course Outline"
         description=""
-        canonical="/certification-courses/dog-care/course-outline"
+        canonical="/certification-courses/dog-daycare/course-outline"
       />
 
       <section id="top" className="bg-dark">
