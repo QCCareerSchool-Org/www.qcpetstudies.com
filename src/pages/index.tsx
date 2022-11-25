@@ -89,7 +89,7 @@ const HomePage: NextPageWithLayout = () => {
                   <h3>Dog Training | <em className="gold">IDTP&trade;</em></h3>
                   <p>Dog trainers have never been in higher demand! It's the best time to launch a rewarding and lucrative career as a dog trainer. This course uses scientifically proven methods of dog training derived from learning theory and industry best practices. You'll gain a thorough understanding of how dogs learn, how to modify unwanted behaviors, and how to create new behaviors in all types of dogs. Don't miss out on your chance to learn from the best!</p>
                 </div>
-                <Link href="/certification-courses/dog-training"><button className="btn btn-navy">View Course</button></Link>
+                <Link href="/certification-courses/dog-training"><button className="btn btn-navy">Course Overview</button></Link>
               </CertificationCard>
             </div>
             <div className="col-12 col-lg-6 col-xxl-4 d-flex align-items-stretch mb-5 mb-lg-4 mb-xxl-0">
@@ -101,7 +101,7 @@ const HomePage: NextPageWithLayout = () => {
                   <h3>Dog Grooming | <em className="gold">IDGP&trade;</em></h3>
                   <p>Become a professional dog groomer. There's more to grooming than just bathing and brushing dogs! In this course you'll learn all about dog anatomy and behavior, how to use grooming tools safely and effectively, and how to competently groom any breed of dog. You'll also get a chance to launch your dog grooming business if that's your goal! Get plenty of hands-on groomer training without ever leaving your home. Start today!</p>
                 </div>
-                <Link href="/certification-courses/dog-grooming"><button className="btn btn-navy">View Course</button></Link>
+                <Link href="/certification-courses/dog-grooming"><button className="btn btn-navy">Course Overview</button></Link>
               </CertificationCard>
             </div>
             <div className="col-12 col-lg-6 col-xxl-4 d-flex align-items-stretch">
@@ -113,7 +113,7 @@ const HomePage: NextPageWithLayout = () => {
                   <h3><span className="badge rounded-pill bg-secondary">New</span> Dog Daycare | <em className="gold">IDCP&trade;</em></h3>
                   <p>Dog walkers and daycare facilities are booked solid! Demand is high which means it&apos;s an incredible time to launch a rewarding and lucrative career as a dog care professional. This course will teach you everything from basic dog behavior and communication to business and marketing tips that will help you grow your clientele. You&apos;ll gain a thorough understanding of proper handling, hygiene, and safety techniques to become a trusted expert in your field. Don&apos;t miss out on your chance to launch a lucrative new career!</p>
                 </div>
-                <Link href="/certification-courses/dog-daycare"><button className="btn btn-navy">View Course</button></Link>
+                <Link href="/certification-courses/dog-daycare"><button className="btn btn-navy">Course Overview</button></Link>
               </CertificationCard>
             </div>
           </div>
