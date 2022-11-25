@@ -20,7 +20,7 @@ const DogTrainingHowItWorksPage: NextPageWithLayout = () => {
     <>
       <SEO
         title="How QC's Online Courses Work"
-        description="Become a certified dog trainer online. Find out how QC’s online professional courses work!"
+        description="Become certified online. Find out how QC’s online professional courses work!"
         canonical="/certification-courses/how-it-works"
       />
 
@@ -29,7 +29,7 @@ const DogTrainingHowItWorksPage: NextPageWithLayout = () => {
         <div className="container">
           <div className="row">
             <div className="col-12 col-md-10 col-lg-8">
-              <h1 className="fw-normal mb-0">How QC's Online<br /><strong>Dog Training Course Works</strong></h1>
+              <h1 className="fw-normal mb-0">How QC's<br /><strong>Online Courses Work</strong></h1>
             </div>
           </div>
         </div>
