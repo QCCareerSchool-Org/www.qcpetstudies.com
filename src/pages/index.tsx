@@ -80,7 +80,7 @@ const HomePage: NextPageWithLayout = () => {
           <h2 className="mb-3">Course <strong>Certifications</strong></h2>
           <p className="lead mb-5">Enroll today and start training for your new career right away!</p>
           <div className="row align-items-stretch justify-content-center">
-            <div className="col-10 col-lg-6 col-xxl-4 d-flex align-items-stretch mb-5 mb-lg-4 mb-xxl-0">
+            <div className="col-12 col-lg-6 col-xxl-4 d-flex align-items-stretch mb-5 mb-lg-4 mb-xxl-0">
               <CertificationCard show={lg}>
                 <div>
                   <div className="mb-3">
@@ -92,7 +92,7 @@ const HomePage: NextPageWithLayout = () => {
                 <Link href="/certification-courses/dog-training"><button className="btn btn-navy">View Course</button></Link>
               </CertificationCard>
             </div>
-            <div className="col-10 col-lg-6 col-xxl-4 d-flex align-items-stretch mb-5 mb-lg-4 mb-xxl-0">
+            <div className="col-12 col-lg-6 col-xxl-4 d-flex align-items-stretch mb-5 mb-lg-4 mb-xxl-0">
               <CertificationCard show={lg}>
                 <div>
                   <div className="mb-3">
@@ -104,7 +104,7 @@ const HomePage: NextPageWithLayout = () => {
                 <Link href="/certification-courses/dog-grooming"><button className="btn btn-navy">View Course</button></Link>
               </CertificationCard>
             </div>
-            <div className="col-10 col-lg-6 col-xxl-4 d-flex align-items-stretch">
+            <div className="col-12 col-lg-6 col-xxl-4 d-flex align-items-stretch">
               <CertificationCard show={lg}>
                 <div>
                   <div className="mb-3">
