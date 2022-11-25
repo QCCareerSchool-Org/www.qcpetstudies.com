@@ -63,7 +63,7 @@ const DogCarePage: NextPageWithLayout<Props> = ({ price }) => {
             <div className="mb-4">
               <Image src={CertificationGoldImage} alt="International Dog Grooming Professional IDGP certification" height="125" width="125" />
             </div>
-            <h1>Dog Daycare</h1>
+            <h1>Dog Daycare Course</h1>
             {price && price.plans.part.deposit > 0 && <h4>Get Started for Only <strong>{price.currency.symbol}{formatPrice(price.plans.part.deposit)}</strong></h4>}
             <p><em><a href="#tuition" className="text-white">See tuition details</a></em></p>
             <a href="https://enroll.qcpetstudies.com?c[]=dd"><button className="btn btn-secondary btn-lg">Enroll Online</button></a>
