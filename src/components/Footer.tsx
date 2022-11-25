@@ -74,7 +74,7 @@ export const Footer: FC<Props> = ({ ctaType, enrollPath = '/', className }) => {
             <ul className="spacedList">
               <li><Link href="/certification-courses/dog-grooming"><a>Dog Grooming</a></Link></li>
               <li><Link href="/certification-courses/dog-training"><a>Dog Training</a></Link></li>
-              <li><Link href="/certification-courses/dog-daycare"><a>Dog Care</a></Link></li>
+              <li><Link href="/certification-courses/dog-daycare"><a>Dog Daycare</a></Link></li>
             </ul>
           </div>
           <div id="footerColContactUs" className="col-12 col-sm-4 col-lg-2 mb-4 mb-sm-0 text-center text-lg-start">
