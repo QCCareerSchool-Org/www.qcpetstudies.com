@@ -115,7 +115,7 @@ const DogGroomingCareerPage: NextPage = () => {
           <h2>Career Resources for<br />Grooming Students and Graduates</h2>
           <p className="lead">As a student of QC Pet Studies, you'll be provided with resources to build a profitable and<br />enjoyable career as a professional dog groomer.</p>
           <CareerResources title="Free Business Training" icon={<FaBriefcase />}>
-            <p className="mb-0">QC's comprehensive <Link href="/dog-grooming-courses/dog-grooming/"><a className="link-primary">Online Dog Grooming Class</a></Link> comes with complete business training at no extra cost! This training will teach you the skills you'll need to start a successful dog grooming business!</p>
+            <p className="mb-0">QC's comprehensive <Link href="/certification-courses/dog-grooming/"><a className="link-primary">Online Dog Grooming Class</a></Link> comes with complete business training at no extra cost! This training will teach you the skills you'll need to start a successful dog grooming business!</p>
           </CareerResources>
           <CareerResources title="A Blog for Groomers" icon={<FaRss />}>
             <p className="mb-0">The Sniffin'Around <Link href="/blog/sniffin-around-blog/"><a className="link-primary">dog grooming blog</a></Link> is full of articles that will help you thrive in your chosen career path. From adding accessories to setting your grooming prices to designing your business logo, the blog content aims to help you succeed as a professional dog groomer and business owner.</p>

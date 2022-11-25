@@ -60,26 +60,15 @@ export const Header = ({ noHero, inverseNav, secondaryTitle, secondaryNavLinks, 
             <Navbar.Toggle aria-controls="main-navbar" />
             <Navbar.Collapse id="main-navbar" className="justify-content-end">
               <Nav>
-                <NavDropdown title={xlOrGreater || !lgOrGreater ? 'Become a Dog Groomer' : 'Dog Grooming'} id="dog-groomer-dropdown">
-                  <Link href="/dog-grooming-courses/dog-grooming"><a onClick={resetMenu} className="dropdown-item dropdown-item-primary">Dog Grooming Course</a></Link>
-                  <Link href="/dog-grooming-courses/dog-grooming#tuition"><a onClick={resetMenu} className="dropdown-item dropdown-item-sub">Tuition</a></Link>
-                  <Link href="/dog-grooming-courses/dog-grooming#outline"><a onClick={resetMenu} className="dropdown-item dropdown-item-sub">Outline</a></Link>
-                  <Link href="/dog-grooming-courses/dog-grooming#guarantee"><a onClick={resetMenu} className="dropdown-item dropdown-item-sub">Guarantee</a></Link>
+                <NavDropdown title="Certification Courses" id="courses-dropdown">
+                  <Link href="/certification-courses/dog-grooming"><a onClick={resetMenu} className="dropdown-item">Dog Grooming Course</a></Link>
+                  <Link href="/certification-courses/dog-training"><a onClick={resetMenu} className="dropdown-item">Dog Training Course</a></Link>
+                  <Link href="/certification-courses/dog-daycare"><a onClick={resetMenu} className="dropdown-item">Dog Care Course</a></Link>
                   <hr />
-                  <Link href="/dog-grooming-courses/how-it-works"><a onClick={resetMenu} className="dropdown-item"><FaCog className="text-primary me-2" /> How It Works</a></Link>
-                  <Link href="/dog-grooming-courses/resources"><a onClick={resetMenu} className="dropdown-item"><FaFolderOpen className="text-primary me-2" /> Dog Grooming Resources</a></Link>
-                  {/* <Link href="/dog-grooming-courses/meet-our-experts"><a onClick={resetMenu} className="dropdown-item"><FaUser className="text-primary me-2" /> Meet Our Experts</a></Link> */}
-                  <Link href="/dog-grooming-courses/dog-grooming-kit"><a onClick={resetMenu} className="dropdown-item"><FaCut className="text-primary me-2" /> Dog Grooming Kit</a></Link>
-                </NavDropdown>
-                <NavDropdown title={xlOrGreater || !lgOrGreater ? 'Become a Dog Trainer' : 'Dog Training'} id="dog-trainer-dropdown">
-                  <Link href="/dog-training-courses/dog-training"><a onClick={resetMenu} className="dropdown-item dropdown-item-primary">Dog Training Course</a></Link>
-                  <Link href="/dog-training-courses/dog-training#tuition"><a onClick={resetMenu} className="dropdown-item dropdown-item-sub">Tuition</a></Link>
-                  <Link href="/dog-training-courses/dog-training#outline"><a onClick={resetMenu} className="dropdown-item dropdown-item-sub">Outline</a></Link>
-                  <Link href="/dog-training-courses/dog-training#guarantee"><a onClick={resetMenu} className="dropdown-item dropdown-item-sub">Guarantee</a></Link>
-                  <hr />
-                  <Link href="/dog-training-courses/how-it-works"><a onClick={resetMenu} className="dropdown-item"><FaCog className="text-primary me-2" /> How It Works</a></Link>
-                  <Link href="/dog-training-courses/resources"><a onClick={resetMenu} className="dropdown-item"><FaFolderOpen className="text-primary me-2" /> Dog Training Resources</a></Link>
-                  {/* <Link href="/dog-training-courses/meet-our-experts"><a onClick={resetMenu} className="dropdown-item"><FaUser className="text-primary me-2" /> Meet Our Experts</a></Link> */}
+                  <Link href="/certification-courses/how-it-works"><a onClick={resetMenu} className="dropdown-item"><FaCog className="text-primary me-2" /> How It Works</a></Link>
+                  <Link href="/certification-courses/resources"><a onClick={resetMenu} className="dropdown-item"><FaFolderOpen className="text-primary me-2" /> Learning Resources</a></Link>
+                  {/* <Link href="/certification-courses/meet-our-experts"><a onClick={resetMenu} className="dropdown-item"><FaUser className="text-primary me-2" /> Meet Our Experts</a></Link> */}
+                  <Link href="/certification-courses/dog-grooming-kit"><a onClick={resetMenu} className="dropdown-item"><FaCut className="text-primary me-2" /> Dog Grooming Kit</a></Link>
                 </NavDropdown>
                 <NavDropdown title="About" id="about-dropdown">
                   <Link href="/about/about-qc-pet-studies"><a onClick={resetMenu} className="dropdown-item">About QC Pet Studies</a></Link>

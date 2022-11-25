@@ -43,7 +43,7 @@ const ThankYouCatalogPage: NextPage<Props> = ({ emailAddress }) => {
               <h2>Thank You for Your Interest!</h2>
               <p className="lead">Find out what a career in dog training can do for you, and how you can get started with QC's Professional Dog Training course.</p>
               <h4 className="mb-4">Access your free course preview here:</h4>
-              <Link href="/dog-training-courses/dog-training/course-preview"><a className="btn btn-outline-secondary btn-lg">Get Preview&nbsp;&nbsp;<FaPaw style={{ position: 'relative', top: -2 }} /></a></Link>
+              <Link href="/certification-courses/dog-training/course-preview"><a className="btn btn-outline-secondary btn-lg">Get Preview&nbsp;&nbsp;<FaPaw style={{ position: 'relative', top: -2 }} /></a></Link>
             </div>
           </div>
         </div>

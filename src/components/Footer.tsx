@@ -17,7 +17,7 @@ import { getAddress, isGBPCountry } from '../lib/address';
 import { openLiveChat } from '../lib/livechat';
 import { getTelephoneNumber } from '../lib/phone';
 
-export type FooterCTAType = 'grooming' | 'training';
+export type FooterCTAType = 'grooming' | 'training' | 'care';
 
 type Props = {
   ctaType?: FooterCTAType;
@@ -36,10 +36,12 @@ export const Footer: FC<Props> = ({ ctaType, enrollPath = '/', className }) => {
   const lgOrGreater = screenWidth >= 992;
 
   const enrollUrl = ctaType === 'grooming'
-    ? `https://enroll.qcpetstudies.com${enrollPath}?c[]=dg&c[]=fa`
+    ? `https://enroll.qcpetstudies.com${enrollPath}?c[]=dg`
     : ctaType === 'training'
       ? `https://enroll.qcpetstudies.com${enrollPath}?c[]=dt`
-      : `https://enroll.qcpetstudies.com${enrollPath}`;
+      : ctaType === 'care'
+        ? `https://enroll.qcpetstudies.com${enrollPath}?c[]=dd`
+        : `https://enroll.qcpetstudies.com${enrollPath}`;
 
   return (
     <footer style={{ borderTop: '1px solid rgb(255,255,255,0.1)' }} className={className}>
@@ -47,8 +49,8 @@ export const Footer: FC<Props> = ({ ctaType, enrollPath = '/', className }) => {
 
         <div className="row align-items-center">
           <div className="col-12 col-lg-9 col-xl-8 mb-4 mb-lg-0 text-center text-lg-start">
-            <h2>Ready to Launch Your <strong>{ctaType === 'grooming' ? <><br />Grooming </> : ctaType === 'training' ? <><br />Training </> : null}Career?</strong></h2>
-            <p className="lead mb-0">Take the first step towards a new career in the booming {ctaType === 'grooming' ? 'dog grooming ' : ctaType === 'training' ? 'dog training ' : 'pet'} industry.</p>
+            <h2>Ready to Launch Your <strong>{ctaType === 'grooming' ? <><br />Grooming </> : ctaType === 'training' ? <><br />Training </> : ctaType === 'care' ? <>Dog Care </> : null}Career?</strong></h2>
+            <p className="lead mb-0">Take the first step towards a new career in the booming {ctaType === 'grooming' ? 'dog grooming ' : ctaType === 'training' ? 'dog training ' : ctaType === 'care' ? ' dog care' : 'pet'} industry.</p>
           </div>
           <div className="col-12 col-lg-3 text-center text-lg-end text-xl-center">
             <a href={enrollUrl}><button className="btn btn-secondary btn-lg">Enroll Online</button></a>
@@ -70,9 +72,9 @@ export const Footer: FC<Props> = ({ ctaType, enrollPath = '/', className }) => {
           <div id="footerColCertifications" className="col-12 col-sm-4 col-lg-2 mb-4 mb-sm-0 text-center text-lg-start">
             <h2 className="h4 text-primary mb-sm-4">Certifications</h2>
             <ul className="spacedList">
-              <li><Link href="/dog-grooming-courses/dog-grooming"><a>Dog Grooming</a></Link></li>
-              <li><Link href="/dog-training-courses/dog-training"><a>Dog Training</a></Link></li>
-              {/* <li className="text-muted"><Link href="/dog-grooming-courses/first-aid"><a>First Aid</a></Link></li> */}
+              <li><Link href="/certification-courses/dog-grooming"><a>Dog Grooming</a></Link></li>
+              <li><Link href="/certification-courses/dog-training"><a>Dog Training</a></Link></li>
+              <li><Link href="/certification-courses/dog-daycare"><a>Dog Care</a></Link></li>
             </ul>
           </div>
           <div id="footerColContactUs" className="col-12 col-sm-4 col-lg-2 mb-4 mb-sm-0 text-center text-lg-start">

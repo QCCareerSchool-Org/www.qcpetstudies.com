@@ -55,7 +55,7 @@ const LearningDuringCovidPage: NextPage = () => {
                 <li>Learn First Aid for dogs</li>
                 <li>Receive informative business training that will allow you to implement best practices both in person and online</li>
               </ul>
-              <Link href="/dog-grooming-courses/dog-grooming/"><a className="link-primary">Discover Everything You'll Learn in the Dog Grooming Course!</a></Link>
+              <Link href="/certification-courses/dog-grooming/"><a className="link-primary">Discover Everything You'll Learn in the Dog Grooming Course!</a></Link>
             </div>
             {lgOrGreater && (
               <div className="col-6 col-xl-5">
