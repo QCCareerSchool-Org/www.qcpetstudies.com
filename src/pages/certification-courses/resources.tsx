@@ -102,7 +102,7 @@ const LearningResourcesPage: NextPage = () => (
               <li><Link href="/certification-courses/dog-grooming/course-outline" className="link-primary">Dog Grooming Course Outline</Link></li>
               <li><Link href="/certification-courses/dog-training/course-outline" className="link-primary">Dog Training Course Outline</Link></li>
               <li><Link href="/certification-courses/dog-daycare/course-outline" className="link-primary">Dog Daycare Course Outline</Link></li>
-              <li><Link href="/2021/07/dog-training-quiz-do-you-know-your-calming-signals" className="link-primary">Quiz: Do you know your calming signals? (blog link)</Link></li>
+              <li><Link href="/blog/2021/07/dog-training-quiz-do-you-know-your-calming-signals" className="link-primary">Quiz: Do you know your calming signals? (blog link)</Link></li>
             </ul>
           </div>
         </div>
