@@ -146,7 +146,7 @@ const DogCarePage: NextPageWithLayout<Props> = ({ price }) => {
                   <p>With all this information, you&apos;ll feel confident and prepared when you care for dogs.</p>
                   <p className="mb-0"><Link href="/certification-courses/dog-daycare/course-outline" className="link-primary">View a more-detailed course syllabus</Link></p>
                 </div>
-                {xlOrGreater && <div className="col-4"><Image src={IntroductoryUnitsImage} alt="two dogs sniffing each other in a park" /></div>}
+                {xlOrGreater && <div className="col-4"><Image src={IntroductoryUnitsImage} layout="responsive" alt="two dogs sniffing each other in a park" /></div>}
               </div>
             </AccordionSection>
             <AccordionToggle title="Part 2: Activities with Dogs" eventKey="1" />
@@ -158,7 +158,7 @@ const DogCarePage: NextPageWithLayout<Props> = ({ price }) => {
                   <p>Your clients will rest assured knowing their beloved pets will be returned happy and safe at the end of their stay with you.</p>
                   <p className="mb-0"><Link href="/certification-courses/dog-daycare/course-outline" className="link-primary">View a more-detailed course syllabus</Link></p>
                 </div>
-                {xlOrGreater && <div className="col-4"><Image src={ActivitiesImage} alt="lady walking three dogs" /></div>}
+                {xlOrGreater && <div className="col-4"><Image src={ActivitiesImage} layout="responsive" alt="lady walking three dogs" /></div>}
               </div>
             </AccordionSection>
             <AccordionToggle title="Part 3: Developing Your Services" eventKey="2" />
@@ -169,7 +169,7 @@ const DogCarePage: NextPageWithLayout<Props> = ({ price }) => {
                   <p>You&apos;ll stand out as the best dog daycare in town if dog owners know you can take care of all of their pets&apos; needs.</p>
                   <p className="mb-0"><Link href="/certification-courses/dog-daycare/course-outline" className="link-primary">View a more-detailed course syllabus</Link></p>
                 </div>
-                {xlOrGreater && <div className="col-4"><Image src={ServicesImage} alt="lady removing a dog's collar at the beach" /></div>}
+                {xlOrGreater && <div className="col-4"><Image src={ServicesImage} layout="responsive" alt="lady removing a dog's collar at the beach" /></div>}
               </div>
             </AccordionSection>
             <AccordionToggle title="Part 4: Dog Daycare Business Training" eventKey="3" />
@@ -179,7 +179,7 @@ const DogCarePage: NextPageWithLayout<Props> = ({ price }) => {
                   <p>Once you&apos;ve learned and practiced the skills you&apos;ll need to take care of dogs, you&apos;ll focus on developing your dog daycare business. In this optional part of your course, you&apos;ll learn how to turn your passion for working with dogs into a thriving career. You&apos;ll discover what it takes to start a business, from naming and registering your business, to selling your services. Honing these important business skills will help you to jumpstart your career and launch a successful business.</p>
                   <p className="mb-0"><Link href="/certification-courses/dog-daycare/course-outline" className="link-primary">View a more-detailed course syllabus</Link></p>
                 </div>
-                {xlOrGreater && <div className="col-4"><Image src={DogCareBusinessImage} alt="man writing at a desk with a Jack Russel Terrier on his lap" /></div>}
+                {xlOrGreater && <div className="col-4"><Image src={DogCareBusinessImage} layout="responsive" alt="man writing at a desk with a Jack Russel Terrier on his lap" /></div>}
               </div>
             </AccordionSection>
           </Accordion>

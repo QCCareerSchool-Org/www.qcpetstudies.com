@@ -101,7 +101,7 @@ const StudentExperiencePage: NextPage = () => {
               <h3>Connect with fellow dog grooming students!</h3>
               <p className="mb-5">The Student Forum is a hub for dog grooming students to socialize and support one another. Ask questions about tools and techniques, swap stories about your best and worst canine clients, and be inspired by like-minded individuals. Education is essential to your success as a dog groomer even after you graduate. That's why you'll have lifetime access to the Online Student Center and be able to access new course texts and video tutorials as soon as they're available. And you can always reach out to the QC team with questions about your career or the dog grooming industry.</p>
               <p className="lead">At QC Pet Studies, <strong>we're with you for the journey.</strong></p>
-              <Image src={LineOfDogsImage} alt="a line of nine dogs standing side to side" />
+              <Image src={LineOfDogsImage} layout="responsive" alt="a line of nine dogs standing side to side" />
             </div>
           </div>
         </div>

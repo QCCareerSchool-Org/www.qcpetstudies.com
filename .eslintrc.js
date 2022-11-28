@@ -173,7 +173,7 @@ module.exports = {
     '@typescript-eslint/dot-notation': 'error',
     '@typescript-eslint/func-call-spacing': 'error',
     '@typescript-eslint/indent': [ 'error', 2 ],
-    '@typescript-eslint/keyword-spacing': 'error',
+    // '@typescript-eslint/keyword-spacing': 'error', // TODO: turn this back on once fixed https://github.com/typescript-eslint/typescript-eslint/issues/6063
     '@typescript-eslint/lines-between-class-members': [ 'error', 'always', { exceptAfterSingleLine: true } ],
     '@typescript-eslint/no-implied-eval': 'error',
     '@typescript-eslint/no-loop-func': 'error',

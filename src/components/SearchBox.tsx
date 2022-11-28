@@ -61,11 +61,11 @@ export const SearchBox: FC<Props> = ({ label, options, multiLine = false, sm = f
     return () => clearInterval(intervalId);
   }, []);
 
-  const handleMouseEnter: MouseEventHandler<HTMLSelectElement> = e => {
+  const handleMouseEnter: MouseEventHandler<HTMLSelectElement> = () => {
     dispatch({ type: 'PAUSE' });
   };
 
-  const handleMouseLeave: MouseEventHandler<HTMLSelectElement> = e => {
+  const handleMouseLeave: MouseEventHandler<HTMLSelectElement> = () => {
     dispatch({ type: 'RESUME' });
   };
 
@@ -79,7 +79,7 @@ export const SearchBox: FC<Props> = ({ label, options, multiLine = false, sm = f
     }
   };
 
-  const handleClick: MouseEventHandler<HTMLButtonElement> = e => {
+  const handleClick: MouseEventHandler<HTMLButtonElement> = () => {
     if (url) {
       gaEvent('search_box_completed', { url });
       void router.push(url);

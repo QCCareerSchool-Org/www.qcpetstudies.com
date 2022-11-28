@@ -42,7 +42,7 @@ const ProfessionalDogGroomerPage: NextPageWithLayout<Props> = ({ testGroup }) =>
               <p>Before you begin your practical work in Unit C, you'll receive a toolkit with the essential items you need to get started.</p>
               <p>Your kit includes a WAHL ARCO 5-in-1 cordless clipper, a stainless steel attachment guide comb kit, professional-grade grooming scissors, brushes, combs, and nail clippers.</p>
               <p><em>Grooming Kit Estimated value: $200</em></p>
-              <Image src={FullKitImage} alt="Dog Grooming Starter Full Kit" />
+              <Image src={FullKitImage} layout="responsive" alt="Dog Grooming Starter Full Kit" />
             </div>
             <div className="col-12 col-lg-6 d-flex text-start">
               <div className="card bg-desaturated-blue">
@@ -83,8 +83,8 @@ const ProfessionalDogGroomerPage: NextPageWithLayout<Props> = ({ testGroup }) =>
         </div>
       </section>
 
-      <div className="container" style={{ marginBottom: -56 }}>
-        <Image src={CourseCatalogImage} objectFit="contain" alt="Dog looking at you" className="formImage" />
+      <div className="container" style={{ marginBottom: -56, maxWidth: 696 }}>
+        <Image src={CourseCatalogImage} layout="responsive" alt="Dog looking at you" className="formImage" />
       </div>
       <section className="bg-navy bg-desaturated-blue pt-3">
         <div className="container">

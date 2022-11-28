@@ -42,7 +42,7 @@ const LicenseVsCertification: NextPage = () => {
               <p className="lead">Even if education is not required, discover the many <Link href="/2020/11/el-paso-requires-dog-groomer-certification-as-of-january-1st" className="link-primary">advantages of getting professionally trained and certified</Link>!</p>
             </div>
             {lgOrGreater && <div className="col-6">
-              <Image src={DogToy} objectFit="fill" objectPosition="center" alt="a dog toy" />
+              <Image src={DogToy} layout="responsive" objectPosition="center" alt="a dog toy" />
             </div>}
           </div>
         </div>
@@ -76,7 +76,7 @@ const LicenseVsCertification: NextPage = () => {
               <p>A certification is earned after successfully completing a professional dog grooming certification course. Unlike a dog grooming license, a certification represents the training, education, and knowledge you have in the field of dog grooming.</p>
             </div>
             <div className="col-sm-12 col-md-6 col-lg-5 mb-4 mb-md-0">
-              <Image src={DogSittingOnTowel} objectFit="contain" objectPosition="center" alt="a dog sitting on a towel" />
+              <Image src={DogSittingOnTowel} layout="responsive" objectPosition="center" alt="a dog sitting on a towel" />
             </div>
             <div className="col-sm-12 col-md-6 col-lg-5">
               <div className="text-start">

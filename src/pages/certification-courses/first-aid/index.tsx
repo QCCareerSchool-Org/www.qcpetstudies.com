@@ -1,5 +1,5 @@
 import { GetServerSideProps } from 'next';
-import Image from 'next/image';
+import Image from 'next/legacy/image';
 import Link from 'next/link';
 
 import { DefaultLayout } from '../../../components/DefaultLayout';
@@ -52,7 +52,9 @@ const DogGroomingPage: NextPageWithLayout<Props> = ({ price }) => {
         <div className="container text-center">
           <div className="row align-items-xl-center">
             <div className="col-12 col-lg-6 mb-5 mb-lg-0">
-              <Image src={CourseMaterials} alt="First Aid course materials" />
+              <div style={{ maxWidth: 431, margin: '0 auto' }}>
+                <Image src={CourseMaterials} layout="responsive" alt="First Aid course materials" />
+              </div>
             </div>
             <div className="col-12 col-lg-6 text-start">
               <p className="lead">You should take this course if you</p>
@@ -82,7 +84,7 @@ const DogGroomingPage: NextPageWithLayout<Props> = ({ price }) => {
               </ul>
             </div>
             <div className="col-12 col-lg-6">
-              <Image src={dogLooking} alt="dog looking to the left" />
+              <Image src={dogLooking} layout="responsive" alt="dog looking to the left" />
             </div>
           </div>
         </div>

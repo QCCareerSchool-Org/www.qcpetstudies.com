@@ -128,7 +128,7 @@ const HomePage: NextPageWithLayout = () => {
               <h2>How Online <strong>Learning Works</strong></h2>
             </div>
             <div className="col-12 col-md-6 mb-4 mb-md-0">
-              <Image src={HowItWorks} alt="Dog looking at tablet" />
+              <Image src={HowItWorks} layout="responsive" alt="Dog looking at tablet" />
             </div>
             <div className="col-12 col-md-6">
               <h3>Enroll Online &amp; Access Your Course Materials</h3>

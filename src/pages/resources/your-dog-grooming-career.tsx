@@ -174,7 +174,7 @@ const CareerSection = ({ title, subtitle, imgSrc, imgAlt, text, extraText, class
     <div className="container text-center">
       <div className="row">
         <div className="col-12 col-lg-6 mb-4 mb-lg-0">
-          <Image src={imgSrc} alt={imgAlt} width="500" height="320" />
+          <Image src={imgSrc} layout="responsive" alt={imgAlt} width="500" height="320" />
         </div>
         <div className="col-12 col-lg-6 text-lg-start">
           <h2>{title}</h2>

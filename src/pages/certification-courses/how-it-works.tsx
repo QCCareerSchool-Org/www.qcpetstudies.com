@@ -63,7 +63,7 @@ const DogTrainingHowItWorksPage: NextPageWithLayout = () => {
             </div>
             <div className="col-12 col-sm-10 col-md-8 col-lg-4 col-xl-3">
               <div className="d-flex justify-content-center">
-                <Image src={Clicker} alt="clicker on a laynard" />
+                <Image src={Clicker} layout="responsive" alt="clicker on a laynard" />
               </div>
             </div>
           </div>

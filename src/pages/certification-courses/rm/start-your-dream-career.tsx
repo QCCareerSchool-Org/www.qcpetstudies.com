@@ -55,7 +55,7 @@ const StartYourDreamCareerPage: NextPageWithLayout<Props> = ({ price }) => (
             <p className="lead"><strong>These professional-grade tools have a $200 value!</strong></p>
           </div>
         </div>
-        <Image src={FullKitImage} layout="responsive" alt="Course Material" />
+        <Image src={FullKitImage} layout="responsive" alt="course material" />
       </div>
     </section>
 

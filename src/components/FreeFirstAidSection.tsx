@@ -21,7 +21,9 @@ export const FreeFirstAidSection = ({ className }: Props): ReactElement => (
           <p className="mb-0">Learn from first aid experts who will guide you through the course. You'll learn how to keep yourself and your furry clients out of harm's way.</p>
         </div>
         <div className="col-12 col-lg-6">
-          <Image src={CourseMaterials} alt="Dog grooming first aid book" />
+          <div style={{ maxWidth: 431, margin: '0 auto' }}>
+            <Image src={CourseMaterials} layout="responsive" alt="Dog grooming first aid book" />
+          </div>
         </div>
       </div>
     </div>

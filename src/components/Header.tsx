@@ -32,7 +32,6 @@ export const Header = ({ noHero, inverseNav, secondaryTitle, secondaryNavLinks, 
   const scrolled = scrollPosition > maxPosition;
 
   const lgOrGreater = screenWidth >= 992;
-  const xlOrGreater = screenWidth >= 1200;
 
   const resetMenu = (): void => {
     setExpanded(false);

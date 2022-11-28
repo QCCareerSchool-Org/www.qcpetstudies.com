@@ -107,7 +107,7 @@ const DogGroomingPage: NextPageWithLayout<Props> = ({ price }) => {
           <div className="row justify-content-center">
             <div className="col-12 col-lg-10 mb-4">
               <h2 className="mb-2 mb-md-4">Included in <strong>Your Course</strong></h2>
-              <Image src={DogCourseMaterialsImage} alt="course materials" />
+              <Image src={DogCourseMaterialsImage} layout="responsive" alt="course materials" />
               <div className="courseContentIcon"><BsScissors size={iconSize} /></div>
               <h3>Professional-Grade Grooming Starter Kit</h3>
               <p>When you enroll, you'll receive a kit of dog grooming tools to help you complete your studies and start your career. This kit includes cordless WAHL clippers and combs, three grooming scissors, an assortment of brushes and combs, and more!</p>
@@ -133,7 +133,7 @@ const DogGroomingPage: NextPageWithLayout<Props> = ({ price }) => {
         <Modal show={kitPopupVisible} onHide={kitPopupToggle}>
           <Modal.Header closeButton>Dog Grooming Kit</Modal.Header>
           <Modal.Body>
-            <Image src={GroomingKitDetailImage} layout="responsive" alt="groomiing kit details" />
+            <Image src={GroomingKitDetailImage} layout="responsive" alt="grooming kit details" />
           </Modal.Body>
         </Modal>
       </section>

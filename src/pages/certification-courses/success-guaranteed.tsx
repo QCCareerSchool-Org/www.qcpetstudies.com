@@ -58,14 +58,14 @@ const SuccessGuaranteedPage: NextPageWithLayout<Props> = ({ location, price }) =
     <section>
       <div className="container text-center">
         <div className="row justify-content-center">
-          <div className="col-12 col-lg-10">
+          <div className="col-12 col-lg-10 mb-4">
             <h2>Your Course Materials</h2>
             <p>Before you begin your practical work in Unit C, you'll receive a toolkit with the essential items you need to get started.</p>
             <p>Your kit includes a WAHL ARCO 5-in-1 cordless clipper, a stainless steel attachment guide comb kit, professional-grade grooming scissors, brushes, combs, and nail clippers.</p>
             <p className="lead mb-0">These professional-grade tools have a $200 value!</p>
           </div>
           <div className="col-12 col-lg-8">
-            <Image src={FullKitWithManualsImage} alt="full course kit with manuals" />
+            <Image src={FullKitWithManualsImage} layout="responsive" alt="full course kit with manuals" />
           </div>
         </div>
       </div>

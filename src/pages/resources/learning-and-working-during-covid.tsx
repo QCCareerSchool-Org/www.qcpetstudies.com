@@ -59,7 +59,7 @@ const LearningDuringCovidPage: NextPage = () => {
             </div>
             {lgOrGreater && (
               <div className="col-6 col-xl-5">
-                <Image src={CovidCareTools} objectFit="contain" alt="Covid care" />
+                <Image src={CovidCareTools} layout="responsive" alt="Covid care" />
               </div>
             )}
           </div>
