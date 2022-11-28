@@ -1,4 +1,4 @@
-import Image from 'next/legacy/image';
+import Image from 'next/image';
 import Link from 'next/link';
 
 import { Bar } from '../../components/Bar';
@@ -24,7 +24,18 @@ const DogTrainingHowItWorksPage: NextPageWithLayout = () => {
     />
 
     <section id="top" className="bg-dark">
-      <Image src={HandReachingTowardDog} placeholder="blur" alt="a hand reaching out to pet a happy dog" priority fill sizes="100vw" style={{ objectFit: 'cover', objectPosition: 'center' }} />
+      <Image
+        src={HandReachingTowardDog}
+        placeholder="blur"
+        alt="a hand reaching out to pet a happy dog"
+        priority
+        fill
+        sizes="100vw"
+        style={{
+          objectFit: 'cover',
+          objectPosition: 'center',
+        }}
+      />
       <div className="container">
         <div className="row">
           <div className="col-12 col-md-10 col-lg-8">
@@ -38,7 +49,15 @@ const DogTrainingHowItWorksPage: NextPageWithLayout = () => {
       <div className="container">
         <div className="row justify-content-center align-items-center">
           <div className="col-12 col-sm-10 col-md-8 col-lg-4 col-xl-3 mb-4 mb-lg-0">
-            <Image src={PuppyOnBack} alt="puppy lying on its back" sizes="100vw" style={{ width: '100%', height: 'auto' }} />
+            <Image
+              src={PuppyOnBack}
+              alt="puppy lying on its back"
+              sizes="100vw"
+              style={{
+                width: '100%',
+                height: 'auto',
+              }}
+            />
           </div>
           <div className="col-12 col-lg-8 col-xl-9">
             <h2>Learning Online</h2>
@@ -62,7 +81,16 @@ const DogTrainingHowItWorksPage: NextPageWithLayout = () => {
           </div>
           <div className="col-12 col-sm-10 col-md-8 col-lg-4 col-xl-3">
             <div className="d-flex justify-content-center">
-              <Image src={Clicker} alt="clicker on a laynard" sizes="100vw" style={{ width: '100%', height: 'auto' }} />
+              <Image
+                src={Clicker}
+                alt="clicker on a laynard"
+                sizes="100vw"
+                style={{
+                  width: '100%',
+                  height: 'auto',
+                  maxWidth: '100%',
+                }}
+              />
             </div>
           </div>
         </div>
@@ -115,7 +143,18 @@ const DogTrainingHowItWorksPage: NextPageWithLayout = () => {
           </div>
           {lgOrGreater && (
             <div className="col-lg-4" style={{ position: 'relative' }}>
-              <Image src={ManAndDogWalking} placeholder="blur" alt="a man and a dog walking in a field" fill sizes="100vw" style={{ objectFit: 'cover', objectPosition: 'right' }} />
+              <Image
+                src={ManAndDogWalking}
+                placeholder="blur"
+                alt="a man and a dog walking in a field"
+                fill
+                sizes="100vw"
+                style={{
+                  objectFit: 'cover',
+                  objectPosition: 'right',
+                  maxWidth: '100%',
+                }}
+              />
             </div>
           )}
         </div>
@@ -127,7 +166,16 @@ const DogTrainingHowItWorksPage: NextPageWithLayout = () => {
         <div className="row justify-content-center">
           <div className="col-12 col-lg-8">
             <div className="mb-2">
-              <Image src={GraduationCertificateImage} alt="IDTP™ Certification logo" height="180" width="180" style={{ maxWidth: '100%', height: 'auto' }} />
+              <Image
+                src={GraduationCertificateImage}
+                alt="IDTP™ Certification logo"
+                height="180"
+                width="180"
+                style={{
+                  maxWidth: '100%',
+                  height: 'auto',
+                }}
+              />
             </div>
             <h2>Your <strong>Graduation</strong></h2>
             <p>Once you've completed your course and your tuition has been paid in full, you'll be all set to graduate. Your professional certificate will be sent straight to your home!</p>

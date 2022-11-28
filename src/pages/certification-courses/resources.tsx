@@ -1,5 +1,5 @@
 import { NextPage } from 'next';
-import Image from 'next/legacy/image';
+import Image from 'next/image';
 import Link from 'next/link';
 
 import { SEO } from '../../components/SEO';
@@ -17,7 +17,18 @@ const LearningResourcesPage: NextPage = () => (
     />
 
     <section id="top" className="bg-dark">
-      <Image src={DogTrainingResourcesBackground} layout="fill" objectFit="cover" objectPosition="center" placeholder="blur" alt="dog with tongue out" priority />
+      <Image
+        src={DogTrainingResourcesBackground}
+        placeholder="blur"
+        alt="dog with tongue out"
+        priority
+        fill
+        sizes="100vw"
+        style={{
+          objectFit: 'cover',
+          objectPosition: 'center',
+        }}
+      />
       <div className="container text-center">
         <div className="row justify-content-center">
           <div className="col-12 col-lg-10">
@@ -38,7 +49,16 @@ const LearningResourcesPage: NextPage = () => (
         <div className="row justify-content-center mb-5">
           <div className="col-12 col-sm-8 col-lg-4 mb-4 mb-lg-0 d-flex">
             <div className="card">
-              <Image src={VirtualClassroom} layout="responsive" className="card-img-top" alt="smiling lady at a laptop" />
+              <Image
+                src={VirtualClassroom}
+                className="card-img-top"
+                alt="smiling lady at a laptop"
+                sizes="100vw"
+                style={{
+                  width: '100%',
+                  height: 'auto',
+                }}
+              />
               <div className="card-body">
                 <h3 className="card-title">Virtual Classroom</h3>
                 <p className="card-text">The Virtual Classroom is a private Facebook group exclusively for QC Pet Studies&apos; students. You&apos;ll have the opportunity to ask course-related questions, interact with your Teaching Assistant, access supplementary content and build a sense of community with other aspiring pet-industry professionals.</p>
@@ -48,7 +68,16 @@ const LearningResourcesPage: NextPage = () => (
           </div>
           <div className="col-12 col-sm-8 col-lg-4 mb-4 mb-lg-0 d-flex">
             <div className="card">
-              <Image src={StudentGrad} layout="responsive" className="card-img-top" alt="smiling man crouched down, petting a dog" />
+              <Image
+                src={StudentGrad}
+                className="card-img-top"
+                alt="smiling man crouched down, petting a dog"
+                sizes="100vw"
+                style={{
+                  width: '100%',
+                  height: 'auto',
+                }}
+              />
               <div className="card-body">
                 <h3 className="card-title">Frequently Asked Questions</h3>
                 <p className="card-text">Do you have questions about taking the online dog training course? Read this list of FAQs to learn more about your tuition options, how the online course works, and more.</p>
@@ -58,7 +87,16 @@ const LearningResourcesPage: NextPage = () => (
           </div>
           <div className="col-12 col-sm-8 col-lg-4 d-flex">
             <div className="card">
-              <Image src={LearningInClassOnline} layout="responsive" className="card-img-top" alt="dog resting his chin on a laptop" />
+              <Image
+                src={LearningInClassOnline}
+                className="card-img-top"
+                alt="dog resting his chin on a laptop"
+                sizes="100vw"
+                style={{
+                  width: '100%',
+                  height: 'auto',
+                }}
+              />
               <div className="card-body">
                 <h3 className="card-title">How It Works</h3>
                 <p className="card-text">Learning online is much more convenient than learning in the classroom, but is it as effective? It can be! Find out more about how QC&apos;s online courses work. </p>

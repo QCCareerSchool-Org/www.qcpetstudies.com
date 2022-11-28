@@ -1,5 +1,5 @@
 import { GetServerSideProps } from 'next';
-import Image from 'next/legacy/image';
+import Image from 'next/image';
 
 import { DefaultLayout } from '../../../components/DefaultLayout';
 import { FreeFirstAidSection } from '../../../components/FreeFirstAidSection';
@@ -32,7 +32,17 @@ const StartYourDreamCareerPage: NextPageWithLayout<Props> = ({ price }) => (
     />
 
     <section id="top" className="bg-dark">
-      <Image src={DreamCareerBackground} layout="fill" objectFit="cover" objectPosition="center" alt="dog getting blow dried" priority />
+      <Image
+        src={DreamCareerBackground}
+        alt="dog getting blow dried"
+        priority
+        fill
+        sizes="100vw"
+        style={{
+          objectFit: 'cover',
+          objectPosition: 'center',
+        }}
+      />
       <div className="image-overlay-gradient" />
       <div className="container text-center">
         <div className="row justify-content-center">
@@ -55,7 +65,15 @@ const StartYourDreamCareerPage: NextPageWithLayout<Props> = ({ price }) => (
             <p className="lead"><strong>These professional-grade tools have a $200 value!</strong></p>
           </div>
         </div>
-        <Image src={FullKitImage} layout="responsive" alt="course material" />
+        <Image
+          src={FullKitImage}
+          alt="course material"
+          sizes="100vw"
+          style={{
+            width: '100%',
+            height: 'auto',
+          }}
+        />
       </div>
     </section>
 
@@ -68,7 +86,14 @@ const StartYourDreamCareerPage: NextPageWithLayout<Props> = ({ price }) => (
               <div className="card-body">
                 <div className="w-100">
                   <div className="mb-3">
-                    <Image src={QcDayGuaratnteeLogo} alt="21-day money-back guarantee logo" />
+                    <Image
+                      src={QcDayGuaratnteeLogo}
+                      alt="21-day money-back guarantee logo"
+                      style={{
+                        maxWidth: '100%',
+                        height: 'auto',
+                      }}
+                    />
                   </div>
                   <h4>The 21-Day Money-Back Guarantee</h4>
                   <p className="card-text">Try the course risk-free for 21 days. This gives you time to receive your course materials and evaluate whether the dog grooming course is right for you. If you decide it's not a good fit, simply contact QC to arrange a return of your course materials for a refund. It's that easy! Note: For sanitary reasons, the clippers and attachment combs provided with the course cannot be refunded (value $200 US)</p>
@@ -81,7 +106,14 @@ const StartYourDreamCareerPage: NextPageWithLayout<Props> = ({ price }) => (
               <div className="card-body">
                 <div className="w-100">
                   <div className="mb-3">
-                    <Image src={QcYearGuaratnteeLogo} alt="1-year money-back guarantee logo" />
+                    <Image
+                      src={QcYearGuaratnteeLogo}
+                      alt="1-year money-back guarantee logo"
+                      style={{
+                        maxWidth: '100%',
+                        height: 'auto',
+                      }}
+                    />
                   </div>
                   <h4>The 1-Year Money-Back Guarantee</h4>
                   <p className="card-text lead"><em>This course will pay for itself within two years. That's a promise.</em></p>

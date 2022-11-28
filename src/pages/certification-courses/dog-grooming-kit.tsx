@@ -1,4 +1,4 @@
-import Image from 'next/legacy/image';
+import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
 
@@ -21,7 +21,18 @@ const DogGroomingKitPage: NextPageWithLayout = () => (
     />
 
     <section id="top" className="bg-dark">
-      <Image src={GroomingKitBackground} layout="fill" objectFit="cover" objectPosition="center" placeholder="blur" alt="grooming kit" priority />
+      <Image
+        src={GroomingKitBackground}
+        placeholder="blur"
+        alt="grooming kit"
+        priority
+        fill
+        sizes="100vw"
+        style={{
+          objectFit: 'cover',
+          objectPosition: 'center',
+        }}
+      />
       <div className="container text-center">
         <h1>Dog grooming kit</h1>
         <p className="lead mb-0">Included with your online course!</p>
@@ -38,7 +49,16 @@ const DogGroomingKitPage: NextPageWithLayout = () => (
             <p className="lead mb-0">The dog grooming kit has an estimated value of over $200!</p>
           </div>
           <div className="col-12 col-lg-8">
-            <Image src={FullKitImage} layout="responsive" objectFit="contain" alt="Full Kit" />
+            <Image
+              src={FullKitImage}
+              alt="Full Kit"
+              sizes="100vw"
+              style={{
+                width: '100%',
+                height: 'auto',
+                objectFit: 'contain',
+              }}
+            />
           </div>
         </div>
       </div>
@@ -53,7 +73,15 @@ const DogGroomingKitPage: NextPageWithLayout = () => (
         <div className="row justify-content-center mb-4">
           <div className="col-12 col-sm-10 col-md-6 mb-4 mb-md-0 d-flex">
             <div className="card">
-              <Image src={ClipperCombsImage} className="card-img-top" alt="cipper combo" />
+              <Image
+                src={ClipperCombsImage}
+                className="card-img-top"
+                alt="cipper combo"
+                style={{
+                  maxWidth: '100%',
+                  height: 'auto',
+                }}
+              />
               <div className="card-body">
                 <h3 className="card-text">WAHL 5-in-1 Cordless Clippers &amp; Comb Attachments</h3>
                 <p className="card-text">A good pair of clippers are a must for any professional dog groomer and most will tell you that WAHL makes the best clippers around. These convenient cordless clippers allow you the freedom to move around the dog and trim its fur comfortably, without having to worry about a pesky cord getting in the way.</p>
@@ -63,7 +91,15 @@ const DogGroomingKitPage: NextPageWithLayout = () => (
           </div>
           <div className="col-12 col-sm-10 col-md-6 d-flex">
             <div className="card">
-              <Image src={GroomingScissorsImage} className="card-img-top" alt="grooming scissors" />
+              <Image
+                src={GroomingScissorsImage}
+                className="card-img-top"
+                alt="grooming scissors"
+                style={{
+                  maxWidth: '100%',
+                  height: 'auto',
+                }}
+              />
               <div className="card-body">
                 <h3 className="card-text">Professional Grooming Scissors</h3>
                 <p className="card-text">Grooming scissors (or shears) are a groomer's best friend. With the right scissors, you can create just about any look on a dog&mdash;from the cutest teddy bear cut to the perfect golden retriever tail and everything in between. As part of your kit, you'll receive a set of three professional-grade grooming scissors and comb! The kit includes a straight blade, a curved blade, and thinning scissors, wrapped in a beautiful leather case for portability and convenience. (Product may vary based on the supplier.)</p>
@@ -73,7 +109,16 @@ const DogGroomingKitPage: NextPageWithLayout = () => (
         </div>
         <div className="row align-items-center justify-content-center">
           <div className="col-12 col-sm-10 col-md-8 col-lg-6 mb-4 mb-lg-0">
-            <Image src={StarterKitImage} layout="responsive" alt="dog gooming starter kit" />
+            <Image
+              src={StarterKitImage}
+              alt="dog gooming starter kit"
+              sizes="100vw"
+              style={{
+                width: '100%',
+                height: 'auto',
+                objectFit: 'contain',
+              }}
+            />
           </div>
           <div className="col-12 col-lg-6">
             <h3>Grooming Tools Starter Kit</h3>

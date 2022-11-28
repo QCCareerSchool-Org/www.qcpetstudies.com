@@ -1,4 +1,4 @@
-import Image from 'next/legacy/image';
+import Image from 'next/image';
 import Link from 'next/link';
 import Accordion from 'react-bootstrap/Accordion';
 import { FaBars } from 'react-icons/fa';
@@ -31,7 +31,18 @@ const DogGroomingCourseOutlinePage: NextPageWithLayout = () => (
     />
 
     <section id="top" className="bg-dark">
-      <Image src={CourseOutlineBackground} layout="fill" objectFit="cover" objectPosition="center" placeholder="blur" alt="dog getting a haircut" priority />
+      <Image
+        src={CourseOutlineBackground}
+        placeholder="blur"
+        alt="dog getting a haircut"
+        priority
+        fill
+        sizes="100vw"
+        style={{
+          objectFit: 'cover',
+          objectPosition: 'center',
+        }}
+      />
       <div className="image-overlay-gradient" />
       <div className="container text-center">
         <div className="row justify-content-center">
@@ -51,7 +62,16 @@ const DogGroomingCourseOutlinePage: NextPageWithLayout = () => (
             <div className="card">
               <div className="card-body">
                 <div className="mb-2">
-                  <Image src={IconTime} width={iconSize} height={iconSize} alt="clock icon" />
+                  <Image
+                    src={IconTime}
+                    width={iconSize}
+                    height={iconSize}
+                    alt="clock icon"
+                    style={{
+                      maxWidth: '100%',
+                      height: 'auto',
+                    }}
+                  />
                 </div>
                 <p>The course should take between <strong>80 and 130 hours</strong> to study and complete assignments from start to finish.  This time does not include the time you will take to practice and develop your skills before you complete an assignment.</p>
               </div>
@@ -61,7 +81,16 @@ const DogGroomingCourseOutlinePage: NextPageWithLayout = () => (
             <div className="card">
               <div className="card-body">
                 <div className="mb-2">
-                  <Image src={calendarIcon} width={iconSize} height={iconSize} alt="calendar icon" />
+                  <Image
+                    src={calendarIcon}
+                    width={iconSize}
+                    height={iconSize}
+                    alt="calendar icon"
+                    style={{
+                      maxWidth: '100%',
+                      height: 'auto',
+                    }}
+                  />
                 </div>
                 <p>On average, most QC students work on their course for a few hours per week, and complete the online dog grooming course within about <strong>6 months to a year.</strong>  You'll have up to two years to complete the program, so lots of time!</p>
               </div>
@@ -87,7 +116,16 @@ const DogGroomingCourseOutlinePage: NextPageWithLayout = () => (
               <AccordionSection eventKey="0">
                 <div className="row">
                   <div className="col-12 col-lg-6 mb-4 mb-lg-0">
-                    <Image src={UnitAImage} className="mb-4" layout="responsive" alt="groomer examining a dog's coat" />
+                    <Image
+                      src={UnitAImage}
+                      className="mb-4"
+                      alt="groomer examining a dog's coat"
+                      sizes="100vw"
+                      style={{
+                        width: '100%',
+                        height: 'auto',
+                      }}
+                    />
                     <p className="mb-0">In the first unit of the dog grooming course, you'll meet your tutor and start learning about the fundamentals of dog grooming. This introductory unit includes theoretical studies on the history of dog grooming, and how to protect your health &amp; safety as a dog groomer.  You'll also learn about dog anatomy in great detail, and you'll start learning about skincare and esthetics.</p>
                   </div>
                   <div className="col-12 col-lg-6">
@@ -109,7 +147,16 @@ const DogGroomingCourseOutlinePage: NextPageWithLayout = () => (
               <AccordionSection eventKey="1">
                 <div className="row">
                   <div className="col-12 col-lg-6 mb-4 mb-lg-0">
-                    <Image src={UnitBImage} className="mb-4" layout="responsive" alt="groomer combing a dog's head" />
+                    <Image
+                      src={UnitBImage}
+                      className="mb-4"
+                      alt="groomer combing a dog's head"
+                      sizes="100vw"
+                      style={{
+                        width: '100%',
+                        height: 'auto',
+                      }}
+                    />
                     <p className="mb-0">In this second unit, you'll focus on how to work with dogs in a grooming environment. You'll learn about dog behaviors and temperaments, and you'll find out more about how dogs learn and communicate with humans.  You'll then learn about how you can keep the dog and yourself safe during a grooming appointment, and how to conduct an effective needs analysis when meeting a dog grooming client.</p>
                   </div>
                   <div className="col-12 col-lg-6">
@@ -131,7 +178,16 @@ const DogGroomingCourseOutlinePage: NextPageWithLayout = () => (
               <AccordionSection eventKey="2">
                 <div className="row">
                   <div className="col-12 col-lg-6 mb-4 mb-lg-0">
-                    <Image src={UnitCImage} className="mb-4" layout="responsive" alt="assorted dog grooming tools" />
+                    <Image
+                      src={UnitCImage}
+                      className="mb-4"
+                      alt="assorted dog grooming tools"
+                      sizes="100vw"
+                      style={{
+                        width: '100%',
+                        height: 'auto',
+                      }}
+                    />
                     <p className="mb-0">The third dog grooming unit will help you become intimately familiar with your grooming tools. You'll learn all about brushes, scissors, clippers, and you'll start to practice techniques to use these tools effectively.  You'll also learn how to properly set up your grooming environment, and how to keep it clean and safe!</p>
                   </div>
                   <div className="col-12 col-lg-6">
@@ -154,7 +210,16 @@ const DogGroomingCourseOutlinePage: NextPageWithLayout = () => (
               <AccordionSection eventKey="3">
                 <div className="row">
                   <div className="col-12 col-lg-6 mb-4 mb-lg-0">
-                    <Image src={FirstAidCourse} className="mb-4" layout="responsive" alt="groomer bandaging a dog's paw" />
+                    <Image
+                      src={FirstAidCourse}
+                      className="mb-4"
+                      alt="groomer bandaging a dog's paw"
+                      sizes="100vw"
+                      style={{
+                        width: '100%',
+                        height: 'auto',
+                      }}
+                    />
                     <p className="mb-0">Starting in Unit D, you'll be completing grooming assignments on dogs. Before you proceed to Unit D, however, you'll take a break and complete the full First Aid for Dog Groomers Course.  This will ensure that you are fully prepared and ready to address any type of grooming emergency.  The First Aid units will teach you how to prevent accidents and injuries, and to respond to these situations should they occur. You'll also learn to build your Groomer's First Aid Kit, assess a dog's vitals, and perform life-saving procedures.  Being able to quickly respond to these situations will make you a better and more confident groomer!</p>
                   </div>
                   <div className="col-12 col-lg-6">
@@ -309,7 +374,16 @@ const DogGroomingCourseOutlinePage: NextPageWithLayout = () => (
               <AccordionSection eventKey="7">
                 <div className="row">
                   <div className="col-12 col-lg-6 mb-4 mb-lg-0">
-                    <Image src={UnitGImage} className="mb-4" layout="responsive" alt="longhaired dog getting a trim" />
+                    <Image
+                      src={UnitGImage}
+                      className="mb-4"
+                      alt="longhaired dog getting a trim"
+                      sizes="100vw"
+                      style={{
+                        width: '100%',
+                        height: 'auto',
+                      }}
+                    />
                     <p>In this final mandatory unit before your practicum, you'll learn the guidelines for styling and showing purebred dogs. These are the standards that give different dog breeds their unique looks.</p>
                     <p>Unit G guides you through the process of adapting breed standards to practical pet cuts for a number of common breeds. You'll return to the information in this unit over and over again throughout your grooming career!</p>
                     <p className="mb-0">Note: This unit is the lead-up to your practicum, therefore there are no practical assignments in this unit.</p>
@@ -339,7 +413,15 @@ const DogGroomingCourseOutlinePage: NextPageWithLayout = () => (
                     <div className="alert alert-primary mb-0">Unit Total: 11 to 20 hours + Practice</div>
                   </div>
                   <div className="col-12 col-lg-6 mb-4">
-                    <Image src={PracticumUnitImage} layout="responsive" alt="wet dog being toweled off" />
+                    <Image
+                      src={PracticumUnitImage}
+                      alt="wet dog being toweled off"
+                      sizes="100vw"
+                      style={{
+                        width: '100%',
+                        height: 'auto',
+                      }}
+                    />
                   </div>
                   <div className="col-12 mb-4 col-lg-6 d-flex">
                     <div className="card bg-light w-100">
@@ -438,7 +520,15 @@ const DogGroomingCourseOutlinePage: NextPageWithLayout = () => (
                   </div>
                   <div className="col-12 col-lg-6">
                     <div className="card w-100">
-                      <Image src={PracticumUnit5Image} className="card-img" alt="dog groomed with wire brush" />
+                      <Image
+                        src={PracticumUnit5Image}
+                        className="card-img"
+                        alt="dog groomed with wire brush"
+                        style={{
+                          maxWidth: '100%',
+                          height: 'auto',
+                        }}
+                      />
                     </div>
                   </div>
                 </div>
@@ -452,7 +542,16 @@ const DogGroomingCourseOutlinePage: NextPageWithLayout = () => (
                     <div className="alert alert-primary mb-0">Unit Total: 9 to 16 Hours</div>
                   </div>
                   <div className="col-12 col-lg-6">
-                    <Image src={UnitHImage} className="mb-4" layout="responsive" alt="groomer admiring groomed dog" />
+                    <Image
+                      src={UnitHImage}
+                      className="mb-4"
+                      alt="groomer admiring groomed dog"
+                      sizes="100vw"
+                      style={{
+                        width: '100%',
+                        height: 'auto',
+                      }}
+                    />
                   </div>
                 </div>
               </AccordionSection>
