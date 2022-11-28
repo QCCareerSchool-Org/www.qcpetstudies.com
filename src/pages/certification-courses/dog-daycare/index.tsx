@@ -63,10 +63,7 @@ const DogCarePage: NextPageWithLayout<Props> = ({ price }) => {
         priority
         fill
         sizes="100vw"
-        style={{
-          objectFit: 'cover',
-          objectPosition: 'right',
-        }}
+        style={{ objectFit: 'cover', objectPosition: 'right' }}
       />
       <div className="container text-center">
         <div className="row mb-4">
@@ -76,10 +73,7 @@ const DogCarePage: NextPageWithLayout<Props> = ({ price }) => {
               alt="International Dog Grooming Professional IDGP certification"
               height="125"
               width="125"
-              style={{
-                maxWidth: '100%',
-                height: 'auto',
-              }}
+              style={{ maxWidth: '100%', height: 'auto' }}
             />
           </div>
           <h1>Dog Daycare Course</h1>
@@ -95,10 +89,7 @@ const DogCarePage: NextPageWithLayout<Props> = ({ price }) => {
                 alt="outline"
                 width={headerIconSize}
                 height={headerIconSize}
-                style={{
-                  maxWidth: '100%',
-                  height: 'auto',
-                }}
+                style={{ maxWidth: '100%', height: 'auto' }}
               /></a>
               <p><strong>Outline</strong></p>
             </div>
@@ -108,10 +99,7 @@ const DogCarePage: NextPageWithLayout<Props> = ({ price }) => {
                 alt="play button"
                 width={headerIconSize}
                 height={headerIconSize}
-                style={{
-                  maxWidth: '100%',
-                  height: 'auto',
-                }}
+                style={{ maxWidth: '100%', height: 'auto' }}
               /></a>
               <p><strong>Guarantee</strong></p>
             </div>
@@ -121,10 +109,7 @@ const DogCarePage: NextPageWithLayout<Props> = ({ price }) => {
                 alt="play button"
                 width={headerIconSize}
                 height={headerIconSize}
-                style={{
-                  maxWidth: '100%',
-                  height: 'auto',
-                }}
+                style={{ maxWidth: '100%', height: 'auto' }}
               /></a>
               <p><strong>Tutors</strong></p>
             </div>
@@ -196,10 +181,7 @@ const DogCarePage: NextPageWithLayout<Props> = ({ price }) => {
                 src={IntroductoryUnitsImage}
                 alt="two dogs sniffing each other in a park"
                 sizes="100vw"
-                style={{
-                  width: '100%',
-                  height: 'auto',
-                }}
+                style={{ width: '100%', height: 'auto' }}
               /></div>}
             </div>
           </AccordionSection>
@@ -216,10 +198,7 @@ const DogCarePage: NextPageWithLayout<Props> = ({ price }) => {
                 src={ActivitiesImage}
                 alt="lady walking three dogs"
                 sizes="100vw"
-                style={{
-                  width: '100%',
-                  height: 'auto',
-                }}
+                style={{ width: '100%', height: 'auto' }}
               /></div>}
             </div>
           </AccordionSection>
@@ -235,10 +214,7 @@ const DogCarePage: NextPageWithLayout<Props> = ({ price }) => {
                 src={ServicesImage}
                 alt="lady removing a dog's collar at the beach"
                 sizes="100vw"
-                style={{
-                  width: '100%',
-                  height: 'auto',
-                }}
+                style={{ width: '100%', height: 'auto' }}
               /></div>}
             </div>
           </AccordionSection>
@@ -253,10 +229,7 @@ const DogCarePage: NextPageWithLayout<Props> = ({ price }) => {
                 src={DogCareBusinessImage}
                 alt="man writing at a desk with a Jack Russel Terrier on his lap"
                 sizes="100vw"
-                style={{
-                  width: '100%',
-                  height: 'auto',
-                }}
+                style={{ width: '100%', height: 'auto' }}
               /></div>}
             </div>
           </AccordionSection>

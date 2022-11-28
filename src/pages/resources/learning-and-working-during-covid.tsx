@@ -31,10 +31,7 @@ const LearningDuringCovidPage: NextPage = () => {
         priority
         fill
         sizes="100vw"
-        style={{
-          objectFit: 'cover',
-          objectPosition: 'center',
-        }}
+        style={{ objectFit: 'cover', objectPosition: 'center' }}
       />
       <div className="image-overlay-gradient" />
       <div className="container text-center">
@@ -73,10 +70,7 @@ const LearningDuringCovidPage: NextPage = () => {
                 src={CovidCareTools}
                 alt="Covid care"
                 sizes="100vw"
-                style={{
-                  width: '100%',
-                  height: 'auto',
-                }}
+                style={{ width: '100%', height: 'auto' }}
               />
             </div>
           )}
@@ -90,10 +84,7 @@ const LearningDuringCovidPage: NextPage = () => {
         alt="Mask"
         fill
         sizes="100vw"
-        style={{
-          objectFit: 'contain',
-          objectPosition: 'left',
-        }}
+        style={{ objectFit: 'contain', objectPosition: 'left' }}
       /> }
       <div className="container">
         <div className="row">
@@ -158,10 +149,7 @@ const LearningDuringCovidPage: NextPage = () => {
         alt="Tips to keep safe"
         fill
         sizes="100vw"
-        style={{
-          objectFit: 'cover',
-          objectPosition: 'center',
-        }}
+        style={{ objectFit: 'cover', objectPosition: 'center' }}
       />}
       <div className="container">
         <div className="row">

@@ -101,10 +101,7 @@ const DogTrainingPage: NextPageWithLayout<Props> = ({ price }) => {
         priority
         fill
         sizes="100vw"
-        style={{
-          objectFit: 'cover',
-          objectPosition: 'center',
-        }}
+        style={{ objectFit: 'cover', objectPosition: 'center' }}
       />
       <div className="image-overlay-gradient" />
       <div className="container text-center">
@@ -115,10 +112,7 @@ const DogTrainingPage: NextPageWithLayout<Props> = ({ price }) => {
               alt="International Dog Training Professional IDTP Certification"
               height="125"
               width="125"
-              style={{
-                maxWidth: '100%',
-                height: 'auto',
-              }}
+              style={{ maxWidth: '100%', height: 'auto' }}
             />
           </div>
           <h1>Dog Training Course</h1>
@@ -134,10 +128,7 @@ const DogTrainingPage: NextPageWithLayout<Props> = ({ price }) => {
                 alt="outline"
                 width={headerIconSize}
                 height={headerIconSize}
-                style={{
-                  maxWidth: '100%',
-                  height: 'auto',
-                }}
+                style={{ maxWidth: '100%', height: 'auto' }}
               /></a>
               <p><strong>Outline</strong></p>
             </div>
@@ -147,10 +138,7 @@ const DogTrainingPage: NextPageWithLayout<Props> = ({ price }) => {
                 alt="play button"
                 width={headerIconSize}
                 height={headerIconSize}
-                style={{
-                  maxWidth: '100%',
-                  height: 'auto',
-                }}
+                style={{ maxWidth: '100%', height: 'auto' }}
               /></a>
               <p><strong>Guarantee</strong></p>
             </div>
@@ -160,10 +148,7 @@ const DogTrainingPage: NextPageWithLayout<Props> = ({ price }) => {
                 alt="play button"
                 width={headerIconSize}
                 height={headerIconSize}
-                style={{
-                  maxWidth: '100%',
-                  height: 'auto',
-                }}
+                style={{ maxWidth: '100%', height: 'auto' }}
               /></a>
               <p><strong>Tutors</strong></p>
             </div>
@@ -256,10 +241,7 @@ const DogTrainingPage: NextPageWithLayout<Props> = ({ price }) => {
                     src={IntroductoryUnitsImage}
                     alt="Dog runing"
                     sizes="100vw"
-                    style={{
-                      width: '100%',
-                      height: 'auto',
-                    }}
+                    style={{ width: '100%', height: 'auto' }}
                   />
                 </div>
               )}
@@ -295,10 +277,7 @@ const DogTrainingPage: NextPageWithLayout<Props> = ({ price }) => {
                     src={ApplyingTrainingPrinciplesImage}
                     alt="Dog learning from human"
                     sizes="100vw"
-                    style={{
-                      width: '100%',
-                      height: 'auto',
-                    }}
+                    style={{ width: '100%', height: 'auto' }}
                   />
                 </div>
               )}
@@ -334,10 +313,7 @@ const DogTrainingPage: NextPageWithLayout<Props> = ({ price }) => {
                     src={TeachingPeopleImage}
                     alt="person training dog"
                     sizes="100vw"
-                    style={{
-                      width: '100%',
-                      height: 'auto',
-                    }}
+                    style={{ width: '100%', height: 'auto' }}
                   />
                 </div>
               )}
@@ -365,10 +341,7 @@ const DogTrainingPage: NextPageWithLayout<Props> = ({ price }) => {
                     src={DogTrainingBusinessImage}
                     alt="person working on laptop"
                     sizes="100vw"
-                    style={{
-                      width: '100%',
-                      height: 'auto',
-                    }}
+                    style={{ width: '100%', height: 'auto' }}
                   />
                 </div>
               )}
@@ -393,10 +366,7 @@ const DogTrainingPage: NextPageWithLayout<Props> = ({ price }) => {
                     src={CPDTPrepImage}
                     alt="German Shepherd puppy"
                     sizes="100vw"
-                    style={{
-                      width: '100%',
-                      height: 'auto',
-                    }}
+                    style={{ width: '100%', height: 'auto' }}
                   />
                 </div>
               )}

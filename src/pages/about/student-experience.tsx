@@ -30,10 +30,7 @@ const StudentExperiencePage: NextPage = () => {
         priority
         fill
         sizes="100vw"
-        style={{
-          objectFit: 'cover',
-          objectPosition: 'center',
-        }}
+        style={{ objectFit: 'cover', objectPosition: 'center' }}
       />
       <div className="container text-center">
         <div className="row">
@@ -56,10 +53,7 @@ const StudentExperiencePage: NextPage = () => {
                 src={ManOnPhoneImage}
                 alt="man on the phone holding a dog"
                 sizes="100vw"
-                style={{
-                  width: '100%',
-                  height: 'auto',
-                }}
+                style={{ width: '100%', height: 'auto' }}
               />
             </div>
           )}
@@ -77,10 +71,7 @@ const StudentExperiencePage: NextPage = () => {
               alt="woman using a laptop with a Chihuahua on her lap"
               fill
               sizes="100vw"
-              style={{
-                objectFit: 'cover',
-                objectPosition: 'center',
-              }}
+              style={{ objectFit: 'cover', objectPosition: 'center' }}
             />
           </div>
           <div className="col-12 col-lg-6 text-lg-start">
@@ -108,10 +99,7 @@ const StudentExperiencePage: NextPage = () => {
               src={CertifiedExpertImage}
               alt="collage of dogs"
               sizes="100vw"
-              style={{
-                width: '100%',
-                height: 'auto',
-              }}
+              style={{ width: '100%', height: 'auto' }}
             />
           </div>
         </div>
@@ -141,10 +129,7 @@ const StudentExperiencePage: NextPage = () => {
               src={LineOfDogsImage}
               alt="a line of nine dogs standing side to side"
               sizes="100vw"
-              style={{
-                width: '100%',
-                height: 'auto',
-              }}
+              style={{ width: '100%', height: 'auto' }}
             />
           </div>
         </div>

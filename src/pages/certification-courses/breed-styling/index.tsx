@@ -50,20 +50,14 @@ const BreedStylingPage: NextPageWithLayout<Props> = ({ price }) => {
         priority
         fill
         sizes="100vw"
-        style={{
-          objectFit: 'cover',
-          objectPosition: 'center',
-        }}
+        style={{ objectFit: 'cover', objectPosition: 'center' }}
       />
       <div className="image-overlay-gradient" />
       <div className="container text-center">
         <Image
           src={CourseIconBadge}
-          alt="Cource Icon Badge"
-          style={{
-            maxWidth: '100%',
-            height: 'auto',
-          }}
+          alt="Breed Styling Course badge"
+          style={{ maxWidth: '100%', height: 'auto' }}
         />
         <h1>Breed Styling Workshop</h1>
         <div className="row justify-content-center">
@@ -93,10 +87,7 @@ const BreedStylingPage: NextPageWithLayout<Props> = ({ price }) => {
             <Image
               src={CourseMaterials}
               alt="Breed Standards course text"
-              style={{
-                maxWidth: '100%',
-                height: 'auto',
-              }}
+              style={{ maxWidth: '100%', height: 'auto' }}
             />
           </div>
         </div>
@@ -135,10 +126,7 @@ const BreedStylingPage: NextPageWithLayout<Props> = ({ price }) => {
               src={BreedStylingCertificateImage}
               alt="Breed Styling Workshop certificate"
               sizes="100vw"
-              style={{
-                width: '100%',
-                height: 'auto',
-              }}
+              style={{ width: '100%', height: 'auto' }}
             />
           </div>
         </div>
@@ -251,10 +239,7 @@ const BreedStylingPage: NextPageWithLayout<Props> = ({ price }) => {
                     src={OutlinePart1}
                     alt="Dog Anatomy"
                     sizes="100vw"
-                    style={{
-                      width: '100%',
-                      height: 'auto',
-                    }}
+                    style={{ width: '100%', height: 'auto' }}
                   />
                 </div>
               )}
@@ -275,10 +260,7 @@ const BreedStylingPage: NextPageWithLayout<Props> = ({ price }) => {
                     src={OutlinePart2}
                     alt="Safety Assessment and First Aid"
                     sizes="100vw"
-                    style={{
-                      width: '100%',
-                      height: 'auto',
-                    }}
+                    style={{ width: '100%', height: 'auto' }}
                   />
                 </div>
               )}
@@ -305,10 +287,7 @@ const BreedStylingPage: NextPageWithLayout<Props> = ({ price }) => {
                     src={OutlinePart3}
                     alt="Practicum"
                     sizes="100vw"
-                    style={{
-                      width: '100%',
-                      height: 'auto',
-                    }}
+                    style={{ width: '100%', height: 'auto' }}
                   />
                 </div>
               )}

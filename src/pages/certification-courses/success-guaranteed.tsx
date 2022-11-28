@@ -39,10 +39,7 @@ const SuccessGuaranteedPage: NextPageWithLayout<Props> = ({ location, price }) =
         priority
         fill
         sizes="100vw"
-        style={{
-          objectFit: 'cover',
-          objectPosition: 'center',
-        }}
+        style={{ objectFit: 'cover', objectPosition: 'center' }}
       />
       <div className="image-overlay-gradient" />
       <div className="container text-center">
@@ -58,20 +55,14 @@ const SuccessGuaranteedPage: NextPageWithLayout<Props> = ({ location, price }) =
             <Image
               src={QcDayGuaratnteeLogo}
               alt="21-day money-back guaratntee logo"
-              style={{
-                maxWidth: '100%',
-                height: 'auto',
-              }}
+              style={{ maxWidth: '100%', height: 'auto' }}
             />
           </div>
           <div className="col-12 col-lg-3 mb-4">
             <Image
               src={QcYearGuaratnteeLogo}
               alt="1-year money-back guaratntee logo"
-              style={{
-                maxWidth: '100%',
-                height: 'auto',
-              }}
+              style={{ maxWidth: '100%', height: 'auto' }}
             />
           </div>
         </div>
@@ -93,10 +84,7 @@ const SuccessGuaranteedPage: NextPageWithLayout<Props> = ({ location, price }) =
               src={FullKitWithManualsImage}
               alt="full course kit with manuals"
               sizes="100vw"
-              style={{
-                width: '100%',
-                height: 'auto',
-              }}
+              style={{ width: '100%', height: 'auto' }}
             />
           </div>
         </div>

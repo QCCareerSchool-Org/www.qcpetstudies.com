@@ -31,10 +31,7 @@ const DogTrainingHowItWorksPage: NextPageWithLayout = () => {
         priority
         fill
         sizes="100vw"
-        style={{
-          objectFit: 'cover',
-          objectPosition: 'center',
-        }}
+        style={{ objectFit: 'cover', objectPosition: 'center' }}
       />
       <div className="container">
         <div className="row">
@@ -53,10 +50,7 @@ const DogTrainingHowItWorksPage: NextPageWithLayout = () => {
               src={PuppyOnBack}
               alt="puppy lying on its back"
               sizes="100vw"
-              style={{
-                width: '100%',
-                height: 'auto',
-              }}
+              style={{ width: '100%', height: 'auto' }}
             />
           </div>
           <div className="col-12 col-lg-8 col-xl-9">
@@ -85,11 +79,7 @@ const DogTrainingHowItWorksPage: NextPageWithLayout = () => {
                 src={Clicker}
                 alt="clicker on a laynard"
                 sizes="100vw"
-                style={{
-                  width: '100%',
-                  height: 'auto',
-                  maxWidth: '100%',
-                }}
+                style={{ width: '100%', height: 'auto', maxWidth: '100%' }}
               />
             </div>
           </div>
@@ -149,11 +139,7 @@ const DogTrainingHowItWorksPage: NextPageWithLayout = () => {
                 alt="a man and a dog walking in a field"
                 fill
                 sizes="100vw"
-                style={{
-                  objectFit: 'cover',
-                  objectPosition: 'right',
-                  maxWidth: '100%',
-                }}
+                style={{ objectFit: 'cover', objectPosition: 'right', maxWidth: '100%' }}
               />
             </div>
           )}
@@ -171,10 +157,7 @@ const DogTrainingHowItWorksPage: NextPageWithLayout = () => {
                 alt="IDTP™ Certification logo"
                 height="180"
                 width="180"
-                style={{
-                  maxWidth: '100%',
-                  height: 'auto',
-                }}
+                style={{ maxWidth: '100%', height: 'auto' }}
               />
             </div>
             <h2>Your <strong>Graduation</strong></h2>

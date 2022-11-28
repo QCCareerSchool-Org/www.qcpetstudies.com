@@ -39,10 +39,7 @@ const DogGroomingPage: NextPageWithLayout<Props> = ({ price }) => {
         priority
         fill
         sizes="100vw"
-        style={{
-          objectFit: 'cover',
-          objectPosition: 'center',
-        }}
+        style={{ objectFit: 'cover', objectPosition: 'center' }}
       />
       <div className="image-overlay-gradient" />
       <div className="container text-center">
@@ -51,10 +48,7 @@ const DogGroomingPage: NextPageWithLayout<Props> = ({ price }) => {
           alt="First Aid Course logo"
           width={60}
           height={60}
-          style={{
-            maxWidth: '100%',
-            height: 'auto',
-          }}
+          style={{ maxWidth: '100%', height: 'auto' }}
         />
         <h1><strong>First Aid</strong> Course for Groomers</h1>
         <div className="row">
@@ -76,10 +70,7 @@ const DogGroomingPage: NextPageWithLayout<Props> = ({ price }) => {
                 src={CourseMaterials}
                 alt="First Aid course materials"
                 sizes="100vw"
-                style={{
-                  width: '100%',
-                  height: 'auto',
-                }}
+                style={{ width: '100%', height: 'auto' }}
               />
             </div>
           </div>
@@ -115,10 +106,7 @@ const DogGroomingPage: NextPageWithLayout<Props> = ({ price }) => {
               src={dogLooking}
               alt="dog looking to the left"
               sizes="100vw"
-              style={{
-                width: '100%',
-                height: 'auto',
-              }}
+              style={{ width: '100%', height: 'auto' }}
             />
           </div>
         </div>
@@ -139,10 +127,7 @@ const DogGroomingPage: NextPageWithLayout<Props> = ({ price }) => {
       src={faCertificate}
       alt="First Aid certification"
       sizes="100vw"
-      style={{
-        width: '100%',
-        height: 'auto',
-      }}
+      style={{ width: '100%', height: 'auto' }}
     />
 
     <section>

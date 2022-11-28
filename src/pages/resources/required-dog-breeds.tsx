@@ -35,10 +35,7 @@ const RequiredDogBreeds: NextPage = () => {
         priority
         fill
         sizes="100vw"
-        style={{
-          objectFit: 'cover',
-          objectPosition: 'center',
-        }}
+        style={{ objectFit: 'cover', objectPosition: 'center' }}
       />
       <div className="image-overlay-gradient" />
       <div className="container text-center">
@@ -62,10 +59,7 @@ const RequiredDogBreeds: NextPage = () => {
                 src={RequiredDogBreedImage}
                 alt="dog in a towel"
                 sizes="100vw"
-                style={{
-                  width: '100%',
-                  height: 'auto',
-                }}
+                style={{ width: '100%', height: 'auto' }}
               />
             </div>
           )}
@@ -130,10 +124,7 @@ const RequiredDogBreeds: NextPage = () => {
                   width={iconSize}
                   height={iconSize}
                   alt="first aid"
-                  style={{
-                    maxWidth: '100%',
-                    height: 'auto',
-                  }}
+                  style={{ maxWidth: '100%', height: 'auto' }}
                 />
               </div>
               <h3 className="mb-4">First Aid Training</h3>
@@ -210,10 +201,7 @@ const RequiredDogBreeds: NextPage = () => {
               src={PracticumImage1}
               alt="Dog lying down"
               sizes="100vw"
-              style={{
-                width: '100%',
-                height: 'auto',
-              }}
+              style={{ width: '100%', height: 'auto' }}
             />
           </div>
           <div className="col-12 col-md-6 text-center text-md-start mb-4">
@@ -226,10 +214,7 @@ const RequiredDogBreeds: NextPage = () => {
               src={PracticumImage2}
               alt="Dog lying down"
               sizes="100vw"
-              style={{
-                width: '100%',
-                height: 'auto',
-              }}
+              style={{ width: '100%', height: 'auto' }}
             />
           </div>
           <div className="col-12 col-md-6 text-center text-md-start mb-4">
@@ -242,10 +227,7 @@ const RequiredDogBreeds: NextPage = () => {
               src={PracticumImage3}
               alt="Dog lying down"
               sizes="100vw"
-              style={{
-                width: '100%',
-                height: 'auto',
-              }}
+              style={{ width: '100%', height: 'auto' }}
             />
           </div>
           <div className="col-12 col-md-6 text-center text-md-start mb-4">
@@ -258,10 +240,7 @@ const RequiredDogBreeds: NextPage = () => {
               src={PracticumImage5}
               alt="Dog lying down"
               sizes="100vw"
-              style={{
-                width: '100%',
-                height: 'auto',
-              }}
+              style={{ width: '100%', height: 'auto' }}
             />
           </div>
           <div className="col-12 col-md-6 text-center text-md-start mb-4">
@@ -274,10 +253,7 @@ const RequiredDogBreeds: NextPage = () => {
               src={PracticumImage4}
               alt="Dog lying down"
               sizes="100vw"
-              style={{
-                width: '100%',
-                height: 'auto',
-              }}
+              style={{ width: '100%', height: 'auto' }}
             />
           </div>
           <div className="col-12 col-md-6 text-center text-md-start">

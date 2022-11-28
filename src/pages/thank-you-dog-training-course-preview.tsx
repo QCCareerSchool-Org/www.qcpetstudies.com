@@ -41,10 +41,7 @@ const ThankYouCatalogPage: NextPage<Props> = ({ emailAddress }) => {
         priority
         fill
         sizes="100vw"
-        style={{
-          objectFit: 'cover',
-          objectPosition: 'right',
-        }}
+        style={{ objectFit: 'cover', objectPosition: 'right' }}
       />}
       <div className="container text-center text-md-start">
         <div className="row">

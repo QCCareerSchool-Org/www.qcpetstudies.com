@@ -38,10 +38,7 @@ const StartYourDreamCareerPage: NextPageWithLayout<Props> = ({ price }) => (
         priority
         fill
         sizes="100vw"
-        style={{
-          objectFit: 'cover',
-          objectPosition: 'center',
-        }}
+        style={{ objectFit: 'cover', objectPosition: 'center' }}
       />
       <div className="image-overlay-gradient" />
       <div className="container text-center">
@@ -69,10 +66,7 @@ const StartYourDreamCareerPage: NextPageWithLayout<Props> = ({ price }) => (
           src={FullKitImage}
           alt="course material"
           sizes="100vw"
-          style={{
-            width: '100%',
-            height: 'auto',
-          }}
+          style={{ width: '100%', height: 'auto' }}
         />
       </div>
     </section>
@@ -89,10 +83,7 @@ const StartYourDreamCareerPage: NextPageWithLayout<Props> = ({ price }) => (
                     <Image
                       src={QcDayGuaratnteeLogo}
                       alt="21-day money-back guarantee logo"
-                      style={{
-                        maxWidth: '100%',
-                        height: 'auto',
-                      }}
+                      style={{ maxWidth: '100%', height: 'auto' }}
                     />
                   </div>
                   <h4>The 21-Day Money-Back Guarantee</h4>
@@ -109,10 +100,7 @@ const StartYourDreamCareerPage: NextPageWithLayout<Props> = ({ price }) => (
                     <Image
                       src={QcYearGuaratnteeLogo}
                       alt="1-year money-back guarantee logo"
-                      style={{
-                        maxWidth: '100%',
-                        height: 'auto',
-                      }}
+                      style={{ maxWidth: '100%', height: 'auto' }}
                     />
                   </div>
                   <h4>The 1-Year Money-Back Guarantee</h4>

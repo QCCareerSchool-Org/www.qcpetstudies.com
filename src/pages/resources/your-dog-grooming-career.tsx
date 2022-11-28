@@ -36,10 +36,7 @@ const DogGroomingCareerPage: NextPage = () => {
         priority
         fill
         sizes="100vw"
-        style={{
-          objectFit: 'cover',
-          objectPosition: 'center',
-        }}
+        style={{ objectFit: 'cover', objectPosition: 'center' }}
       />
       <div className="image-overlay-gradient" />
       <div className="container text-center">
@@ -48,10 +45,7 @@ const DogGroomingCareerPage: NextPage = () => {
             <div className="mb-4"><Image
               src={CompassIcon}
               alt="Compass Icon"
-              style={{
-                maxWidth: '100%',
-                height: 'auto',
-              }}
+              style={{ maxWidth: '100%', height: 'auto' }}
             /></div>
             <h1>Your Dog Grooming Career</h1>
             <p className="lead mb-4">Career Paths for Professional Dog Groomers</p>
@@ -124,10 +118,7 @@ const DogGroomingCareerPage: NextPage = () => {
                 alt="a review of dog grooming course"
                 fill
                 sizes="100vw"
-                style={{
-                  objectFit: 'cover',
-                  objectPosition: 'center',
-                }}
+                style={{ objectFit: 'cover', objectPosition: 'center' }}
               />
             </div>
           )}
@@ -171,10 +162,7 @@ const DogGroomingCareerPage: NextPage = () => {
         alt="dog grooming associations"
         fill
         sizes="100vw"
-        style={{
-          objectFit: 'cover',
-          objectPosition: 'center',
-        }}
+        style={{ objectFit: 'cover', objectPosition: 'center' }}
       />
       <div className="image-overlay-gradient" />
       <div className="container text-center">
@@ -184,10 +172,7 @@ const DogGroomingCareerPage: NextPage = () => {
               className="text-secondary"
               src={AssociationLogo}
               alt="associations logo"
-              style={{
-                maxWidth: '100%',
-                height: 'auto',
-              }}
+              style={{ maxWidth: '100%', height: 'auto' }}
             />
             <h2 className="mb-4">Dog Grooming Associations</h2>
             <p>As you progress in your dog grooming career, you may decide to become a registered and/or certified member of a dog grooming association. These associations are entirely optional and joining them is not mandatory to work or succeed as a dog groomer. However, you may decide that joining an association will help you grow your network and stand out from the competition.</p>
@@ -222,10 +207,7 @@ const CareerSection = ({ title, subtitle, imgSrc, imgAlt, text, extraText, class
             width="500"
             height="320"
             sizes="100vw"
-            style={{
-              width: '100%',
-              height: 'auto',
-            }}
+            style={{ width: '100%', height: 'auto' }}
           />
         </div>
         <div className="col-12 col-lg-6 text-lg-start">

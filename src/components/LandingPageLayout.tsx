@@ -1,4 +1,4 @@
-import Image from 'next/legacy/image';
+import Image from 'next/image';
 import Link from 'next/link';
 import { ReactElement, ReactNode } from 'react';
 
@@ -89,4 +89,10 @@ export const LandingPageLayout = ({ link = true, reloadApp = false, secondaryNav
   );
 };
 
-const Logo = (): ReactElement => <Image src={logo} alt="QC Pet Studies" width="300" height="28" />;
+const Logo = (): ReactElement => <Image
+  src={logo}
+  alt="QC Pet Studies"
+  width="300"
+  height="28"
+  style={{ maxWidth: '100%', height: 'auto' }}
+/>;

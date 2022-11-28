@@ -62,10 +62,7 @@ const DogGroomingPage: NextPageWithLayout<Props> = ({ price }) => {
         priority
         fill
         sizes="100vw"
-        style={{
-          objectFit: 'cover',
-          objectPosition: 'right',
-        }}
+        style={{ objectFit: 'cover', objectPosition: 'right' }}
       />
       <div className="container text-center">
         <div className="row mb-4">
@@ -75,10 +72,7 @@ const DogGroomingPage: NextPageWithLayout<Props> = ({ price }) => {
               alt="International Dog Grooming Professional IDGP certification"
               height="125"
               width="125"
-              style={{
-                maxWidth: '100%',
-                height: 'auto',
-              }}
+              style={{ maxWidth: '100%', height: 'auto' }}
             />
           </div>
           <h1>Dog Grooming Course</h1>
@@ -94,10 +88,7 @@ const DogGroomingPage: NextPageWithLayout<Props> = ({ price }) => {
                 alt="outline"
                 width={headerIconSize}
                 height={headerIconSize}
-                style={{
-                  maxWidth: '100%',
-                  height: 'auto',
-                }}
+                style={{ maxWidth: '100%', height: 'auto' }}
               /></a>
               <p><strong>Outline</strong></p>
             </div>
@@ -107,10 +98,7 @@ const DogGroomingPage: NextPageWithLayout<Props> = ({ price }) => {
                 alt="play button"
                 width={headerIconSize}
                 height={headerIconSize}
-                style={{
-                  maxWidth: '100%',
-                  height: 'auto',
-                }}
+                style={{ maxWidth: '100%', height: 'auto' }}
               /></a>
               <p><strong>Guarantee</strong></p>
             </div>
@@ -120,10 +108,7 @@ const DogGroomingPage: NextPageWithLayout<Props> = ({ price }) => {
                 alt="play button"
                 width={headerIconSize}
                 height={headerIconSize}
-                style={{
-                  maxWidth: '100%',
-                  height: 'auto',
-                }}
+                style={{ maxWidth: '100%', height: 'auto' }}
               /></a>
               <p><strong>Tutors</strong></p>
             </div>
@@ -157,10 +142,7 @@ const DogGroomingPage: NextPageWithLayout<Props> = ({ price }) => {
               src={DogCourseMaterialsImage}
               alt="course materials"
               sizes="100vw"
-              style={{
-                width: '100%',
-                height: 'auto',
-              }}
+              style={{ width: '100%', height: 'auto' }}
             />
             <div className="courseContentIcon"><BsScissors size={iconSize} /></div>
             <h3>Professional-Grade Grooming Starter Kit</h3>
@@ -191,10 +173,7 @@ const DogGroomingPage: NextPageWithLayout<Props> = ({ price }) => {
             src={GroomingKitDetailImage}
             alt="grooming kit details"
             sizes="100vw"
-            style={{
-              width: '100%',
-              height: 'auto',
-            }}
+            style={{ width: '100%', height: 'auto' }}
           />
         </Modal.Body>
       </Modal>

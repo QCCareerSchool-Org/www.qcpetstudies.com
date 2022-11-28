@@ -45,10 +45,7 @@ const ProfessionalDogGroomerPage: NextPageWithLayout<Props> = ({ testGroup }) =>
               src={FullKitImage}
               alt="Dog Grooming Starter Full Kit"
               sizes="100vw"
-              style={{
-                width: '100%',
-                height: 'auto',
-              }}
+              style={{ width: '100%', height: 'auto' }}
             />
           </div>
           <div className="col-12 col-lg-6 d-flex text-start">
@@ -96,10 +93,7 @@ const ProfessionalDogGroomerPage: NextPageWithLayout<Props> = ({ testGroup }) =>
         alt="Dog looking at you"
         className="formImage"
         sizes="100vw"
-        style={{
-          width: '100%',
-          height: 'auto',
-        }}
+        style={{ width: '100%', height: 'auto' }}
       />
     </div>
     <section className="bg-navy bg-desaturated-blue pt-3">

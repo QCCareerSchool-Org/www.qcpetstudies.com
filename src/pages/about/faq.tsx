@@ -34,10 +34,7 @@ const FAQPage: NextPageWithLayout = () => {
         priority
         fill
         sizes="100vw"
-        style={{
-          objectFit: 'cover',
-          objectPosition: 'right',
-        }}
+        style={{ objectFit: 'cover', objectPosition: 'right' }}
       />
       <div className="container text-center">
         <div className="row justify-content-center">

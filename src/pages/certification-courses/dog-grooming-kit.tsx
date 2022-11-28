@@ -28,10 +28,7 @@ const DogGroomingKitPage: NextPageWithLayout = () => (
         priority
         fill
         sizes="100vw"
-        style={{
-          objectFit: 'cover',
-          objectPosition: 'center',
-        }}
+        style={{ objectFit: 'cover', objectPosition: 'center' }}
       />
       <div className="container text-center">
         <h1>Dog grooming kit</h1>
@@ -53,11 +50,7 @@ const DogGroomingKitPage: NextPageWithLayout = () => (
               src={FullKitImage}
               alt="Full Kit"
               sizes="100vw"
-              style={{
-                width: '100%',
-                height: 'auto',
-                objectFit: 'contain',
-              }}
+              style={{ width: '100%', height: 'auto', objectFit: 'contain' }}
             />
           </div>
         </div>
@@ -77,10 +70,7 @@ const DogGroomingKitPage: NextPageWithLayout = () => (
                 src={ClipperCombsImage}
                 className="card-img-top"
                 alt="cipper combo"
-                style={{
-                  maxWidth: '100%',
-                  height: 'auto',
-                }}
+                style={{ maxWidth: '100%', height: 'auto' }}
               />
               <div className="card-body">
                 <h3 className="card-text">WAHL 5-in-1 Cordless Clippers &amp; Comb Attachments</h3>
@@ -95,10 +85,7 @@ const DogGroomingKitPage: NextPageWithLayout = () => (
                 src={GroomingScissorsImage}
                 className="card-img-top"
                 alt="grooming scissors"
-                style={{
-                  maxWidth: '100%',
-                  height: 'auto',
-                }}
+                style={{ maxWidth: '100%', height: 'auto' }}
               />
               <div className="card-body">
                 <h3 className="card-text">Professional Grooming Scissors</h3>
@@ -113,11 +100,7 @@ const DogGroomingKitPage: NextPageWithLayout = () => (
               src={StarterKitImage}
               alt="dog gooming starter kit"
               sizes="100vw"
-              style={{
-                width: '100%',
-                height: 'auto',
-                objectFit: 'contain',
-              }}
+              style={{ width: '100%', height: 'auto', objectFit: 'contain' }}
             />
           </div>
           <div className="col-12 col-lg-6">

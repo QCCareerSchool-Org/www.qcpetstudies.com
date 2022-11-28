@@ -46,10 +46,7 @@ const CourseOutlinePage: NextPageWithLayout = () => {
         priority
         fill
         sizes="100vw"
-        style={{
-          objectFit: 'cover',
-          objectPosition: 'center',
-        }}
+        style={{ objectFit: 'cover', objectPosition: 'center' }}
       />
       <div className="image-overlay-gradient" />
       <div className="container text-center">
@@ -75,10 +72,7 @@ const CourseOutlinePage: NextPageWithLayout = () => {
                     width={iconSize}
                     height={iconSize}
                     alt="Clock Icon"
-                    style={{
-                      maxWidth: '100%',
-                      height: 'auto',
-                    }}
+                    style={{ maxWidth: '100%', height: 'auto' }}
                   />
                 </div>
                 <p className="card-text">The course should take about <strong>30 to 35 hours</strong> to study and complete assignments from start to finish. This time does not include the time you will take to practice and develop your skills before you complete an assignment.</p>
@@ -94,10 +88,7 @@ const CourseOutlinePage: NextPageWithLayout = () => {
                     width={iconSize}
                     height={iconSize}
                     alt="Calendar Icon"
-                    style={{
-                      maxWidth: '100%',
-                      height: 'auto',
-                    }}
+                    style={{ maxWidth: '100%', height: 'auto' }}
                   />
                 </div>
                 <p className="card-text">On average, most QC Students work on their course for a few hours per week, and complete the online dog training course within <strong>three to six months</strong>. You'll have up to two years to complete the program&mdash;lots of time!</p>
@@ -139,10 +130,7 @@ const CourseOutlinePage: NextPageWithLayout = () => {
                     src={UnitAImage}
                     alt="two dogs running in a field"
                     sizes="100vw"
-                    style={{
-                      width: '100%',
-                      height: 'auto',
-                    }}
+                    style={{ width: '100%', height: 'auto' }}
                   />
                 </div>
               )}
@@ -170,10 +158,7 @@ const CourseOutlinePage: NextPageWithLayout = () => {
                     src={UnitBImage}
                     alt="a leashed dog and a man going for a walk"
                     sizes="100vw"
-                    style={{
-                      width: '100%',
-                      height: 'auto',
-                    }}
+                    style={{ width: '100%', height: 'auto' }}
                   />
                 </div>
               )}
@@ -201,10 +186,7 @@ const CourseOutlinePage: NextPageWithLayout = () => {
                     src={UnitCImage}
                     alt="white puppy with a toy lying on a dog bed"
                     sizes="100vw"
-                    style={{
-                      width: '100%',
-                      height: 'auto',
-                    }}
+                    style={{ width: '100%', height: 'auto' }}
                   />
                 </div>
               )}
@@ -231,10 +213,7 @@ const CourseOutlinePage: NextPageWithLayout = () => {
                     src={UnitDImage}
                     alt="trainer using a clicker and treat to reward a German Shepherd puppy"
                     sizes="100vw"
-                    style={{
-                      width: '100%',
-                      height: 'auto',
-                    }}
+                    style={{ width: '100%', height: 'auto' }}
                   />
                 </div>
               )}
@@ -261,10 +240,7 @@ const CourseOutlinePage: NextPageWithLayout = () => {
                     src={UnitEImage}
                     alt="trainer and a dog practicing for an obstacle course"
                     sizes="100vw"
-                    style={{
-                      width: '100%',
-                      height: 'auto',
-                    }}
+                    style={{ width: '100%', height: 'auto' }}
                   />
                 </div>
               )}
@@ -291,10 +267,7 @@ const CourseOutlinePage: NextPageWithLayout = () => {
                     src={UnitFImage}
                     alt="dog snarling at another dog"
                     sizes="100vw"
-                    style={{
-                      width: '100%',
-                      height: 'auto',
-                    }}
+                    style={{ width: '100%', height: 'auto' }}
                   />
                 </div>
               )}
@@ -321,10 +294,7 @@ const CourseOutlinePage: NextPageWithLayout = () => {
                     src={UnitGImage}
                     alt="white dog sitting next to a dog trainer"
                     sizes="100vw"
-                    style={{
-                      width: '100%',
-                      height: 'auto',
-                    }}
+                    style={{ width: '100%', height: 'auto' }}
                   />
                 </div>
               )}
@@ -352,10 +322,7 @@ const CourseOutlinePage: NextPageWithLayout = () => {
                     src={UnitHImage}
                     alt="dog and a trainer shaking hands"
                     sizes="100vw"
-                    style={{
-                      width: '100%',
-                      height: 'auto',
-                    }}
+                    style={{ width: '100%', height: 'auto' }}
                   />
                 </div>
               )}

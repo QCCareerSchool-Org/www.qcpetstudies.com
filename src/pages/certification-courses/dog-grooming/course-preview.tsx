@@ -42,10 +42,7 @@ const GroomingCoursePreviewPage: NextPageWithLayout<Props> = ({ location, price,
         priority
         fill
         sizes="100vw"
-        style={{
-          objectFit: 'cover',
-          objectPosition: 'center',
-        }}
+        style={{ objectFit: 'cover', objectPosition: 'center' }}
       />
       <div className="image-overlay-gradient" />
       <div className="container text-center">
@@ -97,10 +94,7 @@ const GroomingCoursePreviewPage: NextPageWithLayout<Props> = ({ location, price,
               width={200}
               height={200}
               alt="IDGP International Dog Grooming Professional logo"
-              style={{
-                maxWidth: '100%',
-                height: 'auto',
-              }}
+              style={{ maxWidth: '100%', height: 'auto' }}
             />
           </div>
           <div className="text-center text-md-start">

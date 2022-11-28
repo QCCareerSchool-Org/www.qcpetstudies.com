@@ -35,10 +35,7 @@ const GroomingAssignment: NextPageWithLayout = () => {
         priority
         fill
         sizes="100vw"
-        style={{
-          objectFit: 'cover',
-          objectPosition: 'center',
-        }}
+        style={{ objectFit: 'cover', objectPosition: 'center' }}
       />
       <div className="image-overlay-gradient" />
       <div className="container text-center">
@@ -69,12 +66,7 @@ const GroomingAssignment: NextPageWithLayout = () => {
               <Image
                 src={RedDesktopIcon}
                 alt="Desktop icon"
-                style={{
-                  maxWidth: '100%',
-                  height: 'auto',
-                  objectFit: 'cover',
-                  objectPosition: 'center',
-                }}
+                style={{ maxWidth: '100%', height: 'auto', objectFit: 'cover', objectPosition: 'center' }}
               />
             </div>
             <h3>Study{md ? <br /> : ' '}Online</h3>
@@ -85,12 +77,7 @@ const GroomingAssignment: NextPageWithLayout = () => {
               <Image
                 src={CameraIcon}
                 alt="Camera icon"
-                style={{
-                  maxWidth: '100%',
-                  height: 'auto',
-                  objectFit: 'cover',
-                  objectPosition: 'center',
-                }}
+                style={{ maxWidth: '100%', height: 'auto', objectFit: 'cover', objectPosition: 'center' }}
               />
             </div>
             <h3>Complete{md ? <br /> : ' '}Assignments</h3>
@@ -101,12 +88,7 @@ const GroomingAssignment: NextPageWithLayout = () => {
               <Image
                 src={CheckedIcon}
                 alt="Checked icon"
-                style={{
-                  maxWidth: '100%',
-                  height: 'auto',
-                  objectFit: 'cover',
-                  objectPosition: 'center',
-                }}
+                style={{ maxWidth: '100%', height: 'auto', objectFit: 'cover', objectPosition: 'center' }}
               />
             </div>
             <h3>Receive{md ? <br /> : ' '}Feedback</h3>

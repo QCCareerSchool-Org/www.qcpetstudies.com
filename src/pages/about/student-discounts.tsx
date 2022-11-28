@@ -29,10 +29,7 @@ const StudentDiscountsPage: NextPage = () => (
         priority
         fill
         sizes="100vw"
-        style={{
-          objectFit: 'cover',
-          objectPosition: 'center',
-        }}
+        style={{ objectFit: 'cover', objectPosition: 'center' }}
       />
       <div className="container text-center">
         <div className="row justify-content-center">
@@ -115,10 +112,7 @@ const Supplier = ({ className, imageSrc, imageWidth, imageHeight, imageAlt, chil
         width={imageWidth}
         height={imageHeight}
         alt={imageAlt}
-        style={{
-          maxWidth: '100%',
-          height: 'auto',
-        }}
+        style={{ maxWidth: '100%', height: 'auto' }}
       />
     </div>
     <div className="text-lg-start">

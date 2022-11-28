@@ -10,10 +10,11 @@ export const getEnrollment = async (enrollmentId: number, code: string): Promise
   if (!response.ok) {
     throw new HttpStatus.HttpResponse(response.status, response.statusText);
   }
-  const enrollment = await response.json() as Enrollment;
-  return {
-    ...enrollment,
-    paymentDate: new Date(enrollment.paymentDate),
-    transactionTime: new Date(enrollment.transactionTime),
-  };
+  return response.json() as Promise<Enrollment>;
+  // const enrollment = await response.json() as Enrollment;
+  // return {
+  //   ...enrollment,
+  //   paymentDate: new Date(enrollment.paymentDate),
+  //   transactionTime: new Date(enrollment.transactionTime),
+  // };
 };

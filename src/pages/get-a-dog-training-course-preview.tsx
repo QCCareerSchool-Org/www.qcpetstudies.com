@@ -52,10 +52,7 @@ const DogTrainingCatalogPage: NextPageWithLayout<Props> = ({ testGroup }) => {
                   src={CatalogImage}
                   alt="tablet with dog image"
                   sizes="100vw"
-                  style={{
-                    width: '100%',
-                    height: 'auto',
-                  }}
+                  style={{ width: '100%', height: 'auto' }}
                 />
               </div>
             )}

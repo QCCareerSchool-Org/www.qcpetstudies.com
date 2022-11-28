@@ -1,4 +1,4 @@
-import Image from 'next/legacy/image';
+import Image from 'next/image';
 import Link from 'next/link';
 import { ReactElement } from 'react';
 
@@ -20,8 +20,22 @@ export const GuaranteeSection = ({ className, double = false, id = 'guarantee' }
           <div className="col-12 col-lg-10 justify-content-center">
             <div className="mb-2">
               {double
-                ? <Image src={QcGuarantee} alt="qc guarantee" width="140" height="140" />
-                : <Image src={Guarantee21DayImage} alt="21 Day Money Back Guarantee" />
+                ? (
+                  <Image
+                    src={QcGuarantee}
+                    alt="qc guarantee"
+                    width="140"
+                    height="140"
+                    style={{ maxWidth: '100%', height: 'auto' }}
+                  />
+                )
+                : (
+                  <Image
+                    src={Guarantee21DayImage}
+                    alt="21 Day Money Back Guarantee"
+                    style={{ maxWidth: '100%', height: 'auto' }}
+                  />
+                )
               }
             </div>
             <h2>QC Pet Studies' <strong>Guarantee{double ? 's' : ''}</strong></h2>

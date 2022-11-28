@@ -26,10 +26,7 @@ const OfferExpiredPage: NextPage = () => {
         priority
         fill
         sizes="100vw"
-        style={{
-          objectFit: 'cover',
-          objectPosition: 'center',
-        }}
+        style={{ objectFit: 'cover', objectPosition: 'center' }}
       />
       <div className="container text-center">
         <h1 className="fw-normal"><strong>Oops!</strong> Your Offer Has Expired!</h1>

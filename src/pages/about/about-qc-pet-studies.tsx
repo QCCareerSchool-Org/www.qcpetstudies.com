@@ -25,10 +25,7 @@ const AboutPage: NextPage = () => (
         priority
         fill
         sizes="100vw"
-        style={{
-          objectFit: 'cover',
-          objectPosition: 'center',
-        }}
+        style={{ objectFit: 'cover', objectPosition: 'center' }}
       />
       <div className="container">
         <h1 className="fw-normal"><strong>About</strong><br />QC Pet Studies</h1>
@@ -45,10 +42,7 @@ const AboutPage: NextPage = () => (
                   src={Qc35Year}
                   alt="distance education for over 35 years"
                   sizes="100vw"
-                  style={{
-                    width: '100%',
-                    height: 'auto',
-                  }}
+                  style={{ width: '100%', height: 'auto' }}
                 />
               </div>
               <p className="lead mb-0">QC Pet Studies is a faculty of QC Career School. We're an online, international school that's been offering distance education courses since 1984, and in this time we&apos;ve mastered the art of delivering quality course content online.</p>
@@ -121,10 +115,7 @@ const AboutPage: NextPage = () => (
               src={SPCALogo}
               alt="SPCA logo"
               sizes="100vw"
-              style={{
-                width: '100%',
-                height: 'auto',
-              }}
+              style={{ width: '100%', height: 'auto' }}
             />
             <p className="mb-0"><small>In partnership with SPCA International</small></p>
           </div>

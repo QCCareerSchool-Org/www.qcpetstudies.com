@@ -79,10 +79,7 @@ const InternalWelcomePage: NextPage<Props> = ({ data, errorCode }) => {
         priority
         fill
         sizes="100vw"
-        style={{
-          objectFit: 'cover',
-          objectPosition: 'center',
-        }}
+        style={{ objectFit: 'cover', objectPosition: 'center' }}
       />
       <div className="container text-center">
         <div className="row justify-content-center">
@@ -104,14 +101,11 @@ const InternalWelcomePage: NextPage<Props> = ({ data, errorCode }) => {
             <p>Remember, we want to develop a personal relationship with you and be readily available for you whenever you need us.</p>
             <p><strong>Best of luck with your studies!</strong></p>
             <p>Sincerely,</p>
-            <p><Image
+            <Image
               src={AlexSignature}
               alt="Alex Myers"
-              style={{
-                maxWidth: '100%',
-                height: 'auto',
-              }}
-            /><br /><div style={{ marginTop: -14 }}>Director<br /><strong>QC Career School</strong></div></p>
+              style={{ maxWidth: '100%', height: 'auto', marginBottom: '0.5rem' }}
+            /><br /><div style={{ marginTop: -14 }}>Director<br /><strong>QC Career School</strong></div>
           </div>
         </div>
       </div>

@@ -55,9 +55,7 @@ const HomePage: NextPageWithLayout = () => {
         priority
         fill
         sizes="100vw"
-        style={{
-          objectFit: 'cover',
-        }}
+        style={{ objectFit: 'cover' }}
       />
       <div className="container heroContainer">
         <div className="row">
@@ -100,10 +98,7 @@ const HomePage: NextPageWithLayout = () => {
                     width={iconSize}
                     height={iconSize}
                     alt="21-Day Money-Back Guarantee"
-                    style={{
-                      maxWidth: '100%',
-                      height: 'auto',
-                    }}
+                    style={{ maxWidth: '100%', height: 'auto' }}
                   />
                 </div>
                 <h3>Dog Training | <em className="gold">IDTP&trade;</em></h3>
@@ -121,10 +116,7 @@ const HomePage: NextPageWithLayout = () => {
                     width={iconSize}
                     height={iconSize}
                     alt="1-Year Money-Back Guarantee"
-                    style={{
-                      maxWidth: '100%',
-                      height: 'auto',
-                    }}
+                    style={{ maxWidth: '100%', height: 'auto' }}
                   />
                 </div>
                 <h3>Dog Grooming | <em className="gold">IDGP&trade;</em></h3>
@@ -142,10 +134,7 @@ const HomePage: NextPageWithLayout = () => {
                     width={iconSize}
                     height={iconSize}
                     alt="21-Day Money-Back Guarantee"
-                    style={{
-                      maxWidth: '100%',
-                      height: 'auto',
-                    }}
+                    style={{ maxWidth: '100%', height: 'auto' }}
                   />
                 </div>
                 <h3><span className="badge rounded-pill bg-secondary">New</span> Dog Daycare | <em className="gold">IDCP&trade;</em></h3>
@@ -169,10 +158,7 @@ const HomePage: NextPageWithLayout = () => {
               src={HowItWorks}
               alt="Dog looking at tablet"
               sizes="100vw"
-              style={{
-                width: '100%',
-                height: 'auto',
-              }}
+              style={{ width: '100%', height: 'auto' }}
             />
           </div>
           <div className="col-12 col-md-6">

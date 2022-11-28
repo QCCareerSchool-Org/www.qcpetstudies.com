@@ -24,10 +24,7 @@ const LearningResourcesPage: NextPage = () => (
         priority
         fill
         sizes="100vw"
-        style={{
-          objectFit: 'cover',
-          objectPosition: 'center',
-        }}
+        style={{ objectFit: 'cover', objectPosition: 'center' }}
       />
       <div className="container text-center">
         <div className="row justify-content-center">
@@ -54,10 +51,7 @@ const LearningResourcesPage: NextPage = () => (
                 className="card-img-top"
                 alt="smiling lady at a laptop"
                 sizes="100vw"
-                style={{
-                  width: '100%',
-                  height: 'auto',
-                }}
+                style={{ width: '100%', height: 'auto' }}
               />
               <div className="card-body">
                 <h3 className="card-title">Virtual Classroom</h3>
@@ -73,10 +67,7 @@ const LearningResourcesPage: NextPage = () => (
                 className="card-img-top"
                 alt="smiling man crouched down, petting a dog"
                 sizes="100vw"
-                style={{
-                  width: '100%',
-                  height: 'auto',
-                }}
+                style={{ width: '100%', height: 'auto' }}
               />
               <div className="card-body">
                 <h3 className="card-title">Frequently Asked Questions</h3>
@@ -92,10 +83,7 @@ const LearningResourcesPage: NextPage = () => (
                 className="card-img-top"
                 alt="dog resting his chin on a laptop"
                 sizes="100vw"
-                style={{
-                  width: '100%',
-                  height: 'auto',
-                }}
+                style={{ width: '100%', height: 'auto' }}
               />
               <div className="card-body">
                 <h3 className="card-title">How It Works</h3>

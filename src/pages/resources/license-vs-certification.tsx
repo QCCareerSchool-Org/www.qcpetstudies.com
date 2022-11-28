@@ -30,10 +30,7 @@ const LicenseVsCertification: NextPage = () => {
         priority
         fill
         sizes="100vw"
-        style={{
-          objectFit: 'cover',
-          objectPosition: 'center',
-        }}
+        style={{ objectFit: 'cover', objectPosition: 'center' }}
       />
       <div className="image-overlay-gradient" />
       <div className="container text-center">
@@ -56,11 +53,7 @@ const LicenseVsCertification: NextPage = () => {
               src={DogToy}
               alt="a dog toy"
               sizes="100vw"
-              style={{
-                width: '100%',
-                height: 'auto',
-                objectPosition: 'center',
-              }}
+              style={{ width: '100%', height: 'auto', objectPosition: 'center' }}
             />
           </div>}
         </div>
@@ -86,10 +79,7 @@ const LicenseVsCertification: NextPage = () => {
               alt="a dog being dried off with a towel"
               fill
               sizes="100vw"
-              style={{
-                objectFit: 'cover',
-                objectPosition: 'center',
-              }}
+              style={{ objectFit: 'cover', objectPosition: 'center' }}
             />
           </div>}
         </div>
@@ -108,11 +98,7 @@ const LicenseVsCertification: NextPage = () => {
               src={DogSittingOnTowel}
               alt="a dog sitting on a towel"
               sizes="100vw"
-              style={{
-                width: '100%',
-                height: 'auto',
-                objectPosition: 'center',
-              }}
+              style={{ width: '100%', height: 'auto', objectPosition: 'center' }}
             />
           </div>
           <div className="col-sm-12 col-md-6 col-lg-5">
@@ -153,10 +139,7 @@ const LicenseVsCertification: NextPage = () => {
                         width={50}
                         height={50}
                         alt="April Costigan"
-                        style={{
-                          maxWidth: '100%',
-                          height: 'auto',
-                        }}
+                        style={{ maxWidth: '100%', height: 'auto' }}
                       />
                     </div>
                     <p>April Costigan<br /><span className="text-muted">QC Graduate</span></p>
@@ -173,10 +156,7 @@ const LicenseVsCertification: NextPage = () => {
                 alt="a dog sitting on a staircase"
                 fill
                 sizes="100vw"
-                style={{
-                  objectFit: 'cover',
-                  objectPosition: 'center',
-                }}
+                style={{ objectFit: 'cover', objectPosition: 'center' }}
               />
             </div>
           )}
