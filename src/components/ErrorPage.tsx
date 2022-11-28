@@ -1,5 +1,4 @@
-/* eslint-disable @next/next/no-html-link-for-pages */
-import Image from 'next/image';
+import Image from 'next/legacy/image';
 import { ReactElement } from 'react';
 
 import DoGInBedWithStick from '../images/backgrounds/dog-in-bed-with-stick.jpg';

@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import { StaticImageData } from 'next/image';
+import { StaticImageData } from 'next/legacy/image';
 import { ReactElement } from 'react';
 
 type TwitterCardType = 'card' | 'summary_large_image';
