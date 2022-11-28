@@ -12,7 +12,7 @@ const createScript = (conversionId: number, conversionLabel: string, emailAddres
   if (emailAddress !== null) {
     script += `var enhanced_conversion_data = { email: '${emailAddress}' };\n`;
   }
-  script += `gtag('event', 'conversion', { send_to: 'AW-${conversionId}/${conversionLabel}' });\n`;
+  script += `typeof gtag === 'function' && gtag('event', 'conversion', { send_to: 'AW-${conversionId}/${conversionLabel}' });\n`;
   return script;
 };
 
