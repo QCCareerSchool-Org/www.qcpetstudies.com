@@ -67,6 +67,7 @@ const HomePage: NextPageWithLayout = () => {
                   options={options}
                   multiLine={!md}
                   sm={!sm}
+                  name="page"
                 />
               </div>
             </div>

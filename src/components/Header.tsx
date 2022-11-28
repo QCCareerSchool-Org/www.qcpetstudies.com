@@ -55,29 +55,29 @@ export const Header = ({ noHero, inverseNav, secondaryTitle, secondaryNavLinks, 
         <div className="container">
           <div id="nav-wrapper">
             <Navbar.Brand>
-              <Link href="/"><a onClick={resetMenu}><Image src={(scrolled || (inverseNav && !expanded) ? logo : logoLight)} alt="QC Pet Studies" width="176" height="17" /></a></Link>
+              <Link href="/" onClick={resetMenu}><Image src={(scrolled || (inverseNav && !expanded) ? logo : logoLight)} alt="QC Pet Studies" width="176" height="17" /></Link>
             </Navbar.Brand>
             <Navbar.Toggle aria-controls="main-navbar" />
             <Navbar.Collapse id="main-navbar" className="justify-content-end">
               <Nav>
                 <NavDropdown title="Certification Courses" id="courses-dropdown">
-                  <Link href="/certification-courses/dog-grooming"><a onClick={resetMenu} className="dropdown-item">Dog Grooming Course</a></Link>
-                  <Link href="/certification-courses/dog-training"><a onClick={resetMenu} className="dropdown-item">Dog Training Course</a></Link>
-                  <Link href="/certification-courses/dog-daycare"><a onClick={resetMenu} className="dropdown-item">Dog Daycare Course</a></Link>
+                  <Link href="/certification-courses/dog-grooming" onClick={resetMenu} className="dropdown-item">Dog Grooming Course</Link>
+                  <Link href="/certification-courses/dog-training" onClick={resetMenu} className="dropdown-item">Dog Training Course</Link>
+                  <Link href="/certification-courses/dog-daycare" onClick={resetMenu} className="dropdown-item">Dog Daycare Course</Link>
                   <hr />
-                  <Link href="/certification-courses/how-it-works"><a onClick={resetMenu} className="dropdown-item"><FaCog className="text-primary me-2" /> How It Works</a></Link>
-                  <Link href="/certification-courses/resources"><a onClick={resetMenu} className="dropdown-item"><FaFolderOpen className="text-primary me-2" /> Learning Resources</a></Link>
-                  {/* <Link href="/certification-courses/meet-our-experts"><a onClick={resetMenu} className="dropdown-item"><FaUser className="text-primary me-2" /> Meet Our Experts</a></Link> */}
-                  <Link href="/certification-courses/dog-grooming-kit"><a onClick={resetMenu} className="dropdown-item"><FaCut className="text-primary me-2" /> Dog Grooming Kit</a></Link>
+                  <Link href="/certification-courses/how-it-works" onClick={resetMenu} className="dropdown-item"><FaCog className="text-primary me-2" /> How It Works</Link>
+                  <Link href="/certification-courses/resources" onClick={resetMenu} className="dropdown-item"><FaFolderOpen className="text-primary me-2" /> Learning Resources</Link>
+                  {/* <Link href="/certification-courses/meet-our-experts" onClick={resetMenu} className="dropdown-item"><FaUser className="text-primary me-2" /> Meet Our Experts</Link> */}
+                  <Link href="/certification-courses/dog-grooming-kit" onClick={resetMenu} className="dropdown-item"><FaCut className="text-primary me-2" /> Dog Grooming Kit</Link>
                 </NavDropdown>
                 <NavDropdown title="About" id="about-dropdown">
-                  <Link href="/about/about-qc-pet-studies"><a onClick={resetMenu} className="dropdown-item">About QC Pet Studies</a></Link>
-                  <Link href="/about/student-experience"><a onClick={resetMenu} className="dropdown-item">Student Experience</a></Link>
-                  <Link href="/about/student-discounts"><a onClick={resetMenu} className="dropdown-item">Student Discounts</a></Link>
-                  <Link href="/about/faq"><a onClick={resetMenu} className="dropdown-item">FAQ</a></Link>
-                  <Link href="/blog/sniffin-around-blog"><a onClick={resetMenu} className="dropdown-item">Blog</a></Link>
+                  <Link href="/about/about-qc-pet-studies" onClick={resetMenu} className="dropdown-item">About QC Pet Studies</Link>
+                  <Link href="/about/student-experience" onClick={resetMenu} className="dropdown-item">Student Experience</Link>
+                  <Link href="/about/student-discounts" onClick={resetMenu} className="dropdown-item">Student Discounts</Link>
+                  <Link href="/about/faq" onClick={resetMenu} className="dropdown-item">FAQ</Link>
+                  <Link href="/blog/sniffin-around-blog" onClick={resetMenu} className="dropdown-item">Blog</Link>
                 </NavDropdown>
-                <Link href="/contact-us"><a onClick={resetMenu} className="nav-link">Contact Us</a></Link>
+                <Link href="/contact-us" onClick={resetMenu} className="nav-link">Contact Us</Link>
                 {!lgOrGreater
                   ? <a href={`https://enroll.qcpetstudies.com${enrollPath}`} className="nav-link">Enroll Online</a>
                   : <a href={`https://enroll.qcpetstudies.com${enrollPath}`} className="mt-1 ms-3 ms-xxl-5"><button className="btn btn-primary btn-sm">Enroll Online</button></a>

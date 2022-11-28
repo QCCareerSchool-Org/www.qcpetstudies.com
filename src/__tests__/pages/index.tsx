@@ -10,6 +10,10 @@ import Page from '../../pages/index';
 
 jest.mock('../../hooks/useLocation');
 
+jest.mock('../../components/SearchBox', () => ({
+  SearchBox: () => <div />,
+}));
+
 describe('/', () => {
 
   it('shouldn\'t have any usability violations', async () => {

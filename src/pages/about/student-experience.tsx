@@ -60,7 +60,7 @@ const StudentExperiencePage: NextPage = () => {
                 <h2>Get Help When <strong>You Need it</strong></h2>
                 <p className="lead">QCs student support team is here to help.</p>
                 <p className="mb-4">Reach out as often as you need to discuss your course materials or to ask questions about your assignments. Whether you're a student, a graduate or are considering enrolling, we are always happy to hear from you. Contact QC Pet Studies by phone, email or Live Chat whichever you prefer!</p>
-                <p className="mb-0"><Link href="/contact-us"><a className="btn btn-outline-secondary">Contact Us</a></Link></p>
+                <p className="mb-0"><Link href="/contact-us" className="btn btn-outline-secondary">Contact Us</Link></p>
               </div>
             </div>
           </div>

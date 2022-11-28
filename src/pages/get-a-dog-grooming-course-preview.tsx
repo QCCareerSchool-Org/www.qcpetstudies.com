@@ -150,7 +150,7 @@ const DogGroomingCatalogPage: NextPageWithLayout<Props> = ({ testGroup }) => {
           <div className="row justify-content-center">
             <div className="col-12 col-lg-10">
               <h2 className="text-white mb-4">Take the First Step Towards a New and Exciting Career</h2>
-              <Link href="#"><a className="btn btn-outline-light">Preview the Course</a></Link>
+              <Link href="#" className="btn btn-outline-light">Preview the Course</Link>
             </div>
           </div>
         </div>

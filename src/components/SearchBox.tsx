@@ -1,5 +1,5 @@
 import { useRouter } from 'next/router';
-import { ChangeEventHandler, FC, MouseEventHandler, useEffect, useReducer, useState } from 'react';
+import { ChangeEventHandler, FC, MouseEventHandler, useEffect, useId, useReducer, useState } from 'react';
 import { gaEvent } from '../lib/ga';
 
 type State = {
@@ -44,18 +44,21 @@ type Props = {
   options: Option[];
   multiLine?: boolean;
   sm?: boolean;
+  /** the name of the select input, for accessability */
+  name: string;
 };
 
-export const SearchBox: FC<Props> = ({ label, options, multiLine = false, sm = false }) => {
+export const SearchBox: FC<Props> = ({ label, options, multiLine = false, sm = false, name }) => {
   const [ state, dispatch ] = useReducer(reducer, initialState);
   const [ url, setUrl ] = useState<string | null>(null);
+  const id = useId();
   const router = useRouter();
 
   useEffect(() => {
-    const id = setInterval(() => {
+    const intervalId = setInterval(() => {
       dispatch({ type: 'NEXT' });
     }, 500);
-    return () => clearInterval(id);
+    return () => clearInterval(intervalId);
   }, []);
 
   const handleMouseEnter: MouseEventHandler<HTMLSelectElement> = e => {
@@ -86,9 +89,9 @@ export const SearchBox: FC<Props> = ({ label, options, multiLine = false, sm = f
   return (
     <>
       <div className={`searchBox d-flex ${multiLine ? 'flex-column' : 'align-items-center'}`}>
-        <div className="text flex-shrink-0">{label}</div>
+        <label className="text flex-shrink-0" htmlFor={id}>{label}</label>
         <div className="search flex-grow-1">
-          <select onChange={handleChange} value={url ?? ''} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} className={`form-select ${sm ? 'form-select-sm' : ''}`} style={{ fontWeight: 600 }}>
+          <select onChange={handleChange} value={url ?? ''} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} id={id} name={name} className={`form-select ${sm ? 'form-select-sm' : ''}`} style={{ fontWeight: 600 }}>
             <option value="">{state.text}</option>
             {options.map(o => <option key={o.id} value={o.url}>{o.text}</option>)}
           </select>

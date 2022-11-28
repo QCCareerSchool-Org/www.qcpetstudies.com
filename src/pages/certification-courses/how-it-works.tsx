@@ -59,7 +59,7 @@ const DogTrainingHowItWorksPage: NextPageWithLayout = () => {
               <h2>Starting the Course</h2>
               <p>After you enroll online, you'll receive login instructions for your online student center within one business day. Follow the instructions to start your journey!</p>
               <p>Your online student center will contain all your course materials: Your course guides, lesson texts, assignment templates and video tutorials are all in the Student Center. This is also where you're going to upload your assignments and review your tutor's audio feedback.</p>
-              <p className="mb-0">View a <Link href="/certification-courses/dog-training/course-outline"><a className="link-primary">detailed course outline</a></Link> to learn more about your dog trainer course.</p>
+              <p className="mb-0">View a <Link href="/certification-courses/dog-training/course-outline" className="link-primary">detailed course outline</Link> to learn more about your dog trainer course.</p>
             </div>
             <div className="col-12 col-sm-10 col-md-8 col-lg-4 col-xl-3">
               <div className="d-flex justify-content-center">
@@ -111,7 +111,7 @@ const DogTrainingHowItWorksPage: NextPageWithLayout = () => {
                 <h2>Receiving Feedback From <strong>Your Tutor</strong></h2>
                 <p className="lead">You'll receive advice and detailed feedback from your tutor after every unit you complete.</p>
                 <p>Your tutor truly cares about your success and will encourage you to submit your very best work. After each unit, you'll receive an audio file where your tutor explains what you did well, and where you should focus to improve your skills even further. See how your skills and confidence improve as you work your way through the course!</p>
-                <p className="mb-0"><Link href="/certification-courses/dog-training#tutors"><a className="btn btn-outline-secondary">Meet Your Tutor</a></Link></p>
+                <p className="mb-0"><Link href="/certification-courses/dog-training#tutors" className="btn btn-outline-secondary">Meet Your Tutor</Link></p>
               </div>
             </div>
             {lgOrGreater && (

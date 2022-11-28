@@ -89,7 +89,7 @@ const BreedStylingPage: NextPageWithLayout<Props> = ({ price }) => {
                 <li>Dog groomers who are comfortable with basic services but want to enter conformation grooming competitions</li>
                 <li>Experienced dog groomers who have never received professional education on interpreting and implementing breed standards</li>
               </ul>
-              <p className="mb-0">Fundamental pet service knowledge is a prerequisite for this workshop. You won't spend time reviewing grooming tools, hair clipping, bathing, drying, and brushing. Instead, skip right to grooming techniques for a variety of breeds. If you'd like a refresher in these areas, we recommend the <Link href="/certification-courses/dog-grooming"><a className="link-primary"> Dog Grooming course </a></Link> which covers the fundamentals and everything included in the Breed Styling Workshop.</p>
+              <p className="mb-0">Fundamental pet service knowledge is a prerequisite for this workshop. You won't spend time reviewing grooming tools, hair clipping, bathing, drying, and brushing. Instead, skip right to grooming techniques for a variety of breeds. If you'd like a refresher in these areas, we recommend the <Link href="/certification-courses/dog-grooming" className="link-primary">Dog Grooming Course</Link> which covers the fundamentals and everything included in the Breed Styling Workshop.</p>
             </div>
           </div>
         </div>
@@ -182,7 +182,7 @@ const BreedStylingPage: NextPageWithLayout<Props> = ({ price }) => {
             }
             <div className="col-12 col-lg-10">
               <p className="fst-italic">Please note that you'll need to purchase these tools yourself if you don't already own them. As a student of QC Pet Studies, take advantage of discounts from established dog grooming brands.</p>
-              <Link href="/about/student-discounts"><a className="link-primary">See the list here!</a></Link>
+              <Link href="/about/student-discounts" className="link-primary">See the list here!</Link>
             </div>
           </div>
         </div>

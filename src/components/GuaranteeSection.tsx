@@ -48,7 +48,7 @@ export const GuaranteeSection = ({ className, double = false, id = 'guarantee' }
             </div>
           )}
           <div className="col-12 col-lg-10">
-            <p className="lead">Questions about the guarantee{double ? 's' : ''} ? <Link href="/contact-us"><a className="link-primary">Contact Us</a></Link></p>
+            <p className="lead">Questions about the guarantee{double ? 's' : ''} ? <Link href="/contact-us" className="link-primary">Contact Us</Link></p>
           </div>
         </div>
       </div>

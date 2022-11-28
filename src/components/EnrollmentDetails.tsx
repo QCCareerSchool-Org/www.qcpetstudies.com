@@ -1,6 +1,7 @@
 import { Fragment, ReactElement } from 'react';
 
 import { formatDate } from '../lib/formatDate';
+import { formatTime } from '../lib/formatTime';
 import type { Enrollment } from '../models/enrollment';
 
 type Props = {
@@ -101,7 +102,7 @@ export const EnrollmentDetails = ({ enrollment }: Props): ReactElement => {
                 </tr>
                 <tr>
                   <td>Time</td>
-                  <td>{enrollment.transactionTime}</td>
+                  <td>{formatTime(enrollment.transactionTime)}</td>
                 </tr>
                 <tr>
                   <td>Auth Code</td>

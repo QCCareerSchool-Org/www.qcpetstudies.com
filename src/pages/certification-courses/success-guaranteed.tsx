@@ -42,7 +42,7 @@ const SuccessGuaranteedPage: NextPageWithLayout<Props> = ({ location, price }) =
             <p className="lead">QC means Quality of Course, and we stand behind that promise.</p>
             <p className="lead">Study with confidence thanks to QC's double guarantee.</p>
             <p className="mb-4">First, try the course risk free for 21 days. Then, if you don't earn back your tuition in dog grooming fees within one year of graduating, you'll receive a full tuition refund!</p>
-            <Link href="/about/about-qc-pet-studies#guarantee"><a className="btn btn-outline-light">Find Out More</a></Link>
+            <Link href="/about/about-qc-pet-studies#guarantee" className="btn btn-outline-light">Find Out More</Link>
           </div>
           <div className="col-12 col-lg-3 mb-4">
             <Image src={QcDayGuaratnteeLogo} alt="21-day money-back guaratntee logo" />

@@ -72,18 +72,18 @@ export const Footer: FC<Props> = ({ ctaType, enrollPath = '/', className }) => {
           <div id="footerColCertifications" className="col-12 col-sm-4 col-lg-2 mb-4 mb-sm-0 text-center text-lg-start">
             <h2 className="h4 text-primary mb-sm-4">Certifications</h2>
             <ul className="spacedList">
-              <li><Link href="/certification-courses/dog-grooming"><a>Dog Grooming</a></Link></li>
-              <li><Link href="/certification-courses/dog-training"><a>Dog Training</a></Link></li>
-              <li><Link href="/certification-courses/dog-daycare"><a>Dog Daycare</a></Link></li>
+              <li><Link href="/certification-courses/dog-grooming">Dog Grooming</Link></li>
+              <li><Link href="/certification-courses/dog-training">Dog Training</Link></li>
+              <li><Link href="/certification-courses/dog-daycare">Dog Daycare</Link></li>
             </ul>
           </div>
           <div id="footerColContactUs" className="col-12 col-sm-4 col-lg-2 mb-4 mb-sm-0 text-center text-lg-start">
             <h2 className="h4 text-primary mb-sm-4">Contact Us</h2>
             <ul className="spacedList">
               <li>
-                <Link href="/about/about-qc-pet-studies"><a>
+                <Link href="/about/about-qc-pet-studies">
                   {lgOrGreater && <div className="footerIconWrapper"><Image src={InfoIcon} width={16} height={16} alt="About" /></div>}About QC
-                </a></Link>
+                </Link>
               </li>
               <li>
                 <a href="mailto:info@qcpetstudies.com">
@@ -108,10 +108,10 @@ export const Footer: FC<Props> = ({ ctaType, enrollPath = '/', className }) => {
               <Image src={SniffinArroundLogo} width={155} height={40} alt="Sniffin' Around Blog" />
             </div>
             <ul>
-              <li><Link href="/blog/category/grooming"><a>Grooming</a></Link></li>
-              <li><Link href="/blog/category/dog-training"><a>Dog Training</a></Link></li>
-              <li><Link href="/blog/category/student-features"><a>Student Features</a></Link></li>
-              <li><Link href="/blog/category/career-advice"><a>Career Advice</a></Link></li>
+              <li><Link href="/blog/category/grooming">Grooming</Link></li>
+              <li><Link href="/blog/category/dog-training">Dog Training</Link></li>
+              <li><Link href="/blog/category/student-features">Student Features</Link></li>
+              <li><Link href="/blog/category/career-advice">Career Advice</Link></li>
             </ul>
           </div>
         </div>
@@ -123,11 +123,11 @@ export const Footer: FC<Props> = ({ ctaType, enrollPath = '/', className }) => {
             <div className="small">
               &copy; {new Date().getFullYear()} QC Pet Studies
               <PipeSpacer />
-              <Link href={isGBPCountry(location?.countryCode ?? 'US') ? '/terms-gb' : '/terms'}><a>Privacy Policy</a></Link>
+              <Link href={isGBPCountry(location?.countryCode ?? 'US') ? '/terms-gb' : '/terms'}>Privacy Policy</Link>
               {smOrGreater && (
                 <>
                   <PipeSpacer />
-                  <Link href="/about/faq"><a>FAQ</a></Link>
+                  <Link href="/about/faq">FAQ</Link>
                 </>
               )}
             </div>

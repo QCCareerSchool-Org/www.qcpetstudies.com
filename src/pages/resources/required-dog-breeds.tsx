@@ -55,9 +55,9 @@ const RequiredDogBreeds: NextPage = () => {
               <p>For Units A to C, you're expected to work with a coated dog of any breed. For the rest of the units, you will groom dogs that exhibit a variety of different conditions.</p>
               <p className="lead mb-4">Worried about finding dogs for your assignments? Check out these guides on how to recruit dogs for your online grooming assignments!</p>
               <ul>
-                <li><Link href="/2017/07/finding-dogs-online-grooming-assignments/"><a className="link-secondary">Finding Dogs for Your Online Grooming Assignments</a></Link></li>
-                <li><Link href="/2017/09/5-places-find-dogs-pet-grooming-course/"><a className="link-secondary">5 Places to Find Dogs for Your Pet Grooming Course</a></Link></li>
-                <li><Link href="/2019/03/approaching-pet-owners-to-find-dogs-for-your-online-dog-grooming-courses/"><a className="link-secondary">Approaching Pet Owners to Find Dogs for Your Pet Grooming Course</a></Link></li>
+                <li><Link href="/2017/07/finding-dogs-online-grooming-assignments/" className="link-secondary">Finding Dogs for Your Online Grooming Assignments</Link></li>
+                <li><Link href="/2017/09/5-places-find-dogs-pet-grooming-course/" className="link-secondary">5 Places to Find Dogs for Your Pet Grooming Course</Link></li>
+                <li><Link href="/2019/03/approaching-pet-owners-to-find-dogs-for-your-online-dog-grooming-courses/" className="link-secondary">Approaching Pet Owners to Find Dogs for Your Pet Grooming Course</Link></li>
               </ul>
             </div>
           </div>
@@ -111,7 +111,7 @@ const RequiredDogBreeds: NextPage = () => {
                 </div>
                 <h3 className="mb-4">First Aid Training</h3>
                 <p>Before you can move onto the practical units of the dog grooming course, you will need to complete the First Aid for Groomer's course. This course is included at no extra charge with every Dog Grooming Course enrollment. You will learn how to work safely with dogs and deal with any potential complications during the grooming appointment.</p>
-                <p className="lead"><Link href="/online-courses/first-aid-for-groomers/"><a className="link-primary">Learn more about the First Aid for Groomers' Course</a></Link></p>
+                <p className="lead"><Link href="/online-courses/first-aid-for-groomers/" className="link-primary">Learn more about the First Aid for Groomers' Course</Link></p>
               </div>
             </div>
             <div className="col-12 col-md-6 mb-g d-flex align-items-stretch">

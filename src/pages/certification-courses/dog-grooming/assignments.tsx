@@ -50,7 +50,7 @@ const GroomingAssignment: NextPageWithLayout = () => {
               <h2>Learn Online with<br />Hands-On Training</h2>
               <Bar variant="primary" />
               <p>Become a dog groomer with online learning combined with practical hands-on assignments. you'll perform your practical assignments at home, and submit photos and videos of your work.</p>
-              <p>From there, your personal tutor will evaluate your grooming techniques and provide you with detailed feedback. you'll gain insight into where your skills lie, and what you need to improve on for the next unit of your <Link href="/certification-courses/dog-grooming"><a className="link-primary">dog grooming course</a></Link>.</p>
+              <p>From there, your personal tutor will evaluate your grooming techniques and provide you with detailed feedback. you'll gain insight into where your skills lie, and what you need to improve on for the next unit of your <Link href="/certification-courses/dog-grooming" className="link-primary">dog grooming course</Link>.</p>
             </div>
           </div>
           <div className="row justify-content-center">

@@ -13,7 +13,7 @@ const Custom404 = (): ReactElement => (
           <div className="col-12 col-lg-10 offset-lg-1">
             <h1>Whoops!</h1>
             <p className="lead">We couldn't find the page you were looking for.</p>
-            <p>Try our <Link href="/"><a className="link-primary">homepage</a></Link> or <Link href="/blog/sniffin-around-blog"><a className="link-primary">blog</a></Link> instead.</p>
+            <p>Try our <Link href="/" className="link-primary">homepage</Link> or <Link href="/blog/sniffin-around-blog" className="link-primary">blog</Link> instead.</p>
           </div>
         </div>
       </div>
