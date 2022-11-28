@@ -35,7 +35,7 @@ export const SecondaryNav = ({ title, nav, mobile, scrolled }: Props): ReactElem
         <Navbar.Toggle aria-controls="main-navbar" onClick={() => toggleMobileMenu()} />
         <Navbar.Collapse id="main-navbar" className="justify-content-end">
           <Nav>
-            {nav.map(n => <Link key={n.name} href={n.url}><a className="nav-link">{n.name}</a></Link>)}
+            {nav.map(n => <Link key={n.name} href={n.url} className="nav-link">{n.name}</Link>)}
           </Nav>
         </Navbar.Collapse>
       </div>

@@ -31,255 +31,313 @@ const CourseOutlinePage: NextPageWithLayout = () => {
   const [ unit, setUnit ] = useState<string | null>(null);
   const closeModal = (): void => setUnit(null);
 
-  return (
-    <>
-      <SEO
-        title="Course Outline"
-        description=""
-        canonical="/certification-courses/dog-training/course-outline"
+  return <>
+    <SEO
+      title="Course Outline"
+      description=""
+      canonical="/certification-courses/dog-training/course-outline"
+    />
+
+    <section id="top" className="bg-dark">
+      <Image
+        src={CourseOutlineBackground}
+        placeholder="blur"
+        alt="Dog with man"
+        priority
+        fill
+        sizes="100vw"
+        style={{ objectFit: 'cover', objectPosition: 'center' }}
       />
-
-      <section id="top" className="bg-dark">
-        <Image src={CourseOutlineBackground} layout="fill" objectFit="cover" objectPosition="center" placeholder="blur" alt="Dog with man" priority />
-        <div className="image-overlay-gradient" />
-        <div className="container text-center">
-          <div className="row justify-content-center">
-            <div className="col-12 col-lg-10">
-              <FaBars size={iconSize} className="mb-2" />
-              <h1 className="fw-normal">Dog Training<br /><strong>Course Outline</strong></h1>
-              <p className="lead mb-0">Here's a detailed outline of the entire online dog training course offered by QC Pet Studies, including the length of each unit and any special considerations you'll need to complete each unit's assignments.</p>
-            </div>
+      <div className="image-overlay-gradient" />
+      <div className="container text-center">
+        <div className="row justify-content-center">
+          <div className="col-12 col-lg-10">
+            <FaBars size={iconSize} className="mb-2" />
+            <h1 className="fw-normal">Dog Training<br /><strong>Course Outline</strong></h1>
+            <p className="lead mb-0">Here's a detailed outline of the entire online dog training course offered by QC Pet Studies, including the length of each unit and any special considerations you'll need to complete each unit's assignments.</p>
           </div>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <section>
-        <div className="container text-center">
-          <div className="row justify-content-center">
-            <div className="col-12 col-sm-10 col-md-8 col-lg-6 col-xl-5 d-flex mb-4 mb-lg-0">
-              <div className="card">
-                <div className="card-body">
-                  <div className="mb-2">
-                    <Image src={IconTime} width={iconSize} height={iconSize} alt="Clock Icon" />
-                  </div>
-                  <p className="card-text">The course should take about <strong>30 to 35 hours</strong> to study and complete assignments from start to finish. This time does not include the time you will take to practice and develop your skills before you complete an assignment.</p>
+    <section>
+      <div className="container text-center">
+        <div className="row justify-content-center">
+          <div className="col-12 col-sm-10 col-md-8 col-lg-6 col-xl-5 d-flex mb-4 mb-lg-0">
+            <div className="card">
+              <div className="card-body">
+                <div className="mb-2">
+                  <Image
+                    src={IconTime}
+                    width={iconSize}
+                    height={iconSize}
+                    alt="Clock Icon"
+                    style={{ maxWidth: '100%', height: 'auto' }}
+                  />
                 </div>
-              </div>
-            </div>
-            <div className="col-12 col-sm-10 col-md-8 col-lg-6 col-xl-5 d-flex">
-              <div className="card">
-                <div className="card-body">
-                  <div className="mb-2">
-                    <Image src={calendarIcon} width={iconSize} height={iconSize} alt="Calendar Icon" />
-                  </div>
-                  <p className="card-text">On average, most QC Students work on their course for a few hours per week, and complete the online dog training course within <strong>three to six months</strong>. You'll have up to two years to complete the program&mdash;lots of time!</p>
-                </div>
+                <p className="card-text">The course should take about <strong>30 to 35 hours</strong> to study and complete assignments from start to finish. This time does not include the time you will take to practice and develop your skills before you complete an assignment.</p>
               </div>
             </div>
           </div>
-        </div>
-      </section>
-
-      <section id="outlineSection" className="bg-light">
-        <div className="container">
-          <div className="row justify-content-center">
-            <div className="col-12 col-lg-10 mb-5 text-center">
-              <h2>Unit-by-Unit Breakdown</h2>
-              <p className="mb-0">Below is an outline of each unit of the online dog training course. Expand each section to find out what you'll learn in each unit.</p>
+          <div className="col-12 col-sm-10 col-md-8 col-lg-6 col-xl-5 d-flex">
+            <div className="card">
+              <div className="card-body">
+                <div className="mb-2">
+                  <Image
+                    src={calendarIcon}
+                    width={iconSize}
+                    height={iconSize}
+                    alt="Calendar Icon"
+                    style={{ maxWidth: '100%', height: 'auto' }}
+                  />
+                </div>
+                <p className="card-text">On average, most QC Students work on their course for a few hours per week, and complete the online dog training course within <strong>three to six months</strong>. You'll have up to two years to complete the program&mdash;lots of time!</p>
+              </div>
             </div>
           </div>
-          <Accordion defaultActiveKey="0">
-            <AccordionToggle title="Unit A" eventKey="0" variant="primary" />
-            <AccordionSection eventKey="0">
-              <div className="row">
-                <div className="col-12 col-lg-6 col-xl-7">
-                  <div className="alert alert-primary mb-4">Unit Total: 4 hours</div>
-                  <UnitStats assignmentsCount={5} assignmentsTime="2 hours" readingsTime="1 to 2 hours" videosCount={3} videosTime="15 minutes" />
-                  <p>In the first unit of the dog training course, you'll meet your tutor and learn about the fundamentals of dog training. This introductory unit includes an overview of the dog training industry and a background in the fundamentals of ethical and safe training. </p>
-                  <p><em>You'll have the option to tell your tutor about your dog, or a dog you'll be working with to complete your course work! Then you can practice a safe dog introduction.</em></p>
-                  <button onClick={() => setUnit('A')} className="btn btn-primary">View Details</button>
-                  <Modal show={unit === 'A'} onHide={closeModal} size="lg">
-                    <Modal.Header closeButton>Unit A Details</Modal.Header>
-                    <Modal.Body>
-                      <UnitADetails />
-                    </Modal.Body>
-                  </Modal>
-                </div>
-                {lgOrGreater && (
-                  <div className="col-12 col-lg-6 col-xl-5">
-                    <Image src={UnitAImage} layout="responsive" alt="two dogs running in a field" />
-                  </div>
-                )}
-              </div>
-            </AccordionSection>
-            <AccordionToggle title="Unit B" eventKey="1" variant="primary" />
-            <AccordionSection eventKey="1">
-              <div className="row">
-                <div className="col-12 col-lg-6 col-xl-7">
-                  <div className="alert alert-primary mb-4">Unit Total: 5 hours</div>
-                  <UnitStats assignmentsCount={5} assignmentsTime="2 hours" readingsTime="2 hours" videosCount={3} videosTime="25 minutes" />
-                  <p>In this unit, you'll begin to learn about canine behavior. Unit B will introduce you to canine ethology&mdash;the study of natural canine behavior. You'll discover how a dog's breeding history and stage of development will affect his behavior. In particular, you'll learn about how effective socialization as a puppy can impact a dog's behavior throughout his whole life.</p>
-                  <p><em>You'll have the chance to research your own dog, or a friend or family member's dog to learn about its breed characteristics!</em></p>
-                  <button onClick={() => setUnit('B')} className="btn btn-primary">View Details</button>
-                  <Modal show={unit === 'B'} onHide={closeModal} size="lg">
-                    <Modal.Header closeButton>Unit B Details</Modal.Header>
-                    <Modal.Body>
-                      <UnitBDetails />
-                    </Modal.Body>
-                  </Modal>
-                </div>
-                {lgOrGreater && (
-                  <div className="col-12 col-lg-6 col-xl-5">
-                    <Image src={UnitBImage} layout="responsive" alt="a leashed dog and a man going for a walk" />
-                  </div>
-                )}
-              </div>
-            </AccordionSection>
-            <AccordionToggle title="Unit C" eventKey="2" variant="primary" />
-            <AccordionSection eventKey="2">
-              <div className="row">
-                <div className="col-12 col-lg-6 col-xl-7">
-                  <div className="alert alert-primary mb-4">Unit Total: 3 hours</div>
-                  <UnitStats assignmentsCount={5} assignmentsTime="2 hours" readingsTime="1 hour" videosCount={2} videosTime="25 minutes" />
-                  <p>Unit C of your dog training course focuses on canine communication. You'll learn all about the signals that dogs use to communicate. Explore how you can use these signals to improve your training methods and provide a safe, comfortable training space for dogs. This unit will also each you how to use canine communication to improve the relationships between dogs and their owners.</p>
-                  <p><em>Spend some quality time with your own dog, or a friend or family member's dog to practice reading canine communication!</em></p>
-                  <button onClick={() => setUnit('C')} className="btn btn-primary">View Details</button>
-                  <Modal show={unit === 'C'} onHide={closeModal} size="lg">
-                    <Modal.Header closeButton>Unit C Details</Modal.Header>
-                    <Modal.Body>
-                      <UnitCDetails />
-                    </Modal.Body>
-                  </Modal>
-                </div>
-                {lgOrGreater && (
-                  <div className="col-12 col-lg-6 col-xl-5">
-                    <Image src={UnitCImage} layout="responsive" alt="white puppy with a toy lying on a dog bed" />
-                  </div>
-                )}
-              </div>
-            </AccordionSection>
-            <AccordionToggle title="Unit D" eventKey="3" variant="primary" />
-            <AccordionSection eventKey="3">
-              <div className="row">
-                <div className="col-12 col-lg-6 col-xl-7">
-                  <div className="alert alert-primary mb-4">Unit Total: 5 hours</div>
-                  <UnitStats assignmentsCount={5} assignmentsTime="2 hours" readingsTime="1 hour" videosCount={11} videosTime="100 minutes" />
-                  <p>In Unit D of your dog training course, you'll learn about the learning theory behind effective dog training methods. You'll discover how dogs learn by making associations between different stimuli and by understanding the consequences associated with their own actions. Then you'll explore how to apply this learning theory to your training programs. You'll learn positive reinforcement methods, clicker training and much more!</p>
-                  <button onClick={() => setUnit('D')} className="btn btn-primary">View Details</button>
-                  <Modal show={unit === 'D'} onHide={closeModal} size="lg">
-                    <Modal.Header closeButton>Unit D Details</Modal.Header>
-                    <Modal.Body>
-                      <UnitDDetails />
-                    </Modal.Body>
-                  </Modal>
-                </div>
-                {lgOrGreater && (
-                  <div className="col-12 col-lg-6 col-xl-5">
-                    <Image src={UnitDImage} layout="responsive" alt="trainer using a clicker and treat to reward a German Shepherd puppy" />
-                  </div>
-                )}
-              </div>
-            </AccordionSection>
-            <AccordionToggle title="Unit E" eventKey="4" variant="primary" />
-            <AccordionSection eventKey="4">
-              <div className="row">
-                <div className="col-12 col-lg-6 col-xl-7">
-                  <div className="alert alert-primary mb-4">Unit Total: 5 hours</div>
-                  <UnitStats assignmentsCount={5} assignmentsTime="2 hours" readingsTime="1 hour" videosCount={8} videosTime="75 minutes" />
-                  <p>Once you reach Unit E of your online dog training course, you're ready to put everything you've learned into action. You'll learn about the six training methods, all based in positive reinforcement, you can use to teach dogs new behaviors. Discover how to effectively motivate dogs to perform these behaviors and how to use reinforcement schedules in dog training.</p>
-                  <button onClick={() => setUnit('E')} className="btn btn-primary">View Details</button>
-                  <Modal show={unit === 'E'} onHide={closeModal} size="lg">
-                    <Modal.Header closeButton>Unit E Details</Modal.Header>
-                    <Modal.Body>
-                      <UnitEDetails />
-                    </Modal.Body>
-                  </Modal>
-                </div>
-                {lgOrGreater && (
-                  <div className="col-12 col-lg-6 col-xl-5">
-                    <Image src={UnitEImage} layout="responsive" alt="trainer and a dog practicing for an obstacle course" />
-                  </div>
-                )}
-              </div>
-            </AccordionSection>
-            <AccordionToggle title="Unit F" eventKey="5" variant="primary" />
-            <AccordionSection eventKey="5">
-              <div className="row">
-                <div className="col-12 col-lg-6 col-xl-7">
-                  <div className="alert alert-primary mb-4">Unit Total: 5 hours</div>
-                  <UnitStats assignmentsCount={5} assignmentsTime="2 hours" readingsTime="1 hour" videosCount={5} videosTime="85 minutes" />
-                  <p>In Unit F, you'll learn how to safely use common training tools when you work with dogs. You'll discover common tools to help with leash training and crate training and learn how to teach your clients to use these tools at home. You'll also learn how experienced trainers use these tools and other techniques to change a dog's unwanted behaviors.</p>
-                  <button onClick={() => setUnit('F')} className="btn btn-primary">View Details</button>
-                  <Modal show={unit === 'F'} onHide={closeModal} size="lg">
-                    <Modal.Header closeButton>Unit F Details</Modal.Header>
-                    <Modal.Body>
-                      <UnitFDetails />
-                    </Modal.Body>
-                  </Modal>
-                </div>
-                {lgOrGreater && (
-                  <div className="col-12 col-lg-6 col-xl-5">
-                    <Image src={UnitFImage} layout="responsive" alt="dog snarling at another dog" />
-                  </div>
-                )}
-              </div>
-            </AccordionSection>
-            <AccordionToggle title="Unit G" eventKey="6" variant="primary" />
-            <AccordionSection eventKey="6">
-              <div className="row">
-                <div className="col-12 col-lg-6 col-xl-7">
-                  <div className="alert alert-primary mb-4">Unit Total: 4 hours</div>
-                  <UnitStats assignmentsCount={5} assignmentsTime="2 hours" readingsTime="1 hour" videosCount={3} videosTime="25 minutes" />
-                  <p>You've learned all about training dogs. Now in Unit G you'll learn to teach dog owners. You'll discover what it takes to develop a training program and set up a safe training space to facilitate learning in your training sessions. You'll learn essential teaching skills to help your students work effectively to train their dogs.</p>
-                  <button onClick={() => setUnit('G')} className="btn btn-primary">View Details</button>
-                  <Modal show={unit === 'G'} onHide={closeModal} size="lg">
-                    <Modal.Header closeButton>Unit G Details</Modal.Header>
-                    <Modal.Body>
-                      <UnitGDetails />
-                    </Modal.Body>
-                  </Modal>
-                </div>
-                {lgOrGreater && (
-                  <div className="col-12 col-lg-6 col-xl-5">
-                    <Image src={UnitGImage} layout="responsive" alt="white dog sitting next to a dog trainer" />
-                  </div>
-                )}
-              </div>
-            </AccordionSection>
-            <AccordionToggle title="Unit H (Optional)" eventKey="7" variant="primary" />
-            <AccordionSection eventKey="7">
-              <div className="row">
-                <div className="col-12 col-lg-6 col-xl-7">
-                  <div className="alert alert-primary mb-4">Unit Total: 3 hours</div>
-                  <UnitStats assignmentsCount={5} assignmentsTime="2 hours" readingsTime="1 hour" videosCount={3} videosTime="20 minutes" />
-                  <p>You've learned and practiced all the skills you need to successfully work as a dog trainer. Now it's time to turn your finely honed skills into a business! The business training offered in this course is optional. However, this training will be hugely beneficial to your career if you intend to start your own training business, or if you're looking to get a job working for an established trainer.</p>
-                  <p>In this unit, you'll learn to get your business off the ground. We'll cover important first steps, such as naming your business, finding insurance and creating a business plan. You'll learn all about different marketing techniques and how to use them effectively. You'll read up on essential skills for working with clients and selling your services. Even if launching your business isn't in your immediate future, take advantage of wonderful opportunity to kickstart your business when you're ready to take that step.</p>
-                  <button onClick={() => setUnit('H')} className="btn btn-primary">View Details</button>
-                  <Modal show={unit === 'H'} onHide={closeModal} size="lg">
-                    <Modal.Header closeButton>Unit H Details</Modal.Header>
-                    <Modal.Body>
-                      <UnitHDetails />
-                    </Modal.Body>
-                  </Modal>
-                </div>
-                {lgOrGreater && (
-                  <div className="col-12 col-lg-6 col-xl-5">
-                    <Image src={UnitHImage} layout="responsive" alt="dog and a trainer shaking hands" />
-                  </div>
-                )}
-              </div>
-            </AccordionSection>
-          </Accordion>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <style jsx>{`
-        #outlineSection {
-          background-color: #f7f7f7 !important;
-        }
-      `}</style>
-    </>
-  );
+    <section id="outlineSection" className="bg-light">
+      <div className="container">
+        <div className="row justify-content-center">
+          <div className="col-12 col-lg-10 mb-5 text-center">
+            <h2>Unit-by-Unit Breakdown</h2>
+            <p className="mb-0">Below is an outline of each unit of the online dog training course. Expand each section to find out what you'll learn in each unit.</p>
+          </div>
+        </div>
+        <Accordion defaultActiveKey="0">
+          <AccordionToggle title="Unit A" eventKey="0" variant="primary" />
+          <AccordionSection eventKey="0">
+            <div className="row">
+              <div className="col-12 col-lg-6 col-xl-7">
+                <div className="alert alert-primary mb-4">Unit Total: 4 hours</div>
+                <UnitStats assignmentsCount={5} assignmentsTime="2 hours" readingsTime="1 to 2 hours" videosCount={3} videosTime="15 minutes" />
+                <p>In the first unit of the dog training course, you'll meet your tutor and learn about the fundamentals of dog training. This introductory unit includes an overview of the dog training industry and a background in the fundamentals of ethical and safe training. </p>
+                <p><em>You'll have the option to tell your tutor about your dog, or a dog you'll be working with to complete your course work! Then you can practice a safe dog introduction.</em></p>
+                <button onClick={() => setUnit('A')} className="btn btn-primary">View Details</button>
+                <Modal show={unit === 'A'} onHide={closeModal} size="lg">
+                  <Modal.Header closeButton>Unit A Details</Modal.Header>
+                  <Modal.Body>
+                    <UnitADetails />
+                  </Modal.Body>
+                </Modal>
+              </div>
+              {lgOrGreater && (
+                <div className="col-12 col-lg-6 col-xl-5">
+                  <Image
+                    src={UnitAImage}
+                    alt="two dogs running in a field"
+                    sizes="100vw"
+                    style={{ width: '100%', height: 'auto' }}
+                  />
+                </div>
+              )}
+            </div>
+          </AccordionSection>
+          <AccordionToggle title="Unit B" eventKey="1" variant="primary" />
+          <AccordionSection eventKey="1">
+            <div className="row">
+              <div className="col-12 col-lg-6 col-xl-7">
+                <div className="alert alert-primary mb-4">Unit Total: 5 hours</div>
+                <UnitStats assignmentsCount={5} assignmentsTime="2 hours" readingsTime="2 hours" videosCount={3} videosTime="25 minutes" />
+                <p>In this unit, you'll begin to learn about canine behavior. Unit B will introduce you to canine ethology&mdash;the study of natural canine behavior. You'll discover how a dog's breeding history and stage of development will affect his behavior. In particular, you'll learn about how effective socialization as a puppy can impact a dog's behavior throughout his whole life.</p>
+                <p><em>You'll have the chance to research your own dog, or a friend or family member's dog to learn about its breed characteristics!</em></p>
+                <button onClick={() => setUnit('B')} className="btn btn-primary">View Details</button>
+                <Modal show={unit === 'B'} onHide={closeModal} size="lg">
+                  <Modal.Header closeButton>Unit B Details</Modal.Header>
+                  <Modal.Body>
+                    <UnitBDetails />
+                  </Modal.Body>
+                </Modal>
+              </div>
+              {lgOrGreater && (
+                <div className="col-12 col-lg-6 col-xl-5">
+                  <Image
+                    src={UnitBImage}
+                    alt="a leashed dog and a man going for a walk"
+                    sizes="100vw"
+                    style={{ width: '100%', height: 'auto' }}
+                  />
+                </div>
+              )}
+            </div>
+          </AccordionSection>
+          <AccordionToggle title="Unit C" eventKey="2" variant="primary" />
+          <AccordionSection eventKey="2">
+            <div className="row">
+              <div className="col-12 col-lg-6 col-xl-7">
+                <div className="alert alert-primary mb-4">Unit Total: 3 hours</div>
+                <UnitStats assignmentsCount={5} assignmentsTime="2 hours" readingsTime="1 hour" videosCount={2} videosTime="25 minutes" />
+                <p>Unit C of your dog training course focuses on canine communication. You'll learn all about the signals that dogs use to communicate. Explore how you can use these signals to improve your training methods and provide a safe, comfortable training space for dogs. This unit will also each you how to use canine communication to improve the relationships between dogs and their owners.</p>
+                <p><em>Spend some quality time with your own dog, or a friend or family member's dog to practice reading canine communication!</em></p>
+                <button onClick={() => setUnit('C')} className="btn btn-primary">View Details</button>
+                <Modal show={unit === 'C'} onHide={closeModal} size="lg">
+                  <Modal.Header closeButton>Unit C Details</Modal.Header>
+                  <Modal.Body>
+                    <UnitCDetails />
+                  </Modal.Body>
+                </Modal>
+              </div>
+              {lgOrGreater && (
+                <div className="col-12 col-lg-6 col-xl-5">
+                  <Image
+                    src={UnitCImage}
+                    alt="white puppy with a toy lying on a dog bed"
+                    sizes="100vw"
+                    style={{ width: '100%', height: 'auto' }}
+                  />
+                </div>
+              )}
+            </div>
+          </AccordionSection>
+          <AccordionToggle title="Unit D" eventKey="3" variant="primary" />
+          <AccordionSection eventKey="3">
+            <div className="row">
+              <div className="col-12 col-lg-6 col-xl-7">
+                <div className="alert alert-primary mb-4">Unit Total: 5 hours</div>
+                <UnitStats assignmentsCount={5} assignmentsTime="2 hours" readingsTime="1 hour" videosCount={11} videosTime="100 minutes" />
+                <p>In Unit D of your dog training course, you'll learn about the learning theory behind effective dog training methods. You'll discover how dogs learn by making associations between different stimuli and by understanding the consequences associated with their own actions. Then you'll explore how to apply this learning theory to your training programs. You'll learn positive reinforcement methods, clicker training and much more!</p>
+                <button onClick={() => setUnit('D')} className="btn btn-primary">View Details</button>
+                <Modal show={unit === 'D'} onHide={closeModal} size="lg">
+                  <Modal.Header closeButton>Unit D Details</Modal.Header>
+                  <Modal.Body>
+                    <UnitDDetails />
+                  </Modal.Body>
+                </Modal>
+              </div>
+              {lgOrGreater && (
+                <div className="col-12 col-lg-6 col-xl-5">
+                  <Image
+                    src={UnitDImage}
+                    alt="trainer using a clicker and treat to reward a German Shepherd puppy"
+                    sizes="100vw"
+                    style={{ width: '100%', height: 'auto' }}
+                  />
+                </div>
+              )}
+            </div>
+          </AccordionSection>
+          <AccordionToggle title="Unit E" eventKey="4" variant="primary" />
+          <AccordionSection eventKey="4">
+            <div className="row">
+              <div className="col-12 col-lg-6 col-xl-7">
+                <div className="alert alert-primary mb-4">Unit Total: 5 hours</div>
+                <UnitStats assignmentsCount={5} assignmentsTime="2 hours" readingsTime="1 hour" videosCount={8} videosTime="75 minutes" />
+                <p>Once you reach Unit E of your online dog training course, you're ready to put everything you've learned into action. You'll learn about the six training methods, all based in positive reinforcement, you can use to teach dogs new behaviors. Discover how to effectively motivate dogs to perform these behaviors and how to use reinforcement schedules in dog training.</p>
+                <button onClick={() => setUnit('E')} className="btn btn-primary">View Details</button>
+                <Modal show={unit === 'E'} onHide={closeModal} size="lg">
+                  <Modal.Header closeButton>Unit E Details</Modal.Header>
+                  <Modal.Body>
+                    <UnitEDetails />
+                  </Modal.Body>
+                </Modal>
+              </div>
+              {lgOrGreater && (
+                <div className="col-12 col-lg-6 col-xl-5">
+                  <Image
+                    src={UnitEImage}
+                    alt="trainer and a dog practicing for an obstacle course"
+                    sizes="100vw"
+                    style={{ width: '100%', height: 'auto' }}
+                  />
+                </div>
+              )}
+            </div>
+          </AccordionSection>
+          <AccordionToggle title="Unit F" eventKey="5" variant="primary" />
+          <AccordionSection eventKey="5">
+            <div className="row">
+              <div className="col-12 col-lg-6 col-xl-7">
+                <div className="alert alert-primary mb-4">Unit Total: 5 hours</div>
+                <UnitStats assignmentsCount={5} assignmentsTime="2 hours" readingsTime="1 hour" videosCount={5} videosTime="85 minutes" />
+                <p>In Unit F, you'll learn how to safely use common training tools when you work with dogs. You'll discover common tools to help with leash training and crate training and learn how to teach your clients to use these tools at home. You'll also learn how experienced trainers use these tools and other techniques to change a dog's unwanted behaviors.</p>
+                <button onClick={() => setUnit('F')} className="btn btn-primary">View Details</button>
+                <Modal show={unit === 'F'} onHide={closeModal} size="lg">
+                  <Modal.Header closeButton>Unit F Details</Modal.Header>
+                  <Modal.Body>
+                    <UnitFDetails />
+                  </Modal.Body>
+                </Modal>
+              </div>
+              {lgOrGreater && (
+                <div className="col-12 col-lg-6 col-xl-5">
+                  <Image
+                    src={UnitFImage}
+                    alt="dog snarling at another dog"
+                    sizes="100vw"
+                    style={{ width: '100%', height: 'auto' }}
+                  />
+                </div>
+              )}
+            </div>
+          </AccordionSection>
+          <AccordionToggle title="Unit G" eventKey="6" variant="primary" />
+          <AccordionSection eventKey="6">
+            <div className="row">
+              <div className="col-12 col-lg-6 col-xl-7">
+                <div className="alert alert-primary mb-4">Unit Total: 4 hours</div>
+                <UnitStats assignmentsCount={5} assignmentsTime="2 hours" readingsTime="1 hour" videosCount={3} videosTime="25 minutes" />
+                <p>You've learned all about training dogs. Now in Unit G you'll learn to teach dog owners. You'll discover what it takes to develop a training program and set up a safe training space to facilitate learning in your training sessions. You'll learn essential teaching skills to help your students work effectively to train their dogs.</p>
+                <button onClick={() => setUnit('G')} className="btn btn-primary">View Details</button>
+                <Modal show={unit === 'G'} onHide={closeModal} size="lg">
+                  <Modal.Header closeButton>Unit G Details</Modal.Header>
+                  <Modal.Body>
+                    <UnitGDetails />
+                  </Modal.Body>
+                </Modal>
+              </div>
+              {lgOrGreater && (
+                <div className="col-12 col-lg-6 col-xl-5">
+                  <Image
+                    src={UnitGImage}
+                    alt="white dog sitting next to a dog trainer"
+                    sizes="100vw"
+                    style={{ width: '100%', height: 'auto' }}
+                  />
+                </div>
+              )}
+            </div>
+          </AccordionSection>
+          <AccordionToggle title="Unit H (Optional)" eventKey="7" variant="primary" />
+          <AccordionSection eventKey="7">
+            <div className="row">
+              <div className="col-12 col-lg-6 col-xl-7">
+                <div className="alert alert-primary mb-4">Unit Total: 3 hours</div>
+                <UnitStats assignmentsCount={5} assignmentsTime="2 hours" readingsTime="1 hour" videosCount={3} videosTime="20 minutes" />
+                <p>You've learned and practiced all the skills you need to successfully work as a dog trainer. Now it's time to turn your finely honed skills into a business! The business training offered in this course is optional. However, this training will be hugely beneficial to your career if you intend to start your own training business, or if you're looking to get a job working for an established trainer.</p>
+                <p>In this unit, you'll learn to get your business off the ground. We'll cover important first steps, such as naming your business, finding insurance and creating a business plan. You'll learn all about different marketing techniques and how to use them effectively. You'll read up on essential skills for working with clients and selling your services. Even if launching your business isn't in your immediate future, take advantage of wonderful opportunity to kickstart your business when you're ready to take that step.</p>
+                <button onClick={() => setUnit('H')} className="btn btn-primary">View Details</button>
+                <Modal show={unit === 'H'} onHide={closeModal} size="lg">
+                  <Modal.Header closeButton>Unit H Details</Modal.Header>
+                  <Modal.Body>
+                    <UnitHDetails />
+                  </Modal.Body>
+                </Modal>
+              </div>
+              {lgOrGreater && (
+                <div className="col-12 col-lg-6 col-xl-5">
+                  <Image
+                    src={UnitHImage}
+                    alt="dog and a trainer shaking hands"
+                    sizes="100vw"
+                    style={{ width: '100%', height: 'auto' }}
+                  />
+                </div>
+              )}
+            </div>
+          </AccordionSection>
+        </Accordion>
+      </div>
+    </section>
+
+    <style jsx>{`
+      #outlineSection {
+        background-color: #f7f7f7 !important;
+      }
+    `}</style>
+  </>;
 };
 
 CourseOutlinePage.getLayout = page => <DefaultLayout footerCTAType="training">{page}</DefaultLayout>;

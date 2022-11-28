@@ -29,207 +29,255 @@ const DDCourseOutlinePage: NextPageWithLayout = () => {
   const [ unit, setUnit ] = useState<string | null>(null);
   const closeModal = (): void => setUnit(null);
 
-  return (
-    <>
-      <SEO
-        title="Dog Daycare Course Outline"
-        description=""
-        canonical="/certification-courses/dog-daycare/course-outline"
+  return <>
+    <SEO
+      title="Dog Daycare Course Outline"
+      description=""
+      canonical="/certification-courses/dog-daycare/course-outline"
+    />
+
+    <section id="top" className="bg-dark">
+      <Image
+        src={CourseOutlineBackground}
+        placeholder="blur"
+        alt="Dog with man"
+        priority
+        fill
+        sizes="100vw"
+        style={{ objectFit: 'cover', objectPosition: 'center' }}
       />
-
-      <section id="top" className="bg-dark">
-        <Image src={CourseOutlineBackground} layout="fill" objectFit="cover" objectPosition="center" placeholder="blur" alt="Dog with man" priority />
-        <div className="image-overlay-gradient" />
-        <div className="container text-center">
-          <div className="row justify-content-center">
-            <div className="col-12 col-lg-10">
-              <FaBars size={iconSize} className="mb-2" />
-              <h1 className="fw-normal">Dog Care<br /><strong>Course Outline</strong></h1>
-              <p className="lead mb-0">Here&apos;s a detailed outline of the entire online dog care course offered by QC Pet Studies, including the length of each unit and any special considerations you&apos;ll need to complete each unit&apos;s assignments.</p>
-            </div>
+      <div className="image-overlay-gradient" />
+      <div className="container text-center">
+        <div className="row justify-content-center">
+          <div className="col-12 col-lg-10">
+            <FaBars size={iconSize} className="mb-2" />
+            <h1 className="fw-normal">Dog Care<br /><strong>Course Outline</strong></h1>
+            <p className="lead mb-0">Here&apos;s a detailed outline of the entire online dog care course offered by QC Pet Studies, including the length of each unit and any special considerations you&apos;ll need to complete each unit&apos;s assignments.</p>
           </div>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <section>
-        <div className="container text-center">
-          <div className="row justify-content-center">
-            <div className="col-12 col-sm-10 col-md-8 col-lg-6 col-xl-5 d-flex mb-4 mb-lg-0">
-              <div className="card">
-                <div className="card-body">
-                  <div className="mb-2">
-                    <Image src={IconTime} width={iconSize} height={iconSize} alt="Clock Icon" />
-                  </div>
-                  <p className="card-text">The course should take about <strong>20 hours</strong> to study and complete assignments from start to finish. This time does not include the time you will take to practice and develop your skills before you complete an assignment.</p>
+    <section>
+      <div className="container text-center">
+        <div className="row justify-content-center">
+          <div className="col-12 col-sm-10 col-md-8 col-lg-6 col-xl-5 d-flex mb-4 mb-lg-0">
+            <div className="card">
+              <div className="card-body">
+                <div className="mb-2">
+                  <Image
+                    src={IconTime}
+                    width={iconSize}
+                    height={iconSize}
+                    alt="Clock Icon"
+                    style={{ maxWidth: '100%', height: 'auto' }}
+                  />
                 </div>
-              </div>
-            </div>
-            <div className="col-12 col-sm-10 col-md-8 col-lg-6 col-xl-5 d-flex">
-              <div className="card">
-                <div className="card-body">
-                  <div className="mb-2">
-                    <Image src={calendarIcon} width={iconSize} height={iconSize} alt="Calendar Icon" />
-                  </div>
-                  <p className="card-text">On average, most QC Students work on their course for a few hours per week, and complete the online dog training course within <strong>three to six months</strong>. You&apos;ll have up to two years to complete the program&mdash;lots of time!</p>
-                </div>
+                <p className="card-text">The course should take about <strong>20 hours</strong> to study and complete assignments from start to finish. This time does not include the time you will take to practice and develop your skills before you complete an assignment.</p>
               </div>
             </div>
           </div>
-        </div>
-      </section>
-
-      <section id="outlineSection" className="bg-light">
-        <div className="container">
-          <div className="row justify-content-center">
-            <div className="col-12 col-lg-10 mb-5 text-center">
-              <h2>Unit-by-Unit Breakdown</h2>
-              <p className="mb-0">Below is an outline of each unit of the online dog care course. Expand each section to find out what you&apos;ll learn in each unit.</p>
+          <div className="col-12 col-sm-10 col-md-8 col-lg-6 col-xl-5 d-flex">
+            <div className="card">
+              <div className="card-body">
+                <div className="mb-2">
+                  <Image
+                    src={calendarIcon}
+                    width={iconSize}
+                    height={iconSize}
+                    alt="Calendar Icon"
+                    style={{ maxWidth: '100%', height: 'auto' }}
+                  />
+                </div>
+                <p className="card-text">On average, most QC Students work on their course for a few hours per week, and complete the online dog training course within <strong>three to six months</strong>. You&apos;ll have up to two years to complete the program&mdash;lots of time!</p>
+              </div>
             </div>
           </div>
-          <Accordion defaultActiveKey="0">
-            <AccordionToggle title="Unit A" eventKey="0" variant="primary" />
-            <AccordionSection eventKey="0">
-              <div className="row">
-                <div className="col-12 col-lg-6 col-xl-7">
-                  <div className="alert alert-primary mb-4">Unit Total: 3 hours</div>
-                  <UnitStats assignmentsCount={4} assignmentsTime="1 hour" readingsTime="2 hours" videosCount={2} />
-                  <p>In the first unit of your Dog Daycare course, you&apos;ll introduce yourself to your expert tutor and learn about the fundamentals of professionally caring for dogs. You&apos;ll dive into an overview of the dog daycare industry, study different types of dog-care locations and learn about the tools and equipment you&apos;ll need as you begin working with dogs.</p>
-                  <button onClick={() => setUnit('A')} className="btn btn-primary">View Details</button>
-                  <Modal show={unit === 'A'} onHide={closeModal} size="lg">
-                    <Modal.Header closeButton>Unit A Details</Modal.Header>
-                    <Modal.Body>
-                      <UnitADetails />
-                    </Modal.Body>
-                  </Modal>
-                </div>
-                {lgOrGreater && (
-                  <div className="col-12 col-lg-6 col-xl-5">
-                    <Image src={UnitAImage} layout="responsive" alt="two dogs running in a field" />
-                  </div>
-                )}
-              </div>
-            </AccordionSection>
-            <AccordionToggle title="Unit B" eventKey="1" variant="primary" />
-            <AccordionSection eventKey="1">
-              <div className="row">
-                <div className="col-12 col-lg-6 col-xl-7">
-                  <div className="alert alert-primary mb-4">Unit Total: 4 hours</div>
-                  <UnitStats assignmentsCount={5} assignmentsTime="1.5 hours" readingsTime="2.5 hours" videosCount={3} />
-                  <p>In Unit B, you&apos;ll learn all about dogs. You&apos;ll study canine communication signals so that you can identify potential problems that may arise when you care for dogs. You&apos;ll also learn how a dog&apos;s background, including its age and breed, can affect behavior.</p>
-                  <button onClick={() => setUnit('B')} className="btn btn-primary">View Details</button>
-                  <Modal show={unit === 'B'} onHide={closeModal} size="lg">
-                    <Modal.Header closeButton>Unit B Details</Modal.Header>
-                    <Modal.Body>
-                      <UnitBDetails />
-                    </Modal.Body>
-                  </Modal>
-                </div>
-                {lgOrGreater && (
-                  <div className="col-12 col-lg-6 col-xl-5">
-                    <Image src={UnitBImage} layout="responsive" alt="a leashed dog and a man going for a walk" />
-                  </div>
-                )}
-              </div>
-            </AccordionSection>
-            <AccordionToggle title="Unit C" eventKey="2" variant="primary" />
-            <AccordionSection eventKey="2">
-              <div className="row">
-                <div className="col-12 col-lg-6 col-xl-7">
-                  <div className="alert alert-primary mb-4">Unit Total: 3 hours</div>
-                  <UnitStats assignmentsCount={4} assignmentsTime="1 hour" readingsTime="2 hours" videosCount={2} />
-                  <p>Unit C will provide you with detailed information to help you plan safe and stimulating activities for dogs in your care. You&apos;ll learn how to assess a dog&apos;s needs for social, physical, emotional and cognitive stimulation so that you can provide an engaging experience for your clients&apos; pets.</p>
-                  <button onClick={() => setUnit('C')} className="btn btn-primary">View Details</button>
-                  <Modal show={unit === 'C'} onHide={closeModal} size="lg">
-                    <Modal.Header closeButton>Unit C Details</Modal.Header>
-                    <Modal.Body>
-                      <UnitCDetails />
-                    </Modal.Body>
-                  </Modal>
-                </div>
-                {lgOrGreater && (
-                  <div className="col-12 col-lg-6 col-xl-5">
-                    <Image src={UnitCImage} layout="responsive" alt="white puppy with a toy lying on a dog bed" />
-                  </div>
-                )}
-              </div>
-            </AccordionSection>
-            <AccordionToggle title="Unit D" eventKey="3" variant="primary" />
-            <AccordionSection eventKey="3">
-              <div className="row">
-                <div className="col-12 col-lg-6 col-xl-7">
-                  <div className="alert alert-primary mb-4">Unit Total: 2.5 hours</div>
-                  <UnitStats assignmentsCount={3} assignmentsTime="1 hour" readingsTime="1.5 hours" />
-                  <p>As a dog daycare provider, you&apos;ll need to ensure the safety of your clients&apos; beloved pets. In Unit D, you&apos;ll learn how to create a safe daycare space to prevent accidents and injuries when you care for dogs. You&apos;ll also learn about canine first aid so that you&apos;ll be prepared to address any accidents that do occur on the job.</p>
-                  <button onClick={() => setUnit('D')} className="btn btn-primary">View Details</button>
-                  <Modal show={unit === 'D'} onHide={closeModal} size="lg">
-                    <Modal.Header closeButton>Unit D Details</Modal.Header>
-                    <Modal.Body>
-                      <UnitDDetails />
-                    </Modal.Body>
-                  </Modal>
-                </div>
-                {lgOrGreater && (
-                  <div className="col-12 col-lg-6 col-xl-5">
-                    <Image src={UnitDImage} layout="responsive" alt="trainer using a clicker and treat to reward a German Shepherd puppy" />
-                  </div>
-                )}
-              </div>
-            </AccordionSection>
-            <AccordionToggle title="Unit E" eventKey="4" variant="primary" />
-            <AccordionSection eventKey="4">
-              <div className="row">
-                <div className="col-12 col-lg-6 col-xl-7">
-                  <div className="alert alert-primary mb-4">Unit Total: 2 hours</div>
-                  <UnitStats assignmentsCount={4} assignmentsTime="1 hour" readingsTime="1 hour" videosCount={1} />
-                  <p>Make sure you&apos;re providing dog owners with the best possible services for their pets. In this unit, you&apos;ll learn how standard operating procedures can help you to feel confident in your services. You&apos;ll also discover how dog daycare providers can offer supplementary services to make their business standout.</p>
-                  <button onClick={() => setUnit('E')} className="btn btn-primary">View Details</button>
-                  <Modal show={unit === 'E'} onHide={closeModal} size="lg">
-                    <Modal.Header closeButton>Unit E Details</Modal.Header>
-                    <Modal.Body>
-                      <UnitEDetails />
-                    </Modal.Body>
-                  </Modal>
-                </div>
-                {lgOrGreater && (
-                  <div className="col-12 col-lg-6 col-xl-5">
-                    <Image src={UnitEImage} layout="responsive" alt="trainer and a dog practicing for an obstacle course" />
-                  </div>
-                )}
-              </div>
-            </AccordionSection>
-            <AccordionToggle title="Unit F" eventKey="5" variant="primary" />
-            <AccordionSection eventKey="5">
-              <div className="row">
-                <div className="col-12 col-lg-6 col-xl-7">
-                  <div className="alert alert-primary mb-4">Unit Total: 3 hours</div>
-                  <UnitStats assignmentsCount={4} assignmentsTime="1 hour" readingsTime="2 hours" videosCount={1} />
-                  <p>Once you&apos;ve developed the skills you need to provide a safe and enjoyable daycare experience for dogs, you&apos;ll need to practice your business skills. In this optional unit of your course, you&apos;ll turn your finely-honed dog-care skills into a business. Learn about the important first steps involved in launching a business, including choosing a business name, building a website and finding appropriate business insurance. Practice important skills for selling your services, including marketing your business and building positive relationships with clients. This business training unit will be a valuable tool to kickstart your career.</p>
-                  <button onClick={() => setUnit('F')} className="btn btn-primary">View Details</button>
-                  <Modal show={unit === 'F'} onHide={closeModal} size="lg">
-                    <Modal.Header closeButton>Unit F Details</Modal.Header>
-                    <Modal.Body>
-                      <UnitFDetails />
-                    </Modal.Body>
-                  </Modal>
-                </div>
-                {lgOrGreater && (
-                  <div className="col-12 col-lg-6 col-xl-5">
-                    <Image src={UnitFImage} layout="responsive" alt="dog snarling at another dog" />
-                  </div>
-                )}
-              </div>
-            </AccordionSection>
-          </Accordion>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <style jsx>{`
-        #outlineSection {
-          background-color: #f7f7f7 !important;
-        }
-      `}</style>
-    </>
-  );
+    <section id="outlineSection" className="bg-light">
+      <div className="container">
+        <div className="row justify-content-center">
+          <div className="col-12 col-lg-10 mb-5 text-center">
+            <h2>Unit-by-Unit Breakdown</h2>
+            <p className="mb-0">Below is an outline of each unit of the online dog care course. Expand each section to find out what you&apos;ll learn in each unit.</p>
+          </div>
+        </div>
+        <Accordion defaultActiveKey="0">
+          <AccordionToggle title="Unit A" eventKey="0" variant="primary" />
+          <AccordionSection eventKey="0">
+            <div className="row">
+              <div className="col-12 col-lg-6 col-xl-7">
+                <div className="alert alert-primary mb-4">Unit Total: 3 hours</div>
+                <UnitStats assignmentsCount={4} assignmentsTime="1 hour" readingsTime="2 hours" videosCount={2} />
+                <p>In the first unit of your Dog Daycare course, you&apos;ll introduce yourself to your expert tutor and learn about the fundamentals of professionally caring for dogs. You&apos;ll dive into an overview of the dog daycare industry, study different types of dog-care locations and learn about the tools and equipment you&apos;ll need as you begin working with dogs.</p>
+                <button onClick={() => setUnit('A')} className="btn btn-primary">View Details</button>
+                <Modal show={unit === 'A'} onHide={closeModal} size="lg">
+                  <Modal.Header closeButton>Unit A Details</Modal.Header>
+                  <Modal.Body>
+                    <UnitADetails />
+                  </Modal.Body>
+                </Modal>
+              </div>
+              {lgOrGreater && (
+                <div className="col-12 col-lg-6 col-xl-5">
+                  <Image
+                    src={UnitAImage}
+                    alt="two dogs running in a field"
+                    sizes="100vw"
+                    style={{ width: '100%', height: 'auto' }}
+                  />
+                </div>
+              )}
+            </div>
+          </AccordionSection>
+          <AccordionToggle title="Unit B" eventKey="1" variant="primary" />
+          <AccordionSection eventKey="1">
+            <div className="row">
+              <div className="col-12 col-lg-6 col-xl-7">
+                <div className="alert alert-primary mb-4">Unit Total: 4 hours</div>
+                <UnitStats assignmentsCount={5} assignmentsTime="1.5 hours" readingsTime="2.5 hours" videosCount={3} />
+                <p>In Unit B, you&apos;ll learn all about dogs. You&apos;ll study canine communication signals so that you can identify potential problems that may arise when you care for dogs. You&apos;ll also learn how a dog&apos;s background, including its age and breed, can affect behavior.</p>
+                <button onClick={() => setUnit('B')} className="btn btn-primary">View Details</button>
+                <Modal show={unit === 'B'} onHide={closeModal} size="lg">
+                  <Modal.Header closeButton>Unit B Details</Modal.Header>
+                  <Modal.Body>
+                    <UnitBDetails />
+                  </Modal.Body>
+                </Modal>
+              </div>
+              {lgOrGreater && (
+                <div className="col-12 col-lg-6 col-xl-5">
+                  <Image
+                    src={UnitBImage}
+                    alt="a leashed dog and a man going for a walk"
+                    sizes="100vw"
+                    style={{ width: '100%', height: 'auto' }}
+                  />
+                </div>
+              )}
+            </div>
+          </AccordionSection>
+          <AccordionToggle title="Unit C" eventKey="2" variant="primary" />
+          <AccordionSection eventKey="2">
+            <div className="row">
+              <div className="col-12 col-lg-6 col-xl-7">
+                <div className="alert alert-primary mb-4">Unit Total: 3 hours</div>
+                <UnitStats assignmentsCount={4} assignmentsTime="1 hour" readingsTime="2 hours" videosCount={2} />
+                <p>Unit C will provide you with detailed information to help you plan safe and stimulating activities for dogs in your care. You&apos;ll learn how to assess a dog&apos;s needs for social, physical, emotional and cognitive stimulation so that you can provide an engaging experience for your clients&apos; pets.</p>
+                <button onClick={() => setUnit('C')} className="btn btn-primary">View Details</button>
+                <Modal show={unit === 'C'} onHide={closeModal} size="lg">
+                  <Modal.Header closeButton>Unit C Details</Modal.Header>
+                  <Modal.Body>
+                    <UnitCDetails />
+                  </Modal.Body>
+                </Modal>
+              </div>
+              {lgOrGreater && (
+                <div className="col-12 col-lg-6 col-xl-5">
+                  <Image
+                    src={UnitCImage}
+                    alt="white puppy with a toy lying on a dog bed"
+                    sizes="100vw"
+                    style={{ width: '100%', height: 'auto' }}
+                  />
+                </div>
+              )}
+            </div>
+          </AccordionSection>
+          <AccordionToggle title="Unit D" eventKey="3" variant="primary" />
+          <AccordionSection eventKey="3">
+            <div className="row">
+              <div className="col-12 col-lg-6 col-xl-7">
+                <div className="alert alert-primary mb-4">Unit Total: 2.5 hours</div>
+                <UnitStats assignmentsCount={3} assignmentsTime="1 hour" readingsTime="1.5 hours" />
+                <p>As a dog daycare provider, you&apos;ll need to ensure the safety of your clients&apos; beloved pets. In Unit D, you&apos;ll learn how to create a safe daycare space to prevent accidents and injuries when you care for dogs. You&apos;ll also learn about canine first aid so that you&apos;ll be prepared to address any accidents that do occur on the job.</p>
+                <button onClick={() => setUnit('D')} className="btn btn-primary">View Details</button>
+                <Modal show={unit === 'D'} onHide={closeModal} size="lg">
+                  <Modal.Header closeButton>Unit D Details</Modal.Header>
+                  <Modal.Body>
+                    <UnitDDetails />
+                  </Modal.Body>
+                </Modal>
+              </div>
+              {lgOrGreater && (
+                <div className="col-12 col-lg-6 col-xl-5">
+                  <Image
+                    src={UnitDImage}
+                    alt="trainer using a clicker and treat to reward a German Shepherd puppy"
+                    sizes="100vw"
+                    style={{ width: '100%', height: 'auto' }}
+                  />
+                </div>
+              )}
+            </div>
+          </AccordionSection>
+          <AccordionToggle title="Unit E" eventKey="4" variant="primary" />
+          <AccordionSection eventKey="4">
+            <div className="row">
+              <div className="col-12 col-lg-6 col-xl-7">
+                <div className="alert alert-primary mb-4">Unit Total: 2 hours</div>
+                <UnitStats assignmentsCount={4} assignmentsTime="1 hour" readingsTime="1 hour" videosCount={1} />
+                <p>Make sure you&apos;re providing dog owners with the best possible services for their pets. In this unit, you&apos;ll learn how standard operating procedures can help you to feel confident in your services. You&apos;ll also discover how dog daycare providers can offer supplementary services to make their business standout.</p>
+                <button onClick={() => setUnit('E')} className="btn btn-primary">View Details</button>
+                <Modal show={unit === 'E'} onHide={closeModal} size="lg">
+                  <Modal.Header closeButton>Unit E Details</Modal.Header>
+                  <Modal.Body>
+                    <UnitEDetails />
+                  </Modal.Body>
+                </Modal>
+              </div>
+              {lgOrGreater && (
+                <div className="col-12 col-lg-6 col-xl-5">
+                  <Image
+                    src={UnitEImage}
+                    alt="trainer and a dog practicing for an obstacle course"
+                    sizes="100vw"
+                    style={{ width: '100%', height: 'auto' }}
+                  />
+                </div>
+              )}
+            </div>
+          </AccordionSection>
+          <AccordionToggle title="Unit F" eventKey="5" variant="primary" />
+          <AccordionSection eventKey="5">
+            <div className="row">
+              <div className="col-12 col-lg-6 col-xl-7">
+                <div className="alert alert-primary mb-4">Unit Total: 3 hours</div>
+                <UnitStats assignmentsCount={4} assignmentsTime="1 hour" readingsTime="2 hours" videosCount={1} />
+                <p>Once you&apos;ve developed the skills you need to provide a safe and enjoyable daycare experience for dogs, you&apos;ll need to practice your business skills. In this optional unit of your course, you&apos;ll turn your finely-honed dog-care skills into a business. Learn about the important first steps involved in launching a business, including choosing a business name, building a website and finding appropriate business insurance. Practice important skills for selling your services, including marketing your business and building positive relationships with clients. This business training unit will be a valuable tool to kickstart your career.</p>
+                <button onClick={() => setUnit('F')} className="btn btn-primary">View Details</button>
+                <Modal show={unit === 'F'} onHide={closeModal} size="lg">
+                  <Modal.Header closeButton>Unit F Details</Modal.Header>
+                  <Modal.Body>
+                    <UnitFDetails />
+                  </Modal.Body>
+                </Modal>
+              </div>
+              {lgOrGreater && (
+                <div className="col-12 col-lg-6 col-xl-5">
+                  <Image
+                    src={UnitFImage}
+                    alt="dog snarling at another dog"
+                    sizes="100vw"
+                    style={{ width: '100%', height: 'auto' }}
+                  />
+                </div>
+              )}
+            </div>
+          </AccordionSection>
+        </Accordion>
+      </div>
+    </section>
+
+    <style jsx>{`
+      #outlineSection {
+        background-color: #f7f7f7 !important;
+      }
+    `}</style>
+  </>;
 };
 
 DDCourseOutlinePage.getLayout = page => <DefaultLayout footerCTAType="training">{page}</DefaultLayout>;

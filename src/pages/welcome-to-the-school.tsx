@@ -66,47 +66,57 @@ const WelcomeToTheSchoolPage: NextPage<Props> = ({ data, errorCode }) => {
     return <ErrorPage statusCode={500} />;
   }
 
-  return (
-    <>
-      <SEO
-        title="Welcome to the School"
-        description="Your enrollment has been received and will be processed quickly. You will receive an email within the next business day containing login information to your online student center."
-        canonical="/internal-welcome"
-        noIndex={true}
+  return <>
+    <SEO
+      title="Welcome to the School"
+      description="Your enrollment has been received and will be processed quickly. You will receive an email within the next business day containing login information to your online student center."
+      canonical="/internal-welcome"
+      noIndex={true}
+    />
+    <GoogleAdsSaleScript conversionLabel="xFpdCJ3DpW8Qv9uL_wM" enrollment={data.enrollment} />
+
+    <section id="top" className="bg-dark">
+      <Image
+        src={HappyPuppyRunning}
+        placeholder="blur"
+        alt="happy puppy running"
+        priority
+        fill
+        sizes="100vw"
+        style={{ objectFit: 'cover', objectPosition: 'center' }}
       />
-      <GoogleAdsSaleScript conversionLabel="xFpdCJ3DpW8Qv9uL_wM" enrollment={data.enrollment} />
-
-      <section id="top" className="bg-dark">
-        <Image src={HappyPuppyRunning} layout="fill" objectFit="cover" objectPosition="center" placeholder="blur" alt="happy puppy running" priority />
-        <div className="container text-center">
-          <div className="row justify-content-center">
-            <div className="col-12 col-lg-10">
-              <h1>Welcome to the School</h1>
-              <p className="lead mb-0">Whether you want to become a dog groomer, trainer, pet sitter, or all of the above, you'll gain the certification needed to become successful in your chosen career.</p>
-            </div>
+      <div className="container text-center">
+        <div className="row justify-content-center">
+          <div className="col-12 col-lg-10">
+            <h1>Welcome to the School</h1>
+            <p className="lead mb-0">Whether you want to become a dog groomer, trainer, pet sitter, or all of the above, you'll gain the certification needed to become successful in your chosen career.</p>
           </div>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <section>
-        <div className="container">
-          <div className="row justify-content-center">
-            <div className="col-12 col-lg-10">
-              <h2>Thank You for Enrolling with <strong>QC Pet Studies!</strong></h2>
-              <p>Your enrollment has been received and will be processed quickly. You will receive an email within the next business day containing login information to your online student center. If you don't see an email from us, please check your spam folder.</p>
-              <p>If you have any questions regarding the course, or if you want to discuss your goals, our friendly and knowledgeable student support advisors are available 7 days a week by email at <a href={`mailto:${emailAddress}`} className="link-primary">{emailAddress}</a> or by phone at {telephoneNumber}. We would be delighted to speak with you and assist you in any way we can. We hope your learning experience with us will be enjoyable, interesting, and valuable.</p>
-              <p>Remember, we want to develop a personal relationship with you and be readily available for you whenever you need us.</p>
-              <p><strong>Best of luck with your studies!</strong></p>
-              <p>Sincerely,</p>
-              <p><Image src={AlexSignature} alt="Alex Myers" /><br /><div style={{ marginTop: -14 }}>Director<br /><strong>QC Career School</strong></div></p>
-            </div>
+    <section>
+      <div className="container">
+        <div className="row justify-content-center">
+          <div className="col-12 col-lg-10">
+            <h2>Thank You for Enrolling with <strong>QC Pet Studies!</strong></h2>
+            <p>Your enrollment has been received and will be processed quickly. You will receive an email within the next business day containing login information to your online student center. If you don't see an email from us, please check your spam folder.</p>
+            <p>If you have any questions regarding the course, or if you want to discuss your goals, our friendly and knowledgeable student support advisors are available 7 days a week by email at <a href={`mailto:${emailAddress}`} className="link-primary">{emailAddress}</a> or by phone at {telephoneNumber}. We would be delighted to speak with you and assist you in any way we can. We hope your learning experience with us will be enjoyable, interesting, and valuable.</p>
+            <p>Remember, we want to develop a personal relationship with you and be readily available for you whenever you need us.</p>
+            <p><strong>Best of luck with your studies!</strong></p>
+            <p>Sincerely,</p>
+            <Image
+              src={AlexSignature}
+              alt="Alex Myers"
+              style={{ maxWidth: '100%', height: 'auto', marginBottom: '0.5rem' }}
+            /><br /><div style={{ marginTop: -14 }}>Director<br /><strong>QC Career School</strong></div>
           </div>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <EnrollmentDetails enrollment={data.enrollment} />
-    </>
-  );
+    <EnrollmentDetails enrollment={data.enrollment} />
+  </>;
 };
 
 export const getServerSideProps: GetServerSideProps<Props> = async ({ req, res, query }) => {

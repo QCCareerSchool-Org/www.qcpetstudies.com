@@ -15,7 +15,7 @@ export function useReducerWithMiddleware<S>(reducer: ReducerWithoutAction<S>, in
 export function useReducerWithMiddleware(reducer: any, initialState: any, middleware: any, initializer?: any): any {
   // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
   const [ state, dispatch ] = useReducer(reducer, initialState, initializer);
-  // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-call
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-call, react-hooks/exhaustive-deps
   const modifiedDispatch = useCallback(middleware(dispatch), [ middleware, dispatch ]);
   // eslint-disable-next-line @typescript-eslint/no-unsafe-return
   return [ state, modifiedDispatch ] as const;

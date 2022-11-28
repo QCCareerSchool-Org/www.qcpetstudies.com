@@ -22,7 +22,15 @@ const StudentDiscountsPage: NextPage = () => (
     />
 
     <section id="top" className="bg-dark">
-      <Image src={StudentDiscountBackground} layout="fill" objectFit="cover" objectPosition="center" placeholder="blur" alt="Yorkie sticking out its tongue" priority />
+      <Image
+        src={StudentDiscountBackground}
+        placeholder="blur"
+        alt="Yorkie sticking out its tongue"
+        priority
+        fill
+        sizes="100vw"
+        style={{ objectFit: 'cover', objectPosition: 'center' }}
+      />
       <div className="container text-center">
         <div className="row justify-content-center">
           <div className="col-12 col-lg-10">
@@ -99,7 +107,13 @@ type SupplierProps = {
 const Supplier = ({ className, imageSrc, imageWidth, imageHeight, imageAlt, children }: SupplierProps): ReactElement => (
   <div className={`d-flex flex-column flex-lg-row align-items-center ${className ? className : ''}`}>
     <div className="mb-2 mb-lg-0 me-lg-5 flex-shrink-0">
-      <Image src={imageSrc} width={imageWidth} height={imageHeight} alt={imageAlt} />
+      <Image
+        src={imageSrc}
+        width={imageWidth}
+        height={imageHeight}
+        alt={imageAlt}
+        style={{ maxWidth: '100%', height: 'auto' }}
+      />
     </div>
     <div className="text-lg-start">
       {children}

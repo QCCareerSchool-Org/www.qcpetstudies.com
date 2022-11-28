@@ -22,13 +22,15 @@ export type Enrollment = {
   emailAddress: string;
   paymentPlan: 'full' | 'part';
   paymentDay: number;
-  paymentDate: Date;
+  /** string date */
+  paymentDate: string;
   currencyCode: string;
   cost: number;
   deposit: number;
   installment: number;
   authorizationId: string;
-  transactionTime: Date;
+  /** string date */
+  transactionTime: string;
   authCode: string;
   maskedPan: string;
   currencySymbol: string;

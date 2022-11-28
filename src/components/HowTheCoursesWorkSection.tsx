@@ -30,7 +30,13 @@ export const HowTheCoursesWorkSection = ({ className }: Props): ReactElement => 
           </div>
           <div className="col-12 col-sm-8 col-md-6 col-lg-3 mb-4 mb-md-0">
             <div className="mb-3">
-              <Image src={MagnifyingGLassImage} alt="Magnifying Glass Icon" height="50" width="50" />
+              <Image
+                src={MagnifyingGLassImage}
+                alt="Magnifying Glass Icon"
+                height="50"
+                width="50"
+                style={{ maxWidth: '100%', height: 'auto' }}
+              />
             </div>
             <h3>Review Your{lgOrGreater ? <br /> : ' '}<strong>Feedback</strong></h3>
             <p className="mb-0">Get audio feedback from your tutor, a professional dog groomer, after each unit you submit.</p>
