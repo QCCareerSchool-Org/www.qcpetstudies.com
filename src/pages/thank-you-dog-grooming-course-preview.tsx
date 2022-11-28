@@ -1,7 +1,7 @@
 import { promisify } from 'util';
 import { urlencoded } from 'body-parser';
 import { GetServerSideProps, NextPage } from 'next';
-import Image from 'next/image';
+import Image from 'next/legacy/image';
 import Link from 'next/link';
 import { useEffect } from 'react';
 import { FaPaw } from 'react-icons/fa';

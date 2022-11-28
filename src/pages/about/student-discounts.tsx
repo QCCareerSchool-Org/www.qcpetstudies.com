@@ -1,5 +1,5 @@
 import { NextPage } from 'next';
-import Image, { StaticImageData } from 'next/image';
+import Image, { StaticImageData } from 'next/legacy/image';
 import { ReactElement, ReactNode } from 'react';
 
 import { SEO } from '../../components/SEO';

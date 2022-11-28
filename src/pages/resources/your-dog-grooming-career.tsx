@@ -1,5 +1,5 @@
 import { NextPage } from 'next';
-import Image, { StaticImageData } from 'next/image';
+import Image, { StaticImageData } from 'next/legacy/image';
 import Link from 'next/link';
 import { ReactElement, ReactNode } from 'react';
 import { FaBriefcase, FaClipboard, FaRegFileAlt, FaRss, FaTags } from 'react-icons/fa';

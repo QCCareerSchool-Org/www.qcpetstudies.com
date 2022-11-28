@@ -1,5 +1,5 @@
 import { GetServerSideProps } from 'next';
-import Image from 'next/image';
+import Image from 'next/legacy/image';
 import { useMemo } from 'react';
 
 import { BrochureForm } from '../components/BrochureForm';

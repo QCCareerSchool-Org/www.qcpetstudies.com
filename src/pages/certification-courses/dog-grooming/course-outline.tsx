@@ -1,4 +1,4 @@
-import Image from 'next/image';
+import Image from 'next/legacy/image';
 import Link from 'next/link';
 import Accordion from 'react-bootstrap/Accordion';
 import { FaBars } from 'react-icons/fa';

@@ -1,7 +1,7 @@
 import * as HttpStatus from '@qccareerschool/http-status';
 import { GetServerSideProps, NextPage } from 'next';
 import ErrorPage from 'next/error';
-import Image from 'next/image';
+import Image from 'next/legacy/image';
 import { useEffect, useState } from 'react';
 
 import { EnrollmentDetails } from '../components/EnrollmentDetails';
