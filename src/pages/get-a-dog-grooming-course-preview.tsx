@@ -5,7 +5,7 @@ import { useMemo } from 'react';
 import { BsStarFill } from 'react-icons/bs';
 
 import { BrochureForm } from '../components/BrochureForm';
-import { LandingPageLayout } from '../components/LandingPageLayout';
+import { LandingPageLayout } from '../components/layouts/LandingPageLayout';
 import { SEO } from '../components/SEO';
 import { useScreenWidth } from '../hooks/useScreenWidth';
 import TestiminialBackground from '../images/backgrounds/testimonials-bg.jpg';

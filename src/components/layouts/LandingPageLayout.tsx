@@ -2,11 +2,11 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { ReactElement, ReactNode } from 'react';
 
-import { useLocation } from '../hooks/useLocation';
-import { useScreenWidth } from '../hooks/useScreenWidth';
-import logo from '../images/qc-pet-horizontal.svg';
-import { isGBPCountry } from '../lib/address';
-import { getTelephoneNumber } from '../lib/phone';
+import { useLocation } from '../../hooks/useLocation';
+import { useScreenWidth } from '../../hooks/useScreenWidth';
+import logo from '../../images/qc-pet-horizontal.svg';
+import { isGBPCountry } from '../../lib/address';
+import { getTelephoneNumber } from '../../lib/phone';
 
 type Props = {
   link?: boolean;

@@ -7,7 +7,7 @@ import { IoMdRibbon } from 'react-icons/io';
 import { jsonLdScriptProps } from 'react-schemaorg';
 import { EducationalOrganization } from 'schema-dts';
 
-import { DefaultLayout } from '../components/DefaultLayout';
+import { DefaultLayout } from '../components/layouts/DefaultLayout';
 import { SearchBox } from '../components/SearchBox';
 import { SEO } from '../components/SEO';
 import { useScreenWidth } from '../hooks/useScreenWidth';

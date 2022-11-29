@@ -5,7 +5,7 @@ import Accordion from 'react-bootstrap/Accordion';
 
 import { AccordionSection } from '../../components/AccordionSection';
 import { AccordionToggle } from '../../components/AccordionToggle';
-import { DefaultLayout } from '../../components/DefaultLayout';
+import { DefaultLayout } from '../../components/layouts/DefaultLayout';
 import { SEO } from '../../components/SEO';
 import DoGInBedWithStick from '../../images/backgrounds/dog-in-bed-with-stick.jpg';
 import type { NextPageWithLayout } from '../_app';

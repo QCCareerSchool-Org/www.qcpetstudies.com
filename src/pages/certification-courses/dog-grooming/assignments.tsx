@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { BsBook } from 'react-icons/bs';
 
 import { Bar } from '../../../components/Bar';
-import { DefaultLayout } from '../../../components/DefaultLayout';
+import { DefaultLayout } from '../../../components/layouts/DefaultLayout';
 import { SEO } from '../../../components/SEO';
 import { useScreenWidth } from '../../../hooks/useScreenWidth';
 import AssignmentBackground from '../../../images/backgrounds/your-career-bg.jpg';

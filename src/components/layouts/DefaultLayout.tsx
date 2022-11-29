@@ -1,8 +1,8 @@
 import { ReactElement, ReactNode } from 'react';
 
-import { Footer, FooterCTAType } from './Footer';
-import { Header } from './Header';
-import { SecondaryNavLinks } from './SecondaryNav';
+import { Footer, FooterCTAType } from '../Footer';
+import { Header } from '../Header';
+import { SecondaryNavLinks } from '../SecondaryNav';
 
 type Props = {
   noHero?: boolean;

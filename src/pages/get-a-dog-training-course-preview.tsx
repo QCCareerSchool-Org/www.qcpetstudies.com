@@ -3,7 +3,7 @@ import Image from 'next/image';
 import { useMemo } from 'react';
 
 import { BrochureForm } from '../components/BrochureForm';
-import { LandingPageLayout } from '../components/LandingPageLayout';
+import { LandingPageLayout } from '../components/layouts/LandingPageLayout';
 import { SEO } from '../components/SEO';
 import { useScreenWidth } from '../hooks/useScreenWidth';
 import CatalogImage from '../images/preview-landing-page-training.jpg';

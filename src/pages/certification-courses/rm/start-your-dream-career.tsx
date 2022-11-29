@@ -1,9 +1,9 @@
 import { GetServerSideProps } from 'next';
 import Image from 'next/image';
 
-import { DefaultLayout } from '../../../components/DefaultLayout';
 import { FreeFirstAidSection } from '../../../components/FreeFirstAidSection';
 import { HowTheCoursesWorkSection } from '../../../components/HowTheCoursesWorkSection';
+import { DefaultLayout } from '../../../components/layouts/DefaultLayout';
 import { PriceSection } from '../../../components/PriceSection';
 import { SEO } from '../../../components/SEO';
 import QcYearGuaratnteeLogo from '../../../images/1-year-guarantee-outlined.svg';

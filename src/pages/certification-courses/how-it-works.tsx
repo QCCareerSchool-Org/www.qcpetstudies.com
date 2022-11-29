@@ -2,7 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 import { Bar } from '../../components/Bar';
-import { DefaultLayout } from '../../components/DefaultLayout';
+import { DefaultLayout } from '../../components/layouts/DefaultLayout';
 import { SEO } from '../../components/SEO';
 import { useScreenWidth } from '../../hooks/useScreenWidth';
 import HandReachingTowardDog from '../../images/backgrounds/hand-reaching-toward-dog.jpg';

@@ -8,9 +8,9 @@ import { IoMdInfinite } from 'react-icons/io';
 
 import { AccordionSection } from '../../../components/AccordionSection';
 import { AccordionToggle } from '../../../components/AccordionToggle';
-import { DefaultLayout } from '../../../components/DefaultLayout';
 import { DTTutorSection } from '../../../components/DTTutorSection';
 import { GuaranteeSection } from '../../../components/GuaranteeSection';
+import { DefaultLayout } from '../../../components/layouts/DefaultLayout';
 import { PriceSection } from '../../../components/PriceSection';
 import { SEO } from '../../../components/SEO';
 import { usePrevious } from '../../../hooks/usePrevious';
