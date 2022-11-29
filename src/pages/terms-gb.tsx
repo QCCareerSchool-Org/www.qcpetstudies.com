@@ -1,5 +1,5 @@
+import { TextLayout } from '../components/layouts/TextLayout';
 import { SEO } from '../components/SEO';
-import { TextLayout } from '../components/TextLayout';
 import type { NextPageWithLayout } from './_app';
 
 const TermsGBPage: NextPageWithLayout = () => (

@@ -3,9 +3,9 @@ import Image from 'next/image';
 import { useMemo } from 'react';
 
 import { BrochureForm } from '../../../components/BrochureForm';
-import { DefaultLayout } from '../../../components/DefaultLayout';
 import { FreeFirstAidSection } from '../../../components/FreeFirstAidSection';
 import { HowTheCoursesWorkSection } from '../../../components/HowTheCoursesWorkSection';
+import { DefaultLayout } from '../../../components/layouts/DefaultLayout';
 import { SEO } from '../../../components/SEO';
 import CourseCatalogImage from '../../../images/bottom-ipad-shepard.jpg';
 import FullKitImage from '../../../images/Kit-Blue-bg.jpg';

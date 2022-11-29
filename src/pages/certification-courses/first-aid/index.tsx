@@ -2,7 +2,7 @@ import { GetServerSideProps } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 
-import { DefaultLayout } from '../../../components/DefaultLayout';
+import { DefaultLayout } from '../../../components/layouts/DefaultLayout';
 import { PriceSection } from '../../../components/PriceSection';
 import { SEO } from '../../../components/SEO';
 import FirstAidBackground from '../../../images/backgrounds/hero-first-aid-bg.jpg';

@@ -5,7 +5,7 @@ import { FaBars } from 'react-icons/fa';
 
 import { AccordionSection } from '../../../components/AccordionSection';
 import { AccordionToggle } from '../../../components/AccordionToggle';
-import { DefaultLayout } from '../../../components/DefaultLayout';
+import { DefaultLayout } from '../../../components/layouts/DefaultLayout';
 import { SEO } from '../../../components/SEO';
 import CourseOutlineBackground from '../../../images/backgrounds/course-outline.jpg';
 import calendarIcon from '../../../images/calendar.svg';

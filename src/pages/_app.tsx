@@ -6,9 +6,9 @@ import { useRouter } from 'next/router';
 import { ReactElement, ReactNode, useEffect } from 'react';
 import SSRProvider from 'react-bootstrap/SSRProvider';
 
-import { DefaultLayout } from '../components/DefaultLayout';
 import { ErrorBoundary } from '../components/ErrorBoundary';
 import { ErrorPage } from '../components/ErrorPage';
+import { DefaultLayout } from '../components/layouts/DefaultLayout';
 import { fbqPageview } from '../lib/fbq';
 import { gaPageview } from '../lib/ga';
 import { resetOptInMonster } from '../lib/optInMonster';

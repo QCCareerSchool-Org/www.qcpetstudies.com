@@ -3,7 +3,7 @@ import Link from 'next/link';
 import React from 'react';
 
 import { Bar } from '../../components/Bar';
-import { DefaultLayout } from '../../components/DefaultLayout';
+import { DefaultLayout } from '../../components/layouts/DefaultLayout';
 import { SEO } from '../../components/SEO';
 import GroomingKitBackground from '../../images/backgrounds/yorkie-on-a-grooming-table.jpg';
 import ClipperCombsImage from '../../images/clippers-combs-kit-550.jpg';
