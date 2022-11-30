@@ -89,9 +89,9 @@ export const SearchBox: FC<Props> = ({ label, options, multiLine = false, sm = f
   return (
     <>
       <div className={`searchBox d-flex ${multiLine ? 'flex-column' : 'align-items-center'}`}>
-        <label className="text flex-shrink-0" htmlFor={id}>{label}</label>
+        <label className="text flex-shrink-0" htmlFor={`searchBox${id}`}>{label}</label>
         <div className="search flex-grow-1">
-          <select onChange={handleChange} value={url ?? ''} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} id={id} name={name} className={`form-select ${sm ? 'form-select-sm' : ''}`} style={{ fontWeight: 600 }}>
+          <select onChange={handleChange} value={url ?? ''} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} id={`searchBox${id}`} name={name} className={`form-select ${sm ? 'form-select-sm' : ''}`} style={{ fontWeight: 600 }}>
             <option value="">{state.text}</option>
             {options.map(o => <option key={o.id} value={o.url}>{o.text}</option>)}
           </select>

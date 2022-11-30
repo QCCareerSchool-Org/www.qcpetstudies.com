@@ -19,8 +19,6 @@ const FormPage: NextPageWithLayout<Props> = ({ action, phoneNumber, buttonText, 
     return <NextError statusCode={400} />;
   }
 
-  console.log('render', hiddenFields);
-
   return <BrochureForm action={action} phoneNumber={phoneNumber} buttonText={buttonText} hiddenFields={hiddenFields} />;
 };
 
@@ -30,8 +28,12 @@ export const getServerSideProps: GetServerSideProps<Props> = async ctx => {
   if (index === -1) {
     return { props: { action: null, phoneNumber: false, buttonText: '', hiddenFields: [] } };
   }
+
+  // we're using qs because Next.js doesn't support nested data in query strings,
+  // e.g. hiddenFields[0][key]=foo&hiddenFields[0][value]=42&hiddenFields[1][key]=bar&hiddenFields[1][value]=99
   const querystring = ctx.resolvedUrl.substring(index + 1);
-  const query = qs.parse(querystring); // we're using qs because Next.js doesn't support nested data in query strings
+  const query = qs.parse(querystring);
+
   const action = typeof query.action === 'string' ? query.action : null;
   const phoneNumber = typeof query.phoneNumber === 'string' ? !!query.phoneNumber : false;
   const buttonText = typeof query.buttonText === 'string' ? query.buttonText : 'Get the Free Preview';
@@ -44,12 +46,23 @@ const isHiddenFields = (obj: unknown): obj is HiddenField[] => {
   if (!Array.isArray(obj)) {
     return false;
   }
-  for (const item of obj as unknown[]) {
-    if (!(item && typeof item === 'object' && 'key' in item && typeof item.key === 'string' && 'value' in item && (typeof item.value === 'string' || typeof item.value === 'number'))) {
+  for (const item of obj) {
+    if (!isHiddenField(item)) {
       return false;
     }
   }
   return true;
+};
+
+const isHiddenField = (obj: unknown): obj is HiddenField => {
+  if (obj && typeof obj === 'object') {
+    if ('key' in obj && 'value' in obj) {
+      if (typeof obj.key === 'string' && (typeof obj.value === 'string' || typeof obj.value === 'number')) {
+        return true;
+      }
+    }
+  }
+  return false;
 };
 
 FormPage.getLayout = page => <>{page}</>; // no layout
