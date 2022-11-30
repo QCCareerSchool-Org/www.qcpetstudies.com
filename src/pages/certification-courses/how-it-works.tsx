@@ -1,18 +1,17 @@
+import { NextPage } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 
 import { Bar } from '../../components/Bar';
-import { DefaultLayout } from '../../components/layouts/DefaultLayout';
 import { SEO } from '../../components/SEO';
 import { useScreenWidth } from '../../hooks/useScreenWidth';
 import HandReachingTowardDog from '../../images/backgrounds/hand-reaching-toward-dog.jpg';
-import Clicker from '../../images/clicker-on-laynard-light-background.jpg';
+import Dachshund from '../../images/dachshund-sitting-grey-background.png';
 import GraduationCertificateImage from '../../images/IDTP-certification-gold.svg';
 import ManAndDogWalking from '../../images/man-and-white-dog-walking-in-a-field.jpg';
 import PuppyOnBack from '../../images/puppy-lying-on-back.jpg';
-import type { NextPageWithLayout } from '../_app';
 
-const DogTrainingHowItWorksPage: NextPageWithLayout = () => {
+const HowItWorksPage: NextPage = () => {
   const screenWidth = useScreenWidth();
   const lgOrGreater = screenWidth >= 992;
 
@@ -67,19 +66,18 @@ const DogTrainingHowItWorksPage: NextPageWithLayout = () => {
     <section className="bg-light">
       <div className="container text-center">
         <div className="row justify-content-center align-items-center">
-          <div className="col-12 col-lg-8 col-xl-9 mb-4 mb-lg-0 text-lg-start">
+          <div className="col-12 col-lg-9 col-xl-9 mb-4 mb-lg-0 text-lg-start">
             <h2>Starting the Course</h2>
-            <p>After you enroll online, you'll receive login instructions for your online student center within one business day. Follow the instructions to start your journey!</p>
-            <p>Your online student center will contain all your course materials: Your course guides, lesson texts, assignment templates and video tutorials are all in the Student Center. This is also where you're going to upload your assignments and review your tutor's audio feedback.</p>
-            <p className="mb-0">View a <Link href="/certification-courses/dog-training/course-outline" className="link-primary">detailed course outline</Link> to learn more about your dog trainer course.</p>
+            <p>After you enroll online, you'll receive login instructions for your Online Student Center within one business day. Follow the instructions to start your journey!</p>
+            <p className="mb-0">Your Online Student Center will contain all your course materials, including interactive lessons and assignments. This is also where you'll review your tutor's audio feedback.</p>
           </div>
-          <div className="col-12 col-sm-10 col-md-8 col-lg-4 col-xl-3">
+          <div className="col-12 col-sm-10 col-md-8 col-lg-3 col-xl-3">
             <div className="d-flex justify-content-center">
               <Image
-                src={Clicker}
-                alt="clicker on a laynard"
+                src={Dachshund}
+                alt="Dachshund, sausage dog, sitting"
                 sizes="100vw"
-                style={{ width: '100%', height: 'auto', maxWidth: '100%' }}
+                style={{ height: 'auto', maxWidth: '120px' }}
               />
             </div>
           </div>
@@ -101,7 +99,6 @@ const DogTrainingHowItWorksPage: NextPageWithLayout = () => {
                 <h3>Theory-Based Assignments</h3>
                 <p className="card-text">Working with pets requires a high level of theoretical knowledge of a wide range of topics. You have to become an expert in learning theory, stages of development, dog breed characteristics, training methods, and much more.</p>
                 <p className="card-text">Through a series of quizzes, short answer assignments and case studies, your knowledge of theory will be put to the test. As you work through your online course, the first few units will focus heavily on theory-based assignments. Your knowledge and skills will improve during this time, and you'll gradually notice a shift toward more and more practical assignments in the later units of the course.</p>
-                <p className="card-text mt-auto"><a href="/documents/dog-training/C1.pdf" className="link-primary" target="_blank">View a sample assignment from the Dog Training course</a></p>
               </div>
             </div>
           </div>
@@ -112,7 +109,6 @@ const DogTrainingHowItWorksPage: NextPageWithLayout = () => {
                 <h3>Practical Assignments</h3>
                 <p className="card-text">Once you're familiar with fundamentals, you need to practice your skills on actual dogs. Luckily, you can use your own dog(s) to practice methods and skills.</p>
                 <p className="card-text">At the start of your course, your practical assignments will focus on interpreting behaviors exhibited by dogs in your household and environment. As you progress through your training, your practical assignments will evolve. You'll take videos of you working with dogs so that your tutor can evaluate your work!</p>
-                <p className="card-text mt-auto"><a href="/documents/dog-training/G6.pdf" className="link-primary" target="_blank">View a sample assignment from the Dog Training course</a></p>
               </div>
             </div>
           </div>
@@ -127,8 +123,8 @@ const DogTrainingHowItWorksPage: NextPageWithLayout = () => {
             <div className="section pe-lg-5">
               <h2>Receiving Feedback From <strong>Your Tutor</strong></h2>
               <p className="lead">You'll receive advice and detailed feedback from your tutor after every unit you complete.</p>
-              <p>Your tutor truly cares about your success and will encourage you to submit your very best work. After each unit, you'll receive an audio file where your tutor explains what you did well, and where you should focus to improve your skills even further. See how your skills and confidence improve as you work your way through the course!</p>
-              <p className="mb-0"><Link href="/certification-courses/dog-training#tutors" className="btn btn-outline-secondary">Meet Your Tutor</Link></p>
+              <p className="mb-0">Your tutor truly cares about your success and will encourage you to submit your very best work. After each unit, you'll receive an audio file where your tutor explains what you did well, and where you should focus to improve your skills even further. See how your skills and confidence improve as you work your way through the course!</p>
+              {/* <p className="mb-0"><Link href="/certification-courses/dog-training#tutors" className="btn btn-outline-secondary">Meet Your Tutor</Link></p> */}
             </div>
           </div>
           {lgOrGreater && (
@@ -170,6 +166,4 @@ const DogTrainingHowItWorksPage: NextPageWithLayout = () => {
   </>;
 };
 
-DogTrainingHowItWorksPage.getLayout = page => <DefaultLayout footerCTAType="training">{page}</DefaultLayout>;
-
-export default DogTrainingHowItWorksPage;
+export default HowItWorksPage;
