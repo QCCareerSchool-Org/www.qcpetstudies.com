@@ -107,8 +107,8 @@ const DogTrainingCatalogPage: NextPageWithLayout<Props> = ({ testGroup }) => {
               alt="Get your certificate"
               style={{ maxWidth: '100%', height: 'auto' }}
             />
-            <p className="lead">Graduate as an International{lgOrGreater ? <br /> : ' '}Dog Grooming Professional&trade;</p>
-            <p className="mb-0">Receive your IDGP&trade; certification and your career as a professional dog groomer. Enjoy lifetime access to your course materials. Be protected by our 1-year money-back guarantee.</p>
+            <p className="lead">Graduate as an International{lgOrGreater ? <br /> : ' '}Dog Training Professional&trade;</p>
+            <p className="mb-0">Receive your IDTP&trade; certification and your career as a professional dog trainer. Enjoy lifetime access to your course materials. Be protected by our 1-year money-back guarantee.</p>
           </div>
         </div>
       </div>
