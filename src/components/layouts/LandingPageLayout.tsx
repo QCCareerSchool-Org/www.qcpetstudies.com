@@ -35,8 +35,8 @@ export const LandingPageLayout = ({ link = true, reloadApp = false, nav, childre
     gaEvent('click', { id: 'logoLink' });
   };
 
-  const handleBrochureLinkClick: MouseEventHandler = () => {
-    gaEvent('click', { id: 'brochureLink' });
+  const handleBrochureMenuLinkClick: MouseEventHandler = () => {
+    gaEvent('click', { id: 'brochureMenuLink' });
   };
 
   return (
@@ -58,7 +58,7 @@ export const LandingPageLayout = ({ link = true, reloadApp = false, nav, childre
                   </div>
                 )}
                 {nav === 'enroll' && <div className="flex-shrink-0"><a href={`https://enroll.qcpetstudies.com`} className="btn btn-primary">Enroll</a></div>}
-                {nav === 'brochure' && <div className="flex-shrink-0"><Link onClick={handleBrochureLinkClick} href="#" className="btn btn-primary">Get the Course Preview</Link></div>}
+                {nav === 'brochure' && <div className="flex-shrink-0"><Link onClick={handleBrochureMenuLinkClick} href="#" className="btn btn-primary">Get the Course Preview</Link></div>}
               </div>
             </div>
           </div>
