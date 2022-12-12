@@ -29,6 +29,7 @@ const DogGroomingCatalogPage: NextPageWithLayout<Props> = ({ testGroup }) => {
   const hiddenFields = useMemo(() => ([ { key: 'testGroup', value: testGroup } ]), [ testGroup ]);
   const screenWidth = useScreenWidth();
   const lgOrGreater = screenWidth >= 992;
+  const smOrGreater = screenWidth >= 576;
 
   return <>
     <SEO
@@ -41,12 +42,12 @@ const DogGroomingCatalogPage: NextPageWithLayout<Props> = ({ testGroup }) => {
       <div className="container">
         <div className="row justify-content-center align-items-center">
           <div className="col-12 col-sm-11 col-md-10 col-lg-10 mb-4 mb-lg-5">
-            <h2 className="text-center mb-0">Become a Professional Dog Groomer</h2>
+            <h2 className="text-center mb-0">Become a Professional{lgOrGreater ? ' ' : <br />}<strong>Dog Groomer</strong></h2>
           </div>
           <div className="col-12 col-sm-11 col-md-10 col-lg-6 mb-4 mb-lg-0">
             <div className="card bg-light">
               <div className="card-body">
-                <p className="text-center lead">Get Started with a <strong>Free Course Preview</strong></p>
+                <p className="text-center lead">Get Started with a{smOrGreater ? ' ' : <br />}<strong>Free Course Preview</strong></p>
                 <BrochureForm
                   action={formAction}
                   hiddenFields={hiddenFields}
@@ -195,7 +196,7 @@ const DogGroomingCatalogPage: NextPageWithLayout<Props> = ({ testGroup }) => {
   </>;
 };
 
-DogGroomingCatalogPage.getLayout = page => <LandingPageLayout>{page}</LandingPageLayout>;
+DogGroomingCatalogPage.getLayout = page => <LandingPageLayout link={false}>{page}</LandingPageLayout>;
 
 // eslint-disable-next-line @typescript-eslint/require-await
 export const getServerSideProps: GetServerSideProps<Props> = async context => {

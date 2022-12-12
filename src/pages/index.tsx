@@ -49,13 +49,15 @@ const HomePage: NextPageWithLayout = () => {
     <section id="top" className="bg-light">
       <Image
         src={lg ? MaltipuJumping : MaltipuBegging}
-        objectPosition={lg ? '100% 30%' : '50% 100%'}
         placeholder="blur"
         alt="Happy maltipu jumping"
         priority
         fill
         sizes="100vw"
-        style={{ objectFit: 'cover' }}
+        style={{
+          objectPosition: lg ? '100% 30%' : '50% 100%',
+          objectFit: 'cover',
+        }}
       />
       <div className="container heroContainer">
         <div className="row">

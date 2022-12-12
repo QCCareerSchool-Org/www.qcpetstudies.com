@@ -11,13 +11,13 @@ import { getTelephoneNumber } from '../../lib/phone';
 type Props = {
   link?: boolean;
   reloadApp?: boolean;
-  secondaryNav?: boolean;
+  nav?: boolean;
   /** custom path for the shopping cart (include leading slash) */
   enrollPath?: string;
   children: ReactNode;
 };
 
-export const LandingPageLayout = ({ link = true, reloadApp = false, secondaryNav = true, enrollPath = '/', children }: Props): ReactElement => {
+export const LandingPageLayout = ({ link = true, reloadApp = false, nav = true, enrollPath = '/', children }: Props): ReactElement => {
   const screenWidth = useScreenWidth();
   const location = useLocation();
 
@@ -30,11 +30,10 @@ export const LandingPageLayout = ({ link = true, reloadApp = false, secondaryNav
   return (
     <div id="landingPage" className="d-flex flex-column vh-100">
       <header className="flex-shrink-0">
-        {secondaryNav && (
-          <div className="secondaryNav">
+        {nav && (
+          <div className="minimalNav">
             <div className="container">
               <div className="d-flex justify-content-end align-items-center text-uppercase">
-                <a href={`tel:${telephoneNumber}`} className="link-primary me-5">Call{smOrGreater ? ` ${telephoneNumber}` : ''}</a>
                 {/* <Link href="/catalog-become-dog-groomer" className="link-primary me-5">Get Catalog</Link> */}
                 <a href={`https://enroll.qcpetstudies.com${enrollPath}`} className="btn btn-primary">Enroll</a>
               </div>
@@ -70,20 +69,20 @@ export const LandingPageLayout = ({ link = true, reloadApp = false, secondaryNav
           background: linear-gradient(#f6f6f6, #dfdfdf);
           padding: 24px 0;
         }
-        .secondaryNav {
+        .minimalNav {
           background: black;
           color: white;
           font-size: 12px;
           font-weight: 400;
         }
-        .secondaryNav .btn {
+        .minimalNav .btn {
           font-size: 12px;
           font-weight: 400;
         }
-        .secondaryNav a:link { color: white; }
-        .secondaryNav a:visited { color: white; }
-        .secondaryNav a:hover { color: #e8e8e8; }
-        .secondaryNav a:active { color: #e8e8e8; }
+        .minimalNav a:link { color: white; }
+        .minimalNav a:visited { color: white; }
+        .minimalNav a:hover { color: #e8e8e8; }
+        .minimalNav a:active { color: #e8e8e8; }
       `}</style>
     </div>
   );
