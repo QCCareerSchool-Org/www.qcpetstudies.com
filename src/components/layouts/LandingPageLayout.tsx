@@ -26,9 +26,8 @@ export const LandingPageLayout = ({ link = true, reloadApp = false, nav, childre
 
   const telephoneNumber = getTelephoneNumber(location?.countryCode ?? 'US');
 
-  const smOrGreater = screenWidth >= 576;
-
-  const showStickyMenu = scrollPosition > 420;
+  const showFixedMenu = scrollPosition > 640;
+  const showFixedMenuLogo = screenWidth >= 480;
 
   const termsLink = isGBPCountry(location?.countryCode ?? 'US') ? '/terms-gb' : '/terms';
 
@@ -44,10 +43,10 @@ export const LandingPageLayout = ({ link = true, reloadApp = false, nav, childre
     <div id="landingPage" className="d-flex flex-column vh-100">
       <header className="flex-shrink-0">
         {nav && (
-          <div className={`minimalNav ${showStickyMenu ? 'show' : ''}`}>
+          <div className={`minimalNav ${showFixedMenu ? 'show' : ''}`}>
             <div className="container">
               <div className="d-flex justify-content-end align-items-center text-uppercase">
-                {smOrGreater && (
+                {showFixedMenuLogo && (
                   <div className="flex-shrink-0 me-auto">
                     {link
                       ? reloadApp
