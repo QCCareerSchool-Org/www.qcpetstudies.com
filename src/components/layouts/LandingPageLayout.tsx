@@ -1,41 +1,65 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { ReactElement, ReactNode } from 'react';
+import { FC, MouseEventHandler, ReactElement, ReactNode } from 'react';
 
 import { useLocation } from '../../hooks/useLocation';
 import { useScreenWidth } from '../../hooks/useScreenWidth';
+import { useScrollPosition } from '../../hooks/useScrollPosition';
+import logoInverse from '../../images/qc-pet-horizontal-inverse.svg';
 import logo from '../../images/qc-pet-horizontal.svg';
 import { isGBPCountry } from '../../lib/address';
+import { gaEvent } from '../../lib/ga';
 import { getTelephoneNumber } from '../../lib/phone';
 
 type Props = {
   link?: boolean;
   reloadApp?: boolean;
-  nav?: boolean;
-  /** custom path for the shopping cart (include leading slash) */
-  enrollPath?: string;
+  /** What type of nav link to include */
+  nav?: 'brochure' | 'enroll';
   children: ReactNode;
 };
 
-export const LandingPageLayout = ({ link = true, reloadApp = false, nav = true, enrollPath = '/', children }: Props): ReactElement => {
-  const screenWidth = useScreenWidth();
+export const LandingPageLayout = ({ link = true, reloadApp = false, nav, children }: Props): ReactElement => {
   const location = useLocation();
+  const screenWidth = useScreenWidth();
+  const scrollPosition = useScrollPosition();
 
   const telephoneNumber = getTelephoneNumber(location?.countryCode ?? 'US');
 
   const smOrGreater = screenWidth >= 576;
 
+  const showStickyMenu = scrollPosition > 420;
+
   const termsLink = isGBPCountry(location?.countryCode ?? 'US') ? '/terms-gb' : '/terms';
+
+  const handleLogoClick: MouseEventHandler = () => {
+    gaEvent('click', { id: 'logoLink' });
+  };
+
+  const handleBrochureLinkClick: MouseEventHandler = () => {
+    gaEvent('click', { id: 'brochureLink' });
+  };
 
   return (
     <div id="landingPage" className="d-flex flex-column vh-100">
       <header className="flex-shrink-0">
         {nav && (
-          <div className="minimalNav">
+          <div className={`minimalNav ${showStickyMenu ? 'show' : ''}`}>
             <div className="container">
               <div className="d-flex justify-content-end align-items-center text-uppercase">
-                {/* <Link href="/catalog-become-dog-groomer" className="link-primary me-5">Get Catalog</Link> */}
-                <a href={`https://enroll.qcpetstudies.com${enrollPath}`} className="btn btn-primary">Enroll</a>
+                {smOrGreater && (
+                  <div className="flex-shrink-0 me-auto">
+                    {link
+                      ? reloadApp
+                        // eslint-disable-next-line @next/next/no-html-link-for-pages
+                        ? <a onClick={handleLogoClick} href="/"><LogoInverse /></a>
+                        : <Link onClick={handleLogoClick} href="/"><LogoInverse /></Link>
+                      : <LogoInverse />
+                    }
+                  </div>
+                )}
+                {nav === 'enroll' && <div className="flex-shrink-0"><a href={`https://enroll.qcpetstudies.com`} className="btn btn-primary">Enroll</a></div>}
+                {nav === 'brochure' && <div className="flex-shrink-0"><Link onClick={handleBrochureLinkClick} href="#" className="btn btn-primary">Get the Course Preview</Link></div>}
               </div>
             </div>
           </div>
@@ -45,8 +69,8 @@ export const LandingPageLayout = ({ link = true, reloadApp = false, nav = true, 
             {link
               ? reloadApp
                 // eslint-disable-next-line @next/next/no-html-link-for-pages
-                ? <a href="/"><Logo /></a>
-                : <Link href="/"><Logo /></Link>
+                ? <a onClick={handleLogoClick} href="/"><Logo /></a>
+                : <Link onClick={handleLogoClick} href="/"><Logo /></Link>
               : <Logo />
             }
           </div>
@@ -70,10 +94,18 @@ export const LandingPageLayout = ({ link = true, reloadApp = false, nav = true, 
           padding: 24px 0;
         }
         .minimalNav {
+          opacity: 0;
           background: black;
           color: white;
           font-size: 12px;
           font-weight: 400;
+          position: fixed;
+          z-index: 1000;
+          width: 100%;
+        }
+        .minimalNav.show {
+          opacity: 1;
+          transition: opacity 500ms;
         }
         .minimalNav .btn {
           font-size: 12px;
@@ -88,10 +120,22 @@ export const LandingPageLayout = ({ link = true, reloadApp = false, nav = true, 
   );
 };
 
-const Logo = (): ReactElement => <Image
-  src={logo}
-  alt="QC Pet Studies"
-  width="300"
-  height="28"
-  style={{ maxWidth: '100%', height: 'auto' }}
-/>;
+const Logo: FC = () => (
+  <Image
+    src={logo}
+    alt="QC Pet Studies"
+    width="300"
+    height="28"
+    style={{ maxWidth: '100%', height: 'auto' }}
+  />
+);
+
+const LogoInverse: FC = () => (
+  <Image
+    src={logoInverse}
+    alt="QC Pet Studies"
+    width="825"
+    height="77"
+    style={{ width: 172, height: 16 }}
+  />
+);

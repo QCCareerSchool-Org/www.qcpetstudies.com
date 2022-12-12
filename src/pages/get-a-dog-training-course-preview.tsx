@@ -2,14 +2,11 @@ import { GetServerSideProps } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useMemo } from 'react';
-import { BsStarFill } from 'react-icons/bs';
 
 import { BrochureForm } from '../components/BrochureForm';
 import { LandingPageLayout } from '../components/layouts/LandingPageLayout';
 import { SEO } from '../components/SEO';
 import { useScreenWidth } from '../hooks/useScreenWidth';
-import TestiminialBackground from '../images/backgrounds/testimonials-bg.jpg';
-import ProfileImage from '../images/casey-bechard.png';
 import CatalogImage from '../images/preview-landing-page-training.jpg';
 import Step1EnrollImage from '../images/step-1-enroll.svg';
 import Step2SubmitImage from '../images/step-2-submit.svg';
@@ -126,7 +123,7 @@ const DogTrainingCatalogPage: NextPageWithLayout<Props> = ({ testGroup }) => {
   </>;
 };
 
-DogTrainingCatalogPage.getLayout = page => <LandingPageLayout link={false}>{page}</LandingPageLayout>;
+DogTrainingCatalogPage.getLayout = page => <LandingPageLayout link={false} nav="brochure">{page}</LandingPageLayout>;
 
 // eslint-disable-next-line @typescript-eslint/require-await
 export const getServerSideProps: GetServerSideProps<Props> = async context => {
