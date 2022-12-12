@@ -1,7 +1,7 @@
 import { GetServerSideProps } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
-import { useMemo } from 'react';
+import { MouseEventHandler, useMemo } from 'react';
 
 import { BrochureForm } from '../components/BrochureForm';
 import { LandingPageLayout } from '../components/layouts/LandingPageLayout';
@@ -11,6 +11,7 @@ import CatalogImage from '../images/preview-landing-page-training.jpg';
 import Step1EnrollImage from '../images/step-1-enroll.svg';
 import Step2SubmitImage from '../images/step-2-submit.svg';
 import Step3CertificateImage from '../images/step-3-certificate.svg';
+import { gaEvent } from '../lib/ga';
 import { getRandomIntInclusive } from '../lib/randomInt';
 import type { NextPageWithLayout } from './_app';
 
@@ -25,6 +26,10 @@ const DogTrainingCatalogPage: NextPageWithLayout<Props> = ({ testGroup }) => {
   const screenWidth = useScreenWidth();
   const lgOrGreater = screenWidth >= 992;
   const smOrGreater = screenWidth >= 576;
+
+  const handleBrochureBottomLinkClick: MouseEventHandler = () => {
+    gaEvent('click', { id: 'brochureBottomLink' });
+  };
 
   return <>
     <SEO
@@ -115,7 +120,7 @@ const DogTrainingCatalogPage: NextPageWithLayout<Props> = ({ testGroup }) => {
         <div className="row justify-content-center">
           <div className="col-12 col-lg-10">
             <h2 className="text-white mb-4">Take the First Step Towards a New and Exciting Career</h2>
-            <Link href="#" className="btn btn-outline-light">Preview the Course</Link>
+            <Link onClick={handleBrochureBottomLinkClick} href="#" className="btn btn-outline-light">Preview the Course</Link>
           </div>
         </div>
       </div>
