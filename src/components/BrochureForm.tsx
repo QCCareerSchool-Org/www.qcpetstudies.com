@@ -14,7 +14,7 @@ type Props = {
 
 // Do we need to keep track of the opt in date, or will Pardot do that? For telephoneOptIn too?
 
-export const BrochureForm = ({ action, phoneNumber = false, buttonText = 'Get the Catalog', buttonClassName, hiddenFields }: Props): ReactElement => {
+export const BrochureForm = ({ action, phoneNumber = false, buttonText = 'Get the Preview', buttonClassName, hiddenFields }: Props): ReactElement => {
   const location = useLocation();
 
   return (
@@ -46,7 +46,7 @@ export const BrochureForm = ({ action, phoneNumber = false, buttonText = 'Get th
       <div className="mb-4">
         <div className="form-check">
           <input className="form-check-input" type="checkbox" id="emailOptIn" name="emailOptIn" value="yes" />
-          <label className="form-check-label" htmlFor="emailOptIn">
+          <label className="form-check-label small fst-italic" htmlFor="emailOptIn">
             I agree to receive additional emails from QC, including promotions, course launches, special offers and more. Unsubscribe anytime!
           </label>
         </div>
@@ -56,7 +56,7 @@ export const BrochureForm = ({ action, phoneNumber = false, buttonText = 'Get th
           <div className="mb-4">
             <div className="form-check">
               <input className="form-check-input" type="checkbox" id="telephoneOptIn" name="telephoneOptIn" value="yes" />
-              <label className="form-check-label" htmlFor="telephoneOptIn">
+              <label className="form-check-label small fst-italic" htmlFor="telephoneOptIn">
                 I agree to receive phone calls and/or text messages from a QC student advisor. Standard rates apply.
               </label>
             </div>

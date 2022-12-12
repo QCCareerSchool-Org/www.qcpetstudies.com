@@ -1,12 +1,19 @@
 import { GetServerSideProps } from 'next';
 import Image from 'next/image';
+import Link from 'next/link';
 import { useMemo } from 'react';
+import { BsStarFill } from 'react-icons/bs';
 
 import { BrochureForm } from '../components/BrochureForm';
 import { LandingPageLayout } from '../components/layouts/LandingPageLayout';
 import { SEO } from '../components/SEO';
 import { useScreenWidth } from '../hooks/useScreenWidth';
+import TestiminialBackground from '../images/backgrounds/testimonials-bg.jpg';
+import ProfileImage from '../images/casey-bechard.png';
 import CatalogImage from '../images/preview-landing-page-training.jpg';
+import Step1EnrollImage from '../images/step-1-enroll.svg';
+import Step2SubmitImage from '../images/step-2-submit.svg';
+import Step3CertificateImage from '../images/step-3-certificate.svg';
 import { getRandomIntInclusive } from '../lib/randomInt';
 import type { NextPageWithLayout } from './_app';
 
@@ -20,6 +27,7 @@ const DogTrainingCatalogPage: NextPageWithLayout<Props> = ({ testGroup }) => {
   const hiddenFields = useMemo(() => ([ { key: 'testGroup', value: testGroup } ]), [ testGroup ]);
   const screenWidth = useScreenWidth();
   const lgOrGreater = screenWidth >= 992;
+  const smOrGreater = screenWidth >= 576;
 
   return <>
     <SEO
@@ -32,12 +40,12 @@ const DogTrainingCatalogPage: NextPageWithLayout<Props> = ({ testGroup }) => {
       <div className="container">
         <div className="row justify-content-center align-items-center">
           <div className="col-12 col-sm-11 col-md-10 col-lg-10 mb-4 mb-lg-5">
-            <h2 className="text-center mb-0">Become a Professional Dog Trainer</h2>
+            <h2 className="text-center mb-0">Become a Professional{lgOrGreater ? ' ' : <br />}<strong>Dog Trainer</strong></h2>
           </div>
           <div className="col-12 col-sm-11 col-md-10 col-lg-6 mb-4 mb-lg-0">
             <div className="card bg-light">
               <div className="card-body">
-                <p className="text-center lead">Get Started with a <strong>Free Course Preview</strong></p>
+                <p className="text-center lead">Get Started with a{smOrGreater ? ' ' : <br />}<strong>Free Course Preview</strong></p>
                 <BrochureForm
                   action={formAction}
                   hiddenFields={hiddenFields}
@@ -68,10 +76,57 @@ const DogTrainingCatalogPage: NextPageWithLayout<Props> = ({ testGroup }) => {
         </div>
       </div>
     </section>
+
+    <section className="bg-light">
+      <div className="container text-center">
+        <div className="row justify-content-center">
+          <div className="col-12 col-lg-10">
+            <h2>How the Courses Work</h2>
+          </div>
+          <div className="col-12 col-lg-4">
+            <Image
+              src={Step1EnrollImage}
+              alt="Enroll today"
+              style={{ maxWidth: '100%', height: 'auto' }}
+            />
+            <p className="lead">Enroll Today &amp; Access Your{lgOrGreater ? <br /> : ' '}Course Materials</p>
+            <p className="mb-0">Receive online access to a course within 48 hours. Receive your physical course books and grooming kit in 5 to 10 business days.</p>
+          </div>
+          <div className="col-12 col-lg-4">
+            <Image
+              src={Step2SubmitImage}
+              alt="Complete assignment and submit"
+              style={{ maxWidth: '100%', height: 'auto' }}
+            />
+            <p className="lead">Complete Assignments{lgOrGreater ? <br /> : ' '}&amp; Review Feedback</p>
+            <p className="mb-0">Complete your theoretical and practical assignments. Receive advice and detailed feedback from your tutor after every unit you complete. Review your tutor's advice to improve your skills for the next unit.</p>
+          </div>
+          <div className="col-12 col-lg-4">
+            <Image
+              src={Step3CertificateImage}
+              alt="Get your certificate"
+              style={{ maxWidth: '100%', height: 'auto' }}
+            />
+            <p className="lead">Graduate as an International{lgOrGreater ? <br /> : ' '}Dog Grooming Professional&trade;</p>
+            <p className="mb-0">Receive your IDGP&trade; certification and your career as a professional dog groomer. Enjoy lifetime access to your course materials. Be protected by our 1-year money-back guarantee.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section className="bg-secondary">
+      <div className="container text-center">
+        <div className="row justify-content-center">
+          <div className="col-12 col-lg-10">
+            <h2 className="text-white mb-4">Take the First Step Towards a New and Exciting Career</h2>
+            <Link href="#" className="btn btn-outline-light">Preview the Course</Link>
+          </div>
+        </div>
+      </div>
+    </section>
   </>;
 };
 
-DogTrainingCatalogPage.getLayout = page => <LandingPageLayout>{page}</LandingPageLayout>;
+DogTrainingCatalogPage.getLayout = page => <LandingPageLayout link={false}>{page}</LandingPageLayout>;
 
 // eslint-disable-next-line @typescript-eslint/require-await
 export const getServerSideProps: GetServerSideProps<Props> = async context => {

@@ -327,7 +327,7 @@ const DogTrainingCoursePreviewPage: NextPageWithLayout<Props> = ({ price, enroll
 };
 
 DogTrainingCoursePreviewPage.getLayout = page => (
-  <LandingPageLayout link={true} secondaryNav={true} enrollPath="/">{page}</LandingPageLayout>
+  <LandingPageLayout link={true} nav={true} enrollPath="/">{page}</LandingPageLayout>
 );
 
 export const getServerSideProps: GetServerSideProps<Props> = async context => {
