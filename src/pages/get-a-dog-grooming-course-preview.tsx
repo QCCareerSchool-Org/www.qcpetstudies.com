@@ -196,7 +196,7 @@ const DogGroomingCatalogPage: NextPageWithLayout<Props> = ({ testGroup }) => {
   </>;
 };
 
-DogGroomingCatalogPage.getLayout = page => <LandingPageLayout link={false}>{page}</LandingPageLayout>;
+DogGroomingCatalogPage.getLayout = page => <LandingPageLayout link={false} nav="brochure">{page}</LandingPageLayout>;
 
 // eslint-disable-next-line @typescript-eslint/require-await
 export const getServerSideProps: GetServerSideProps<Props> = async context => {

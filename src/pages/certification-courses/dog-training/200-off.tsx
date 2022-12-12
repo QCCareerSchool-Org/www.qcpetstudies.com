@@ -11,7 +11,7 @@ const Page: NextPageWithLayout<Props> = props => (
 );
 
 Page.getLayout = page => (
-  <LandingPageLayout link={false} nav={false} enrollPath="/training-200-off">{page}</LandingPageLayout>
+  <LandingPageLayout link={false}>{page}</LandingPageLayout>
 );
 
 export { getServerSideProps };
