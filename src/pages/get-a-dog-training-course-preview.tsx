@@ -4,10 +4,11 @@ import Link from 'next/link';
 import { MouseEventHandler, useMemo } from 'react';
 
 import { BrochureForm } from '../components/BrochureForm';
+import { CardBody } from '../components/CardBody';
 import { LandingPageLayout } from '../components/layouts/LandingPageLayout';
 import { SEO } from '../components/SEO';
 import { useScreenWidth } from '../hooks/useScreenWidth';
-import CatalogImage from '../images/preview-landing-page-training.jpg';
+import CatalogImage from '../images/dog-in-a-tube-1.jpg';
 import Step1EnrollImage from '../images/step-1-enroll.svg';
 import Step2SubmitImage from '../images/step-2-submit.svg';
 import Step3CertificateImage from '../images/step-3-certificate.svg';
@@ -46,18 +47,18 @@ const DogTrainingCatalogPage: NextPageWithLayout<Props> = ({ testGroup }) => {
           </div>
           <div className="col-12 col-sm-11 col-md-10 col-lg-6 mb-4 mb-lg-0">
             <div className="card bg-light">
-              <div className="card-body">
+              <CardBody>
                 <p className="text-center lead">Get Started with a{smOrGreater ? ' ' : <br />}<strong>Free Course Preview</strong></p>
                 <BrochureForm
                   action={formAction}
                   hiddenFields={hiddenFields}
                 />
-              </div>
+              </CardBody>
             </div>
           </div>
           <div className="col-12 col-sm-11 col-md-10 col-lg-6">
             {lgOrGreater && (
-              <div className="px-5 mb-2">
+              <div className="mb-2">
                 <Image
                   src={CatalogImage}
                   alt="tablet with dog image"
@@ -67,7 +68,7 @@ const DogTrainingCatalogPage: NextPageWithLayout<Props> = ({ testGroup }) => {
               </div>
             )}
             <p className="lead">Get access to a free preview of the online dog trainer course to</p>
-            <ul>
+            <ul className="mb-0">
               <li>Find out if a career in dog training is right for you</li>
               <li>Learn about the many careers you can pursue as a dog trainer</li>
               <li>View the course curriculum, course videos, and sample assignments</li>

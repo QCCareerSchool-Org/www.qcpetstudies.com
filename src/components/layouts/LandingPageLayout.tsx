@@ -44,8 +44,8 @@ export const LandingPageLayout = ({ link = true, reloadApp = false, nav, childre
     <div id="landingPage" className="d-flex flex-column vh-100">
       <header className="flex-shrink-0">
         {nav && (
-          <div className={`minimalNav ${showFixedMenu ? 'show' : ''}`}>
-            <div id="minimalNavContainer" className="container">
+          <div className={`fixedNav ${showFixedMenu ? 'show' : ''}`}>
+            <div id="fixedNavContainer" className="container">
               <div className="d-flex justify-content-end align-items-center text-uppercase">
                 <div className="flex-shrink-0 me-auto">
                   {link
@@ -88,7 +88,7 @@ export const LandingPageLayout = ({ link = true, reloadApp = false, nav, childre
       </footer>
       <style jsx>{`
         @media only screen and (max-width: 575px) {
-          #minimalNavContainer {
+          #fixedNavContainer {
             margin-right: 0;
             padding-right: 0;
           }
@@ -97,7 +97,7 @@ export const LandingPageLayout = ({ link = true, reloadApp = false, nav, childre
           background: linear-gradient(#f6f6f6, #dfdfdf);
           padding: 24px 0;
         }
-        .minimalNav {
+        .fixedNav {
           opacity: 0;
           background: black;
           color: white;
@@ -107,18 +107,18 @@ export const LandingPageLayout = ({ link = true, reloadApp = false, nav, childre
           z-index: 1000;
           width: 100%;
         }
-        .minimalNav.show {
+        .fixedNav.show {
           opacity: 1;
           transition: opacity 500ms;
         }
-        .minimalNav .btn {
+        .fixedNav .btn {
           font-size: 12px;
           font-weight: 400;
         }
-        .minimalNav a:link { color: white; }
-        .minimalNav a:visited { color: white; }
-        .minimalNav a:hover { color: #e8e8e8; }
-        .minimalNav a:active { color: #e8e8e8; }
+        .fixedNav a:link { color: white; }
+        .fixedNav a:visited { color: white; }
+        .fixedNav a:hover { color: #e8e8e8; }
+        .fixedNav a:active { color: #e8e8e8; }
       `}</style>
     </div>
   );
