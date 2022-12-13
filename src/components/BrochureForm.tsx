@@ -25,25 +25,25 @@ export const BrochureForm = ({ action, phoneNumber = false, buttonText = 'Get th
       ))}
       {location?.countryCode && <input type="hidden" name="countryCode" value={location.countryCode} />}
       {location?.provinceCode && <input type="hidden" name="provinceCode" value={location.provinceCode} />}
-      <div className="mb-4">
+      <div className="mb-3 mb-sm-4">
         <label htmlFor="firstName" className="form-label">First Name</label>
         <input type="text" id="firstName" name="firstName" className="form-control" autoComplete="given-name" autoCapitalize="words" />
       </div>
-      <div className="mb-4">
+      <div className="mb-3 mb-sm-4">
         <label htmlFor="lastName" className="form-label">Last Name</label>
         <input type="text" id="lastName" name="lastName" className="form-control" autoComplete="family-name" autoCapitalize="words" />
       </div>
-      <div className="mb-4">
+      <div className="mb-3 mb-sm-4">
         <label htmlFor="emailAddress" className="form-label">Email Address <span className="text-secondary">*</span></label>
         <input type="email" id="emailAddress" name="emailAddress" className="form-control" autoComplete="email" required />
       </div>
       {phoneNumber && (
-        <div className="mb-4">
+        <div className="mb-3 mb-sm-4">
           <label htmlFor="telephoneNumber" className="form-label">Phone Number</label>
           <input type="tel" id="telephoneNumber" name="telephoneNumber" className="form-control" autoComplete="tel" />
         </div>
       )}
-      <div className="mb-4">
+      <div className="mb-3 mb-sm-4">
         <div className="form-check">
           <input className="form-check-input" type="checkbox" id="emailOptIn" name="emailOptIn" value="yes" />
           <label className="form-check-label small fst-italic" htmlFor="emailOptIn">
@@ -53,7 +53,7 @@ export const BrochureForm = ({ action, phoneNumber = false, buttonText = 'Get th
       </div>
       {phoneNumber && (
         <>
-          <div className="mb-4">
+          <div className="mb-3 mb-sm-4">
             <div className="form-check">
               <input className="form-check-input" type="checkbox" id="telephoneOptIn" name="telephoneOptIn" value="yes" />
               <label className="form-check-label small fst-italic" htmlFor="telephoneOptIn">

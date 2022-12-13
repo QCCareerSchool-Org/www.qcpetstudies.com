@@ -5,14 +5,15 @@ import { MouseEventHandler, useMemo } from 'react';
 import { BsStarFill } from 'react-icons/bs';
 
 import { BrochureForm } from '../components/BrochureForm';
+import { CardBody } from '../components/CardBody';
 import { LandingPageLayout } from '../components/layouts/LandingPageLayout';
 import { SEO } from '../components/SEO';
 import { useScreenWidth } from '../hooks/useScreenWidth';
 import TestiminialBackground from '../images/backgrounds/testimonials-bg.jpg';
 import ProfileImage from '../images/casey-bechard.png';
 import GroomingKitImage from '../images/dog-grooming-kit.jpg';
+import CatalogImage from '../images/dog-in-towel-with-grooming-tools-1.jpg';
 import FirstAidLogo from '../images/first-aid-logo.svg';
-import CatalogImage from '../images/preview-landing-page-grooming.jpg';
 import Step1EnrollImage from '../images/step-1-enroll.svg';
 import Step2SubmitImage from '../images/step-2-submit.svg';
 import Step3CertificateImage from '../images/step-3-certificate.svg';
@@ -51,18 +52,18 @@ const DogGroomingCatalogPage: NextPageWithLayout<Props> = ({ testGroup }) => {
           </div>
           <div className="col-12 col-sm-11 col-md-10 col-lg-6 mb-4 mb-lg-0">
             <div className="card bg-light">
-              <div className="card-body">
+              <CardBody>
                 <p className="text-center lead">Get Started with a{smOrGreater ? ' ' : <br />}<strong>Free Course Preview</strong></p>
                 <BrochureForm
                   action={formAction}
                   hiddenFields={hiddenFields}
                 />
-              </div>
+              </CardBody>
             </div>
           </div>
           <div className="col-12 col-sm-11 col-md-10 col-lg-6">
             {lgOrGreater && (
-              <div className="px-5 mb-2">
+              <div className="mb-2">
                 <Image
                   src={CatalogImage}
                   alt="tablet with dog image"
@@ -72,7 +73,7 @@ const DogGroomingCatalogPage: NextPageWithLayout<Props> = ({ testGroup }) => {
               </div>
             )}
             <p className="lead">Get access to a free preview of the online dog grooming course to</p>
-            <ul>
+            <ul className="mb-0">
               <li>Find out if a career in dog grooming is right for you</li>
               <li>Learn about the many careers you can pursue as a dog groomer</li>
               <li>View the course curriculum, course videos, and sample assignments</li>
