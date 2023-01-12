@@ -59,7 +59,7 @@ const ContactUsPage: NextPage = () => {
                 height="80"
                 width="64"
                 alt="telephone icon"
-                style={{ maxWidth: '100%', height: 'auto' }}
+                style={{ maxWidth: '100%' }}
               />
               <h3>By Phone</h3>
               <p className="mb-lg-4"><a href={`tel:${telephoneNumber}`} className="link-primary">{telephoneNumber}</a></p>
@@ -73,7 +73,7 @@ const ContactUsPage: NextPage = () => {
                 height="80"
                 width="64"
                 alt="email icon"
-                style={{ maxWidth: '100%', height: 'auto' }}
+                style={{ maxWidth: '100%' }}
               />
               <h3>By Email</h3>
               <p className="mb-lg-4"><a href={`mailto:${emailAddress}`} className="link-primary">{emailAddress}</a></p>
@@ -87,7 +87,7 @@ const ContactUsPage: NextPage = () => {
                 height="80"
                 width="64"
                 alt="chat icon"
-                style={{ maxWidth: '100%', height: 'auto' }}
+                style={{ maxWidth: '100%' }}
               />
               <h3>By Live Chat</h3>
               <p className="mb-lg-4"><a onClick={openLiveChat} className="link-primary">Click here to chat</a></p>

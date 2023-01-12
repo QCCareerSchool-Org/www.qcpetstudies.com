@@ -1,6 +1,6 @@
 import React, { ReactElement, ReactNode, useEffect, useState } from 'react';
 
-export const ScreenWidthContext = React.createContext<number | undefined>(0);
+export const ScreenWidthContext = React.createContext<number | undefined>(undefined);
 
 type Props = {
   children: ReactNode;

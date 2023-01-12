@@ -1,6 +1,6 @@
 import React, { ReactElement, ReactNode, useEffect, useState } from 'react';
 
-export const ScrollPositionContext = React.createContext<number>(0);
+export const ScrollPositionContext = React.createContext<number | undefined>(undefined);
 
 type Props = {
   children: ReactNode;
