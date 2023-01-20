@@ -1,6 +1,8 @@
 // eslint-disable-next-line @next/next/no-document-import-in-page
 import Document, { DocumentContext, DocumentInitialProps, Head, Html, Main, NextScript } from 'next/document';
+import Script from 'next/script';
 import { ReactElement } from 'react';
+import { script } from '../components/DeadlineFunnelScript';
 
 const googleAnalyticsSrc = `https://www.googletagmanager.com/gtag/js?id=${process.env.GOOGLE_ANALYTICS_ID ?? ''}`;
 
@@ -121,6 +123,7 @@ class MyDocument extends Document {
           <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" />
           <meta name="msapplication-TileColor" content="#da532c" />
           <meta name="theme-color" content="#ffffff" />
+          <Script id="deadlineFunnel" strategy="beforeInteractive" data-cfasync="false" dangerouslySetInnerHTML={{ __html: script }} />
         </Head>
         <body className="d-flex flex-column h-100">
           <noscript><img height="1" width="1" style={{ display: 'none' }} src="https://www.facebook.com/tr?id=1725004270923176&ev=PageView&noscript=1" /></noscript>{ /* eslint-disable-line @next/next/no-img-element,jsx-a11y/alt-text */ }
