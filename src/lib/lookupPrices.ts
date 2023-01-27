@@ -1,9 +1,15 @@
-import { PriceResult } from '../models/price';
-import { createQueryString } from './querystring';
+import qs from 'qs';
 
-export const lookupPrices = async (courses: string[], countryCode: string, provinceCode: string | null): Promise<PriceResult> => {
-  const url = 'https://api.qccareerschool.com/prices?' +
-    (provinceCode ? createQueryString({ courses, countryCode, provinceCode }) : createQueryString({ courses, countryCode }));
+import { PriceResult } from '../models/price';
+
+type PriceOptions = {
+  promoCode?: string;
+  school?: string;
+};
+
+export const lookupPrices = async (courses: string[], countryCode: string, provinceCode: string | null, options?: PriceOptions): Promise<PriceResult> => {
+  const url = 'https://api.qccareerschool.com/prices?' + qs.stringify({ courses, countryCode, provinceCode: provinceCode ?? undefined, options });
+
   const response = await fetch(url, {
     headers: { 'X-API-Version': '2' },
   });
