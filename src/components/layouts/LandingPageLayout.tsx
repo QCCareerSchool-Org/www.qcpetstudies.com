@@ -15,13 +15,14 @@ import { getTelephoneNumber } from '../../lib/phone';
 
 type Props = {
   link?: boolean;
+  href?: string;
   reloadApp?: boolean;
   /** What type of nav link to include */
   nav?: 'brochure' | 'enroll';
   children: ReactNode;
 };
 
-export const LandingPageLayout = ({ link = true, reloadApp = false, nav, children }: Props): ReactElement => {
+export const LandingPageLayout = ({ link = true, href = '/', reloadApp = false, nav, children }: Props): ReactElement => {
   const location = useLocation();
   const screenWidth = useScreenWidth();
   const scrollPosition = useScrollPosition();
@@ -51,12 +52,12 @@ export const LandingPageLayout = ({ link = true, reloadApp = false, nav, childre
                   {link
                     ? reloadApp
                       // eslint-disable-next-line @next/next/no-html-link-for-pages
-                      ? <a onClick={handleLogoClick} href="/"><FixedMenuLogo screenWidth={screenWidth} /></a>
-                      : <Link onClick={handleLogoClick} href="/"><FixedMenuLogo screenWidth={screenWidth} /></Link>
+                      ? <a onClick={handleLogoClick} href={href}><FixedMenuLogo screenWidth={screenWidth} /></a>
+                      : <Link onClick={handleLogoClick} href={href}><FixedMenuLogo screenWidth={screenWidth} /></Link>
                     : <FixedMenuLogo screenWidth={screenWidth} />
                   }
                 </div>
-                {nav === 'enroll' && <div className="flex-shrink-0"><a href={`https://enroll.qcpetstudies.com`} className="btn btn-primary">Enroll</a></div>}
+                {nav === 'enroll' && <div className="flex-shrink-0"><a href={href ?? 'https://enroll.qcpetstudies.com'} className="btn btn-primary">Enroll</a></div>}
                 {nav === 'brochure' && <div className="flex-shrink-0"><Link onClick={handleBrochureMenuLinkClick} href="#" className="btn btn-primary">Get the {screenWidth >= 375 ? 'Free ' : null}Course Preview</Link></div>}
               </div>
             </div>
@@ -67,8 +68,8 @@ export const LandingPageLayout = ({ link = true, reloadApp = false, nav, childre
             {link
               ? reloadApp
                 // eslint-disable-next-line @next/next/no-html-link-for-pages
-                ? <a onClick={handleLogoClick} href="/"><MainLogo /></a>
-                : <Link onClick={handleLogoClick} href="/"><MainLogo /></Link>
+                ? <a onClick={handleLogoClick} href={href}><MainLogo /></a>
+                : <Link onClick={handleLogoClick} href={href}><MainLogo /></Link>
               : <MainLogo />
             }
           </div>

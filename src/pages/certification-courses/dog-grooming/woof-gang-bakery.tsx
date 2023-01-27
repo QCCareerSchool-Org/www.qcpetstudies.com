@@ -124,7 +124,7 @@ const Page: NextPageWithLayout<Props> = ({ location, price, enrollPath }) => {
               <li>Breed-specific pet styling</li>
             </ul>
             <p>You'll also receive comprehensive First Aid training free with your course. Don't miss out on this amazing opportunity to work with an expert to develop your skills!</p>
-            <Link href={enrollPath}><button className="btn btn-lg btn-secondary">Enroll Now</button></Link>
+            <a href={`https://enroll.qcpetstudies.com${enrollPath}`}><button className="btn btn-lg btn-secondary">Enroll Now</button></a>
           </div>
           <div className="col-8 col-md-6">
             <Image src={ExclusiveWGB} width="547" height="619" style={{ maxWidth: '100%', height: 'auto' }} alt="Exclusive WGB discount" />
@@ -339,7 +339,7 @@ const Page: NextPageWithLayout<Props> = ({ location, price, enrollPath }) => {
               <AccordionSection eventKey="8">
                 <UnitStats readings="1 to 2 hours" videos="2 (45 minutes)" assignments="1 (5 to 6 hours)" />
                 <Bar variant="secondary" />
-                <p>Practice grooming a natural breed that requires minimal shaping and styling. Create the breed standard on either a golden retriever or a shetland sheepdog. Use the best tools and techniques to achieve a flattering but natural look.</p>
+                <p>Practice grooming a natural breed that requires minimal shaping and styling. Create the breed standard on either a golden retriever or a Shetland sheepdog. Use the best tools and techniques to achieve a flattering but natural look.</p>
                 <p className="mb-0"><strong>Required grooming equipment:</strong></p>
                 <ul>
                   <li>Appropriate equipment for prep work</li>
@@ -348,7 +348,7 @@ const Page: NextPageWithLayout<Props> = ({ location, price, enrollPath }) => {
                   <li>Appropriate grooming scissors</li>
                   <li>Other grooming equipment needed for your dog of choice</li>
                 </ul>
-                <p className="mb-0"><strong>Required dogs:</strong> A purebred golden retriever or purebred shetland sheepdog</p>
+                <p className="mb-0"><strong>Required dogs:</strong> A purebred golden retriever or purebred Shetland sheepdog</p>
               </AccordionSection>
               <AccordionToggle title="Unit J – Grooming a Terrier" eventKey="9" variant="primary" />
               <AccordionSection eventKey="9">
@@ -417,7 +417,7 @@ const Page: NextPageWithLayout<Props> = ({ location, price, enrollPath }) => {
 };
 
 Page.getLayout = page => (
-  <LandingPageLayout link={true} nav="enroll">{page}</LandingPageLayout>
+  <LandingPageLayout link={true} href="https://enroll.qcpetstudies.com/woof-gang-bakery" nav="enroll">{page}</LandingPageLayout>
 );
 
 export const getServerSideProps: GetServerSideProps<Props> = async context => {
