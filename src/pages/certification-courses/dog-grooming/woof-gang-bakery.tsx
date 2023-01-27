@@ -124,7 +124,7 @@ const Page: NextPageWithLayout<Props> = ({ location, price, enrollPath }) => {
               <li>Breed-specific pet styling</li>
             </ul>
             <p>You'll also receive comprehensive First Aid training free with your course. Don't miss out on this amazing opportunity to work with an expert to develop your skills!</p>
-            <button className="btn btn-lg btn-secondary">Enroll Now</button>
+            <Link href={enrollPath}><button className="btn btn-lg btn-secondary">Enroll Now</button></Link>
           </div>
           <div className="col-8 col-md-6">
             <Image src={ExclusiveWGB} width="547" height="619" style={{ maxWidth: '100%', height: 'auto' }} alt="Exclusive WGB discount" />
@@ -423,7 +423,7 @@ Page.getLayout = page => (
 export const getServerSideProps: GetServerSideProps<Props> = async context => {
   const location = await getLocation(context);
   const price = await lookupPrices(courseCodes, location.countryCode, location.provinceCode, { promoCode: 'WOOFGANG', school: 'QC Pet Studies' });
-  return { props: { location, price, enrollPath: '/' } };
+  return { props: { location, price, enrollPath: '/woof-gang-bakery' } };
 };
 
 export default Page;
