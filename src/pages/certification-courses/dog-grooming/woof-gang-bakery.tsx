@@ -1,24 +1,23 @@
 import { GetServerSideProps } from 'next';
 import Image from 'next/image';
-import Link from 'next/link';
-import { FC, useEffect, useRef, useState } from 'react';
-import { Accordion } from 'react-bootstrap';
+import { FC, MouseEventHandler, useEffect, useRef, useState } from 'react';
+import { Accordion, Modal } from 'react-bootstrap';
+import { FaBook, FaFilm, FaLaptop } from 'react-icons/fa';
 import { useCountUp } from 'react-use-count-up';
-import { AccordionSection } from '../../../components/AccordionSection';
 
+import { AccordionSection } from '../../../components/AccordionSection';
 import { AccordionToggle } from '../../../components/AccordionToggle';
 import { Bar } from '../../../components/Bar';
 import { DGTutorSection } from '../../../components/DGTutorSection';
 import { LandingPageLayout } from '../../../components/layouts/LandingPageLayout';
-import { PriceSection } from '../../../components/PriceSection';
+import { PriceSectionWithDiscount } from '../../../components/PriceSectionWithDiscount';
 import { SEO } from '../../../components/SEO';
 import { useIntersectionObserver } from '../../../hooks/useIntersectionObserver';
 import { useScreenWidth } from '../../../hooks/useScreenWidth';
 import HeroWGB from '../../../images/backgrounds/hero-wgb.jpg';
-import calendarIcon from '../../../images/calendar.svg';
-import IconTime from '../../../images/clock.svg';
-import DogCourseMaterialsImage from '../../../images/dg-course-materials-manuals-kit-white.jpg';
-import ExclusiveWGB from '../../../images/exclusive-wgb.jpg';
+import ExclusiveWGB from '../../../images/border-collie-sitting-wgb.jpg';
+import DogGroomingKit from '../../../images/dog-grooming-kit-white.jpg';
+import GroomingKitDetails from '../../../images/grooming-kit-details.jpg';
 import IDGPCertificationLogo from '../../../images/IDGP-certification-gold.svg';
 import WoofGangLogo from '../../../images/logos/woof-gang-bakery-black.svg';
 import { getLocation } from '../../../lib/getLocation';
@@ -37,8 +36,6 @@ const courseCodes = [ 'dg' ];
 const countUpDuration = 3000;
 const easingFunction = 'easeOutQuad';
 
-const iconSize = 50;
-
 const Page: NextPageWithLayout<Props> = ({ location, price, enrollPath }) => {
   const screenWidth = useScreenWidth();
 
@@ -49,32 +46,49 @@ const Page: NextPageWithLayout<Props> = ({ location, price, enrollPath }) => {
   const videosRef = useRef(null);
   const videosIntersection = useIntersectionObserver(videosRef);
   const [ videosStarted, setVideosStarted ] = useState(false);
+
   useEffect(() => {
     if (videosIntersection?.isIntersecting) {
       setVideosStarted(true);
     }
   }, [ videosIntersection?.isIntersecting ]);
+
   const videosCount = useCountUp({ start: 0, end: 43, duration: countUpDuration, started: videosStarted, easingFunction });
 
   const lessonsRef = useRef(null);
   const lessonsIntersection = useIntersectionObserver(videosRef);
   const [ lessonsStarted, setLessonsStarted ] = useState(false);
+
   useEffect(() => {
     if (lessonsIntersection?.isIntersecting) {
       setLessonsStarted(true);
     }
   }, [ lessonsIntersection?.isIntersecting ]);
+
   const lessonsCount = useCountUp({ start: 0, end: 25, duration: countUpDuration, started: lessonsStarted, easingFunction });
 
   const assignmentsRef = useRef(null);
   const assignmentsIntersection = useIntersectionObserver(videosRef);
   const [ assignmentsStarted, setAssignmentsStarted ] = useState(false);
+
   useEffect(() => {
     if (assignmentsIntersection?.isIntersecting) {
       setAssignmentsStarted(true);
     }
   }, [ assignmentsIntersection?.isIntersecting ]);
+
   const assignmentsCount = useCountUp({ start: 0, end: 34, duration: countUpDuration, started: assignmentsStarted, easingFunction });
+
+  const [ popup, setPopup ] = useState(false);
+
+  const handlePopupLinkClick: MouseEventHandler<HTMLAnchorElement> = e => {
+    e.preventDefault();
+    setPopup(true);
+  };
+
+  const handlePopupClose = (): void => {
+    setPopup(false);
+  };
 
   return <>
     <SEO
@@ -83,37 +97,22 @@ const Page: NextPageWithLayout<Props> = ({ location, price, enrollPath }) => {
       canonical="/certification-courses/dog-grooming/course-preview"
     />
 
-    <section id="top" className="bg-dark">
+    <section id="top" style={{ padding: 0 }}>
       <Image
         src={HeroWGB}
         placeholder="blur"
         alt="dog getting a haircut"
         priority
-        fill
         sizes="100vw"
-        style={{ objectFit: 'cover', objectPosition: 'center' }}
+        style={{ width: '100%', height: 'auto' }}
       />
-      <div className="container text-center">
-        <div className="py-sm-1 py-md-4 py-lg-5">
-          <div className="py-xxl-5">
-            <div className="row justify-content-center">
-              <div className="col-8 col-sm-8 col-md-8 col-lg-6">
-                <div className="mb-4 mb-md-5">
-                  <Image src={WoofGangLogo} alt="Woof Gang Bakery logo" width="2000" height="454" style={{ maxHeight: lg ? 64 : sm ? 48 : 32, width: 'auto', margin: '0 auto' }} />
-                </div>
-                <h1 className={`mb-4 mb-lg-5 fw-normal ${sm ? '' : 'h3'}`}><span className="fw-bold">Dog Grooming</span> Certification Course</h1>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
     </section>
 
     <section id="offsetSection">
       <div className="container">
         <div className="row align-items-center justify-content-center">
           <div className="col-12 col-lg-6 mb-5 mb-lg-0">
-            <h2>Access Your<br /><strong>Exclusive WGB Discount!</strong></h2>
+            <h1 className="h2">Access Your<br /><strong>Exclusive WGB Discount!</strong></h1>
             <p className="lead">As a Woof Gang Bakery employee, manager, or owner you're eligible to receive an exclusive $500 discount towards your online Dog Grooming course tuition.</p>
             <p>Get started now and work closely with a Certified Master Groomer. Gain the professional skills you need to offer the following services:</p>
             <ul>
@@ -123,7 +122,7 @@ const Page: NextPageWithLayout<Props> = ({ location, price, enrollPath }) => {
               <li>Complete grooms</li>
               <li>Breed-specific pet styling</li>
             </ul>
-            <p>You'll also receive comprehensive First Aid training free with your course. Don't miss out on this amazing opportunity to work with an expert to develop your skills!</p>
+            <p><strong>Plus, get first-aid training FREE with your course.</strong> Don't miss out on this amazing opportunity to learn from the best and develop your skills quickly!</p>
             <a href={`https://enroll.qcpetstudies.com${enrollPath}`}><button className="btn btn-lg btn-secondary">Enroll Now</button></a>
           </div>
           <div className="col-8 col-md-6">
@@ -157,18 +156,27 @@ const Page: NextPageWithLayout<Props> = ({ location, price, enrollPath }) => {
       <div className="container text-center">
         <div className="row justify-content-center">
           <div className="col-12 col-xl-10">
-            <h2 className="fw-bold">Free Grooming Kit</h2>
+            <h2 className="fw-bold">Your Professional Grooming Kit</h2>
             <div className="my-4">
               <Image
-                src={DogCourseMaterialsImage}
-                alt="course materials"
+                src={DogGroomingKit}
+                alt="professional dog-grooming kit"
                 sizes="100vw"
                 style={{ width: '100%', height: 'auto' }}
               />
             </div>
-            <h3>Professional-Grade Grooming Starter Kit</h3>
-            <p>When you enroll, you'll receive a kit of dog grooming tools to help you complete your assignments. The kit includes cordless WAHL clippers and combs, grooming scissors, an assortment of brushes and combs, and more!</p>
-            <p><Link href="/certification-courses/dog-grooming-kit" className="link-primary text-uppercase">View kit details</Link></p>
+            <p>When you enroll in QC's online dog grooming course, you'll receive a WAHL ARCO 5-in-1 cordless clipper, a stainless steel attachment guide comb kit, grooming scissors, and an assortment of tools used for preparation work. These items will be shipped to you when you successfully complete Unit B.</p>
+            <p><a onClick={handlePopupLinkClick} href="#" className="link-primary text-uppercase">View kit details</a></p>
+            <Modal show={popup} onHide={handlePopupClose}>
+              <Modal.Header closeButton>
+                <Modal.Title>Your Professional Grooming Kit</Modal.Title>
+              </Modal.Header>
+              <Modal.Body>
+                <div className="p-2">
+                  <Image src={GroomingKitDetails} width="652" height="1009" alt="grooming kit details" style={{ width: '100%', height: 'auto' }} />
+                </div>
+              </Modal.Body>
+            </Modal>
           </div>
         </div>
       </div>
@@ -176,55 +184,43 @@ const Page: NextPageWithLayout<Props> = ({ location, price, enrollPath }) => {
 
     <section className="bg-light">
       <div className="container">
-        <div className="row text-center">
-          <div className="col-12 col-sm-4">
-            <div className="h3" ref={videosRef}><div className="h1 mb-2">{videosCount}</div>Video Demonstrations</div>
+        <div className="row text-center justify-content-center mb-5">
+          <div className="col-12 col-sm-4 col-lg-3 mb-5 mb-sm-0">
+            <div className="mb-2">
+              <FaFilm size="54" color="#bbb" />
+            </div>
+            <div className="h3" ref={videosRef}><div className="h1 mb-2">{videosCount}</div>Video<br />Demonstrations</div>
           </div>
-          <div className="col-12 col-sm-4">
-            <div className="h3" ref={lessonsRef}><div className="h1 mb-2">{lessonsCount}</div>Interactive Lessons</div>
+          <div className="col-12 col-sm-4 col-lg-3 mb-5 mb-sm-0">
+            <div className="mb-2">
+              <FaBook size="54" color="#bbb" />
+            </div>
+            <div className="h3" ref={lessonsRef}><div className="h1 mb-2">{lessonsCount}</div>Interactive<br />Lessons</div>
           </div>
-          <div className="col-12 col-sm-4">
-            <div className="h3" ref={assignmentsRef}><div className="h1 mb-2">{assignmentsCount}</div>Practical Assignments</div>
+          <div className="col-12 col-sm-4 col-lg-3">
+            <div className="mb-2">
+              <FaLaptop size="54" color="#bbb" />
+            </div>
+            <div className="h3" ref={assignmentsRef}><div className="h1 mb-2">{assignmentsCount}</div>Practical<br />Assignments</div>
           </div>
         </div>
-        <div className="row justify-content-center my-5 text-center">
+        <div className="row justify-content-center text-center">
           <div className="col-12 col-sm-10 col-md-8 col-lg-6 col-xl-5 d-flex mb-4 mb-lg-0">
             <div className="card">
               <div className="card-body">
-                <div className="mb-2">
-                  <Image
-                    src={IconTime}
-                    width={iconSize}
-                    height={iconSize}
-                    alt="clock icon"
-                    style={{ maxWidth: '100%', height: 'auto' }}
-                  />
-                </div>
-                <p>The course should take between <strong>80 and 130 hours</strong> to study and complete assignments from start to finish.  This time does not include the time you will take to practice and develop your skills before you complete an assignment.</p>
+                <h3 className="mb-3">Work at Your Own Pace</h3>
+                <Bar variant="secondary" />
+                <p className="mb-0">The course has no deadlines or due dates. You can work through the units at completely your own pace. Re-read your course lessons and re-watch your instructional videos as often as you like. Take your time or graduate quickly&mdash;the choice is yours!</p>
               </div>
             </div>
           </div>
           <div className="col-12 col-sm-10 col-md-8 col-lg-6 col-xl-5 d-flex">
             <div className="card">
               <div className="card-body">
-                <div className="mb-2">
-                  <Image
-                    src={calendarIcon}
-                    width={iconSize}
-                    height={iconSize}
-                    alt="calendar icon"
-                    style={{ maxWidth: '100%', height: 'auto' }}
-                  />
-                </div>
-                <p>On average, most QC students work on their course for a few hours per week, and complete the online dog grooming course within about <strong>6 months to a year.</strong>  You'll have up to two years to complete the program, so lots of time!</p>
+                <h3 className="mb-3">Average Completion Time</h3>
+                <Bar variant="secondary" />
+                <p className="mb-0">On average, most QC students complete the self-paced course in 6 months to a year. The course will take between 80 and 130 hours to complete. You have up to two years to complete the program.</p>
               </div>
-            </div>
-          </div>
-        </div>
-        <div className="row justify-content-center">
-          <div className="col-12 col-md-10 col-lg-8 col-xl-6">
-            <div className="alert alert-primary">
-              <strong><i>Note:</i></strong> Course and unit times indicated on this page are approximate. Since this is a self-paced course, students take as much time as they need to practice their skills and complete each unit.
             </div>
           </div>
         </div>
@@ -240,22 +236,22 @@ const Page: NextPageWithLayout<Props> = ({ location, price, enrollPath }) => {
             <Accordion defaultActiveKey="0" className="mb-4">
               <AccordionToggle title="Unit A" eventKey="0" variant="primary" />
               <AccordionSection eventKey="0">
-                <UnitStats readings="1 to 2 hours" videos="3 (25 minutes)" assignments="4 (2 hours)" />
-                <Bar variant="secondary" />
+                <UnitStats readings="1 to 2 hours" videos="25 minutes" assignments="2 hours" />
+                <hr />
                 <p className="mb-0">In the first unit of the dog grooming course, you'll meet your tutor and start learning about the fundamentals of dog grooming. This introductory unit includes theoretical studies on the history of dog grooming.  You'll also learn about dog anatomy in great detail, and you'll start learning about skincare and esthetics.</p>
               </AccordionSection>
               <AccordionToggle title="Unit B" eventKey="1" variant="primary" />
               <AccordionSection eventKey="1">
-                <UnitStats readings="1 to 2 hours" videos="3 (1 hour)" assignments="5 (3 hours)" />
-                <Bar variant="secondary" />
+                <UnitStats readings="1 to 2 hours" videos="1 hour" assignments="3 hours" />
+                <hr />
                 <p>You'll focus on how to work with dogs in a grooming environment. You'll learn about dog behaviors and temperaments, and you'll find out how dogs learn and communicate with humans. You'll learn about how you can keep the dog and yourself safe during a grooming appointment, and how to conduct an effective needs analysis when meeting a dog grooming client for the first time.</p>
                 <p className="mb-0"><strong>Required grooming equipment:</strong> None</p>
                 <p className="mb-0"><strong>Required dogs:</strong> One coated dog</p>
               </AccordionSection>
               <AccordionToggle title="Unit C" eventKey="2" variant="primary" />
               <AccordionSection eventKey="2">
-                <UnitStats readings="1 to 2 hours" videos="4 (1.5 hours)" assignments="5 (2 to 3 hours)" />
-                <Bar variant="secondary" />
+                <UnitStats readings="1 to 2 hours" videos="1.5 hours" assignments="2 to 3 hours" />
+                <hr />
                 <p>The third dog grooming unit will help you become intimately familiar with your grooming tools. You'll learn all about brushes, scissors, clippers, and you'll start to practice techniques to use these tools effectively. You'll also learn how to properly set up your grooming environment, and how to keep it clean and safe!</p>
                 <p className="mb-0"><strong>Required grooming equipment:</strong></p>
                 <ul>
@@ -269,8 +265,8 @@ const Page: NextPageWithLayout<Props> = ({ location, price, enrollPath }) => {
               </AccordionSection>
               <AccordionToggle title="Unit D" eventKey="3" variant="primary" />
               <AccordionSection eventKey="3">
-                <UnitStats readings="2 to 4 hours" videos="17 (5.5 hours)" assignments="7 (6 hours)" />
-                <Bar variant="secondary" />
+                <UnitStats readings="2 to 4 hours" videos="5.5 hours" assignments="6 hours" />
+                <hr />
                 <p>In the first half of Unit D, you'll learn how to deal with a number of injuries or accidents that might occur while grooming dogs, but you'll also learn how to do everything you can to prevent those emergencies from occurring!</p>
                 <p>Next you'll start working on dogs and practicing your practical dog grooming skills! You'll learn about all the basic preparatory work that goes into a grooming session, from clipping nails to bathing and drying. These skills will form the foundation of all the grooming work you'll perform later in the course and in your career.</p>
                 <p className="mb-0"><strong>Required grooming equipment:</strong></p>
@@ -294,21 +290,21 @@ const Page: NextPageWithLayout<Props> = ({ location, price, enrollPath }) => {
               </AccordionSection>
               <AccordionToggle title="Unit E" eventKey="4" variant="primary" />
               <AccordionSection eventKey="4">
-                <UnitStats readings="1 to 2 hours" videos="2 (1 hour)" assignments="5 (3 hours)" />
-                <Bar variant="secondary" />
+                <UnitStats readings="1 to 2 hours" videos="1 hour" assignments="3 hours" />
+                <hr />
                 <p>This unit is all about different coat types in dogs. You'll learn how to work with every coat type including the necessary care and maintenance of these coats. You'll also be introduced to some indispensable pet cuts, and techniques for creating eye-catching finishing touches to top off a stylish groom!</p>
                 <p className="mb-0"><strong>Required dogs:</strong> A coated dog in need of grooming</p>
               </AccordionSection>
               <AccordionToggle title="Unit F" eventKey="5" variant="primary" />
               <AccordionSection eventKey="5">
                 <UnitStats readings="1 to 2 hours" videos="3 (1.5 hours)" assignments="3 (2 hours)" />
-                <Bar variant="secondary" />
+                <hr />
                 <p className="mb-0">You'll now start to work with dogs that require special accommodations. These include introducing puppies to the grooming process, grooming seniors and other dogs who might have health issues, and dogs that may have behavioral issues that make them particularly challenging to groom.</p>
               </AccordionSection>
-              <AccordionToggle title="Unit G – The Bath and Breed Standards" eventKey="6" variant="primary" />
+              <AccordionToggle title="Unit G - The Bath and Breed Standards" eventKey="6" variant="primary" />
               <AccordionSection eventKey="6">
-                <UnitStats readings="30 minutes to 1 hour" assignments="1 (3 hours)" />
-                <Bar variant="secondary" />
+                <UnitStats readings="30 minutes to 1 hour" assignments="3 hours" />
+                <hr />
                 <p>In your first practicum unit, you'll discover the basics of every groom. You'll study breed standards to prepare you for the most common grooming requests. Then you'll practice wetting a dog with the ideal water temperature and pressure, and choosing a suitable shampoo to lather and cleanse his coat. Next, thoroughly rinse the dog and check for any leftover dirt or debris. Finally, select an appropriate dryer to thoroughly dry and straighten the dog's coat.</p>
                 <p className="mb-0"><strong>Required grooming equipment:</strong></p>
                 <ul>
@@ -320,10 +316,10 @@ const Page: NextPageWithLayout<Props> = ({ location, price, enrollPath }) => {
                 </ul>
                 <p className="mb-0"><strong>Required dogs:</strong> A coated dog that is due for a bath</p>
               </AccordionSection>
-              <AccordionToggle title="Unit H – Creating the Teddy Bear Cut" eventKey="7" variant="primary" />
+              <AccordionToggle title="Unit H - Creating the Teddy Bear Cut" eventKey="7" variant="primary" />
               <AccordionSection eventKey="7">
-                <UnitStats readings="30 minutes to 1 hour" videos="1 (15 minutes)" assignments="1 (5 to 6 hours)" />
-                <Bar variant="secondary" />
+                <UnitStats readings="30 minutes to 1 hour" videos="15 minutes" assignments="5 to 6 hours" />
+                <hr />
                 <p>The teddy bear cut can be a groomer's bread and butter. In this unit you'll complete six individual assignments where your tutor will evaluate your take on the teddy bear cut, from prep work through to execution and finishing touches.</p>
                 <p className="mb-0"><strong>Required grooming equipment:</strong></p>
                 <ul>
@@ -335,10 +331,10 @@ const Page: NextPageWithLayout<Props> = ({ location, price, enrollPath }) => {
                 </ul>
                 <p className="mb-0"><strong>Required dogs:</strong> A dog suitable for a teddy bear cut, whose coat is at least 3&quot; long (e.g., miniature poodle mix, Havanese mix, etc.)</p>
               </AccordionSection>
-              <AccordionToggle title="Unit I – Grooming a Natural Breed" eventKey="8" variant="primary" />
+              <AccordionToggle title="Unit I - Grooming a Natural Breed" eventKey="8" variant="primary" />
               <AccordionSection eventKey="8">
-                <UnitStats readings="1 to 2 hours" videos="2 (45 minutes)" assignments="1 (5 to 6 hours)" />
-                <Bar variant="secondary" />
+                <UnitStats readings="1 to 2 hours" videos="45 minutes" assignments="5 to 6 hours" />
+                <hr />
                 <p>Practice grooming a natural breed that requires minimal shaping and styling. Create the breed standard on either a golden retriever or a Shetland sheepdog. Use the best tools and techniques to achieve a flattering but natural look.</p>
                 <p className="mb-0"><strong>Required grooming equipment:</strong></p>
                 <ul>
@@ -350,10 +346,10 @@ const Page: NextPageWithLayout<Props> = ({ location, price, enrollPath }) => {
                 </ul>
                 <p className="mb-0"><strong>Required dogs:</strong> A purebred golden retriever or purebred Shetland sheepdog</p>
               </AccordionSection>
-              <AccordionToggle title="Unit J – Grooming a Terrier" eventKey="9" variant="primary" />
+              <AccordionToggle title="Unit J - Grooming a Terrier" eventKey="9" variant="primary" />
               <AccordionSection eventKey="9">
-                <UnitStats readings="3 to 4 hours" videos="4 (3 hours)" assignments="1 (5 to 6 hours)" />
-                <Bar variant="secondary" />
+                <UnitStats readings="3 to 4 hours" videos="3 hours" assignments="5 to 6 hours" />
+                <hr />
                 <p>Grooming a terrier is a requirement for many dog grooming certification exams. Create the breed standard on a miniature schnauzer, standard schnauzer, airedale terrier or west highland white terrier. Use the best tools and techniques to achieve the desired shapes and styles.</p>
                 <p className="mb-0"><strong>Required grooming equipment:</strong></p>
                 <ul>
@@ -365,10 +361,10 @@ const Page: NextPageWithLayout<Props> = ({ location, price, enrollPath }) => {
                 </ul>
                 <p className="mb-0"><strong>Required dogs:</strong> A purebred ,miniature schnauzer, standard schnauzer, west highland white terrier, or airedale whose owner is looking for clipping, not hand stripping</p>
               </AccordionSection>
-              <AccordionToggle title="Unit K – Grooming a Non-Sporting Breed" eventKey="10" variant="primary" />
+              <AccordionToggle title="Unit K - Grooming a Non-Sporting Breed" eventKey="10" variant="primary" />
               <AccordionSection eventKey="10">
-                <UnitStats readings="2 to 3 hours" videos="2 (2 hours)" assignments="1 (5 to 6 hours)" />
-                <Bar variant="secondary" />
+                <UnitStats readings="2 to 3 hours" videos="2 hours" assignments="5 to 6 hours" />
+                <hr />
                 <p>Grooming a non-sporting breed is a requirement for many dog grooming certification exams. Create the breed standard on either a poodle or a bichon frise. Use the best tools and techniques to make stylized breeds look sleek and polished.</p>
                 <p className="mb-0"><strong>Required grooming equipment:</strong></p>
                 <ul>
@@ -387,7 +383,7 @@ const Page: NextPageWithLayout<Props> = ({ location, price, enrollPath }) => {
       </div>
     </section>
 
-    <PriceSection
+    <PriceSectionWithDiscount
       courses={courseCodes}
       price={price}
       doubleGuarantee={true}

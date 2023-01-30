@@ -18,7 +18,7 @@ import DogGroomingBackground from '../../../images/backgrounds/bichon-frise-gett
 import GuaranteeIcon from '../../../images/course-overview-icons/guarantee.svg';
 import OutlineIcon from '../../../images/course-overview-icons/outline.svg';
 import TutorIcon from '../../../images/course-overview-icons/tutor.svg';
-import DogCourseMaterialsImage from '../../../images/dg-course-materials-manuals-kit-white.jpg';
+import DogGroomingKit from '../../../images/dog-grooming-kit-white.jpg';
 import GroomingKitDetailImage from '../../../images/grooming-kit-details.jpg';
 import CertificationGoldImage from '../../../images/IDGP-certification-gold.svg';
 import { formatPrice } from '../../../lib/formatPrice';
@@ -139,8 +139,8 @@ const DogGroomingPage: NextPageWithLayout<Props> = ({ price }) => {
           <div className="col-12 col-lg-10 mb-4">
             <h2 className="mb-2 mb-md-4">Included in <strong>Your Course</strong></h2>
             <Image
-              src={DogCourseMaterialsImage}
-              alt="course materials"
+              src={DogGroomingKit}
+              alt="professional dog-grooming kit"
               sizes="100vw"
               style={{ width: '100%', height: 'auto' }}
             />
