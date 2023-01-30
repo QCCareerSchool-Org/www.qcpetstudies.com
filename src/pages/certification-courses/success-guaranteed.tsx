@@ -10,7 +10,7 @@ import { SEO } from '../../components/SEO';
 import QcYearGuaratnteeLogo from '../../images/1-year-guarantee-outlined.svg';
 import QcDayGuaratnteeLogo from '../../images/21-day-guarantee-outlined.svg';
 import DryingDogBg from '../../images/backgrounds/drying-dog-bg.jpg';
-import FullKitWithManualsImage from '../../images/dg-course-materials-manuals-kit-white.jpg';
+import DogGroomingKit from '../../images/dog-grooming-kit-white.jpg';
 import { getLocation } from '../../lib/getLocation';
 import { lookupPrices } from '../../lib/lookupPrices';
 import type { Location } from '../../models/location';
@@ -81,8 +81,8 @@ const SuccessGuaranteedPage: NextPageWithLayout<Props> = ({ location, price }) =
           </div>
           <div className="col-12 col-lg-8">
             <Image
-              src={FullKitWithManualsImage}
-              alt="full course kit with manuals"
+              src={DogGroomingKit}
+              alt="professional dog-grooming kit"
               sizes="100vw"
               style={{ width: '100%', height: 'auto' }}
             />
