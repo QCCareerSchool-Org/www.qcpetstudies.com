@@ -103,6 +103,12 @@ const Page: NextPageWithLayout<Props> = ({ location, price, enrollPath }) => {
     setPopup(false);
   };
 
+  const [ heroSrc, heroWidth, heroHeight ] = xl
+    ? [ HeroWGBContained, 1200, 506 ]
+    : sm
+      ? [ HeroWGB, 1173, 495 ]
+      : [ HeroWGBMobile, 518, 610 ];
+
   return <>
     <SEO
       title="Dog Grooming Certification Course"
@@ -113,13 +119,13 @@ const Page: NextPageWithLayout<Props> = ({ location, price, enrollPath }) => {
     <section id="top" style={{ padding: 0, backgroundColor: '#6fbade' }}>
       <div className={xl ? 'container' : ''}>
         <Image
-          src={xl ? HeroWGBContained : sm ? HeroWGB : HeroWGBMobile}
+          src={heroSrc}
           placeholder="blur"
           alt="Dog Grooming Certification Course, $500 WGB Discount"
           priority
           sizes="100vw"
-          width="1173"
-          height="495"
+          width={heroWidth}
+          height={heroHeight}
           style={{ width: '100%', height: 'auto' }}
         />
       </div>
