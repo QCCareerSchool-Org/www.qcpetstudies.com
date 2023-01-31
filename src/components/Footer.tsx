@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { FC } from 'react';
+import { FC, ReactNode } from 'react';
 import { FaFacebookF, FaInstagram, FaTwitter } from 'react-icons/fa';
 
 import { useLocation } from '../hooks/useLocation';
@@ -20,12 +20,14 @@ import { getTelephoneNumber } from '../lib/phone';
 export type FooterCTAType = 'grooming' | 'training' | 'care';
 
 type Props = {
+  /** overrides the entire CTA */
+  cta?: ReactNode;
   ctaType?: FooterCTAType;
   enrollPath?: string;
   className?: string;
 };
 
-export const Footer: FC<Props> = ({ ctaType, enrollPath = '/', className }) => {
+export const Footer: FC<Props> = ({ ctaType, cta, enrollPath = '/', className }) => {
   const location = useLocation();
   const screenWidth = useScreenWidth();
 
@@ -47,15 +49,20 @@ export const Footer: FC<Props> = ({ ctaType, enrollPath = '/', className }) => {
     <footer style={{ borderTop: '1px solid rgb(255,255,255,0.1)' }} className={className}>
       <div className="container">
 
-        <div className="row align-items-center">
-          <div className="col-12 col-lg-9 col-xl-8 mb-4 mb-lg-0 text-center text-lg-start">
-            <h2>Ready to Launch Your <strong>{ctaType === 'grooming' ? <><br />Grooming </> : ctaType === 'training' ? <><br />Training </> : ctaType === 'care' ? <>Dog Care </> : null}Career?</strong></h2>
-            <p className="lead mb-0">Take the first step towards a new career in the booming {ctaType === 'grooming' ? 'dog grooming ' : ctaType === 'training' ? 'dog training ' : ctaType === 'care' ? ' dog care' : 'pet'} industry.</p>
-          </div>
-          <div className="col-12 col-lg-3 text-center text-lg-end text-xl-center">
-            <a href={enrollUrl}><button className="btn btn-secondary btn-lg">Enroll Online</button></a>
-          </div>
-        </div>
+        {typeof cta === 'undefined'
+          ? (
+            <div className="row align-items-center">
+              <div className="col-12 col-lg-9 col-xl-8 mb-4 mb-lg-0 text-center text-lg-start">
+                <h2>Ready to Launch Your <strong>{ctaType === 'grooming' ? <><br />Grooming </> : ctaType === 'training' ? <><br />Training </> : ctaType === 'care' ? <>Dog Care </> : null}Career?</strong></h2>
+                <p className="lead mb-0">Take the first step towards a new career in the booming {ctaType === 'grooming' ? 'dog grooming ' : ctaType === 'training' ? 'dog training ' : ctaType === 'care' ? ' dog care' : 'pet'} industry.</p>
+              </div>
+              <div className="col-12 col-lg-3 text-center text-lg-end text-xl-center">
+                <a href={enrollUrl}><button className="btn btn-secondary btn-lg">Enroll Online</button></a>
+              </div>
+            </div>
+          )
+          : cta
+        }
 
         <hr className="my-5" />
 

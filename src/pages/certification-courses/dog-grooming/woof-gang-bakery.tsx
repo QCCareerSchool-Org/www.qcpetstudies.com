@@ -249,7 +249,7 @@ const Page: NextPageWithLayout<Props> = ({ location, price, enrollPath }) => {
               <AccordionToggle title="Unit A" eventKey="0" variant="primary" />
               <AccordionSection eventKey="0">
                 <div className="accordionOutset">
-                  <Image src={UnitA} alt="Unit A" fill sizes="100vw" style={{ objectFit: 'cover', objectPosition: lg ? '50% 10%' : '50% 0%' }} />
+                  <Image src={UnitA} alt="Unit A" fill placeholder="blur" sizes="100vw" style={{ objectFit: 'cover', objectPosition: lg ? '50% 10%' : '50% 0%' }} />
                 </div>
                 <UnitStats readings="1 to 2 hours" videos="25 minutes" assignments="2 hours" />
                 <hr />
@@ -258,7 +258,7 @@ const Page: NextPageWithLayout<Props> = ({ location, price, enrollPath }) => {
               <AccordionToggle title="Unit B" eventKey="1" variant="primary" />
               <AccordionSection eventKey="1">
                 <div className="accordionOutset">
-                  <Image src={UnitB} alt="Unit B" fill sizes="100vw" style={{ objectFit: 'cover', objectPosition: lg ? '50% 40%' : '50% 35%' }} />
+                  <Image src={UnitB} alt="Unit B" fill placeholder="blur" sizes="100vw" style={{ objectFit: 'cover', objectPosition: lg ? '50% 40%' : '50% 35%' }} />
                 </div>
                 <UnitStats readings="1 to 2 hours" videos="1 hour" assignments="3 hours" />
                 <hr />
@@ -269,7 +269,7 @@ const Page: NextPageWithLayout<Props> = ({ location, price, enrollPath }) => {
               <AccordionToggle title="Unit C" eventKey="2" variant="primary" />
               <AccordionSection eventKey="2">
                 <div className="accordionOutset">
-                  <Image src={UnitC} alt="Unit C" fill sizes="100vw" style={{ objectFit: 'cover', objectPosition: lg ? '50% 80%' : '50% 80%' }} />
+                  <Image src={UnitC} alt="Unit C" fill placeholder="blur" sizes="100vw" style={{ objectFit: 'cover', objectPosition: lg ? '50% 80%' : '50% 80%' }} />
                 </div>
                 <UnitStats readings="1 to 2 hours" videos="1.5 hours" assignments="2 to 3 hours" />
                 <hr />
@@ -287,7 +287,7 @@ const Page: NextPageWithLayout<Props> = ({ location, price, enrollPath }) => {
               <AccordionToggle title="Unit D" eventKey="3" variant="primary" />
               <AccordionSection eventKey="3">
                 <div className="accordionOutset">
-                  <Image src={UnitD} alt="Unit D" fill sizes="100vw" style={{ objectFit: 'cover', objectPosition: lg ? '50% 80%' : '50% 80%' }} />
+                  <Image src={UnitD} alt="Unit D" fill placeholder="blur" sizes="100vw" style={{ objectFit: 'cover', objectPosition: lg ? '50% 80%' : '50% 80%' }} />
                 </div>
                 <UnitStats readings="2 to 4 hours" videos="5.5 hours" assignments="6 hours" />
                 <hr />
@@ -315,7 +315,7 @@ const Page: NextPageWithLayout<Props> = ({ location, price, enrollPath }) => {
               <AccordionToggle title="Unit E" eventKey="4" variant="primary" />
               <AccordionSection eventKey="4">
                 <div className="accordionOutset">
-                  <Image src={UnitE} alt="Unit E" fill sizes="100vw" style={{ objectFit: 'cover', objectPosition: '50%' }} />
+                  <Image src={UnitE} alt="Unit E" fill placeholder="blur" sizes="100vw" style={{ objectFit: 'cover', objectPosition: '50%' }} />
                 </div>
                 <UnitStats readings="1 to 2 hours" videos="1 hour" assignments="3 hours" />
                 <hr />
@@ -325,7 +325,7 @@ const Page: NextPageWithLayout<Props> = ({ location, price, enrollPath }) => {
               <AccordionToggle title="Unit F" eventKey="5" variant="primary" />
               <AccordionSection eventKey="5">
                 <div className="accordionOutset">
-                  <Image src={UnitF} alt="Unit F" fill sizes="100vw" style={{ objectFit: 'cover', objectPosition: '50%' }} />
+                  <Image src={UnitF} alt="Unit F" fill placeholder="blur" sizes="100vw" style={{ objectFit: 'cover', objectPosition: '50%' }} />
                 </div>
                 <UnitStats readings="1 to 2 hours" videos="3 (1.5 hours)" assignments="3 (2 hours)" />
                 <hr />
@@ -334,7 +334,7 @@ const Page: NextPageWithLayout<Props> = ({ location, price, enrollPath }) => {
               <AccordionToggle title="Unit G - The Bath and Breed Standards" eventKey="6" variant="primary" />
               <AccordionSection eventKey="6">
                 <div className="accordionOutset">
-                  <Image src={UnitG} alt="Unit G" fill sizes="100vw" style={{ objectFit: 'cover', objectPosition: lg ? '50% 20%' : '50% 0%' }} />
+                  <Image src={UnitG} alt="Unit G" fill placeholder="blur" sizes="100vw" style={{ objectFit: 'cover', objectPosition: lg ? '50% 20%' : '50% 0%' }} />
                 </div>
                 <UnitStats readings="30 minutes to 1 hour" assignments="3 hours" />
                 <hr />
@@ -352,7 +352,7 @@ const Page: NextPageWithLayout<Props> = ({ location, price, enrollPath }) => {
               <AccordionToggle title="Unit H - Creating the Teddy Bear Cut" eventKey="7" variant="primary" />
               <AccordionSection eventKey="7">
                 <div className="accordionOutset">
-                  <Image src={UnitH} alt="Unit H" fill sizes="100vw" style={{ objectFit: 'cover', objectPosition: lg ? '50% 20%' : '50% 0%' }} />
+                  <Image src={UnitH} alt="Unit H" fill placeholder="blur" sizes="100vw" style={{ objectFit: 'cover', objectPosition: lg ? '50% 20%' : '50% 0%' }} />
                 </div>
                 <UnitStats readings="30 minutes to 1 hour" videos="15 minutes" assignments="5 to 6 hours" />
                 <hr />
@@ -370,7 +370,7 @@ const Page: NextPageWithLayout<Props> = ({ location, price, enrollPath }) => {
               <AccordionToggle title="Unit I - Grooming a Natural Breed" eventKey="8" variant="primary" />
               <AccordionSection eventKey="8">
                 <div className="accordionOutset">
-                  <Image src={UnitI} alt="Unit I" fill sizes="100vw" style={{ objectFit: 'cover', objectPosition: lg ? '50% 30%' : '50% 25%' }} />
+                  <Image src={UnitI} alt="Unit I" fill placeholder="blur" sizes="100vw" style={{ objectFit: 'cover', objectPosition: lg ? '50% 30%' : '50% 25%' }} />
                 </div>
                 <UnitStats readings="1 to 2 hours" videos="45 minutes" assignments="5 to 6 hours" />
                 <hr />
@@ -388,7 +388,7 @@ const Page: NextPageWithLayout<Props> = ({ location, price, enrollPath }) => {
               <AccordionToggle title="Unit J - Grooming a Terrier" eventKey="9" variant="primary" />
               <AccordionSection eventKey="9">
                 <div className="accordionOutset">
-                  <Image src={UnitJ} alt="Unit J" fill sizes="100vw" style={{ objectFit: 'cover', objectPosition: lg ? '50% 40%' : '50% 20%' }} />
+                  <Image src={UnitJ} alt="Unit J" fill placeholder="blur" sizes="100vw" style={{ objectFit: 'cover', objectPosition: lg ? '50% 40%' : '50% 20%' }} />
                 </div>
                 <UnitStats readings="3 to 4 hours" videos="3 hours" assignments="5 to 6 hours" />
                 <hr />
@@ -406,7 +406,7 @@ const Page: NextPageWithLayout<Props> = ({ location, price, enrollPath }) => {
               <AccordionToggle title="Unit K - Grooming a Non-Sporting Breed" eventKey="10" variant="primary" />
               <AccordionSection eventKey="10">
                 <div className="accordionOutset">
-                  <Image src={UnitK} alt="Unit K" fill sizes="100vw" style={{ objectFit: 'cover', objectPosition: lg ? '50% 40%' : '50% 20%' }} />
+                  <Image src={UnitK} alt="Unit K" fill placeholder="blur" sizes="100vw" style={{ objectFit: 'cover', objectPosition: lg ? '50% 40%' : '50% 20%' }} />
                 </div>
                 <UnitStats readings="2 to 3 hours" videos="2 hours" assignments="5 to 6 hours" />
                 <hr />
