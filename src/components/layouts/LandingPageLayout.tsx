@@ -19,10 +19,11 @@ type Props = {
   reloadApp?: boolean;
   /** What type of nav link to include */
   nav?: 'brochure' | 'enroll';
+  footer?: boolean;
   children: ReactNode;
 };
 
-export const LandingPageLayout = ({ link = true, href = '/', reloadApp = false, nav, children }: Props): ReactElement => {
+export const LandingPageLayout = ({ link = true, href = '/', reloadApp = false, nav, footer = true, children }: Props): ReactElement => {
   const location = useLocation();
   const screenWidth = useScreenWidth();
   const scrollPosition = useScrollPosition();
@@ -79,13 +80,22 @@ export const LandingPageLayout = ({ link = true, href = '/', reloadApp = false, 
         {children}
       </main>
       <footer className="bg-dark">
-        <section>
-          <div className="container text-center">
-            <h2>Have questions?<br />Give us a call.</h2>
-            <p className="lead"><Link href={`tel:${telephoneNumber}`} className="link-primary">{telephoneNumber}</Link></p>
-            &copy;{new Date().getFullYear()} QC Pet Studies<br /><Link href={termsLink} className="link-primary">Privacy Policy</Link>
-          </div>
-        </section>
+        {footer
+          ? (
+            <section>
+              <div className="container text-center">
+                <h2>Have questions?<br />Give us a call.</h2>
+                <p className="lead"><Link href={`tel:${telephoneNumber}`} className="link-primary">{telephoneNumber}</Link></p>
+                <Copyright termsLink={termsLink} />
+              </div>
+            </section>
+          )
+          : (
+            <div className="container text-center py-3">
+              <Copyright termsLink={termsLink} />
+            </div>
+          )
+        }
       </footer>
       <style jsx>{`
         @media only screen and (max-width: 575px) {
@@ -124,6 +134,10 @@ export const LandingPageLayout = ({ link = true, href = '/', reloadApp = false, 
     </div>
   );
 };
+
+const Copyright: FC<{ termsLink: string }> = ({ termsLink }) => (
+  <>&copy;{new Date().getFullYear()} QC Pet Studies<br /><Link href={termsLink} className="link-primary">Privacy Policy</Link></>
+);
 
 const MainLogo: FC = () => (
   <Image

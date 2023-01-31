@@ -9,17 +9,19 @@ type Props = {
   inverseNav?: boolean;
   secondaryTitle?: string;
   secondaryNavLinks?: SecondaryNavLinks;
+  /** overrides the entire CTA */
+  footerCTA?: ReactNode;
   footerCTAType?: FooterCTAType;
   enrollPath?: string;
   children: ReactNode;
 };
 
-export const DefaultLayout = ({ noHero, inverseNav, secondaryTitle, secondaryNavLinks, footerCTAType, enrollPath = '/', children }: Props): ReactElement => (
+export const DefaultLayout = ({ noHero, inverseNav, secondaryTitle, secondaryNavLinks, footerCTA, footerCTAType, enrollPath = '/', children }: Props): ReactElement => (
   <div id="defaultPage" className="d-flex flex-column vh-100">
     <Header noHero={noHero} inverseNav={inverseNav} secondaryTitle={secondaryTitle} secondaryNavLinks={secondaryNavLinks} enrollPath={enrollPath} className="flex-shrink-0 fixed-top" />
     <main className="flex-shrink-0">
       {children}
     </main>
-    <Footer ctaType={footerCTAType} enrollPath={enrollPath} className="bg-navy mt-auto" />
+    <Footer cta={footerCTA} ctaType={footerCTAType} enrollPath={enrollPath} className="bg-navy mt-auto" />
   </div>
 );
