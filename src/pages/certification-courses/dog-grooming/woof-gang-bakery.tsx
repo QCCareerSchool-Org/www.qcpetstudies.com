@@ -14,6 +14,8 @@ import { PriceSectionWithDiscount } from '../../../components/PriceSectionWithDi
 import { SEO } from '../../../components/SEO';
 import { useIntersectionObserver } from '../../../hooks/useIntersectionObserver';
 import { useScreenWidth } from '../../../hooks/useScreenWidth';
+import HeroWGBContained from '../../../images/backgrounds/hero-wgb-contained.jpg';
+import HeroWGBMobile from '../../../images/backgrounds/hero-wgb-mobile.jpg';
 import HeroWGB from '../../../images/backgrounds/hero-wgb.jpg';
 import ExclusiveWGB from '../../../images/border-collie-sitting-wgb.jpg';
 import DogGroomingKit from '../../../images/dog-grooming-kit-white.jpg';
@@ -52,6 +54,7 @@ const Page: NextPageWithLayout<Props> = ({ location, price, enrollPath }) => {
   const sm = screenWidth >= 576;
   const md = screenWidth >= 768;
   const lg = screenWidth >= 992;
+  const xl = screenWidth >= 1200;
 
   const videosRef = useRef(null);
   const videosIntersection = useIntersectionObserver(videosRef);
@@ -107,17 +110,19 @@ const Page: NextPageWithLayout<Props> = ({ location, price, enrollPath }) => {
       canonical="/certification-courses/dog-grooming/woof-gang-bakery"
     />
 
-    <section id="top" style={{ padding: 0 }}>
-      <Image
-        src={HeroWGB}
-        placeholder="blur"
-        alt="Dog Grooming Certification Course, $500 WGB Discount"
-        priority
-        sizes="100vw"
-        width="1173"
-        height="495"
-        style={{ width: '100%', height: 'auto' }}
-      />
+    <section id="top" style={{ padding: 0, backgroundColor: '#6fbade' }}>
+      <div className={xl ? 'container' : ''}>
+        <Image
+          src={xl ? HeroWGBContained : sm ? HeroWGB : HeroWGBMobile}
+          placeholder="blur"
+          alt="Dog Grooming Certification Course, $500 WGB Discount"
+          priority
+          sizes="100vw"
+          width="1173"
+          height="495"
+          style={{ width: '100%', height: 'auto' }}
+        />
+      </div>
     </section>
 
     <section>
