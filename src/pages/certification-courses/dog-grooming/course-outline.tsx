@@ -1,10 +1,9 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import Accordion from 'react-bootstrap/Accordion';
 import { FaBars } from 'react-icons/fa';
 
-import { AccordionSection } from '../../../components/AccordionSection';
-import { AccordionToggle } from '../../../components/AccordionToggle';
+import { Accordion } from '../../../components/accordion';
+import { AccordionItem } from '../../../components/accordion/AccordionItem';
 import { DefaultLayout } from '../../../components/layouts/DefaultLayout';
 import { SEO } from '../../../components/SEO';
 import CourseOutlineBackground from '../../../images/backgrounds/course-outline.jpg';
@@ -102,9 +101,8 @@ const DogGroomingCourseOutlinePage: NextPageWithLayout = () => (
             <p className="mb-0">Below is an outline of each unit of the online dog grooming course. Expand each section to find out what you'll learn in each unit, along with each unit's expected length and the required dogs/equipment to complete your assignments.</p>
           </div>
           <div className="col-12 col-xl-10 col-xxl-9">
-            <Accordion defaultActiveKey="0" className="mb-4">
-              <AccordionToggle title="Unit A" eventKey="0" variant="primary" />
-              <AccordionSection eventKey="0">
+            <Accordion className="mb-4">
+              <AccordionItem heading="Unit A">
                 <div className="row">
                   <div className="col-12 col-lg-6 mb-4 mb-lg-0">
                     <Image
@@ -130,9 +128,8 @@ const DogGroomingCourseOutlinePage: NextPageWithLayout = () => (
                     <p className="lead mb-0">Required Dogs: One (any breed)</p>
                   </div>
                 </div>
-              </AccordionSection>
-              <AccordionToggle title="Unit B" eventKey="1" variant="primary" />
-              <AccordionSection eventKey="1">
+              </AccordionItem>
+              <AccordionItem heading="Unit B">
                 <div className="row">
                   <div className="col-12 col-lg-6 mb-4 mb-lg-0">
                     <Image
@@ -158,9 +155,8 @@ const DogGroomingCourseOutlinePage: NextPageWithLayout = () => (
                     <p className="lead mb-0">Required Dogs: One (any breed)</p>
                   </div>
                 </div>
-              </AccordionSection>
-              <AccordionToggle title="Unit C" eventKey="2" variant="primary" />
-              <AccordionSection eventKey="2">
+              </AccordionItem>
+              <AccordionItem heading="Unit C">
                 <div className="row">
                   <div className="col-12 col-lg-6 mb-4 mb-lg-0">
                     <Image
@@ -187,9 +183,8 @@ const DogGroomingCourseOutlinePage: NextPageWithLayout = () => (
                     <p className="lead mb-0">Required Dogs: One (any breed)</p>
                   </div>
                 </div>
-              </AccordionSection>
-              <AccordionToggle title="First Aid for Groomers Course" eventKey="3" variant="primary" />
-              <AccordionSection eventKey="3">
+              </AccordionItem>
+              <AccordionItem heading="First Aid for Groomers Course">
                 <div className="row">
                   <div className="col-12 col-lg-6 mb-4 mb-lg-0">
                     <Image
@@ -216,9 +211,8 @@ const DogGroomingCourseOutlinePage: NextPageWithLayout = () => (
                     <p className="lead mb-0">Required Dogs: One (any breed)</p>
                   </div>
                 </div>
-              </AccordionSection>
-              <AccordionToggle title="Unit D" eventKey="4" variant="primary" />
-              <AccordionSection eventKey="4">
+              </AccordionItem>
+              <AccordionItem heading="Unit D">
                 <div className="row">
                   <div className="col-12 col-lg-6 mb-4">
                     <p>Now that you have basic dog grooming theory and First Aid under your belt, you're going to start working on dogs and practicing your practical dog grooming skills!</p>
@@ -268,9 +262,8 @@ const DogGroomingCourseOutlinePage: NextPageWithLayout = () => (
                     </div>
                   </div>
                 </div>
-              </AccordionSection>
-              <AccordionToggle title="Unit E" eventKey="5" variant="primary" />
-              <AccordionSection eventKey="5">
+              </AccordionItem>
+              <AccordionItem heading="Unit E">
                 <div className="row">
                   <div className="col-12 col-lg-6 mb-4">
                     <p className="mb-0">This unit is all about different coat types in dogs. You'll learn how to handle every coat type including the necessary care and maintenance of these coats.  You'll also be introduced to some indispensable pet cuts, and techniques for creating eye-catching finishing touches to top off a stylish groom in any dog!</p>
@@ -309,9 +302,8 @@ const DogGroomingCourseOutlinePage: NextPageWithLayout = () => (
                     </div>
                   </div>
                 </div>
-              </AccordionSection>
-              <AccordionToggle title="Unit F" eventKey="6" variant="primary" />
-              <AccordionSection eventKey="6">
+              </AccordionItem>
+              <AccordionItem heading="Unit F">
                 <div className="row">
                   <div className="col-12 col-lg-6 mb-4">
                     <p className="mb-0">You'll now start to work with dogs that require special accommodations or considerations when grooming. This includes introducing puppies to the grooming process, grooming seniors and other dogs who might have health issues to consider when grooming, and dogs that may have behavioral issues that make them particularly difficult to groom.</p>
@@ -348,9 +340,8 @@ const DogGroomingCourseOutlinePage: NextPageWithLayout = () => (
                     </div>
                   </div>
                 </div>
-              </AccordionSection>
-              <AccordionToggle title="Unit G" eventKey="7" variant="primary" />
-              <AccordionSection eventKey="7">
+              </AccordionItem>
+              <AccordionItem heading="Unit G">
                 <div className="row">
                   <div className="col-12 col-lg-6 mb-4 mb-lg-0">
                     <Image
@@ -380,9 +371,8 @@ const DogGroomingCourseOutlinePage: NextPageWithLayout = () => (
                     <p className="mb-0">None until practicum units</p>
                   </div>
                 </div>
-              </AccordionSection>
-              <AccordionToggle title="Practicum Units" eventKey="8" variant="primary" />
-              <AccordionSection eventKey="8">
+              </AccordionItem>
+              <AccordionItem heading="Practicum Units">
                 <div className="row">
                   <div className="col-12 col-lg-6 mb-4">
                     <p>In your practicum units, you'll follow a series of assignments that will have you grooming full dogs from start to finish.  This is where all your knowledge from the course will come to a head. For best results, you'll want to complete a groom on several dogs before submitting your work for grading. It's only with practice that you will truly become a competent and successful professional dog groomer!</p>
@@ -502,9 +492,8 @@ const DogGroomingCourseOutlinePage: NextPageWithLayout = () => (
                     </div>
                   </div>
                 </div>
-              </AccordionSection>
-              <AccordionToggle title="Unit H (Optional)" eventKey="9" variant="primary" />
-              <AccordionSection eventKey="9">
+              </AccordionItem>
+              <AccordionItem heading="Unit H (Optional)">
                 <div className="row">
                   <div className="col-12 col-lg-6 mb-4 mb-lg-0">
                     <p>By this point in the dog grooming class, you've completed all your theoretical and practical work, and are feeling pretty confident in your grooming abilities! Now it's time to use those abilities in the real-world and turn your passion into a career.  The business training offered in this course is optional, however, it will be hugely beneficial if you want to freelance your services, if you intend on starting your own dog grooming business or salon, or if you're looking to get a job in an established salon.</p>
@@ -521,7 +510,7 @@ const DogGroomingCourseOutlinePage: NextPageWithLayout = () => (
                     />
                   </div>
                 </div>
-              </AccordionSection>
+              </AccordionItem>
             </Accordion>
             <p className="text-center lead">View <Link href="/certification-courses/dog-grooming/course-preview" className="text-primary">Sample Assignments</Link> from QC's Online Dog Grooming Course</p>
           </div>

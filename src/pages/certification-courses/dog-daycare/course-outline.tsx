@@ -1,10 +1,10 @@
 import Image from 'next/image';
 import { FC, useState } from 'react';
-import { Accordion, Modal } from 'react-bootstrap';
+import { Modal } from 'react-bootstrap';
 import { FaBars } from 'react-icons/fa';
 
-import { AccordionSection } from '../../../components/AccordionSection';
-import { AccordionToggle } from '../../../components/AccordionToggle';
+import { Accordion } from '../../../components/accordion';
+import { AccordionItem } from '../../../components/accordion/AccordionItem';
 import { DefaultLayout } from '../../../components/layouts/DefaultLayout';
 import { SEO } from '../../../components/SEO';
 import { UnitStats } from '../../../components/UnitStats';
@@ -105,9 +105,8 @@ const DDCourseOutlinePage: NextPageWithLayout = () => {
             <p className="mb-0">Below is an outline of each unit of the online dog care course. Expand each section to find out what you&apos;ll learn in each unit.</p>
           </div>
         </div>
-        <Accordion defaultActiveKey="0">
-          <AccordionToggle title="Unit A" eventKey="0" variant="primary" />
-          <AccordionSection eventKey="0">
+        <Accordion>
+          <AccordionItem heading="Unit A">
             <div className="row">
               <div className="col-12 col-lg-6 col-xl-7">
                 <div className="alert alert-primary mb-4">Unit Total: 3 hours</div>
@@ -132,9 +131,8 @@ const DDCourseOutlinePage: NextPageWithLayout = () => {
                 </div>
               )}
             </div>
-          </AccordionSection>
-          <AccordionToggle title="Unit B" eventKey="1" variant="primary" />
-          <AccordionSection eventKey="1">
+          </AccordionItem>
+          <AccordionItem heading="Unit B">
             <div className="row">
               <div className="col-12 col-lg-6 col-xl-7">
                 <div className="alert alert-primary mb-4">Unit Total: 4 hours</div>
@@ -159,9 +157,8 @@ const DDCourseOutlinePage: NextPageWithLayout = () => {
                 </div>
               )}
             </div>
-          </AccordionSection>
-          <AccordionToggle title="Unit C" eventKey="2" variant="primary" />
-          <AccordionSection eventKey="2">
+          </AccordionItem>
+          <AccordionItem heading="Unit C">
             <div className="row">
               <div className="col-12 col-lg-6 col-xl-7">
                 <div className="alert alert-primary mb-4">Unit Total: 3 hours</div>
@@ -186,9 +183,8 @@ const DDCourseOutlinePage: NextPageWithLayout = () => {
                 </div>
               )}
             </div>
-          </AccordionSection>
-          <AccordionToggle title="Unit D" eventKey="3" variant="primary" />
-          <AccordionSection eventKey="3">
+          </AccordionItem>
+          <AccordionItem heading="Unit D">
             <div className="row">
               <div className="col-12 col-lg-6 col-xl-7">
                 <div className="alert alert-primary mb-4">Unit Total: 2.5 hours</div>
@@ -213,9 +209,8 @@ const DDCourseOutlinePage: NextPageWithLayout = () => {
                 </div>
               )}
             </div>
-          </AccordionSection>
-          <AccordionToggle title="Unit E" eventKey="4" variant="primary" />
-          <AccordionSection eventKey="4">
+          </AccordionItem>
+          <AccordionItem heading="Unit E">
             <div className="row">
               <div className="col-12 col-lg-6 col-xl-7">
                 <div className="alert alert-primary mb-4">Unit Total: 2 hours</div>
@@ -240,9 +235,8 @@ const DDCourseOutlinePage: NextPageWithLayout = () => {
                 </div>
               )}
             </div>
-          </AccordionSection>
-          <AccordionToggle title="Unit F" eventKey="5" variant="primary" />
-          <AccordionSection eventKey="5">
+          </AccordionItem>
+          <AccordionItem heading="Unit F">
             <div className="row">
               <div className="col-12 col-lg-6 col-xl-7">
                 <div className="alert alert-primary mb-4">Unit Total: 3 hours</div>
@@ -267,7 +261,7 @@ const DDCourseOutlinePage: NextPageWithLayout = () => {
                 </div>
               )}
             </div>
-          </AccordionSection>
+          </AccordionItem>
         </Accordion>
       </div>
     </section>

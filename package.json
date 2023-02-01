@@ -35,7 +35,8 @@
     "react-use-count-up": "^1.0.2",
     "schema-dts": "^1.1.0",
     "trackjs": "^3.10.1",
-    "trackjs-node": "^1.0.1"
+    "trackjs-node": "^1.0.1",
+    "use-reducer-thunk": "^1.1.0"
   },
   "devDependencies": {
     "@testing-library/jest-dom": "^5.16.5",

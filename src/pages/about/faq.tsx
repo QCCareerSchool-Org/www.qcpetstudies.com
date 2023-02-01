@@ -1,10 +1,9 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { ReactElement, ReactNode } from 'react';
-import Accordion from 'react-bootstrap/Accordion';
+import { Accordion } from '../../components/accordion';
+import { AccordionItem } from '../../components/accordion/AccordionItem';
 
-import { AccordionSection } from '../../components/AccordionSection';
-import { AccordionToggle } from '../../components/AccordionToggle';
 import { DefaultLayout } from '../../components/layouts/DefaultLayout';
 import { SEO } from '../../components/SEO';
 import DoGInBedWithStick from '../../images/backgrounds/dog-in-bed-with-stick.jpg';
@@ -193,13 +192,10 @@ type QuestionAnswerProps = {
   children: ReactNode;
 };
 
-const QuestionAnswer = ({ question, index, children }: QuestionAnswerProps): ReactElement => (
-  <>
-    <AccordionToggle title={question} eventKey={index.toString()} />
-    <AccordionSection eventKey={index.toString()}>
-      {children}
-    </AccordionSection>
-  </>
+const QuestionAnswer = ({ question, children }: QuestionAnswerProps): ReactElement => (
+  <AccordionItem heading={question}>
+    {children}
+  </AccordionItem>
 );
 
 export default FAQPage;

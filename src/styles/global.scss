@@ -78,6 +78,13 @@ $link-decoration: none;
 $card-spacer-y: 2rem;
 $card-spacer-x: 2rem;
 
+$accordion-bg: #ededed;
+$accordion-button-active-color: #000;
+$accordion-button-active-bg: #ededed;
+$accordion-border-color: #ddd;
+$accordion-button-padding-x: 1.625rem;
+$accordion-button-padding-y: 1rem;
+
 @import "bootstrap/scss/bootstrap";
 
 // Then add additional custom code here

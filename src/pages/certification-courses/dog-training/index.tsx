@@ -2,12 +2,11 @@ import { GetServerSideProps } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 import { ReactEventHandler, useEffect, useState } from 'react';
-import { Accordion } from 'react-bootstrap';
 import { BsCardChecklist, BsPeopleFill } from 'react-icons/bs';
 import { IoMdInfinite } from 'react-icons/io';
 
-import { AccordionSection } from '../../../components/AccordionSection';
-import { AccordionToggle } from '../../../components/AccordionToggle';
+import { Accordion } from '../../../components/accordion';
+import { AccordionItem } from '../../../components/accordion/AccordionItem';
 import { DTTutorSection } from '../../../components/DTTutorSection';
 import { GuaranteeSection } from '../../../components/GuaranteeSection';
 import { DefaultLayout } from '../../../components/layouts/DefaultLayout';
@@ -213,9 +212,8 @@ const DogTrainingPage: NextPageWithLayout<Props> = ({ price }) => {
             <p className="lead mb-0">The Dog training Course is split into four parts, each containing individual training units.</p>
           </div>
         </div>
-        <Accordion defaultActiveKey="0">
-          <AccordionToggle title="Introductory Units" eventKey="0" />
-          <AccordionSection eventKey="0">
+        <Accordion>
+          <AccordionItem heading="Introductory Units">
             <div className="row">
               <div className="col-12 col-lg-6 col-xl-7">
                 <p>Before you learn about how to train dogs, you have to learn about dogs. This includes breed types and characteristics, how dogs communicate with each other and with humans, what constitutes normal and abnormal canine behaviors, and&mdash;most importantly&mdash;how dogs actually learn. Once you become an expert in canine behavior and communication, you'll be in excellent shape to start working with dogs to teach new behaviors and correct unwanted behaviors!</p>
@@ -246,9 +244,8 @@ const DogTrainingPage: NextPageWithLayout<Props> = ({ price }) => {
                 </div>
               )}
             </div>
-          </AccordionSection>
-          <AccordionToggle title="Applying Training Principles" eventKey="1" />
-          <AccordionSection eventKey="1">
+          </AccordionItem>
+          <AccordionItem heading="Applying Training Principles">
             <div className="row">
               <div className="col-12 col-lg-6 col-xl-7">
                 <p>Now that you have a deep understanding of how dogs learn and communicate, you're ready to start applying training techniques to teach new behaviors and address unwanted behaviors. This course teaches scientifically-proven techniques and methods based on learning theory. You'll learn how to apply classical and operant conditioning principles to any type of training situation. Always remember: There is no magic formula that works for every dog, but every dog has a formula that will work for them.</p>
@@ -282,9 +279,8 @@ const DogTrainingPage: NextPageWithLayout<Props> = ({ price }) => {
                 </div>
               )}
             </div>
-          </AccordionSection>
-          <AccordionToggle title="Teaching People" eventKey="2" />
-          <AccordionSection eventKey="2">
+          </AccordionItem>
+          <AccordionItem heading="Teaching People">
             <div className="row">
               <div className="col-12 col-lg-6 col-xl-7">
                 <p>A dog trainer's job isn't just to train dogs. As a trainer a big part of your job will be to teach people how to train their own dogs!  This requires a unique set of skills that you'll have to develop. You have to understand how people learn and how to communicate your expertise to dog owners who are looking for help. This part of the dog trainer course will help you learn those skills!</p>
@@ -318,9 +314,8 @@ const DogTrainingPage: NextPageWithLayout<Props> = ({ price }) => {
                 </div>
               )}
             </div>
-          </AccordionSection>
-          <AccordionToggle title="Starting your Dog Training Business" eventKey="3" />
-          <AccordionSection eventKey="3">
+          </AccordionItem>
+          <AccordionItem heading="Starting your Dog Training Business">
             <div className="row">
               <div className="col-12 col-lg-6 col-xl-7">
                 <p>You've learned and practiced all the skills you need to successfully work as a dog trainer. Now it's time to turn your finely honed skills into a business! The business training offered in this course is optional. However, this training will be hugely beneficial to your career if you intend to start your own training business, or if you're looking to get a job working for an established trainer.</p>
@@ -346,9 +341,8 @@ const DogTrainingPage: NextPageWithLayout<Props> = ({ price }) => {
                 </div>
               )}
             </div>
-          </AccordionSection>
-          <AccordionToggle title="CPDT Exam Prep" eventKey="4" />
-          <AccordionSection eventKey="4">
+          </AccordionItem>
+          <AccordionItem heading="CPDT Exam Prep">
             <div className="row">
               <div className="col-12 col-lg-6 col-xl-7">
                 <p>Many professional dog trainers strive to pass the Certified Professional Dog Trainer (CPDT) exam from the Certification Council for Professional Dog Trainers. The CPDT is the gold-standard for dog trainers who have the knowledge and skills to train dogs using scientifically-proven methods. Your QC Dog training course teaches you everything you need to know to pass your CPDT exam. As an added bonus, you have access to an extra optional unit to help prepare you to write the CPDT exam! </p>
@@ -371,7 +365,7 @@ const DogTrainingPage: NextPageWithLayout<Props> = ({ price }) => {
                 </div>
               )}
             </div>
-          </AccordionSection>
+          </AccordionItem>
         </Accordion>
       </div>
     </section>

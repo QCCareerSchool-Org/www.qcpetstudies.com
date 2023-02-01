@@ -1,10 +1,9 @@
 import { GetServerSideProps } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
-import Accordion from 'react-bootstrap/Accordion';
 
-import { AccordionSection } from '../../../components/AccordionSection';
-import { AccordionToggle } from '../../../components/AccordionToggle';
+import { Accordion } from '../../../components/accordion';
+import { AccordionItem } from '../../../components/accordion/AccordionItem';
 import { Bar } from '../../../components/Bar';
 import { GuaranteeSection } from '../../../components/GuaranteeSection';
 import { DefaultLayout } from '../../../components/layouts/DefaultLayout';
@@ -217,9 +216,8 @@ const BreedStylingPage: NextPageWithLayout<Props> = ({ price }) => {
             <p>You must complete a unit with a satisfactory grade before you can submit assignments for the next units.</p>
           </div>
         </div>
-        <Accordion defaultActiveKey="0">
-          <AccordionToggle title="Part 1: Theoretical Foundations" eventKey="0" />
-          <AccordionSection eventKey="0">
+        <Accordion>
+          <AccordionItem heading="Part 1: Theoretical Foundations">
             <div className="row">
               <div className="col-12 col-lg-8">
                 <p className="lead">In the first part of the course, you'll review your knowledge of dog anatomy, skincare, and dog behavior. You'll learn all about the basics of working with canines and keeping yourself safe in the grooming environment.</p>
@@ -244,9 +242,8 @@ const BreedStylingPage: NextPageWithLayout<Props> = ({ price }) => {
                 </div>
               )}
             </div>
-          </AccordionSection>
-          <AccordionToggle title="Part 2: Dog First Aid Course" eventKey="1" />
-          <AccordionSection eventKey="1">
+          </AccordionItem>
+          <AccordionItem heading="Part 2: Dog First Aid Course">
             <div className="row">
               <div className="col-12 col-lg-8">
                 <p className="lead">The second part of the course covers foundational dog first aid training. Understand how to prevent illness and accidents and treat basic injuries in this condensed version of QC's Dog First Aid course.</p>
@@ -265,9 +262,8 @@ const BreedStylingPage: NextPageWithLayout<Props> = ({ price }) => {
                 </div>
               )}
             </div>
-          </AccordionSection>
-          <AccordionToggle title="Part 3: Practicum" eventKey="2" />
-          <AccordionSection eventKey="2">
+          </AccordionItem>
+          <AccordionItem heading="Part 3: Practicum">
             <div className="row">
               <div className="col-12 col-lg-8">
                 <p className="lead">The last third of the course is broken up into four units. Learn all about interpreting breed standards and applying them to a variety of breeds. You'll complete a series of practical assignments grooming each dog from start to finish. Be tested on how well you adhere to official breed standards to bring out a dog's best features.</p>
@@ -292,7 +288,7 @@ const BreedStylingPage: NextPageWithLayout<Props> = ({ price }) => {
                 </div>
               )}
             </div>
-          </AccordionSection>
+          </AccordionItem>
         </Accordion>
       </div>
     </section>

@@ -1,12 +1,12 @@
 import { GetServerSideProps } from 'next';
 import Image from 'next/image';
 import { FC, MouseEventHandler, useEffect, useRef, useState } from 'react';
-import { Accordion, Modal } from 'react-bootstrap';
+import { Modal } from 'react-bootstrap';
 import { FaBook, FaFilm, FaLaptop } from 'react-icons/fa';
 import { useCountUp } from 'react-use-count-up';
 
-import { AccordionSection } from '../../../components/AccordionSection';
-import { AccordionToggle } from '../../../components/AccordionToggle';
+import { Accordion } from '../../../components/accordion';
+import { AccordionItem } from '../../../components/accordion/AccordionItem';
 import { Bar } from '../../../components/Bar';
 import { DGTutorSection } from '../../../components/DGTutorSection';
 import { LandingPageLayout } from '../../../components/layouts/LandingPageLayout';
@@ -256,18 +256,16 @@ const Page: NextPageWithLayout<Props> = ({ location, price, enrollPath }) => {
           <div className="col-12 col-xl-10 col-xxl-9">
             <h2>Course Outline</h2>
             <p className="lead">Below is an outline of each unit of the online dog grooming course. Expand each section to find out what you'll learn in each unit.</p>
-            <Accordion defaultActiveKey="0" className="mb-4">
-              <AccordionToggle title="Unit A" eventKey="0" variant="primary" />
-              <AccordionSection eventKey="0">
+            <Accordion className="mb-4">
+              <AccordionItem heading="Unit A">
                 <div className="accordionOutset">
                   <Image src={UnitA} alt="Unit A" fill placeholder="blur" sizes="100vw" style={{ objectFit: 'cover', objectPosition: lg ? '50% 10%' : '50% 0%' }} />
                 </div>
                 <UnitStats readings="1 to 2 hours" videos="25 minutes" assignments="2 hours" />
                 <hr />
                 <p className="mb-0">In the first unit of the dog grooming course, you'll meet your tutor and start learning about the fundamentals of dog grooming. This introductory unit includes theoretical studies on the history of dog grooming.  You'll also learn about dog anatomy in great detail, and you'll start learning about skincare and esthetics.</p>
-              </AccordionSection>
-              <AccordionToggle title="Unit B" eventKey="1" variant="primary" />
-              <AccordionSection eventKey="1">
+              </AccordionItem>
+              <AccordionItem heading="Unit B">
                 <div className="accordionOutset">
                   <Image src={UnitB} alt="Unit B" fill placeholder="blur" sizes="100vw" style={{ objectFit: 'cover', objectPosition: lg ? '50% 40%' : '50% 35%' }} />
                 </div>
@@ -276,9 +274,8 @@ const Page: NextPageWithLayout<Props> = ({ location, price, enrollPath }) => {
                 <p>You'll focus on how to work with dogs in a grooming environment. You'll learn about dog behaviors and temperaments, and you'll find out how dogs learn and communicate with humans. You'll learn about how you can keep the dog and yourself safe during a grooming appointment, and how to conduct an effective needs analysis when meeting a dog grooming client for the first time.</p>
                 <p className="mb-0"><strong>Required grooming equipment:</strong> None</p>
                 <p className="mb-0"><strong>Required dogs:</strong> One coated dog</p>
-              </AccordionSection>
-              <AccordionToggle title="Unit C" eventKey="2" variant="primary" />
-              <AccordionSection eventKey="2">
+              </AccordionItem>
+              <AccordionItem heading="Unit C">
                 <div className="accordionOutset">
                   <Image src={UnitC} alt="Unit C" fill placeholder="blur" sizes="100vw" style={{ objectFit: 'cover', objectPosition: lg ? '50% 80%' : '50% 80%' }} />
                 </div>
@@ -294,9 +291,8 @@ const Page: NextPageWithLayout<Props> = ({ location, price, enrollPath }) => {
                   <li>Grooming loop</li>
                 </ul>
                 <p className="mb-0"><strong>Required dogs:</strong> None</p>
-              </AccordionSection>
-              <AccordionToggle title="Unit D" eventKey="3" variant="primary" />
-              <AccordionSection eventKey="3">
+              </AccordionItem>
+              <AccordionItem heading="Unit D">
                 <div className="accordionOutset">
                   <Image src={UnitD} alt="Unit D" fill placeholder="blur" sizes="100vw" style={{ objectFit: 'cover', objectPosition: lg ? '50% 80%' : '50% 80%' }} />
                 </div>
@@ -322,9 +318,8 @@ const Page: NextPageWithLayout<Props> = ({ location, price, enrollPath }) => {
                   <li>One double-coated dog</li>
                   <li>A dog with at least one mat in his fur</li>
                 </ul>
-              </AccordionSection>
-              <AccordionToggle title="Unit E" eventKey="4" variant="primary" />
-              <AccordionSection eventKey="4">
+              </AccordionItem>
+              <AccordionItem heading="Unit E">
                 <div className="accordionOutset">
                   <Image src={UnitE} alt="Unit E" fill placeholder="blur" sizes="100vw" style={{ objectFit: 'cover', objectPosition: '50%' }} />
                 </div>
@@ -332,18 +327,16 @@ const Page: NextPageWithLayout<Props> = ({ location, price, enrollPath }) => {
                 <hr />
                 <p>This unit is all about different coat types in dogs. You'll learn how to work with every coat type including the necessary care and maintenance of these coats. You'll also be introduced to some indispensable pet cuts, and techniques for creating eye-catching finishing touches to top off a stylish groom!</p>
                 <p className="mb-0"><strong>Required dogs:</strong> A coated dog in need of grooming</p>
-              </AccordionSection>
-              <AccordionToggle title="Unit F" eventKey="5" variant="primary" />
-              <AccordionSection eventKey="5">
+              </AccordionItem>
+              <AccordionItem heading="Unit F">
                 <div className="accordionOutset">
                   <Image src={UnitF} alt="Unit F" fill placeholder="blur" sizes="100vw" style={{ objectFit: 'cover', objectPosition: '50%' }} />
                 </div>
                 <UnitStats readings="1 to 2 hours" videos="3 (1.5 hours)" assignments="3 (2 hours)" />
                 <hr />
                 <p className="mb-0">You'll now start to work with dogs that require special accommodations. These include introducing puppies to the grooming process, grooming seniors and other dogs who might have health issues, and dogs that may have behavioral issues that make them particularly challenging to groom.</p>
-              </AccordionSection>
-              <AccordionToggle title="Unit G - The Bath and Breed Standards" eventKey="6" variant="primary" />
-              <AccordionSection eventKey="6">
+              </AccordionItem>
+              <AccordionItem heading="Unit G - The Bath and Breed Standards">
                 <div className="accordionOutset">
                   <Image src={UnitG} alt="Unit G" fill placeholder="blur" sizes="100vw" style={{ objectFit: 'cover', objectPosition: lg ? '50% 20%' : '50% 0%' }} />
                 </div>
@@ -359,9 +352,8 @@ const Page: NextPageWithLayout<Props> = ({ location, price, enrollPath }) => {
                   <li>High-velocity dryer</li>
                 </ul>
                 <p className="mb-0"><strong>Required dogs:</strong> A coated dog that is due for a bath</p>
-              </AccordionSection>
-              <AccordionToggle title="Unit H - Creating the Teddy Bear Cut" eventKey="7" variant="primary" />
-              <AccordionSection eventKey="7">
+              </AccordionItem>
+              <AccordionItem heading="Unit H - Creating the Teddy Bear Cut">
                 <div className="accordionOutset">
                   <Image src={UnitH} alt="Unit H" fill placeholder="blur" sizes="100vw" style={{ objectFit: 'cover', objectPosition: lg ? '50% 20%' : '50% 0%' }} />
                 </div>
@@ -377,9 +369,8 @@ const Page: NextPageWithLayout<Props> = ({ location, price, enrollPath }) => {
                   <li>Other grooming equipment needed for your dog of choice</li>
                 </ul>
                 <p className="mb-0"><strong>Required dogs:</strong> A dog suitable for a teddy bear cut, whose coat is at least 3&quot; long (e.g., miniature poodle mix, Havanese mix, etc.)</p>
-              </AccordionSection>
-              <AccordionToggle title="Unit I - Grooming a Natural Breed" eventKey="8" variant="primary" />
-              <AccordionSection eventKey="8">
+              </AccordionItem>
+              <AccordionItem heading="Unit I - Grooming a Natural Breed">
                 <div className="accordionOutset">
                   <Image src={UnitI} alt="Unit I" fill placeholder="blur" sizes="100vw" style={{ objectFit: 'cover', objectPosition: lg ? '50% 30%' : '50% 25%' }} />
                 </div>
@@ -395,9 +386,8 @@ const Page: NextPageWithLayout<Props> = ({ location, price, enrollPath }) => {
                   <li>Other grooming equipment needed for your dog of choice</li>
                 </ul>
                 <p className="mb-0"><strong>Required dogs:</strong> A purebred golden retriever or purebred Shetland sheepdog</p>
-              </AccordionSection>
-              <AccordionToggle title="Unit J - Grooming a Terrier" eventKey="9" variant="primary" />
-              <AccordionSection eventKey="9">
+              </AccordionItem>
+              <AccordionItem heading="Unit J - Grooming a Terrier">
                 <div className="accordionOutset">
                   <Image src={UnitJ} alt="Unit J" fill placeholder="blur" sizes="100vw" style={{ objectFit: 'cover', objectPosition: lg ? '50% 40%' : '50% 20%' }} />
                 </div>
@@ -413,9 +403,8 @@ const Page: NextPageWithLayout<Props> = ({ location, price, enrollPath }) => {
                   <li>Other grooming equipment needed for your dog of choice</li>
                 </ul>
                 <p className="mb-0"><strong>Required dogs:</strong> A purebred, miniature schnauzer, standard schnauzer, west highland white terrier, or airedale whose owner is looking for clipping, not hand stripping</p>
-              </AccordionSection>
-              <AccordionToggle title="Unit K - Grooming a Non-Sporting Breed" eventKey="10" variant="primary" />
-              <AccordionSection eventKey="10">
+              </AccordionItem>
+              <AccordionItem heading="Unit K - Grooming a Non-Sporting Breed">
                 <div className="accordionOutset">
                   <Image src={UnitK} alt="Unit K" fill placeholder="blur" sizes="100vw" style={{ objectFit: 'cover', objectPosition: lg ? '50% 40%' : '50% 20%' }} />
                 </div>
@@ -431,7 +420,7 @@ const Page: NextPageWithLayout<Props> = ({ location, price, enrollPath }) => {
                   <li>Other grooming equipment needed for your dog of choice</li>
                 </ul>
                 <p className="mb-0"><strong>Required dogs:</strong> A purebred poodle or bichon frise</p>
-              </AccordionSection>
+              </AccordionItem>
             </Accordion>
           </div>
         </div>
@@ -451,7 +440,7 @@ const Page: NextPageWithLayout<Props> = ({ location, price, enrollPath }) => {
 
     <style jsx>{`
     .accordionOutset {
-      margin: -1.625rem -1.625rem 1.625rem;
+      margin: -1rem -1.25rem 1rem;
       position: relative;
       overflow: hidden;
       height: 200px;
