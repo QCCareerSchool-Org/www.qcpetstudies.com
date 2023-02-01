@@ -1,6 +1,7 @@
 import { GetServerSideProps } from 'next';
 import Image from 'next/image';
-import { FC, MouseEventHandler, useEffect, useRef, useState } from 'react';
+import type { FC, MouseEventHandler } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import { Modal } from 'react-bootstrap';
 import { FaBook, FaFilm, FaLaptop } from 'react-icons/fa';
 import { useCountUp } from 'react-use-count-up';
@@ -256,7 +257,7 @@ const Page: NextPageWithLayout<Props> = ({ location, price, enrollPath }) => {
           <div className="col-12 col-xl-10 col-xxl-9">
             <h2>Course Outline</h2>
             <p className="lead">Below is an outline of each unit of the online dog grooming course. Expand each section to find out what you'll learn in each unit.</p>
-            <Accordion className="mb-4">
+            <Accordion>
               <AccordionItem heading="Unit A">
                 <div className="accordionOutset">
                   <Image src={UnitA} alt="Unit A" fill placeholder="blur" sizes="100vw" style={{ objectFit: 'cover', objectPosition: lg ? '50% 10%' : '50% 0%' }} />
@@ -467,20 +468,51 @@ type UnitStatsProps = {
   assignments: string;
 };
 
+const shorten = (t: string): string => {
+  return t.replace(/hours/gu, 'hrs.')
+    .replace(/hour/gu, 'hr.')
+    .replace(/minutes/gu, 'mins.')
+    .replace(/minute/gu, 'min.');
+};
+
 const UnitStats: FC<UnitStatsProps> = ({ readings, videos, assignments }) => {
+  const screenWidth = useScreenWidth();
+  const [ r, v, a ] = useMemo(() => {
+    return screenWidth >= 768
+      ? [ readings, videos, assignments ]
+      : [ shorten(readings), typeof videos === 'undefined' ? undefined : shorten(videos), shorten(assignments) ];
+  }, [ screenWidth, readings, videos, assignments ]);
+
   return (
-    <div className="row justify-content-center text-center mb-4 mb-sm-3">
-      <div className="col-12 col-sm-4 mb-4 mb-sm-0">
-        <h4 className="fw-bold mb-1">Readings</h4>{readings}
+    <div className="row justify-content-center text-center mb-3">
+      <div className="customCol customMarginBottom">
+        <h4 className="fw-bold mb-1">Readings</h4>{r}
       </div>
       {!!videos && (
-        <div className="col-12 col-sm-4 mb-4 mb-sm-0">
-          <h4 className="fw-bold mb-1">Videos</h4>{videos}
+        <div className="customCol customMarginBottom">
+          <h4 className="fw-bold mb-1">Videos</h4>{v}
         </div>
       )}
-      <div className="col-12 col-sm-4">
-        <h4 className="fw-bold mb-1">Assignments</h4>{assignments}
+      <div className="customCol">
+        <h4 className="fw-bold mb-1">Assigments</h4>{a}
       </div>
+      <style jsx>{`
+      .customCol {
+        flex: 0 0 auto;
+        width: 100%;
+      }
+      .customMarginBottom {
+        margin-bottom: 1rem;
+      }
+      @media only screen and (min-width: 490px) {
+        .customCol {
+          width: 33.33333333%;
+        }
+        .customMarginBottom {
+          margin-bottom: 0;
+        }
+      }
+      `}</style>
     </div>
   );
 };
