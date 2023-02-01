@@ -1,12 +1,12 @@
 import { GetServerSideProps } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
-import { Accordion, Modal } from 'react-bootstrap';
+import { Modal } from 'react-bootstrap';
 import { BsCardChecklist, BsPeopleFill, BsScissors } from 'react-icons/bs';
 import { IoMdInfinite } from 'react-icons/io';
 
-import { AccordionSection } from '../../../components/AccordionSection';
-import { AccordionToggle } from '../../../components/AccordionToggle';
+import { Accordion } from '../../../components/accordion';
+import { AccordionItem } from '../../../components/accordion/AccordionItem';
 import { DGTutorSection } from '../../../components/DGTutorSection';
 import { GuaranteeSection } from '../../../components/GuaranteeSection';
 import { DefaultLayout } from '../../../components/layouts/DefaultLayout';
@@ -189,38 +189,33 @@ const DogGroomingPage: NextPageWithLayout<Props> = ({ price }) => {
             <p>You must complete a unit with a satisfactory grade before you can submit assignment for the next units.</p>
           </div>
         </div>
-        <Accordion defaultActiveKey="0">
-          <AccordionToggle title="Introductory Units" eventKey="0" />
-          <AccordionSection eventKey="0">
+        <Accordion>
+          <AccordionItem heading="Introductory Units">
             <h4>Units A&ndash;C</h4>
             <p>The first few units in this course will introduce you to the fundamental concepts of dog grooming. In these units, you'll cover health and safety, basic dog anatomy, skincare, behavior, the tools of the trade and more.</p>
             <p>During these units it is recommended that you start considering your grooming workspace so that you are prepared for the practical assignments later in the course. Unit C will be particularly helpful in selecting appropriate tools, equipment and products.</p>
             <p>It is also recommended that you start seeking out dog owners who are willing to let you use their dogs in practical assignments later in the course.</p>
             <p className="mb-0"><Link href="/certification-courses/dog-grooming/course-outline" className="link-primary">View a more-detailed course syllabus</Link></p>
-          </AccordionSection>
-          <AccordionToggle title="Dog First Aid Course" eventKey="1" />
-          <AccordionSection eventKey="1">
+          </AccordionItem>
+          <AccordionItem heading="Dog First Aid Course">
             <p>In order to provide you with the resources to learn your craft safely, your grooming course also comes with a two-unit course on dog first aid. This course covers emergency situations that may occur in a grooming environment and prepares you to respond calmly and effectively in any emergency.</p>
             <p>You must complete both units of the First Aid course before proceeding to the next unit in the dog grooming course.</p>
             <p className="mb-0"><Link href="/certification-courses/dog-grooming/course-outline" className="link-primary">View a more-detailed course syllabus</Link></p>
-          </AccordionSection>
-          <AccordionToggle title="Hands-On units" eventKey="2" />
-          <AccordionSection eventKey="2">
+          </AccordionItem>
+          <AccordionItem heading="Hands-On units">
             <p>Once you understand the basics of dog grooming and dog first aid, you will move on to units that teach you the hands-on skills involved in grooming. In these units, you'll cover nail trimming, ear cleaning, brushing, de-matting, bathing, drying, coat types, pet cuts, breed standards and more. You'll complete a number of basic practical assignments that will prepare you to start your practicum.</p>
             <p className="mb-0"><Link href="/certification-courses/dog-grooming/course-outline" className="link-primary">View a more-detailed course syllabus</Link></p>
-          </AccordionSection>
-          <AccordionToggle title="Practicum" eventKey="3" />
-          <AccordionSection eventKey="3">
+          </AccordionItem>
+          <AccordionItem heading="Practicum">
             <p>Dog grooming as a profession requires a lot of background knowledge, but ultimately your success will depend on your ability to safely and skillfully groom dogs.</p>
             <p>Your practicum is designed to allow you to practice and receive feedback on these essential skills. The units within the practicum involve intensive practical assignments that draw on the content you've mastered throughout the course. You'll have a chance to receive feedback from your tutors on your bathing and drying skills, in addition to the pet cuts and breed cuts you'll create throughout your career.</p>
             <p className="mb-0"><Link href="/certification-courses/dog-grooming/course-outline" className="link-primary">View a more-detailed course syllabus</Link></p>
-          </AccordionSection>
-          <AccordionToggle title="Dog Grooming Business Essentials" eventKey="4" />
-          <AccordionSection eventKey="4">
+          </AccordionItem>
+          <AccordionItem heading="Dog Grooming Business Essentials">
             <h4>(Optional Unit)</h4>
             <p>Dog grooming is a creative career, but it's also a business. After completing your practicum you can choose to complete the optional Business Essentials unit. This unit will help you develop the skills you need to run your own successful dog grooming business, from building your brand to constructing a business plan to setting your prices.</p>
             <p className="mb-0"><Link href="/certification-courses/dog-grooming/course-outline" className="link-primary">View a more-detailed course syllabus</Link></p>
-          </AccordionSection>
+          </AccordionItem>
         </Accordion>
       </div>
     </section>
