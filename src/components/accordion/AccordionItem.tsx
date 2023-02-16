@@ -1,4 +1,4 @@
-import { FC, MouseEventHandler, ReactNode, useEffect, useId, useReducer, useRef } from 'react';
+import { FC, MouseEventHandler, ReactNode, useEffect, useId, useRef } from 'react';
 
 import useReducerWithThunk from 'use-reducer-thunk';
 

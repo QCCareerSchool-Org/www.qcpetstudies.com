@@ -26,7 +26,7 @@ export type Props = {
   enrollPath: string;
 };
 
-const GroomingCoursePreviewPage: NextPageWithLayout<Props> = ({ location, price, enrollPath }) => {
+const GroomingCoursePreviewPage: NextPageWithLayout<Props> = ({ price, enrollPath }) => {
   return <>
     <SEO
       title="Dog Grooming Certification Course"

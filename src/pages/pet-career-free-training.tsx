@@ -1,6 +1,6 @@
 import type { Property } from 'csstype';
 import Image, { StaticImageData } from 'next/image';
-import type { FC, MouseEventHandler } from 'react';
+import type { FC } from 'react';
 import { FaFilm } from 'react-icons/fa';
 import { BrochureForm } from '../components/BrochureForm';
 
@@ -134,6 +134,6 @@ export default PetCareerFreeTrainingPage;
 
 const ImageCircle: FC<{ src: StaticImageData; size?: number; objectPosition?: Property.ObjectPosition }> = ({ src, size = 60, objectPosition = '50%' }) => (
   <div style={{ position: 'relative', overflow: 'hidden', width: size, height: size, borderRadius: size / 2 }}>
-    <Image src={src} placeholder="blur" fill alt="April Costigan, IDGP" style={{ objectFit: 'cover', objectPosition: '50% 0%' }} />
+    <Image src={src} placeholder="blur" fill alt="April Costigan, IDGP" style={{ objectFit: 'cover', objectPosition }} />
   </div>
 );

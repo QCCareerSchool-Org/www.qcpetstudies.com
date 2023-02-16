@@ -5,13 +5,13 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import { FaCog, FaCut, FaFolderOpen } from 'react-icons/fa';
-import { getFlagImageData } from '../lib/flags';
 
 import { useLocation } from '../hooks/useLocation';
 import { useScreenWidth } from '../hooks/useScreenWidth';
 import { useScrollPosition } from '../hooks/useScrollPosition';
 import logoLight from '../images/qc-pet-horizontal-inverse.svg';
 import logo from '../images/qc-pet-horizontal.svg';
+import { getFlagImageData } from '../lib/flags';
 import { SecondaryNav, SecondaryNavLinks } from './SecondaryNav';
 
 type Props = {
