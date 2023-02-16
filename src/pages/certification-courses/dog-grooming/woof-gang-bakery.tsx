@@ -49,11 +49,10 @@ const courseCodes = [ 'dg' ];
 const countUpDuration = 3000;
 const easingFunction = 'easeOutQuad';
 
-const Page: NextPageWithLayout<Props> = ({ location, price, enrollPath }) => {
+const Page: NextPageWithLayout<Props> = ({ price, enrollPath }) => {
   const screenWidth = useScreenWidth();
 
   const sm = screenWidth >= 576;
-  const md = screenWidth >= 768;
   const lg = screenWidth >= 992;
   const xl = screenWidth >= 1200;
 

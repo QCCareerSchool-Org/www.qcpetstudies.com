@@ -1,8 +1,7 @@
-import Image, { StaticImageData } from 'next/image';
+import Image from 'next/image';
 import Link from 'next/link';
 import { FC, ReactNode } from 'react';
 import { FaFacebookF, FaInstagram, FaTwitter } from 'react-icons/fa';
-import { getFlagImageData } from '../lib/flags';
 
 import { useLocation } from '../hooks/useLocation';
 import { useScreenWidth } from '../hooks/useScreenWidth';
@@ -15,6 +14,7 @@ import GuaranteeIcon from '../images/guarantee-icon-fill.svg';
 import Logo from '../images/logo-top-white.svg';
 import SniffinArroundLogo from '../images/sniffin-around-logo-white.svg';
 import { getAddress, isGBPCountry } from '../lib/address';
+import { getFlagImageData } from '../lib/flags';
 import { openLiveChat } from '../lib/livechat';
 import { getTelephoneNumber } from '../lib/phone';
 
