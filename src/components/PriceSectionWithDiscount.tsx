@@ -98,6 +98,9 @@ export const PriceSectionWithDiscount = ({ courses, price, doubleGuarantee, vari
                 </div>
               </div>
             </div>
+            <div className="col-10 offset-1 col-sm-8 offset-sm-2 col-md-12 offset-md-0">
+              <p className="mt-3 mb-0 text-end small fst-italic">Prices are listed in {price.currency.name}.</p>
+            </div>
           </div>
         </div>
         <GuaranteeModal show={popup} doubleGuarantee={doubleGuarantee} toggle={toggle} />

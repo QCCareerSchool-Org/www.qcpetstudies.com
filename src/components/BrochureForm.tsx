@@ -3,8 +3,9 @@ import { useLocation } from '../hooks/useLocation';
 
 type Props = {
   action: string;
+  lastName?: boolean;
   phoneNumber?: boolean;
-  buttonText?: string;
+  buttonText?: string | JSX.Element;
   buttonClassName?: string;
   hiddenFields?: Array<{
     key: string;
@@ -14,7 +15,7 @@ type Props = {
 
 // Do we need to keep track of the opt in date, or will Pardot do that? For telephoneOptIn too?
 
-export const BrochureForm = ({ action, phoneNumber = false, buttonText = 'Get the Preview', buttonClassName, hiddenFields }: Props): ReactElement => {
+export const BrochureForm = ({ action, lastName = true, phoneNumber = false, buttonText = 'Get the Preview', buttonClassName, hiddenFields }: Props): ReactElement => {
   const location = useLocation();
 
   return (
@@ -29,10 +30,12 @@ export const BrochureForm = ({ action, phoneNumber = false, buttonText = 'Get th
         <label htmlFor="firstName" className="form-label">First Name</label>
         <input type="text" id="firstName" name="firstName" className="form-control" autoComplete="given-name" autoCapitalize="words" />
       </div>
-      <div className="mb-3 mb-sm-4">
-        <label htmlFor="lastName" className="form-label">Last Name</label>
-        <input type="text" id="lastName" name="lastName" className="form-control" autoComplete="family-name" autoCapitalize="words" />
-      </div>
+      {lastName && (
+        <div className="mb-3 mb-sm-4">
+          <label htmlFor="lastName" className="form-label">Last Name</label>
+          <input type="text" id="lastName" name="lastName" className="form-control" autoComplete="family-name" autoCapitalize="words" />
+        </div>
+      )}
       <div className="mb-3 mb-sm-4">
         <label htmlFor="emailAddress" className="form-label">Email Address <span className="text-secondary">*</span></label>
         <input type="email" id="emailAddress" name="emailAddress" className="form-control" autoComplete="email" required />

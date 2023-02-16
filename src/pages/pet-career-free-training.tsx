@@ -1,13 +1,25 @@
-import Image from 'next/image';
+import type { Property } from 'csstype';
+import Image, { StaticImageData } from 'next/image';
+import type { FC, MouseEventHandler } from 'react';
 import { FaFilm } from 'react-icons/fa';
+import { BrochureForm } from '../components/BrochureForm';
 
 import { LandingPageLayout } from '../components/layouts/LandingPageLayout';
 import { SEO } from '../components/SEO';
-import Qc35Year from '../images/35-year-emblem.svg';
-import GrowthIcon from '../images/growth-icon-1.svg';
+import { useScreenWidth } from '../hooks/useScreenWidth';
+import Qc35Year from '../images/35-year-emblem-gold.svg';
+import AprilCostigan from '../images/april-costigan.png';
+import Hero from '../images/backgrounds/black-and-white-dog-looking-up.jpg';
+import DogSitting from '../images/black-and-white-dog-sitting.jpg';
+import FiveStars from '../images/five-stars.svg';
 import { NextPageWithLayout } from './_app';
 
 const PetCareerFreeTrainingPage: NextPageWithLayout = () => {
+  const screenWidth = useScreenWidth();
+  const lg = screenWidth >= 992;
+  const xl = screenWidth >= 1200;
+  const xxl = screenWidth >= 1600;
+
   return (
     <>
       <SEO
@@ -16,27 +28,49 @@ const PetCareerFreeTrainingPage: NextPageWithLayout = () => {
         canonical="/pet-career-free-training"
       />
 
-      <section id="top">
+      <section id="top" className="bg-black text-white">
+        {lg && <Image
+          src={Hero}
+          placeholder="blur"
+          alt="Black and white dog"
+          priority
+          fill
+          sizes="100vw"
+          style={{
+            objectPosition: xxl ? '50% 50%' : xl ? '40% 50%' : '30% 50%',
+            objectFit: 'cover',
+            transform: 'scaleX(-1)',
+          }}
+        />}
         <div className="container">
-          <Image src={GrowthIcon} width="74" height="62" alt="growth chart" />
-          <h1>Free Training!</h1>
-          <p className="lead">Calling all dog groomers, trainers, walkers &amp; daycare providers:</p>
-          <p className="lead mb-4">Want to know wow to start, grow &amp; scale <strong>a hugely successful pet business in 2023?</strong></p>
-          <a className="btn btn-secondary btn-lg" href="https://youtube.com"><span style={{ position: 'relative', top: -1 }}><FaFilm /></span> Watch the free training now!</a>
-        </div>
-      </section>
-      <section className="bg-light">
-        <div className="container">
-          <h2>Here's What You'll Learn:</h2>
-          <ul className="checkmarkList">
-            <li>Why starting a pet care business is one of the <strong>best</strong> opportunities in 2023</li>
-            <li>The top (and most profitable) career opportunities for new pet professionals</li>
-            <li>Which services you should offer to grow your business (&amp; bank account) quickly</li>
-            <li>How to keep a reliable and consistent flow of happy customers and furry clients</li>
-          </ul>
+          <div className="row">
+            <div className="col-12 col-md-10 col-lg-6 col-xxl-5">
+              <h1>Free Training!</h1>
+              <p className="lead">Calling all dog groomers, trainers, walkers &amp; daycare providers: <strong>learn how to start, grow &amp; scale a hugely successful pet business in 2023?</strong></p>
+              <BrochureForm action="https://go.qccareerschool.com/l/947642/2023-02-16/thly8" lastName={false} buttonClassName="btn btn-secondary btn-lg" buttonText={<><span style={{ position: 'relative', top: -1, marginRight: '0.5rem' }}><FaFilm /></span> Watch the free training now!</>} />
+            </div>
+          </div>
         </div>
       </section>
       <section>
+        <div className="container">
+          <div className="row align-items-center justify-content-center">
+            <div className="col-12 col-lg-8 mb-4 mb-lg-0">
+              <h2 className="mb-4">Here's What You'll Learn:</h2>
+              <ul className="checkmarkList mb-0">
+                <li>Why starting a pet care business is one of the <strong>best</strong> opportunities in 2023</li>
+                <li>The top (and most profitable) career opportunities for new pet professionals</li>
+                <li>Which services you should offer to grow your business (&amp; bank account) quickly</li>
+                <li>How to keep a reliable and consistent flow of happy customers and furry clients</li>
+              </ul>
+            </div>
+            <div className="col-8 col-md-6 col-lg-4 text-center">
+              <Image src={DogSitting} width="862" height="792" style={{ maxWidth: '100%', height: 'auto' }} alt="a dog lying down" />
+            </div>
+          </div>
+        </div>
+      </section>
+      <section className="bg-navy text-white">
         <div className="container text-center text-md-start">
           <div className="row justify-content-center">
             <div className="col-12 col-lg-10">
@@ -51,30 +85,43 @@ const PetCareerFreeTrainingPage: NextPageWithLayout = () => {
                 </div>
                 <p className="lead mb-0">QC Pet Studies is a faculty of QC Career School. We're an online, international school that's been offering distance education courses since 1984, and in this time we&apos;ve mastered the art of delivering quality course content online.</p>
               </div>
-              <p>QC Pet Studies offers the most comprehensive online pet course available. Through lesson texts, video tutorials, hands on assignments, and personalized feedback from industry professionals, our students receive the skills and resources they need to build successful careers in the pet care industry.</p>
             </div>
           </div>
         </div>
       </section>
-      <section className="bg-light">
+      <section className="bg-light text-center">
         <div className="container">
-          <p className="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam non imperdiet tortor. Donec rhoncus interdum efficitur. Maecenas euismod, justo eu molestie gravida, eros arcu ultricies neque, pulvinar volutpat purus elit eget nunc. Vivamus sed aliquet nisi. Mauris imperdiet enim cursus arcu sodales dictum. Praesent arcu dolor, accumsan at ante et, interdum commodo velit. Mauris finibus diam vitae enim volutpat ultricies. Aliquam porttitor maximus nisi, ut consequat nulla condimentum euismod. Sed id elit eleifend erat interdum scelerisque sit amet sed erat. Duis pharetra scelerisque urna quis imperdiet. Fusce efficitur elit aliquet commodo rhoncus. Suspendisse venenatis lacus urna, ac placerat leo fringilla et. Donec vestibulum in justo malesuada eleifend. Mauris non ante sit amet velit iaculis elementum vel dignissim magna.</p>
+          <div className="mb-4"><Image src={FiveStars} width="268" height="48" alt="5 out of 5" /></div>
+          <p className="lead">&ldquo;I don't think I could be where I am today without QC Pet Studies.&rdquo;</p>
+          <p className="mb-4">&ldquo;The Dog Grooming and First Aid courses are fantastic. I learned so much from Lisa Day and Paddy Gaffney. I've officially started my own business, Sparkling Dog Grooming. I've constructed an entire professional grooming studio in my basement and have started building a very nice client list.&rdquo;</p>
+          <div className="d-flex justify-content-center">
+            <div className="me-3"><ImageCircle src={AprilCostigan} objectPosition="0% 50%" /></div>
+            <p className="mb-0"><span className="fw-bold">April Costigan</span><br /><span className="fst-italic gold">QC Pet Studies Graduate, IDGP</span></p>
+          </div>
         </div>
       </section>
-      <section className="bg-navy text-white">
+      <section className="bg-black text-white">
         <div className="container">
           <div className="row align-items-center">
             <div className="col-12 col-lg-9 col-xl-8 mb-4 mb-lg-0 text-center text-lg-start">
               <h2 className="mb-4">Ready to jump into an<br /><strong>exciting new pet care career?</strong></h2>
-              <a className="btn btn-secondary btn-lg" href="https://youtube.com"><span style={{ position: 'relative', top: -1 }}><FaFilm /></span> Watch the free training now!</a>
+              <a className="btn btn-secondary btn-lg" href="#top"><span style={{ position: 'relative', top: -1 }}><FaFilm /></span> Watch the free training now!</a>
             </div>
           </div>
         </div>
       </section>
       <style jsx>{`
       .checkmarkList li {
-        list-style-type: '✔️';
+        // list-style-type: '✔️';
+        list-style-image: url('/images/check-mark-blue-16.svg');
         padding-inline-start: 1ch;
+        margin-bottom: 0.5rem;
+      }
+      .checkmarkList li:last-of-type {
+        margin-bottom: 0;
+      }
+      .gold {
+        color: #cfa245;
       }
       `}</style>
     </>
@@ -84,3 +131,9 @@ const PetCareerFreeTrainingPage: NextPageWithLayout = () => {
 PetCareerFreeTrainingPage.getLayout = page => <LandingPageLayout footer={false}>{page}</LandingPageLayout>;
 
 export default PetCareerFreeTrainingPage;
+
+const ImageCircle: FC<{ src: StaticImageData; size?: number; objectPosition?: Property.ObjectPosition }> = ({ src, size = 60, objectPosition = '50%' }) => (
+  <div style={{ position: 'relative', overflow: 'hidden', width: size, height: size, borderRadius: size / 2 }}>
+    <Image src={src} placeholder="blur" fill alt="April Costigan, IDGP" style={{ objectFit: 'cover', objectPosition: '50% 0%' }} />
+  </div>
+);

@@ -5,7 +5,9 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import { FaCog, FaCut, FaFolderOpen } from 'react-icons/fa';
+import { getFlagImageData } from '../lib/flags';
 
+import { useLocation } from '../hooks/useLocation';
 import { useScreenWidth } from '../hooks/useScreenWidth';
 import { useScrollPosition } from '../hooks/useScrollPosition';
 import logoLight from '../images/qc-pet-horizontal-inverse.svg';
@@ -24,6 +26,7 @@ type Props = {
 
 export const Header = ({ noHero, inverseNav, secondaryTitle, secondaryNavLinks, enrollPath = '/', className }: Props): ReactElement => {
   const screenWidth = useScreenWidth();
+  const location = useLocation();
   const scrollPosition = useScrollPosition();
   const [ expanded, setExpanded ] = useState(false);
   const [ key, setKey ] = useState(0);
@@ -32,6 +35,8 @@ export const Header = ({ noHero, inverseNav, secondaryTitle, secondaryNavLinks, 
   const scrolled = scrollPosition > maxPosition;
 
   const lgOrGreater = screenWidth >= 992;
+
+  const flagImage = getFlagImageData(location?.countryCode);
 
   const resetMenu = (): void => {
     setExpanded(false);
@@ -54,7 +59,7 @@ export const Header = ({ noHero, inverseNav, secondaryTitle, secondaryNavLinks, 
         <div className="container">
           <div id="nav-wrapper">
             <Navbar.Brand>
-              <Link href="/" onClick={resetMenu}><Image src={(scrolled || (inverseNav && !expanded) ? logo : logoLight)} alt="QC Pet Studies" width="176" height="17" /></Link>
+              <Link href="/" onClick={resetMenu}><Image src={(scrolled || (inverseNav && !expanded) ? logo : logoLight)} alt="QC Pet Studies" width="176" height="17" />{flagImage && <span style={{ position: 'relative', marginLeft: '0.5rem', top: '-3px' }}><Image src={flagImage.src} width={17.1434} height={10} alt={flagImage.alt} /></span>}</Link>
             </Navbar.Brand>
             <Navbar.Toggle aria-controls="main-navbar" />
             <Navbar.Collapse id="main-navbar" className="justify-content-end">

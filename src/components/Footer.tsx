@@ -1,7 +1,8 @@
-import Image from 'next/image';
+import Image, { StaticImageData } from 'next/image';
 import Link from 'next/link';
 import { FC, ReactNode } from 'react';
 import { FaFacebookF, FaInstagram, FaTwitter } from 'react-icons/fa';
+import { getFlagImageData } from '../lib/flags';
 
 import { useLocation } from '../hooks/useLocation';
 import { useScreenWidth } from '../hooks/useScreenWidth';
@@ -44,6 +45,8 @@ export const Footer: FC<Props> = ({ ctaType, cta, enrollPath = '/', className })
       : ctaType === 'care'
         ? `https://enroll.qcpetstudies.com${enrollPath}?c[]=dd`
         : `https://enroll.qcpetstudies.com${enrollPath}`;
+
+  const flagImage = getFlagImageData(location?.countryCode);
 
   return (
     <footer style={{ borderTop: '1px solid rgb(255,255,255,0.1)' }} className={className}>
@@ -175,7 +178,7 @@ export const Footer: FC<Props> = ({ ctaType, cta, enrollPath = '/', className })
                 </>
               )}
             </div>
-            <div className="small">{address.join(', ')}</div>
+            <div className="small">{address.join(', ')}{flagImage && <span style={{ position: 'relative', top: -1, marginLeft: '0.5rem' }}><Image src={flagImage.src} width={20.57} height={12} alt={flagImage.alt} /></span>}</div>
           </div>
           <div className="col-12 col-sm-3 text-center text-sm-end">
             <a href="https://www.facebook.com/qcpetstudies" target="_blank" rel="noopener noreferrer"><FaFacebookF className="me-3" /></a>
