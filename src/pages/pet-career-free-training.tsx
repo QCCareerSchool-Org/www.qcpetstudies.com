@@ -46,8 +46,8 @@ const PetCareerFreeTrainingPage: NextPageWithLayout = () => {
           <div className="row">
             <div className="col-12 col-md-10 col-lg-6 col-xxl-5">
               <h1>Free Training!</h1>
-              <p className="lead">Calling all dog groomers, trainers, walkers &amp; daycare providers: <strong>learn how to start, grow &amp; scale a hugely successful pet business in 2023?</strong></p>
-              <BrochureForm action="https://go.qccareerschool.com/l/947642/2023-02-16/thly8" lastName={false} buttonClassName="btn btn-secondary btn-lg" buttonText={<><span style={{ position: 'relative', top: -1, marginRight: '0.5rem' }}><FaFilm /></span> Watch the free training now!</>} />
+              <p className="lead">Calling all dog groomers, trainers, walkers &amp; daycare providers: <strong>learn how to start, grow &amp; scale a hugely successful pet business in 2023!</strong></p>
+              <BrochureForm action="https://go.qccareerschool.com/l/947642/2023-02-16/thly8" lastName={false} buttonClassName="btn btn-secondary btn-lg" buttonText={<><span style={{ position: 'relative', top: -1, marginRight: '0.25rem' }}><FaFilm /></span> Watch the free training now!</>} />
             </div>
           </div>
         </div>
@@ -91,28 +91,31 @@ const PetCareerFreeTrainingPage: NextPageWithLayout = () => {
       </section>
       <section className="bg-light text-center">
         <div className="container">
-          <div className="mb-4"><Image src={FiveStars} width="268" height="48" alt="5 out of 5" /></div>
-          <p className="lead">&ldquo;I don't think I could be where I am today without QC Pet Studies.&rdquo;</p>
-          <p className="mb-4">&ldquo;The Dog Grooming and First Aid courses are fantastic. I learned so much from Lisa Day and Paddy Gaffney. I've officially started my own business, Sparkling Dog Grooming. I've constructed an entire professional grooming studio in my basement and have started building a very nice client list.&rdquo;</p>
-          <div className="d-flex justify-content-center">
-            <div className="me-3"><ImageCircle src={AprilCostigan} objectPosition="0% 50%" /></div>
-            <p className="mb-0"><span className="fw-bold">April Costigan</span><br /><span className="fst-italic gold">QC Pet Studies Graduate, IDGP</span></p>
+          <div className="row justify-content-center">
+            <div className="col-12 col-md-10 col-lg-8">
+              <div className="mb-4"><Image src={FiveStars} width="268" height="48" alt="5 out of 5" /></div>
+              <p className="lead">&ldquo;I don't think I could be where I am today without QC Pet Studies.&rdquo;</p>
+              <p className="mb-4">&ldquo;The Dog Grooming and First Aid courses are fantastic. I learned so much from Lisa Day and Paddy Gaffney. I've officially started my own business, Sparkling Dog Grooming. I've constructed an entire professional grooming studio in my basement and have started building a very nice client list.&rdquo;</p>
+              <div className="d-flex justify-content-center">
+                <div className="me-3"><ImageCircle src={AprilCostigan} objectPosition="0% 50%" /></div>
+                <p className="mb-0"><span className="fw-bold">April Costigan</span><br /><span className="fst-italic gold">QC Pet Studies Graduate, IDGP</span></p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
       <section className="bg-black text-white">
         <div className="container">
-          <div className="row align-items-center">
-            <div className="col-12 col-lg-9 col-xl-8 mb-4 mb-lg-0 text-center text-lg-start">
+          <div className="row justify-content-center">
+            <div className="col-12 col-lg-9 col-xl-8 mb-4 mb-lg-0 text-center">
               <h2 className="mb-4">Ready to jump into an<br /><strong>exciting new pet care career?</strong></h2>
-              <a className="btn btn-secondary btn-lg" href="#top"><span style={{ position: 'relative', top: -1 }}><FaFilm /></span> Watch the free training now!</a>
+              <a className="btn btn-secondary btn-lg" href="#top"><span style={{ position: 'relative', top: -1, marginRight: '0.25rem' }}><FaFilm /></span> Watch the free training now!</a>
             </div>
           </div>
         </div>
       </section>
       <style jsx>{`
       .checkmarkList li {
-        // list-style-type: '✔️';
         list-style-image: url('/images/check-mark-blue-16.svg');
         padding-inline-start: 1ch;
         margin-bottom: 0.5rem;
