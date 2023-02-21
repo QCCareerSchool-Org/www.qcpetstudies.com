@@ -1,9 +1,8 @@
-import type { Property } from 'csstype';
-import Image, { StaticImageData } from 'next/image';
-import type { FC } from 'react';
+import Image from 'next/image';
 import { FaFilm } from 'react-icons/fa';
-import { BrochureForm } from '../components/BrochureForm';
 
+import { BrochureForm } from '../components/BrochureForm';
+import { ImageCircle } from '../components/ImageCircle';
 import { LandingPageLayout } from '../components/layouts/LandingPageLayout';
 import { SEO } from '../components/SEO';
 import { useScreenWidth } from '../hooks/useScreenWidth';
@@ -134,9 +133,3 @@ const PetCareerFreeTrainingPage: NextPageWithLayout = () => {
 PetCareerFreeTrainingPage.getLayout = page => <LandingPageLayout footer={false}>{page}</LandingPageLayout>;
 
 export default PetCareerFreeTrainingPage;
-
-const ImageCircle: FC<{ src: StaticImageData; size?: number; objectPosition?: Property.ObjectPosition }> = ({ src, size = 60, objectPosition = '50%' }) => (
-  <div style={{ position: 'relative', overflow: 'hidden', width: size, height: size, borderRadius: size / 2 }}>
-    <Image src={src} placeholder="blur" fill alt="April Costigan, IDGP" style={{ objectFit: 'cover', objectPosition }} />
-  </div>
-);
