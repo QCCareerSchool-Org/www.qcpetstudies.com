@@ -1,4 +1,3 @@
-import { NextPage } from 'next';
 import Image from 'next/image';
 import { useEffect, useRef, useState } from 'react';
 
@@ -28,7 +27,7 @@ const WelcomeToThePetCareerFreeTraining: NextPageWithLayout = () => {
     <>
       <section id="top" className="bg-black text-white">
         <div className="container text-center">
-          <h1 className="lead mb-5" style={{ lineHeight: 'normal' }}>Start, Grow &amp; Scale a Hugely Successful Pet Business in 2023!</h1>
+          <h1 className="h2 mb-4 mb-md-5" style={{ lineHeight: 'normal' }}>Start, Grow &amp; Scale a Hugely Successful Pet Business in 2023!</h1>
           <script src="https://fast.wistia.com/embed/medias/logodkgd9s.jsonp" async />
           <script src="https://fast.wistia.com/assets/external/E-v1.js" async />
           {client && (
@@ -112,7 +111,7 @@ const WelcomeToThePetCareerFreeTraining: NextPageWithLayout = () => {
             <div className="col-12 col-md-10 col-lg-8">
               <h2>Still Need Help Chosing the Best Pet Care Career Path?</h2>
               <p>Book a call with a student advisor and we'd be happy to guide you!</p>
-              <a href="#" className="btn btn-secondary btn-lg">Book a Call Now</a>
+              <a href="https://ng295qu8zyk.typeform.com/to/aLUG3dpN" target="_blank" rel="noopener noreferrer" className="btn btn-secondary btn-lg">Book a Call Now</a>
             </div>
           </div>
         </div>
