@@ -38,6 +38,7 @@
     { "source": "/enrollment-agreement-gb.html", "destination": "/enrollment-agreement-gb" }
   ],
   "rewrites": [
+    { "source": "/blog/", "destination": "https://blog.qcpetstudies.com/blog/sniffin-around-blog" },
     { "source": "/blog/:match*", "destination": "https://blog.qcpetstudies.com/blog/:match" }
   ]
 }
