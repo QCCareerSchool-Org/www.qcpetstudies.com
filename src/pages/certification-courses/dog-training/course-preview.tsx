@@ -7,7 +7,7 @@ import { FaBars, FaPlay } from 'react-icons/fa';
 import { Bar } from '../../../components/Bar';
 import { DTTutorSection } from '../../../components/DTTutorSection';
 import { LandingPageLayout } from '../../../components/layouts/LandingPageLayout';
-import { PriceSection } from '../../../components/PriceSection';
+import { PriceSectionWithDiscount } from '../../../components/PriceSectionWithDiscount';
 import { SEO } from '../../../components/SEO';
 import { TabGroup } from '../../../components/TabGroup';
 import GoldenRetrieverComputerBackground from '../../../images/backgrounds/golden-retriever-sitting-next-to-computer.jpg';
@@ -320,7 +320,7 @@ const DogTrainingCoursePreviewPage: NextPageWithLayout<Props> = ({ price, enroll
       </div>
     </section>
 
-    <PriceSection courses={courseCodes} price={price} doubleGuarantee={true} enrollPath={enrollPath} />
+    <PriceSectionWithDiscount courses={courseCodes} price={price} doubleGuarantee={true} enrollPath={enrollPath} />
 
     <DTTutorSection className="bg-light" />
   </>;
