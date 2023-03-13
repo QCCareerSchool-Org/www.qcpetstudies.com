@@ -1,6 +1,7 @@
 import { GetServerSideProps } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
+import { ReactEventHandler, useEffect, useState } from 'react';
 import { Modal } from 'react-bootstrap';
 import { BsCardChecklist, BsPeopleFill, BsScissors } from 'react-icons/bs';
 import { IoMdInfinite } from 'react-icons/io';
@@ -12,6 +13,7 @@ import { GuaranteeSection } from '../../../components/GuaranteeSection';
 import { DefaultLayout } from '../../../components/layouts/DefaultLayout';
 import { PriceSection } from '../../../components/PriceSection';
 import { SEO } from '../../../components/SEO';
+import { usePrevious } from '../../../hooks/usePrevious';
 import { useScreenWidth } from '../../../hooks/useScreenWidth';
 import { useToggle } from '../../../hooks/useToggle';
 import DogGroomingBackground from '../../../images/backgrounds/bichon-frise-getting-haircut.jpg';
@@ -22,6 +24,7 @@ import DogGroomingKit from '../../../images/dog-grooming-kit-white.jpg';
 import GroomingKitDetailImage from '../../../images/grooming-kit-details.jpg';
 import CertificationGoldImage from '../../../images/IDGP-certification-gold.svg';
 import { formatPrice } from '../../../lib/formatPrice';
+import { gaEvent } from '../../../lib/ga';
 import { getLocation } from '../../../lib/getLocation';
 import { lookupPrices } from '../../../lib/lookupPrices';
 import type { Location } from '../../../models/location';
@@ -38,14 +41,54 @@ type Props = {
   price: PriceResult;
 };
 
+const eventLabel = 'DG Teaser 2023';
+
 const DogGroomingPage: NextPageWithLayout<Props> = ({ price }) => {
   const screenWidth = useScreenWidth();
   const [ kitPopupVisible, kitPopupToggle ] = useToggle();
+  const [ videoPercentage, setVideoPercentage ] = useState(0);
 
   const mdOrGreater = screenWidth >= 768;
   const lgOrGreater = screenWidth >= 992;
 
   const md = mdOrGreater && !lgOrGreater;
+
+  const videoPlay: ReactEventHandler<HTMLVideoElement> = () => {
+    // eslint-disable-next-line camelcase
+    gaEvent('Play', { event_category: 'Video', event_label: eventLabel });
+  };
+
+  const videoEnded: ReactEventHandler<HTMLVideoElement> = () => {
+    // eslint-disable-next-line camelcase
+    gaEvent('End', { event_category: 'Video', event_label: eventLabel });
+  };
+
+  const videoUpdate: ReactEventHandler<HTMLVideoElement> = e => {
+    const target = e.target as HTMLVideoElement;
+    const percentage = Math.round((target.currentTime / target.duration) * 100);
+    setVideoPercentage(percentage);
+  };
+
+  const prevVideoPercentage = usePrevious<number>(videoPercentage);
+
+  useEffect(() => {
+    if (typeof prevVideoPercentage === 'undefined') {
+      return;
+    }
+    if (videoPercentage >= 100 && prevVideoPercentage < 100) {
+      // eslint-disable-next-line camelcase
+      gaEvent('100%', { event_category: 'Video', event_label: eventLabel });
+    } else if (videoPercentage >= 75 && prevVideoPercentage < 75) {
+      // eslint-disable-next-line camelcase
+      gaEvent('75%', { event_category: 'Video', event_label: eventLabel });
+    } else if (videoPercentage >= 50 && prevVideoPercentage < 50) {
+      // eslint-disable-next-line camelcase
+      gaEvent('50%', { event_category: 'Video', event_label: eventLabel });
+    } else if (videoPercentage >= 25 && prevVideoPercentage < 25) {
+      // eslint-disable-next-line camelcase
+      gaEvent('25%', { event_category: 'Video', event_label: eventLabel });
+    }
+  }, [ videoPercentage, prevVideoPercentage ]);
 
   return <>
     <SEO
@@ -121,6 +164,12 @@ const DogGroomingPage: NextPageWithLayout<Props> = ({ price }) => {
       <div className="container text-center">
         <div className="row justify-content-center">
           <div className="col-12 col-lg-10">
+            <div className="ratio ratio-16x9 mb-4">
+              <video onTimeUpdate={videoUpdate} onEnded={videoEnded} onPlay={videoPlay} controls poster="https://89b45d42c17e11dd3d57-62a1fc0bf60a98e1d5e980348a7de3b7.ssl.cf1.rackcdn.com/dog-grooming-teaser.jpg">
+                <source src="https://89b45d42c17e11dd3d57-62a1fc0bf60a98e1d5e980348a7de3b7.ssl.cf1.rackcdn.com/dog-grooming-teaser.mp4" type="video/mp4" />
+              </video>
+            </div>
+
             <h2>Become a <strong>Certified Dog Groomer</strong></h2>
             <p className="lead"><strong>International Dog Grooming Professional&trade;</strong> | <i>IDGP&trade;</i></p>
             <p>There's never been a better time to start a career as a dog groomer. Groomers all over the country have waiting lists or are simply refusing new clients. What an amazing opportunity to start a new and lucrative career!</p>
