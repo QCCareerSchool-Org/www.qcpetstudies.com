@@ -7,7 +7,6 @@ import { FaBars, FaPlay } from 'react-icons/fa';
 import { Bar } from '../../../components/Bar';
 import { DGTutorSection } from '../../../components/DGTutorSection';
 import { LandingPageLayout } from '../../../components/layouts/LandingPageLayout';
-import { PriceSection } from '../../../components/PriceSection';
 import { PriceSectionWithDiscount } from '../../../components/PriceSectionWithDiscount';
 import { SEO } from '../../../components/SEO';
 import { TabGroup } from '../../../components/TabGroup';

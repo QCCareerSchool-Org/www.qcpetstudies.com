@@ -73,7 +73,10 @@ const DogTrainingPage: NextPageWithLayout<Props> = ({ price }) => {
     if (typeof prevVideoPercentage === 'undefined') {
       return;
     }
-    if (videoPercentage >= 75 && prevVideoPercentage < 75) {
+    if (videoPercentage >= 100 && prevVideoPercentage < 100) {
+      // eslint-disable-next-line camelcase
+      gaEvent('100%', { event_category: 'Video', event_label: 'DT Trailer' });
+    } else if (videoPercentage >= 75 && prevVideoPercentage < 75) {
       // eslint-disable-next-line camelcase
       gaEvent('75%', { event_category: 'Video', event_label: 'DT Trailer' });
     } else if (videoPercentage >= 50 && prevVideoPercentage < 50) {
