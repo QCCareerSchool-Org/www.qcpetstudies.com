@@ -5,6 +5,7 @@ const withPurgeCss = require('next-purgecss');
 module.exports = withPurgeCss({
   reactStrictMode: true,
   swcMinify: true,
+  pageExtensions: [ 'page.tsx', 'page.ts', 'page.jsx', 'page.js' ],
   purgeCssPaths: [
     'src/pages/**/*',
     'src/components/**/*',

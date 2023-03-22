@@ -6,7 +6,7 @@ import { render } from '@testing-library/react';
 import { axe } from 'jest-axe';
 import React from 'react';
 
-import Page from '../../pages/contact-us';
+import Page from '../../pages/contact-us.page';
 
 jest.mock('../../hooks/useLocation');
 
