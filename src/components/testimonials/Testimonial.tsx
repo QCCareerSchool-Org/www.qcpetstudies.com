@@ -15,6 +15,6 @@ export const Testimonial: FC<PropsWithChildren<Props>> = ({ name, certification,
       <Image src={imageSrc} width={imageWidth} height={imageHeight} alt={name} />
     </div>
     {children}
-    <p className="lead"><strong>{name}{certification && <>, <span className="gold">{certification}&trade;</span></>}</strong></p>
+    <p className="lead mb-0"><strong>{name}{certification && <>, <span className="gold">{certification}&trade;</span></>}</strong></p>
   </>
 );
