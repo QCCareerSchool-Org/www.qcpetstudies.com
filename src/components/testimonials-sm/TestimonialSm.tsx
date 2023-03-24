@@ -24,6 +24,6 @@ export const TestimonialSm: FC<Props> = ({ size = 216, quotation, name, certific
     </div>
     <div className="mb-3"><Image src={variant === 'secondary' ? FiveStarsSecondary : FiveStarsPrimary} width="268" height="48" alt="5 out of 5" /></div>
     <p className="lead strong"><strong>&ldquo;{quotation}&rdquo;</strong></p>
-    <p>{name}{certification && <>, <span className="gold">{certification}&trade;</span></>}</p>
+    <p className="mb-0">{name}{certification && <>, <span className="gold">{certification}&trade;</span></>}</p>
   </>
 );
