@@ -5,12 +5,13 @@ import type { FC } from 'react';
 
 type Props = {
   src: StaticImageData;
+  alt: string;
   size?: number;
   objectPosition?: Property.ObjectPosition;
 };
 
-export const ImageCircle: FC<Props> = ({ src, size = 60, objectPosition = '50%' }) => (
+export const ImageCircle: FC<Props> = ({ src, alt, size = 60, objectPosition = '50%' }) => (
   <div style={{ position: 'relative', overflow: 'hidden', width: size, height: size, borderRadius: size / 2 }}>
-    <Image src={src} placeholder="blur" fill alt="April Costigan, IDGP" style={{ objectFit: 'cover', objectPosition }} />
+    <Image src={src} placeholder="blur" fill alt={alt} style={{ objectFit: 'cover', objectPosition }} />
   </div>
 );

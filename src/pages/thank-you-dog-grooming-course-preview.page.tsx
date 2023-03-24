@@ -8,6 +8,9 @@ import { FaPaw } from 'react-icons/fa';
 
 import { GoogleAdsLeadScript } from '../components/GoogleAdsLeadScript';
 import { SEO } from '../components/SEO';
+import { TestimonialSmAprilCostigan } from '../components/testimonials-sm/TestimonialSmAprilCostigan';
+import { TestimonialSmHailieSavage } from '../components/testimonials-sm/TestimonialSmHailieSavage';
+import { TestimonialSmNickiHughes } from '../components/testimonials-sm/TestimonialSmNickiHughes';
 import { useScreenWidth } from '../hooks/useScreenWidth';
 import CatalogBackground from '../images/backgrounds/white-bichon-frise-circle-cut.jpg';
 import { fbqLead } from '../lib/fbq';
@@ -51,6 +54,23 @@ const ThankYouCatalogPage: NextPage<Props> = ({ emailAddress }) => {
             <p className="lead">Find out what a career in dog grooming can do for you, and how you can get started with QC's Dog Grooming course.</p>
             <h4 className="mb-4">Access your free course preview here:</h4>
             <Link href="/certification-courses/dog-grooming/course-preview" className="btn btn-outline-secondary btn-lg">Get Preview&nbsp;&nbsp;<FaPaw style={{ position: 'relative', top: -2 }} /></Link>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section className="text-center">
+      <div className="container">
+        <h2 className="mb-4">What <strong>Graduates Are Saying</strong></h2>
+        <div className="row">
+          <div className="col-12 col-lg-4 mb-4 mb-lg-0">
+            <TestimonialSmAprilCostigan />
+          </div>
+          <div className="col-12 col-lg-4 mb-4 mb-lg-0">
+            <TestimonialSmHailieSavage />
+          </div>
+          <div className="col-12 col-lg-4">
+            <TestimonialSmNickiHughes />
           </div>
         </div>
       </div>

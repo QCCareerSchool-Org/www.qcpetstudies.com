@@ -10,7 +10,7 @@ import Qc35Year from '../images/35-year-emblem-gold.svg';
 import AprilCostigan from '../images/april-costigan.png';
 import Hero from '../images/backgrounds/black-and-white-dog-looking-up.jpg';
 import DogSitting from '../images/black-and-white-dog-sitting.jpg';
-import FiveStars from '../images/five-stars.svg';
+import FiveStars from '../images/five-stars-secondary.svg';
 import { NextPageWithLayout } from './_app.page';
 
 const PetCareerFreeTrainingPage: NextPageWithLayout = () => {
@@ -96,7 +96,7 @@ const PetCareerFreeTrainingPage: NextPageWithLayout = () => {
               <p className="lead">&ldquo;I don't think I could be where I am today without QC Pet Studies.&rdquo;</p>
               <p className="mb-4">&ldquo;The Dog Grooming and First Aid courses are fantastic. I learned so much from Lisa Day and Paddy Gaffney. I've officially started my own business, Sparkling Dog Grooming. I've constructed an entire professional grooming studio in my basement and have started building a very nice client list.&rdquo;</p>
               <div className="d-flex justify-content-center">
-                <div className="me-3"><ImageCircle src={AprilCostigan} objectPosition="0% 50%" /></div>
+                <div className="me-3"><ImageCircle src={AprilCostigan} alt="April Costigan, IDGP" objectPosition="0% 50%" /></div>
                 <p className="mb-0"><span className="fw-bold">April Costigan</span><br /><span className="fst-italic gold">QC Pet Studies Graduate, IDGP</span></p>
               </div>
             </div>
