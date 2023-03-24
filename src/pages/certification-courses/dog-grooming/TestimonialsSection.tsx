@@ -31,7 +31,7 @@ export const TestimonialsSection: FC<Props> = ({ className }) => (
         <Col className="mb-4 mb-lg-0 mb-xl-0">
           <TestimonialCaseyBecard />
         </Col>
-        <Col className="mb-4 mb-lg-0 mb-xl-0">
+        <Col>
           <TestimonialNickiHughes />
         </Col>
       </div>
