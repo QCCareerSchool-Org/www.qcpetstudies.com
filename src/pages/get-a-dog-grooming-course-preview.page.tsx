@@ -8,6 +8,9 @@ import { BrochureForm } from '../components/BrochureForm';
 import { CardBody } from '../components/CardBody';
 import { LandingPageLayout } from '../components/layouts/LandingPageLayout';
 import { SEO } from '../components/SEO';
+import { TestimonialSmCaseyBechard } from '../components/testimonials-sm/TestimonialSmMelodyCaseyBechard';
+import { TestimonialSmKaylaTorraville } from '../components/testimonials-sm/TestimonialSmMelodyKaylaTorraville';
+import { TestimonialSmMelodyMason } from '../components/testimonials-sm/TestimonialSmMelodyMason';
 import { useScreenWidth } from '../hooks/useScreenWidth';
 import TestiminialBackground from '../images/backgrounds/testimonials-bg.jpg';
 import ProfileImage from '../images/casey-bechard.png';
@@ -66,7 +69,7 @@ const DogGroomingCatalogPage: NextPageWithLayout<Props> = ({ testGroup }) => {
               <div className="mb-2">
                 <Image
                   src={CatalogImage}
-                  alt="tablet with dog image"
+                  alt="dog with grooming tools"
                   sizes="100vw"
                   style={{ width: '100%', height: 'auto' }}
                 />
@@ -122,33 +125,24 @@ const DogGroomingCatalogPage: NextPageWithLayout<Props> = ({ testGroup }) => {
       </div>
     </section>
 
-    <section className="bg-dark text-white">
-      <Image
+    <section className="text-light" style={{ backgroundColor: '#61677a' }}>
+      {false && lgOrGreater && <Image
         src={TestiminialBackground}
         alt="happy dog with open mouth"
         fill
         sizes="100vw"
         style={{ objectFit: 'cover', objectPosition: 'right' }}
-      />
+      />}
       <div className="container text-center">
         <div className="row justify-content-center">
-          <div className="col-12 col-lg-10 mb-4">
-            <BsStarFill size={32} className="text-primary mx-2" />
-            <BsStarFill size={32} className="text-primary mx-2" />
-            <BsStarFill size={32} className="text-primary mx-2" />
-            <BsStarFill size={32} className="text-primary mx-2" />
-            <BsStarFill size={32} className="text-primary mx-2" />
+          <div className="col-12 col-lg-4 mb-4 mb-lg-0">
+            <TestimonialSmMelodyMason size={120} />
           </div>
-          <div className="col-12 col-lg-8">
-            <p>&ldquo;Loved having the opportunity to learn dog grooming and dog first aid through this program. It's awesome being able to work at my own pace and taking the time to practice and use my assignments in my everyday job. Highly recommend!&rdquo;</p>
-            <Image
-              src={ProfileImage}
-              alt="Casey bechard profile image"
-              width="85"
-              height="85"
-              style={{ maxWidth: '100%', height: 'auto' }}
-            />
-            <p className="lead mb-0"><strong>Casey Bechard</strong><br />QC Pet Studies Graduate</p>
+          <div className="col-12 col-lg-4 mb-4 mb-lg-0">
+            <TestimonialSmKaylaTorraville size={120} />
+          </div>
+          <div className="col-12 col-lg-4 mb-4">
+            <TestimonialSmCaseyBechard size={120} />
           </div>
         </div>
       </div>

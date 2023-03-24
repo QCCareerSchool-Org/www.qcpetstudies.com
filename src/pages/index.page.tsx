@@ -10,6 +10,9 @@ import { EducationalOrganization } from 'schema-dts';
 import { DefaultLayout } from '../components/layouts/DefaultLayout';
 import { SearchBox } from '../components/SearchBox';
 import { SEO } from '../components/SEO';
+import { TestimonialKaylaTorraville } from '../components/testimonials/TestimonialKaylaTorraville';
+import { TestimonialLucaCoppola } from '../components/testimonials/TestimonialLucaCoppola';
+import { TestimonialMelodyMason } from '../components/testimonials/TestimonialMelodyMason';
 import { useScreenWidth } from '../hooks/useScreenWidth';
 import MaltipuBegging from '../images/backgrounds/maltipu-begging.jpg';
 import MaltipuJumping from '../images/backgrounds/maltipu-jumping.jpg';
@@ -238,6 +241,23 @@ const HomePage: NextPageWithLayout = () => {
           <div className="col-9">
             <h3>No Additional or Hidden Fees</h3>
             <p>Your course tuition is the only fee you&apos;ll pay for your course or certification. Unlike other schools, when you graduate from QC your certificate is yours forever, and you&apos;ll have continued access to your student center at no additional cost. you&apos;ll never be asked to pay subscription fees, membership fees, or any other fees to keep your certification current or use your business materials.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section className="bg-light">
+      <div className="container text-center">
+        <h2 className="text-center mb-4">QC Success Stories</h2>
+        <div className="row justify-content-center">
+          <div className="col-12 col-md-9 col-lg-6 col-xl-4 mb-4 mb-xl-0">
+            <TestimonialKaylaTorraville />
+          </div>
+          <div className="col-12 col-md-9 col-lg-6 col-xl-4 mb-4 mb-xl-0">
+            <TestimonialLucaCoppola />
+          </div>
+          <div className="col-12 col-md-9 col-lg-6 col-xl-4">
+            <TestimonialMelodyMason />
           </div>
         </div>
       </div>
