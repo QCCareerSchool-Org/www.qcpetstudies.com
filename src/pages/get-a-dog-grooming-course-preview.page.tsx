@@ -32,6 +32,8 @@ type Props = {
 const DogGroomingCatalogPage: NextPageWithLayout<Props> = ({ testGroup }) => {
   const hiddenFields = useMemo(() => ([ { key: 'testGroup', value: testGroup } ]), [ testGroup ]);
   const screenWidth = useScreenWidth();
+  const xxlOrGreater = screenWidth >= 1400;
+  const xlOrGreater = screenWidth >= 1200;
   const lgOrGreater = screenWidth >= 992;
   const smOrGreater = screenWidth >= 576;
 
@@ -72,7 +74,7 @@ const DogGroomingCatalogPage: NextPageWithLayout<Props> = ({ testGroup }) => {
                   width="922"
                   height="622"
                   sizes="100vw"
-                  style={{ width: '100%', maxWidth: 310, height: 'auto' }}
+                  style={{ width: '100%', maxWidth: xxlOrGreater ? 480 : xlOrGreater ? 430 : 310, height: 'auto' }}
                 />
               </div>
             )}
