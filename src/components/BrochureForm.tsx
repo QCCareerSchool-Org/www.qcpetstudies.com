@@ -66,7 +66,7 @@ export const BrochureForm = ({ action, lastName = true, phoneNumber = false, but
           </div>
         </>
       )}
-      <button className={buttonClassName ?? 'btn btn-primary'} type="submit">{buttonText}</button>
+      <button className={buttonClassName ?? 'btn btn-primary shadow-sm'} type="submit">{buttonText}</button>
     </form>
   );
 };
