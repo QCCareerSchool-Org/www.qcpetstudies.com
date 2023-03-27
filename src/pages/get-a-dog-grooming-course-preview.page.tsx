@@ -13,9 +13,8 @@ import { TestimonialSmKaylaTorraville } from '../components/testimonials-sm/Test
 import { TestimonialSmMelodyMason } from '../components/testimonials-sm/TestimonialSmMelodyMason';
 import { useScreenWidth } from '../hooks/useScreenWidth';
 import TestiminialBackground from '../images/backgrounds/testimonials-bg.jpg';
-import ProfileImage from '../images/casey-bechard.png';
+import CatalogImage from '../images/dog-and-scissors.jpg';
 import GroomingKitImage from '../images/dog-grooming-kit.jpg';
-import CatalogImage from '../images/dog-in-towel-with-grooming-tools-1.jpg';
 import FirstAidLogo from '../images/first-aid-logo.svg';
 import Step1EnrollImage from '../images/step-1-enroll.svg';
 import Step2SubmitImage from '../images/step-2-submit.svg';
@@ -49,7 +48,7 @@ const DogGroomingCatalogPage: NextPageWithLayout<Props> = ({ testGroup }) => {
 
     <section id="top">
       <div className="container">
-        <div className="row justify-content-center align-items-center">
+        <div className="row align-items-center justify-content-center">
           <div className="col-12 col-sm-11 col-md-10 col-lg-10 mb-4 mb-lg-5">
             <h2 className="text-center mb-0">Become a Professional{lgOrGreater ? ' ' : <br />}<strong>Dog Groomer</strong></h2>
           </div>
@@ -66,12 +65,14 @@ const DogGroomingCatalogPage: NextPageWithLayout<Props> = ({ testGroup }) => {
           </div>
           <div className="col-12 col-sm-11 col-md-10 col-lg-6">
             {lgOrGreater && (
-              <div className="mb-2">
+              <div className="mb-2 d-flex justify-content-center">
                 <Image
                   src={CatalogImage}
                   alt="dog with grooming tools"
+                  width="922"
+                  height="622"
                   sizes="100vw"
-                  style={{ width: '100%', height: 'auto' }}
+                  style={{ width: '100%', maxWidth: 310, height: 'auto' }}
                 />
               </div>
             )}
@@ -134,15 +135,16 @@ const DogGroomingCatalogPage: NextPageWithLayout<Props> = ({ testGroup }) => {
         style={{ objectFit: 'cover', objectPosition: 'right' }}
       />}
       <div className="container text-center">
+        <h2 className="text-light mb-4">What <strong>Graduates Are Saying</strong></h2>
         <div className="row justify-content-center">
           <div className="col-12 col-lg-4 mb-4 mb-lg-0">
-            <TestimonialSmMelodyMason size={120} />
+            <TestimonialSmMelodyMason size={120} starSize={180} />
           </div>
           <div className="col-12 col-lg-4 mb-4 mb-lg-0">
-            <TestimonialSmKaylaTorraville size={120} />
+            <TestimonialSmKaylaTorraville size={120} starSize={180} />
           </div>
           <div className="col-12 col-lg-4 mb-4">
-            <TestimonialSmCaseyBechard size={120} />
+            <TestimonialSmCaseyBechard size={120} starSize={180} />
           </div>
         </div>
       </div>
