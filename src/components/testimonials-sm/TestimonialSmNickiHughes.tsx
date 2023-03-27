@@ -5,6 +5,7 @@ import { TestimonialSm } from './TestimonialSm';
 
 type Props = {
   size?: number;
+  starSize?: number;
 };
 
 export const TestimonialSmNickiHughes: FC<Props> = ({ size }) => (
