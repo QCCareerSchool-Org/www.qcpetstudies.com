@@ -19,11 +19,11 @@ type Props = {
 
 export const TestimonialSm: FC<Props> = ({ size = 216, quotation, name, certification, imageSrc, objectPosition, variant = 'primary' }) => (
   <>
-    <div className="mb-3 d-flex justify-content-center">
+    <div className="mb-2 d-flex justify-content-center">
       <ImageCircle src={imageSrc} alt={name} size={size} objectPosition={objectPosition} />
     </div>
-    <div className="mb-3"><Image src={variant === 'secondary' ? FiveStarsSecondary : FiveStarsPrimary} width="268" height="48" alt="5 out of 5" /></div>
-    <p className="lead strong"><strong>&ldquo;{quotation}&rdquo;</strong></p>
+    <div className="mb-2"><Image src={variant === 'secondary' ? FiveStarsSecondary : FiveStarsPrimary} width="183" height="31" alt="5 out of 5" style={{ maxWidth: '100%', height: 'auto' }} /></div>
+    <p className="lead strong mb-2"><strong>&ldquo;{quotation}&rdquo;</strong></p>
     <p className="mb-0">{name}{certification && <>, <span className="gold">{certification}&trade;</span></>}</p>
   </>
 );
