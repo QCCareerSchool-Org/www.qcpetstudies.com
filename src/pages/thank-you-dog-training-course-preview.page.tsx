@@ -9,7 +9,7 @@ import { FaPaw } from 'react-icons/fa';
 import { GoogleAdsLeadScript } from '../components/GoogleAdsLeadScript';
 import { SEO } from '../components/SEO';
 import { useScreenWidth } from '../hooks/useScreenWidth';
-import CatalogBackground from '../images/backgrounds/white-bichon-frise-circle-cut.jpg';
+import CatalogBackground from '../images/backgrounds/smiling-border-collie-on-black.jpg';
 import { fbqLead } from '../lib/fbq';
 
 const urlencodedAsync = promisify(urlencoded({ extended: false }));
@@ -37,7 +37,7 @@ const ThankYouCatalogPage: NextPage<Props> = ({ emailAddress }) => {
       {mdOrGreater && <Image
         src={CatalogBackground}
         placeholder="blur"
-        alt="white Bichon Frise with circle cut"
+        alt="Smiling border collie"
         priority
         fill
         sizes="100vw"

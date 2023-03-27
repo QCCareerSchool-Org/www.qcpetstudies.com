@@ -1,6 +1,6 @@
 {
   "name": "www.petstudies.com",
-  "version": "1.1.46",
+  "version": "1.1.47",
   "license": "UNLICENSED",
   "private": true,
   "scripts": {
@@ -34,6 +34,7 @@
     "schema-dts": "^1.1.0",
     "trackjs": "^3.10.1",
     "trackjs-node": "^1.0.1",
+    "update": "^0.7.4",
     "use-reducer-thunk": "^1.1.0"
   },
   "devDependencies": {

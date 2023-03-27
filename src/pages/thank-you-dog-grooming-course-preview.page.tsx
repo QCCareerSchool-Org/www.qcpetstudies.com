@@ -12,7 +12,8 @@ import { TestimonialSmAprilCostigan } from '../components/testimonials-sm/Testim
 import { TestimonialSmHailieSavage } from '../components/testimonials-sm/TestimonialSmHailieSavage';
 import { TestimonialSmNickiHughes } from '../components/testimonials-sm/TestimonialSmNickiHughes';
 import { useScreenWidth } from '../hooks/useScreenWidth';
-import CatalogBackground from '../images/backgrounds/white-bichon-frise-circle-cut.jpg';
+import CatalogBackground from '../images/backgrounds/smiling-border-collie-on-black.jpg';
+import PeekingHusky from '../images/peeking-siberian-husky.jpg';
 import { fbqLead } from '../lib/fbq';
 
 const urlencodedAsync = promisify(urlencoded({ extended: false }));
@@ -40,7 +41,7 @@ const ThankYouCatalogPage: NextPage<Props> = ({ emailAddress }) => {
       {mdOrGreater && <Image
         src={CatalogBackground}
         placeholder="blur"
-        alt="white Bichon Frise with circle cut"
+        alt="Smiling border collie"
         priority
         fill
         sizes="100vw"
@@ -58,6 +59,7 @@ const ThankYouCatalogPage: NextPage<Props> = ({ emailAddress }) => {
         </div>
       </div>
     </section>
+    {!mdOrGreater && <Image src={PeekingHusky} width="806" height="234" style={{ width: '100%', height: 'auto' }} alt="Peeking husky" />}
 
     <section className="text-center">
       <div className="container">
