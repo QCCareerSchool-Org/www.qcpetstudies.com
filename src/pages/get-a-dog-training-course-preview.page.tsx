@@ -45,7 +45,7 @@ const DogTrainingCatalogPage: NextPageWithLayout<Props> = ({ testGroup }) => {
           <div className="col-12 col-sm-11 col-md-10 col-lg-10 mb-4 mb-lg-5">
             <h2 className="text-center mb-0">Become a Professional{lgOrGreater ? ' ' : <br />}<strong>Dog Trainer</strong></h2>
           </div>
-          <div className="col-12 col-sm-11 col-md-10 col-lg-6 mb-4 mb-lg-0">
+          <div className="col-12 col-sm-11 col-md-8 col-lg-6 col-xl-5 mb-4 mb-lg-0">
             <div className="card bg-light">
               <CardBody>
                 <p className="text-center lead">Get Started with a{smOrGreater ? ' ' : <br />}<strong>Free Course Preview</strong></p>
@@ -56,7 +56,7 @@ const DogTrainingCatalogPage: NextPageWithLayout<Props> = ({ testGroup }) => {
               </CardBody>
             </div>
           </div>
-          <div className="col-12 col-sm-11 col-md-10 col-lg-6">
+          <div className="col-12 col-sm-11 col-md-10 col-lg-6 col-xl-5">
             {lgOrGreater && (
               <div className="mb-2">
                 <Image
@@ -93,7 +93,7 @@ const DogTrainingCatalogPage: NextPageWithLayout<Props> = ({ testGroup }) => {
               style={{ maxWidth: '100%', height: 'auto' }}
             />
             <p className="lead">Enroll Today &amp; Access Your{lgOrGreater ? <br /> : ' '}Course Materials</p>
-            <p className="mb-0">Receive online access to a course within 48 hours. Receive your physical course books and grooming kit in 5 to 10 business days.</p>
+            <p className="mb-0">Your course materials are always available online and are always being updated with the latest industry standards. Refer to your updated training guides throughout your career!</p>
           </div>
           <div className="col-12 col-lg-4">
             <Image
