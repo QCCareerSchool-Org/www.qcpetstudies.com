@@ -1,3 +1,7 @@
+:root {
+  --navBarHeight: 56px;
+}
+
 // Include any default variable overrides here (though functions won't be available)
 
 /**
@@ -290,7 +294,7 @@ ul.sm-indent, ol.sm-indent { padding-inline-start: 0rem; padding-left: 1.5rem; }
 
 #main-nav.desktop.inverse #nav-wrapper { border-color: rgba(0,0,0,0); }
 
-#secondary-nav { margin-top: 56px }
+#secondary-nav { margin-top: var(--navBarHeight) }
 
 #nav-wrapper {
   flex-wrap: nowrap;
@@ -579,7 +583,7 @@ ul.list-style-none, ol.list-style-none {
 
 .sectionAnchor {
   position: relative;
-  top: -56px;
+  top: calc(var(--navBarHeight) * -1);
 }
 
 .gold { color: #C9952C; }
