@@ -12,6 +12,7 @@ import { useScrollPosition } from '../hooks/useScrollPosition';
 import logoLight from '../images/qc-pet-horizontal-inverse.svg';
 import logo from '../images/qc-pet-horizontal.svg';
 import { getFlagImageData } from '../lib/flags';
+import { CanadaAuxNavBar } from './CanadaAuxNavBar';
 import { SecondaryNav, SecondaryNavLinks } from './SecondaryNav';
 
 type Props = {
@@ -53,9 +54,10 @@ export const Header = ({ noHero, inverseNav, secondaryTitle, secondaryNavLinks, 
         bg={scrolled ? 'white' : noHero ? 'dark' : undefined}
         variant={scrolled ? undefined : 'dark'}
         expand="lg"
-        className={`${inverseNav ? 'inverse' : ''} ${scrolled && !secondaryNavLinks ? 'shadow-sm' : ''} ${expanded && !lgOrGreater ? 'opened' : 'closed'} ${!lgOrGreater ? 'mobile' : 'desktop'} ${secondaryNavLinks ? '.with-secondary' : ''} ${className ?? ''}`}
+        className={`${inverseNav ? 'inverse' : ''} ${scrolled && !secondaryNavLinks ? 'shadow-sm' : ''} ${expanded && !lgOrGreater ? 'opened' : 'closed'} ${!lgOrGreater ? 'mobile' : 'desktop'} ${secondaryNavLinks ? '.with-secondary' : ''} ${className ?? ''} flex-column`}
         onToggle={setExpanded}
       >
+        {location?.countryCode === 'CA' && <CanadaAuxNavBar />}
         <div className="container">
           <div id="nav-wrapper">
             <Navbar.Brand>

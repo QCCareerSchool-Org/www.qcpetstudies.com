@@ -1,11 +1,12 @@
 import Big from 'big.js';
-import { ReactElement, ReactNode, useMemo } from 'react';
+import { FC, ReactElement, ReactNode, useMemo } from 'react';
 import { FaClock, FaLock, FaStar } from 'react-icons/fa';
 
 import { useToggle } from '../hooks/useToggle';
 import { formatPrice } from '../lib/formatPrice';
 import { PriceResult } from '../models/price';
 import { Bar } from './Bar';
+import { CAPriceMessage } from './CAPriceMessage';
 import { GuaranteeModal } from './GuaranteeModal';
 
 const iconSize = 24;
@@ -51,7 +52,13 @@ export const PriceSection = ({ courses, price, doubleGuarantee, variant = 'dark'
           <div className="row">
             <div className="col-12 col-lg-4 mb-4 mb-lg-0">
               <h2 className="mb-3">Tuition &amp; Payment Plans</h2>
-              <p className="lead">{message ?? 'Includes everything you need to get started!'}</p>
+
+              {typeof message !== 'undefined'
+                ? <p className="lead">{message}</p>
+                : price.countryCode === 'CA'
+                  ? <CAPriceMessage />
+                  : <p className="lead">Includes everything you need to get started!</p>
+              }
               <hr className="my-4" />
               <ul className="list-style-none">
                 <li className="mb-3 d-flex align-items-center"><FaStar size={iconSize} className="text-primary me-2" />Certification upon graduation</li>
@@ -109,7 +116,7 @@ export const PriceSection = ({ courses, price, doubleGuarantee, variant = 'dark'
   );
 };
 
-const Loader = (): ReactElement => (
+const Loader: FC = () => (
   <div className="d-flex justify-content-center align-items-center" style={{ height: 186 }}>
     <div className="spinner-border" role="status">
       <span className="visually-hidden">Loading...</span>
