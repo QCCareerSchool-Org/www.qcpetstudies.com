@@ -8,7 +8,7 @@ type Props = {
 };
 
 export const AuxNavBar: FC<PropsWithChildren<Props>> = ({ background, color, className, style, children }) => (
-  <div className={className} style={{ width: '100%', padding: '0.5rem', background, color, ...style }}>
+  <div className={className} style={{ width: '100%', padding: '0.5rem 0', background, color, ...style }}>
     <div className="container">
       {children}
     </div>
