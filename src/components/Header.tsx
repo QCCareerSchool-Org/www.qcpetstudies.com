@@ -93,7 +93,8 @@ export const Header = ({ noHero, inverseNav, secondaryTitle, secondaryNavLinks, 
           </div>
         </div>
       </Navbar>
-      {secondaryNavLinks && <SecondaryNav title={secondaryTitle} nav={secondaryNavLinks} scrolled={scrolled} mobile={!lgOrGreater} />}
+      {secondaryNavLinks && <SecondaryNav title={secondaryTitle} nav={secondaryNavLinks} scrolled={scrolled} mobile={!lgOrGreater} offset={location?.countryCode === 'CA' ? 40 : undefined} />}
+      {location?.countryCode === 'CA' && <div style={{ marginTop: 40 }} />}
     </>
   );
 };

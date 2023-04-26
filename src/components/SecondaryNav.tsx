@@ -15,9 +15,10 @@ type Props = {
   nav: SecondaryNavLinks;
   mobile: boolean;
   scrolled: boolean;
+  offset?: number;
 };
 
-export const SecondaryNav = ({ title, nav, mobile, scrolled }: Props): ReactElement => {
+export const SecondaryNav = ({ title, nav, mobile, scrolled, offset }: Props): ReactElement => {
   const [ mobileMenu, toggleMobileMenu ] = useToggle(false);
 
   return (
@@ -27,6 +28,7 @@ export const SecondaryNav = ({ title, nav, mobile, scrolled }: Props): ReactElem
       expand="lg"
       fixed="top"
       className={`shadow-sm ${mobileMenu && mobile ? 'opened' : 'closed'} ${mobile ? 'mobile' : 'desktop'} ${scrolled ? 'scrolled' : ''}`}
+      style={offset ? { marginTop: `calc(var(--navBarHeight) + ${offset}px)` } : undefined}
     >
       <div className="container">
         <Navbar.Brand>
