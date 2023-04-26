@@ -6,6 +6,7 @@ import { AccordionItem } from '../../components/accordion/AccordionItem';
 
 import { DefaultLayout } from '../../components/layouts/DefaultLayout';
 import { SEO } from '../../components/SEO';
+import { useLocation } from '../../hooks/useLocation';
 import DoGInBedWithStick from '../../images/backgrounds/dog-in-bed-with-stick.jpg';
 import type { NextPageWithLayout } from '../_app.page';
 
@@ -16,6 +17,8 @@ const secondaryNavLinks = [
 ];
 
 const FAQPage: NextPageWithLayout = () => {
+  const location = useLocation();
+
   let i = 0;
 
   return <>
@@ -50,6 +53,11 @@ const FAQPage: NextPageWithLayout = () => {
           <div className="col-12 col-lg-10">
             <h2 className="text-center mb-4">Questions About QC Pet Studies</h2>
             <Accordion>
+              {location?.countryCode === 'CA' && (
+                <QuestionAnswer question="Can I claim my course tuition on my taxes?" index={i++}>
+                  <p className="mb-0">Yes, and you can have more than 50% of your course fees covered! QC is a certified educational institution with Employment and Social Development Canada. At the end of the year, we'll send you a T2202 tax receipt for the course fees you paid during the year. You can use the receipt to get a tax refund. Learn more about the tax credits you're eligible for <Link className="link-primary" href="/canadian-tax-credits">here</Link>.</p>
+                </QuestionAnswer>
+              )}
               <QuestionAnswer question="Is QC Pet Studies an accredited online school?" index={i++}>
                 <p className="mb-0">Yes. QC Pet Studies is a faculty of QC Career School, which is an accredited business with the Better Business Bureau. QC holds the <a href="https://www.bbb.org/ottawa/business-reviews/correspondence-schools/qc-career-school-in-ottawa-on-4175" target="_blank" rel="noopener noreferrer" className="link-primary">highest possible consumer satisfaction standing (A+) with the BBB</a>.</p>
               </QuestionAnswer>
