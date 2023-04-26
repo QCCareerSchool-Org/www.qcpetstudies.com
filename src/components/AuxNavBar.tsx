@@ -1,7 +1,5 @@
 import type { CSSProperties, FC, PropsWithChildren } from 'react';
 
-import styles from './auxNavBar.module.css';
-
 type Props = {
   background: CSSProperties['background'];
   color: CSSProperties['color'];
@@ -10,7 +8,7 @@ type Props = {
 };
 
 export const AuxNavBar: FC<PropsWithChildren<Props>> = ({ background, color, className, style, children }) => (
-  <div className={`${styles.navbar} ${className ?? ''}`} style={{ background, color, ...style }}>
+  <div className={className} style={{ width: '100%', padding: '0.5rem', background, color, ...style }}>
     <div className="container">
       {children}
     </div>
