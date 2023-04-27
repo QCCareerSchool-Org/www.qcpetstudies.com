@@ -1,8 +1,15 @@
 import { DefaultLayout } from '../../components/layouts/DefaultLayout';
+import { SEO } from '../../components/SEO';
 import { NextPageWithLayout } from '../_app.page';
 
 const CanadianTaxCreditsPage: NextPageWithLayout = () => (
   <>
+    <SEO
+      title="Canadian Tax Credits"
+      description="Canadian students can use tax credits to save over 50% of their course fees"
+      canonical="/contact-us"
+    />
+
     <section id="top">
       <div className="container">
         <h1>Canadian Eh?</h1>
