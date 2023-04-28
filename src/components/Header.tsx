@@ -36,6 +36,7 @@ export const Header = ({ noHero, inverseNav, secondaryTitle, secondaryNavLinks, 
   const scrolled = scrollPosition > maxPosition;
 
   const lgOrGreater = screenWidth >= 992;
+  const auxBarHeight = screenWidth >= 400 ? 40 : 32;
 
   const flagImage = getFlagImageData(location?.countryCode);
 
@@ -93,8 +94,8 @@ export const Header = ({ noHero, inverseNav, secondaryTitle, secondaryNavLinks, 
           </div>
         </div>
       </Navbar>
-      {secondaryNavLinks && <SecondaryNav title={secondaryTitle} nav={secondaryNavLinks} scrolled={scrolled} mobile={!lgOrGreater} offset={location?.countryCode === 'CA' ? 40 : undefined} />}
-      {location?.countryCode === 'CA' && <div style={{ marginTop: 40 }} />}
+      {secondaryNavLinks && <SecondaryNav title={secondaryTitle} nav={secondaryNavLinks} scrolled={scrolled} mobile={!lgOrGreater} offset={location?.countryCode === 'CA' ? auxBarHeight : undefined} />}
+      {location?.countryCode === 'CA' && <div style={{ marginTop: auxBarHeight }} />}
     </>
   );
 };
