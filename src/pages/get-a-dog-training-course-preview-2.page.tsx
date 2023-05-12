@@ -7,14 +7,8 @@ import { BrochureForm } from '../components/BrochureForm';
 import { CardBody } from '../components/CardBody';
 import { LandingPageLayout } from '../components/layouts/LandingPageLayout';
 import { SEO } from '../components/SEO';
-import { TestimonialSmCaseyBechard } from '../components/testimonials-sm/TestimonialSmMelodyCaseyBechard';
-import { TestimonialSmKaylaTorraville } from '../components/testimonials-sm/TestimonialSmMelodyKaylaTorraville';
-import { TestimonialSmMelodyMason } from '../components/testimonials-sm/TestimonialSmMelodyMason';
 import { useScreenWidth } from '../hooks/useScreenWidth';
-import TestiminialBackground from '../images/backgrounds/testimonials-bg.jpg';
-import CatalogImage from '../images/dog-and-scissors.jpg';
-import GroomingKitImage from '../images/dog-grooming-kit.jpg';
-import FirstAidLogo from '../images/first-aid-logo.svg';
+import CatalogImage from '../images/dog-in-a-tube-1.jpg';
 import Step1EnrollImage from '../images/step-1-enroll.svg';
 import Step2SubmitImage from '../images/step-2-submit.svg';
 import Step3CertificateImage from '../images/step-3-certificate.svg';
@@ -22,17 +16,15 @@ import { gaEvent } from '../lib/ga';
 import { getRandomIntInclusive } from '../lib/randomInt';
 import type { NextPageWithLayout } from './_app.page';
 
-const formAction = 'https://go.qcpetstudies.com/l/947642/2021-12-05/6h9rv';
+const formAction = 'https://go.qcpetstudies.com/l/947642/2021-12-05/6h9rx';
 
 type Props = {
   testGroup: number;
 };
 
-const DogGroomingCatalogPage: NextPageWithLayout<Props> = ({ testGroup }) => {
+const DogTrainingCatalogPage: NextPageWithLayout<Props> = ({ testGroup }) => {
   const hiddenFields = useMemo(() => ([ { key: 'testGroup', value: testGroup } ]), [ testGroup ]);
   const screenWidth = useScreenWidth();
-  const xxlOrGreater = screenWidth >= 1400;
-  const xlOrGreater = screenWidth >= 1200;
   const lgOrGreater = screenWidth >= 992;
   const smOrGreater = screenWidth >= 576;
 
@@ -42,16 +34,16 @@ const DogGroomingCatalogPage: NextPageWithLayout<Props> = ({ testGroup }) => {
 
   return <>
     <SEO
-      title="Become a Professional Dog Groomer"
-      description="Request a free preview of the online dog grooming course."
-      canonical="/get-a-dog-grooming-course-preview"
+      title="Become a Professional Dog Trainer"
+      description="Request a free preview of the online dog trainer course."
+      canonical="/get-a-dog-training-course-preview"
     />
 
     <section id="top">
       <div className="container">
-        <div className="row align-items-center justify-content-center">
+        <div className="row justify-content-center align-items-center">
           <div className="col-12 col-sm-11 col-md-10 col-lg-10 mb-4 mb-lg-5">
-            <h2 className="text-center mb-0">Become a Professional{lgOrGreater ? ' ' : <br />}<strong>Dog Groomer</strong></h2>
+            <h2 className="text-center mb-0">Become a Professional{lgOrGreater ? ' ' : <br />}<strong>Dog Trainer</strong></h2>
           </div>
           <div className="col-12 col-sm-11 col-md-8 col-lg-6 col-xl-5 mb-4 mb-lg-0">
             <div className="card bg-light">
@@ -60,27 +52,26 @@ const DogGroomingCatalogPage: NextPageWithLayout<Props> = ({ testGroup }) => {
                 <BrochureForm
                   action={formAction}
                   hiddenFields={hiddenFields}
+                  phoneNumber
                 />
               </CardBody>
             </div>
           </div>
           <div className="col-12 col-sm-11 col-md-10 col-lg-6 col-xl-5">
             {lgOrGreater && (
-              <div className="mb-2 d-flex justify-content-center">
+              <div className="mb-2">
                 <Image
                   src={CatalogImage}
-                  alt="dog with grooming tools"
-                  width="922"
-                  height="622"
+                  alt="tablet with dog image"
                   sizes="100vw"
-                  style={{ width: '100%', maxWidth: xxlOrGreater ? 400 : xlOrGreater ? 320 : 310, height: 'auto' }}
+                  style={{ width: '100%', height: 'auto' }}
                 />
               </div>
             )}
-            <p className="lead">Get access to a free preview of the online dog grooming course to</p>
+            <p className="lead">Get access to a free preview of the online dog trainer course to</p>
             <ul className="mb-0">
-              <li>Find out if a career in dog grooming is right for you</li>
-              <li>Learn about the many careers you can pursue as a dog groomer</li>
+              <li>Find out if a career in dog training is right for you</li>
+              <li>Learn about the many careers you can pursue as a dog trainer</li>
               <li>View the course curriculum, course videos, and sample assignments</li>
               <li>Find out about tuition information and choose a payment plan</li>
               <li>Learn how you can't go wrong with QC's money back guarantee!</li>
@@ -93,7 +84,7 @@ const DogGroomingCatalogPage: NextPageWithLayout<Props> = ({ testGroup }) => {
     <section className="bg-light">
       <div className="container text-center">
         <div className="row justify-content-center">
-          <div className="col-12 col-sm-10 col-lg-10">
+          <div className="col-12 col-lg-10">
             <h2>How the Courses Work</h2>
           </div>
           <div className="col-12 col-sm-10 col-md-8 col-lg-4 mb-4 mb-lg-0">
@@ -120,72 +111,12 @@ const DogGroomingCatalogPage: NextPageWithLayout<Props> = ({ testGroup }) => {
               alt="Get your certificate"
               style={{ maxWidth: '100%', height: 'auto' }}
             />
-            <p className="lead mb-2">Graduate as an International{lgOrGreater ? <br /> : ' '}Dog Grooming Professional&trade;</p>
-            <p className="mb-0">Receive your IDGP&trade; certification and your career as a professional dog groomer. Enjoy lifetime access to your course materials. Be protected by our 1-year money-back guarantee.</p>
+            <p className="lead mb-2">Graduate as an International{lgOrGreater ? <br /> : ' '}Dog Training Professional&trade;</p>
+            <p className="mb-0">Receive your IDTP&trade; certification and your career as a professional dog trainer. Enjoy lifetime access to your course materials. Be protected by our 1-year money-back guarantee.</p>
           </div>
         </div>
       </div>
     </section>
-
-    <section className="text-light" style={{ backgroundColor: '#61677a' }}>
-      {false && lgOrGreater && <Image
-        src={TestiminialBackground}
-        alt="happy dog with open mouth"
-        fill
-        sizes="100vw"
-        style={{ objectFit: 'cover', objectPosition: 'right' }}
-      />}
-      <div className="container text-center">
-        <h2 className="text-light mb-4">What <strong>Graduates Are Saying</strong></h2>
-        <div className="row justify-content-center">
-          <div className="col-12 col-lg-4 mb-4 mb-lg-0">
-            <TestimonialSmMelodyMason size={120} starSize={180} />
-          </div>
-          <div className="col-12 col-lg-4 mb-4 mb-lg-0">
-            <TestimonialSmKaylaTorraville size={120} starSize={180} />
-          </div>
-          <div className="col-12 col-lg-4 mb-4">
-            <TestimonialSmCaseyBechard size={120} starSize={180} />
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section>
-      <div className="container text-center">
-        <div className="row justify-content-center">
-          <div className="col-12 col-lg-10">
-            <Image
-              src={FirstAidLogo}
-              alt="First Aid course logo"
-              style={{ maxWidth: '100%', height: 'auto' }}
-            />
-            <h2>Free First Aid Course</h2>
-            <p className="lead">Enroll in the Dog Grooming course and get the First Aid for Dog Groomers course <strong>FREE! ($348 value)</strong></p>
-            <p className="mb-0">Being trained in pet first aid prepares you to respond to emergencies and to maintain a safe grooming environment. In this course, you'll learn how to prevent injuries and how to respond to emergency situations in your grooming salon.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section className="bg-light pb-0">
-      <div className="container text-center">
-        <div className="row justify-content-center">
-          <div className="col-12 col-lg-10">
-            <h2>Dog Grooming Kit</h2>
-            <p className="lead">Included with your course <strong>(valued at $200!)</strong></p>
-            <p className="mb-4">Receive a dog grooming starter kit when you enroll. It contains some of the key tools and equipment you'll need to groom dogs professionally.</p>
-          </div>
-        </div>
-        <Image
-          src={GroomingKitImage}
-          alt="Dog grooming kit"
-          sizes="100vw"
-          style={{ width: '100%', height: 'auto' }}
-        />
-      </div>
-    </section>
-
     <section className="bg-secondary">
       <div className="container text-center">
         <div className="row justify-content-center">
@@ -199,7 +130,7 @@ const DogGroomingCatalogPage: NextPageWithLayout<Props> = ({ testGroup }) => {
   </>;
 };
 
-DogGroomingCatalogPage.getLayout = page => <LandingPageLayout link={false} nav="brochure">{page}</LandingPageLayout>;
+DogTrainingCatalogPage.getLayout = page => <LandingPageLayout link={false} nav="brochure">{page}</LandingPageLayout>;
 
 // eslint-disable-next-line @typescript-eslint/require-await
 export const getServerSideProps: GetServerSideProps<Props> = async context => {
@@ -219,4 +150,4 @@ export const getServerSideProps: GetServerSideProps<Props> = async context => {
   return { props: { testGroup } };
 };
 
-export default DogGroomingCatalogPage;
+export default DogTrainingCatalogPage;

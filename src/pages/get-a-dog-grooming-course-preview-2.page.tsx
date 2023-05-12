@@ -60,6 +60,7 @@ const DogGroomingCatalogPage: NextPageWithLayout<Props> = ({ testGroup }) => {
                 <BrochureForm
                   action={formAction}
                   hiddenFields={hiddenFields}
+                  phoneNumber
                 />
               </CardBody>
             </div>
