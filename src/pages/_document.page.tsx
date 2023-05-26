@@ -2,14 +2,14 @@
 import Document, { DocumentContext, DocumentInitialProps, Head, Html, Main, NextScript } from 'next/document';
 import { ReactElement } from 'react';
 
-const googleAnalyticsSrc = `https://www.googletagmanager.com/gtag/js?id=${process.env.GOOGLE_ANALYTICS_ID ?? ''}`;
+const getGoogleAnalyticsSrc = (id: string): string => `https://www.googletagmanager.com/gtag/js?id=${id}`;
 
-const googleAnalyticsScript = `
+const getGoogleAnalyticsScript = (id: string, adsId?: string): string => `
 window.dataLayer = window.dataLayer || [];
 function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
-gtag('config', '${process.env.GOOGLE_ANALYTICS_ID ?? ''}', { page_path: window.location.pathname });
-gtag('config', 'AW-1071836607', { allow_enhanced_conversions: true });`;
+gtag('config', '${id}', { page_path: window.location.pathname });
+${adsId ? `gtag('config', '${adsId}', { allow_enhanced_conversions: true });` : ''}`;
 
 const uetScript = `
 (function(w,d,t,r,u) {
@@ -103,8 +103,8 @@ class MyDocument extends Document {
           {process.env.GOOGLE_ANALYTICS_ID && (
             <>
               {process.env.GOOGLE_OPTIMIZE_ID && <script async src={`https://www.googleoptimize.com/optimize.js?id=${process.env.GOOGLE_OPTIMIZE_ID}`} />}
-              <script async src={googleAnalyticsSrc} />
-              <script dangerouslySetInnerHTML={{ __html: googleAnalyticsScript }} />
+              <script async src={getGoogleAnalyticsSrc(process.env.GOOGLE_ANALYTICS_ID)} />
+              <script dangerouslySetInnerHTML={{ __html: getGoogleAnalyticsScript(process.env.GOOGLE_ANALYTICS_ID, 'AW-1071836607') }} />
             </>
           )}
           <script dangerouslySetInnerHTML={{ __html: uetScript }} />
