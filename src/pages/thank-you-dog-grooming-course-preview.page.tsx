@@ -7,6 +7,7 @@ import { useEffect } from 'react';
 import { FaPaw } from 'react-icons/fa';
 
 import { GoogleAdsLeadScript } from '../components/GoogleAdsLeadScript';
+import { PushSubscription } from '../components/PushSubscription';
 import { SEO } from '../components/SEO';
 import { TestimonialSmAprilCostigan } from '../components/testimonials-sm/TestimonialSmAprilCostigan';
 import { TestimonialSmHailieSavage } from '../components/testimonials-sm/TestimonialSmHailieSavage';
@@ -19,10 +20,12 @@ import { fbqLead } from '../lib/fbq';
 const urlencodedAsync = promisify(urlencoded({ extended: false }));
 
 type Props = {
+  firstName: string | null;
+  lastName: string | null;
   emailAddress: string | null;
 };
 
-const ThankYouCatalogPage: NextPage<Props> = ({ emailAddress }) => {
+const ThankYouCatalogPage: NextPage<Props> = ({ firstName, lastName, emailAddress }) => {
   const screenWidth = useScreenWidth();
   const mdOrGreater = screenWidth >= 768;
 
@@ -87,9 +90,12 @@ export const getServerSideProps: GetServerSideProps<Props> = async ({ req, res }
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     type RequestWithBody = typeof req & { body: Record<string, any> };
     const body = (req as RequestWithBody).body;
-    return { props: { emailAddress: typeof body?.emailAddress === 'string' ? body?.emailAddress : null } };
+    const firstName = typeof body.firstName === 'string' ? body.firstName || null : null;
+    const lastName = typeof body.lastName === 'string' ? body.lastName || null : null;
+    const emailAddress = typeof body.emailAddress === 'string' ? body.emailAddress || null : null;
+    return { props: { firstName, lastName, emailAddress } };
   }
-  return { props: { emailAddress: null } };
+  return { props: { firstName: null, lastName: null, emailAddress: null } };
 };
 
 export default ThankYouCatalogPage;

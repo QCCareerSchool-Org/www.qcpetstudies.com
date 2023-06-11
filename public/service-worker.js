@@ -1,19 +1,17 @@
-/* eslint-disable */
-
-const baseUrl = 'https://api.qccareerschool.com';
+const baseUrl = 'https://push.qccareerschool.com';
 const websiteName = 'QC Pet Studies';
 
-self.addEventListener('install', function () {
+self.addEventListener('install', () => {
   console.log('service worker installed');
   self.skipWaiting();
 });
 
-self.addEventListener('activate', function (event) {
+self.addEventListener('activate', event => {
   console.log('service worker activated');
   event.waitUntil(clients.claim());
 });
 
-self.addEventListener('push', function (event) {
+self.addEventListener('push', event => {
   const options = {
     // Visual Options,
     body: event.data.body,
@@ -41,7 +39,7 @@ self.addEventListener('push', function (event) {
   event.waitUntil(self.registration.showNotification(title, options));
 });
 
-self.addEventListener('notificationclick', function (event) {
+self.addEventListener('notificationclick', event => {
   console.log(event);
   if (event.action) {
     if (event.notification.data?.actions?.[event.action]?.url) {
@@ -52,23 +50,24 @@ self.addEventListener('notificationclick', function (event) {
   event.waitUntil(clients.openWindow(targetUrl));
 });
 
-self.addEventListener('pushsubscriptionchange', function (event) {
+self.addEventListener('pushsubscriptionchange', event => {
   console.log('pushsubscriptionchange', event);
   if (!event.oldSubscription || !event.newSubscription) {
     return;
   }
+  const keys = event.newSubscription.toJSON().keys;
+  // TODO: add fetch request to a queue to get processed when we know the client is online
   event.waitUntil(
-    fetch(`${baseUrl}/subscriptions/${event.oldSubscription.endpoint}`, {
+    fetch(`${baseUrl}/subscriptions?websiteName=${encodeURIComponent(websiteName)}&endpoint=${encodeURIComponent(event.oldSubscription.endpoint)}`, {
       method: 'PUT',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
         websiteName,
         endpoint: event.newSubscription.endpoint,
         expirationTime: event.newSubscription.expirationTime ?? null,
-        p256dh: event.newSubscription.toJSON().keys?.p256dh ?? null,
-        auth: event.newSubscription.toJSON().keys?.auth ?? null,
+        p256dh: keys?.p256dh ?? null,
+        auth: keys?.auth ?? null,
       }),
-      credentials: 'include',
     }),
   );
 });
@@ -87,19 +86,12 @@ self.addEventListener('pushsubscriptionchange', function (event) {
  * });
  * @returns a promise that resolves to an object that indicates if the website is in focus and a list of the clients
  */
-function isClientFocused() {
+const isClientFocused = () => {
   return clients.matchAll({
     type: 'window',
     includeUncontrolled: true,
   }).then(windowClients => {
-    const clientIsFocused = false;
-    for (let i = 0; i < windowClients.length; i++) {
-      const windowClient = windowClients[i];
-      if (windowClient.focused) {
-        clientIsFocused = true;
-        break;
-      }
-    }
+    const clientIsFocused = windowClients.some(windowClient => windowClient.focused);
     return { clientIsFocused, windowClients };
   });
 }

@@ -1,46 +1,104 @@
-// import type { PushSubscription } from ''
-import { getRegistration } from './serviceWorker';
-import { urlBase64ToUint8Array } from './urlBase64ToUint8Array';
-
 const publicKey = 'BHoi0aIhIzYg9Up6vlm9dMS2VzK2dDmDbCv9v5Oj1z_ubfHNgl1rmdzHMgVck0MNB2kjZYm5vCQ53MXHJn1YZzw';
-const baseUrl = 'https://analytics.qccareerschool.com';
+const baseUrl = 'https://push.qccareerschool.com';
 const websiteName = 'QC Pet Studies';
 
-export class NotificationsUnsupported extends Error { }
-export class NotificationPermissionDenied extends Error { }
+const subscribeOptions = {
+  userVisibleOnly: true,
+  applicationServerKey: publicKey,
+};
+
+export type SubscriptionDTO = {
+  /** uuid */
+  subscriptionId: string;
+  /** uuid */
+  websiteId: string;
+  endpoint: string;
+  expirationTime: number | null;
+  p256dh: string | null;
+  auth: string | null;
+  firstName: string | null;
+  lastName: string | null;
+  emailAddress: string | null;
+  errorCode: number | null;
+  created: Date;
+  modified: Date;
+  interests: string[];
+};
+
+export type RawSubscriptionDTO = {
+  /** uuid */
+  subscriptionId: string;
+  /** uuid */
+  websiteId: string;
+  endpoint: string;
+  expirationTime: number | null;
+  p256dh: string | null;
+  auth: string | null;
+  firstName: string | null;
+  lastName: string | null;
+  emailAddress: string | null;
+  errorCode: number | null;
+  /** date string */
+  created: string;
+  /** date string */
+  modified: string;
+  interests: string[];
+};
+
 export class StorageError extends Error { }
 
-export const requestNotificationsPermission = async (): Promise<NotificationPermission> => {
-  if (!('Notification' in window)) {
-    throw new NotificationsUnsupported();
+export type SubscriptionMetaData = {
+  firstName: string | null;
+  lastName: string | null;
+  emailAddress: string | null;
+  interests?: string[];
+};
+
+/**
+ * Creates a push subscription and stores it
+ * @param serviceWorkerRegistration the service worker registration
+ * @returns the push subscription
+ */
+export const createPushSubscription = async (serviceWorkerRegistration: ServiceWorkerRegistration, meta: SubscriptionMetaData): Promise<PushSubscription | null> => {
+  // register the subscription
+  let pushSubscription: PushSubscription | null;
+  try {
+    pushSubscription = await serviceWorkerRegistration.pushManager.subscribe(subscribeOptions);
+  } catch (err) {
+    pushSubscription = null;
   }
-  return new Promise((resolve, reject) => {
-    const permissionResult = Notification.requestPermission(resolve);
-    if (typeof permissionResult !== 'undefined') {
-      permissionResult.then(resolve, reject);
+
+  if (pushSubscription) {
+    // store the subscription and unsubscribe if storage fails
+    try {
+      await storePushSubscription(pushSubscription, meta);
+    } catch (err) {
+      await pushSubscription.unsubscribe(); // unsubscribe if there was an storage error
+      throw err;
     }
-  });
-};
-
-export const createPushSubscription = async (): Promise<PushSubscription> => {
-  const notificationPermission = await requestNotificationsPermission();
-  if (notificationPermission !== 'granted') {
-    throw new NotificationPermissionDenied('Notification permission denied');
   }
-  const serviceWorkerRegistration = await getRegistration();
-  const subscribeOptions = {
-    userVisibleOnly: true,
-    applicationServerKey: urlBase64ToUint8Array(publicKey),
-  };
-  return serviceWorkerRegistration.pushManager.subscribe(subscribeOptions);
+
+  return pushSubscription;
 };
 
-export const getPushSubscription = async (): Promise<PushSubscription | null> => {
-  const serviceWorkerRegistration = await getRegistration();
-  return serviceWorkerRegistration.pushManager.getSubscription();
+export const deletePushSubscription = async (serviceWorkerRegistration: ServiceWorkerRegistration): Promise<void> => {
+  const pushSubscription = await serviceWorkerRegistration.pushManager.getSubscription();
+  if (pushSubscription) {
+    await pushSubscription.unsubscribe();
+    await removePushSubscription(pushSubscription);
+  }
 };
 
-export const insertPushSubscription = async (pushSubscription: PushSubscription): Promise<void> => {
+export const getPushSubscription = async (serviceWorkerRegistration: ServiceWorkerRegistration, meta: SubscriptionMetaData): Promise<PushSubscription | null> => {
+  const pushSubscription = await serviceWorkerRegistration.pushManager.getSubscription();
+  if (pushSubscription) {
+    await storePushSubscription(pushSubscription, meta);
+  }
+  return pushSubscription;
+};
+
+const storePushSubscription = async (pushSubscription: PushSubscription, meta: SubscriptionMetaData): Promise<SubscriptionDTO> => {
+  const keys = pushSubscription.toJSON().keys;
   const url = `${baseUrl}/subscriptions`;
   const response = await fetch(url, {
     method: 'POST',
@@ -48,23 +106,30 @@ export const insertPushSubscription = async (pushSubscription: PushSubscription)
     body: JSON.stringify({
       websiteName,
       endpoint: pushSubscription.endpoint,
-      expirationTime: (pushSubscription as unknown as { expirationTime?: number | null }).expirationTime ?? null,
-      p256dh: pushSubscription.toJSON().keys?.p256dh ?? null,
-      auth: pushSubscription.toJSON().keys?.auth ?? null,
+      expirationTime: pushSubscription.expirationTime,
+      p256dh: keys?.p256dh ?? null,
+      auth: keys?.auth ?? null,
+      firstName: meta.firstName,
+      lastName: meta.lastName,
+      emailAddress: meta.emailAddress,
+      interests: meta.interests,
     }),
-    credentials: 'include',
   });
   if (!response.ok) {
     throw new StorageError();
   }
+  const body = await response.json() as RawSubscriptionDTO;
+  return {
+    ...body,
+    created: new Date(body.created),
+    modified: new Date(body.modified),
+  };
 };
 
-export const deletePushSubscription = async (pushSubscription: PushSubscription): Promise<void> => {
-  const url = `${baseUrl}/subscriptions?endpoint=${encodeURIComponent(pushSubscription.endpoint)}`;
+const removePushSubscription = async (pushSubscription: PushSubscription): Promise<void> => {
+  const url = `${baseUrl}/subscriptions?websiteName=${encodeURIComponent(websiteName)}&endpoint=${encodeURIComponent(pushSubscription.endpoint)}`;
   const response = await fetch(url, {
     method: 'DELETE',
-    headers: { 'Content-Type': 'application/json' },
-    credentials: 'include',
   });
   if (!response.ok) {
     throw new StorageError();
