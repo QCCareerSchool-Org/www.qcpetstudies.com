@@ -1,6 +1,7 @@
 import { ReactElement, ReactNode } from 'react';
 
 import { LocationProvider } from './LocationProvider';
+import { PushSubscriptionProvider } from './PushSubscriptionProvider';
 import { ScreenWidthProvider } from './ScreenWidthProvider';
 import { ScrollPositionProvider } from './ScrollPositionProvider';
 
@@ -12,7 +13,9 @@ export const Provider = ({ children }: Props): ReactElement => (
   <LocationProvider>
     <ScreenWidthProvider>
       <ScrollPositionProvider>
-        {children}
+        <PushSubscriptionProvider>
+          {children}
+        </PushSubscriptionProvider>
       </ScrollPositionProvider>
     </ScreenWidthProvider>
   </LocationProvider>

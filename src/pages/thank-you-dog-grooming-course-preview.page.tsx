@@ -7,7 +7,6 @@ import { useEffect } from 'react';
 import { FaPaw } from 'react-icons/fa';
 
 import { GoogleAdsLeadScript } from '../components/GoogleAdsLeadScript';
-import { PushSubscription } from '../components/PushSubscription';
 import { SEO } from '../components/SEO';
 import { TestimonialSmAprilCostigan } from '../components/testimonials-sm/TestimonialSmAprilCostigan';
 import { TestimonialSmHailieSavage } from '../components/testimonials-sm/TestimonialSmHailieSavage';

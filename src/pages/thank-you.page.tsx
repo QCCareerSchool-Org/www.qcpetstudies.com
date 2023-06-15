@@ -7,7 +7,7 @@ import { useEffect } from 'react';
 import { FaPaw } from 'react-icons/fa';
 
 import { GoogleAdsLeadScript } from '../components/GoogleAdsLeadScript';
-import { PushSubscription } from '../components/PushSubscription';
+import { PushSubscriptionSection } from '../components/pushSubscriptionSection';
 import { SEO } from '../components/SEO';
 import { TestimonialSmAprilCostigan } from '../components/testimonials-sm/TestimonialSmAprilCostigan';
 import { TestimonialSmHailieSavage } from '../components/testimonials-sm/TestimonialSmHailieSavage';
@@ -64,7 +64,7 @@ const ThankYouPage: NextPage<Props> = ({ firstName, lastName, emailAddress }) =>
     </section>
     {!mdOrGreater && <Image src={PeekingHusky} width="806" height="234" style={{ width: '100%', height: 'auto' }} alt="Peeking husky" />}
 
-    <PushSubscription className="bg-light" meta={{ firstName, lastName, emailAddress, interests: [ 'dog grooming' ] }} />
+    <PushSubscriptionSection className="bg-light" meta={{ firstName, lastName, emailAddress, interests: [ 'dog grooming' ] }} />
 
     <section className="text-center">
       <div className="container">

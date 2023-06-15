@@ -12,29 +12,32 @@ self.addEventListener('activate', event => {
 });
 
 self.addEventListener('push', event => {
+  const data = event.data.json();
+
   const options = {
     // Visual Options,
-    body: event.data.body,
-    icon: event.data.icon ?? '/android-chrome-512x512.png',
-    image: event.data.image,
-    badge: event.data.badge ?? '/android-chrome-192x192.png',
+    body: data.body,
+    icon: data.icon ?? '/android-chrome-512x512.png',
+    image: data.image,
+    badge: data.badge ?? '/android-chrome-192x192.png',
 
     // Behavioral Options
-    tag: event.data.tag, // string | undefined
-    data: event.data.data, // any | undefined
-    requireInteraction: event.data.requireInteraction ?? undefined, // boolean | undefined
-    renotify: event.data.renotify, // boolean | undefined
-    silent: event.data.silent, // boolean | undefined
+    tag: data.tag, // string | undefined
+    data: data.data, // any | undefined
+    requireInteraction: data.requireInteraction ?? undefined, // boolean | undefined
+    renotify: data.renotify, // boolean | undefined
+    silent: data.silent, // boolean | undefined
 
     // Both visual & behavioral options
-    actions: event.data.actions,
+    actions: data.actions,
 
     // Information Option. No visual affect.
     timestamp: Date.now(),
   };
-  console.log(options);
+  console.log('event', event);
+  console.log('options', options);
 
-  const title = event.data.title ?? 'Notification from QC Pet Studies';
+  const title = data.title ?? 'Notification from QC Pet Studies';
 
   event.waitUntil(self.registration.showNotification(title, options));
 });

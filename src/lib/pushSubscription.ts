@@ -1,4 +1,4 @@
-const publicKey = 'BHoi0aIhIzYg9Up6vlm9dMS2VzK2dDmDbCv9v5Oj1z_ubfHNgl1rmdzHMgVck0MNB2kjZYm5vCQ53MXHJn1YZzw';
+const publicKey = 'BO1L2LomrzC4eipHJ1oY3UVeyMB1fDtzIszcaurEEJzeL1weI5zvJVDE19UEmhgD8ZLBeNRlVCsrB6198VyhARA';
 const baseUrl = 'https://push.qccareerschool.com';
 const websiteName = 'QC Pet Studies';
 
@@ -59,7 +59,7 @@ export type SubscriptionMetaData = {
  * @param serviceWorkerRegistration the service worker registration
  * @returns the push subscription
  */
-export const createPushSubscription = async (serviceWorkerRegistration: ServiceWorkerRegistration, meta: SubscriptionMetaData): Promise<PushSubscription | null> => {
+export const createPushSubscription = async (serviceWorkerRegistration: ServiceWorkerRegistration, meta?: SubscriptionMetaData): Promise<PushSubscription | null> => {
   // register the subscription
   let pushSubscription: PushSubscription | null;
   try {
@@ -89,7 +89,7 @@ export const deletePushSubscription = async (serviceWorkerRegistration: ServiceW
   }
 };
 
-export const getPushSubscription = async (serviceWorkerRegistration: ServiceWorkerRegistration, meta: SubscriptionMetaData): Promise<PushSubscription | null> => {
+export const getPushSubscription = async (serviceWorkerRegistration: ServiceWorkerRegistration, meta?: SubscriptionMetaData): Promise<PushSubscription | null> => {
   const pushSubscription = await serviceWorkerRegistration.pushManager.getSubscription();
   if (pushSubscription) {
     await storePushSubscription(pushSubscription, meta);
@@ -97,7 +97,7 @@ export const getPushSubscription = async (serviceWorkerRegistration: ServiceWork
   return pushSubscription;
 };
 
-const storePushSubscription = async (pushSubscription: PushSubscription, meta: SubscriptionMetaData): Promise<SubscriptionDTO> => {
+export const storePushSubscription = async (pushSubscription: PushSubscription, meta?: SubscriptionMetaData): Promise<SubscriptionDTO> => {
   const keys = pushSubscription.toJSON().keys;
   const url = `${baseUrl}/subscriptions`;
   const response = await fetch(url, {
@@ -109,10 +109,12 @@ const storePushSubscription = async (pushSubscription: PushSubscription, meta: S
       expirationTime: pushSubscription.expirationTime,
       p256dh: keys?.p256dh ?? null,
       auth: keys?.auth ?? null,
-      firstName: meta.firstName,
-      lastName: meta.lastName,
-      emailAddress: meta.emailAddress,
-      interests: meta.interests,
+      meta: meta ? {
+        firstName: meta.firstName,
+        lastName: meta.lastName,
+        emailAddress: meta.emailAddress,
+        interests: meta.interests,
+      } : undefined,
     }),
   });
   if (!response.ok) {
@@ -126,7 +128,7 @@ const storePushSubscription = async (pushSubscription: PushSubscription, meta: S
   };
 };
 
-const removePushSubscription = async (pushSubscription: PushSubscription): Promise<void> => {
+export const removePushSubscription = async (pushSubscription: PushSubscription): Promise<void> => {
   const url = `${baseUrl}/subscriptions?websiteName=${encodeURIComponent(websiteName)}&endpoint=${encodeURIComponent(pushSubscription.endpoint)}`;
   const response = await fetch(url, {
     method: 'DELETE',
