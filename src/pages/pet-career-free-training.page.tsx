@@ -1,4 +1,6 @@
+import { GetServerSideProps } from 'next';
 import Image from 'next/image';
+import { useMemo } from 'react';
 import { FaFilm } from 'react-icons/fa';
 
 import { BrochureForm } from '../components/BrochureForm';
@@ -11,9 +13,29 @@ import AprilCostigan from '../images/april-costigan.png';
 import Hero from '../images/backgrounds/black-and-white-dog-looking-up.jpg';
 import DogSitting from '../images/black-and-white-dog-sitting.jpg';
 import FiveStars from '../images/five-stars-secondary.svg';
+import { getRandomIntInclusive } from '../lib/randomInt';
 import { NextPageWithLayout } from './_app.page';
 
-const PetCareerFreeTrainingPage: NextPageWithLayout = () => {
+const formAction = 'https://go.qccareerschool.com/l/947642/2023-02-16/thly8';
+
+type Props = {
+  testGroup: number;
+  gclid: string | null;
+  msclkid: string | null;
+};
+
+const PetCareerFreeTrainingPage: NextPageWithLayout<Props> = ({ testGroup, gclid, msclkid }) => {
+  const hiddenFields = useMemo(() => {
+    const h: Array<{ key: string; value: string | number }> = [ { key: 'testGroup', value: testGroup } ];
+    if (gclid) {
+      h.push({ key: 'gclid', value: gclid });
+    }
+    if (msclkid) {
+      h.push({ key: 'msclkid', value: msclkid });
+    }
+    return h;
+  }, [ testGroup, gclid, msclkid ]);
+
   const screenWidth = useScreenWidth();
   const lg = screenWidth >= 992;
   const xl = screenWidth >= 1200;
@@ -46,7 +68,13 @@ const PetCareerFreeTrainingPage: NextPageWithLayout = () => {
             <div className="col-12 col-md-10 col-lg-6 col-xxl-5">
               <h1>Free Training!</h1>
               <p className="lead">Calling all dog groomers, trainers, walkers &amp; daycare providers: <strong>learn how to start, grow &amp; scale a hugely successful pet business in 2023!</strong></p>
-              <BrochureForm action="https://go.qccareerschool.com/l/947642/2023-02-16/thly8" lastName={false} buttonClassName="btn btn-secondary btn-lg" buttonText={<><span style={{ position: 'relative', top: -1, marginRight: '0.25rem' }}><FaFilm /></span> Watch the free training now!</>} />
+              <BrochureForm
+                action={formAction}
+                lastName={false}
+                hiddenFields={hiddenFields}
+                buttonClassName="btn btn-secondary btn-lg"
+                buttonText={<><span style={{ position: 'relative', top: -1, marginRight: '0.25rem' }}><FaFilm /></span> Watch the free training now!</>}
+              />
             </div>
           </div>
         </div>
@@ -128,6 +156,27 @@ const PetCareerFreeTrainingPage: NextPageWithLayout = () => {
       `}</style>
     </>
   );
+};
+
+export const getServerSideProps: GetServerSideProps<Props> = async context => {
+  let testGroup: number | undefined;
+  const storedTestGroup = context.req.cookies.testGroup;
+  if (typeof storedTestGroup !== 'undefined') {
+    const parsed = parseInt(storedTestGroup, 10);
+    if (!isNaN(parsed)) {
+      testGroup = parsed;
+    }
+  }
+  if (typeof testGroup === 'undefined') {
+    testGroup = getRandomIntInclusive(1, 12);
+    const maxAge = 60 * 60 * 24 * 365;
+    context.res.setHeader('Set-Cookie', `testGroup=${testGroup}; Max-Age=${maxAge}; Path=/; Secure; SameSite=Strict`);
+  }
+
+  const gclid = typeof context.query.gclid === 'string' ? context.query.gclid : null;
+  const msclkid = typeof context.query.msclkid === 'string' ? context.query.msclkid : null;
+
+  return { props: { testGroup, gclid, msclkid } };
 };
 
 PetCareerFreeTrainingPage.getLayout = page => <LandingPageLayout footer={false}>{page}</LandingPageLayout>;

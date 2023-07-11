@@ -20,10 +20,22 @@ const formAction = 'https://go.qcpetstudies.com/l/947642/2021-12-05/6h9rx';
 
 type Props = {
   testGroup: number;
+  gclid: string | null;
+  msclkid: string | null;
 };
 
-const DogTrainingCatalogPage: NextPageWithLayout<Props> = ({ testGroup }) => {
-  const hiddenFields = useMemo(() => ([ { key: 'testGroup', value: testGroup } ]), [ testGroup ]);
+const DogTrainingCatalogPage: NextPageWithLayout<Props> = ({ testGroup, gclid, msclkid }) => {
+  const hiddenFields = useMemo(() => {
+    const h: Array<{ key: string; value: string | number }> = [ { key: 'testGroup', value: testGroup } ];
+    if (gclid) {
+      h.push({ key: 'gclid', value: gclid });
+    }
+    if (msclkid) {
+      h.push({ key: 'msclkid', value: msclkid });
+    }
+    return h;
+  }, [ testGroup, gclid, msclkid ]);
+
   const screenWidth = useScreenWidth();
   const lgOrGreater = screenWidth >= 992;
   const smOrGreater = screenWidth >= 576;
@@ -147,7 +159,11 @@ export const getServerSideProps: GetServerSideProps<Props> = async context => {
     const maxAge = 60 * 60 * 24 * 365;
     context.res.setHeader('Set-Cookie', `testGroup=${testGroup}; Max-Age=${maxAge}; Path=/; Secure; SameSite=Strict`);
   }
-  return { props: { testGroup } };
+
+  const gclid = typeof context.query.gclid === 'string' ? context.query.gclid : null;
+  const msclkid = typeof context.query.msclkid === 'string' ? context.query.msclkid : null;
+
+  return { props: { testGroup, gclid, msclkid } };
 };
 
 export default DogTrainingCatalogPage;
