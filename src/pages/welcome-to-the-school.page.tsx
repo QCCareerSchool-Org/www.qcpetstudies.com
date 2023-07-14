@@ -45,7 +45,6 @@ const WelcomeToTheSchoolPage: NextPage<Props> = ({ data, errorCode }) => {
       return;
     }
     if (!data.enrollment.emailed) {
-      addToActiveCampaign(data.enrollment).catch(() => { /* */ });
       addToIDevAffiliate(data.enrollment).catch(() => { /* */ });
       gaSale(data.enrollment);
       fbqSale(data.enrollment);
