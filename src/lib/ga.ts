@@ -44,4 +44,23 @@ export const gaSale = (enrollment: Enrollment): void => {
     currency: enrollment.currencyCode,
     transaction_id: enrollment.id, // eslint-disable-line camelcase
   });
+
+  const address: Record<string, string> = {
+    first_name: enrollment.firstName, // eslint-disable-line camelcase
+    last_name: enrollment.lastName, // eslint-disable-line camelcase
+    street: enrollment.address1,
+    city: enrollment.city,
+    postal_code: enrollment.postalCode ?? '0', // eslint-disable-line camelcase
+    country: enrollment.countryCode,
+  };
+
+  if (enrollment.provinceCode) {
+    address.region = enrollment.provinceCode;
+  }
+
+  window.gtag?.('set', 'user_data', {
+    email: enrollment.emailAddress,
+    // phone_number: enrollment.telephoneNumber, // can't include phone_number because it must be in E.164 format and we don't explicitly ask for a telephone country code
+    address,
+  });
 };
