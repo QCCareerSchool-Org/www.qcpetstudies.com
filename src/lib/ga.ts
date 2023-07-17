@@ -23,28 +23,6 @@ export const gaEvent = (action: string, params?: unknown): void => {
 const precision = 2;
 
 export const gaSale = (enrollment: Enrollment): void => {
-  gaEvent('purchase', {
-    transaction_id: enrollment.id, // eslint-disable-line camelcase
-    affiliation: enrollment.school,
-    value: enrollment.cost,
-    currency: enrollment.currencyCode,
-    tax: 0,
-    shipping: 0,
-    items: enrollment.courses.map(c => ({
-      id: c.code,
-      name: c.name,
-      price: parseFloat(Big(c.baseCost).minus(c.planDiscount).minus(c.discount).toFixed(precision)),
-      quantity: 1,
-    })),
-  });
-
-  gaEvent('conversion', {
-    send_to: 'AW-1071836607/xFpdCJ3DpW8Qv9uL_wM', // eslint-disable-line camelcase
-    value: enrollment.cost,
-    currency: enrollment.currencyCode,
-    transaction_id: enrollment.id, // eslint-disable-line camelcase
-  });
-
   const address: Record<string, string> = {
     first_name: enrollment.firstName, // eslint-disable-line camelcase
     last_name: enrollment.lastName, // eslint-disable-line camelcase
@@ -63,4 +41,29 @@ export const gaSale = (enrollment: Enrollment): void => {
     // phone_number: enrollment.telephoneNumber, // can't include phone_number because it must be in E.164 format and we don't explicitly ask for a telephone country code
     address,
   });
+
+  // Google Analtytics e-commerce event
+  gaEvent('purchase', {
+    transaction_id: enrollment.id, // eslint-disable-line camelcase
+    affiliation: enrollment.school,
+    value: enrollment.cost,
+    currency: enrollment.currencyCode,
+    tax: 0,
+    shipping: 0,
+    items: enrollment.courses.map(c => ({
+      id: c.code,
+      name: c.name,
+      price: parseFloat(Big(c.baseCost).minus(c.planDiscount).minus(c.discount).toFixed(precision)),
+      quantity: 1,
+    })),
+  });
+
+  // Google Ads sale conversion
+  gaEvent('conversion', {
+    send_to: 'AW-1071836607/xFpdCJ3DpW8Qv9uL_wM', // eslint-disable-line camelcase
+    value: enrollment.cost,
+    currency: enrollment.currencyCode,
+    transaction_id: enrollment.id, // eslint-disable-line camelcase
+  });
+
 };
