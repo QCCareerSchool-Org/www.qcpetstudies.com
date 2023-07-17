@@ -5,12 +5,10 @@ import Image from 'next/image';
 import { useEffect, useState } from 'react';
 
 import { EnrollmentDetails } from '../components/EnrollmentDetails';
-import { GoogleAdsSaleScript } from '../components/GoogleAdsSaleScript';
 import { SEO } from '../components/SEO';
 import { useLocation } from '../hooks/useLocation';
 import AlexSignature from '../images/alex-myers.png';
 import HappyPuppyRunning from '../images/backgrounds/happy-puppy-running.jpg';
-import { addToActiveCampaign } from '../lib/addToActiveCampaign';
 import { addToIDevAffiliate } from '../lib/addToIDevAffiliate';
 import { fbqSale } from '../lib/fbq';
 import { gaSale } from '../lib/ga';
@@ -72,7 +70,6 @@ const WelcomeToTheSchoolPage: NextPage<Props> = ({ data, errorCode }) => {
       canonical="/internal-welcome"
       noIndex={true}
     />
-    <GoogleAdsSaleScript conversionLabel="xFpdCJ3DpW8Qv9uL_wM" enrollment={data.enrollment} />
 
     <section id="top" className="bg-dark">
       <Image

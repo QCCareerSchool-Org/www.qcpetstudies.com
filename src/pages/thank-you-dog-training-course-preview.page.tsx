@@ -3,14 +3,14 @@ import { urlencoded } from 'body-parser';
 import { GetServerSideProps, NextPage } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 import { FaPaw } from 'react-icons/fa';
 
-import { GoogleAdsLeadScript } from '../components/GoogleAdsLeadScript';
 import { SEO } from '../components/SEO';
 import { useScreenWidth } from '../hooks/useScreenWidth';
 import CatalogBackground from '../images/backgrounds/smiling-border-collie-on-black.jpg';
 import { fbqLead } from '../lib/fbq';
+import { gaEvent } from '../lib/ga';
 
 const urlencodedAsync = promisify(urlencoded({ extended: false }));
 
@@ -18,15 +18,34 @@ type Props = {
   firstName: string | null;
   lastName: string | null;
   emailAddress: string | null;
+  countryCode: string | null;
+  provinceCode: string | null;
+  testGroup: number | null;
 };
 
 const ThankYouCatalogPage: NextPage<Props> = ({ emailAddress }) => {
   const screenWidth = useScreenWidth();
   const mdOrGreater = screenWidth >= 768;
+  const effectCalled = useRef<boolean>(false);
 
   useEffect(() => {
+    if (effectCalled.current) {
+      return;
+    }
+    effectCalled.current = true;
     fbqLead();
+    gaEvent('conversion', {
+      send_to: 'AW-1071836607/yZtFCL_BpW8Qv9uL_wM', // eslint-disable-line camelcase
+      value: 1.0,
+      currency: 'USD',
+    });
   }, []);
+
+  useEffect(() => {
+    if (emailAddress !== null && emailAddress.length > 0) {
+      window.gtag?.('set', 'user-data', { email: emailAddress });
+    }
+  }, [ emailAddress ]);
 
   return <>
     <SEO
@@ -34,7 +53,6 @@ const ThankYouCatalogPage: NextPage<Props> = ({ emailAddress }) => {
       description="Get your Dog Training Course Preview Now"
       canonical="/thank-you-dog-training-course-preview"
     />
-    <GoogleAdsLeadScript conversionLabel="yZtFCL_BpW8Qv9uL_wM" emailAddress={emailAddress} />
     <section id="top" className="bg-black">
       {mdOrGreater && <Image
         src={CatalogBackground}
@@ -70,9 +88,15 @@ export const getServerSideProps: GetServerSideProps<Props> = async ({ req, res }
     const firstName = typeof body.firstName === 'string' ? body.firstName || null : null;
     const lastName = typeof body.lastName === 'string' ? body.lastName || null : null;
     const emailAddress = typeof body.emailAddress === 'string' ? body.emailAddress || null : null;
-    return { props: { firstName, lastName, emailAddress } };
+    const countryCode = typeof body.countryCode === 'string' ? body.countryCode || null : null;
+    const provinceCode = typeof body.provinceCode === 'string' ? body.provinceCode || null : null;
+    let testGroup = typeof body.testGroup === 'string' ? parseInt(body.testGroup, 10) : null;
+    if (testGroup && isNaN(testGroup)) {
+      testGroup = null;
+    }
+    return { props: { firstName, lastName, emailAddress, countryCode, provinceCode, testGroup } };
   }
-  return { props: { firstName: null, lastName: null, emailAddress: null } };
+  return { props: { firstName: null, lastName: null, emailAddress: null, countryCode: null, provinceCode: null, testGroup: null } };
 };
 
 export default ThankYouCatalogPage;
