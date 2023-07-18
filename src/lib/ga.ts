@@ -20,27 +20,51 @@ export const gaEvent = (action: string, params?: unknown): void => {
   window.gtag?.('event', action, params);
 };
 
+type GAUserData = {
+  email: string;
+  // phone_number: string; // can't include phone_number because it must be in E.164 format and we don't explicitly ask for a telephone country code
+  address?: {
+    first_name: string;
+    last_name: string;
+    street?: string;
+    city?: string;
+    region?: string;
+    /** Google says "5-digit format" (seems to only consider the United States) */
+    postal_code: string;
+    country: string;
+  };
+};
+
+export const gaUserData = (userData: GAUserData): void => {
+  window.gtag?.('set', 'user-data', userData);
+};
+
 const precision = 2;
 
 export const gaSale = (enrollment: Enrollment): void => {
-  const address: Record<string, string> = {
-    first_name: enrollment.firstName, // eslint-disable-line camelcase
-    last_name: enrollment.lastName, // eslint-disable-line camelcase
-    street: enrollment.address1,
-    city: enrollment.city,
-    postal_code: enrollment.postalCode ?? '0', // eslint-disable-line camelcase
-    country: enrollment.countryCode,
+  const postalCode = enrollment.postalCode === null
+    ? '0'
+    : enrollment.countryCode === 'US'
+      ? enrollment.postalCode.substring(0, 5)
+      : enrollment.postalCode;
+
+  const userData: GAUserData = {
+    email: enrollment.emailAddress,
+    address: {
+      first_name: enrollment.firstName, // eslint-disable-line camelcase
+      last_name: enrollment.lastName, // eslint-disable-line camelcase
+      street: enrollment.address1,
+      city: enrollment.city,
+      postal_code: postalCode, // eslint-disable-line camelcase
+      country: enrollment.countryCode,
+    },
   };
 
-  if (enrollment.provinceCode) {
-    address.region = enrollment.provinceCode;
+  if (enrollment.provinceCode && userData.address) {
+    userData.address.region = enrollment.provinceCode;
   }
 
-  window.gtag?.('set', 'user_data', {
-    email: enrollment.emailAddress,
-    // phone_number: enrollment.telephoneNumber, // can't include phone_number because it must be in E.164 format and we don't explicitly ask for a telephone country code
-    address,
-  });
+  gaUserData(userData);
 
   // Google Analtytics e-commerce event
   gaEvent('purchase', {

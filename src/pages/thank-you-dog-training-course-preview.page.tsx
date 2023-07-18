@@ -10,7 +10,7 @@ import { SEO } from '../components/SEO';
 import { useScreenWidth } from '../hooks/useScreenWidth';
 import CatalogBackground from '../images/backgrounds/smiling-border-collie-on-black.jpg';
 import { fbqLead } from '../lib/fbq';
-import { gaEvent } from '../lib/ga';
+import { gaEvent, gaUserData } from '../lib/ga';
 
 const urlencodedAsync = promisify(urlencoded({ extended: false }));
 
@@ -30,7 +30,7 @@ const ThankYouCatalogPage: NextPage<Props> = ({ emailAddress }) => {
 
   useEffect(() => {
     if (emailAddress !== null && emailAddress.length > 0) {
-      window.gtag?.('set', 'user-data', { email: emailAddress });
+      gaUserData({ email: emailAddress });
     }
   }, [ emailAddress ]);
 
