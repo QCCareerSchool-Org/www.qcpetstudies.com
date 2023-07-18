@@ -155,7 +155,7 @@ const FAQPage: NextPageWithLayout = () => {
               <QuestionAnswer question="Do I need prior training or experience as a dog trainer before taking this course?" index={i++}>
                 <p className="mb-0">Not at all! The online dog training course will teach you everything you need to know about becoming a professional dog trainer from the ground up. While it always helps to have experience training your own dog(s), it's definitely not a requirement to take this course!</p>
               </QuestionAnswer>
-              <QuestionAnswer question="Will I need to purchase anything else to complete the dog groomer course?" index={i++}>
+              <QuestionAnswer question="Will I need to purchase anything else to complete the dog training course?" index={i++}>
                 <p className="mb-0">If you have a dog at home, odds are you already have the basics like dog treats, a crate, a treat pouch and probably a clicker. If not, you'll want to obtain these tools for your dog training class. You might also want to invest in different types of leashes, collars, harnesses, and more, however these are not required to complete the course.</p>
               </QuestionAnswer>
               <QuestionAnswer question="How long will it take to complete my online dog training class?" index={i++}>
@@ -172,7 +172,7 @@ const FAQPage: NextPageWithLayout = () => {
                 <p className="mb-0">The online dog training course provided by QC was developed to prepare students for the CPDT-KA exam. You can learn more about obtaining your CPDT certification <a href="https://www.ccpdt.org/certification/dog-trainer-certification/about-the-examination/" target="_blank" rel="noopener noreferrer" className="link-primary">here</a>.</p>
               </QuestionAnswer>
               <QuestionAnswer question="Will I be able to receive discounts toward dog training tools and equipment as a student or graduate?" index={i++}>
-                <p className="mb-0">Yes! QC Pet Studies students and graduates are eligible to receive discounts from a variety of pet retailers. Find a <Link href="/resources/your-dog-grooming-career/discounts-for-grooming-students" className="link-primary">full list of preferred suppliers here</Link>.</p>
+                <p className="mb-0">Yes! QC Pet Studies students and graduates are eligible to receive discounts from a variety of pet retailers. Find a <Link href="/about/student-discounts" className="link-primary">full list of preferred suppliers here</Link>.</p>
               </QuestionAnswer>
               <QuestionAnswer question="How much can you earn as a professional dog trainer?" index={i++}>
                 <p>A professional dog trainer's salary varies depending on the level of experience, skill, location, and the type of services you offer. A dog trainer can expect to earn between $21,550 and $62,040 US per year.</p>
