@@ -68,7 +68,7 @@ export const gaSale = (enrollment: Enrollment): void => {
 
   // Google Analtytics e-commerce event
   gaEvent('purchase', {
-    transaction_id: enrollment.id, // eslint-disable-line camelcase
+    transaction_id: enrollment.id.toString(), // eslint-disable-line camelcase
     affiliation: enrollment.school,
     value: enrollment.cost,
     currency: enrollment.currencyCode,
@@ -87,7 +87,6 @@ export const gaSale = (enrollment: Enrollment): void => {
     send_to: 'AW-1071836607/xFpdCJ3DpW8Qv9uL_wM', // eslint-disable-line camelcase
     value: enrollment.cost,
     currency: enrollment.currencyCode,
-    transaction_id: enrollment.id, // eslint-disable-line camelcase
+    transaction_id: enrollment.id.toString(), // eslint-disable-line camelcase
   });
-
 };
