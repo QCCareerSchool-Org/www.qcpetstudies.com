@@ -105,22 +105,21 @@ const ThankYouCatalogPage: NextPage<Props> = ({ emailAddress }) => {
   </>;
 };
 
-// eslint-disable-next-line @typescript-eslint/require-await
 export const getServerSideProps: GetServerSideProps<Props> = async ({ req, res }) => {
   if (req.method === 'POST') {
     await urlencodedAsync(req, res);
-    type RequestWithBody = typeof req & { body: Record<string, unknown> };
-    const body = (req as RequestWithBody).body;
-    const firstName = typeof body.firstName === 'string' ? body.firstName || null : null;
-    const lastName = typeof body.lastName === 'string' ? body.lastName || null : null;
-    const emailAddress = typeof body.emailAddress === 'string' ? body.emailAddress || null : null;
-    const countryCode = typeof body.countryCode === 'string' ? body.countryCode || null : null;
-    const provinceCode = typeof body.provinceCode === 'string' ? body.provinceCode || null : null;
-    let testGroup = typeof body.testGroup === 'string' ? parseInt(body.testGroup, 10) : null;
-    if (testGroup && isNaN(testGroup)) {
-      testGroup = null;
+    if ('body' in req && typeof req.body === 'object' && req.body !== null) {
+      const firstName = 'firstName' in req.body && typeof req.body.firstName === 'string' ? req.body.firstName || null : null;
+      const lastName = 'lastName' in req.body && typeof req.body.lastName === 'string' ? req.body.lastName || null : null;
+      const emailAddress = 'emailAddress' in req.body && typeof req.body.emailAddress === 'string' ? req.body.emailAddress || null : null;
+      const countryCode = 'countryCode' in req.body && typeof req.body.countryCode === 'string' ? req.body.countryCode || null : null;
+      const provinceCode = 'provinceCode' in req.body && typeof req.body.provinceCode === 'string' ? req.body.provinceCode || null : null;
+      let testGroup = 'testGroup' in req.body && typeof req.body.testGroup === 'string' ? parseInt(req.body.testGroup, 10) : null;
+      if (testGroup && isNaN(testGroup)) {
+        testGroup = null;
+      }
+      return { props: { firstName, lastName, emailAddress, countryCode, provinceCode, testGroup } };
     }
-    return { props: { firstName, lastName, emailAddress, countryCode, provinceCode, testGroup } };
   }
   return { props: { firstName: null, lastName: null, emailAddress: null, countryCode: null, provinceCode: null, testGroup: null } };
 };
