@@ -1,8 +1,13 @@
+import { GetServerSideProps } from 'next';
 import { DefaultLayout } from '../../components/layouts/DefaultLayout';
 import { SEO } from '../../components/SEO';
 import { NextPageWithLayout } from '../_app.page';
 
-const CanadianTaxCreditsPage: NextPageWithLayout = () => (
+type Props = {
+  year: number;
+};
+
+const CanadianTaxCreditsPage: NextPageWithLayout<Props> = ({ year }) => (
   <>
     <SEO
       title="Canadian Tax Credits"
@@ -29,29 +34,36 @@ const CanadianTaxCreditsPage: NextPageWithLayout = () => (
         <p>At tax time you'll be able to access your T2202 receipt in the My Account section of your online student center. We also send a copy to the CRA.</p>
       </div>
     </section>
+
     <section className="bg-light">
       <div className="container">
         <h2>Sample Calculation</h2>
-        <p className="lead">Tania's Course Enrollment Details</p>
-        <p>Tania decides to enroll in QC's Dog Training course. She saves $400 by paying in full.</p>
-        <p><strong>Course Cost:</strong> $2498<br /><strong>Pay-in-Full Discount:</strong> $400</p>
-        <p>$2498 &minus; $400 discount = $2098</p>
+        <p>Tania decides to enroll in QC's Dog Grooming course for $2398.</p>
         <h3>Canada Training Credit</h3>
-        <p>She wants to use the Canada Training Credit. Her Canada Training Credit Limit (CTCL) is valued at $1000 for the tax year. She can claim the lesser of her CTCL or 50% of eligible tuition fees.</p>
-        <p>$2098 &times; 50% = $1049</p>
-        <p>Her CTCL valued at $1000 is less than 50% of her eligible tuition fees.</p>
-        <p>Tania receives a refund of $1000 at tax time.</p>
-        <h3>Tution Tax Credit</h3>
-        <p>Next, Tania would like to claim the Tuition Tax Credit on the unclaimed $1098 balance. The lowest federal tax rate of 15% is applied to this amount:</p>
-        <p>$1098 &times; 15% = $164.70</p>
-        <p>Tania is able to reduce the amount of tax that she owes at tax time by $164.70.</p>
+        <p>She can use the Canada Training Credit (CTC) to claim a refund of up to 50% of her eligible tuition fees. Half of her eligible tuition fees is $1199. Her Canada Training Credit Limit (CTCL) for the {year} tax year is $1500, which is greater than $1199, so she can claim the full $1199.</p>
+        <h3>Tuition Tax Credit</h3>
+        <p>Next, Tania would like to claim the federal Tuition Tax Credit for the remaining $1199 balance. The federal tax rate of 15% is applied, giving a refund of $179.85.</p>
         <h3>Total Savings</h3>
-        <p>In this case Tania was able to use tax credits to reduce the cost of her tuition by $1164.70. With her full payment discount, Tania was able to save a total of $1564.70.</p>
-        <p>Rules for the way the credits work reflect your personal tax situation. Please reach out to your personal accountant for further guidance.</p>
+        <p>Tania will get a refund of $1378.85 at tax time, making the effective cost of her course only $1019.15.</p>
+        <div className="mb-3 py-3 px-4 bg-white d-inline-block">
+          <table>
+            <tbody>
+              <tr><td className="text-end pe-2">$2398.00</td><th scope="row">Cost of Course</th></tr>
+              <tr><td className="text-end pe-2">&minus; $1199.00</td><th scope="row">CTC</th></tr>
+              <tr><td className="text-end pe-2">&minus; $179.85</td><th scope="row">Tuition Tax Credit</th></tr>
+              <tr><td colSpan={2}><hr className="my-1" /></td></tr>
+              <tr><td className="text-end pe-2">$1019.15</td><th scope="row">Effective Cost ✔</th></tr>
+            </tbody>
+          </table>
+        </div>
+        <p>Your personal tax situation may be different. Please reach out to your personal accountant for further guidance.</p>
       </div>
     </section>
   </>
 );
+
+// eslint-disable-next-line @typescript-eslint/require-await
+export const getServerSideProps: GetServerSideProps<Props> = async () => ({ props: { year: new Date().getFullYear() } });
 
 CanadianTaxCreditsPage.getLayout = page => <DefaultLayout noHero={true}>{page}</DefaultLayout>;
 
