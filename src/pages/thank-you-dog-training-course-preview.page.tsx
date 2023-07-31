@@ -88,7 +88,7 @@ export const getServerSideProps: GetServerSideProps<Props> = async ({ req, res }
       const countryCode = 'countryCode' in req.body && typeof req.body.countryCode === 'string' ? req.body.countryCode || null : null;
       const provinceCode = 'provinceCode' in req.body && typeof req.body.provinceCode === 'string' ? req.body.provinceCode || null : null;
       let testGroup = 'testGroup' in req.body && typeof req.body.testGroup === 'string' ? parseInt(req.body.testGroup, 10) : null;
-      if (testGroup && isNaN(testGroup)) {
+      if (testGroup !== null && isNaN(testGroup)) {
         testGroup = null;
       }
       return { props: { firstName, lastName, emailAddress, countryCode, provinceCode, testGroup } };
