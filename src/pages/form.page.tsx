@@ -19,7 +19,7 @@ const FormPage: NextPageWithLayout<Props> = ({ action, phoneNumber, buttonText, 
     return <NextError statusCode={400} />;
   }
 
-  return <BrochureForm action={action} phoneNumber={phoneNumber} buttonText={buttonText} hiddenFields={hiddenFields} />;
+  return <BrochureForm action={action} phoneNumber={phoneNumber} buttonText={buttonText} hiddenFields={hiddenFields} marketing={null} />;
 };
 
 // eslint-disable-next-line @typescript-eslint/require-await

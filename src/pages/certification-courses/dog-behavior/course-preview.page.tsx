@@ -6,8 +6,6 @@ import { FaBars, FaPlay } from 'react-icons/fa';
 
 import { Accordion } from '../../../components/accordion';
 import { AccordionItem } from '../../../components/accordion/AccordionItem';
-import { Bar } from '../../../components/Bar';
-import { DGTutorSection } from '../../../components/DGTutorSection';
 import { LandingPageLayout } from '../../../components/layouts/LandingPageLayout';
 import { PriceSectionWithDiscount } from '../../../components/PriceSectionWithDiscount';
 import { SEO } from '../../../components/SEO';
@@ -235,26 +233,6 @@ const AssignmentTab = (): ReactElement => (
     <FaBars size={20} className="mb-2" />
     <span>Assignment<span className="d-none d-sm-inline"> Sample</span></span>
   </div>
-);
-
-type PreviewProps = {
-  videoContent: ReactElement;
-  assignmentContent: ReactElement;
-};
-
-const Preview = ({ videoContent, assignmentContent }: PreviewProps): ReactElement => (
-  <TabGroup
-    data={[
-      {
-        tab: <VideoTab />,
-        content: videoContent,
-      },
-      {
-        tab: <AssignmentTab />,
-        content: assignmentContent,
-      },
-    ]}
-  />
 );
 
 export default BehaviorCoursePreviewPage;
