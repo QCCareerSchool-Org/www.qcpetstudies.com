@@ -25,7 +25,7 @@ const uetScript = `
   i = d.getElementsByTagName(t)[0], i.parentNode.insertBefore(n, i)
 })(window, document, "script", "//bat.bing.com/bat.js", "uetq");`;
 
-const facebookScript = `
+const getFacebookScript = (id: string): string => `
 !function(f,b,e,v,n,t,s)
 {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
 n.callMethod.apply(n,arguments):n.queue.push(arguments)};
@@ -34,7 +34,7 @@ n.queue=[];t=b.createElement(e);t.async=!0;
 t.src=v;s=b.getElementsByTagName(e)[0];
 s.parentNode.insertBefore(t,s)}(window, document,'script',
 'https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', '1725004270923176');
+fbq('init', '${id}');
 fbq('track', 'PageView');`;
 
 const pardotScript = `
@@ -108,7 +108,7 @@ class MyDocument extends Document {
             </>
           )}
           <script dangerouslySetInnerHTML={{ __html: uetScript }} />
-          <script dangerouslySetInnerHTML={{ __html: facebookScript }} />
+          {process.env.FACEBOOK_ID && <script dangerouslySetInnerHTML={{ __html: getFacebookScript(process.env.FACEBOOK_ID) }} />}
           <script dangerouslySetInnerHTML={{ __html: pardotScript }} />
           <script dangerouslySetInnerHTML={{ __html: livechatScript }} />
           <link rel="preconnect" href="https://fonts.googleapis.com" />
