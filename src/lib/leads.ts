@@ -42,5 +42,5 @@ export const addLead = async (payload: LeadPayload): Promise<void> => {
   if (!response.ok) {
     throw Error(response.statusText);
   }
-  await response.json();
+  await response.text();
 };
