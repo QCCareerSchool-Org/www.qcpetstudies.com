@@ -113,28 +113,34 @@ export const BrochureForm: FC<Props> = ({ action, lastName = true, phoneNumber =
     }
 
     const form = formRef.current;
+    const schoolInput = schoolRef.current;
+    const emailAddressInput = emailAddressRef.current;
+    const firstNameInput = firstNameRef.current;
+    const lastNameInput = lastNameRef.current;
 
-    const testGroup = getHiddenField('testGroup', hiddenFields);
-    const gclid = getHiddenField('gclid', hiddenFields);
-    const msclkid = getHiddenField('msclkid', hiddenFields);
+    Promise.resolve().then(async () => {
+      submitting.current = true;
 
-    submitting.current = true;
+      const testGroup = getHiddenField('testGroup', hiddenFields);
+      const gclid = getHiddenField('gclid', hiddenFields);
+      const msclkid = getHiddenField('msclkid', hiddenFields);
 
-    addLead({
-      school: schoolRef.current.value,
-      emailAddress: emailAddressRef.current.value,
-      firstName: firstNameRef.current.value || null,
-      lastName: lastNameRef.current.value || null,
-      telephoneNumber: telephoneNumberRef.current?.value || null, // eslint-disable-line @typescript-eslint/prefer-nullish-coalescing
-      emailOptIn: emailOptInRef.current?.checked ?? null,
-      smsOptIn: smsOptInRef.current?.checked ?? null,
-      countryCode: location?.countryCode ?? null,
-      provinceCode: location?.provinceCode ?? null,
-      testGroup: typeof testGroup === 'string' ? parseInt(testGroup, 10) : testGroup,
-      gclid: typeof gclid === 'number' ? gclid.toString() : gclid,
-      msclkid: typeof msclkid === 'number' ? msclkid.toString() : msclkid,
-      marketing: marketing ?? undefined,
-      courses: courses,
+      return addLead({
+        school: schoolInput.value,
+        emailAddress: emailAddressInput.value,
+        firstName: firstNameInput.value || null,
+        lastName: lastNameInput.value || null,
+        telephoneNumber: telephoneNumberRef.current?.value || null, // eslint-disable-line @typescript-eslint/prefer-nullish-coalescing
+        emailOptIn: emailOptInRef.current?.checked ?? null,
+        smsOptIn: smsOptInRef.current?.checked ?? null,
+        countryCode: location?.countryCode ?? null,
+        provinceCode: location?.provinceCode ?? null,
+        testGroup: typeof testGroup === 'string' ? parseInt(testGroup, 10) : testGroup,
+        gclid: typeof gclid === 'number' ? gclid.toString() : gclid,
+        msclkid: typeof msclkid === 'number' ? msclkid.toString() : msclkid,
+        marketing: marketing ?? undefined,
+        courses: courses,
+      });
     }).catch(err => {
       console.error('Error adding lead', err);
     }).finally(() => {
