@@ -2,6 +2,7 @@ import { ChangeEventHandler, FC, FormEventHandler, useReducer, useRef } from 're
 
 import { useLocation } from '../hooks/useLocation';
 import { addLead } from '../lib/leads';
+import { Spinner } from './Spinner';
 
 type Props = {
   action: string;
@@ -33,6 +34,7 @@ type Props = {
 };
 
 type State = {
+  formSubmitting: boolean;
   telephoneNumber: string;
   smsOptIn: boolean;
   telephoneError: boolean;
@@ -40,11 +42,17 @@ type State = {
 };
 
 type Action =
+  | { type: 'FORM_SUBMITTED' }
+  | { type: 'FORM_COMPLETE' }
   | { type: 'TELEPHONE_NUMBER_CHANGED'; payload: string }
   | { type: 'SMS_OPT_IN_CHANGED'; payload: boolean };
 
 const reducer = (state: State, action: Action): State => {
   switch (action.type) {
+    case 'FORM_SUBMITTED':
+      return { ...state, formSubmitting: true };
+    case 'FORM_COMPLETE':
+      return { ...state, formSubmitting: false };
     case 'TELEPHONE_NUMBER_CHANGED': {
       let telephoneError = false;
       let telephoneErrorMessage: string | undefined = undefined;
@@ -66,7 +74,9 @@ const reducer = (state: State, action: Action): State => {
   }
 };
 
-const initialState: State = { telephoneNumber: '', smsOptIn: false, telephoneError: false };
+const initialState: State = { formSubmitting: false, telephoneNumber: '', smsOptIn: false, telephoneError: false };
+
+const disableDelay = 5000;
 
 const getHiddenField = (name: string, hiddenFields?: Array<{ key: string; value: string | number }>): string | number | null => {
   return hiddenFields?.find(({ key }) => key === name)?.value ?? null;
@@ -118,6 +128,8 @@ export const BrochureForm: FC<Props> = ({ action, lastName = true, phoneNumber =
     const firstNameInput = firstNameRef.current;
     const lastNameInput = lastNameRef.current;
 
+    dispatch({ type: 'FORM_SUBMITTED' });
+
     Promise.resolve().then(async () => {
       submitting.current = true;
 
@@ -143,8 +155,11 @@ export const BrochureForm: FC<Props> = ({ action, lastName = true, phoneNumber =
       });
     }).catch(err => {
       console.error('Error adding lead', err);
-    }).finally(() => {
+    }).then(async () => {
       form.submit();
+      return new Promise(res => setTimeout(res, disableDelay));
+    }).finally(() => {
+      dispatch({ type: 'FORM_COMPLETE' });
       submitting.current = false;
     });
   };
@@ -197,7 +212,10 @@ export const BrochureForm: FC<Props> = ({ action, lastName = true, phoneNumber =
         )}
       </div>
       {errors && <p className="text-danger mb-4" style={{ marginTop: '-0.5rem' }}>Please complete all required form fields.</p>}
-      <button className={buttonClassName ?? 'btn btn-primary shadow-sm'} type="submit">{buttonText}</button>
+      <div className="d-flex align-items-center">
+        <button className={buttonClassName ?? 'btn btn-primary shadow-sm'} type="submit" disabled={state.formSubmitting}>{buttonText}</button>
+        {state.formSubmitting && <div className="ms-2"><Spinner /></div>}
+      </div>
     </form>
   );
 };
