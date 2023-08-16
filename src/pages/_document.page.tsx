@@ -90,6 +90,15 @@ const optInMonsterScript = `
   d.getElementsByTagName('head')[0].appendChild(s);
 })(document,42601,48459);`;
 
+const trustPulseScript = `
+!function(w,d,s,n,r,a){
+  (w._tpq=w._tpq||[]).push(['init',n]),
+  (r=d.createElement(s)).type='text/javascript',
+  r.src='https://a.trstplse.com/app/js/api.min.js',
+  r.async=!0,
+  (a=d.getElementsByTagName(s)[0]).parentNode.insertBefore(r,a)
+}(window,document,'script',10509);`;
+
 class MyDocument extends Document {
   public static async getInitialProps(ctx: DocumentContext): Promise<DocumentInitialProps> {
     const initialProps = await Document.getInitialProps(ctx);
@@ -128,6 +137,7 @@ class MyDocument extends Document {
           <Main />
           <NextScript />
           <script dangerouslySetInnerHTML={{ __html: optInMonsterScript }} />
+          <script dangerouslySetInnerHTML={{ __html: trustPulseScript }} />
         </body>
       </Html>
     );
