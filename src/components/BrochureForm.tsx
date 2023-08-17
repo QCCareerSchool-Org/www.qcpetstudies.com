@@ -1,8 +1,10 @@
-import { ChangeEventHandler, FC, FormEventHandler, useReducer, useRef } from 'react';
+import { ChangeEvent, ChangeEventHandler, FC, FormEventHandler, useReducer, useRef } from 'react';
 
 import { useLocation } from '../hooks/useLocation';
 import { addLead } from '../lib/leads';
 import { Spinner } from './Spinner';
+
+export type CourseCode = 'dg' | 'dt';
 
 type Props = {
   action: string;
@@ -30,6 +32,8 @@ type Props = {
     telephoneNumber: string | null;
     smsOptIn: boolean | null;
   };
+  courseSelection?: boolean;
+  onCourseChange?: (courseCode: CourseCode) => void;
   errors?: boolean;
 };
 
@@ -82,7 +86,9 @@ const getHiddenField = (name: string, hiddenFields?: Array<{ key: string; value:
   return hiddenFields?.find(({ key }) => key === name)?.value ?? null;
 };
 
-export const BrochureForm: FC<Props> = ({ action, lastName = true, phoneNumber = false, buttonText = 'Get the Preview', buttonClassName, hiddenFields, marketing, courses, initialValues, errors }) => {
+export const BrochureForm: FC<Props> = props => {
+  const { action, lastName = true, phoneNumber = false, buttonText = 'Get the Preview', buttonClassName, hiddenFields, marketing, courses, initialValues, courseSelection, errors } = props;
+
   const location = useLocation();
 
   const submitting = useRef(false);
@@ -164,6 +170,10 @@ export const BrochureForm: FC<Props> = ({ action, lastName = true, phoneNumber =
     });
   };
 
+  const handleCourseChange = (e: ChangeEvent<HTMLInputElement>, courseCode: CourseCode): void => {
+    props.onCourseChange?.(courseCode);
+  };
+
   return (
     <form ref={formRef} onSubmit={handleSubmit} action={action} method="post">
       <input ref={schoolRef} type="hidden" name="school" value="QC Pet Studies" />
@@ -172,6 +182,19 @@ export const BrochureForm: FC<Props> = ({ action, lastName = true, phoneNumber =
       ))}
       {location?.countryCode && <input type="hidden" name="countryCode" value={location.countryCode} />}
       {location?.provinceCode && <input type="hidden" name="provinceCode" value={location.provinceCode} />}
+      {courseSelection && (
+        <div className="mb-3 mb-sm-4">
+          <label className="mb-1">Which course are you interested in?</label>
+          <div className="form-check">
+            <input onChange={e => handleCourseChange(e, 'dg')} checked={courses?.includes('dg')} className="form-check-input" type="radio" id="courseDG" name="course" value="dg" />
+            <label className="form-check-label" htmlFor="courseDG">Dog Grooming</label>
+          </div>
+          <div className="form-check">
+            <input onChange={e => handleCourseChange(e, 'dt')} checked={courses?.includes('dt')} className="form-check-input" type="radio" id="courseDT" name="course" value="dt" />
+            <label className="form-check-label" htmlFor="courseDT">Dog Training</label>
+          </div>
+        </div>
+      )}
       <div className="mb-3 mb-sm-4">
         <label htmlFor="firstName" className="form-label">First Name</label>
         <input ref={firstNameRef} type="text" id="firstName" name="firstName" className="form-control" autoComplete="given-name" autoCapitalize="words" defaultValue={initialValues?.firstName ?? ''} />
