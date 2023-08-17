@@ -87,7 +87,7 @@ export const Header = ({ noHero, inverseNav, secondaryTitle, secondaryNavLinks, 
                 <Link href="/contact-us" onClick={resetMenu} className="nav-link">Contact Us</Link>
                 {!lgOrGreater
                   ? <a href={`https://enroll.qcpetstudies.com${enrollPath}`} className="nav-link">Enroll Online</a>
-                  : <a href={`https://enroll.qcpetstudies.com${enrollPath}`} className="mt-1 ms-3 ms-xxl-5"><button className="btn btn-primary btn-sm">Enroll Online</button></a>
+                  : <a href={`https://enroll.qcpetstudies.com${enrollPath}`} className="mt-1 ms-3 ms-xxl-5"><button className="btn btn-secondary btn-sm">Enroll Online</button></a>
                 }
               </Nav>
             </Navbar.Collapse>
