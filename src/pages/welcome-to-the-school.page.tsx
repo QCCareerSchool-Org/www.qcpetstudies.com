@@ -16,6 +16,7 @@ import { getEnrollment } from '../lib/getEnrollment';
 import { getTelephoneNumber } from '../lib/phone';
 import { sendEnrollmentEmail } from '../lib/sendEnrollmentEmail';
 import { setStudent } from '../lib/setStudent';
+import { trustPulseEnrollment } from '../lib/trustpulse';
 import { Enrollment } from '../models/enrollment';
 
 type Props = {
@@ -46,12 +47,9 @@ const WelcomeToTheSchoolPage: NextPage<Props> = ({ data, errorCode }) => {
       addToIDevAffiliate(data.enrollment).catch(() => { /* */ });
       gaSale(data.enrollment);
       fbqSale(data.enrollment);
-      sendEnrollmentEmail(data.enrollment.id, data.code).catch((err: unknown) => {
-        console.error(err);
-      });
-      setStudent(data.enrollment.id, data.code).catch((err: unknown) => {
-        console.error(err);
-      });
+      sendEnrollmentEmail(data.enrollment.id, data.code).catch(console.error);
+      setStudent(data.enrollment.id, data.code).catch(console.error);
+      trustPulseEnrollment(data.enrollment, data.ipAddress).catch(console.error);
     }
   }, [ data ]);
 
