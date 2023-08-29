@@ -1,15 +1,12 @@
 import { GetServerSideProps } from 'next';
 import Image from 'next/image';
-import { ReactElement } from 'react';
 import { BsBook } from 'react-icons/bs';
-import { FaBars, FaPlay } from 'react-icons/fa';
 
 import { Accordion } from '../../../components/accordion';
 import { AccordionItem } from '../../../components/accordion/AccordionItem';
 import { LandingPageLayout } from '../../../components/layouts/LandingPageLayout';
 import { PriceSectionWithDiscount } from '../../../components/PriceSectionWithDiscount';
 import { SEO } from '../../../components/SEO';
-import { TabGroup } from '../../../components/TabGroup';
 import AssignmentBackground from '../../../images/backgrounds/your-career-bg.jpg';
 import IDGPCertificationLogo from '../../../images/IDGP-certification-gold.svg';
 import { getLocation } from '../../../lib/getLocation';
@@ -220,19 +217,5 @@ export const getServerSideProps: GetServerSideProps<Props> = async context => {
   const price = await lookupPrices(courseCodes, location.countryCode, location.provinceCode);
   return { props: { location, price, enrollPath: '/student' } };
 };
-
-const VideoTab = (): ReactElement => (
-  <div className="d-flex flex-column align-items-center">
-    <FaPlay size={20} className="mb-2" />
-    <span>Video<span className="d-none d-sm-inline"> Sample</span></span>
-  </div>
-);
-
-const AssignmentTab = (): ReactElement => (
-  <div className="d-flex flex-column align-items-center">
-    <FaBars size={20} className="mb-2" />
-    <span>Assignment<span className="d-none d-sm-inline"> Sample</span></span>
-  </div>
-);
 
 export default BehaviorCoursePreviewPage;
