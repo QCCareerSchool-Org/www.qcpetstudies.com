@@ -1,6 +1,18 @@
 import { Enrollment } from '../models/enrollment';
 
-const url = 'https://hooks.zapier.com/hooks/catch/1909320/35iyjpc/';
+const urls = {
+  dg: 'https://hooks.zapier.com/hooks/catch/1909320/358g42p',
+  dt: 'https://hooks.zapier.com/hooks/catch/1909320/358q6qj',
+  default: 'https://hooks.zapier.com/hooks/catch/1909320/35iyjpc',
+};
+
+const getUrl = (enrollment: Enrollment): string => {
+  return enrollment.courses.some(c => c.code === 'dg')
+    ? urls.dg
+    : enrollment.courses.some(c => c.code === 'dt')
+      ? urls.dt
+      : urls.default;
+};
 
 export const trustPulseEnrollment = async (enrollment: Enrollment, ipAddress: string | null): Promise<void> => {
   const body = {
@@ -10,7 +22,7 @@ export const trustPulseEnrollment = async (enrollment: Enrollment, ipAddress: st
     ipAddress,
   };
 
-  const response = await fetch(url, {
+  const response = await fetch(getUrl(enrollment), {
     method: 'post',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(body),
