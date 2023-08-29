@@ -24,7 +24,7 @@ export const trustPulseEnrollment = async (enrollment: Enrollment, ipAddress: st
 
   const response = await fetch(getUrl(enrollment), {
     method: 'post',
-    headers: { 'Content-Type': 'application/json' },
+    // headers: { 'Content-Type': 'application/json' }, // CORS doesn't allow Content-Type header
     body: JSON.stringify(body),
   });
 
