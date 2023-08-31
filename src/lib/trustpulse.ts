@@ -7,9 +7,9 @@ const urls = {
 };
 
 const getUrl = (enrollment: Enrollment): string => {
-  return enrollment.courses.some(c => c.code === 'dg')
+  return enrollment.courses.some(c => c.code.toUpperCase() === 'DG')
     ? urls.dg
-    : enrollment.courses.some(c => c.code === 'dt')
+    : enrollment.courses.some(c => c.code.toUpperCase() === 'DT')
       ? urls.dt
       : urls.default;
 };
