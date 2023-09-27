@@ -9,6 +9,7 @@ import SSRProvider from 'react-bootstrap/SSRProvider';
 import { ErrorBoundary } from '../components/ErrorBoundary';
 import { ErrorPage } from '../components/ErrorPage';
 import { DefaultLayout } from '../components/layouts/DefaultLayout';
+import { brevoPageView } from '../lib/brevo';
 import { fbqPageview } from '../lib/fbq';
 import { gaPageview } from '../lib/ga';
 import { resetOptInMonster } from '../lib/optInMonster';
@@ -47,6 +48,7 @@ const QCPetStudiesApp = ({ Component, pageProps }: AppPropsWithLayout): ReactEle
       uetPageview(url);
       fbqPageview(url);
       pardotPageview(url);
+      brevoPageView(url);
       resetOptInMonster();
     };
 
