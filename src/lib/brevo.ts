@@ -18,6 +18,8 @@ declare global {
   }
 }
 
-export const brevoPageView = (url: string, title?: string): void => {
-  window.sendinblue.page(title ?? 'Unknown', { ma_url: url, ma_title: title });
+export const brevoPageView = (path: string, title?: string): void => {
+  const pageName = title ? title.replace(' - QC Pet Studies', '') : 'Unknown';
+  console.log(pageName, { ma_url: `https://www.qcpetstudies.com${path}`, ma_path: path, ma_title: title });
+  window.sendinblue.page(pageName, { ma_url: `https://www.qcpetstudies.com${path}`, ma_path: path, ma_title: title });
 };
