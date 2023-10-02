@@ -125,6 +125,23 @@ const brevoScript = `
   n.type = "text/javascript", n.id = "sendinblue-js", n.async = !0, n.src = "https://sibautomation.com/sa.js?key=" + window.sib.client_key, i.parentNode.insertBefore(n, i), window.sendinblue.page();
 })();`;
 
+const getActiveCampaignScript = (accountId: string): string => `
+(function (e,t,o,n,p,r,i) {
+  e.visitorGlobalObjectAlias = n;
+  e[e.visitorGlobalObjectAlias] = e[e.visitorGlobalObjectAlias] || function() {
+    (e[e.visitorGlobalObjectAlias].q = e[e.visitorGlobalObjectAlias].q || []).push(arguments);
+  };
+  e[e.visitorGlobalObjectAlias].l = (new Date).getTime();
+  r = t.createElement("script");
+  r.src = o;
+  r.async = true;
+  i = t.getElementsByTagName('script')[0];
+  i.parentNode.insertBefore(r, i);
+})(window, document, 'https://diffuser-cdn.app-us1.com/diffuser/diffuser.js', 'vgo');
+vgo('setAccount', ${accountId});
+vgo('setTrackByDefault', true);
+vgo('process');`;
+
 class MyDocument extends Document {
   public static async getInitialProps(ctx: DocumentContext): Promise<DocumentInitialProps> {
     const initialProps = await Document.getInitialProps(ctx);
@@ -146,6 +163,7 @@ class MyDocument extends Document {
           {process.env.FACEBOOK_ID && <script dangerouslySetInnerHTML={{ __html: getFacebookScript(process.env.FACEBOOK_ID) }} />}
           <script dangerouslySetInnerHTML={{ __html: pardotScript }} />
           <script dangerouslySetInnerHTML={{ __html: brevoScript }} />
+          {process.env.ACTIVECAMPAIGN_ID && <script dangerouslySetInnerHTML={{ __html: getActiveCampaignScript(process.env.ACTIVECAMPAIGN_ID) }} />}
           <script dangerouslySetInnerHTML={{ __html: livechatScript }} />
           <link rel="preconnect" href="https://fonts.googleapis.com" />
           <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
