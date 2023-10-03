@@ -12,7 +12,7 @@ type BrevoPageViewProperties = Record<string, unknown> & {
 
 declare global {
   interface Window {
-    sendinblue: {
+    sendinblue?: {
       page: (pageName: string, properties?: BrevoPageViewProperties) => void;
     };
   }
@@ -20,5 +20,5 @@ declare global {
 
 export const brevoPageView = (path: string, title?: string): void => {
   const pageName = title ? title.replace(' - QC Pet Studies', '') : 'Unknown';
-  window.sendinblue.page(pageName, { ma_url: `https://www.qcpetstudies.com${path}`, ma_path: path, ma_title: title });
+  window.sendinblue?.page(pageName, { ma_url: `https://www.qcpetstudies.com${path}`, ma_path: path, ma_title: title });
 };
