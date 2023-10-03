@@ -1,5 +1,6 @@
 import Image from 'next/image';
 
+import { ActiveCampaignDirectForm } from '../components/ActiveCampaignDirectForm';
 import { ActiveCampaignForm } from '../components/ActiveCampaignForm';
 import { LandingPageLayout } from '../components/layouts/LandingPageLayout';
 import { TestimonialSmCaseyBechard } from '../components/testimonials-sm/TestimonialSmMelodyCaseyBechard';
@@ -23,7 +24,7 @@ const ActiveCampaignPage: NextPageWithLayout = () => {
     <>
       <section>
         <div className="container">
-          <ActiveCampaignForm formId={1} onSubmit="/" />
+          <ActiveCampaignDirectForm formId={1} />
         </div>
       </section>
       <section className="bg-light">

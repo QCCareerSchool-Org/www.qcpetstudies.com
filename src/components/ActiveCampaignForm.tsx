@@ -31,6 +31,7 @@ const submit = async (formId: number, name: string, emailAddres: string, optIn: 
     method: 'POST',
     body: new URLSearchParams(body),
     mode: 'no-cors',
+    credentials: 'include',
     headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
   });
 };
