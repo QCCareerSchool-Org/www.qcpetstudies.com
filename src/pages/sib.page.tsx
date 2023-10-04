@@ -1,14 +1,10 @@
 import Image from 'next/image';
-import { useRouter } from 'next/router';
-import type { FormEventHandler } from 'react';
-import { useId, useRef, useState } from 'react';
 
+import { BrevoForm } from '../components/BrevoForm';
 import { LandingPageLayout } from '../components/layouts/LandingPageLayout';
-import { Spinner } from '../components/Spinner';
 import { TestimonialSmCaseyBechard } from '../components/testimonials-sm/TestimonialSmMelodyCaseyBechard';
 import { TestimonialSmKaylaTorraville } from '../components/testimonials-sm/TestimonialSmMelodyKaylaTorraville';
 import { TestimonialSmMelodyMason } from '../components/testimonials-sm/TestimonialSmMelodyMason';
-import { useLocation } from '../hooks/useLocation';
 import { useScreenWidth } from '../hooks/useScreenWidth';
 import TestiminialBackground from '../images/backgrounds/testimonials-bg.jpg';
 import GroomingKitImage from '../images/dog-grooming-kit.jpg';
@@ -18,80 +14,18 @@ import Step2SubmitImage from '../images/step-2-submit.svg';
 import Step3CertificateImage from '../images/step-3-certificate.svg';
 import { NextPageWithLayout } from './_app.page';
 
-const action = 'https://b3b2efab.sibforms.com/serve/MUIFADRIepaEP8RAiW5oSoAIu-wJ8kVSWuw4sBKA7oiVi0WS_HrqPzDcZX-DIu---Qox-IuggdiHjNSbxbMMN7prrUX6hCoKFRJId6VjJqdVS_Wo8UysZVCs6CpirEgf0163tISRP1b57T0Lrmn3CK35DY24Vzfu2aXrBC7eojUQzDdxSNRYxaj0IyCpXTNg7-aZqwfZ8ywYInaA';
-
-const submit = async (name: string, emailAddres: string, optIn: boolean, countryCode: string): Promise<void> => {
-  const body = {
-    FIRSTNAME: name,
-    EMAIL: emailAddres,
-    OPT_IN: optIn ? 'Yes' : 'No',
-    COUNTRY_CODE: countryCode,
-    locale: 'en',
-  };
-
-  await fetch(action, {
-    method: 'POST',
-    body: new URLSearchParams(body),
-    mode: 'no-cors',
-    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-  });
-};
-
 const SibPage: NextPageWithLayout = () => {
-  const id = useId();
-  const router = useRouter();
-  const [ submitting, setSubmitting ] = useState(false);
-  const location = useLocation();
-
   const screenWidth = useScreenWidth();
-  const xxlOrGreater = screenWidth >= 1400;
-  const xlOrGreater = screenWidth >= 1200;
   const lgOrGreater = screenWidth >= 992;
-  const smOrGreater = screenWidth >= 576;
-
-  const nameRef = useRef<HTMLInputElement>(null);
-  const emailAddressRef = useRef<HTMLInputElement>(null);
-  const optInRef = useRef<HTMLInputElement>(null);
-
-  const handleSubmit: FormEventHandler<HTMLFormElement> = e => {
-    e.preventDefault();
-
-    if (!nameRef.current || !emailAddressRef.current || !optInRef.current) {
-      return;
-    }
-
-    const name = nameRef.current.value;
-    const emailAddress = emailAddressRef.current.value;
-    const optIn = optInRef.current.checked;
-    const countryCode = location?.countryCode ?? 'US';
-
-    setSubmitting(true);
-    submit(name, emailAddress, optIn, countryCode)
-      // .then(async () => router.push('/'))
-      .catch(console.error)
-      .finally(() => setSubmitting(false));
-  };
 
   return (
     <>
       <section>
         <div className="container">
-          <form onSubmit={handleSubmit} method="POST" action={action}>
-            <div className="mb-3">
-              <label htmlFor={`name${id}`} className="form-label">Name</label>
-              <input ref={nameRef} type="text" id={`name${id}`} className="form-control" name="name" autoComplete="given-name" />
-            </div>
-            <div className="mb-3">
-              <label htmlFor={`emailAddress${id}`} className="form-label">Email Address <span className="text-danger">*</span></label>
-              <input ref={emailAddressRef} type="email" id={`emailAddress${id}`} className="form-control" name="emailAddress" autoComplete="email" required />
-            </div>
-            <div className="mb-3 form-check">
-              <input ref={optInRef} type="checkbox" id={`optin${id}`} className="form-check-input" />
-              <label htmlFor={`optin${id}`} className="form-check-label fst-italic small">I agree to receive additional emails from QC, including news and offers. Unsubscribe anytime!</label>
-            </div>
-            <button type="submit" className="btn btn-primary">Get the Catalog</button>
-            {submitting && <Spinner />}
-          </form>
+          <BrevoForm
+            action="https://b3b2efab.sibforms.com/serve/MUIFADRIepaEP8RAiW5oSoAIu-wJ8kVSWuw4sBKA7oiVi0WS_HrqPzDcZX-DIu---Qox-IuggdiHjNSbxbMMN7prrUX6hCoKFRJId6VjJqdVS_Wo8UysZVCs6CpirEgf0163tISRP1b57T0Lrmn3CK35DY24Vzfu2aXrBC7eojUQzDdxSNRYxaj0IyCpXTNg7-aZqwfZ8ywYInaA"
+            onSubmit="/"
+          />
         </div>
       </section>
       <section className="bg-light">

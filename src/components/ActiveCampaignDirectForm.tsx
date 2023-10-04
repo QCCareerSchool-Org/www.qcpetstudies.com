@@ -1,3 +1,9 @@
+/**
+ * The form has to be posted normally, not through ajax. Otherwise the client
+ * won't accept ActiveCampaign's same-site cookies. The contact would still
+ * be created, but pageview tracking wouldn't work.
+ */
+
 import type { FC } from 'react';
 import { useId } from 'react';
 
@@ -17,24 +23,17 @@ const activeCampaignFieldIds = {
 
 type Props = {
   formId: number;
+  buttonText?: string;
 };
 
-export const ActiveCampaignDirectForm: FC<Props> = props => {
+export const ActiveCampaignDirectForm: FC<Props> = ({ formId, buttonText = 'Get the Preview' }) => {
   const id = useId();
   const location = useLocation();
 
   return (
     <form method="POST" action={action}>
-      <input type="hidden" name="f" value={props.formId} />
-
-      {/* <input type="hidden" name="u" value="1" /> */}
-      {/* <input type="hidden" name="s" /> */}
-      {/* <input type="hidden" name="c" value="0" /> */}
-      {/* <input type="hidden" name="m" value="0" /> */}
+      <input type="hidden" name="f" value={formId} />
       <input type="hidden" name="act" value="sub" />
-      {/* <input type="hidden" name="v" value="2" /> */}
-      {/* <input type="hidden" name="or" value="71ca6b76745eb7936fc8ee610d28f904" /> */}
-
       <input type="hidden" name={`field[${activeCampaignFieldIds.countryCode}]`} value={location?.countryCode} />
       <input type="hidden" name={`field[${activeCampaignFieldIds.provinceCode}]`} value={location?.provinceCode ?? undefined} />
       <div className="mb-3">
@@ -49,7 +48,7 @@ export const ActiveCampaignDirectForm: FC<Props> = props => {
         <input type="checkbox" id={`optin${id}`} className="form-check-input" />
         <label htmlFor={`optin${id}`} className="form-check-label fst-italic small">I agree to receive additional emails from QC, including news and offers. Unsubscribe anytime!</label>
       </div>
-      <button type="submit" className="btn btn-primary">Get the Catalog</button>
+      <button type="submit" className="btn btn-primary">{buttonText}</button>
     </form>
   );
 };
