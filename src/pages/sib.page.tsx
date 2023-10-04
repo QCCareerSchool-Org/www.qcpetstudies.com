@@ -1,5 +1,6 @@
 import Image from 'next/image';
 
+import { BrevoDirectForm } from '../components/BrevoDirectForm';
 import { BrevoForm } from '../components/BrevoForm';
 import { LandingPageLayout } from '../components/layouts/LandingPageLayout';
 import { TestimonialSmCaseyBechard } from '../components/testimonials-sm/TestimonialSmMelodyCaseyBechard';
@@ -22,10 +23,7 @@ const SibPage: NextPageWithLayout = () => {
     <>
       <section>
         <div className="container">
-          <BrevoForm
-            action="https://b3b2efab.sibforms.com/serve/MUIFADRIepaEP8RAiW5oSoAIu-wJ8kVSWuw4sBKA7oiVi0WS_HrqPzDcZX-DIu---Qox-IuggdiHjNSbxbMMN7prrUX6hCoKFRJId6VjJqdVS_Wo8UysZVCs6CpirEgf0163tISRP1b57T0Lrmn3CK35DY24Vzfu2aXrBC7eojUQzDdxSNRYxaj0IyCpXTNg7-aZqwfZ8ywYInaA"
-            onSubmit="/"
-          />
+          <BrevoDirectForm action="https://b3b2efab.sibforms.com/serve/MUIFANefRMHb5gnMWi_F4xkkZ-Q4CWNwn_jS-UzI0VmRhbcHmtpVtNVYWfHblVr69XWWe2N1aDBuYm1kbDBjdwNPmRDoaqTc5AnpfDUl5tp_aZJANMqBHCLy7DmwetdIaiCZow1bevsDIqSVO0ATMVSX2trp2rBdwfkF8WZf-3zwCxcgC97tYihFruK3AAl5FVvKXgSl1dFbkujV" />
         </div>
       </section>
       <section className="bg-light">
