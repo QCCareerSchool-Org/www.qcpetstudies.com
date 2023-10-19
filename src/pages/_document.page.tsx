@@ -154,7 +154,7 @@ class MyDocument extends Document {
         <Head>
           {process.env.GOOGLE_ANALYTICS_ID && (
             <>
-              {process.env.GOOGLE_OPTIMIZE_ID && <script async src={`https://www.googleoptimize.com/optimize.js?id=${process.env.GOOGLE_OPTIMIZE_ID}`} />}
+              {/* {process.env.GOOGLE_OPTIMIZE_ID && <script async src={`https://www.googleoptimize.com/optimize.js?id=${process.env.GOOGLE_OPTIMIZE_ID}`} />} */}
               <script async src={getGoogleAnalyticsSrc(process.env.GOOGLE_ANALYTICS_ID)} />
               <script dangerouslySetInnerHTML={{ __html: getGoogleAnalyticsScript(process.env.GOOGLE_ANALYTICS_ID, 'AW-1071836607') }} />
             </>
@@ -162,8 +162,8 @@ class MyDocument extends Document {
           <script dangerouslySetInnerHTML={{ __html: uetScript }} />
           {process.env.FACEBOOK_ID && <script dangerouslySetInnerHTML={{ __html: getFacebookScript(process.env.FACEBOOK_ID) }} />}
           <script dangerouslySetInnerHTML={{ __html: pardotScript }} />
-          <script dangerouslySetInnerHTML={{ __html: brevoScript }} />
-          {process.env.ACTIVECAMPAIGN_ID && <script dangerouslySetInnerHTML={{ __html: getActiveCampaignScript(process.env.ACTIVECAMPAIGN_ID) }} />}
+          {/* <script dangerouslySetInnerHTML={{ __html: brevoScript }} /> */}
+          {/* {process.env.ACTIVECAMPAIGN_ID && <script dangerouslySetInnerHTML={{ __html: getActiveCampaignScript(process.env.ACTIVECAMPAIGN_ID) }} />} */}
           <script dangerouslySetInnerHTML={{ __html: livechatScript }} />
           <link rel="preconnect" href="https://fonts.googleapis.com" />
           <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
