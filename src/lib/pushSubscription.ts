@@ -82,7 +82,7 @@ export const createPushSubscription = async (serviceWorkerRegistration: ServiceW
 };
 
 export const deletePushSubscription = async (serviceWorkerRegistration: ServiceWorkerRegistration): Promise<void> => {
-  const pushSubscription = await serviceWorkerRegistration.pushManager.getSubscription();
+  const pushSubscription = await serviceWorkerRegistration.pushManager?.getSubscription?.();
   if (pushSubscription) {
     await pushSubscription.unsubscribe();
     await removePushSubscription(pushSubscription);
@@ -90,7 +90,7 @@ export const deletePushSubscription = async (serviceWorkerRegistration: ServiceW
 };
 
 export const getPushSubscription = async (serviceWorkerRegistration: ServiceWorkerRegistration, meta?: SubscriptionMetaData): Promise<PushSubscription | null> => {
-  const pushSubscription = await serviceWorkerRegistration.pushManager.getSubscription();
+  const pushSubscription = await serviceWorkerRegistration.pushManager?.getSubscription?.();
   if (pushSubscription) {
     await storePushSubscription(pushSubscription, meta);
   }
