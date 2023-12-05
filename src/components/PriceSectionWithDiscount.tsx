@@ -27,7 +27,7 @@ type Props = {
 export const PriceSectionWithDiscount = ({ courses, price, doubleGuarantee, variant = 'dark', id = 'tuition', enrollPath = '/', message }: Props): ReactElement => {
   const [ popup, toggle ] = useToggle();
 
-  const enrollLink = `https://enroll.qcpetstudies.com${enrollPath}?${courses.map(c => `c[]=${encodeURIComponent(c)}`).join('&')}`;
+  const enrollLink = `https://enroll.qcpetstudies.com${enrollPath}?${courses.map(c => `c=${encodeURIComponent(c)}`).join('&')}`;
 
   const [ newFullDiscount, originalPartTotal ] = useMemo(() => {
     if (price.promoDiscount === 0) {

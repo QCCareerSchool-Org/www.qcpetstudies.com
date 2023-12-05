@@ -122,7 +122,7 @@ const DogGroomingPage: NextPageWithLayout<Props> = ({ price }) => {
           <h1>Dog Grooming Course</h1>
           {price && price.plans.part.deposit > 0 && <h4>Get Started for Only <strong>{price.currency.symbol}{formatPrice(price.plans.part.deposit)}</strong></h4>}
           <p><em><a href="#tuition" className="text-white">See tuition details</a></em></p>
-          <a href="https://enroll.qcpetstudies.com?c[]=dg"><button className="btn btn-secondary btn-lg">Enroll Online</button></a>
+          <a href="https://enroll.qcpetstudies.com?c=dg"><button className="btn btn-secondary btn-lg">Enroll Online</button></a>
         </div>
         <div className="row justify-content-center">
           <div className="col-12 col-md-6 d-flex">

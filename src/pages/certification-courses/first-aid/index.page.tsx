@@ -183,7 +183,7 @@ const DogGroomingPage: NextPageWithLayout<Props> = ({ price }) => {
           <div className="col-12">
             <h2>Receive First Aid Training <strong>FREE</strong></h2>
             <p className="lead mb-4">When You Enroll in the <Link href="/certification-courses/dog-grooming" className="link-primary">Online Dog Grooming Course</Link></p>
-            <a className="btn btn-primary" href="https://enroll.qcpetstudies.com/?c[]=dg&c[]=fa"><span>ENROLL NOW</span></a>
+            <a className="btn btn-primary" href="https://enroll.qcpetstudies.com/?c=dg&c=fa"><span>ENROLL NOW</span></a>
           </div>
         </div>
       </div>

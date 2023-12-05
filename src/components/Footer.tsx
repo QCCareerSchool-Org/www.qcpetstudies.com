@@ -39,11 +39,11 @@ export const Footer: FC<Props> = ({ ctaType, cta, enrollPath = '/', className })
   const lgOrGreater = screenWidth >= 992;
 
   const enrollUrl = ctaType === 'grooming'
-    ? `https://enroll.qcpetstudies.com${enrollPath}?c[]=dg`
+    ? `https://enroll.qcpetstudies.com${enrollPath}?c=dg`
     : ctaType === 'training'
-      ? `https://enroll.qcpetstudies.com${enrollPath}?c[]=dt`
+      ? `https://enroll.qcpetstudies.com${enrollPath}?c=dt`
       : ctaType === 'care'
-        ? `https://enroll.qcpetstudies.com${enrollPath}?c[]=dd`
+        ? `https://enroll.qcpetstudies.com${enrollPath}?c=dd`
         : `https://enroll.qcpetstudies.com${enrollPath}`;
 
   const flagImage = getFlagImageData(location?.countryCode);
