@@ -45,7 +45,7 @@ export const GuaranteeSection = ({ className, double = false, id = 'guarantee' }
             <div className="card">
               <div className="card-body">
                 <h3 className="card-title">The 21-Day Money-Back Guarantee</h3>
-                <p className="card-text">Try the course risk-free for 21 days. This gives you time to receive your course materials and evaluate whether the course is right for you. If you decide it s not a good fit, simply contact QC and request a refund. It's that easy!</p>
+                <p className="card-text">Try the course risk-free for 21 days. This gives you time to receive your course materials and evaluate whether the course is right for you. If you decide it's not a good fit, simply contact QC and request a refund. It's that easy!</p>
               </div>
             </div>
           </div>
