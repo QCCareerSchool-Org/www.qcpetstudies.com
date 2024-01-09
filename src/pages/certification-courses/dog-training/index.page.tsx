@@ -393,7 +393,7 @@ const DogTrainingPage: NextPageWithLayout<Props> = ({ price }) => {
       </div>
     </section>
 
-    <section>
+    <section id="behaviorOutline">
       <div className="container">
         <div className="text-center">
           <h2>Dog Behavior Course <strong>Outline</strong></h2>

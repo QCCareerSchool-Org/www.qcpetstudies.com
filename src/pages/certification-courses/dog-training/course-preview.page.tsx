@@ -1,5 +1,6 @@
 import { GetServerSideProps } from 'next';
 import Image from 'next/image';
+import Link from 'next/link';
 import { ReactElement } from 'react';
 import { BsBook } from 'react-icons/bs';
 import { FaBars, FaPlay } from 'react-icons/fa';
@@ -336,7 +337,7 @@ const DogTrainingCoursePreviewPage: NextPageWithLayout<Props> = ({ price, enroll
             <p className="fw-bold">Hear why instructor Kim Cooper believes the Behavior Modification course is a great way to advance your dog-training career.</p>
             <video src="https://89b45d42c17e11dd3d57-62a1fc0bf60a98e1d5e980348a7de3b7.ssl.cf1.rackcdn.com/why-should-students-study-training-and-behavior-modification.mp4" poster={KimCooperImage.src} controls className="w-100 img-fluid mb-3" />
             <p>Whether your goal is to launch your own business or work for an established training school, you'll gain all the skills and knowledge you need to feel confident in your new career!  QC's advanced online dog behavior course teaches specialized behavior modification skills so you'll be ready to help any dog that comes your way.</p>
-            <p className="fst-italic">Please note, Dog Behavior is an advanced certification program and requires students to have successfully completed QC's Dog Training course as a prerequisite.</p>
+            <p className="fst-italic">Please note, Dog Behavior is an advanced certification program and requires students to have successfully completed QC's Dog Training course as a prerequisite. <Link href="/certification-courses/dog-training#behaviorOutline">View the course outline for the Dog Behaviour Course</Link>.</p>
           </div>
         </div>
       </div>
