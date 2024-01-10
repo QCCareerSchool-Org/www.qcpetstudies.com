@@ -62,7 +62,7 @@ const DogTrainingCoursePreviewPage: NextPageWithLayout<Props> = ({ price, enroll
         <div className="row">
           <div className="col-12 col-md-6 mb-4 mb-md-0">
             <h2>Congratulations on Choosing to Explore a Career as a <strong>Professional Dog Trainer</strong>!</h2>
-            <p>There's never been a better time to become a professional dog trainer! All over, training schools are booked to capacity and clients are being put on waiting lists. Entering the market as a qualified professional dog groomer is almost a guaranteed stable income!</p>
+            <p>There's never been a better time to become a professional dog trainer! All over, training schools are booked to capacity and clients are being put on waiting lists. Entering the market as a qualified professional dog trainer is almost a guaranteed stable income!</p>
             <p>Do you have what it takes to become a professional dog trainer? Does this sound like you?</p>
             <ul>
               <li>You love all dogs, big and small</li>
@@ -95,7 +95,7 @@ const DogTrainingCoursePreviewPage: NextPageWithLayout<Props> = ({ price, enroll
               src={IDTPCertificationLogo}
               width={200}
               height={200}
-              alt="IDTP International Dog Grooming Professional logo"
+              alt="IDTP International Dog Training Professional logo"
               style={{ maxWidth: '100%', height: 'auto' }}
             />
           </div>
