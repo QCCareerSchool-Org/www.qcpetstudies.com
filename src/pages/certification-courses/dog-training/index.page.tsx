@@ -212,7 +212,7 @@ const DogTrainingPage: NextPageWithLayout<Props> = ({ price }) => {
       <div className="container">
         <div className="row justify-content-center mb-4">
           <div className="col12 col-lg-10 text-center">
-            <h2>Dog Training Course <strong>Outline</strong></h2>
+            <h2>Dog Training <strong>Course Outline</strong></h2>
             <p className="lead mb-0">The Dog Training Course is split into four parts, each containing individual training units.</p>
           </div>
         </div>
@@ -396,7 +396,7 @@ const DogTrainingPage: NextPageWithLayout<Props> = ({ price }) => {
     <section id="behaviorOutline">
       <div className="container">
         <div className="text-center">
-          <h2>Dog Behavior Course <strong>Outline</strong></h2>
+          <h2>Dog Behavior <strong>Course Outline</strong></h2>
           <p className="lead">The Dog Behavior Course is split into five parts, each containing individual training units.</p>
           <p className="mb-4">You must complete a unit with a satisfactory grade before you can submit assignments for the next units.</p>
         </div>
