@@ -17,6 +17,7 @@ import { useScreenWidth } from '../hooks/useScreenWidth';
 import MaltipuBegging from '../images/backgrounds/maltipu-begging.jpg';
 import MaltipuJumping from '../images/backgrounds/maltipu-jumping.jpg';
 import HowItWorks from '../images/how-it-works.png';
+import IDBSCertificationGold from '../images/IDBS-certification-gold.svg';
 import IDCPCertificationGold from '../images/IDCP-certification-gold.svg';
 import IDGPCertificationGold from '../images/IDGP-certification-gold.svg';
 import IDTPCertificationGold from '../images/IDTP-certification-gold.svg';
@@ -53,7 +54,7 @@ const HomePage: NextPageWithLayout = () => {
       <Image
         src={lg ? MaltipuJumping : MaltipuBegging}
         placeholder="blur"
-        alt="Happy maltipu jumping"
+        alt=""
         priority
         fill
         sizes="100vw"
@@ -93,8 +94,8 @@ const HomePage: NextPageWithLayout = () => {
       <div className="container text-center">
         <h2 className="mb-3">Course <strong>Certifications</strong></h2>
         <p className="lead mb-5">Enroll today and start training for your new career right away!</p>
-        <div className="row align-items-stretch justify-content-center">
-          <div className="col-12 col-lg-6 col-xxl-4 d-flex align-items-stretch mb-5 mb-lg-4 mb-xxl-0">
+        <div className="row align-items-stretch justify-content-center g-4">
+          <div className="col-12 col-lg-6 col-xxl-5 d-flex align-items-stretch">
             <CertificationCard show={lg}>
               <div>
                 <div className="mb-3">
@@ -102,7 +103,7 @@ const HomePage: NextPageWithLayout = () => {
                     src={IDTPCertificationGold}
                     width={iconSize}
                     height={iconSize}
-                    alt="21-Day Money-Back Guarantee"
+                    alt="IDTP certification"
                     style={{ maxWidth: '100%', height: 'auto' }}
                   />
                 </div>
@@ -112,7 +113,7 @@ const HomePage: NextPageWithLayout = () => {
               <Link href="/certification-courses/dog-training"><button className="btn btn-navy">Course Overview</button></Link>
             </CertificationCard>
           </div>
-          <div className="col-12 col-lg-6 col-xxl-4 d-flex align-items-stretch mb-5 mb-lg-4 mb-xxl-0">
+          <div className="col-12 col-lg-6 col-xxl-5 d-flex align-items-stretch">
             <CertificationCard show={lg}>
               <div>
                 <div className="mb-3">
@@ -120,7 +121,7 @@ const HomePage: NextPageWithLayout = () => {
                     src={IDGPCertificationGold}
                     width={iconSize}
                     height={iconSize}
-                    alt="1-Year Money-Back Guarantee"
+                    alt="IDGP certification"
                     style={{ maxWidth: '100%', height: 'auto' }}
                   />
                 </div>
@@ -130,7 +131,7 @@ const HomePage: NextPageWithLayout = () => {
               <Link href="/certification-courses/dog-grooming"><button className="btn btn-navy">Course Overview</button></Link>
             </CertificationCard>
           </div>
-          <div className="col-12 col-lg-6 col-xxl-4 d-flex align-items-stretch">
+          <div className="col-12 col-lg-6 col-xxl-5 d-flex align-items-stretch">
             <CertificationCard show={lg}>
               <div>
                 <div className="mb-3">
@@ -138,14 +139,32 @@ const HomePage: NextPageWithLayout = () => {
                     src={IDCPCertificationGold}
                     width={iconSize}
                     height={iconSize}
-                    alt="21-Day Money-Back Guarantee"
+                    alt="IDCP certification logo"
                     style={{ maxWidth: '100%', height: 'auto' }}
                   />
                 </div>
-                <h3><span className="badge rounded-pill bg-secondary">New</span> Dog Daycare | <em className="gold">IDCP&trade;</em></h3>
+                <h3>Dog Daycare | <em className="gold">IDCP&trade;</em></h3>
                 <p>Dog walkers and daycare facilities are booked solid! Demand is high which means it&apos;s an incredible time to launch a rewarding and lucrative career as a dog care professional. This course will teach you everything from basic dog behavior and communication to business and marketing tips that will help you grow your clientele. You&apos;ll gain a thorough understanding of proper handling, hygiene, and safety techniques to become a trusted expert in your field. Don&apos;t miss out on your chance to launch a lucrative new career!</p>
               </div>
               <Link href="/certification-courses/dog-daycare"><button className="btn btn-navy">Course Overview</button></Link>
+            </CertificationCard>
+          </div>
+          <div className="col-12 col-lg-6 col-xxl-5 d-flex align-items-stretch">
+            <CertificationCard show={lg}>
+              <div>
+                <div className="mb-3">
+                  <Image
+                    src={IDBSCertificationGold}
+                    width={iconSize}
+                    height={iconSize}
+                    alt="IDBS Certification"
+                    style={{ maxWidth: '100%', height: 'auto' }}
+                  />
+                </div>
+                <h3><span className="badge rounded-pill bg-secondary">New</span> Dog Behavior | <em className="gold">IDBS&trade;</em></h3>
+                <p>Once you have successfully completed QC's Dog Training course you can advance your education with the Dog Behavior course. You’ll build on your excellent foundation in dog training and learn how to deal with advanced concerns like anxiety, phobias, reactivity, and even aggression. Learn specialized behavior modification skills so you'll be ready to help any dog that comes your way.</p>
+              </div>
+              <Link href="/certification-courses/dog-training"><button className="btn btn-navy">Course Overview</button></Link>
             </CertificationCard>
           </div>
         </div>
@@ -161,7 +180,7 @@ const HomePage: NextPageWithLayout = () => {
           <div className="col-12 col-md-6 mb-4 mb-md-0">
             <Image
               src={HowItWorks}
-              alt="Dog looking at tablet"
+              alt=""
               sizes="100vw"
               style={{ width: '100%', height: 'auto' }}
             />
