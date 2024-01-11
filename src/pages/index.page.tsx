@@ -164,7 +164,7 @@ const HomePage: NextPageWithLayout = () => {
                 <h3><span className="badge rounded-pill bg-secondary">New</span> Dog Behavior | <em className="gold">IDBS&trade;</em></h3>
                 <p>Once you have successfully completed QC's Dog Training course you can advance your education with the Dog Behavior course. You'll build on your excellent foundation in dog training and learn how to deal with advanced concerns like anxiety, phobias, reactivity, and even aggression. Learn specialized behavior modification skills so you'll be ready to help any dog that comes your way.</p>
               </div>
-              <Link href="/certification-courses/dog-training"><button className="btn btn-navy">Course Overview</button></Link>
+              <Link href="/certification-courses/dog-training#behavior"><button className="btn btn-navy">Course Overview</button></Link>
             </CertificationCard>
           </div>
         </div>

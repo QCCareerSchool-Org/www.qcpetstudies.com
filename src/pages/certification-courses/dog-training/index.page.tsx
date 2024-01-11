@@ -376,7 +376,7 @@ const DogTrainingPage: NextPageWithLayout<Props> = ({ price }) => {
 
     <DTTutorSection />
 
-    <section className="bg-light">
+    <section className="bg-light" id="behavior">
       <div className="container">
         <div className="row justify-content-center">
           <div className="col-12 col-md-10 col-lg-8 text-center">
