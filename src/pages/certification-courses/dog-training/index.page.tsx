@@ -506,7 +506,7 @@ const FooterCTA: FC = () => (
         <p className="lead mb-0">Get 50% off the Dog Behavior course when you enroll in Dog Training.</p>
       </div>
       <div className="col-12 col-lg-3 text-center text-lg-end text-xl-center">
-        <a href="https://enroll.qcpetstudies.com/?c=dt&c=ds"><button className="btn btn-secondary btn-lg">Enroll Online</button></a>
+        <a href="https://enroll.qcpetstudies.com/?c=dt&c=dc"><button className="btn btn-secondary btn-lg">Enroll Online</button></a>
       </div>
     </div>
   </>
