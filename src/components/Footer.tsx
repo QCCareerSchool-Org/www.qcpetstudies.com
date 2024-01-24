@@ -18,7 +18,7 @@ import { getFlagImageData } from '../lib/flags';
 import { openLiveChat } from '../lib/livechat';
 import { getTelephoneNumber } from '../lib/phone';
 
-export type FooterCTAType = 'grooming' | 'training' | 'care';
+export type FooterCTAType = 'grooming' | 'training' | 'care' | 'behavior';
 
 type Props = {
   /** overrides the entire CTA */
@@ -42,9 +42,11 @@ export const Footer: FC<Props> = ({ ctaType, cta, enrollPath = '/', className })
     ? `https://enroll.qcpetstudies.com${enrollPath}?c=dg`
     : ctaType === 'training'
       ? `https://enroll.qcpetstudies.com${enrollPath}?c=dt`
-      : ctaType === 'care'
-        ? `https://enroll.qcpetstudies.com${enrollPath}?c=dd`
-        : `https://enroll.qcpetstudies.com${enrollPath}`;
+      : ctaType === 'behavior'
+        ? `https://enroll.qcpetstudies.com${enrollPath}?c=dt&c=dc`
+        : ctaType === 'care'
+          ? `https://enroll.qcpetstudies.com${enrollPath}?c=dd`
+          : `https://enroll.qcpetstudies.com${enrollPath}`;
 
   const flagImage = getFlagImageData(location?.countryCode);
 
@@ -57,7 +59,7 @@ export const Footer: FC<Props> = ({ ctaType, cta, enrollPath = '/', className })
             <div className="row align-items-center">
               <div className="col-12 col-lg-9 col-xl-8 mb-4 mb-lg-0 text-center text-lg-start">
                 <h2>Ready to Launch Your <strong>{ctaType === 'grooming' ? <><br />Grooming </> : ctaType === 'training' ? <><br />Training </> : ctaType === 'care' ? <>Dog Care </> : null}Career?</strong></h2>
-                <p className="lead mb-0">Take the first step towards a new career in the booming {ctaType === 'grooming' ? 'dog grooming ' : ctaType === 'training' ? 'dog training ' : ctaType === 'care' ? ' dog care' : 'pet'} industry.</p>
+                <p className="lead mb-0">Take the first step towards a new career in the booming {ctaType === 'grooming' ? 'dog grooming ' : ctaType === 'training' ? 'dog training ' : ctaType === 'behavior' ? 'behavior' : ctaType === 'care' ? ' dog care' : 'pet'} industry.</p>
               </div>
               <div className="col-12 col-lg-3 text-center text-lg-end text-xl-center">
                 <a href={enrollUrl}><button className="btn btn-secondary btn-lg">Enroll Online</button></a>

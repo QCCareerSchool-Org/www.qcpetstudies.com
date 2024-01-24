@@ -14,6 +14,7 @@ const iconSize = 24;
 type Variant = 'dark' | 'light';
 
 type Props = {
+  /** the cousre(s) to base the shopping cart link on */
   courses: string[];
   price: PriceResult;
   doubleGuarantee: boolean;
