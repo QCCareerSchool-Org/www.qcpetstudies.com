@@ -10,7 +10,6 @@ import { GuaranteeSection } from '../../../components/GuaranteeSection';
 import { DefaultLayout } from '../../../components/layouts/DefaultLayout';
 import { PriceSection } from '../../../components/PriceSection';
 import { SEO } from '../../../components/SEO';
-import { useLocation } from '../../../hooks/useLocation';
 import { useScreenWidth } from '../../../hooks/useScreenWidth';
 import GuaranteeIcon from '../../../images/course-overview-icons/guarantee.svg';
 import OutlineIcon from '../../../images/course-overview-icons/outline.svg';
@@ -39,7 +38,6 @@ type Props = {
 
 const DogBehaviorPage: NextPageWithLayout<Props> = ({ price }) => {
   const screenWidth = useScreenWidth();
-  const location = useLocation();
 
   const mdOrGreater = screenWidth >= 768;
   const lgOrGreater = screenWidth >= 992;
