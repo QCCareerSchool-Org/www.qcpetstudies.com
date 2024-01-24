@@ -12,7 +12,6 @@ import { PriceSection } from '../../../components/PriceSection';
 import { SEO } from '../../../components/SEO';
 import { useLocation } from '../../../hooks/useLocation';
 import { useScreenWidth } from '../../../hooks/useScreenWidth';
-import DTBackgroundImage from '../../../images/backgrounds/australian-shepherd-attentive.jpg';
 import GuaranteeIcon from '../../../images/course-overview-icons/guarantee.svg';
 import OutlineIcon from '../../../images/course-overview-icons/outline.svg';
 import TutorIcon from '../../../images/course-overview-icons/tutor.svg';
@@ -25,7 +24,7 @@ import { lookupPrices } from '../../../lib/lookupPrices';
 import type { Location } from '../../../models/location';
 import type { PriceResult } from '../../../models/price';
 import type { NextPageWithLayout } from '../../_app.page';
-import KimCooperImage from '../dog-training/kim-cooper.jpg';
+import DTBackgroundImage from './hero.jpg';
 
 const headerIconSize = 20;
 const iconSize = 36;
