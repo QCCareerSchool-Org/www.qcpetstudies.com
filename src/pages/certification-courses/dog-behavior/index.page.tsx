@@ -14,7 +14,7 @@ import { useScreenWidth } from '../../../hooks/useScreenWidth';
 import GuaranteeIcon from '../../../images/course-overview-icons/guarantee.svg';
 import OutlineIcon from '../../../images/course-overview-icons/outline.svg';
 import TutorIcon from '../../../images/course-overview-icons/tutor.svg';
-import CertificationGoldImage from '../../../images/IDTP-certification-yellow.svg';
+import CertificationGoldImage from '../../../images/IDBS-certification-gold.svg';
 import ShannonNoonanImage from '../../../images/shannon-noonan.jpg';
 import SusanReadImage from '../../../images/susan-read.jpg';
 import { formatPrice } from '../../../lib/formatPrice';
@@ -23,7 +23,7 @@ import { lookupPrices } from '../../../lib/lookupPrices';
 import type { Location } from '../../../models/location';
 import type { PriceResult } from '../../../models/price';
 import type { NextPageWithLayout } from '../../_app.page';
-import DTBackgroundImage from './hero.jpg';
+import DCBackgroundImage from './hero.jpg';
 
 const headerIconSize = 20;
 const iconSize = 36;
@@ -53,7 +53,7 @@ const DogBehaviorPage: NextPageWithLayout<Props> = ({ price }) => {
 
     <section id="top" className="bg-dark">
       <Image
-        src={DTBackgroundImage}
+        src={DCBackgroundImage}
         placeholder="blur"
         alt=""
         priority
