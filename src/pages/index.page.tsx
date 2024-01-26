@@ -95,24 +95,7 @@ const HomePage: NextPageWithLayout = () => {
         <h2 className="mb-3">Course <strong>Certifications</strong></h2>
         <p className="lead mb-5">Enroll today and start training for your new career right away!</p>
         <div className="row align-items-stretch justify-content-center g-4">
-          <div className="col-12 col-lg-6 col-xxl-5 d-flex align-items-stretch">
-            <CertificationCard show={lg}>
-              <div>
-                <div className="mb-3">
-                  <Image
-                    src={IDTPCertificationGold}
-                    width={iconSize}
-                    height={iconSize}
-                    alt="IDTP certification"
-                    style={{ maxWidth: '100%', height: 'auto' }}
-                  />
-                </div>
-                <h3>Dog Training | <em className="gold">IDTP&trade;</em></h3>
-                <p>Dog trainers have never been in higher demand! It's the best time to launch a rewarding and lucrative career as a dog trainer. This course uses scientifically proven methods of dog training derived from learning theory and industry best practices. You'll gain a thorough understanding of how dogs learn, how to modify unwanted behaviors, and how to create new behaviors in all types of dogs. Don't miss out on your chance to learn from the best!</p>
-              </div>
-              <Link href="/certification-courses/dog-training"><button className="btn btn-navy">Course Overview</button></Link>
-            </CertificationCard>
-          </div>
+
           <div className="col-12 col-lg-6 col-xxl-5 d-flex align-items-stretch">
             <CertificationCard show={lg}>
               <div>
@@ -131,6 +114,7 @@ const HomePage: NextPageWithLayout = () => {
               <Link href="/certification-courses/dog-grooming"><button className="btn btn-navy">Course Overview</button></Link>
             </CertificationCard>
           </div>
+
           <div className="col-12 col-lg-6 col-xxl-5 d-flex align-items-stretch">
             <CertificationCard show={lg}>
               <div>
@@ -149,6 +133,26 @@ const HomePage: NextPageWithLayout = () => {
               <Link href="/certification-courses/dog-daycare"><button className="btn btn-navy">Course Overview</button></Link>
             </CertificationCard>
           </div>
+
+          <div className="col-12 col-lg-6 col-xxl-5 d-flex align-items-stretch">
+            <CertificationCard show={lg}>
+              <div>
+                <div className="mb-3">
+                  <Image
+                    src={IDTPCertificationGold}
+                    width={iconSize}
+                    height={iconSize}
+                    alt="IDTP certification"
+                    style={{ maxWidth: '100%', height: 'auto' }}
+                  />
+                </div>
+                <h3>Dog Training | <em className="gold">IDTP&trade;</em></h3>
+                <p>Dog trainers have never been in higher demand! It's the best time to launch a rewarding and lucrative career as a dog trainer. This course uses scientifically proven methods of dog training derived from learning theory and industry best practices. You'll gain a thorough understanding of how dogs learn, how to modify unwanted behaviors, and how to create new behaviors in all types of dogs. Don't miss out on your chance to learn from the best!</p>
+              </div>
+              <Link href="/certification-courses/dog-training"><button className="btn btn-navy">Course Overview</button></Link>
+            </CertificationCard>
+          </div>
+
           <div className="col-12 col-lg-6 col-xxl-5 d-flex align-items-stretch">
             <CertificationCard show={lg}>
               <div>
@@ -164,9 +168,10 @@ const HomePage: NextPageWithLayout = () => {
                 <h3><span className="badge rounded-pill bg-secondary">New</span> Dog Behavior | <em className="gold">IDBS&trade;</em></h3>
                 <p>Once you have successfully completed QC's Dog Training course you can advance your education with the Dog Behavior course. You'll build on your excellent foundation in dog training and learn how to deal with advanced concerns like anxiety, phobias, reactivity, and even aggression. Learn specialized behavior modification skills so you'll be ready to help any dog that comes your way.</p>
               </div>
-              <Link href="/certification-courses/dog-training#behavior"><button className="btn btn-navy">Course Overview</button></Link>
+              <Link href="/certification-courses/dog-behavior"><button className="btn btn-navy">Course Overview</button></Link>
             </CertificationCard>
           </div>
+
         </div>
       </div>
     </section>

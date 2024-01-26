@@ -69,8 +69,9 @@ export const Header = ({ noHero, inverseNav, secondaryTitle, secondaryNavLinks, 
               <Nav>
                 <NavDropdown title="Certification Courses" id="courses-dropdown">
                   <Link href="/certification-courses/dog-grooming" onClick={resetMenu} className="dropdown-item">Dog Grooming Course</Link>
-                  <Link href="/certification-courses/dog-training" onClick={resetMenu} className="dropdown-item">Dog Training Course</Link>
                   <Link href="/certification-courses/dog-daycare" onClick={resetMenu} className="dropdown-item">Dog Daycare Course</Link>
+                  <Link href="/certification-courses/dog-training" onClick={resetMenu} className="dropdown-item">Dog Training Course</Link>
+                  <Link href="/certification-courses/dog-behavior" onClick={resetMenu} className="dropdown-item">Dog Behavior Course</Link>
                   <hr />
                   <Link href="/certification-courses/how-it-works" onClick={resetMenu} className="dropdown-item"><FaCog className="text-primary me-2" /> How It Works</Link>
                   <Link href="/certification-courses/resources" onClick={resetMenu} className="dropdown-item"><FaFolderOpen className="text-primary me-2" /> Learning Resources</Link>
