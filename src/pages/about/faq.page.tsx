@@ -187,7 +187,7 @@ const FAQPage: NextPageWithLayout = () => {
                 <p className="mb-0">If you decide to work in a dog training school, you'll have a regular salary. If you choose a freelance dog training career, your salary will be less steady but you'll be able to set your own rates and hours. Launching your own dog training school has the highest salary potential since you can hire other trainers at an hourly rate and make a profit off their training courses, too!</p>
               </QuestionAnswer>
               <QuestionAnswer question="I'm not sure which course to take: Dog Training, Dog Behavior or both?" index={i++}>
-                <p className="mb-0">Fill out <a onClick={handleQuizLinkClick} className="link-primary" href="https://ng295qu8zyk.typeform.com/to/IrVyZ1ak" target="_blank" rel="noreferrer">this short quiz</a> to find the learning path that best fits your unique learning goals</p>
+                <p className="mb-0">Fill out <a onClick={handleQuizLinkClick} className="link-primary" href="https://ng295qu8zyk.typeform.com/to/IrVyZ1ak" target="_blank" rel="noreferrer">this short quiz</a> to find the learning path that best fits your unique learning goals.</p>
                 <Modal size="lg" show={quizPopupVisible} onHide={quizPopupToggle}>
                   <Modal.Header closeButton>Dog Grooming Kit</Modal.Header>
                   <Modal.Body>
