@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { MouseEventHandler, ReactElement, ReactNode } from 'react';
-import { Modal, ModalBody } from 'react-bootstrap';
+import { Modal } from 'react-bootstrap';
 import { Accordion } from '../../components/accordion';
 import { AccordionItem } from '../../components/accordion/AccordionItem';
 
@@ -189,7 +189,7 @@ const FAQPage: NextPageWithLayout = () => {
               <QuestionAnswer question="I'm not sure which course to take: Dog Training, Dog Behavior or both?" index={i++}>
                 <p className="mb-0">Fill out <a onClick={handleQuizLinkClick} className="link-primary" href="https://ng295qu8zyk.typeform.com/to/IrVyZ1ak" target="_blank" rel="noreferrer">this short quiz</a> to find the learning path that best fits your unique learning goals.</p>
                 <Modal size="lg" show={quizPopupVisible} onHide={quizPopupToggle}>
-                  <Modal.Header closeButton>Dog Grooming Kit</Modal.Header>
+                  <Modal.Header closeButton>Dog Training or Dog Behavior</Modal.Header>
                   <Modal.Body>
                     <iframe style={{ width: '100%', minHeight: 800 }} src="https://ng295qu8zyk.typeform.com/to/IrVyZ1ak" />
                   </Modal.Body>
