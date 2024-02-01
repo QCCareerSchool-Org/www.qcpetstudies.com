@@ -1,12 +1,14 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { ReactElement, ReactNode } from 'react';
+import { MouseEventHandler, ReactElement, ReactNode } from 'react';
+import { Modal, ModalBody } from 'react-bootstrap';
 import { Accordion } from '../../components/accordion';
 import { AccordionItem } from '../../components/accordion/AccordionItem';
 
 import { DefaultLayout } from '../../components/layouts/DefaultLayout';
 import { SEO } from '../../components/SEO';
 import { useLocation } from '../../hooks/useLocation';
+import { useToggle } from '../../hooks/useToggle';
 import DoGInBedWithStick from '../../images/backgrounds/dog-in-bed-with-stick.jpg';
 import type { NextPageWithLayout } from '../_app.page';
 
@@ -18,8 +20,14 @@ const secondaryNavLinks = [
 
 const FAQPage: NextPageWithLayout = () => {
   const location = useLocation();
+  const [ quizPopupVisible, quizPopupToggle ] = useToggle(false);
 
   let i = 0;
+
+  const handleQuizLinkClick: MouseEventHandler<HTMLAnchorElement> = e => {
+    e.preventDefault();
+    quizPopupToggle();
+  };
 
   return <>
     <SEO
@@ -177,6 +185,15 @@ const FAQPage: NextPageWithLayout = () => {
               <QuestionAnswer question="How much can you earn as a professional dog trainer?" index={i++}>
                 <p>A professional dog trainer's salary varies depending on the level of experience, skill, location, and the type of services you offer. A dog trainer can expect to earn between $21,550 and $62,040 US per year.</p>
                 <p className="mb-0">If you decide to work in a dog training school, you'll have a regular salary. If you choose a freelance dog training career, your salary will be less steady but you'll be able to set your own rates and hours. Launching your own dog training school has the highest salary potential since you can hire other trainers at an hourly rate and make a profit off their training courses, too!</p>
+              </QuestionAnswer>
+              <QuestionAnswer question="I'm not sure which course to take: Dog Training, Dog Behavior or both?" index={i++}>
+                <p className="mb-0">Fill out <a onClick={handleQuizLinkClick} href="https://ng295qu8zyk.typeform.com/to/IrVyZ1ak" target="_blank" rel="noreferrer">this short quiz</a> to find the learning path that best fits your unique learning goals</p>
+                <Modal size="lg" show={quizPopupVisible} onHide={quizPopupToggle}>
+                  <Modal.Header closeButton>Dog Grooming Kit</Modal.Header>
+                  <Modal.Body>
+                    <iframe style={{ width: '100%', minHeight: 800 }} src="https://ng295qu8zyk.typeform.com/to/IrVyZ1ak" />
+                  </Modal.Body>
+                </Modal>
               </QuestionAnswer>
             </Accordion>
           </div>
