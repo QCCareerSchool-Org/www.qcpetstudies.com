@@ -37,7 +37,7 @@ type GAUserData = {
 
 export const gaUserData = (userData: GAUserData): void => {
   console.log('enhanced', userData);
-  window.gtag?.('set', 'user-data', userData);
+  window.gtag?.('set', 'user_data', userData);
 };
 
 const precision = 2;
