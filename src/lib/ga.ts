@@ -36,11 +36,9 @@ type GAUserData = {
 };
 
 export const gaUserData = (userData: GAUserData): void => {
-  console.log('enhanced', userData);
+  console.log('set', 'user_data', userData);
   window.gtag?.('set', 'user_data', userData);
 };
-
-const precision = 2;
 
 export const gaSale = (enrollment: Enrollment): void => {
   const postalCode = enrollment.postalCode === null
