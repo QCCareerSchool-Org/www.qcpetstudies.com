@@ -1,5 +1,5 @@
 import { GetServerSideProps } from 'next';
-import Image from 'next/image';
+import Image, { StaticImageData } from 'next/image';
 
 import { FreeFirstAidSection } from '../../../components/FreeFirstAidSection';
 import { HowTheCoursesWorkSection } from '../../../components/HowTheCoursesWorkSection';
@@ -81,7 +81,7 @@ const StartYourDreamCareerPage: NextPageWithLayout<Props> = ({ price }) => (
                 <div className="w-100">
                   <div className="mb-3">
                     <Image
-                      src={QcDayGuaratnteeLogo}
+                      src={QcDayGuaratnteeLogo as StaticImageData}
                       alt="21-day money-back guarantee logo"
                       style={{ maxWidth: '100%', height: 'auto' }}
                     />
@@ -98,7 +98,7 @@ const StartYourDreamCareerPage: NextPageWithLayout<Props> = ({ price }) => (
                 <div className="w-100">
                   <div className="mb-3">
                     <Image
-                      src={QcYearGuaratnteeLogo}
+                      src={QcYearGuaratnteeLogo as StaticImageData}
                       alt="1-year money-back guarantee logo"
                       style={{ maxWidth: '100%', height: 'auto' }}
                     />

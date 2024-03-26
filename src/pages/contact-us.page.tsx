@@ -1,5 +1,5 @@
 import { NextPage } from 'next';
-import Image from 'next/image';
+import Image, { StaticImageData } from 'next/image';
 import { useEffect, useState } from 'react';
 
 import { SEO } from '../components/SEO';
@@ -55,7 +55,7 @@ const ContactUsPage: NextPage = () => {
           <div className="col-12 col-sm-10 col-md-8 col-lg-4 mb-4 mb-lg-0">
             <div className="px-lg-4">
               <Image
-                src={ContactByPhoneImage}
+                src={ContactByPhoneImage as StaticImageData}
                 height="80"
                 width="64"
                 alt="telephone icon"
@@ -69,7 +69,7 @@ const ContactUsPage: NextPage = () => {
           <div className="col-12 col-sm-10 col-md-8 col-lg-4 mb-4 mb-lg-0">
             <div className="px-lg-4">
               <Image
-                src={ContactByEmailImage}
+                src={ContactByEmailImage as StaticImageData}
                 height="80"
                 width="64"
                 alt="email icon"
@@ -83,7 +83,7 @@ const ContactUsPage: NextPage = () => {
           <div className="col-12 col-sm-10 col-md-8 col-lg-4">
             <div className="px-lg-4">
               <Image
-                src={ContactByChatImage}
+                src={ContactByChatImage as StaticImageData}
                 height="80"
                 width="64"
                 alt="chat icon"
