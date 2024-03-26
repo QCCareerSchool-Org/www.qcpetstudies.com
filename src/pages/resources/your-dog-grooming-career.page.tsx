@@ -43,7 +43,7 @@ const DogGroomingCareerPage: NextPage = () => {
         <div className="row justify-content-center">
           <div className="col-12 col-lg-10">
             <div className="mb-4"><Image
-              src={CompassIcon}
+              src={CompassIcon as StaticImageData}
               alt="Compass Icon"
               style={{ maxWidth: '100%', height: 'auto' }}
             /></div>

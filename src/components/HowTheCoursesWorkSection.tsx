@@ -1,4 +1,4 @@
-import Image from 'next/image';
+import Image, { StaticImageData } from 'next/image';
 import { ReactElement } from 'react';
 import { BsCalendarCheck, BsCheckCircle, BsFillCloudArrowDownFill } from 'react-icons/bs';
 
@@ -31,7 +31,7 @@ export const HowTheCoursesWorkSection = ({ className }: Props): ReactElement => 
           <div className="col-12 col-sm-8 col-md-6 col-lg-3 mb-4 mb-md-0">
             <div className="mb-3">
               <Image
-                src={MagnifyingGLassImage}
+                src={MagnifyingGLassImage as StaticImageData}
                 alt="Magnifying Glass Icon"
                 height="50"
                 width="50"

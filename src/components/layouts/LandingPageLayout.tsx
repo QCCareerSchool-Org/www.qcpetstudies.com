@@ -1,4 +1,4 @@
-import Image from 'next/image';
+import Image, { StaticImageData } from 'next/image';
 import Link from 'next/link';
 import { FC, MouseEventHandler, ReactElement, ReactNode } from 'react';
 
@@ -141,7 +141,7 @@ const Copyright: FC<{ termsLink: string }> = ({ termsLink }) => (
 
 const MainLogo: FC = () => (
   <Image
-    src={logo}
+    src={logo as StaticImageData}
     alt="QC Pet Studies"
     width="300"
     height="28"
@@ -157,7 +157,7 @@ const FixedMenuLogo: FC<FixedMenuLogoProps> = ({ screenWidth }) => {
   if (screenWidth >= 480) {
     return (
       <Image
-        src={logoInverse}
+        src={logoInverse as StaticImageData}
         alt="QC Pet Studies"
         width="825"
         height="77"
@@ -169,14 +169,14 @@ const FixedMenuLogo: FC<FixedMenuLogoProps> = ({ screenWidth }) => {
     return (
       <>
         <Image
-          src={favicon}
+          src={favicon as StaticImageData}
           width="21"
           height="21"
           alt="QC Pet Studies"
           style={{ width: 18, height: 18, marginRight: '0.5rem' }}
         />
         <Image
-          src={qcLogo}
+          src={qcLogo as StaticImageData}
           alt="QC"
           width="151"
           height="77"

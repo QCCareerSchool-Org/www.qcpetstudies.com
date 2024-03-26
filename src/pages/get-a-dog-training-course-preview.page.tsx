@@ -1,5 +1,5 @@
 import { GetServerSideProps } from 'next';
-import Image from 'next/image';
+import Image, { StaticImageData } from 'next/image';
 import Link from 'next/link';
 import { MouseEventHandler, useMemo } from 'react';
 
@@ -120,7 +120,7 @@ const DogTrainingCatalogPage: NextPageWithLayout<Props> = ({ firstName, lastName
           </div>
           <div className="col-12 col-sm-10 col-md-8 col-lg-4 mb-4 mb-lg-0">
             <Image
-              src={Step1EnrollImage}
+              src={Step1EnrollImage as StaticImageData}
               alt="Enroll today"
               style={{ maxWidth: '100%', height: 'auto' }}
             />
@@ -129,7 +129,7 @@ const DogTrainingCatalogPage: NextPageWithLayout<Props> = ({ firstName, lastName
           </div>
           <div className="col-12 col-sm-10 col-md-8 col-lg-4 mb-4 mb-lg-0">
             <Image
-              src={Step2SubmitImage}
+              src={Step2SubmitImage as StaticImageData}
               alt="Complete assignment and submit"
               style={{ maxWidth: '100%', height: 'auto' }}
             />
@@ -138,7 +138,7 @@ const DogTrainingCatalogPage: NextPageWithLayout<Props> = ({ firstName, lastName
           </div>
           <div className="col-12 col-sm-10 col-md-8 col-lg-4">
             <Image
-              src={Step3CertificateImage}
+              src={Step3CertificateImage as StaticImageData}
               alt="Get your certificate"
               style={{ maxWidth: '100%', height: 'auto' }}
             />

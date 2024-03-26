@@ -1,4 +1,4 @@
-import Image from 'next/image';
+import Image, { StaticImageData } from 'next/image';
 import Link from 'next/link';
 import { FaBars } from 'react-icons/fa';
 
@@ -59,7 +59,7 @@ const DogGroomingCourseOutlinePage: NextPageWithLayout = () => (
               <div className="card-body">
                 <div className="mb-2">
                   <Image
-                    src={IconTime}
+                    src={IconTime as StaticImageData}
                     width={iconSize}
                     height={iconSize}
                     alt="clock icon"
@@ -75,7 +75,7 @@ const DogGroomingCourseOutlinePage: NextPageWithLayout = () => (
               <div className="card-body">
                 <div className="mb-2">
                   <Image
-                    src={calendarIcon}
+                    src={calendarIcon as StaticImageData}
                     width={iconSize}
                     height={iconSize}
                     alt="calendar icon"

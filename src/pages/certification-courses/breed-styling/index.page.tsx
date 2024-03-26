@@ -1,5 +1,5 @@
 import { GetServerSideProps } from 'next';
-import Image from 'next/image';
+import Image, { StaticImageData } from 'next/image';
 import Link from 'next/link';
 
 import { Accordion } from '../../../components/accordion';
@@ -54,7 +54,7 @@ const BreedStylingPage: NextPageWithLayout<Props> = ({ price }) => {
       <div className="image-overlay-gradient" />
       <div className="container text-center">
         <Image
-          src={CourseIconBadge}
+          src={CourseIconBadge as StaticImageData}
           alt="Breed Styling Course badge"
           style={{ maxWidth: '100%', height: 'auto' }}
         />

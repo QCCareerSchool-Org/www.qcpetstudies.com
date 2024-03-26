@@ -1,5 +1,5 @@
 import { NextPage } from 'next';
-import Image from 'next/image';
+import Image, { StaticImageData } from 'next/image';
 
 import { Bar } from '../../components/Bar';
 import { SEO } from '../../components/SEO';
@@ -148,7 +148,7 @@ const HowItWorksPage: NextPage = () => {
           <div className="col-12 col-lg-8">
             <div className="mb-2">
               <Image
-                src={GraduationCertificateImage}
+                src={GraduationCertificateImage as StaticImageData}
                 alt="IDTP™ Certification logo"
                 height="180"
                 width="180"

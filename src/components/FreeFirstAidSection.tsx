@@ -1,4 +1,4 @@
-import Image from 'next/image';
+import Image, { StaticImageData } from 'next/image';
 import { ReactElement } from 'react';
 
 import CourseMaterials from '../images/course-materials-first-aid.jpg';
@@ -15,7 +15,7 @@ export const FreeFirstAidSection = ({ className }: Props): ReactElement => (
         <div className="col-12 col-lg-6 mb-4 mb-lg-0 text-lg-start">
           <div className="text-center mb-2">
             <Image
-              src={FirstAidLogo}
+              src={FirstAidLogo as StaticImageData}
               alt="First Aid plus Logo"
               style={{ maxWidth: '100%', height: 'auto' }}
             />

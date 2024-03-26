@@ -9,7 +9,7 @@ import FlagUS from '../images/flags/us.svg';
 export const getFlagImageData = (countryCode?: string): { src: StaticImageData; alt: string } | null => {
   switch (countryCode) {
     case 'CA':
-      return { src: FlagCA, alt: 'CA' };
+      return { src: FlagCA as StaticImageData, alt: 'CA' };
     // case 'GB':
     // case 'IM':
     // case 'GG':
@@ -18,12 +18,12 @@ export const getFlagImageData = (countryCode?: string): { src: StaticImageData; 
     case 'AU':
     case 'CC':
     case 'CX':
-      return { src: FlagAU, alt: 'AU' };
+      return { src: FlagAU as StaticImageData, alt: 'AU' };
     // case 'NZ':
     // case 'PN':
     //   return { src: FlagNZ, alt: 'NZ' };
     case 'US':
-      return { src: FlagUS, alt: 'US' };
+      return { src: FlagUS as StaticImageData, alt: 'US' };
     default:
       return null;
   }
