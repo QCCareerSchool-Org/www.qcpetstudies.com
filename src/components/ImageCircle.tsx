@@ -1,13 +1,12 @@
-import type { Property } from 'csstype';
 import Image from 'next/image';
 import type { StaticImageData } from 'next/image';
-import type { FC } from 'react';
+import type { CSSProperties, FC } from 'react';
 
 type Props = {
   src: StaticImageData;
   alt: string;
   size?: number;
-  objectPosition?: Property.ObjectPosition;
+  objectPosition?: CSSProperties['objectPosition'];
 };
 
 export const ImageCircle: FC<Props> = ({ src, alt, size = 60, objectPosition = '50%' }) => (
