@@ -1,5 +1,5 @@
 import { GetServerSideProps } from 'next';
-import Image from 'next/image';
+import Image, { StaticImageData } from 'next/image';
 import Link from 'next/link';
 
 import { DefaultLayout } from '../../../components/layouts/DefaultLayout';
@@ -44,7 +44,7 @@ const DogGroomingPage: NextPageWithLayout<Props> = ({ price }) => {
       <div className="image-overlay-gradient" />
       <div className="container text-center">
         <Image
-          src={firstAidLogo}
+          src={firstAidLogo as StaticImageData}
           alt="First Aid Course logo"
           width={60}
           height={60}

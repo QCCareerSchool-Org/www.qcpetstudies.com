@@ -1,5 +1,5 @@
 import { GetServerSideProps } from 'next';
-import Image from 'next/image';
+import Image, { StaticImageData } from 'next/image';
 import Link from 'next/link';
 import { MouseEventHandler, useMemo, useState } from 'react';
 
@@ -13,8 +13,6 @@ import { TestimonialSmMelodyMason } from '../components/testimonials-sm/Testimon
 import { useScreenWidth } from '../hooks/useScreenWidth';
 import TestiminialBackground from '../images/backgrounds/testimonials-bg.jpg';
 import CatalogImage from '../images/dog-and-scissors.jpg';
-import GroomingKitImage from '../images/dog-grooming-kit.jpg';
-import FirstAidLogo from '../images/first-aid-logo.svg';
 import Step1EnrollImage from '../images/step-1-enroll.svg';
 import Step2SubmitImage from '../images/step-2-submit.svg';
 import Step3CertificateImage from '../images/step-3-certificate.svg';
@@ -143,7 +141,7 @@ const DogGroomingCatalogPage: NextPageWithLayout<Props> = ({ firstName, lastName
           </div>
           <div className="col-12 col-sm-10 col-md-8 col-lg-4 mb-4 mb-lg-0">
             <Image
-              src={Step1EnrollImage}
+              src={Step1EnrollImage as StaticImageData}
               alt="Enroll today"
               style={{ maxWidth: '100%', height: 'auto' }}
             />
@@ -152,7 +150,7 @@ const DogGroomingCatalogPage: NextPageWithLayout<Props> = ({ firstName, lastName
           </div>
           <div className="col-12 col-sm-10 col-md-8 col-lg-4 mb-4 mb-lg-0">
             <Image
-              src={Step2SubmitImage}
+              src={Step2SubmitImage as StaticImageData}
               alt="Complete assignment and submit"
               style={{ maxWidth: '100%', height: 'auto' }}
             />
@@ -161,7 +159,7 @@ const DogGroomingCatalogPage: NextPageWithLayout<Props> = ({ firstName, lastName
           </div>
           <div className="col-12 col-sm-10 col-md-8 col-lg-4">
             <Image
-              src={Step3CertificateImage}
+              src={Step3CertificateImage as StaticImageData}
               alt="Get your certificate"
               style={{ maxWidth: '100%', height: 'auto' }}
             />

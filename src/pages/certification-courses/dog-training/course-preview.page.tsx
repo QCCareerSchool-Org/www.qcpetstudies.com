@@ -1,5 +1,5 @@
 import { GetServerSideProps } from 'next';
-import Image from 'next/image';
+import Image, { StaticImageData } from 'next/image';
 import Link from 'next/link';
 import { ReactElement } from 'react';
 import { BsBook } from 'react-icons/bs';
@@ -92,7 +92,7 @@ const DogTrainingCoursePreviewPage: NextPageWithLayout<Props> = ({ price, enroll
         <div className="d-flex flex-column flex-md-row justify-contents-center align-items-center">
           <div className="flex-shrink-0 mb-4 mb-md-0 me-md-4">
             <Image
-              src={IDTPCertificationLogo}
+              src={IDTPCertificationLogo as StaticImageData}
               width={200}
               height={200}
               alt="IDTP International Dog Training Professional logo"

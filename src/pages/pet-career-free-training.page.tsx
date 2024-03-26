@@ -1,5 +1,5 @@
 import { GetServerSideProps } from 'next';
-import Image from 'next/image';
+import Image, { StaticImageData } from 'next/image';
 import { useMemo } from 'react';
 import { FaFilm } from 'react-icons/fa';
 
@@ -124,7 +124,7 @@ const PetCareerFreeTrainingPage: NextPageWithLayout<Props> = ({ firstName, lastN
               <div className="d-flex flex-column flex-md-row justify-content-start align-items-center mb-4">
                 <div className="me-4 flex-shrink-0 mb-2 mb-md-0" style={{ width: '120px' }}>
                   <Image
-                    src={Qc35Year}
+                    src={Qc35Year as StaticImageData}
                     alt="distance education for over 35 years"
                     sizes="100vw"
                     style={{ width: '100%', height: 'auto' }}
@@ -140,7 +140,7 @@ const PetCareerFreeTrainingPage: NextPageWithLayout<Props> = ({ firstName, lastN
         <div className="container">
           <div className="row justify-content-center">
             <div className="col-12 col-md-10 col-lg-8">
-              <div className="mb-4"><Image src={FiveStars} width="268" height="48" alt="5 out of 5" /></div>
+              <div className="mb-4"><Image src={FiveStars as StaticImageData} width="268" height="48" alt="5 out of 5" /></div>
               <p className="lead">&ldquo;I don't think I could be where I am today without QC Pet Studies.&rdquo;</p>
               <p className="mb-4">&ldquo;The Dog Grooming and First Aid courses are fantastic. I learned so much from Lisa Day and Paddy Gaffney. I've officially started my own business, Sparkling Dog Grooming. I've constructed an entire professional grooming studio in my basement and have started building a very nice client list.&rdquo;</p>
               <div className="d-flex justify-content-center">

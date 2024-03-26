@@ -1,5 +1,5 @@
 import { GetServerSideProps } from 'next';
-import Image from 'next/image';
+import Image, { StaticImageData } from 'next/image';
 import Link from 'next/link';
 import { FC, ReactEventHandler, useEffect, useState } from 'react';
 import { BsCardChecklist, BsPeopleFill } from 'react-icons/bs';
@@ -113,7 +113,7 @@ const DogTrainingPage: NextPageWithLayout<Props> = ({ price }) => {
         <div className="row mb-4">
           <div className="mb-4">
             <Image
-              src={CertificationGoldImage}
+              src={CertificationGoldImage as StaticImageData}
               alt="International Dog Training Professional IDTP Certification"
               height="125"
               width="125"
@@ -129,7 +129,7 @@ const DogTrainingPage: NextPageWithLayout<Props> = ({ price }) => {
           <div className="col-12 col-md-6 col-lg-6 d-flex">
             <div className="col text-uppercase">
               <a href="#outline"><Image
-                src={OutlineIcon}
+                src={OutlineIcon as StaticImageData}
                 alt="outline"
                 width={headerIconSize}
                 height={headerIconSize}
@@ -139,7 +139,7 @@ const DogTrainingPage: NextPageWithLayout<Props> = ({ price }) => {
             </div>
             <div className="col text-uppercase">
               <a href="#guarantee"><Image
-                src={GuaranteeIcon}
+                src={GuaranteeIcon as StaticImageData}
                 alt="play button"
                 width={headerIconSize}
                 height={headerIconSize}
@@ -149,7 +149,7 @@ const DogTrainingPage: NextPageWithLayout<Props> = ({ price }) => {
             </div>
             <div className="col text-uppercase">
               <a href="#tutors"><Image
-                src={TutorIcon}
+                src={TutorIcon as StaticImageData}
                 alt="play button"
                 width={headerIconSize}
                 height={headerIconSize}

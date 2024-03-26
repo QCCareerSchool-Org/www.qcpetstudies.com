@@ -1,3 +1,4 @@
+import { StaticImageData } from 'next/image';
 import Image from 'next/legacy/image';
 import Link from 'next/link';
 import { ReactElement, useState } from 'react';
@@ -62,7 +63,7 @@ export const Header = ({ noHero, inverseNav, secondaryTitle, secondaryNavLinks, 
         <div className="container">
           <div id="nav-wrapper">
             <Navbar.Brand>
-              <Link href="/" onClick={resetMenu}><Image src={(scrolled || (inverseNav && !expanded) ? logo : logoLight)} alt="QC Pet Studies" width="176" height="17" />{flagImage && <span style={{ position: 'relative', marginLeft: '0.5rem', top: '-3px' }}><Image src={flagImage.src} width={17.1434} height={10} alt={flagImage.alt} /></span>}</Link>
+              <Link href="/" onClick={resetMenu}><Image src={(scrolled || (inverseNav && !expanded) ? logo : logoLight) as StaticImageData} alt="QC Pet Studies" width="176" height="17" />{flagImage && <span style={{ position: 'relative', marginLeft: '0.5rem', top: '-3px' }}><Image src={flagImage.src} width={17.1434} height={10} alt={flagImage.alt} /></span>}</Link>
             </Navbar.Brand>
             <Navbar.Toggle aria-controls="main-navbar" />
             <Navbar.Collapse id="main-navbar" className="justify-content-end">

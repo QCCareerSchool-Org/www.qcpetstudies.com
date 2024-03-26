@@ -1,5 +1,5 @@
 import { GetServerSideProps } from 'next';
-import Image from 'next/image';
+import Image, { StaticImageData } from 'next/image';
 import { BsBook } from 'react-icons/bs';
 
 import { Accordion } from '../../../components/accordion';
@@ -86,7 +86,7 @@ const BehaviorCoursePreviewPage: NextPageWithLayout<Props> = ({ price, enrollPat
         <div className="d-flex flex-column flex-md-row justify-contents-center align-items-center">
           <div className="flex-shrink-0 mb-4 mb-md-0 me-md-4">
             <Image
-              src={IDGPCertificationLogo}
+              src={IDGPCertificationLogo as StaticImageData}
               width={200}
               height={200}
               alt="IDGP International Dog Grooming Professional logo"
