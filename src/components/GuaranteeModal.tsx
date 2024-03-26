@@ -1,4 +1,4 @@
-import Image from 'next/image';
+import Image, { StaticImageData } from 'next/image';
 import { ReactElement } from 'react';
 import Modal from 'react-bootstrap/Modal';
 
@@ -23,7 +23,7 @@ export const GuaranteeModal = ({ show, doubleGuarantee, toggle }: Props): ReactE
           <div className="row text-center">
             <div className="col-12 col-md-6">
               <p><Image
-                src={Guarantee21Days}
+                src={Guarantee21Days as StaticImageData}
                 alt="21-day guarantee"
                 style={{ maxWidth: '100%', height: 'auto' }}
               /></p>
@@ -32,7 +32,7 @@ export const GuaranteeModal = ({ show, doubleGuarantee, toggle }: Props): ReactE
             </div>
             <div className="col-12 col-md-6">
               <p><Image
-                src={Guarantee1Year}
+                src={Guarantee1Year as StaticImageData}
                 alt="1-year guarantee"
                 style={{ maxWidth: '100%', height: 'auto' }}
               /></p>
@@ -44,7 +44,7 @@ export const GuaranteeModal = ({ show, doubleGuarantee, toggle }: Props): ReactE
         : (
           <div className="text-center">
             <p><Image
-              src={Guarantee21Days}
+              src={Guarantee21Days as StaticImageData}
               alt="21-day guarantee"
               style={{
                 maxWidth: '100%',

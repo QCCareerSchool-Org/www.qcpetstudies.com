@@ -1,4 +1,4 @@
-import Image from 'next/image';
+import Image, { StaticImageData } from 'next/image';
 import Link from 'next/link';
 import { BsBook } from 'react-icons/bs';
 
@@ -64,7 +64,7 @@ const GroomingAssignment: NextPageWithLayout = () => {
           <div className="col-12 col-md-4 mb-4 mb-md-0">
             <div className="mb-2">
               <Image
-                src={RedDesktopIcon}
+                src={RedDesktopIcon as StaticImageData}
                 alt="Desktop icon"
                 style={{ maxWidth: '100%', height: 'auto', objectFit: 'cover', objectPosition: 'center' }}
               />
@@ -75,7 +75,7 @@ const GroomingAssignment: NextPageWithLayout = () => {
           <div className="col-12 col-md-4 mb-4 mb-md-0">
             <div className="mb-2">
               <Image
-                src={CameraIcon}
+                src={CameraIcon as StaticImageData}
                 alt="Camera icon"
                 style={{ maxWidth: '100%', height: 'auto', objectFit: 'cover', objectPosition: 'center' }}
               />
@@ -86,7 +86,7 @@ const GroomingAssignment: NextPageWithLayout = () => {
           <div className="col-12 col-md-4">
             <div className="mb-2">
               <Image
-                src={CheckedIcon}
+                src={CheckedIcon as StaticImageData}
                 alt="Checked icon"
                 style={{ maxWidth: '100%', height: 'auto', objectFit: 'cover', objectPosition: 'center' }}
               />

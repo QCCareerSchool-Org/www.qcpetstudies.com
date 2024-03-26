@@ -1,5 +1,5 @@
 import { NextPage } from 'next';
-import Image from 'next/image';
+import Image, { StaticImageData } from 'next/image';
 import { ReactElement, ReactNode } from 'react';
 import { FaBookOpen, FaHeadphones, FaLightbulb, FaStar } from 'react-icons/fa';
 
@@ -39,7 +39,7 @@ const AboutPage: NextPage = () => (
             <div className="d-flex flex-column flex-md-row justify-content-start align-items-center mb-4">
               <div className="me-4 flex-shrink-0 mb-2 mb-md-0" style={{ width: '120px' }}>
                 <Image
-                  src={Qc35Year}
+                  src={Qc35Year as StaticImageData}
                   alt="distance education for over 35 years"
                   sizes="100vw"
                   style={{ width: '100%', height: 'auto' }}
@@ -112,7 +112,7 @@ const AboutPage: NextPage = () => (
           </div>
           <div className="col-10 col-sm-8 col-lg-4 mb-4 mb-lg-0 text-center">
             <Image
-              src={SPCALogo}
+              src={SPCALogo as StaticImageData}
               alt="SPCA logo"
               sizes="100vw"
               style={{ width: '100%', height: 'auto' }}

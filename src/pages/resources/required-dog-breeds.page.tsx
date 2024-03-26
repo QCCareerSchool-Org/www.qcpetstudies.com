@@ -1,5 +1,5 @@
 import { NextPage } from 'next';
-import Image from 'next/image';
+import Image, { StaticImageData } from 'next/image';
 import Link from 'next/link';
 
 import { SEO } from '../../components/SEO';
@@ -120,7 +120,7 @@ const RequiredDogBreeds: NextPage = () => {
             <div className="card-body text-center">
               <div className="mb-2">
                 <Image
-                  src={IconFirstAidLogo}
+                  src={IconFirstAidLogo as StaticImageData}
                   width={iconSize}
                   height={iconSize}
                   alt="first aid"

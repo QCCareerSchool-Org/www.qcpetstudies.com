@@ -1,4 +1,4 @@
-import Image from 'next/image';
+import Image, { StaticImageData } from 'next/image';
 import { ReactElement, useState } from 'react';
 import { Modal } from 'react-bootstrap';
 import { FaBars } from 'react-icons/fa';
@@ -68,7 +68,7 @@ const CourseOutlinePage: NextPageWithLayout = () => {
               <div className="card-body">
                 <div className="mb-2">
                   <Image
-                    src={IconTime}
+                    src={IconTime as StaticImageData}
                     width={iconSize}
                     height={iconSize}
                     alt="Clock Icon"
@@ -84,7 +84,7 @@ const CourseOutlinePage: NextPageWithLayout = () => {
               <div className="card-body">
                 <div className="mb-2">
                   <Image
-                    src={calendarIcon}
+                    src={calendarIcon as StaticImageData}
                     width={iconSize}
                     height={iconSize}
                     alt="Calendar Icon"
