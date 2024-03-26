@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import Image from 'next/image';
+import Image, { StaticImageData } from 'next/image';
 import Link from 'next/link';
 import { CSSProperties, FC, ReactNode } from 'react';
 import { FaBriefcase, FaChalkboardTeacher, FaHandHoldingUsd, FaLaptopHouse, FaRegCalendarCheck } from 'react-icons/fa';
@@ -101,7 +101,7 @@ const HomePage: NextPageWithLayout = () => {
               <div>
                 <div className="mb-3">
                   <Image
-                    src={IDGPCertificationGold}
+                    src={IDGPCertificationGold as StaticImageData}
                     width={iconSize}
                     height={iconSize}
                     alt="IDGP certification"
@@ -120,7 +120,7 @@ const HomePage: NextPageWithLayout = () => {
               <div>
                 <div className="mb-3">
                   <Image
-                    src={IDCPCertificationGold}
+                    src={IDCPCertificationGold as StaticImageData}
                     width={iconSize}
                     height={iconSize}
                     alt="IDCP certification logo"
@@ -139,7 +139,7 @@ const HomePage: NextPageWithLayout = () => {
               <div>
                 <div className="mb-3">
                   <Image
-                    src={IDTPCertificationGold}
+                    src={IDTPCertificationGold as StaticImageData}
                     width={iconSize}
                     height={iconSize}
                     alt="IDTP certification"
@@ -158,7 +158,7 @@ const HomePage: NextPageWithLayout = () => {
               <div>
                 <div className="mb-3">
                   <Image
-                    src={IDBSCertificationGold}
+                    src={IDBSCertificationGold as StaticImageData}
                     width={iconSize}
                     height={iconSize}
                     alt="IDBS Certification"

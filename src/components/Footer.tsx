@@ -1,4 +1,4 @@
-import Image from 'next/image';
+import Image, { StaticImageData } from 'next/image';
 import Link from 'next/link';
 import { FC, ReactNode } from 'react';
 import { FaFacebookF, FaInstagram, FaTwitter } from 'react-icons/fa';
@@ -76,7 +76,7 @@ export const Footer: FC<Props> = ({ ctaType, cta, enrollPath = '/', className })
             <div className="mb-4">
               <Image
                 id="footerLogo"
-                src={Logo}
+                src={Logo as StaticImageData}
                 width={240}
                 height={28}
                 alt="QC Pet Studies"
@@ -102,7 +102,7 @@ export const Footer: FC<Props> = ({ ctaType, cta, enrollPath = '/', className })
               <li>
                 <Link href="/about/about-qc-pet-studies">
                   {lgOrGreater && <div className="footerIconWrapper"><Image
-                    src={InfoIcon}
+                    src={InfoIcon as StaticImageData}
                     width={16}
                     height={16}
                     alt="About"
@@ -113,7 +113,7 @@ export const Footer: FC<Props> = ({ ctaType, cta, enrollPath = '/', className })
               <li>
                 <a href="mailto:info@qcpetstudies.com">
                   {lgOrGreater && <div className="footerIconWrapper"><Image
-                    src={EmailIcon}
+                    src={EmailIcon as StaticImageData}
                     width={16}
                     height={16}
                     alt="Email"
@@ -124,7 +124,7 @@ export const Footer: FC<Props> = ({ ctaType, cta, enrollPath = '/', className })
               <li>
                 <a onClick={openLiveChat} title="Open Chat Window">
                   {lgOrGreater && <div className="footerIconWrapper"><Image
-                    src={ChatIcon}
+                    src={ChatIcon as StaticImageData}
                     width={16}
                     height={16}
                     alt="Chat"
@@ -135,7 +135,7 @@ export const Footer: FC<Props> = ({ ctaType, cta, enrollPath = '/', className })
               <li>
                 <a href={`tel:${phoneNumber}`}>
                   {lgOrGreater && <div className="footerIconWrapper"><Image
-                    src={PhoneIcon}
+                    src={PhoneIcon as StaticImageData}
                     width={16}
                     height={16}
                     alt="Phone"
@@ -149,7 +149,7 @@ export const Footer: FC<Props> = ({ ctaType, cta, enrollPath = '/', className })
             <h2 className="h4 text-primary">Stay Informed</h2>
             <div id="blogLogoWrapper">
               <Image
-                src={SniffinArroundLogo}
+                src={SniffinArroundLogo as StaticImageData}
                 width={155}
                 height={40}
                 alt="Sniffin' Around Blog"
@@ -201,7 +201,7 @@ const BBBGuarantee: FC = () => (
       <div>
         <a href="https://www.bbb.org/ca/on/ottawa/profile/correspondence-schools/qc-career-school-0117-4175/#sealclick" target="_blank" rel="noreferrer">
           <Image
-            src={BBBLogo}
+            src={BBBLogo as StaticImageData}
             width={75}
             height={48}
             alt="BBB Better Business Bureau A+"
@@ -214,7 +214,7 @@ const BBBGuarantee: FC = () => (
     <div className="col-4 col-sm-3 col-md-2 col-lg-6">
       <div>
         <Image
-          src={GuaranteeIcon}
+          src={GuaranteeIcon as StaticImageData}
           width={46}
           height={48}
           alt="21-Day Guarantee"

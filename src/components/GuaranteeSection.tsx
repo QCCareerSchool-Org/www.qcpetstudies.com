@@ -1,4 +1,4 @@
-import Image from 'next/image';
+import Image, { StaticImageData } from 'next/image';
 import Link from 'next/link';
 import { ReactElement } from 'react';
 
@@ -22,7 +22,7 @@ export const GuaranteeSection = ({ className, double = false, id = 'guarantee' }
               {double
                 ? (
                   <Image
-                    src={QcGuarantee}
+                    src={QcGuarantee as StaticImageData}
                     alt="qc guarantee"
                     width="140"
                     height="140"
@@ -31,7 +31,7 @@ export const GuaranteeSection = ({ className, double = false, id = 'guarantee' }
                 )
                 : (
                   <Image
-                    src={Guarantee21DayImage}
+                    src={Guarantee21DayImage as StaticImageData}
                     alt="21 Day Money Back Guarantee"
                     style={{ maxWidth: '100%', height: 'auto' }}
                   />
