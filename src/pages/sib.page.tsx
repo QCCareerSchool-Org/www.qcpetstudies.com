@@ -1,7 +1,6 @@
 import Image, { StaticImageData } from 'next/image';
 
 import { BrevoDirectForm } from '../components/BrevoDirectForm';
-import { BrevoForm } from '../components/BrevoForm';
 import { LandingPageLayout } from '../components/layouts/LandingPageLayout';
 import { TestimonialSmCaseyBechard } from '../components/testimonials-sm/TestimonialSmMelodyCaseyBechard';
 import { TestimonialSmKaylaTorraville } from '../components/testimonials-sm/TestimonialSmMelodyKaylaTorraville';

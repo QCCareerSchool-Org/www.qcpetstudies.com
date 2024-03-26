@@ -24,7 +24,7 @@ type Props = {
   price: PriceResult;
 };
 
-const SuccessGuaranteedPage: NextPageWithLayout<Props> = ({ location, price }) => (
+const SuccessGuaranteedPage: NextPageWithLayout<Props> = ({ price }) => (
   <>
     <SEO
       title="Success Guaranteed"
