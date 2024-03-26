@@ -178,6 +178,7 @@ const PetCareerFreeTrainingPage: NextPageWithLayout<Props> = ({ firstName, lastN
   );
 };
 
+// eslint-disable-next-line @typescript-eslint/require-await
 export const getServerSideProps: GetServerSideProps<Props> = async context => {
   const firstName = typeof context.query.firstName === 'string' ? context.query.firstName : null;
   const lastName = typeof context.query.lastName === 'string' ? context.query.lastName : null;
