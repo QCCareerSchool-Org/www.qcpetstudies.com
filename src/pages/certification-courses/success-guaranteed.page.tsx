@@ -1,5 +1,5 @@
 import { GetServerSideProps } from 'next';
-import Image from 'next/image';
+import Image, { StaticImageData } from 'next/image';
 import Link from 'next/link';
 
 import { FreeFirstAidSection } from '../../components/FreeFirstAidSection';
@@ -53,14 +53,14 @@ const SuccessGuaranteedPage: NextPageWithLayout<Props> = ({ price }) => (
           </div>
           <div className="col-12 col-lg-3 mb-4">
             <Image
-              src={QcDayGuaratnteeLogo}
+              src={QcDayGuaratnteeLogo as StaticImageData}
               alt="21-day money-back guaratntee logo"
               style={{ maxWidth: '100%', height: 'auto' }}
             />
           </div>
           <div className="col-12 col-lg-3 mb-4">
             <Image
-              src={QcYearGuaratnteeLogo}
+              src={QcYearGuaratnteeLogo as StaticImageData}
               alt="1-year money-back guaratntee logo"
               style={{ maxWidth: '100%', height: 'auto' }}
             />
