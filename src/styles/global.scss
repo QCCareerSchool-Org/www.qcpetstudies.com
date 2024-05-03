@@ -591,3 +591,10 @@ ul.list-style-none, ol.list-style-none {
 }
 
 .gold { color: #C9952C; }
+
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  .nav-link  {
+    --bs-navbar-nav-link-padding-x: 0.5rem;
+    // --bs-nav-link-padding-x: 0.125rem;
+  }
+}

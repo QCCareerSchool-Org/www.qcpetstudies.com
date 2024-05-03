@@ -79,6 +79,7 @@ export const Header = ({ noHero, inverseNav, secondaryTitle, secondaryNavLinks, 
                   {/* <Link href="/certification-courses/meet-our-experts" onClick={resetMenu} className="dropdown-item"><FaUser className="text-primary me-2" /> Meet Our Experts</Link> */}
                   <Link href="/certification-courses/dog-grooming-kit" onClick={resetMenu} className="dropdown-item"><FaCut className="text-primary me-2" /> Dog Grooming Kit</Link>
                 </NavDropdown>
+                <Link href="/get-a-dog-grooming-course-preview" onClick={resetMenu} className="nav-link">Request Info</Link>
                 <NavDropdown title="About" id="about-dropdown">
                   <Link href="/about/about-qc-pet-studies" onClick={resetMenu} className="dropdown-item">About QC Pet Studies</Link>
                   <Link href="/about/student-experience" onClick={resetMenu} className="dropdown-item">Student Experience</Link>
