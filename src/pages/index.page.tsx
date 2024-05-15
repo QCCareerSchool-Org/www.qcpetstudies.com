@@ -8,7 +8,6 @@ import { jsonLdScriptProps } from 'react-schemaorg';
 import { EducationalOrganization } from 'schema-dts';
 
 import { DefaultLayout } from '../components/layouts/DefaultLayout';
-import { SearchBox } from '../components/SearchBox';
 import { SEO } from '../components/SEO';
 import { TestimonialKaylaTorraville } from '../components/testimonials/TestimonialKaylaTorraville';
 import { TestimonialLucaCoppola } from '../components/testimonials/TestimonialLucaCoppola';
@@ -25,12 +24,6 @@ import { qcPetStudiesEducationalOrganization } from '../qcPetStudiesEducationalO
 import { NextPageWithLayout } from './_app.page';
 
 const iconSize = 145;
-
-const options = [
-  { id: 'groomer', text: 'become a professional dog groomer', url: '/certification-courses/dog-grooming' },
-  { id: 'trainer', text: 'become a professional dog trainer', url: '/certification-courses/dog-training' },
-  { id: 'care', text: 'become a dog daycare professional', url: '/certification-courses/dog-daycare' },
-];
 
 const HomePage: NextPageWithLayout = () => {
   const screenWidth = useScreenWidth();
@@ -70,19 +63,6 @@ const HomePage: NextPageWithLayout = () => {
             <div className="d-flex align-items-center">
               <div className="flex-shrink-0 me-3"><RibbonInCircle /></div>
               <span><strong>Get one-on-one training from industry experts</strong> and graduate with a professional certification.</span>
-            </div>
-          </div>
-        </div>
-        <div className="row">
-          <div className="col-12 col-lg-8 col-xl-7 col-xxl-6">
-            <div className="searchBoxWrapper">
-              <SearchBox
-                label="I'm ready to"
-                options={options}
-                multiLine={!md}
-                sm={!sm}
-                name="page"
-              />
             </div>
           </div>
         </div>
@@ -288,9 +268,6 @@ const HomePage: NextPageWithLayout = () => {
     </section>
 
     <style jsx>{`
-    .searchBoxWrapper {
-      margin-top: 5rem;
-    }
     .heroContainer {
       margin-bottom: 16rem;
     }
@@ -305,21 +282,8 @@ const HomePage: NextPageWithLayout = () => {
       }
     }
     @media screen and (min-width: 992px) {
-      .searchBoxWrapper {
-        margin-top: 5rem;
-      }
       .heroContainer {
         margin-bottom: 0;
-      }
-    }
-    @media screen and (min-width: 1200px) {
-      .searchBoxWrapper {
-        margin-top: 6rem;
-      }
-    }
-    @media screen and (min-width: 1400px) {
-      .searchBoxWrapper {
-        margin-top: 7rem;
       }
     }
     `}</style>
