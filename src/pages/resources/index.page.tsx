@@ -40,7 +40,7 @@ const LearningResourcesPage: NextPage = () => (
         <div className="row justify-content-center">
           <div className="col-12 col-lg-6">
             <h2>Useful <strong>Links</strong></h2>
-            <p>Learn more about QC Pet Studies and how your dog training course will help you achieve your goals!</p>
+            <p>Learn more about QC Pet Studies and how your dog grooming, training or daycare course will help you achieve your goals!</p>
           </div>
         </div>
         <div className="row justify-content-center mb-5">
