@@ -92,10 +92,6 @@ const GroomingTechnicianPage: NextPageWithLayout<Props> = ({ location, price, dg
       <div className="container">
         <h2>Become a Certified Professional Dog Groomer</h2>
         <p className="lead">International Dog Grooming Professional™ | IDGP™</p>
-        There's never been a better time to start a career as a professional dog groomer. Groomers and pet stylists all over the country have waiting lists or are simply refusing new clients. What an amazing opportunity to start a new and lucrative career!
-        Get your International Dog Groomer Certification in less than a year with QC's comprehensiveinteractive online training. Study at your own pace. Watch instructional videos and complete hands-on assignments to grow your grooming skills. With QC’s all-encompassing Professional Grooming course, you’ll master all levels of pet grooming from bathing and brushing and pet cuts, all the way to advanced pet styling.  Graduate with all the knowledge and skills you need to succeed in the dog grooming industry!
-        Are you ready to start an amazing career?
-
       </div>
     </section>
     <section>
