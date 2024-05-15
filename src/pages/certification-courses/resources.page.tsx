@@ -54,8 +54,8 @@ const LearningResourcesPage: NextPage = () => (
                 style={{ width: '100%', height: 'auto' }}
               />
               <div className="card-body">
-                <h3 className="card-title">Virtual Classroom</h3>
-                <p className="card-text">The Virtual Classroom is a private Facebook group exclusively for QC Pet Studies&apos; students. You&apos;ll have the opportunity to ask course-related questions, interact with your Teaching Assistant, access supplementary content and build a sense of community with other aspiring pet-industry professionals.</p>
+                <h3 className="card-title">Virtual Community</h3>
+                <p className="card-text">The Virtual Community is a private Facebook group exclusively for QC Pet Studies students. You'll have the opportunity to ask course-related questions, interact with your Teaching Assistant, access supplementary content and be part of an uplifting community alongside other aspiring pet industry professionals.</p>
                 <a href="https://www.facebook.com/groups/qcpetstudiesvirtualclassroom" className="link-primary" target="_blank" rel="noreferrer">Learn More</a>
               </div>
             </div>
@@ -71,7 +71,7 @@ const LearningResourcesPage: NextPage = () => (
               />
               <div className="card-body">
                 <h3 className="card-title">Frequently Asked Questions</h3>
-                <p className="card-text">Do you have questions about taking the online dog training course? Read this list of FAQs to learn more about your tuition options, how the online course works, and more.</p>
+                <p className="card-text">Do you have questions about taking an online course with QC Pet Studies? Read this list of FAQs to learn more about our Dog Grooming, Dog Training and Dog Daycare course options.</p>
                 <Link href="/about/faq" className="link-primary">Learn More</Link>
               </div>
             </div>
@@ -87,7 +87,7 @@ const LearningResourcesPage: NextPage = () => (
               />
               <div className="card-body">
                 <h3 className="card-title">How It Works</h3>
-                <p className="card-text">Learning online is much more convenient than learning in the classroom, but is it as effective? It can be! Find out more about how QC&apos;s online courses work. </p>
+                <p className="card-text">At QC Pet Studies, we combine the perks of in-person learning with the convenience of studying online. Get hands-on experience, learn from expert feedback and build a professional community all from the comfort of home. Find out more about how QC's online courses work. </p>
                 <Link href="/certification-courses/how-it-works" className="link-primary">Learn More</Link>
               </div>
             </div>
