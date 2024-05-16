@@ -231,7 +231,7 @@ const DogGroomingPage: NextPageWithLayout<Props> = ({ price }) => {
           <div className="col-12 col-lg-10 mb-4 text-center">
             <h2>Course <strong>Outline</strong></h2>
             <p className="lead">The Dog Grooming Course is split into 5 parts, each containing individual training units.</p>
-            <p>You must complete a unit with a satisfactory grade before you can submit assignment for the next units.</p>
+            <p>You must complete a unit with a satisfactory grade before you can submit assignments for the next unit.</p>
           </div>
         </div>
         <Accordion>
@@ -252,7 +252,7 @@ const DogGroomingPage: NextPageWithLayout<Props> = ({ price }) => {
           </AccordionItem>
           <AccordionItem heading="Pet Cuts and Advanced Breed Styling">
             <p>Dog grooming as a profession requires a lot of background knowledge, but ultimately your success will depend on your ability to safely and skillfully groom dogs. You'll learn to complete the most popular pet cuts and advanced breed styles through a series of detailed instructional videos with certified Master Groomers.</p>
-            <p>You'll completer practicum units designed to help you hone your technique and receive feedback on these essential skills. The units within the practicum involve practical assignments that draw on the content you've mastered throughout the course.</p>
+            <p>You'll complete practicum units designed to help you hone your technique and receive feedback on these essential skills. The units within the practicum involve practical assignments that draw on the content you've mastered throughout the course.</p>
             <p className="mb-0"><Link href="/certification-courses/dog-grooming/course-outline" className="link-primary">View a more detailed course syllabus</Link></p>
           </AccordionItem>
           <AccordionItem heading="Dog Grooming Business Essentials">

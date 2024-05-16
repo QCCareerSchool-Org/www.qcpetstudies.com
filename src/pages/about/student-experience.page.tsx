@@ -19,7 +19,7 @@ const StudentExperiencePage: NextPage = () => {
   return <>
     <SEO
       title="Student Experience"
-      description="As a QC Pet Studies Student, you'll get help through every step of your education. As you work through your course, you'll be guided by our team of teaching assistants, as well as top-notch industry experts with years of experience in the industry. Even after you graduate, you'll remain an essential member of the QC community."
+      description="As a QC Pet Studies Student, you'll get help through every step of your education. As you work through your course, you'll be guided by our team of teaching assistants, as well as top-notch industry experts with years of professional experience. Even after you graduate, you'll remain an essential member of the QC community."
       canonical="/about/student-experience"
     />
 
@@ -71,7 +71,7 @@ const StudentExperiencePage: NextPage = () => {
             <div className="section px-lg-5">
               <h2>Get Help When <strong>You Need It</strong></h2>
               <p className="lead">QC's student support team is here to help.</p>
-              <p className="mb-4">Reach out as often as you need to discuss your course materials or to ask questions about your assignments. Whether you're a student, a graduate or are considering enrolling, we are always happy to hear from you. Contact QC Pet Studies by phone, email or Live Chat whichever you prefer!</p>
+              <p className="mb-4">Reach out as often as you need to discuss your course materials or to ask questions about your assignments. Whether you're a student, a graduate or are considering enrolling, we are always happy to hear from you. Contact QC Pet Studies by phone, email or Live Chat&mdash;whichever you prefer!</p>
               <p className="mb-0"><Link href="/contact-us" className="btn btn-outline-secondary">Contact Us</Link></p>
             </div>
           </div>

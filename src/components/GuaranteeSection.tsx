@@ -54,7 +54,7 @@ export const GuaranteeSection = ({ className, double = false, id = 'guarantee' }
               <div className="card">
                 <div className="card-body">
                   <h3 className="card-title">The 1-Year Money-Back Guarantee</h3>
-                  <p className="card-text">Your online course will pay for itself within one year. That's a promise. If, after one year of receiving your certificate of completion, you haven't earned the equivalent of your tuition fees in your professional salary, your course tuition will be refunded in full. All you have to do is provide proof that you've made a reasonable effort to find work as a dog groomer or dog trainer.</p>
+                  <p className="card-text">Your online course will pay for itself within one year. That's a promise. If, after one year of receiving your certificate of completion, you haven't earned the equivalent of your tuition fees in your professional salary, your course tuition will be refunded in full. All you have to do is provide proof that you've made a reasonable effort to find work as a dog groomer.</p>
                   <p className="card-text"><strong>Note:</strong> This guarantee is only valid for graduates of the Dog Grooming Course.</p>
                 </div>
               </div>
