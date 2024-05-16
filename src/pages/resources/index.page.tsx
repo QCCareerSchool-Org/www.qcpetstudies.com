@@ -2,6 +2,7 @@ import { NextPage } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 
+import { SectionBackground } from '../../components/SectionBackground';
 import { SEO } from '../../components/SEO';
 import DogTrainingResourcesBackground from '../../images/backgrounds/working-at-home-office-with-dog.jpg';
 import LearningInClassOnline from '../../images/cards/learning-in-class-online.jpg';
@@ -11,21 +12,13 @@ import VirtualClassroom from '../../images/cards/virtual-classroom.jpg';
 const LearningResourcesPage: NextPage = () => (
   <>
     <SEO
-      title="Dog Training Resources"
+      title="Resources"
       description="Use these resources to decide if a career in dog training is right for you!"
       canonical="/certification-courses/resources"
     />
 
     <section id="top" className="bg-dark">
-      <Image
-        src={DogTrainingResourcesBackground}
-        placeholder="blur"
-        alt="dog with tongue out"
-        priority
-        fill
-        sizes="100vw"
-        style={{ objectFit: 'cover', objectPosition: 'center' }}
-      />
+      <SectionBackground src={DogTrainingResourcesBackground} priority />
       <div className="container text-center">
         <div className="row justify-content-center">
           <div className="col-12 col-lg-10">
