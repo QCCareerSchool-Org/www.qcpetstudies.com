@@ -12,9 +12,9 @@ import VirtualClassroom from '../../images/cards/virtual-classroom.jpg';
 const LearningResourcesPage: NextPage = () => (
   <>
     <SEO
-      title="Resources"
-      description="Use these resources to decide if a career in dog training is right for you!"
-      canonical="/certification-courses/resources"
+      title="Learning Resources"
+      description="Use these resources to decide if a career in the pet industry is right for you!"
+      canonical="/resources"
     />
 
     <section id="top" className="bg-dark">
