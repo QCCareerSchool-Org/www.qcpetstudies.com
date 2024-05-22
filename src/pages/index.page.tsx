@@ -199,7 +199,6 @@ const HomePage: NextPageWithLayout = () => {
         <div className="row">
           <div className="col-12 col-lg-10 offset-lg-1 col-xl-8 offset-xl-2 text-center">
             <h2 className="mb-4">Why Choose <strong>QC</strong></h2>
-            <p className="mb-5">When choosing to attend an online school, it can be difficult to separate legitimate educational institutions from less-than-reputable companies that are looking to make a quick buck. You want to choose a school you&apos;ll be proud to attend. One that will help you meet your career goals. Welcome to QC!</p>
           </div>
         </div>
         <div className="row mb-4">
@@ -208,7 +207,7 @@ const HomePage: NextPageWithLayout = () => {
           </div>
           <div className="col-9">
             <h3>Proven Track Record</h3>
-            <p>Enroll in a school with a 35-year track record of quality distance education, an A+ rating from the Better Business Bureau, and thousands of graduates working careers they love!</p>
+            <p>Enroll in a school with over 40 years of experience providing top-quality education, an A+ rating from the Better Business Bureau, and thousands of graduates working in careers they love!</p>
           </div>
         </div>
         <div className="row mb-4">
@@ -217,7 +216,7 @@ const HomePage: NextPageWithLayout = () => {
           </div>
           <div className="col-9">
             <h3>A Fully Online Learning Experience</h3>
-            <p>QC offers 100% online learning on all courses! There are no mandatory scheduled webinars to attend and no inconvenient classroom sessions. You work at your own pace and on your own time, with 1-on-1 guidance and support from your personal tutor and your student support advisor.</p>
+            <p>QC offers 100% online learning! There are no assignment deadlines or inconvenient classroom sessions. You work at your own pace with one-on-one guidance and support from your personal tutor and teaching assistant.</p>
           </div>
         </div>
         <div className="row mb-4">
@@ -226,7 +225,7 @@ const HomePage: NextPageWithLayout = () => {
           </div>
           <div className="col-9">
             <h3>Expert Tutors to Guide You</h3>
-            <p>Your personal tutor will follow your progress through your online course, will personally grade your assignments, and provide you with individualized feedback after you ve completed each unit. These aren&apos;t paid employees of the school grading from a template; they&apos;re career professionals working in your industry, and they&apos;re focused on your success!</p>
+            <p>Your personal tutor will follow your progress through your online course, grade your assignments, and provide you with individualized feedback after you've completed each unit. QC's tutors are career professionals excelling in the pet industry, and they're focused on your success!</p>
           </div>
         </div>
         <div className="row mb-4">
@@ -235,7 +234,7 @@ const HomePage: NextPageWithLayout = () => {
           </div>
           <div className="col-9">
             <h3>Business Training You Can Use</h3>
-            <p>Each course comes complete with optional business training where you&apos;ll work with your tutor to come up with a business name, create a marketing strategy, start building your website, and get access to templates that will help get your career off the ground from day one!</p>
+            <p>Each course comes complete with optional business training where you&apos;ll work with your tutor to come up with a business name, create a marketing strategy, start building your website, and get access to templates that will help get your career off to a great start from day one!</p>
           </div>
         </div>
         <div className="row">
@@ -244,7 +243,7 @@ const HomePage: NextPageWithLayout = () => {
           </div>
           <div className="col-9">
             <h3>No Additional or Hidden Fees</h3>
-            <p>Your course tuition is the only fee you&apos;ll pay for your course or certification. Unlike other schools, when you graduate from QC your certificate is yours forever, and you&apos;ll have continued access to your student center at no additional cost. you&apos;ll never be asked to pay subscription fees, membership fees, or any other fees to keep your certification current or use your business materials.</p>
+            <p>When you graduate from QC your certificate is yours forever, and you&apos;ll have continued access to your student center at no additional cost. You'll never be asked to pay subscription fees, membership fees, or any other fees to keep your certification current.</p>
           </div>
         </div>
       </div>
