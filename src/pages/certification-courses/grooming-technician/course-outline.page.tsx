@@ -10,13 +10,9 @@ import CourseOutlineBackground from '../../../images/backgrounds/course-outline.
 import calendarIcon from '../../../images/calendar.svg';
 import IconTime from '../../../images/clock.svg';
 import FirstAidCourse from '../../../images/dg-full-outline-first-aid-for-groomers.jpg';
-import PracticumUnit5Image from '../../../images/dg-full-outline-practicum-unit-5-image.jpg';
-import PracticumUnitImage from '../../../images/dg-full-outline-practicum-unit.jpg';
 import UnitAImage from '../../../images/dg-full-outline-unit-a-image.jpg';
 import UnitBImage from '../../../images/dg-full-outline-unit-b-image.jpg';
 import UnitCImage from '../../../images/dg-full-outline-unit-c-image.jpg';
-import UnitGImage from '../../../images/dg-full-outline-unit-g-image.jpg';
-import UnitHImage from '../../../images/dg-full-outline-unit-h-image.jpg';
 import type { NextPageWithLayout } from '../../_app.page';
 
 const iconSize = 50;
@@ -24,9 +20,9 @@ const iconSize = 50;
 const GroomingTechCourseOutlinePage: NextPageWithLayout = () => (
   <>
     <SEO
-      title="Dog Grooming Course Outline"
-      description="Become a certified dog grooming professional with QC's interactive online course. Get started today!"
-      canonical="/certification-courses/dog-grooming/course-outline"
+      title="Grooming Technician Course Outline"
+      description="Become a certified grooming technician with QC's interactive online course. Get started today!"
+      canonical="/certification-courses/grooming-technician/course-outline"
     />
 
     <section id="top" className="bg-dark">
@@ -274,6 +270,7 @@ const GroomingTechCourseOutlinePage: NextPageWithLayout = () => (
                 </div>
               </AccordionItem>
             </Accordion>
+            <p className="text-center lead">View <Link href="/certification-courses/dog-grooming/course-preview" className="text-primary">Sample Assignments</Link> from QC's Online Grooming Technician Course</p>
           </div>
         </div>
       </div>
