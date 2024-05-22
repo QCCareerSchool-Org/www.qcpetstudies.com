@@ -36,7 +36,7 @@ type Props = {
   dgPrice: PriceResult;
 };
 
-const GroomingTechnicianPage: NextPageWithLayout<Props> = ({ location, gtPrice, dgPrice }) => {
+const GroomingTechnicianPage: NextPageWithLayout<Props> = ({ gtPrice, dgPrice }) => {
   const screenWidth = useScreenWidth();
   const [ kitPopupVisible, kitPopupToggle ] = useToggle();
 
@@ -127,14 +127,12 @@ const GroomingTechnicianPage: NextPageWithLayout<Props> = ({ location, gtPrice, 
           <div className="row justify-content-center">
             <div className="col-12 col-lg-10 mb-4">
               <h2 className="mb-2 mb-md-4">Included in <strong>Your Course</strong></h2>
-              <div style={{ marginBottom: '-3rem' }}>
-                <Image
-                  src={BeginnerKit}
-                  alt="professional dog-grooming kit"
-                  sizes="100vw"
-                  style={{ width: '100%', height: 'auto' }}
-                />
-              </div>
+              <Image
+                src={BeginnerKit}
+                alt="professional dog-grooming kit"
+                sizes="100vw"
+                style={{ width: '100%', height: 'auto' }}
+              />
               <div className="courseContentIcon"><BsScissors size={iconSize} /></div>
               <h3>Beginner Tool Kit</h3>
               <p>When you enroll, you'll receive a beginner toolkit to help you complete your studies. This bonus kit includes an assortment of brushes, combs and nail clippers to get you started.</p>
@@ -160,14 +158,12 @@ const GroomingTechnicianPage: NextPageWithLayout<Props> = ({ location, gtPrice, 
         <Modal show={kitPopupVisible} onHide={kitPopupToggle}>
           <Modal.Header closeButton>Grooming Tools Starter Kit</Modal.Header>
           <Modal.Body>
-            <div style={{ marginBottom: '-1rem' }}>
-              <Image
-                src={BeginnerKit}
-                alt="grooming kit details"
-                sizes="100vw"
-                style={{ width: '100%', height: 'auto' }}
-              />
-            </div>
+            <Image
+              src={BeginnerKit}
+              alt="grooming kit details"
+              sizes="100vw"
+              style={{ width: '100%', height: 'auto' }}
+            />
             <ul style={{ width: 300, marginLeft: 'auto', marginRight: 'auto' }}>
               <li>2 Slicker Brushes (soft and hard)</li>
               <li>2 Nail Clippers (large and small)</li>
