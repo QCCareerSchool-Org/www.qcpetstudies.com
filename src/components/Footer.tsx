@@ -108,7 +108,7 @@ export const Footer: FC<Props> = ({ ctaType, cta, enrollPath = '/', className })
                     width={16}
                     height={16}
                     alt="About"
-                    style={{ maxWidth: '100%', height: 'auto' }}
+                    style={{ maxWidth: '100%', height: 'auto', position: 'relative', top: -4 }}
                   /></div>}About QC
                 </Link>
               </li>
@@ -119,7 +119,7 @@ export const Footer: FC<Props> = ({ ctaType, cta, enrollPath = '/', className })
                     width={16}
                     height={16}
                     alt="Email"
-                    style={{ maxWidth: '100%', height: 'auto' }}
+                    style={{ maxWidth: '100%', height: 'auto', position: 'relative', top: -4 }}
                   /></div>}Email Us
                 </a>
               </li>
@@ -130,7 +130,7 @@ export const Footer: FC<Props> = ({ ctaType, cta, enrollPath = '/', className })
                     width={16}
                     height={16}
                     alt="Chat"
-                    style={{ maxWidth: '100%', height: 'auto' }}
+                    style={{ maxWidth: '100%', height: 'auto', position: 'relative', top: -4 }}
                   /></div>}Chat
                 </a>
               </li>
@@ -141,7 +141,7 @@ export const Footer: FC<Props> = ({ ctaType, cta, enrollPath = '/', className })
                     width={16}
                     height={16}
                     alt="Phone"
-                    style={{ maxWidth: '100%', height: 'auto' }}
+                    style={{ maxWidth: '100%', height: 'auto', position: 'relative', top: -4 }}
                   /></div>}{phoneNumber}
                 </a>
               </li>
