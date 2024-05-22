@@ -78,17 +78,17 @@ const QCPetStudiesApp = ({ Component, pageProps }: AppPropsWithLayout): ReactEle
 };
 
 export const reportWebVitals = ({ id, name, label, value }: NextWebVitalsMetric): void => {
-  // Use `window.gtag` if you initialized Google Analytics as this example:
-  // https://github.com/vercel/next.js/blob/canary/examples/with-google-analytics/pages/_app.js
-  window.gtag?.('event', name, {
-    // eslint-disable-next-line camelcase
-    event_category: label === 'web-vital' ? 'Web Vitals' : 'Next.js custom metric',
-    value: Math.round(name === 'CLS' ? value * 1000 : value), // values must be integers
-    // eslint-disable-next-line camelcase
-    event_label: id, // id unique to current page load
-    // eslint-disable-next-line camelcase
-    non_interaction: true, // avoids affecting bounce rate.
-  });
+  // // Use `window.gtag` if you initialized Google Analytics as this example:
+  // // https://github.com/vercel/next.js/blob/canary/examples/with-google-analytics/pages/_app.js
+  // window.gtag?.('event', name, {
+  //   // eslint-disable-next-line camelcase
+  //   event_category: label === 'web-vital' ? 'Web Vitals' : 'Next.js custom metric',
+  //   value: Math.round(name === 'CLS' ? value * 1000 : value), // values must be integers
+  //   // eslint-disable-next-line camelcase
+  //   event_label: id, // id unique to current page load
+  //   // eslint-disable-next-line camelcase
+  //   non_interaction: true, // avoids affecting bounce rate.
+  // });
 };
 
 export default QCPetStudiesApp;

@@ -174,7 +174,7 @@ const DogGroomingPage: NextPageWithLayout<Props> = ({ price }) => {
       </div>
     </section>
 
-    <PriceSection courses={courseCodes} price={price} doubleGuarantee={true} />
+    <PriceSection courses={courseCodes} price={price} doubleGuarantee />
 
     <section>
       <div className="container text-center">

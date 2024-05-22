@@ -17,7 +17,7 @@ type Props = {
   /** the cousre(s) to base the shopping cart link on */
   courses: string[];
   price: PriceResult;
-  doubleGuarantee: boolean;
+  doubleGuarantee?: boolean;
   variant?: Variant;
   id?: string;
   /** custom path for the shopping cart (include leading slash) */
