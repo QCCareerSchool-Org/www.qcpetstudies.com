@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { FC } from 'react';
+import { FC, MouseEventHandler } from 'react';
 import { Modal } from 'react-bootstrap';
 
 import { Accordion } from '../../../components/accordion';
@@ -16,7 +16,8 @@ type Props = {
 export const GroomingTechOutlineSection: FC<Props> = ({ dgPrice, gtPrice }) => {
   const [ popup, togglePopup ] = useToggle();
 
-  const handleClick = (): void => {
+  const handleClick: MouseEventHandler = e => {
+    e.preventDefault();
     togglePopup();
   };
 
@@ -59,8 +60,12 @@ export const GroomingTechOutlineSection: FC<Props> = ({ dgPrice, gtPrice }) => {
               <p className="mb-0"><Link href="/certification-courses/dog-grooming/course-outline" className="link-primary">View a more detailed course syllabus</Link></p>
             </AccordionItem>
           </Accordion>
-
-          <p className="lead mb-0">Do you need help deciding between the Grooming Technician and Dog Grooming courses? View the benefits of each in the <a onClick={handleClick} href="#" className="link-primary">comparison chart</a>.</p>
+          <div className="row justify-content-center">
+            <div className="col-12 col-lg-10 col-xl-8 text-center">
+              <p className="lead">Do you need help deciding between the Grooming Technician and Dog Grooming courses? View the benefits of each in the <a onClick={handleClick} href="#" className="link-primary">comparison chart</a>.</p>
+              <button onClick={handleClick} className="btn btn-primary btn-lg">View Comparison Chart</button>
+            </div>
+          </div>
         </div>
       </section>
       <Modal size="xl" show={popup} onHide={togglePopup}>
