@@ -88,8 +88,8 @@ const HomePage: NextPageWithLayout = () => {
                     style={{ maxWidth: '100%', height: 'auto' }}
                   />
                 </div>
-                <h3>Dog Grooming | <em className="gold">IDGP&trade;</em></h3>
-                <p>Become a professional dog groomer. There's more to grooming than just bathing and brushing dogs! In this course you'll learn all about dog anatomy and behavior, how to use grooming tools safely and effectively, and how to competently groom any breed of dog. You'll also get a chance to launch your dog grooming business if that's your goal! Get plenty of hands-on groomer training without ever leaving your home. Start today!</p>
+                <h3>Professional Dog Grooming | <em className="gold">IDGP&trade;</em></h3>
+                <p>Master every level of dog grooming from bathing, brushing and pet cuts to advanced breed styling. In this course, you'll learn all about dog anatomy and behavior, how to use grooming tools safely and effectively, and how to expertly groom any breed of dog. You'll also get a chance to launch your dog grooming business if that's your goal! Get plenty of hands-on groomer training without ever leaving your home. Start today!</p>
               </div>
               <Link href="/certification-courses/dog-grooming"><button className="btn btn-navy">Course Overview</button></Link>
             </CertificationCard>
