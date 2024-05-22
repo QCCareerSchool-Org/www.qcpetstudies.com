@@ -183,7 +183,7 @@ const GroomingTechnicianPage: NextPageWithLayout<Props> = ({ location, gtPrice, 
 
       <GroomingTechOutlineSection dgPrice={dgPrice} gtPrice={gtPrice} />
 
-      <GuaranteeSection className="bg-light" double />
+      <GuaranteeSection className="bg-light" />
 
       <DGTutorSection />
 

@@ -1,6 +1,6 @@
 import Image, { StaticImageData } from 'next/image';
 import Link from 'next/link';
-import { FC, ReactNode } from 'react';
+import { FC, ReactElement, ReactNode } from 'react';
 import { FaFacebookF, FaInstagram, FaTwitter } from 'react-icons/fa';
 
 import { useLocation } from '../hooks/useLocation';
@@ -52,6 +52,8 @@ export const Footer: FC<Props> = ({ ctaType, cta, enrollPath = '/', className })
 
   const flagImage = getFlagImageData(location?.countryCode);
 
+  const ctaText = getCTAText(ctaType);
+
   return (
     <footer style={{ borderTop: '1px solid rgb(255,255,255,0.1)' }} className={className}>
       <div className="container">
@@ -60,7 +62,7 @@ export const Footer: FC<Props> = ({ ctaType, cta, enrollPath = '/', className })
           ? (
             <div className="row align-items-center">
               <div className="col-12 col-lg-9 col-xl-8 mb-4 mb-lg-0 text-center text-lg-start">
-                <h2>Ready to Launch Your <strong>{ctaType === 'grooming' || ctaType === 'grooming tech' ? <><br />Grooming </> : ctaType === 'training' ? <><br />Training </> : ctaType === 'care' ? <>Dog Care </> : null}Career?</strong></h2>
+                <h2>{ctaText}</h2>
                 <p className="lead mb-0">Take the first step towards a new career in the booming {ctaType === 'grooming' ? 'dog grooming ' : ctaType === 'training' ? 'dog training ' : ctaType === 'behavior' ? 'behavior' : ctaType === 'care' ? ' dog care' : 'pet'} industry.</p>
               </div>
               <div className="col-12 col-lg-3 text-center text-lg-end text-xl-center">
@@ -227,3 +229,10 @@ const BBBGuarantee: FC = () => (
     </div>
   </div>
 );
+
+const getCTAText = (ctaType?: FooterCTAType): ReactElement => {
+  if (ctaType === 'grooming tech') {
+    return <>Ready to Launch Your Career as a <strong>Grooming Technician?</strong></>;
+  }
+  return <>Ready to Launch Your <strong>{ctaType === 'grooming' ? <><br />Grooming </> : ctaType === 'training' ? <><br />Training </> : ctaType === 'care' ? <>Dog Care </> : null}Career?</strong></>;
+};
