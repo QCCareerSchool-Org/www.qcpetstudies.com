@@ -1,6 +1,6 @@
 import Image, { StaticImageData } from 'next/image';
 import Link from 'next/link';
-import { FC, ReactNode } from 'react';
+import { FC, ReactElement, ReactNode } from 'react';
 import { FaFacebookF, FaInstagram, FaTwitter } from 'react-icons/fa';
 
 import { useLocation } from '../hooks/useLocation';
@@ -18,7 +18,7 @@ import { getFlagImageData } from '../lib/flags';
 import { openLiveChat } from '../lib/livechat';
 import { getTelephoneNumber } from '../lib/phone';
 
-export type FooterCTAType = 'grooming' | 'training' | 'care' | 'behavior';
+export type FooterCTAType = 'grooming' | 'training' | 'care' | 'behavior' | 'grooming tech';
 
 type Props = {
   /** overrides the entire CTA */
@@ -46,9 +46,13 @@ export const Footer: FC<Props> = ({ ctaType, cta, enrollPath = '/', className })
         ? `https://enroll.qcpetstudies.com${enrollPath}?c=dt&c=dc`
         : ctaType === 'care'
           ? `https://enroll.qcpetstudies.com${enrollPath}?c=dd`
-          : `https://enroll.qcpetstudies.com${enrollPath}`;
+          : ctaType === 'grooming tech'
+            ? `https://enroll.qcpetstudies.com${enrollPath}?c=gt`
+            : `https://enroll.qcpetstudies.com${enrollPath}`;
 
   const flagImage = getFlagImageData(location?.countryCode);
+
+  const ctaText = getCTAText(ctaType);
 
   return (
     <footer style={{ borderTop: '1px solid rgb(255,255,255,0.1)' }} className={className}>
@@ -58,7 +62,7 @@ export const Footer: FC<Props> = ({ ctaType, cta, enrollPath = '/', className })
           ? (
             <div className="row align-items-center">
               <div className="col-12 col-lg-9 col-xl-8 mb-4 mb-lg-0 text-center text-lg-start">
-                <h2>Ready to Launch Your <strong>{ctaType === 'grooming' ? <><br />Grooming </> : ctaType === 'training' ? <><br />Training </> : ctaType === 'care' ? <>Dog Care </> : null}Career?</strong></h2>
+                <h2>{ctaText}</h2>
                 <p className="lead mb-0">Take the first step towards a new career in the booming {ctaType === 'grooming' ? 'dog grooming ' : ctaType === 'training' ? 'dog training ' : ctaType === 'behavior' ? 'behavior' : ctaType === 'care' ? ' dog care' : 'pet'} industry.</p>
               </div>
               <div className="col-12 col-lg-3 text-center text-lg-end text-xl-center">
@@ -106,7 +110,7 @@ export const Footer: FC<Props> = ({ ctaType, cta, enrollPath = '/', className })
                     width={16}
                     height={16}
                     alt="About"
-                    style={{ maxWidth: '100%', height: 'auto' }}
+                    style={{ maxWidth: '100%', height: 'auto', position: 'relative', top: -4 }}
                   /></div>}About QC
                 </Link>
               </li>
@@ -117,7 +121,7 @@ export const Footer: FC<Props> = ({ ctaType, cta, enrollPath = '/', className })
                     width={16}
                     height={16}
                     alt="Email"
-                    style={{ maxWidth: '100%', height: 'auto' }}
+                    style={{ maxWidth: '100%', height: 'auto', position: 'relative', top: -4 }}
                   /></div>}Email Us
                 </a>
               </li>
@@ -128,7 +132,7 @@ export const Footer: FC<Props> = ({ ctaType, cta, enrollPath = '/', className })
                     width={16}
                     height={16}
                     alt="Chat"
-                    style={{ maxWidth: '100%', height: 'auto' }}
+                    style={{ maxWidth: '100%', height: 'auto', position: 'relative', top: -4 }}
                   /></div>}Chat
                 </a>
               </li>
@@ -139,7 +143,7 @@ export const Footer: FC<Props> = ({ ctaType, cta, enrollPath = '/', className })
                     width={16}
                     height={16}
                     alt="Phone"
-                    style={{ maxWidth: '100%', height: 'auto' }}
+                    style={{ maxWidth: '100%', height: 'auto', position: 'relative', top: -4 }}
                   /></div>}{phoneNumber}
                 </a>
               </li>
@@ -225,3 +229,10 @@ const BBBGuarantee: FC = () => (
     </div>
   </div>
 );
+
+const getCTAText = (ctaType?: FooterCTAType): ReactElement => {
+  if (ctaType === 'grooming tech') {
+    return <>Ready to Launch Your Career as a <strong>Grooming Technician?</strong></>;
+  }
+  return <>Ready to Launch Your <strong>{ctaType === 'grooming' ? <><br />Grooming </> : ctaType === 'training' ? <><br />Training </> : ctaType === 'care' ? <>Dog Care </> : null}Career?</strong></>;
+};

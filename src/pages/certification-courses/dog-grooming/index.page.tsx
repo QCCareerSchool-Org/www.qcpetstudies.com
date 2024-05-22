@@ -174,7 +174,7 @@ const DogGroomingPage: NextPageWithLayout<Props> = ({ price }) => {
       </div>
     </section>
 
-    <PriceSection courses={courseCodes} price={price} doubleGuarantee={true} />
+    <PriceSection courses={courseCodes} price={price} doubleGuarantee />
 
     <section>
       <div className="container text-center">
@@ -235,8 +235,7 @@ const DogGroomingPage: NextPageWithLayout<Props> = ({ price }) => {
           </div>
         </div>
         <Accordion>
-          <AccordionItem heading="Introductory Units">
-            <h4>Introduction to Professional Grooming</h4>
+          <AccordionItem heading="Introduction to Professional Grooming">
             <p>The first units in this course will introduce you to the fundamental concepts of dog grooming. In these units, you'll cover health and safety, basic dog anatomy, skincare, behavior, the tools of the trade and more.</p>
             <p>While you complete these units we recommended that you start considering your grooming workspace so that you are prepared for the practical assignments later in the course. Unit C will be particularly helpful in selecting appropriate tools, equipment and products.</p>
             <p>It is also recommended that you start seeking out dog owners who are willing to let you use their dogs in practical assignments later in the course.</p>
@@ -264,7 +263,7 @@ const DogGroomingPage: NextPageWithLayout<Props> = ({ price }) => {
       </div>
     </section>
 
-    <GuaranteeSection className="bg-light" double={true} />
+    <GuaranteeSection className="bg-light" double />
 
     <DGTutorSection />
 

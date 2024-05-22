@@ -7,7 +7,7 @@ import Guarantee21Days from '../images/21-day-guarantee-outlined.svg';
 
 type Props = {
   show: boolean;
-  doubleGuarantee: boolean;
+  doubleGuarantee?: boolean;
   toggle: () => void;
 };
 

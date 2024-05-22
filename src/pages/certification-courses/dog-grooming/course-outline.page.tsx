@@ -45,7 +45,7 @@ const DogGroomingCourseOutlinePage: NextPageWithLayout = () => (
           <div className="col-12 col-lg-10">
             <FaBars size={iconSize} className="mb-2" />
             <h1 className="fw-normal">Dog Grooming<br /><strong>Course Outline</strong></h1>
-            <p className="lead mb-0">Here's a detailed outline of the entire online dog grooming course offered by QC Pet Studies, including the length of each unit and the materials/dogs required to complete your grooming assignments.</p>
+            <p className="lead mb-0">Here's a detailed outline of the entire online Dog Grooming course offered by QC Pet Studies, including the length of each unit and the materials/dogs required to complete your grooming assignments.</p>
           </div>
         </div>
       </div>

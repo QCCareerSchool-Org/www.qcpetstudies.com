@@ -1,5 +1,6 @@
 import { GetServerSideProps } from 'next';
 import Image, { StaticImageData } from 'next/image';
+import Link from 'next/link';
 import { ReactElement } from 'react';
 import { BsBook } from 'react-icons/bs';
 import { FaBars, FaPlay } from 'react-icons/fa';
@@ -368,6 +369,19 @@ const GroomingCoursePreviewPage: NextPageWithLayout<Props> = ({ price, enrollPat
     <PriceSectionWithDiscount courses={courseCodes} price={price} doubleGuarantee={true} enrollPath={enrollPath} />
 
     <DGTutorSection className="bg-light" />
+
+    <section>
+      <div className="container">
+        <div className="row justify-content-center">
+          <div className="col-12 col-lg-10 col-xl-8 text-center">
+            <h2>New: <strong>Grooming Technician Course</strong></h2>
+            <p>Would you like to start out with the basics? The Grooming Technician course offers training in preparing dogs for clipper and scissor work. Discover how to expertly trim nails, brush, bathe, and efficiently dry dogs.</p>
+            <p>Once you graduate you&apos;ll have the option to upskill your training with QC and get certified as a Professional Dog Groomer.</p>
+            <Link href="/certification-courses/grooming-technician" className="btn btn-primary btn-lg">Learn More</Link>
+          </div>
+        </div>
+      </div>
+    </section>
   </>;
 };
 
