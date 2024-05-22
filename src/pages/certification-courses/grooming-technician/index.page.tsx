@@ -125,7 +125,7 @@ const GroomingTechnicianPage: NextPageWithLayout<Props> = ({ location, gtPrice, 
           <div className="row justify-content-center">
             <div className="col-12 col-lg-10 mb-4">
               <h2 className="mb-2 mb-md-4">Included in <strong>Your Course</strong></h2>
-              <div style={{ marginBottom: '-2rem' }}>
+              <div style={{ marginBottom: '-3rem' }}>
                 <Image
                   src={BeginnerKit}
                   alt="professional dog-grooming kit"
@@ -188,7 +188,7 @@ const GroomingTechnicianPage: NextPageWithLayout<Props> = ({ location, gtPrice, 
   );
 };
 
-GroomingTechnicianPage.getLayout = page => <DefaultLayout footerCTAType="grooming">{page}</DefaultLayout>;
+GroomingTechnicianPage.getLayout = page => <DefaultLayout footerCTAType="grooming tech">{page}</DefaultLayout>;
 
 export const getServerSideProps: GetServerSideProps<Props> = async context => {
   const location = await getLocation(context);
