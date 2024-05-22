@@ -263,7 +263,7 @@ const DogGroomingPage: NextPageWithLayout<Props> = ({ price }) => {
       </div>
     </section>
 
-    <GuaranteeSection className="bg-light" double={true} />
+    <GuaranteeSection className="bg-light" double />
 
     <DGTutorSection />
 

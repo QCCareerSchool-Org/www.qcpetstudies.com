@@ -4,6 +4,8 @@ import Image, { StaticImageData } from 'next/image';
 import { Modal } from 'react-bootstrap';
 import { BsCardChecklist, BsPeopleFill, BsScissors } from 'react-icons/bs';
 import { IoMdInfinite } from 'react-icons/io';
+import { DGTutorSection } from '../../../components/DGTutorSection';
+import { GuaranteeSection } from '../../../components/GuaranteeSection';
 import { DefaultLayout } from '../../../components/layouts/DefaultLayout';
 import { PriceSection } from '../../../components/PriceSection';
 import { SectionBackground } from '../../../components/SectionBackground';
@@ -180,6 +182,10 @@ const GroomingTechnicianPage: NextPageWithLayout<Props> = ({ location, gtPrice, 
       </section>
 
       <GroomingTechOutlineSection dgPrice={dgPrice} gtPrice={gtPrice} />
+
+      <GuaranteeSection className="bg-light" double />
+
+      <DGTutorSection />
 
       <style jsx>{`
       .courseContentIcon { color: #ccc; margin-bottom: 0.5rem; }
