@@ -1,6 +1,7 @@
 import { GetServerSideProps } from 'next';
 
-import { DefaultLayout } from '../../../components/layouts/DefaultLayout';
+import { DeadlineFunnelScript } from '../../../components/DeadlineFunnelScript';
+import { LandingPageLayout } from '../../../components/layouts/LandingPageLayout';
 import { getLocation } from '../../../lib/getLocation';
 import { lookupPrices } from '../../../lib/lookupPrices';
 import { Location } from '../../../models/location';
@@ -16,9 +17,14 @@ type Props = {
   dgPrice: PriceResult;
 };
 
-const GroomingTechnicianPage: NextPageWithLayout<Props> = ({ gtPrice, dgPrice, location }) => <GroomingTechnicianBase gtPrice={gtPrice} dgPrice={dgPrice} location={location} />;
+const GroomingTechnicianPageAlt1: NextPageWithLayout<Props> = ({ gtPrice, dgPrice, location }) => (
+  <>
+    <DeadlineFunnelScript />
+    <GroomingTechnicianBase gtPrice={gtPrice} dgPrice={dgPrice} location={location} />;
+  </>
+);
 
-GroomingTechnicianPage.getLayout = page => <DefaultLayout footerCTAType="grooming tech">{page}</DefaultLayout>;
+GroomingTechnicianPageAlt1.getLayout = page => <LandingPageLayout link={false}>{page}</LandingPageLayout>;
 
 export const getServerSideProps: GetServerSideProps<Props> = async context => {
   const location = await getLocation(context);
@@ -29,4 +35,4 @@ export const getServerSideProps: GetServerSideProps<Props> = async context => {
   return { props: { location, gtPrice, dgPrice } };
 };
 
-export default GroomingTechnicianPage;
+export default GroomingTechnicianPageAlt1;
