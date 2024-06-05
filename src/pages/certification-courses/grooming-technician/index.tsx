@@ -26,13 +26,14 @@ const courseCodes = [ 'gt' ];
 const headerIconSize = 20;
 const iconSize = 36;
 
-type Props = {
+export type Props = {
   location: Location;
   gtPrice: PriceResult;
   dgPrice: PriceResult;
+  enrollPath?: string;
 };
 
-export const GroomingTechnicianBase: FC<Props> = ({ gtPrice, dgPrice }) => {
+export const GroomingTechnicianBase: FC<Props> = ({ gtPrice, dgPrice, enrollPath = '/' }) => {
   const screenWidth = useScreenWidth();
   const [ kitPopupVisible, kitPopupToggle ] = useToggle();
 
@@ -65,7 +66,7 @@ export const GroomingTechnicianBase: FC<Props> = ({ gtPrice, dgPrice }) => {
             <h1>Grooming Technician Course</h1>
             {gtPrice && gtPrice.plans.part.deposit > 0 && <h4>Get Started for Only <strong>{gtPrice.currency.symbol}{formatPrice(gtPrice.plans.part.deposit)}</strong></h4>}
             <p><em><a href="#tuition" className="text-white">See tuition details</a></em></p>
-            <a href="https://enroll.qcpetstudies.com?c=gt"><button className="btn btn-secondary btn-lg">Enroll Online</button></a>
+            <a href={`https://enroll.qcpetstudies.com${enrollPath}?c=gt`}><button className="btn btn-secondary btn-lg">Enroll Online</button></a>
           </div>
           <div className="row justify-content-center">
             <div className="col-12 col-md-6 d-flex">
@@ -116,7 +117,7 @@ export const GroomingTechnicianBase: FC<Props> = ({ gtPrice, dgPrice }) => {
         </div>
       </section>
 
-      <PriceSection courses={courseCodes} price={gtPrice} />
+      <PriceSection courses={courseCodes} price={gtPrice} enrollPath={enrollPath} />
 
       <section>
         <div className="container text-center">

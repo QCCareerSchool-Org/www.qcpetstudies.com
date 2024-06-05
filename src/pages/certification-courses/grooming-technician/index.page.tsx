@@ -3,20 +3,13 @@ import { GetServerSideProps } from 'next';
 import { DefaultLayout } from '../../../components/layouts/DefaultLayout';
 import { getLocation } from '../../../lib/getLocation';
 import { lookupPrices } from '../../../lib/lookupPrices';
-import { Location } from '../../../models/location';
-import { PriceResult } from '../../../models/price';
 import { NextPageWithLayout } from '../../_app.page';
 import { GroomingTechnicianBase } from '.';
+import type { Props } from '.';
 
 const courseCodes = [ 'gt' ];
 
-type Props = {
-  location: Location;
-  gtPrice: PriceResult;
-  dgPrice: PriceResult;
-};
-
-const GroomingTechnicianPage: NextPageWithLayout<Props> = ({ gtPrice, dgPrice, location }) => <GroomingTechnicianBase gtPrice={gtPrice} dgPrice={dgPrice} location={location} />;
+const GroomingTechnicianPage: NextPageWithLayout<Props> = props => <GroomingTechnicianBase {...props} />;
 
 GroomingTechnicianPage.getLayout = page => <DefaultLayout footerCTAType="grooming tech">{page}</DefaultLayout>;
 
