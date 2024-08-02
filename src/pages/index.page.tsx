@@ -29,8 +29,8 @@ const HomePage: NextPageWithLayout = () => {
   const screenWidth = useScreenWidth();
 
   const lg = screenWidth >= 992;
-  const md = screenWidth >= 768;
-  const sm = screenWidth >= 576;
+  // const md = screenWidth >= 768;
+  // const sm = screenWidth >= 576;
 
   return <>
     <SEO

@@ -29,7 +29,7 @@ import { gaEvent } from '../../../lib/ga';
 import { getLocation } from '../../../lib/getLocation';
 import { lookupPrices } from '../../../lib/lookupPrices';
 import type { Location } from '../../../models/location';
-import type { PriceResult } from '../../../models/price';
+import type { Price } from '../../../models/price';
 import type { NextPageWithLayout } from '../../_app.page';
 import { TestimonialsSection } from './TestimonialsSection';
 
@@ -40,7 +40,7 @@ const courseCodes = [ 'dg' ];
 
 type Props = {
   location: Location;
-  price: PriceResult;
+  price: Price;
 };
 
 const eventLabel = 'DG Teaser 2023';

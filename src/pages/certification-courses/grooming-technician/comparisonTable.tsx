@@ -2,15 +2,15 @@ import { FC } from 'react';
 
 import { Check } from '../../../components/Check';
 import { formatPrice } from '../../../lib/formatPrice';
-import { PriceResult } from '../../../models/price';
+import { Price } from '../../../models/price';
 import styles from './comparisonTable.module.scss';
 
 const dgColor = '#ff0074';
 const gtColor = '#061F3A';
 
 type Props = {
-  gtPrice: PriceResult;
-  dgPrice: PriceResult;
+  gtPrice: Price;
+  dgPrice: Price;
 };
 
 export const ComparisonTable: FC<Props> = ({ gtPrice, dgPrice }) => (

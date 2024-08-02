@@ -75,48 +75,31 @@ const trustPulseScript = `
   (a=d.getElementsByTagName(s)[0]).parentNode.insertBefore(r,a)
 }(window,document,'script',10509);`;
 
-const brevoScript = `
-(function() {
-  window.sib = {
-    equeue: [],
-    client_key: "wik5t1al63ykgvgi0qflcqee"
-  };
-  /* OPTIONAL: email for identify request*/
-  // window.sib.email_id = 'example@domain.com';
-  window.sendinblue = {};
-  for (var j = ['track', 'identify', 'trackLink', 'page'], i = 0; i < j.length; i++) {
-    (function(k) {
-      window.sendinblue[k] = function() {
-        var arg = Array.prototype.slice.call(arguments);
-        (window.sib[k] || function() {
-          var t = {};
-          t[k] = arg;
-          window.sib.equeue.push(t);
-        })(arg[0], arg[1], arg[2], arg[3]);
-      };
-    })(j[i]);
-  }
-  var n = document.createElement("script"),
-    i = document.getElementsByTagName("script")[0];
-  n.type = "text/javascript", n.id = "sendinblue-js", n.async = !0, n.src = "https://sibautomation.com/sa.js?key=" + window.sib.client_key, i.parentNode.insertBefore(n, i), window.sendinblue.page();
-})();`;
-
-const getActiveCampaignScript = (accountId: string): string => `
-(function (e,t,o,n,p,r,i) {
-  e.visitorGlobalObjectAlias = n;
-  e[e.visitorGlobalObjectAlias] = e[e.visitorGlobalObjectAlias] || function() {
-    (e[e.visitorGlobalObjectAlias].q = e[e.visitorGlobalObjectAlias].q || []).push(arguments);
-  };
-  e[e.visitorGlobalObjectAlias].l = (new Date).getTime();
-  r = t.createElement("script");
-  r.src = o;
-  r.async = true;
-  i = t.getElementsByTagName('script')[0];
-  i.parentNode.insertBefore(r, i);
-})(window, document, 'https://diffuser-cdn.app-us1.com/diffuser/diffuser.js', 'vgo');
-vgo('setAccount', ${accountId});
-vgo('setTrackByDefault', true);
-vgo('process');`;
+// const brevoScript = `
+// (function() {
+//   window.sib = {
+//     equeue: [],
+//     client_key: "wik5t1al63ykgvgi0qflcqee"
+//   };
+//   /* OPTIONAL: email for identify request*/
+//   // window.sib.email_id = 'example@domain.com';
+//   window.sendinblue = {};
+//   for (var j = ['track', 'identify', 'trackLink', 'page'], i = 0; i < j.length; i++) {
+//     (function(k) {
+//       window.sendinblue[k] = function() {
+//         var arg = Array.prototype.slice.call(arguments);
+//         (window.sib[k] || function() {
+//           var t = {};
+//           t[k] = arg;
+//           window.sib.equeue.push(t);
+//         })(arg[0], arg[1], arg[2], arg[3]);
+//       };
+//     })(j[i]);
+//   }
+//   var n = document.createElement("script"),
+//     i = document.getElementsByTagName("script")[0];
+//   n.type = "text/javascript", n.id = "sendinblue-js", n.async = !0, n.src = "https://sibautomation.com/sa.js?key=" + window.sib.client_key, i.parentNode.insertBefore(n, i), window.sendinblue.page();
+// })();`;
 
 class MyDocument extends Document {
   public static async getInitialProps(ctx: DocumentContext): Promise<DocumentInitialProps> {

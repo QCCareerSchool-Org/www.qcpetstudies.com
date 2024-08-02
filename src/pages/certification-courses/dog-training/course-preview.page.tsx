@@ -16,7 +16,7 @@ import IDTPCertificationLogo from '../../../images/IDTP-certification-gold.svg';
 import { getLocation } from '../../../lib/getLocation';
 import { lookupPrices } from '../../../lib/lookupPrices';
 import { Location } from '../../../models/location';
-import { PriceResult } from '../../../models/price';
+import { Price } from '../../../models/price';
 import type { NextPageWithLayout } from '../../_app.page';
 import KimCooperImage from './kim-cooper.jpg';
 
@@ -24,7 +24,7 @@ export const courseCodes = [ 'dt' ];
 
 export type Props = {
   location: Location;
-  price: PriceResult;
+  price: Price;
   enrollPath: string;
 };
 

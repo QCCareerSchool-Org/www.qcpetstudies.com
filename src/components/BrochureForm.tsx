@@ -136,7 +136,7 @@ export const BrochureForm: FC<Props> = props => {
 
     dispatch({ type: 'FORM_SUBMITTED' });
 
-    Promise.resolve().then(async () => {
+    void Promise.resolve().then(async () => {
       submitting.current = true;
 
       const testGroup = getHiddenField('testGroup', hiddenFields);

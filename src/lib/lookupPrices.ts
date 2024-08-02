@@ -1,13 +1,13 @@
 import qs from 'qs';
 
-import { PriceResult } from '../models/price';
+import { Price } from '../models/price';
 
 type PriceOptions = {
   promoCode?: string;
   school?: string;
 };
 
-export const lookupPrices = async (courses: string[], countryCode: string, provinceCode: string | null, options?: PriceOptions): Promise<PriceResult> => {
+export const lookupPrices = async (courses: string[], countryCode: string, provinceCode: string | null, options?: PriceOptions): Promise<Price> => {
   const o = options ? { ...options, school: 'QC Pet Studies' } : { school: 'QC Pet Studies' };
   const url = 'https://api.qccareerschool.com/prices?' + qs.stringify({ courses, countryCode, provinceCode: provinceCode ?? undefined, options: o });
 
@@ -17,5 +17,5 @@ export const lookupPrices = async (courses: string[], countryCode: string, provi
   if (!response.ok) {
     throw Error('Unable to fetch prices');
   }
-  return response.json() as Promise<PriceResult>;
+  return response.json() as Promise<Price>;
 };

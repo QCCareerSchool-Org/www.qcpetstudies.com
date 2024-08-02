@@ -30,7 +30,7 @@ import { gaEvent } from '../../../lib/ga';
 import { getLocation } from '../../../lib/getLocation';
 import { lookupPrices } from '../../../lib/lookupPrices';
 import type { Location } from '../../../models/location';
-import type { PriceResult } from '../../../models/price';
+import type { Price } from '../../../models/price';
 import type { NextPageWithLayout } from '../../_app.page';
 import KimCooperImage from './kim-cooper.jpg';
 
@@ -41,7 +41,7 @@ const courseCodes = [ 'dt' ];
 
 type Props = {
   location: Location;
-  price: PriceResult;
+  price: Price;
 };
 
 const DogTrainingPage: NextPageWithLayout<Props> = ({ price }) => {
