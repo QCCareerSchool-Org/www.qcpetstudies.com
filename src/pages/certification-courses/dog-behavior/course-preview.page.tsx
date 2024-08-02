@@ -12,14 +12,14 @@ import IDGPCertificationLogo from '../../../images/IDGP-certification-gold.svg';
 import { getLocation } from '../../../lib/getLocation';
 import { lookupPrices } from '../../../lib/lookupPrices';
 import { Location } from '../../../models/location';
-import { PriceResult } from '../../../models/price';
+import { Price } from '../../../models/price';
 import type { NextPageWithLayout } from '../../_app.page';
 
 export const courseCodes = [ 'dc' ];
 
 export type Props = {
   location: Location;
-  price: PriceResult;
+  price: Price;
   enrollPath: string;
 };
 

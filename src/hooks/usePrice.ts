@@ -1,10 +1,10 @@
 import { useEffect, useState } from 'react';
 import { lookupPrices } from '../lib/lookupPrices';
 
-import type { PriceResult } from '../models/price';
+import type { Price } from '../models/price';
 
-export const usePrice = (courses: string[], countryCode?: string, provinceCode?: string | null): PriceResult | undefined => {
-  const [ state, dispatch ] = useState<PriceResult>();
+export const usePrice = (courses: string[], countryCode?: string, provinceCode?: string | null): Price | undefined => {
+  const [ state, dispatch ] = useState<Price>();
 
   useEffect(() => {
     if (countryCode === undefined || provinceCode === undefined) {

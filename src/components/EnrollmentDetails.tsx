@@ -101,7 +101,7 @@ export const EnrollmentDetails = ({ enrollment }: Props): ReactElement => {
                 </tr>
                 <tr>
                   <td>Time</td>
-                  <td>{enrollment.transactionTime}</td>
+                  <td>{enrollment.transactionTime !== null ? formatDate(enrollment.transactionTime) : ''}</td>
                 </tr>
                 <tr>
                   <td>Auth Code</td>

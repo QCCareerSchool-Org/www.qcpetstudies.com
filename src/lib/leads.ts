@@ -21,10 +21,10 @@ export type LeadPayload = {
   courses?: string[];
 };
 
-export const addLead = async (payload: LeadPayload): Promise<void> => {
+export const addLead = async (payload: LeadPayload): Promise<AddLeadResponse> => {
   const url = 'https://leads.qccareerschool.com/';
 
-  if (payload.marketing && !(payload.marketing.source || payload.marketing.medium || payload.marketing.campaign || payload.marketing.content || payload.marketing.term)) {
+  if (payload.marketing && !(payload.marketing.source ?? payload.marketing.medium ?? payload.marketing.campaign ?? payload.marketing.content ?? payload.marketing.term)) {
     // no marketing parameters were supplied
     payload.marketing = undefined;
   }
@@ -42,5 +42,17 @@ export const addLead = async (payload: LeadPayload): Promise<void> => {
   if (!response.ok) {
     throw Error(response.statusText);
   }
-  await response.text();
+
+  const responseBody: unknown = await response.json();
+  if (!isAddLeadResponse(responseBody)) {
+    throw Error('Invalid response');
+  }
+
+  return responseBody;
+};
+
+type AddLeadResponse = { leadId: string };
+
+const isAddLeadResponse = (obj: unknown): obj is AddLeadResponse => {
+  return obj !== null && typeof obj === 'object' && 'leadId' in obj && typeof obj.leadId === 'string';
 };

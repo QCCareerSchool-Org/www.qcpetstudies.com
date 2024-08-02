@@ -16,7 +16,7 @@ import OutlineIcon from '../../../images/course-overview-icons/outline.svg';
 import TutorIcon from '../../../images/course-overview-icons/tutor.svg';
 import { formatPrice } from '../../../lib/formatPrice';
 import { Location } from '../../../models/location';
-import { PriceResult } from '../../../models/price';
+import { Price } from '../../../models/price';
 import BeginnerKit from './beginner-tool-kit.jpg';
 import CertificationGoldImage from './cgt-light-gold.svg';
 import GroomingTechnicianBackground from './hero.jpg';
@@ -28,8 +28,8 @@ const iconSize = 36;
 
 export type Props = {
   location: Location;
-  gtPrice: PriceResult;
-  dgPrice: PriceResult;
+  gtPrice: Price;
+  dgPrice: Price;
   enrollPath?: string;
 };
 

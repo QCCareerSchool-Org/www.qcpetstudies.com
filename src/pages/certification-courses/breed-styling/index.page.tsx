@@ -20,14 +20,14 @@ import OutlinePart3 from '../../../images/ds-outlline-part-3-grooming.jpg';
 import { getLocation } from '../../../lib/getLocation';
 import { lookupPrices } from '../../../lib/lookupPrices';
 import type { Location } from '../../../models/location';
-import type { PriceResult } from '../../../models/price';
+import type { Price } from '../../../models/price';
 import type { NextPageWithLayout } from '../../_app.page';
 
 const courseCodes = [ 'ds' ];
 
 type Props = {
   location: Location;
-  price: PriceResult;
+  price: Price;
 };
 
 const BreedStylingPage: NextPageWithLayout<Props> = ({ price }) => {

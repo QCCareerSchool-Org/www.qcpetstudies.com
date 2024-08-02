@@ -14,14 +14,14 @@ import DogGroomingKit from '../../images/dog-grooming-kit-white.jpg';
 import { getLocation } from '../../lib/getLocation';
 import { lookupPrices } from '../../lib/lookupPrices';
 import type { Location } from '../../models/location';
-import type { PriceResult } from '../../models/price';
+import type { Price } from '../../models/price';
 import type { NextPageWithLayout } from '../_app.page';
 
 const courseCodes = [ 'dg' ];
 
 type Props = {
   location: Location;
-  price: PriceResult;
+  price: Price;
 };
 
 const SuccessGuaranteedPage: NextPageWithLayout<Props> = ({ price }) => (

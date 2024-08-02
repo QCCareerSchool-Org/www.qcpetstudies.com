@@ -4,7 +4,7 @@ import { FaClock, FaLock, FaStar } from 'react-icons/fa';
 
 import { useToggle } from '../hooks/useToggle';
 import { formatPrice } from '../lib/formatPrice';
-import { PriceResult } from '../models/price';
+import { Price } from '../models/price';
 import { Bar } from './Bar';
 import { CAPriceMessage } from './CAPriceMessage';
 import { GuaranteeModal } from './GuaranteeModal';
@@ -16,7 +16,7 @@ type Variant = 'dark' | 'light';
 type Props = {
   /** the cousre(s) to base the shopping cart link on */
   courses: string[];
-  price: PriceResult;
+  price: Price;
   doubleGuarantee?: boolean;
   variant?: Variant;
   id?: string;

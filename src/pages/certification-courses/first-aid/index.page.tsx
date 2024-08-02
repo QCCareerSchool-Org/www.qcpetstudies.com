@@ -13,14 +13,14 @@ import firstAidLogo from '../../../images/first-aid-logo.svg';
 import { getLocation } from '../../../lib/getLocation';
 import { lookupPrices } from '../../../lib/lookupPrices';
 import type { Location } from '../../../models/location';
-import type { PriceResult } from '../../../models/price';
+import type { Price } from '../../../models/price';
 import type { NextPageWithLayout } from '../../_app.page';
 
 const courseCodes = [ 'fa' ];
 
 type Props = {
   location: Location;
-  price: PriceResult;
+  price: Price;
 };
 
 const DogGroomingPage: NextPageWithLayout<Props> = ({ price }) => {

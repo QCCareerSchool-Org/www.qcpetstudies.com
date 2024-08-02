@@ -5,12 +5,12 @@ import { Modal } from 'react-bootstrap';
 import { Accordion } from '../../../components/accordion';
 import { AccordionItem } from '../../../components/accordion/AccordionItem';
 import { useToggle } from '../../../hooks/useToggle';
-import { PriceResult } from '../../../models/price';
+import { Price } from '../../../models/price';
 import { ComparisonTable } from './comparisonTable';
 
 type Props = {
-  dgPrice: PriceResult;
-  gtPrice: PriceResult;
+  dgPrice: Price;
+  gtPrice: Price;
 };
 
 export const GroomingTechOutlineSection: FC<Props> = ({ dgPrice, gtPrice }) => {

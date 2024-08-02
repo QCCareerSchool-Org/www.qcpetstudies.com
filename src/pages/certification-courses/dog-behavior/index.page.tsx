@@ -21,7 +21,7 @@ import { formatPrice } from '../../../lib/formatPrice';
 import { getLocation } from '../../../lib/getLocation';
 import { lookupPrices } from '../../../lib/lookupPrices';
 import type { Location } from '../../../models/location';
-import type { PriceResult } from '../../../models/price';
+import type { Price } from '../../../models/price';
 import type { NextPageWithLayout } from '../../_app.page';
 import DCBackgroundImage from './hero.jpg';
 
@@ -33,7 +33,7 @@ const linkCourseCodes = [ 'dt', 'dc' ];
 
 type Props = {
   location: Location;
-  price: PriceResult;
+  price: Price;
 };
 
 const DogBehaviorPage: NextPageWithLayout<Props> = ({ price }) => {
