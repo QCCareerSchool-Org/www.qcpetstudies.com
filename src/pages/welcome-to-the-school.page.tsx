@@ -2,7 +2,7 @@ import * as HttpStatus from '@qccareerschool/http-status';
 import { GetServerSideProps, NextPage } from 'next';
 import ErrorPage from 'next/error';
 import Image from 'next/image';
-import { useEffect, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 
 import { EnrollmentDetails } from '../components/EnrollmentDetails';
 import { SEO } from '../components/SEO';
@@ -33,13 +33,16 @@ const WelcomeToTheSchoolPage: NextPage<Props> = ({ data, errorCode }) => {
   const location = useLocation();
   const telephoneNumber = getTelephoneNumber(location?.countryCode ?? 'US');
 
-  const enrollment = typeof data?.rawEnrollment === 'undefined'
-    ? undefined
-    : {
+  const enrollment: Enrollment | undefined = useMemo(() => {
+    if (typeof data?.rawEnrollment === 'undefined') {
+      return;
+    }
+    return {
       ...data.rawEnrollment,
       paymentDate: new Date(data.rawEnrollment.paymentDate),
       transactionTime: data.rawEnrollment.transactionTime === null ? null : new Date(data.rawEnrollment.transactionTime),
     };
+  }, [ data?.rawEnrollment ]);
 
   useEffect(() => {
     // eslint-disable-next-line no-useless-concat
@@ -59,7 +62,7 @@ const WelcomeToTheSchoolPage: NextPage<Props> = ({ data, errorCode }) => {
       setStudent(enrollment.id, data.code).catch(console.error);
       trustPulseEnrollment(enrollment, data.ipAddress).catch(console.error);
     }
-  }, [ data ]);
+  }, [ data, enrollment ]);
 
   if (typeof errorCode !== 'undefined') {
     return <ErrorPage statusCode={errorCode} />;

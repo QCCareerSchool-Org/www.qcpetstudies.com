@@ -2,7 +2,7 @@ import * as HttpStatus from '@qccareerschool/http-status';
 import { GetServerSideProps, NextPage } from 'next';
 import ErrorPage from 'next/error';
 import Image from 'next/image';
-import { useEffect, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 
 import { EnrollmentDetails } from '../components/EnrollmentDetails';
 import { SEO } from '../components/SEO';
@@ -16,11 +16,11 @@ import { getEnrollment } from '../lib/getEnrollment';
 import { getTelephoneNumber } from '../lib/phone';
 import { sendEnrollmentEmail } from '../lib/sendEnrollmentEmail';
 import { setStudent } from '../lib/setStudent';
-import { Enrollment } from '../models/enrollment';
+import { Enrollment, RawEnrollment } from '../models/enrollment';
 
 type Props = {
   data?: {
-    enrollment: Enrollment;
+    rawEnrollment: RawEnrollment;
     code: string;
     ipAddress: string | null;
   };
@@ -32,27 +32,38 @@ const InternalWelcomePage: NextPage<Props> = ({ data, errorCode }) => {
   const location = useLocation();
   const telephoneNumber = getTelephoneNumber(location?.countryCode ?? 'US');
 
+  const enrollment: Enrollment | undefined = useMemo(() => {
+    if (typeof data?.rawEnrollment === 'undefined') {
+      return;
+    }
+    return {
+      ...data.rawEnrollment,
+      paymentDate: new Date(data.rawEnrollment.paymentDate),
+      transactionTime: data.rawEnrollment.transactionTime === null ? null : new Date(data.rawEnrollment.transactionTime),
+    };
+  }, [ data?.rawEnrollment ]);
+
   useEffect(() => {
     // eslint-disable-next-line no-useless-concat
     setEmailAddress('info' + '@' + 'qcpetstudies.com');
   }, []);
 
   useEffect(() => {
-    if (typeof data === 'undefined') {
+    if (typeof data === 'undefined' || typeof enrollment === 'undefined') {
       return;
     }
-    if (!data.enrollment.emailed) {
-      addToActiveCampaign(data.enrollment).catch(() => { /* */ });
-      gaSale(data.enrollment);
-      fbqSale(data.enrollment);
-      sendEnrollmentEmail(data.enrollment.id, data.code).catch((err: unknown) => {
+    if (!enrollment.emailed) {
+      addToActiveCampaign(enrollment).catch(() => { /* */ });
+      gaSale(enrollment);
+      fbqSale(enrollment);
+      sendEnrollmentEmail(enrollment.id, data.code).catch((err: unknown) => {
         console.error(err);
       });
-      setStudent(data.enrollment.id, data.code).catch((err: unknown) => {
+      setStudent(enrollment.id, data.code).catch((err: unknown) => {
         console.error(err);
       });
     }
-  }, [ data ]);
+  }, [ data, enrollment ]);
 
   if (typeof errorCode !== 'undefined') {
     return <ErrorPage statusCode={errorCode} />;
@@ -109,7 +120,7 @@ const InternalWelcomePage: NextPage<Props> = ({ data, errorCode }) => {
       </div>
     </section>
 
-    <EnrollmentDetails enrollment={data.enrollment} />
+    {enrollment && <EnrollmentDetails enrollment={enrollment} />}
   </>;
 };
 
@@ -122,15 +133,15 @@ export const getServerSideProps: GetServerSideProps<Props> = async ({ req, res, 
     const enrollmentId = parseInt(query.enrollmentId, 10);
     const code = query.code;
 
-    const enrollment = await getEnrollment(enrollmentId, code);
+    const rawEnrollment = await getEnrollment(enrollmentId, code);
 
-    if (!enrollment.complete || !enrollment.success) {
+    if (!rawEnrollment.complete || !rawEnrollment.success) {
       throw new HttpStatus.NotFound();
     }
 
     const ipAddress = Array.isArray(req.headers['x-real-ip']) ? req.headers['x-real-ip']?.[0] : req.headers['x-real-ip'];
 
-    return { props: { data: { enrollment, code, ipAddress: ipAddress ?? null } } };
+    return { props: { data: { rawEnrollment, code, ipAddress: ipAddress ?? null } } };
   } catch (err) {
     const internalServerError = 500;
     const errorCode = err instanceof HttpStatus.HttpResponse ? err.statusCode : internalServerError;
