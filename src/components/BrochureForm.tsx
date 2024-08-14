@@ -2,6 +2,7 @@ import { ChangeEvent, ChangeEventHandler, FC, FormEventHandler, useReducer, useR
 
 import { useLocation } from '../hooks/useLocation';
 import { addLead } from '../lib/leads';
+import { isSchool } from '../models/school';
 import { Spinner } from './Spinner';
 
 export type CourseCode = 'dg' | 'dt';
@@ -134,28 +135,28 @@ export const BrochureForm: FC<Props> = props => {
     const firstNameInput = firstNameRef.current;
     const lastNameInput = lastNameRef.current;
 
+    if (!isSchool(schoolInput)) {
+      return;
+    }
+
     dispatch({ type: 'FORM_SUBMITTED' });
 
     void Promise.resolve().then(async () => {
       submitting.current = true;
 
-      const testGroup = getHiddenField('testGroup', hiddenFields);
       const gclid = getHiddenField('gclid', hiddenFields);
       const msclkid = getHiddenField('msclkid', hiddenFields);
 
       return addLead({
-        school: schoolInput.value,
+        school: schoolInput,
         emailAddress: emailAddressInput.value,
-        firstName: firstNameInput.value || null,
-        lastName: lastNameInput.value || null,
-        telephoneNumber: telephoneNumberRef.current?.value || null, // eslint-disable-line @typescript-eslint/prefer-nullish-coalescing
-        emailOptIn: emailOptInRef.current?.checked ?? null,
-        smsOptIn: smsOptInRef.current?.checked ?? null,
-        countryCode: location?.countryCode ?? null,
-        provinceCode: location?.provinceCode ?? null,
-        testGroup: typeof testGroup === 'string' ? parseInt(testGroup, 10) : testGroup,
-        gclid: typeof gclid === 'number' ? gclid.toString() : gclid,
-        msclkid: typeof msclkid === 'number' ? msclkid.toString() : msclkid,
+        firstName: firstNameInput.value || undefined,
+        lastName: lastNameInput.value || undefined,
+        telephoneNumber: telephoneNumberRef.current?.value || undefined, // eslint-disable-line @typescript-eslint/prefer-nullish-coalescing
+        emailOptIn: emailOptInRef.current?.checked ?? undefined,
+        smsOptIn: smsOptInRef.current?.checked ?? undefined,
+        gclid: typeof gclid === 'number' ? gclid.toString() : gclid ?? undefined,
+        msclkid: typeof msclkid === 'number' ? msclkid.toString() : msclkid ?? undefined,
         marketing: marketing ?? undefined,
         courses: courses,
       });

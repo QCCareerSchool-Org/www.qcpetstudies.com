@@ -1,16 +1,15 @@
+import { School } from '../models/school';
+
 export type LeadPayload = {
-  school: string;
+  school: School;
   emailAddress: string;
-  firstName: string | null;
-  lastName: string | null;
-  telephoneNumber: string | null;
-  emailOptIn: boolean | null;
-  smsOptIn: boolean | null;
-  countryCode: string | null;
-  provinceCode: string | null;
-  testGroup: number | null;
-  gclid: string | null;
-  msclkid: string | null;
+  firstName?: string;
+  lastName?: string;
+  telephoneNumber?: string;
+  emailOptIn?: boolean;
+  smsOptIn?: boolean;
+  gclid?: string;
+  msclkid?: string;
   marketing?: {
     source: string | null;
     medium: string | null;

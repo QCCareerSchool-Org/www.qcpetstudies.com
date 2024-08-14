@@ -1,4 +1,3 @@
-import * as brevo from '@getbrevo/brevo';
 import type { NextRequest } from 'next/server';
 import { z, ZodError } from 'zod';
 import { zfd } from 'zod-form-data';
@@ -71,20 +70,17 @@ export const POST = async (request: NextRequest): Promise<Response> => {
       : undefined;
     const payload: LeadPayload = {
       school: 'QC Pet Studies',
-      testGroup: 1,
       emailAddress: body.emailAddress,
-      telephoneNumber: null,
-      firstName: body.firstName ?? null,
-      lastName: body.lastName ?? null,
-      emailOptIn: body.emailOptIn ?? null,
-      smsOptIn: null,
-      countryCode: body.countryCode,
-      provinceCode: body.provinceCode ?? null,
-      gclid: body.gclid ?? null,
-      msclkid: body.msclkid ?? null,
+      firstName: body.firstName,
+      lastName: body.lastName,
+      gclid: body.gclid,
+      msclkid: body.msclkid,
       marketing,
       courses: body.courseCodes,
     };
+    if (body.emailOptIn) {
+      payload.emailOptIn = true;
+    }
     try {
       const response = await addLead(payload, { ipAddress: clientIpAddress, userAgent: clientUserAgent });
       params.set('leadId', response.leadId);

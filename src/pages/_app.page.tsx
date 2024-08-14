@@ -9,7 +9,7 @@ import { ErrorBoundary } from '../components/ErrorBoundary';
 import { ErrorPage } from '../components/ErrorPage';
 import { DefaultLayout } from '../components/layouts/DefaultLayout';
 import { resetActiveCampaign } from '../lib/activeCampaign';
-import { brevoPageView } from '../lib/brevo';
+import { brevoPageview } from '../lib/brevo';
 import { fbqPageview } from '../lib/fbq';
 import { gaPageview } from '../lib/ga';
 import { resetOptInMonster } from '../lib/optInMonster';
@@ -49,7 +49,12 @@ const QCPetStudiesApp = ({ Component, pageProps }: AppPropsWithLayout): ReactEle
       uetPageview(url);
       fbqPageview(url);
       pardotPageview(url);
-      brevoPageView(url, window.document.title);
+      try {
+        const parsed = new URL(window.document.title);
+        brevoPageview(window.document.title, url, parsed.pathname);
+      } catch (err) {
+        console.error(err);
+      }
       resetOptInMonster();
       resetActiveCampaign();
     };
