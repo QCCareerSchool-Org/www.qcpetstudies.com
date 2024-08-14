@@ -1,24 +1,35 @@
-/* eslint-disable camelcase */
-type BrevoPageViewProperties = Record<string, unknown> & {
-  /** the full URL of the page, including the scheme */
-  ma_url?: string;
-  /** the path of the page, i.e. the url without the scheme, the domain, the query string or the fragments */
-  ma_path?: string;
-  /** the title of the page */
-  ma_title?: string;
-  /** the referrer of the page */
-  ma_referrer?: string;
-};
+interface Properties {
+  FIRSTNAME?: string;
+  LASTNAME?: string;
+  COUNTRY_CODE?: string;
+  PROVINCE_CODE?: string;
+  STATUS_PET_LEAD: true;
+}
 
 declare global {
   interface Window {
     sendinblue?: {
-      page: (pageName: string, properties?: BrevoPageViewProperties) => void;
+      page: (...args: unknown[]) => void;
+      identify: (emailAddress: string, properties: Properties) => void;
     };
   }
 }
 
-export const brevoPageView = (path: string, title?: string): void => {
-  const pageName = title ? title.replace(' - QC Pet Studies', '') : 'Unknown';
-  window.sendinblue?.page(pageName, { ma_url: `https://www.qcpetstudies.com${path}`, ma_path: path, ma_title: title });
+// log the page view with a specific URL
+export const brevoPageview = (title: string, url: string, path: string): void => {
+  window.sendinblue?.page(title, {
+    ma_title: title, // eslint-disable-line camelcase
+    ma_url: url, // eslint-disable-line camelcase
+    ma_path: path, // eslint-disable-line camelcase
+  });
+};
+
+export const brevoIdentify = (emailAddress: string, countryCode: string, provinceCode: string | null, firstName?: string, lastName?: string): void => {
+  window.sendinblue?.identify(emailAddress, {
+    FIRSTNAME: firstName,
+    LASTNAME: lastName,
+    COUNTRY_CODE: countryCode,
+    PROVINCE_CODE: provinceCode ?? '',
+    STATUS_PET_LEAD: true,
+  });
 };
