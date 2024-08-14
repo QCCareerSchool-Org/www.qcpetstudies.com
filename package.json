@@ -1,6 +1,6 @@
 {
   "name": "www.petstudies.com",
-  "version": "1.4.2",
+  "version": "1.4.3",
   "license": "UNLICENSED",
   "private": true,
   "scripts": {
@@ -29,6 +29,7 @@
     "react": "^18.2.0",
     "react-bootstrap": "^2.2.1",
     "react-dom": "^18.2.0",
+    "react-google-recaptcha-v3": "^1.10.1",
     "react-icons": "^4.6.0",
     "react-schemaorg": "^2.0.0",
     "react-use-count-up": "^1.0.2",

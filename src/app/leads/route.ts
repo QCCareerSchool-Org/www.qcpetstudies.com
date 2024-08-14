@@ -1,7 +1,7 @@
-import * as brevo from '@getbrevo/brevo';
 import type { NextRequest } from 'next/server';
 import { z, ZodError } from 'zod';
 import { zfd } from 'zod-form-data';
+import { createBrevoContact, sendBrevoEmail } from '../../lib/brevoAPI';
 import { fbPostLead } from '../../lib/facebookConversionAPI';
 import { getClientIp } from '../../lib/getClientIp';
 import type { LeadPayload } from '../../lib/leads';
@@ -17,6 +17,7 @@ const schema = zfd.formData({
   countryCode: zfd.text(z.string().length(2)),
   provinceCode: zfd.text(z.string().length(2).optional()),
   successLocation: zfd.text(z.string().regex(/^http(s?):\/\//ui)),
+  emailTemplateId: zfd.numeric(z.number().optional()),
   listId: zfd.numeric(z.number().multipleOf(1)),
   gclid: zfd.text(z.string().optional()),
   msclkid: zfd.text(z.string().optional()),
@@ -25,9 +26,8 @@ const schema = zfd.formData({
   utmCampaign: zfd.text(z.string().optional()),
   utmContent: zfd.text(z.string().optional()),
   utmTerm: zfd.text(z.string().optional()),
+  courseCodes: zfd.repeatableOfType(z.string()).optional(),
 });
-
-const brevoApiKey = process.env.BREVO_API_KEY ?? '';
 
 export const POST = async (request: NextRequest): Promise<Response> => {
   const forwardedFor = request.headers.get('x-forwarded-for') ?? undefined;
@@ -53,7 +53,7 @@ export const POST = async (request: NextRequest): Promise<Response> => {
     }
 
     // create Brevo contact
-    const createContactResult = await createBrevoContact(body.emailAddress, body.firstName, body.lastName, body.countryCode, body.emailOptIn ? [ body.listId ] : undefined);
+    const createContactResult = await createBrevoContact(body.emailAddress, body.firstName, body.lastName, body.countryCode, body.provinceCode ?? '', { STATUS_PET_LEAD: true }, body.emailOptIn ? [ body.listId ] : undefined);
     if (!createContactResult) {
       throw Error('Unable to create contact');
     }
@@ -69,34 +69,33 @@ export const POST = async (request: NextRequest): Promise<Response> => {
       }
       : undefined;
     const payload: LeadPayload = {
-      school: 'QC Event School',
-      testGroup: 1,
+      school: 'QC Pet Studies',
       emailAddress: body.emailAddress,
-      telephoneNumber: null,
-      firstName: body.firstName ?? null,
-      lastName: body.lastName ?? null,
-      emailOptIn: body.emailOptIn ?? null,
-      smsOptIn: null,
-      countryCode: body.countryCode,
-      provinceCode: body.provinceCode ?? null,
-      gclid: body.gclid ?? null,
-      msclkid: body.msclkid ?? null,
+      firstName: body.firstName,
+      lastName: body.lastName,
+      gclid: body.gclid,
+      msclkid: body.msclkid,
       marketing,
-      courses: undefined,
+      courses: body.courseCodes,
     };
+    if (body.emailOptIn) {
+      payload.emailOptIn = true;
+    }
     try {
-      const response = await addLead(payload);
+      const response = await addLead(payload, { ipAddress: clientIpAddress, userAgent: clientUserAgent });
       params.set('leadId', response.leadId);
       await fbPostLead(response.leadId, new Date(), body.emailAddress, body.firstName, body.lastName, body.countryCode, undefined, clientIpAddress ?? undefined, clientUserAgent ?? undefined, fbc, fbp);
     } catch (err) {
       console.error(err);
     }
 
-    // trigger Brevo M1 email
-    try {
-      await sendBrevoEmail(body.emailAddress, body.firstName, body.lastName);
-    } catch (err) {
-      console.error(err);
+    // semd email
+    if (typeof body.emailTemplateId !== 'undefined') {
+      try {
+        await sendBrevoEmail(body.emailTemplateId, body.emailAddress, body.firstName, body.lastName);
+      } catch (err) {
+        console.error(err);
+      }
     }
 
     // redirect to success page
@@ -115,36 +114,4 @@ export const POST = async (request: NextRequest): Promise<Response> => {
 
     return Response.json({ message: 'Unknown error', err }, { status: 500 });
   }
-};
-
-const createBrevoContact = async (emailAddress: string, firstName?: string, lastName?: string, countryCode?: string, listIds?: number[]): Promise<boolean> => {
-  const contactsApi = new brevo.ContactsApi();
-  contactsApi.setApiKey(brevo.ContactsApiApiKeys.apiKey, brevoApiKey);
-
-  const createContactResult = await contactsApi.createContact({
-    email: emailAddress,
-    listIds,
-    updateEnabled: true,
-    attributes: {
-      FIRSTNAME: firstName,
-      LASTNAME: lastName,
-      COUNTRY_CODE: countryCode?.toLocaleUpperCase(),
-    },
-  });
-
-  return createContactResult.response.complete;
-};
-
-const sendBrevoEmail = async (emailAddress: string, firstName?: string, lastName?: string): Promise<void> => {
-  const transactionalEmailsApi = new brevo.TransactionalEmailsApi();
-  transactionalEmailsApi.setApiKey(brevo.TransactionalEmailsApiApiKeys.apiKey, brevoApiKey);
-
-  await transactionalEmailsApi.sendTransacEmail({
-    to: firstName ? [ { email: emailAddress, name: firstName } ] : [ { email: emailAddress } ],
-    templateId: 7,
-    params: { name: firstName, surname: lastName },
-    // headers: {
-    //   'X-Mailin-custom': 'custom_header_1:custom_value_1|custom_header_2:custom_value_2',
-    // },
-  });
 };

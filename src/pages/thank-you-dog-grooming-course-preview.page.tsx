@@ -44,11 +44,6 @@ const ThankYouCatalogPage: NextPage<Props> = ({ emailAddress }) => {
     }
     effectCalled.current = true;
     fbqLead();
-    console.log('conversion', {
-      send_to: 'AW-1071836607/yZtFCL_BpW8Qv9uL_wM', // eslint-disable-line camelcase
-      value: 1.0,
-      currency: 'USD',
-    });
     gaEvent('conversion', {
       send_to: 'AW-1071836607/yZtFCL_BpW8Qv9uL_wM', // eslint-disable-line camelcase
       value: 1.0,
