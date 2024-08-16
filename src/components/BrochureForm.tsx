@@ -135,10 +135,6 @@ export const BrochureForm: FC<Props> = props => {
     const firstNameInput = firstNameRef.current;
     const lastNameInput = lastNameRef.current;
 
-    if (!isSchool(schoolInput)) {
-      return;
-    }
-
     dispatch({ type: 'FORM_SUBMITTED' });
 
     void Promise.resolve().then(async () => {
@@ -148,7 +144,7 @@ export const BrochureForm: FC<Props> = props => {
       const msclkid = getHiddenField('msclkid', hiddenFields);
 
       return addLead({
-        school: schoolInput,
+        school: isSchool(schoolInput) ? schoolInput : 'QC Pet Studies',
         emailAddress: emailAddressInput.value,
         firstName: firstNameInput.value || undefined,
         lastName: lastNameInput.value || undefined,
