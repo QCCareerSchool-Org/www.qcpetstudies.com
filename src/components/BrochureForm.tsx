@@ -144,7 +144,7 @@ export const BrochureForm: FC<Props> = props => {
       const msclkid = getHiddenField('msclkid', hiddenFields);
 
       return addLead({
-        school: isSchool(schoolInput) ? schoolInput : 'QC Pet Studies',
+        school: isSchool(schoolInput.value) ? schoolInput.value : 'QC Pet Studies',
         emailAddress: emailAddressInput.value,
         firstName: firstNameInput.value || undefined,
         lastName: lastNameInput.value || undefined,
