@@ -9,13 +9,11 @@ import { SEO } from '../components/SEO';
 import { useLocation } from '../hooks/useLocation';
 import AlexSignature from '../images/alex-myers.png';
 import HappyPuppyRunning from '../images/backgrounds/happy-puppy-running.jpg';
-import { addToActiveCampaign } from '../lib/addToActiveCampaign';
 import { fbqSale } from '../lib/fbq';
 import { gaSale } from '../lib/ga';
 import { getEnrollment } from '../lib/getEnrollment';
 import { getTelephoneNumber } from '../lib/phone';
 import { sendEnrollmentEmail } from '../lib/sendEnrollmentEmail';
-import { setStudent } from '../lib/setStudent';
 import { Enrollment, RawEnrollment } from '../models/enrollment';
 
 type Props = {
@@ -53,13 +51,9 @@ const InternalWelcomePage: NextPage<Props> = ({ data, errorCode }) => {
       return;
     }
     if (!enrollment.emailed) {
-      addToActiveCampaign(enrollment).catch(() => { /* */ });
       gaSale(enrollment);
       fbqSale(enrollment);
       sendEnrollmentEmail(enrollment.id, data.code).catch((err: unknown) => {
-        console.error(err);
-      });
-      setStudent(enrollment.id, data.code).catch((err: unknown) => {
         console.error(err);
       });
     }

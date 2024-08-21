@@ -3,7 +3,7 @@ import * as HttpStatus from '@qccareerschool/http-status';
 import type { RawEnrollment } from '../models/enrollment';
 
 export const getEnrollment = async (enrollmentId: number, code: string): Promise<RawEnrollment> => {
-  const url = `https://api.qccareerschool.com/enrollments/${enrollmentId}?code=${code}`;
+  const url = `${process.env.ENROLLMENT_ENDPOINT}/${enrollmentId}?code=${code}`;
   const response = await fetch(url, {
     headers: { 'X-API-Version': '2' },
   });

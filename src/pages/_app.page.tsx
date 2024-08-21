@@ -8,7 +8,6 @@ import { ReactElement, ReactNode, useEffect } from 'react';
 import { ErrorBoundary } from '../components/ErrorBoundary';
 import { ErrorPage } from '../components/ErrorPage';
 import { DefaultLayout } from '../components/layouts/DefaultLayout';
-import { resetActiveCampaign } from '../lib/activeCampaign';
 import { brevoPageview } from '../lib/brevo';
 import { fbqPageview } from '../lib/fbq';
 import { gaPageview } from '../lib/ga';
@@ -56,7 +55,6 @@ const QCPetStudiesApp = ({ Component, pageProps }: AppPropsWithLayout): ReactEle
         console.error(err);
       }
       resetOptInMonster();
-      resetActiveCampaign();
     };
 
     // When the component is mounted, subscribe to router changes and log those page views

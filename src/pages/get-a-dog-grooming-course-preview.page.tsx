@@ -1,9 +1,9 @@
 import { GetServerSideProps } from 'next';
 import Image, { StaticImageData } from 'next/image';
 import Link from 'next/link';
-import { MouseEventHandler, useMemo } from 'react';
+import { MouseEventHandler } from 'react';
 
-import { BrochureForm } from '../components/BrochureForm';
+import { BrevoForm } from '../components/brevoForm';
 import { CardBody } from '../components/CardBody';
 import { LandingPageLayout } from '../components/layouts/LandingPageLayout';
 import { SEO } from '../components/SEO';
@@ -19,45 +19,23 @@ import Step1EnrollImage from '../images/step-1-enroll.svg';
 import Step2SubmitImage from '../images/step-2-submit.svg';
 import Step3CertificateImage from '../images/step-3-certificate.svg';
 import { gaEvent } from '../lib/ga';
-import { getRandomIntInclusive } from '../lib/randomInt';
 import type { NextPageWithLayout } from './_app.page';
 
-const formAction = 'https://go.qcpetstudies.com/l/947642/2021-12-05/6h9rv';
-
 type Props = {
-  firstName: string | null;
-  lastName: string | null;
-  emailAddress: string | null;
-  emailOptIn: boolean | null;
-  telephoneNumber: string | null;
-  smsOptIn: boolean | null;
-  errors: boolean;
-  testGroup: number;
   gclid: string | null;
   msclkid: string | null;
-  marketing: {
-    source: string | null;
-    medium: string | null;
-    campaign: string | null;
-    content: string | null;
-    term: string | null;
-  };
+  utmSource: string | null;
+  utmMedium: string | null;
+  utmCampaign: string | null;
+  utmContent: string | null;
+  utmTerm: string | null;
 };
 
 const courses = [ 'dg' ];
+const brevoListId = 31;
+const brevoEmailTemplateId = 60;
 
-const DogGroomingCatalogPage: NextPageWithLayout<Props> = ({ firstName, lastName, emailAddress, emailOptIn, telephoneNumber, smsOptIn, errors, testGroup, gclid, msclkid, marketing }) => {
-  const hiddenFields = useMemo(() => {
-    const h: Array<{ key: string; value: string | number }> = [ { key: 'testGroup', value: testGroup } ];
-    if (gclid) {
-      h.push({ key: 'gclid', value: gclid });
-    }
-    if (msclkid) {
-      h.push({ key: 'msclkid', value: msclkid });
-    }
-    return h;
-  }, [ testGroup, gclid, msclkid ]);
-
+const DogGroomingCatalogPage: NextPageWithLayout<Props> = props => {
   const screenWidth = useScreenWidth();
   const xxlOrGreater = screenWidth >= 1400;
   const xlOrGreater = screenWidth >= 1200;
@@ -85,13 +63,19 @@ const DogGroomingCatalogPage: NextPageWithLayout<Props> = ({ firstName, lastName
             <div className="card bg-light">
               <CardBody>
                 <p className="text-center lead">Get Started with a{smOrGreater ? ' ' : <br />}<strong>Free Course Preview</strong></p>
-                <BrochureForm
-                  action={formAction}
-                  hiddenFields={hiddenFields}
-                  marketing={marketing}
-                  courses={courses}
-                  initialValues={{ firstName, lastName, emailAddress, emailOptIn, telephoneNumber, smsOptIn }}
-                  errors={errors}
+                <BrevoForm
+                  successLocation={`${process.env.HOST ?? 'https:/www.qcpetstudies.com'}/thank-you-dog-grooming-course-preview`}
+                  listId={brevoListId}
+                  emailTemplateId={brevoEmailTemplateId}
+                  gclid={props.gclid ?? undefined}
+                  msclkid={props.msclkid ?? undefined}
+                  utmSource={props.utmSource ?? undefined}
+                  utmMedium={props.utmMedium ?? undefined}
+                  utmCampaign={props.utmCampaign ?? undefined}
+                  utmContent={props.utmContent ?? undefined}
+                  utmTerm={props.utmTerm ?? undefined}
+                  placeholders
+                  courseCodes={courses}
                 />
               </CardBody>
             </div>
@@ -235,41 +219,25 @@ DogGroomingCatalogPage.getLayout = page => <LandingPageLayout link={false} nav="
 
 // eslint-disable-next-line @typescript-eslint/require-await
 export const getServerSideProps: GetServerSideProps<Props> = async context => {
-  const firstName = typeof context.query.firstName === 'string' ? context.query.firstName : null;
-  const lastName = typeof context.query.lastName === 'string' ? context.query.lastName : null;
-  const emailAddress = typeof context.query.emailAddress === 'string' ? context.query.emailAddress : null;
-  const emailOptIn = typeof context.query.emailOptIn === 'string' ? context.query.emailOptIn === 'yes' : null;
-  const telephoneNumber = typeof context.query.telephoneNumber === 'string' ? context.query.telephoneNumber : null;
-  const smsOptIn = typeof context.query.smsOptIn === 'string' ? context.query.smsOptIn === 'yes' : null;
-
-  const errors = typeof context.query.errors === 'string' && context.query.errors === 'true';
-
-  let testGroup: number | undefined;
-  const storedTestGroup = context.req.cookies.testGroup;
-  if (typeof storedTestGroup !== 'undefined') {
-    const parsed = parseInt(storedTestGroup, 10);
-    if (!isNaN(parsed)) {
-      testGroup = parsed;
+  const getParam = (paramName: string): string | null => {
+    if (typeof context.query[paramName] === 'string') {
+      return context.query[paramName] || null;
     }
-  }
-  if (typeof testGroup === 'undefined') {
-    testGroup = getRandomIntInclusive(1, 12);
-    const maxAge = 60 * 60 * 24 * 365;
-    context.res.setHeader('Set-Cookie', `testGroup=${testGroup}; Max-Age=${maxAge}; Path=/; Secure; SameSite=Strict`);
-  }
-
-  const gclid = typeof context.query.gclid === 'string' ? context.query.gclid : null;
-  const msclkid = typeof context.query.msclkid === 'string' ? context.query.msclkid : null;
-
-  const marketing = {
-    source: typeof context.query.utm_source === 'string' ? context.query.utm_source || null : null,
-    medium: typeof context.query.utm_medium === 'string' ? context.query.utm_medium || null : null,
-    campaign: typeof context.query.utm_campaign === 'string' ? context.query.utm_campaign || null : null,
-    content: typeof context.query.utm_content === 'string' ? context.query.utm_content || null : null,
-    term: typeof context.query.utm_term === 'string' ? context.query.utm_term || null : null,
+    if (Array.isArray(context.query[paramName])) {
+      return context.query[paramName]?.[0] || null;
+    }
+    return null;
   };
 
-  return { props: { firstName, lastName, emailAddress, emailOptIn, telephoneNumber, smsOptIn, errors, testGroup, gclid, msclkid, marketing } };
+  const gclid = getParam('gclid');
+  const msclkid = getParam('msclkid');
+  const utmSource = getParam('utm_source');
+  const utmMedium = getParam('utm_medium');
+  const utmCampaign = getParam('utm_campaign');
+  const utmContent = getParam('utm_content');
+  const utmTerm = getParam('utm_term');
+
+  return { props: { gclid, msclkid, utmSource, utmMedium, utmCampaign, utmContent, utmTerm } };
 };
 
 export default DogGroomingCatalogPage;

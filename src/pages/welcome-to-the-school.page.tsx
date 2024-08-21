@@ -10,12 +10,12 @@ import { useLocation } from '../hooks/useLocation';
 import AlexSignature from '../images/alex-myers.png';
 import HappyPuppyRunning from '../images/backgrounds/happy-puppy-running.jpg';
 import { addToIDevAffiliate } from '../lib/addToIDevAffiliate';
+import { createBrevoContact } from '../lib/brevoAPI';
 import { fbqSale } from '../lib/fbq';
 import { gaSale } from '../lib/ga';
 import { getEnrollment } from '../lib/getEnrollment';
 import { getTelephoneNumber } from '../lib/phone';
 import { sendEnrollmentEmail } from '../lib/sendEnrollmentEmail';
-import { setStudent } from '../lib/setStudent';
 import { trustPulseEnrollment } from '../lib/trustpulse';
 import type { Enrollment, RawEnrollment } from '../models/enrollment';
 
@@ -27,6 +27,8 @@ type Props = {
   };
   errorCode?: number;
 };
+
+const brevoStudentListId = 17;
 
 const WelcomeToTheSchoolPage: NextPage<Props> = ({ data, errorCode }) => {
   const [ emailAddress, setEmailAddress ] = useState('');
@@ -58,8 +60,6 @@ const WelcomeToTheSchoolPage: NextPage<Props> = ({ data, errorCode }) => {
       addToIDevAffiliate(enrollment).catch(() => { /* */ });
       gaSale(enrollment);
       fbqSale(enrollment);
-      sendEnrollmentEmail(enrollment.id, data.code).catch(console.error);
-      setStudent(enrollment.id, data.code).catch(console.error);
       trustPulseEnrollment(enrollment, data.ipAddress).catch(console.error);
     }
   }, [ data, enrollment ]);
@@ -76,7 +76,7 @@ const WelcomeToTheSchoolPage: NextPage<Props> = ({ data, errorCode }) => {
     <SEO
       title="Welcome to the School"
       description="Your enrollment has been received and will be processed quickly. You will receive an email within the next business day containing login information to your online student center."
-      canonical="/internal-welcome"
+      canonical="/welcome-to-the-school"
       noIndex={true}
     />
 
@@ -137,6 +137,22 @@ export const getServerSideProps: GetServerSideProps<Props> = async ({ req, res, 
 
     if (!rawEnrollment.complete || !rawEnrollment.success) {
       throw new HttpStatus.NotFound();
+    }
+
+    if (!rawEnrollment.emailed) {
+      // send email
+      try {
+        await sendEnrollmentEmail(enrollmentId, code);
+      } catch (err) {
+        console.error(err);
+      }
+
+      // create Brevo contact
+      try {
+        await createBrevoContact(rawEnrollment.emailAddress, rawEnrollment.firstName, rawEnrollment.lastName, rawEnrollment.countryCode, rawEnrollment.provinceCode, { STATUS_PET_STUDENT: true }, [ brevoStudentListId ]);
+      } catch (err) {
+        console.error(err);
+      }
     }
 
     const ipAddress = Array.isArray(req.headers['x-real-ip']) ? req.headers['x-real-ip']?.[0] : req.headers['x-real-ip'];

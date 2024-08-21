@@ -9,7 +9,7 @@ type PriceOptions = {
 
 export const lookupPrices = async (courses: string[], countryCode: string, provinceCode: string | null, options?: PriceOptions): Promise<Price> => {
   const o = options ? { ...options, school: 'QC Pet Studies' } : { school: 'QC Pet Studies' };
-  const url = 'https://api.qccareerschool.com/prices?' + qs.stringify({ courses, countryCode, provinceCode: provinceCode ?? undefined, options: o });
+  const url = process.env.PRICES_ENDPOINT + '?' + qs.stringify({ courses, countryCode, provinceCode: provinceCode ?? undefined, options: o });
 
   const response = await fetch(url, {
     headers: { 'X-API-Version': '2' },
