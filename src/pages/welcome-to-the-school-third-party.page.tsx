@@ -12,7 +12,6 @@ import { fbqSale } from '../lib/fbq';
 import { gaSale } from '../lib/ga';
 import { getEnrollment } from '../lib/getEnrollment';
 import { sendEnrollmentEmail } from '../lib/sendEnrollmentEmail';
-import { setStudent } from '../lib/setStudent';
 import { trustPulseEnrollment } from '../lib/trustpulse';
 import { Enrollment, RawEnrollment } from '../models/enrollment';
 
@@ -54,7 +53,6 @@ const WelcomeToTheSchoolThirdPartyPage: NextPage<Props> = ({ data, errorCode }) 
       gaSale(enrollment);
       fbqSale(enrollment);
       sendEnrollmentEmail(enrollment.id, data.code).catch(console.error);
-      setStudent(enrollment.id, data.code).catch(console.error);
       trustPulseEnrollment(enrollment, data.ipAddress).catch(console.error);
     }
   }, [ data, enrollment ]);
@@ -71,7 +69,7 @@ const WelcomeToTheSchoolThirdPartyPage: NextPage<Props> = ({ data, errorCode }) 
     <SEO
       title="Welcome to the School"
       description="Your enrollment has been received and will be processed quickly. You will receive an email within the next business day containing login information to your online student center."
-      canonical="/internal-welcome"
+      canonical="/welcome-to-the-school-third-party"
       noIndex={true}
     />
 

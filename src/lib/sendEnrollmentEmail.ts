@@ -1,7 +1,7 @@
 import * as HttpStatus from '@qccareerschool/http-status';
 
 export const sendEnrollmentEmail = async (enrollmentId: number, code: string): Promise<void> => {
-  const url = `https://api.qccareerschool.com/enrollments/${enrollmentId}/email`;
+  const url = `${process.env.ENROLLMENT_ENDPOINT}/${enrollmentId}/email`;
   const response = await fetch(url, {
     method: 'post',
     headers: {

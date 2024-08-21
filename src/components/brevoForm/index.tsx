@@ -1,18 +1,19 @@
 'use client';
 
-import type { ChangeEventHandler, FC } from 'react';
+import Image, { StaticImageData } from 'next/image';
+import type { ChangeEvent, ChangeEventHandler, FC, ReactElement } from 'react';
 import { useCallback, useId, useState } from 'react';
 import { GoogleReCaptcha } from 'react-google-recaptcha-v3';
 
+import { CourseCode } from '../../models/courseCode';
 import DownloadIcon from '../download.svg';
 import styles from './index.module.scss';
 
 type Props = {
+  onCourseChange?: (e: ChangeEvent<HTMLInputElement>, courseCode: CourseCode) => void;
   successLocation: string;
   listId: number;
   emailTemplateId?: number;
-  countryCode: string;
-  provinceCode: string | null;
   buttonText?: string;
   buttonClassName?: string;
   placeholders?: boolean;
@@ -24,6 +25,7 @@ type Props = {
   utmContent?: string;
   utmTerm?: string;
   courseCodes?: string[];
+  button?: ReactElement;
 };
 
 export const BrevoForm: FC<Props> = props => {
@@ -51,12 +53,11 @@ export const BrevoForm: FC<Props> = props => {
   }, []);
 
   return (
-    <form action="/leads" method="post" className={styles.brochureForm}>
+    <form action="https://leads.qccareerschool.com" method="post" className={styles.brochureForm}>
       <input type="hidden" name="g-recaptcha-response" value={token} />
+      <input type="hidden" name="school" value="QC Pet Studies" />
       <input type="hidden" name="successLocation" value={props.successLocation} />
       <input type="hidden" name="listId" value={props.listId} />
-      <input type="hidden" name="countryCode" value={props.countryCode} />
-      <input type="hidden" name="provinceCode" value={props.provinceCode ?? ''} />
       {props.courseCodes?.map(c => <input key={c} type="hidden" name="courseCodes" value={c} />)}
       {typeof props.emailTemplateId !== 'undefined' && <input type="hidden" name="emailTemplateId" value={props.emailTemplateId} />}
       {props.gclid && <input type="hidden" name="gclid" value={props.gclid} />}
@@ -66,6 +67,19 @@ export const BrevoForm: FC<Props> = props => {
       {props.utmCampaign && <input type="hidden" name="utmCampaign" value={props.utmCampaign} />}
       {props.utmContent && <input type="hidden" name="utmContent" value={props.utmContent} />}
       {props.utmTerm && <input type="hidden" name="utmTerm" value={props.utmTerm} />}
+      {props.onCourseChange && (
+        <div className="mb-3 mb-sm-4">
+          <label className="mb-1">Which course are you interested in?</label>
+          <div className="form-check">
+            <input onChange={e => props.onCourseChange?.(e, 'dg')} checked={props.courseCodes?.includes('dg')} className="form-check-input" type="radio" id="courseDG" name="course" value="dg" />
+            <label className="form-check-label" htmlFor="courseDG">Dog Grooming</label>
+          </div>
+          <div className="form-check">
+            <input onChange={e => props.onCourseChange?.(e, 'dt')} checked={props.courseCodes?.includes('dt')} className="form-check-input" type="radio" id="courseDT" name="course" value="dt" />
+            <label className="form-check-label" htmlFor="courseDT">Dog Training</label>
+          </div>
+        </div>
+      )}
       <div className="mb-3">
         {!props.placeholders && <label htmlFor={`${id}firstName`} className="form-label">Name</label>}
         <input onChange={handleFirstNameChange} value={firstName} type="text" name="firstName" id={`${id}firstName`} className="form-control" placeholder={props.placeholders ? 'Name' : undefined} autoComplete="given-name" autoCapitalize="words" />
@@ -83,7 +97,12 @@ export const BrevoForm: FC<Props> = props => {
           </label>
         </div>
       </div>
-      <button className={`${styles.button} ${props.buttonClassName ?? 'btn btn-primary'}`}><span className="text-navy"><DownloadIcon height="14" className="me-2" style={{ position: 'relative', top: -1 }} /></span>{props.buttonText ?? 'Get Your Free Catalog'}</button>
+      {props.button
+        ? <>{props.button}</>
+        : (
+          <button className={`${styles.button} ${props.buttonClassName ?? 'btn btn-primary'}`}><span className="text-navy"><Image src={DownloadIcon as StaticImageData} alt="" height="14" className="me-2" style={{ position: 'relative', top: -1 }} /></span>{props.buttonText ?? 'Get Your Free Catalog'}</button>
+        )
+      }
       <GoogleReCaptcha onVerify={handleVerify} refreshReCaptcha={refreshReCaptcha} />
     </form>
   );

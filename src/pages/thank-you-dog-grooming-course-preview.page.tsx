@@ -1,5 +1,3 @@
-import { promisify } from 'util';
-import { urlencoded } from 'body-parser';
 import { GetServerSideProps, NextPage } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -13,10 +11,9 @@ import { TestimonialSmNickiHughes } from '../components/testimonials-sm/Testimon
 import { useScreenWidth } from '../hooks/useScreenWidth';
 import CatalogBackground from '../images/backgrounds/smiling-border-collie-on-black.jpg';
 import PeekingHusky from '../images/peeking-siberian-husky.jpg';
+import { brevoIdentify } from '../lib/brevo';
 import { fbqLead } from '../lib/fbq';
 import { gaEvent, gaUserData } from '../lib/ga';
-
-const urlencodedAsync = promisify(urlencoded({ extended: false }));
 
 type Props = {
   firstName: string | null;
@@ -24,10 +21,9 @@ type Props = {
   emailAddress: string | null;
   countryCode: string | null;
   provinceCode: string | null;
-  testGroup: number | null;
 };
 
-const ThankYouCatalogPage: NextPage<Props> = ({ emailAddress }) => {
+const ThankYouCatalogPage: NextPage<Props> = ({ emailAddress, firstName, lastName, countryCode, provinceCode }) => {
   const screenWidth = useScreenWidth();
   const mdOrGreater = screenWidth >= 768;
   const effectCalled = useRef<boolean>(false);
@@ -50,6 +46,12 @@ const ThankYouCatalogPage: NextPage<Props> = ({ emailAddress }) => {
       currency: 'USD',
     });
   }, []);
+
+  useEffect(() => {
+    if (emailAddress !== null && countryCode !== null) {
+      brevoIdentify(emailAddress, countryCode, provinceCode, firstName ?? undefined, lastName ?? undefined);
+    }
+  }, [ emailAddress, countryCode, provinceCode, firstName, lastName ]);
 
   return <>
     <SEO
@@ -100,23 +102,25 @@ const ThankYouCatalogPage: NextPage<Props> = ({ emailAddress }) => {
   </>;
 };
 
-export const getServerSideProps: GetServerSideProps<Props> = async ({ req, res }) => {
-  if (req.method === 'POST') {
-    await urlencodedAsync(req, res);
-    if ('body' in req && typeof req.body === 'object' && req.body !== null) {
-      const firstName = 'firstName' in req.body && typeof req.body.firstName === 'string' ? req.body.firstName || null : null;
-      const lastName = 'lastName' in req.body && typeof req.body.lastName === 'string' ? req.body.lastName || null : null;
-      const emailAddress = 'emailAddress' in req.body && typeof req.body.emailAddress === 'string' ? req.body.emailAddress || null : null;
-      const countryCode = 'countryCode' in req.body && typeof req.body.countryCode === 'string' ? req.body.countryCode || null : null;
-      const provinceCode = 'provinceCode' in req.body && typeof req.body.provinceCode === 'string' ? req.body.provinceCode || null : null;
-      let testGroup = 'testGroup' in req.body && typeof req.body.testGroup === 'string' ? parseInt(req.body.testGroup, 10) : null;
-      if (testGroup !== null && isNaN(testGroup)) {
-        testGroup = null;
-      }
-      return { props: { firstName, lastName, emailAddress, countryCode, provinceCode, testGroup } };
+// eslint-disable-next-line @typescript-eslint/require-await
+export const getServerSideProps: GetServerSideProps<Props> = async context => {
+  const getParam = (paramName: string): string | null => {
+    if (typeof context.query[paramName] === 'string') {
+      return context.query[paramName] || null;
     }
-  }
-  return { props: { firstName: null, lastName: null, emailAddress: null, countryCode: null, provinceCode: null, testGroup: null } };
+    if (Array.isArray(context.query[paramName])) {
+      return context.query[paramName]?.[0] || null;
+    }
+    return null;
+  };
+
+  const emailAddress = getParam('emailAddress');
+  const countryCode = getParam('countryCode');
+  const provinceCode = getParam('provinceCode');
+  const firstName = getParam('firstName');
+  const lastName = getParam('lastName');
+
+  return { props: { emailAddress, countryCode, provinceCode, firstName, lastName } };
 };
 
 export default ThankYouCatalogPage;
