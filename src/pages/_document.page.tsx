@@ -79,7 +79,7 @@ const brevoScript = `
 (function() {
   window.sib = {
     equeue: [],
-    client_key: "wik5t1al63ykgvgi0qflcqee"
+    client_key: "ggq6iykwaxh2hn0q20y7fwpu"
   };
   /* OPTIONAL: email for identify request*/
   // window.sib.email_id = 'example@domain.com';
