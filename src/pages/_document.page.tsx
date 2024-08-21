@@ -75,31 +75,31 @@ const trustPulseScript = `
   (a=d.getElementsByTagName(s)[0]).parentNode.insertBefore(r,a)
 }(window,document,'script',10509);`;
 
-// const brevoScript = `
-// (function() {
-//   window.sib = {
-//     equeue: [],
-//     client_key: "wik5t1al63ykgvgi0qflcqee"
-//   };
-//   /* OPTIONAL: email for identify request*/
-//   // window.sib.email_id = 'example@domain.com';
-//   window.sendinblue = {};
-//   for (var j = ['track', 'identify', 'trackLink', 'page'], i = 0; i < j.length; i++) {
-//     (function(k) {
-//       window.sendinblue[k] = function() {
-//         var arg = Array.prototype.slice.call(arguments);
-//         (window.sib[k] || function() {
-//           var t = {};
-//           t[k] = arg;
-//           window.sib.equeue.push(t);
-//         })(arg[0], arg[1], arg[2], arg[3]);
-//       };
-//     })(j[i]);
-//   }
-//   var n = document.createElement("script"),
-//     i = document.getElementsByTagName("script")[0];
-//   n.type = "text/javascript", n.id = "sendinblue-js", n.async = !0, n.src = "https://sibautomation.com/sa.js?key=" + window.sib.client_key, i.parentNode.insertBefore(n, i), window.sendinblue.page();
-// })();`;
+const brevoScript = `
+(function() {
+  window.sib = {
+    equeue: [],
+    client_key: "wik5t1al63ykgvgi0qflcqee"
+  };
+  /* OPTIONAL: email for identify request*/
+  // window.sib.email_id = 'example@domain.com';
+  window.sendinblue = {};
+  for (var j = ['track', 'identify', 'trackLink', 'page'], i = 0; i < j.length; i++) {
+    (function(k) {
+      window.sendinblue[k] = function() {
+        var arg = Array.prototype.slice.call(arguments);
+        (window.sib[k] || function() {
+          var t = {};
+          t[k] = arg;
+          window.sib.equeue.push(t);
+        })(arg[0], arg[1], arg[2], arg[3]);
+      };
+    })(j[i]);
+  }
+  var n = document.createElement("script"),
+    i = document.getElementsByTagName("script")[0];
+  n.type = "text/javascript", n.id = "sendinblue-js", n.async = !0, n.src = "https://sibautomation.com/sa.js?key=" + window.sib.client_key, i.parentNode.insertBefore(n, i), window.sendinblue.page();
+})();`;
 
 class MyDocument extends Document {
   public static async getInitialProps(ctx: DocumentContext): Promise<DocumentInitialProps> {
@@ -121,7 +121,7 @@ class MyDocument extends Document {
           <script dangerouslySetInnerHTML={{ __html: uetScript }} />
           {process.env.FACEBOOK_ID && <script dangerouslySetInnerHTML={{ __html: getFacebookScript(process.env.FACEBOOK_ID) }} />}
           <script dangerouslySetInnerHTML={{ __html: pardotScript }} />
-          {/* <script dangerouslySetInnerHTML={{ __html: brevoScript }} /> */}
+          <script dangerouslySetInnerHTML={{ __html: brevoScript }} />
           <link rel="preconnect" href="https://fonts.googleapis.com" />
           <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
           <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Raleway:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600;1,700&display=swap" rel="stylesheet" />
