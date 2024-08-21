@@ -64,7 +64,7 @@ const DogGroomingCatalogPage: NextPageWithLayout<Props> = props => {
               <CardBody>
                 <p className="text-center lead">Get Started with a{smOrGreater ? ' ' : <br />}<strong>Free Course Preview</strong></p>
                 <BrevoForm
-                  successLocation={`${process.env.HOST ?? 'https:/www.qcpetstudies.com'}/thank-you-dog-grooming-course-preview`}
+                  successLocation={`${process.env.HOST ?? 'https://www.qcpetstudies.com'}/thank-you-dog-grooming-course-preview`}
                   listId={brevoListId}
                   emailTemplateId={brevoEmailTemplateId}
                   gclid={props.gclid ?? undefined}
