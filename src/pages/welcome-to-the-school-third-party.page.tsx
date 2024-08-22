@@ -52,7 +52,6 @@ const WelcomeToTheSchoolThirdPartyPage: NextPage<Props> = ({ data, errorCode }) 
       addToIDevAffiliate(enrollment).catch(() => { /* */ });
       gaSale(enrollment);
       fbqSale(enrollment);
-      sendEnrollmentEmail(enrollment.id, data.code).catch(console.error);
       trustPulseEnrollment(enrollment, data.ipAddress).catch(console.error);
     }
   }, [ data, enrollment ]);
@@ -122,6 +121,15 @@ export const getServerSideProps: GetServerSideProps<Props> = async ({ req, res, 
 
     if (!rawEnrollment.complete || !rawEnrollment.success) {
       throw new HttpStatus.NotFound();
+    }
+
+    if (!rawEnrollment.emailed) {
+      // send email
+      try {
+        await sendEnrollmentEmail(enrollmentId, code);
+      } catch (err) {
+        console.error(err);
+      }
     }
 
     const ipAddress = Array.isArray(req.headers['x-real-ip']) ? req.headers['x-real-ip']?.[0] : req.headers['x-real-ip'];
