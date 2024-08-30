@@ -10,7 +10,9 @@ import { useLocation } from '../hooks/useLocation';
 import AlexSignature from '../images/alex-myers.png';
 import HappyPuppyRunning from '../images/backgrounds/happy-puppy-running.jpg';
 import { addToIDevAffiliate } from '../lib/addToIDevAffiliate';
+import { brevoIdentifyStudent } from '../lib/brevo';
 import { createBrevoContact } from '../lib/brevoAPI';
+import { fbPostPurchase } from '../lib/facebookConversionAPI';
 import { fbqSale } from '../lib/fbq';
 import { gaSale } from '../lib/ga';
 import { getEnrollment } from '../lib/getEnrollment';
@@ -22,8 +24,6 @@ import type { Enrollment, RawEnrollment } from '../models/enrollment';
 type Props = {
   data?: {
     rawEnrollment: RawEnrollment;
-    code: string;
-    ipAddress: string | null;
   };
   errorCode?: number;
 };
@@ -57,11 +57,10 @@ const WelcomeToTheSchoolPage: NextPage<Props> = ({ data, errorCode }) => {
       return;
     }
     if (!enrollment.emailed) {
-      addToIDevAffiliate(enrollment).catch(() => { /* */ });
       gaSale(enrollment);
       fbqSale(enrollment);
-      trustPulseEnrollment(enrollment, data.ipAddress).catch(console.error);
     }
+    brevoIdentifyStudent(enrollment.emailAddress, enrollment.countryCode, enrollment.provinceCode ?? undefined, enrollment.firstName, enrollment.lastName);
   }, [ data, enrollment ]);
 
   if (typeof errorCode !== 'undefined') {
@@ -124,7 +123,7 @@ const WelcomeToTheSchoolPage: NextPage<Props> = ({ data, errorCode }) => {
   </>;
 };
 
-export const getServerSideProps: GetServerSideProps<Props> = async ({ req, res, query }) => {
+export const getServerSideProps: GetServerSideProps<Props> = async ({ req, res, query, resolvedUrl }) => {
   try {
     if (typeof query.enrollmentId !== 'string' || typeof query.code !== 'string') {
       throw new HttpStatus.BadRequest();
@@ -133,6 +132,10 @@ export const getServerSideProps: GetServerSideProps<Props> = async ({ req, res, 
     const enrollmentId = parseInt(query.enrollmentId, 10);
     const code = query.code;
 
+    if (isNaN(enrollmentId)) {
+      throw new HttpStatus.BadRequest();
+    }
+
     const rawEnrollment = await getEnrollment(enrollmentId, code);
 
     if (!rawEnrollment.complete || !rawEnrollment.success) {
@@ -140,6 +143,28 @@ export const getServerSideProps: GetServerSideProps<Props> = async ({ req, res, 
     }
 
     if (!rawEnrollment.emailed) {
+      const getHeader = (headerName: string): string | null => {
+        const rawHeader = req.headers[headerName];
+        if (Array.isArray(rawHeader)) {
+          return rawHeader?.[0] ?? null;
+        }
+        return rawHeader ?? null;
+      };
+
+      const ipAddress = getHeader('x-real-ip');
+      const userAgent = getHeader('user-agent');
+
+      const getCookie = (cookieName: string): string | undefined => {
+        const rawCookie = req.cookies[cookieName];
+        if (Array.isArray(rawCookie)) {
+          return req.headers['x-real-ip']?.[0];
+        }
+        return rawCookie;
+      };
+
+      const fbc = getCookie('_fbc');
+      const fbp = getCookie('_fbp');
+
       // send email
       try {
         await sendEnrollmentEmail(enrollmentId, code);
@@ -153,11 +178,34 @@ export const getServerSideProps: GetServerSideProps<Props> = async ({ req, res, 
       } catch (err) {
         console.error(err);
       }
+
+      // TrustPulse
+      try {
+        await trustPulseEnrollment(rawEnrollment, ipAddress);
+      } catch (err) {
+        console.error(err);
+      }
+
+      // iDevAffiliate
+      try {
+        await addToIDevAffiliate(rawEnrollment, ipAddress);
+      } catch (err) {
+        console.error(err);
+      }
+
+      // Facebook
+      if (rawEnrollment.transactionTime === null || new Date().getTime() - new Date(rawEnrollment.transactionTime).getTime() < 7 * 24 * 60 * 60 * 1000) {
+        try {
+          const source = (process.env.HOST ?? 'https://www.qcpetstudies.com') + resolvedUrl;
+          await fbPostPurchase(rawEnrollment, source, ipAddress, userAgent, fbc, fbp);
+        } catch (err) {
+          console.error(err);
+        }
+      }
+
     }
 
-    const ipAddress = Array.isArray(req.headers['x-real-ip']) ? req.headers['x-real-ip']?.[0] : req.headers['x-real-ip'];
-
-    return { props: { data: { rawEnrollment, code, ipAddress: ipAddress ?? null } } };
+    return { props: { data: { rawEnrollment } } };
   } catch (err) {
     const internalServerError = 500;
     const errorCode = err instanceof HttpStatus.HttpResponse ? err.statusCode : internalServerError;
