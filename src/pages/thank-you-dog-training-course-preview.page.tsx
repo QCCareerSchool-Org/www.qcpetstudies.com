@@ -37,11 +37,7 @@ const ThankYouCatalogPage: NextPage<Props> = ({ emailAddress, firstName, lastNam
     }
     effectCalled.current = true;
     fbqLead();
-    gaEvent('conversion', {
-      send_to: 'AW-1071836607/yZtFCL_BpW8Qv9uL_wM', // eslint-disable-line camelcase
-      value: 1.0,
-      currency: 'USD',
-    });
+    gaEvent('conversion', { send_to: 'AW-1071836607/yZtFCL_BpW8Qv9uL_wM' }); // eslint-disable-line camelcase
   }, []);
 
   useEffect(() => {
@@ -71,10 +67,10 @@ const ThankYouCatalogPage: NextPage<Props> = ({ emailAddress, firstName, lastNam
           <div className="col-12 col-md-6 col-lg-7 col-xl-8">
             <h1>Your Course Preview</h1>
             <h2>Thank You for Your Interest{firstName && <>, {firstName}</>}!</h2>
-            {emailAddress && <p className="lead text-primary">Your email was sent to <strong>{emailAddress}</strong>.</p>}
             <p className="lead">Find out what a career in dog training can do for you, and how you can get started with QC's Professional Dog Training course.</p>
+            {emailAddress && <p className="lead text-primary">Your email was sent to <strong>{emailAddress}</strong>. If you don't see it in your inbox in a few minutes, please check your spam or junk mail folder.</p>}
             <h4 className="mb-4">Access your free course preview here:</h4>
-            <Link href="/certification-courses/dog-training/course-preview" className="btn btn-outline-secondary btn-lg">Get Preview&nbsp;&nbsp;<FaPaw style={{ position: 'relative', top: -2 }} /></Link>
+            <Link href="/certification-courses/dog-training/course-preview" className="btn btn-outline-secondary btn-lg">View the Preview&nbsp;&nbsp;<FaPaw style={{ position: 'relative', top: -2 }} /></Link>
           </div>
         </div>
       </div>
