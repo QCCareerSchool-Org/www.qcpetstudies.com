@@ -74,7 +74,8 @@ const ThankYouCatalogPage: NextPage<Props> = ({ emailAddress, firstName, lastNam
         <div className="row">
           <div className="col-12 col-md-6 col-lg-7 col-xl-8">
             <h1>Your Course Preview</h1>
-            <h2>Thank You for Your Interest!</h2>
+            <h2>Thank You for Your Interest{firstName && <>, {firstName}</>}!</h2>
+            {emailAddress && <p className="lead text-primary">Your email was sent to <strong>{emailAddress}</strong>.</p>}
             <p className="lead">Find out what a career in dog grooming can do for you, and how you can get started with QC's Dog Grooming course.</p>
             <h4 className="mb-4">Access your free course preview here:</h4>
             <Link href="/certification-courses/dog-grooming/course-preview" className="btn btn-outline-secondary btn-lg">Get Preview&nbsp;&nbsp;<FaPaw style={{ position: 'relative', top: -2 }} /></Link>
