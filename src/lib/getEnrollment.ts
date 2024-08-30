@@ -6,15 +6,10 @@ export const getEnrollment = async (enrollmentId: number, code: string): Promise
   const url = `${process.env.ENROLLMENT_ENDPOINT}/${enrollmentId}?code=${code}`;
   const response = await fetch(url, {
     headers: { 'X-API-Version': '2' },
+    cache: 'no-cache',
   });
   if (!response.ok) {
     throw new HttpStatus.HttpResponse(response.status, response.statusText);
   }
   return response.json() as Promise<RawEnrollment>;
-  // const enrollment = await response.json() as RawEnrollment;
-  // return {
-  //   ...enrollment,
-  //   paymentDate: new Date(enrollment.paymentDate),
-  //   transactionTime: enrollment.transactionTime === null ? null : new Date(enrollment.transactionTime),
-  // };
 };

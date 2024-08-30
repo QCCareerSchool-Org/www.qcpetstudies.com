@@ -9,6 +9,7 @@ export const sendEnrollmentEmail = async (enrollmentId: number, code: string): P
       'Content-Type': 'application/json',
     },
     body: JSON.stringify({ code }),
+    cache: 'no-cache',
   });
   if (!response.ok) {
     throw new HttpStatus.HttpResponse(response.status, response.statusText);

@@ -3,7 +3,8 @@ interface Properties {
   LASTNAME?: string;
   COUNTRY_CODE?: string;
   PROVINCE_CODE?: string;
-  STATUS_PET_LEAD: true;
+  STATUS_PET_LEAD?: true;
+  STATUS_PET_STUDENT?: true;
 }
 
 declare global {
@@ -24,12 +25,32 @@ export const brevoPageview = (title: string, url: string, path: string): void =>
   });
 };
 
-export const brevoIdentify = (emailAddress: string, countryCode: string, provinceCode: string | null, firstName?: string, lastName?: string): void => {
-  window.sendinblue?.identify(emailAddress, {
+export const brevoIdentifyLead = (emailAddress: string, countryCode?: string, provinceCode?: string, firstName?: string, lastName?: string): void => {
+  const properties: Properties = {
     FIRSTNAME: firstName,
     LASTNAME: lastName,
-    COUNTRY_CODE: countryCode,
-    PROVINCE_CODE: provinceCode ?? '',
     STATUS_PET_LEAD: true,
-  });
+  };
+  if (countryCode) {
+    properties.COUNTRY_CODE = countryCode;
+  }
+  if (provinceCode) {
+    properties.PROVINCE_CODE = provinceCode;
+  }
+  window.sendinblue?.identify(emailAddress, properties);
+};
+
+export const brevoIdentifyStudent = (emailAddress: string, countryCode?: string, provinceCode?: string, firstName?: string, lastName?: string): void => {
+  const properties: Properties = {
+    FIRSTNAME: firstName,
+    LASTNAME: lastName,
+    STATUS_PET_STUDENT: true,
+  };
+  if (countryCode) {
+    properties.COUNTRY_CODE = countryCode;
+  }
+  if (provinceCode) {
+    properties.PROVINCE_CODE = provinceCode;
+  }
+  window.sendinblue?.identify(emailAddress, properties);
 };

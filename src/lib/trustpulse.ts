@@ -1,4 +1,4 @@
-import { Enrollment } from '../models/enrollment';
+import { RawEnrollment } from '../models/enrollment';
 
 const urls = {
   dg: 'https://hooks.zapier.com/hooks/catch/1909320/358g42p',
@@ -6,7 +6,7 @@ const urls = {
   default: 'https://hooks.zapier.com/hooks/catch/1909320/35iyjpc',
 };
 
-const getUrl = (enrollment: Enrollment): string => {
+const getUrl = (enrollment: RawEnrollment): string => {
   return enrollment.courses.some(c => c.code.toUpperCase() === 'DG')
     ? urls.dg
     : enrollment.courses.some(c => c.code.toUpperCase() === 'DT')
@@ -14,7 +14,7 @@ const getUrl = (enrollment: Enrollment): string => {
       : urls.default;
 };
 
-export const trustPulseEnrollment = async (enrollment: Enrollment, ipAddress: string | null): Promise<void> => {
+export const trustPulseEnrollment = async (enrollment: RawEnrollment, ipAddress: string | null): Promise<void> => {
   const body = {
     firstName: enrollment.firstName,
     emailAddress: enrollment.emailAddress,

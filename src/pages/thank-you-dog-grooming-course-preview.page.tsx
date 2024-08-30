@@ -11,16 +11,17 @@ import { TestimonialSmNickiHughes } from '../components/testimonials-sm/Testimon
 import { useScreenWidth } from '../hooks/useScreenWidth';
 import CatalogBackground from '../images/backgrounds/smiling-border-collie-on-black.jpg';
 import PeekingHusky from '../images/peeking-siberian-husky.jpg';
-import { brevoIdentify } from '../lib/brevo';
+import { brevoIdentifyLead } from '../lib/brevo';
+import { fbPostLead } from '../lib/facebookConversionAPI';
 import { fbqLead } from '../lib/fbq';
 import { gaEvent, gaUserData } from '../lib/ga';
 
 type Props = {
-  firstName: string | null;
-  lastName: string | null;
-  emailAddress: string | null;
-  countryCode: string | null;
-  provinceCode: string | null;
+  firstName?: string;
+  lastName?: string;
+  emailAddress?: string;
+  countryCode?: string;
+  provinceCode?: string;
 };
 
 const ThankYouCatalogPage: NextPage<Props> = ({ emailAddress, firstName, lastName, countryCode, provinceCode }) => {
@@ -29,7 +30,7 @@ const ThankYouCatalogPage: NextPage<Props> = ({ emailAddress, firstName, lastNam
   const effectCalled = useRef<boolean>(false);
 
   useEffect(() => {
-    if (emailAddress !== null && emailAddress.length > 0) {
+    if (emailAddress) {
       gaUserData({ email: emailAddress });
     }
   }, [ emailAddress ]);
@@ -48,8 +49,8 @@ const ThankYouCatalogPage: NextPage<Props> = ({ emailAddress, firstName, lastNam
   }, []);
 
   useEffect(() => {
-    if (emailAddress !== null && countryCode !== null) {
-      brevoIdentify(emailAddress, countryCode, provinceCode, firstName ?? undefined, lastName ?? undefined);
+    if (emailAddress) {
+      brevoIdentifyLead(emailAddress, countryCode, provinceCode, firstName ?? undefined, lastName ?? undefined);
     }
   }, [ emailAddress, countryCode, provinceCode, firstName, lastName ]);
 
@@ -104,23 +105,60 @@ const ThankYouCatalogPage: NextPage<Props> = ({ emailAddress, firstName, lastNam
 
 // eslint-disable-next-line @typescript-eslint/require-await
 export const getServerSideProps: GetServerSideProps<Props> = async context => {
-  const getParam = (paramName: string): string | null => {
+  const getParam = (paramName: string): string | undefined => {
     if (typeof context.query[paramName] === 'string') {
-      return context.query[paramName] || null;
+      return context.query[paramName];
     }
     if (Array.isArray(context.query[paramName])) {
-      return context.query[paramName]?.[0] || null;
+      return context.query[paramName]?.[0];
     }
-    return null;
+  };
+  const getHeader = (headerName: string): string | undefined => {
+    if (typeof context.req.headers[headerName] === 'string') {
+      return context.req.headers[headerName];
+    }
+    if (Array.isArray(context.req.headers[headerName])) {
+      return context.req.headers[headerName]?.[0];
+    }
   };
 
+  const leadId = getParam('leadId');
   const emailAddress = getParam('emailAddress');
   const countryCode = getParam('countryCode');
   const provinceCode = getParam('provinceCode');
   const firstName = getParam('firstName');
   const lastName = getParam('lastName');
+  const ipAddress = getHeader('x-real-ip');
+  const userAgent = getHeader('user-agent');
+  const fbc = context.req.cookies._fbc;
+  const fbp = context.req.cookies._fbp;
 
-  return { props: { emailAddress, countryCode, provinceCode, firstName, lastName } };
+  try {
+    if (leadId && emailAddress) {
+      await fbPostLead(leadId, new Date(), emailAddress, firstName, lastName, countryCode, provinceCode, ipAddress, userAgent, fbc, fbp);
+    }
+  } catch (err) {
+    console.error(err);
+  }
+
+  const props: Props = {};
+  if (emailAddress) {
+    props.emailAddress = emailAddress;
+  }
+  if (countryCode) {
+    props.countryCode = countryCode;
+  }
+  if (provinceCode) {
+    props.provinceCode = provinceCode;
+  }
+  if (firstName) {
+    props.firstName = firstName;
+  }
+  if (lastName) {
+    props.lastName = lastName;
+  }
+
+  return { props };
 };
 
 export default ThankYouCatalogPage;
