@@ -11,6 +11,7 @@ import { GuaranteeSection } from '../../../components/GuaranteeSection';
 import { DefaultLayout } from '../../../components/layouts/DefaultLayout';
 import { PriceSection } from '../../../components/PriceSection';
 import { SEO } from '../../../components/SEO';
+import { VirtualCommunitySection } from '../../../components/virtualCommunitySection';
 import { useScreenWidth } from '../../../hooks/useScreenWidth';
 import DogCareBackground from '../../../images/backgrounds/jack-russel-terrier-in-handbag.jpg';
 import GuaranteeIcon from '../../../images/course-overview-icons/guarantee.svg';
@@ -233,6 +234,8 @@ const DogCarePage: NextPageWithLayout<Props> = ({ price }) => {
     </section>
 
     <GuaranteeSection className="bg-light" />
+
+    <VirtualCommunitySection />
 
     <DDTutorSection />
 

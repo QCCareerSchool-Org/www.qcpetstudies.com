@@ -12,6 +12,7 @@ import { GuaranteeSection } from '../../../components/GuaranteeSection';
 import { DefaultLayout } from '../../../components/layouts/DefaultLayout';
 import { PriceSection } from '../../../components/PriceSection';
 import { SEO } from '../../../components/SEO';
+import { VirtualCommunitySection } from '../../../components/virtualCommunitySection';
 import { useLocation } from '../../../hooks/useLocation';
 import { usePrevious } from '../../../hooks/usePrevious';
 import { useScreenWidth } from '../../../hooks/useScreenWidth';
@@ -502,6 +503,8 @@ const DogTrainingPage: NextPageWithLayout<Props> = ({ price }) => {
     )}
 
     <GuaranteeSection className="bg-light" />
+
+    <VirtualCommunitySection />
   </>;
 };
 

@@ -12,6 +12,7 @@ import { SEO } from '../components/SEO';
 import { TestimonialKaylaTorraville } from '../components/testimonials/TestimonialKaylaTorraville';
 import { TestimonialLucaCoppola } from '../components/testimonials/TestimonialLucaCoppola';
 import { TestimonialMelodyMason } from '../components/testimonials/TestimonialMelodyMason';
+import { VirtualCommunitySection } from '../components/virtualCommunitySection';
 import { useScreenWidth } from '../hooks/useScreenWidth';
 import MaltipuBegging from '../images/backgrounds/maltipu-begging.jpg';
 import MaltipuJumping from '../images/backgrounds/maltipu-jumping.jpg';
@@ -265,6 +266,8 @@ const HomePage: NextPageWithLayout = () => {
         </div>
       </div>
     </section>
+
+    <VirtualCommunitySection />
 
     <style jsx>{`
     .heroContainer {

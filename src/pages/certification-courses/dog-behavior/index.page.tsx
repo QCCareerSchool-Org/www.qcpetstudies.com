@@ -10,6 +10,7 @@ import { GuaranteeSection } from '../../../components/GuaranteeSection';
 import { DefaultLayout } from '../../../components/layouts/DefaultLayout';
 import { PriceSection } from '../../../components/PriceSection';
 import { SEO } from '../../../components/SEO';
+import { VirtualCommunitySection } from '../../../components/virtualCommunitySection';
 import { useScreenWidth } from '../../../hooks/useScreenWidth';
 import GuaranteeIcon from '../../../images/course-overview-icons/guarantee.svg';
 import OutlineIcon from '../../../images/course-overview-icons/outline.svg';
@@ -297,6 +298,8 @@ const DogBehaviorPage: NextPageWithLayout<Props> = ({ price }) => {
     </section>
 
     <GuaranteeSection className="bg-light" />
+
+    <VirtualCommunitySection />
   </>;
 };
 
