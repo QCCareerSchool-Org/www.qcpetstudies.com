@@ -9,6 +9,7 @@ import { GuaranteeSection } from '../../../components/GuaranteeSection';
 import { PriceSection } from '../../../components/PriceSection';
 import { SectionBackground } from '../../../components/SectionBackground';
 import { SEO } from '../../../components/SEO';
+import { VirtualCommunitySection } from '../../../components/virtualCommunitySection';
 import { useScreenWidth } from '../../../hooks/useScreenWidth';
 import { useToggle } from '../../../hooks/useToggle';
 import GuaranteeIcon from '../../../images/course-overview-icons/guarantee.svg';
@@ -177,6 +178,8 @@ export const GroomingTechnicianBase: FC<Props> = ({ gtPrice, dgPrice, enrollPath
       <GroomingTechOutlineSection dgPrice={dgPrice} gtPrice={gtPrice} />
 
       <GuaranteeSection className="bg-light" />
+
+      <VirtualCommunitySection />
 
       <DGTutorSection />
 

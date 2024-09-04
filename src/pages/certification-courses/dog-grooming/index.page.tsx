@@ -14,6 +14,7 @@ import { DefaultLayout } from '../../../components/layouts/DefaultLayout';
 import { PriceSection } from '../../../components/PriceSection';
 import { SectionBackground } from '../../../components/SectionBackground';
 import { SEO } from '../../../components/SEO';
+import { VirtualCommunitySection } from '../../../components/virtualCommunitySection';
 import { usePrevious } from '../../../hooks/usePrevious';
 import { useScreenWidth } from '../../../hooks/useScreenWidth';
 import { useToggle } from '../../../hooks/useToggle';
@@ -264,6 +265,8 @@ const DogGroomingPage: NextPageWithLayout<Props> = ({ price }) => {
     </section>
 
     <GuaranteeSection className="bg-light" double />
+
+    <VirtualCommunitySection />
 
     <DGTutorSection />
 
