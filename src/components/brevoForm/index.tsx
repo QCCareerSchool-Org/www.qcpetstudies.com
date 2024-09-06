@@ -2,7 +2,7 @@
 
 import Image, { StaticImageData } from 'next/image';
 import type { ChangeEvent, ChangeEventHandler, FC, FormEventHandler, ReactElement } from 'react';
-import { useCallback, useId, useRef, useState } from 'react';
+import { useCallback, useEffect, useId, useRef, useState } from 'react';
 import { GoogleReCaptcha } from 'react-google-recaptcha-v3';
 import { v1 } from 'uuid';
 
@@ -35,7 +35,7 @@ export const BrevoForm: FC<Props> = props => {
   const [ lastName, setLastName ] = useState('');
   const [ emailAddress, setEmailAddress ] = useState('');
   const [ token, setToken ] = useState<string>();
-  const [ refreshReCaptcha ] = useState(false);
+  const [ refreshReCaptcha, setRefreshReCaptcha ] = useState(false);
   const submitting = useRef(false);
 
   const handleFirstNameChange: ChangeEventHandler<HTMLInputElement> = e => {
@@ -52,6 +52,17 @@ export const BrevoForm: FC<Props> = props => {
 
   const handleVerify = useCallback((t: string): void => {
     setToken(t);
+  }, []);
+
+  // Google reCaptcha token expires after 2 minutes
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      setRefreshReCaptcha(r => !r);
+    }, 90_000); // 90 seconds
+
+    return (): void => {
+      clearInterval(intervalId);
+    };
   }, []);
 
   const handleSubmit: FormEventHandler = e => {
