@@ -37,6 +37,7 @@ export const BrevoForm: FC<Props> = props => {
   const [ token, setToken ] = useState<string>();
   const [ refreshReCaptcha, setRefreshReCaptcha ] = useState(false);
   const submitting = useRef(false);
+  const [ disabled, setDisabled ] = useState(true);
 
   const handleFirstNameChange: ChangeEventHandler<HTMLInputElement> = e => {
     setFirstName(e.target.value);
@@ -65,8 +66,18 @@ export const BrevoForm: FC<Props> = props => {
     };
   }, []);
 
+  useEffect(() => {
+    const timeoutId = setTimeout(() => {
+      setDisabled(false);
+    }, 1_000);
+
+    return (): void => {
+      clearTimeout(timeoutId);
+    };
+  }, []);
+
   const handleSubmit: FormEventHandler = e => {
-    if (submitting.current) {
+    if (submitting.current || disabled) {
       e.preventDefault();
       return false;
     }
@@ -126,7 +137,7 @@ export const BrevoForm: FC<Props> = props => {
       {props.button
         ? <>{props.button}</>
         : (
-          <button className={`${styles.button} ${props.buttonClassName ?? 'btn btn-primary'}`}><span className="text-navy"><Image src={DownloadIcon as StaticImageData} alt="" height="14" className="me-2" style={{ position: 'relative', top: -1 }} /></span>{props.buttonText ?? 'Get Your Free Catalog'}</button>
+          <button className={`${styles.button} ${props.buttonClassName ?? 'btn btn-primary'}`} disabled={disabled}><span className="text-navy"><Image src={DownloadIcon as StaticImageData} alt="" height="14" className="me-2" style={{ position: 'relative', top: -1 }} /></span>{props.buttonText ?? 'Get Your Free Catalog'}</button>
         )
       }
       <GoogleReCaptcha onVerify={handleVerify} refreshReCaptcha={refreshReCaptcha} />
