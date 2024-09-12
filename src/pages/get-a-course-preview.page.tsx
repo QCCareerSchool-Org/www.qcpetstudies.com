@@ -28,6 +28,7 @@ type Props = {
   utmCampaign: string | null;
   utmContent: string | null;
   utmTerm: string | null;
+  referrer: string | null;
 };
 
 type FormFields = {
@@ -101,6 +102,7 @@ const DogGroomingCatalogPage: NextPageWithLayout<Props> = props => {
                   utmTerm={props.utmTerm ?? undefined}
                   placeholders
                   courseCodes={[ course ]}
+                  referrer={props.referrer}
                 />
               </CardBody>
             </div>
@@ -227,7 +229,7 @@ export const getServerSideProps: GetServerSideProps<Props> = async context => {
   const utmContent = getParam('utm_content');
   const utmTerm = getParam('utm_term');
 
-  return { props: { gclid, msclkid, utmSource, utmMedium, utmCampaign, utmContent, utmTerm } };
+  return { props: { gclid, msclkid, utmSource, utmMedium, utmCampaign, utmContent, utmTerm, referrer: context.req.headers.referer ?? null } };
 };
 
 export default DogGroomingCatalogPage;
