@@ -12,7 +12,6 @@ import { brevoPageview } from '../lib/brevo';
 import { fbqPageview } from '../lib/fbq';
 import { gaPageview } from '../lib/ga';
 import { resetOptInMonster } from '../lib/optInMonster';
-import { pardotPageview } from '../lib/pardot';
 import { getRegistration } from '../lib/serviceWorker';
 import { TrackJS } from '../lib/trackjs-isomorphic';
 import { uetPageview } from '../lib/uet';
@@ -47,7 +46,6 @@ const QCPetStudiesApp = ({ Component, pageProps }: AppPropsWithLayout): ReactEle
       gaPageview(url);
       uetPageview(url);
       fbqPageview(url);
-      pardotPageview(url);
       try {
         const parsed = new URL(window.document.title);
         brevoPageview(window.document.title, url, parsed.pathname);
