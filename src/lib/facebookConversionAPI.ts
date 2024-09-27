@@ -4,7 +4,7 @@ import { createHash } from 'crypto';
 import type { RawEnrollment } from '../models/enrollment';
 
 const apiVersion = 'v20.0';
-const datasetId = '';
+const datasetId = '3226622604235515';
 const accessToken = 'EAAMUT7XQ1g0BO5wBaKj6vPYKLZBz0GZBsyGoFaGe6DMK9noiEvjUWfxNy0PKwloAqn7Lpuvi2ZCPwZAENgb2Ie5bwW7Y9ctPhP0MyY7S6ZBlvSuJ6bWHor6DPG7gbZB0FHPeWE7uHLu3WgxYPATgv9aT2H54sPmYMISUyynQxhxRBWvAHmekQyy7tVvOb7QPhvrwZDZD';
 
 export const fbPostPurchase = async (
@@ -15,54 +15,53 @@ export const fbPostPurchase = async (
   fbc?: string,
   fbp?: string,
 ): Promise<unknown> => {
-  return null;
-  // const url = `https://graph.facebook.com/${apiVersion}/${datasetId}/events?access_token=${accessToken}`;
+  const url = `https://graph.facebook.com/${apiVersion}/${datasetId}/events?access_token=${accessToken}`;
 
-  // const eventTime = enrollment.transactionTime ?? new Date();
+  const eventTime = enrollment.transactionTime ?? new Date();
 
-  // const body: { data: PurchaseConversion[] } = {
-  //   data: [
-  //     {
-  //       event_name: 'Purchase', // eslint-disable-line camelcase
-  //       event_time: Math.floor(new Date(eventTime).getTime() / 1000), // eslint-disable-line camelcase
-  //       action_source: 'website', // eslint-disable-line camelcase
-  //       user_data: { // eslint-disable-line camelcase
-  //         em: hash(normalizeEmailAddress(enrollment.emailAddress)),
-  //         ph: hash(normalizeTelephoneNumber(enrollment.telephoneNumber)), // NOTE: we don't have the telephone country code
-  //         fn: hash(normalizeName(enrollment.firstName)),
-  //         ln: hash(normalizeName(enrollment.lastName)),
-  //         ge: hash(enrollment.title === 'Mr.' ? 'm' : 'f'),
-  //         ct: hash(normalizeCity(enrollment.city)),
-  //         st: enrollment.provinceCode ? hash(normalizeState(enrollment.provinceCode)) : undefined,
-  //         zp: enrollment.postalCode ? hash(normalizeZipCode(enrollment.postalCode, enrollment.countryCode)) : undefined,
-  //         country: hash(enrollment.countryCode.toLowerCase()),
-  //         client_ip_address: clientIPAddress, // eslint-disable-line camelcase
-  //         client_user_agent: clientUserAgent, // eslint-disable-line camelcase
-  //         fbc,
-  //         fbp,
-  //       },
-  //       custom_data: { // eslint-disable-line camelcase
-  //         currency: enrollment.currencyCode,
-  //         value: enrollment.cost,
-  //       },
-  //       event_source_url: eventSourceUrl, // eslint-disable-line camelcase
-  //       event_id: enrollment.id.toString(), // eslint-disable-line camelcase
-  //     },
-  //   ],
-  // };
+  const body: { data: PurchaseConversion[] } = {
+    data: [
+      {
+        event_name: 'Purchase', // eslint-disable-line camelcase
+        event_time: Math.floor(new Date(eventTime).getTime() / 1000), // eslint-disable-line camelcase
+        action_source: 'website', // eslint-disable-line camelcase
+        user_data: { // eslint-disable-line camelcase
+          em: hash(normalizeEmailAddress(enrollment.emailAddress)),
+          ph: hash(normalizeTelephoneNumber(enrollment.telephoneNumber)), // NOTE: we don't have the telephone country code
+          fn: hash(normalizeName(enrollment.firstName)),
+          ln: hash(normalizeName(enrollment.lastName)),
+          ge: hash(enrollment.title === 'Mr.' ? 'm' : 'f'),
+          ct: hash(normalizeCity(enrollment.city)),
+          st: enrollment.provinceCode ? hash(normalizeState(enrollment.provinceCode)) : undefined,
+          zp: enrollment.postalCode ? hash(normalizeZipCode(enrollment.postalCode, enrollment.countryCode)) : undefined,
+          country: hash(enrollment.countryCode.toLowerCase()),
+          client_ip_address: clientIPAddress ?? undefined, // eslint-disable-line camelcase
+          client_user_agent: clientUserAgent ?? undefined, // eslint-disable-line camelcase
+          fbc,
+          fbp,
+        },
+        custom_data: { // eslint-disable-line camelcase
+          currency: enrollment.currencyCode,
+          value: enrollment.cost,
+        },
+        event_source_url: eventSourceUrl, // eslint-disable-line camelcase
+        event_id: enrollment.id.toString(), // eslint-disable-line camelcase
+      },
+    ],
+  };
 
-  // const response = await fetch(url, {
-  //   method: 'post',
-  //   body: JSON.stringify(body),
-  //   headers: { 'content-type': 'application/json' },
-  //   cache: 'no-cache',
-  // });
+  const response = await fetch(url, {
+    method: 'post',
+    body: JSON.stringify(body),
+    headers: { 'content-type': 'application/json' },
+    cache: 'no-cache',
+  });
 
-  // if (!response.ok) {
-  //   throw Error(JSON.stringify(await response.json()));
-  // }
+  if (!response.ok) {
+    throw Error(JSON.stringify(await response.json()));
+  }
 
-  // return response.json();
+  return response.json();
 };
 
 export const fbPostLead = async (
@@ -78,43 +77,42 @@ export const fbPostLead = async (
   fbc?: string,
   fbp?: string,
 ): Promise<unknown> => {
-  return null;
-  // const url = `https://graph.facebook.com/${apiVersion}/${datasetId}/events?access_token=${accessToken}`;
+  const url = `https://graph.facebook.com/${apiVersion}/${datasetId}/events?access_token=${accessToken}`;
 
-  // const body: { data: LeadConversion[] } = {
-  //   data: [
-  //     {
-  //       event_name: 'Lead', // eslint-disable-line camelcase
-  //       event_time: Math.floor(eventTime.getTime() / 1000), // eslint-disable-line camelcase
-  //       action_source: 'website', // eslint-disable-line camelcase
-  //       user_data: { // eslint-disable-line camelcase
-  //         em: hash(normalizeEmailAddress(emailAddress)),
-  //         fn: typeof firstName === 'undefined' ? undefined : hash(normalizeName(firstName)),
-  //         ln: typeof lastName === 'undefined' ? undefined : hash(normalizeName(lastName)),
-  //         country: typeof countryCode === 'undefined' ? undefined : hash(countryCode.toLowerCase()),
-  //         client_ip_address: clientIPAddress, // eslint-disable-line camelcase
-  //         client_user_agent: clientUserAgent, // eslint-disable-line camelcase
-  //         fbc,
-  //         fbp,
-  //       },
-  //       event_source_url: eventSourceUrl, // eslint-disable-line camelcase
-  //       event_id: eventId, // eslint-disable-line camelcase
-  //     },
-  //   ],
-  // };
+  const body: { data: LeadConversion[] } = {
+    data: [
+      {
+        event_name: 'Lead', // eslint-disable-line camelcase
+        event_time: Math.floor(eventTime.getTime() / 1000), // eslint-disable-line camelcase
+        action_source: 'website', // eslint-disable-line camelcase
+        user_data: { // eslint-disable-line camelcase
+          em: hash(normalizeEmailAddress(emailAddress)),
+          fn: typeof firstName === 'undefined' ? undefined : hash(normalizeName(firstName)),
+          ln: typeof lastName === 'undefined' ? undefined : hash(normalizeName(lastName)),
+          country: typeof countryCode === 'undefined' ? undefined : hash(countryCode.toLowerCase()),
+          client_ip_address: clientIPAddress, // eslint-disable-line camelcase
+          client_user_agent: clientUserAgent, // eslint-disable-line camelcase
+          fbc,
+          fbp,
+        },
+        event_source_url: eventSourceUrl, // eslint-disable-line camelcase
+        event_id: eventId, // eslint-disable-line camelcase
+      },
+    ],
+  };
 
-  // const response = await fetch(url, {
-  //   method: 'post',
-  //   body: JSON.stringify(body),
-  //   headers: { 'content-type': 'application/json' },
-  //   cache: 'no-cache',
-  // });
+  const response = await fetch(url, {
+    method: 'post',
+    body: JSON.stringify(body),
+    headers: { 'content-type': 'application/json' },
+    cache: 'no-cache',
+  });
 
-  // if (!response.ok) {
-  //   throw Error(JSON.stringify(await response.json()));
-  // }
+  if (!response.ok) {
+    throw Error(JSON.stringify(await response.json()));
+  }
 
-  // return response.json();
+  return response.json();
 };
 
 const hash = (input: string): string => {
