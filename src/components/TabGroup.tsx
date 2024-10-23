@@ -1,4 +1,4 @@
-import { FC, Reducer, useRef } from 'react';
+import { FC, ReactElement, Reducer, useRef } from 'react';
 import { DispatchMiddleware, useReducerWithMiddleware } from '../hooks/useReducerWithMiddleware';
 
 type Props = {

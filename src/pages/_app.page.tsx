@@ -3,7 +3,7 @@ import '../styles/global.scss';
 import { NextPage } from 'next';
 import type { AppProps } from 'next/app';
 import { useRouter } from 'next/router';
-import { FC, ReactNode, useEffect } from 'react';
+import { FC, ReactElement, ReactNode, useEffect } from 'react';
 
 import { ErrorBoundary } from '../components/ErrorBoundary';
 import { ErrorPage } from '../components/ErrorPage';
