@@ -1,9 +1,5 @@
-import Image, { StaticImageData } from 'next/image';
 import { FC, ReactElement } from 'react';
-import { Modal } from 'react-bootstrap';
 
-import { useToggle } from '../../hooks/useToggle';
-import IconPlay from '../../images/circle-play-regular.svg';
 import { ImageCircle } from './../ImageCircle';
 import { lisaDay, mariKusanagi, paddyGaffney, Tutor } from './tutors';
 
@@ -44,34 +40,14 @@ export const DGTutorSection = ({ className, id = 'tutors' }: Props): ReactElemen
   </>
 );
 
-const MasterIcon: FC<Tutor> = ({ ...tutor }) => {
-  const [ modalOpened, toggleModal ] = useToggle();
-
-  return (
-    <div className="col-12 col-lg-4">
-      <ImageCircle src={tutor.image} alt="" size={200} />
-      <div className="mt-4">
-        <div className="d-flex align-items-center justify-content-between mb-3">
-          <div className="">
-            <h3>{tutor.name}</h3>
-            <h4>Certified Master Groomer</h4>
-            <p className="my-0"><i>{tutor.yearsExperience}+ Years of Experience</i></p>
-          </div>
-          {tutor.video && <Image src={IconPlay as StaticImageData} alt="Play Button" onClick={toggleModal} width={40} className="btn btn-link" />}
-        </div>
-        <p>{tutor.description}</p>
-      </div>
-
-      <Modal show={modalOpened} onHide={toggleModal} size="lg">
-        <Modal.Header closeButton>{tutor.name}</Modal.Header>
-        <Modal.Body>
-          <div className="ratio ratio-16x9">
-            <video controls autoPlay>
-              <source src={tutor.video} type="video/mp4" />
-            </video>
-          </div>
-        </Modal.Body>
-      </Modal>
+const MasterIcon: FC<Tutor> = ({ ...tutor }) => (
+  <div className="col-12 col-lg-4">
+    <ImageCircle src={tutor.image} alt="" size={200} />
+    <div className="mt-4">
+      <h3>{tutor.name}</h3>
+      <h4>Certified Master Groomer</h4>
+      <p className="my-0"><i>{tutor.yearsExperience}+ Years of Experience</i></p>
+      <p>{tutor.description}</p>
     </div>
-  );
-};
+  </div>
+);

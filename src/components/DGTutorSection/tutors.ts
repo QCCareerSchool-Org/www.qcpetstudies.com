@@ -8,7 +8,7 @@ export type Tutor = {
   yearsExperience: number;
   description: string;
   image: StaticImageData;
-  video?: string;
+  video?: string; // currently unused, but kept in case we want them in the future
 };
 
 export const mariKusanagi: Tutor = {
