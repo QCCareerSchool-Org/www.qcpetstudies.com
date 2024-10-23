@@ -1,15 +1,16 @@
 import Image, { StaticImageData } from 'next/image';
-import { ReactElement } from 'react';
+import { FC } from 'react';
 import { BsCalendarCheck, BsCheckCircle, BsFillCloudArrowDownFill } from 'react-icons/bs';
 
 import { useScreenWidth } from '../hooks/useScreenWidth';
+
 import MagnifyingGLassImage from '../images/icon-magnifying-glass-2.svg';
 
 type Props = {
   className?: string;
 };
 
-export const HowTheCoursesWorkSection = ({ className }: Props): ReactElement => {
+export const HowTheCoursesWorkSection: FC<Props> = ({ className }) => {
   const screenWidth = useScreenWidth();
   const lgOrGreater = screenWidth >= 992;
 

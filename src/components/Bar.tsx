@@ -1,4 +1,4 @@
-import { ReactElement, useEffect, useRef, useState } from 'react';
+import { FC, useEffect, useRef, useState } from 'react';
 import { useOnScreen } from '../hooks/useOnScreen';
 
 type Props = {
@@ -6,7 +6,7 @@ type Props = {
   align?: 'start' | 'center' | 'end';
 };
 
-export const Bar = ({ variant, align = 'center' }: Props): ReactElement => {
+export const Bar: FC<Props> = ({ variant, align = 'center' }) => {
   const ref = useRef(null);
   const onScreen = useOnScreen(ref);
   const [ onScreenOnce, setOnScreenOnce ] = useState(false);

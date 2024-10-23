@@ -1,10 +1,10 @@
-import { ReactElement, ReactNode } from 'react';
+import { FC, ReactNode } from 'react';
 
 type Props = {
   children: ReactNode;
 };
 
-export const TextLayout = ({ children }: Props): ReactElement => (
+export const TextLayout: FC<Props> = ({ children }) => (
   <main className="textLayout">
     {children}
   </main>

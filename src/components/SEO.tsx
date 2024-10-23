@@ -1,6 +1,6 @@
 import Head from 'next/head';
 import { StaticImageData } from 'next/legacy/image';
-import { ReactElement } from 'react';
+import { FC } from 'react';
 
 type TwitterCardType = 'card' | 'summary_large_image';
 type SchemaType = 'WebPage' | 'AboutPage' | 'CheckoutPage' | 'CollectionPage' | 'ContactPage' | 'FAQPage' | 'ItemPage' | 'MedicalWebPage' | 'ProfilePage' | 'QAPage' | 'RealEstateListing' | 'SearchResultsPage';
@@ -27,7 +27,7 @@ type Schema = {
   'description': string;
 };
 
-export const SEO = ({ title, description, canonical, image, twitterCardType, twitterCreator, schemaType, noIndex }: Props): ReactElement => {
+export const SEO: FC<Props> = ({ title, description, canonical, image, twitterCardType, twitterCreator, schemaType, noIndex }) => {
   const htmlTitle = title === 'QC Pet Studies' ? title : `${title} - QC Pet Studies`;
   const baseUrl = 'https://www.qcpetstudies.com';
   const schema: Schema = {

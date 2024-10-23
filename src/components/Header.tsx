@@ -1,9 +1,10 @@
 import { StaticImageData } from 'next/image';
 import Image from 'next/legacy/image';
 import Link from 'next/link';
-import { ReactElement, useState } from 'react';
+import { FC, useState } from 'react';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
+
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import { FaCog, FaCut, FaFolderOpen } from 'react-icons/fa';
 
@@ -26,7 +27,7 @@ type Props = {
   className?: string;
 };
 
-export const Header = ({ noHero, inverseNav, secondaryTitle, secondaryNavLinks, enrollPath = '/', className }: Props): ReactElement => {
+export const Header: FC<Props> = ({ noHero, inverseNav, secondaryTitle, secondaryNavLinks, enrollPath = '/', className }) => {
   const screenWidth = useScreenWidth();
   const location = useLocation();
   const scrollPosition = useScrollPosition();

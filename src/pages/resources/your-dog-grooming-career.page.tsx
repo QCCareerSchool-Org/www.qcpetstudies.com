@@ -1,7 +1,7 @@
 import { NextPage } from 'next';
 import Image, { StaticImageData } from 'next/image';
 import Link from 'next/link';
-import { ReactElement, ReactNode } from 'react';
+import { FC, ReactElement, ReactNode } from 'react';
 import { FaBriefcase, FaClipboard, FaRegFileAlt, FaRss, FaTags } from 'react-icons/fa';
 
 import { SEO } from '../../components/SEO';
@@ -196,7 +196,7 @@ type CareerSectionProps = {
   className?: string;
 };
 
-const CareerSection = ({ title, subtitle, imgSrc, imgAlt, text, extraText, className }: CareerSectionProps): ReactElement => (
+const CareerSection: FC<CareerSectionProps> = ({ title, subtitle, imgSrc, imgAlt, text, extraText, className }) => (
   <section className={className}>
     <div className="container text-center">
       <div className="row">
@@ -227,7 +227,7 @@ type CareerResourcesProps = {
   children: ReactNode;
 };
 
-const CareerResources = ({ title, icon, children }: CareerResourcesProps): ReactElement => (
+const CareerResources: FC<CareerResourcesProps> = ({ title, icon, children }) => (
   <div className="row justify-content-center align-items-center mt-5">
     <div className="col-12 col-lg-2">
       <div className="h2 text-secondary mb-3">

@@ -1,7 +1,8 @@
-import { ReactElement, ReactNode } from 'react';
+import { FC, ReactNode } from 'react';
 
 import { Footer, FooterCTAType } from '../Footer';
 import { Header } from '../Header';
+
 import { SecondaryNavLinks } from '../SecondaryNav';
 
 type Props = {
@@ -16,7 +17,7 @@ type Props = {
   children: ReactNode;
 };
 
-export const DefaultLayout = ({ noHero, inverseNav, secondaryTitle, secondaryNavLinks, footerCTA, footerCTAType, enrollPath = '/', children }: Props): ReactElement => (
+export const DefaultLayout: FC<Props> = ({ noHero, inverseNav, secondaryTitle, secondaryNavLinks, footerCTA, footerCTAType, enrollPath = '/', children }) => (
   <div id="defaultPage" className="d-flex flex-column vh-100">
     <Header noHero={noHero} inverseNav={inverseNav} secondaryTitle={secondaryTitle} secondaryNavLinks={secondaryNavLinks} enrollPath={enrollPath} className="flex-shrink-0 fixed-top" />
     <main className="flex-shrink-0">

@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import { ReactElement } from 'react';
+import { FC } from 'react';
 import { Modal } from 'react-bootstrap';
 
 import { useScreenWidth } from '../hooks/useScreenWidth';
@@ -12,7 +12,7 @@ type Props = {
   id?: string;
 };
 
-export const DGTutorSection = ({ className, id = 'tutors' }: Props): ReactElement => {
+export const DGTutorSection: FC<Props> = ({ className, id = 'tutors' }) => {
   const screenWidth = useScreenWidth();
   const lgOrGreater = screenWidth >= 992;
 

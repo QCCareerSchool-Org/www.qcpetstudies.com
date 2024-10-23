@@ -1,5 +1,5 @@
 import Big from 'big.js';
-import { ReactElement, ReactNode, useMemo } from 'react';
+import { FC, ReactElement, ReactNode, useMemo } from 'react';
 import { FaClock, FaLock, FaStar } from 'react-icons/fa';
 
 import { useToggle } from '../hooks/useToggle';
@@ -24,7 +24,7 @@ type Props = {
   message?: ReactNode;
 };
 
-export const PriceSectionWithDiscount = ({ courses, price, doubleGuarantee, variant = 'dark', id = 'tuition', enrollPath = '/', message }: Props): ReactElement => {
+export const PriceSectionWithDiscount: FC<Props> = ({ courses, price, doubleGuarantee, variant = 'dark', id = 'tuition', enrollPath = '/', message }) => {
   const [ popup, toggle ] = useToggle();
 
   const enrollLink = `https://enroll.qcpetstudies.com${enrollPath}?${courses.map(c => `c=${encodeURIComponent(c)}`).join('&')}`;
