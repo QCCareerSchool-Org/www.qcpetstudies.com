@@ -1,8 +1,9 @@
-import { ReactElement, ReactNode } from 'react';
+import { FC, ReactNode } from 'react';
 
 import { CaptchaProvider } from './CaptchaProvider';
 import { LocationProvider } from './LocationProvider';
 import { PushSubscriptionProvider } from './PushSubscriptionProvider';
+
 import { ScreenWidthProvider } from './ScreenWidthProvider';
 import { ScrollPositionProvider } from './ScrollPositionProvider';
 
@@ -12,7 +13,7 @@ type Props = {
 
 const reCaptchaKey = process.env.NEXT_PUBLIC_RECAPTCHA_KEY;
 
-export const Provider = ({ children }: Props): ReactElement => (
+export const Provider: FC<Props> = ({ children }) => (
   <LocationProvider>
     <ScreenWidthProvider>
       <ScrollPositionProvider>

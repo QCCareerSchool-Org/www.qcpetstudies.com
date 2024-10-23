@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { MouseEventHandler, ReactElement, ReactNode } from 'react';
+import { FC, MouseEventHandler, ReactNode } from 'react';
+
 import { Modal } from 'react-bootstrap';
 import { Accordion } from '../../components/accordion';
 import { AccordionItem } from '../../components/accordion/AccordionItem';
@@ -217,7 +218,7 @@ type QuestionAnswerProps = {
   children: ReactNode;
 };
 
-const QuestionAnswer = ({ question, children }: QuestionAnswerProps): ReactElement => (
+const QuestionAnswer: FC<QuestionAnswerProps> = ({ question, children }) => (
   <AccordionItem heading={question}>
     {children}
   </AccordionItem>

@@ -1,10 +1,10 @@
-import { ReactElement, ReactNode } from 'react';
+import { FC, ReactNode } from 'react';
 
 type Props = {
   src: string;
   children: ReactNode;
 };
 
-const Link = ({ children }: Props): ReactElement => <>{children}</>;
+const Link: FC<Props> = ({ children }) => <>{children}</>;
 
 export default Link;

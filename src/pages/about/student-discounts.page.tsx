@@ -1,6 +1,6 @@
 import { NextPage } from 'next';
 import Image, { StaticImageData } from 'next/image';
-import { ReactElement, ReactNode } from 'react';
+import { FC, ReactNode } from 'react';
 
 import { SEO } from '../../components/SEO';
 import StudentDiscountBackground from '../../images/backgrounds/student-discounts-bg.jpg';
@@ -104,7 +104,7 @@ type SupplierProps = {
   children: ReactNode;
 };
 
-const Supplier = ({ className, imageSrc, imageWidth, imageHeight, imageAlt, children }: SupplierProps): ReactElement => (
+const Supplier: FC<SupplierProps> = ({ className, imageSrc, imageWidth, imageHeight, imageAlt, children }) => (
   <div className={`d-flex flex-column flex-lg-row align-items-center ${className ? className : ''}`}>
     <div className="mb-2 mb-lg-0 me-lg-5 flex-shrink-0">
       <Image

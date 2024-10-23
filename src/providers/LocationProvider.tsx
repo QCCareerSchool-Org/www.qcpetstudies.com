@@ -1,5 +1,5 @@
 import Cookies from 'js-cookie';
-import React, { ReactElement, ReactNode, useEffect, useState } from 'react';
+import React, { FC, ReactNode, useEffect, useState } from 'react';
 
 import { Location } from '../models/location';
 
@@ -47,7 +47,7 @@ const getLocation = async (): Promise<Location> => {
   }
 };
 
-export const LocationProvider = ({ children }: Props): ReactElement => {
+export const LocationProvider: FC<Props> = ({ children }) => {
   const [ state, dispatch ] = useState<Location | null>(null);
 
   useEffect(() => {

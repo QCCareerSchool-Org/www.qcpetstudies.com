@@ -1,6 +1,7 @@
 import { NextPage } from 'next';
 import Image, { StaticImageData } from 'next/image';
-import { ReactElement, ReactNode } from 'react';
+import { FC, ReactNode } from 'react';
+
 import { FaBookOpen, FaHeadphones, FaLightbulb, FaStar } from 'react-icons/fa';
 
 import { GuaranteeSection } from '../../components/GuaranteeSection';
@@ -133,7 +134,7 @@ type CoreValueProps = {
   right: ReactNode;
 };
 
-const CoreValue = ({ left, right }: CoreValueProps): ReactElement => (
+const CoreValue: FC<CoreValueProps> = ({ left, right }) => (
   <div className="d-flex flex-column flex-md-row align-items-center text-center text-md-start mb-4">
     <div className="flex-shrink-0 me-md-4 mb-2 mb-md-0">
       {left}

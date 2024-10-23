@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { ReactElement } from 'react';
+import { FC } from 'react';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 
@@ -18,7 +18,7 @@ type Props = {
   offset?: number;
 };
 
-export const SecondaryNav = ({ title, nav, mobile, scrolled, offset }: Props): ReactElement => {
+export const SecondaryNav: FC<Props> = ({ title, nav, mobile, scrolled, offset }) => {
   const [ mobileMenu, toggleMobileMenu ] = useToggle(false);
 
   return (

@@ -3,7 +3,7 @@ import '../styles/global.scss';
 import { NextPage } from 'next';
 import type { AppProps } from 'next/app';
 import { useRouter } from 'next/router';
-import { ReactElement, ReactNode, useEffect } from 'react';
+import { FC, ReactNode, useEffect } from 'react';
 
 import { ErrorBoundary } from '../components/ErrorBoundary';
 import { ErrorPage } from '../components/ErrorPage';
@@ -34,7 +34,7 @@ type AppPropsWithLayout = AppProps & {
   Component: NextPageWithLayout;
 };
 
-const QCPetStudiesApp = ({ Component, pageProps }: AppPropsWithLayout): ReactElement => {
+const QCPetStudiesApp: FC<AppPropsWithLayout> = ({ Component, pageProps }) => {
   const router = useRouter();
 
   useEffect(() => {

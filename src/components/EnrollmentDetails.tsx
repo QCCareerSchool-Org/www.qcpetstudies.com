@@ -1,13 +1,14 @@
-import { Fragment, ReactElement } from 'react';
+import { FC, Fragment } from 'react';
 
 import { formatDate } from '../lib/formatDate';
+
 import type { Enrollment } from '../models/enrollment';
 
 type Props = {
   enrollment: Enrollment;
 };
 
-export const EnrollmentDetails = ({ enrollment }: Props): ReactElement => {
+export const EnrollmentDetails: FC<Props> = ({ enrollment }) => {
   return (
     <section className="bg-light">
       <div className="container">

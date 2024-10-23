@@ -1,4 +1,4 @@
-import { ReactElement } from 'react';
+import { FC } from 'react';
 
 type Variant = 'dark' | 'light';
 
@@ -7,7 +7,7 @@ type Props = {
   id?: string;
 };
 
-export const PriceSectionDisabled = ({ variant = 'dark', id = 'tuition' }: Props): ReactElement => (
+export const PriceSectionDisabled: FC<Props> = ({ variant = 'dark', id = 'tuition' }) => (
   <>
     <div id={id} className="sectionAnchor" />
     <section className={variant === 'dark' ? 'bg-navy' : 'bg-light'}>

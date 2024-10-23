@@ -1,5 +1,6 @@
-import React, { ReactElement, ReactNode, useEffect, useReducer } from 'react';
+import React, { FC, ReactNode, useEffect, useReducer } from 'react';
 import { createPushSubscription, deletePushSubscription, getPushSubscription, removePushSubscription, SubscriptionMetaData } from '../lib/pushSubscription';
+
 import { getRegistration } from '../lib/serviceWorker';
 
 export const PushSubscriptionContext = React.createContext<UsePushSubscriptionResult | undefined>(undefined);
@@ -74,7 +75,7 @@ type Props = {
   children: ReactNode;
 };
 
-export const PushSubscriptionProvider = ({ children }: Props): ReactElement => {
+export const PushSubscriptionProvider: FC<Props> = ({ children }) => {
   const [ state, dispatch ] = useReducer(pushSubscriptionReducer, pushSubscriptionInitialState);
 
   // on load, register the service worker

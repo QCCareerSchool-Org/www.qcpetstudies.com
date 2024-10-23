@@ -1,6 +1,6 @@
 import { NextPage } from 'next';
 import Image from 'next/image';
-import { ReactElement } from 'react';
+import { FC, ReactElement } from 'react';
 import { FaGraduationCap, FaLaptop, FaUniversity } from 'react-icons/fa';
 
 import { SEO } from '../../components/SEO';
@@ -121,7 +121,7 @@ type ComparisonSectionProps = {
   className?: string;
 };
 
-const ComparisonSection = ({ title, inClass, online, className }: ComparisonSectionProps): ReactElement => (
+const ComparisonSection: FC<ComparisonSectionProps> = ({ title, inClass, online, className }) => (
   <section className={className}>
     <div className="container text-center">
       <h2 className="mb-4">{title}</h2>

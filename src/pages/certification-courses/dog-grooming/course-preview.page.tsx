@@ -1,7 +1,8 @@
 import { GetServerSideProps } from 'next';
 import Image, { StaticImageData } from 'next/image';
 import Link from 'next/link';
-import { ReactElement } from 'react';
+import { FC, ReactElement } from 'react';
+
 import { BsBook } from 'react-icons/bs';
 import { FaBars, FaPlay } from 'react-icons/fa';
 
@@ -414,7 +415,7 @@ type PreviewProps = {
   assignmentContent: ReactElement;
 };
 
-const Preview = ({ videoContent, assignmentContent }: PreviewProps): ReactElement => (
+const Preview: FC<PreviewProps> = ({ videoContent, assignmentContent }) => (
   <TabGroup
     data={[
       {
