@@ -1,14 +1,14 @@
-import { FC, ReactElement } from 'react';
+import type { FC } from 'react';
 
-import { ImageCircle } from './../ImageCircle';
-import { lisaDay, mariKusanagi, paddyGaffney, Tutor } from './tutors';
+import { MasterIcon } from './masterIcon';
+import { lisaDay, mariKusanagi, paddyGaffney } from './tutors';
 
 type Props = {
   className?: string;
   id?: string;
 };
 
-export const DGTutorSection = ({ className, id = 'tutors' }: Props): ReactElement => (
+export const DGTutorSection: FC<Props> = ({ className, id = 'tutors' }) => (
   <>
     <div id={id} className="sectionAnchor" />
     <section className={className}>
@@ -38,16 +38,4 @@ export const DGTutorSection = ({ className, id = 'tutors' }: Props): ReactElemen
       }
     `}</style>
   </>
-);
-
-const MasterIcon: FC<Tutor> = ({ ...tutor }) => (
-  <div className="col-12 col-lg-4">
-    <ImageCircle src={tutor.image} alt="" size={200} />
-    <div className="mt-4">
-      <h3>{tutor.name}</h3>
-      <h4>Certified Master Groomer</h4>
-      <p className="my-0"><i>{tutor.yearsExperience}+ Years of Experience</i></p>
-      <p>{tutor.description}</p>
-    </div>
-  </div>
 );
