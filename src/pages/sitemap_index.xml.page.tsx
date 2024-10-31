@@ -17,7 +17,7 @@ type SiteMapIndex = {
 const getRemoteSiteMapIndex = async (): Promise<SiteMapIndex> => {
   try {
     // fetch the data
-    const response = await fetch('https://blog.qcpetstudies.com/sitemap_index.xml');
+    const response = await fetch('https://blog.qcpetstudies.com/blog/sitemap_index.xml');
     if (!response.ok) {
       throw Error('Could not fetch remote sitemap index');
     }
