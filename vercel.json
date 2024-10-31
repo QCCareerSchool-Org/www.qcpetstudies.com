@@ -1,16 +1,16 @@
 {
   "rewrites": [
-    { "source": "/blog", "destination": "https://blog.qcpetstudies.com/blog/" },
+    { "source": "/blog", "destination": "https://blog.qcpetstudies.com/blog/index.php" },
     { "source": "/blog/:match*", "destination": "https://blog.qcpetstudies.com/blog/:match" }
   ],
   "redirects": [
-    { "source": "/:year(\\d\\d\\d\\d)/:month(\\d\\d)/:path*", "destination": "/blog/:year/:month/:path" },
-    
+    { "source": "/:year(\\d\\d\\d\\d)/:month(\\d\\d)/:path*", "destination": "/blog/:year/:month/:path", "permanent": true  },
+    { "source": "/tag/:path*", "destination": "/blog/tag/:path*", "permanent": true  },
+    { "source": "/category/:path*", "destination": "/blog/category/:path*", "permanent": true  },
+    { "source": "/author/:path*", "destination": "/blog/author/:path*", "permanent": true  },
+
     { "source": "/dog-grooming-courses/:path*", "destination": "/certification-courses/:path*" },
     { "source": "/dog-training-courses/:path*", "destination": "/certification-courses/:path*" },
-    { "source": "/tag/:path*", "destination": "/blog/tag/:path*" },
-    { "source": "/category/:path*", "destination": "/blog/category/:path*" },
-    { "source": "/author/:path*", "destination": "/blog/author/:path*" },
     { "source": "/certification-courses/resources/:path*", "destination": "/resources/:path*" },
     { "source": "/certification-courses/your-grooming-assignment", "destination": "/certification-courses/dog-grooming/assignments" },
     { "source": "/online-courses", "destination": "/certification-courses/dog-grooming", "permanent": true },
@@ -43,6 +43,6 @@
     { "source": "/terms.html", "destination": "/terms", "permanent": true },
     { "source": "/terms-gb.html", "destination": "/terms-gb", "permanent": true },
     { "source": "/enrollment-agreement.html", "destination": "/enrollment-agreement", "permanent": true },
-    { "source": "/enrollment-agreement-gb.html", "destination": "/enrollment-agreement-gb" }
+    { "source": "/enrollment-agreement-gb.html", "destination": "/enrollment-agreement-gb", "permanent": true }
   ]
 }
