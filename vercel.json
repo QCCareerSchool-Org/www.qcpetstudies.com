@@ -1,5 +1,11 @@
 {
+  "rewrites": [
+    { "source": "/blog", "destination": "https://blog.qcpetstudies.com/blog/" },
+    { "source": "/blog/:match*", "destination": "https://blog.qcpetstudies.com/blog/:match" }
+  ],
   "redirects": [
+    { "source": "/:year(\\d\\d\\d\\d)/:month(\\d\\d)/:path*", "destination": "/blog/:year/:month/:path" },
+    
     { "source": "/dog-grooming-courses/:path*", "destination": "/certification-courses/:path*" },
     { "source": "/dog-training-courses/:path*", "destination": "/certification-courses/:path*" },
     { "source": "/tag/:path*", "destination": "/blog/tag/:path*" },
@@ -38,9 +44,5 @@
     { "source": "/terms-gb.html", "destination": "/terms-gb", "permanent": true },
     { "source": "/enrollment-agreement.html", "destination": "/enrollment-agreement", "permanent": true },
     { "source": "/enrollment-agreement-gb.html", "destination": "/enrollment-agreement-gb" }
-  ],
-  "rewrites": [
-    { "source": "/blog/", "destination": "https://blog.qcpetstudies.com/blog/sniffin-around-blog" },
-    { "source": "/blog/:match*", "destination": "https://blog.qcpetstudies.com/blog/:match" }
   ]
 }
