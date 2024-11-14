@@ -24,9 +24,10 @@ type Props = {
   /** custom path for the shopping cart (include leading slash) */
   enrollPath?: string;
   className?: string;
+  style?: React.CSSProperties;
 };
 
-export const Header = ({ noHero, inverseNav, secondaryTitle, secondaryNavLinks, enrollPath = '/', className }: Props): ReactElement => {
+export const Header: FC<Props> = ({ noHero, inverseNav, secondaryTitle, secondaryNavLinks, enrollPath = '/', className, style }) => {
   const screenWidth = useScreenWidth();
   const location = useLocation();
   const scrollPosition = useScrollPosition();
@@ -58,6 +59,7 @@ export const Header = ({ noHero, inverseNav, secondaryTitle, secondaryNavLinks, 
         expand="lg"
         className={`${inverseNav ? 'inverse' : ''} ${scrolled && !secondaryNavLinks ? 'shadow-sm' : ''} ${expanded && !lgOrGreater ? 'opened' : 'closed'} ${!lgOrGreater ? 'mobile' : 'desktop'} ${secondaryNavLinks ? '.with-secondary' : ''} ${className ?? ''} flex-column`}
         onToggle={setExpanded}
+        style={style}
       >
         {location?.countryCode === 'CA' && <CanadaAuxNavBar />}
         <div className="container">

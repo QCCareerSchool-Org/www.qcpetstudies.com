@@ -1,5 +1,7 @@
-import { ReactElement, ReactNode } from 'react';
+import { FC, ReactNode, useState } from 'react';
 
+import { useLocation } from '../../hooks/useLocation';
+import { CountDownTimer } from '../countDownTimer';
 import { Footer, FooterCTAType } from '../Footer';
 import { Header } from '../Header';
 import { SecondaryNavLinks } from '../SecondaryNav';
@@ -16,17 +18,35 @@ type Props = {
   children: ReactNode;
 };
 
-export const DefaultLayout = ({ noHero, inverseNav, secondaryTitle, secondaryNavLinks, footerCTA, footerCTAType, enrollPath = '/', children }: Props): ReactElement => (
-  <div id="defaultPage" className="d-flex flex-column vh-100">
-    <Header noHero={noHero} inverseNav={inverseNav} secondaryTitle={secondaryTitle} secondaryNavLinks={secondaryNavLinks} enrollPath={enrollPath} className="flex-shrink-0 fixed-top" />
-    <main className="flex-shrink-0">
-      {children}
-    </main>
-    <Footer cta={footerCTA} ctaType={footerCTAType} enrollPath={enrollPath} className="bg-navy mt-auto" />
-    <script dangerouslySetInnerHTML={{ __html: livechatScript }} />
-    <noscript><a href="https://www.livechatinc.com/chat-with/1056788/" rel="nofollow">Chat with us</a>, powered by <a href="https://www.livechatinc.com/?welcome" rel="noopener nofollow noreferrer" target="_blank">LiveChat</a></noscript>
-  </div>
-);
+export const DefaultLayout: FC<Props> = ({ noHero, inverseNav, secondaryTitle, secondaryNavLinks, footerCTA, footerCTAType, enrollPath = '/', children }) => {
+  const date = new Date().getTime();
+  const location = useLocation();
+  const [ countdownHeight, setCountdownHeight ] = useState(0);
+
+  return (
+    <div>
+      <CountDownTimer date={date} countryCode={location?.countryCode ?? ''} setCountdownHeight={setCountdownHeight} />
+
+      <div id="defaultPage" className="d-flex flex-column">
+        <Header
+          noHero={noHero}
+          inverseNav={inverseNav}
+          secondaryTitle={secondaryTitle}
+          secondaryNavLinks={secondaryNavLinks}
+          enrollPath={enrollPath}
+          className="flex-shrink-0 fixed-top"
+          style={{ marginTop: countdownHeight }}
+        />
+        <main className="flex-shrink-0">
+          {children}
+        </main>
+        <Footer cta={footerCTA} ctaType={footerCTAType} enrollPath={enrollPath} className="bg-navy mt-auto" />
+        <script dangerouslySetInnerHTML={{ __html: livechatScript }} />
+        <noscript><a href="https://www.livechatinc.com/chat-with/1056788/" rel="nofollow">Chat with us</a>, powered by <a href="https://www.livechatinc.com/?welcome" rel="noopener nofollow noreferrer" target="_blank">LiveChat</a></noscript>
+      </div>
+    </div>
+  );
+};
 
 const livechatScript = `
 window.__lc = window.__lc || { };
