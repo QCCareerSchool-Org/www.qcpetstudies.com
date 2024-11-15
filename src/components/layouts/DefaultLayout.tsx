@@ -1,4 +1,4 @@
-import type { FC, ReactNode } from 'react';
+import type { FC, PropsWithChildren, ReactNode } from 'react';
 
 import { Footer, FooterCTAType } from '../Footer';
 import { Header } from '../Header';
@@ -11,10 +11,9 @@ type Props = {
   footerCTA?: ReactNode;
   footerCTAType?: FooterCTAType;
   enrollPath?: string;
-  children: ReactNode;
 };
 
-export const DefaultLayout: FC<Props> = props => (
+export const DefaultLayout: FC<PropsWithChildren<Props>> = props => (
   <div id="defaultPage" className="d-flex flex-column">
     <Header secondaryTitle={props.secondaryTitle} secondaryNavLinks={props.secondaryNavLinks} enrollPath={props.enrollPath} />
     <main className="flex-shrink-0">

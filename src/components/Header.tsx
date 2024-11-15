@@ -1,7 +1,8 @@
 import type { FC } from 'react';
 
 import { useLocation } from '../hooks/useLocation';
-import { CanadaAuxNavBar } from './CanadaAuxNavBar';
+// import { CanadaAuxNavBar } from './CanadaAuxNavBar';
+import { CountDownTimer } from './countDownTimer';
 import styles from './Header.module.scss';
 import { MainNav } from './MainNav';
 import { SecondaryNav, SecondaryNavLink } from './SecondaryNav';
@@ -13,13 +14,14 @@ type Props = {
   enrollPath?: string;
 };
 
-export const Header: FC<Props> = ({ secondaryTitle, secondaryNavLinks, enrollPath = '/' }) => {
+export const Header: FC<Props> = ({ secondaryTitle, secondaryNavLinks, enrollPath }) => {
   const location = useLocation();
   const countryCode = location?.countryCode;
 
   return (
     <div className={`${styles.wrapper} shadow-lg`}>
-      {countryCode === 'CA' && <CanadaAuxNavBar />}
+      {/* {countryCode === 'CA' && <CanadaAuxNavBar />} */}
+      <CountDownTimer countryCode={countryCode ?? 'US'} />
       <MainNav enrollPath={enrollPath} countryCode={countryCode} />
       {secondaryNavLinks && <SecondaryNav title={secondaryTitle} nav={secondaryNavLinks} />}
     </div>

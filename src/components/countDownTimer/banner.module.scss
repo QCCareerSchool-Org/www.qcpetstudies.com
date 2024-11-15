@@ -1,0 +1,13 @@
+.banner {
+  text-align: center;
+  padding: 1rem;
+  background-color: black;
+  color: white;
+}
+
+.message {
+  font-size: 0.875rem;
+  @media only screen and (min-width: 768px) {
+    font-size: 1rem;
+  }
+}

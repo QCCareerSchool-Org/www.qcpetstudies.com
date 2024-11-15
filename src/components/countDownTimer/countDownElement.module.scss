@@ -1,0 +1,21 @@
+.digits {
+  font-size: 1.75rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+
+  &.disabled {
+    opacity: 0.5;
+  }
+
+  @media only screen and (min-width: 768px) {
+    font-size: 2rem;
+  }
+}
+
+.units {
+  font-size: 0.625rem;
+  margin-top: -0.375rem;
+  font-weight: 300;
+  text-transform: uppercase;
+  opacity: 0.8;
+}
