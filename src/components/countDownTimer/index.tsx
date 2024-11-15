@@ -11,7 +11,7 @@ type Props = {
   countryCode: string;
 };
 
-const bannerStartDate = Date.UTC(2024, 10, 18, 13); // November 18, 2024 at 08:00 (13:00 UTC)
+const bannerStartDate = Date.UTC(2024, 10, 15, 21, 40); // November 15, 2024 at 16:40 (21:40 UTC)
 const countDownStartDate = Date.UTC(2024, 10, 29, 8); // November 29, 2024 at 3:00 (08:00 UTC)
 const endDate = Date.UTC(2024, 10, 30, 8); // November 30, 2024 at 03:00 (08:00 UTC)
 
