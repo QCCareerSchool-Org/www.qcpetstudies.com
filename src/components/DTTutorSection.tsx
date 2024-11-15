@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import { ReactElement } from 'react';
+import type { FC } from 'react';
 
 import ShannonNoonanImage from '../images/shannon-noonan.jpg';
 import SusanReadImage from '../images/susan-read.jpg';
@@ -9,7 +9,7 @@ type Props = {
   id?: string;
 };
 
-export const DTTutorSection = ({ className, id = 'tutors' }: Props): ReactElement => {
+export const DTTutorSection: FC<Props> = ({ className, id = 'tutors' }) => {
 
   return <>
     <div id={id} className="sectionAnchor" />

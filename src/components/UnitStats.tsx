@@ -1,4 +1,4 @@
-import { ReactElement } from 'react';
+import { FC, ReactElement } from 'react';
 import { BsBookHalf, BsPencilSquare, BsPlayCircle } from 'react-icons/bs';
 
 const AssignmentsIcon = (): ReactElement => (
@@ -21,7 +21,7 @@ type Props = {
   videosTime?: string;
 };
 
-export const UnitStats = (props: Props): ReactElement => (
+export const UnitStats: FC<Props> = props => (
   <div className="d-flex flex-column flex-sm-row mb-3">
     {props.assignmentsCount && <div className="d-flex mb-2 mb-sm-0 me-sm-4"><AssignmentsIcon />{props.assignmentsCount}{props.assignmentsTime && <> ({props.assignmentsTime})</>}</div>}
     {props.readingsTime && <div className="d-flex mb-2 mb-sm-0 me-sm-4"><ReadingsIcon />{props.readingsTime}</div>}

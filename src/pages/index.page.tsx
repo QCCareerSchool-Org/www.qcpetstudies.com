@@ -7,7 +7,6 @@ import { IoMdRibbon } from 'react-icons/io';
 import { jsonLdScriptProps } from 'react-schemaorg';
 import { EducationalOrganization } from 'schema-dts';
 
-import { DefaultLayout } from '../components/layouts/DefaultLayout';
 import { SEO } from '../components/SEO';
 import { TestimonialKaylaTorraville } from '../components/testimonials/TestimonialKaylaTorraville';
 import { TestimonialLucaCoppola } from '../components/testimonials/TestimonialLucaCoppola';
@@ -291,8 +290,6 @@ const HomePage: NextPageWithLayout = () => {
     `}</style>
   </>;
 };
-
-HomePage.getLayout = page => <DefaultLayout inverseNav={true}>{page}</DefaultLayout>;
 
 export default HomePage;
 

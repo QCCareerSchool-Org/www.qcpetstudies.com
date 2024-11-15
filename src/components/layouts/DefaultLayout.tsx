@@ -1,28 +1,25 @@
-import { ReactElement, ReactNode } from 'react';
+import type { FC, PropsWithChildren, ReactNode } from 'react';
 
 import { Footer, FooterCTAType } from '../Footer';
 import { Header } from '../Header';
-import { SecondaryNavLinks } from '../SecondaryNav';
+import { SecondaryNavLink } from '../SecondaryNav';
 
 type Props = {
-  noHero?: boolean;
-  inverseNav?: boolean;
   secondaryTitle?: string;
-  secondaryNavLinks?: SecondaryNavLinks;
+  secondaryNavLinks?: SecondaryNavLink[];
   /** overrides the entire CTA */
   footerCTA?: ReactNode;
   footerCTAType?: FooterCTAType;
   enrollPath?: string;
-  children: ReactNode;
 };
 
-export const DefaultLayout = ({ noHero, inverseNav, secondaryTitle, secondaryNavLinks, footerCTA, footerCTAType, enrollPath = '/', children }: Props): ReactElement => (
-  <div id="defaultPage" className="d-flex flex-column vh-100">
-    <Header noHero={noHero} inverseNav={inverseNav} secondaryTitle={secondaryTitle} secondaryNavLinks={secondaryNavLinks} enrollPath={enrollPath} className="flex-shrink-0 fixed-top" />
+export const DefaultLayout: FC<PropsWithChildren<Props>> = props => (
+  <div id="defaultPage" className="d-flex flex-column">
+    <Header secondaryTitle={props.secondaryTitle} secondaryNavLinks={props.secondaryNavLinks} enrollPath={props.enrollPath} />
     <main className="flex-shrink-0">
-      {children}
+      {props.children}
     </main>
-    <Footer cta={footerCTA} ctaType={footerCTAType} enrollPath={enrollPath} className="bg-navy mt-auto" />
+    <Footer cta={props.footerCTA} ctaType={props.footerCTAType} enrollPath={props.enrollPath} className="bg-navy mt-auto" />
     <script dangerouslySetInnerHTML={{ __html: livechatScript }} />
     <noscript><a href="https://www.livechatinc.com/chat-with/1056788/" rel="nofollow">Chat with us</a>, powered by <a href="https://www.livechatinc.com/?welcome" rel="noopener nofollow noreferrer" target="_blank">LiveChat</a></noscript>
   </div>

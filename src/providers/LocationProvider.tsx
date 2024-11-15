@@ -1,10 +1,11 @@
 import Cookies from 'js-cookie';
-import React, { ReactElement, ReactNode, useEffect, useState } from 'react';
+import type { FC, PropsWithChildren } from 'react';
+import { createContext, useEffect, useState } from 'react';
 
 import { Location } from '../models/location';
 
-export const LocationStateContext = React.createContext<Location | null | undefined>(undefined);
-export const LocationDispatchContext = React.createContext<((location: Location) => void) | undefined>(undefined);
+export const LocationStateContext = createContext<Location | null | undefined>(undefined);
+export const LocationDispatchContext = createContext<((location: Location) => void) | undefined>(undefined);
 
 const isLocation = (obj: unknown): obj is Location => {
   if (typeof obj === 'object' && obj !== null) {
@@ -16,10 +17,6 @@ const isLocation = (obj: unknown): obj is Location => {
     }
   }
   return false;
-};
-
-type Props = {
-  children: ReactNode;
 };
 
 const getLocation = async (): Promise<Location> => {
@@ -47,7 +44,7 @@ const getLocation = async (): Promise<Location> => {
   }
 };
 
-export const LocationProvider = ({ children }: Props): ReactElement => {
+export const LocationProvider: FC<PropsWithChildren> = ({ children }) => {
   const [ state, dispatch ] = useState<Location | null>(null);
 
   useEffect(() => {

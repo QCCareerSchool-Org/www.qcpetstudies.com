@@ -1,5 +1,4 @@
 import { GetServerSideProps } from 'next';
-import { DefaultLayout } from '../../components/layouts/DefaultLayout';
 import { SEO } from '../../components/SEO';
 import { NextPageWithLayout } from '../_app.page';
 
@@ -64,7 +63,5 @@ const CanadianTaxCreditsPage: NextPageWithLayout<Props> = ({ year }) => (
 
 // eslint-disable-next-line @typescript-eslint/require-await
 export const getServerSideProps: GetServerSideProps<Props> = async () => ({ props: { year: new Date().getFullYear() } });
-
-CanadianTaxCreditsPage.getLayout = page => <DefaultLayout noHero={true}>{page}</DefaultLayout>;
 
 export default CanadianTaxCreditsPage;

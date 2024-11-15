@@ -1,5 +1,6 @@
-import Image, { StaticImageData } from 'next/image';
-import { ReactElement } from 'react';
+import type { StaticImageData } from 'next/image';
+import Image from 'next/image';
+import type { FC } from 'react';
 
 import CourseMaterials from '../images/course-materials-first-aid.jpg';
 import FirstAidLogo from '../images/first-aid-logo.svg';
@@ -8,7 +9,7 @@ type Props = {
   className?: string;
 };
 
-export const FreeFirstAidSection = ({ className }: Props): ReactElement => (
+export const FreeFirstAidSection: FC<Props> = ({ className }) => (
   <section className={className}>
     <div className="container text-center">
       <div className="row align-items-center">
