@@ -12,7 +12,7 @@ type Props = {
   countryCode?: string;
 };
 
-export const MainNav: FC<Props> = ({ enrollPath, countryCode }) => {
+export const MainNav: FC<Props> = ({ enrollPath = '/', countryCode }) => {
   const [ key, setKey ] = useState(0);
 
   const flagImage = getFlagImageData(countryCode);
