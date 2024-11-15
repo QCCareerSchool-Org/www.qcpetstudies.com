@@ -1,6 +1,6 @@
 import Image, { StaticImageData } from 'next/image';
 import Link from 'next/link';
-import { FC, MouseEventHandler, ReactElement, ReactNode } from 'react';
+import type { FC, MouseEventHandler, ReactNode } from 'react';
 
 import { useLocation } from '../../hooks/useLocation';
 import { useScreenWidth } from '../../hooks/useScreenWidth';
@@ -23,7 +23,7 @@ type Props = {
   children: ReactNode;
 };
 
-export const LandingPageLayout = ({ link = true, href = '/', reloadApp = false, nav, footer = true, children }: Props): ReactElement => {
+export const LandingPageLayout: FC<Props> = ({ link = true, href = '/', reloadApp = false, nav, footer = true, children }) => {
   const location = useLocation();
   const screenWidth = useScreenWidth();
   const scrollPosition = useScrollPosition();

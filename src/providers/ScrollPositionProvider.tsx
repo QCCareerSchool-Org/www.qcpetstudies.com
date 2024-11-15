@@ -1,17 +1,14 @@
-import React, { ReactElement, ReactNode, useEffect, useState } from 'react';
+import type { FC, PropsWithChildren } from 'react';
+import { createContext, useEffect, useState } from 'react';
 
-export const ScrollPositionContext = React.createContext<number | undefined>(undefined);
+export const ScrollPositionContext = createContext<number | undefined>(undefined);
 
-type Props = {
-  children: ReactNode;
-};
-
-export const ScrollPositionProvider = ({ children }: Props): ReactElement => {
+export const ScrollPositionProvider: FC<PropsWithChildren> = ({ children }) => {
   const [ state, dispatch ] = useState(0);
 
   useEffect(() => {
-    dispatch(window.pageYOffset);
-    const handleScroll = (): void => dispatch(window.pageYOffset);
+    dispatch(window.scrollY);
+    const handleScroll = (): void => dispatch(window.scrollY);
     window.addEventListener('scroll', handleScroll);
     return () => {
       window.removeEventListener('scroll', handleScroll);

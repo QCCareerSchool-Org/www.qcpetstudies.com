@@ -1,4 +1,4 @@
-import { ReactElement, Reducer, useRef } from 'react';
+import { FC, ReactElement, Reducer, useRef } from 'react';
 import { DispatchMiddleware, useReducerWithMiddleware } from '../hooks/useReducerWithMiddleware';
 
 type Props = {
@@ -30,7 +30,7 @@ const reducer: Reducer<State, Action> = (prevState, action) => {
   }
 };
 
-export const TabGroup = ({ defaultTab = 0, data }: Props): ReactElement => {
+export const TabGroup: FC<Props> = ({ defaultTab = 0, data }) => {
   const id = useRef<NodeJS.Timeout | null>(null);
 
   const dispatchMiddleware: DispatchMiddleware<Action> = dispatch => action => {

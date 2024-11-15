@@ -1,6 +1,7 @@
-import Image, { StaticImageData } from 'next/image';
+import type { StaticImageData } from 'next/image';
+import Image from 'next/image';
 import Link from 'next/link';
-import { ReactElement } from 'react';
+import type { FC } from 'react';
 
 import Guarantee21DayImage from '../images/21-day-guarantee-outlined.svg';
 import QcGuarantee from '../images/double-guarantee.svg';
@@ -11,7 +12,7 @@ type Props = {
   id?: string;
 };
 
-export const GuaranteeSection = ({ className, double = false, id = 'guarantee' }: Props): ReactElement => (
+export const GuaranteeSection: FC<Props> = ({ className, double = false, id = 'guarantee' }) => (
   <>
     <div id={id} className="sectionAnchor" />
     <section className={className}>

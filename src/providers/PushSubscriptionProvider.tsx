@@ -1,8 +1,10 @@
-import React, { ReactElement, ReactNode, useEffect, useReducer } from 'react';
+import type { FC, PropsWithChildren } from 'react';
+import { createContext, useEffect, useReducer } from 'react';
+
 import { createPushSubscription, deletePushSubscription, getPushSubscription, removePushSubscription, SubscriptionMetaData } from '../lib/pushSubscription';
 import { getRegistration } from '../lib/serviceWorker';
 
-export const PushSubscriptionContext = React.createContext<UsePushSubscriptionResult | undefined>(undefined);
+export const PushSubscriptionContext = createContext<UsePushSubscriptionResult | undefined>(undefined);
 
 type PushSubscriptionState = {
   serviceWorkerRegistration: ServiceWorkerRegistration | null;
@@ -70,11 +72,7 @@ export type UsePushSubscriptionResult = [
   dismissError: () => void,
 ];
 
-type Props = {
-  children: ReactNode;
-};
-
-export const PushSubscriptionProvider = ({ children }: Props): ReactElement => {
+export const PushSubscriptionProvider: FC<PropsWithChildren> = ({ children }) => {
   const [ state, dispatch ] = useReducer(pushSubscriptionReducer, pushSubscriptionInitialState);
 
   // on load, register the service worker
