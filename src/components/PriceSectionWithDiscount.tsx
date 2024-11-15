@@ -1,4 +1,4 @@
-import Big from 'big.js';
+import { Big } from 'big.js';
 import { FC, ReactElement, ReactNode, useMemo } from 'react';
 import { FaClock, FaLock, FaStar } from 'react-icons/fa';
 
