@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
-import { lookupPrices } from '../lib/lookupPrices';
+import { lookupPrices } from '@/lib/lookupPrices';
 
-import type { Price } from '../models/price';
+import type { Price } from '@/models/price';
 
 export const usePrice = (courses: string[], countryCode?: string, provinceCode?: string | null): Price | undefined => {
   const [ state, dispatch ] = useState<Price>();

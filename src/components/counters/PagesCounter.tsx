@@ -1,8 +1,10 @@
+'use client';
+
 import { ReactElement, useEffect, useRef, useState } from 'react';
 import { FaBookOpen } from 'react-icons/fa';
 import { useCountUp } from 'react-use-count-up';
 
-import { useOnScreen } from '../../hooks/useOnScreen';
+import { useOnScreen } from '@/hooks/useOnScreen';
 
 const formatter = (value: number): string => `${value.toFixed(0)}+`;
 

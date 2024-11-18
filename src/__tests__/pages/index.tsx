@@ -6,11 +6,11 @@ import { render } from '@testing-library/react';
 import { axe } from 'jest-axe';
 import React from 'react';
 
-import Page from '../../pages/index.page';
+import Page from '../../app/page';
 
-jest.mock('../../hooks/useLocation');
+jest.mock('@/hooks/useLocation');
 
-jest.mock('../../components/SearchBox', () => ({
+jest.mock('@/components/SearchBox', () => ({
   SearchBox: () => <div />,
 }));
 

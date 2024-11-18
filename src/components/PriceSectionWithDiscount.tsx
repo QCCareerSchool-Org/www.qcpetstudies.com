@@ -2,12 +2,12 @@ import { Big } from 'big.js';
 import { FC, ReactElement, ReactNode, useMemo } from 'react';
 import { FaClock, FaLock, FaStar } from 'react-icons/fa';
 
-import { useToggle } from '../hooks/useToggle';
-import { formatPrice } from '../lib/formatPrice';
-import { Price } from '../models/price';
 import { Bar } from './Bar';
 import { GuaranteeModal } from './GuaranteeModal';
 import { PriceSection } from './PriceSection';
+import { useToggle } from '@/hooks/useToggle';
+import { formatPrice } from '@/lib/formatPrice';
+import { Price } from '@/models/price';
 
 const iconSize = 24;
 

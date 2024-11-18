@@ -1,7 +1,7 @@
 import { FC } from 'react';
 
-import MelodyMason from '../../images/testimonials-sm/melody-mason.jpg';
 import { TestimonialSm } from './TestimonialSm';
+import MelodyMason from '@/images/testimonials-sm/melody-mason.jpg';
 
 type Props = {
   size?: number;

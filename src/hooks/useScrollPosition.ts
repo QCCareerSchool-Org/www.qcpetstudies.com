@@ -1,6 +1,6 @@
 import { useContext } from 'react';
 
-import { ScrollPositionContext } from '../providers/ScrollPositionProvider';
+import { ScrollPositionContext } from '@/providers/ScrollPositionProvider';
 
 export const useScrollPosition = (): number => {
   const context = useContext(ScrollPositionContext);

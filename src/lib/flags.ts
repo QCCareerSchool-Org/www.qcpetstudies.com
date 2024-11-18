@@ -1,10 +1,10 @@
 import { StaticImageData } from 'next/image';
 
-import FlagAU from '../images/flags/au.svg';
-import FlagCA from '../images/flags/ca.svg';
-// import FlagGB from '../images/flags/gb.svg';
-// import FlagNZ from '../images/flags/nz.svg';
-import FlagUS from '../images/flags/us.svg';
+import FlagAU from '@/images/flags/au.svg';
+import FlagCA from '@/images/flags/ca.svg';
+// import FlagGB from '@/images/flags/gb.svg';
+// import FlagNZ from '@/images/flags/nz.svg';
+import FlagUS from '@/images/flags/us.svg';
 
 export const getFlagImageData = (countryCode?: string): { src: StaticImageData; alt: string } | null => {
   switch (countryCode) {

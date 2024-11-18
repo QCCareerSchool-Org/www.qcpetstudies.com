@@ -1,4 +1,4 @@
-import type { Enrollment } from '../models/enrollment';
+import type { Enrollment } from '@/models/enrollment';
 
 type FBQ = {
   (action: 'track', type: 'PageView' | 'Lead'): void;

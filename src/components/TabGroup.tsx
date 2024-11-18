@@ -1,5 +1,5 @@
 import { FC, ReactElement, Reducer, useRef } from 'react';
-import { DispatchMiddleware, useReducerWithMiddleware } from '../hooks/useReducerWithMiddleware';
+import { DispatchMiddleware, useReducerWithMiddleware } from '@/hooks/useReducerWithMiddleware';
 
 type Props = {
   defaultTab?: number;

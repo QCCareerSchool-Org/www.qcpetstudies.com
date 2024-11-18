@@ -3,8 +3,8 @@ import Image from 'next/image';
 import type { FC } from 'react';
 import Modal from 'react-bootstrap/Modal';
 
-import Guarantee1Year from '../images/1-year-guarantee-outlined.svg';
-import Guarantee21Days from '../images/21-day-guarantee-outlined.svg';
+import Guarantee1Year from '@/images/1-year-guarantee-outlined.svg';
+import Guarantee21Days from '@/images/21-day-guarantee-outlined.svg';
 
 type Props = {
   show: boolean;

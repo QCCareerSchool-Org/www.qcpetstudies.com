@@ -1,6 +1,8 @@
+'use client';
+
 import type { FC } from 'react';
 import { useEffect, useRef, useState } from 'react';
-import { useOnScreen } from '../hooks/useOnScreen';
+import { useOnScreen } from '@/hooks/useOnScreen';
 
 type Props = {
   variant: 'primary' | 'secondary' | 'dark' | 'light';

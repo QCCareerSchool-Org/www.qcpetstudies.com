@@ -1,8 +1,8 @@
 import { GetServerSidePropsContext } from 'next';
 
-import { Location } from '../models/location';
 import { getIpAddress } from './getIpAddress';
 import { lookupLocation } from './lookupLocation';
+import { Location } from '@/models/location';
 
 const getStoredLocation = (context: GetServerSidePropsContext): Location | undefined => {
   const storedLocation: string | undefined = context.req.cookies.location;

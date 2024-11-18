@@ -1,8 +1,10 @@
+'use client';
+
 import type { FC, PropsWithChildren } from 'react';
 import { createContext, useEffect, useReducer } from 'react';
 
-import { createPushSubscription, deletePushSubscription, getPushSubscription, removePushSubscription, SubscriptionMetaData } from '../lib/pushSubscription';
-import { getRegistration } from '../lib/serviceWorker';
+import { createPushSubscription, deletePushSubscription, getPushSubscription, removePushSubscription, SubscriptionMetaData } from '@/lib/pushSubscription';
+import { getRegistration } from '@/lib/serviceWorker';
 
 export const PushSubscriptionContext = createContext<UsePushSubscriptionResult | undefined>(undefined);
 

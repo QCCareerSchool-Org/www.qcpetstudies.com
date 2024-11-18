@@ -1,4 +1,4 @@
-import { RawEnrollment } from '../models/enrollment';
+import { RawEnrollment } from '@/models/enrollment';
 
 const urls = {
   dg: 'https://hooks.zapier.com/hooks/catch/1909320/358g42p',

@@ -2,9 +2,9 @@ import Image, { StaticImageData } from 'next/image';
 import Link from 'next/link';
 import type { FC } from 'react';
 
-import { useScreenWidth } from '../hooks/useScreenWidth';
-import MapleLeaf from '../images/maple-leaf.svg';
 import { AuxNavBar } from './AuxNavBar';
+import { useScreenWidth } from '@/hooks/useScreenWidth';
+import MapleLeaf from '@/images/maple-leaf.svg';
 
 export const CanadaAuxNavBar: FC = () => {
   const screenWidth = useScreenWidth();

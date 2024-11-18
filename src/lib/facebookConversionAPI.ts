@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import { createHash } from 'crypto';
 
-import type { RawEnrollment } from '../models/enrollment';
+import type { RawEnrollment } from '@/models/enrollment';
 
 const apiVersion = 'v20.0';
 const datasetId = '3226622604235515';

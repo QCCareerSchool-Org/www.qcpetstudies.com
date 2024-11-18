@@ -1,11 +1,11 @@
 import type { FC } from 'react';
 
-import { useLocation } from '../hooks/useLocation';
 // import { CanadaAuxNavBar } from './CanadaAuxNavBar';
 import { CountDownTimer } from './countDownTimer';
 import styles from './Header.module.scss';
 import { MainNav } from './MainNav';
 import { SecondaryNav, SecondaryNavLink } from './SecondaryNav';
+import { useLocation } from '@/hooks/useLocation';
 
 type Props = {
   secondaryTitle?: string;

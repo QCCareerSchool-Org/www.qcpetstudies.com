@@ -1,7 +1,7 @@
 import { FC } from 'react';
 
-import CaseyBechard from '../../images/testimonials-sm/casey-bechard.jpg';
 import { TestimonialSm } from './TestimonialSm';
+import CaseyBechard from '@/images/testimonials-sm/casey-bechard.jpg';
 
 type Props = {
   size?: number;

@@ -3,12 +3,12 @@ import type { FC, ReactNode } from 'react';
 import { useMemo } from 'react';
 import { FaClock, FaLock, FaStar } from 'react-icons/fa';
 
-import { useToggle } from '../hooks/useToggle';
-import { formatPrice } from '../lib/formatPrice';
-import { Price } from '../models/price';
 import { Bar } from './Bar';
 import { CAPriceMessage } from './CAPriceMessage';
 import { GuaranteeModal } from './GuaranteeModal';
+import { useToggle } from '@/hooks/useToggle';
+import { formatPrice } from '@/lib/formatPrice';
+import { Price } from '@/models/price';
 
 const iconSize = 24;
 

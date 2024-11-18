@@ -1,7 +1,7 @@
 import { FC } from 'react';
 
-import NickiHughes from '../../images/testimonials/nicki-hughes.jpg';
 import { Testimonial } from './Testimonial';
+import NickiHughes from '@/images/testimonials/nicki-hughes.jpg';
 
 export const TestimonialNickiHughes: FC = () => (
   <Testimonial name="Nicki Hughes" certification="IDGP" imageSrc={NickiHughes} imageWidth={256} imageHeight={144}>

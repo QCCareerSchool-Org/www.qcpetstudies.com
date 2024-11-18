@@ -1,7 +1,7 @@
 import { FC } from 'react';
 
-import HailieSavage from '../../images/testimonials-sm/hailie-savage.jpg';
 import { TestimonialSm } from './TestimonialSm';
+import HailieSavage from '@/images/testimonials-sm/hailie-savage.jpg';
 
 type Props = {
   size?: number;

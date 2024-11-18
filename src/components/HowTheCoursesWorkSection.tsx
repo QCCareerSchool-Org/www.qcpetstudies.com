@@ -3,8 +3,8 @@ import Image from 'next/image';
 import type { FC } from 'react';
 import { BsCalendarCheck, BsCheckCircle, BsFillCloudArrowDownFill } from 'react-icons/bs';
 
-import { useScreenWidth } from '../hooks/useScreenWidth';
-import MagnifyingGLassImage from '../images/icon-magnifying-glass-2.svg';
+import { useScreenWidth } from '@/hooks/useScreenWidth';
+import MagnifyingGLassImage from '@/images/icon-magnifying-glass-2.svg';
 
 type Props = {
   className?: string;

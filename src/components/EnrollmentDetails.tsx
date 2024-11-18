@@ -1,8 +1,8 @@
 import type { FC } from 'react';
 import { Fragment } from 'react';
 
-import { formatDate } from '../lib/formatDate';
-import type { Enrollment } from '../models/enrollment';
+import { formatDate } from '@/lib/formatDate';
+import type { Enrollment } from '@/models/enrollment';
 
 type Props = {
   enrollment: Enrollment;

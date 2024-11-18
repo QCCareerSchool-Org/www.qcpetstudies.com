@@ -1,9 +1,9 @@
 import { ChangeEvent, ChangeEventHandler, FC, FormEventHandler, useReducer, useRef } from 'react';
 
-import { useLocation } from '../hooks/useLocation';
-import { addLead } from '../lib/leads';
-import { isSchool } from '../models/school';
 import { Spinner } from './Spinner';
+import { useLocation } from '@/hooks/useLocation';
+import { addLead } from '@/lib/leads';
+import { isSchool } from '@/models/school';
 
 export type CourseCode = 'dg' | 'dt';
 

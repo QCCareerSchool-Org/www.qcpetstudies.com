@@ -1,6 +1,6 @@
 import * as HttpStatus from '@qccareerschool/http-status';
 
-import type { RawEnrollment } from '../models/enrollment';
+import type { RawEnrollment } from '@/models/enrollment';
 
 export const getEnrollment = async (enrollmentId: number, code: string): Promise<RawEnrollment> => {
   const url = `${process.env.ENROLLMENT_ENDPOINT}/${enrollmentId}?code=${code}`;

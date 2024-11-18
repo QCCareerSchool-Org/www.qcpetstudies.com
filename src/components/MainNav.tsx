@@ -4,8 +4,8 @@ import { FC, useState } from 'react';
 import { Nav, Navbar, NavDropdown } from 'react-bootstrap';
 import { FaCog, FaCut, FaFolderOpen } from 'react-icons/fa';
 
-import logo from '../images/qc-pet-horizontal.svg';
-import { getFlagImageData } from '../lib/flags';
+import logo from '@/images/qc-pet-horizontal.svg';
+import { getFlagImageData } from '@/lib/flags';
 
 type Props = {
   enrollPath?: string;

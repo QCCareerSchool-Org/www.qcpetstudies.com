@@ -6,9 +6,9 @@ import { useCallback, useEffect, useId, useRef, useState } from 'react';
 import { GoogleReCaptcha } from 'react-google-recaptcha-v3';
 import { v1 } from 'uuid';
 
-import { CourseCode } from '../../models/courseCode';
 import DownloadIcon from '../download.svg';
 import styles from './index.module.scss';
+import { CourseCode } from '@/models/courseCode';
 
 type Props = {
   onCourseChange?: (e: ChangeEvent<HTMLInputElement>, courseCode: CourseCode) => void;

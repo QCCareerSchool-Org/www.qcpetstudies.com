@@ -1,5 +1,5 @@
 import { useContext } from 'react';
-import { PushSubscriptionContext, UsePushSubscriptionResult } from '../providers/PushSubscriptionProvider';
+import { PushSubscriptionContext, UsePushSubscriptionResult } from '@/providers/PushSubscriptionProvider';
 
 export const usePushSubscription = (): UsePushSubscriptionResult => {
   const context = useContext(PushSubscriptionContext);

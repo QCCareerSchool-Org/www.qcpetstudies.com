@@ -3,9 +3,9 @@
 import type { FC } from 'react';
 import { useEffect, useState } from 'react';
 
-import { isGBPCountry } from '../../lib/address';
 import { Banner } from './banner';
 import { getParts } from './getParts';
+import { isGBPCountry } from '@/lib/address';
 
 type Props = {
   countryCode: string;

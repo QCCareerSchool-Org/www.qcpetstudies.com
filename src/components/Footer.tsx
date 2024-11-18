@@ -1,22 +1,24 @@
+'use client';
+
 import Image, { StaticImageData } from 'next/image';
 import Link from 'next/link';
 import { FC, ReactElement, ReactNode } from 'react';
 import { FaFacebookF, FaInstagram, FaTwitter } from 'react-icons/fa';
 
-import { useLocation } from '../hooks/useLocation';
-import { useScreenWidth } from '../hooks/useScreenWidth';
-import BBBLogo from '../images/a-plus-left-pad.svg';
-import ChatIcon from '../images/footer-icons-chat.svg';
-import EmailIcon from '../images/footer-icons-email.svg';
-import InfoIcon from '../images/footer-icons-info.svg';
-import PhoneIcon from '../images/footer-icons-phone.svg';
-import GuaranteeIcon from '../images/guarantee-icon-fill.svg';
-import Logo from '../images/logo-top-white.svg';
-import SniffinArroundLogo from '../images/sniffin-around-logo-white.svg';
-import { getAddress, isGBPCountry } from '../lib/address';
-import { getFlagImageData } from '../lib/flags';
-import { openLiveChat } from '../lib/livechat';
-import { getTelephoneNumber } from '../lib/phone';
+import { useLocation } from '@/hooks/useLocation';
+import { useScreenWidth } from '@/hooks/useScreenWidth';
+import BBBLogo from '@/images/a-plus-left-pad.svg';
+import ChatIcon from '@/images/footer-icons-chat.svg';
+import EmailIcon from '@/images/footer-icons-email.svg';
+import InfoIcon from '@/images/footer-icons-info.svg';
+import PhoneIcon from '@/images/footer-icons-phone.svg';
+import GuaranteeIcon from '@/images/guarantee-icon-fill.svg';
+import Logo from '@/images/logo-top-white.svg';
+import SniffinArroundLogo from '@/images/sniffin-around-logo-white.svg';
+import { getAddress, isGBPCountry } from '@/lib/address';
+import { getFlagImageData } from '@/lib/flags';
+import { openLiveChat } from '@/lib/livechat';
+import { getTelephoneNumber } from '@/lib/phone';
 
 export type FooterCTAType = 'grooming' | 'training' | 'care' | 'behavior' | 'grooming tech';
 

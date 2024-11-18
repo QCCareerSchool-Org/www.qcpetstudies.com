@@ -1,6 +1,6 @@
 import * as HttpStatus from '@qccareerschool/http-status';
 
-import type { RawEnrollment } from '../models/enrollment';
+import type { RawEnrollment } from '@/models/enrollment';
 
 export const addToIDevAffiliate = async (enrollment: RawEnrollment, ipAddress: string | null): Promise<void> => {
   const cost = (enrollment.cost / (enrollment.currencyExchangeRate ?? 1)).toFixed(2);

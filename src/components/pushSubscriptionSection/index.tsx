@@ -1,13 +1,14 @@
+'use client';
+
 import Image from 'next/image';
 import type { FC, MouseEventHandler } from 'react';
 import { useEffect, useRef } from 'react';
 import { Modal, ModalBody, ModalHeader } from 'react-bootstrap';
 import { FaCheckCircle, FaTimesCircle } from 'react-icons/fa';
 
-import { usePushSubscription } from '../../hooks/usePushSubscription';
-import { SubscriptionMetaData } from '../../lib/pushSubscription';
-
 import EnableNotificationsChrome from './enable-notifications-with-arrow-chrome.gif';
+import { usePushSubscription } from '@/hooks/usePushSubscription';
+import { SubscriptionMetaData } from '@/lib/pushSubscription';
 
 type Props = {
   className?: string;

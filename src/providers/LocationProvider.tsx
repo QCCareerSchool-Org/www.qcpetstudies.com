@@ -1,8 +1,10 @@
+'use client';
+
 import Cookies from 'js-cookie';
 import type { FC, PropsWithChildren } from 'react';
 import { createContext, useEffect, useState } from 'react';
 
-import { Location } from '../models/location';
+import { Location } from '@/models/location';
 
 export const LocationStateContext = createContext<Location | null | undefined>(undefined);
 export const LocationDispatchContext = createContext<((location: Location) => void) | undefined>(undefined);

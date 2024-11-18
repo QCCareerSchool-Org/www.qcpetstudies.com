@@ -1,3 +1,5 @@
+'use client';
+
 import type { FC, MouseEventHandler, ReactNode } from 'react';
 import { useEffect, useId, useRef } from 'react';
 import useReducerWithThunk from 'use-reducer-thunk';

@@ -2,9 +2,9 @@ import type { StaticImageData } from 'next/image';
 import Image from 'next/image';
 import type { CSSProperties, FC } from 'react';
 
-import FiveStarsPrimary from '../../images/five-stars-primary.svg';
-import FiveStarsSecondary from '../../images/five-stars-secondary.svg';
 import { ImageCircle } from '../ImageCircle';
+import FiveStarsPrimary from '@/images/five-stars-primary.svg';
+import FiveStarsSecondary from '@/images/five-stars-secondary.svg';
 
 type Props = {
   size?: number;

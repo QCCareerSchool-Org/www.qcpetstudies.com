@@ -1,4 +1,4 @@
-import { School } from '../models/school';
+import { School } from '@/models/school';
 
 export type LeadPayload = {
   school: School;

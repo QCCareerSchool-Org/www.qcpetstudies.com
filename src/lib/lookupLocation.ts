@@ -1,4 +1,4 @@
-import { Location } from '../models/location';
+import { Location } from '@/models/location';
 
 export const lookupLocation = async (ipAddress: string): Promise<Location> => {
   try {

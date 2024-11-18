@@ -1,6 +1,6 @@
 import Big from 'big.js';
 
-import type { Enrollment } from '../models/enrollment';
+import type { Enrollment } from '@/models/enrollment';
 
 declare global {
   interface Window {

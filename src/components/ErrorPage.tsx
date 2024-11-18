@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import { ReactElement } from 'react';
 
-import DoGInBedWithStick from '../images/backgrounds/dog-in-bed-with-stick.jpg';
+import DoGInBedWithStick from '@/images/backgrounds/dog-in-bed-with-stick.jpg';
 
 export const ErrorPage = (): ReactElement => (
   <section id="top" className="bg-dark">
