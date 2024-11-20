@@ -1,34 +1,30 @@
-import { GetServerSideProps } from 'next';
 import Image, { StaticImageData } from 'next/image';
 import Link from 'next/link';
 import { ReactElement } from 'react';
 import { BsBook } from 'react-icons/bs';
 import { FaBars, FaPlay } from 'react-icons/fa';
 
-import type { PageComponent } from '../../../../_app.page';
-import KimCooperImage from './kim-cooper.jpg';
+import KimCooperImage from '../kim-cooper.jpg';
+import { PageComponent } from '@/app/serverComponent';
 import { Bar } from '@/components/Bar';
 import { DTTutorSection } from '@/components/DTTutorSection';
-import { LandingPageLayout } from '@/components/layouts/LandingPageLayout';
 import { PriceSectionWithDiscount } from '@/components/PriceSectionWithDiscount';
 import { SEO } from '@/components/SEO';
 import { TabGroup } from '@/components/TabGroup';
 import GoldenRetrieverComputerBackground from '@/images/backgrounds/golden-retriever-sitting-next-to-computer.jpg';
 import IDTPCertificationLogo from '@/images/IDTP-certification-gold.svg';
-import { getLocation } from '@/lib/getLocation';
 import { lookupPrices } from '@/lib/lookupPrices';
-import { Location } from '@/models/location';
-import { Price } from '@/models/price';
 
 export const courseCodes = [ 'dt' ];
 
 export type Props = {
-  location: Location;
-  price: Price;
   enrollPath: string;
 };
 
-const DogTrainingCoursePreviewPage: PageComponent = ({ price, enrollPath }) => {
+const DogTrainingCoursePreviewPage: PageComponent = async ({ enrollPath }) => {
+
+  const price = await lookupPrices([ 'dt' ]);
+
   return <>
     <SEO
       title="Professional Dog Trainer Course"
@@ -345,15 +341,9 @@ const DogTrainingCoursePreviewPage: PageComponent = ({ price, enrollPath }) => {
   </>;
 };
 
-DogTrainingCoursePreviewPage.getLayout = page => (
-  <LandingPageLayout link={true} nav="enroll">{page}</LandingPageLayout>
-);
-
-export const getServerSideProps: GetServerSideProps<Props> = async context => {
-  const location = await getLocation(context);
-  const price = await lookupPrices(courseCodes, location.countryCode, location.provinceCode);
-  return { props: { location, price, enrollPath: '/' } };
-};
+// DogTrainingCoursePreviewPage.getLayout = page => (
+//   <LandingPageLayout link={true} nav="enroll">{page}</LandingPageLayout>
+// );
 
 const VideoTab = (): ReactElement => (
   <div className="d-flex flex-column align-items-center">

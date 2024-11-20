@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 
-import type { PageComponent } from './_app.page';
+import { PageComponent } from '@/app/serverComponent';
 import { TextLayout } from '@/components/layouts/TextLayout';
 import { SEO } from '@/components/SEO';
 
@@ -103,6 +103,6 @@ const AgreementGBPage: PageComponent = () => {
   );
 };
 
-AgreementGBPage.getLayout = page => <TextLayout>{page}</TextLayout>;
+// AgreementGBPage.getLayout = page => <TextLayout>{page}</TextLayout>;
 
 export default AgreementGBPage;

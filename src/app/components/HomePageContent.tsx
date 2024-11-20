@@ -10,7 +10,7 @@ import { jsonLdScriptProps } from 'react-schemaorg';
 import { EducationalOrganization } from 'schema-dts';
 
 import { qcPetStudiesEducationalOrganization } from '../../qcPetStudiesEducationalOrganization';
-import { PageComponent } from '../_app/page';
+import { PageComponent } from '@/app/serverComponent';
 import { SEO } from '@/components/SEO';
 import { TestimonialKaylaTorraville } from '@/components/testimonials/TestimonialKaylaTorraville';
 import { TestimonialLucaCoppola } from '@/components/testimonials/TestimonialLucaCoppola';

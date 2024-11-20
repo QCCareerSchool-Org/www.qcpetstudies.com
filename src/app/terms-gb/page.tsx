@@ -1,4 +1,4 @@
-import type { PageComponent } from '@/app/_app';
+import { PageComponent } from '../serverComponent';
 import { SEO } from '@/components/SEO';
 
 const TermsGBPage: PageComponent = () => (

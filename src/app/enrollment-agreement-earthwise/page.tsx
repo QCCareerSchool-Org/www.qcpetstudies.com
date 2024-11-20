@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react';
 
-import type { PageComponent } from './_app.page';
-import { TextLayout } from '@/components/layouts/TextLayout';
+import { PageComponent } from '@/app/serverComponent';
 import { SEO } from '@/components/SEO';
 
 const AgreementPage: PageComponent = () => {
@@ -58,6 +57,6 @@ const AgreementPage: PageComponent = () => {
   );
 };
 
-AgreementPage.getLayout = page => <TextLayout>{page}</TextLayout>;
+// AgreementPage.getLayout = page => <TextLayout>{page}</TextLayout>;
 
 export default AgreementPage;

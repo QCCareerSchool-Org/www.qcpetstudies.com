@@ -2,10 +2,9 @@ import Image, { StaticImageData } from 'next/image';
 import Link from 'next/link';
 import { FaBars } from 'react-icons/fa';
 
-import type { PageComponent } from '../../../../_app.page';
+import { PageComponent } from '@/app/serverComponent';
 import { Accordion } from '@/components/accordion';
 import { AccordionItem } from '@/components/accordion/AccordionItem';
-import { DefaultLayout } from '@/components/layouts/DefaultLayout';
 import { SEO } from '@/components/SEO';
 import CourseOutlineBackground from '@/images/backgrounds/course-outline.jpg';
 import calendarIcon from '@/images/calendar.svg';
@@ -297,6 +296,6 @@ const GroomingTechCourseOutlinePage: PageComponent = () => (
   </>
 );
 
-GroomingTechCourseOutlinePage.getLayout = page => <DefaultLayout footerCTAType="grooming">{page}</DefaultLayout>;
+// GroomingTechCourseOutlinePage.getLayout = page => <DefaultLayout footerCTAType="grooming">{page}</DefaultLayout>;
 
 export default GroomingTechCourseOutlinePage;

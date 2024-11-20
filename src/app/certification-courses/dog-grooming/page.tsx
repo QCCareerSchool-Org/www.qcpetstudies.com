@@ -6,7 +6,7 @@ import { BsCardChecklist, BsPeopleFill, BsScissors } from 'react-icons/bs';
 import { IoMdInfinite } from 'react-icons/io';
 
 import { TestimonialsSection } from './TestimonialsSection';
-import { PageComponent } from '@/app/_app';
+import { PageComponent } from '@/app/serverComponent';
 import { Accordion } from '@/components/accordion';
 import { AccordionItem } from '@/components/accordion/AccordionItem';
 import { DGTutorSection } from '@/components/DGTutorSection';

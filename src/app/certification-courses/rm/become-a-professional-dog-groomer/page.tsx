@@ -1,42 +1,54 @@
-import { GetServerSideProps } from 'next';
 import Image from 'next/image';
 import { useMemo } from 'react';
 
-import type { PageComponent } from '../../../../_app.page';
+import { PageComponent } from '@/app/serverComponent';
 import { BrochureForm } from '@/components/BrochureForm';
 import { FreeFirstAidSection } from '@/components/FreeFirstAidSection';
 import { HowTheCoursesWorkSection } from '@/components/HowTheCoursesWorkSection';
-import { DefaultLayout } from '@/components/layouts/DefaultLayout';
 import { SEO } from '@/components/SEO';
 import CourseCatalogImage from '@/images/bottom-ipad-shepard.jpg';
 import FullKitImage from '@/images/Kit-Blue-bg.jpg';
 import { getRandomIntInclusive } from '@/lib/randomInt';
 
 const formAction = 'https://go.qcpetstudies.com/l/947642/2021-12-05/6h9rv';
-
-type Props = {
-  firstName: string | null;
-  lastName: string | null;
-  emailAddress: string | null;
-  emailOptIn: boolean | null;
-  telephoneNumber: string | null;
-  smsOptIn: boolean | null;
-  errors: boolean;
-  testGroup: number;
-  gclid: string | null;
-  msclkid: string | null;
-  marketing: {
-    source: string | null;
-    medium: string | null;
-    campaign: string | null;
-    content: string | null;
-    term: string | null;
-  };
-};
-
 const courses = [ 'dg' ];
 
-const ProfessionalDogGroomerPage: PageComponent = ({ firstName, lastName, emailAddress, emailOptIn, telephoneNumber, smsOptIn, errors, testGroup, gclid, msclkid, marketing }) => {
+const ProfessionalDogGroomerPage: PageComponent = () => {
+
+  const firstName = typeof context.query.firstName === 'string' ? context.query.firstName : null;
+  const lastName = typeof context.query.lastName === 'string' ? context.query.lastName : null;
+  const emailAddress = typeof context.query.emailAddress === 'string' ? context.query.emailAddress : null;
+  const emailOptIn = typeof context.query.emailOptIn === 'string' ? context.query.emailOptIn === 'yes' : null;
+  const telephoneNumber = typeof context.query.telephoneNumber === 'string' ? context.query.telephoneNumber : null;
+  const smsOptIn = typeof context.query.smsOptIn === 'string' ? context.query.smsOptIn === 'yes' : null;
+
+  const errors = typeof context.query.errors === 'string' && context.query.errors === 'true';
+
+  let testGroup: number | undefined;
+  const storedTestGroup = context.req.cookies.testGroup;
+  if (typeof storedTestGroup !== 'undefined') {
+    const parsed = parseInt(storedTestGroup, 10);
+    if (!isNaN(parsed)) {
+      testGroup = parsed;
+    }
+  }
+  if (typeof testGroup === 'undefined') {
+    testGroup = getRandomIntInclusive(1, 12);
+    const maxAge = 60 * 60 * 24 * 365;
+    context.res.setHeader('Set-Cookie', `testGroup=${testGroup}; Max-Age=${maxAge}; Path=/; Secure; SameSite=Strict`);
+  }
+
+  const gclid = typeof context.query.gclid === 'string' ? context.query.gclid : null;
+  const msclkid = typeof context.query.msclkid === 'string' ? context.query.msclkid : null;
+
+  const marketing = {
+    source: typeof context.query.utm_source === 'string' ? context.query.utm_source || null : null,
+    medium: typeof context.query.utm_medium === 'string' ? context.query.utm_medium || null : null,
+    campaign: typeof context.query.utm_campaign === 'string' ? context.query.utm_campaign || null : null,
+    content: typeof context.query.utm_content === 'string' ? context.query.utm_content || null : null,
+    term: typeof context.query.utm_term === 'string' ? context.query.utm_term || null : null,
+  };
+
   const hiddenFields = useMemo(() => {
     const h: Array<{ key: string; value: string | number }> = [ { key: 'testGroup', value: testGroup } ];
     if (gclid) {
@@ -158,45 +170,6 @@ const ProfessionalDogGroomerPage: PageComponent = ({ firstName, lastName, emailA
   </>;
 };
 
-ProfessionalDogGroomerPage.getLayout = page => <DefaultLayout footerCTAType="grooming">{page}</DefaultLayout>;
-
-// eslint-disable-next-line @typescript-eslint/require-await
-export const getServerSideProps: GetServerSideProps<Props> = async context => {
-  const firstName = typeof context.query.firstName === 'string' ? context.query.firstName : null;
-  const lastName = typeof context.query.lastName === 'string' ? context.query.lastName : null;
-  const emailAddress = typeof context.query.emailAddress === 'string' ? context.query.emailAddress : null;
-  const emailOptIn = typeof context.query.emailOptIn === 'string' ? context.query.emailOptIn === 'yes' : null;
-  const telephoneNumber = typeof context.query.telephoneNumber === 'string' ? context.query.telephoneNumber : null;
-  const smsOptIn = typeof context.query.smsOptIn === 'string' ? context.query.smsOptIn === 'yes' : null;
-
-  const errors = typeof context.query.errors === 'string' && context.query.errors === 'true';
-
-  let testGroup: number | undefined;
-  const storedTestGroup = context.req.cookies.testGroup;
-  if (typeof storedTestGroup !== 'undefined') {
-    const parsed = parseInt(storedTestGroup, 10);
-    if (!isNaN(parsed)) {
-      testGroup = parsed;
-    }
-  }
-  if (typeof testGroup === 'undefined') {
-    testGroup = getRandomIntInclusive(1, 12);
-    const maxAge = 60 * 60 * 24 * 365;
-    context.res.setHeader('Set-Cookie', `testGroup=${testGroup}; Max-Age=${maxAge}; Path=/; Secure; SameSite=Strict`);
-  }
-
-  const gclid = typeof context.query.gclid === 'string' ? context.query.gclid : null;
-  const msclkid = typeof context.query.msclkid === 'string' ? context.query.msclkid : null;
-
-  const marketing = {
-    source: typeof context.query.utm_source === 'string' ? context.query.utm_source || null : null,
-    medium: typeof context.query.utm_medium === 'string' ? context.query.utm_medium || null : null,
-    campaign: typeof context.query.utm_campaign === 'string' ? context.query.utm_campaign || null : null,
-    content: typeof context.query.utm_content === 'string' ? context.query.utm_content || null : null,
-    term: typeof context.query.utm_term === 'string' ? context.query.utm_term || null : null,
-  };
-
-  return { props: { firstName, lastName, emailAddress, emailOptIn, telephoneNumber, smsOptIn, errors, testGroup, gclid, msclkid, marketing } };
-};
+// ProfessionalDogGroomerPage.getLayout = page => <DefaultLayout footerCTAType="grooming">{page}</DefaultLayout>;
 
 export default ProfessionalDogGroomerPage;

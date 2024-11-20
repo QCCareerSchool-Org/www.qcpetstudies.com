@@ -1,12 +1,10 @@
-import { GetServerSideProps } from 'next';
 import Image, { StaticImageData } from 'next/image';
 import Link from 'next/link';
 import { MouseEventHandler } from 'react';
 
-import type { PageComponent } from './_app.page';
+import { PageComponent } from '@/app/serverComponent';
 import { BrevoForm } from '@/components/brevoForm';
 import { CardBody } from '@/components/CardBody';
-import { LandingPageLayout } from '@/components/layouts/LandingPageLayout';
 import { SEO } from '@/components/SEO';
 import { useScreenWidth } from '@/hooks/useScreenWidth';
 import CatalogImage from '@/images/dog-in-a-tube-1.jpg';
@@ -15,22 +13,28 @@ import Step2SubmitImage from '@/images/step-2-submit.svg';
 import Step3CertificateImage from '@/images/step-3-certificate.svg';
 import { gaEvent } from '@/lib/ga';
 
-type Props = {
-  gclid: string | null;
-  msclkid: string | null;
-  utmSource: string | null;
-  utmMedium: string | null;
-  utmCampaign: string | null;
-  utmContent: string | null;
-  utmTerm: string | null;
-  referrer: string | null;
-};
-
 const courses = [ 'dt' ];
 const brevoListId = 30;
 const brevoEmailTemplateId = 61;
 
-const DogTrainingCatalogPage: PageComponent = props => {
+const DogTrainingCatalogPage: PageComponent = () => {
+  const getParam = (paramName: string): string | null => {
+    if (typeof context.query[paramName] === 'string') {
+      return context.query[paramName] || null;
+    }
+    if (Array.isArray(context.query[paramName])) {
+      return context.query[paramName]?.[0] || null;
+    }
+    return null;
+  };
+
+  const gclid = getParam('gclid');
+  const msclkid = getParam('msclkid');
+  const utmSource = getParam('utm_source');
+  const utmMedium = getParam('utm_medium');
+  const utmCampaign = getParam('utm_campaign');
+  const utmContent = getParam('utm_content');
+  const utmTerm = getParam('utm_term');
   const screenWidth = useScreenWidth();
   const lgOrGreater = screenWidth >= 992;
   const smOrGreater = screenWidth >= 576;
@@ -147,29 +151,6 @@ const DogTrainingCatalogPage: PageComponent = props => {
   </>;
 };
 
-DogTrainingCatalogPage.getLayout = page => <LandingPageLayout link={false} nav="brochure">{page}</LandingPageLayout>;
-
-// eslint-disable-next-line @typescript-eslint/require-await
-export const getServerSideProps: GetServerSideProps<Props> = async context => {
-  const getParam = (paramName: string): string | null => {
-    if (typeof context.query[paramName] === 'string') {
-      return context.query[paramName] || null;
-    }
-    if (Array.isArray(context.query[paramName])) {
-      return context.query[paramName]?.[0] || null;
-    }
-    return null;
-  };
-
-  const gclid = getParam('gclid');
-  const msclkid = getParam('msclkid');
-  const utmSource = getParam('utm_source');
-  const utmMedium = getParam('utm_medium');
-  const utmCampaign = getParam('utm_campaign');
-  const utmContent = getParam('utm_content');
-  const utmTerm = getParam('utm_term');
-
-  return { props: { gclid, msclkid, utmSource, utmMedium, utmCampaign, utmContent, utmTerm, referrer: context.req.headers.referer ?? null } };
-};
+// DogTrainingCatalogPage.getLayout = page => <LandingPageLayout link={false} nav="brochure">{page}</LandingPageLayout>;
 
 export default DogTrainingCatalogPage;

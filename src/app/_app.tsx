@@ -5,6 +5,7 @@ import { useRouter } from 'next/router';
 import { FC, ReactElement, useEffect } from 'react';
 
 import { OklahomaDisclaimer } from './oklahomaDisclaimer';
+import { PageComponent } from './serverComponent';
 import { ErrorBoundary } from '@/components/ErrorBoundary';
 import { ErrorPage } from '@/components/ErrorPage';
 import { DefaultLayout } from '@/components/layouts/DefaultLayout';
@@ -23,13 +24,6 @@ if (!TrackJS.isInstalled()) {
     application: 'qc-pet-studies',
   });
 }
-
-type PageProps = {
-  params: Record<string, string>;
-  searchParams: { [key: string]: string | string[] | undefined };
-};
-
-export type PageComponent = FC<PageProps>;
 
 type AppPropsWithLayout = AppProps & {
   Component: PageComponent;

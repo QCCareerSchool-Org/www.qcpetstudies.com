@@ -1,22 +1,16 @@
-import { GetServerSideProps } from 'next';
-import type { PageComponent } from '../../../../_app.page';
-import CoursePreview, { Props } from './course-preview.page';
+import DogTrainingCoursePreviewPage from '../course-preview/page';
+import type { PageComponent } from '@/app/_app';
 import { DeadlineFunnelScript } from '@/components/DeadlineFunnelScript';
-import { LandingPageLayout } from '@/components/layouts/LandingPageLayout';
-import { getLocation } from '@/lib/getLocation';
 import { lookupPrices } from '@/lib/lookupPrices';
 
-const Page: PageComponent = props => (
-  <>
-    <DeadlineFunnelScript />
-    <CoursePreview {...props} enrollPath="/training-300-off" />
-  </>
-);
-
-export const getServerSideProps: GetServerSideProps<Props> = async context => {
-  const location = await getLocation(context);
-  const price = await lookupPrices([ 'dt' ], location.countryCode, location.provinceCode, { promoCode: 'DT300' });
-  return { props: { location, price, enrollPath: '/' } };
+const Page: PageComponent = async props => {
+  const price = await lookupPrices([ 'dt' ], { promoCode: 'DT300' });
+  return (
+    <>
+      <DeadlineFunnelScript />
+      <DogTrainingCoursePreviewPage {...props} enrollPath="/training-300-off" />
+    </>
+  );
 };
 
 export default Page;

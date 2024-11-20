@@ -3,10 +3,9 @@ import Image, { StaticImageData } from 'next/image';
 import Link from 'next/link';
 import { MouseEventHandler } from 'react';
 
-import type { PageComponent } from './_app.page';
+import { PageComponent } from '@/app/serverComponent';
 import { BrevoForm } from '@/components/brevoForm';
 import { CardBody } from '@/components/CardBody';
-import { LandingPageLayout } from '@/components/layouts/LandingPageLayout';
 import { SEO } from '@/components/SEO';
 import { TestimonialSmCaseyBechard } from '@/components/testimonials-sm/TestimonialSmMelodyCaseyBechard';
 import { TestimonialSmKaylaTorraville } from '@/components/testimonials-sm/TestimonialSmMelodyKaylaTorraville';
@@ -217,7 +216,7 @@ const DogGroomingCatalogPage: PageComponent = props => {
   </>;
 };
 
-DogGroomingCatalogPage.getLayout = page => <LandingPageLayout link={false} nav="brochure">{page}</LandingPageLayout>;
+// DogGroomingCatalogPage.getLayout = page => <LandingPageLayout link={false} nav="brochure">{page}</LandingPageLayout>;
 
 // eslint-disable-next-line @typescript-eslint/require-await
 export const getServerSideProps: GetServerSideProps<Props> = async context => {

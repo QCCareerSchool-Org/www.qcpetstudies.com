@@ -2,7 +2,7 @@ import { GetServerSideProps } from 'next';
 import Image, { StaticImageData } from 'next/image';
 import Link from 'next/link';
 
-import type { PageComponent } from '../../../../_app.page';
+import type { PageComponent } from '@/app/_app';
 import { DefaultLayout } from '@/components/layouts/DefaultLayout';
 import { PriceSection } from '@/components/PriceSection';
 import { SEO } from '@/components/SEO';

@@ -1,17 +1,15 @@
-import { GetServerSideProps } from 'next';
 import Image, { StaticImageData } from 'next/image';
 import Link from 'next/link';
 import { FC, ReactEventHandler, useEffect, useState } from 'react';
 import { BsCardChecklist, BsPeopleFill } from 'react-icons/bs';
 import { IoMdInfinite } from 'react-icons/io';
 
-import type { PageComponent } from '../../../../_app.page';
 import KimCooperImage from './kim-cooper.jpg';
+import { PageComponent } from '@/app/serverComponent';
 import { Accordion } from '@/components/accordion';
 import { AccordionItem } from '@/components/accordion/AccordionItem';
 import { DTTutorSection } from '@/components/DTTutorSection';
 import { GuaranteeSection } from '@/components/GuaranteeSection';
-import { DefaultLayout } from '@/components/layouts/DefaultLayout';
 import { PriceSection } from '@/components/PriceSection';
 import { SEO } from '@/components/SEO';
 import { VirtualCommunitySection } from '@/components/virtualCommunitySection';
@@ -30,22 +28,15 @@ import CPDTPrepImage from '@/images/german-shepherd-puppy-sitting.jpg';
 import CertificationGoldImage from '@/images/IDTP-certification-yellow.svg';
 import { formatPrice } from '@/lib/formatPrice';
 import { gaEvent } from '@/lib/ga';
-import { getLocation } from '@/lib/getLocation';
 import { lookupPrices } from '@/lib/lookupPrices';
-import type { Location } from '@/models/location';
-import type { Price } from '@/models/price';
 
 const headerIconSize = 20;
 const iconSize = 36;
 
 const courseCodes = [ 'dt' ];
 
-type Props = {
-  location: Location;
-  price: Price;
-};
-
-const DogTrainingPage: PageComponent = ({ price }) => {
+const DogTrainingPage: PageComponent = async () => {
+  const price = await lookupPrices([ 'dt' ]);
   const screenWidth = useScreenWidth();
   const [ videoPercentage, setVideoPercentage ] = useState(0);
   const location = useLocation();
@@ -508,44 +499,38 @@ const DogTrainingPage: PageComponent = ({ price }) => {
   </>;
 };
 
-const FooterDualCTA: FC = () => {
-  const location = useLocation();
+// const FooterDualCTA: FC = () => {
+//   const location = useLocation();
 
-  return location && !(location.countryCode === 'CA' && location.provinceCode)
-    ? (
-      <>
-        <div className="row align-items-center">
-          <div className="col-12 col-lg-9 col-xl-8 mb-4 mb-lg-0 text-center text-lg-start">
-            <h2>Ready to Launch Your <strong>Training Career?</strong></h2>
-            <p className="lead mb-0">Get 50% off the Dog Behavior course when you enroll in Dog Training.</p>
-          </div>
-          <div className="col-12 col-lg-3 text-center text-lg-end text-xl-center">
-            <a href="https://enroll.qcpetstudies.com/?c=dt&c=dc"><button className="btn btn-secondary btn-lg">Enroll Online</button></a>
-          </div>
-        </div>
-      </>
-    )
-    : (
-      <>
-        <div className="row align-items-center">
-          <div className="col-12 col-lg-9 col-xl-8 mb-4 mb-lg-0 text-center text-lg-start">
-            <h2>Ready to Launch Your <strong>Training Career?</strong></h2>
-            <p className="lead mb-0">Take the first step towards a new career in the booming dog training industry.</p>
-          </div>
-          <div className="col-12 col-lg-3 text-center text-lg-end text-xl-center">
-            <a href="https://enroll.qcpetstudies.com/?c=dt"><button className="btn btn-secondary btn-lg">Enroll Online</button></a>
-          </div>
-        </div>
-      </>
-    );
-};
+//   return location && !(location.countryCode === 'CA' && location.provinceCode)
+//     ? (
+//       <>
+//         <div className="row align-items-center">
+//           <div className="col-12 col-lg-9 col-xl-8 mb-4 mb-lg-0 text-center text-lg-start">
+//             <h2>Ready to Launch Your <strong>Training Career?</strong></h2>
+//             <p className="lead mb-0">Get 50% off the Dog Behavior course when you enroll in Dog Training.</p>
+//           </div>
+//           <div className="col-12 col-lg-3 text-center text-lg-end text-xl-center">
+//             <a href="https://enroll.qcpetstudies.com/?c=dt&c=dc"><button className="btn btn-secondary btn-lg">Enroll Online</button></a>
+//           </div>
+//         </div>
+//       </>
+//     )
+//     : (
+//       <>
+//         <div className="row align-items-center">
+//           <div className="col-12 col-lg-9 col-xl-8 mb-4 mb-lg-0 text-center text-lg-start">
+//             <h2>Ready to Launch Your <strong>Training Career?</strong></h2>
+//             <p className="lead mb-0">Take the first step towards a new career in the booming dog training industry.</p>
+//           </div>
+//           <div className="col-12 col-lg-3 text-center text-lg-end text-xl-center">
+//             <a href="https://enroll.qcpetstudies.com/?c=dt"><button className="btn btn-secondary btn-lg">Enroll Online</button></a>
+//           </div>
+//         </div>
+//       </>
+//     );
+// };
 
-DogTrainingPage.getLayout = page => <DefaultLayout footerCTA={<FooterDualCTA />}>{page}</DefaultLayout>;
-
-export const getServerSideProps: GetServerSideProps<Props> = async context => {
-  const location = await getLocation(context);
-  const price = await lookupPrices(courseCodes, location.countryCode, location.provinceCode);
-  return { props: { location, price } };
-};
+// DogTrainingPage.getLayout = page => <DefaultLayout footerCTA={<FooterDualCTA />}>{page}</DefaultLayout>;
 
 export default DogTrainingPage;

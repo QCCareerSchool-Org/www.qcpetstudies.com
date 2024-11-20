@@ -1,9 +1,10 @@
-import { GetServerSideProps, PageComponent } from 'next';
+import { GetServerSideProps } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useEffect, useRef } from 'react';
 import { FaPaw } from 'react-icons/fa';
 
+import { PageComponent } from '../serverComponent';
 import { SEO } from '@/components/SEO';
 import { TestimonialSmAprilCostigan } from '@/components/testimonials-sm/TestimonialSmAprilCostigan';
 import { TestimonialSmHailieSavage } from '@/components/testimonials-sm/TestimonialSmHailieSavage';
@@ -24,7 +25,7 @@ type Props = {
   provinceCode?: string;
 };
 
-const ThankYouCatalogPage: PageComponent<Props> = ({ emailAddress, firstName, lastName, countryCode, provinceCode }) => {
+const ThankYouCatalogPage: PageComponent = ({ emailAddress, firstName, lastName, countryCode, provinceCode }) => {
   const screenWidth = useScreenWidth();
   const mdOrGreater = screenWidth >= 768;
   const effectCalled = useRef<boolean>(false);
