@@ -25,7 +25,6 @@ export const metadata: Metadata = {
 };
 
 const RootLayout: LayoutComponent = ({ children }): ReactElement => {
-  console.log('RootLayout');
   return (
     <html lang="en" className={`h-100`}>
       <head>

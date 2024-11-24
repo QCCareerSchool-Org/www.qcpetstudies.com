@@ -1,4 +1,4 @@
-import Image from 'next/image';
+import Image, { StaticImageData } from 'next/image';
 import Link from 'next/link';
 import { FaFacebookF, FaInstagram, FaTwitter } from 'react-icons/fa';
 
@@ -21,7 +21,7 @@ const StudentExperiencePage: PageComponent = () => {
     />
 
     <section id="top" className="bg-dark">
-      <SectionBackground src={StudentExperienceBackground} priority />
+      <SectionBackground src={StudentExperienceBackground as StaticImageData} priority />
       <div className="container text-center">
         <div className="row">
           <h1>Student Experience</h1>
@@ -36,7 +36,7 @@ const StudentExperiencePage: PageComponent = () => {
         <div className="row">
           <div className="col-12 col-lg-6" style={{ position: 'relative' }}>
             <Image
-              src={WomanUsingLaptopImage}
+              src={WomanUsingLaptopImage as StaticImageData}
               placeholder="blur"
               alt="woman using a laptop with a Chihuahua on her lap"
               fill
@@ -66,7 +66,7 @@ const StudentExperiencePage: PageComponent = () => {
           </div>
           <div className="col-12 col-sm-10 col-md-8 col-lg-6 col-xl-4 col-xxl-3">
             <Image
-              src={CertifiedExpertImage}
+              src={CertifiedExpertImage as StaticImageData}
               alt="collage of dogs"
               sizes="100vw"
               style={{ width: '100%', height: 'auto' }}
@@ -96,7 +96,7 @@ const StudentExperiencePage: PageComponent = () => {
             <p className="mb-5">The Virtual Community is a hub for QC Pet Studies students to socialize and support one another. Ask questions about tools and techniques, swap stories about your best and worst canine clients, and be inspired by like-minded individuals. Education is essential to your success in the pet industry even after you graduate. That's why you'll have lifetime access to the Online Student Center and be able to access new course lessons and video tutorials as soon as they're available. You can always reach out to the QC team with questions about your career or the pet care industry.</p>
             <p className="lead">At QC Pet Studies, <strong>we're with you for the journey.</strong></p>
             <Image
-              src={LineOfDogsImage}
+              src={LineOfDogsImage as StaticImageData}
               alt="a line of nine dogs standing side to side"
               sizes="100vw"
               style={{ width: '100%', height: 'auto' }}

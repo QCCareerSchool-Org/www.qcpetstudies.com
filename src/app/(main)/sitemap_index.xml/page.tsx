@@ -2,7 +2,7 @@ import { promises as fs } from 'fs';
 import path from 'path';
 import { XMLBuilder, XMLParser } from 'fast-xml-parser';
 import { GetServerSideProps } from 'next';
-import { PageComponent } from '../serverComponent';
+import { PageComponent } from '@/app/serverComponent';
 
 const XMLSiteMapPage: PageComponent = () => null;
 

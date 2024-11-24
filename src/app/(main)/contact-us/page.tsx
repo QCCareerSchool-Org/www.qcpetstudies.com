@@ -1,10 +1,10 @@
-import Image from 'next/image';
+import Image, { StaticImageData } from 'next/image';
 import { ContactLinkSection } from './ContactLinkSection';
 import { PageComponent } from '@/app/serverComponent';
 
 import { SEO } from '@/components/SEO';
 import ContactUsBackground from '@/images/backgrounds/contact-us-bg.jpg';
-// import ScheduleCallImage from '@/images/schedule-call-contact.png';
+import ScheduleCallImage from '@/images/schedule-call-contact.png';
 
 const ContactUsPage: PageComponent = () => {
 
@@ -17,7 +17,7 @@ const ContactUsPage: PageComponent = () => {
 
     <section id="top" className="bg-dark text-light">
       <Image
-        src={ContactUsBackground}
+        src={ContactUsBackground as StaticImageData}
         placeholder="blur"
         alt="happy dog"
         priority
@@ -32,7 +32,7 @@ const ContactUsPage: PageComponent = () => {
 
     <ContactLinkSection />
 
-    {/* <section className="bg-light">
+    <section className="bg-light">
       <div className="container text-center text-lg-start">
         <div className="row justify-content-center">
           <div className="col-12 col-lg-6 col-xl-7 mb-4 mb-lg-0">
@@ -42,11 +42,11 @@ const ContactUsPage: PageComponent = () => {
             <a href=""><button className="btn btn-outline-secondary mb-4 mb-lg-0">Schedule a Call</button></a>
           </div>
           <div className="col-12 col-sm-10 col-md-8 col-lg-6 col-xl-5">
-            <Image src={ScheduleCallImage} layout="responsive" alt="dog looking at a phone" />
+            <Image src={ScheduleCallImage as StaticImageData} layout="responsive" alt="dog looking at a phone" />
           </div>
         </div>
       </div>
-    </section> */}
+    </section>
   </>;
 };
 

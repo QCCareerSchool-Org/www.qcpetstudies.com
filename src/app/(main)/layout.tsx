@@ -2,15 +2,14 @@
 
 import type { ReactNode } from 'react';
 import { LayoutComponent } from '../serverComponent';
-import { Footer } from '@/components/Footer';
-import { Header } from '@/components/Header';
+import { Footer } from './footer';
+import { Header } from './header';
 
 const MainLayout: LayoutComponent = ({
   children,
 }: {
   children: ReactNode;
 }) => {
-  console.log('MainLayout');
   return (
     <div id="defaultPage" className="d-flex flex-column">
       <Header />

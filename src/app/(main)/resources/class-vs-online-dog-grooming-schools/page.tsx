@@ -1,4 +1,4 @@
-import Image from 'next/image';
+import Image, { StaticImageData } from 'next/image';
 import { FC, ReactElement } from 'react';
 import { FaGraduationCap, FaLaptop, FaUniversity } from 'react-icons/fa';
 import { PageComponent } from '@/app/serverComponent';
@@ -17,7 +17,7 @@ const ClassVsOnlineLearning: PageComponent = () => {
 
     <section id="top" className="bg-dark">
       <Image
-        src={FirstSectionBackground}
+        src={FirstSectionBackground as StaticImageData}
         placeholder="blur"
         alt="happy Yorkie"
         priority

@@ -23,7 +23,7 @@ const StudentDiscountsPage: PageComponent = () => (
 
     <section id="top" className="bg-dark">
       <Image
-        src={StudentDiscountBackground}
+        src={StudentDiscountBackground as StaticImageData}
         placeholder="blur"
         alt="Yorkie sticking out its tongue"
         priority
@@ -57,33 +57,33 @@ const StudentDiscountsPage: PageComponent = () => (
               <p>MyTime is the leading cloud based scheduling and marketing application for local businesses. Features include online booking, automated email and SMS marketing, full point of sale, reputation management, reports and analytics, and real time messaging with clients. Use MyTime to engage and retain customers, drive operational efficiency and grow your business!</p>
               <p className="mb-0"><em>QC Pet Studies students receive 30% off their purchase</em></p>
             </Supplier>
-            <Supplier imageSrc={MasonCompanyLogo} imageWidth={170} imageHeight={51} imageAlt="Mason Company" className="mb-5">
+            <Supplier imageSrc={MasonCompanyLogo as StaticImageData} imageWidth={170} imageHeight={51} imageAlt="Mason Company" className="mb-5">
               <h3>Mason Company</h3>
               <p>Mason Company is unique in its ability to design and build any size animal housing solution for dogs, cats and other animals. Their exclusive focus on animal enclosure solutions since 1892 means they deliver high quality animal enclosure solutions for even the toughest environments. They have installed more kennel systems than any other company in the world!</p>
               <p className="mb-0"><em>QC Pet Studies students and graduates receive 15% off their purchase</em></p>
             </Supplier>
             <h2 className="mb-4">Grooming Tool <strong>Discounts</strong></h2>
-            <Supplier imageSrc={SharkFinLogo} imageWidth={170} imageHeight={65} imageAlt="Shark Fin" className="mb-5">
+            <Supplier imageSrc={SharkFinLogo as StaticImageData} imageWidth={170} imageHeight={65} imageAlt="Shark Fin" className="mb-5">
               <h3>Shark Fin</h3>
               <p>The Shark Fin Shear Company aims to offer you the most technologically advanced shears in the world. Their patented technology has been tested for over 17 years throughout the world and is proven to dramatically help you with your scissor work.</p>
               <p className="mb-0"><em>QC Pet Studies students receive a 20% off discount on shears</em></p>
             </Supplier>
-            <Supplier imageSrc={SenseiLogo} imageWidth={170} imageHeight={42} imageAlt="Sensei" className="mb-5">
+            <Supplier imageSrc={SenseiLogo as StaticImageData} imageWidth={170} imageHeight={42} imageAlt="Sensei" className="mb-5">
               <h3>Sensei</h3>
               <p>Sensei consistently designs and manufactures extremely ergonomic professional shears. With over thirty years of high performance blade technology, Sensei continues to strive to be an innovative force in the industry. They offer a vast collection of high quality Japanese shears including neutral grip crane handle shears, swivel shears, texture thinning shears and seamless blending shears that leave no line and comb out with zero drag.</p>
               <p className="mb-0"><em>QC Pet Studies students receive $25 or 10-15% (whichever is greater) off any shears purchased online, as well as free shipping within the USA. Students also receive an additional discount if they purchase multiple shears</em></p>
             </Supplier>
-            <Supplier imageSrc={EpiPetLogo} imageWidth={170} imageHeight={81} imageAlt="Epi-Pet" className="mb-5">
+            <Supplier imageSrc={EpiPetLogo as StaticImageData} imageWidth={170} imageHeight={81} imageAlt="Epi-Pet" className="mb-5">
               <h3>Epi-Pet</h3>
               <p>Epi-Pet offers a variety of products that can help the professional groomer provide a complete and healthy groom and promote overall health for their clients' pets. The Epi Pet Shampoo is multifunctional and promotes healthy skin and coat. The Epi Pet Ear Cleaner cleanses, enriches and refreshes the ear by gently removing dirt, grime and wax.</p>
               <p className="mb-0"><em>QC Pet Studies students receive 50% off products purchased on the Epi-Pet website</em></p>
             </Supplier>
-            <Supplier imageSrc={DirectLogo} imageWidth={170} imageHeight={49} imageAlt="Direct Animal Products" className="mb-5">
+            <Supplier imageSrc={DirectLogo as StaticImageData} imageWidth={170} imageHeight={49} imageAlt="Direct Animal Products" className="mb-5">
               <h3>Direct Animal Products</h3>
               <p>Direct Animal Products supplies tubs, grooming tables and cages that minimize back, neck and shoulder strain. They understand that proper body mechanics along with ergonomic grooming equipment is absolutely essential to the longevity of a pet stylist. Their equipment promises to perform well and is designed with your comfort in mind.</p>
               <p className="mb-0"><em>QC Pet Studies students receive 10% off their online purchase</em></p>
             </Supplier>
-            <Supplier imageSrc={ZenDogLogo} imageWidth={170} imageHeight={174} imageAlt="Zen Dog">
+            <Supplier imageSrc={ZenDogLogo as StaticImageData} imageWidth={170} imageHeight={174} imageAlt="Zen Dog">
               <h3>ZenDog</h3>
               <p>ZenDog sells earthly inspired aromatherapy shampoos, sprays, and gels that never contain synthetic fragrances, colors, bleaches, or dyes. They're formulated exclusively with 100% pure, therapeutic class essential oils. Their products are created by professional groomers for professional groomers.</p>
               <p className="mb-0"><em>QC Pet Studies students receive an Aromatherapy Package worth $160 for only $99. The package includes 10 different aromatherapy healing shampoos, sprays and gels</em></p>

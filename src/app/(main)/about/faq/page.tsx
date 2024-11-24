@@ -1,9 +1,10 @@
 'use client';
 
-import Image from 'next/image';
+import Image, { StaticImageData } from 'next/image';
 import Link from 'next/link';
 import { MouseEventHandler, ReactElement, ReactNode } from 'react';
 import { Modal } from 'react-bootstrap';
+import { SubnavLink } from '../../subnavs';
 import { PageComponent } from '@/app/serverComponent';
 import { Accordion } from '@/components/accordion';
 import { AccordionItem } from '@/components/accordion/AccordionItem';
@@ -11,13 +12,13 @@ import { AccordionItem } from '@/components/accordion/AccordionItem';
 import { SEO } from '@/components/SEO';
 import { useLocation } from '@/hooks/useLocation';
 import { useToggle } from '@/hooks/useToggle';
-import DoGInBedWithStick from '@/images/backgrounds/dog-in-bed-with-stick.jpg';
+import DogInBedWithStick from '@/images/backgrounds/dog-in-bed-with-stick.jpg';
 
-// const secondaryNavLinks = [
-//   { name: 'About QC Pet Studies', url: '#about' },
-//   { name: 'Dog Grooming FAQ', url: '#grooming' },
-//   { name: 'Dog Training FAQ', url: '#training' },
-// ];
+export const subnavLinks: SubnavLink[] = [
+  { title: 'About QC Pet Studies', href: '#about' },
+  { title: 'Dog Grooming FAQ', href: '#grooming' },
+  { title: 'Dog Training FAQ', href: '#training' },
+];
 
 const FAQPage: PageComponent = () => {
   const location = useLocation();
@@ -39,7 +40,7 @@ const FAQPage: PageComponent = () => {
 
     <section id="top" className="bg-dark">
       <Image
-        src={DoGInBedWithStick}
+        src={DogInBedWithStick as StaticImageData}
         placeholder="blur"
         alt="dog in a dog bed, holding a stick"
         priority

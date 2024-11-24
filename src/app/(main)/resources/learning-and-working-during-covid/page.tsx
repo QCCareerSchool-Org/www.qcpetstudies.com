@@ -1,20 +1,15 @@
-import Image from 'next/image';
+import Image, { StaticImageData } from 'next/image';
 import Link from 'next/link';
 import { FaInstagram, FaLaptop, FaMedkit, FaPaw, FaPencilAlt, FaTruck } from 'react-icons/fa';
+import { HowToGroomSection } from './HowToGroomSection';
+import { KeepingSafeSection } from './KeepingSafeSection';
+import { ReviewSection } from './ReviewSection';
 import { PageComponent } from '@/app/serverComponent';
 
 import { SEO } from '@/components/SEO';
-import { useScreenWidth } from '@/hooks/useScreenWidth';
 import LearningAndWorkingBackground from '@/images/backgrounds/groomer-wearing-face-mask.jpg';
-import TipsCardBackground from '@/images/backgrounds/pet-covid-bg-light-gray.jpg';
-import PetWithMaskImage from '@/images/pet-covid-image.jpg';
-import CovidCareTools from '@/images/pet-covid-img-wide.jpg';
 
 const LearningDuringCovidPage: PageComponent = () => {
-  const screenWidth = useScreenWidth();
-
-  const lgOrGreater = screenWidth >= 992;
-  const xlOrGreater = screenWidth >= 1200;
 
   return <>
     <SEO
@@ -25,7 +20,7 @@ const LearningDuringCovidPage: PageComponent = () => {
 
     <section id="top" className="bg-dark">
       <Image
-        src={LearningAndWorkingBackground}
+        src={LearningAndWorkingBackground as StaticImageData}
         placeholder="blur"
         alt="groomer wire brushing a dog"
         priority
@@ -46,56 +41,8 @@ const LearningDuringCovidPage: PageComponent = () => {
       </div>
     </section>
 
-    <section>
-      <div className="container">
-        <div className="row align-items-center">
-          <div className="col-12 col-lg-6 col-xl-7">
-            <h2 className="mb-4">How to Learn Dog Grooming During a Pandemic</h2>
-            <p className="lead mb-4">QC&apos;s courses are very flexible! Train at your own pace, from the comfort of your own home.</p>
-            <h3>How QC Sets You Up to Succeed</h3>
-            <ul className="mb-4">
-              <li>Study from wherever you are most comfortable with a fully online course</li>
-              <li>Receive virtual one-on-one support from your tutor</li>
-              <li>Reach out to the <Link href="/contact-us" className="link-primary">Student Support Team</Link> 7 days a week for assistance</li>
-              <li>Complete hands-on grooming assignments to gain real-world experience</li>
-              <li>Get personalized, audio feedback from your tutor directly sent to you after each unit</li>
-              <li>Learn First Aid for dogs</li>
-              <li>Receive informative business training that will allow you to implement best practices both in person and online</li>
-            </ul>
-            <Link href="/certification-courses/dog-grooming/" className="link-primary">Discover Everything You&apos;ll Learn in the Dog Grooming Course!</Link>
-          </div>
-          {lgOrGreater && (
-            <div className="col-6 col-xl-5">
-              <Image
-                src={CovidCareTools}
-                alt="Covid care"
-                sizes="100vw"
-                style={{ width: '100%', height: 'auto' }}
-              />
-            </div>
-          )}
-        </div>
-      </div>
-    </section>
-
-    <section className="bg-light">
-      {xlOrGreater && <Image
-        src={PetWithMaskImage}
-        alt="Mask"
-        fill
-        sizes="100vw"
-        style={{ objectFit: 'contain', objectPosition: 'left' }}
-      /> }
-      <div className="container">
-        <div className="row">
-          <div className="col-12 col-xl-8 offset-xl-4 offset-xxl-3">
-            <p className="lead mb-4">&quot;I&apos;m 2 units [into the Dog Grooming Course] and love it! It has a great background, written learning, supplies, and more! I came from a vet assisting background and wanted to open up my own grooming salon, but I have two kids, so I needed to do distance [training]. I love this course so much! I highly recommend this course and the First Aid for Groomers Course. With my background knowledge, I could tell the topics were well-researched. By far, blew me away!&quot; </p>
-            <p className="mb-4">Mackenzie Lafleur<br /><span className="text-muted">QC Student</span></p>
-            <p>Read other reviews like this one by checking out our <Link href="/category/student-features/" className="link-secondary">Student &amp; Graduate Features</Link>!</p>
-          </div>
-        </div>
-      </div>
-    </section>
+    <HowToGroomSection />
+    <ReviewSection />
 
     <section>
       <div className="container text-center">
@@ -143,36 +90,7 @@ const LearningDuringCovidPage: PageComponent = () => {
       </div>
     </section>
 
-    <section className="bg-light">
-      {lgOrGreater && <Image
-        src={TipsCardBackground}
-        alt="Tips to keep safe"
-        fill
-        sizes="100vw"
-        style={{ objectFit: 'cover', objectPosition: 'center' }}
-      />}
-      <div className="container">
-        <div className="row">
-          <div className="col-12 col-lg-8 offset-lg-1">
-            <h2>Tips for Keeping Yourself and Clients Safe</h2>
-            <p className="lead">When working with clients in person, you should follow strict practices to keep everyone safe.</p>
-            <h3>COVID-19 Safety Protocols for Dog Groomers</h3>
-            <ul>
-              <li>Reschedule or cancel appointments if you or your client is feeling ill or have been recently exposed to someone who has tested positive for COVID-19</li>
-              <li>Ensure that you&apos;re always wearing a mask when working with clients</li>
-              <li>Insist that clients also wear masks</li>
-              <li>Consider reducing your overall grooming capacity to ensure a limited amount of people in your workspace</li>
-              <li>Do not permit clients to wait for their dog on the premises. Consider meeting clients out in the parking lot to collect/deliver their dog</li>
-              <li>Implement an online payment system so clients aren&apos;t required to linger in the salon for payment</li>
-              <li>Socially distance whenever possible and enforce a maximum occupancy limit</li>
-              <li>Wash your hands before and after working with a client, grooming their dog, or touching communal surfaces</li>
-              <li>Disinfect all <Link href="/2018/08/learning-about-your-dog-grooming-kit-brushes-combs-and-dematting-tools" className="link-primary">grooming tools</Link> before and after use</li>
-              <li>Work in a sanitized space and use air purifiers to keep the air clean</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
+    <KeepingSafeSection />
   </>;
 };
 
