@@ -1,3 +1,5 @@
+'use client';
+
 import { FC } from 'react';
 
 import { useLocation } from '@/hooks/useLocation';

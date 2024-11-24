@@ -1,3 +1,5 @@
+'use client';
+
 import { Component, ReactNode } from 'react';
 
 import { TrackJS } from '@/lib/trackjs-isomorphic';
