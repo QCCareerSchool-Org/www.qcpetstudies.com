@@ -8,7 +8,6 @@ import { FaBars } from 'react-icons/fa';
 import type { PageComponent } from '@/app/serverComponent';
 import { Accordion } from '@/components/accordion';
 import { AccordionItem } from '@/components/accordion/AccordionItem';
-import { DefaultLayout } from '@/components/layouts/DefaultLayout';
 import { SEO } from '@/components/SEO';
 import { UnitStats } from '@/components/UnitStats';
 import { useScreenWidth } from '@/hooks/useScreenWidth';
@@ -276,7 +275,7 @@ const DDCourseOutlinePage: PageComponent = () => {
   </>;
 };
 
-DDCourseOutlinePage.getLayout = page => <DefaultLayout footerCTAType="training">{page}</DefaultLayout>;
+// DDCourseOutlinePage.getLayout = page => <DefaultLayout footerCTAType="training">{page}</DefaultLayout>;
 
 export default DDCourseOutlinePage;
 

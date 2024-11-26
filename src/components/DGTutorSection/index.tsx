@@ -26,16 +26,5 @@ export const DGTutorSection: FC<Props> = ({ className, id = 'tutors' }) => (
         </div>
       </div>
     </section>
-
-    <style jsx>{`
-      .imageShadowWrapper {
-        padding: 0 0 12px; // to offset the shadow
-      }
-      @media (min-width: 576px) {
-        .imageShadowWrapper {
-          padding: 0 12px 0 0; // to offset the shadow
-        }
-      }
-    `}</style>
   </>
 );

@@ -196,7 +196,7 @@ const BehaviorCoursePreviewPage: PageComponent = async () => {
       </div>
     </section>
 
-    <PriceSectionWithDiscount courses={courseCodes} price={price} doubleGuarantee={true} enrollPath={enrollPath} />
+    <PriceSectionWithDiscount courses={courseCodes} price={price} doubleGuarantee={true} />
 
     <section>
       <div className="container">

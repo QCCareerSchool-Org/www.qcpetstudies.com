@@ -1,9 +1,8 @@
 import Image, { StaticImageData } from 'next/image';
 import Link from 'next/link';
-import { BsCardChecklist, BsPeopleFill } from 'react-icons/bs';
-import { IoMdInfinite } from 'react-icons/io';
 
 import DCBackgroundImage from './hero.jpg';
+import { NewestCourseMaterialsSection } from './NewestCourseMaterialsSection';
 import { PageComponent } from '@/app/serverComponent';
 import { Accordion } from '@/components/accordion';
 import { AccordionItem } from '@/components/accordion/AccordionItem';
@@ -11,7 +10,6 @@ import { GuaranteeSection } from '@/components/GuaranteeSection';
 import { PriceSection } from '@/components/PriceSection';
 import { SEO } from '@/components/SEO';
 import { VirtualCommunitySection } from '@/components/virtualCommunitySection';
-import { useScreenWidth } from '@/hooks/useScreenWidth';
 import GuaranteeIcon from '@/images/course-overview-icons/guarantee.svg';
 import OutlineIcon from '@/images/course-overview-icons/outline.svg';
 import TutorIcon from '@/images/course-overview-icons/tutor.svg';
@@ -22,7 +20,6 @@ import { formatPrice } from '@/lib/formatPrice';
 import { lookupPrices } from '@/lib/lookupPrices';
 
 const headerIconSize = 20;
-const iconSize = 36;
 
 const courseCodes = [ 'dc' ];
 const linkCourseCodes = [ 'dt', 'dc' ];
@@ -30,13 +27,6 @@ const linkCourseCodes = [ 'dt', 'dc' ];
 const DogBehaviorPage: PageComponent = async () => {
 
   const price = await lookupPrices(courseCodes);
-
-  const screenWidth = useScreenWidth();
-
-  const mdOrGreater = screenWidth >= 768;
-  const lgOrGreater = screenWidth >= 992;
-
-  const md = mdOrGreater && !lgOrGreater;
 
   return <>
     <SEO
@@ -126,30 +116,7 @@ const DogBehaviorPage: PageComponent = async () => {
 
     <PriceSection courses={linkCourseCodes} price={price} doubleGuarantee={true} />
 
-    <section>
-      <div className="container text-center">
-        <div className="row justify-content-center">
-          <div className="col-12 col-lg-10 mb-4">
-            <h2 className="mb-2 mb-md-4">Included in <strong>Your Course</strong></h2>
-          </div>
-          <div className="col-12 col-md-4 mb-4 mb-md-0">
-            <div className="courseContentIcon"><BsCardChecklist size={iconSize} /></div>
-            <h3>Newest{md ? <br /> : ' '}Course Materials</h3>
-            <p className="mb-0">Your course materials are always available online and are always being updated with the latest science-based industry standards. Refer to your updated training guides throughout your career!</p>
-          </div>
-          <div className="col-12 col-md-4 mb-4 mb-md-0">
-            <div className="courseContentIcon"><BsPeopleFill size={iconSize} /></div>
-            <h3>Personalized{md ? <br /> : ' '}Feedback</h3>
-            <p className="mb-0">Just because you're learning online doesn't mean you're learning alone. You'll receive personalized audio feedback from your tutor on every dog behavior assignment you submit. Use this feedback to improve and succeed!</p>
-          </div>
-          <div className="col-12 col-md-4">
-            <div className="courseContentIcon"><IoMdInfinite size={iconSize} /></div>
-            <h3>Lifetime{md ? <br /> : ' '}Access</h3>
-            <p className="mb-0">Once you're a member of the QC family you'll have lifetime access to all the tools and resources available to QC students. This includes discounts on industry products and so much more!</p>
-          </div>
-        </div>
-      </div>
-    </section>
+    <NewestCourseMaterialsSection />
 
     <div id="outline" className="sectionAnchor" />
     <section className="bg-lighter">

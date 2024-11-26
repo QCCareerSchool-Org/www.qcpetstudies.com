@@ -1,3 +1,5 @@
+'use client';
+
 import { Big } from 'big.js';
 import type { FC, ReactNode } from 'react';
 import { useMemo } from 'react';

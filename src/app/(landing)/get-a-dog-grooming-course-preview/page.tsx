@@ -1,4 +1,5 @@
-import { GetServerSideProps } from 'next';
+'use client';
+
 import Image, { StaticImageData } from 'next/image';
 import Link from 'next/link';
 import { MouseEventHandler } from 'react';
@@ -19,23 +20,13 @@ import Step1EnrollImage from '@/images/step-1-enroll.svg';
 import Step2SubmitImage from '@/images/step-2-submit.svg';
 import Step3CertificateImage from '@/images/step-3-certificate.svg';
 import { gaEvent } from '@/lib/ga';
-
-type Props = {
-  gclid: string | null;
-  msclkid: string | null;
-  utmSource: string | null;
-  utmMedium: string | null;
-  utmCampaign: string | null;
-  utmContent: string | null;
-  utmTerm: string | null;
-  referrer: string | null;
-};
+import { getParam } from '@/lib/getParam';
 
 const courses = [ 'dg' ];
 const brevoListId = 31;
 const brevoEmailTemplateId = 60;
 
-const DogGroomingCatalogPage: PageComponent = props => {
+const DogGroomingCatalogPage: PageComponent = ({ searchParams }) => {
   const screenWidth = useScreenWidth();
   const xxlOrGreater = screenWidth >= 1400;
   const xlOrGreater = screenWidth >= 1200;
@@ -45,6 +36,15 @@ const DogGroomingCatalogPage: PageComponent = props => {
   const handleBrochureBottomLinkClick: MouseEventHandler = () => {
     gaEvent('click', { id: 'brochureBottomLink' });
   };
+
+  const gclid = getParam(searchParams.gclid);
+  const msclkid = getParam(searchParams.msclkid);
+  const utmSource = getParam(searchParams.utm_source);
+  const utmMedium = getParam(searchParams.utm_medium);
+  const utmCampaign = getParam(searchParams.utm_campaign);
+  const utmContent = getParam(searchParams.utm_content);
+  const utmTerm = getParam(searchParams.utm_term);
+  const referrer = getParam(searchParams.referrer);
 
   return <>
     <SEO
@@ -67,16 +67,16 @@ const DogGroomingCatalogPage: PageComponent = props => {
                   successLocation={`${process.env.HOST ?? 'https://www.qcpetstudies.com'}/thank-you-dog-grooming-course-preview`}
                   listId={brevoListId}
                   emailTemplateId={brevoEmailTemplateId}
-                  gclid={props.gclid ?? undefined}
-                  msclkid={props.msclkid ?? undefined}
-                  utmSource={props.utmSource ?? undefined}
-                  utmMedium={props.utmMedium ?? undefined}
-                  utmCampaign={props.utmCampaign ?? undefined}
-                  utmContent={props.utmContent ?? undefined}
-                  utmTerm={props.utmTerm ?? undefined}
+                  gclid={gclid ?? undefined}
+                  msclkid={msclkid ?? undefined}
+                  utmSource={utmSource ?? undefined}
+                  utmMedium={utmMedium ?? undefined}
+                  utmCampaign={utmCampaign ?? undefined}
+                  utmContent={utmContent ?? undefined}
+                  utmTerm={utmTerm ?? undefined}
                   placeholders
                   courseCodes={courses}
-                  referrer={props.referrer}
+                  referrer={referrer ?? null}
                 />
               </CardBody>
             </div>
@@ -217,28 +217,5 @@ const DogGroomingCatalogPage: PageComponent = props => {
 };
 
 // DogGroomingCatalogPage.getLayout = page => <LandingPageLayout link={false} nav="brochure">{page}</LandingPageLayout>;
-
-// eslint-disable-next-line @typescript-eslint/require-await
-export const getServerSideProps: GetServerSideProps<Props> = async context => {
-  const getParam = (paramName: string): string | null => {
-    if (typeof context.query[paramName] === 'string') {
-      return context.query[paramName] || null;
-    }
-    if (Array.isArray(context.query[paramName])) {
-      return context.query[paramName]?.[0] || null;
-    }
-    return null;
-  };
-
-  const gclid = getParam('gclid');
-  const msclkid = getParam('msclkid');
-  const utmSource = getParam('utm_source');
-  const utmMedium = getParam('utm_medium');
-  const utmCampaign = getParam('utm_campaign');
-  const utmContent = getParam('utm_content');
-  const utmTerm = getParam('utm_term');
-
-  return { props: { gclid, msclkid, utmSource, utmMedium, utmCampaign, utmContent, utmTerm, referrer: context.req.headers.referer ?? null } };
-};
 
 export default DogGroomingCatalogPage;

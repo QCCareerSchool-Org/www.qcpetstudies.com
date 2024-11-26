@@ -1,3 +1,5 @@
+'use client';
+
 import Image, { StaticImageData } from 'next/image';
 import Link from 'next/link';
 import { MouseEventHandler } from 'react';
@@ -12,29 +14,23 @@ import Step1EnrollImage from '@/images/step-1-enroll.svg';
 import Step2SubmitImage from '@/images/step-2-submit.svg';
 import Step3CertificateImage from '@/images/step-3-certificate.svg';
 import { gaEvent } from '@/lib/ga';
+import { getParam } from '@/lib/getParam';
 
 const courses = [ 'dt' ];
 const brevoListId = 30;
 const brevoEmailTemplateId = 61;
 
-const DogTrainingCatalogPage: PageComponent = () => {
-  const getParam = (paramName: string): string | null => {
-    if (typeof context.query[paramName] === 'string') {
-      return context.query[paramName] || null;
-    }
-    if (Array.isArray(context.query[paramName])) {
-      return context.query[paramName]?.[0] || null;
-    }
-    return null;
-  };
+const DogTrainingCatalogPage: PageComponent = ({ searchParams }) => {
 
-  const gclid = getParam('gclid');
-  const msclkid = getParam('msclkid');
-  const utmSource = getParam('utm_source');
-  const utmMedium = getParam('utm_medium');
-  const utmCampaign = getParam('utm_campaign');
-  const utmContent = getParam('utm_content');
-  const utmTerm = getParam('utm_term');
+  const gclid = getParam(searchParams.gclid);
+  const msclkid = getParam(searchParams.msclkid);
+  const utmSource = getParam(searchParams.utm_source);
+  const utmMedium = getParam(searchParams.utm_medium);
+  const utmCampaign = getParam(searchParams.utm_campaign);
+  const utmContent = getParam(searchParams.utm_content);
+  const utmTerm = getParam(searchParams.utm_term);
+  const referrer = getParam(searchParams.referrer);
+
   const screenWidth = useScreenWidth();
   const lgOrGreater = screenWidth >= 992;
   const smOrGreater = screenWidth >= 576;
@@ -64,16 +60,16 @@ const DogTrainingCatalogPage: PageComponent = () => {
                   successLocation={`${process.env.HOST ?? 'https://www.qcpetstudies.com'}/thank-you-dog-training-course-preview`}
                   listId={brevoListId}
                   emailTemplateId={brevoEmailTemplateId}
-                  gclid={props.gclid ?? undefined}
-                  msclkid={props.msclkid ?? undefined}
-                  utmSource={props.utmSource ?? undefined}
-                  utmMedium={props.utmMedium ?? undefined}
-                  utmCampaign={props.utmCampaign ?? undefined}
-                  utmContent={props.utmContent ?? undefined}
-                  utmTerm={props.utmTerm ?? undefined}
+                  gclid={gclid ?? undefined}
+                  msclkid={msclkid ?? undefined}
+                  utmSource={utmSource ?? undefined}
+                  utmMedium={utmMedium ?? undefined}
+                  utmCampaign={utmCampaign ?? undefined}
+                  utmContent={utmContent ?? undefined}
+                  utmTerm={utmTerm ?? undefined}
                   placeholders
                   courseCodes={courses}
-                  referrer={props.referrer}
+                  referrer={referrer ?? null}
                 />
               </CardBody>
             </div>

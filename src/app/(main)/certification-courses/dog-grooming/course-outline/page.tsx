@@ -1,3 +1,5 @@
+'use client';
+
 import Image, { StaticImageData } from 'next/image';
 import Link from 'next/link';
 import { FaBars } from 'react-icons/fa';
