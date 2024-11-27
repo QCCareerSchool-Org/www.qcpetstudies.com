@@ -147,6 +147,5 @@ const DogTrainingCatalogPage: PageComponent = ({ searchParams }) => {
   </>;
 };
 
-// DogTrainingCatalogPage.getLayout = page => <LandingPageLayout link={false} nav="brochure">{page}</LandingPageLayout>;
 
 export default DogTrainingCatalogPage;

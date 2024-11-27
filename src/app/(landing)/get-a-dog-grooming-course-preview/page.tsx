@@ -216,6 +216,4 @@ const DogGroomingCatalogPage: PageComponent = ({ searchParams }) => {
   </>;
 };
 
-// DogGroomingCatalogPage.getLayout = page => <LandingPageLayout link={false} nav="brochure">{page}</LandingPageLayout>;
-
 export default DogGroomingCatalogPage;
