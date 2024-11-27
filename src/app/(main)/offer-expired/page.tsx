@@ -1,4 +1,4 @@
-import { OfferExpiredSection } from './OfferExpiredSection';
+import { OfferExpiredSection } from './OfferExpiredSections';
 import { PageComponent } from '@/app/serverComponent';
 
 import { SEO } from '@/components/SEO';

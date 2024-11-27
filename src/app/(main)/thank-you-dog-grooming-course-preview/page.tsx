@@ -1,10 +1,11 @@
-import { GetServerSideProps } from 'next';
+'use client';
+
 import Image from 'next/image';
 import Link from 'next/link';
 import { useEffect, useRef } from 'react';
 import { FaPaw } from 'react-icons/fa';
 
-import { PageComponent } from '../serverComponent';
+import { PageComponent } from '@/app/serverComponent';
 import { SEO } from '@/components/SEO';
 import { TestimonialSmAprilCostigan } from '@/components/testimonials-sm/TestimonialSmAprilCostigan';
 import { TestimonialSmHailieSavage } from '@/components/testimonials-sm/TestimonialSmHailieSavage';
@@ -13,19 +14,18 @@ import { useScreenWidth } from '@/hooks/useScreenWidth';
 import CatalogBackground from '@/images/backgrounds/smiling-border-collie-on-black.jpg';
 import PeekingHusky from '@/images/peeking-siberian-husky.jpg';
 import { brevoIdentifyLead } from '@/lib/brevo';
-import { fbPostLead } from '@/lib/facebookConversionAPI';
 import { fbqLead } from '@/lib/fbq';
 import { gaEvent, gaUserData } from '@/lib/ga';
+import { getParam } from '@/lib/getParam';
 
-type Props = {
-  firstName?: string;
-  lastName?: string;
-  emailAddress?: string;
-  countryCode?: string;
-  provinceCode?: string;
-};
+const ThankYouCatalogPage: PageComponent = ({ searchParams }) => {
 
-const ThankYouCatalogPage: PageComponent = ({ emailAddress, firstName, lastName, countryCode, provinceCode }) => {
+  const emailAddress = getParam(searchParams.emailAddress);
+  const firstName = getParam(searchParams.firstName);
+  const lastName = getParam(searchParams.lastName);
+  const countryCode = getParam(searchParams.countryCode);
+  const provinceCode = getParam(searchParams.provinceCode);
+
   const screenWidth = useScreenWidth();
   const mdOrGreater = screenWidth >= 768;
   const effectCalled = useRef<boolean>(false);
@@ -99,64 +99,6 @@ const ThankYouCatalogPage: PageComponent = ({ emailAddress, firstName, lastName,
       </div>
     </section>
   </>;
-};
-
-// eslint-disable-next-line @typescript-eslint/require-await
-export const getServerSideProps: GetServerSideProps<Props> = async context => {
-  const getParam = (paramName: string): string | undefined => {
-    if (typeof context.query[paramName] === 'string') {
-      return context.query[paramName];
-    }
-    if (Array.isArray(context.query[paramName])) {
-      return context.query[paramName]?.[0];
-    }
-  };
-  const getHeader = (headerName: string): string | undefined => {
-    if (typeof context.req.headers[headerName] === 'string') {
-      return context.req.headers[headerName];
-    }
-    if (Array.isArray(context.req.headers[headerName])) {
-      return context.req.headers[headerName]?.[0];
-    }
-  };
-
-  const leadId = getParam('leadId');
-  const emailAddress = getParam('emailAddress');
-  const countryCode = getParam('countryCode');
-  const provinceCode = getParam('provinceCode');
-  const firstName = getParam('firstName');
-  const lastName = getParam('lastName');
-  const ipAddress = getHeader('x-real-ip');
-  const userAgent = getHeader('user-agent');
-  const fbc = context.req.cookies._fbc;
-  const fbp = context.req.cookies._fbp;
-
-  try {
-    if (leadId && emailAddress) {
-      await fbPostLead(leadId, new Date(), emailAddress, firstName, lastName, countryCode, provinceCode, ipAddress, userAgent, fbc, fbp);
-    }
-  } catch (err) {
-    console.error(err);
-  }
-
-  const props: Props = {};
-  if (emailAddress) {
-    props.emailAddress = emailAddress;
-  }
-  if (countryCode) {
-    props.countryCode = countryCode;
-  }
-  if (provinceCode) {
-    props.provinceCode = provinceCode;
-  }
-  if (firstName) {
-    props.firstName = firstName;
-  }
-  if (lastName) {
-    props.lastName = lastName;
-  }
-
-  return { props };
 };
 
 export default ThankYouCatalogPage;
