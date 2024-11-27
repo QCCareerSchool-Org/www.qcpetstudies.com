@@ -1,9 +1,7 @@
-import { GetServerSideProps } from 'next';
 import Image, { StaticImageData } from 'next/image';
 import Link from 'next/link';
 
-import type { PageComponent } from '@/app/_app';
-import { DefaultLayout } from '@/components/layouts/DefaultLayout';
+import { PageComponent } from '@/app/serverComponent';
 import { PriceSection } from '@/components/PriceSection';
 import { SEO } from '@/components/SEO';
 import FirstAidBackground from '@/images/backgrounds/hero-first-aid-bg.jpg';
@@ -11,19 +9,14 @@ import CourseMaterials from '@/images/course-materials-first-aid.jpg';
 import dogLooking from '@/images/dog-looking.jpg';
 import faCertificate from '@/images/fa-certificate-desktop.jpg';
 import firstAidLogo from '@/images/first-aid-logo.svg';
-import { getLocation } from '@/lib/getLocation';
 import { lookupPrices } from '@/lib/lookupPrices';
-import type { Location } from '@/models/location';
-import type { Price } from '@/models/price';
 
 const courseCodes = [ 'fa' ];
 
-type Props = {
-  location: Location;
-  price: Price;
-};
+const DogGroomingPage: PageComponent = async () => {
 
-const DogGroomingPage: PageComponent = ({ price }) => {
+  const price = await lookupPrices(courseCodes);
+
   return <>
     <SEO
       title="First Aid for Groomers Course"
@@ -191,12 +184,6 @@ const DogGroomingPage: PageComponent = ({ price }) => {
   </>;
 };
 
-DogGroomingPage.getLayout = page => <DefaultLayout secondaryTitle="First Aid for Groomers Course">{page}</DefaultLayout>;
-
-export const getServerSideProps: GetServerSideProps<Props> = async context => {
-  const location = await getLocation(context);
-  const price = await lookupPrices(courseCodes, location.countryCode, location.provinceCode);
-  return { props: { location, price } };
-};
+// DogGroomingPage.getLayout = page => <DefaultLayout secondaryTitle="First Aid for Groomers Course">{page}</DefaultLayout>;
 
 export default DogGroomingPage;

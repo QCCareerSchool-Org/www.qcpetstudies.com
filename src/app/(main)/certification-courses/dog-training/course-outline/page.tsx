@@ -1,12 +1,12 @@
+'use client';
+
 import Image, { StaticImageData } from 'next/image';
 import { ReactElement, useState } from 'react';
 import { Modal } from 'react-bootstrap';
 import { FaBars } from 'react-icons/fa';
 
-import type { PageComponent } from '../../../../_app.page';
 import { Accordion } from '@/components/accordion';
 import { AccordionItem } from '@/components/accordion/AccordionItem';
-import { DefaultLayout } from '@/components/layouts/DefaultLayout';
 import { SEO } from '@/components/SEO';
 import { UnitStats } from '@/components/UnitStats';
 import { useScreenWidth } from '@/hooks/useScreenWidth';
@@ -21,6 +21,7 @@ import UnitEImage from '@/images/dt-full-outline-unit-e.jpg';
 import UnitFImage from '@/images/dt-full-outline-unit-f.jpg';
 import UnitGImage from '@/images/dt-full-outline-unit-g.jpg';
 import UnitHImage from '@/images/dt-full-outline-unit-h.jpg';
+import { PageComponent } from '@/app/serverComponent';
 
 const iconSize = 50;
 
@@ -332,7 +333,7 @@ const CourseOutlinePage: PageComponent = () => {
   </>;
 };
 
-CourseOutlinePage.getLayout = page => <DefaultLayout footerCTAType="training">{page}</DefaultLayout>;
+// CourseOutlinePage.getLayout = page => <DefaultLayout footerCTAType="training">{page}</DefaultLayout>;
 
 export default CourseOutlinePage;
 

@@ -1,6 +1,9 @@
-import Image from 'next/image';
-import { useMemo } from 'react';
+'use client';
 
+import Image from 'next/image';
+import { useEffect, useMemo, useState } from 'react';
+
+import { StyleComponent } from './StyleComponent';
 import { PageComponent } from '@/app/serverComponent';
 import { BrochureForm } from '@/components/BrochureForm';
 import { FreeFirstAidSection } from '@/components/FreeFirstAidSection';
@@ -8,49 +11,58 @@ import { HowTheCoursesWorkSection } from '@/components/HowTheCoursesWorkSection'
 import { SEO } from '@/components/SEO';
 import CourseCatalogImage from '@/images/bottom-ipad-shepard.jpg';
 import FullKitImage from '@/images/Kit-Blue-bg.jpg';
+import { getParam } from '@/lib/getParam';
 import { getRandomIntInclusive } from '@/lib/randomInt';
 
 const formAction = 'https://go.qcpetstudies.com/l/947642/2021-12-05/6h9rv';
 const courses = [ 'dg' ];
 
-const ProfessionalDogGroomerPage: PageComponent = () => {
+const ProfessionalDogGroomerPage: PageComponent = ({ searchParams }) => {
 
-  const firstName = typeof context.query.firstName === 'string' ? context.query.firstName : null;
-  const lastName = typeof context.query.lastName === 'string' ? context.query.lastName : null;
-  const emailAddress = typeof context.query.emailAddress === 'string' ? context.query.emailAddress : null;
-  const emailOptIn = typeof context.query.emailOptIn === 'string' ? context.query.emailOptIn === 'yes' : null;
-  const telephoneNumber = typeof context.query.telephoneNumber === 'string' ? context.query.telephoneNumber : null;
-  const smsOptIn = typeof context.query.smsOptIn === 'string' ? context.query.smsOptIn === 'yes' : null;
+  const firstName = getParam(searchParams.firstName);
+  const lastName = getParam(searchParams.lastName);
+  const emailAddress = getParam(searchParams.emailAddress);
+  const emailOptIn = getParam(searchParams.emailOptIn) === 'yes';
+  const telephoneNumber = getParam(searchParams.telephoneNumber);
+  const smsOptIn = getParam(searchParams.smsOptIn) === 'yes';
 
-  const errors = typeof context.query.errors === 'string' && context.query.errors === 'true';
+  const errors = getParam(searchParams.errors) === 'true';
 
-  let testGroup: number | undefined;
-  const storedTestGroup = context.req.cookies.testGroup;
-  if (typeof storedTestGroup !== 'undefined') {
-    const parsed = parseInt(storedTestGroup, 10);
-    if (!isNaN(parsed)) {
-      testGroup = parsed;
+  const [ testGroup, setTestGroup ] = useState<number>();
+
+  useEffect(() => {
+    // Get cookie on mount
+    const cookie = document.cookie
+      .split('; ')
+      .find(row => row.startsWith('testGroup='));
+
+    if (cookie) {
+      const value = parseInt(cookie.split('=')[1], 10);
+      if (!isNaN(value)) {
+        setTestGroup(value);
+        return;
+      }
     }
-  }
-  if (typeof testGroup === 'undefined') {
-    testGroup = getRandomIntInclusive(1, 12);
-    const maxAge = 60 * 60 * 24 * 365;
-    context.res.setHeader('Set-Cookie', `testGroup=${testGroup}; Max-Age=${maxAge}; Path=/; Secure; SameSite=Strict`);
-  }
 
-  const gclid = typeof context.query.gclid === 'string' ? context.query.gclid : null;
-  const msclkid = typeof context.query.msclkid === 'string' ? context.query.msclkid : null;
+    // Set new test group if none exists
+    const newTestGroup = getRandomIntInclusive(1, 12);
+    document.cookie = `testGroup=${newTestGroup}; max-age=${60 * 60 * 24 * 365}; path=/; secure; samesite=strict`;
+    setTestGroup(newTestGroup);
+  }, []);
+
+  const gclid = getParam(searchParams.gclid);
+  const msclkid = getParam(searchParams.msclkid);
 
   const marketing = {
-    source: typeof context.query.utm_source === 'string' ? context.query.utm_source || null : null,
-    medium: typeof context.query.utm_medium === 'string' ? context.query.utm_medium || null : null,
-    campaign: typeof context.query.utm_campaign === 'string' ? context.query.utm_campaign || null : null,
-    content: typeof context.query.utm_content === 'string' ? context.query.utm_content || null : null,
-    term: typeof context.query.utm_term === 'string' ? context.query.utm_term || null : null,
+    source: getParam(searchParams.utm_source) ?? null,
+    medium: getParam(searchParams.utm_medium) ?? null,
+    campaign: getParam(searchParams.utm_campaign) ?? null,
+    content: getParam(searchParams.utm_content) ?? null,
+    term: getParam(searchParams.utm_term) ?? null,
   };
 
   const hiddenFields = useMemo(() => {
-    const h: Array<{ key: string; value: string | number }> = [ { key: 'testGroup', value: testGroup } ];
+    const h: Array<{ key: string; value: string | number }> = [ { key: 'testGroup', value: testGroup ?? '' } ];
     if (gclid) {
       h.push({ key: 'gclid', value: gclid });
     }
@@ -105,7 +117,7 @@ const ProfessionalDogGroomerPage: PageComponent = () => {
                   hiddenFields={hiddenFields}
                   marketing={marketing}
                   courses={courses}
-                  initialValues={{ firstName, lastName, emailAddress, emailOptIn, telephoneNumber, smsOptIn }}
+                  initialValues={{ firstName: firstName ?? null, lastName: lastName ?? null, emailAddress: emailAddress ?? null, emailOptIn: emailOptIn, telephoneNumber: telephoneNumber ?? null, smsOptIn: smsOptIn }}
                   errors={errors}
                 />
               </div>
@@ -150,7 +162,7 @@ const ProfessionalDogGroomerPage: PageComponent = () => {
               hiddenFields={hiddenFields}
               marketing={marketing}
               courses={courses}
-              initialValues={{ firstName, lastName, emailAddress, emailOptIn, telephoneNumber, smsOptIn }}
+              initialValues={{ firstName: firstName ?? null, lastName: lastName ?? null, emailAddress: emailAddress ?? null, emailOptIn: emailOptIn, telephoneNumber: telephoneNumber ?? null, smsOptIn: smsOptIn }}
               errors={errors}
             />
           </div>
@@ -158,15 +170,7 @@ const ProfessionalDogGroomerPage: PageComponent = () => {
       </div>
     </section>
 
-    <style jsx>{`
-      .bg-grayish-blue {
-        background: #3e4557 !important;
-      }
-      .bg-desaturated-blue {
-        background: #262e41 !important;
-      }
-      .formImage { z-index: 100; }
-    `}</style>
+    <StyleComponent />
   </>;
 };
 

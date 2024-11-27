@@ -1,3 +1,5 @@
+'use client';
+
 import Image, { StaticImageData } from 'next/image';
 import { PageComponent } from '@/app/serverComponent';
 

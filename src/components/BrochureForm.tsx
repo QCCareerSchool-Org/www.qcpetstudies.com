@@ -1,3 +1,5 @@
+'use client';
+
 import { ChangeEvent, ChangeEventHandler, FC, FormEventHandler, useReducer, useRef } from 'react';
 
 import { Spinner } from './Spinner';
