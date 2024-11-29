@@ -2,7 +2,6 @@
 
 import type { ReactNode } from 'react';
 import { LayoutComponent } from '../serverComponent';
-import { Footer } from './footer';
 import { Header } from './header';
 
 const MainLayout: LayoutComponent = ({
@@ -13,10 +12,8 @@ const MainLayout: LayoutComponent = ({
   return (
     <div id="defaultPage" className="d-flex flex-column">
       <Header />
-      <main className="flex-shrink-0">
-        {children}
-      </main>
-      <Footer className="bg-navy mt-auto" />
+      {children}
+      {/* footer is applied in sub-layouts, as they differ */}
       <script dangerouslySetInnerHTML={{ __html: livechatScript }} />
     </div>
   );
