@@ -20,8 +20,8 @@ if (!TrackJS.isInstalled()) {
 }
 
 export const metadata: Metadata = {
-  title: { default: 'QC Design School', template: '%s - QC Design School' },
-  metadataBase: new URL('https://www.qcdesignschool.com'),
+  title: { default: 'Become a Pet Care Professional - QC Pet Studies', template: '%s - QC Pet Studies' },
+  metadataBase: new URL('https://www.qcpetstudies.com'),
 };
 
 const RootLayout: LayoutComponent = ({ children }): ReactElement => {

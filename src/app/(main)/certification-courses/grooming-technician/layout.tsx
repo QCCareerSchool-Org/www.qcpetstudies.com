@@ -7,7 +7,7 @@ const DefaultFooterLayout: LayoutComponent = ({
   return (
     <main className="flex-shrink-0">
       {children}
-      <Footer className="bg-navy mt-auto" />
+      <Footer className="bg-navy mt-auto" ctaType="grooming tech" />
     </main>
   );
 };

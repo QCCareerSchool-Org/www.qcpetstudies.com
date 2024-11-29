@@ -12,7 +12,6 @@ export const SecondaryNav: FC = () => {
   const pathname = usePathname();
   const subnav = getSecondaryNav(pathname);
 
-
   if (!subnav) {
     return null;
   }

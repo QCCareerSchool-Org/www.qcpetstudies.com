@@ -1,4 +1,4 @@
-import { subnavLinks as FAQLinks } from './about/faq/page';
+import { subnavLinks as FAQLinks } from '@/app/(main)/(default-footer)/about/faq/page';
 
 export type SubnavLink = {
   title: string;

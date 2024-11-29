@@ -1,3 +1,5 @@
+'use client';
+
 import Image, { StaticImageData } from 'next/image';
 import { FC } from 'react';
 import { Modal } from 'react-bootstrap';
@@ -20,7 +22,6 @@ import GuaranteeIcon from '@/images/course-overview-icons/guarantee.svg';
 import OutlineIcon from '@/images/course-overview-icons/outline.svg';
 import TutorIcon from '@/images/course-overview-icons/tutor.svg';
 import { formatPrice } from '@/lib/formatPrice';
-import { Location } from '@/models/location';
 import { Price } from '@/models/price';
 
 const courseCodes = [ 'gt' ];
@@ -28,7 +29,6 @@ const headerIconSize = 20;
 const iconSize = 36;
 
 export type Props = {
-  location: Location;
   gtPrice: Price;
   dgPrice: Price;
   enrollPath?: string;

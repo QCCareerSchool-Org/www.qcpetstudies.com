@@ -1,4 +1,4 @@
-import { GroomingTechnicianBase } from '..';
+import { GroomingTechnicianBase } from '../';
 import { PageComponent } from '@/app/serverComponent';
 import { DeadlineFunnelScript } from '@/components/DeadlineFunnelScript';
 import { lookupPrices } from '@/lib/lookupPrices';
@@ -6,8 +6,9 @@ import { lookupPrices } from '@/lib/lookupPrices';
 const courseCodes = [ 'gt' ];
 
 const GroomingTechnicianPageAlt2: PageComponent = async () => {
-  const gtPrice = lookupPrices(courseCodes);
-  const dgPrice = lookupPrices([ 'dg' ]);
+  const gtPrice = await lookupPrices(courseCodes);
+  const dgPrice = await lookupPrices([ 'dg' ]);
+  const props = { gtPrice, dgPrice };
   return (
     <>
       <DeadlineFunnelScript />

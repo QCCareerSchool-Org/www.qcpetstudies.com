@@ -208,8 +208,4 @@ const BehaviorCoursePreviewPage: PageComponent = async () => {
   </>;
 };
 
-// BehaviorCoursePreviewPage.getLayout = page => (
-//   <LandingPageLayout link={true} nav="enroll">{page}</LandingPageLayout>
-// );
-
 export default BehaviorCoursePreviewPage;
