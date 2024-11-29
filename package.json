@@ -1,6 +1,6 @@
 {
   "name": "www.petstudies.com",
-  "version": "1.4.28",
+  "version": "1.4.29",
   "license": "UNLICENSED",
   "private": true,
   "scripts": {
@@ -25,7 +25,7 @@
     "fast-xml-parser": "^4.5.0",
     "js-cookie": "^3.0.5",
     "next": "^14.2.18",
-    "qs": "^6.11.0",
+    "qs": "^6.13.1",
     "react": "^18.3.1",
     "react-bootstrap": "^2.10.5",
     "react-dom": "^18.3.1",
@@ -62,8 +62,6 @@
     "jest": "^29.7.0",
     "jest-axe": "^7.0.1",
     "jest-environment-jsdom": "^29.7.0",
-    "next-purgecss": "^4.0.0",
-    "purgecss": "^6.0.0",
     "sass": "^1.81.0",
     "typescript": "^5.6.3"
   }
