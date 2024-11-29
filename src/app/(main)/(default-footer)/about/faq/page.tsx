@@ -1,10 +1,10 @@
 'use client';
 
-import Image, { StaticImageData } from 'next/image';
+import Image from 'next/image';
 import Link from 'next/link';
 import { MouseEventHandler, ReactElement, ReactNode } from 'react';
 import { Modal } from 'react-bootstrap';
-import { SubnavLink } from '../../subnavs';
+import { SubnavLink } from '@/app/(main)/subnavs';
 import { PageComponent } from '@/app/serverComponent';
 import { Accordion } from '@/components/accordion';
 import { AccordionItem } from '@/components/accordion/AccordionItem';
@@ -40,7 +40,7 @@ const FAQPage: PageComponent = () => {
 
     <section id="top" className="bg-dark">
       <Image
-        src={DogInBedWithStick as StaticImageData}
+        src={DogInBedWithStick}
         placeholder="blur"
         alt="dog in a dog bed, holding a stick"
         priority
