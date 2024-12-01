@@ -37,12 +37,6 @@ export const WelcomeToTheSchoolThirdPartyClient: FC<Props> = ({ rawEnrollment })
 
   return (
     <>
-      <SEO
-        title="Welcome to the School"
-        description="Your enrollment has been received and will be processed quickly. You will receive an email within the next business day containing login information to your online student center."
-        canonical="/welcome-to-the-school-third-party"
-        noIndex={true}
-      />
 
       <section id="top" className="bg-dark">
         <Image

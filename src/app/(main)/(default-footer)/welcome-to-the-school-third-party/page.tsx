@@ -1,4 +1,5 @@
 import * as HttpStatus from '@qccareerschool/http-status';
+import { Metadata } from 'next';
 import { cookies, headers } from 'next/headers';
 
 import { ErrorPageWrapper } from '../internal-welcome/ErrorPageWrapper';
@@ -10,6 +11,14 @@ import { fbPostPurchase } from '@/lib/facebookConversionAPI';
 import { getEnrollment } from '@/lib/getEnrollment';
 import { sendEnrollmentEmail } from '@/lib/sendEnrollmentEmail';
 import { trustPulseEnrollment } from '@/lib/trustpulse';
+
+export const metadata: Metadata = {
+  title: 'Welcome to the School',
+  description: 'Your enrollment has been received and will be processed quickly. You will receive an email within the next business day containing login information to your online student center.',
+  alternates: {
+    canonical: '/welcome-to-the-school-third-party',
+  },
+};
 
 const WelcomeToTheSchoolThirdPartyPage: PageComponent = async ({
   searchParams,

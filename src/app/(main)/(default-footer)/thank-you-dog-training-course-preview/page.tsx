@@ -1,18 +1,20 @@
-'use client';
-
+import { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
-import { useEffect, useRef } from 'react';
 import { FaPaw } from 'react-icons/fa';
 
+import { ClientLogic } from '../thank-you-dog-grooming-course-preview/ClientLogic';
 import { PageComponent } from '@/app/serverComponent';
-import { SEO } from '@/components/SEO';
-import { useScreenWidth } from '@/hooks/useScreenWidth';
 import CatalogBackground from '@/images/backgrounds/smiling-border-collie-on-black.jpg';
-import { brevoIdentifyLead } from '@/lib/brevo';
-import { fbqLead } from '@/lib/fbq';
-import { gaEvent, gaUserData } from '@/lib/ga';
 import { getParam } from '@/lib/getParam';
+
+export const metadata: Metadata = {
+  title: 'Here\'s Your Course Preview',
+  description: 'Get your Dog Training Course Preview Now',
+  alternates: {
+    canonical: '/thank-you-dog-training-course-preview',
+  },
+};
 
 const ThankYouCatalogPage: PageComponent = ({ searchParams }) => {
 
@@ -22,47 +24,21 @@ const ThankYouCatalogPage: PageComponent = ({ searchParams }) => {
   const countryCode = getParam(searchParams.countryCode);
   const provinceCode = getParam(searchParams.provinceCode);
 
-  const screenWidth = useScreenWidth();
-  const mdOrGreater = screenWidth >= 768;
-  const effectCalled = useRef<boolean>(false);
-
-  useEffect(() => {
-    if (emailAddress) {
-      gaUserData({ email: emailAddress });
-    }
-  }, [ emailAddress ]);
-
-  useEffect(() => {
-    if (effectCalled.current) {
-      return;
-    }
-    effectCalled.current = true;
-    fbqLead();
-    gaEvent('conversion', { send_to: 'AW-1071836607/yZtFCL_BpW8Qv9uL_wM' }); // eslint-disable-line camelcase
-  }, []);
-
-  useEffect(() => {
-    if (emailAddress) {
-      brevoIdentifyLead(emailAddress, countryCode, provinceCode, firstName ?? undefined, lastName ?? undefined);
-    }
-  }, [ emailAddress, countryCode, provinceCode, firstName, lastName ]);
-
   return <>
-    <SEO
-      title="Here's Your Course Preview"
-      description="Get your Dog Training Course Preview Now"
-      canonical="/thank-you-dog-training-course-preview"
-    />
+    <ClientLogic emailAddress={emailAddress} countryCode={countryCode} provinceCode={provinceCode} firstName={firstName} lastName={lastName} />
+
     <section id="top" className="bg-black">
-      {mdOrGreater && <Image
-        src={CatalogBackground}
-        placeholder="blur"
-        alt="Smiling border collie"
-        priority
-        fill
-        sizes="100vw"
-        style={{ objectFit: 'cover', objectPosition: 'right' }}
-      />}
+      <div className="d-none d-md-block">
+        <Image
+          src={CatalogBackground}
+          placeholder="blur"
+          alt="Smiling border collie"
+          priority
+          fill
+          sizes="100vw"
+          style={{ objectFit: 'cover', objectPosition: 'right' }}
+        />
+      </div>
       <div className="container text-center text-md-start">
         <div className="row">
           <div className="col-12 col-md-6 col-lg-7 col-xl-8">

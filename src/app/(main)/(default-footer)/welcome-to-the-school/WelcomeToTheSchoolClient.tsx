@@ -4,7 +4,6 @@ import Image from 'next/image';
 import { FC, useEffect, useMemo, useState } from 'react';
 
 import { EnrollmentDetails } from '@/components/EnrollmentDetails';
-import { SEO } from '@/components/SEO';
 import { useLocation } from '@/hooks/useLocation';
 import AlexSignature from '@/images/alex-myers.png';
 import HappyPuppyRunning from '@/images/backgrounds/happy-puppy-running.jpg';
@@ -50,12 +49,6 @@ export const WelcomeToTheSchoolClient: FC<Props> = ({ rawEnrollment }) => {
 
   return (
     <>
-      <SEO
-        title="Welcome to the School"
-        description="Your enrollment has been received and will be processed quickly. You will receive an email within the next business day containing login information to your online student center."
-        canonical="/welcome-to-the-school"
-        noIndex={true}
-      />
 
       <section id="top" className="bg-dark">
         <Image
