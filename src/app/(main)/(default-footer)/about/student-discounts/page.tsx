@@ -1,8 +1,8 @@
+import { Metadata } from 'next';
 import Image, { StaticImageData } from 'next/image';
 import { ReactElement, ReactNode } from 'react';
 import { PageComponent } from '@/app/serverComponent';
 
-import { SEO } from '@/components/SEO';
 import StudentDiscountBackground from '@/images/backgrounds/student-discounts-bg.jpg';
 import DaySmartPetLogo from '@/images/logos/day-smart-pet.svg';
 import DirectLogo from '@/images/logos/direct-animal-products.jpg';
@@ -13,14 +13,16 @@ import SenseiLogo from '@/images/logos/sensei-shear-systems.jpg';
 import SharkFinLogo from '@/images/logos/shark-fin.jpg';
 import ZenDogLogo from '@/images/logos/zen-dog.jpg';
 
+export const metadata: Metadata = {
+  title: 'Student Discounts',
+  description: 'This is Student Discounts page',
+  alternates: {
+    canonical: '/about/student-discounts',
+  },
+};
+
 const StudentDiscountsPage: PageComponent = () => (
   <>
-    <SEO
-      title="Student Discounts"
-      description="This is Student Discount page"
-      canonical="/about/student-discounts"
-    />
-
     <section id="top" className="bg-dark">
       <Image
         src={StudentDiscountBackground}

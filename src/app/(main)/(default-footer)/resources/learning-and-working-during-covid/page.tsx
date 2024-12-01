@@ -1,4 +1,5 @@
-import Image, { StaticImageData } from 'next/image';
+import { Metadata } from 'next';
+import Image from 'next/image';
 import Link from 'next/link';
 import { FaInstagram, FaLaptop, FaMedkit, FaPaw, FaPencilAlt, FaTruck } from 'react-icons/fa';
 import { HowToGroomSection } from './HowToGroomSection';
@@ -6,21 +7,23 @@ import { KeepingSafeSection } from './KeepingSafeSection';
 import { ReviewSection } from './ReviewSection';
 import { PageComponent } from '@/app/serverComponent';
 
-import { SEO } from '@/components/SEO';
 import LearningAndWorkingBackground from '@/images/backgrounds/groomer-wearing-face-mask.jpg';
+
+export const metadata: Metadata = {
+  title: 'Learning & Working During COVID-19',
+  description: 'Starting a new career during a pandemic can be challenging! Find out how online training can help.',
+  alternates: {
+    canonical: '/resources/learning-and-working-during-covid',
+  },
+};
 
 const LearningDuringCovidPage: PageComponent = () => {
 
   return <>
-    <SEO
-      title="Learning &amp; Working During COVID-19"
-      description="Starting a new career during a pandemic can be challenging! Find out how online training can help."
-      canonical="/resources/learning-and-working-during-covid"
-    />
 
     <section id="top" className="bg-dark">
       <Image
-        src={LearningAndWorkingBackground as StaticImageData}
+        src={LearningAndWorkingBackground}
         placeholder="blur"
         alt="groomer wire brushing a dog"
         priority

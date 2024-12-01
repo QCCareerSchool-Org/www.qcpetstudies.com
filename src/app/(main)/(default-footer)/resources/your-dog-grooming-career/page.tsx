@@ -1,3 +1,4 @@
+import { Metadata } from 'next';
 import Image, { StaticImageData } from 'next/image';
 import Link from 'next/link';
 import { FC, ReactElement, ReactNode } from 'react';
@@ -16,14 +17,17 @@ import OwnDogGroomingSaloon from '@/images/run-your-own-dog-grooming-salon.jpg';
 import WorkFromHomeImage from '@/images/work-as-a-dog-groomer-from-home.jpg';
 import WorkSaloonImage from '@/images/work-for-a-grooming-salon-or-pet-retailer.jpg';
 
+export const metadata: Metadata = {
+  title: 'Your Dog Grooming Career',
+  description: "There are different career paths a professional dog groomer can take. Choose the path that's right for you!",
+  alternates: {
+    canonical: '/resources/your-dog-grooming-career',
+  },
+};
+
 const DogGroomingCareerPage: PageComponent = () => {
 
   return <>
-    <SEO
-      title="Your Dog Grooming Career"
-      description="There are different career paths a professional dog groomer can take. Choose the path that's right for you!"
-      canonical="/resources/your-dog-grooming-career"
-    />
 
     <section id="top" className="bg-dark">
       <Image

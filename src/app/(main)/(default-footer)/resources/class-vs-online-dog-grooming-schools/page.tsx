@@ -1,23 +1,26 @@
-import Image, { StaticImageData } from 'next/image';
+import { Metadata } from 'next';
+import Image from 'next/image';
 import { FC, ReactElement } from 'react';
 import { FaGraduationCap, FaLaptop, FaUniversity } from 'react-icons/fa';
 import { PageComponent } from '@/app/serverComponent';
 
-import { SEO } from '@/components/SEO';
 import FirstSectionBackground from '@/images/backgrounds/inclass_vs_online_bg.jpg';
+
+export const metadata: Metadata = {
+  title: 'In-Class vs. Online Dog Grooming Schools',
+  description: 'In-Class vs. Online Dog Grooming Schools',
+  alternates: {
+    canonical: '/resources/class-vs-online-dog-grooming-schools',
+  },
+};
 
 const ClassVsOnlineLearning: PageComponent = () => {
 
   return <>
-    <SEO
-      title="In-Class vs. Online Dog Grooming Schools"
-      description="In-Class vs. Online Dog Grooming Schools"
-      canonical="/resources/class-vs-online-dog-grooming-schools"
-    />
 
     <section id="top" className="bg-dark">
       <Image
-        src={FirstSectionBackground as StaticImageData}
+        src={FirstSectionBackground}
         placeholder="blur"
         alt="happy Yorkie"
         priority

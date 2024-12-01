@@ -1,21 +1,24 @@
+import { Metadata } from 'next';
 import Image, { StaticImageData } from 'next/image';
 import { ReactElement, ReactNode } from 'react';
 import { FaBookOpen, FaHeadphones, FaLightbulb, FaStar } from 'react-icons/fa';
 
 import { PageComponent } from '@/app/serverComponent';
 import { GuaranteeSection } from '@/components/GuaranteeSection';
-import { SEO } from '@/components/SEO';
 import Qc35Year from '@/images/35-year-emblem.svg';
 import QcBackground from '@/images/backgrounds/about-qc-background.jpg';
 import SPCALogo from '@/images/spca-full-color-logo.svg';
 
+export const metadata: Metadata = {
+  title: 'About QC Pet Studies',
+  description: '',
+  alternates: {
+    canonical: '/about/about-qc-pet-studies',
+  },
+};
+
 const AboutPage: PageComponent = () => (
   <>
-    <SEO
-      title="About QC Pet Studies"
-      description=""
-      canonical="/about/about-qc-pet-studies"
-    />
 
     <section id="top" className="bg-dark">
       <Image

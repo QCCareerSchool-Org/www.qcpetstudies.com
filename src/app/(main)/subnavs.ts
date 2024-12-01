@@ -1,5 +1,3 @@
-import { subnavLinks as FAQLinks } from '@/app/(main)/(default-footer)/about/faq/page';
-
 export type SubnavLink = {
   title: string;
   href: string;
@@ -16,6 +14,10 @@ export const subnavs: Subnav[] = [
   {
     pathname: '/about/faq',
     title: 'FAQ',
-    links: FAQLinks,
+    links: [
+      { title: 'About QC Pet Studies', href: '#about' },
+      { title: 'Dog Grooming FAQ', href: '#grooming' },
+      { title: 'Dog Training FAQ', href: '#training' },
+    ],
   },
 ];

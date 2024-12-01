@@ -1,9 +1,9 @@
+import { Metadata } from 'next';
 import Image, { StaticImageData } from 'next/image';
 import Link from 'next/link';
 import { UnitsSection } from './UnitsSection';
 import { PageComponent } from '@/app/serverComponent';
 
-import { SEO } from '@/components/SEO';
 import RequiredDogBreedsBackground from '@/images/backgrounds/every-breed-bg.jpg';
 import PracticumImage1 from '@/images/dogs/practicum-1.jpg';
 import PracticumImage2 from '@/images/dogs/practicum-2.jpg';
@@ -14,14 +14,17 @@ import IconFirstAidLogo from '@/images/first-aid-logo.svg';
 
 const iconSize = 50;
 
+export const metadata: Metadata = {
+  title: 'Every Dog Breed You Must Groom in Your Dog Grooming Course',
+  description: 'Find out what types of dog breeds you\'ll need in order to complete your online dog groomer training with QC',
+  alternates: {
+    canonical: '/dog-grooming/required-dog-breeds',
+  },
+};
+
 const RequiredDogBreeds: PageComponent = () => {
 
   return <>
-    <SEO
-      title="Every Dog Breed You Must Groom in Your Dog Grooming Course"
-      description="Find out what types of dog breeds you'll need in order to complete your online dog groomer training with QC"
-      canonical="/dog-grooming/required-dog-breeds"
-    />
 
     <section id="top" className="bg-dark">
       <Image

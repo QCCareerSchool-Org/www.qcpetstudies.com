@@ -1,25 +1,28 @@
-import Image, { StaticImageData } from 'next/image';
+import { Metadata } from 'next';
+import Image from 'next/image';
 import { ReviewSection } from '../learning-and-working-during-covid/ReviewSection';
 import { CertificationSection } from './CertificationSection';
 import { LicenseSection } from './LicenseSection';
 import { TrainingRequiredSection } from './TrainingRequiredSection';
 import { PageComponent } from '@/app/serverComponent';
 
-import { SEO } from '@/components/SEO';
 import GroomerDemattingBackground from '@/images/backgrounds/license-vs-certification-bg.jpg';
+
+export const metadata: Metadata = {
+  title: 'Dog Grooming License vs. Certification',
+  description: 'Dog grooming License vs. Certification',
+  alternates: {
+    canonical: '/resources/license-vs-certification',
+  },
+};
 
 const LicenseVsCertification: PageComponent = () => {
 
   return <>
-    <SEO
-      title="Dog Grooming License vs. Certification"
-      description="Dog Grooming License vs. Certification"
-      canonical="/resources/license-vs-certification"
-    />
 
     <section id="top" className="bg-dark">
       <Image
-        src={GroomerDemattingBackground as StaticImageData}
+        src={GroomerDemattingBackground}
         placeholder="blur"
         alt="groomer dematting a dog"
         priority

@@ -1,11 +1,11 @@
 import * as HttpStatus from '@qccareerschool/http-status';
+import { Metadata } from 'next';
 import { headers } from 'next/headers';
 
 import { EnrollmentDetailsWrapper } from './EnrollmentDetailsWrapper';
 import { ErrorPageWrapper } from './ErrorPageWrapper';
 import { InternalWelcomeComponent } from './InternalWelcomeComponent';
 import { PageComponent } from '@/app/serverComponent';
-import { SEO } from '@/components/SEO';
 import { getEnrollment } from '@/lib/getEnrollment';
 import { getParam } from '@/lib/getParam';
 import { RawEnrollment } from '@/models/enrollment';
@@ -17,6 +17,14 @@ type PropData = {
     ipAddress: string | null;
   };
   errorCode: string | undefined;
+};
+
+export const metadata: Metadata = {
+  title: 'Welcome to the School',
+  description: 'Your enrollment has been received and will be processed quickly. You will receive an email within the next business day containing login information to your online student center.',
+  alternates: {
+    canonical: '/welcome-to-the-school',
+  },
 };
 
 const InternalWelcomePage: PageComponent = async ({ searchParams }) => {
@@ -60,12 +68,6 @@ const InternalWelcomePage: PageComponent = async ({ searchParams }) => {
   }
 
   return <>
-    <SEO
-      title="Welcome to the School"
-      description="Your enrollment has been received and will be processed quickly. You will receive an email within the next business day containing login information to your online student center."
-      canonical="/welcome-to-the-school"
-    />
-
     <InternalWelcomeComponent {...data} />
 
     {data.rawEnrollment && <EnrollmentDetailsWrapper rawEnrollment={data.rawEnrollment} />}

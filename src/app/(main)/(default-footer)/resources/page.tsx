@@ -1,21 +1,24 @@
+import { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 import { PageComponent } from '@/app/serverComponent';
 
 import { SectionBackground } from '@/components/SectionBackground';
-import { SEO } from '@/components/SEO';
 import DogTrainingResourcesBackground from '@/images/backgrounds/working-at-home-office-with-dog.jpg';
 import LearningInClassOnline from '@/images/cards/learning-in-class-online.jpg';
 import StudentGrad from '@/images/cards/student-grad.jpg';
 import VirtualClassroom from '@/images/cards/virtual-classroom.jpg';
 
+export const metadata: Metadata = {
+  title: 'Learning Resources',
+  description: 'Use these resources to decide if a career in the pet industry is right for you!',
+  alternates: {
+    canonical: '/resources',
+  },
+};
+
 const LearningResourcesPage: PageComponent = () => (
   <>
-    <SEO
-      title="Learning Resources"
-      description="Use these resources to decide if a career in the pet industry is right for you!"
-      canonical="/resources"
-    />
 
     <section id="top" className="bg-dark">
       <SectionBackground src={DogTrainingResourcesBackground} priority />

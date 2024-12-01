@@ -1,15 +1,18 @@
+import { Metadata } from 'next';
 import { PageComponent } from '@/app/serverComponent';
-import { SEO } from '@/components/SEO';
+
+export const metadata: Metadata = {
+  title: 'Canadian Tax Credits',
+  description: 'Canadian students can use tax credits to save over 50% of their course fees',
+  alternates: {
+    canonical: '/canadian-tax-credits',
+  },
+};
 
 const CanadianTaxCreditsPage: PageComponent = () => {
   const year = new Date().getFullYear();
   return (
     <>
-      <SEO
-        title="Canadian Tax Credits"
-        description="Canadian students can use tax credits to save over 50% of their course fees"
-        canonical="/canadian-tax-credits"
-      />
 
       <section id="top">
         <div className="container">

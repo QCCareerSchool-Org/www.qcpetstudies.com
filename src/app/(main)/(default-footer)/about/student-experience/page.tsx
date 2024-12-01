@@ -1,27 +1,30 @@
-import Image, { StaticImageData } from 'next/image';
+import { Metadata } from 'next';
+import Image from 'next/image';
 import Link from 'next/link';
 import { FaFacebookF, FaInstagram, FaTwitter } from 'react-icons/fa';
 
 import { SettingUpForSuccessSection } from './SettingUpForSuccessSection';
 import { PageComponent } from '@/app/serverComponent';
 import { SectionBackground } from '@/components/SectionBackground';
-import { SEO } from '@/components/SEO';
 import StudentExperienceBackground from '@/images/backgrounds/student-experience-hero.jpg';
 import CertifiedExpertImage from '@/images/certified-experts-collage.png';
 import LineOfDogsImage from '@/images/line-of-dogs.jpg';
 import WomanUsingLaptopImage from '@/images/woman-using-laptop-with-dog-on-lap.jpg';
 
+export const metadata: Metadata = {
+  title: 'Student Experience',
+  description: 'As a QC Pet Studies Student, you\'ll get help through every step of your education. As you work through your course, you\'ll be guided by our team of teaching assistants, as well as top-notch industry experts with years of professional experience. Even after you graduate, you\'ll remain an essential member of the QC community.',
+  alternates: {
+    canonical: '/about/student-experience',
+  },
+};
+
 const StudentExperiencePage: PageComponent = () => {
 
   return <>
-    <SEO
-      title="Student Experience"
-      description="As a QC Pet Studies Student, you'll get help through every step of your education. As you work through your course, you'll be guided by our team of teaching assistants, as well as top-notch industry experts with years of professional experience. Even after you graduate, you'll remain an essential member of the QC community."
-      canonical="/about/student-experience"
-    />
 
     <section id="top" className="bg-dark">
-      <SectionBackground src={StudentExperienceBackground as StaticImageData} priority />
+      <SectionBackground src={StudentExperienceBackground} priority />
       <div className="container text-center">
         <div className="row">
           <h1>Student Experience</h1>
@@ -36,7 +39,7 @@ const StudentExperiencePage: PageComponent = () => {
         <div className="row">
           <div className="col-12 col-lg-6" style={{ position: 'relative' }}>
             <Image
-              src={WomanUsingLaptopImage as StaticImageData}
+              src={WomanUsingLaptopImage}
               placeholder="blur"
               alt="woman using a laptop with a Chihuahua on her lap"
               fill
@@ -66,7 +69,7 @@ const StudentExperiencePage: PageComponent = () => {
           </div>
           <div className="col-12 col-sm-10 col-md-8 col-lg-6 col-xl-4 col-xxl-3">
             <Image
-              src={CertifiedExpertImage as StaticImageData}
+              src={CertifiedExpertImage}
               alt="collage of dogs"
               sizes="100vw"
               style={{ width: '100%', height: 'auto' }}
@@ -96,7 +99,7 @@ const StudentExperiencePage: PageComponent = () => {
             <p className="mb-5">The Virtual Community is a hub for QC Pet Studies students to socialize and support one another. Ask questions about tools and techniques, swap stories about your best and worst canine clients, and be inspired by like-minded individuals. Education is essential to your success in the pet industry even after you graduate. That's why you'll have lifetime access to the Online Student Center and be able to access new course lessons and video tutorials as soon as they're available. You can always reach out to the QC team with questions about your career or the pet care industry.</p>
             <p className="lead">At QC Pet Studies, <strong>we're with you for the journey.</strong></p>
             <Image
-              src={LineOfDogsImage as StaticImageData}
+              src={LineOfDogsImage}
               alt="a line of nine dogs standing side to side"
               sizes="100vw"
               style={{ width: '100%', height: 'auto' }}

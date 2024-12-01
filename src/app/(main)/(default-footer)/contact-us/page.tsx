@@ -1,23 +1,26 @@
-import Image, { StaticImageData } from 'next/image';
+import { Metadata } from 'next';
+import Image from 'next/image';
 import { ContactLinkSection } from './ContactLinkSection';
 import { PageComponent } from '@/app/serverComponent';
 
-import { SEO } from '@/components/SEO';
 import ContactUsBackground from '@/images/backgrounds/contact-us-bg.jpg';
 import ScheduleCallImage from '@/images/schedule-call-contact.png';
+
+export const metadata: Metadata = {
+  title: 'Contact Us',
+  description: 'How to contact QC Pet Studies',
+  alternates: {
+    canonical: '/contact-us',
+  },
+};
 
 const ContactUsPage: PageComponent = () => {
 
   return <>
-    <SEO
-      title="Contact Us"
-      description="How to contact QC Pet Studies"
-      canonical="/contact-us"
-    />
 
     <section id="top" className="bg-dark text-light">
       <Image
-        src={ContactUsBackground as StaticImageData}
+        src={ContactUsBackground}
         placeholder="blur"
         alt="happy dog"
         priority
@@ -42,7 +45,7 @@ const ContactUsPage: PageComponent = () => {
             <a href=""><button className="btn btn-outline-secondary mb-4 mb-lg-0">Schedule a Call</button></a>
           </div>
           <div className="col-12 col-sm-10 col-md-8 col-lg-6 col-xl-5">
-            <Image src={ScheduleCallImage as StaticImageData} layout="responsive" alt="dog looking at a phone" />
+            <Image src={ScheduleCallImage} layout="responsive" alt="dog looking at a phone" />
           </div>
         </div>
       </div>
