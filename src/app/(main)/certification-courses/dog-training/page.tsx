@@ -1,3 +1,4 @@
+import { Metadata } from 'next';
 import Image, { StaticImageData } from 'next/image';
 
 import { CertificationSection } from './CertificationSection';
@@ -8,7 +9,6 @@ import { PageComponent } from '@/app/serverComponent';
 import { DTTutorSection } from '@/components/DTTutorSection';
 import { GuaranteeSection } from '@/components/GuaranteeSection';
 import { PriceSection } from '@/components/PriceSection';
-import { SEO } from '@/components/SEO';
 import { VirtualCommunitySection } from '@/components/virtualCommunitySection';
 import DTBackgroundImage from '@/images/backgrounds/australian-shepherd-attentive.jpg';
 import GuaranteeIcon from '@/images/course-overview-icons/guarantee.svg';
@@ -22,15 +22,16 @@ const headerIconSize = 20;
 
 const courseCodes = [ 'dt' ];
 
+export const metadata: Metadata = {
+  title: 'Dog Training Course',
+  description: 'Become a Professional Dog Trainer with QC\'s online dog training course. Study Online with Hands-On Learning!',
+  alternates: { canonical: '/certification-courses/dog-training' },
+};
+
 const DogTrainingPage: PageComponent = async () => {
   const price = await lookupPrices([ 'dt' ]);
 
   return <>
-    <SEO
-      title="Dog Training Course"
-      description="Become a Professional Dog Trainer with QC's online dog training course. Study Online with Hands-On Learning!"
-      canonical="/certification-courses/dog-training"
-    />
 
     <section id="top" className="bg-dark">
       <Image

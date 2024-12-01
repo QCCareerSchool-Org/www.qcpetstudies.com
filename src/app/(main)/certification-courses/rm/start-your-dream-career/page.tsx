@@ -1,10 +1,10 @@
+import { Metadata } from 'next';
 import Image, { StaticImageData } from 'next/image';
 
 import { PageComponent } from '@/app/serverComponent';
 import { FreeFirstAidSection } from '@/components/FreeFirstAidSection';
 import { HowTheCoursesWorkSection } from '@/components/HowTheCoursesWorkSection';
 import { PriceSection } from '@/components/PriceSection';
-import { SEO } from '@/components/SEO';
 import QcYearGuaratnteeLogo from '@/images/1-year-guarantee-outlined.svg';
 import QcDayGuaratnteeLogo from '@/images/21-day-guarantee-outlined.svg';
 import DreamCareerBackground from '@/images/backgrounds/drying-dog-bg.jpg';
@@ -13,15 +13,16 @@ import { lookupPrices } from '@/lib/lookupPrices';
 
 const courseCodes = [ 'dg' ];
 
+export const metadata: Metadata = {
+  title: 'Start Your Dream Career',
+  description: 'Start Your Dream Career',
+  alternates: { canonical: '/certification-courses/rm/start-your-dream-career' },
+};
+
 const StartYourDreamCareerPage: PageComponent = async () => {
   const price = await lookupPrices(courseCodes);
   return (
     <>
-      <SEO
-        title="Start Your Dream Career"
-        description="Start Your Dream Career"
-        canonical="/certification-courses/rm/start-your-dream-career"
-      />
 
       <section id="top" className="bg-dark">
         <Image

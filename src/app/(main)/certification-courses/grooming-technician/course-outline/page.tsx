@@ -1,11 +1,12 @@
+import { Metadata } from 'next';
 import Image, { StaticImageData } from 'next/image';
 import Link from 'next/link';
 import { FaBars } from 'react-icons/fa';
 
+import { CustomStyles } from './CustomStyles';
 import { PageComponent } from '@/app/serverComponent';
 import { Accordion } from '@/components/accordion';
 import { AccordionItem } from '@/components/accordion/AccordionItem';
-import { SEO } from '@/components/SEO';
 import CourseOutlineBackground from '@/images/backgrounds/course-outline.jpg';
 import calendarIcon from '@/images/calendar.svg';
 import IconTime from '@/images/clock.svg';
@@ -16,13 +17,14 @@ import UnitCImage from '@/images/dg-full-outline-unit-c-image.jpg';
 
 const iconSize = 50;
 
+export const metadata: Metadata = {
+  title: 'Grooming Technician Course Outline',
+  alternates: { canonical: '/certification-courses/grooming-technician/course-outline' },
+  description: 'Become a certified grooming technician with QC\'s interactive online course. Get started today!',
+};
+
 const GroomingTechCourseOutlinePage: PageComponent = () => (
   <>
-    <SEO
-      title="Grooming Technician Course Outline"
-      description="Become a certified grooming technician with QC's interactive online course. Get started today!"
-      canonical="/certification-courses/grooming-technician/course-outline"
-    />
 
     <section id="top" className="bg-dark">
       <Image
@@ -275,24 +277,7 @@ const GroomingTechCourseOutlinePage: PageComponent = () => (
       </div>
     </section>
 
-    <style jsx>{`
-      #outlineSection {
-        background-color: #f7f7f7 !important;
-      }
-      .unitStatsTable {
-        font-size: 1.25rem;
-      }
-      .unitStatsTable th {
-        font-weight: bold;
-        padding-right: 0.5rem;
-      }
-      .unitStatsTable tr > td, .unitStatsTable tr > th {
-        padding-bottom: 0.75rem;
-      }
-      .unitStatsTable tr:last-of-type > td, .unitStatsTable tr:last-of-type > th {
-        padding-bottom: 0.25rem;
-      }
-    `}</style>
+    <CustomStyles />
   </>
 );
 

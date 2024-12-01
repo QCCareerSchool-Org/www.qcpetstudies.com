@@ -1,9 +1,9 @@
+import { Metadata } from 'next';
 import type { FC } from 'react';
 
 import { PageSections } from './PageSections';
 import { DGTutorSection } from '@/components/DGTutorSection';
 import { PriceSectionWithDiscount } from '@/components/PriceSectionWithDiscount';
-import { SEO } from '@/components/SEO';
 import { lookupPrices } from '@/lib/lookupPrices';
 
 const courseCodes = [ 'dg' ];
@@ -12,16 +12,16 @@ type Props = {
   enrollPath: string;
 };
 
+export const metadata: Metadata = {
+  title: 'Dog Grooming Certification Course',
+  alternates: { canonical: '/certification-courses/dog-grooming/woof-gang-bakery' },
+};
+
 const Page: FC<Props> = async ({ enrollPath }) => {
 
   const price = await lookupPrices(courseCodes);
 
   return <>
-    <SEO
-      title="Dog Grooming Certification Course"
-      description=""
-      canonical="/certification-courses/dog-grooming/woof-gang-bakery"
-    />
 
     <PageSections enrollPath={enrollPath} />
 

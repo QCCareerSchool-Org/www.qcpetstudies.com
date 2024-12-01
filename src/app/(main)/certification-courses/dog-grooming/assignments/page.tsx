@@ -1,32 +1,23 @@
-'use client';
-
 import Image, { StaticImageData } from 'next/image';
 import Link from 'next/link';
 import { BsBook } from 'react-icons/bs';
 
 import { PageComponent } from '@/app/serverComponent';
 import { Bar } from '@/components/Bar';
-import { SEO } from '@/components/SEO';
-import { useScreenWidth } from '@/hooks/useScreenWidth';
 import AssignmentBackground from '@/images/backgrounds/your-career-bg.jpg';
 import CameraIcon from '@/images/camera.svg';
 import CheckedIcon from '@/images/checked.svg';
 import RedDesktopIcon from '@/images/desktop-red.svg';
 
+export const metadata = {
+  title: 'Your Grooming Assignments',
+  description: 'Your Grooming Assignments',
+  alternates: { canonical: '/certification-courses/dog-grooming/assignments' },
+};
+
 const GroomingAssignment: PageComponent = () => {
-  const screenWidth = useScreenWidth();
-  const mdOrLarger = screenWidth >= 768;
-  const lgOrLarger = screenWidth >= 992;
-  const xlOrLarger = screenWidth >= 1200;
-  const md = mdOrLarger && !lgOrLarger;
-  const lg = lgOrLarger && !xlOrLarger;
 
   return <>
-    <SEO
-      title="Your Grooming Assignments"
-      description="Your Grooming Assignments"
-      canonical="/certification-courses/your-grooming-assignment"
-    />
 
     <section id="top" className="bg-dark">
       <Image
@@ -70,7 +61,7 @@ const GroomingAssignment: PageComponent = () => {
                 style={{ maxWidth: '100%', height: 'auto', objectFit: 'cover', objectPosition: 'center' }}
               />
             </div>
-            <h3>Study{md ? <br /> : ' '}Online</h3>
+            <h3>Study <br className="d-none d-md-inline d-lg-none" /> Online</h3>
             <p className="mb-0">Study your material online. Master the course theory and develop an understanding of proper practices, techniques, and industry knowledge.</p>
           </div>
           <div className="col-12 col-md-4 mb-4 mb-md-0">
@@ -81,7 +72,7 @@ const GroomingAssignment: PageComponent = () => {
                 style={{ maxWidth: '100%', height: 'auto', objectFit: 'cover', objectPosition: 'center' }}
               />
             </div>
-            <h3>Complete{md ? <br /> : ' '}Assignments</h3>
+            <h3>Complete <br className="d-none d-md-inline d-lg-none" /> Assignments</h3>
             <p className="mb-0">Your theory assignments are completed online by simply filling out the assignment template. For practical assignments, you'll submit clear photos and videos of your work.</p>
           </div>
           <div className="col-12 col-md-4">
@@ -92,7 +83,7 @@ const GroomingAssignment: PageComponent = () => {
                 style={{ maxWidth: '100%', height: 'auto', objectFit: 'cover', objectPosition: 'center' }}
               />
             </div>
-            <h3>Receive{md ? <br /> : ' '}Feedback</h3>
+            <h3>Receive <br className="d-none d-md-inline d-lg-none" /> Feedback</h3>
             <p className="mb-0">Your tutor reviews your work and provides detailed feedback, which you'll use to improve on your next unit. you'll receive a letter grade for each unit based on your knowledge and technical skills.</p>
           </div>
         </div>
@@ -112,7 +103,7 @@ const GroomingAssignment: PageComponent = () => {
           <div className="col-10 col-sm-9 col-md-7 col-lg-4 mb-4 mb-lg-0 d-flex">{/* d-flex so all columns will be the same size */}
             <div className="card">
               <div className="card-body d-flex flex-column">{/* d-flex so the buttons at the bottom of each card can be aligned */}
-                <h3>Theory{lg ? <br /> : ' '}Assignment</h3>
+                <h3>Theory <br className="d-none d-lg-inline d-xl-none" /> Assignment</h3>
                 <Bar variant="secondary" />
                 <h4><em>Topical Structure</em></h4>
                 <p className="small">In this assignment, you'll use your knowledge of topical structure to correctly label the given breed's topical features.</p>
@@ -125,7 +116,7 @@ const GroomingAssignment: PageComponent = () => {
           <div className="col-10 col-sm-9 col-md-7 col-lg-4 mb-4 mb-lg-0 d-flex">{/* d-flex so all columns will be the same size */}
             <div className="card">
               <div className="card-body d-flex flex-column">{/* d-flex so the buttons at the bottom of each card can be aligned */}
-                <h3>Preparatory{lg ? <br /> : ' '}Assignment</h3>
+                <h3>Preparatory <br className="d-none d-lg-inline d-xl-none" /> Assignment</h3>
                 <Bar variant="secondary" />
                 <h4><em>Clipping White Nails</em></h4>
                 <p className="small">In this assignment, you'll prepare for your practicum units by practicing clipping the nails of a dog with white nails.</p>
@@ -138,7 +129,7 @@ const GroomingAssignment: PageComponent = () => {
           <div className="col-10 col-sm-9 col-md-7 col-lg-4 d-flex">{/* d-flex so all columns will be the same size */}
             <div className="card">
               <div className="card-body d-flex flex-column">{/* d-flex so the buttons at the bottom of each card can be aligned */}
-                <h3>Practicum{lg ? <br /> : ' '}Assignment</h3>
+                <h3>Practicum <br className="d-none d-lg-inline d-xl-none" /> Assignment</h3>
                 <Bar variant="secondary" />
                 <h4><em>Preparation for a Teddy Bear Cut</em></h4>
                 <p className="small">In this practicum assignment, you'll prepare a dog to receive a classic teddy bear cut. Show the dog fully prepared by following the instructions provided.</p>

@@ -1,21 +1,22 @@
-'use client';
-
+import { Metadata } from 'next';
 import Image from 'next/image';
-import { useEffect, useMemo, useState } from 'react';
 
+import { BrochureForm, Marketing } from './BrochureForm';
 import { StyleComponent } from './StyleComponent';
 import { PageComponent } from '@/app/serverComponent';
-import { BrochureForm } from '@/components/BrochureForm';
 import { FreeFirstAidSection } from '@/components/FreeFirstAidSection';
 import { HowTheCoursesWorkSection } from '@/components/HowTheCoursesWorkSection';
-import { SEO } from '@/components/SEO';
 import CourseCatalogImage from '@/images/bottom-ipad-shepard.jpg';
 import FullKitImage from '@/images/Kit-Blue-bg.jpg';
 import { getParam } from '@/lib/getParam';
-import { getRandomIntInclusive } from '@/lib/randomInt';
 
-const formAction = 'https://go.qcpetstudies.com/l/947642/2021-12-05/6h9rv';
 const courses = [ 'dg' ];
+
+export const metadata: Metadata = {
+  title: 'Become a Professional Dog Groomer',
+  alternates: { canonical: '/certification-courses/rm/become-a-professional-dog-groomer' },
+  description: 'Become a Professional Dog Groomer',
+};
 
 const ProfessionalDogGroomerPage: PageComponent = ({ searchParams }) => {
 
@@ -25,35 +26,11 @@ const ProfessionalDogGroomerPage: PageComponent = ({ searchParams }) => {
   const emailOptIn = getParam(searchParams.emailOptIn) === 'yes';
   const telephoneNumber = getParam(searchParams.telephoneNumber);
   const smsOptIn = getParam(searchParams.smsOptIn) === 'yes';
-
-  const errors = getParam(searchParams.errors) === 'true';
-
-  const [ testGroup, setTestGroup ] = useState<number>();
-
-  useEffect(() => {
-    // Get cookie on mount
-    const cookie = document.cookie
-      .split('; ')
-      .find(row => row.startsWith('testGroup='));
-
-    if (cookie) {
-      const value = parseInt(cookie.split('=')[1], 10);
-      if (!isNaN(value)) {
-        setTestGroup(value);
-        return;
-      }
-    }
-
-    // Set new test group if none exists
-    const newTestGroup = getRandomIntInclusive(1, 12);
-    document.cookie = `testGroup=${newTestGroup}; max-age=${60 * 60 * 24 * 365}; path=/; secure; samesite=strict`;
-    setTestGroup(newTestGroup);
-  }, []);
-
   const gclid = getParam(searchParams.gclid);
   const msclkid = getParam(searchParams.msclkid);
+  const errors = getParam(searchParams.errors) === 'true';
 
-  const marketing = {
+  const marketing: Marketing = {
     source: getParam(searchParams.utm_source) ?? null,
     medium: getParam(searchParams.utm_medium) ?? null,
     campaign: getParam(searchParams.utm_campaign) ?? null,
@@ -61,24 +38,7 @@ const ProfessionalDogGroomerPage: PageComponent = ({ searchParams }) => {
     term: getParam(searchParams.utm_term) ?? null,
   };
 
-  const hiddenFields = useMemo(() => {
-    const h: Array<{ key: string; value: string | number }> = [ { key: 'testGroup', value: testGroup ?? '' } ];
-    if (gclid) {
-      h.push({ key: 'gclid', value: gclid });
-    }
-    if (msclkid) {
-      h.push({ key: 'msclkid', value: msclkid });
-    }
-    return h;
-  }, [ testGroup, gclid, msclkid ]);
-
   return <>
-    <SEO
-      title="Become a Professional Dog Groomer"
-      description="Become a Professional Dog Groomer"
-      canonical="/certification-courses/rm/become-a-professional-dog-groomer"
-    />
-
     <section id="top" className="bg-dark bg-grayish-blue">
       <div className="container text-center">
         <div className="row justify-content-center">
@@ -110,16 +70,7 @@ const ProfessionalDogGroomerPage: PageComponent = ({ searchParams }) => {
                   <li>Find out about tuition information including finding a payment plan that works well for you</li>
                   <li>Learn how you can't go wrong with QC's money back guarantee!</li>
                 </ul>
-                <BrochureForm
-                  action={formAction}
-                  buttonClassName="btn btn-outline-primary"
-                  buttonText="Download Catalog"
-                  hiddenFields={hiddenFields}
-                  marketing={marketing}
-                  courses={courses}
-                  initialValues={{ firstName: firstName ?? null, lastName: lastName ?? null, emailAddress: emailAddress ?? null, emailOptIn: emailOptIn, telephoneNumber: telephoneNumber ?? null, smsOptIn: smsOptIn }}
-                  errors={errors}
-                />
+                <BrochureForm gclid={gclid} msclkid={msclkid} buttonText="Download Catalog" firstName={firstName} lastName={lastName} emailAddress={emailAddress} emailOptIn={emailOptIn} telephoneNumber={telephoneNumber} smsOptIn={smsOptIn} marketing={marketing} courses={courses} errors={errors} />
               </div>
             </div>
           </div>
@@ -155,16 +106,7 @@ const ProfessionalDogGroomerPage: PageComponent = ({ searchParams }) => {
       <div className="container">
         <div className="row justify-content-center bg-desaturated-blue text-white">
           <div className="col-12 col-lg-6 mb-4 px-5" style={{ marginTop: '50px' }}>
-            <BrochureForm
-              action={formAction}
-              buttonClassName="btn btn-outline-primary"
-              buttonText="Download Free Catalog"
-              hiddenFields={hiddenFields}
-              marketing={marketing}
-              courses={courses}
-              initialValues={{ firstName: firstName ?? null, lastName: lastName ?? null, emailAddress: emailAddress ?? null, emailOptIn: emailOptIn, telephoneNumber: telephoneNumber ?? null, smsOptIn: smsOptIn }}
-              errors={errors}
-            />
+            <BrochureForm gclid={gclid} msclkid={msclkid} buttonText="Download Free Catalog" firstName={firstName} lastName={lastName} emailAddress={emailAddress} emailOptIn={emailOptIn} telephoneNumber={telephoneNumber} smsOptIn={smsOptIn} marketing={marketing} courses={courses} errors={errors} />
           </div>
         </div>
       </div>
@@ -173,7 +115,5 @@ const ProfessionalDogGroomerPage: PageComponent = ({ searchParams }) => {
     <StyleComponent />
   </>;
 };
-
-// ProfessionalDogGroomerPage.getLayout = page => <DefaultLayout footerCTAType="grooming">{page}</DefaultLayout>;
 
 export default ProfessionalDogGroomerPage;

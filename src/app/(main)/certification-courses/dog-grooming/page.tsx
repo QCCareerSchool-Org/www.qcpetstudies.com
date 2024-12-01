@@ -1,3 +1,4 @@
+import { Metadata } from 'next';
 import Image, { StaticImageData } from 'next/image';
 import Link from 'next/link';
 
@@ -11,7 +12,6 @@ import { DGTutorSection } from '@/components/DGTutorSection';
 import { GuaranteeSection } from '@/components/GuaranteeSection';
 import { PriceSection } from '@/components/PriceSection';
 import { SectionBackground } from '@/components/SectionBackground';
-import { SEO } from '@/components/SEO';
 import { VirtualCommunitySection } from '@/components/virtualCommunitySection';
 import DogGroomingBackground from '@/images/backgrounds/bichon-frise-getting-haircut.jpg';
 import GuaranteeIcon from '@/images/course-overview-icons/guarantee.svg';
@@ -25,16 +25,19 @@ const headerIconSize = 20;
 
 const courseCodes = [ 'dg' ];
 
+export const metadata: Metadata = {
+  title: 'Dog Grooming Course',
+  description: 'Become a Certified Dog Groomer with Interactive Online Training!',
+  alternates: {
+    canonical: '/certification-courses/dog-grooming',
+  },
+};
+
 const DogGroomingPage: PageComponent = async () => {
 
   const price = await lookupPrices(courseCodes);
 
   return <>
-    <SEO
-      title="Dog Grooming Course"
-      description="Become a Certified Dog Groomer with Interactive Online Training!"
-      canonical="/certification-courses/dog-grooming"
-    />
 
     <section id="top" className="bg-dark">
       <SectionBackground src={DogGroomingBackground} priority objectPosition="right" />

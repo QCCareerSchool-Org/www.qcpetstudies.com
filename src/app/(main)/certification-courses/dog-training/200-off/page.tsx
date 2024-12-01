@@ -1,14 +1,12 @@
 import DogTrainingCoursePreviewPage from '../course-preview/page';
-import type { PageComponent } from '@/app/_app';
+import { PageComponent } from '@/app/serverComponent';
 import { DeadlineFunnelScript } from '@/components/DeadlineFunnelScript';
-import { lookupPrices } from '@/lib/lookupPrices';
 
-const Page: PageComponent = async props => {
-  const price = await lookupPrices([ 'dt' ], { promoCode: 'DT200' });
+const Page: PageComponent = ({ searchParams }) => {
   return (
     <>
       <DeadlineFunnelScript />
-      <DogTrainingCoursePreviewPage {...props} enrollPath="/training-200-off" />
+      <DogTrainingCoursePreviewPage searchParams={{ ...searchParams, enrollPath: '/training-200-off', promoCode: 'DT200' }} params={{}} />
     </>
   );
 };

@@ -1,3 +1,4 @@
+import { Metadata } from 'next';
 import Image, { StaticImageData } from 'next/image';
 import Link from 'next/link';
 
@@ -5,7 +6,6 @@ import { ToolsToSucceedSection } from './ToolsToSucceedSection';
 import { PageComponent } from '@/app/serverComponent';
 import { GuaranteeSection } from '@/components/GuaranteeSection';
 import { PriceSection } from '@/components/PriceSection';
-import { SEO } from '@/components/SEO';
 import StylingBackground from '@/images/backgrounds/black-medium-size-poodle.jpg';
 import BreedStylingCertificateImage from '@/images/breed-styling-certificate.png';
 import CourseIconBadge from '@/images/course-icon-badge.svg';
@@ -14,16 +14,19 @@ import { lookupPrices } from '@/lib/lookupPrices';
 
 const courseCodes = [ 'ds' ];
 
+export const metadata: Metadata = {
+  title: 'Breed Styling Workshop',
+  description: 'If you\'re already a professional dog groomer, the breed styling workshop will take your grooming skills to the next level. Start today!',
+  alternates: {
+    canonical: '/certification-courses/breed-styling',
+  },
+};
+
 const BreedStylingPage: PageComponent = async () => {
 
   const price = await lookupPrices(courseCodes);
 
   return <>
-    <SEO
-      title="Breed Styling Workshop"
-      description="If you're already a professional dog groomer, the breed styling workshop will take your grooming skills to the next level. Start today!"
-      canonical="/certification-courses/breed-styling"
-    />
 
     <section id="top" className="bg-dark">
       <Image

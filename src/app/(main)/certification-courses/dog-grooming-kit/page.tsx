@@ -1,23 +1,24 @@
+import { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
 
 import { PageComponent } from '@/app/serverComponent';
 import { Bar } from '@/components/Bar';
-import { SEO } from '@/components/SEO';
 import GroomingKitBackground from '@/images/backgrounds/yorkie-on-a-grooming-table.jpg';
 import ClipperCombsImage from '@/images/clippers-combs-kit-550.jpg';
 import FullKitImage from '@/images/dog-grooming-kit.jpg';
 import GroomingScissorsImage from '@/images/Pro-Grooming-Scissors-550x550.jpg';
 import StarterKitImage from '@/images/starter-kit.jpg';
 
+export const metadata: Metadata = {
+  title: 'Dog Grooming Kit',
+  description: 'Take a look at the grooming starter kit you\'ll receive when you enroll in QC\'s dog grooming course!',
+  alternates: { canonical: '/certification-courses/dog-grooming-kit' },
+};
+
 const DogGroomingKitPage: PageComponent = () => (
   <>
-    <SEO
-      title="Dog Grooming Kit"
-      description="Take a look at the grooming starter kit you'll receive when you enroll in QC's dog grooming course!"
-      canonical="/certification-courses/dog-grooming-kit"
-    />
 
     <section id="top" className="bg-dark">
       <Image

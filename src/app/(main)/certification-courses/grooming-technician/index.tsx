@@ -14,7 +14,6 @@ import { DGTutorSection } from '@/components/DGTutorSection';
 import { GuaranteeSection } from '@/components/GuaranteeSection';
 import { PriceSection } from '@/components/PriceSection';
 import { SectionBackground } from '@/components/SectionBackground';
-import { SEO } from '@/components/SEO';
 import { VirtualCommunitySection } from '@/components/virtualCommunitySection';
 import { useScreenWidth } from '@/hooks/useScreenWidth';
 import { useToggle } from '@/hooks/useToggle';
@@ -45,11 +44,6 @@ export const GroomingTechnicianBase: FC<Props> = ({ gtPrice, dgPrice, enrollPath
 
   return (
     <>
-      <SEO
-        title="Grooming Technician Course"
-        description="Become a Certified Grooming Technician with interactive online training!"
-        canonical="/certification-courses/grooming-technician"
-      />
 
       <section id="top" className="bg-dark">
         <SectionBackground src={GroomingTechnicianBackground} priority objectPosition="right" />

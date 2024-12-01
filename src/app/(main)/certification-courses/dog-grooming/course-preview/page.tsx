@@ -1,3 +1,4 @@
+import { Metadata } from 'next';
 import Image, { StaticImageData } from 'next/image';
 import Link from 'next/link';
 import { FC } from 'react';
@@ -6,7 +7,6 @@ import { BsBook } from 'react-icons/bs';
 import { CourseSyllabusSection } from './CouseSyllabusSection';
 import { DGTutorSection } from '@/components/DGTutorSection';
 import { PriceSectionWithDiscount } from '@/components/PriceSectionWithDiscount';
-import { SEO } from '@/components/SEO';
 import AssignmentBackground from '@/images/backgrounds/your-career-bg.jpg';
 import IDGPCertificationLogo from '@/images/IDGP-certification-gold.svg';
 import { lookupPrices } from '@/lib/lookupPrices';
@@ -17,14 +17,14 @@ export type Props = {
   enrollPath: string;
 };
 
+export const metadata: Metadata = {
+  title: 'Dog Grooming Certification Course',
+  alternates: { canonical: '/certification-courses/dog-grooming/course-preview' },
+};
+
 const GroomingCoursePreviewPage: FC<Props> = async ({ enrollPath }) => {
   const price = await lookupPrices(courseCodes);
   return <>
-    <SEO
-      title="Dog Grooming Certification Course"
-      description=""
-      canonical="/certification-courses/dog-grooming/course-preview"
-    />
 
     <section id="top" className="bg-dark">
       <Image

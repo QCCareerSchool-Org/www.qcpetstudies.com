@@ -1,3 +1,4 @@
+import { Metadata } from 'next';
 import Link from 'next/link';
 
 import KimCooperImage from '../kim-cooper.jpg';
@@ -5,24 +6,23 @@ import { CoursePreviewSections } from './CoursePreviewSections';
 import { PageComponent } from '@/app/serverComponent';
 import { DTTutorSection } from '@/components/DTTutorSection';
 import { PriceSectionWithDiscount } from '@/components/PriceSectionWithDiscount';
-import { SEO } from '@/components/SEO';
 import { getParam } from '@/lib/getParam';
 import { lookupPrices } from '@/lib/lookupPrices';
 
 export const courseCodes = [ 'dt' ];
 
+export const metadata: Metadata = {
+  title: 'Professional Dog Trainer Course',
+  alternates: { canonical: '/certification-courses/dog-training/course-preview' },
+};
+
 const DogTrainingCoursePreviewPage: PageComponent = async ({ searchParams }) => {
 
-  const price = await lookupPrices([ 'dt' ]);
+  const price = await lookupPrices([ 'dt' ], { promoCode: getParam(searchParams.promoCode) });
 
   const enrollPath = getParam(searchParams.enrollPath);
 
   return <>
-    <SEO
-      title="Professional Dog Trainer Course"
-      description=""
-      canonical="/certification-courses/dog-training/course-preview"
-    />
 
     <CoursePreviewSections />
 
@@ -48,9 +48,5 @@ const DogTrainingCoursePreviewPage: PageComponent = async ({ searchParams }) => 
     </section>
   </>;
 };
-
-// DogTrainingCoursePreviewPage.getLayout = page => (
-//   <LandingPageLayout link={true} nav="enroll">{page}</LandingPageLayout>
-// );
 
 export default DogTrainingCoursePreviewPage;

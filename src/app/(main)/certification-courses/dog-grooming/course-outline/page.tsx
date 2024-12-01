@@ -1,13 +1,12 @@
-'use client';
-
+import { Metadata } from 'next';
 import Image, { StaticImageData } from 'next/image';
 import Link from 'next/link';
 import { FaBars } from 'react-icons/fa';
 
+import { CustomStyle } from './CustomStyle';
 import { PageComponent } from '@/app/serverComponent';
 import { Accordion } from '@/components/accordion';
 import { AccordionItem } from '@/components/accordion/AccordionItem';
-import { SEO } from '@/components/SEO';
 import CourseOutlineBackground from '@/images/backgrounds/course-outline.jpg';
 import calendarIcon from '@/images/calendar.svg';
 import IconTime from '@/images/clock.svg';
@@ -22,13 +21,14 @@ import UnitHImage from '@/images/dg-full-outline-unit-h-image.jpg';
 
 const iconSize = 50;
 
+export const metadata: Metadata = {
+  title: 'Dog Grooming Course Outline',
+  description: 'Become a certified dog grooming professional with QC\'s interactive online course. Get started today!',
+  alternates: { canonical: '/certification-courses/dog-grooming/course-outline' },
+};
+
 const DogGroomingCourseOutlinePage: PageComponent = () => (
   <>
-    <SEO
-      title="Dog Grooming Course Outline"
-      description="Become a certified dog grooming professional with QC's interactive online course. Get started today!"
-      canonical="/certification-courses/dog-grooming/course-outline"
-    />
 
     <section id="top" className="bg-dark">
       <Image
@@ -519,27 +519,8 @@ const DogGroomingCourseOutlinePage: PageComponent = () => (
       </div>
     </section>
 
-    <style jsx>{`
-      #outlineSection {
-        background-color: #f7f7f7 !important;
-      }
-      .unitStatsTable {
-        font-size: 1.25rem;
-      }
-      .unitStatsTable th {
-        font-weight: bold;
-        padding-right: 0.5rem;
-      }
-      .unitStatsTable tr > td, .unitStatsTable tr > th {
-        padding-bottom: 0.75rem;
-      }
-      .unitStatsTable tr:last-of-type > td, .unitStatsTable tr:last-of-type > th {
-        padding-bottom: 0.25rem;
-      }
-    `}</style>
+    <CustomStyle />
   </>
 );
-
-// DogGroomingCourseOutlinePage.getLayout = page => <DefaultLayout footerCTAType="grooming">{page}</DefaultLayout>;
 
 export default DogGroomingCourseOutlinePage;

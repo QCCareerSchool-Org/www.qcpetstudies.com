@@ -1,9 +1,9 @@
+import { Metadata } from 'next';
 import Image, { StaticImageData } from 'next/image';
 import Link from 'next/link';
 
 import { PageComponent } from '@/app/serverComponent';
 import { PriceSection } from '@/components/PriceSection';
-import { SEO } from '@/components/SEO';
 import FirstAidBackground from '@/images/backgrounds/hero-first-aid-bg.jpg';
 import CourseMaterials from '@/images/course-materials-first-aid.jpg';
 import dogLooking from '@/images/dog-looking.jpg';
@@ -13,16 +13,17 @@ import { lookupPrices } from '@/lib/lookupPrices';
 
 const courseCodes = [ 'fa' ];
 
+export const metadata: Metadata = {
+  title: 'First Aid for Groomers Course',
+  alternates: { canonical: '/certification-courses/first-aid' },
+  description: 'Learn how to create a safe environment and how to respond to emergencies. The First Aid for Groomers course is for new and experienced groomers alike!',
+};
+
 const DogGroomingPage: PageComponent = async () => {
 
   const price = await lookupPrices(courseCodes);
 
   return <>
-    <SEO
-      title="First Aid for Groomers Course"
-      description="Learn how to create a safe environment and how to respond to emergencies. The First Aid for Groomers course is for new and experienced groomers alike!"
-      canonical="/certification-courses/first-aid"
-    />
 
     <section id="top" className="bg-dark">
       <Image
@@ -183,7 +184,5 @@ const DogGroomingPage: PageComponent = async () => {
     </section>
   </>;
 };
-
-// DogGroomingPage.getLayout = page => <DefaultLayout secondaryTitle="First Aid for Groomers Course">{page}</DefaultLayout>;
 
 export default DogGroomingPage;

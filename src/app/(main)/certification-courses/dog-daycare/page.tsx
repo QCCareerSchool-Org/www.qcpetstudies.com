@@ -1,3 +1,4 @@
+import { Metadata } from 'next';
 import Image, { StaticImageData } from 'next/image';
 
 import { CourseOutlineSection } from './CourseOutlineSection';
@@ -6,7 +7,6 @@ import { PageComponent } from '@/app/serverComponent';
 import { DDTutorSection } from '@/components/DDTutorSection';
 import { GuaranteeSection } from '@/components/GuaranteeSection';
 import { PriceSection } from '@/components/PriceSection';
-import { SEO } from '@/components/SEO';
 import { VirtualCommunitySection } from '@/components/virtualCommunitySection';
 import DogCareBackground from '@/images/backgrounds/jack-russel-terrier-in-handbag.jpg';
 import GuaranteeIcon from '@/images/course-overview-icons/guarantee.svg';
@@ -20,16 +20,19 @@ const headerIconSize = 20;
 
 const courseCodes = [ 'dd' ];
 
+export const metadata: Metadata = {
+  title: 'Dog Daycare Course',
+  description: 'Become a certified dog care professional with interactive online training!',
+  alternates: {
+    canonical: '/certification-courses/dog-daycare',
+  },
+};
+
 const DogCarePage: PageComponent = async () => {
 
   const price = await lookupPrices(courseCodes);
 
   return <>
-    <SEO
-      title="Dog Daycare Course"
-      description="Become a certified dog care professional with interactive online training!"
-      canonical="/certification-courses/dog-daycare"
-    />
 
     <section id="top" className="bg-dark">
       <Image

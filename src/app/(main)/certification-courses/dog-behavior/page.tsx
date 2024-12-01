@@ -1,3 +1,4 @@
+import { Metadata } from 'next';
 import Image, { StaticImageData } from 'next/image';
 import Link from 'next/link';
 
@@ -8,7 +9,6 @@ import { Accordion } from '@/components/accordion';
 import { AccordionItem } from '@/components/accordion/AccordionItem';
 import { GuaranteeSection } from '@/components/GuaranteeSection';
 import { PriceSection } from '@/components/PriceSection';
-import { SEO } from '@/components/SEO';
 import { VirtualCommunitySection } from '@/components/virtualCommunitySection';
 import GuaranteeIcon from '@/images/course-overview-icons/guarantee.svg';
 import OutlineIcon from '@/images/course-overview-icons/outline.svg';
@@ -24,16 +24,19 @@ const headerIconSize = 20;
 const courseCodes = [ 'dc' ];
 const linkCourseCodes = [ 'dt', 'dc' ];
 
+export const metadata: Metadata = {
+  title: 'Dog Behavior Course',
+  description: 'Become a Professional Dog Behavior Specialist with QC\'s online dog behavior course. Study online with hands-on learning!',
+  alternates: {
+    canonical: '/certification-courses/dog-behavior',
+  },
+};
+
 const DogBehaviorPage: PageComponent = async () => {
 
   const price = await lookupPrices(courseCodes);
 
   return <>
-    <SEO
-      title="Dog Behaviour Course"
-      description="Become a Professional Dog Behavior Specialist with QC's online dog behavior course. Study online with hands-on learning!"
-      canonical="/certification-courses/dog-training"
-    />
 
     <section id="top" className="bg-dark">
       <Image

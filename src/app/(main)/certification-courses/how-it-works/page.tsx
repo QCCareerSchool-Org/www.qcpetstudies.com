@@ -1,27 +1,23 @@
-'use client';
-
+import { Metadata } from 'next';
 import Image, { StaticImageData } from 'next/image';
 import { PageComponent } from '@/app/serverComponent';
 
 import { Bar } from '@/components/Bar';
-import { SEO } from '@/components/SEO';
-import { useScreenWidth } from '@/hooks/useScreenWidth';
 import HandReachingTowardDog from '@/images/backgrounds/hand-reaching-toward-dog.jpg';
 import Dachshund from '@/images/dachshund-sitting-grey-background.png';
 import GraduationCertificateImage from '@/images/IDTP-certification-gold.svg';
 import ManAndDogWalking from '@/images/man-and-white-dog-walking-in-a-field.jpg';
 import PuppyOnBack from '@/images/puppy-lying-on-back.jpg';
 
+export const metadata: Metadata = {
+  title: 'How QC\'s Online Courses Work',
+  alternates: { canonical: '/certification-courses/how-it-works' },
+  description: 'Learn how QC\'s online professional courses work!',
+};
+
 const HowItWorksPage: PageComponent = () => {
-  const screenWidth = useScreenWidth();
-  const lgOrGreater = screenWidth >= 992;
 
   return <>
-    <SEO
-      title="How QC's Online Courses Work"
-      description="Become certified online. Find out how QC’s online professional courses work!"
-      canonical="/certification-courses/how-it-works"
-    />
 
     <section id="top" className="bg-dark">
       <Image
@@ -128,18 +124,16 @@ const HowItWorksPage: PageComponent = () => {
               {/* <p className="mb-0"><Link href="/certification-courses/dog-training#tutors" className="btn btn-outline-secondary">Meet Your Tutor</Link></p> */}
             </div>
           </div>
-          {lgOrGreater && (
-            <div className="col-lg-4" style={{ position: 'relative' }}>
-              <Image
-                src={ManAndDogWalking}
-                placeholder="blur"
-                alt="a man and a dog walking in a field"
-                fill
-                sizes="100vw"
-                style={{ objectFit: 'cover', objectPosition: 'right', maxWidth: '100%' }}
-              />
-            </div>
-          )}
+          <div className="col-lg-4 d-none d-lg-block" style={{ position: 'relative' }}>
+            <Image
+              src={ManAndDogWalking}
+              placeholder="blur"
+              alt="a man and a dog walking in a field"
+              fill
+              sizes="100vw"
+              style={{ objectFit: 'cover', objectPosition: 'right', maxWidth: '100%' }}
+            />
+          </div>
         </div>
       </div>
     </section>
