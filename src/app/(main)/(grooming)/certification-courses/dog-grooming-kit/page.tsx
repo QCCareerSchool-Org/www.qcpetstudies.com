@@ -122,6 +122,4 @@ const DogGroomingKitPage: PageComponent = () => (
   </>
 );
 
-// DogGroomingKitPage.getLayout = page => <DefaultLayout footerCTAType="grooming">{page}</DefaultLayout>;
-
 export default DogGroomingKitPage;

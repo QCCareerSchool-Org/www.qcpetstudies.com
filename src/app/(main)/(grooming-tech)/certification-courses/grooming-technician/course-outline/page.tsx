@@ -281,6 +281,4 @@ const GroomingTechCourseOutlinePage: PageComponent = () => (
   </>
 );
 
-// GroomingTechCourseOutlinePage.getLayout = page => <DefaultLayout footerCTAType="grooming">{page}</DefaultLayout>;
-
 export default GroomingTechCourseOutlinePage;

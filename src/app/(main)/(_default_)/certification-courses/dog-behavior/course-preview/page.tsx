@@ -12,7 +12,7 @@ import { lookupPrices } from '@/lib/lookupPrices';
 import { Location } from '@/models/location';
 import { Price } from '@/models/price';
 
-export const courseCodes = [ 'dc' ];
+const courseCodes = [ 'dc' ];
 
 export type Props = {
   location: Location;

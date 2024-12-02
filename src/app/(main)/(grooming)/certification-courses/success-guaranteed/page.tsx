@@ -94,6 +94,5 @@ const SuccessGuaranteedPage: PageComponent = async () => {
     </>
   );
 };
-// SuccessGuaranteedPage.getLayout = page => <DefaultLayout footerCTAType="grooming">{page}</DefaultLayout>;
 
 export default SuccessGuaranteedPage;

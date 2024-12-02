@@ -118,8 +118,4 @@ const GroomingCoursePreviewPage: FC<Props> = async ({ enrollPath }) => {
   </>;
 };
 
-// GroomingCoursePreviewPage.getLayout = page => (
-//   <LandingPageLayout link={true} nav="enroll">{page}</LandingPageLayout>
-// );
-
 export default GroomingCoursePreviewPage;

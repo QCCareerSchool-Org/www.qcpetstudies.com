@@ -150,6 +150,4 @@ const DogGroomingPage: PageComponent = async () => {
   </>;
 };
 
-// DogGroomingPage.getLayout = page => <DefaultLayout footerCTAType="grooming">{page}</DefaultLayout>;
-
 export default DogGroomingPage;

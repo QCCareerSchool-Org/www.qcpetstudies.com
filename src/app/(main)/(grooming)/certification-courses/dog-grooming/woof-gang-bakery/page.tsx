@@ -1,23 +1,22 @@
 import { Metadata } from 'next';
-import type { FC } from 'react';
 
 import { PageSections } from './PageSections';
+import { PageComponent } from '@/app/serverComponent';
 import { DGTutorSection } from '@/components/DGTutorSection';
 import { PriceSectionWithDiscount } from '@/components/PriceSectionWithDiscount';
+import { getParam } from '@/lib/getParam';
 import { lookupPrices } from '@/lib/lookupPrices';
 
 const courseCodes = [ 'dg' ];
-
-type Props = {
-  enrollPath: string;
-};
 
 export const metadata: Metadata = {
   title: 'Dog Grooming Certification Course',
   alternates: { canonical: '/certification-courses/dog-grooming/woof-gang-bakery' },
 };
 
-const Page: FC<Props> = async ({ enrollPath }) => {
+const Page: PageComponent = async ({ searchParams }) => {
+
+  const enrollPath = getParam(searchParams.enrollPath);
 
   const price = await lookupPrices(courseCodes);
 
@@ -37,9 +36,5 @@ const Page: FC<Props> = async ({ enrollPath }) => {
 
   </>;
 };
-
-// Page.getLayout = page => (
-//   <LandingPageLayout link={true} href="https://enroll.qcpetstudies.com/woof-gang-bakery" nav="enroll">{page}</LandingPageLayout>
-// );
 
 export default Page;

@@ -124,6 +124,4 @@ const BreedStylingPage: PageComponent = async () => {
   </>;
 };
 
-// BreedStylingPage.getLayout = page => <DefaultLayout footerCTAType="grooming">{page}</DefaultLayout>;
-
 export default BreedStylingPage;

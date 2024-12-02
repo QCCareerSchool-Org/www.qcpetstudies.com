@@ -148,6 +148,4 @@ const DogTrainingPage: PageComponent = async () => {
 //     );
 // };
 
-// DogTrainingPage.getLayout = page => <DefaultLayout footerCTA={<FooterDualCTA />}>{page}</DefaultLayout>;
-
 export default DogTrainingPage;

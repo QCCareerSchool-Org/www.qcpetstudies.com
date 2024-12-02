@@ -35,7 +35,7 @@ const countUpDuration = 3000;
 const easingFunction = 'easeOutQuad';
 
 type Props = {
-  enrollPath: string;
+  enrollPath?: string;
 };
 
 export const PageSections: FC<Props> = ({ enrollPath }) => {

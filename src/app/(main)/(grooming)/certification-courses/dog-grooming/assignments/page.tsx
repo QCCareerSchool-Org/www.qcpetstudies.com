@@ -169,6 +169,4 @@ const GroomingAssignment: PageComponent = () => {
   </>;
 };
 
-// GroomingAssignment.getLayout = page => <DefaultLayout footerCTAType="grooming">{page}</DefaultLayout>;
-
 export default GroomingAssignment;

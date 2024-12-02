@@ -116,6 +116,4 @@ const StartYourDreamCareerPage: PageComponent = async () => {
   );
 };
 
-// StartYourDreamCareerPage.getLayout = page => <DefaultLayout footerCTAType="grooming">{page}</DefaultLayout>;
-
 export default StartYourDreamCareerPage;

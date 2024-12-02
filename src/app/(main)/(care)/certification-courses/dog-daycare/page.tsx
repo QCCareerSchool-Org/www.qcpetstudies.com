@@ -126,6 +126,4 @@ const DogCarePage: PageComponent = async () => {
   </>;
 };
 
-// DogCarePage.getLayout = page => <DefaultLayout footerCTAType="care">{page}</DefaultLayout>;
-
 export default DogCarePage;
