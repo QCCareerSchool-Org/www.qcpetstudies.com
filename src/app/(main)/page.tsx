@@ -10,7 +10,6 @@ import { jsonLdScriptProps } from 'react-schemaorg';
 import { EducationalOrganization } from 'schema-dts';
 
 import { PageComponent } from '@/app/serverComponent';
-import { SEO } from '@/components/SEO';
 import { TestimonialKaylaTorraville } from '@/components/testimonials/TestimonialKaylaTorraville';
 import { TestimonialLucaCoppola } from '@/components/testimonials/TestimonialLucaCoppola';
 import { TestimonialMelodyMason } from '@/components/testimonials/TestimonialMelodyMason';
@@ -27,6 +26,14 @@ import { qcPetStudiesEducationalOrganization } from '@/qcPetStudiesEducationalOr
 
 const iconSize = 145;
 
+export const metadata: Metadata = {
+  title: 'Become a Pet Care Professional',
+  description: 'Start a successful career in the pet care industry! Become a certified dog groomer or certified dog trainer with QC’s internationally recognized online courses!',
+  alternates: {
+    canonical: '/',
+  },
+};
+
 const HomePage: PageComponent = () => {
 
   const screenWidth = useScreenWidth();
@@ -36,11 +43,6 @@ const HomePage: PageComponent = () => {
   // const sm = screenWidth >= 576;
 
   return <>
-    <SEO
-      title="Become a Pet Care Professional"
-      description="Start a successful career in the pet care industry! Become a certified dog groomer or certified dog trainer with QC’s internationally recognized online courses!"
-      canonical="/"
-    />
 
     <Head>
       <script {...jsonLdScriptProps<EducationalOrganization>(qcPetStudiesEducationalOrganization)} />

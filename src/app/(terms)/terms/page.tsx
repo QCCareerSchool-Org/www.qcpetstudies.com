@@ -1,13 +1,17 @@
+import { Metadata } from 'next';
 import { PageComponent } from '@/app/serverComponent';
-import { SEO } from '@/components/SEO';
+import { EmailAddress } from '@/components/EmailAddress';
+
+export const metadata: Metadata = {
+  title: 'Privacy Policy',
+  description: 'QC Pet Studies website privacy policy and terms of service',
+  alternates: {
+    canonical: '/terms',
+  },
+};
 
 const TermsPage: PageComponent = () => (
   <>
-    <SEO
-      title="Privacy Policy"
-      description="QC Pet Studies website privacy policy and terms of service"
-      canonical="/terms"
-    />
 
     <h1>Privacy Policy</h1>
     <h2>What information do we collect?</h2>
@@ -43,8 +47,7 @@ const TermsPage: PageComponent = () => (
     <h2>Contacting Us</h2>
     <p>If there are any questions regarding this privacy policy you may contact us using the information below.</p>
     <p>QC Career School<br />38 McArthur Ave<br />Ottawa ON&nbsp; K1L 6R2<br />Canada</p>
-    <p>Email: info@qccareerschool.com</p>
-    <p>Phone: 1-613-749-8248</p>
+    <p>Email: <EmailAddress /><br />Phone: 1-613-749-8248</p>
     <p><i>This policy is powered by Free Privacy Policy and Rhino Support helpdesk software.</i></p>
   </>
 );

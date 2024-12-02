@@ -1,17 +1,19 @@
-import { ReactElement, ReactNode } from 'react';
+import { Metadata } from 'next';
 import { PageComponent } from '@/app/serverComponent';
-import { SEO } from '@/components/SEO';
+import { EmailAddress } from '@/components/EmailAddress';
 
-export default function AgreementPage(): JSX.Element {
-  const emailAddress = 'info@qcpetstudies.com';
+export const metadata: Metadata = {
+  title: 'Enrollment Agreement',
+  description: 'The agreement for enrolling with QC Pet Studies',
+  alternates: {
+    canonical: '/enrollment-agreement',
+  },
+};
+
+const AgreementPage: PageComponent = () => {
 
   return (
     <>
-      {/* <SEO
-        title="Enrollment Agreement"
-        description="The agreement for enrolling with QC Pet Studies"
-        canonical="/enrollment-agreement"
-      /> */}
 
       <h1>Enrollment Agreement</h1>
 
@@ -87,11 +89,13 @@ export default function AgreementPage(): JSX.Element {
 
       <h2>10. Contact Information</h2>
       <p>QC Quality of Course Inc.<br />Corporation Number: 208502-0<br />Business Number (BN): 105927339RC0001</p>
-      <p>Email: {emailAddress}<br />Phone: 1-613-749-8248</p>
+      <p>Email: <EmailAddress /><br />Phone: 1-613-749-8248</p>
       <h3>Shipping</h3>
       <p>38 McArthur Ave<br />Ottawa ON&nbsp; K1L 6R2<br />Canada</p>
       <h3>Registered Office</h3>
       <p>2026 Delmar Crt<br />Ottawa ON&nbsp;  K1H 5R6<br />Canada</p>
     </>
   );
-}
+};
+
+export default AgreementPage;

@@ -1,23 +1,19 @@
-import { useEffect, useState } from 'react';
-
+import { Metadata } from 'next';
 import { PageComponent } from '@/app/serverComponent';
-import { SEO } from '@/components/SEO';
+import { EmailAddress } from '@/components/EmailAddress';
+
+export const metadata: Metadata = {
+  title: 'Enrollment Agreement',
+  description: 'The agreement for enrolling with QC Pet Studies',
+  alternates: {
+    canonical: '/enrollment-agreement-earthwise',
+  },
+};
 
 const AgreementPage: PageComponent = () => {
-  const [ emailAddress, setEmailAddress ] = useState('');
-
-  useEffect(() => {
-    // eslint-disable-next-line no-useless-concat
-    setEmailAddress('info' + '@' + 'qcpetstudies.com');
-  }, []);
 
   return (
     <>
-      <SEO
-        title="Enrollment Agreement"
-        description="The agreement for enrolling with QC Pet Studies"
-        canonical="/enrollment-agreement"
-      />
 
       <h1>Enrollment Agreement</h1>
 
@@ -48,7 +44,7 @@ const AgreementPage: PageComponent = () => {
       <p>If you are under 18 or under the age of majority in your state/province, you will need a parental consent form in order to enroll with QC. Please contact the School for further details.</p>
       <h2>10. Contact Information</h2>
       <p>QC Quality of Course Inc.<br />Corporation Number: 208502-0<br />Business Number (BN): 105927339RC0001</p>
-      <p>Email: {emailAddress}<br />Phone: 1-613-749-8248</p>
+      <p>Email: <EmailAddress /><br />Phone: 1-613-749-8248</p>
       <h3>Shipping</h3>
       <p>38 McArthur Ave<br />Ottawa ON&nbsp; K1L 6R2<br />Canada</p>
       <h3>Registered Office</h3>

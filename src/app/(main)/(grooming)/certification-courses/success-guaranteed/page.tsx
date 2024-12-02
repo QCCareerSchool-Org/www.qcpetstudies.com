@@ -1,3 +1,4 @@
+import { Metadata } from 'next';
 import Image, { StaticImageData } from 'next/image';
 import Link from 'next/link';
 
@@ -5,7 +6,6 @@ import { PageComponent } from '@/app/serverComponent';
 import { FreeFirstAidSection } from '@/components/FreeFirstAidSection';
 import { HowTheCoursesWorkSection } from '@/components/HowTheCoursesWorkSection';
 import { PriceSection } from '@/components/PriceSection';
-import { SEO } from '@/components/SEO';
 import QcYearGuaratnteeLogo from '@/images/1-year-guarantee-outlined.svg';
 import QcDayGuaratnteeLogo from '@/images/21-day-guarantee-outlined.svg';
 import DryingDogBg from '@/images/backgrounds/drying-dog-bg.jpg';
@@ -14,15 +14,18 @@ import { lookupPrices } from '@/lib/lookupPrices';
 
 const courseCodes = [ 'dg' ];
 
+export const metadata: Metadata = {
+  title: 'Success Guaranteed',
+  description: 'Study with confidence thanks to QC\'s double guarantee',
+  alternates: {
+    canonical: '/certification-courses/success-guaranteed',
+  },
+};
+
 const SuccessGuaranteedPage: PageComponent = async () => {
   const price = await lookupPrices(courseCodes);
   return (
     <>
-      <SEO
-        title="Success Guaranteed"
-        description="Study with confidence thanks to QC's double guarantee"
-        canonical="/certification-courses/success-guaranteed"
-      />
 
       <section id="top" className="bg-dark">
         <Image
