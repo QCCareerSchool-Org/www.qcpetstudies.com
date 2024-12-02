@@ -1,6 +1,6 @@
 'use client';
 
-import Image, { StaticImageData } from 'next/image';
+import Image from 'next/image';
 import Link from 'next/link';
 import { FC } from 'react';
 
@@ -27,7 +27,7 @@ export const LicenseSection: FC = () => {
           </div>
           {lgOrGreater && <div className="col-6" style={{ position: 'relative' }}>{/* need relative position for background image */}
             <Image
-              src={DogDriedOffByTowel as StaticImageData}
+              src={DogDriedOffByTowel}
               alt="a dog being dried off with a towel"
               fill
               sizes="100vw"

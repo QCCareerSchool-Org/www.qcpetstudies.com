@@ -1,5 +1,4 @@
-'use client';
-
+import { Metadata } from 'next';
 import Head from 'next/head';
 import Image, { StaticImageData } from 'next/image';
 import Link from 'next/link';
@@ -9,12 +8,12 @@ import { IoMdRibbon } from 'react-icons/io';
 import { jsonLdScriptProps } from 'react-schemaorg';
 import { EducationalOrganization } from 'schema-dts';
 
+import { HomepageStyles, RibbonInCircleStyles } from './HomepageStyles';
 import { PageComponent } from '@/app/serverComponent';
 import { TestimonialKaylaTorraville } from '@/components/testimonials/TestimonialKaylaTorraville';
 import { TestimonialLucaCoppola } from '@/components/testimonials/TestimonialLucaCoppola';
 import { TestimonialMelodyMason } from '@/components/testimonials/TestimonialMelodyMason';
 import { VirtualCommunitySection } from '@/components/virtualCommunitySection';
-import { useScreenWidth } from '@/hooks/useScreenWidth';
 import MaltipuBegging from '@/images/backgrounds/maltipu-begging.jpg';
 import MaltipuJumping from '@/images/backgrounds/maltipu-jumping.jpg';
 import HowItWorks from '@/images/how-it-works.png';
@@ -36,12 +35,6 @@ export const metadata: Metadata = {
 
 const HomePage: PageComponent = () => {
 
-  const screenWidth = useScreenWidth();
-
-  const lg = screenWidth >= 992;
-  // const md = screenWidth >= 768;
-  // const sm = screenWidth >= 576;
-
   return <>
 
     <Head>
@@ -49,18 +42,35 @@ const HomePage: PageComponent = () => {
     </Head>
 
     <section id="top" className="bg-light">
-      <Image
-        src={lg ? MaltipuJumping : MaltipuBegging}
-        placeholder="blur"
-        alt=""
-        priority
-        fill
-        sizes="100vw"
-        style={{
-          objectPosition: lg ? '100% 30%' : '50% 100%',
-          objectFit: 'cover',
-        }}
-      />
+      <div className="d-none d-lg-block">
+        <Image
+          src={MaltipuJumping}
+          placeholder="blur"
+          alt=""
+          priority
+          fill
+          sizes="100vw"
+          style={{
+            objectPosition: '100% 30%',
+            objectFit: 'cover',
+          }}
+        />
+      </div>
+      <div className="d-block d-lg-none">
+        <Image
+          src={MaltipuBegging}
+          placeholder="blur"
+          alt=""
+          priority
+          fill
+          sizes="100vw"
+          style={{
+            objectPosition: '50% 100%',
+            objectFit: 'cover',
+          }}
+        />
+      </div>
+
       <div className="container heroContainer">
         <div className="row">
           <div className="col-12 col-lg-6">
@@ -82,7 +92,7 @@ const HomePage: PageComponent = () => {
         <div className="row align-items-stretch justify-content-center g-4">
 
           <div className="col-12 col-lg-6 col-xxl-5 d-flex align-items-stretch">
-            <CertificationCard show={lg}>
+            <CertificationCard>
               <div>
                 <div className="mb-3">
                   <Image
@@ -101,7 +111,7 @@ const HomePage: PageComponent = () => {
           </div>
 
           <div className="col-12 col-lg-6 col-xxl-5 d-flex align-items-stretch">
-            <CertificationCard show={lg}>
+            <CertificationCard>
               <div>
                 <div className="mb-3">
                   <Image
@@ -120,7 +130,7 @@ const HomePage: PageComponent = () => {
           </div>
 
           <div className="col-12 col-lg-6 col-xxl-5 d-flex align-items-stretch">
-            <CertificationCard show={lg}>
+            <CertificationCard>
               <div>
                 <div className="mb-3">
                   <Image
@@ -139,7 +149,7 @@ const HomePage: PageComponent = () => {
           </div>
 
           <div className="col-12 col-lg-6 col-xxl-5 d-flex align-items-stretch">
-            <CertificationCard show={lg}>
+            <CertificationCard>
               <div>
                 <div className="mb-3">
                   <Image
@@ -273,26 +283,7 @@ const HomePage: PageComponent = () => {
 
     <VirtualCommunitySection />
 
-    <style jsx>{`
-    .heroContainer {
-      margin-bottom: 16rem;
-    }
-    @media screen and (min-width: 576px) {
-      .heroContainer {
-        margin-bottom: 20rem;
-      }
-    }
-    @media screen and (min-width: 768px) {
-      .heroContainer {
-        margin-bottom: 24rem;
-      }
-    }
-    @media screen and (min-width: 992px) {
-      .heroContainer {
-        margin-bottom: 0;
-      }
-    }
-    `}</style>
+    <HomepageStyles />
   </>;
 };
 
@@ -306,35 +297,23 @@ const RibbonInCircle: FC<RibbonInCircleProps> = ({ size = 48, background = 'whit
   return (
     <>
       <div className="wrapper d-flex align-items-center justify-content-center text-center"><IoMdRibbon size={size * 0.7} /></div>
-      <style jsx>{`
-      .wrapper {
-        height: ${size}px;
-        width: ${size}px;
-        border-radius: ${size / 2}px;
-        background-color: ${background};
-        ${typeof color !== 'undefined' ? `color: ${color}` : ''}
-      }
-      `}</style>
+      <RibbonInCircleStyles size={size} background={background} color={color} />
     </>
   );
 };
 
 type CertificationCardProps = {
-  show: boolean;
   children: ReactNode;
 };
 
-const CertificationCard: FC<CertificationCardProps> = ({ show, children }) => {
-  if (show) {
-    return (
-      <div className="card">
-        <div className="card-body d-flex flex-column align-items-center justify-content-between">
-          {children}
-        </div>
+const CertificationCard: FC<CertificationCardProps> = ({ children }) => {
+  return (
+    <div className="card d-none d-lg-block">
+      <div className="card-body d-flex flex-column align-items-center justify-content-between">
+        {children}
       </div>
-    );
-  }
-  return <div>{children}</div>;
+    </div>
+  );
 };
 
 export default HomePage;

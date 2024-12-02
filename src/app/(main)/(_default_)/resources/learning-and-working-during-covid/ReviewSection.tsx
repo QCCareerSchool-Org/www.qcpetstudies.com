@@ -1,6 +1,6 @@
 'use client';
 
-import Image, { StaticImageData } from 'next/image';
+import Image from 'next/image';
 import Link from 'next/link';
 import { FC } from 'react';
 import { useScreenWidth } from '@/hooks/useScreenWidth';
@@ -15,7 +15,7 @@ export const ReviewSection: FC = () => {
 
   return <section className="bg-light">
     {xlOrGreater && <Image
-      src={PetWithMaskImage as StaticImageData}
+      src={PetWithMaskImage}
       alt="Mask"
       fill
       sizes="100vw"

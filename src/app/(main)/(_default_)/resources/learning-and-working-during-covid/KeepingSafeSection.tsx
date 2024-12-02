@@ -1,6 +1,6 @@
 'use client';
 
-import Image, { StaticImageData } from 'next/image';
+import Image from 'next/image';
 import Link from 'next/link';
 
 import { FC } from 'react';
@@ -15,7 +15,7 @@ export const KeepingSafeSection: FC = () => {
   return (
     <section className="bg-light">
       {lgOrGreater && <Image
-        src={TipsCardBackground as StaticImageData}
+        src={TipsCardBackground}
         alt="Tips to keep safe"
         fill
         sizes="100vw"

@@ -1,6 +1,6 @@
 'use client';
 
-import Image, { StaticImageData } from 'next/image';
+import Image from 'next/image';
 import Link from 'next/link';
 import { FC } from 'react';
 
@@ -23,7 +23,7 @@ export const TrainingRequiredSection: FC = () => {
           </div>
           {lgOrGreater && <div className="col-6">
             <Image
-              src={DogToy as StaticImageData}
+              src={DogToy}
               alt="a dog toy"
               sizes="100vw"
               style={{ width: '100%', height: 'auto', objectPosition: 'center' }}

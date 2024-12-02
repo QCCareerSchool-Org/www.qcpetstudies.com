@@ -1,6 +1,6 @@
 'use client';
 
-import Image, { StaticImageData } from 'next/image';
+import Image from 'next/image';
 import Link from 'next/link';
 import { FC } from 'react';
 
@@ -34,7 +34,7 @@ export const HowToGroomSection: FC = () => {
         {lgOrGreater && (
           <div className="col-6 col-xl-5">
             <Image
-              src={CovidCareTools as StaticImageData}
+              src={CovidCareTools}
               alt="Covid care"
               sizes="100vw"
               style={{ width: '100%', height: 'auto' }}

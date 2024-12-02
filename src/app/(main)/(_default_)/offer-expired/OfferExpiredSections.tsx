@@ -1,6 +1,6 @@
 'use client';
 
-import Image, { StaticImageData } from 'next/image';
+import Image from 'next/image';
 import { FC } from 'react';
 import { useLocation } from '@/hooks/useLocation';
 import EnglishCockerSpanielPosing from '@/images/english-cocker-spaniel-posing.jpg';
@@ -15,7 +15,7 @@ export const OfferExpiredSection: FC = () => {
 
   return <section id="top" className="bg-dark text-light">
     <Image
-      src={EnglishCockerSpanielPosing as StaticImageData}
+      src={EnglishCockerSpanielPosing}
       placeholder="blur"
       alt="English Cocker Spaniel posing"
       priority

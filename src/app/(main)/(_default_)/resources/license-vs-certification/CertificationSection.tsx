@@ -1,6 +1,6 @@
 'use client';
 
-import Image, { StaticImageData } from 'next/image';
+import Image from 'next/image';
 import Link from 'next/link';
 import { FC } from 'react';
 
@@ -17,7 +17,7 @@ export const CertificationSection: FC = () => {
           </div>
           <div className="col-sm-12 col-md-6 col-lg-5 mb-4 mb-md-0">
             <Image
-              src={DogSittingOnTowel as StaticImageData}
+              src={DogSittingOnTowel}
               alt="a dog sitting on a towel"
               sizes="100vw"
               style={{ width: '100%', height: 'auto', objectPosition: 'center' }}

@@ -4,7 +4,6 @@ import Image from 'next/image';
 import { FC, useEffect, useMemo, useState } from 'react';
 
 import { EnrollmentDetails } from '@/components/EnrollmentDetails';
-import { SEO } from '@/components/SEO';
 import HappyPuppyRunning from '@/images/backgrounds/happy-puppy-running.jpg';
 import { fbqSale } from '@/lib/fbq';
 import { gaSale } from '@/lib/ga';

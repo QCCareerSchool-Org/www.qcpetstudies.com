@@ -6,7 +6,6 @@ import { FaBriefcase, FaClipboard, FaRegFileAlt, FaRss, FaTags } from 'react-ico
 import { ReviewSection } from './ReviewSection';
 import { PageComponent } from '@/app/serverComponent';
 
-import { SEO } from '@/components/SEO';
 import AssociationLogo from '@/images/association-logo.png';
 import CareerBackground from '@/images/backgrounds/your-dog-grooming-carrer.jpg';
 import MobileGroomerImage from '@/images/become-a-mobile-dog-groomer.jpg';

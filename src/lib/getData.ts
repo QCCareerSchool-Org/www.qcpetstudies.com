@@ -1,5 +1,3 @@
-import 'server-only';
-
 import { randomInt } from 'crypto';
 import { cookies, headers } from 'next/headers';
 

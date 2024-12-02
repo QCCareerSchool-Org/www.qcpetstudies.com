@@ -2,8 +2,8 @@ import { Metadata } from 'next';
 import Image, { StaticImageData } from 'next/image';
 import Link from 'next/link';
 
-import { IncludedSection } from '../dog-daycare/IncludedSection';
 import { CertificationSection } from './CertificationSection';
+import { IncludedSection } from './IncludedSection';
 import { TestimonialsSection } from './TestimonialsSection';
 import { PageComponent } from '@/app/serverComponent';
 import { Accordion } from '@/components/accordion';

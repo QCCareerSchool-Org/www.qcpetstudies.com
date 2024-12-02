@@ -1,6 +1,6 @@
 'use client';
 
-import Image, { StaticImageData } from 'next/image';
+import Image from 'next/image';
 import Link from 'next/link';
 
 import { FC } from 'react';
@@ -23,7 +23,7 @@ export const ReviewSection: FC = () => {
                   <div className="d-flex mb-4">
                     <div className="me-4">
                       <Image
-                        src={AprilCostigan as StaticImageData}
+                        src={AprilCostigan}
                         className="rounded-circle"
                         width={50}
                         height={50}
@@ -41,7 +41,7 @@ export const ReviewSection: FC = () => {
           {lgOrGreater && (
             <div className="col-lg-4 col-xl-3" style={{ position: 'relative' }}>
               <Image
-                src={DogStaircase as StaticImageData}
+                src={DogStaircase}
                 alt="a dog sitting on a staircase"
                 fill
                 sizes="100vw"
