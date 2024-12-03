@@ -9,9 +9,7 @@ import ScheduleCallImage from '@/images/schedule-call-contact.png';
 export const metadata: Metadata = {
   title: 'Contact Us',
   description: 'How to contact QC Pet Studies',
-  alternates: {
-    canonical: '/contact-us',
-  },
+  alternates: { canonical: '/contact-us' },
 };
 
 const ContactUsPage: PageComponent = () => {

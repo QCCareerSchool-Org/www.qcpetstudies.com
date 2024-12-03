@@ -12,9 +12,7 @@ import LearningAndWorkingBackground from '@/images/backgrounds/groomer-wearing-f
 export const metadata: Metadata = {
   title: 'Learning & Working During COVID-19',
   description: 'Starting a new career during a pandemic can be challenging! Find out how online training can help.',
-  alternates: {
-    canonical: '/resources/learning-and-working-during-covid',
-  },
+  alternates: { canonical: '/resources/learning-and-working-during-covid' },
 };
 
 const LearningDuringCovidPage: PageComponent = () => {

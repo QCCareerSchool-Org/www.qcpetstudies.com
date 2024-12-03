@@ -27,9 +27,7 @@ const linkCourseCodes = [ 'dt', 'dc' ];
 export const metadata: Metadata = {
   title: 'Dog Behavior Course',
   description: 'Become a Professional Dog Behavior Specialist with QC\'s online dog behavior course. Study online with hands-on learning!',
-  alternates: {
-    canonical: '/certification-courses/dog-behavior',
-  },
+  alternates: { canonical: '/certification-courses/dog-behavior' },
 };
 
 const DogBehaviorPage: PageComponent = async () => {

@@ -8,9 +8,7 @@ import DogInBedWithStick from '@/images/backgrounds/dog-in-bed-with-stick.jpg';
 export const metadata: Metadata = {
   title: 'FAQ',
   description: 'If you have any questions about QC\'s online programs in dog grooming or dog training, find your answers here!',
-  alternates: {
-    canonical: '/about/faq',
-  },
+  alternates: { canonical: '/about/faq' },
 };
 
 const FAQPage: PageComponent = () => {

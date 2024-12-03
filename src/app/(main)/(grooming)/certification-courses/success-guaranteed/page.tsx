@@ -17,9 +17,7 @@ const courseCodes = [ 'dg' ];
 export const metadata: Metadata = {
   title: 'Success Guaranteed',
   description: 'Study with confidence thanks to QC\'s double guarantee',
-  alternates: {
-    canonical: '/certification-courses/success-guaranteed',
-  },
+  alternates: { canonical: '/certification-courses/success-guaranteed' },
 };
 
 const SuccessGuaranteedPage: PageComponent = async () => {

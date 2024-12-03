@@ -17,9 +17,7 @@ const brevoEmailTemplateId = 61;
 export const metadata: Metadata = {
   title: 'Become a Professional Dog Trainer',
   description: 'Request a free preview of the online dog trainer course.',
-  alternates: {
-    canonical: '/get-a-dog-training-course-preview',
-  },
+  alternates: { canonical: '/get-a-dog-training-course-preview' },
 };
 
 const DogTrainingCatalogPage: PageComponent = ({ searchParams }) => {

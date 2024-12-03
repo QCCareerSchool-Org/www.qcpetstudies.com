@@ -5,9 +5,7 @@ import { EmailAddress } from '@/components/EmailAddress';
 export const metadata: Metadata = {
   title: 'Enrollment Agreement',
   description: 'The agreement for enrolling with QC Pet Studies',
-  alternates: {
-    canonical: '/enrollment-agreement',
-  },
+  alternates: { canonical: '/enrollment-agreement' },
 };
 
 const AgreementPage: PageComponent = () => {

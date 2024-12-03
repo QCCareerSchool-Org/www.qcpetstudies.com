@@ -4,9 +4,7 @@ import { PageComponent } from '@/app/serverComponent';
 export const metadata: Metadata = {
   title: 'Canadian Tax Credits',
   description: 'Canadian students can use tax credits to save over 50% of their course fees',
-  alternates: {
-    canonical: '/canadian-tax-credits',
-  },
+  alternates: { canonical: '/canadian-tax-credits' },
 };
 
 const CanadianTaxCreditsPage: PageComponent = () => {

@@ -17,14 +17,10 @@ const brevoStudentListId = 17;
 export const metadata: Metadata = {
   title: 'Welcome to the School',
   description: 'Your enrollment has been received and will be processed quickly. You will receive an email within the next business day containing login information to your online student center.',
-  alternates: {
-    canonical: '/welcome-to-the-school',
-  },
+  alternates: { canonical: '/welcome-to-the-school' },
 };
 
-const WelcomeToTheSchoolPage: PageComponent = async ({
-  searchParams,
-}) => {
+const WelcomeToTheSchoolPage: PageComponent = async ({ searchParams }) => {
   try {
     const enrollmentId = searchParams.enrollmentId;
     const code = searchParams.code;

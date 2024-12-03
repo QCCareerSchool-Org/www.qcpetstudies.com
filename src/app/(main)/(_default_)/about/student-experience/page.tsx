@@ -14,9 +14,7 @@ import WomanUsingLaptopImage from '@/images/woman-using-laptop-with-dog-on-lap.j
 export const metadata: Metadata = {
   title: 'Student Experience',
   description: 'As a QC Pet Studies Student, you\'ll get help through every step of your education. As you work through your course, you\'ll be guided by our team of teaching assistants, as well as top-notch industry experts with years of professional experience. Even after you graduate, you\'ll remain an essential member of the QC community.',
-  alternates: {
-    canonical: '/about/student-experience',
-  },
+  alternates: { canonical: '/about/student-experience' },
 };
 
 const StudentExperiencePage: PageComponent = () => {

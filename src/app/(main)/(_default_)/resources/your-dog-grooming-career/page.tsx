@@ -19,9 +19,7 @@ import WorkSaloonImage from '@/images/work-for-a-grooming-salon-or-pet-retailer.
 export const metadata: Metadata = {
   title: 'Your Dog Grooming Career',
   description: "There are different career paths a professional dog groomer can take. Choose the path that's right for you!",
-  alternates: {
-    canonical: '/resources/your-dog-grooming-career',
-  },
+  alternates: { canonical: '/resources/your-dog-grooming-career' },
 };
 
 const DogGroomingCareerPage: PageComponent = () => {

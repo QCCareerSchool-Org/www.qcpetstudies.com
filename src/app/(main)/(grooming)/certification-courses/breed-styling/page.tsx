@@ -17,9 +17,7 @@ const courseCodes = [ 'ds' ];
 export const metadata: Metadata = {
   title: 'Breed Styling Workshop',
   description: 'If you\'re already a professional dog groomer, the breed styling workshop will take your grooming skills to the next level. Start today!',
-  alternates: {
-    canonical: '/certification-courses/breed-styling',
-  },
+  alternates: { canonical: '/certification-courses/breed-styling' },
 };
 
 const BreedStylingPage: PageComponent = async () => {

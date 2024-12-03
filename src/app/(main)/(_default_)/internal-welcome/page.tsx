@@ -22,9 +22,7 @@ type PropData = {
 export const metadata: Metadata = {
   title: 'Welcome to the School',
   description: 'Your enrollment has been received and will be processed quickly. You will receive an email within the next business day containing login information to your online student center.',
-  alternates: {
-    canonical: '/welcome-to-the-school',
-  },
+  alternates: { canonical: '/welcome-to-the-school' },
 };
 
 const InternalWelcomePage: PageComponent = async ({ searchParams }) => {

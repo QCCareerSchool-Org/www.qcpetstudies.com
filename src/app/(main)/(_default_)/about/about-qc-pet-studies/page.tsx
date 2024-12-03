@@ -12,9 +12,7 @@ import SPCALogo from '@/images/spca-full-color-logo.svg';
 export const metadata: Metadata = {
   title: 'About QC Pet Studies',
   description: '',
-  alternates: {
-    canonical: '/about/about-qc-pet-studies',
-  },
+  alternates: { canonical: '/about/about-qc-pet-studies' },
 };
 
 const AboutPage: PageComponent = () => (

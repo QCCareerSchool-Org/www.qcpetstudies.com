@@ -23,9 +23,7 @@ const courseCodes = [ 'dd' ];
 export const metadata: Metadata = {
   title: 'Dog Daycare Course',
   description: 'Become a certified dog care professional with interactive online training!',
-  alternates: {
-    canonical: '/certification-courses/dog-daycare',
-  },
+  alternates: { canonical: '/certification-courses/dog-daycare' },
 };
 
 const DogCarePage: PageComponent = async () => {

@@ -12,9 +12,7 @@ import VirtualClassroom from '@/images/cards/virtual-classroom.jpg';
 export const metadata: Metadata = {
   title: 'Learning Resources',
   description: 'Use these resources to decide if a career in the pet industry is right for you!',
-  alternates: {
-    canonical: '/resources',
-  },
+  alternates: { canonical: '/resources' },
 };
 
 const LearningResourcesPage: PageComponent = () => (

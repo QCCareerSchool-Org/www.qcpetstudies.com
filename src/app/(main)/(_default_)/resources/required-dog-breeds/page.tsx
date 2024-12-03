@@ -17,9 +17,7 @@ const iconSize = 50;
 export const metadata: Metadata = {
   title: 'Every Dog Breed You Must Groom in Your Dog Grooming Course',
   description: 'Find out what types of dog breeds you\'ll need in order to complete your online dog groomer training with QC',
-  alternates: {
-    canonical: '/dog-grooming/required-dog-breeds',
-  },
+  alternates: { canonical: '/dog-grooming/required-dog-breeds' },
 };
 
 const RequiredDogBreeds: PageComponent = () => {

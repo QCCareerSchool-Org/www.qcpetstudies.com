@@ -5,9 +5,7 @@ import { EmailAddress } from '@/components/EmailAddress';
 export const metadata: Metadata = {
   title: 'Privacy Policy',
   description: 'QC Pet Studies website privacy policy and terms of service',
-  alternates: {
-    canonical: '/terms',
-  },
+  alternates: { canonical: '/terms' },
 };
 
 const TermsPage: PageComponent = () => (

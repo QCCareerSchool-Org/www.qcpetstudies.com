@@ -23,9 +23,7 @@ export type Props = {
 export const metadata: Metadata = {
   title: 'Dog Behavior Certification Course',
   description: '',
-  alternates: {
-    canonical: '/certification-courses/dog-behavior/course-preview',
-  },
+  alternates: { canonical: '/certification-courses/dog-behavior/course-preview' },
 };
 
 const BehaviorCoursePreviewPage: PageComponent = async () => {

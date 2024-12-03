@@ -13,9 +13,7 @@ const iconSize = 50;
 export const metadata: Metadata = {
   title: 'Dog Daycare Course Outline',
   description: '',
-  alternates: {
-    canonical: '/certification-courses/dog-daycare/course-outline',
-  },
+  alternates: { canonical: '/certification-courses/dog-daycare/course-outline' },
 };
 
 const DDCourseOutlinePage: PageComponent = () => {

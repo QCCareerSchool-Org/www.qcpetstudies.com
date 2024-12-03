@@ -16,9 +16,7 @@ import ZenDogLogo from '@/images/logos/zen-dog.jpg';
 export const metadata: Metadata = {
   title: 'Student Discounts',
   description: 'This is Student Discounts page',
-  alternates: {
-    canonical: '/about/student-discounts',
-  },
+  alternates: { canonical: '/about/student-discounts' },
 };
 
 const StudentDiscountsPage: PageComponent = () => (

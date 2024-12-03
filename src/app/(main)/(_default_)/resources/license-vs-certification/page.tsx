@@ -11,9 +11,7 @@ import GroomerDemattingBackground from '@/images/backgrounds/license-vs-certific
 export const metadata: Metadata = {
   title: 'Dog Grooming License vs. Certification',
   description: 'Dog grooming License vs. Certification',
-  alternates: {
-    canonical: '/resources/license-vs-certification',
-  },
+  alternates: { canonical: '/resources/license-vs-certification' },
 };
 
 const LicenseVsCertification: PageComponent = () => {

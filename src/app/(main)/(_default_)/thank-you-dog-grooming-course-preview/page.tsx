@@ -15,9 +15,7 @@ import { getParam } from '@/lib/getParam';
 export const metadata: Metadata = {
   title: 'Here\'s Your Course Preview',
   description: 'Get your Dog Grooming Course Preview Now',
-  alternates: {
-    canonical: '/thank-you-dog-grooming-course-preview',
-  },
+  alternates: { canonical: '/thank-you-dog-grooming-course-preview' },
 };
 
 const ThankYouCatalogPage: PageComponent = ({ searchParams }) => {

@@ -9,9 +9,7 @@ import FirstSectionBackground from '@/images/backgrounds/inclass_vs_online_bg.jp
 export const metadata: Metadata = {
   title: 'In-Class vs. Online Dog Grooming Schools',
   description: 'In-Class vs. Online Dog Grooming Schools',
-  alternates: {
-    canonical: '/resources/class-vs-online-dog-grooming-schools',
-  },
+  alternates: { canonical: '/resources/class-vs-online-dog-grooming-schools' },
 };
 
 const ClassVsOnlineLearning: PageComponent = () => {

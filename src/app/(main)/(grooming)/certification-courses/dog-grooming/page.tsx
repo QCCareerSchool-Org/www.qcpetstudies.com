@@ -28,9 +28,7 @@ const courseCodes = [ 'dg' ];
 export const metadata: Metadata = {
   title: 'Dog Grooming Course',
   description: 'Become a Certified Dog Groomer with Interactive Online Training!',
-  alternates: {
-    canonical: '/certification-courses/dog-grooming',
-  },
+  alternates: { canonical: '/certification-courses/dog-grooming' },
 };
 
 const DogGroomingPage: PageComponent = async () => {
