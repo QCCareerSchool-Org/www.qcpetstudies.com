@@ -1,8 +1,6 @@
-import * as HttpStatus from '@qccareerschool/http-status';
 import { Metadata } from 'next';
 import { cookies, headers } from 'next/headers';
-
-import { ErrorPageWrapper } from '../internal-welcome/ErrorPageWrapper';
+import { redirect } from 'next/navigation';
 import { WelcomeToTheSchoolThirdPartyClient } from './WelcomeToTheSchoolThirdPartyClient';
 import { PageComponent } from '@/app/serverComponent';
 import { addToIDevAffiliate } from '@/lib/addToIDevAffiliate';
@@ -26,18 +24,18 @@ const WelcomeToTheSchoolThirdPartyPage: PageComponent = async ({ searchParams }:
     const code = searchParams.code;
 
     if (typeof enrollmentId !== 'string' || typeof code !== 'string') {
-      return <ErrorPageWrapper errorCode={'400'} />;
+      redirect('/');
     }
 
     const parsedEnrollmentId = parseInt(enrollmentId, 10);
     if (isNaN(parsedEnrollmentId)) {
-      return <ErrorPageWrapper errorCode={'400'} />;
+      redirect('/');
     }
 
     const rawEnrollment = await getEnrollment(parsedEnrollmentId, code);
 
     if (!rawEnrollment.complete || !rawEnrollment.success) {
-      return <ErrorPageWrapper errorCode={'404'} />;
+      redirect('/');
     }
 
     if (!rawEnrollment.emailed) {
@@ -100,8 +98,7 @@ const WelcomeToTheSchoolThirdPartyPage: PageComponent = async ({ searchParams }:
 
     return <WelcomeToTheSchoolThirdPartyClient rawEnrollment={rawEnrollment} />;
   } catch (err) {
-    const statusCode = err instanceof HttpStatus.HttpResponse ? err.statusCode : 500;
-    return <ErrorPageWrapper errorCode={statusCode.toString()} />;
+    redirect('/');
   }
 };
 
