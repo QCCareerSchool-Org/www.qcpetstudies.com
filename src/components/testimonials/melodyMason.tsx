@@ -1,7 +1,7 @@
 import type { FC } from 'react';
 
+import MelodyMason from './images/melody-mason.jpg';
 import { Testimonial } from './testimonial';
-import MelodyMason from '@/images/testimonials/melody-mason.jpg';
 
 export const TestimonialMelodyMason: FC = () => (
   <Testimonial name="Melody Mason" certification="IDGP" imageSrc={MelodyMason} imageWidth={256} imageHeight={144}>

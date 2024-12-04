@@ -1,7 +1,7 @@
 import type { FC } from 'react';
 
-import { TestimonialSm } from './testimonialSm';
-import HailieSavage from '@/images/testimonials-sm/hailie-savage.jpg';
+import HailieSavage from './images/hailie-savage.jpg';
+import { TestimonialSmall } from './testimonialSmall';
 
 type Props = {
   size?: number;
@@ -9,7 +9,7 @@ type Props = {
 };
 
 export const TestimonialSmHailieSavage: FC<Props> = ({ size, starSize }) => (
-  <TestimonialSm
+  <TestimonialSmall
     size={size}
     starSize={starSize}
     quotation="The critique was fantastic. I highly recommend the program!"

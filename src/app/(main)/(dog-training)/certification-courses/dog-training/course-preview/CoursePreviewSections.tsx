@@ -8,7 +8,7 @@ import { FaBars, FaPlay } from 'react-icons/fa';
 
 import { Bar } from '@/components/bar';
 import IDTPCertificationLogo from '@/components/certifications/IDTP-certification-gold.svg';
-import { TabGroup } from '@/components/TabGroup';
+import { TabGroup } from '@/components/tabGroup';
 import GoldenRetrieverComputerBackground from '@/images/backgrounds/golden-retriever-sitting-next-to-computer.jpg';
 
 export const CoursePreviewSections: FC = () => {

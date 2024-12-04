@@ -1,10 +1,10 @@
-import { Metadata } from 'next';
+import type { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 import { FaPaw } from 'react-icons/fa';
 
-import { ClientLogic } from '../../(grooming)/thank-you-dog-grooming-course-preview/ClientLogic';
-import { PageComponent } from '@/app/serverComponent';
+import { ClientLogic } from '../../(dog-grooming)/thank-you-dog-grooming-course-preview/ClientLogic';
+import type { PageComponent } from '@/app/serverComponent';
 import CatalogBackground from '@/images/backgrounds/smiling-border-collie-on-black.jpg';
 import { getParam } from '@/lib/getParam';
 

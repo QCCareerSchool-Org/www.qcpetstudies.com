@@ -1,21 +1,21 @@
-import { Metadata } from 'next';
+import type { Metadata } from 'next';
 import { cookies, headers } from 'next/headers';
 import { redirect } from 'next/navigation';
 
-import { PageComponent } from '@/app/serverComponent';
+import HappyPuppyRunning from '../welcome-to-the-school/happy-puppy-running.jpg';
+import { Processing } from '../welcome-to-the-school/processing';
+import type { PageComponent } from '@/app/serverComponent';
+import { BackgroundImage } from '@/components/backgroundImage';
+import { EmailLink } from '@/components/emailLink';
+import { EnrollmentDetails } from '@/components/enrollmentDetails';
+import { TelephoneLink } from '@/components/telephoneLink';
 import { addToIDevAffiliate } from '@/lib/addToIDevAffiliate';
 import { createBrevoContact } from '@/lib/brevoAPI';
 import { fbPostPurchase } from '@/lib/facebookConversionAPI';
 import { getEnrollment } from '@/lib/fetch';
+import { getParam } from '@/lib/getParam';
 import { sendEnrollmentEmail } from '@/lib/sendEnrollmentEmail';
 import { trustPulseEnrollment } from '@/lib/trustpulse';
-import { EnrollmentDetails } from '@/components/EnrollmentDetails';
-import { Processing } from '../welcome-to-the-school/processing';
-import { BackgroundImage } from '@/components/backgroundImage';
-import { EmailLink } from '@/components/3emailLink';
-import { TelephoneLink } from '@/components/telephoneLink';
-import HappyPuppyRunning from '../welcome-to-the-school/happy-puppy-running.jpg';
-import { getParam } from '@/lib/getParam';
 
 export const metadata: Metadata = {
   title: 'Welcome to the School',

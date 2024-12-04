@@ -1,7 +1,11 @@
-import { Metadata } from 'next';
+import type { Metadata } from 'next';
+
 import { GroomingTechnicianBase } from '..';
-import { PageComponent } from '@/app/serverComponent';
+import type { PageComponent } from '@/app/serverComponent';
 import { DeadlineFunnelScript } from '@/components/DeadlineFunnelScript';
+import type { PriceQuery } from '@/lib/fetch';
+import { fetchPrice } from '@/lib/fetch';
+import { getData } from '@/lib/getData';
 import { lookupPrices } from '@/lib/lookupPrices';
 
 const courseCodes = [ 'gt' ];
@@ -13,8 +17,14 @@ export const metadata: Metadata = {
 };
 
 const GroomingTechnicianPageAlt1: PageComponent = async () => {
-  const gtPrice = await lookupPrices(courseCodes);
-  const dgPrice = await lookupPrices([ 'dg' ]);
+  const { countryCode, provinceCode } = getData();
+
+  const gtPriceQuery: PriceQuery = { countryCode, provinceCode: provinceCode ?? undefined, courses: courseCodes };
+  const dgPriceQuery: PriceQuery = { countryCode, provinceCode: provinceCode ?? undefined, courses: [ 'dg' ] };
+  const [ gtPrice, dgPrice ] = await Promise.all([
+    fetchPrice(gtPriceQuery),
+    fetchPrice(dgPriceQuery),
+  ]);
   const props = { gtPrice, dgPrice };
   return (
     <>

@@ -1,23 +1,23 @@
-import { Metadata } from 'next';
+import type { Metadata } from 'next';
 import { cookies, headers } from 'next/headers';
-import { redirect } from 'next/navigation';
 import Image from 'next/image';
+import { redirect } from 'next/navigation';
 
-import { PageComponent } from '@/app/serverComponent';
+import AlexSignature from './alex-myers.png';
+import HappyPuppyRunning from './happy-puppy-running.jpg';
+import { Processing } from './processing';
+import type { PageComponent } from '@/app/serverComponent';
+import { BackgroundImage } from '@/components/backgroundImage';
+import { EmailLink } from '@/components/emailLink';
+import { EnrollmentDetails } from '@/components/enrollmentDetails';
+import { TelephoneLink } from '@/components/telephoneLink';
 import { addToIDevAffiliate } from '@/lib/addToIDevAffiliate';
 import { createBrevoContact } from '@/lib/brevoAPI';
 import { fbPostPurchase } from '@/lib/facebookConversionAPI';
+import { getEnrollment } from '@/lib/fetch';
+import { getParam } from '@/lib/getParam';
 import { sendEnrollmentEmail } from '@/lib/sendEnrollmentEmail';
 import { trustPulseEnrollment } from '@/lib/trustpulse';
-import { getParam } from '@/lib/getParam';
-import { EnrollmentDetails } from '@/components/EnrollmentDetails';
-import { BackgroundImage } from '@/components/backgroundImage';
-import { Processing } from './processing';
-import { getEnrollment } from '@/lib/fetch';
-import { EmailLink } from '@/components/3emailLink';
-import { TelephoneLink } from '@/components/telephoneLink';
-import AlexSignature from './alex-myers.png';
-import HappyPuppyRunning from './happy-puppy-running.jpg';
 
 const brevoStudentListId = 17;
 
@@ -65,7 +65,7 @@ const WelcomeToTheSchoolPage: PageComponent = async ({ searchParams }) => {
 
     // create Brevo contact
     try {
-      await createBrevoContact(enrollment.emailAddress, enrollment.firstName, enrollment.lastName, enrollment.countryCode, enrollment.provinceCode, { STATUS_PET_STUDENT: true }, [brevoStudentListId]);
+      await createBrevoContact(enrollment.emailAddress, enrollment.firstName, enrollment.lastName, enrollment.countryCode, enrollment.provinceCode, { STATUS_PET_STUDENT: true }, [ brevoStudentListId ]);
     } catch (err) {
       console.error(err);
     }

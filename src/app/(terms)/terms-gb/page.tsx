@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 
 import type { PageComponent } from '../../serverComponent';
 import styles from '../terms.module.scss';
-import { EmailLink } from '@/components/3emailLink';
+import { EmailLink } from '@/components/emailLink';
 
 export const metadata: Metadata = {
   title: 'Privacy Policy',

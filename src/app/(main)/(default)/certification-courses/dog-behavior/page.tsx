@@ -4,13 +4,13 @@ import Link from 'next/link';
 import { BsCardChecklist, BsPeopleFill } from 'react-icons/bs';
 import { IoMdInfinite } from 'react-icons/io';
 
-import DCBackgroundImage from './hero.jpg';
+import HeroBackgroundImage from './hero-bg.jpg';
 import { OutlineSection } from './outlineSection';
 import type { PageComponent } from '@/app/serverComponent';
 import { BackgroundImage } from '@/components/backgroundImage';
 import CertificationGoldImage from '@/components/certifications/IDBS-certification-gold.svg';
 import { GuaranteeSection } from '@/components/guaranteeSection';
-import { PriceSection } from '@/components/PriceSection';
+import { PriceSection } from '@/components/priceSection';
 import { VirtualCommunitySection } from '@/components/virtualCommunitySection';
 import GuaranteeIcon from '@/images/course-overview-icons/guarantee.svg';
 import OutlineIcon from '@/images/course-overview-icons/outline.svg';
@@ -45,7 +45,7 @@ const DogBehaviorPage: PageComponent = async () => {
   return (
     <>
       <section className="bg-dark">
-        <BackgroundImage src={DCBackgroundImage} priority />
+        <BackgroundImage src={HeroBackgroundImage} priority />
         <div className="image-overlay-gradient" />
         <div className="container text-center">
           <div className="row mb-4">

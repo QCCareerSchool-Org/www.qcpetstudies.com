@@ -1,13 +1,15 @@
-import { Metadata } from 'next';
+import type { Metadata } from 'next';
 import Link from 'next/link';
 
 import KimCooperImage from '../kim-cooper.jpg';
 import { CoursePreviewSections } from './CoursePreviewSections';
-import { PageComponent } from '@/app/serverComponent';
-import { DTTutorSection } from '@/components/DTTutorSection';
-import { PriceSectionWithDiscount } from '@/components/PriceSectionWithDiscount';
+import type { PageComponent } from '@/app/serverComponent';
+import { DTTutorSection } from '@/components/dtTutorSection';
+import { PriceSectionWithDiscount } from '@/components/priceSectionWithDiscount';
+import type { PriceQuery } from '@/lib/fetch';
+import { fetchPrice } from '@/lib/fetch';
+import { getData } from '@/lib/getData';
 import { getParam } from '@/lib/getParam';
-import { lookupPrices } from '@/lib/lookupPrices';
 
 export const courseCodes = [ 'dt' ];
 
@@ -17,8 +19,12 @@ export const metadata: Metadata = {
 };
 
 const DogTrainingCoursePreviewPage: PageComponent = async ({ searchParams }) => {
-
-  const price = await lookupPrices([ 'dt' ], { promoCode: getParam(searchParams.promoCode) });
+  const { countryCode, provinceCode } = getData();
+  const priceQuery: PriceQuery = { countryCode, provinceCode: provinceCode ?? undefined, courses: courseCodes };
+  const price = await fetchPrice(priceQuery);
+  if (!price) {
+    return null;
+  }
 
   const enrollPath = getParam(searchParams.enrollPath);
 

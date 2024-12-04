@@ -1,29 +1,35 @@
-import { Metadata } from 'next';
-import Image, { StaticImageData } from 'next/image';
+import type { Metadata } from 'next';
+import Image from 'next/image';
 
-import { PageComponent } from '@/app/serverComponent';
-import { FreeFirstAidSection } from '@/components/FreeFirstAidSection';
-import { HowTheCoursesWorkSection } from '@/components/HowTheCoursesWorkSection';
-import { PriceSection } from '@/components/PriceSection';
-import QcYearGuaratnteeLogo from '@/images/1-year-guarantee-outlined.svg';
-import QcDayGuaratnteeLogo from '@/images/21-day-guarantee-outlined.svg';
+import type { PageComponent } from '@/app/serverComponent';
+import { FreeFirstAidSection } from '@/components/freeFirstAidSection';
+import QcYearGuaratnteeLogo from '@/components/guaranteeModal/1-year-guarantee-outlined.svg';
+import QcDayGuaratnteeLogo from '@/components/guaranteeModal/21-day-guarantee-outlined.svg';
+import { HowTheCoursesWorkSection } from '@/components/howTheCoursesWorkSection';
+import { PriceSection } from '@/components/priceSection';
 import DreamCareerBackground from '@/images/backgrounds/drying-dog-bg.jpg';
 import FullKitImage from '@/images/dog-grooming-kit.jpg';
-import { lookupPrices } from '@/lib/lookupPrices';
+import type { PriceQuery } from '@/lib/fetch';
+import { fetchPrice } from '@/lib/fetch';
+import { getData } from '@/lib/getData';
 
 const courseCodes = [ 'dg' ];
 
 export const metadata: Metadata = {
   title: 'Start Your Dream Career',
-  description: 'Start Your Dream Career',
   alternates: { canonical: '/certification-courses/rm/start-your-dream-career' },
 };
 
 const StartYourDreamCareerPage: PageComponent = async () => {
-  const price = await lookupPrices(courseCodes);
+  const { countryCode, provinceCode } = getData();
+  const priceQuery: PriceQuery = { countryCode, provinceCode: provinceCode ?? undefined, courses: courseCodes };
+  const price = await fetchPrice(priceQuery);
+  if (!price) {
+    return null;
+  }
+
   return (
     <>
-
       <section id="top" className="bg-dark">
         <Image
           src={DreamCareerBackground}
@@ -55,12 +61,7 @@ const StartYourDreamCareerPage: PageComponent = async () => {
               <p className="lead"><strong>These professional-grade tools have a $200 value!</strong></p>
             </div>
           </div>
-          <Image
-            src={FullKitImage}
-            alt="course material"
-            sizes="100vw"
-            style={{ width: '100%', height: 'auto' }}
-          />
+          <Image src={FullKitImage} alt="course material" sizes="100vw" style={{ width: '100%', height: 'auto' }} />
         </div>
       </section>
 
@@ -73,11 +74,7 @@ const StartYourDreamCareerPage: PageComponent = async () => {
                 <div className="card-body">
                   <div className="w-100">
                     <div className="mb-3">
-                      <Image
-                        src={QcDayGuaratnteeLogo as StaticImageData}
-                        alt="21-day money-back guarantee logo"
-                        style={{ maxWidth: '100%', height: 'auto' }}
-                      />
+                      <QcDayGuaratnteeLogo alt="21-day money-back guarantee logo" style={{ maxWidth: '100%', height: 'auto' }} />
                     </div>
                     <h4>The 21-Day Money-Back Guarantee</h4>
                     <p className="card-text">Try the course risk-free for 21 days. This gives you time to receive your course materials and evaluate whether the dog grooming course is right for you. If you decide it's not a good fit, simply contact QC to arrange a return of your course materials for a refund. It's that easy! Note: For sanitary reasons, the clippers and attachment combs provided with the course cannot be refunded (value $200 US)</p>
@@ -90,11 +87,7 @@ const StartYourDreamCareerPage: PageComponent = async () => {
                 <div className="card-body">
                   <div className="w-100">
                     <div className="mb-3">
-                      <Image
-                        src={QcYearGuaratnteeLogo as StaticImageData}
-                        alt="1-year money-back guarantee logo"
-                        style={{ maxWidth: '100%', height: 'auto' }}
-                      />
+                      <QcYearGuaratnteeLogo alt="1-year money-back guarantee logo" style={{ maxWidth: '100%', height: 'auto' }} />
                     </div>
                     <h4>The 1-Year Money-Back Guarantee</h4>
                     <p className="card-text lead"><em>This course will pay for itself within two years. That's a promise.</em></p>

@@ -1,16 +1,19 @@
-import { Metadata } from 'next';
-import Image, { StaticImageData } from 'next/image';
+import type { Metadata } from 'next';
+import type { StaticImageData } from 'next/image';
+import Image from 'next/image';
 import Link from 'next/link';
 
-import { PageComponent } from '@/app/serverComponent';
-import { FreeFirstAidSection } from '@/components/FreeFirstAidSection';
-import { HowTheCoursesWorkSection } from '@/components/HowTheCoursesWorkSection';
-import { PriceSection } from '@/components/PriceSection';
-import QcYearGuaratnteeLogo from '@/images/1-year-guarantee-outlined.svg';
-import QcDayGuaratnteeLogo from '@/images/21-day-guarantee-outlined.svg';
+import type { PageComponent } from '@/app/serverComponent';
+import { FreeFirstAidSection } from '@/components/freeFirstAidSection';
+import QcYearGuaratnteeLogo from '@/components/guaranteeModal/1-year-guarantee-outlined.svg';
+import QcDayGuaratnteeLogo from '@/components/guaranteeModal/21-day-guarantee-outlined.svg';
+import { HowTheCoursesWorkSection } from '@/components/howTheCoursesWorkSection';
+import { PriceSection } from '@/components/priceSection';
 import DryingDogBg from '@/images/backgrounds/drying-dog-bg.jpg';
 import DogGroomingKit from '@/images/dog-grooming-kit-white.jpg';
-import { lookupPrices } from '@/lib/lookupPrices';
+import type { PriceQuery } from '@/lib/fetch';
+import { fetchPrice } from '@/lib/fetch';
+import { getData } from '@/lib/getData';
 
 const courseCodes = [ 'dg' ];
 
@@ -21,10 +24,15 @@ export const metadata: Metadata = {
 };
 
 const SuccessGuaranteedPage: PageComponent = async () => {
-  const price = await lookupPrices(courseCodes);
+  const { countryCode, provinceCode } = getData();
+  const priceQuery: PriceQuery = { countryCode, provinceCode: provinceCode ?? undefined, courses: courseCodes };
+  const price = await fetchPrice(priceQuery);
+  if (!price) {
+    return null;
+  }
+
   return (
     <>
-
       <section id="top" className="bg-dark">
         <Image
           src={DryingDogBg}

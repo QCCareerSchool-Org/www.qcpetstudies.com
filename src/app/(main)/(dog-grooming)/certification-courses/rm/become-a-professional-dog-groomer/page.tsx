@@ -1,13 +1,14 @@
-import { Metadata } from 'next';
+import type { Metadata } from 'next';
+import { headers } from 'next/headers';
 import Image from 'next/image';
 
-import { BrochureForm, Marketing } from './BrochureForm';
 import { StyleComponent } from './StyleComponent';
-import { PageComponent } from '@/app/serverComponent';
-import { FreeFirstAidSection } from '@/components/FreeFirstAidSection';
-import { HowTheCoursesWorkSection } from '@/components/HowTheCoursesWorkSection';
+import type { PageComponent } from '@/app/serverComponent';
+import { FreeFirstAidSection } from '@/components/freeFirstAidSection';
+import { HowTheCoursesWorkSection } from '@/components/howTheCoursesWorkSection';
 import CourseCatalogImage from '@/images/bottom-ipad-shepard.jpg';
 import FullKitImage from '@/images/Kit-Blue-bg.jpg';
+import { getData } from '@/lib/getData';
 import { getParam } from '@/lib/getParam';
 
 const courses = [ 'dg' ];
@@ -15,28 +16,20 @@ const courses = [ 'dg' ];
 export const metadata: Metadata = {
   title: 'Become a Professional Dog Groomer',
   alternates: { canonical: '/certification-courses/rm/become-a-professional-dog-groomer' },
-  description: 'Become a Professional Dog Groomer',
 };
 
 const ProfessionalDogGroomerPage: PageComponent = ({ searchParams }) => {
-
-  const firstName = getParam(searchParams.firstName);
-  const lastName = getParam(searchParams.lastName);
-  const emailAddress = getParam(searchParams.emailAddress);
-  const emailOptIn = getParam(searchParams.emailOptIn) === 'yes';
-  const telephoneNumber = getParam(searchParams.telephoneNumber);
-  const smsOptIn = getParam(searchParams.smsOptIn) === 'yes';
+  const { countryCode } = getData();
+  const date = new Date().getTime();
   const gclid = getParam(searchParams.gclid);
   const msclkid = getParam(searchParams.msclkid);
-  const errors = getParam(searchParams.errors) === 'true';
-
-  const marketing: Marketing = {
-    source: getParam(searchParams.utm_source) ?? null,
-    medium: getParam(searchParams.utm_medium) ?? null,
-    campaign: getParam(searchParams.utm_campaign) ?? null,
-    content: getParam(searchParams.utm_content) ?? null,
-    term: getParam(searchParams.utm_term) ?? null,
-  };
+  const utmSource = getParam(searchParams.utm_source);
+  const utmMedium = getParam(searchParams.utm_medium);
+  const utmCampaign = getParam(searchParams.utm_campaign);
+  const utmContent = getParam(searchParams.utm_content);
+  const utmTerm = getParam(searchParams.utm_term);
+  const headerList = headers();
+  const referrer = headerList.get('referer');
 
   return <>
     <section id="top" className="bg-dark bg-grayish-blue">
@@ -52,12 +45,7 @@ const ProfessionalDogGroomerPage: PageComponent = ({ searchParams }) => {
             <p>Before you begin your practical work in Unit C, you'll receive a toolkit with the essential items you need to get started.</p>
             <p>Your kit includes a WAHL ARCO 5-in-1 cordless clipper, a stainless steel attachment guide comb kit, professional-grade grooming scissors, brushes, combs, and nail clippers.</p>
             <p><em>Grooming Kit Estimated value: $200</em></p>
-            <Image
-              src={FullKitImage}
-              alt="Dog Grooming Starter Full Kit"
-              sizes="100vw"
-              style={{ width: '100%', height: 'auto' }}
-            />
+            <Image src={FullKitImage} alt="Dog Grooming Starter Full Kit" sizes="100vw" style={{ width: '100%', height: 'auto' }} />
           </div>
           <div className="col-12 col-lg-6 d-flex text-start">
             <div className="card bg-desaturated-blue">
@@ -70,7 +58,7 @@ const ProfessionalDogGroomerPage: PageComponent = ({ searchParams }) => {
                   <li>Find out about tuition information including finding a payment plan that works well for you</li>
                   <li>Learn how you can't go wrong with QC's money back guarantee!</li>
                 </ul>
-                <BrochureForm gclid={gclid} msclkid={msclkid} buttonText="Download Catalog" firstName={firstName} lastName={lastName} emailAddress={emailAddress} emailOptIn={emailOptIn} telephoneNumber={telephoneNumber} smsOptIn={smsOptIn} marketing={marketing} courses={courses} errors={errors} />
+                {/* <BrochureForm gclid={gclid} msclkid={msclkid} buttonText="Download Catalog" firstName={firstName} lastName={lastName} emailAddress={emailAddress} emailOptIn={emailOptIn} telephoneNumber={telephoneNumber} smsOptIn={smsOptIn} marketing={marketing} courses={courses} errors={errors} /> */}
               </div>
             </div>
           </div>
@@ -106,7 +94,7 @@ const ProfessionalDogGroomerPage: PageComponent = ({ searchParams }) => {
       <div className="container">
         <div className="row justify-content-center bg-desaturated-blue text-white">
           <div className="col-12 col-lg-6 mb-4 px-5" style={{ marginTop: '50px' }}>
-            <BrochureForm gclid={gclid} msclkid={msclkid} buttonText="Download Free Catalog" firstName={firstName} lastName={lastName} emailAddress={emailAddress} emailOptIn={emailOptIn} telephoneNumber={telephoneNumber} smsOptIn={smsOptIn} marketing={marketing} courses={courses} errors={errors} />
+            {/* <BrochureForm gclid={gclid} msclkid={msclkid} buttonText="Download Free Catalog" firstName={firstName} lastName={lastName} emailAddress={emailAddress} emailOptIn={emailOptIn} telephoneNumber={telephoneNumber} smsOptIn={smsOptIn} marketing={marketing} courses={courses} errors={errors} /> */}
           </div>
         </div>
       </div>

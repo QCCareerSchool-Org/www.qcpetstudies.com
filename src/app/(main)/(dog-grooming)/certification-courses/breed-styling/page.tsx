@@ -1,16 +1,20 @@
-import { Metadata } from 'next';
-import Image, { StaticImageData } from 'next/image';
+import type { Metadata } from 'next';
+import type { StaticImageData } from 'next/image';
+import Image from 'next/image';
 import Link from 'next/link';
 
 import { ToolsToSucceedSection } from './ToolsToSucceedSection';
-import { PageComponent } from '@/app/serverComponent';
-import { GuaranteeSection } from '@/components/GuaranteeSection';
-import { PriceSection } from '@/components/PriceSection';
+import type { PageComponent } from '@/app/serverComponent';
+import { BackgroundImage } from '@/components/backgroundImage';
+import { GuaranteeSection } from '@/components/guaranteeSection';
+import { PriceSection } from '@/components/priceSection';
 import StylingBackground from '@/images/backgrounds/black-medium-size-poodle.jpg';
 import BreedStylingCertificateImage from '@/images/breed-styling-certificate.png';
 import CourseIconBadge from '@/images/course-icon-badge.svg';
 import CourseMaterials from '@/images/course-materials-breed-styling.jpg';
-import { lookupPrices } from '@/lib/lookupPrices';
+import type { PriceQuery } from '@/lib/fetch';
+import { fetchPrice } from '@/lib/fetch';
+import { getData } from '@/lib/getData';
 
 const courseCodes = [ 'ds' ];
 
@@ -21,21 +25,17 @@ export const metadata: Metadata = {
 };
 
 const BreedStylingPage: PageComponent = async () => {
-
-  const price = await lookupPrices(courseCodes);
+  const { countryCode, provinceCode } = getData();
+  const priceQuery: PriceQuery = { countryCode, provinceCode: provinceCode ?? undefined, courses: courseCodes };
+  const price = await fetchPrice(priceQuery);
+  if (!price) {
+    return null;
+  }
 
   return <>
 
     <section id="top" className="bg-dark">
-      <Image
-        src={StylingBackground}
-        placeholder="blur"
-        alt="dog getting a haircut"
-        priority
-        fill
-        sizes="100vw"
-        style={{ objectFit: 'cover', objectPosition: 'center' }}
-      />
+      <BackgroundImage src={StylingBackground} priority />
       <div className="image-overlay-gradient" />
       <div className="container text-center">
         <Image

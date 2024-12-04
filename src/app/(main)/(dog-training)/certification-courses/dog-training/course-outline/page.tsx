@@ -1,9 +1,11 @@
-import { Metadata } from 'next';
-import Image, { StaticImageData } from 'next/image';
+import type { Metadata } from 'next';
+import type { StaticImageData } from 'next/image';
+import Image from 'next/image';
 import { FaBars } from 'react-icons/fa';
 
 import { UnitSections } from './UnitSections';
-import { PageComponent } from '@/app/serverComponent';
+import type { PageComponent } from '@/app/serverComponent';
+import { BackgroundImage } from '@/components/backgroundImage';
 import CourseOutlineBackground from '@/images/backgrounds/aki-with-man.jpg';
 import calendarIcon from '@/images/calendar.svg';
 import IconTime from '@/images/clock.svg';
@@ -15,20 +17,11 @@ export const metadata: Metadata = {
   alternates: { canonical: '/certification-courses/dog-training/course-outline' },
 };
 
-const CourseOutlinePage: PageComponent = () => {
+const CourseOutlinePage: PageComponent = () => (
 
-  return <>
-
+  <>
     <section id="top" className="bg-dark">
-      <Image
-        src={CourseOutlineBackground}
-        placeholder="blur"
-        alt="Dog with man"
-        priority
-        fill
-        sizes="100vw"
-        style={{ objectFit: 'cover', objectPosition: 'center' }}
-      />
+      <BackgroundImage src={CourseOutlineBackground} priority />
       <div className="image-overlay-gradient" />
       <div className="container text-center">
         <div className="row justify-content-center">
@@ -81,8 +74,7 @@ const CourseOutlinePage: PageComponent = () => {
     </section>
 
     <UnitSections />
-
-  </>;
-};
+  </>
+);
 
 export default CourseOutlinePage;

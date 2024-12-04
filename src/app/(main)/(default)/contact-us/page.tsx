@@ -7,7 +7,7 @@ import ContactUsBackground from './hero-bg.jpg';
 // import ScheduleCallImage from './schedule-call-contact.png';
 import type { PageComponent } from '@/app/serverComponent';
 import { BackgroundImage } from '@/components/backgroundImage';
-import { EmailLink } from '@/components/3emailLink';
+import { EmailLink } from '@/components/emailLink';
 import { LivechatLink } from '@/components/livechatLink';
 import { TelephoneLink } from '@/components/telephoneLink';
 import { getData } from '@/lib/getData';

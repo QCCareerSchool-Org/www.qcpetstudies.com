@@ -17,7 +17,7 @@ type Props = {
   variant?: 'primary' | 'secondary';
 };
 
-export const TestimonialSm: FC<Props> = ({ size = 192, starSize, quotation, name, certification, imageSrc, objectPosition, variant = 'primary' }) => (
+export const TestimonialSmall: FC<Props> = ({ size = 192, starSize, quotation, name, certification, imageSrc, objectPosition, variant = 'primary' }) => (
   <>
     <div className="mb-3 d-flex justify-content-center">
       <ImageCircle src={imageSrc} alt={name} size={size} objectPosition={objectPosition} />
