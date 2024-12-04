@@ -1,10 +1,15 @@
-'use client';
+import { Footer } from './_components/footer';
+import type { LayoutComponent } from '@/app/serverComponent';
+import './landing.scss';
 
-import { LayoutComponent } from '../serverComponent';
-import LandingPageLayout from '@/components/LandingPageLayout';
+/**
+ * The header, if any, should be included on the page
+ */
+const LandingLayout: LayoutComponent = ({ children }) => (
+  <>
+    <main className="flex-shrink-0">{children}</main>
+    <Footer />
+  </>
+);
 
-const Layout: LayoutComponent = ({ children }) => {
-  return <LandingPageLayout link={false} nav="brochure">{children}</LandingPageLayout>;
-};
-
-export default Layout;
+export default LandingLayout;

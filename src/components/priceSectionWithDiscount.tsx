@@ -1,15 +1,16 @@
 'use client';
 
 import { Big } from 'big.js';
-import { FC, ReactElement, ReactNode, useMemo } from 'react';
+import type { FC, ReactElement, ReactNode } from 'react';
+import { useMemo } from 'react';
 import { FaClock, FaLock, FaStar } from 'react-icons/fa';
 
-import { Bar } from './Bar';
-import { GuaranteeModal } from './GuaranteeModal';
+import { Bar } from './bar';
+import { GuaranteeModal } from './guaranteeModal';
 import { PriceSection } from './PriceSection';
+import type { Price } from '@/domain/price';
 import { useToggle } from '@/hooks/useToggle';
 import { formatPrice } from '@/lib/formatPrice';
-import { Price } from '@/models/price';
 
 const iconSize = 24;
 

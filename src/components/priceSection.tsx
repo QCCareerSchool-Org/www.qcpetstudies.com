@@ -5,12 +5,12 @@ import type { FC, ReactNode } from 'react';
 import { useMemo } from 'react';
 import { FaClock, FaLock, FaStar } from 'react-icons/fa';
 
-import { Bar } from './Bar';
+import { Bar } from './bar';
 import { CAPriceMessage } from './CAPriceMessage';
-import { GuaranteeModal } from './GuaranteeModal';
+import { GuaranteeModal } from '@/components/guaranteeModal';
+import type { Price } from '@/domain/price';
 import { useToggle } from '@/hooks/useToggle';
 import { formatPrice } from '@/lib/formatPrice';
-import { Price } from '@/models/price';
 
 const iconSize = 24;
 
@@ -29,7 +29,7 @@ type Props = {
 };
 
 export const PriceSection: FC<Props> = ({ courses, price, doubleGuarantee, variant = 'dark', id = 'tuition', enrollPath = '/', message }) => {
-  const [ popup, toggle ] = useToggle();
+  const [ popup, handleToggle ] = useToggle();
 
   const enrollLink = `https://enroll.qcpetstudies.com${enrollPath}?${courses.map(c => `c=${encodeURIComponent(c)}`).join('&')}`;
 
@@ -114,7 +114,7 @@ export const PriceSection: FC<Props> = ({ courses, price, doubleGuarantee, varia
             </div>
           </div>
         </div>
-        <GuaranteeModal show={popup} doubleGuarantee={doubleGuarantee} toggle={toggle} />
+        <GuaranteeModal show={popup} doubleGuarantee={doubleGuarantee} onToggle={handleToggle} />
       </section>
     </>
   );

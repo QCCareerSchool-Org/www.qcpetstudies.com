@@ -1,6 +1,6 @@
-import { FC } from 'react';
+import type { FC } from 'react';
 
-import { Testimonial } from './Testimonial';
+import { Testimonial } from './testimonial';
 import HailieSavage from '@/images/testimonials/hailie-savage.jpg';
 
 export const TestimonialHailieSavage: FC = () => (

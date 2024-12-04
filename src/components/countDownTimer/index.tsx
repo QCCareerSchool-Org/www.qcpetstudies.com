@@ -5,9 +5,10 @@ import { useEffect, useState } from 'react';
 
 import { Banner } from './banner';
 import { getParts } from './getParts';
-import { isGBPCountry } from '@/lib/address';
+import { gbpCountry } from '@/lib/currencies';
 
 type Props = {
+  date: number;
   countryCode: string;
 };
 
@@ -25,8 +26,8 @@ type Props = {
 
 const cyberMondayStartDate = Date.UTC(2024, 11, 1, 8);
 
-export const CountDownTimer: FC<Props> = ({ countryCode }) => {
-  const [ currentDate, setCurrentDate ] = useState(0);
+export const CountDownTimer: FC<Props> = ({ date, countryCode }) => {
+  const [ currentDate, setCurrentDate ] = useState(date);
 
   const [ bannerStartDate, countDownStartDate, endDate ] = currentDate >= cyberMondayStartDate
     ? [ cyberMondayStartDate, Date.UTC(2024, 11, 6, 8), Date.UTC(2024, 11, 7, 8) ]
@@ -34,8 +35,6 @@ export const CountDownTimer: FC<Props> = ({ countryCode }) => {
 
   // keep track of the current time each second
   useEffect(() => {
-    setCurrentDate(new Date().getTime());
-
     const id = setInterval(() => {
       setCurrentDate(d => d + 1000);
     }, 1000);
@@ -52,7 +51,7 @@ export const CountDownTimer: FC<Props> = ({ countryCode }) => {
 
     const showTimer = currentDate >= countDownStartDate;
 
-    const discount = isGBPCountry(countryCode) ? '£400' : '$400';
+    const discount = gbpCountry(countryCode) ? '£400' : '$400';
 
     const message = showTimer
       ? <RegularMessage cyberMonday={currentDate >= cyberMondayStartDate} discount={discount} />

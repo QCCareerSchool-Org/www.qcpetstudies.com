@@ -1,6 +1,8 @@
-import { Metadata } from 'next';
-import { PageComponent } from '../../serverComponent';
-import { EmailAddress } from '@/components/EmailAddress';
+import type { Metadata } from 'next';
+
+import type { PageComponent } from '../../serverComponent';
+import styles from '../terms.module.scss';
+import { EmailLink } from '@/components/3emailLink';
 
 export const metadata: Metadata = {
   title: 'Privacy Policy',
@@ -9,7 +11,7 @@ export const metadata: Metadata = {
 };
 
 const TermsGBPage: PageComponent = () => (
-  <>
+  <div className={styles.terms}>
     <h1>Privacy Policy</h1>
     <h2>What information do we collect?</h2>
     <p>We collect information from you when you register on our site, place an order, subscribe to our newsletter or respond to a survey.</p>
@@ -42,10 +44,10 @@ const TermsGBPage: PageComponent = () => (
     <h2>Contacting Us</h2>
     <p>If there are any questions regarding this privacy policy you may contact us using the information below.</p>
     <p>QC Quality of Course Ltd<br />R+<br />2 Blagrave Street<br />READING<br />RG1 1AZ</p>
-    <p>Email: <EmailAddress /></p>
+    <p>Email: <EmailLink /></p>
     <p>Phone: 0800&nbsp;066&nbsp;4734</p>
     <p><i>This policy is powered by Free Privacy Policy and Rhino Support helpdesk software.</i></p>
-  </>
+  </div>
 );
 
 export default TermsGBPage;

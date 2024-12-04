@@ -12,7 +12,7 @@ import logoInverse from '@/images/qc-pet-horizontal-inverse.svg';
 import logo from '@/images/qc-pet-horizontal.svg';
 import qcLogo from '@/images/qc-white.svg';
 import { isGBPCountry } from '@/lib/address';
-import { gaEvent } from '@/lib/ga';
+import { gaEvent } from '@/lib/gtag';
 import { getTelephoneNumber } from '@/lib/phone';
 
 type Props = {
@@ -136,10 +136,6 @@ const LandingPageLayout: FC<Props> = ({ link = true, href = '/', reloadApp = fal
     </div>
   );
 };
-
-const Copyright: FC<{ termsLink: string }> = ({ termsLink }) => (
-  <>&copy;{new Date().getFullYear()} QC Pet Studies<br /><Link href={termsLink} className="link-primary">Privacy Policy</Link></>
-);
 
 const MainLogo: FC = () => (
   <Image

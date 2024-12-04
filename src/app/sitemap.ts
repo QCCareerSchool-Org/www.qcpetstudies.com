@@ -1,8 +1,8 @@
 import { promises as fs } from 'fs';
-import path from 'path';
 import type { MetadataRoute } from 'next';
+import path from 'path';
 
-const prefix = 'https://www.qcdesignschool.com';
+const prefix = 'https://www.qcpetstudies.com';
 
 const getAppDirectoryPages = async (filePath: string = 'src/app'): Promise<MetadataRoute.Sitemap> => {
   const result: MetadataRoute.Sitemap = [];
@@ -33,13 +33,13 @@ const getPriority = (url: string): number => {
   if (url === prefix) {
     return 1;
   }
-  if (url === `${prefix}/free-catalog`) {
+  if (url === `${prefix}/get-a-course-preview`) {
     return 1;
   }
-  if (url.startsWith(`${prefix}/online-courses`)) {
+  if (url.startsWith(`${prefix}/certification-courses`)) {
     return 0.9;
   }
-  if (url === `${prefix}/about`) {
+  if (url === `${prefix}/about/about-qc-pet-studies`) {
     return 0.8;
   }
   if (url === `${prefix}/contact-us`) {

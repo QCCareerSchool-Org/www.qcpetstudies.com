@@ -1,5 +1,6 @@
-import Image, { StaticImageData } from 'next/image';
-import { FC, PropsWithChildren } from 'react';
+import type { StaticImageData } from 'next/image';
+import Image from 'next/image';
+import type { FC, PropsWithChildren } from 'react';
 
 type Props = {
   name: string;

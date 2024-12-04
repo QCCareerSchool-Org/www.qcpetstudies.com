@@ -1,11 +1,7 @@
-'use client';
+import { useReducer } from 'react';
 
-import { useState } from 'react';
+export const useToggle = (initialState?: boolean): [ value: boolean, toggle: () => void ] => {
+  const [ state, dispatch ] = useReducer(s => !s, initialState ?? false);
 
-export const useToggle = (initial = false): readonly [ boolean, () => void ] => {
-  const [ state, dispatch ] = useState(initial);
-  const toggle = (): void => {
-    dispatch(s => !s);
-  };
-  return [ state, toggle ] as const;
+  return [ state, dispatch ];
 };

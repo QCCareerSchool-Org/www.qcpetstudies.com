@@ -9,6 +9,6 @@ export default function robots(): MetadataRoute.Robots {
         '/*?*playAgain=',
       ],
     },
-    sitemap: 'https://www.qcdesignschool.com/sitemap_index.xml',
+    sitemap: 'https://www.qcpetstudies.com/sitemap_index.xml',
   };
 }

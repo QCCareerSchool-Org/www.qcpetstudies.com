@@ -1,6 +1,6 @@
-import { FC } from 'react';
+import type { FC } from 'react';
 
-import { TestimonialSm } from './TestimonialSm';
+import { TestimonialSm } from './testimonialSm';
 import KaylaTorraville from '@/images/testimonials-sm/kayla-torraville.jpg';
 
 type Props = {

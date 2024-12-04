@@ -1,4 +1,4 @@
-import { RawEnrollment } from '@/models/enrollment';
+import { Enrollment } from '@/domain/enrollment';
 
 const urls = {
   dg: 'https://hooks.zapier.com/hooks/catch/1909320/358g42p',
@@ -6,7 +6,7 @@ const urls = {
   default: 'https://hooks.zapier.com/hooks/catch/1909320/35iyjpc',
 };
 
-const getUrl = (enrollment: RawEnrollment): string => {
+const getUrl = (enrollment: Enrollment): string => {
   return enrollment.courses.some(c => c.code.toUpperCase() === 'DG')
     ? urls.dg
     : enrollment.courses.some(c => c.code.toUpperCase() === 'DT')
@@ -14,18 +14,31 @@ const getUrl = (enrollment: RawEnrollment): string => {
       : urls.default;
 };
 
-export const trustPulseEnrollment = async (enrollment: RawEnrollment, ipAddress: string | null): Promise<void> => {
-  const body = {
+export const trustPulseEnrollment = async (enrollment: Enrollment, ipAddress: string | null): Promise<void> => {
+  const payload: Payload = {
     firstName: enrollment.firstName,
     emailAddress: enrollment.emailAddress,
     postalCode: enrollment.postalCode,
     ipAddress,
   };
 
-  const response = await fetch(getUrl(enrollment), {
+  const url = getUrl(enrollment);
+
+  await trustPulse(payload, url);
+};
+
+type Payload = {
+  firstName: string | null;
+  emailAddress: string | null;
+  postalCode: string | null;
+  ipAddress: string | null;
+};
+
+const trustPulse = async (payload: Payload, url: string): Promise<void> => {
+  const response = await fetch(url, {
     method: 'post',
     // headers: { 'Content-Type': 'application/json' }, // CORS doesn't allow Content-Type header
-    body: JSON.stringify(body),
+    body: JSON.stringify(payload),
   });
 
   if (!response.ok) {
@@ -34,3 +47,4 @@ export const trustPulseEnrollment = async (enrollment: RawEnrollment, ipAddress:
 
   await response.json();
 };
+

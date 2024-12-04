@@ -4,7 +4,6 @@ module.exports = {
     'node': true,
     'browser': true,
     'commonjs': true,
-    'jest/globals': true,
   },
   parser: '@typescript-eslint/parser',
   parserOptions: {
@@ -17,7 +16,6 @@ module.exports = {
   },
   plugins: [
     '@typescript-eslint',
-    'jest',
   ],
   extends: [
     'next/core-web-vitals',
@@ -27,8 +25,6 @@ module.exports = {
     'plugin:react/recommended',
     'plugin:import/recommended',
     'plugin:import/typescript',
-    'plugin:jest/recommended',
-    'plugin:jest/style',
   ],
   rules: {
     // standard rules -- best practices
@@ -118,6 +114,7 @@ module.exports = {
     'object-curly-newline': 'error',
     'object-curly-spacing': 'off', // handled by @typescript-eslint plugin
     'object-property-newline': [ 'error', { allowAllPropertiesOnSameLine: true } ],
+    'object-shorthand': 'error',
     'one-var': [ 'error', 'never' ],
     'padding-line-between-statements': [
       'error',
@@ -149,6 +146,7 @@ module.exports = {
     'yield-star-spacing': 'error',
 
     // @typescript-eslint rules
+    '@typescript-eslint/consistent-type-imports': 'error',
     '@typescript-eslint/explicit-function-return-type': 'off', // included in "overrides" section
     '@typescript-eslint/explicit-member-accessibility': 'off', // included in "overrides" section
     '@typescript-eslint/member-delimiter-style': 'error',
@@ -196,7 +194,12 @@ module.exports = {
     'react/jsx-equals-spacing': 'error',
     'react/jsx-first-prop-new-line': [ 'error', 'multiline' ],
     'react/jsx-fragments': 'error',
-    'react/jsx-handler-names': 'error',
+    'react/jsx-handler-names': [ 'error', {
+      eventHandlerPrefix: 'handle',
+      eventHandlerPropPrefix: 'on',
+      checkLocalVariables: true,
+      checkInlineFunction: true,
+    } ],
     'react/jsx-indent': [ 'error', 2, { checkAttributes: true, indentLogicalExpressions: true } ],
     'react/jsx-indent-props': [ 'error', 2 ],
     'react/jsx-pascal-case': [ 'error', { allowAllCaps: true, allowNamespace: true } ],
@@ -209,10 +212,11 @@ module.exports = {
     'react/self-closing-comp': 'error',
 
     // import rules
-    'import/order': [ 'error', { alphabetize: { order: 'asc', caseInsensitive: true } } ],
-
-    // jest rules
-    'jest/consistent-test-it': [ 'error', { fn: 'it' } ],
+    'import/order': [ 'error', {
+      'alphabetize': { order: 'asc', orderImportKind: 'asc', caseInsensitive: true },
+      'groups': [ [ 'builtin', 'external' ], [ 'internal', 'parent', 'sibling', 'index', 'object', 'unknown' ] ],
+      'newlines-between': 'always',
+    } ],
   },
   overrides: [
     {

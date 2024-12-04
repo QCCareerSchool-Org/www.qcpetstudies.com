@@ -6,7 +6,7 @@ import FlagCA from '@/images/flags/ca.svg';
 // import FlagNZ from '@/images/flags/nz.svg';
 import FlagUS from '@/images/flags/us.svg';
 
-export const getFlagImageData = (countryCode?: string): { src: StaticImageData; alt: string } | null => {
+export const getFlag = (countryCode?: string): { src: StaticImageData; alt: string } | null => {
   switch (countryCode) {
     case 'CA':
       return { src: FlagCA as StaticImageData, alt: 'CA' };

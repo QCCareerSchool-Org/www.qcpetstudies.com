@@ -1,6 +1,8 @@
-import { Metadata } from 'next';
-import { PageComponent } from '@/app/serverComponent';
-import { EmailAddress } from '@/components/EmailAddress';
+import type { Metadata } from 'next';
+
+import styles from '../terms.module.scss';
+import type { PageComponent } from '@/app/serverComponent';
+import { EmailLink } from '@/components/3emailLink';
 
 export const metadata: Metadata = {
   title: 'Privacy Policy',
@@ -9,8 +11,7 @@ export const metadata: Metadata = {
 };
 
 const TermsPage: PageComponent = () => (
-  <>
-
+  <div className={styles.terms}>
     <h1>Privacy Policy</h1>
     <h2>What information do we collect?</h2>
     <p>We collect information from you when you register on our site, place an order, subscribe to our newsletter or respond to a survey.</p>
@@ -45,9 +46,9 @@ const TermsPage: PageComponent = () => (
     <h2>Contacting Us</h2>
     <p>If there are any questions regarding this privacy policy you may contact us using the information below.</p>
     <p>QC Career School<br />38 McArthur Ave<br />Ottawa ON&nbsp; K1L 6R2<br />Canada</p>
-    <p>Email: <EmailAddress /><br />Phone: 1-613-749-8248</p>
+    <p>Email: <EmailLink /><br />Phone: 1-613-749-8248</p>
     <p><i>This policy is powered by Free Privacy Policy and Rhino Support helpdesk software.</i></p>
-  </>
+  </div>
 );
 
 export default TermsPage;

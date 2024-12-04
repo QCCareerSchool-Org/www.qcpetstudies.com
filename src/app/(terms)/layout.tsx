@@ -1,4 +1,4 @@
-import { LayoutComponent } from '../serverComponent';
+import type { LayoutComponent } from '../serverComponent';
 
 const TextLayout: LayoutComponent = ({ children }) => (
   <main className="textLayout">

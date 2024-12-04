@@ -1,11 +1,11 @@
 'use client';
 
 import Image from 'next/image';
+import type { FC } from 'react';
 
-import { FC } from 'react';
-import { TestimonialSmCaseyBechard } from '@/components/testimonials-sm/TestimonialSmMelodyCaseyBechard';
-import { TestimonialSmKaylaTorraville } from '@/components/testimonials-sm/TestimonialSmMelodyKaylaTorraville';
-import { TestimonialSmMelodyMason } from '@/components/testimonials-sm/TestimonialSmMelodyMason';
+import { TestimonialSmCaseyBechard } from '@/components/testimonialsSmall/caseyBechard';
+import { TestimonialSmKaylaTorraville } from '@/components/testimonialsSmall/kaylaTorraville';
+import { TestimonialSmMelodyMason } from '@/components/testimonialsSmall/melodyMason';
 import { useScreenWidth } from '@/hooks/useScreenWidth';
 import TestiminialBackground from '@/images/backgrounds/testimonials-bg.jpg';
 

@@ -8,7 +8,7 @@ import { v1 } from 'uuid';
 
 import DownloadIcon from '../download.svg';
 import styles from './index.module.scss';
-import { CourseCode } from '@/models/courseCode';
+import { CourseCode } from '@/domain/courseCode';
 
 type Props = {
   onCourseChange?: (e: ChangeEvent<HTMLInputElement>, courseCode: CourseCode) => void;

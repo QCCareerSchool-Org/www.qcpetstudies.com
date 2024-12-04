@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import { FC, MouseEventHandler } from 'react';
 
-import { gaEvent } from '@/lib/ga';
+import { gaEvent } from '@/lib/gtag';
 
 export const TakeTheFirstStepsSection: FC = () => {
 
