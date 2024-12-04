@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 
 import { PageSections } from './PageSections';
 import type { PageComponent } from '@/app/serverComponent';
-import { DGTutorSection } from '@/components/DGTutorSection';
+import { DGTutorSection } from '@/components/tutorSectionDG';
 import { PriceSectionWithDiscount } from '@/components/priceSectionWithDiscount';
 import type { PriceQuery } from '@/lib/fetch';
 import { fetchPrice } from '@/lib/fetch';

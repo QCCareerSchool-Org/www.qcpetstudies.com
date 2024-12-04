@@ -12,7 +12,7 @@ import CertificationGoldImage from './cgt-light-gold.svg';
 import GroomingTechnicianBackground from './hero.jpg';
 import { GroomingTechOutlineSection } from './outline';
 import { BackgroundImage } from '@/components/backgroundImage';
-import { DGTutorSection } from '@/components/DGTutorSection';
+import { DGTutorSection } from '@/components/tutorSectionDG';
 import { GuaranteeSection } from '@/components/GuaranteeSection';
 import { PriceSection } from '@/components/PriceSection';
 import { SectionBackground } from '@/components/SectionBackground';

@@ -1,4 +1,5 @@
-import { StaticImageData } from 'next/image';
+import type { StaticImageData } from 'next/image';
+
 import LisaImage from './lisa.jpg';
 import MariImage from './mari.jpg';
 import PaddyImage from './paddy.jpg';

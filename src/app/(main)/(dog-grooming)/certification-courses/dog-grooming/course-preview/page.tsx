@@ -7,7 +7,7 @@ import { BsBook } from 'react-icons/bs';
 
 import { CourseSyllabusSection } from './CouseSyllabusSection';
 import IDGPCertificationLogo from '@/components/certifications/IDGP-certification-gold.svg';
-import { DGTutorSection } from '@/components/DGTutorSection';
+import { DGTutorSection } from '@/components/tutorSectionDG';
 import { PriceSectionWithDiscount } from '@/components/priceSectionWithDiscount';
 import AssignmentBackground from '@/images/backgrounds/your-career-bg.jpg';
 import type { PriceQuery } from '@/lib/fetch';

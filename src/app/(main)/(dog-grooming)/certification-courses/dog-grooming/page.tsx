@@ -11,7 +11,7 @@ import { Accordion } from '@/components/accordion';
 import { AccordionItem } from '@/components/accordion/accordionItem';
 import { BackgroundImage } from '@/components/backgroundImage';
 import CertificationGoldImage from '@/components/certifications/IDGP-certification-gold.svg';
-import { DGTutorSection } from '@/components/DGTutorSection';
+import { DGTutorSection } from '@/components/tutorSectionDG';
 import { GuaranteeSection } from '@/components/guaranteeSection';
 import { PriceSection } from '@/components/priceSection';
 import { VirtualCommunitySection } from '@/components/virtualCommunitySection';
