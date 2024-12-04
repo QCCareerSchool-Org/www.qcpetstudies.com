@@ -1,9 +1,9 @@
-import { FC } from 'react';
+import type { FC } from 'react';
 
 import styles from './comparisonTable.module.scss';
-import { Check } from '@/components/Check';
+import { Check } from '@/components/check';
+import type { Price } from '@/domain/price';
 import { formatPrice } from '@/lib/formatPrice';
-import { Price } from '@/domain/price';
 
 const dgColor = '#ff0074';
 const gtColor = '#061F3A';

@@ -1,12 +1,9 @@
-'use client';
-
 import Image from 'next/image';
 import Link from 'next/link';
-import { FC } from 'react';
+import type { FC } from 'react';
 
 import { Accordion } from '@/components/accordion';
-import { AccordionItem } from '@/components/accordion/AccordionItem';
-import { useScreenWidth } from '@/hooks/useScreenWidth';
+import { AccordionItem } from '@/components/accordion/accordionItem';
 import IntroductoryUnitsImage from '@/images/dt-outline-part-1-image.jpg';
 import ApplyingTrainingPrinciplesImage from '@/images/dt-outline-part-2-image.jpg';
 import TeachingPeopleImage from '@/images/dt-outline-part-3-image.jpg';
@@ -14,10 +11,8 @@ import DogTrainingBusinessImage from '@/images/dt-outline-part-4-image.jpg';
 import CPDTPrepImage from '@/images/german-shepherd-puppy-sitting.jpg';
 
 export const CourseOutlineSection: FC = () => {
+  let eventKey = 0;
 
-  const screenWidth = useScreenWidth();
-
-  const lgOrGreater = screenWidth >= 992;
   return (
     <section className="bg-lighter">
       <div className="container">
@@ -28,7 +23,7 @@ export const CourseOutlineSection: FC = () => {
           </div>
         </div>
         <Accordion>
-          <AccordionItem heading="Introductory Units">
+          <AccordionItem eventKey={eventKey++} heading="Introductory Units">
             <div className="row">
               <div className="col-12 col-lg-6 col-xl-7">
                 <p>Before you learn about how to train dogs, you have to learn about dogs. This includes breed types and characteristics, how dogs communicate with each other and with humans, what constitutes normal and abnormal canine behaviors, and&mdash;most importantly&mdash;how dogs actually learn. Once you become an expert in canine behavior and communication, you'll be in excellent shape to start working with dogs to teach new behaviors and correct unwanted behaviors!</p>
@@ -48,19 +43,12 @@ export const CourseOutlineSection: FC = () => {
                 </ul>
                 <p className="mb-0"><Link href="/certification-courses/dog-training/course-outline" className="link-primary">View a more-detailed course syllabus</Link></p>
               </div>
-              {lgOrGreater && (
-                <div className="col-6 col-xl-5">
-                  <Image
-                    src={IntroductoryUnitsImage}
-                    alt="Dog runing"
-                    sizes="100vw"
-                    style={{ width: '100%', height: 'auto' }}
-                  />
-                </div>
-              )}
+              <div className="col-6 col-xl-5 d-none d-lg-block">
+                <Image src={IntroductoryUnitsImage} alt="Dog runing" sizes="100vw" style={{ width: '100%', height: 'auto' }} />
+              </div>
             </div>
           </AccordionItem>
-          <AccordionItem heading="Applying Training Principles">
+          <AccordionItem eventKey={eventKey++} heading="Applying Training Principles">
             <div className="row">
               <div className="col-12 col-lg-6 col-xl-7">
                 <p>Now that you have a deep understanding of how dogs learn and communicate, you're ready to start applying training techniques to teach new behaviors and address unwanted behaviors. This course teaches scientifically-proven techniques and methods based on learning theory. You'll learn how to apply classical and operant conditioning principles to any type of training situation. Always remember: There is no magic formula that works for every dog, but every dog has a formula that will work for them.</p>
@@ -83,19 +71,12 @@ export const CourseOutlineSection: FC = () => {
                 </ul>
                 <p className="mb-0"><Link href="/certification-courses/dog-training/course-outline" className="link-primary">View a more-detailed course syllabus</Link></p>
               </div>
-              {lgOrGreater && (
-                <div className="col-6 col-xl-5">
-                  <Image
-                    src={ApplyingTrainingPrinciplesImage}
-                    alt="Dog learning from human"
-                    sizes="100vw"
-                    style={{ width: '100%', height: 'auto' }}
-                  />
-                </div>
-              )}
+              <div className="col-6 col-xl-5 d-none d-lg-block">
+                <Image src={ApplyingTrainingPrinciplesImage} alt="Dog learning from human" sizes="100vw" style={{ width: '100%', height: 'auto' }} />
+              </div>
             </div>
           </AccordionItem>
-          <AccordionItem heading="Teaching People">
+          <AccordionItem eventKey={eventKey++} heading="Teaching People">
             <div className="row">
               <div className="col-12 col-lg-6 col-xl-7">
                 <p>A dog trainer's job isn't just to train dogs. As a trainer a big part of your job will be to teach people how to train their own dogs!  This requires a unique set of skills that you'll have to develop. You have to understand how people learn and how to communicate your expertise to dog owners who are looking for help. This part of the dog trainer course will help you learn those skills!</p>
@@ -118,19 +99,12 @@ export const CourseOutlineSection: FC = () => {
                 </ul>
                 <p className="mb-0"><Link href="/certification-courses/dog-training/course-outline" className="link-primary">View a more-detailed course syllabus</Link></p>
               </div>
-              {lgOrGreater && (
-                <div className="col-6 col-xl-5">
-                  <Image
-                    src={TeachingPeopleImage}
-                    alt="person training dog"
-                    sizes="100vw"
-                    style={{ width: '100%', height: 'auto' }}
-                  />
-                </div>
-              )}
+              <div className="col-6 col-xl-5 d-none d-lg-block">
+                <Image src={TeachingPeopleImage} alt="person training dog" sizes="100vw" style={{ width: '100%', height: 'auto' }} />
+              </div>
             </div>
           </AccordionItem>
-          <AccordionItem heading="Starting your Dog Training Business">
+          <AccordionItem eventKey={eventKey++} heading="Starting your Dog Training Business">
             <div className="row">
               <div className="col-12 col-lg-6 col-xl-7">
                 <p>You've learned and practiced all the skills you need to successfully work as a dog trainer. Now it's time to turn your finely honed skills into a business! The business training offered in this course is optional. However, this training will be hugely beneficial to your career if you intend to start your own training business, or if you're looking to get a job working for an established trainer.</p>
@@ -145,19 +119,12 @@ export const CourseOutlineSection: FC = () => {
                 </ul>
                 <p className="mb-0"><Link href="/certification-courses/dog-training/course-outline" className="link-primary">View a more-detailed course syllabus</Link></p>
               </div>
-              {lgOrGreater && (
-                <div className="col-6 col-xl-5">
-                  <Image
-                    src={DogTrainingBusinessImage}
-                    alt="person working on laptop"
-                    sizes="100vw"
-                    style={{ width: '100%', height: 'auto' }}
-                  />
-                </div>
-              )}
+              <div className="col-6 col-xl-5 d-none d-lg-block">
+                <Image src={DogTrainingBusinessImage} alt="person working on laptop" sizes="100vw" style={{ width: '100%', height: 'auto' }} />
+              </div>
             </div>
           </AccordionItem>
-          <AccordionItem heading="CPDT Exam Prep">
+          <AccordionItem eventKey={eventKey++} heading="CPDT Exam Prep">
             <div className="row">
               <div className="col-12 col-lg-6 col-xl-7">
                 <p>Many professional dog trainers strive to pass the Certified Professional Dog Trainer (CPDT) exam from the Certification Council for Professional Dog Trainers. The CPDT is the gold-standard for dog trainers who have the knowledge and skills to train dogs using scientifically-proven methods. Your QC Dog training course teaches you everything you need to know to pass your CPDT exam. As an added bonus, you have access to an extra optional unit to help prepare you to write the CPDT exam! </p>
@@ -169,16 +136,9 @@ export const CourseOutlineSection: FC = () => {
                 </ul>
                 <p className="mb-0"><Link href="/certification-courses/dog-training/course-outline" className="link-primary">View a more-detailed course syllabus</Link></p>
               </div>
-              {lgOrGreater && (
-                <div className="col-6 col-xl-5">
-                  <Image
-                    src={CPDTPrepImage}
-                    alt="German Shepherd puppy"
-                    sizes="100vw"
-                    style={{ width: '100%', height: 'auto' }}
-                  />
-                </div>
-              )}
+              <div className="col-6 col-xl-5 d-none d-lg-block">
+                <Image src={CPDTPrepImage} alt="German Shepherd puppy" sizes="100vw" style={{ width: '100%', height: 'auto' }} />
+              </div>
             </div>
           </AccordionItem>
         </Accordion>

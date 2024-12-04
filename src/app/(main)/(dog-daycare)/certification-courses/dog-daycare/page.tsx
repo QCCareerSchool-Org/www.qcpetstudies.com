@@ -6,9 +6,9 @@ import { CourseOutlineSection } from './CourseOutlineSection';
 import { IncludedSection } from './IncludedSection';
 import type { PageComponent } from '@/app/serverComponent';
 import CertificationGoldImage from '@/components/certifications/IDCP-certification-yellow.svg';
-import { DDTutorSection } from '@/components/ddTutorSection';
 import { GuaranteeSection } from '@/components/guaranteeSection';
 import { PriceSection } from '@/components/priceSection';
+import { TutorSectionDD } from '@/components/tutorSectionDD';
 import { VirtualCommunitySection } from '@/components/virtualCommunitySection';
 import DogCareBackground from '@/images/backgrounds/jack-russel-terrier-in-handbag.jpg';
 import GuaranteeIcon from '@/images/course-overview-icons/guarantee.svg';
@@ -126,7 +126,7 @@ const DogCarePage: PageComponent = async () => {
 
       <VirtualCommunitySection />
 
-      <DDTutorSection />
+      <TutorSectionDD />
 
     </>
   );

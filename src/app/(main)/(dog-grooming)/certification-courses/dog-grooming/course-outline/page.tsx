@@ -1,12 +1,13 @@
-import { Metadata } from 'next';
-import Image, { StaticImageData } from 'next/image';
+import type { Metadata } from 'next';
+import type { StaticImageData } from 'next/image';
+import Image from 'next/image';
 import Link from 'next/link';
 import { FaBars } from 'react-icons/fa';
 
 import { CustomStyle } from './CustomStyle';
-import { PageComponent } from '@/app/serverComponent';
+import type { PageComponent } from '@/app/serverComponent';
 import { Accordion } from '@/components/accordion';
-import { AccordionItem } from '@/components/accordion/AccordionItem';
+import { AccordionItem } from '@/components/accordion/accordionItem';
 import CourseOutlineBackground from '@/images/backgrounds/course-outline.jpg';
 import calendarIcon from '@/images/calendar.svg';
 import IconTime from '@/images/clock.svg';

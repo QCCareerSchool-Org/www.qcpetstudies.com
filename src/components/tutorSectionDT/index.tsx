@@ -9,7 +9,7 @@ type Props = {
   id?: string;
 };
 
-export const DTTutorSection: FC<Props> = ({ className, id = 'tutors' }) => {
+export const TutorSectionDT: FC<Props> = ({ className, id = 'tutors' }) => {
 
   return <>
     <div id={id} className="sectionAnchor" />

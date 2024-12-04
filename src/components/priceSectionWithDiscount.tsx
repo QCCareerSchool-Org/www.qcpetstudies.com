@@ -7,7 +7,7 @@ import { FaClock, FaLock, FaStar } from 'react-icons/fa';
 
 import { Bar } from './bar';
 import { GuaranteeModal } from './guaranteeModal';
-import { PriceSection } from './PriceSection';
+import { PriceSection } from './priceSection';
 import type { Price } from '@/domain/price';
 import { useToggle } from '@/hooks/useToggle';
 import { formatPrice } from '@/lib/formatPrice';

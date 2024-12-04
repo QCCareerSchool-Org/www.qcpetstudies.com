@@ -8,7 +8,7 @@ type Props = {
   id?: string;
 };
 
-export const DGTutorSection: FC<Props> = ({ className, id = 'tutors' }) => (
+export const TutorSectionDG: FC<Props> = ({ className, id = 'tutors' }) => (
   <>
     <div id={id} className="sectionAnchor" />
     <section className={className}>

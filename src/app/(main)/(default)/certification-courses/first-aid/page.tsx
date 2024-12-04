@@ -4,7 +4,7 @@ import Link from 'next/link';
 
 import type { PageComponent } from '@/app/serverComponent';
 import { BackgroundImage } from '@/components/backgroundImage';
-import { PriceSection } from '@/components/PriceSection';
+import { PriceSection } from '@/components/priceSection';
 import FirstAidBackground from '@/images/backgrounds/hero-first-aid-bg.jpg';
 import CourseMaterials from '@/images/course-materials-first-aid.jpg';
 import dogLooking from '@/images/dog-looking.jpg';

@@ -11,9 +11,9 @@ import { Accordion } from '@/components/accordion';
 import { AccordionItem } from '@/components/accordion/accordionItem';
 import { BackgroundImage } from '@/components/backgroundImage';
 import CertificationGoldImage from '@/components/certifications/IDGP-certification-gold.svg';
-import { DGTutorSection } from '@/components/tutorSectionDG';
 import { GuaranteeSection } from '@/components/guaranteeSection';
 import { PriceSection } from '@/components/priceSection';
+import { TutorSectionDG } from '@/components/tutorSectionDG';
 import { VirtualCommunitySection } from '@/components/virtualCommunitySection';
 import DogGroomingBackground from '@/images/backgrounds/bichon-frise-getting-haircut.jpg';
 import GuaranteeIcon from '@/images/course-overview-icons/guarantee.svg';
@@ -152,7 +152,7 @@ const DogGroomingPage: PageComponent = async () => {
 
       <VirtualCommunitySection />
 
-      <DGTutorSection />
+      <TutorSectionDG />
     </>
   );
 };

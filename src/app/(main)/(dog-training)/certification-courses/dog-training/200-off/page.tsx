@@ -1,6 +1,6 @@
 import DogTrainingCoursePreviewPage from '../course-preview/page';
-import { PageComponent } from '@/app/serverComponent';
-import { DeadlineFunnelScript } from '@/components/DeadlineFunnelScript';
+import type { PageComponent } from '@/app/serverComponent';
+import { DeadlineFunnelScript } from '@/components/deadlineFunnelScript';
 
 const Page: PageComponent = ({ searchParams }) => {
   return (

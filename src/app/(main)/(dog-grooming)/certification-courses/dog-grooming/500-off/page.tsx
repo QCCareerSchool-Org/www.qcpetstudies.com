@@ -1,7 +1,7 @@
 import GroomingCoursePreviewPage from '../course-preview/page';
 import { metadata as rootMetadata } from '../page';
-import { PageComponent } from '@/app/serverComponent';
-import { DeadlineFunnelScript } from '@/components/DeadlineFunnelScript';
+import type { PageComponent } from '@/app/serverComponent';
+import { DeadlineFunnelScript } from '@/components/deadlineFunnelScript';
 export const metadata = { ...rootMetadata, description: '' };
 
 const Page: PageComponent = props => (

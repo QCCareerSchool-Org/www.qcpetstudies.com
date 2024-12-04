@@ -1,6 +1,7 @@
 'use client';
 
-import Image, { StaticImageData } from 'next/image';
+import type { StaticImageData } from 'next/image';
+import Image from 'next/image';
 import type { ChangeEvent, ChangeEventHandler, FC, FormEventHandler, ReactElement } from 'react';
 import { useCallback, useEffect, useId, useRef, useState } from 'react';
 import { GoogleReCaptcha } from 'react-google-recaptcha-v3';
@@ -8,7 +9,7 @@ import { v1 } from 'uuid';
 
 import DownloadIcon from '../download.svg';
 import styles from './index.module.scss';
-import { CourseCode } from '@/domain/courseCode';
+import type { CourseCode } from '@/domain/courseCode';
 
 type Props = {
   onCourseChange?: (e: ChangeEvent<HTMLInputElement>, courseCode: CourseCode) => void;
@@ -89,6 +90,14 @@ export const BrevoForm: FC<Props> = props => {
     return true;
   };
 
+  const handleDGSelection: ChangeEventHandler<HTMLInputElement> = e => {
+    props.onCourseChange?.(e, 'dg');
+  };
+
+  const handleDTSelection: ChangeEventHandler<HTMLInputElement> = e => {
+    props.onCourseChange?.(e, 'dt');
+  };
+
   return (
     <form action="https://leads.qccareerschool.com" method="post" className={styles.brochureForm} onSubmit={handleSubmit}>
       <input type="hidden" name="g-recaptcha-response" value={token} />
@@ -110,11 +119,11 @@ export const BrevoForm: FC<Props> = props => {
         <div className="mb-3 mb-sm-4">
           <label className="mb-1">Which course are you interested in?</label>
           <div className="form-check">
-            <input onChange={e => props.onCourseChange?.(e, 'dg')} checked={props.courseCodes?.includes('dg')} className="form-check-input" type="radio" id="courseDG" name="course" value="dg" />
+            <input onChange={handleDGSelection} checked={props.courseCodes?.includes('dg')} className="form-check-input" type="radio" id="courseDG" name="course" value="dg" />
             <label className="form-check-label" htmlFor="courseDG">Dog Grooming</label>
           </div>
           <div className="form-check">
-            <input onChange={e => props.onCourseChange?.(e, 'dt')} checked={props.courseCodes?.includes('dt')} className="form-check-input" type="radio" id="courseDT" name="course" value="dt" />
+            <input onChange={handleDTSelection} checked={props.courseCodes?.includes('dt')} className="form-check-input" type="radio" id="courseDT" name="course" value="dt" />
             <label className="form-check-label" htmlFor="courseDT">Dog Training</label>
           </div>
         </div>

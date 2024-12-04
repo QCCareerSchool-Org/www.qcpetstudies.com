@@ -2,8 +2,8 @@ import type { Metadata } from 'next';
 
 import { PageSections } from './PageSections';
 import type { PageComponent } from '@/app/serverComponent';
-import { DGTutorSection } from '@/components/tutorSectionDG';
 import { PriceSectionWithDiscount } from '@/components/priceSectionWithDiscount';
+import { TutorSectionDG } from '@/components/tutorSectionDG';
 import type { PriceQuery } from '@/lib/fetch';
 import { fetchPrice } from '@/lib/fetch';
 import { getData } from '@/lib/getData';
@@ -38,7 +38,7 @@ const Page: PageComponent = async ({ searchParams }) => {
         message={<>Includes everything you need to get started with a <strong className="text-primary">WGB-exclusive $500 discount!</strong></>}
       />
 
-      <DGTutorSection className="bg-light" />
+      <TutorSectionDG className="bg-light" />
     </>
   );
 };

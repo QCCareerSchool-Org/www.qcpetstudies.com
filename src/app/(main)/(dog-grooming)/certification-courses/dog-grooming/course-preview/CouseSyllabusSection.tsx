@@ -4,7 +4,7 @@ import type { FC, ReactElement } from 'react';
 import { FaBars, FaPlay } from 'react-icons/fa';
 
 import { Bar } from '@/components/bar';
-import { TabGroup } from '@/components/TabGroup';
+import { TabGroup } from '@/components/tabGroup';
 
 export const CourseSyllabusSection: FC = () => {
   return (

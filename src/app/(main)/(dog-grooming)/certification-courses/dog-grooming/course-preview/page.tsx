@@ -7,8 +7,8 @@ import { BsBook } from 'react-icons/bs';
 
 import { CourseSyllabusSection } from './CouseSyllabusSection';
 import IDGPCertificationLogo from '@/components/certifications/IDGP-certification-gold.svg';
-import { DGTutorSection } from '@/components/tutorSectionDG';
 import { PriceSectionWithDiscount } from '@/components/priceSectionWithDiscount';
+import { TutorSectionDG } from '@/components/tutorSectionDG';
 import AssignmentBackground from '@/images/backgrounds/your-career-bg.jpg';
 import type { PriceQuery } from '@/lib/fetch';
 import { fetchPrice } from '@/lib/fetch';
@@ -110,7 +110,7 @@ const GroomingCoursePreviewPage: FC<Props> = async ({ enrollPath }) => {
 
       <PriceSectionWithDiscount courses={courseCodes} price={price} doubleGuarantee={true} enrollPath={enrollPath} />
 
-      <DGTutorSection className="bg-light" />
+      <TutorSectionDG className="bg-light" />
 
       <section>
         <div className="container">

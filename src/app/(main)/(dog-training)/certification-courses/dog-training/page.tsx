@@ -9,9 +9,9 @@ import { OntarioOnlySection } from './OntarioOnlySection';
 import type { PageComponent } from '@/app/serverComponent';
 import { BackgroundImage } from '@/components/backgroundImage';
 import CertificationGoldImage from '@/components/certifications/IDTP-certification-yellow.svg';
-import { DTTutorSection } from '@/components/dtTutorSection';
 import { GuaranteeSection } from '@/components/guaranteeSection';
 import { PriceSection } from '@/components/priceSection';
+import { TutorSectionDT } from '@/components/tutorSectionDT';
 import { VirtualCommunitySection } from '@/components/virtualCommunitySection';
 import DTBackgroundImage from '@/images/backgrounds/australian-shepherd-attentive.jpg';
 import GuaranteeIcon from '@/images/course-overview-icons/guarantee.svg';
@@ -107,7 +107,7 @@ const DogTrainingPage: PageComponent = async () => {
       <div id="outline" className="sectionAnchor" />
       <CourseOutlineSection />
 
-      <DTTutorSection />
+      <TutorSectionDT />
 
       <OntarioOnlySection />
 

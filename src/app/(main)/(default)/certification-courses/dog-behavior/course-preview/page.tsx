@@ -5,7 +5,7 @@ import { OutlineSection } from '../outlineSection';
 import type { PageComponent } from '@/app/serverComponent';
 import { BackgroundImage } from '@/components/backgroundImage';
 import IDGPCertificationLogo from '@/components/certifications/IDGP-certification-gold.svg';
-import { PriceSectionWithDiscount } from '@/components/PriceSectionWithDiscount';
+import { PriceSectionWithDiscount } from '@/components/priceSectionWithDiscount';
 import AssignmentBackground from '@/images/backgrounds/your-career-bg.jpg';
 import type { PriceQuery } from '@/lib/fetch';
 import { fetchPrice } from '@/lib/fetch';

@@ -12,10 +12,9 @@ import CertificationGoldImage from './cgt-light-gold.svg';
 import GroomingTechnicianBackground from './hero.jpg';
 import { GroomingTechOutlineSection } from './outline';
 import { BackgroundImage } from '@/components/backgroundImage';
-import { DGTutorSection } from '@/components/tutorSectionDG';
-import { GuaranteeSection } from '@/components/GuaranteeSection';
-import { PriceSection } from '@/components/PriceSection';
-import { SectionBackground } from '@/components/SectionBackground';
+import { GuaranteeSection } from '@/components/guaranteeSection';
+import { PriceSection } from '@/components/priceSection';
+import { TutorSectionDG } from '@/components/tutorSectionDG';
 import { VirtualCommunitySection } from '@/components/virtualCommunitySection';
 import type { Price } from '@/domain/price';
 import { useScreenWidth } from '@/hooks/useScreenWidth';
@@ -37,7 +36,7 @@ export type Props = {
 
 export const GroomingTechnicianBase: FC<Props> = ({ gtPrice, dgPrice, enrollPath = '/' }) => {
   const screenWidth = useScreenWidth();
-  const [ kitPopupVisible, kitPopupToggle ] = useToggle();
+  const [ kitPopupVisible, handleKitClick ] = useToggle();
 
   const mdOrGreater = screenWidth >= 768;
   const lgOrGreater = screenWidth >= 992;
@@ -130,7 +129,7 @@ export const GroomingTechnicianBase: FC<Props> = ({ gtPrice, dgPrice, enrollPath
               <div className="courseContentIcon"><BsScissors size={iconSize} /></div>
               <h3>Beginner Tool Kit</h3>
               <p>When you enroll, you'll receive a beginner toolkit to help you complete your studies. This bonus kit includes an assortment of brushes, combs and nail clippers to get you started.</p>
-              <button onClick={kitPopupToggle} className="btn btn-link link-primary">View Kit Details</button>
+              <button onClick={handleKitClick} className="btn btn-link link-primary">View Kit Details</button>
             </div>
             <div className="col-12 col-md-4 mb-4 mb-md-0">
               <div className="courseContentIcon"><BsCardChecklist size={iconSize} /></div>
@@ -149,7 +148,7 @@ export const GroomingTechnicianBase: FC<Props> = ({ gtPrice, dgPrice, enrollPath
             </div>
           </div>
         </div>
-        <Modal show={kitPopupVisible} onHide={kitPopupToggle}>
+        <Modal show={kitPopupVisible} onHide={handleKitClick}>
           <Modal.Header closeButton>Grooming Tools Starter Kit</Modal.Header>
           <Modal.Body>
             <Image
@@ -177,7 +176,7 @@ export const GroomingTechnicianBase: FC<Props> = ({ gtPrice, dgPrice, enrollPath
 
       <VirtualCommunitySection />
 
-      <DGTutorSection />
+      <TutorSectionDG />
 
       <style jsx>{`
       .courseContentIcon { color: #ccc; margin-bottom: 0.5rem; }

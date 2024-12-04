@@ -1,12 +1,12 @@
 import Link from 'next/link';
-import { FC, MouseEventHandler } from 'react';
+import type { FC, MouseEventHandler } from 'react';
 import { Modal } from 'react-bootstrap';
 
 import { ComparisonTable } from './comparisonTable';
 import { Accordion } from '@/components/accordion';
-import { AccordionItem } from '@/components/accordion/AccordionItem';
+import { AccordionItem } from '@/components/accordion/accordionItem';
+import type { Price } from '@/domain/price';
 import { useToggle } from '@/hooks/useToggle';
-import { Price } from '@/domain/price';
 
 type Props = {
   dgPrice: Price;

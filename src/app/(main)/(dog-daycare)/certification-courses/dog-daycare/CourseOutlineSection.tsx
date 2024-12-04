@@ -2,10 +2,10 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
+import type { FC } from 'react';
 
-import { FC } from 'react';
 import { Accordion } from '@/components/accordion';
-import { AccordionItem } from '@/components/accordion/AccordionItem';
+import { AccordionItem } from '@/components/accordion/accordionItem';
 import { useScreenWidth } from '@/hooks/useScreenWidth';
 import IntroductoryUnitsImage from '@/images/dd-outline-part-1.jpg';
 import ActivitiesImage from '@/images/dd-outline-part-2.jpg';

@@ -2,11 +2,10 @@ import type { Metadata } from 'next';
 
 import { GroomingTechnicianBase } from '..';
 import type { PageComponent } from '@/app/serverComponent';
-import { DeadlineFunnelScript } from '@/components/DeadlineFunnelScript';
+import { DeadlineFunnelScript } from '@/components/deadlineFunnelScript';
 import type { PriceQuery } from '@/lib/fetch';
 import { fetchPrice } from '@/lib/fetch';
 import { getData } from '@/lib/getData';
-import { lookupPrices } from '@/lib/lookupPrices';
 
 const courseCodes = [ 'gt' ];
 

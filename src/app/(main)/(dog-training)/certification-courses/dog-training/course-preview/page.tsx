@@ -4,8 +4,8 @@ import Link from 'next/link';
 import KimCooperImage from '../kim-cooper.jpg';
 import { CoursePreviewSections } from './CoursePreviewSections';
 import type { PageComponent } from '@/app/serverComponent';
-import { DTTutorSection } from '@/components/dtTutorSection';
 import { PriceSectionWithDiscount } from '@/components/priceSectionWithDiscount';
+import { TutorSectionDT } from '@/components/tutorSectionDT';
 import type { PriceQuery } from '@/lib/fetch';
 import { fetchPrice } from '@/lib/fetch';
 import { getData } from '@/lib/getData';
@@ -34,7 +34,7 @@ const DogTrainingCoursePreviewPage: PageComponent = async ({ searchParams }) => 
 
     <PriceSectionWithDiscount courses={courseCodes} price={price} doubleGuarantee={true} enrollPath={enrollPath} />
 
-    <DTTutorSection className="bg-light" />
+    <TutorSectionDT className="bg-light" />
 
     <section>
       <div className="container">
