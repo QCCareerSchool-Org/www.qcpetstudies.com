@@ -1,4 +1,6 @@
-import { headers } from 'next/headers';
+'use client';
+
+import { usePathname } from 'next/navigation';
 import type { FC } from 'react';
 
 import { CTAHeading } from './ctaHeading';
@@ -6,8 +8,7 @@ import { CTAHeading } from './ctaHeading';
 export type CTAType = 'grooming' | 'training' | 'care' | 'behavior' | 'grooming tech';
 
 export const CTA: FC = () => {
-  const heads = headers();
-  const pathname = heads.get('next-url'); // won't work in development unless you send this header yourself (e.g., with Postman)
+  const pathname = usePathname();
 
   const type = getCTAType(pathname);
   const enrollmentUrl = getEnrollUrl(type);
