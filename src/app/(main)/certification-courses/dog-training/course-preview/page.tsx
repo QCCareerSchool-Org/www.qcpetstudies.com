@@ -14,24 +14,21 @@ import GoldenRetrieverComputerBackground from '@/images/backgrounds/golden-retri
 import type { PriceQuery } from '@/lib/fetch';
 import { fetchPrice } from '@/lib/fetch';
 import { getData } from '@/lib/getData';
-import { getParam } from '@/lib/getParam';
-
-export const courseCodes = [ 'dt' ];
 
 export const metadata: Metadata = {
   title: 'Professional Dog Trainer Course',
   alternates: { canonical: '/certification-courses/dog-training/course-preview' },
 };
 
-const DogTrainingCoursePreviewPage: PageComponent = async ({ searchParams }) => {
+const courseCodes = [ 'dt' ];
+
+const DogTrainingCoursePreviewPage: PageComponent = async () => {
   const { countryCode, provinceCode } = getData();
   const priceQuery: PriceQuery = { countryCode, provinceCode: provinceCode ?? undefined, courses: courseCodes };
   const price = await fetchPrice(priceQuery);
   if (!price) {
     return null;
   }
-
-  const enrollPath = getParam(searchParams.enrollPath);
 
   return <>
 
@@ -307,7 +304,7 @@ const DogTrainingCoursePreviewPage: PageComponent = async ({ searchParams }) => 
       </div>
     </section>
 
-    <PriceSectionWithDiscount courses={courseCodes} price={price} doubleGuarantee={true} enrollPath={enrollPath} />
+    <PriceSectionWithDiscount courses={courseCodes} price={price} doubleGuarantee />
 
     <TutorSectionDT className="bg-light" />
 

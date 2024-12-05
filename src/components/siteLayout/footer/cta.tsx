@@ -1,19 +1,22 @@
+import { headers } from 'next/headers';
 import type { FC } from 'react';
+
+import { CTAHeading } from './ctaHeading';
 
 export type CTAType = 'grooming' | 'training' | 'care' | 'behavior' | 'grooming tech';
 
-type Props = {
-  type?: CTAType;
-};
+export const CTA: FC = () => {
+  const heads = headers();
+  const pathname = heads.get('next-url'); // won't work in development unless you send this header yourself (e.g., with Postman)
 
-export const CTA: FC<Props> = ({ type }) => {
+  const type = getCTAType(pathname);
   const enrollmentUrl = getEnrollUrl(type);
 
   return (
     <div className="row align-items-center">
       <div className="col-12 col-lg-9 col-xl-8 mb-4 mb-lg-0 text-center text-lg-start">
-        <h2><Heading type={type} /></h2>
-        <p className="lead mb-0">Take the first step towards a new career in the booming {type === 'grooming' ? 'dog grooming ' : type === 'training' ? 'dog training ' : type === 'behavior' ? 'behavior' : type === 'care' ? ' dog care' : 'pet'} industry.</p>
+        <h2><CTAHeading type={type} /></h2>
+        <p className="lead mb-0">Take the first step towards a new career in the booming {getIndustry(type)} industry.</p>
       </div>
       <div className="col-12 col-lg-3 text-center text-lg-end text-xl-center">
         <a href={enrollmentUrl}><button className="btn btn-secondary btn-lg">Enroll Online</button></a>
@@ -22,18 +25,28 @@ export const CTA: FC<Props> = ({ type }) => {
   );
 };
 
-const Heading: FC<Props> = ({ type }) => {
+/**
+ * Determines the CTAType to use based on the page path
+ */
+const getCTAType = (path: string | null): CTAType | undefined => {
+  if (path?.startsWith('/certification-courses/dog-grooming')) {
+    return 'grooming';
+  }
+};
+
+const getIndustry = (type?: CTAType): string => {
   switch (type) {
-    case 'grooming tech':
-      return <>Ready to Launch Your Career as a <strong>Grooming Technician?</strong></>;
     case 'grooming':
-      return <>Ready to Launch Your<br /><strong>Grooming Career?</strong></>;
+    case 'grooming tech':
+      return 'dog grooming';
     case 'training':
-      return <>Ready to Launch Your<br /><strong>Training Career?</strong></>;
+      return 'dog training';
+    case 'behavior':
+      return `behavior`;
     case 'care':
-      return <>Ready to Launch Your<br /><strong>Dog Care Career?</strong></>;
+      return 'dog care';
     default:
-      return <>Ready to Launch Your <strong>Career?</strong></>;
+      return 'pet';
   }
 };
 

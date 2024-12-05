@@ -1,10 +1,9 @@
 import Link from 'next/link';
-import type { FC, ReactNode } from 'react';
+import type { FC } from 'react';
 import { FaFacebookF, FaInstagram, FaTwitter } from 'react-icons/fa';
 
 import BBBLogo from './bbb-icon.svg';
 import ChatIcon from './chat-icon.svg';
-import type { CTAType } from './cta';
 import { CTA } from './cta';
 import EmailIcon from './email-icon.svg';
 import GuaranteeIcon from './guarantee-icon.svg';
@@ -21,13 +20,9 @@ import { getTelephoneNumber } from '@/lib/telephone';
 
 type Props = {
   countryCode: string;
-  /** overrides the entire CTA section */
-  cta?: ReactNode;
-  ctaType?: CTAType;
-  className?: string;
 };
 
-export const Footer: FC<Props> = ({ countryCode, ctaType, cta }) => {
+export const Footer: FC<Props> = ({ countryCode }) => {
   const address = getAddress(countryCode);
   const phoneNumber = getTelephoneNumber(countryCode);
   const termsLink = gbpCountry(countryCode) ? '/terms-gb' : '/terms';
@@ -35,7 +30,7 @@ export const Footer: FC<Props> = ({ countryCode, ctaType, cta }) => {
   return (
     <footer className={`${styles.footer} bg-navy flex-shrink-0 mt-auto`}>
       <div className="container">
-        {typeof cta !== 'undefined' ? cta : <CTA type={ctaType} /> }
+        <CTA />
         <hr className="my-5" />
         <div className="row">
           <div className={`${styles.brandCol} col-12 col-lg-6 mb-5 mb-lg-0 text-center`}>

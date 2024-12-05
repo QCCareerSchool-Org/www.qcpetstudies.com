@@ -30,14 +30,14 @@ import TutorIcon from '@/images/course-overview-icons/tutor.svg';
 import DogGroomingKit from '@/images/dog-grooming-kit-white.jpg';
 import { formatPrice } from '@/lib/formatPrice';
 
-const headerIconSize = 20;
-const iconSize = 36;
-
 type Props = {
   price: Price;
   enrollPath: string;
   courseCodes: CourseCode[];
 };
+
+const headerIconSize = 20;
+const iconSize = 36;
 
 export const DogGroomingBase: FC<Props> = ({ price, enrollPath, courseCodes }) => {
   let eventKey = 0;
