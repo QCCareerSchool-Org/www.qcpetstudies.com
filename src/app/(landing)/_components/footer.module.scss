@@ -1,0 +1,19 @@
+.footer {
+  margin-top: auto;
+  background-color: var(--qc-color-navy);
+  color: var(--qc-color-light-blue-steel);
+  padding: 1rem 0;
+
+  h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 { color: white; }
+
+  @media only screen and (min-width: 768px) {
+    padding: 1.5rem 0;
+  }
+  
+  @media only screen and (min-width: 992px) {
+    padding: 2rem 0;
+  }
+
+  a { color: inherit; }
+}
+
