@@ -2,12 +2,12 @@ import Image from 'next/image';
 import Link from 'next/link';
 import type { FC } from 'react';
 
+import IntroductoryUnitsImage from './part-1.jpg';
+import ApplyingTrainingPrinciplesImage from './part-2.jpg';
+import TeachingPeopleImage from './part-3.jpg';
+import DogTrainingBusinessImage from './part-4.jpg';
 import { Accordion } from '@/components/accordion';
 import { AccordionItem } from '@/components/accordion/accordionItem';
-import IntroductoryUnitsImage from '@/images/dt-outline-part-1-image.jpg';
-import ApplyingTrainingPrinciplesImage from '@/images/dt-outline-part-2-image.jpg';
-import TeachingPeopleImage from '@/images/dt-outline-part-3-image.jpg';
-import DogTrainingBusinessImage from '@/images/dt-outline-part-4-image.jpg';
 import CPDTPrepImage from '@/images/german-shepherd-puppy-sitting.jpg';
 
 export const CourseOutlineSection: FC = () => {

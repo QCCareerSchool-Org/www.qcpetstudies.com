@@ -1,36 +1,18 @@
 import type { Metadata } from 'next';
-import { headers } from 'next/headers';
 import Image from 'next/image';
 
-import { StyleComponent } from './StyleComponent';
 import type { PageComponent } from '@/app/serverComponent';
 import { FreeFirstAidSection } from '@/components/freeFirstAidSection';
 import { HowTheCoursesWorkSection } from '@/components/howTheCoursesWorkSection';
 import CourseCatalogImage from '@/images/bottom-ipad-shepard.jpg';
 import FullKitImage from '@/images/Kit-Blue-bg.jpg';
-import { getData } from '@/lib/getData';
-import { getParam } from '@/lib/getParam';
-
-const courses = [ 'dg' ];
 
 export const metadata: Metadata = {
   title: 'Become a Professional Dog Groomer',
   alternates: { canonical: '/certification-courses/rm/become-a-professional-dog-groomer' },
 };
 
-const ProfessionalDogGroomerPage: PageComponent = ({ searchParams }) => {
-  const { countryCode } = getData();
-  const date = new Date().getTime();
-  const gclid = getParam(searchParams.gclid);
-  const msclkid = getParam(searchParams.msclkid);
-  const utmSource = getParam(searchParams.utm_source);
-  const utmMedium = getParam(searchParams.utm_medium);
-  const utmCampaign = getParam(searchParams.utm_campaign);
-  const utmContent = getParam(searchParams.utm_content);
-  const utmTerm = getParam(searchParams.utm_term);
-  const headerList = headers();
-  const referrer = headerList.get('referer');
-
+const ProfessionalDogGroomerPage: PageComponent = () => {
   return <>
     <section id="top" className="bg-dark bg-grayish-blue">
       <div className="container text-center">
@@ -100,7 +82,15 @@ const ProfessionalDogGroomerPage: PageComponent = ({ searchParams }) => {
       </div>
     </section>
 
-    <StyleComponent />
+    {/* <style jsx>{`
+      .bg-grayish-blue {
+        background: #3e4557 !important;
+      }
+      .bg-desaturated-blue {
+        background: #262e41 !important;
+      }
+      .formImage { z-index: 100; }
+    `}</style> */}
   </>;
 };
 

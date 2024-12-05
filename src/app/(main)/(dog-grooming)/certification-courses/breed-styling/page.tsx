@@ -3,7 +3,7 @@ import type { StaticImageData } from 'next/image';
 import Image from 'next/image';
 import Link from 'next/link';
 
-import { ToolsToSucceedSection } from './ToolsToSucceedSection';
+import { ToolsToSucceedSection } from './toolsToSucceedSection';
 import type { PageComponent } from '@/app/serverComponent';
 import { BackgroundImage } from '@/components/backgroundImage';
 import { GuaranteeSection } from '@/components/guaranteeSection';
@@ -38,11 +38,7 @@ const BreedStylingPage: PageComponent = async () => {
       <BackgroundImage src={StylingBackground} priority />
       <div className="image-overlay-gradient" />
       <div className="container text-center">
-        <Image
-          src={CourseIconBadge as StaticImageData}
-          alt="Breed Styling Course badge"
-          style={{ maxWidth: '100%', height: 'auto' }}
-        />
+        <Image src={CourseIconBadge as StaticImageData} alt="Breed Styling Course badge" style={{ maxWidth: '100%', height: 'auto' }} />
         <h1>Breed Styling Workshop</h1>
         <div className="row justify-content-center">
           <div className="col-12 col-lg-10">
@@ -68,11 +64,7 @@ const BreedStylingPage: PageComponent = async () => {
             </ul>
           </div>
           <div className="col-12 col-lg-6">
-            <Image
-              src={CourseMaterials}
-              alt="Breed Standards course text"
-              style={{ maxWidth: '100%', height: 'auto' }}
-            />
+            <Image src={CourseMaterials} alt="Breed Standards course text" style={{ maxWidth: '100%', height: 'auto' }} />
           </div>
         </div>
       </div>

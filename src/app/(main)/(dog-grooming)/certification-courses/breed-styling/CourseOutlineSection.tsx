@@ -1,20 +1,15 @@
-'use client';
-
 import Image from 'next/image';
 import type { FC } from 'react';
 
 import { Accordion } from '@/components/accordion';
 import { AccordionItem } from '@/components/accordion/accordionItem';
 import { Bar } from '@/components/bar';
-import { useScreenWidth } from '@/hooks/useScreenWidth';
 import OutlinePart1 from '@/images/ds-outlline-part-1-anatomy.jpg';
 import OutlinePart2 from '@/images/ds-outlline-part-2-first-aid.jpg';
 import OutlinePart3 from '@/images/ds-outlline-part-3-grooming.jpg';
 
 export const CourseOutlineSection: FC = () => {
-
-  const screenWidth = useScreenWidth();
-  const lgOrGreater = screenWidth >= 992;
+  let eventKey = 0;
 
   return (
     <section className="bg-lighter">
@@ -27,7 +22,7 @@ export const CourseOutlineSection: FC = () => {
           </div>
         </div>
         <Accordion>
-          <AccordionItem heading="Part 1: Theoretical Foundations">
+          <AccordionItem eventKey={eventKey++} heading="Part 1: Theoretical Foundations">
             <div className="row">
               <div className="col-12 col-lg-8">
                 <p className="lead">In the first part of the course, you'll review your knowledge of dog anatomy, skincare, and dog behavior. You'll learn all about the basics of working with canines and keeping yourself safe in the grooming environment.</p>
@@ -41,19 +36,12 @@ export const CourseOutlineSection: FC = () => {
                 <h4>Personal Health and Safety</h4>
                 <p className="mb-0">Prevent illness and injury to yourself by learning all about handling grooming tools, preventing muscle strain, and maintaining a clean workspace.</p>
               </div>
-              {lgOrGreater && (
-                <div className="col-lg-4">
-                  <Image
-                    src={OutlinePart1}
-                    alt="Dog Anatomy"
-                    sizes="100vw"
-                    style={{ width: '100%', height: 'auto' }}
-                  />
-                </div>
-              )}
+              <div className="col-lg-4 d-none d-lg-block">
+                <Image src={OutlinePart1} alt="Dog Anatomy" sizes="100vw" style={{ width: '100%', height: 'auto' }} />
+              </div>
             </div>
           </AccordionItem>
-          <AccordionItem heading="Part 2: Dog First Aid Course">
+          <AccordionItem eventKey={eventKey++} heading="Part 2: Dog First Aid Course">
             <div className="row">
               <div className="col-12 col-lg-8">
                 <p className="lead">The second part of the course covers foundational dog first aid training. Understand how to prevent illness and accidents and treat basic injuries in this condensed version of QC's Dog First Aid course.</p>
@@ -61,19 +49,12 @@ export const CourseOutlineSection: FC = () => {
                 <h4>Safety Assessment and First Aid</h4>
                 <p className="mb-0">Learn about pet afflictions and assessing symptoms. Then, learn how to properly check vitals, treat wounds, and perform rescue procedures.</p>
               </div>
-              {lgOrGreater && (
-                <div className="col-lg-4">
-                  <Image
-                    src={OutlinePart2}
-                    alt="Safety Assessment and First Aid"
-                    sizes="100vw"
-                    style={{ width: '100%', height: 'auto' }}
-                  />
-                </div>
-              )}
+              <div className="col-lg-4 d-none d-lg-block">
+                <Image src={OutlinePart2} alt="Safety Assessment and First Aid" sizes="100vw" style={{ width: '100%', height: 'auto' }} />
+              </div>
             </div>
           </AccordionItem>
-          <AccordionItem heading="Part 3: Practicum">
+          <AccordionItem eventKey={eventKey++} heading="Part 3: Practicum">
             <div className="row">
               <div className="col-12 col-lg-8">
                 <p className="lead">The last third of the course is broken up into four units. Learn all about interpreting breed standards and applying them to a variety of breeds. You'll complete a series of practical assignments grooming each dog from start to finish. Be tested on how well you adhere to official breed standards to bring out a dog's best features.</p>
@@ -87,16 +68,9 @@ export const CourseOutlineSection: FC = () => {
                 </ul>
                 <p className="mb-0">Complete the course by researching and grooming a breed of your own choice.</p>
               </div>
-              {lgOrGreater && (
-                <div className="col-lg-4">
-                  <Image
-                    src={OutlinePart3}
-                    alt="Practicum"
-                    sizes="100vw"
-                    style={{ width: '100%', height: 'auto' }}
-                  />
-                </div>
-              )}
+              <div className="col-lg-4 d-none d-lg-block">
+                <Image src={OutlinePart3} alt="Practicum" sizes="100vw" style={{ width: '100%', height: 'auto' }} />
+              </div>
             </div>
           </AccordionItem>
         </Accordion>

@@ -1,4 +1,4 @@
-import { Enrollment } from '@/domain/enrollment';
+import type { Enrollment } from '@/domain/enrollment';
 
 const urls = {
   dg: 'https://hooks.zapier.com/hooks/catch/1909320/358g42p',
@@ -47,4 +47,3 @@ const trustPulse = async (payload: Payload, url: string): Promise<void> => {
 
   await response.json();
 };
-

@@ -1,10 +1,10 @@
 import type { Metadata } from 'next';
-import Image from 'next/image';
 import Link from 'next/link';
 import { FaPaw } from 'react-icons/fa';
 
 import { ClientLogic } from '../../(dog-grooming)/thank-you-dog-grooming-course-preview/ClientLogic';
 import type { PageComponent } from '@/app/serverComponent';
+import { BackgroundImage } from '@/components/backgroundImage';
 import CatalogBackground from '@/images/backgrounds/smiling-border-collie-on-black.jpg';
 import { getParam } from '@/lib/getParam';
 
@@ -15,7 +15,6 @@ export const metadata: Metadata = {
 };
 
 const ThankYouCatalogPage: PageComponent = ({ searchParams }) => {
-
   const emailAddress = getParam(searchParams.emailAddress);
   const firstName = getParam(searchParams.firstName);
   const lastName = getParam(searchParams.lastName);
@@ -27,15 +26,7 @@ const ThankYouCatalogPage: PageComponent = ({ searchParams }) => {
 
     <section id="top" className="bg-black">
       <div className="d-none d-md-block">
-        <Image
-          src={CatalogBackground}
-          placeholder="blur"
-          alt="Smiling border collie"
-          priority
-          fill
-          sizes="100vw"
-          style={{ objectFit: 'cover', objectPosition: 'right' }}
-        />
+        <BackgroundImage src={CatalogBackground} priority />
       </div>
       <div className="container text-center text-md-start">
         <div className="row">

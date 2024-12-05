@@ -1,24 +1,10 @@
-.headerComponent {
-  position: sticky;
-  top: 0;
-  z-index: 100;
-  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.1);
+.header {
+  background: linear-gradient(#f6f6f6, #dfdfdf);
+  padding: 24px 0;
+  text-align: center;
+}
 
-  .header {
-    background-color: var(--bs-light);
-    width: 100%;
-  
-    .content {
-      height: 62px;
-      @media only screen and (min-width: 768px) { height: 70px; }
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-
-    .button {
-      padding-left: 1rem;
-      padding-right: 1.25rem;
-    }
-  }
+.container {
+  display: flex;
+  justify-content: space-between;
 }

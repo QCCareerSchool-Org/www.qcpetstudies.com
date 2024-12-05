@@ -8,7 +8,7 @@ type Props = {
   countryCode: string;
 };
 
-export const Layout: FC<PropsWithChildren<Props>> = ({ date, countryCode, children }) => (
+export const SiteLayout: FC<PropsWithChildren<Props>> = ({ date, countryCode, children }) => (
   <>
     <Header date={date} countryCode={countryCode} />
     <main className="flex-shrink-0">{children}</main>

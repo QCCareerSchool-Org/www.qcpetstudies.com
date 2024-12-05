@@ -1,13 +1,14 @@
-import { TelephoneLink } from "@/components/telephoneLink";
-import { gbpCountry } from "@/lib/currencies";
-import { getData } from "@/lib/getData";
-import Link from "next/link";
-import type { FC } from "react";
+import Link from 'next/link';
+import type { FC } from 'react';
+
+import { TelephoneLink } from '@/components/telephoneLink';
+import { gbpCountry } from '@/lib/currencies';
+import { getData } from '@/lib/getData';
 
 export const Footer: FC = () => {
   const { countryCode } = getData();
   const termsLink = gbpCountry(countryCode) ? '/terms-gb' : '/terms';
-  
+
   return (
     <footer className="bg-dark">
       <section>
@@ -18,5 +19,5 @@ export const Footer: FC = () => {
         </div>
       </section>
     </footer>
-  )
+  );
 };

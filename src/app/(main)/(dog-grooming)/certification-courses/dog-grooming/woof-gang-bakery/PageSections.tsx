@@ -1,6 +1,5 @@
 'use client';
 
-import type { StaticImageData } from 'next/image';
 import Image from 'next/image';
 import type { FC, MouseEventHandler } from 'react';
 import { useEffect, useMemo, useRef, useState } from 'react';
@@ -40,6 +39,7 @@ type Props = {
 };
 
 export const PageSections: FC<Props> = ({ enrollPath }) => {
+  let eventKey = 0;
 
   const screenWidth = useScreenWidth();
 
@@ -52,10 +52,10 @@ export const PageSections: FC<Props> = ({ enrollPath }) => {
   const [ videosStarted, setVideosStarted ] = useState(false);
 
   useEffect(() => {
-    if (videosIntersection?.isIntersecting) {
+    if (videosIntersection) {
       setVideosStarted(true);
     }
-  }, [ videosIntersection?.isIntersecting ]);
+  }, [ videosIntersection ]);
 
   const videosCount = useCountUp({ start: 0, end: 43, duration: countUpDuration, started: videosStarted, easingFunction });
 
@@ -64,10 +64,10 @@ export const PageSections: FC<Props> = ({ enrollPath }) => {
   const [ lessonsStarted, setLessonsStarted ] = useState(false);
 
   useEffect(() => {
-    if (lessonsIntersection?.isIntersecting) {
+    if (lessonsIntersection) {
       setLessonsStarted(true);
     }
-  }, [ lessonsIntersection?.isIntersecting ]);
+  }, [ lessonsIntersection ]);
 
   const lessonsCount = useCountUp({ start: 0, end: 25, duration: countUpDuration, started: lessonsStarted, easingFunction });
 
@@ -76,10 +76,10 @@ export const PageSections: FC<Props> = ({ enrollPath }) => {
   const [ assignmentsStarted, setAssignmentsStarted ] = useState(false);
 
   useEffect(() => {
-    if (assignmentsIntersection?.isIntersecting) {
+    if (assignmentsIntersection) {
       setAssignmentsStarted(true);
     }
-  }, [ assignmentsIntersection?.isIntersecting ]);
+  }, [ assignmentsIntersection ]);
 
   const assignmentsCount = useCountUp({ start: 0, end: 34, duration: countUpDuration, started: assignmentsStarted, easingFunction });
 
@@ -145,13 +145,7 @@ export const PageSections: FC<Props> = ({ enrollPath }) => {
         <div className="container">
           <div className="d-flex flex-column flex-md-row justify-contents-center align-items-center">
             <div className="flex-shrink-0 mb-4 mb-md-0 me-md-4">
-              <Image
-                src={IDGPCertificationLogo as StaticImageData}
-                width={200}
-                height={200}
-                alt="IDGP International Dog Grooming Professional logo"
-                style={{ maxWidth: '100%', height: 'auto' }}
-              />
+              <IDGPCertificationLogo width={200} height={200} alt="IDGP International Dog Grooming Professional logo" style={{ maxWidth: '100%', height: 'auto' }} />
             </div>
             <div className="text-center text-md-start">
               <h2>Your <strong>Certification</strong></h2>
@@ -167,12 +161,7 @@ export const PageSections: FC<Props> = ({ enrollPath }) => {
             <div className="col-12 col-xl-10">
               <h2 className="fw-bold">Your Professional Grooming Kit</h2>
               <div className="my-4">
-                <Image
-                  src={DogGroomingKit}
-                  alt="professional dog-grooming kit"
-                  sizes="100vw"
-                  style={{ width: '100%', height: 'auto' }}
-                />
+                <Image src={DogGroomingKit} alt="professional dog-grooming kit" sizes="100vw" style={{ width: '100%', height: 'auto' }} />
               </div>
               <p>When you enroll in QC's online dog grooming course, you'll receive a WAHL ARCO 5-in-1 cordless clipper, a stainless steel attachment guide comb kit, grooming scissors, and an assortment of tools used for preparation work. These items will be shipped to you when you successfully complete Unit B.</p>
               <p><a onClick={handlePopupLinkClick} href="#" className="link-primary text-uppercase">View kit details</a></p>
@@ -243,7 +232,7 @@ export const PageSections: FC<Props> = ({ enrollPath }) => {
               <h2>Course Outline</h2>
               <p className="lead">Below is an outline of each unit of the online dog grooming course. Expand each section to find out what you'll learn in each unit.</p>
               <Accordion>
-                <AccordionItem heading="Unit A">
+                <AccordionItem eventKey={eventKey++} heading="Unit A">
                   <div className="accordionOutset">
                     <Image src={UnitA} alt="Unit A" fill placeholder="blur" sizes="100vw" style={{ objectFit: 'cover', objectPosition: lg ? '50% 10%' : '50% 0%' }} />
                   </div>
@@ -251,7 +240,7 @@ export const PageSections: FC<Props> = ({ enrollPath }) => {
                   <hr />
                   <p className="mb-0">In the first unit of the dog grooming course, you'll meet your tutor and start learning about the fundamentals of dog grooming. This introductory unit includes theoretical studies on the history of dog grooming.  You'll also learn about dog anatomy in great detail, and you'll start learning about skincare and esthetics.</p>
                 </AccordionItem>
-                <AccordionItem heading="Unit B">
+                <AccordionItem eventKey={eventKey++} heading="Unit B">
                   <div className="accordionOutset">
                     <Image src={UnitB} alt="Unit B" fill placeholder="blur" sizes="100vw" style={{ objectFit: 'cover', objectPosition: lg ? '50% 40%' : '50% 35%' }} />
                   </div>
@@ -261,7 +250,7 @@ export const PageSections: FC<Props> = ({ enrollPath }) => {
                   <p className="mb-0"><strong>Required grooming equipment:</strong> None</p>
                   <p className="mb-0"><strong>Required dogs:</strong> One coated dog</p>
                 </AccordionItem>
-                <AccordionItem heading="Unit C">
+                <AccordionItem eventKey={eventKey++} heading="Unit C">
                   <div className="accordionOutset">
                     <Image src={UnitC} alt="Unit C" fill placeholder="blur" sizes="100vw" style={{ objectFit: 'cover', objectPosition: lg ? '50% 80%' : '50% 80%' }} />
                   </div>
@@ -278,7 +267,7 @@ export const PageSections: FC<Props> = ({ enrollPath }) => {
                   </ul>
                   <p className="mb-0"><strong>Required dogs:</strong> None</p>
                 </AccordionItem>
-                <AccordionItem heading="Unit D">
+                <AccordionItem eventKey={eventKey++} heading="Unit D">
                   <div className="accordionOutset">
                     <Image src={UnitD} alt="Unit D" fill placeholder="blur" sizes="100vw" style={{ objectFit: 'cover', objectPosition: lg ? '50% 80%' : '50% 80%' }} />
                   </div>
@@ -305,7 +294,7 @@ export const PageSections: FC<Props> = ({ enrollPath }) => {
                     <li>A dog with at least one mat in his fur</li>
                   </ul>
                 </AccordionItem>
-                <AccordionItem heading="Unit E">
+                <AccordionItem eventKey={eventKey++} heading="Unit E">
                   <div className="accordionOutset">
                     <Image src={UnitE} alt="Unit E" fill placeholder="blur" sizes="100vw" style={{ objectFit: 'cover', objectPosition: '50%' }} />
                   </div>
@@ -314,7 +303,7 @@ export const PageSections: FC<Props> = ({ enrollPath }) => {
                   <p>This unit is all about different coat types in dogs. You'll learn how to work with every coat type including the necessary care and maintenance of these coats. You'll also be introduced to some indispensable pet cuts, and techniques for creating eye-catching finishing touches to top off a stylish groom!</p>
                   <p className="mb-0"><strong>Required dogs:</strong> A coated dog in need of grooming</p>
                 </AccordionItem>
-                <AccordionItem heading="Unit F">
+                <AccordionItem eventKey={eventKey++} heading="Unit F">
                   <div className="accordionOutset">
                     <Image src={UnitF} alt="Unit F" fill placeholder="blur" sizes="100vw" style={{ objectFit: 'cover', objectPosition: '50%' }} />
                   </div>
@@ -322,7 +311,7 @@ export const PageSections: FC<Props> = ({ enrollPath }) => {
                   <hr />
                   <p className="mb-0">You'll now start to work with dogs that require special accommodations. These include introducing puppies to the grooming process, grooming seniors and other dogs who might have health issues, and dogs that may have behavioral issues that make them particularly challenging to groom.</p>
                 </AccordionItem>
-                <AccordionItem heading="Unit G - The Bath and Breed Standards">
+                <AccordionItem eventKey={eventKey++} heading="Unit G - The Bath and Breed Standards">
                   <div className="accordionOutset">
                     <Image src={UnitG} alt="Unit G" fill placeholder="blur" sizes="100vw" style={{ objectFit: 'cover', objectPosition: lg ? '50% 20%' : '50% 0%' }} />
                   </div>
@@ -339,7 +328,7 @@ export const PageSections: FC<Props> = ({ enrollPath }) => {
                   </ul>
                   <p className="mb-0"><strong>Required dogs:</strong> A coated dog that is due for a bath</p>
                 </AccordionItem>
-                <AccordionItem heading="Unit H - Creating the Teddy Bear Cut">
+                <AccordionItem eventKey={eventKey++} heading="Unit H - Creating the Teddy Bear Cut">
                   <div className="accordionOutset">
                     <Image src={UnitH} alt="Unit H" fill placeholder="blur" sizes="100vw" style={{ objectFit: 'cover', objectPosition: lg ? '50% 20%' : '50% 0%' }} />
                   </div>
@@ -356,7 +345,7 @@ export const PageSections: FC<Props> = ({ enrollPath }) => {
                   </ul>
                   <p className="mb-0"><strong>Required dogs:</strong> A dog suitable for a teddy bear cut, whose coat is at least 3&quot; long (e.g., miniature poodle mix, Havanese mix, etc.)</p>
                 </AccordionItem>
-                <AccordionItem heading="Unit I - Grooming a Natural Breed">
+                <AccordionItem eventKey={eventKey++} heading="Unit I - Grooming a Natural Breed">
                   <div className="accordionOutset">
                     <Image src={UnitI} alt="Unit I" fill placeholder="blur" sizes="100vw" style={{ objectFit: 'cover', objectPosition: lg ? '50% 30%' : '50% 25%' }} />
                   </div>
@@ -373,7 +362,7 @@ export const PageSections: FC<Props> = ({ enrollPath }) => {
                   </ul>
                   <p className="mb-0"><strong>Required dogs:</strong> A purebred golden retriever or purebred Shetland sheepdog</p>
                 </AccordionItem>
-                <AccordionItem heading="Unit J - Grooming a Terrier">
+                <AccordionItem eventKey={eventKey++} heading="Unit J - Grooming a Terrier">
                   <div className="accordionOutset">
                     <Image src={UnitJ} alt="Unit J" fill placeholder="blur" sizes="100vw" style={{ objectFit: 'cover', objectPosition: lg ? '50% 40%' : '50% 20%' }} />
                   </div>
@@ -390,7 +379,7 @@ export const PageSections: FC<Props> = ({ enrollPath }) => {
                   </ul>
                   <p className="mb-0"><strong>Required dogs:</strong> A purebred, miniature schnauzer, standard schnauzer, west highland white terrier, or airedale whose owner is looking for clipping, not hand stripping</p>
                 </AccordionItem>
-                <AccordionItem heading="Unit K - Grooming a Non-Sporting Breed">
+                <AccordionItem eventKey={eventKey++} heading="Unit K - Grooming a Non-Sporting Breed">
                   <div className="accordionOutset">
                     <Image src={UnitK} alt="Unit K" fill placeholder="blur" sizes="100vw" style={{ objectFit: 'cover', objectPosition: lg ? '50% 40%' : '50% 20%' }} />
                   </div>
@@ -413,16 +402,7 @@ export const PageSections: FC<Props> = ({ enrollPath }) => {
 
         </div>
       </section>
-      <style jsx>{`
-    .accordionOutset {
-      margin: -1rem -1.25rem 1rem;
-      position: relative;
-      overflow: hidden;
-      height: 200px;
-    }
-    `}</style>
     </>
-
   );
 };
 

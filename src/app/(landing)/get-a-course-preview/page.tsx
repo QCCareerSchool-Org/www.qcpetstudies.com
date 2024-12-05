@@ -4,6 +4,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 import { MultiCourseBrevoForm } from './multiCourseBrevoForm';
+import { Header } from '../_components/header';
 import type { PageComponent } from '@/app/serverComponent';
 import { TestimonialSmCaseyBechard } from '@/components/testimonialsSmall/caseyBechard';
 import { TestimonialSmKaylaTorraville } from '@/components/testimonialsSmall/kaylaTorraville';
@@ -33,6 +34,7 @@ const DogGroomingCatalogPage: PageComponent = ({ searchParams }) => {
 
   return (
     <>
+      <Header />
       <section>
         <div className="container">
           <div className="row align-items-center justify-content-center">

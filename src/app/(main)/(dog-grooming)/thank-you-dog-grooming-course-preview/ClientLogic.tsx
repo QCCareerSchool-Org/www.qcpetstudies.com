@@ -1,6 +1,8 @@
 'use client';
 
-import { FC, useEffect, useRef } from 'react';
+import type { FC } from 'react';
+import { useEffect, useRef } from 'react';
+
 import { brevoIdentifyLead } from '@/lib/brevo';
 import { fbqLead } from '@/lib/fbq';
 import { gaEvent, gaUserData } from '@/lib/gtag';

@@ -1,7 +1,7 @@
-import { FC } from 'react';
+import type { FC } from 'react';
 
+import type { Tutor } from './tutors';
 import { ImageCircle } from '../ImageCircle';
-import { Tutor } from './tutors';
 
 type Props = Tutor;
 

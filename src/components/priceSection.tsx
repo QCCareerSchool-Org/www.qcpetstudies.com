@@ -6,7 +6,7 @@ import { useMemo } from 'react';
 import { FaClock, FaLock, FaStar } from 'react-icons/fa';
 
 import { Bar } from './bar';
-import { CAPriceMessage } from './CAPriceMessage';
+import { CAPriceMessage } from './caPriceMessage';
 import { GuaranteeModal } from '@/components/guaranteeModal';
 import type { Price } from '@/domain/price';
 import { useToggle } from '@/hooks/useToggle';

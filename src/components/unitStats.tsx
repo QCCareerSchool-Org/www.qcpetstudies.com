@@ -1,6 +1,6 @@
 'use client';
 
-import { FC, ReactElement } from 'react';
+import type { FC, ReactElement } from 'react';
 import { BsBookHalf, BsPencilSquare, BsPlayCircle } from 'react-icons/bs';
 
 const AssignmentsIcon = (): ReactElement => (

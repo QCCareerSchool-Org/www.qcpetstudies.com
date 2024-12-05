@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 import type { PageComponent } from './serverComponent';
 import { BackgroundImage } from '@/components/backgroundImage';
-import { Layout } from '@/components/layout';
+import { SiteLayout } from '@/components/siteLayout';
 import DoGInBedWithStick from '@/images/backgrounds/dog-in-bed-with-stick.jpg';
 import { getData } from '@/lib/getData';
 
@@ -16,7 +16,7 @@ const NotFoundPage: PageComponent = () => {
   const { countryCode } = getData();
 
   return (
-    <Layout date={date} countryCode={countryCode}>
+    <SiteLayout date={date} countryCode={countryCode}>
       <section>
         <BackgroundImage src={DoGInBedWithStick} />
         <div className="container text-center text-shadow">
@@ -29,7 +29,7 @@ const NotFoundPage: PageComponent = () => {
           </div>
         </div>
       </section>
-    </Layout>
+    </SiteLayout>
   );
 };
 

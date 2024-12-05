@@ -1,10 +1,10 @@
-import { FC } from 'react';
+import type { FC } from 'react';
 
 export type CTAType = 'grooming' | 'training' | 'care' | 'behavior' | 'grooming tech';
 
 type Props = {
   type?: CTAType;
-}
+};
 
 export const CTA: FC<Props> = ({ type }) => {
   const enrollmentUrl = getEnrollUrl(type);
@@ -34,9 +34,8 @@ const Heading: FC<Props> = ({ type }) => {
       return <>Ready to Launch Your<br /><strong>Dog Care Career?</strong></>;
     default:
       return <>Ready to Launch Your <strong>Career?</strong></>;
-  };
+  }
 };
-
 
 const getEnrollUrl = (type?: CTAType): string => {
   switch (type) {

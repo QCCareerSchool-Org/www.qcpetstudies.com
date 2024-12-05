@@ -1,7 +1,7 @@
 'use client';
 
 import { Big } from 'big.js';
-import type { FC, ReactElement, ReactNode } from 'react';
+import type { FC, ReactNode } from 'react';
 import { useMemo } from 'react';
 import { FaClock, FaLock, FaStar } from 'react-icons/fa';
 
@@ -29,6 +29,10 @@ type Props = {
 
 export const PriceSectionWithDiscount: FC<Props> = ({ courses, price, doubleGuarantee, variant = 'dark', id = 'tuition', enrollPath = '/', message }) => {
   const [ popup, toggle ] = useToggle();
+
+  const handleClick = (): void => {
+    toggle();
+  };
 
   const enrollLink = `https://enroll.qcpetstudies.com${enrollPath}?${courses.map(c => `c=${encodeURIComponent(c)}`).join('&')}`;
 
@@ -106,13 +110,13 @@ export const PriceSectionWithDiscount: FC<Props> = ({ courses, price, doubleGuar
             </div>
           </div>
         </div>
-        <GuaranteeModal show={popup} doubleGuarantee={doubleGuarantee} toggle={toggle} />
+        <GuaranteeModal show={popup} doubleGuarantee={doubleGuarantee} onToggle={handleClick} />
       </section>
     </>
   );
 };
 
-const Loader = (): ReactElement => (
+const Loader: FC = () => (
   <div className="d-flex justify-content-center align-items-center" style={{ height: 186 }}>
     <div className="spinner-border" role="status">
       <span className="visually-hidden">Loading...</span>

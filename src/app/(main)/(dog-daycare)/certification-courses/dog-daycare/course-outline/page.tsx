@@ -1,5 +1,4 @@
 import type { Metadata } from 'next';
-import Image, { StaticImageData } from 'next/image';
 import { FaBars } from 'react-icons/fa';
 
 import { UnitA } from './unitA';
@@ -8,7 +7,6 @@ import { UnitC } from './unitC';
 import { UnitD } from './unitD';
 import { UnitE } from './unitE';
 import { UnitF } from './unitF';
-import { UnitSection } from './UnitSection';
 import type { PageComponent } from '@/app/serverComponent';
 import { Accordion } from '@/components/accordion';
 import { AccordionItem } from '@/components/accordion/accordionItem';
@@ -44,7 +42,7 @@ const DDCourseOutlinePage: PageComponent = () => {
         </div>
       </section>
 
-      <section className="bg-light">
+      <section>
         <div className="container text-center">
           <div className="row justify-content-center">
             <div className="col-12 col-sm-10 col-md-8 col-lg-6 col-xl-5 d-flex mb-4 mb-lg-0">
@@ -71,7 +69,7 @@ const DDCourseOutlinePage: PageComponent = () => {
         </div>
       </section>
 
-      <section>
+      <section style={{ backgroundColor: '#f7f7f7' }}>
         <div className="container">
           <div className="row justify-content-center">
             <div className="col-12 col-lg-10 mb-5 text-center">

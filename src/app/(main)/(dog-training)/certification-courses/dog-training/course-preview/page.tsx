@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 
 import KimCooperImage from '../kim-cooper.jpg';
-import { CoursePreviewSections } from './CoursePreviewSections';
+import { CoursePreviewSections } from './coursePreviewSections';
 import type { PageComponent } from '@/app/serverComponent';
 import { PriceSectionWithDiscount } from '@/components/priceSectionWithDiscount';
 import { TutorSectionDT } from '@/components/tutorSectionDT';

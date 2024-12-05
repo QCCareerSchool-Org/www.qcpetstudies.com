@@ -1,5 +1,5 @@
 import type { LayoutComponent } from '@/app/serverComponent';
-import { Layout } from '@/components/layout';
+import { SiteLayout } from '@/components/siteLayout';
 import { getData } from '@/lib/getData';
 
 const MainLayout: LayoutComponent = ({ children }) => {
@@ -7,9 +7,9 @@ const MainLayout: LayoutComponent = ({ children }) => {
   const { countryCode } = getData();
 
   return (
-    <Layout date={date} countryCode={countryCode}>
+    <SiteLayout date={date} countryCode={countryCode}>
       {children}
-    </Layout>
+    </SiteLayout>
   );
 };
 

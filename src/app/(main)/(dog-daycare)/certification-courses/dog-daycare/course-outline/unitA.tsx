@@ -4,9 +4,9 @@ import Image from 'next/image';
 import type { FC } from 'react';
 import { Modal } from 'react-bootstrap';
 
+import UnitAImage from './_images/unit-a.jpg';
 import { UnitStats } from '@/components/unitStats';
 import { useToggle } from '@/hooks/useToggle';
-import UnitAImage from '@/images/dd-full-outline-unit-a.jpg';
 
 export const UnitA: FC = () => {
   const [ show, toggle ] = useToggle();

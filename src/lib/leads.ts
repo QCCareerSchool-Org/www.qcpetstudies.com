@@ -1,4 +1,4 @@
-import { School } from '@/domain/school';
+import type { School } from '@/domain/school';
 
 export type LeadPayload = {
   school: School;

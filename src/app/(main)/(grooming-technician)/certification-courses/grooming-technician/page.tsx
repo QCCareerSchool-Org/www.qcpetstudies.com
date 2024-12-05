@@ -27,8 +27,7 @@ const GroomingTechnicianPage: PageComponent = async () => {
     return null;
   }
 
-  const props = { gtPrice, dgPrice };
-  return <GroomingTechnicianBase {...props} />;
+  return <GroomingTechnicianBase gtPrice={gtPrice} dgPrice={dgPrice} />;
 };
 
 export default GroomingTechnicianPage;

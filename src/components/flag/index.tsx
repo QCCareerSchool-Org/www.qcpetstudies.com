@@ -7,7 +7,7 @@ import USIcon from './images/us.svg';
 type Props = {
   countryCode: string;
   height: number;
-}
+};
 
 export const Flag: FC<Props> = ({ countryCode, height }) => {
   switch (countryCode) {
@@ -18,7 +18,4 @@ export const Flag: FC<Props> = ({ countryCode, height }) => {
     case 'AU':
       return <AUIcon height={height} alt="Australia" />;
   }
-}
-
-
-
+};

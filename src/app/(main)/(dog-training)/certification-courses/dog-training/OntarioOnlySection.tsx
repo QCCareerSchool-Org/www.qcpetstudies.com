@@ -3,15 +3,9 @@ import type { FC } from 'react';
 import KimCooperImage from './kim-cooper.jpg';
 import { Accordion } from '@/components/accordion';
 import { AccordionItem } from '@/components/accordion/accordionItem';
-import { getData } from '@/lib/getData';
 
 export const OntarioOnlySection: FC = () => {
   let eventKey = 0;
-  const { countryCode, provinceCode } = getData();
-
-  if (countryCode !== 'CA' || provinceCode !== 'ON') {
-    return;
-  }
 
   return (
     <>

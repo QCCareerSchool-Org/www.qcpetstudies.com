@@ -1,11 +1,9 @@
 import type { Metadata } from 'next';
-import type { StaticImageData } from 'next/image';
-import Image from 'next/image';
+import { BsCardChecklist, BsPeopleFill } from 'react-icons/bs';
+import { IoMdInfinite } from 'react-icons/io';
 
-import { CertificationSection } from './CertificationSection';
-import { CourseOutlineSection } from './CourseOutlineSection';
-import { IncludedSection } from './IncludedSection';
-import { OntarioOnlySection } from './OntarioOnlySection';
+import { OntarioOnlySection } from './ontarioOnlySection';
+import { CourseOutlineSection } from './outlineSection';
 import type { PageComponent } from '@/app/serverComponent';
 import { BackgroundImage } from '@/components/backgroundImage';
 import CertificationGoldImage from '@/components/certifications/IDTP-certification-yellow.svg';
@@ -22,8 +20,8 @@ import { fetchPrice } from '@/lib/fetch';
 import { formatPrice } from '@/lib/formatPrice';
 import { getData } from '@/lib/getData';
 
+const iconSize = 36;
 const headerIconSize = 20;
-
 const courseCodes = [ 'dt' ];
 
 export const metadata: Metadata = {
@@ -48,49 +46,25 @@ const DogTrainingPage: PageComponent = async () => {
         <div className="container text-center">
           <div className="row mb-4">
             <div className="mb-4">
-              <Image
-                src={CertificationGoldImage as StaticImageData}
-                alt="International Dog Training Professional IDTP Certification"
-                height="125"
-                width="125"
-                style={{ maxWidth: '100%', height: 'auto' }}
-              />
+              <CertificationGoldImage alt="International Dog Training Professional IDTP Certification" height="125" width="125" style={{ maxWidth: '100%', height: 'auto' }} />
             </div>
             <h1>Dog Training Course</h1>
-            {price && price.plans.part.deposit > 0 && <h4>Get Started for Only <strong>{price.currency.symbol}{formatPrice(price.plans.part.deposit)}</strong></h4>}
+            {price.plans.part.deposit > 0 && <h4>Get Started for Only <strong>{price.currency.symbol}{formatPrice(price.plans.part.deposit)}</strong></h4>}
             <p><em><a href="#tuition" className="text-white">See tuition details</a></em></p>
             <a href="https://enroll.qcpetstudies.com?c=dt"><button className="btn btn-secondary btn-lg">Enroll Online</button></a>
           </div>
           <div className="row justify-content-center">
             <div className="col-12 col-md-6 col-lg-6 d-flex">
               <div className="col text-uppercase">
-                <a href="#outline"><Image
-                  src={OutlineIcon as StaticImageData}
-                  alt="outline"
-                  width={headerIconSize}
-                  height={headerIconSize}
-                  style={{ maxWidth: '100%', height: 'auto' }}
-                /></a>
+                <a href="#outline"><OutlineIcon alt="outline" width={headerIconSize} height={headerIconSize} style={{ maxWidth: '100%', height: 'auto' }} /></a>
                 <p><strong>Outline</strong></p>
               </div>
               <div className="col text-uppercase">
-                <a href="#guarantee"><Image
-                  src={GuaranteeIcon as StaticImageData}
-                  alt="play button"
-                  width={headerIconSize}
-                  height={headerIconSize}
-                  style={{ maxWidth: '100%', height: 'auto' }}
-                /></a>
+                <a href="#guarantee"><GuaranteeIcon alt="play button" width={headerIconSize} height={headerIconSize} style={{ maxWidth: '100%', height: 'auto' }} /></a>
                 <p><strong>Guarantee</strong></p>
               </div>
               <div className="col text-uppercase">
-                <a href="#tutors"><Image
-                  src={TutorIcon as StaticImageData}
-                  alt="play button"
-                  width={headerIconSize}
-                  height={headerIconSize}
-                  style={{ maxWidth: '100%', height: 'auto' }}
-                /></a>
+                <a href="#tutors"><TutorIcon alt="play button" width={headerIconSize} height={headerIconSize} style={{ maxWidth: '100%', height: 'auto' }} /></a>
                 <p><strong>Tutors</strong></p>
               </div>
             </div>
@@ -98,56 +72,61 @@ const DogTrainingPage: PageComponent = async () => {
         </div>
       </section>
 
-      <CertificationSection />
+      <section>
+        <div className="container text-center">
+          <div className="row justify-content-center">
+            <div className="col-12 col-lg-8 mb-4">
+              <div className="ratio ratio-16x9">
+                <video controls preload="metadata" poster="https://89b45d42c17e11dd3d57-62a1fc0bf60a98e1d5e980348a7de3b7.ssl.cf1.rackcdn.com/dog-training-trailer-poster.png">
+                  <source src="https://89b45d42c17e11dd3d57-62a1fc0bf60a98e1d5e980348a7de3b7.ssl.cf1.rackcdn.com/dog-training-trailer.mp4" type="video/mp4" />
+                </video>
+              </div>
+            </div>
+            <div className="col-12 col-lg-10">
+              <h2>Become a <strong>Certified Dog Trainer</strong></h2>
+              <p className="lead"><strong>International Dog Training Professional&trade;</strong> | <i>IDTP&trade;</i></p>
+              <p>Dog training is a booming industry! Owners need help to turn their dogs into well-behaved members of the family, and they want someone qualified to help them achieve this goal.  Whether you want to work in a training school, launch your own dog training business, or freelance as a private dog trainer, you'll graduate with all the knowledge and skills you need to succeed in the dog training industry!</p>
+              <p className="lead mb-0">Are you ready to start an amazing career?</p>
+            </div>
+          </div>
+        </div>
+      </section>
 
       <PriceSection courses={courseCodes} price={price} doubleGuarantee={true} />
 
-      <IncludedSection />
+      <section>
+        <div className="container text-center">
+          <div className="row justify-content-center">
+            <div className="col-12 col-lg-10 mb-4">
+              <h2 className="mb-2 mb-md-4">Included in <strong>Your Course</strong></h2>
+            </div>
+            <div className="col-12 col-md-4 mb-4 mb-md-0">
+              <div className="courseContentIcon"><BsCardChecklist size={iconSize} /></div>
+              <h3>Newest <br className="d-none d-md-inline d-lg-none" />Course Materials</h3>
+              <p className="mb-0">Your course materials are always available online and are always being updated with the latest science-based industry standards. Refer to your updated training guides throughout your career!</p>
+            </div>
+            <div className="col-12 col-md-4 mb-4 mb-md-0">
+              <div className="courseContentIcon"><BsPeopleFill size={iconSize} /></div>
+              <h3>Personalized <br className="d-none d-md-inline d-lg-none" />Feedback</h3>
+              <p className="mb-0">Just because you're learning online doesn't mean you're learning alone. You'll receive personalized audio feedback from your tutor on every dog training assignment you submit. Use this feedback to improve and succeed!</p>
+            </div>
+            <div className="col-12 col-md-4">
+              <div className="courseContentIcon"><IoMdInfinite size={iconSize} /></div>
+              <h3>Lifetime <br className="d-none d-md-inline d-lg-none" />Access</h3>
+              <p className="mb-0">Once you're a member of the QC family you'll have lifetime access to all the tools and resources available to QC students. This includes discounts on industry products and so much more!</p>
+            </div>
+          </div>
+        </div>
+      </section>
 
       <div id="outline" className="sectionAnchor" />
       <CourseOutlineSection />
-
       <TutorSectionDT />
-
-      <OntarioOnlySection />
-
+      {countryCode === 'CA' && provinceCode === 'ON' && <OntarioOnlySection />}
       <GuaranteeSection className="bg-light" />
-
       <VirtualCommunitySection />
     </>
   );
 };
-
-// const FooterDualCTA: FC = () => {
-//   const location = useLocation();
-
-//   return location && !(location.countryCode === 'CA' && location.provinceCode)
-//     ? (
-//       <>
-//         <div className="row align-items-center">
-//           <div className="col-12 col-lg-9 col-xl-8 mb-4 mb-lg-0 text-center text-lg-start">
-//             <h2>Ready to Launch Your <strong>Training Career?</strong></h2>
-//             <p className="lead mb-0">Get 50% off the Dog Behavior course when you enroll in Dog Training.</p>
-//           </div>
-//           <div className="col-12 col-lg-3 text-center text-lg-end text-xl-center">
-//             <a href="https://enroll.qcpetstudies.com/?c=dt&c=dc"><button className="btn btn-secondary btn-lg">Enroll Online</button></a>
-//           </div>
-//         </div>
-//       </>
-//     )
-//     : (
-//       <>
-//         <div className="row align-items-center">
-//           <div className="col-12 col-lg-9 col-xl-8 mb-4 mb-lg-0 text-center text-lg-start">
-//             <h2>Ready to Launch Your <strong>Training Career?</strong></h2>
-//             <p className="lead mb-0">Take the first step towards a new career in the booming dog training industry.</p>
-//           </div>
-//           <div className="col-12 col-lg-3 text-center text-lg-end text-xl-center">
-//             <a href="https://enroll.qcpetstudies.com/?c=dt"><button className="btn btn-secondary btn-lg">Enroll Online</button></a>
-//           </div>
-//         </div>
-//       </>
-//     );
-// };
 
 export default DogTrainingPage;

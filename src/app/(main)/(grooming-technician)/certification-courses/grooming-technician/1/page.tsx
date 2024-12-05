@@ -24,11 +24,15 @@ const GroomingTechnicianPageAlt1: PageComponent = async () => {
     fetchPrice(gtPriceQuery),
     fetchPrice(dgPriceQuery),
   ]);
-  const props = { gtPrice, dgPrice };
+
+  if (!gtPrice || !dgPrice) {
+    return null;
+  }
+
   return (
     <>
       <DeadlineFunnelScript />
-      <GroomingTechnicianBase {...props} enrollPath="/grooming-300-off" />;
+      <GroomingTechnicianBase gtPrice={gtPrice} dgPrice={dgPrice} enrollPath="/grooming-300-off" />;
     </>
   );
 };

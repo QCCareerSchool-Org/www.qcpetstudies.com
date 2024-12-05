@@ -4,7 +4,7 @@ import type { FC } from 'react';
 import styles from './header.module.scss';
 import { SecondaryNav } from './secondaryNav';
 import { CountDownTimer } from '@/components/countDownTimer';
-import { MainNav } from '@/components/layout/mainNav';
+import { MainNav } from '@/components/siteLayout/mainNav';
 
 type Props = {
   date: number;

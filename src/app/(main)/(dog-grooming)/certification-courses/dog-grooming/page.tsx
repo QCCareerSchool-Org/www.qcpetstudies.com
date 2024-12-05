@@ -1,11 +1,11 @@
 import type { Metadata } from 'next';
-import type { StaticImageData } from 'next/image';
 import Image from 'next/image';
 import Link from 'next/link';
+import { BsCardChecklist, BsPeopleFill, BsScissors } from 'react-icons/bs';
+import { IoMdInfinite } from 'react-icons/io';
 
-import { CertificationSection } from './CertificationSection';
-import { IncludedSection } from './IncludedSection';
-import { TestimonialsSection } from './TestimonialsSection';
+import { KitDetailsButton } from './kitDetailsButton';
+import styles from './page.module.scss';
 import type { PageComponent } from '@/app/serverComponent';
 import { Accordion } from '@/components/accordion';
 import { AccordionItem } from '@/components/accordion/accordionItem';
@@ -13,19 +13,26 @@ import { BackgroundImage } from '@/components/backgroundImage';
 import CertificationGoldImage from '@/components/certifications/IDGP-certification-gold.svg';
 import { GuaranteeSection } from '@/components/guaranteeSection';
 import { PriceSection } from '@/components/priceSection';
+import { TestimonialAprilCostigan } from '@/components/testimonials/aprilCostigan';
+import { TestimonialCaseyBecard } from '@/components/testimonials/caseyBecard';
+import { TestimonialHailieSavage } from '@/components/testimonials/hailieSavage';
+import { TestimonialKaylaTorraville } from '@/components/testimonials/kaylaTorraville';
+import { TestimonialMelodyMason } from '@/components/testimonials/melodyMason';
+import { TestimonialNickiHughes } from '@/components/testimonials/nickiHughes';
 import { TutorSectionDG } from '@/components/tutorSectionDG';
 import { VirtualCommunitySection } from '@/components/virtualCommunitySection';
 import DogGroomingBackground from '@/images/backgrounds/bichon-frise-getting-haircut.jpg';
 import GuaranteeIcon from '@/images/course-overview-icons/guarantee.svg';
 import OutlineIcon from '@/images/course-overview-icons/outline.svg';
 import TutorIcon from '@/images/course-overview-icons/tutor.svg';
+import DogGroomingKit from '@/images/dog-grooming-kit-white.jpg';
 import type { PriceQuery } from '@/lib/fetch';
 import { fetchPrice } from '@/lib/fetch';
 import { formatPrice } from '@/lib/formatPrice';
 import { getData } from '@/lib/getData';
 
 const headerIconSize = 20;
-
+const iconSize = 36;
 const courseCodes = [ 'dg' ];
 
 export const metadata: Metadata = {
@@ -51,49 +58,25 @@ const DogGroomingPage: PageComponent = async () => {
         <div className="container text-center">
           <div className="row mb-4">
             <div className="mb-4">
-              <Image
-                src={CertificationGoldImage as StaticImageData}
-                alt="International Dog Grooming Professional IDGP certification"
-                height="125"
-                width="125"
-                style={{ maxWidth: '100%', height: 'auto' }}
-              />
+              <CertificationGoldImage alt="International Dog Grooming Professional IDGP certification" height="125" width="125" style={{ maxWidth: '100%', height: 'auto' }} />
             </div>
             <h1>Dog Grooming Course</h1>
-            {price && price.plans.part.deposit > 0 && <h4>Get Started for Only <strong>{price.currency.symbol}{formatPrice(price.plans.part.deposit)}</strong></h4>}
+            {price.plans.part.deposit > 0 && <h4>Get Started for Only <strong>{price.currency.symbol}{formatPrice(price.plans.part.deposit)}</strong></h4>}
             <p><em><a href="#tuition" className="text-white">See tuition details</a></em></p>
             <a href="https://enroll.qcpetstudies.com?c=dg"><button className="btn btn-secondary btn-lg">Enroll Online</button></a>
           </div>
           <div className="row justify-content-center">
             <div className="col-12 col-md-6 d-flex">
               <div className="col text-uppercase">
-                <a href="#outline"><Image
-                  src={OutlineIcon as StaticImageData}
-                  alt="outline"
-                  width={headerIconSize}
-                  height={headerIconSize}
-                  style={{ maxWidth: '100%', height: 'auto' }}
-                /></a>
+                <a href="#outline"><OutlineIcon alt="outline" width={headerIconSize} height={headerIconSize} style={{ maxWidth: '100%', height: 'auto' }} /></a>
                 <p><strong>Outline</strong></p>
               </div>
               <div className="col text-uppercase">
-                <a href="#guarantee"><Image
-                  src={GuaranteeIcon as StaticImageData}
-                  alt="play button"
-                  width={headerIconSize}
-                  height={headerIconSize}
-                  style={{ maxWidth: '100%', height: 'auto' }}
-                /></a>
+                <a href="#guarantee"><GuaranteeIcon alt="play button" width={headerIconSize} height={headerIconSize} style={{ maxWidth: '100%', height: 'auto' }} /></a>
                 <p><strong>Guarantee</strong></p>
               </div>
               <div className="col text-uppercase">
-                <a href="#tutors"><Image
-                  src={TutorIcon as StaticImageData}
-                  alt="play button"
-                  width={headerIconSize}
-                  height={headerIconSize}
-                  style={{ maxWidth: '100%', height: 'auto' }}
-                /></a>
+                <a href="#tutors"><TutorIcon alt="play button" width={headerIconSize} height={headerIconSize} style={{ maxWidth: '100%', height: 'auto' }} /></a>
                 <p><strong>Tutors</strong></p>
               </div>
             </div>
@@ -101,13 +84,82 @@ const DogGroomingPage: PageComponent = async () => {
         </div>
       </section>
 
-      <CertificationSection />
+      <section>
+        <div className="container text-center">
+          <div className="row justify-content-center">
+            <div className="col-12 col-lg-10">
+              <div className="ratio ratio-16x9 mb-4">
+                <video controls poster="https://89b45d42c17e11dd3d57-62a1fc0bf60a98e1d5e980348a7de3b7.ssl.cf1.rackcdn.com/dog-grooming-teaser.jpg">
+                  <source src="https://89b45d42c17e11dd3d57-62a1fc0bf60a98e1d5e980348a7de3b7.ssl.cf1.rackcdn.com/dog-grooming-teaser.mp4" type="video/mp4" />
+                </video>
+              </div>
+              <h2>Become a <strong>Certified Professional Dog Groomer</strong></h2>
+              <p className="lead"><strong>International Dog Grooming Professional&trade;</strong> | <i>IDGP&trade;</i></p>
+              <p>There's never been a better time to start a career as a professional dog groomer. Groomers and pet stylists all over the country have waiting lists or are simply refusing new clients. What an amazing opportunity to start a new and lucrative career!</p>
+              <p>Get your International Dog Groomer Certification in less than a year with QC's comprehensive online training. Study at your own pace. Watch instructional videos and complete hands-on assignments to grow your grooming skills. With QC's all-encompassing Professional Grooming course, you'll master all levels of pet grooming from bathing and brushing and pet cuts, all the way to advanced pet styling. Graduate with all the knowledge and skills you need to succeed in the dog grooming industry!</p>
+              <p className="mb-0">Are you ready to start an amazing career?</p>
+            </div>
+          </div>
+        </div>
+      </section>
 
       <PriceSection courses={courseCodes} price={price} doubleGuarantee />
 
-      <IncludedSection />
+      <section>
+        <div className="container text-center">
+          <div className="row justify-content-center">
+            <div className="col-12 col-lg-10 mb-4">
+              <h2 className="mb-2 mb-md-4">Included in <strong>Your Course</strong></h2>
+              <Image src={DogGroomingKit} alt="professional dog-grooming kit" sizes="100vw" style={{ width: '100%', height: 'auto' }} />
+              <div className={`${styles.icon} mb-1`}><BsScissors size={iconSize} /></div>
+              <h3>Professional-Grade Grooming Starter Kit</h3>
+              <p>When you enroll, you'll receive a kit of dog grooming tools to help you complete your studies and start your career. This kit includes cordless WAHL clippers and combs, three grooming scissors, an assortment of brushes and combs, and more!</p>
+              <KitDetailsButton />
+            </div>
+            <div className="col-12 col-md-4 mb-4 mb-md-0">
+              <div className={`${styles.icon} mb-1`}><BsCardChecklist size={iconSize} /></div>
+              <h3>Newest <br className="d-none d-md-inline d-lg-block" />Course Materials</h3>
+              <p className="mb-0">Your course materials are always available online and are always being updated with the latest industry standards.  Refer to your updated training guides throughout your career!</p>
+            </div>
+            <div className="col-12 col-md-4 mb-4 mb-md-0">
+              <div className={`${styles.icon} mb-1`}><BsPeopleFill size={iconSize} /></div>
+              <h3>Personalized <br className="d-none d-md-inline d-lg-block" />Feedback</h3>
+              <p className="mb-0">Just because you're learning online doesn't mean you're learning alone. You'll receive personalized audio feedback from your tutor on every dog grooming assignment you submit.</p>
+            </div>
+            <div className="col-12 col-md-4">
+              <div className={`${styles.icon} mb-1`}><IoMdInfinite size={iconSize} /></div>
+              <h3>Lifetime <br className="d-none d-md-inline d-lg-block" />Access</h3>
+              <p className="mb-0">Once you're a member of the QC family you 'll have lifetime access to all the tools and resources available to QC students. This includes discounts on industry products and so much more!</p>
+            </div>
+          </div>
+        </div>
+      </section>
 
-      <TestimonialsSection className="bg-lighter" />
+      <section className="bg-lighter">
+        <div className="container text-center">
+          <h2 className="text-center mb-4">QC Success Stories</h2>
+          <div className="row justify-content-center">
+            <div className="col-12 col-md-9 col-lg-6 col-xl-4 mb-4">
+              <TestimonialKaylaTorraville />
+            </div>
+            <div className="col-12 col-md-9 col-lg-6 col-xl-4 mb-4">
+              <TestimonialAprilCostigan />
+            </div>
+            <div className="col-12 col-md-9 col-lg-6 col-xl-4 mb-4">
+              <TestimonialHailieSavage />
+            </div>
+            <div className="col-12 col-md-9 col-lg-6 col-xl-4 mb-4 mb-xl-0">
+              <TestimonialMelodyMason />
+            </div>
+            <div className="col-12 col-md-9 col-lg-6 col-xl-4 mb-4 mb-lg-0 mb-xl-0">
+              <TestimonialCaseyBecard />
+            </div>
+            <div>
+              <TestimonialNickiHughes />
+            </div>
+          </div>
+        </div>
+      </section>
 
       <div id="outline" className="sectionAnchor" />
       <section>
