@@ -70,7 +70,7 @@ const CourseOutlinePage: PageComponent = () => {
         </div>
       </section>
 
-      <section style={{ backgroundColor: '#f7f7f7' }}>
+      <section className="bg-lighter">
         <div className="container">
           <div className="row justify-content-center">
             <div className="col-12 col-lg-10 mb-5 text-center">

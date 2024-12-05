@@ -1,9 +1,8 @@
-import type { StaticImageData } from 'next/image';
-import Image from 'next/image';
 import Link from 'next/link';
 import { BsBook } from 'react-icons/bs';
 
 import type { PageComponent } from '@/app/serverComponent';
+import { BackgroundImage } from '@/components/backgroundImage';
 import { Bar } from '@/components/bar';
 import AssignmentBackground from '@/images/backgrounds/your-career-bg.jpg';
 import CameraIcon from '@/images/camera.svg';
@@ -12,24 +11,13 @@ import RedDesktopIcon from '@/images/desktop-red.svg';
 
 export const metadata = {
   title: 'Your Grooming Assignments',
-  description: 'Your Grooming Assignments',
   alternates: { canonical: '/certification-courses/dog-grooming/assignments' },
 };
 
-const GroomingAssignment: PageComponent = () => {
-
-  return <>
-
-    <section id="top" className="bg-dark">
-      <Image
-        src={AssignmentBackground}
-        placeholder="blur"
-        alt="dog getting a haircut"
-        priority
-        fill
-        sizes="100vw"
-        style={{ objectFit: 'cover', objectPosition: 'center' }}
-      />
+const DogGroomingAssignmentsPage: PageComponent = () => (
+  <>
+    <section className="bg-dark">
+      <BackgroundImage src={AssignmentBackground} priority />
       <div className="image-overlay-gradient" />
       <div className="container text-center">
         <div className="row justify-content-center">
@@ -53,38 +41,26 @@ const GroomingAssignment: PageComponent = () => {
             <p>From there, your personal tutor will evaluate your grooming techniques and provide you with detailed feedback. you'll gain insight into where your skills lie, and what you need to improve on for the next unit of your <Link href="/certification-courses/dog-grooming" className="link-primary">dog grooming course</Link>.</p>
           </div>
         </div>
-        <div className="row justify-content-center">
-          <div className="col-12 col-md-4 mb-4 mb-md-0">
+        <div className="row justify-content-center g-4">
+          <div className="col-12 col-md-4">
             <div className="mb-2">
-              <Image
-                src={RedDesktopIcon as StaticImageData}
-                alt="Desktop icon"
-                style={{ maxWidth: '100%', height: 'auto', objectFit: 'cover', objectPosition: 'center' }}
-              />
+              <RedDesktopIcon alt="Desktop icon" style={{ maxWidth: '100%', height: 'auto', objectFit: 'cover', objectPosition: 'center' }} />
             </div>
-            <h3>Study <br className="d-none d-md-inline d-lg-none" /> Online</h3>
+            <h3>Study <br className="d-none d-md-inline d-lg-none" />Online</h3>
             <p className="mb-0">Study your material online. Master the course theory and develop an understanding of proper practices, techniques, and industry knowledge.</p>
           </div>
-          <div className="col-12 col-md-4 mb-4 mb-md-0">
+          <div className="col-12 col-md-4">
             <div className="mb-2">
-              <Image
-                src={CameraIcon as StaticImageData}
-                alt="Camera icon"
-                style={{ maxWidth: '100%', height: 'auto', objectFit: 'cover', objectPosition: 'center' }}
-              />
+              <CameraIcon alt="Camera icon" style={{ maxWidth: '100%', height: 'auto', objectFit: 'cover', objectPosition: 'center' }} />
             </div>
-            <h3>Complete <br className="d-none d-md-inline d-lg-none" /> Assignments</h3>
+            <h3>Complete <br className="d-none d-md-inline d-lg-none" />Assignments</h3>
             <p className="mb-0">Your theory assignments are completed online by simply filling out the assignment template. For practical assignments, you'll submit clear photos and videos of your work.</p>
           </div>
           <div className="col-12 col-md-4">
             <div className="mb-2">
-              <Image
-                src={CheckedIcon as StaticImageData}
-                alt="Checked icon"
-                style={{ maxWidth: '100%', height: 'auto', objectFit: 'cover', objectPosition: 'center' }}
-              />
+              <CheckedIcon alt="Checked icon" style={{ maxWidth: '100%', height: 'auto', objectFit: 'cover', objectPosition: 'center' }} />
             </div>
-            <h3>Receive <br className="d-none d-md-inline d-lg-none" /> Feedback</h3>
+            <h3>Receive <br className="d-none d-md-inline d-lg-none" />Feedback</h3>
             <p className="mb-0">Your tutor reviews your work and provides detailed feedback, which you'll use to improve on your next unit. you'll receive a letter grade for each unit based on your knowledge and technical skills.</p>
           </div>
         </div>
@@ -157,7 +133,7 @@ const GroomingAssignment: PageComponent = () => {
                 <p className="mb-4"><em>The video below is a sample from QC's dog grooming course assignments. Students can watch these clips on their assignment templates in the Online Student Center.</em></p>
                 <div className="ratio ratio-16x9">
                   <video controls>
-                    <source src="https://www.doggroomingcourse.com/wp-content/uploads/2017/09/Practicum_optimized_smaller_1.mp4" type="video/mp4" />
+                    <source src="https://www.qcpetstudies.com/blog/wp-content/uploads/2017/09/Practicum_optimized_smaller_1.mp4" type="video/mp4" />
                     Your browser does not support the video tag.
                   </video>
                 </div>
@@ -167,7 +143,7 @@ const GroomingAssignment: PageComponent = () => {
         </div>
       </div>
     </section>
-  </>;
-};
+  </>
+);
 
-export default GroomingAssignment;
+export default DogGroomingAssignmentsPage;

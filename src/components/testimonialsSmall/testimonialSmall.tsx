@@ -16,15 +16,15 @@ type Props = {
   variant?: 'primary' | 'secondary';
 };
 
-export const TestimonialSmall: FC<Props> = ({ size = 192, starSize, quotation, name, certification, imageSrc, objectPosition, variant = 'primary' }) => (
+export const TestimonialSmall: FC<Props> = ({ size = 192, starSize = 180, quotation, name, certification, imageSrc, objectPosition, variant = 'primary' }) => (
   <>
     <div className="mb-3 d-flex justify-content-center">
       <ImageCircle src={imageSrc} alt={name} size={size} objectPosition={objectPosition} />
     </div>
     <div className="mb-2">
       {variant === 'secondary'
-        ? <FiveStarsSecondary width="183" height="31" alt="5 out of 5" style={{ maxWidth: '100%', width: starSize ?? size * 1.5, height: 'auto' }} />
-        : <FiveStarsPrimary width="183" height="31" alt="5 out of 5" style={{ maxWidth: '100%', width: starSize ?? size * 1.5, height: 'auto' }} />
+        ? <FiveStarsSecondary width="183" height="31" alt="5 out of 5" style={{ maxWidth: '100%', width: starSize, height: 'auto' }} />
+        : <FiveStarsPrimary width="183" height="31" alt="5 out of 5" style={{ maxWidth: '100%', width: starSize, height: 'auto' }} />
       }
     </div>
     <p className="lead strong mb-2"><strong>&ldquo;{quotation}&rdquo;</strong></p>

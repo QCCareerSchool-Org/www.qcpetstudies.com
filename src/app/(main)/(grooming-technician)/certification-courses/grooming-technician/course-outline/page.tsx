@@ -3,17 +3,17 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { FaBars } from 'react-icons/fa';
 
+import FirstAidCourse from './_images/first-aid-for-groomers.jpg';
+import UnitAImage from './_images/unit-a.jpg';
+import UnitBImage from './_images/unit-b.jpg';
+import UnitCImage from './_images/unit-c.jpg';
 import type { PageComponent } from '@/app/serverComponent';
 import { Accordion } from '@/components/accordion';
 import { AccordionItem } from '@/components/accordion/accordionItem';
 import { BackgroundImage } from '@/components/backgroundImage';
 import CourseOutlineBackground from '@/images/backgrounds/course-outline.jpg';
 import CalendarIcon from '@/images/calendar.svg';
-import IconTime from '@/images/clock.svg';
-import FirstAidCourse from '@/images/dg-full-outline-first-aid-for-groomers.jpg';
-import UnitAImage from '@/images/dg-full-outline-unit-a-image.jpg';
-import UnitBImage from '@/images/dg-full-outline-unit-b-image.jpg';
-import UnitCImage from '@/images/dg-full-outline-unit-c-image.jpg';
+import TimeIcon from '@/images/clock.svg';
 
 const iconSize = 50;
 
@@ -49,7 +49,7 @@ const GroomingTechCourseOutlinePage: PageComponent = () => {
               <div className="card">
                 <div className="card-body">
                   <div className="mb-2">
-                    <IconTime width={iconSize} height={iconSize} alt="clock icon" style={{ maxWidth: '100%', height: 'auto' }} />
+                    <TimeIcon width={iconSize} height={iconSize} alt="clock icon" style={{ maxWidth: '100%', height: 'auto' }} />
                   </div>
                   <p>The course should take between <strong>45 and 80 hours</strong> to study and complete assignments from start to finish. This time does not include the time you will take to practice and develop your skills before you complete an assignment.</p>
                 </div>
@@ -72,7 +72,7 @@ const GroomingTechCourseOutlinePage: PageComponent = () => {
         </div>
       </section>
 
-      <section id="outlineSection" className="bg-light">
+      <section className="bg-lighter">
         <div className="container">
           <div className="row justify-content-center">
             <div className="col-12 col-lg-10 mb-4 text-center">
@@ -260,9 +260,7 @@ const GroomingTechCourseOutlinePage: PageComponent = () => {
       </section>
 
       {/* <style jsx>{`
-      #outlineSection {
-        background-color: #f7f7f7 !important;
-      }
+
       .unitStatsTable {
         font-size: 1.25rem;
       }

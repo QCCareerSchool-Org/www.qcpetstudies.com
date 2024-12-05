@@ -1,9 +1,8 @@
 import type { Metadata } from 'next';
-import type { StaticImageData } from 'next/image';
 import Image from 'next/image';
 import Link from 'next/link';
 
-import { ToolsToSucceedSection } from './toolsToSucceedSection';
+import { OutlineSection } from './outlineSection';
 import type { PageComponent } from '@/app/serverComponent';
 import { BackgroundImage } from '@/components/backgroundImage';
 import { GuaranteeSection } from '@/components/guaranteeSection';
@@ -34,11 +33,11 @@ const BreedStylingPage: PageComponent = async () => {
 
   return <>
 
-    <section id="top" className="bg-dark">
+    <section className="bg-dark">
       <BackgroundImage src={StylingBackground} priority />
       <div className="image-overlay-gradient" />
       <div className="container text-center">
-        <Image src={CourseIconBadge as StaticImageData} alt="Breed Styling Course badge" style={{ maxWidth: '100%', height: 'auto' }} />
+        <CourseIconBadge alt="Breed Styling Course badge" className="mb-2" style={{ maxWidth: '100%', height: 'auto' }} />
         <h1>Breed Styling Workshop</h1>
         <div className="row justify-content-center">
           <div className="col-12 col-lg-10">
@@ -98,19 +97,52 @@ const BreedStylingPage: PageComponent = async () => {
             <p className="mb-4">Upon graduation, you'll receive your Breed Styling Workshop certificate. You'll also receive the International Dog Grooming Professional (IDGP) designation. These qualifications attest to your success in learning how to expertly groom a dog of any breed.</p>
           </div>
           <div className="col-12 col-md-10 col-lg-8 col-xl-6">
-            <Image
-              src={BreedStylingCertificateImage}
-              alt="Breed Styling Workshop certificate"
-              sizes="100vw"
-              style={{ width: '100%', height: 'auto' }}
-            />
+            <Image src={BreedStylingCertificateImage} alt="Breed Styling Workshop certificate" sizes="100vw" style={{ width: '100%', height: 'auto' }} />
           </div>
         </div>
       </div>
     </section>
 
-    <ToolsToSucceedSection />
+    <section>
+      <div className="container">
+        <div className="row justify-content-center">
+          <div className="col-12 col-lg-10 text-center">
+            <h2>Tools to succeed</h2>
+            <p>To complete the assignments in the course, you'll need the following tools:</p>
+          </div>
+          <div className="col-12 col-sm-9 col-md-7 col-lg-4">
+            <ul className="mb-0">
+              <li>A selection of grooming brushes and combs</li>
+              <li>Dematting tools</li>
+              <li>Nail clippers</li>
+              <li>Styptic product</li>
+              <li>Hemostats</li>
+              <li>A selection of professional scissors</li>
+              <li>Professional clippers with a selection of blades or blade settings</li>
+            </ul>
+          </div>
+          <div className="col-12 col-sm-9 col-md-7 col-lg-4 mb-4">
+            <ul className="mb-0">
+              <li>Shampoos and conditioners</li>
+              <li>Ear powder</li>
+              <li>Restraints</li>
+              <li>Grooming table</li>
+              <li>Bathing setup</li>
+              <li>High-velocity dryer and/or stand dryer</li>
+              <li>Towels</li>
+              <li>Face mask</li>
+              <li>Ear protection</li>
+            </ul>
+          </div>
+          <div className="col-12 col-lg-10 text-center">
+            <p className="fst-italic">Please note that you'll need to purchase these tools yourself if you don't already own them. As a student of QC Pet Studies, take advantage of discounts from established dog grooming brands.</p>
+            <Link href="/about/student-discounts" className="link-primary">See the list here!</Link>
+          </div>
+        </div>
+      </div>
+    </section>
 
+    <OutlineSection />
   </>;
 };
 

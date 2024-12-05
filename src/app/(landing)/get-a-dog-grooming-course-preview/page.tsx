@@ -1,9 +1,9 @@
 import type { Metadata } from 'next';
 import { headers } from 'next/headers';
-import type { StaticImageData } from 'next/image';
 import Image from 'next/image';
 import Link from 'next/link';
 
+import { Header } from '../_components/header';
 import type { PageComponent } from '@/app/serverComponent';
 import { BrevoForm } from '@/components/brevoForm';
 import { TestimonialSmCaseyBechard } from '@/components/testimonialsSmall/caseyBechard';
@@ -40,6 +40,7 @@ const DogGroomingCatalogPage: PageComponent = ({ searchParams }) => {
 
   return (
     <>
+      <Header />
       <section>
         <div className="container">
           <div className="row align-items-center justify-content-center">
@@ -131,7 +132,7 @@ const DogGroomingCatalogPage: PageComponent = ({ searchParams }) => {
         <div className="container text-center">
           <div className="row justify-content-center">
             <div className="col-12 col-lg-10">
-              <Image src={FirstAidLogo as StaticImageData} alt="First Aid course logo" style={{ maxWidth: '100%', height: 'auto' }} />
+              <FirstAidLogo alt="First Aid course logo" style={{ maxWidth: '100%', height: 'auto' }} />
               <h2>Free First Aid Course</h2>
               <p className="lead">Enroll in the Dog Grooming course and get the First Aid for Dog Groomers course <strong>FREE! ($348 value)</strong></p>
               <p className="mb-0">Being trained in pet first aid prepares you to respond to emergencies and to maintain a safe grooming environment. In this course, you'll learn how to prevent injuries and how to respond to emergency situations in your grooming salon.</p>

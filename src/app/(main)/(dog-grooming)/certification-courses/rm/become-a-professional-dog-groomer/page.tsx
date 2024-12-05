@@ -1,20 +1,37 @@
 import type { Metadata } from 'next';
+import { headers } from 'next/headers';
 import Image from 'next/image';
 
+import styles from './page.module.scss';
 import type { PageComponent } from '@/app/serverComponent';
+import { BrevoForm } from '@/components/brevoForm';
 import { FreeFirstAidSection } from '@/components/freeFirstAidSection';
 import { HowTheCoursesWorkSection } from '@/components/howTheCoursesWorkSection';
 import CourseCatalogImage from '@/images/bottom-ipad-shepard.jpg';
 import FullKitImage from '@/images/Kit-Blue-bg.jpg';
+import { getParam } from '@/lib/getParam';
 
 export const metadata: Metadata = {
   title: 'Become a Professional Dog Groomer',
   alternates: { canonical: '/certification-courses/rm/become-a-professional-dog-groomer' },
 };
 
-const ProfessionalDogGroomerPage: PageComponent = () => {
+const courses = [ 'dg' ];
+const brevoListId = 31;
+
+const ProfessionalDogGroomerPage: PageComponent = ({ searchParams }) => {
+  const gclid = getParam(searchParams.gclid);
+  const msclkid = getParam(searchParams.msclkid);
+  const utmSource = getParam(searchParams.utm_source);
+  const utmMedium = getParam(searchParams.utm_medium);
+  const utmCampaign = getParam(searchParams.utm_campaign);
+  const utmContent = getParam(searchParams.utm_content);
+  const utmTerm = getParam(searchParams.utm_term);
+  const headerList = headers();
+  const referrer = headerList.get('referer');
+
   return <>
-    <section id="top" className="bg-dark bg-grayish-blue">
+    <section className={`bg-dark ${styles.bgGrayishBlue}`}>
       <div className="container text-center">
         <div className="row justify-content-center">
           <div className="col-12 col-lg-10 mb-4">
@@ -30,7 +47,7 @@ const ProfessionalDogGroomerPage: PageComponent = () => {
             <Image src={FullKitImage} alt="Dog Grooming Starter Full Kit" sizes="100vw" style={{ width: '100%', height: 'auto' }} />
           </div>
           <div className="col-12 col-lg-6 d-flex text-start">
-            <div className="card bg-desaturated-blue">
+            <div className={`card ${styles.bgDesaturatedBlue}`}>
               <div className="card-body">
                 <h3>Download a Free Course Catalog!</h3>
                 <ul className="no-indent">
@@ -40,7 +57,21 @@ const ProfessionalDogGroomerPage: PageComponent = () => {
                   <li>Find out about tuition information including finding a payment plan that works well for you</li>
                   <li>Learn how you can't go wrong with QC's money back guarantee!</li>
                 </ul>
-                {/* <BrochureForm gclid={gclid} msclkid={msclkid} buttonText="Download Catalog" firstName={firstName} lastName={lastName} emailAddress={emailAddress} emailOptIn={emailOptIn} telephoneNumber={telephoneNumber} smsOptIn={smsOptIn} marketing={marketing} courses={courses} errors={errors} /> */}
+                <BrevoForm
+                  successLocation={`${process.env.HOST ?? 'https://www.qcpetstudies.com'}/thank-you-dog-grooming-course-preview`}
+                  listId={brevoListId}
+                  // emailTemplateId={brevoEmailTemplateId}
+                  gclid={gclid}
+                  msclkid={msclkid}
+                  utmSource={utmSource}
+                  utmMedium={utmMedium}
+                  utmCampaign={utmCampaign}
+                  utmContent={utmContent}
+                  utmTerm={utmTerm}
+                  courseCodes={courses}
+                  placeholders
+                  referrer={referrer}
+                />
               </div>
             </div>
           </div>
@@ -64,33 +95,31 @@ const ProfessionalDogGroomerPage: PageComponent = () => {
     </section>
 
     <div className="container" style={{ marginBottom: -56, maxWidth: 696 }}>
-      <Image
-        src={CourseCatalogImage}
-        alt="Dog looking at you"
-        className="formImage"
-        sizes="100vw"
-        style={{ width: '100%', height: 'auto' }}
-      />
+      <Image src={CourseCatalogImage} alt="Dog looking at you" className={styles.formImage} sizes="100vw" style={{ width: '100%', height: 'auto' }} />
     </div>
     <section className="bg-navy bg-desaturated-blue pt-3">
       <div className="container">
         <div className="row justify-content-center bg-desaturated-blue text-white">
           <div className="col-12 col-lg-6 mb-4 px-5" style={{ marginTop: '50px' }}>
-            {/* <BrochureForm gclid={gclid} msclkid={msclkid} buttonText="Download Free Catalog" firstName={firstName} lastName={lastName} emailAddress={emailAddress} emailOptIn={emailOptIn} telephoneNumber={telephoneNumber} smsOptIn={smsOptIn} marketing={marketing} courses={courses} errors={errors} /> */}
+            <BrevoForm
+              successLocation={`${process.env.HOST ?? 'https://www.qcpetstudies.com'}/thank-you-dog-grooming-course-preview`}
+              listId={brevoListId}
+              // emailTemplateId={brevoEmailTemplateId}
+              gclid={gclid}
+              msclkid={msclkid}
+              utmSource={utmSource}
+              utmMedium={utmMedium}
+              utmCampaign={utmCampaign}
+              utmContent={utmContent}
+              utmTerm={utmTerm}
+              courseCodes={courses}
+              placeholders
+              referrer={referrer}
+            />
           </div>
         </div>
       </div>
     </section>
-
-    {/* <style jsx>{`
-      .bg-grayish-blue {
-        background: #3e4557 !important;
-      }
-      .bg-desaturated-blue {
-        background: #262e41 !important;
-      }
-      .formImage { z-index: 100; }
-    `}</style> */}
   </>;
 };
 

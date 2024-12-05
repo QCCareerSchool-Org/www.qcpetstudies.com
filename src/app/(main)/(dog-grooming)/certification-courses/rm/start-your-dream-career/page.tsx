@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Image from 'next/image';
 
 import type { PageComponent } from '@/app/serverComponent';
+import { BackgroundImage } from '@/components/backgroundImage';
 import { FreeFirstAidSection } from '@/components/freeFirstAidSection';
 import QcYearGuaratnteeLogo from '@/components/guaranteeModal/1-year-guarantee-outlined.svg';
 import QcDayGuaratnteeLogo from '@/components/guaranteeModal/21-day-guarantee-outlined.svg';
@@ -31,14 +32,7 @@ const StartYourDreamCareerPage: PageComponent = async () => {
   return (
     <>
       <section id="top" className="bg-dark">
-        <Image
-          src={DreamCareerBackground}
-          alt="dog getting blow dried"
-          priority
-          fill
-          sizes="100vw"
-          style={{ objectFit: 'cover', objectPosition: 'center' }}
-        />
+        <BackgroundImage src={DreamCareerBackground} priority />
         <div className="image-overlay-gradient" />
         <div className="container text-center">
           <div className="row justify-content-center">
@@ -51,7 +45,7 @@ const StartYourDreamCareerPage: PageComponent = async () => {
         </div>
       </section>
 
-      <section id="courseMaterials" className="bg-light">
+      <section id="courseMaterials" style={{ backgroundColor: '#e3e3e3' }}>
         <div className="container text-center">
           <div className="row justify-content-center">
             <div className="col-12 col-lg-10">
@@ -74,7 +68,7 @@ const StartYourDreamCareerPage: PageComponent = async () => {
                 <div className="card-body">
                   <div className="w-100">
                     <div className="mb-3">
-                      <QcDayGuaratnteeLogo alt="21-day money-back guarantee logo" style={{ maxWidth: '100%', height: 'auto' }} />
+                      <QcDayGuaratnteeLogo alt="21-day money-back guarantee logo" width="150" style={{ maxWidth: '100%', height: 'auto' }} />
                     </div>
                     <h4>The 21-Day Money-Back Guarantee</h4>
                     <p className="card-text">Try the course risk-free for 21 days. This gives you time to receive your course materials and evaluate whether the dog grooming course is right for you. If you decide it's not a good fit, simply contact QC to arrange a return of your course materials for a refund. It's that easy! Note: For sanitary reasons, the clippers and attachment combs provided with the course cannot be refunded (value $200 US)</p>
@@ -87,7 +81,7 @@ const StartYourDreamCareerPage: PageComponent = async () => {
                 <div className="card-body">
                   <div className="w-100">
                     <div className="mb-3">
-                      <QcYearGuaratnteeLogo alt="1-year money-back guarantee logo" style={{ maxWidth: '100%', height: 'auto' }} />
+                      <QcYearGuaratnteeLogo alt="1-year money-back guarantee logo" width="150" style={{ maxWidth: '100%', height: 'auto' }} />
                     </div>
                     <h4>The 1-Year Money-Back Guarantee</h4>
                     <p className="card-text lead"><em>This course will pay for itself within two years. That's a promise.</em></p>

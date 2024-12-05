@@ -3,6 +3,7 @@ import { headers } from 'next/headers';
 import Image from 'next/image';
 import Link from 'next/link';
 
+import { Header } from '../_components/header';
 import type { PageComponent } from '@/app/serverComponent';
 import { BrevoForm } from '@/components/brevoForm';
 import CatalogImage from '@/images/dog-in-a-tube-1.jpg';
@@ -34,6 +35,7 @@ const DogTrainingCatalogPage: PageComponent = ({ searchParams }) => {
 
   return (
     <>
+      <Header />
       <section>
         <div className="container">
           <div className="row justify-content-center align-items-center">

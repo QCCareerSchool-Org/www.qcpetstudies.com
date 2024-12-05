@@ -1,14 +1,14 @@
 import Image from 'next/image';
 import type { FC } from 'react';
 
+import OutlinePart1 from './part-1-anatomy.jpg';
+import OutlinePart2 from './part-2-first-aid.jpg';
+import OutlinePart3 from './part-3-grooming.jpg';
 import { Accordion } from '@/components/accordion';
 import { AccordionItem } from '@/components/accordion/accordionItem';
 import { Bar } from '@/components/bar';
-import OutlinePart1 from '@/images/ds-outlline-part-1-anatomy.jpg';
-import OutlinePart2 from '@/images/ds-outlline-part-2-first-aid.jpg';
-import OutlinePart3 from '@/images/ds-outlline-part-3-grooming.jpg';
 
-export const CourseOutlineSection: FC = () => {
+export const OutlineSection: FC = () => {
   let eventKey = 0;
 
   return (

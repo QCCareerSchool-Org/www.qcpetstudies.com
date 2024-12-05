@@ -1,7 +1,5 @@
-<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="64px" height="64px" viewBox="0 0 64 64" enable-background="new 0 0 64 64" xml:space="preserve" id="nectar-svg-animation-instance-2" style="height: 50px; width: 50px;">
-<g>
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 64 64">
 <path fill="none" stroke="#FF0000" stroke-width="2" stroke-miterlimit="10" d="M1,21A20,20 0,1,1 41,21A20,20 0,1,1 1,21" style="stroke-dasharray: 126, 128; stroke-dashoffset: 0;"></path>
 <path fill="none" stroke="#FF0000" stroke-width="2" stroke-miterlimit="10" d="M35,35L41,41" style="stroke-dasharray: 9, 11; stroke-dashoffset: 0;"></path>
 <path transform="matrix(-0.7071 0.7071 -0.7071 -0.7071 121.9178 50.5)" fill="none" stroke="#FF0000" stroke-width="2" stroke-miterlimit="10" width="8.485" height="26.87" d="M46.257 37.065 L54.742 37.065 L54.742 63.935 L46.257 63.935 Z" style="stroke-dasharray: 71, 73; stroke-dashoffset: 0;"></path>
-</g>
 </svg>
