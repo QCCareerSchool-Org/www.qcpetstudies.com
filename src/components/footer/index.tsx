@@ -33,7 +33,7 @@ export const Footer: FC<Props> = ({ countryCode, ctaType, cta }) => {
   const termsLink = gbpCountry(countryCode) ? '/terms-gb' : '/terms';
 
   return (
-    <footer className={`${styles.footer} bg-navy`}>
+    <footer className={`${styles.footer} bg-navy flex-shrink-0 mt-auto`}>
       <div className="container">
         {typeof cta !== 'undefined' ? cta : <CTA type={ctaType} /> }
         <hr className="my-5" />

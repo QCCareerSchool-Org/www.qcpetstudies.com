@@ -22,14 +22,14 @@ export const metadata: Metadata = {
 
 const RootLayout: LayoutComponent = ({ children }): ReactElement => {
   return (
-    <html lang="en" className={`h-100`}>
+    <html lang="en" className="vh-100">
       <head>
         {process.env.GOOGLE_ANALYTICS_ID && <GoogleAnalytics id={process.env.GOOGLE_ANALYTICS_ID} adsId={process.env.GOOGLE_ADS_ID} />}
         {process.env.VWO_ID && <VWO id={parseInt(process.env.VWO_ID, 10)} />}
         {process.env.BREVO_CLIENT_KEY && <Brevo clientKey={process.env.BREVO_CLIENT_KEY} />}
         <FaviconMeta />
       </head>
-      <body className="d-flex flex-column">
+      <body className="d-flex flex-column vh-100">
         <Provider>
           {children}
           <OklahomaDisclaimer />
