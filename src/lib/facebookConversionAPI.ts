@@ -1,14 +1,15 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
+'server only';
+
 import { createHash } from 'crypto';
 
-import type { RawEnrollment } from '../models/enrollment';
+import type { Enrollment } from '@/domain/enrollment';
 
 const apiVersion = 'v20.0';
 const datasetId = '3226622604235515';
 const accessToken = 'EAAMUT7XQ1g0BO5wBaKj6vPYKLZBz0GZBsyGoFaGe6DMK9noiEvjUWfxNy0PKwloAqn7Lpuvi2ZCPwZAENgb2Ie5bwW7Y9ctPhP0MyY7S6ZBlvSuJ6bWHor6DPG7gbZB0FHPeWE7uHLu3WgxYPATgv9aT2H54sPmYMISUyynQxhxRBWvAHmekQyy7tVvOb7QPhvrwZDZD';
 
 export const fbPostPurchase = async (
-  enrollment: RawEnrollment,
+  enrollment: Enrollment,
   eventSourceUrl: string | undefined,
   clientIPAddress: string | null,
   clientUserAgent: string | null,

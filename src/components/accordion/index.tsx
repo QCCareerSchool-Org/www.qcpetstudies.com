@@ -1,13 +1,14 @@
-import type { FC, ReactNode } from 'react';
+'use client';
+
+import type { FC, PropsWithChildren } from 'react';
+import { Accordion as BsAccordion } from 'react-bootstrap';
 
 type Props = {
-  id?: string;
-  className?: string;
-  children: ReactNode;
+  defaultActiveKey?: number;
 };
 
-export const Accordion: FC<Props> = ({ id, className, children }) => (
-  <div id={id} className={`accordion ${className ?? ''}`}>
+export const Accordion: FC<PropsWithChildren<Props>> = ({ defaultActiveKey, children }) => (
+  <BsAccordion defaultActiveKey={defaultActiveKey?.toString()}>
     {children}
-  </div>
+  </BsAccordion>
 );

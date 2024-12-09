@@ -1,3 +1,5 @@
+import 'server-only';
+
 import * as brevo from '@getbrevo/brevo';
 
 const brevoApiKey = process.env.BREVO_API_KEY ?? '';
