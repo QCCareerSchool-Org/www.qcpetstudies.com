@@ -30,9 +30,18 @@ export const CTA: FC = () => {
  * Determines the CTAType to use based on the page path
  */
 const getCTAType = (path: string | null): CTAType | undefined => {
-  if (path?.startsWith('/certification-courses/dog-grooming')) {
-    return 'grooming';
-  }
+  if (
+    path?.startsWith('/certification-courses/dog-grooming') 
+    || path?.startsWith('/certification-courses/breed-styling')
+    || path?.startsWith('/certification-courses/dog-grooming-kit')
+    || path?.startsWith('/certification-courses/rm')
+    || path?.startsWith('/certification-courses/success-guaranteed')
+  ) return 'grooming';
+  
+  if (path?.startsWith('/certification-courses/dog-training')) return 'training';
+
+  if (path?.startsWith('/certification-courses/grooming-technician')) return 'grooming tech';
+
 };
 
 const getIndustry = (type?: CTAType): string => {
