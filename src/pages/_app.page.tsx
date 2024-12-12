@@ -16,7 +16,6 @@ import { getRegistration } from '../lib/serviceWorker';
 import { TrackJS } from '../lib/trackjs-isomorphic';
 import { uetPageview } from '../lib/uet';
 import { Provider } from '../providers';
-import { OklahomaDisclaimer } from './oklahomaDisclaimer';
 
 if (!TrackJS.isInstalled()) {
   TrackJS.install({
@@ -71,7 +70,6 @@ const QCPetStudiesApp = ({ Component, pageProps }: AppPropsWithLayout): ReactEle
     <ErrorBoundary fallback={<ErrorPage />}>
       <Provider>
         {getLayout(<Component {...pageProps} />)}
-        <OklahomaDisclaimer />
       </Provider>
     </ErrorBoundary>
   );
