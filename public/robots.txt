@@ -2,5 +2,6 @@ User-agent: *
 Crawl-delay: 10
 Disallow: /wp-admin/
 Disallow: /blog/wp-admin/
+Disallow: '/*?*playAgain='
 Allow: /blog/wp-admin/admin-ajax.php
 Sitemap: https://www.qcpetstudies.com/sitemap_index.xml
