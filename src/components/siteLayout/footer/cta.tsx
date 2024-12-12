@@ -46,7 +46,6 @@ const getCTAType = (path: string | null): CTAType | undefined => {
   if (path.startsWith('/certification-courses/dog-training')) { return 'training'; }
 
   if (path.startsWith('/certification-courses/grooming-technician')) { return 'grooming tech'; }
-
 };
 
 const getIndustry = (type?: CTAType): string => {
@@ -57,7 +56,7 @@ const getIndustry = (type?: CTAType): string => {
     case 'training':
       return 'dog training';
     case 'behavior':
-      return `behavior`;
+      return 'behavior';
     case 'care':
       return 'dog care';
     default:
