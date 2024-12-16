@@ -115,12 +115,7 @@ const HomePage: PageComponent = () => {
               <h2>How Online <strong>Learning Works</strong></h2>
             </div>
             <div className="col-12 col-md-6 mb-4 mb-md-0">
-              <Image
-                src={HowItWorks}
-                alt=""
-                sizes="100vw"
-                style={{ width: '100%', height: 'auto' }}
-              />
+              <Image src={HowItWorks} alt="" sizes="100vw" style={{ width: '100%', height: 'auto' }} />
             </div>
             <div className="col-12 col-md-6">
               <h3>Enroll Online &amp; Access Your Course Materials</h3>
