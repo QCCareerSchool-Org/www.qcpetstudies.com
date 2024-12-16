@@ -45,7 +45,7 @@ export const CountDownTimer: FC<Props> = ({ date, countryCode }) => {
 
     const showTimer = currentDate >= countDownStartDate;
 
-    const discount = gbpCountry(countryCode) ? '£400' : '$400';
+    const discount = gbpCountry(countryCode) ? '£200' : '$200';
 
     const message = showTimer
       ? <RegularMessage discount={discount} />
