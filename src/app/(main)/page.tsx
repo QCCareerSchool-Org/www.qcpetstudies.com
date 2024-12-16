@@ -43,7 +43,6 @@ const HomePage: PageComponent = () => {
               </div>
             </div>
           </div>
-          <div className="heroSpacer" />
         </div>
       </section>
 
@@ -226,7 +225,7 @@ const HomePage: PageComponent = () => {
 
 const CertificationCard: FC<PropsWithChildren> = ({ children }) => {
   return (
-    <div className="card d-none d-lg-block">
+    <div className="card">
       <div className="card-body d-flex flex-column align-items-center justify-content-between">
         {children}
       </div>

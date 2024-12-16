@@ -41,7 +41,7 @@ export const CourseOutlineSection: FC = () => {
                   <li>learning theory</li>
                   <li>applying learning theory</li>
                 </ul>
-                <p className="mb-0"><Link href="/certification-courses/dog-training/course-outline" className="link-primary">View a more-detailed course syllabus</Link></p>
+                <p className="mb-0"><Link href="/certification-courses/dog-training/course-outline">View a more-detailed course syllabus</Link></p>
               </div>
               <div className="col-6 col-xl-5 d-none d-lg-block">
                 <Image src={IntroductoryUnitsImage} alt="Dog runing" sizes="100vw" style={{ width: '100%', height: 'auto' }} />
@@ -69,7 +69,7 @@ export const CourseOutlineSection: FC = () => {
                   <li>training tools</li>
                   <li>addressing unwanted behaviors</li>
                 </ul>
-                <p className="mb-0"><Link href="/certification-courses/dog-training/course-outline" className="link-primary">View a more-detailed course syllabus</Link></p>
+                <p className="mb-0"><Link href="/certification-courses/dog-training/course-outline">View a more-detailed course syllabus</Link></p>
               </div>
               <div className="col-6 col-xl-5 d-none d-lg-block">
                 <Image src={ApplyingTrainingPrinciplesImage} alt="Dog learning from human" sizes="100vw" style={{ width: '100%', height: 'auto' }} />
@@ -97,7 +97,7 @@ export const CourseOutlineSection: FC = () => {
                     </ul>
                   </li>
                 </ul>
-                <p className="mb-0"><Link href="/certification-courses/dog-training/course-outline" className="link-primary">View a more-detailed course syllabus</Link></p>
+                <p className="mb-0"><Link href="/certification-courses/dog-training/course-outline">View a more-detailed course syllabus</Link></p>
               </div>
               <div className="col-6 col-xl-5 d-none d-lg-block">
                 <Image src={TeachingPeopleImage} alt="person training dog" sizes="100vw" style={{ width: '100%', height: 'auto' }} />
@@ -117,7 +117,7 @@ export const CourseOutlineSection: FC = () => {
                   <li>marketing techniques</li>
                   <li>selling your services</li>
                 </ul>
-                <p className="mb-0"><Link href="/certification-courses/dog-training/course-outline" className="link-primary">View a more-detailed course syllabus</Link></p>
+                <p className="mb-0"><Link href="/certification-courses/dog-training/course-outline">View a more-detailed course syllabus</Link></p>
               </div>
               <div className="col-6 col-xl-5 d-none d-lg-block">
                 <Image src={DogTrainingBusinessImage} alt="person working on laptop" sizes="100vw" style={{ width: '100%', height: 'auto' }} />
@@ -134,7 +134,7 @@ export const CourseOutlineSection: FC = () => {
                   <li>Useful tips to help you prepare for your exam</li>
                   <li>A practice quiz to help make sure you're ready!</li>
                 </ul>
-                <p className="mb-0"><Link href="/certification-courses/dog-training/course-outline" className="link-primary">View a more-detailed course syllabus</Link></p>
+                <p className="mb-0"><Link href="/certification-courses/dog-training/course-outline">View a more-detailed course syllabus</Link></p>
               </div>
               <div className="col-6 col-xl-5 d-none d-lg-block">
                 <Image src={CPDTPrepImage} alt="German Shepherd puppy" sizes="100vw" style={{ width: '100%', height: 'auto' }} />

@@ -3,22 +3,24 @@
 import type { FC, MouseEventHandler } from 'react';
 import { Modal } from 'react-bootstrap';
 
-import styles from './page.module.scss';
 import { useToggle } from '@/hooks/useToggle';
 
-export const QuizQuestion: FC = () => {
+export const QuizAnswer: FC = () => {
+  const [ show, toggle ] = useToggle(false);
+
   const handleQuizLinkClick: MouseEventHandler<HTMLAnchorElement> = e => {
     e.preventDefault();
-    handleQuizClick();
+    toggle();
   };
 
-  const [ quizPopupVisible, handleQuizClick ] = useToggle(false);
+  const handleClose = (): void => {
+    toggle();
+  };
 
   return (
     <>
-      <h3 className={styles.question}>I'm not sure which course to take: Dog Training, Dog Behavior or both?</h3>
       <p>Fill out <a onClick={handleQuizLinkClick} href="https://ng295qu8zyk.typeform.com/to/IrVyZ1ak" target="_blank" rel="noreferrer">this short quiz</a> to find the learning path that best fits your unique learning goals.</p>
-      <Modal size="lg" show={quizPopupVisible} onHide={handleQuizClick}>
+      <Modal size="lg" show={show} onHide={handleClose}>
         <Modal.Header closeButton>Dog Training or Dog Behavior</Modal.Header>
         <Modal.Body>
           <iframe style={{ width: '100%', minHeight: 800 }} src="https://ng295qu8zyk.typeform.com/to/IrVyZ1ak" />

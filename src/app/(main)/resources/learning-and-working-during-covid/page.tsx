@@ -43,13 +43,13 @@ const LearningDuringCovidPage: PageComponent = () => (
             <ul className="mb-4">
               <li>Study from wherever you are most comfortable with a fully online course</li>
               <li>Receive virtual one-on-one support from your tutor</li>
-              <li>Reach out to the <Link href="/contact-us" className="link-primary">Student Support Team</Link> 7 days a week for assistance</li>
+              <li>Reach out to the <Link href="/contact-us">Student Support Team</Link> 7 days a week for assistance</li>
               <li>Complete hands-on grooming assignments to gain real-world experience</li>
               <li>Get personalized, audio feedback from your tutor directly sent to you after each unit</li>
               <li>Learn First Aid for dogs</li>
               <li>Receive informative business training that will allow you to implement best practices both in person and online</li>
             </ul>
-            <Link href="/certification-courses/dog-grooming/" className="link-primary">Discover Everything You&apos;ll Learn in the Dog Grooming Course!</Link>
+            <Link href="/certification-courses/dog-grooming/">Discover Everything You&apos;ll Learn in the Dog Grooming Course!</Link>
           </div>
           <div className="col-6 col-xl-5 d-none d-lg-block">
             <Image src={CovidCareTools} alt="Covid care" sizes="100vw" style={{ width: '100%', height: 'auto' }} />
@@ -85,7 +85,7 @@ const LearningDuringCovidPage: PageComponent = () => (
           <div className="col-10 col-lg-3 mb-4 mb-lg-0 p-5 border border-light">
             <FaTruck className="h2 text-secondary mb-3" />
             <h4>Mobile Grooming</h4>
-            <p>Consider launching a <Link href="/2020/10/dog-grooming-career-pros-and-cons-of-mobile-grooming" className="link-primary">mobile grooming</Link> service</p>
+            <p>Consider launching a <Link href="/2020/10/dog-grooming-career-pros-and-cons-of-mobile-grooming">mobile grooming</Link> service</p>
           </div>
           <div className="col-10 col-lg-3 mb-4 mb-lg-0 p-5 border border-light">
             <FaLaptop className="h2 text-secondary mb-3" />
@@ -136,7 +136,7 @@ const LearningDuringCovidPage: PageComponent = () => (
               <li>Implement an online payment system so clients aren&apos;t required to linger in the salon for payment</li>
               <li>Socially distance whenever possible and enforce a maximum occupancy limit</li>
               <li>Wash your hands before and after working with a client, grooming their dog, or touching communal surfaces</li>
-              <li>Disinfect all <Link href="/2018/08/learning-about-your-dog-grooming-kit-brushes-combs-and-dematting-tools" className="link-primary">grooming tools</Link> before and after use</li>
+              <li>Disinfect all <Link href="/2018/08/learning-about-your-dog-grooming-kit-brushes-combs-and-dematting-tools">grooming tools</Link> before and after use</li>
               <li>Work in a sanitized space and use air purifiers to keep the air clean</li>
             </ul>
           </div>

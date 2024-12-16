@@ -154,7 +154,7 @@ const FirstAidForGroomersPage: PageComponent = async () => {
         <div className="row align-items-center">
           <div className="col-12">
             <h2>Receive First Aid Training <strong>FREE</strong></h2>
-            <p className="lead mb-4">When You Enroll in the <Link href="/certification-courses/dog-grooming" className="link-primary">Online Dog Grooming Course</Link></p>
+            <p className="lead mb-4">When You Enroll in the <Link href="/certification-courses/dog-grooming">Online Dog Grooming Course</Link></p>
             <a className="btn btn-primary" href="https://enroll.qcpetstudies.com/?c=dg&c=fa"><span>ENROLL NOW</span></a>
           </div>
         </div>

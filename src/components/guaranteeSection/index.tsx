@@ -46,7 +46,7 @@ export const GuaranteeSection: FC<Props> = ({ className, double = false, id = 'g
             </div>
           )}
           <div className="col-12 col-lg-10">
-            <p className="lead">Questions about the guarantee{double ? 's' : ''} ? <Link href="/contact-us" className="link-primary">Contact Us</Link></p>
+            <p className="lead">Questions about the guarantee{double ? 's' : ''} ? <Link href="/contact-us">Contact Us</Link></p>
           </div>
         </div>
       </div>

@@ -30,7 +30,7 @@ export const KitSection: FC = () => {
               <Image src={DogGroomingKit} alt="professional dog-grooming kit" sizes="100vw" style={{ width: '100%', height: 'auto' }} />
             </div>
             <p>When you enroll in QC's online dog grooming course, you'll receive a WAHL ARCO 5-in-1 cordless clipper, a stainless steel attachment guide comb kit, grooming scissors, and an assortment of tools used for preparation work. These items will be shipped to you when you successfully complete Unit B.</p>
-            <p><a onClick={handlePopupLinkClick} href="#" className="link-primary text-uppercase">View kit details</a></p>
+            <p><a onClick={handlePopupLinkClick} href="#" className="btn btn-link">View kit details</a></p>
             <Modal show={popup} onHide={handlePopupClose}>
               <Modal.Header closeButton>
                 <Modal.Title>Your Professional Grooming Kit</Modal.Title>

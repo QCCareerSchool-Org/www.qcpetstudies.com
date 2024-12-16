@@ -144,6 +144,6 @@ export const ComparisonTable: FC<Props> = ({ gtPrice, dgPrice }) => (
         </tr>
       </tbody>
     </table>
-    <p className="small">* These rates are based on the median hourly rate <a target="_blank" rel="noreferrer" href="https://www.payscale.com/research/US/Job=Dog_Grooming_Assistant/Hourly_Rate" className="link-primary">reported by Payscale in 2024</a>. Rates will vary according to location and years of experience.</p>
+    <p className="small">* These rates are based on the median hourly rate <a target="_blank" rel="noreferrer" href="https://www.payscale.com/research/US/Job=Dog_Grooming_Assistant/Hourly_Rate">reported by Payscale in 2024</a>. Rates will vary according to location and years of experience.</p>
   </>
 );

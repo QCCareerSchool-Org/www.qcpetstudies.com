@@ -15,7 +15,7 @@ export const Footer: FC = () => {
         <div className="container text-center">
           <h2>Have questions?<br />Give us a call.</h2>
           <p className="lead"><TelephoneLink countryCode={countryCode} /></p>
-          &copy;{new Date().getFullYear()} QC Pet Studies<br /><Link href={termsLink} className="link-primary">Privacy Policy</Link>
+          &copy;{new Date().getFullYear()} QC Pet Studies<br /><Link href={termsLink}>Privacy Policy</Link>
         </div>
       </section>
     </footer>

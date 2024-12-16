@@ -12,7 +12,7 @@ export const KitDetailsButton: FC = () => {
 
   return (
     <>
-      <button onClick={handleKitClick} className="btn btn-link link-primary">View Kit Details</button>
+      <button onClick={handleKitClick} className="btn btn-link">View Kit Details</button>
       <Modal show={kitPopupVisible} onHide={handleKitClick}>
         <Modal.Header closeButton>Grooming Tools Starter Kit</Modal.Header>
         <Modal.Body>

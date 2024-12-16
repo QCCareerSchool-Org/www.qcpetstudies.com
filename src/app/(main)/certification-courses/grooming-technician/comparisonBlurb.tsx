@@ -15,7 +15,7 @@ export const ComparisonBlurb: FC<PropsWithChildren> = ({ children }) => {
   return (
     <div className="row justify-content-center">
       <div className="col-12 col-lg-10 col-xl-8 text-center">
-        <p className="lead">Do you need help deciding between the Grooming Technician and Dog Grooming courses? View the benefits of each in the <a onClick={handleClick} href="#" className="link-primary">comparison chart</a>.</p>
+        <p className="lead">Do you need help deciding between the Grooming Technician and Dog Grooming courses? View the benefits of each in the <a onClick={handleClick} href="#">comparison chart</a>.</p>
         <button onClick={handleClick} className="btn btn-primary btn-lg">View Comparison Chart</button>
       </div>
       <Modal size="xl" show={popup} onHide={handleClick}>

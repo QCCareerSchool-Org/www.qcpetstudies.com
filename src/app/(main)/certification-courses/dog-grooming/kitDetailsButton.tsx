@@ -16,7 +16,7 @@ export const KitDetailsButton: FC = () => {
 
   return (
     <>
-      <button onClick={handleClick} className="btn btn-link link-primary">View Kit Details</button>
+      <button onClick={handleClick} className="btn btn-link">View Kit Details</button>
       <Modal show={show} onHide={handleClick}>
         <Modal.Header closeButton>Dog Grooming Kit</Modal.Header>
         <Modal.Body>

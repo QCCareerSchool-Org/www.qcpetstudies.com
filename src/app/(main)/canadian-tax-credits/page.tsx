@@ -24,10 +24,10 @@ const CanadianTaxCreditsPage: PageComponent = () => {
           </ul>
           <h3>Canada Training Credit</h3>
           <p>Most QC students can benefit from the Canada Training Credit. Starting in 2020, the federal government puts $250 into your training account each year you filed a tax return. You can draw on the account to get a tax refund. If you qualify, you can get as much as 50% of your course fees back.</p>
-          <p>See details <a className="link-primary" href="https://www.canada.ca/en/revenue-agency/services/child-family-benefits/canada-training-credit.html" target="_blank" rel="noreferrer">here</a>.</p>
+          <p>See details <a href="https://www.canada.ca/en/revenue-agency/services/child-family-benefits/canada-training-credit.html" target="_blank" rel="noreferrer">here</a>.</p>
           <h3>Tuition Tax Credit</h3>
           <p>Any amount of your tuition that you don't claim under the Canada Training Credit can be claimed under the Tuition Tax Credit. You can get back 15% of the amount claimed from the federal government. Your province may also provide a tax credit.</p>
-          <p>Learn more <a className="link-primary" href="https://www.canada.ca/en/revenue-agency/services/tax/individuals/topics/about-your-tax-return/tax-return/completing-a-tax-return/provincial-territorial-tax-credits-individuals.html" target="_blank" rel="noreferrer">here</a>.</p>
+          <p>Learn more <a href="https://www.canada.ca/en/revenue-agency/services/tax/individuals/topics/about-your-tax-return/tax-return/completing-a-tax-return/provincial-territorial-tax-credits-individuals.html" target="_blank" rel="noreferrer">here</a>.</p>
           <h3>Getting Your T2202 Receipt</h3>
           <p>At tax time you'll be able to access your T2202 receipt in the My Account section of your online student center. We also send a copy to the CRA.</p>
         </div>
