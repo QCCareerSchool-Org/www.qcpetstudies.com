@@ -1,0 +1,85 @@
+.footer {
+  border-top: 1px solid rgb(255,255,255,0.1);
+  font-weight: 400;
+  padding: 2rem 0;
+  
+  h4, .h4 { font-weight: 600; }
+  
+  ul {
+    list-style-type: none;
+    padding: 0;
+    text-transform: uppercase;
+    margin-bottom: 0;
+  }
+
+  a { text-decoration: none; color: inherit; }
+  a:visited { color: inherit; }
+  a:hover, a:active { color: #bbb; }
+}
+
+.blogLogoWrapper {
+  margin-top: 12px;
+  margin-bottom: 6px;
+}
+
+.logoText {
+  font-size: 0.625rem;
+  // font-size: 0.75rem;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.icon {
+  display: none;
+}
+
+@media (min-width: 576px) {
+  .spacedList > li { margin-bottom: 16px; }
+  .blogLogoWrapper {
+    margin-top: 16px;
+    margin-bottom: 10px;
+  }
+}
+
+@media (min-width: 768px) {
+  .footer {
+    padding: 4rem 0;
+  }
+}
+
+@media (min-width: 992px) {
+  .footer {
+    h4, .h4 { font-size: 1.2rem; }
+  }
+
+  .icon {
+    display: inline-block;
+    position: relative;
+    top: 2px;
+    margin-right: 10px;
+    position: relative;
+    top: -4px;
+  }
+
+  .brandCol { width: 28%; padding-right: 2.25rem; }
+  .certificationsCol { width: 24%; padding-left: 2.25rem; padding-right: 2.25rem; }
+  .contactCol { width: 24%; padding-left: 2.25rem; padding-right: 2.25rem; }
+  .stayInformedCol { width: 24%; padding-left: 2.25rem; border-left: 1px solid rgba(255, 255, 255, 0.25); }
+  .spacedList > li { margin-bottom: 16px }
+  
+  .logInButton { width: 100%; }
+}
+
+@media (min-width: 1200px) {
+  .brandCol { width: 25%; padding-right: 4rem; }
+  .certificationsCol { width: 25%; padding-left: 4rem; padding-right: 4rem; }
+  .contactCol { width: 25%; padding-left: 4rem; padding-right: 4rem; }
+  .stayInformedCol { width: 25%; padding-left: 4rem; }
+}
+
+@media (min-width: 1400px) {
+  .brandCol { padding-right: 5rem; }
+  .certificationsCol { padding-left: 5rem; padding-right: 5rem; }
+  .contactCol { padding-left: 5rem; padding-right: 5rem; }
+  .stayInformedCol { padding-left: 5rem; }
+}

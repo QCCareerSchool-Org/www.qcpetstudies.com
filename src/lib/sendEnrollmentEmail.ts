@@ -1,7 +1,5 @@
-import * as HttpStatus from '@qccareerschool/http-status';
-
 export const sendEnrollmentEmail = async (enrollmentId: number, code: string): Promise<void> => {
-  const url = `${process.env.ENROLLMENT_ENDPOINT}/${enrollmentId}/email`;
+  const url = `https://api.qccareerschool.com/enrollments/${enrollmentId}/email`;
   const response = await fetch(url, {
     method: 'post',
     headers: {
@@ -9,10 +7,9 @@ export const sendEnrollmentEmail = async (enrollmentId: number, code: string): P
       'Content-Type': 'application/json',
     },
     body: JSON.stringify({ code }),
-    cache: 'no-cache',
   });
   if (!response.ok) {
-    throw new HttpStatus.HttpResponse(response.status, response.statusText);
+    throw Error(response.statusText);
   }
   await response.json();
 };
