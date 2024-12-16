@@ -3,11 +3,12 @@
 import type { FC } from 'react';
 import { useEffect, useState } from 'react';
 
-import { isGBPCountry } from '../../lib/address';
 import { Banner } from './banner';
 import { getParts } from './getParts';
+import { gbpCountry } from '@/lib/currencies';
 
 type Props = {
+  date: number;
   countryCode: string;
 };
 
@@ -23,13 +24,11 @@ if (countDownStartDate < bannerStartDate) {
   throw Error('count down starts before banner starts');
 }
 
-export const CountDownTimer: FC<Props> = ({ countryCode }) => {
-  const [ currentDate, setCurrentDate ] = useState(0);
+export const CountDownTimer: FC<Props> = ({ date, countryCode }) => {
+  const [ currentDate, setCurrentDate ] = useState(date);
 
   // keep track of the current time each second
   useEffect(() => {
-    setCurrentDate(new Date().getTime());
-
     const id = setInterval(() => {
       setCurrentDate(d => d + 1000);
     }, 1000);
@@ -46,7 +45,7 @@ export const CountDownTimer: FC<Props> = ({ countryCode }) => {
 
     const showTimer = currentDate >= countDownStartDate;
 
-    const discount = isGBPCountry(countryCode) ? '£200' : '$200';
+    const discount = gbpCountry(countryCode) ? '£400' : '$400';
 
     const message = showTimer
       ? <RegularMessage discount={discount} />
