@@ -22,7 +22,9 @@ export const Header: FC<Props> = ({ logoLink, buttonHref, buttonContent, showBan
     <div className={styles.wrapper}>
       {showBanner && <CountDownTimer date={date} countryCode={countryCode} />}
       <header className={styles.header}>
-        {logoLink ? <Link href="/"><Logo height={28} /></Link> : <Logo height={28} />}
+        <div className="container">
+          {logoLink ? <Link href="/"><Logo height={28} /></Link> : <Logo height={28} />}
+        </div>
       </header>
       <FixedNav buttonHref={buttonHref} buttonContent={buttonContent} />
     </div>
