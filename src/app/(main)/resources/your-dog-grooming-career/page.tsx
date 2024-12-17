@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { FaBriefcase, FaClipboard, FaRegFileAlt, FaRss, FaTags } from 'react-icons/fa';
 
 import ReviewDogGroomingCourse from './a-review-of-dog-grooming-course.jpg';
+import AssociationLogo from './association-logo.png';
 import MobileGroomerImage from './become-a-mobile-dog-groomer.jpg';
 import { CareerResources } from './careerResources';
 import { CareerSection } from './careerSection';
@@ -15,7 +16,6 @@ import WorkSaloonImage from './work-for-a-grooming-salon-or-pet-retailer.jpg';
 import CareerBackground from './your-dog-grooming-carrer.jpg';
 import type { PageComponent } from '@/app/serverComponent';
 import { BackgroundImage } from '@/components/backgroundImage';
-import AssociationLogo from '@/images/association-logo.png';
 import CompassIcon from '@/images/compass.svg';
 
 export const metadata: Metadata = {
