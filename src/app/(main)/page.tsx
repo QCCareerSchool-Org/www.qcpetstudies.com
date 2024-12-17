@@ -4,6 +4,7 @@ import Link from 'next/link';
 import type { FC, PropsWithChildren } from 'react';
 import { FaBriefcase, FaChalkboardTeacher, FaHandHoldingUsd, FaLaptopHouse, FaRegCalendarCheck } from 'react-icons/fa';
 
+import HowItWorks from './how-it-works.png';
 import MaltipuBegging from './maltipu-begging.jpg';
 import MaltipuJumping from './maltipu-jumping.jpg';
 import styles from './page.module.scss';
@@ -18,7 +19,6 @@ import { TestimonialKaylaTorraville } from '@/components/testimonials/kaylaTorra
 import { TestimonialLucaCoppola } from '@/components/testimonials/lucaCoppola';
 import { TestimonialMelodyMason } from '@/components/testimonials/melodyMason';
 import { VirtualCommunitySection } from '@/components/virtualCommunitySection';
-import HowItWorks from '@/images/how-it-works.png';
 
 const iconSize = 145;
 
