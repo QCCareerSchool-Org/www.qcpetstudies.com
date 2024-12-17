@@ -2,15 +2,15 @@ import type { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 
+import StylingBackground from './black-medium-size-poodle.jpg';
+import BreedStylingCertificateImage from './breed-styling-certificate.png';
+import CourseMaterials from './course-materials-breed-styling.jpg';
 import { OutlineSection } from './outlineSection';
 import type { PageComponent } from '@/app/serverComponent';
 import { BackgroundImage } from '@/components/backgroundImage';
 import { GuaranteeSection } from '@/components/guaranteeSection';
 import { PriceSection } from '@/components/priceSection';
-import StylingBackground from '@/images/backgrounds/black-medium-size-poodle.jpg';
-import BreedStylingCertificateImage from '@/images/breed-styling-certificate.png';
 import CourseIconBadge from '@/images/course-icon-badge.svg';
-import CourseMaterials from '@/images/course-materials-breed-styling.jpg';
 import type { PriceQuery } from '@/lib/fetch';
 import { fetchPrice } from '@/lib/fetch';
 import { getData } from '@/lib/getData';

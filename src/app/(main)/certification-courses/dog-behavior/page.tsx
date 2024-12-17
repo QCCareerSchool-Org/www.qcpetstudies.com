@@ -6,6 +6,8 @@ import { IoMdInfinite } from 'react-icons/io';
 
 import HeroBackgroundImage from './hero-bg.jpg';
 import { OutlineSection } from './outlineSection';
+import ShannonNoonanImage from './shannon-noonan.jpg';
+import SusanReadImage from './susan-read.jpg';
 import type { PageComponent } from '@/app/serverComponent';
 import { BackgroundImage } from '@/components/backgroundImage';
 import CertificationGoldImage from '@/components/certifications/IDBS-certification-gold.svg';
@@ -15,8 +17,6 @@ import { VirtualCommunitySection } from '@/components/virtualCommunitySection';
 import GuaranteeIcon from '@/images/course-overview-icons/guarantee.svg';
 import OutlineIcon from '@/images/course-overview-icons/outline.svg';
 import TutorIcon from '@/images/course-overview-icons/tutor.svg';
-import ShannonNoonanImage from '@/images/shannon-noonan.jpg';
-import SusanReadImage from '@/images/susan-read.jpg';
 import type { PriceQuery } from '@/lib/fetch';
 import { fetchPrice } from '@/lib/fetch';
 import { formatPrice } from '@/lib/formatPrice';

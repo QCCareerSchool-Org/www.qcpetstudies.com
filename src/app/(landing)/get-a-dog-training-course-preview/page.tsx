@@ -3,10 +3,10 @@ import { headers } from 'next/headers';
 import Image from 'next/image';
 import Link from 'next/link';
 
+import CatalogImage from './dog-in-a-tube-1.jpg';
 import { Header } from '../_components/header';
 import type { PageComponent } from '@/app/serverComponent';
 import { BrevoForm } from '@/components/brevoForm';
-import CatalogImage from '@/images/dog-in-a-tube-1.jpg';
 import Step1EnrollImage from '@/images/step-1-enroll.svg';
 import Step2SubmitImage from '@/images/step-2-submit.svg';
 import Step3CertificateImage from '@/images/step-3-certificate.svg';

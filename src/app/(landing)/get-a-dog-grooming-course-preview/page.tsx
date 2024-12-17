@@ -3,14 +3,14 @@ import { headers } from 'next/headers';
 import Image from 'next/image';
 import Link from 'next/link';
 
+import CatalogImage from './dog-and-scissors.jpg';
+import GroomingKitImage from './dog-grooming-kit.jpg';
 import { Header } from '../_components/header';
 import type { PageComponent } from '@/app/serverComponent';
 import { BrevoForm } from '@/components/brevoForm';
 import { TestimonialSmCaseyBechard } from '@/components/testimonialsSmall/caseyBechard';
 import { TestimonialSmKaylaTorraville } from '@/components/testimonialsSmall/kaylaTorraville';
 import { TestimonialSmMelodyMason } from '@/components/testimonialsSmall/melodyMason';
-import CatalogImage from '@/images/dog-and-scissors.jpg';
-import GroomingKitImage from '@/images/dog-grooming-kit.jpg';
 import FirstAidLogo from '@/images/first-aid-logo.svg';
 import Step1EnrollImage from '@/images/step-1-enroll.svg';
 import Step2SubmitImage from '@/images/step-2-submit.svg';

@@ -4,14 +4,14 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { FaPaw } from 'react-icons/fa';
 
+import PeekingHusky from './peeking-siberian-husky.jpg';
+import CatalogBackground from './smiling-border-collie-on-black.jpg';
 import type { PageComponent } from '@/app/serverComponent';
 import { BackgroundImage } from '@/components/backgroundImage';
 import { LeadProcessing } from '@/components/leadProcessing';
 import { TestimonialSmAprilCostigan } from '@/components/testimonialsSmall/aprilCostigan';
 import { TestimonialSmHailieSavage } from '@/components/testimonialsSmall/hailieSavage';
 import { TestimonialSmNickiHughes } from '@/components/testimonialsSmall/nickiHughes';
-import CatalogBackground from '@/images/backgrounds/smiling-border-collie-on-black.jpg';
-import PeekingHusky from '@/images/peeking-siberian-husky.jpg';
 import { fbPostLead } from '@/lib/facebookConversionAPI';
 import { getParam } from '@/lib/getParam';
 

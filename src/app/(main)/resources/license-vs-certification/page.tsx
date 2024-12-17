@@ -2,15 +2,15 @@ import type { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 
+import AprilCostigan from './april-costigan-300x300.jpg';
+import DogDriedOffByTowel from './dog-dried-off-by-towel.jpg';
+import DogStaircase from './dog-on-staircase.jpg';
+import DogSittingOnTowel from './dog-sitting-on-towel.jpg';
+import DogToy from './dog-toy.jpg';
+import GroomerDemattingBackground from './license-vs-certification-bg.jpg';
 import styles from './page.module.scss';
 import type { PageComponent } from '@/app/serverComponent';
 import { BackgroundImage } from '@/components/backgroundImage';
-import AprilCostigan from '@/images/april-costigan-300x300.jpg';
-import GroomerDemattingBackground from '@/images/backgrounds/license-vs-certification-bg.jpg';
-import DogDriedOffByTowel from '@/images/dog-dried-off-by-towel.jpg';
-import DogStaircase from '@/images/dog-on-staircase.jpg';
-import DogSittingOnTowel from '@/images/dog-sitting-on-towel.jpg';
-import DogToy from '@/images/dog-toy.jpg';
 
 export const metadata: Metadata = {
   title: 'Dog Grooming License vs. Certification',

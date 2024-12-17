@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import type { FC } from 'react';
 
-import CourseMaterials from '@/images/course-materials-first-aid.jpg';
+import CourseMaterials from './course-materials-first-aid.jpg';
 import FirstAidLogo from '@/images/first-aid-logo.svg';
 
 type Props = {

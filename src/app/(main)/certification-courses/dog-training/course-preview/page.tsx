@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { BsBook } from 'react-icons/bs';
 
 import KimCooperImage from '../kim-cooper.jpg';
+import GoldenRetrieverComputerBackground from './golden-retriever-sitting-next-to-computer.jpg';
 import type { PageComponent } from '@/app/serverComponent';
 import { BackgroundImage } from '@/components/backgroundImage';
 import { Bar } from '@/components/bar';
@@ -10,7 +11,6 @@ import IDTPCertificationLogo from '@/components/certifications/IDTP-certificatio
 import { PriceSectionWithDiscount } from '@/components/priceSectionWithDiscount';
 import { TabGroup } from '@/components/tabGroup';
 import { TutorSectionDT } from '@/components/tutorSectionDT';
-import GoldenRetrieverComputerBackground from '@/images/backgrounds/golden-retriever-sitting-next-to-computer.jpg';
 import type { PriceQuery } from '@/lib/fetch';
 import { fetchPrice } from '@/lib/fetch';
 import { getData } from '@/lib/getData';

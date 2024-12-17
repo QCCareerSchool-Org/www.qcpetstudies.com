@@ -5,8 +5,8 @@ import type { FC, MouseEventHandler } from 'react';
 import { useState } from 'react';
 import { Modal } from 'react-bootstrap';
 
-import DogGroomingKit from '@/images/dog-grooming-kit-white.jpg';
-import GroomingKitDetails from '@/images/grooming-kit-details.jpg';
+import DogGroomingKit from './dog-grooming-kit-white.jpg';
+import GroomingKitDetails from './grooming-kit-details.jpg';
 
 export const KitSection: FC = () => {
   const [ popup, setPopup ] = useState(false);

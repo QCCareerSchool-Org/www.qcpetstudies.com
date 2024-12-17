@@ -1,11 +1,11 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 
+import DogInBedWithStick from './dog-in-bed-with-stick.jpg';
 import { QuestionAndAnswer } from './questionAndAnswer';
 import { QuizAnswer } from './quizAnswer';
 import type { PageComponent } from '@/app/serverComponent';
 import { BackgroundImage } from '@/components/backgroundImage';
-import DogInBedWithStick from '@/images/backgrounds/dog-in-bed-with-stick.jpg';
 import { getData } from '@/lib/getData';
 
 export const metadata: Metadata = {

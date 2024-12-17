@@ -1,10 +1,10 @@
 import Link from 'next/link';
 import { BsBook } from 'react-icons/bs';
 
+import AssignmentBackground from './your-career-bg.jpg';
 import type { PageComponent } from '@/app/serverComponent';
 import { BackgroundImage } from '@/components/backgroundImage';
 import { Bar } from '@/components/bar';
-import AssignmentBackground from '@/images/backgrounds/your-career-bg.jpg';
 import CameraIcon from '@/images/camera.svg';
 import CheckedIcon from '@/images/checked.svg';
 import RedDesktopIcon from '@/images/desktop-red.svg';

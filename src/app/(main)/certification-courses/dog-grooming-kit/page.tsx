@@ -3,14 +3,14 @@ import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
 
+import ClipperCombsImage from './clippers-combs-kit-550.jpg';
+import FullKitImage from './dog-grooming-kit.jpg';
+import GroomingScissorsImage from './Pro-Grooming-Scissors-550x550.jpg';
+import StarterKitImage from './starter-kit.jpg';
+import GroomingKitBackground from './yorkie-on-a-grooming-table.jpg';
 import type { PageComponent } from '@/app/serverComponent';
 import { BackgroundImage } from '@/components/backgroundImage';
 import { Bar } from '@/components/bar';
-import GroomingKitBackground from '@/images/backgrounds/yorkie-on-a-grooming-table.jpg';
-import ClipperCombsImage from '@/images/clippers-combs-kit-550.jpg';
-import FullKitImage from '@/images/dog-grooming-kit.jpg';
-import GroomingScissorsImage from '@/images/Pro-Grooming-Scissors-550x550.jpg';
-import StarterKitImage from '@/images/starter-kit.jpg';
 
 export const metadata: Metadata = {
   title: 'Dog Grooming Kit',

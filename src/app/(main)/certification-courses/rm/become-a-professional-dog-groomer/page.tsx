@@ -2,13 +2,13 @@ import type { Metadata } from 'next';
 import { headers } from 'next/headers';
 import Image from 'next/image';
 
+import CourseCatalogImage from './bottom-ipad-shepard.jpg';
+import FullKitImage from './Kit-Blue-bg.jpg';
 import styles from './page.module.scss';
 import type { PageComponent } from '@/app/serverComponent';
 import { BrevoForm } from '@/components/brevoForm';
 import { FreeFirstAidSection } from '@/components/freeFirstAidSection';
 import { HowTheCoursesWorkSection } from '@/components/howTheCoursesWorkSection';
-import CourseCatalogImage from '@/images/bottom-ipad-shepard.jpg';
-import FullKitImage from '@/images/Kit-Blue-bg.jpg';
 import { getParam } from '@/lib/getParam';
 
 export const metadata: Metadata = {

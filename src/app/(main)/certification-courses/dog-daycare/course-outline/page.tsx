@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { FaBars } from 'react-icons/fa';
 
+import CourseOutlineBackground from './aki-with-man.jpg';
 import { UnitA } from './unitA';
 import { UnitB } from './unitB';
 import { UnitC } from './unitC';
@@ -11,7 +12,6 @@ import type { PageComponent } from '@/app/serverComponent';
 import { Accordion } from '@/components/accordion';
 import { AccordionItem } from '@/components/accordion/accordionItem';
 import { BackgroundImage } from '@/components/backgroundImage';
-import CourseOutlineBackground from '@/images/backgrounds/aki-with-man.jpg';
 import CalendarIcon from '@/images/calendar.svg';
 import TimeIcon from '@/images/clock.svg';
 
