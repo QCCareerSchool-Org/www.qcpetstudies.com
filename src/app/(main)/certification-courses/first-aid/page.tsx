@@ -2,13 +2,13 @@ import type { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 
+import CourseMaterials from './course-materials-first-aid.jpg';
+import dogLooking from './dog-looking.jpg';
+import FaCertificateImage from './fa-certificate-desktop.jpg';
+import FirstAidBackground from './hero-first-aid-bg.jpg';
 import type { PageComponent } from '@/app/serverComponent';
 import { BackgroundImage } from '@/components/backgroundImage';
 import { PriceSection } from '@/components/priceSection';
-import FirstAidBackground from '@/images/backgrounds/hero-first-aid-bg.jpg';
-import CourseMaterials from '@/images/course-materials-first-aid.jpg';
-import dogLooking from '@/images/dog-looking.jpg';
-import FaCertificateImage from '@/images/fa-certificate-desktop.jpg';
 import FirstAidLogo from '@/images/first-aid-logo.svg';
 import type { PriceQuery } from '@/lib/fetch';
 import { fetchPrice } from '@/lib/fetch';

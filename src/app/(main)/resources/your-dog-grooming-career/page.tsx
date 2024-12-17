@@ -3,20 +3,20 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { FaBriefcase, FaClipboard, FaRegFileAlt, FaRss, FaTags } from 'react-icons/fa';
 
+import ReviewDogGroomingCourse from './a-review-of-dog-grooming-course.jpg';
+import MobileGroomerImage from './become-a-mobile-dog-groomer.jpg';
 import { CareerResources } from './careerResources';
 import { CareerSection } from './careerSection';
+import DogGroomingAssociations from './dog-grooming-associations.jpg';
+import ExploreDogIndustryImage from './explore-the-dog-industry.jpg';
+import OwnDogGroomingSaloon from './run-your-own-dog-grooming-salon.jpg';
+import WorkFromHomeImage from './work-as-a-dog-groomer-from-home.jpg';
+import WorkSaloonImage from './work-for-a-grooming-salon-or-pet-retailer.jpg';
+import CareerBackground from './your-dog-grooming-carrer.jpg';
 import type { PageComponent } from '@/app/serverComponent';
 import { BackgroundImage } from '@/components/backgroundImage';
-import ReviewDogGroomingCourse from '@/images/a-review-of-dog-grooming-course.jpg';
 import AssociationLogo from '@/images/association-logo.png';
-import CareerBackground from '@/images/backgrounds/your-dog-grooming-carrer.jpg';
-import MobileGroomerImage from '@/images/become-a-mobile-dog-groomer.jpg';
 import CompassIcon from '@/images/compass.svg';
-import DogGroomingAssociations from '@/images/dog-grooming-associations.jpg';
-import ExploreDogIndustryImage from '@/images/explore-the-dog-industry.jpg';
-import OwnDogGroomingSaloon from '@/images/run-your-own-dog-grooming-salon.jpg';
-import WorkFromHomeImage from '@/images/work-as-a-dog-groomer-from-home.jpg';
-import WorkSaloonImage from '@/images/work-for-a-grooming-salon-or-pet-retailer.jpg';
 
 export const metadata: Metadata = {
   title: 'Your Dog Grooming Career',

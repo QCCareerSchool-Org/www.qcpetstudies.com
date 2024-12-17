@@ -2,12 +2,12 @@ import type { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 
+import LearningInClassOnline from './learning-in-class-online.jpg';
+import StudentGrad from './student-grad.jpg';
+import VirtualClassroom from './virtual-classroom.jpg';
+import DogTrainingResourcesBackground from './working-at-home-office-with-dog.jpg';
 import type { PageComponent } from '@/app/serverComponent';
 import { BackgroundImage } from '@/components/backgroundImage';
-import DogTrainingResourcesBackground from '@/images/backgrounds/working-at-home-office-with-dog.jpg';
-import LearningInClassOnline from '@/images/cards/learning-in-class-online.jpg';
-import StudentGrad from '@/images/cards/student-grad.jpg';
-import VirtualClassroom from '@/images/cards/virtual-classroom.jpg';
 
 export const metadata: Metadata = {
   title: 'Learning Resources',

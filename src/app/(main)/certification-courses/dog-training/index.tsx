@@ -2,6 +2,7 @@ import type { FC } from 'react';
 import { BsCardChecklist, BsPeopleFill } from 'react-icons/bs';
 import { IoMdInfinite } from 'react-icons/io';
 
+import DTBackgroundImage from './australian-shepherd-attentive.jpg';
 import { OntarioOnlySection } from './ontarioOnlySection';
 import { CourseOutlineSection } from './outlineSection';
 import { BackgroundImage } from '@/components/backgroundImage';
@@ -13,7 +14,6 @@ import { TutorSectionDT } from '@/components/tutorSectionDT';
 import { VirtualCommunitySection } from '@/components/virtualCommunitySection';
 import type { CourseCode } from '@/domain/courseCode';
 import type { Price } from '@/domain/price';
-import DTBackgroundImage from '@/images/backgrounds/australian-shepherd-attentive.jpg';
 import GuaranteeIcon from '@/images/course-overview-icons/guarantee.svg';
 import OutlineIcon from '@/images/course-overview-icons/outline.svg';
 import TutorIcon from '@/images/course-overview-icons/tutor.svg';

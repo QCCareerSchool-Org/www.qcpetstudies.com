@@ -4,6 +4,8 @@ import type { FC } from 'react';
 import { BsCardChecklist, BsPeopleFill, BsScissors } from 'react-icons/bs';
 import { IoMdInfinite } from 'react-icons/io';
 
+import DogGroomingBackground from './bichon-frise-getting-haircut.jpg';
+import DogGroomingKit from './dog-grooming-kit-white.jpg';
 import styles from './index.module.scss';
 import { KitDetailsButton } from './kitDetailsButton';
 import { Accordion } from '@/components/accordion';
@@ -23,11 +25,9 @@ import { TutorSectionDG } from '@/components/tutorSectionDG';
 import { VirtualCommunitySection } from '@/components/virtualCommunitySection';
 import type { CourseCode } from '@/domain/courseCode';
 import type { Price } from '@/domain/price';
-import DogGroomingBackground from '@/images/backgrounds/bichon-frise-getting-haircut.jpg';
 import GuaranteeIcon from '@/images/course-overview-icons/guarantee.svg';
 import OutlineIcon from '@/images/course-overview-icons/outline.svg';
 import TutorIcon from '@/images/course-overview-icons/tutor.svg';
-import DogGroomingKit from '@/images/dog-grooming-kit-white.jpg';
 import { formatPrice } from '@/lib/formatPrice';
 
 type Props = {

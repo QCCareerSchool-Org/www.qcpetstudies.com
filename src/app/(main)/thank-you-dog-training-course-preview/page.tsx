@@ -3,10 +3,10 @@ import { cookies, headers } from 'next/headers';
 import Link from 'next/link';
 import { FaPaw } from 'react-icons/fa';
 
+import CatalogBackground from './smiling-border-collie-on-black.jpg';
 import type { PageComponent } from '@/app/serverComponent';
 import { BackgroundImage } from '@/components/backgroundImage';
 import { LeadProcessing } from '@/components/leadProcessing';
-import CatalogBackground from '@/images/backgrounds/smiling-border-collie-on-black.jpg';
 import { fbPostLead } from '@/lib/facebookConversionAPI';
 import { getParam } from '@/lib/getParam';
 
