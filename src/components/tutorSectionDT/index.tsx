@@ -1,8 +1,8 @@
 import Image from 'next/image';
 import type { FC } from 'react';
 
-import ShannonNoonanImage from '@/images/shannon-noonan.jpg';
-import SusanReadImage from '@/images/susan-read.jpg';
+import ShannonNoonanImage from './shannon-noonan.jpg';
+import SusanReadImage from './susan-read.jpg';
 
 type Props = {
   className?: string;

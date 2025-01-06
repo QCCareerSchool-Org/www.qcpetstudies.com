@@ -1,6 +1,8 @@
 import type { Metadata } from 'next';
 import Image from 'next/image';
 
+import FullKitImage from './dog-grooming-kit.jpg';
+import DreamCareerBackground from './drying-dog-bg.jpg';
 import type { PageComponent } from '@/app/serverComponent';
 import { BackgroundImage } from '@/components/backgroundImage';
 import { FreeFirstAidSection } from '@/components/freeFirstAidSection';
@@ -8,8 +10,6 @@ import QcYearGuaratnteeLogo from '@/components/guaranteeModal/1-year-guarantee-o
 import QcDayGuaratnteeLogo from '@/components/guaranteeModal/21-day-guarantee-outlined.svg';
 import { HowTheCoursesWorkSection } from '@/components/howTheCoursesWorkSection';
 import { PriceSection } from '@/components/priceSection';
-import DreamCareerBackground from '@/images/backgrounds/drying-dog-bg.jpg';
-import FullKitImage from '@/images/dog-grooming-kit.jpg';
 import type { PriceQuery } from '@/lib/fetch';
 import { fetchPrice } from '@/lib/fetch';
 import { getData } from '@/lib/getData';

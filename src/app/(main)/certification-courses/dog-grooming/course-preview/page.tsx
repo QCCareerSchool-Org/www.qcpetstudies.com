@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { BsBook } from 'react-icons/bs';
 
+import AssignmentBackground from './your-career-bg.jpg';
 import type { PageComponent } from '@/app/serverComponent';
 import { BackgroundImage } from '@/components/backgroundImage';
 import { Bar } from '@/components/bar';
@@ -9,7 +10,6 @@ import IDGPCertificationLogo from '@/components/certifications/IDGP-certificatio
 import { PriceSectionWithDiscount } from '@/components/priceSectionWithDiscount';
 import { TabGroup } from '@/components/tabGroup';
 import { TutorSectionDG } from '@/components/tutorSectionDG';
-import AssignmentBackground from '@/images/backgrounds/your-career-bg.jpg';
 import type { PriceQuery } from '@/lib/fetch';
 import { fetchPrice } from '@/lib/fetch';
 import { getData } from '@/lib/getData';

@@ -7,11 +7,11 @@ import FirstAidCourse from './_images/first-aid-for-groomers.jpg';
 import UnitAImage from './_images/unit-a.jpg';
 import UnitBImage from './_images/unit-b.jpg';
 import UnitCImage from './_images/unit-c.jpg';
+import CourseOutlineBackground from './course-outline.jpg';
 import type { PageComponent } from '@/app/serverComponent';
 import { Accordion } from '@/components/accordion';
 import { AccordionItem } from '@/components/accordion/accordionItem';
 import { BackgroundImage } from '@/components/backgroundImage';
-import CourseOutlineBackground from '@/images/backgrounds/course-outline.jpg';
 import CalendarIcon from '@/images/calendar.svg';
 import TimeIcon from '@/images/clock.svg';
 

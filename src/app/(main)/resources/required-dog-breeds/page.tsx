@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 
+import RequiredDogBreedImage from './dog-breeds-required.jpg';
 import HeroBackgroundImage from './hero-bg.jpg';
 import PracticumImage1 from './practicum-1.jpg';
 import PracticumImage2 from './practicum-2.jpg';
@@ -10,7 +11,6 @@ import PracticumImage4 from './practicum-4.jpg';
 import PracticumImage5 from './practicum-5.jpg';
 import type { PageComponent } from '@/app/serverComponent';
 import { BackgroundImage } from '@/components/backgroundImage';
-import RequiredDogBreedImage from '@/images/dog-breeds-required.jpg';
 import IconFirstAidLogo from '@/images/first-aid-logo.svg';
 
 const iconSize = 50;

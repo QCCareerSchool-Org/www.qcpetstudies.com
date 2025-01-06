@@ -1,9 +1,9 @@
 import type { Metadata } from 'next';
 
+import EnglishCockerSpanielPosing from './english-cocker-spaniel-posing.jpg';
 import type { PageComponent } from '@/app/serverComponent';
 import { BackgroundImage } from '@/components/backgroundImage';
 import { LivechatLink } from '@/components/livechatLink';
-import EnglishCockerSpanielPosing from '@/images/english-cocker-spaniel-posing.jpg';
 import { getData } from '@/lib/getData';
 import { getTelephoneNumber } from '@/lib/telephone';
 

@@ -2,13 +2,13 @@ import Image from 'next/image';
 import Link from 'next/link';
 import type { FC } from 'react';
 
+import CPDTPrepImage from './german-shepherd-puppy-sitting.jpg';
 import IntroductoryUnitsImage from './part-1.jpg';
 import ApplyingTrainingPrinciplesImage from './part-2.jpg';
 import TeachingPeopleImage from './part-3.jpg';
 import DogTrainingBusinessImage from './part-4.jpg';
 import { Accordion } from '@/components/accordion';
 import { AccordionItem } from '@/components/accordion/accordionItem';
-import CPDTPrepImage from '@/images/german-shepherd-puppy-sitting.jpg';
 
 export const CourseOutlineSection: FC = () => {
   let eventKey = 0;
