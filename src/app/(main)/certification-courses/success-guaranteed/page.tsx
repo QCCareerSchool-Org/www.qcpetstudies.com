@@ -3,14 +3,14 @@ import type { StaticImageData } from 'next/image';
 import Image from 'next/image';
 import Link from 'next/link';
 
+import DogGroomingKit from './dog-grooming-kit-white.jpg';
+import DryingDogBg from './drying-dog-bg.jpg';
 import type { PageComponent } from '@/app/serverComponent';
 import { FreeFirstAidSection } from '@/components/freeFirstAidSection';
 import QcYearGuaratnteeLogo from '@/components/guaranteeModal/1-year-guarantee-outlined.svg';
 import QcDayGuaratnteeLogo from '@/components/guaranteeModal/21-day-guarantee-outlined.svg';
 import { HowTheCoursesWorkSection } from '@/components/howTheCoursesWorkSection';
 import { PriceSection } from '@/components/priceSection';
-import DryingDogBg from '@/images/backgrounds/drying-dog-bg.jpg';
-import DogGroomingKit from '@/images/dog-grooming-kit-white.jpg';
 import type { PriceQuery } from '@/lib/fetch';
 import { fetchPrice } from '@/lib/fetch';
 import { getData } from '@/lib/getData';

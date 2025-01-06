@@ -4,8 +4,8 @@ import Image from 'next/image';
 import type { FC } from 'react';
 import { Modal } from 'react-bootstrap';
 
+import GroomingKitDetailImage from './grooming-kit-details.jpg';
 import { useToggle } from '@/hooks/useToggle';
-import GroomingKitDetailImage from '@/images/grooming-kit-details.jpg';
 
 export const KitDetailsButton: FC = () => {
   const [ show, toggle ] = useToggle();
