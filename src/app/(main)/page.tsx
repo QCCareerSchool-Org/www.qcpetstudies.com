@@ -69,12 +69,12 @@ const HomePage: PageComponent = () => {
               <CertificationCard>
                 <div>
                   <div className="mb-3">
-                    <IDCPCertificationGold height={iconSize} width={iconSize} alt="IDCP Certification" style={{ maxWidth: '100%', height: 'auto' }} />
+                    <IDTPCertificationGold height={iconSize} width={iconSize} alt="IDTP Certification" style={{ maxWidth: '100%', height: 'auto' }} />
                   </div>
-                  <h3>Dog Daycare | <em className="gold">IDCP&trade;</em></h3>
-                  <p>Dog walkers and daycare facilities are booked solid! Demand is high which means it&apos;s an incredible time to launch a rewarding and lucrative career as a dog care professional. This course will teach you everything from basic dog behavior and communication to business and marketing tips that will help you grow your clientele. You&apos;ll gain a thorough understanding of proper handling, hygiene, and safety techniques to become a trusted expert in your field. Don&apos;t miss out on your chance to launch a lucrative new career!</p>
+                  <h3>Dog Training | <em className="gold">IDTP&trade;</em></h3>
+                  <p>Dog trainers have never been in higher demand! It's the best time to launch a rewarding and lucrative career as a dog trainer. This course uses scientifically proven methods of dog training derived from learning theory and industry best practices. You'll gain a thorough understanding of how dogs learn, how to modify unwanted behaviors, and how to create new behaviors in all types of dogs. Don't miss out on your chance to learn from the best!</p>
                 </div>
-                <Link href="/certification-courses/dog-daycare"><button className="btn btn-navy">Course Overview</button></Link>
+                <Link href="/certification-courses/dog-training"><button className="btn btn-navy">Course Overview</button></Link>
               </CertificationCard>
             </div>
 
@@ -82,12 +82,12 @@ const HomePage: PageComponent = () => {
               <CertificationCard>
                 <div>
                   <div className="mb-3">
-                    <IDTPCertificationGold height={iconSize} width={iconSize} alt="IDTP Certification" style={{ maxWidth: '100%', height: 'auto' }} />
+                    <IDCPCertificationGold height={iconSize} width={iconSize} alt="IDCP Certification" style={{ maxWidth: '100%', height: 'auto' }} />
                   </div>
-                  <h3>Dog Training | <em className="gold">IDTP&trade;</em></h3>
-                  <p>Dog trainers have never been in higher demand! It's the best time to launch a rewarding and lucrative career as a dog trainer. This course uses scientifically proven methods of dog training derived from learning theory and industry best practices. You'll gain a thorough understanding of how dogs learn, how to modify unwanted behaviors, and how to create new behaviors in all types of dogs. Don't miss out on your chance to learn from the best!</p>
+                  <h3>Dog Daycare | <em className="gold">IDCP&trade;</em></h3>
+                  <p>Dog walkers and daycare facilities are booked solid! Demand is high which means it&apos;s an incredible time to launch a rewarding and lucrative career as a dog care professional. This course will teach you everything from basic dog behavior and communication to business and marketing tips that will help you grow your clientele. You&apos;ll gain a thorough understanding of proper handling, hygiene, and safety techniques to become a trusted expert in your field. Don&apos;t miss out on your chance to launch a lucrative new career!</p>
                 </div>
-                <Link href="/certification-courses/dog-training"><button className="btn btn-navy">Course Overview</button></Link>
+                <Link href="/certification-courses/dog-daycare"><button className="btn btn-navy">Course Overview</button></Link>
               </CertificationCard>
             </div>
 

@@ -34,9 +34,8 @@ export const MainNav: FC<Props> = ({ countryCode }) => {
           <Nav>
             <NavDropdown title={<><span className="d-lg-none d-xl-inline">Certification </span>Courses</>} id="courses-dropdown">
               <Link href="/certification-courses/dog-grooming" onClick={handleClick} className="dropdown-item">Dog Grooming</Link>
-              <Link href="/certification-courses/grooming-technician" onClick={handleClick} className="dropdown-item">Grooming Technician</Link>
-              <Link href="/certification-courses/dog-daycare" onClick={handleClick} className="dropdown-item">Dog Daycare</Link>
               <Link href="/certification-courses/dog-training" onClick={handleClick} className="dropdown-item">Dog Training</Link>
+              <Link href="/certification-courses/dog-daycare" onClick={handleClick} className="dropdown-item">Dog Daycare</Link>
               <Link href="/certification-courses/dog-behavior" onClick={handleClick} className="dropdown-item">Dog Behavior</Link>
               <hr />
               <Link href="/certification-courses/how-it-works" onClick={handleClick} className="dropdown-item"><FaCog className="text-primary me-2" /> How It Works</Link>
