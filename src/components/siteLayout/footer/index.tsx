@@ -10,8 +10,8 @@ import styles from './index.module.scss';
 import InfoIcon from './info-icon.svg';
 import PhoneIcon from './phone-icon.svg';
 import SniffinArroundLogo from './sniffin-around-logo-white.svg';
+import { ChatLink } from '@/components/chatLink';
 import { Flag } from '@/components/flag';
-import { LivechatLink } from '@/components/livechatLink';
 import { Logo } from '@/components/logo';
 import { getAddress } from '@/lib/address';
 import { gbpCountry } from '@/lib/currencies';
@@ -54,7 +54,7 @@ export const Footer: FC<Props> = ({ countryCode }) => {
             <ul className={styles.spacedList}>
               <li><Link href="/about/about-qc-pet-studies"><InfoIcon width={16} height={16} className={styles.icon} />About QC</Link></li>
               <li><a href="mailto:info@qcpetstudies.com"><EmailIcon width={16} height={16} className={styles.icon} />Email Us</a></li>
-              <li><LivechatLink><ChatIcon width={16} height={16} className={styles.icon} />Chat</LivechatLink></li>
+              <li><ChatLink><ChatIcon width={16} height={16} className={styles.icon} />Chat</ChatLink></li>
               <li><a href={`tel:${phoneNumber}`}><PhoneIcon width={16} height={16} className={styles.icon} />{phoneNumber}</a></li>
             </ul>
           </div>

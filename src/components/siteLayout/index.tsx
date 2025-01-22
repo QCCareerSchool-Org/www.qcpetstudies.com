@@ -2,7 +2,7 @@ import type { FC, PropsWithChildren } from 'react';
 
 import { Footer } from './footer';
 import { Header } from './header';
-import { LiveChat } from '@/scripts/liveChat';
+import { BrevoConversations } from '@/scripts/brevoCoversations';
 
 type Props = {
   date: number;
@@ -14,6 +14,6 @@ export const SiteLayout: FC<PropsWithChildren<Props>> = ({ date, countryCode, ch
     <Header date={date} countryCode={countryCode} />
     <main className="flex-shrink-0">{children}</main>
     <Footer countryCode={countryCode} />
-    <LiveChat license={1056788} group={18} />
+    {process.env.BREVO_CONVERSATIONS_ID && <BrevoConversations conversationsId={process.env.BREVO_CONVERSATIONS_ID} />}
   </>
 );

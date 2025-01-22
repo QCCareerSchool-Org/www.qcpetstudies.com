@@ -7,8 +7,8 @@ import ContactUsBackground from './hero-bg.jpg';
 // import ScheduleCallImage from './schedule-call-contact.png';
 import type { PageComponent } from '@/app/serverComponent';
 import { BackgroundImage } from '@/components/backgroundImage';
+import { ChatLink } from '@/components/chatLink';
 import { EmailLink } from '@/components/emailLink';
-import { LivechatLink } from '@/components/livechatLink';
 import { TelephoneLink } from '@/components/telephoneLink';
 import { getData } from '@/lib/getData';
 
@@ -57,7 +57,7 @@ const ContactUsPage: PageComponent = () => {
               <div className="px-lg-4">
                 <ContactByChatImage height="80" width="64" alt="chat icon" style={{ maxWidth: '100%' }} />
                 <h3>By Live Chat</h3>
-                <p className="mb-lg-4"><LivechatLink>Click here to chat</LivechatLink></p>
+                <p className="mb-lg-4"><ChatLink>Click here to chat</ChatLink></p>
                 <p className="mb-0">Do you have a question you want to be answered right away? Our student support specialists are ready to chat!</p>
               </div>
             </div>

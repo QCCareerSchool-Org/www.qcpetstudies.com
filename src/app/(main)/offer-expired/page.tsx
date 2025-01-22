@@ -3,7 +3,7 @@ import type { Metadata } from 'next';
 import EnglishCockerSpanielPosing from './english-cocker-spaniel-posing.jpg';
 import type { PageComponent } from '@/app/serverComponent';
 import { BackgroundImage } from '@/components/backgroundImage';
-import { LivechatLink } from '@/components/livechatLink';
+import { ChatLink } from '@/components/chatLink';
 import { getData } from '@/lib/getData';
 import { getTelephoneNumber } from '@/lib/telephone';
 
@@ -27,7 +27,7 @@ const OfferExpiredPage: PageComponent = () => {
           <div className="col col-lg-8 col-xl-7 col-xxl-6">
             <div className="d-flex flex-column flex-lg-row align-items-center justify-content-lg-evenly">
               <a href={`tel:${telephoneNumber}`}><button className="btn btn-outline-primary mb-3 mb-lg-0">Call Us Now {telephoneNumber}</button></a>
-              <LivechatLink className="btn btn-primary">Chat with a Student Advisor</LivechatLink>
+              <ChatLink className="btn btn-primary">Chat with a Student Advisor</ChatLink>
             </div>
           </div>
         </div>
