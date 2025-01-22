@@ -4,12 +4,13 @@ import type { FC, MouseEventHandler, PropsWithChildren } from 'react';
 
 type Props = {
   className?: string;
+  focus?: boolean;
 };
 
-export const LivechatLink: FC<PropsWithChildren<Props>> = ({ className, children }) => {
+export const ChatLink: FC<PropsWithChildren<Props>> = ({ className, focus, children }) => {
   const handleChatLinkClick: MouseEventHandler<HTMLAnchorElement> = e => {
     e.preventDefault();
-    window.LC_API?.open_chat_window?.();
+    window.BrevoConversations?.('openChat', focus);
   };
 
   return <a onClick={handleChatLinkClick} href="#" className={className}>{children}</a>;
