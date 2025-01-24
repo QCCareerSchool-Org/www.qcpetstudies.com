@@ -10,6 +10,7 @@ export const BrevoConversations: FC<Props> = ({ conversationsId }) => (
 );
 
 const getScript = (conversationsId: string): string => `
+window.BrevoConversationsGroupID = 'D9koKxcaHpzSBTrDw';
 (function(d, w, c) {
   w.BrevoConversationsID = \`${conversationsId.replace(/`/ug, '\\`')}\`;
   w[c] = w[c] || function() {
