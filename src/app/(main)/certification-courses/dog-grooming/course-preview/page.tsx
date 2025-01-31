@@ -1,5 +1,4 @@
 import type { Metadata } from 'next';
-import Link from 'next/link';
 import { BsBook } from 'react-icons/bs';
 
 import AssignmentBackground from './your-career-bg.jpg';
@@ -340,19 +339,6 @@ const GroomingCoursePreviewPage: PageComponent = async () => {
       <PriceSectionWithDiscount courses={courseCodes} price={price} doubleGuarantee={true} />
 
       <TutorSectionDG className="bg-light" />
-
-      <section>
-        <div className="container">
-          <div className="row justify-content-center">
-            <div className="col-12 col-lg-10 col-xl-8 text-center">
-              <h2>New: <strong>Grooming Technician Course</strong></h2>
-              <p>Would you like to start out with the basics? The Grooming Technician course offers training in preparing dogs for clipper and scissor work. Discover how to expertly trim nails, brush, bathe, and efficiently dry dogs.</p>
-              <p>Once you graduate you&apos;ll have the option to upskill your training with QC and get certified as a Professional Dog Groomer.</p>
-              <Link href="/certification-courses/grooming-technician" className="btn btn-primary btn-lg">Learn More</Link>
-            </div>
-          </div>
-        </div>
-      </section>
     </>
   );
 };
