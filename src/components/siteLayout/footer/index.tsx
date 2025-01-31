@@ -47,6 +47,7 @@ export const Footer: FC<Props> = ({ countryCode }) => {
               <li><Link href="/certification-courses/dog-grooming">Dog Grooming</Link></li>
               <li><Link href="/certification-courses/dog-training">Dog Training</Link></li>
               <li><Link href="/certification-courses/dog-daycare">Dog Daycare</Link></li>
+              <li><Link href="/certification-courses/grooming-technician">Grooming Tech</Link></li>
             </ul>
           </div>
           <div className={`${styles.contactCol} col-12 col-sm-4 col-lg-2 mb-4 mb-sm-0 text-center text-lg-start`}>
