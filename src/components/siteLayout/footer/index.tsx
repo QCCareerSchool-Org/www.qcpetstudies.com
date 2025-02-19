@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import type { FC } from 'react';
-import { FaFacebookF, FaInstagram, FaTwitter } from 'react-icons/fa';
+import { FaFacebookF, FaInstagram } from 'react-icons/fa';
 
 import { BBBGuarantee } from './bbbGuarantee';
 import ChatIcon from './chat-icon.svg';
