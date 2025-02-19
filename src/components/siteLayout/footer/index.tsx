@@ -88,7 +88,6 @@ export const Footer: FC<Props> = ({ countryCode }) => {
           </div>
           <div className="col-12 col-sm-3 text-center text-sm-end">
             <a href="https://www.facebook.com/qcpetstudies" target="_blank" rel="noreferrer"><FaFacebookF className="me-3" /></a>
-            <a href="https://twitter.com/qcpetstudies" target="_blank" rel="noreferrer"><FaTwitter className="me-3" /></a>
             <a href="https://www.instagram.com/qcpetstudies" target="_blank" rel="noreferrer"><FaInstagram /></a>
           </div>
         </div>
