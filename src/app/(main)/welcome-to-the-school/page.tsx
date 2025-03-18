@@ -17,7 +17,6 @@ import { fbPostPurchase } from '@/lib/facebookConversionAPI';
 import { getEnrollment } from '@/lib/fetch';
 import { getParam } from '@/lib/getParam';
 import { sendEnrollmentEmail } from '@/lib/sendEnrollmentEmail';
-import { trustPulseEnrollment } from '@/lib/trustpulse';
 
 const brevoStudentListId = 17;
 
@@ -66,13 +65,6 @@ const WelcomeToTheSchoolPage: PageComponent = async ({ searchParams }) => {
     // create Brevo contact
     try {
       await createBrevoContact(enrollment.emailAddress, enrollment.firstName, enrollment.lastName, enrollment.countryCode, enrollment.provinceCode, { STATUS_PET_STUDENT: true }, [ brevoStudentListId ]);
-    } catch (err) {
-      console.error(err);
-    }
-
-    // TrustPulse
-    try {
-      await trustPulseEnrollment(enrollment, ipAddress);
     } catch (err) {
       console.error(err);
     }
