@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import type { FC } from 'react';
 
-import ShannonNoonanImage from './shannon-noonan.jpg';
+import BrunoBakerImage from './bruno-baker.jpg';
 import SusanReadImage from './susan-read.jpg';
 
 type Props = {
@@ -25,16 +25,16 @@ export const TutorSectionDT: FC<Props> = ({ className, id = 'tutors' }) => {
           <div className="col-12 col-lg-6 text-lg-start align-item-center mb-2">
             <div className="mb-2">
               <Image
-                src={ShannonNoonanImage}
+                src={BrunoBakerImage}
                 placeholder="blur"
-                alt="dog-training expert, Shannon Noonan"
+                alt="dog-training expert, Bruno Baker"
                 sizes="100vw"
                 style={{ width: '100%', height: 'auto' }}
               />
             </div>
-            <p className="lead"><strong>Shannon Noonan</strong></p>
-            <p>Certified Dog Trainer (KPA-CTP, CPDT-KA)<br /><em>10 Years of Experience</em></p>
-            <p className="mb-0">Shannon first started working with dogs when she started fostering with Ottawa Dog Rescue. Through this organization, Shannon adopted her first dog, Blue, a Great Dane/pointer mix. Shannon and Blue learned about formal dog training together. This pair went on to found the first official Therapy Dog program at Carleton University, a program that remains popular today. Now, Shannon is a Certified Professional Dog Trainer-Knowledge Assessed, and owns her own dog training business with her Dalmatian, Elroy. Shannon and Elroy share a passion for teaching other humans and dogs about training, obedience and agility. Shannon is excited to ignite this same passion for training in QC's dog training students.</p>
+            <p className="lead"><strong>Bruno Baker</strong></p>
+            <p>K9 Search and Rescue Specialist & Canine Educator</p>
+            <p className="mb-0">Bruno got his first dog over 30 years ago, fulfilling a lifelong yearning for a canine partnership. He views working with dogs as an ongoing study of canine ethology, with the goal of becoming a better human teammate. After retiring from distinguished careers in the Royal Canadian Mounted Police and Royal Canadian Air Force, Bruno decided to bring his passion for dogs to a professional level. Today, he and his current partner, Mikaw, are dedicated to K9 Wilderness Search and Rescue. In addition to this full-time endeavor, Bruno finds great joy in sharing his knowledge with fellow dog owners and trainers, watching their partnerships with their canine companions grow. His teaching is deeply informed by years of experience as a civilian flight instructor, military pilot trainer, flight training program director, military flying school commander, and search and rescue trainer.</p>
           </div>
           <div className="col-12 col-lg-6 text-lg-start">
             <div className="mb-2">
@@ -47,7 +47,7 @@ export const TutorSectionDT: FC<Props> = ({ className, id = 'tutors' }) => {
               />
             </div>
             <p className="lead"><strong>Susan Read</strong></p>
-            <p>Certified Dog Trainer<br /><em>35 Years of Experience</em></p>
+            <p>Certified Dog Trainer</p>
             <p className="mb-0">Susan has been training dogs for over 35 years. She specializes in Search and Rescue (SAR) work, but Susan's experience extends to competitive obedience, rally and agility training as well. Susan has been teaching tracking for many years, and conducts workshops across Ontario. She has been involved with K9 SAR since 2000, and is now the head K9 trainer and handler with Georgian Bay SAR. Susan is also the Provincial K9 Coordinator and sits on the Ontario Search and Rescue Volunteer Association (OSARVA) Board of Directors. Susan is currently the only OPP/OSARVA certified dog handler in Central Ontario with her live find dog, Zena. She has also worked with Human Remains Detection K9 with her dog, Zappa, since 2014. As a former school teacher and a highly experienced dog training instructor, Susan looks forward to using her significant teaching experience to benefit QC's dog training students.</p>
           </div>
         </div>

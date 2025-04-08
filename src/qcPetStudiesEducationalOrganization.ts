@@ -4,14 +4,17 @@ import { getTelephoneNumber } from './lib/telephone';
 
 export const qcPetStudiesEducationalOrganization: WithContext<EducationalOrganization> = {
   '@context': 'https://schema.org',
-  '@id': 'https://www.qcpetstudies.com/#school',
   '@type': 'EducationalOrganization',
+  '@id': 'https://www.qcpetstudies.com/#school',
+  'url': 'https://www.qcpetstudies.com',
   'name': 'QC Pet Studies',
-  'url': 'https://www.qcpetstudies.com/',
   'logo': 'https://www.qcpetstudies.com/logo.svg',
   'email': 'info@qcpetstudies.com',
   'foundingDate': '2017-03-13T09:00:00-05:00',
-  'parentOrganization': { '@id': 'https://www.qccareerschool.com/#school' },
+  'parentOrganization': {
+    '@id': 'https://www.qccareerschool.com/#school',
+    'url': 'https://www.qccareerschool.com',
+  },
   'sameAs': [
     'https://www.facebook.com/qcpetstudies',
     'https://twitter.com/qcpetstudies',
