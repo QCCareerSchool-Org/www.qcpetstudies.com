@@ -1,8 +1,8 @@
-/* eslint-disable @typescript-eslint/ban-types */
+import type { Metadata, ResolvingMetadata } from 'next';
 import type { FC, ReactNode } from 'react';
 
 type PageProps = {
-  params: {};
+  params: Promise<{ id: string }>;
   searchParams: { [key: string]: string | string[] | undefined };
 };
 
@@ -13,3 +13,5 @@ type LayoutProps = {
 export type PageComponent = FC<PageProps>;
 
 export type LayoutComponent = FC<LayoutProps>;
+
+export type GenerateMetadata = (props: PageProps, parent: ResolvingMetadata) => Promise<Metadata>;
