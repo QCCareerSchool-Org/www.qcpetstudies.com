@@ -5,6 +5,7 @@ import { fetchAward } from './fetchAward';
 import { formatDate } from './formatDate';
 import { SuggestedText } from './suggestedText';
 import type { GenerateMetadata, PageComponent } from '@/app/serverComponent';
+import { BlueskyShare } from '@/components/share/bluesky';
 import { FacebookShare } from '@/components/share/facebook';
 import { InstagramShare } from '@/components/share/instagram';
 import { LinkedInShare } from '@/components/share/linkedIn';
@@ -96,6 +97,9 @@ const AwardPage: PageComponent<RouteParams> = async ({ params }) => {
               </div>
               <div className="mt-2">
                 <InstagramShare url={url} />
+              </div>
+              <div className="mt-2">
+                <BlueskyShare url={url} />
               </div>
               <div className="mt-2">
                 <FacebookShare url={url} />

@@ -26,9 +26,7 @@ export const SuggestedText: FC<Params> = ({ text }) => {
 
   return (
     <>
-      <textarea onClick={handleTextAreaClick} className="form-control" readOnly rows={4} style={{ resize: 'none', marginBottom: '0.25rem', borderRadius: '0.5rem' }}>
-        {text}
-      </textarea>
+      <textarea onClick={handleTextAreaClick} className="form-control" readOnly rows={4} style={{ resize: 'none', marginBottom: '0.25rem', borderRadius: '0.5rem' }} value={text} />
       <div style={{ height: '1rem' }}>
         {clicks > 0 && <small style={{ textTransform: 'uppercase' }}>Text Copied!</small>}
       </div>
