@@ -38,7 +38,6 @@ export default function robots(): MetadataRoute.Robots {
           'Timpibot',
           'VelenPublicWebCrawler',
           'Webzio-Extended',
-          'facebookexternalhit',
           'img2dataset',
         ],
         disallow: '/',
