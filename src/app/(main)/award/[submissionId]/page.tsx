@@ -7,8 +7,8 @@ import { SuggestedText } from './suggestedText';
 import type { GenerateMetadata, PageComponent } from '@/app/serverComponent';
 import { BlueskyShare } from '@/components/share/bluesky';
 import { FacebookShare } from '@/components/share/facebook';
-import { InstagramShare } from '@/components/share/instagram';
 import { LinkedInShare } from '@/components/share/linkedIn';
+import { ThreadsShare } from '@/components/share/threads';
 import { TwitterShare } from '@/components/share/twitter';
 import type { School } from '@/domain/school';
 
@@ -96,7 +96,7 @@ const AwardPage: PageComponent<RouteParams> = async ({ params }) => {
                 <SuggestedText text={suggestedText} />
               </div>
               <div className="mt-2">
-                <InstagramShare text={`${suggestedText.replace(' 💫', '')} ${url}`} />
+                <ThreadsShare text={`${suggestedText.replace(' 💫', '')} ${url}`} />
               </div>
               <div className="mt-2">
                 <BlueskyShare text={`${suggestedText} ${url}`} />
