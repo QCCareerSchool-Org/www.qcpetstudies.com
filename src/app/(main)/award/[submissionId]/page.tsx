@@ -42,12 +42,12 @@ export const generateMetadata: GenerateMetadata<RouteParams> = async ({ params }
     openGraph: {
       title,
       description,
-      images: [ imageSrc ],
+      images: [ { url: imageSrc, alt: 'Award of Excellence' } ],
     },
     twitter: {
       title,
       description,
-      images: [ imageSrc ],
+      images: [ { url: imageSrc, alt: 'Award of Excellence' } ],
     },
   };
 };
