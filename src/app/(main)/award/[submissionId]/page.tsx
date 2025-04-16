@@ -66,7 +66,7 @@ const AwardPage: PageComponent<RouteParams> = async ({ params }) => {
   }
 
   const url = `https://www.qcpetstudies.com/award/${award.submissionId}`;
-  const suggestedText = `I just earned this Award of Excellence from ${award.schoolName} for my work in ${award.courseName}! So excited to be learning what I love. 💫 #AwardOfExcellence @QCPetStudies`;
+  const suggestedText = `I just earned this Award of Excellence from ${award.schoolName} for my work in ${award.courseName}! I'm so excited to be persuing my dream career. 💫 #AwardOfExcellence @QCPetStudies`;
 
   return (
     <>
@@ -92,7 +92,7 @@ const AwardPage: PageComponent<RouteParams> = async ({ params }) => {
               <h2 className="mb-2">Share Your Success</h2>
               <p className="lead mb-5">Celebrate your achievement by sharing your Award of Excellence with your friends and followers on social media. Don't forget to tag <b>@QCPetStudies</b> so we can cheer you on!</p>
               <div className="mb-4">
-                <h3 className="h4 mb-1">Suggested Text</h3>
+                <h3 className="h4 mb-1">Sample Text</h3>
                 <SuggestedText text={suggestedText} />
               </div>
               <div className="mt-2">
