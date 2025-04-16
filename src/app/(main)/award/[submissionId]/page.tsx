@@ -40,14 +40,16 @@ export const generateMetadata: GenerateMetadata<RouteParams> = async ({ params }
     description,
     alternates: { canonical: `/award/${submissionId}` },
     openGraph: {
+      url: `https://www.qcpetstudies.com/award/${award.submissionId}`,
+      type: 'website',
       title,
       description,
-      images: [ { url: imageSrc, alt: 'Award of Excellence' } ],
+      images: [ { url: imageSrc, alt: `Award of Excellence for ${award.name}` } ],
     },
     twitter: {
       title,
       description,
-      images: [ { url: imageSrc, alt: 'Award of Excellence' } ],
+      images: [ { url: imageSrc, alt: `Award of Excellence for ${award.name}` } ],
     },
   };
 };
