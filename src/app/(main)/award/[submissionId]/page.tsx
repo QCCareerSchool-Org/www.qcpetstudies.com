@@ -32,7 +32,7 @@ export const generateMetadata: GenerateMetadata<RouteParams> = async ({ params }
   }
 
   const title = `Award of Excellence for ${award.name}`;
-  const description = `${award.name} was awarded a grade of ${award.grade} for work in ${award.courseName}`;
+  const description = `${award.name} was awarded a grade of ${award.grade} for outstanding work in ${award.courseName}`;
   const imageSrc = 'https://www.qcpetstudies.com/images/award-of-excellence.jpg';
 
   return {
