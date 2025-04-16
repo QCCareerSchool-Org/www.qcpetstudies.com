@@ -2,17 +2,17 @@ import Script from 'next/script';
 import type { FC } from 'react';
 
 type Props = {
-  text: string;
+  suggestedText: string;
 };
 
-export const TwitterShare: FC<Props> = ({ text }) => (
+export const TwitterShare: FC<Props> = ({ suggestedText: text }) => (
   <>
     <a className="twitter-share-button" href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}`} data-size="large">Tweet</a>
-    <Script id="twitter" dangerouslySetInnerHTML={{ __html: twitterJS }} />
+    <Script id="twitterWidget" dangerouslySetInnerHTML={{ __html: twitterWidgetJS }} />
   </>
 );
 
-const twitterJS = `
+const twitterWidgetJS = `
 window.twttr = (function(d, s, id) {
   var js, fjs = d.getElementsByTagName(s)[0],
     t = window.twttr || {};
