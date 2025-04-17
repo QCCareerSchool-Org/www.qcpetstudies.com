@@ -20,7 +20,7 @@ export const SuggestedText: FC<Params> = ({ text }) => {
 
   const handleTextAreaClick: MouseEventHandler<HTMLTextAreaElement> = () => {
     void navigator.clipboard.writeText(text).then(() => {
-      setClicks(c => c + 1);
+      setClicks(c => (c === Number.MAX_SAFE_INTEGER ? 1 : c + 1));
     });
   };
 

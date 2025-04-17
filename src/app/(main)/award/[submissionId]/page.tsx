@@ -21,10 +21,6 @@ const schooolName: School = 'QC Pet Studies';
 export const generateMetadata: GenerateMetadata<RouteParams> = async ({ params }) => {
   const { submissionId } = await params;
 
-  if (!submissionId) {
-    return { robots: { index: false } };
-  }
-
   const award = await fetchAward(submissionId);
 
   if (award.schoolName !== schooolName) {
@@ -32,7 +28,7 @@ export const generateMetadata: GenerateMetadata<RouteParams> = async ({ params }
   }
 
   const title = `Award of Excellence for ${award.name}`;
-  const description = `${award.name} was awarded a grade of ${award.grade} for outstanding work in ${award.courseName}`;
+  const description = `Awarded in recognition of outstanding performance in ${award.courseName}`;
   const imageSrc = 'https://www.qcpetstudies.com/images/award-of-excellence.png';
 
   return {
@@ -57,10 +53,6 @@ export const generateMetadata: GenerateMetadata<RouteParams> = async ({ params }
 const AwardPage: PageComponent<RouteParams> = async ({ params }) => {
   const { submissionId } = await params;
 
-  if (!submissionId) {
-    throw Error('Bad request');
-  }
-
   const award = await fetchAward(submissionId);
 
   if (award.schoolName !== schooolName) {
@@ -79,7 +71,7 @@ const AwardPage: PageComponent<RouteParams> = async ({ params }) => {
               <h1 className="mb-2">You Did It!</h1>
               <p className="lead fw-bold text-primary mb-2">Congratulations, {award.name}! 🎉</p>
               <p className="lead mb-2 fw-bold">Grade: {award.grade}</p>
-              <p className="lead mb-4">You've earned an Award of Excellence for your amazing performance in {award.courseName} at {award.schoolName}. Your unit grade places you among the top achievers in your program. This badge recognizes your hard work, dedication, and commitment to excellence. It was issued on {formatDate(award.created)}.</p>
+              <p className="lead mb-4">You've earned an Award of Excellence from {award.schoolName} for your amazing performance in {award.courseName}. Your grade places you among the top achievers in your program. This badge recognizes your hard work, dedication, and commitment to excellence. It was issued on {formatDate(award.created)}.</p>
               <Image src={AwardImage} alt={`${schooolName} Award of Excellence`} style={{ maxWidth: 200, height: 'auto' }} />
             </div>
           </div>
@@ -112,7 +104,6 @@ const AwardPage: PageComponent<RouteParams> = async ({ params }) => {
               </div>
             </div>
           </div>
-
         </div>
       </section>
     </>
