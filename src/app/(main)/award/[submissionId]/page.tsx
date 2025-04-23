@@ -71,7 +71,7 @@ const AwardPage: PageComponent<RouteParams> = async ({ params }) => {
               <h1 className="mb-2">You Did It!</h1>
               <p className="lead fw-bold text-primary mb-2">Congratulations, {award.name}! 🎉</p>
               <p className="lead mb-2 fw-bold">Grade: {award.grade}</p>
-              <p className="lead mb-4">You've earned an Award of Excellence from {award.schoolName} for your amazing performance in {award.courseName}. Your grade places you among the top achievers in your program. This badge recognizes your hard work, dedication, and commitment to excellence. It was issued on {formatDate(award.created)}.</p>
+              <p className="lead mb-4">You've earned an Award of Excellence from {award.schoolName} for your amazing performance in {award.courseName}. Your grade places you among the top achievers in your program. This badge recognizes your hard work, dedication, and commitment to excellence. It was issued for Submission {award.unitLetter} on {formatDate(award.created)}.</p>
               <Image src={AwardImage} alt={`${schooolName} Award of Excellence`} style={{ maxWidth: 200, height: 'auto' }} />
             </div>
           </div>
