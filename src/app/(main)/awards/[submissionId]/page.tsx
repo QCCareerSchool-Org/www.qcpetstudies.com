@@ -34,9 +34,9 @@ export const generateMetadata: GenerateMetadata<RouteParams> = async ({ params }
   return {
     title,
     description,
-    alternates: { canonical: `/award/${submissionId}` },
+    alternates: { canonical: `/awards/${submissionId}` },
     openGraph: {
-      url: `https://www.qcpetstudies.com/award/${award.submissionId}`,
+      url: `https://www.qcpetstudies.com/awards/${award.submissionId}`,
       type: 'website',
       title,
       description,
@@ -59,7 +59,7 @@ const AwardPage: PageComponent<RouteParams> = async ({ params }) => {
     throw Error('Bad request');
   }
 
-  const url = `https://www.qcpetstudies.com/award/${award.submissionId}`;
+  const url = `https://www.qcpetstudies.com/awards/${award.submissionId}`;
   const suggestedText = `I just earned this Award of Excellence from ${award.schoolName} for my work in ${award.courseName}! I'm so excited to be pursuing my dream career. 💫 #AwardOfExcellence @QCPetStudies`;
 
   return (
