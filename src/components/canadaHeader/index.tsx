@@ -1,13 +1,14 @@
 import type { FC } from 'react';
 
 import styles from './index.module.scss';
-import MapleLeafIcon from './maple-leaf.svg';
+import { LearnMore } from './learnMore';
+import MapleLeafIcon from '@/components/icons/maple-leaf.svg';
 
 export const CanadaHeader: FC = () => (
   <div className={styles.wrapper}>
     <div className="container">
       <div className="d-flex align-items-center justify-content-center">
-        <MapleLeafIcon height="22" className="me-2" /> Proudly Canadian!
+        <MapleLeafIcon height="22" className="me-2" /> Proudly Canadian!<span className="ms-3 fw-normal">You could save more than 50% on your course fees <LearnMore /></span>
       </div>
     </div>
   </div>
