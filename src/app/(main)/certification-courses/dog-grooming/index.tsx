@@ -29,6 +29,7 @@ import GuaranteeIcon from '@/images/course-overview-icons/guarantee.svg';
 import OutlineIcon from '@/images/course-overview-icons/outline.svg';
 import TutorIcon from '@/images/course-overview-icons/tutor.svg';
 import { formatPrice } from '@/lib/formatPrice';
+import { getData } from '@/lib/getData';
 
 type Props = {
   price: Price;
@@ -40,6 +41,7 @@ const headerIconSize = 20;
 const iconSize = 36;
 
 export const DogGroomingBase: FC<Props> = ({ price, enrollPath, courseCodes }) => {
+  const { countryCode } = getData();
   let eventKey = 0;
 
   return (
@@ -108,7 +110,7 @@ export const DogGroomingBase: FC<Props> = ({ price, enrollPath, courseCodes }) =
               <div className={`${styles.icon} mb-1`}><BsScissors size={iconSize} /></div>
               <h3>Professional-Grade Grooming Starter Kit</h3>
               <p>When you enroll, you'll receive a kit of dog grooming tools to help you complete your studies and start your career. This kit includes cordless WAHL clippers and combs, three grooming scissors, an assortment of brushes and combs, and more!</p>
-              <KitDetailsButton />
+              <KitDetailsButton countryCode={countryCode} />
             </div>
             <div className="col-12 col-md-4 mb-4 mb-md-0">
               <div className={`${styles.icon} mb-1`}><BsCardChecklist size={iconSize} /></div>
