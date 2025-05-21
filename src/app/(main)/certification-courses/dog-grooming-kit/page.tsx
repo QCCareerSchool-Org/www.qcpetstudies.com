@@ -6,7 +6,7 @@ import React from 'react';
 import ClipperCombsImage from './clippers-combs-kit-550.jpg';
 import FullKitImage from './dog-grooming-kit.jpg';
 import GroomingScissorsImage from './Pro-Grooming-Scissors-550x550.jpg';
-import StarterKitImage from './starter-kit.jpg';
+import ToolsStarterSetImage from './tools-starter-set.jpg';
 import GroomingKitBackground from './yorkie-on-a-grooming-table.jpg';
 import type { PageComponent } from '@/app/serverComponent';
 import { BackgroundImage } from '@/components/backgroundImage';
@@ -14,7 +14,7 @@ import { Bar } from '@/components/bar';
 
 export const metadata: Metadata = {
   title: 'Dog Grooming Kit',
-  description: 'Take a look at the grooming starter kit you\'ll receive when you enroll in QC\'s dog grooming course!',
+  description: 'Take a look at the dog grooming kit you\'ll receive when you enroll in QC\'s dog grooming course!',
   alternates: { canonical: '/certification-courses/dog-grooming-kit' },
 };
 
@@ -34,7 +34,7 @@ const DogGroomingKitPage: PageComponent = () => (
           <div className="col-12 col-lg-10 mb-4">
             <p>When you enroll in QC's online <Link href="/certification-courses/dog-grooming/">dog grooming course</Link>, you'll receive a toolkit with the essential items you need to get started. These items will be shipped to you when you successfully complete Unit B before you begin your practical work in Unit C.</p>
             <p>Your kit includes a WAHL ARCO 5-in-1 cordless clipper, a stainless steel attachment guide comb kit, professional-grade grooming scissors, brushes, combs, and nail clippers.</p>
-            <p>This starter kit will go a long way not only to help you complete your online course but also to enter the industry as a fully equipped dog grooming professional!</p>
+            <p>This kit will go a long way not only to help you complete your online course but also to enter the industry as a fully equipped dog grooming professional!</p>
             <p className="lead mb-0">The dog grooming kit has an estimated value of over $200!</p>
           </div>
           <div className="col-12 col-lg-8">
@@ -73,10 +73,10 @@ const DogGroomingKitPage: PageComponent = () => (
         </div>
         <div className="row align-items-center justify-content-center">
           <div className="col-12 col-sm-10 col-md-8 col-lg-6 mb-4 mb-lg-0">
-            <Image src={StarterKitImage} alt="dog gooming starter kit" sizes="100vw" style={{ width: '100%', height: 'auto', objectFit: 'contain' }} />
+            <Image src={ToolsStarterSetImage} alt="dog gooming starter set" sizes="100vw" style={{ width: '100%', height: 'auto', objectFit: 'contain' }} />
           </div>
           <div className="col-12 col-lg-6">
-            <h3>Grooming Tools Starter Kit</h3>
+            <h3>Grooming Tools Starter Set</h3>
             <p>Some routine tools of the trade that all groomers need are provided in this starter kit. You'll learn to expertly use every one of these tools in your course, and you'll probably use them every day throughout your dog grooming career! This 11-piece set includes:</p>
             <ul>
               <li>2 Slicker Brushes (soft and hard)</li>
