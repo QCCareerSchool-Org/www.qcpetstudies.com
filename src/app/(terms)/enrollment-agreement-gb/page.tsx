@@ -15,7 +15,31 @@ const AgreementGBPage: PageComponent = () => (
     <h1>Enrollment Agreement</h1>
     <h2>1. Shipping Policy</h2>
     <p>QC Pet Studies' course lessons are fully online.</p>
-    <p>If you are an eligible student enrolled in QC's Dog Grooming course, your Wahl-ARCO 5-in-1 cordless clippers, matching comb set, set of 3 grooming scissors, and the grooming starter kit will be automatically sent to you after you have submitted Unit B of the course in the Online Student Center. Students who are not in good standing and students who live in countries that QC does not ship to due to international shipping restrictions are not eligible to receive these supplementary dog grooming supplies.</p>
+    <p>For eligible students of QC's Dog Grooming course, the Dog Grooming Kit will be automatically sent to you after you have submitted Unit B and your tuition paid covers the cost of the kit and associated fees (see chart below). For students on the standard monthly installment plan, this will include the deposit and the first two installment payments. Students who live in countries that QC does not ship to due to international shipping restrictions are not eligible to receive these supplementary dog grooming supplies. Your account must be in good standing to receive a kit.</p>
+    <table className="table table-bordered w-auto">
+      <thead>
+        <tr>
+          <th scope="row">Country</th>
+          <th className="text-center">US</th>
+          <th className="text-center">CA</th>
+          <th className="text-center">GB</th>
+          <th className="text-center">AU</th>
+          <th className="text-center">NZ</th>
+          <th className="text-center">Other</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">Dog Grooming Kit</th>
+          <td>360 USD</td>
+          <td>360 CAD</td>
+          <td>310 GBP</td>
+          <td>360 AUD</td>
+          <td>360 NZD</td>
+          <td>360 USD</td>
+        </tr>
+      </tbody>
+    </table>
     <h2>2. Money-Back Guarantee</h2>
     <h3>21-Day Money-Back Guarantee</h3>
     <p>You have 21 days from the date of enrollment to examine the course. If you are not entirely satisfied or choose not to complete the course, contact the School within this 21-day period, either by phone or email.</p>
