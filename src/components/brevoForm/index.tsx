@@ -87,7 +87,8 @@ export const BrevoForm: FC<Props> = props => {
 
     setTimeout(() => { submitting.current = false; }, 10_000);
 
-    return true;
+    const form = e.target as HTMLFormElement;
+    return form.checkValidity();
   };
 
   const handleDGSelection: ChangeEventHandler<HTMLInputElement> = e => {
@@ -135,7 +136,7 @@ export const BrevoForm: FC<Props> = props => {
       <input onChange={handleLastNameChange} value={lastName} type="hidden" name="lastName" id={`${id}lastName`} />
       <div className="mb-3">
         {!props.placeholders && <label htmlFor={`${id}emailAddress`} className="form-label">Email <span className="text-primary">*</span></label>}
-        <input onChange={handleEmailAddressChange} value={emailAddress} type="email" name="emailAddress" id={`${id}emailAddress`} className={`form-control ${styles.emailAddressInput}`} placeholder={props.placeholders ? 'Email *' : undefined} required autoComplete="email" autoCapitalize="none" />
+        <input onChange={handleEmailAddressChange} value={emailAddress} type="email" name="emailAddress" id={`${id}emailAddress`} className={`form-control ${styles.emailAddressInput}`} placeholder={props.placeholders ? 'Email *' : undefined} required autoComplete="email" autoCapitalize="none" pattern="^[^@\s]+@([^@\s]+\.)+[^@\s]+$" />
       </div>
       <div className="mb-3">
         <div className="form-check">
