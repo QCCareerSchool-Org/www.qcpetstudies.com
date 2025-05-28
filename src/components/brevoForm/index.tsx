@@ -51,7 +51,9 @@ export const BrevoForm: FC<Props> = props => {
   };
 
   const handleEmailAddressChange: ChangeEventHandler<HTMLInputElement> = e => {
-    setEmailAddress(e.target.value);
+    const input = e.target;
+    input.setCustomValidity('');
+    setEmailAddress(input.value);
   };
 
   const handleVerify = useCallback((t: string): void => {
