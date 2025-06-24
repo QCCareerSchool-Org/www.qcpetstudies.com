@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import type { FC } from 'react';
-import { FaFacebookF, FaInstagram } from 'react-icons/fa';
+import { FaFacebookF, FaInstagram, FaTiktok, FaTwitter, FaYoutube } from 'react-icons/fa';
 
 import { BBBGuarantee } from './bbbGuarantee';
 import ChatIcon from './chat-icon.svg';
@@ -87,6 +87,8 @@ export const Footer: FC<Props> = ({ countryCode }) => {
           </div>
           <div className="col-12 col-sm-3 text-center text-sm-end">
             <a href="https://www.facebook.com/qcpetstudies" target="_blank" rel="noreferrer"><FaFacebookF className="me-3" /></a>
+            <a href="https://www.tiktok.com/@qcpetstudies" target="_blank" rel="noreferrer"><FaTiktok className="me-3" /></a>
+            <a href="https://www.youtube.com/@qcpetstudies" target="_blank" rel="noreferrer"><FaYoutube className="me-3" /></a>
             <a href="https://www.instagram.com/qcpetstudies" target="_blank" rel="noreferrer"><FaInstagram /></a>
           </div>
         </div>
