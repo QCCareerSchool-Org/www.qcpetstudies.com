@@ -29,8 +29,6 @@ const ThankYouCoursePreviewPage: PageComponent = async ({ searchParams }) => {
   const fbc = cookieStore.get('_fbc')?.value;
   const fbp = cookieStore.get('_fbp')?.value;
 
-  console.log(countryCode, validCountryForSMS(countryCode));
-
   if (leadId && emailAddress) {
     try {
       await fbPostLead(leadId, new Date(), emailAddress, firstName, lastName, countryCode, provinceCode, ipAddress, userAgent, fbc, fbp);
