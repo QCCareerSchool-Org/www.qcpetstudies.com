@@ -44,6 +44,9 @@
     { "source": "/terms.html", "destination": "/terms", "permanent": true },
     { "source": "/terms-gb.html", "destination": "/terms-gb", "permanent": true },
     { "source": "/enrollment-agreement.html", "destination": "/enrollment-agreement", "permanent": true },
-    { "source": "/enrollment-agreement-gb.html", "destination": "/enrollment-agreement-gb", "permanent": true }
+    { "source": "/enrollment-agreement-gb.html", "destination": "/enrollment-agreement-gb", "permanent": true },
+
+    { "source": "/thank-you-dog-grooming-course-preview", "destination": "/thank-you-course-preview" },
+    { "source": "/thank-you-dog-training-course-preview", "destination": "/thank-you-course-preview" }
   ]
 }

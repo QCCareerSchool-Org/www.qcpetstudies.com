@@ -1,0 +1,5 @@
+.toastContainer {
+  top: 4.625rem;
+  @media screen and (min-width: 992px) { top: 5.125rem; }
+  @media screen and (min-width: 1200px) { top: 6.75rem; }
+}
