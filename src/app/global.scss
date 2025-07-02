@@ -1,1 +1,6 @@
 .grecaptcha-badge { visibility: hidden; }
+
+/* override the section that react-toastify uses */
+section.Toastify {
+  padding: 0;
+}
