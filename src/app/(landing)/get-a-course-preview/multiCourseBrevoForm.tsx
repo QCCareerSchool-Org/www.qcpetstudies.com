@@ -14,12 +14,12 @@ type FormFields = {
 
 const formFieldsDictionary: Record<string, FormFields> = {
   dg: {
-    successLocation: `${process.env.HOST ?? 'https://www.qcpetstudies.com'}/thank-you-course-preview`,
+    successLocation: `${process.env.HOST ?? 'https://www.qcpetstudies.com'}/thank-you-dog-grooming-course-preview`,
     brevoListId: 31,
     brevoEmailTemplateId: 60,
   },
   dt: {
-    successLocation: `${process.env.HOST ?? 'https://www.qcpetstudies.com'}/thank-you-course-preview`,
+    successLocation: `${process.env.HOST ?? 'https://www.qcpetstudies.com'}/thank-you-dog-training-course-preview`,
     brevoListId: 30,
     brevoEmailTemplateId: 61,
   },
