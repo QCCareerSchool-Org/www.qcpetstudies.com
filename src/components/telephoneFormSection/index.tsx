@@ -18,13 +18,12 @@ import { Overlay } from '@/components/overlay';
 type Props = {
   countryCode?: string;
   leadId: string;
+  brevoListId: number;
 };
 
 type State = 'ready' | 'submitting' | 'success' | 'error';
 
-const brevoListId = 55;
-
-export const TelephoneFormSection: FC<Props> = ({ countryCode, leadId }) => {
+export const TelephoneFormSection: FC<Props> = ({ countryCode, leadId, brevoListId }) => {
   const [ telephoneNumber, setTelephoneNumber ] = useState<Value>();
   const [ state, setState ] = useState<State>('ready');
 

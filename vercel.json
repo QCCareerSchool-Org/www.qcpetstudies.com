@@ -34,8 +34,9 @@
     { "source": "/student-experience", "destination": "/about/student-experience", "permanent": true },
     { "source": "/your-dog-grooming-career/discounts-for-grooming-students", "destination": "/about/student-discounts", "permanent": true },
     { "source": "/faq", "destination": "/about/faq", "permanent": true },
-    { "source": "/thank-you-course-catalog", "destination": "/thank-you-course-preview", "permanent": true },
-    { "source": "/thank-you-course-catalog-web", "destination": "/thank-you-course-preview", "permanent": true },
+    { "source": "/thank-you-course-catalog", "destination": "/thank-you-dog-grooming-course-preview", "permanent": true },
+    { "source": "/thank-you-course-catalog-web", "destination": "/thank-you-dog-grooming-course-preview", "permanent": true },
+    { "source": "/thank-you-course-preview", "destination": "/thank-you-dog-grooming-course-preview" },
     { "source": "/dog-grooming-course-catalog", "destination": "/get-a-dog-grooming-course-preview", "permanent": true },
     { "source": "/free-course-catalog", "destination": "/get-a-dog-grooming-course-preview", "permanent": true },
     { "source": "/get-free-course-catalog", "destination": "/get-a-dog-grooming-course-preview", "permanent": true },
@@ -44,9 +45,6 @@
     { "source": "/terms.html", "destination": "/terms", "permanent": true },
     { "source": "/terms-gb.html", "destination": "/terms-gb", "permanent": true },
     { "source": "/enrollment-agreement.html", "destination": "/enrollment-agreement", "permanent": true },
-    { "source": "/enrollment-agreement-gb.html", "destination": "/enrollment-agreement-gb", "permanent": true },
-
-    { "source": "/thank-you-dog-grooming-course-preview", "destination": "/thank-you-course-preview" },
-    { "source": "/thank-you-dog-training-course-preview", "destination": "/thank-you-course-preview" }
+    { "source": "/enrollment-agreement-gb.html", "destination": "/enrollment-agreement-gb", "permanent": true }
   ]
 }

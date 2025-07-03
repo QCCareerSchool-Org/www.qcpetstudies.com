@@ -50,7 +50,7 @@ const ThankYouCoursePreviewPage: PageComponent = async ({ searchParams }) => {
         leadId={leadId}
         conversionId="AW-1071836607/yZtFCL_BpW8Qv9uL_wM"
       />
-      {leadId && validCountryForSMS(countryCode) && <TelephoneFormSection leadId={leadId} countryCode={countryCode} />}
+      {leadId && validCountryForSMS(countryCode) && <TelephoneFormSection leadId={leadId} countryCode={countryCode} brevoListId={57} />}
       <WhyChooseQCSection />
     </>
   );
