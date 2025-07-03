@@ -2,7 +2,7 @@ import Image from 'next/image';
 import type { FC } from 'react';
 
 import BrunoBakerImage from './bruno-baker.jpg';
-import SusanReadImage from './susan-read.jpg';
+import SusanReadImage from './susan-read.png';
 
 type Props = {
   className?: string;
