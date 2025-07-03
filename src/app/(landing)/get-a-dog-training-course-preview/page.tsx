@@ -47,7 +47,7 @@ const DogTrainingCatalogPage: PageComponent = ({ searchParams }) => {
                 <div className="card-body">
                   <p className="text-center lead">Get Started with a <strong>Free Course Preview</strong></p>
                   <BrevoForm
-                    successLocation={`${process.env.HOST ?? 'https://www.qcpetstudies.com'}/thank-you-course-preview`}
+                    successLocation={`${process.env.HOST ?? 'https://www.qcpetstudies.com'}/thank-you-dog-training-course-preview`}
                     listId={brevoListId}
                     emailTemplateId={brevoEmailTemplateId}
                     gclid={gclid}
