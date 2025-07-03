@@ -11,7 +11,7 @@ import { getParam } from '@/lib/getParam';
 
 export const metadata: Metadata = {
   title: 'Course Preview',
-  alternates: { canonical: '/thank-you-course-preview' },
+  alternates: { canonical: '/thank-you-dog-training-course-preview' },
   robots: { index: false },
 };
 
