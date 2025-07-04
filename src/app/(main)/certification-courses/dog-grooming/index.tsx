@@ -134,23 +134,23 @@ export const DogGroomingBase: FC<Props> = ({ price, enrollPath, courseCodes }) =
       <section className="bg-lighter">
         <div className="container text-center">
           <h2 className="text-center mb-4">QC Success Stories</h2>
-          <div className="row justify-content-center">
-            <div className="col-12 col-md-9 col-lg-6 col-xl-4 mb-4">
+          <div className="row justify-content-center g-4">
+            <div className="col-12 col-md-9 col-lg-6 col-xl-4">
               <TestimonialKaylaTorraville />
             </div>
-            <div className="col-12 col-md-9 col-lg-6 col-xl-4 mb-4">
+            <div className="col-12 col-md-9 col-lg-6 col-xl-4">
               <TestimonialAprilCostigan />
             </div>
-            <div className="col-12 col-md-9 col-lg-6 col-xl-4 mb-4">
+            <div className="col-12 col-md-9 col-lg-6 col-xl-4">
               <TestimonialHailieSavage />
             </div>
-            <div className="col-12 col-md-9 col-lg-6 col-xl-4 mb-4 mb-xl-0">
+            <div className="col-12 col-md-9 col-lg-6 col-xl-4">
               <TestimonialMelodyMason />
             </div>
-            <div className="col-12 col-md-9 col-lg-6 col-xl-4 mb-4 mb-lg-0 mb-xl-0">
+            <div className="col-12 col-md-9 col-lg-6 col-xl-4">
               <TestimonialCaseyBecard />
             </div>
-            <div>
+            <div className="col-12 col-md-9 col-lg-6 col-xl-4">
               <TestimonialNickiHughes />
             </div>
           </div>

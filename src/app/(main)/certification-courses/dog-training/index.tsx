@@ -10,6 +10,9 @@ import CertificationGoldImage from '@/components/certifications/IDTP-certificati
 import { GuaranteeSection } from '@/components/guaranteeSection';
 import { PriceSection } from '@/components/priceSection';
 import { PriceSectionWithDiscount } from '@/components/priceSectionWithDiscount';
+import { TestimonialAlexaAnnCesari } from '@/components/testimonials/alexaAnnCesari';
+import { TestimonialCherylLovette } from '@/components/testimonials/cherylLovette';
+import { TestimonialLorisTiede } from '@/components/testimonials/lorisTiede';
 import { TutorSectionDT } from '@/components/tutorSectionDT';
 import { VirtualCommunitySection } from '@/components/virtualCommunitySection';
 import type { CourseCode } from '@/domain/courseCode';
@@ -114,10 +117,27 @@ export const DogTrainingBase: FC<Props> = ({ price, enrollPath, courseCodes, cou
       </div>
     </section>
 
-    <div id="outline" className="sectionAnchor" />
-    <CourseOutlineSection />
+    <section className="bg-lighter">
+      <div className="container text-center">
+        <h2 className="text-center mb-4">QC Success Stories</h2>
+        <div className="row justify-content-center g-4">
+          <div className="col-12 col-md-9 col-lg-6 col-xl-4">
+            <TestimonialAlexaAnnCesari />
+          </div>
+          <div className="col-12 col-md-9 col-lg-6 col-xl-4">
+            <TestimonialCherylLovette />
+          </div>
+          <div className="col-12 col-md-9 col-lg-6 col-xl-4">
+            <TestimonialLorisTiede />
+          </div>
+        </div>
+      </div>
+    </section>
 
-    <TutorSectionDT />
+    <div id="outline" className="sectionAnchor" />
+    <CourseOutlineSection className="bg-white" />
+
+    <TutorSectionDT className="bg-lighter" />
 
     {countryCode === 'CA' && provinceCode === 'ON' && <OntarioOnlySection />}
 

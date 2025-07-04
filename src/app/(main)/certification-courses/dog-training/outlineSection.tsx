@@ -10,11 +10,15 @@ import DogTrainingBusinessImage from './part-4.jpg';
 import { Accordion } from '@/components/accordion';
 import { AccordionItem } from '@/components/accordion/accordionItem';
 
-export const CourseOutlineSection: FC = () => {
+type Props = {
+  className?: string;
+};
+
+export const CourseOutlineSection: FC<Props> = ({ className }) => {
   let eventKey = 0;
 
   return (
-    <section className="bg-lighter">
+    <section className={`bg-lighter ${className ? className : ''}`}>
       <div className="container">
         <div className="row justify-content-center mb-4">
           <div className="col12 col-lg-10 text-center">
