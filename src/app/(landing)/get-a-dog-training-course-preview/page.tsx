@@ -14,7 +14,7 @@ import { getParam } from '@/lib/getParam';
 
 const courses = [ 'dt' ];
 const brevoListId = 30;
-const brevoEmailTemplateId = 61;
+const brevoEmailTemplateId = 1635;
 
 export const metadata: Metadata = {
   title: 'Become a Professional Dog Trainer',
