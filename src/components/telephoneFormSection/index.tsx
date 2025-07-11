@@ -1,6 +1,7 @@
 'use client';
 
 import 'react-phone-number-input/style.css';
+import type { StaticImageData } from 'next/image';
 import Link from 'next/link';
 import type { ChangeEventHandler, FC, FormEventHandler } from 'react';
 import { forwardRef, useState } from 'react';
@@ -8,8 +9,6 @@ import { Spinner } from 'react-bootstrap';
 import type { Country, Value } from 'react-phone-number-input';
 import PhoneInput from 'react-phone-number-input';
 
-import DesktopBackgroundImage from './desktop-bg.jpg';
-import MobileBackgroundImage from './mobile-bg.jpg';
 import { BackgroundImage } from '@/components/backgroundImage';
 import { FormCard } from '@/components/formCard';
 import { FormWrapper } from '@/components/formWrapper';
@@ -19,11 +18,12 @@ type Props = {
   countryCode?: string;
   leadId: string;
   brevoListId: number;
+  backgroundSrc: StaticImageData;
 };
 
 type State = 'ready' | 'submitting' | 'success' | 'error';
 
-export const TelephoneFormSection: FC<Props> = ({ countryCode, leadId, brevoListId }) => {
+export const TelephoneFormSection: FC<Props> = ({ countryCode, leadId, brevoListId, backgroundSrc }) => {
   const [ telephoneNumber, setTelephoneNumber ] = useState<Value>();
   const [ state, setState ] = useState<State>('ready');
 
@@ -57,7 +57,7 @@ export const TelephoneFormSection: FC<Props> = ({ countryCode, leadId, brevoList
 
   return (
     <section>
-      <BackgroundImage src={DesktopBackgroundImage} objectPosition="0% 50%" mobile={{ src: MobileBackgroundImage, breakpoint: 'md' }} />
+      <BackgroundImage src={backgroundSrc} priority />
       <Overlay backgroundColor="rgba(0,0,0,0.6)" className="d-md-none" />
       <div className="container text-white">
         <div className="row">

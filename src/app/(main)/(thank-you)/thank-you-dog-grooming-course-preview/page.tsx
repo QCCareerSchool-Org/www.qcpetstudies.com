@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { cookies, headers } from 'next/headers';
 
+import TelephoneBackground from './telephone-bg.jpg';
 import type { PageComponent } from '@/app/serverComponent';
 import { EmailSentToast } from '@/components/emailSentToast';
 import { LeadProcessing } from '@/components/leadProcessing';
@@ -50,7 +51,7 @@ const ThankYouCoursePreviewPage: PageComponent = async ({ searchParams }) => {
         leadId={leadId}
         conversionId="AW-1071836607/yZtFCL_BpW8Qv9uL_wM"
       />
-      {leadId && validCountryForSMS(countryCode) && <TelephoneFormSection leadId={leadId} countryCode={countryCode} brevoListId={55} />}
+      {leadId && validCountryForSMS(countryCode) && <TelephoneFormSection leadId={leadId} countryCode={countryCode} brevoListId={55} backgroundSrc={TelephoneBackground} />}
       <WhyChooseQCSection />
     </>
   );
