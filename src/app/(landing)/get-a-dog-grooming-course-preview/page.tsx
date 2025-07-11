@@ -25,7 +25,7 @@ export const metadata: Metadata = {
 
 const courses = [ 'dg' ];
 const brevoListId = 31;
-const brevoEmailTemplateId = 60;
+const brevoEmailTemplateId = 1660;
 
 const DogGroomingCatalogPage: PageComponent = ({ searchParams }) => {
   const gclid = getParam(searchParams.gclid);
