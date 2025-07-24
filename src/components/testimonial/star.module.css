@@ -1,0 +1,12 @@
+.star {
+  color: #ccc;
+  margin-right: 0.25rem;
+}
+
+.star:last-of-type {
+  margin-right: 0;
+}
+
+.filled {
+  color: var(--qc-color-gold);
+}
