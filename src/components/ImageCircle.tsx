@@ -1,16 +1,29 @@
 import type { StaticImageData } from 'next/image';
 import Image from 'next/image';
-import type { CSSProperties, FC } from 'react';
+import type { FC } from 'react';
 
 type Props = {
   src: StaticImageData;
   alt: string;
+  imagePositionX?: number;
+  imagePositionY?: number;
   size?: number;
-  objectPosition?: CSSProperties['objectPosition'];
+  itemProp?: boolean;
 };
 
-export const ImageCircle: FC<Props> = ({ src, alt, size = 60, objectPosition = '50%' }) => (
-  <div style={{ position: 'relative', overflow: 'hidden', width: size, height: size, borderRadius: size / 2 }}>
-    <Image src={src} placeholder="blur" fill alt={alt} style={{ objectFit: 'cover', objectPosition }} />
-  </div>
-);
+export const ImageCircle: FC<Props> = ({ src, alt, imagePositionX, imagePositionY, size = 64, itemProp }) => {
+  const width = Math.floor(size);
+  const radius = Math.ceil(width / 2);
+  return (
+    <div style={{ position: 'relative', width, height: width, borderRadius: radius }}>
+      <Image
+        src={src}
+        alt={alt}
+        fill
+        sizes={`${width * 2}px`}
+        style={{ borderRadius: radius, objectFit: 'cover', objectPosition: `${typeof imagePositionX === 'undefined' ? '50%' : `${imagePositionX}%`} ${typeof imagePositionY === 'undefined' ? '50%' : `${imagePositionY}%`}` }}
+        itemProp={itemProp ? 'image' : undefined}
+      />
+    </div>
+  );
+};
