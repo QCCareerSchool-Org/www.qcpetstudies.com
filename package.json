@@ -1,6 +1,6 @@
 {
   "name": "www.petstudies.com",
-  "version": "1.5.48",
+  "version": "1.5.50",
   "license": "UNLICENSED",
   "private": true,
   "scripts": {
@@ -30,7 +30,7 @@
     "react-phone-number-input": "^3.4.12",
     "react-toastify": "^11.0.5",
     "react-use-count-up": "^1.0.2",
-    "schema-dts": "^1.1.2",
+    "schema-dts": "^1.1.5",
     "server-only": "^0.0.1",
     "uuid": "^10.0.0"
   },

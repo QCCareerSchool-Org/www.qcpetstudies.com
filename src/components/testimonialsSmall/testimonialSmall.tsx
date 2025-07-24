@@ -1,5 +1,5 @@
 import type { StaticImageData } from 'next/image';
-import type { CSSProperties, FC } from 'react';
+import type { FC } from 'react';
 
 import { ImageCircle } from '../ImageCircle';
 import FiveStarsPrimary from '@/images/five-stars-primary.svg';
@@ -12,14 +12,15 @@ type Props = {
   name: string;
   certification?: string;
   imageSrc: StaticImageData;
-  objectPosition?: CSSProperties['objectPosition'];
+  imagePositionX?: number;
+  imagePositionY?: number;
   variant?: 'primary' | 'secondary';
 };
 
-export const TestimonialSmall: FC<Props> = ({ size = 192, starSize = 180, quotation, name, certification, imageSrc, objectPosition, variant = 'primary' }) => (
+export const TestimonialSmall: FC<Props> = ({ size = 192, starSize = 180, quotation, name, certification, imageSrc, imagePositionX, imagePositionY, variant = 'primary' }) => (
   <>
     <div className="mb-3 d-flex justify-content-center">
-      <ImageCircle src={imageSrc} alt={name} size={size} objectPosition={objectPosition} />
+      <ImageCircle src={imageSrc} alt={name} size={size} imagePositionX={imagePositionX} imagePositionY={imagePositionY} />
     </div>
     <div className="mb-2">
       {variant === 'secondary'
