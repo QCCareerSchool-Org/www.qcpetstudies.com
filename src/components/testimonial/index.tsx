@@ -50,8 +50,6 @@ export const Testimonial: FC<Props> = memo(({ id, courseCodes }) => {
     };
   }, [ id, courseCodes ]);
 
-  console.log(testimonial);
-
   if (!testimonial) {
     return;
   }
