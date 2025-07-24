@@ -1,0 +1,32 @@
+.testimonial {
+  
+}
+
+.stars {
+  margin-bottom: 2rem;
+}
+
+.quotation {
+  font-size: 1.125rem;
+  margin-bottom: 2rem;
+}
+
+.footer {
+  display: flex;
+}
+
+.attribution {
+  font-size: 1.125rem;
+  font-weight: 500;
+  color: var(--qc-color-headings);
+  font-style: normal;
+}
+
+.title {
+  font-size: 0.875rem;
+  font-style: normal;
+}
+
+.imageWrapper {
+  margin-right: 1rem;
+}

@@ -10,7 +10,7 @@ export const Footer: FC = () => {
   const termsLink = gbpCountry(countryCode) ? '/terms-gb' : '/terms';
 
   return (
-    <footer className="bg-dark">
+    <footer className="bg-light">
       <section>
         <div className="container text-center">
           <h2>Have questions?<br />Give us a call.</h2>
