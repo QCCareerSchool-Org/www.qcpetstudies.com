@@ -92,7 +92,7 @@ const DogTrainingCatalogPage: PageComponent = ({ searchParams }) => {
               <h2 className="mb-3">Step into a Thriving Industry</h2>
               <p>The demand for dog trainers is booming—with the industry projected to grow 15% over the next 10 years.*</p>
               <p>That's well above the average for all careers, making now the perfect time to turn your passion for helping dogs into a rewarding profession!</p>
-              <p className="mt-5 small">* <Link href="https://www.bls.gov/ooh/personal-care-and-service/animal-care-and-service-workers.htm">https://www.bls.gov/ooh/personal-care-and-service/animal-care-and-service-workers.htm</Link></p>
+              <p className="mt-5 small">* US Bureau of Labor Statistics</p>
             </div>
             <div className="col-12 col-sm-10 col-md-6">
               <Image src={GraphImage} className="img-fluid" alt="" />
