@@ -18,16 +18,21 @@ export const metadata: Metadata = {
 
 const DogGrooming300Off2Page: PageComponent = async () => {
   const { countryCode, provinceCode } = getData();
-  const priceQuery: PriceQuery = { countryCode, provinceCode: provinceCode ?? undefined, courses: courseCodes, options: { school: 'QC Pet Studies', promoCode: 'DG300' } };
-  const price = await fetchPrice(priceQuery);
-  if (!price) {
+  const dgPriceQuery: PriceQuery = { countryCode, provinceCode: provinceCode ?? undefined, courses: [ 'dg' ] };
+  const dePriceQuery: PriceQuery = { countryCode, provinceCode: provinceCode ?? undefined, courses: [ 'de' ] };
+  const [ dgPrice, dePrice ] = await Promise.all([
+    fetchPrice(dgPriceQuery),
+    fetchPrice(dePriceQuery),
+  ]);
+
+  if (!dgPrice || !dePrice) {
     return null;
   }
 
   return (
     <>
       <DeadlineFunnelScript />
-      <DogGroomingBase price={price} enrollPath="/grooming-300-off" courseCodes={courseCodes} />;
+      <DogGroomingBase dgPrice={dgPrice} dePrice={dePrice} enrollPath="/grooming-300-off" courseCodes={courseCodes} />
     </>
   );
 };
