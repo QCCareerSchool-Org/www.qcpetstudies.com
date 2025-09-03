@@ -149,11 +149,11 @@ const DogGroomingCourseOutlinePage: PageComponent = () => {
                     </div>
                   </div>
                 </AccordionItem>
-                <AccordionItem eventKey={eventKey++} heading="First Aid for Groomers Course">
+                <AccordionItem eventKey={eventKey++} heading="First Aid for Groomers Training">
                   <div className="row">
                     <div className="col-12 col-lg-6 mb-4 mb-lg-0">
                       <Image src={FirstAidCourse} className="mb-4" alt="groomer bandaging a dog's paw" sizes="100vw" style={{ width: '100%', height: 'auto' }} />
-                      <p className="mb-0">Starting in Unit D, you'll be completing grooming assignments on dogs. Before you proceed to Unit D, however, you'll take a break and complete the full First Aid for Dog Groomers Course.  This will ensure that you are fully prepared and ready to address any type of grooming emergency.  The First Aid units will teach you how to prevent accidents and injuries, and to respond to these situations should they occur. You'll also learn to build your Groomer's First Aid Kit, assess a dog's vitals, and perform life-saving procedures.  Being able to quickly respond to these situations will make you a better and more confident groomer!</p>
+                      <p className="mb-0">Starting in Unit D, you'll be completing grooming assignments on dogs. Before you proceed to Unit D, however, you'll take a break and complete the full First Aid for Dog Groomers  Course. This will ensure that you are fully prepared and ready to address any type of grooming emergency. The First Aid units will teach you how to prevent accidents and injuries, and to respond to these situations should they occur. You'll also learn to build your Groomer's First Aid Kit, assess a dog's vitals, and perform life-saving procedures. Being able to quickly respond to these situations will make you a better and more confident groomer!</p>
                     </div>
                     <div className="col-12 col-lg-6">
                       <div className="alert alert-primary">Unit Total: 8 to 15 Hours</div>
@@ -439,8 +439,8 @@ const DogGroomingCourseOutlinePage: PageComponent = () => {
                 <AccordionItem eventKey={eventKey++} heading="Unit H (Optional)">
                   <div className="row">
                     <div className="col-12 col-lg-6 mb-4 mb-lg-0">
-                      <p>By this point in the dog grooming class, you've completed all your theoretical and practical work, and are feeling pretty confident in your grooming abilities! Now it's time to use those abilities in the real-world and turn your passion into a career.  The business training offered in this course is optional, however, it will be hugely beneficial if you want to freelance your services, if you intend on starting your own dog grooming business or salon, or if you're looking to get a job in an established salon.</p>
-                      <p>You'll work with your tutor to name your dog grooming business and establish a business plan.  You'll learn all about different marketing techniques and how to use them effectively. You'll also read up on the most effective networking techniques and find out how to apply them to your business or job search.  Even if launching your business isn't in your immediate future, take advantage of this wonderful opportunity, and complete this optional unit of your course!</p>
+                      <p>By this point in the dog grooming class, you've completed all your theoretical and practical work, and are feeling pretty confident in your grooming abilities! Now it's time to use those abilities in the real-world and turn your passion into a career. Business training is optional for the Online Track students, but includes mandatory components for those in the Externship Track. We encourage all students to take full advantage of this training to build valuable skills for running a successful grooming business.</p>
+                      <p>You'll work with your tutor to name your dog grooming business and establish a business plan. You'll learn all about different marketing techniques and how to use them effectively. You'll also read up on the most effective networking techniques and find out how to apply them to your business or job search. Even if launching your business isn't in your immediate future, take advantage of this wonderful opportunity, and complete this optional unit of your course!</p>
                       <div className="alert alert-primary mb-0">Unit Total: 9 to 16 Hours</div>
                     </div>
                     <div className="col-12 col-lg-6">
@@ -452,6 +452,26 @@ const DogGroomingCourseOutlinePage: PageComponent = () => {
               <p className="text-center lead mt-4">View <Link href="/certification-courses/dog-grooming/course-preview" className="text-primary">Sample Assignments</Link> from QC's Online Dog Grooming Course</p>
             </div>
           </div>
+        </div>
+      </section>
+      <section>
+        <div className="container">
+          <h2>Externship Units</h2>
+          <p>In the Externship Track, you'll apply everything you've learned from the Online Track by completing your externship application and starting your in-person placement in a professional grooming environment. Here is a detailed breakdown of how the externship track course works.</p>
+          <h3>Submit Your Externship Application</h3>
+          <p>After completing the online training with a grade of B or higher in your practicum units and paying your course fees in full, you'll fill out an externship application. This is your opportunity to share your preferences with your facilitator, such as location or type of grooming facility.</p>
+          <h3>Placement Matching</h3>
+          <p>Your Externship Facilitator will review your application and work with you to secure the best placement for your hands-on training alongside a professional groomer.</p>
+          <h3>Receive Your Placement & Sign Documentation</h3>
+          <p>Within 14 days of application approval, you'll receive your placement details. Your facilitator will provide all required documentation, which you must sign before starting your externship.</p>
+          <h3>Begin Your Externship</h3>
+          <p>You'll complete 80 hours of unpaid, hands-on training in a real grooming environment, gaining practical experience and confidence in your skills.</p>
+          <h3>Track Your Hours & Get Evaluated</h3>
+          <p>During your externship you'll log your hours and complete an evaluation of your experience. Your grooming supervisor will also submit a final evaluation of your performance and skills.</p>
+          <h3>Receive Your Certificate of Completion</h3>
+          <p>Once all externship requirements are met—including your hours log and evaluations—you'll receive your official QC Certificate of Completion, recognizing both your coursework and real-world training.</p>
+          <h2>Meet Ashli, Your Externship Facilitator</h2>
+          <p>Ashli is dedicated to ensuring every student has a smooth and successful externship experience. She'll personally guide you through the placement process, help match you with a  professional groomer, and provide ongoing support until your training is complete. With Ashli's expertise and commitment to student success, you can feel confident knowing you'll have guidance every step of the way as you transition from online learning to hands-on experience.</p>
         </div>
       </section>
     </>

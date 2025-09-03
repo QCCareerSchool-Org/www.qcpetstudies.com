@@ -1,3 +1,9 @@
 export { default as Alexa } from './Alexa.jpg';
 export { default as Cheryl } from './Cheryl.jpg';
 export { default as Loris } from './Loris.jpg';
+export { default as April } from './april.jpg';
+export { default as Casey } from './casey.jpg';
+export { default as Kayla } from './kayla.jpg';
+export { default as Kloe } from './kloe.jpg';
+export { default as Melody } from './melody.jpg';
+export { default as Nicki } from './nicki.jpg';
