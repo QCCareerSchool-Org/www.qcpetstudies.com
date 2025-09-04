@@ -23,8 +23,8 @@ export const WhyChooseQCSection: FC = () => (
           <FaLaptopHouse className="h1 text-secondary mb-3" />
         </div>
         <div className="col-9">
-          <h3>A Fully Online Learning Experience</h3>
-          <p>QC offers 100% online learning! There are no assignment deadlines or inconvenient classroom sessions. You work at your own pace with one-on-one guidance and support from your personal tutor and teaching assistant.</p>
+          <h3>Courses Designed for You</h3>
+          <p>QC's online programs are designed to fit your life. There are no assignment deadlines or rigid exam schedules. You’ll complete your coursework when it works best for you, and get support from your grooming mentor and our student advisors every step of the way.</p>
         </div>
       </div>
       <div className="row mb-4">
@@ -32,8 +32,8 @@ export const WhyChooseQCSection: FC = () => (
           <FaChalkboardTeacher className="h1 text-secondary mb-3" />
         </div>
         <div className="col-9">
-          <h3>Expert Tutors to Guide You</h3>
-          <p>Your personal tutor will follow your progress through your online course, grade your assignments, and provide you with individualized feedback after you've completed each unit. QC's tutors are career professionals excelling in the pet industry, and they're focused on your success!</p>
+          <h3>Expert Mentors to Guide You</h3>
+          <p>Your grooming mentor will follow your progress through your online course, grade your assignments, and provide you with individualized feedback to help you grow your skills. QC's mentors are career professionals excelling in the pet industry, and they're focused on your success!</p>
         </div>
       </div>
       <div className="row mb-4">
@@ -42,7 +42,7 @@ export const WhyChooseQCSection: FC = () => (
         </div>
         <div className="col-9">
           <h3>Business Training You Can Use</h3>
-          <p>Each course comes complete with optional business training where you&apos;ll work with your tutor to come up with a business name, create a marketing strategy, start building your website, and get access to templates that will help get your career off to a great start from day one!</p>
+          <p>Graduate with professional designations that showcase your expertise and set you apart in the booming pet care industry. These credentials prove your skills to clients and employers, opening the door to exciting career opportunities, including launching your own successful pet-care business.</p>
         </div>
       </div>
       <div className="row">
@@ -50,7 +50,7 @@ export const WhyChooseQCSection: FC = () => (
           <FaHandHoldingUsd className="h1 text-secondary mb-3" />
         </div>
         <div className="col-9">
-          <h3>No Additional or Hidden Fees</h3>
+          <h3>Industry-Recognized Certifications</h3>
           <p>When you graduate from QC your certificate is yours forever, and you&apos;ll have continued access to your student center at no additional cost. You'll never be asked to pay subscription fees, membership fees, or any other fees to keep your certification current.</p>
         </div>
       </div>

@@ -59,7 +59,8 @@ const HomePage: PageComponent = () => {
                     <IDGPCertificationGold height={iconSize} width={iconSize} alt="IDGP Certification" style={{ maxWidth: '100%', height: 'auto' }} />
                   </div>
                   <h3>Professional Dog Grooming | <em className="gold">IDGP&trade;</em></h3>
-                  <p>Master every level of dog grooming from bathing, brushing and pet cuts to advanced breed styling. In this course, you'll learn all about dog anatomy and behavior, how to use grooming tools safely and effectively, and how to expertly groom any breed of dog. You'll also get a chance to launch your dog grooming business if that's your goal! Get plenty of hands-on groomer training without ever leaving your home. Start today!</p>
+                  <p>Master every level of dog grooming from bathing, brushing and pet cuts to advanced breed styling. In this course, you'll learn all about dog anatomy and behavior, how to use grooming tools safely and effectively, and how to expertly groom any breed. You’ll get plenty of hands-on training with personalized guidance from your grooming mentor. Plus, learn to run a successful grooming business.</p>
+                  <p>NEW: You can choose the <strong>Online-Only Track</strong> for hands-on training from home, or select the <strong>Externship Track</strong> to add real-world experience in a professional grooming salon.</p>
                 </div>
                 <Link href="/certification-courses/dog-grooming"><button className="btn btn-navy">Course Overview</button></Link>
               </CertificationCard>
