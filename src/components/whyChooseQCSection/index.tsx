@@ -24,7 +24,7 @@ export const WhyChooseQCSection: FC = () => (
         </div>
         <div className="col-9">
           <h3>Courses Designed for You</h3>
-          <p>QC's online programs are designed to fit your life. There are no assignment deadlines or rigid exam schedules. You’ll complete your coursework when it works best for you, and get support from your grooming mentor and our student advisors every step of the way.</p>
+          <p>QC's online programs are designed to fit your life. There are no assignment deadlines or rigid exam schedules. You'll complete your coursework when it works best for you, and get support from your grooming mentor and our student advisors every step of the way.</p>
         </div>
       </div>
       <div className="row mb-4">
