@@ -60,13 +60,13 @@ export const DogGroomingBase: FC<Props> = ({ dgPrice, dePrice, enrollPath }) => 
           </div>
         </div>
       </section>
-      <Client dgPrice={dgPrice} dePrice={dePrice} />
+      <Client dgPrice={dgPrice} dePrice={dePrice} countryCode={countryCode} />
       <section>
         <div className="container text-center">
           <div className="row justify-content-center">
             <div className="col-12 col-lg-10 mb-4">
               <h2 className="mb-3 mb-md-4">Why Choose QC?</h2>
-              <h3>Get Your Prodessional-Grade 36-Piece Grooming Kit</h3>
+              <h3>Get Your Professional-Grade 36-Piece Grooming Kit</h3>
               <p>When you enroll, you'll receive dog grooming tools to help you complete your studies and start your career. This kit includes cordless WAHL clippers and combs, three grooming scissors, an assortment of brushes and combs, and more!</p>
               <div className="mb-3">
                 <KitDetailsButton countryCode={countryCode} />
@@ -85,7 +85,7 @@ export const DogGroomingBase: FC<Props> = ({ dgPrice, dePrice, enrollPath }) => 
             </div>
             <div className="col-12 col-md-4">
               <div className={`${styles.icon} mb-1`}><BsCalendar size={iconSize} /></div>
-              <h3>Choose a Payment Plan that Works for You</h3>
+              <h3>Payment Plans that Work for You</h3>
               <p className="mb-0">QC offers flexible payment options and affordable tuition so you can focus on mastering your dog grooming skills and launching your career.</p>
             </div>
           </div>
@@ -118,7 +118,6 @@ export const DogGroomingBase: FC<Props> = ({ dgPrice, dePrice, enrollPath }) => 
             <div className="col-12 col-lg-10 mb-4 text-center">
               <h2>Course <strong>Outline</strong></h2>
               <p className="lead">The Dog Grooming Course is split into 5 parts, each containing individual training units.</p>
-              <p>You must complete a unit with a satisfactory grade before you can submit assignments for the next unit.</p>
             </div>
           </div>
           <Accordion defaultActiveKey={0}>
@@ -128,7 +127,7 @@ export const DogGroomingBase: FC<Props> = ({ dgPrice, dePrice, enrollPath }) => 
               <p>It is also recommended that you start seeking out dog owners who are willing to let you use their dogs in practical assignments later in the course.</p>
               <p className="mb-0"><Link href="/certification-courses/dog-grooming/course-outline">View a more detailed course syllabus</Link></p>
             </AccordionItem>
-            <AccordionItem eventKey={eventKey++} heading="Dog First Aid Course">
+            <AccordionItem eventKey={eventKey++} heading="Dog First Aid Training">
               <p>In order to provide you with the resources to learn your craft safely, your grooming course also comes with complimentary training on dog first aid. You'll learn about emergency situations that may occur in a grooming environment so that you'll be prepared to respond calmly and effectively in any emergency.</p>
               <p className="mb-0"><Link href="/certification-courses/dog-grooming/course-outline">View a more detailed course syllabus</Link></p>
             </AccordionItem>
@@ -146,7 +145,7 @@ export const DogGroomingBase: FC<Props> = ({ dgPrice, dePrice, enrollPath }) => 
               <p>After completing your practicum you can choose to complete the optional Business Essentials unit. This unit will help you develop the skills you need to run your own successful dog grooming business, from building your brand to constructing a business plan to setting your prices.</p>
               <p className="mb-0"><Link href="/certification-courses/dog-grooming/course-outline">View a more detailed course syllabus</Link></p>
             </AccordionItem>
-            <AccordionItem eventKey={eventKey++} heading="NEW: Optional Externship Placement">
+            <AccordionItem eventKey={eventKey++} heading={<strong>NEW: Optional Externship Placement</strong>}>
               <p>If you choose the Externship Track, you'll be matched with a professional grooming salon in your area once you've completed the online portion of your course and paid your fees.  Spend 80 hours working alongside an experienced groomer, honing your skills in a real salon environment, and gaining valuable industry insight as you complete your unpaid externship. Track your hours, receive mentorship and feedback from your host, and graduate with a certificate that showcases both your knowledge and hands-on experience.</p>
               <p>As an Externship Track student, you'll also earn an additional professional certificate showcasing your advanced training and hands-on experience.</p>
               <p>Note: Students who choose the Online Track will graduate with their International Dog Grooming Professional™ (IDGP) Certification upon completing the course.</p>
