@@ -21,6 +21,7 @@ import { TutorSectionDG } from '@/components/tutorSectionDG';
 import { VirtualCommunitySection } from '@/components/virtualCommunitySection';
 import type { CourseCode } from '@/domain/courseCode';
 import type { Price } from '@/domain/price';
+import { externship } from '@/lib/externship';
 import { formatPrice } from '@/lib/formatPrice';
 import { getData } from '@/lib/getData';
 
@@ -35,16 +36,11 @@ const iconSize = 36;
 const testimonialIds = [ 'TD-0004', 'TD-0005', 'TD-0007', 'TD-0008', 'TD-0009', 'TD-0010' ];
 
 export const DogGroomingBase: FC<Props> = ({ dgPrice, dePrice, enrollPath }) => {
-  const { countryCode } = getData();
+  const { countryCode, provinceCode } = getData();
   let eventKey = 0;
 
   return (
     <>
-      <div style={{ background: 'red', color: 'white', width: '100%', padding: '0.5rem' }}>
-        <div className="container text-center">
-          <p className="lead fw-normal mb-0">NEW: Now Available with an In-Person Externship!</p>
-        </div>
-      </div>
       <section id="top" className="bg-dark" style={{ paddingTop: '6rem', paddingBottom: '6rem' }}>
         <BackgroundImage src={DesktopHero} objectPosition="50% 50%" mobile={{ src: MobileHero, breakpoint: 'md' }} priority />
         <div className="container text-center text-md-start">
@@ -60,7 +56,14 @@ export const DogGroomingBase: FC<Props> = ({ dgPrice, dePrice, enrollPath }) => 
           </div>
         </div>
       </section>
-      <Client dgPrice={dgPrice} dePrice={dePrice} countryCode={countryCode} />
+      {externship(countryCode, provinceCode) && (
+        <div style={{ background: 'red', color: 'white', width: '100%', padding: '0.5rem' }}>
+          <div className="container text-center">
+            <p className="lead fw-normal mb-0">NEW: Now Available with an In-Person Externship!</p>
+          </div>
+        </div>
+      )}
+      <Client dgPrice={dgPrice} dePrice={dePrice} countryCode={countryCode} provinceCode={provinceCode} enrollPath={enrollPath} />
       <section>
         <div className="container text-center">
           <div className="row justify-content-center">
@@ -145,13 +148,14 @@ export const DogGroomingBase: FC<Props> = ({ dgPrice, dePrice, enrollPath }) => 
               <p>After completing your practicum you can choose to complete the optional Business Essentials unit. This unit will help you develop the skills you need to run your own successful dog grooming business, from building your brand to constructing a business plan to setting your prices.</p>
               <p className="mb-0"><Link href="/certification-courses/dog-grooming/course-outline">View a more detailed course syllabus</Link></p>
             </AccordionItem>
-            <AccordionItem eventKey={eventKey++} heading={<strong>NEW: Optional Externship Placement</strong>}>
-              <p>If you choose the Externship Track, you'll be matched with a professional grooming salon in your area once you've completed the online portion of your course and paid your fees.  Spend 80 hours working alongside an experienced groomer, honing your skills in a real salon environment, and gaining valuable industry insight as you complete your unpaid externship. Track your hours, receive mentorship and feedback from your host, and graduate with a certificate that showcases both your knowledge and hands-on experience.</p>
-              <p>As an Externship Track student, you'll also earn an additional professional certificate showcasing your advanced training and hands-on experience.</p>
-              <p>Note: Students who choose the Online Track will graduate with their International Dog Grooming Professional™ (IDGP) Certification upon completing the course.</p>
-              <p className="mb-0"><Link href="/certification-courses/dog-grooming/course-outline">View a More Detailed Breakdown of the Externship</Link></p>
-            </AccordionItem>
-
+            {externship(countryCode, provinceCode) && (
+              <AccordionItem eventKey={eventKey++} heading={<strong>NEW: Optional Externship Placement</strong>}>
+                <p>If you choose the Externship Track, you'll be matched with a professional grooming salon in your area once you've completed the online portion of your course and paid your fees.  Spend 80 hours working alongside an experienced groomer, honing your skills in a real salon environment, and gaining valuable industry insight as you complete your unpaid externship. Track your hours, receive mentorship and feedback from your host, and graduate with a certificate that showcases both your knowledge and hands-on experience.</p>
+                <p>As an Externship Track student, you'll also earn an additional professional certificate showcasing your advanced training and hands-on experience.</p>
+                <p>Note: Students who choose the Online Track will graduate with their International Dog Grooming Professional™ (IDGP) Certification upon completing the course.</p>
+                <p className="mb-0"><Link href="/certification-courses/dog-grooming/course-outline">View a More Detailed Breakdown of the Externship</Link></p>
+              </AccordionItem>
+            )}
           </Accordion>
         </div>
       </section>

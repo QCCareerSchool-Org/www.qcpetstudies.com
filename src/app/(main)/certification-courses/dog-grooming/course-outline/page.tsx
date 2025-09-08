@@ -19,6 +19,8 @@ import { AccordionItem } from '@/components/accordion/accordionItem';
 import { BackgroundImage } from '@/components/backgroundImage';
 import CalendarIcon from '@/images/calendar.svg';
 import TimeIcon from '@/images/clock.svg';
+import { externship } from '@/lib/externship';
+import { getData } from '@/lib/getData';
 
 const iconSize = 50;
 
@@ -30,6 +32,7 @@ export const metadata: Metadata = {
 
 const DogGroomingCourseOutlinePage: PageComponent = () => {
   let eventKey = 0;
+  const { countryCode, provinceCode } = getData();
 
   return (
     <>
@@ -447,32 +450,34 @@ const DogGroomingCourseOutlinePage: PageComponent = () => {
                     </div>
                   </div>
                 </AccordionItem>
-                <AccordionItem eventKey={eventKey++} heading="Externship Units">
-                  <p className="lead">In the Externship Track, you'll apply everything you've learned from the Online Track by completing your externship application and starting your in-person placement in a professional grooming environment. Here is a detailed breakdown of how the externship track course works.</p>
-                  <div className="row">
-                    <div className="col-12 col-lg-6 mb-4">
-                      <h4>Submit Your Externship Application</h4>
-                      <p>After completing the online training with a grade of B or higher in your practicum units and paying your course fees in full, you'll fill out an externship application. This is your opportunity to share your preferences with your facilitator, such as location or type of grooming facility.</p>
-                      <h4>Placement Matching</h4>
-                      <p>Your Externship Facilitator will review your application and work with you to secure the best placement for your hands-on training alongside a professional groomer.</p>
-                      <h4>Receive Your Placement & Sign Documentation</h4>
-                      <p>Within 14 days of application approval, you'll receive your placement details. Your facilitator will provide all required documentation, which you must sign before starting your externship.</p>
-                      <h4>Begin Your Externship</h4>
-                      <p>You'll complete 80 hours of unpaid, hands-on training in a real grooming environment, gaining practical experience and confidence in your skills.</p>
-                      <h4>Track Your Hours & Get Evaluated</h4>
-                      <p>During your externship you'll log your hours and complete an evaluation of your experience. Your grooming supervisor will also submit a final evaluation of your performance and skills.</p>
-                      <h4>Receive Your Certificate of Completion</h4>
-                      <p>Once all externship requirements are met—including your hours log and evaluations—you'll receive your official QC Certificate of Completion, recognizing both your coursework and real-world training.</p>
-                    </div>
-                    <div className="col-12 col-lg-6 mb-4">
-                      <h4>Meet Ashli, Your Externship Facilitator</h4>
-                      <p className="mb-5">Ashli is dedicated to ensuring every student has a smooth and successful externship experience. She'll personally guide you through the placement process, help match you with a  professional groomer, and provide ongoing support until your training is complete. With Ashli's expertise and commitment to student success, you can feel confident knowing you'll have guidance every step of the way as you transition from online learning to hands-on experience.</p>
-                      <div className="text-center">
-                        <Image src={AshliImage} className="img-fluid" alt="Ashli" />
+                {externship(countryCode, provinceCode) && (
+                  <AccordionItem eventKey={eventKey++} heading="Externship Units">
+                    <p className="lead">In the Externship Track, you'll apply everything you've learned from the Online Track by completing your externship application and starting your in-person placement in a professional grooming environment. Here is a detailed breakdown of how the externship track course works.</p>
+                    <div className="row">
+                      <div className="col-12 col-lg-6 mb-4">
+                        <h4>Submit Your Externship Application</h4>
+                        <p>After completing the online training with a grade of B or higher in your practicum units and paying your course fees in full, you'll fill out an externship application. This is your opportunity to share your preferences with your facilitator, such as location or type of grooming facility.</p>
+                        <h4>Placement Matching</h4>
+                        <p>Your Externship Facilitator will review your application and work with you to secure the best placement for your hands-on training alongside a professional groomer.</p>
+                        <h4>Receive Your Placement & Sign Documentation</h4>
+                        <p>Within 14 days of application approval, you'll receive your placement details. Your facilitator will provide all required documentation, which you must sign before starting your externship.</p>
+                        <h4>Begin Your Externship</h4>
+                        <p>You'll complete 80 hours of unpaid, hands-on training in a real grooming environment, gaining practical experience and confidence in your skills.</p>
+                        <h4>Track Your Hours & Get Evaluated</h4>
+                        <p>During your externship you'll log your hours and complete an evaluation of your experience. Your grooming supervisor will also submit a final evaluation of your performance and skills.</p>
+                        <h4>Receive Your Certificate of Completion</h4>
+                        <p>Once all externship requirements are met—including your hours log and evaluations—you'll receive your official QC Certificate of Completion, recognizing both your coursework and real-world training.</p>
+                      </div>
+                      <div className="col-12 col-lg-6 mb-4">
+                        <h4>Meet Ashli, Your Externship Facilitator</h4>
+                        <p className="mb-5">Ashli is dedicated to ensuring every student has a smooth and successful externship experience. She'll personally guide you through the placement process, help match you with a  professional groomer, and provide ongoing support until your training is complete. With Ashli's expertise and commitment to student success, you can feel confident knowing you'll have guidance every step of the way as you transition from online learning to hands-on experience.</p>
+                        <div className="text-center">
+                          <Image src={AshliImage} className="img-fluid" alt="Ashli" />
+                        </div>
                       </div>
                     </div>
-                  </div>
-                </AccordionItem>
+                  </AccordionItem>
+                )}
               </Accordion>
               <p className="text-center lead mt-4">View <Link href="/certification-courses/dog-grooming/course-preview" className="text-primary">Sample Assignments</Link> from QC's Online Dog Grooming Course</p>
             </div>
