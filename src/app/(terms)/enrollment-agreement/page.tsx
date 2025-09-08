@@ -86,18 +86,28 @@ const AgreementPage: PageComponent = () => (
       <li>Withdrawal fees are dependent on tuition fees paid to date, the course materials sent to you, and the amount of tutorial used. If you have completed more than half of your course, you may not be eligible to withdraw.</li>
       <li>QC reserves the right to refuse any withdrawal request after the 21-day guarantee period. Refunds (if applicable) will only be processed within six months of your date of enrollment.</li>
     </ul>
-    <h2>7. Code of Conduct</h2>
+    <h2>7. Externship</h2>
+    <h3>Eligibility Requirements</h3>
+    <p>Students enrolled in the Dog Grooming course with the Externship track must meet the following criteria before starting their externship:</p>
+    <ol>
+      <li>All prior course units have been completed</li>
+      <li>A minimum course average grade of 'B' has been met</li>
+      <li>Tuition is paid in full</li>
+    </ol>
+    <h3>Finding a Placement</h3>
+    <p>The School will make every reasonable effort to arrange a dog grooming externship placement for the student. However, placement availability depends on factors such as location, timing, and the specific requirements of participating grooming facilities, and therefore cannot be guaranteed. If the School is unable to secure a placement, the student will receive a refund for the externship portion of the course fee. Students will receive a complete list of externship policies upon enrollment.</p>
+    <h2>8. Code of Conduct</h2>
     <p>QC's tutors and support staff are dedicated to providing a top-quality experience to all students. When you communicate with the QC Team, you will be greeted in a courteous, friendly and respectful manner.</p>
     <p>Students who exhibit abusive, threatening or offensive behavior when communicating with any member of the QC team may be placed on academic probation or expelled from the School without a tuition refund.</p>
     <p>QC considers cyber-bullying to be a serious and dangerous situation for all. Any individual who is identifiable as a QC student who is found to exhibit threatening, harassing, abusive or offensive behavior online may be placed on academic probation or expelled from the School without a tuition refund.</p>
     <h3>Cheating &amp; Plagiarism</h3>
     <p>As a student of QC, you are expected to put in your best effort to complete your course work and assignments. Cheating, plagiarism, tampering, or falsification of your work in any way is not permitted.</p>
     <p>If your tutor suspects your work to be the result of any form of cheating, your account may be immediately placed under academic probation while a review of your work is conducted. If your work is determined to be the result of cheating, you will receive a failing grade for that unit and will be required to pay a re-submission fee to submit the unit. Additional instances of cheating will result in immediate expulsion from the School without a tuition refund.</p>
-    <h2>8. Governing Law and Jurisdiction</h2>
+    <h2>9. Governing Law and Jurisdiction</h2>
     <p>This Agreement is governed by and is to be construed in accordance with the laws of the Province of Ontario and the laws of Canada applicable therein and treated in all respects as an Ontario contract. The parties to this Agreement hereby irrevocably and unconditionally attorn to the exclusive jurisdiction of the courts of the Province of Ontario and all courts competent to hear appeals therefrom.</p>
-    <h2>9. Age of Majority</h2>
+    <h2>10. Age of Majority</h2>
     <p>If you are under 18 or under the age of majority in your state/province, you will need a parental consent form in order to enroll with QC. Please contact the School for further details.</p>
-    <h2>10. Contact Information</h2>
+    <h2>11. Contact Information</h2>
     <p>QC Quality of Course Inc.<br />Corporation Number: 208502-0<br />Business Number (BN): 105927339RC0001</p>
     <p>Email: <EmailLink /><br />Phone: 1-613-749-8248</p>
     <h3>Shipping</h3>
