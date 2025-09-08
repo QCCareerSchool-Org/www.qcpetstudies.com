@@ -106,7 +106,7 @@ export const DogGroomingBase: FC<Props> = ({ dgPrice, dePrice, enrollPath }) => 
               <h2 className="text-white">Your International Dog Grooming Professional Certification</h2>
               <p>Once you graduate from your online dog grooming course, you'll receive a certification and be able to use the designation of International Dog Grooming Professional (IDGP).</p>
               <p>This certification demonstrates that you have successfully completed professional training and that you possess all the skills and knowledge required to safely handle dogs and deliver top-notch, professional grooms.</p>
-              <p>If you complete the <strong>Externship Track</strong>, you'll also receive an <strong>additional certificate of completion</strong> recognizing your additional hands-on training and real-world salon experience!</p>
+              {externship(countryCode, provinceCode) && <p>If you complete the <strong>Externship Track</strong>, you'll also receive an <strong>additional certificate of completion</strong> recognizing your additional hands-on training and real-world salon experience!</p>}
             </div>
           </div>
         </div>
