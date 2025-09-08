@@ -14,7 +14,7 @@ type Props = {
   dgPrice: Price;
   dePrice: Price;
   className?: string;
-  onPopupLinkClick: MouseEventHandler;
+  onPopupLinkClick?: MouseEventHandler;
   countryCode: string;
 };
 

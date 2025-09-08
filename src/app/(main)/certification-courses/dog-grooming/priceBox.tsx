@@ -14,7 +14,7 @@ type Props = {
   selected: boolean;
   onSelected: () => void;
   cartUrl: string;
-  onPopupLinkClick: MouseEventHandler<HTMLAnchorElement>;
+  onPopupLinkClick?: MouseEventHandler<HTMLAnchorElement>;
 };
 
 type Plan = 'full' | 'part';
@@ -57,9 +57,11 @@ export const PriceBox: FC<Props> = ({ title, price, selected, onSelected, cartUr
         <a href={href}><button className={`btn w-100 btn-primary ${selected ? '' : 'disabled'}`}>Enroll Now</button></a>
       </div>
 
-      <div className="text-center">
-        <a href="#" onClick={handlePopupLinkClick}>View Course Features</a>
-      </div>
+      {onPopupLinkClick && (
+        <div className="text-center">
+          <a href="#" onClick={handlePopupLinkClick}>View Course Features</a>
+        </div>
+      )}
     </div>
   );
 };

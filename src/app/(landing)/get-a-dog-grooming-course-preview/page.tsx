@@ -15,6 +15,8 @@ import FirstAidLogo from '@/images/first-aid-logo.svg';
 import Step1EnrollImage from '@/images/step-1-enroll.svg';
 import Step2SubmitImage from '@/images/step-2-submit.svg';
 import Step3CertificateImage from '@/images/step-3-certificate.svg';
+import { externship } from '@/lib/externship';
+import { getData } from '@/lib/getData';
 import { getParam } from '@/lib/getParam';
 
 export const metadata: Metadata = {
@@ -38,6 +40,8 @@ const DogGroomingCatalogPage: PageComponent = ({ searchParams }) => {
   const headerList = headers();
   const referrer = headerList.get('referer');
 
+  const { countryCode, provinceCode } = getData();
+
   return (
     <>
       <Header />
@@ -46,6 +50,7 @@ const DogGroomingCatalogPage: PageComponent = ({ searchParams }) => {
           <div className="row align-items-center justify-content-center">
             <div className="col-12 col-sm-11 col-md-10 col-lg-10 mb-4 mb-lg-5">
               <h2 className="text-center mb-0">Become a Professional <strong>Dog Groomer</strong></h2>
+              {externship(countryCode, provinceCode) && <p className="lead text-center text-secondary">Now Available with Optional Externship!</p>}
             </div>
             <div className="col-12 col-sm-11 col-md-8 col-lg-6 col-xl-5 mb-4 mb-lg-0">
               <div className="card bg-light">
@@ -75,10 +80,10 @@ const DogGroomingCatalogPage: PageComponent = ({ searchParams }) => {
               </div>
               <p className="lead">Get access to a free preview of the online dog grooming course to</p>
               <ul className="mb-0">
-                <li>Find out if a career in dog grooming is right for you</li>
                 <li>Learn about the many careers you can pursue as a dog groomer</li>
                 <li>View the course curriculum, course videos, and sample assignments</li>
                 <li>Find out about tuition information and choose a payment plan</li>
+                {externship(countryCode, provinceCode) && <li>Learn how you can gain even more hands on experience with the Externship Track</li>}
                 <li>Learn how you can't go wrong with QC's money back guarantee!</li>
               </ul>
             </div>

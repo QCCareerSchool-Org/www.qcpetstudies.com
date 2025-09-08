@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { BsBook } from 'react-icons/bs';
 
 import AssignmentBackground from './your-career-bg.jpg';
+import { PriceSection } from '../priceSection';
 import type { PageComponent } from '@/app/serverComponent';
 import { BackgroundImage } from '@/components/backgroundImage';
 import { Bar } from '@/components/bar';
@@ -9,6 +10,7 @@ import IDGPCertificationLogo from '@/components/certifications/IDGP-certificatio
 import { PriceSectionWithDiscount } from '@/components/priceSectionWithDiscount';
 import { TabGroup } from '@/components/tabGroup';
 import { TutorSectionDG } from '@/components/tutorSectionDG';
+import { externship } from '@/lib/externship';
 import type { PriceQuery } from '@/lib/fetch';
 import { fetchPrice } from '@/lib/fetch';
 import { getData } from '@/lib/getData';
@@ -22,9 +24,15 @@ export const metadata: Metadata = {
 
 const GroomingCoursePreviewPage: PageComponent = async () => {
   const { countryCode, provinceCode } = getData();
-  const priceQuery: PriceQuery = { countryCode, provinceCode: provinceCode ?? undefined, courses: courseCodes };
-  const price = await fetchPrice(priceQuery);
-  if (!price) {
+  const dgPriceQuery: PriceQuery = { countryCode, provinceCode: provinceCode ?? undefined, courses: courseCodes };
+  const dePriceQuery: PriceQuery = { countryCode, provinceCode: provinceCode ?? undefined, courses: [ 'de' ] };
+
+  const [ dgPrice, dePrice ] = await Promise.all([
+    fetchPrice(dgPriceQuery),
+    fetchPrice(dePriceQuery),
+  ]);
+
+  if (!dgPrice || !dePrice) {
     return null;
   }
 
@@ -48,7 +56,7 @@ const GroomingCoursePreviewPage: PageComponent = async () => {
           <div className="row">
             <div className="col-12 col-md-6 mb-4 mb-md-0">
               <h2>Congratulations on Choosing to Explore a Career as a <strong>Dog Groomer</strong>!</h2>
-              <p>Becoming a dog groomer is not for everyone! But if you have the right set of passion and skills, it can be an extremely rewarding and profitable career! Does this sound like you?</p>
+              <p>Dog grooming is an extremely rewarding and profitable career! Does this sound like you?</p>
               <ul>
                 <li>You love all dogs, big and small</li>
                 <li>You're able to interact with all types of dogs calmly and carefully</li>
@@ -57,15 +65,16 @@ const GroomingCoursePreviewPage: PageComponent = async () => {
                 <li>You're driven and ambitious</li>
                 <li>You're willing to continue learning throughout your career</li>
               </ul>
-              <p className="lead mb-0">If this list describes your personality, then you're in the right place!</p>
+              <p className="lead mb-0">If this list describes you, then you're in the right place!</p>
             </div>
             <div className="col-12 col-md-6">
               <div className="card bg-lighter border-lighter">
                 <div className="card-body">
                   <p className="card-text">QC's online dog grooming course will prepare you in every way for a successful dog grooming career. You will learn everything from dog behavior and safety practices to tools of the trade, to specific grooming techniques and the most popular cuts.</p>
-                  <p className="card-text">Whether your goal is to launch your own grooming business, work in a grooming salon, or just groom your own dog, you'll gain all the skills to achieve your goals.</p>
-                  <p className="card-text">Even though you're learning online, you'll get plenty of hands-on experience every step of the way! You'll complete tons of hands-on assignments designed to enhance your grooming skills, and will have support from your own personal tutor, a Certified Master Groomer!</p>
+                  <p className="card-text">Whether you want to launch your own grooming business, work in a grooming salon, or just groom your own dog, you'll gain all the skills you need to achieve your goals.</p>
+                  <p className="card-text">Even though you're learning online, you'll get plenty of hands-on experience every step of the way! You'll complete tons of practical assignments designed to enhance your grooming skills, and you'll have support from your personal tutor, a Certified Master Groomer!</p>
                   <p className="card-text">Don't miss out on this amazing opportunity to work with an expert to develop your skills!</p>
+                  {externship(countryCode, provinceCode) && <p className="card-text"><strong>New! Take your training to the next level with our Optional Externship Track—get additional real-world, hands-on experience working side-by-side with a professional groomer.</strong></p>}
                 </div>
               </div>
             </div>
@@ -328,6 +337,27 @@ const GroomingCoursePreviewPage: PageComponent = async () => {
               <hr className="my-5" />
             </div>
 
+            <div className="col-12">
+              <div className="card bg-lighter border-lighter">
+                <div className="card-body">
+                  <div className="row">
+                    <div className="col-12 col-lg-6 mb-4 mb-lg-0">
+                      <h3 className="fw-normal"><strong>Part 6:</strong> Optional Externship</h3>
+                      <p className="mb-0">If you choose the Externship Track, you'll be matched with a professional grooming salon in your area once you've completed the online portion of your course and paid your fees.  Spend 80 hours working alongside an experienced groomer, honing your skills in a real salon environment, and gaining valuable industry insight.</p>
+                    </div>
+                    <div className="col-12 col-lg-6">
+                      <h4>Certification</h4>
+                      <p className="mb-4">As an Externship Track student, you'll also earn an additional professional certificate showcasing your advanced training and hands-on experience.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="col-12">
+              <hr className="my-5" />
+            </div>
+
             <div className="col-12 text-center">
               For a full course outline, including required dog breeds, tools, and completion times, please see the dog grooming course curriculum.
             </div>
@@ -336,7 +366,10 @@ const GroomingCoursePreviewPage: PageComponent = async () => {
         </div>
       </section>
 
-      <PriceSectionWithDiscount courses={courseCodes} price={price} doubleGuarantee={true} />
+      {externship(countryCode, provinceCode)
+        ? <PriceSection dgPrice={dgPrice} dePrice={dePrice} countryCode={countryCode} />
+        : <PriceSectionWithDiscount courses={courseCodes} price={dgPrice} doubleGuarantee={true} />
+      }
 
       <TutorSectionDG className="bg-light" />
     </>
