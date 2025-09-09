@@ -11,6 +11,7 @@ import UnitBImage from './_images/unit-b.jpg';
 import UnitCImage from './_images/unit-c.jpg';
 import UnitGImage from './_images/unit-g.jpg';
 import UnitHImage from './_images/unit-h.jpg';
+import AshliImage from './ashli.jpg';
 import CourseOutlineBackground from './course-outline.jpg';
 import type { PageComponent } from '@/app/serverComponent';
 import { Accordion } from '@/components/accordion';
@@ -18,6 +19,8 @@ import { AccordionItem } from '@/components/accordion/accordionItem';
 import { BackgroundImage } from '@/components/backgroundImage';
 import CalendarIcon from '@/images/calendar.svg';
 import TimeIcon from '@/images/clock.svg';
+import { externship } from '@/lib/externship';
+import { getData } from '@/lib/getData';
 
 const iconSize = 50;
 
@@ -29,6 +32,7 @@ export const metadata: Metadata = {
 
 const DogGroomingCourseOutlinePage: PageComponent = () => {
   let eventKey = 0;
+  const { countryCode, provinceCode } = getData();
 
   return (
     <>
@@ -85,7 +89,7 @@ const DogGroomingCourseOutlinePage: PageComponent = () => {
             </div>
             <div className="col-12 col-xl-10 col-xxl-9">
               <Accordion>
-                <AccordionItem eventKey={eventKey++} heading="Unit A">
+                <AccordionItem eventKey={eventKey++} heading="Introduction to Dog Grooming">
                   <div className="row">
                     <div className="col-12 col-lg-6 mb-4 mb-lg-0">
                       <Image src={UnitAImage} className="mb-4" alt="groomer examining a dog's coat" sizes="100vw" style={{ width: '100%', height: 'auto' }} />
@@ -97,7 +101,7 @@ const DogGroomingCourseOutlinePage: PageComponent = () => {
                         <tbody>
                           <tr><th scope="row">Readings:</th><td>1 to 2 hours</td></tr>
                           <tr><th scope="row">Videos:</th><td>3 (25 minutes)</td></tr>
-                          <tr><th scope="row">Assignments:</th><td>10 (2 to 4 hours)</td></tr>
+                          <tr><th scope="row">Assignments:</th><td>4 (2 to 4 hours)</td></tr>
                         </tbody>
                       </table>
                       <hr />
@@ -106,7 +110,7 @@ const DogGroomingCourseOutlinePage: PageComponent = () => {
                     </div>
                   </div>
                 </AccordionItem>
-                <AccordionItem eventKey={eventKey++} heading="Unit B">
+                <AccordionItem eventKey={eventKey++} heading="Meeting and Evaluating Dogs">
                   <div className="row">
                     <div className="col-12 col-lg-6 mb-4 mb-lg-0">
                       <Image src={UnitBImage} className="mb-4" alt="groomer combing a dog's head" sizes="100vw" style={{ width: '100%', height: 'auto' }} />
@@ -118,7 +122,7 @@ const DogGroomingCourseOutlinePage: PageComponent = () => {
                         <tbody>
                           <tr><th scope="row">Readings:</th><td>1 to 2 hours</td></tr>
                           <tr><th scope="row">Videos:</th><td>3 (65 minutes)</td></tr>
-                          <tr><th scope="row">Assignments:</th><td>9 (3 to 6 hours)</td></tr>
+                          <tr><th scope="row">Assignments:</th><td>5 (3 to 6 hours)</td></tr>
                         </tbody>
                       </table>
                       <hr />
@@ -127,7 +131,7 @@ const DogGroomingCourseOutlinePage: PageComponent = () => {
                     </div>
                   </div>
                 </AccordionItem>
-                <AccordionItem eventKey={eventKey++} heading="Unit C">
+                <AccordionItem eventKey={eventKey++} heading="Grooming Tools and Techniques">
                   <div className="row">
                     <div className="col-12 col-lg-6 mb-4 mb-lg-0">
                       <Image src={UnitCImage} className="mb-4" alt="assorted dog grooming tools" sizes="100vw" style={{ width: '100%', height: 'auto' }} />
@@ -139,7 +143,7 @@ const DogGroomingCourseOutlinePage: PageComponent = () => {
                         <tbody>
                           <tr><th scope="row">Readings:</th><td>1 to 2 hours</td></tr>
                           <tr><th scope="row">Videos:</th><td>4 (1½ hours)</td></tr>
-                          <tr><th scope="row">Assignments:</th><td>12 (3 to 6 hours)</td></tr>
+                          <tr><th scope="row">Assignments:</th><td>5 (3 to 6 hours)</td></tr>
                         </tbody>
                       </table>
                       <hr />
@@ -149,11 +153,11 @@ const DogGroomingCourseOutlinePage: PageComponent = () => {
                     </div>
                   </div>
                 </AccordionItem>
-                <AccordionItem eventKey={eventKey++} heading="First Aid for Groomers Course">
+                <AccordionItem eventKey={eventKey++} heading="Bonus Lessons: First Aid for Groomers">
                   <div className="row">
                     <div className="col-12 col-lg-6 mb-4 mb-lg-0">
                       <Image src={FirstAidCourse} className="mb-4" alt="groomer bandaging a dog's paw" sizes="100vw" style={{ width: '100%', height: 'auto' }} />
-                      <p className="mb-0">Starting in Unit D, you'll be completing grooming assignments on dogs. Before you proceed to Unit D, however, you'll take a break and complete the full First Aid for Dog Groomers Course.  This will ensure that you are fully prepared and ready to address any type of grooming emergency.  The First Aid units will teach you how to prevent accidents and injuries, and to respond to these situations should they occur. You'll also learn to build your Groomer's First Aid Kit, assess a dog's vitals, and perform life-saving procedures.  Being able to quickly respond to these situations will make you a better and more confident groomer!</p>
+                      <p className="mb-0">In the following units, you'll be completing grooming assignments on dogs. Before you proceed, however, you'll take a break and complete your full First Aid for Dog Groomers training. This will ensure that you are fully prepared and ready to address any type of grooming emergency. The First Aid lesson will teach you how to prevent accidents and injuries, and to respond to these situations should they occur. You'll also learn to build your Groomer's First Aid Kit, assess a dog's vitals, and perform life-saving procedures. Being able to quickly respond to these situations will make you a better and more confident groomer!</p>
                     </div>
                     <div className="col-12 col-lg-6">
                       <div className="alert alert-primary">Unit Total: 8 to 15 Hours</div>
@@ -161,7 +165,6 @@ const DogGroomingCourseOutlinePage: PageComponent = () => {
                         <tbody>
                           <tr><th scope="row">Readings:</th><td>1 to 2 hours</td></tr>
                           <tr><th scope="row">Videos:</th><td>9 (2½ hours)</td></tr>
-                          <tr><th scope="row">Assignments:</th><td>27 (6 to 12 hours)</td></tr>
                         </tbody>
                       </table>
                       <hr />
@@ -171,7 +174,7 @@ const DogGroomingCourseOutlinePage: PageComponent = () => {
                     </div>
                   </div>
                 </AccordionItem>
-                <AccordionItem eventKey={eventKey++} heading="Unit D">
+                <AccordionItem eventKey={eventKey++} heading="Prep Work">
                   <div className="row">
                     <div className="col-12 col-lg-6 mb-4">
                       <p>Now that you have basic dog grooming theory and First Aid under your belt, you're going to start working on dogs and practicing your practical dog grooming skills!</p>
@@ -183,7 +186,7 @@ const DogGroomingCourseOutlinePage: PageComponent = () => {
                         <tbody>
                           <tr><th scope="row">Readings:</th><td>1 to 2 hours</td></tr>
                           <tr><th scope="row">Videos:</th><td>8 (3 hours)</td></tr>
-                          <tr><th scope="row">Assignments:</th><td>12 (4 to 8 hours)</td></tr>
+                          <tr><th scope="row">Assignments:</th><td>7 (4 to 8 hours)</td></tr>
                         </tbody>
                       </table>
                     </div>
@@ -222,7 +225,7 @@ const DogGroomingCourseOutlinePage: PageComponent = () => {
                     </div>
                   </div>
                 </AccordionItem>
-                <AccordionItem eventKey={eventKey++} heading="Unit E">
+                <AccordionItem eventKey={eventKey++} heading="Coat Types and Cuts">
                   <div className="row">
                     <div className="col-12 col-lg-6 mb-4">
                       <p className="mb-0">This unit is all about different coat types in dogs. You'll learn how to handle every coat type including the necessary care and maintenance of these coats.  You'll also be introduced to some indispensable pet cuts, and techniques for creating eye-catching finishing touches to top off a stylish groom in any dog!</p>
@@ -233,7 +236,7 @@ const DogGroomingCourseOutlinePage: PageComponent = () => {
                         <tbody>
                           <tr><th scope="row">Readings:</th><td>1 to 2 hours</td></tr>
                           <tr><th scope="row">Videos:</th><td>2 (1 hour)</td></tr>
-                          <tr><th scope="row">Assignments:</th><td>14 (5 to 10 hours)</td></tr>
+                          <tr><th scope="row">Assignments:</th><td>5 (5 to 10 hours)</td></tr>
                         </tbody>
                       </table>
                     </div>
@@ -262,7 +265,7 @@ const DogGroomingCourseOutlinePage: PageComponent = () => {
                     </div>
                   </div>
                 </AccordionItem>
-                <AccordionItem eventKey={eventKey++} heading="Unit F">
+                <AccordionItem eventKey={eventKey++} heading="Grooming Plans">
                   <div className="row">
                     <div className="col-12 col-lg-6 mb-4">
                       <p className="mb-0">You'll now start to work with dogs that require special accommodations or considerations when grooming. This includes introducing puppies to the grooming process, grooming seniors and other dogs who might have health issues to consider when grooming, and dogs that may have behavioral issues that make them particularly difficult to groom.</p>
@@ -273,7 +276,7 @@ const DogGroomingCourseOutlinePage: PageComponent = () => {
                         <tbody>
                           <tr><th scope="row">Readings:</th><td>1 to 2 hours</td></tr>
                           <tr><th scope="row">Videos:</th><td>3 (1½ hours)</td></tr>
-                          <tr><th scope="row">Assignments:</th><td>9 (6 to 12 hours)</td></tr>
+                          <tr><th scope="row">Assignments:</th><td>3 (6 to 12 hours)</td></tr>
                         </tbody>
                       </table>
                     </div>
@@ -300,7 +303,7 @@ const DogGroomingCourseOutlinePage: PageComponent = () => {
                     </div>
                   </div>
                 </AccordionItem>
-                <AccordionItem eventKey={eventKey++} heading="Unit G">
+                <AccordionItem eventKey={eventKey++} heading="Breed Standards">
                   <div className="row">
                     <div className="col-12 col-lg-6 mb-4 mb-lg-0">
                       <Image src={UnitGImage} className="mb-4" alt="longhaired dog getting a trim" sizes="100vw" style={{ width: '100%', height: 'auto' }} />
@@ -314,7 +317,6 @@ const DogGroomingCourseOutlinePage: PageComponent = () => {
                         <tbody>
                           <tr><th scope="row">Readings:</th><td>1 to 2 hours</td></tr>
                           <tr><th scope="row">Videos:</th><td>9 (5 hours)</td></tr>
-                          <tr><th scope="row">Assignments:</th><td>1 (1 hour)</td></tr>
                         </tbody>
                       </table>
                       <hr />
@@ -436,11 +438,11 @@ const DogGroomingCourseOutlinePage: PageComponent = () => {
                     </div>
                   </div>
                 </AccordionItem>
-                <AccordionItem eventKey={eventKey++} heading="Unit H (Optional)">
+                <AccordionItem eventKey={eventKey++} heading="Business Training">
                   <div className="row">
                     <div className="col-12 col-lg-6 mb-4 mb-lg-0">
-                      <p>By this point in the dog grooming class, you've completed all your theoretical and practical work, and are feeling pretty confident in your grooming abilities! Now it's time to use those abilities in the real-world and turn your passion into a career.  The business training offered in this course is optional, however, it will be hugely beneficial if you want to freelance your services, if you intend on starting your own dog grooming business or salon, or if you're looking to get a job in an established salon.</p>
-                      <p>You'll work with your tutor to name your dog grooming business and establish a business plan.  You'll learn all about different marketing techniques and how to use them effectively. You'll also read up on the most effective networking techniques and find out how to apply them to your business or job search.  Even if launching your business isn't in your immediate future, take advantage of this wonderful opportunity, and complete this optional unit of your course!</p>
+                      <p>By this point in the dog grooming class, you've completed all your theoretical and practical work, and are feeling pretty confident in your grooming abilities! Now it's time to use those abilities in the real-world and turn your passion into a career. {externship(countryCode, provinceCode) && <>Business training is optional for the Online Track students, but includes mandatory components for those in the Externship Track. </>}We encourage all students to take full advantage of this training to build valuable skills for running a successful grooming business.</p>
+                      <p>You'll work with your tutor to name your dog grooming business and establish a business plan. You'll learn all about different marketing techniques and how to use them effectively. You'll also read up on the most effective networking techniques and find out how to apply them to your business or job search. Even if launching your business isn't in your immediate future, take advantage of this wonderful opportunity, and complete this optional unit of your course!</p>
                       <div className="alert alert-primary mb-0">Unit Total: 9 to 16 Hours</div>
                     </div>
                     <div className="col-12 col-lg-6">
@@ -448,10 +450,44 @@ const DogGroomingCourseOutlinePage: PageComponent = () => {
                     </div>
                   </div>
                 </AccordionItem>
+                {externship(countryCode, provinceCode) && (
+                  <AccordionItem eventKey={eventKey++} heading="Externship Units">
+                    <p className="lead">In the Externship Track, you'll apply everything you've learned from the Online Track by completing your externship application and starting your in-person placement in a professional grooming environment. Here is a detailed breakdown of how the externship track course works.</p>
+                    <div className="row">
+                      <div className="col-12 col-lg-6 mb-4">
+                        <h4>Submit Your Externship Application</h4>
+                        <p>After completing the online training with a grade of B or higher in your practicum units and paying your course fees in full, you'll fill out an externship application. This is your opportunity to share your preferences with your facilitator, such as location or type of grooming facility.</p>
+                        <h4>Placement Matching</h4>
+                        <p>Your Externship Facilitator will review your application and work with you to secure the best placement for your hands-on training alongside a professional groomer.</p>
+                        <h4>Receive Your Placement & Sign Documentation</h4>
+                        <p>Within 14 days of application approval, you'll receive your placement details. Your facilitator will provide all required documentation, which you must sign before starting your externship.</p>
+                        <h4>Begin Your Externship</h4>
+                        <p>You'll complete 80 hours of unpaid, hands-on training in a real grooming environment, gaining practical experience and confidence in your skills.</p>
+                        <h4>Track Your Hours & Get Evaluated</h4>
+                        <p>During your externship you'll log your hours and complete an evaluation of your experience. Your grooming supervisor will also submit a final evaluation of your performance and skills.</p>
+                        <h4>Receive Your Certificate of Completion</h4>
+                        <p>Once all externship requirements are met—including your hours log and evaluations—you'll receive your official QC Certificate of Completion, recognizing both your coursework and real-world training.</p>
+                      </div>
+                      <div className="col-12 col-lg-6 mb-4">
+                        <h4>Meet Ashli, Your Externship Facilitator</h4>
+                        <p className="mb-5">Ashli is dedicated to ensuring every student has a smooth and successful externship experience. She'll personally guide you through the placement process, help match you with a  professional groomer, and provide ongoing support until your training is complete. With Ashli's expertise and commitment to student success, you can feel confident knowing you'll have guidance every step of the way as you transition from online learning to hands-on experience.</p>
+                        <div className="text-center">
+                          <Image src={AshliImage} className="img-fluid" alt="Ashli" />
+                        </div>
+                      </div>
+                    </div>
+                  </AccordionItem>
+                )}
               </Accordion>
               <p className="text-center lead mt-4">View <Link href="/certification-courses/dog-grooming/course-preview" className="text-primary">Sample Assignments</Link> from QC's Online Dog Grooming Course</p>
             </div>
           </div>
+        </div>
+      </section>
+      <section>
+        <div className="container">
+          <h2 />
+
         </div>
       </section>
     </>
