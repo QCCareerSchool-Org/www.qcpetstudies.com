@@ -83,7 +83,7 @@ const DogGroomingCatalogPage: PageComponent = ({ searchParams }) => {
                 <li>Learn about the many careers you can pursue as a dog groomer</li>
                 <li>View the course curriculum, course videos, and sample assignments</li>
                 <li>Find out about tuition information and choose a payment plan</li>
-                {externship(countryCode, provinceCode) && <li>Learn how you can gain even more hands on experience with the Externship Track</li>}
+                {externship(countryCode, provinceCode) && <li>Learn how you can gain even more hands-on experience with the Externship Track</li>}
                 <li>Learn how you can't go wrong with QC's money back guarantee!</li>
               </ul>
             </div>

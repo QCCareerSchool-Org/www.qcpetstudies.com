@@ -74,7 +74,7 @@ const GroomingCoursePreviewPage: PageComponent = async () => {
                   <p className="card-text">Whether you want to launch your own grooming business, work in a grooming salon, or just groom your own dog, you'll gain all the skills you need to achieve your goals.</p>
                   <p className="card-text">Even though you're learning online, you'll get plenty of hands-on experience every step of the way! You'll complete tons of practical assignments designed to enhance your grooming skills, and you'll have support from your personal tutor, a Certified Master Groomer!</p>
                   <p className="card-text">Don't miss out on this amazing opportunity to work with an expert to develop your skills!</p>
-                  {externship(countryCode, provinceCode) && <p className="card-text"><strong>New! Take your training to the next level with our Optional Externship Track—get additional real-world, hands-on experience working side-by-side with a professional groomer.</strong></p>}
+                  {externship(countryCode, provinceCode) && <p className="card-text"><strong>New! Take your training to the next level with our <strong>Optional Externship Track</strong>—get additional real-world, hands-on experience working side-by-side with a professional groomer.</strong></p>}
                 </div>
               </div>
             </div>
