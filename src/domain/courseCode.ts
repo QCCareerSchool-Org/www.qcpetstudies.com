@@ -1,7 +1,7 @@
-export type CourseCode = 'dg' | 'dt' | 'dc' | 'dd' | 'gt';
+export type CourseCode = 'dg' | 'dt' | 'dc' | 'dd' | 'gt' | 'de';
 
 export const isCourseCode = (obj: unknown): obj is CourseCode => {
-  return typeof obj === 'string' && [ 'dg', 'dt', 'dc', 'dd', 'gt' ].includes(obj);
+  return typeof obj === 'string' && [ 'dg', 'dt', 'dc', 'dd', 'gt', 'de' ].includes(obj);
 };
 
 export const getCourseDescription = (courseCode: CourseCode): string => {
@@ -16,6 +16,8 @@ export const getCourseDescription = (courseCode: CourseCode): string => {
       return 'Dog Daycare';
     case 'gt':
       return 'Grooming Technician';
+    case 'de':
+      return 'Dog Grooming Externship';
   }
 };
 
@@ -31,12 +33,15 @@ export const getCourseName = (courseCode: CourseCode): string => {
       return 'Dog Daycare';
     case 'gt':
       return 'Grooming Technician';
+    case 'de':
+      return 'Dog Grooming Externship';
   }
 };
 
 export const getCourseUrl = (courseCode: CourseCode): string => {
   switch (courseCode) {
     case 'dg':
+    case 'de':
       return 'https://www.qcpetstudies.com/certification-courses/dog-grooming';
     case 'dt':
       return 'https://www.qcpetstudies.com/certification-courses/dog-training';

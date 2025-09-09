@@ -20,7 +20,7 @@ export const TestimonialWallSection: FC<Props> = ({ h, courseCodes, testimonialI
         <div className="row justify-content-center">
           <div className="col-12 col-lg-9 col-xl-8 col-xxl-7 text-lg-center">
             <h2 className={`mb-4 ${headerClass(h)}`}>Hear From Students and Grads</h2>
-            <p className="lead mb-5">We've helped thousands of students and graduates start their own successful dog training businesses!</p>
+            <p className="lead mb-5">QC Pet Studies is proud to have amazing students and grads pursuing their dream careers in the pet industry. Here are some of their success stories!</p>
           </div>
         </div>
       )}

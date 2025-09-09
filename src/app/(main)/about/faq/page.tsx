@@ -6,6 +6,7 @@ import { QuestionAndAnswer } from './questionAndAnswer';
 import { QuizAnswer } from './quizAnswer';
 import type { PageComponent } from '@/app/serverComponent';
 import { BackgroundImage } from '@/components/backgroundImage';
+import { externship } from '@/lib/externship';
 import { getData } from '@/lib/getData';
 
 export const metadata: Metadata = {
@@ -15,7 +16,7 @@ export const metadata: Metadata = {
 };
 
 const FAQPage: PageComponent = () => {
-  const { countryCode } = getData();
+  const { countryCode, provinceCode } = getData();
 
   return (
     <>
@@ -96,7 +97,7 @@ const FAQPage: PageComponent = () => {
               <h2 className="text-center mb-4">Questions About Dog Grooming</h2>
 
               <QuestionAndAnswer header="Is it possible to learn dog grooming online?">
-                <p>Absolutely! As a QC grooming student, you'll receive the tools you need to learn the theoretical knowledge and practical skills of a dog groomer. Through hands-on assignments and practicum units, you'll get to develop your skills in real-life scenarios. Learn more about <Link href="/learning-online">QC's online learning system</Link>.</p>
+                <p>Absolutely! As a QC grooming student, you'll receive the tools you need to learn the theoretical knowledge and practical skills to be a successful dog groomer. Through hands-on assignments and practicum units, you'll get to develop your skills.{externship(countryCode, provinceCode) && <> If you would like additional hands-on experience working alongside a professional groomer, you can enroll in the Externship Track.</>}</p>
                 <p>As a student of QC's Dog Grooming School, you'll enjoy the flexibility of online dog grooming classes because they'll fit into your own schedule and lifestyle. Remember, just because you're learning from home doesn't mean you're learning alone! You'll work with a personal <Link href="/tutors">dog grooming tutor</Link> who will guide you through the course and review all your work, so you'll receive the same feedback as you would in a classroom-based dog grooming school.</p>
                 <p>QC's Student Support Specialists are also available to answer your questions before, during, and after your online dog grooming course! <Link href="/contact-us">Contact QC Pet Studies</Link> by phone, email, or Live Chat.</p>
               </QuestionAndAnswer>
@@ -110,9 +111,16 @@ const FAQPage: PageComponent = () => {
               </QuestionAndAnswer>
 
               <QuestionAndAnswer header="How long will it take to complete my online dog grooming class?">
-                <p>With QC's online courses, you work at your own pace. You decide how much time per week you want to spend developing your grooming skills. QC's flexible dog groomer training has no deadlines for completing course assignments. Typically, students who work on their grooming assignments for a short period each week will complete their online course within six months to a year.</p>
-                <p>Keep in mind that you have a full two years to complete your dog grooming course, so you can schedule your groomer training around your lifestyle!</p>
+                <p>With QC's online courses, you work at your own pace. You decide how much time per week you want to spend developing your grooming skills. QC's flexible dog groomer training has no deadlines for completing course assignments. Typically, students who work on their grooming assignments for a short period each week will complete their online course within six months to a year. Keep in mind that you have a full two years to complete your dog grooming course, so you can schedule your groomer training around your lifestyle!</p>
+                {externship(countryCode, provinceCode) && <p>If you enroll in the Externship Track you'll have an additional 8 weeks to complete your program.</p>}
               </QuestionAndAnswer>
+
+              {externship(countryCode, provinceCode) && (
+                <QuestionAndAnswer header="I'm not sure if an externship will benefit me. What should I do?">
+                  <p>If you're unsure, we suggest enrolling in the Dog Grooming course without the externship first. You'll have the opportunity to groom multiple dog breeds and receive ongoing guidance from your Grooming Mentor. If, after completing the course, you feel you'd benefit from additional coaching with a professional groomer, you can purchase the externship separately. Just contact the school for instructions on how to proceed.</p>
+                  {externship(countryCode, provinceCode) && <p>If you enroll in the Externship Track you'll have an additional 8 weeks to complete your program.</p>}
+                </QuestionAndAnswer>
+              )}
 
               <QuestionAndAnswer header="How exactly do the hands-on grooming assignments and practicum dog grooming units work?">
                 <p>You will complete the practical grooming assignments and practicum units by working with real dogs. Your course materials contain guidelines for finding dogs to work with. In order to get the most out of your dog groomer education, you are encouraged to work on as many different dogs as you can find!</p>

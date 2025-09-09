@@ -17,13 +17,18 @@ export const metadata: Metadata = {
 
 const DogGroomingPage: PageComponent = async () => {
   const { countryCode, provinceCode } = getData();
-  const priceQuery: PriceQuery = { countryCode, provinceCode: provinceCode ?? undefined, courses: courseCodes };
-  const price = await fetchPrice(priceQuery);
-  if (!price) {
+  const dgPriceQuery: PriceQuery = { countryCode, provinceCode: provinceCode ?? undefined, courses: [ 'dg' ] };
+  const dePriceQuery: PriceQuery = { countryCode, provinceCode: provinceCode ?? undefined, courses: [ 'de' ] };
+  const [ dgPrice, dePrice ] = await Promise.all([
+    fetchPrice(dgPriceQuery),
+    fetchPrice(dePriceQuery),
+  ]);
+
+  if (!dgPrice || !dePrice) {
     return null;
   }
 
-  return <DogGroomingBase price={price} enrollPath="/" courseCodes={courseCodes} />;
+  return <DogGroomingBase dgPrice={dgPrice} dePrice={dePrice} enrollPath="/" courseCodes={courseCodes} />;
 };
 
 export default DogGroomingPage;
