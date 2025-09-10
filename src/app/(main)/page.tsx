@@ -19,6 +19,8 @@ import { TestimonialLucaCoppola } from '@/components/testimonials/lucaCoppola';
 import { TestimonialMelodyMason } from '@/components/testimonials/melodyMason';
 import { VirtualCommunitySection } from '@/components/virtualCommunitySection';
 import { WhyChooseQCSection } from '@/components/whyChooseQCSection';
+import { externship } from '@/lib/externship';
+import { getData } from '@/lib/getData';
 
 const iconSize = 145;
 
@@ -29,6 +31,7 @@ export const metadata: Metadata = {
 };
 
 const HomePage: PageComponent = () => {
+  const { countryCode, provinceCode } = getData();
   return (
     <>
       <section className="bg-light">
@@ -60,7 +63,7 @@ const HomePage: PageComponent = () => {
                   </div>
                   <h3>Professional Dog Grooming | <em className="gold">IDGP&trade;</em></h3>
                   <p>Master every level of dog grooming from bathing, brushing and pet cuts to advanced breed styling. In this course, you'll learn all about dog anatomy and behavior, how to use grooming tools safely and effectively, and how to expertly groom any breed. You'll get plenty of hands-on training with personalized guidance from your grooming mentor. Plus, learn to run a successful grooming business.</p>
-                  <p>NEW: You can choose the <strong>Online-Only Track</strong> for hands-on training from home, or select the <strong>Externship Track</strong> to add real-world experience in a professional grooming salon.</p>
+                  {externship(countryCode, provinceCode) && <p>NEW: You can choose the <strong>Online-Only Track</strong> for hands-on training from home, or select the <strong>Externship Track</strong> to add real-world experience in a professional grooming salon.</p>}
                 </div>
                 <Link href="/certification-courses/dog-grooming"><button className="btn btn-navy">Course Overview</button></Link>
               </CertificationCard>
