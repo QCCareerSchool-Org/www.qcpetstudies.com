@@ -42,7 +42,7 @@ const HomePage: PageComponent = () => {
         </div>
       </section>
       <section>
-        <div className="container mt-5">
+        <div className="container mt-3">
           <div className="row justify-content-center g-s mb-4">
             <div className="col-12 col-lg-6">
               <h2 className="mb-4">Meet Our Partner&mdash;<br />Paw Parent Academy</h2>

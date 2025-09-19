@@ -1,5 +1,6 @@
 'use client';
 
+import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import type { FC } from 'react';
 
@@ -12,6 +13,20 @@ export const CTA: FC = () => {
 
   const type = getCTAType(pathname);
   const enrollmentUrl = getEnrollUrl(type);
+
+  if (pathname.startsWith('/diy-grooming')) {
+    return (
+      <div className="row align-items-center">
+        <div className="col-12 col-lg-9 col-xl-8 mb-4 mb-lg-0 text-center text-lg-start">
+          <h2 className="mb-3"><strong>Not sure which<br />option is right for you?</strong></h2>
+          <p className="lead mb-0">Give us a call or send an email to <Link href="mailto:info@qcpetstudies.com">info@qcpetstudies.com</Link><br />our friendly advisors will help you find the perfect fit.</p>
+        </div>
+        <div className="col-12 col-lg-3 text-center text-lg-end text-xl-center">
+          <a href="https://www.qcpetstudies.com/contact-us"><button className="btn btn-secondary btn-lg" style={{ borderRadius: '25px' }}>Talk to an Advisor</button></a>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="row align-items-center">
