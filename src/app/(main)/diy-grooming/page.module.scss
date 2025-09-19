@@ -19,3 +19,19 @@
     margin-bottom: 0;
   }
 }
+
+.mtResponsive130 {
+  margin-top: 50px;
+
+  @media (min-width: 992px) {
+      margin-top: 130px;
+    }
+  }
+
+.mtResponsive70 {
+  margin-top: 20;
+
+  @media (min-width: 992px) {
+      margin-top: 80px;
+    }
+  }

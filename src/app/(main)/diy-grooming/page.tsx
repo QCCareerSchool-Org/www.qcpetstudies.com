@@ -31,7 +31,7 @@ const HomePage: PageComponent = () => {
   // const { countryCode, provinceCode } = getData();
   return (
     <>
-      <section className="bg-light w-full position-relative mb-5" style={{ height: '500px' }}>
+      <section className="bg-light w-full position-relative mb-2 mb-lg-5" style={{ height: '500px' }}>
         <BackgroundImage src={HeroImg} objectPosition="100% 50%" mobile={{ src: HeroImgMobile, breakpoint: 'lg', objectPosition: '50% 100%' }} />
         <div className={`container ${styles.hero} h-100`}>
           <div className="row h-100">
@@ -42,24 +42,24 @@ const HomePage: PageComponent = () => {
         </div>
       </section>
       <section>
-        <div className="container mt-3">
+        <div className="container mt-0 mt-lg-3">
           <div className="row justify-content-center g-s mb-4">
             <div className="col-12 col-lg-6 text-left">
               <h2 className="mb-4">Meet Our Partner&mdash;<br />Paw Parent Academy</h2>
               <p className="lead mb-4" style={{ marginRight: '30px' }}>If your goal is to confidently care for your own dogs at home, you can find expert-led online training through QC Pet Studies&apos; trusted partner, Paw Parent Academy. While QC courses are designed for students pursuing professional careers, Paw Parent Academy was created specifically for pet parents. Their expert-led programs deliver breed- and coat-specific tutorials, complete with step-by-step videos and printable guides, so you can safely groom your dog at home with professional-level confidence.</p>
               <div className="col-12 col-sm-10 col-md-8 col-lg-6 mb-2 d-block d-lg-none mt-3">
-                <Image src={PPAImg} alt="" className="img-fluid mt-3 mt-lg-5" style={{ borderRadius: '25px', height: '510px', objectFit: 'cover' }} />
+                <Link href="https://www.pawparentacademy.com/" target="_blank" rel="noopener noreferrer"><Image src={PPAImg} alt="" className="img-fluid mt-3 mt-lg-5" style={{ borderRadius: '25px', height: '510px', objectFit: 'cover' }} /></Link>
               </div>
-              <p className="lead mb-3 mt-5" style={{ fontWeight: 500 }}>This option is perfect if you:</p>
+              <p className="lead mb-3 mt-4 mt-lg-5" style={{ fontWeight: 500 }}>This option is perfect if you:</p>
               <ul style={{ listStyleType: '"✓"', paddingLeft: '1em' }}>
                 <li className="mb-3" style={{ paddingLeft: '0.8em' }}>Want to master the right grooming techniques for your dog&apos;s specific coat</li>
                 <li className="mb-3" style={{ paddingLeft: '0.8em' }}>Prefer detailed video lessons you can replay anytime</li>
                 <li className="mb-3" style={{ paddingLeft: '0.8em' }}>Want to maintain your dog&apos;s health and hygiene</li>
-                <li className="mb-5" style={{ paddingLeft: '0.8em' }}>Care about style and comfort, but not breed-standard show cuts</li>
+                <li className="mb-0 mb-lg-5" style={{ paddingLeft: '0.8em' }}>Care about style and comfort, but not breed-standard show cuts</li>
               </ul>
             </div>
             <div className="col-12 col-sm-10 col-md-8 col-lg-6 mb-2 d-none d-lg-block" style={{ marginTop: '90px' }}>
-              <Image src={PPAImg} alt="" className="img-fluid mt-3 mt-lg-5" style={{ borderRadius: '25px', height: '475px', objectFit: 'cover' }} />
+              <Link href="https://www.pawparentacademy.com/" target="_blank" rel="noopener noreferrer"><Image src={PPAImg} alt="" className="img-fluid mt-3 mt-lg-5" style={{ borderRadius: '25px', height: '475px', objectFit: 'cover' }} /></Link>
             </div>
           </div>
           <div className="row g-s mb-4 mt-5 text-left">
@@ -74,7 +74,7 @@ const HomePage: PageComponent = () => {
                 <li className="mb-3" style={{ paddingLeft: '0.8em' }}>Master practical &quot;pet cuts&quot; that are easy to maintain, safe to perform, and look great</li>
               </ul>
               <div className="text-left mt-5">
-                <Link href="https://www.pawparentacademy.com/" target="blank" rel="noopener noreferrer"><button className="btn btn-primary btn-lg mb-5">Learn More at Paw Parent Academy</button></Link>
+                <Link href="https://www.pawparentacademy.com/" target="blank" rel="noopener noreferrer"><button className="btn btn-primary btn-lg mb-3 mb-lg-5">Learn More at Paw Parent Academy</button></Link>
               </div>
             </div>
           </div>
@@ -89,20 +89,20 @@ const HomePage: PageComponent = () => {
         </div>
       </section>
       <section>
-        <div className="container mt-5">
-          <div className="row text-left g-s mb-4">
+        <div className="container mt-3 mt-lg-5">
+          <div className="row text-left g-s mb-lg-4">
             <div className="col-12 col-lg-6 text-left">
               <h2 className="mb-4">Do You Have More<br />Than One Dog?</h2>
-              <p className="lead" style={{ marginBottom: '70px', marginRight: '30px' }}>If you have more than one dog at home, want to learn professional show cuts, or don&apos;t see your dog&apos;s breed covered at Paw Parent Academy, QC&apos;s Dog Grooming Certification Course could be the perfect fit. This professional-level program gives you the skills and confidence to groom any dog like a pro.</p>
-              <p className="lead mb-4" style={{ fontWeight: 500 }}>This course is right for you if you:</p>
+              <p className="lead mb-4" style={{ marginRight: '30px' }}>If you have more than one dog at home, want to learn professional show cuts, or don&apos;t see your dog&apos;s breed covered at Paw Parent Academy, QC&apos;s Dog Grooming Certification Course could be the perfect fit. This professional-level program gives you the skills and confidence to groom any dog like a pro.</p>
+              <p className={`lead ${styles.mtResponsive70}`} style={{ fontWeight: 500 }}>This course is right for you if you:</p>
               <ul style={{ listStyleType: '"✓"', paddingLeft: '1em' }}>
                 <li className="mb-3" style={{ paddingLeft: '0.8em' }}>Aim to learn coat-specific techniques and cuts for multiple dog breeds</li>
                 <li className="mb-3" style={{ paddingLeft: '0.8em' }}>Are eager to learn breed-standard cuts and advanced styling</li>
                 <li className="mb-3" style={{ paddingLeft: '0.8em' }}>Want to groom your own dogs with professional precision</li>
-                <li style={{ paddingLeft: '0.8em' }}>Plan to groom dogs beyond your own—friends, family, or clients</li>
+                <li className="mb-0 mb-lg-3" style={{ paddingLeft: '0.8em' }}>Plan to groom dogs beyond your own—friends, family, or clients</li>
               </ul>
             </div>
-            <div className="col-12 col-sm-10 col-md-8 col-lg-6 mb-2" style={{ marginTop: '130px' }}>
+            <div className={`col-12 col-sm-10 col-md-8 col-lg-6 mb-0 mb-lg-2 ${styles.mtResponsive130}`}>
               <p className="lead mb-4">With QC&apos;s Dog Grooming course, you&apos;ll master essential grooming techniques and graduate ready to build a thriving career as a professional groomer.</p>
               <ul style={{ listStyleType: '"✓"', paddingLeft: '1em' }}>
                 <li className="mb-3" style={{ paddingLeft: '0.8em' }}>Master breed-standard cuts for a wide variety of dog breeds</li>
@@ -118,7 +118,7 @@ const HomePage: PageComponent = () => {
           </div>
         </div>
       </section>
-      <section className="bg-light mt-5">
+      <section className="bg-light mt-lg-5">
         <div className="container text-center col-lg-6">
           <p className="lead mb-4" style={{ fontWeight: 600 }}>&quot;I loved everything about the course because it was affordable, the online format worked perfectly for me, and it included a grooming kit so I could start practicing right away.&quot;</p>
           <Image src={GabriellaDarin} alt="" className="img-fluid mb-3" style={{ borderRadius: '50%', maxWidth: '120px', height: 'auto' }} />
