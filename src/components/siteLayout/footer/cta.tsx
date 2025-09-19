@@ -19,7 +19,7 @@ export const CTA: FC = () => {
       <div className="row align-items-center">
         <div className="col-12 col-lg-9 col-xl-8 mb-4 mb-lg-0 text-center text-lg-start">
           <h2 className="mb-3"><strong>Not sure which<br />option is right for you?</strong></h2>
-          <p className="lead mb-0">Give us a call or send an email to <Link href="mailto:info@qcpetstudies.com">info@qcpetstudies.com</Link><br />our friendly advisors will help you find the perfect fit.</p>
+          <p className="lead mb-0">Give us a call or send an email to <Link href="mailto:info@qcpetstudies.com" style={{ color: '#57c3d7' }}>info@qcpetstudies.com</Link><br />our friendly advisors will help you find the perfect fit.</p>
         </div>
         <div className="col-12 col-lg-3 text-center text-lg-end text-xl-center">
           <a href="https://www.qcpetstudies.com/contact-us"><button className="btn btn-secondary btn-lg" style={{ borderRadius: '25px' }}>Talk to an Advisor</button></a>
