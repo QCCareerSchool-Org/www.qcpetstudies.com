@@ -35,3 +35,21 @@
       margin-top: 80px;
     }
   }
+
+.heroSection {
+  position: relative;
+  margin: 0;
+  padding: 0;
+
+  & > div {
+    position: relative;
+    width: 100%;
+    height: 70vh;
+  }
+
+  @media (max-width: 992px){
+    & > div{
+      height: 400px;
+    }
+  }
+}

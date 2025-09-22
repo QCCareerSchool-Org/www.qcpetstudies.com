@@ -31,8 +31,8 @@ const HomePage: PageComponent = () => {
   // const { countryCode, provinceCode } = getData();
   return (
     <>
-      <section className="w-100 position-relative" style={{ marginTop: 0, paddingTop: 0 }}>
-        <BackgroundImage src={HeroImg} objectPosition="100% 50%" height="75vh" mobile={{ src: HeroImgMobile, breakpoint: 'lg', objectPosition: '50% 100%', height: '370px' }} />
+      <section className={styles.heroSection}>
+        <BackgroundImage src={HeroImg} objectPosition="100% 50%" mobile={{ src: HeroImgMobile, breakpoint: 'lg', objectPosition: '50% 100%' }} />
         <div className="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center">
           <div className="container">
             <div className="row">
