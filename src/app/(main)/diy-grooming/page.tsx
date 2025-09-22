@@ -31,12 +31,14 @@ const HomePage: PageComponent = () => {
   // const { countryCode, provinceCode } = getData();
   return (
     <>
-      <section className="bg-light w-full position-relative mb-2 mb-lg-5" style={{ height: '500px' }}>
-        <BackgroundImage src={HeroImg} objectPosition="100% 50%" mobile={{ src: HeroImgMobile, breakpoint: 'lg', objectPosition: '50% 100%' }} />
-        <div className={`container ${styles.hero} h-100`}>
-          <div className="row h-100">
-            <div className="col-12 col-lg-7 d-flex align-items-center">
-              <h1 className="mb-4 mb-lg-5 text-white">Do You Want to Groom Your Own Dog?</h1>
+      <section className="w-100 position-relative" style={{ marginTop: 0, paddingTop: 0 }}>
+        <BackgroundImage src={HeroImg} objectPosition="100% 50%" height="80vh" mobile={{ src: HeroImgMobile, breakpoint: 'lg', objectPosition: '50% 100%', height: '370px' }} />
+        <div className="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center">
+          <div className="container">
+            <div className="row">
+              <div className="col-12 col-lg-7">
+                <h1 className="mb-4 mb-lg-5 text-white">Do You Want to Groom Your Own Dog?</h1>
+              </div>
             </div>
           </div>
         </div>
