@@ -22,7 +22,7 @@ import { BackgroundImage } from '@/components/backgroundImage';
 export const metadata: Metadata = {
   title: 'Groom Your Own Dog at Home',
   description: 'If your goal is to confidently care for your own dogs at home, you can find expert-led online training through QC Pet Studies\' trusted partner, Paw Parent Academy.',
-  alternates: { canonical: '/' },
+  alternates: { canonical: '/diy-grooming' },
 };
 
 let eventKey = 0;
