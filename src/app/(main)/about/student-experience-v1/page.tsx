@@ -6,11 +6,10 @@ import { FaFacebookF, FaInstagram, FaTwitter } from 'react-icons/fa';
 import StudentExperienceBackground from './hero-bg.jpg';
 import CertifiedExpertImage from './images/certified-experts-collage.png';
 import LineOfDogsImage from './images/line-of-dogs.jpg';
+import ManOnPhoneImage from './images/man-on-phone-holding-dog.jpg';
 import WomanUsingLaptopImage from './images/woman-using-laptop-with-dog-on-lap.jpg';
 import type { PageComponent } from '@/app/serverComponent';
 import { BackgroundImage } from '@/components/backgroundImage';
-import { StudentShowcaseSection } from '@/components/studentShowcase';
-import { students } from '@/components/studentShowcase/data';
 
 export const metadata: Metadata = {
   title: 'Student Experience',
@@ -21,10 +20,10 @@ export const metadata: Metadata = {
 const StudentExperiencePage: PageComponent = () => (
   <>
     <section className="bg-dark">
-      <BackgroundImage src={StudentExperienceBackground} priority /> {/* increase height */}
-      <div className="container text-left">
+      <BackgroundImage src={StudentExperienceBackground} priority />
+      <div className="container text-center">
         <div className="row">
-          <h1><br />Student Experience<br /><br /></h1>
+          <h1>Student Experience</h1>
         </div>
       </div>
     </section>
@@ -34,16 +33,20 @@ const StudentExperiencePage: PageComponent = () => (
         <div className="row justify-content-center">
           <div className="col-12 col-lg-8 mb-4 mb-lg-0">
             <h2>Setting You up for Success</h2>
-            <p className="lead">Discover the inspiring stories of QC Pet Studies students and graduates. See how they transformed their passion for animals into thriving, rewarding careers.</p>
+            <p className="lead">As a QC Pet Studies Student, you'll get help through <strong>every step of your education.</strong></p>
+            <p className="mb-0">When you enroll, you gain access to QC's friendly and experienced Student Support Specialists who are ready to assist you and answer your questions. As you work through your course, you'll be guided by our team of teaching assistants, as well as top-notch industry experts with years of experience in the industry. These experts include  Master groomers, certified dog trainers and experienced dog daycare providers. Even after you graduate, you'll remain an essential member of the QC community. You'll build relationships with other pet industry professionals and be connected with business resources that will help you succeed in your career.</p>
+          </div>
+          <div className="col-12 col-sm-10 col-md-8 col-lg-4 d-xl-none">
+            <Image
+              src={ManOnPhoneImage}
+              alt="man on the phone holding a dog"
+              sizes="100vw"
+              style={{ width: '100%', height: 'auto' }}
+            />
           </div>
         </div>
       </div>
     </section>
-
-    <StudentShowcaseSection student={students['casey-bechard']} />
-    <StudentShowcaseSection student={students['nicki-scott']} />
-    <StudentShowcaseSection student={students['kayla-macdonald']} />
-    <StudentShowcaseSection student={students['wendy-bailey']} />
 
     <section className="bg-navy py-0">
       <div className="container-fluid text-center">
