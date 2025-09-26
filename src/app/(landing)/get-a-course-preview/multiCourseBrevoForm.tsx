@@ -21,7 +21,7 @@ const formFieldsDictionary: Record<string, FormFields> = {
   dt: {
     successLocation: `${process.env.HOST ?? 'https://www.qcpetstudies.com'}/thank-you-dog-training-course-preview`,
     brevoListId: 30,
-    brevoEmailTemplateId: 61,
+    brevoEmailTemplateId: 1635,
   },
 };
 
