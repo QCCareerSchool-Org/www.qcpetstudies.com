@@ -1,16 +1,19 @@
 import type { Metadata } from 'next';
-import Image from 'next/image';
-import Link from 'next/link';
-import { FaFacebookF, FaInstagram, FaTwitter } from 'react-icons/fa';
+// import Image from 'next/image';
+// import Link from 'next/link';
+// import { FaFacebookF, FaInstagram, FaTwitter } from 'react-icons/fa';
 
 import StudentExperienceBackground from './hero-bg.jpg';
-import CertifiedExpertImage from './images/certified-experts-collage.png';
-import LineOfDogsImage from './images/line-of-dogs.jpg';
-import WomanUsingLaptopImage from './images/woman-using-laptop-with-dog-on-lap.jpg';
+// import CertifiedExpertImage from './images/certified-experts-collage.png';
+// import LineOfDogsImage from './images/line-of-dogs.jpg';
+// import WomanUsingLaptopImage from './images/woman-using-laptop-with-dog-on-lap.jpg';
 import type { PageComponent } from '@/app/serverComponent';
 import { BackgroundImage } from '@/components/backgroundImage';
 import { StudentShowcaseSection } from '@/components/studentShowcase';
 import { students } from '@/components/studentShowcase/data';
+import { SupportSection } from '@/components/supportSection';
+import { TestimonialWallSection } from '@/components/testimonialWallSection';
+import { VirtualCommunitySection } from '@/components/virtualCommunitySection';
 
 export const metadata: Metadata = {
   title: 'Student Experience',
@@ -18,10 +21,12 @@ export const metadata: Metadata = {
   alternates: { canonical: '/about/student-experience' },
 };
 
+const testimonialIds = [ 'TD-0004', 'TD-0005', 'TD-0001', 'TD-0007', 'TD-0003', 'TD-0010' ];
+
 const StudentExperiencePage: PageComponent = () => (
   <>
     <section className="bg-dark">
-      <BackgroundImage src={StudentExperienceBackground} priority /> {/* increase height */}
+      <BackgroundImage src={StudentExperienceBackground} priority />
       <div className="container text-left">
         <div className="row">
           <h1><br />Student Experience<br /><br /></h1>
@@ -45,7 +50,11 @@ const StudentExperiencePage: PageComponent = () => (
     <StudentShowcaseSection student={students['kayla-macdonald']} />
     <StudentShowcaseSection student={students['wendy-bailey']} />
 
-    <section className="bg-navy py-0">
+    <SupportSection showLink />
+    <TestimonialWallSection testimonialIds={testimonialIds} />
+    <VirtualCommunitySection />
+
+    {/* <section className="bg-navy py-0">
       <div className="container-fluid text-center">
         <div className="row">
           <div className="col-12 col-lg-6" style={{ position: 'relative' }}>
@@ -76,9 +85,9 @@ const StudentExperiencePage: PageComponent = () => (
           </div>
         </div>
       </div>
-    </section>
+    </section> */}
 
-    <section>
+    {/* <section>
       <div className="container text-center">
         <h2 className="mb-4">Join the <strong>Social Community</strong></h2>
         <div className="row justify-content-center">
@@ -101,7 +110,7 @@ const StudentExperiencePage: PageComponent = () => (
           </div>
         </div>
       </div>
-    </section>
+    </section> */}
   </>
 );
 
