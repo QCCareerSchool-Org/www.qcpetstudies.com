@@ -4,6 +4,7 @@ import type { StaticImageData } from 'next/image';
 import Image from 'next/image';
 import type { FC } from 'react';
 
+import ReadMore from './readMore';
 import styles from '@/components/testimonial/index.module.css';
 import { Star } from '@/components/testimonial/star';
 import type { CourseCode } from '@/domain/courseCode';
@@ -35,16 +36,17 @@ export const StudentShowcaseSection: FC<{ student: ShowcaseProps }> = ({ student
             {Array(5).fill(null).map((_, i) => <Star key={i} filled={i < student.stars} />)}
           </div>
           <div className="order-lg-2">
+            <div className="d-block d-md-none">
+              <ReadMore text={student.description.trim()} maxChars={500} />
+            </div>
             {student.description.split('\n\n').map((paragraph, index) => (
-              paragraph.trim() && (
-                <p key={index} className="mb-4" style={{ fontStyle: 'italic' }}>
-                  {paragraph}
+              <div key={index} className="d-none d-md-block">
+                <p key={index} className="p-key" style={{ fontStyle: 'italic' }}>
+                  {paragraph.trim()}
                 </p>
-              )
+              </div>
             ))}
           </div>
-          {/* <h3 className="mb-1">{student.name}</h3>
-          <h5 className="mb-4">{getCourseDescription(student.courses[0])}</h5> */}
         </div>
       </div>
     </div>
