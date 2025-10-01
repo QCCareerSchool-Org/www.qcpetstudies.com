@@ -42,7 +42,7 @@ const ReadMore: React.FC<ReadMoreProps> = ({ text, maxChars }) => {
       {content}
       {needsTruncation && (
         <div className="text-center">
-          <button onClick={handleToggleExpansion} className="ml-2" style={{ color: '#324F54', cursor: 'pointer', border: 'none', background: 'none', padding: 0, fontWeight: '550', fontSize: '1.2em' }}>
+          <button onClick={handleToggleExpansion} className="ml-2" style={{ color: '#324F54', cursor: 'pointer', border: 'none', background: 'none', padding: 0, fontWeight: '550', fontSize: '1.2em', textDecoration: 'underline' }}>
             {isExpanded ? 'Show Less' : 'Read More' }
           </button>
         </div>

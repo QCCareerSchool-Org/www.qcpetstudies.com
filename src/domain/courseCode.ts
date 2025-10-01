@@ -11,7 +11,7 @@ export const getCourseDescription = (courseCode: CourseCode): string => {
     case 'dt':
       return 'Dog Training';
     case 'dc':
-      return 'Dog Behaviour';
+      return 'Dog Behavior';
     case 'dd':
       return 'Dog Daycare';
     case 'gt':

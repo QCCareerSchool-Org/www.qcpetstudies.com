@@ -28,14 +28,14 @@ export const StudentShowcaseSection: FC<{ student: ShowcaseProps }> = ({ student
           <Image src={student.image} alt="" style={{ borderRadius: '30px' }} className="img-fluid rounded-lg" />
         </div>
         <div className="col-12 col-sm-10 col-md-8 col-lg-6 mb-2 d-flex flex-column">
-          <div className="order-lg-3">
+          <div>
             <h3 className="mb-1">{student.name}</h3>
             <h5 className="mb-4">{getCourseDescription(student.courses[0])}</h5>
           </div>
-          <div className={`${styles.stars} order-lg-1`}>
+          <div className={`${styles.stars}`}>
             {Array(5).fill(null).map((_, i) => <Star key={i} filled={i < student.stars} />)}
           </div>
-          <div className="order-lg-2">
+          <div>
             <div className="d-block d-md-none">
               <ReadMore text={student.description.trim()} maxChars={500} />
             </div>
