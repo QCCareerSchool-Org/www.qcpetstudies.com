@@ -41,13 +41,11 @@ const StudentExperiencePage: PageComponent = () => (
         </div>
       </div>
     </section>
-
     <StudentShowcaseSection student={students['casey-bechard']} />
     <StudentShowcaseSection student={students['nicki-scott']} />
     <StudentShowcaseSection student={students['kayla-macdonald']} />
     <StudentShowcaseSection student={students['wendy-bailey']} />
-
-    <section><SupportSection showLink /></section>
+    <SupportSection showLink />
     <TestimonialWallSection testimonialIds={testimonialIds} />
     <section className="bg-light">
       <div className="container my-5">
