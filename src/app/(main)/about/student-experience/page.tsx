@@ -26,7 +26,7 @@ const StudentExperiencePage: PageComponent = () => (
       <BackgroundImage src={StudentExperienceBackground} priority />
       <div className="container text-left">
         <div className="row">
-          <h1><br />Student Experience<br /><br /></h1>
+          <h1 className="mt-5 mb-5">Student Experience</h1>
         </div>
       </div>
     </section>
