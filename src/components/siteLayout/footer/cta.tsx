@@ -26,6 +26,18 @@ export const CTA: FC = () => {
         </div>
       </div>
     );
+  } else if (pathname.startsWith('/about/student-experience')) {
+    return (
+      <div className="row align-items-center">
+        <div className="col-12 col-lg-9 col-xl-8 mb-4 mb-lg-0 text-center text-lg-start">
+          <h2 className="mb-3"><strong>Ready to start your own<br />success story?</strong></h2>
+          <p className="lead mb-0">Join the thousands of QC Pets Studies students and graduates building careers they love.</p>
+        </div>
+        <div className="col-12 col-lg-3 text-center text-lg-end text-xl-center">
+          <a href="https://enroll.qcpetstudies.com/"><button className="btn btn-secondary btn-lg">Start My Journey</button></a>
+        </div>
+      </div>
+    );
   }
 
   return (

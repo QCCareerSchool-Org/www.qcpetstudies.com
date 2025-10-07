@@ -1,0 +1,30 @@
+.subtitle {
+  color: var(--qc-color-dark-gold);
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+  letter-spacing: 0.125rem;
+}
+
+.carousel-track {
+  > div {
+    flex: 0 0 100%;
+    padding: 0 15px; 
+  }
+
+  @media (min-width: 992px) {
+    > div {
+      flex: 0 0 calc(100% / 3);
+    }
+  }
+}
+
+.expert-card-wrapper {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.expert-card {
+  padding: 24px;
+  height: 100%;
+  transition: transform 0.3s ease-in-out;
+}
