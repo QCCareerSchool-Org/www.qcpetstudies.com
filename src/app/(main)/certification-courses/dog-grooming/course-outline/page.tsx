@@ -69,7 +69,7 @@ const DogGroomingCourseOutlinePage: PageComponent = () => {
                   <div className="mb-2">
                     <CalendarIcon width={iconSize} height={iconSize} alt="calendar icon" style={{ maxWidth: '100%', height: 'auto' }} />
                   </div>
-                  <p>On average, most QC students work on their course for a few hours per week, and complete the online dog grooming course within about <strong>6 months to a year.</strong>  You'll have up to two years to complete the program, so lots of time!</p>
+                  <p>On average, most QC students work on their course for a few hours per week, and complete the online dog grooming course within about <strong>6 months to a year.</strong>  You'll have up to a year to complete the program, so lots of time!</p>
                 </div>
               </div>
             </div>

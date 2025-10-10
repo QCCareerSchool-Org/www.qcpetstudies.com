@@ -167,7 +167,7 @@ const FAQPage: PageComponent = () => {
 
               <QuestionAndAnswer header="How long will it take to complete my online dog training class?">
                 <p>With QC's online courses, you work at your own pace. You decide how much time per week you want to spend developing your training skills. QC's flexible dog trainer course has no deadlines for completing course assignments. Typically, students who work on their training assignments for a short period each week will complete their online course within about three months.</p>
-                <p>Keep in mind that you have a full two years to complete your course, so you can schedule your training around your lifestyle!</p>
+                <p>Keep in mind that you have a full year to complete your course, so you can schedule your training around your lifestyle!</p>
               </QuestionAndAnswer>
 
               <QuestionAndAnswer header="What methods do you teach as part of the dog training class?">

@@ -61,7 +61,7 @@ const GroomingTechCourseOutlinePage: PageComponent = () => {
                   <div className="mb-2">
                     <CalendarIcon width={iconSize} height={iconSize} alt="calendar icon" style={{ maxWidth: '100%', height: 'auto' }} />
                   </div>
-                  <p>On average, most QC students work on their course for a few hours per week, and complete the online Grooming Tech course within about <strong>6 months.</strong>  You'll have up to two years to complete the program, so lots of time!</p>
+                  <p>On average, most QC students work on their course for a few hours per week, and complete the online Grooming Tech course within about <strong>6 months.</strong>  You'll have up to a year to complete the program, so lots of time!</p>
                 </div>
               </div>
             </div>

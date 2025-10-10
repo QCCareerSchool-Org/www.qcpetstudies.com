@@ -87,7 +87,7 @@ export const StatsSection: FC = () => {
                 <div className="card-body">
                   <h3 className="mb-3">Average Completion Time</h3>
                   <Bar variant="secondary" />
-                  <p className="mb-0">On average, most QC students complete the self-paced course in 6 months to a year. The course will take between 80 and 130 hours to complete. You have up to two years to complete the program.</p>
+                  <p className="mb-0">On average, most QC students complete the self-paced course in 6 months to a year. The course will take between 80 and 130 hours to complete. You have up to a year to complete the program.</p>
                 </div>
               </div>
             </div>
