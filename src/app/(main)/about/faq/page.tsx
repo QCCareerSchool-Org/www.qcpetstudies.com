@@ -111,7 +111,7 @@ const FAQPage: PageComponent = () => {
               </QuestionAndAnswer>
 
               <QuestionAndAnswer header="How long will it take to complete my online dog grooming class?">
-                <p>With QC's online courses, you work at your own pace. You decide how much time per week you want to spend developing your grooming skills. QC's flexible dog groomer training has no deadlines for completing course assignments. Typically, students who work on their grooming assignments for a short period each week will complete their online course within six months to a year. Keep in mind that you have a full two years to complete your dog grooming course, so you can schedule your groomer training around your lifestyle!</p>
+                <p>With QC's online courses, you work at your own pace. You decide how much time per week you want to spend developing your grooming skills. QC's flexible dog groomer training has no deadlines for completing course assignments. Typically, students who work on their grooming assignments for a short period each week will complete their online course within six months to a year. Keep in mind that you have a full year to complete your dog grooming course, so you can schedule your groomer training around your lifestyle!</p>
                 {externship(countryCode, provinceCode) && <p>If you enroll in the Externship Track you'll have an additional 8 weeks to complete your program.</p>}
               </QuestionAndAnswer>
 
