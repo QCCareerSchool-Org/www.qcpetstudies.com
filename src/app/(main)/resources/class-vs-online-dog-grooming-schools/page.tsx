@@ -84,7 +84,7 @@ const ClassVsOnlineLearning: PageComponent = () => (
 
     <ComparisonSection
       title="Program Completion"
-      inClass="6 months to 2 years (depends on the program)"
+      inClass="6 months to a year (depends on the program)"
       online={<>Flexible&mdash;<strong>Complete the program at your own pace.</strong> (average 6 months to 1 year)</>}
       className="bg-light"
     />
