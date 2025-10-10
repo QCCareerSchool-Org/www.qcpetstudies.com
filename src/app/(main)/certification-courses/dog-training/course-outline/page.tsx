@@ -62,7 +62,7 @@ const CourseOutlinePage: PageComponent = () => {
                   <div className="mb-2">
                     <CalendarIcon width={iconSize} height={iconSize} alt="Calendar Icon" style={{ maxWidth: '100%', height: 'auto' }} />
                   </div>
-                  <p className="card-text">On average, most QC Students work on their course for a few hours per week, and complete the online dog training course within <strong>three to six months</strong>. You'll have up to two years to complete the program&mdash;lots of time!</p>
+                  <p className="card-text">On average, most QC Students work on their course for a few hours per week, and complete the online dog training course within <strong>three to six months</strong>. You'll have up to a year to complete the program&mdash;lots of time!</p>
                 </div>
               </div>
             </div>
