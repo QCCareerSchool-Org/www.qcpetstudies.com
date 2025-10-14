@@ -38,7 +38,7 @@ export const ThankYouSection: FC<Props> = ({ course, heroSrc, mobileHeroSrc, ema
                 </div>
                 <h1 className="h4 mb-4 text-navy">Thanks For Signing Up!</h1>
                 <FormWrapper>
-                  <p className="lead mb-3">We've just sent your course preview to {emailAddress ? <> to <strong>{emailAddress}</strong></> : 'your inbox'}, packed with everything you need to explore your {profession} journey. Be sure to check your junk or spam folder so you don't miss any important updates.</p>
+                  <p className="lead mb-3">We've just sent your course preview to {emailAddress ? <strong>{emailAddress}</strong> : 'your inbox'}, packed with everything you need to explore your {profession} journey. Be sure to check your junk or spam folder so you don't miss any important updates.</p>
                   <p className="lead fw-bold mb-4">Too excited to wait?</p>
                   <a href={downloadUrl}><button className="btn btn-primary">View Your Course Preview Now</button></a>
                 </FormWrapper>
