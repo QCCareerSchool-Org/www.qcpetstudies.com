@@ -13,6 +13,7 @@ import { TestimonialSmMelodyMason } from '@/components/testimonialsSmall/melodyM
 import Step1EnrollImage from '@/images/step-1-enroll.svg';
 import Step2SubmitImage from '@/images/step-2-submit.svg';
 import Step3CertificateImage from '@/images/step-3-certificate.svg';
+import { getData } from '@/lib/getData';
 import { getParam } from '@/lib/getParam';
 
 export const metadata: Metadata = {
@@ -22,6 +23,7 @@ export const metadata: Metadata = {
 };
 
 const DogGroomingCatalogPage: PageComponent = ({ searchParams }) => {
+  const { countryCode } = getData();
   const gclid = getParam(searchParams.gclid);
   const msclkid = getParam(searchParams.msclkid);
   const utmSource = getParam(searchParams.utm_source);
@@ -55,6 +57,7 @@ const DogGroomingCatalogPage: PageComponent = ({ searchParams }) => {
                     utmTerm={utmTerm}
                     referrer={referrer}
                     placeholders
+                    countryCode={countryCode}
                   />
                 </div>
               </div>

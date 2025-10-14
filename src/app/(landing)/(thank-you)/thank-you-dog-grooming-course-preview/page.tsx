@@ -1,20 +1,24 @@
 import type { Metadata } from 'next';
 import { cookies, headers } from 'next/headers';
 
-import TelephoneBackground from './telephone-bg.jpg';
+import HeroBackground from './grooming-bg.jpg';
+import { Header } from '../../_components/header';
+import { ThankYouSection } from '../../_components/thankYouSection';
 import type { PageComponent } from '@/app/serverComponent';
-import { EmailSentToast } from '@/components/emailSentToast';
 import { LeadProcessing } from '@/components/leadProcessing';
-import { TelephoneFormSection } from '@/components/telephoneFormSection';
+import { SupportSection } from '@/components/supportSection';
+import { TestimonialWallSection } from '@/components/testimonialWallSection';
 import { WhyChooseQCSection } from '@/components/whyChooseQCSection';
 import { fbPostLead } from '@/lib/facebookConversionAPI';
 import { getParam } from '@/lib/getParam';
 
 export const metadata: Metadata = {
   title: 'Course Preview',
-  alternates: { canonical: '/thank-you-dog-training-course-preview' },
+  alternates: { canonical: '/thank-you-dog-grooming-course-preview' },
   robots: { index: false },
 };
+
+const testimonialIds = [ 'TD-0004', 'TD-0005', 'TD-0007', 'TD-0008', 'TD-0009', 'TD-0010' ];
 
 const ThankYouCoursePreviewPage: PageComponent = async ({ searchParams }) => {
   const leadId = getParam(searchParams.leadId);
@@ -40,7 +44,6 @@ const ThankYouCoursePreviewPage: PageComponent = async ({ searchParams }) => {
 
   return (
     <>
-      {emailAddress && <EmailSentToast emailAddress={emailAddress} firstName={firstName} />}
       <LeadProcessing
         emailAddress={emailAddress}
         countryCode={countryCode}
@@ -51,12 +54,13 @@ const ThankYouCoursePreviewPage: PageComponent = async ({ searchParams }) => {
         leadId={leadId}
         conversionId="AW-1071836607/yZtFCL_BpW8Qv9uL_wM"
       />
-      {leadId && validCountryForSMS(countryCode) && <TelephoneFormSection leadId={leadId} countryCode={countryCode} brevoListId={57} backgroundSrc={TelephoneBackground} />}
+      <Header />
+      <ThankYouSection course="dg" heroSrc={HeroBackground} emailAddress={emailAddress} />
       <WhyChooseQCSection />
+      <TestimonialWallSection testimonialIds={testimonialIds} className="bg-light" />
+      <SupportSection />
     </>
   );
 };
-
-const validCountryForSMS = (countrycode?: string): boolean => countrycode === 'CA' || countrycode === 'US';
 
 export default ThankYouCoursePreviewPage;

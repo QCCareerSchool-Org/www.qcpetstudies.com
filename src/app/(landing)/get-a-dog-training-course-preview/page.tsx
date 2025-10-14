@@ -18,11 +18,13 @@ import SusanImage from './susan.jpg';
 import type { PageComponent } from '@/app/serverComponent';
 import { BrevoForm } from '@/components/brevoForm';
 import { TestimonialWallSection } from '@/components/testimonialWallSection';
+import { getData } from '@/lib/getData';
 import { getParam } from '@/lib/getParam';
 
 const courses = [ 'dt' ];
 const brevoListId = 30;
 const brevoEmailTemplateId = 1635;
+const brevoTelephoneListId = 57;
 
 const testimonialIds = [ 'TD-0001', 'TD-0002', 'TD-0003' ];
 
@@ -33,6 +35,7 @@ export const metadata: Metadata = {
 };
 
 const DogTrainingCatalogPage: PageComponent = ({ searchParams }) => {
+  const { countryCode } = getData();
   const gclid = getParam(searchParams.gclid);
   const msclkid = getParam(searchParams.msclkid);
   const utmSource = getParam(searchParams.utm_source);
@@ -60,6 +63,7 @@ const DogTrainingCatalogPage: PageComponent = ({ searchParams }) => {
                     successLocation={`${process.env.HOST ?? 'https://www.qcpetstudies.com'}/thank-you-dog-training-course-preview`}
                     listId={brevoListId}
                     emailTemplateId={brevoEmailTemplateId}
+                    telephoneListId={brevoTelephoneListId}
                     gclid={gclid}
                     msclkid={msclkid}
                     utmSource={utmSource}
@@ -70,6 +74,7 @@ const DogTrainingCatalogPage: PageComponent = ({ searchParams }) => {
                     courseCodes={courses}
                     placeholders
                     referrer={referrer}
+                    countryCode={countryCode}
                   />
                 </div>
               </div>
