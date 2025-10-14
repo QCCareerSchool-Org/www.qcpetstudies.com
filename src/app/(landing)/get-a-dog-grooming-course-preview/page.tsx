@@ -28,6 +28,7 @@ export const metadata: Metadata = {
 const courses = [ 'dg' ];
 const brevoListId = 31;
 const brevoEmailTemplateId = 1660;
+const brevoTelephoneListId = 55;
 
 const DogGroomingCatalogPage: PageComponent = ({ searchParams }) => {
   const gclid = getParam(searchParams.gclid);
@@ -60,6 +61,7 @@ const DogGroomingCatalogPage: PageComponent = ({ searchParams }) => {
                     successLocation={`${process.env.HOST ?? 'https://www.qcpetstudies.com'}/thank-you-dog-grooming-course-preview`}
                     listId={brevoListId}
                     emailTemplateId={brevoEmailTemplateId}
+                    telephoneListId={brevoTelephoneListId}
                     gclid={gclid}
                     msclkid={msclkid}
                     utmSource={utmSource}
@@ -70,6 +72,7 @@ const DogGroomingCatalogPage: PageComponent = ({ searchParams }) => {
                     courseCodes={courses}
                     placeholders
                     referrer={referrer}
+                    countryCode={countryCode}
                   />
                 </div>
               </div>

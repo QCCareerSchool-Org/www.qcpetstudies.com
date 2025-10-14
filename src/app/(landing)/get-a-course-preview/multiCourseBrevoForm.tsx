@@ -10,6 +10,7 @@ type FormFields = {
   successLocation: string;
   brevoListId: number;
   brevoEmailTemplateId: number;
+  telephoneListId: number;
 };
 
 const formFieldsDictionary: Record<string, FormFields> = {
@@ -17,11 +18,13 @@ const formFieldsDictionary: Record<string, FormFields> = {
     successLocation: `${process.env.HOST ?? 'https://www.qcpetstudies.com'}/thank-you-dog-grooming-course-preview`,
     brevoListId: 31,
     brevoEmailTemplateId: 1660,
+    telephoneListId: 55,
   },
   dt: {
     successLocation: `${process.env.HOST ?? 'https://www.qcpetstudies.com'}/thank-you-dog-training-course-preview`,
     brevoListId: 30,
     brevoEmailTemplateId: 1635,
+    telephoneListId: 57,
   },
 };
 
@@ -37,6 +40,7 @@ type Props = {
   utmContent?: string;
   utmTerm?: string;
   referrer: string | null;
+  countryCode?: string | null;
 };
 
 export const MultiCourseBrevoForm: FC<Props> = props => {
@@ -55,6 +59,7 @@ export const MultiCourseBrevoForm: FC<Props> = props => {
       onCourseChange={handleCourseChange}
       successLocation={formFields.successLocation}
       listId={formFields.brevoListId}
+      telephoneListId={formFields.telephoneListId}
       emailTemplateId={formFields.brevoEmailTemplateId}
       gclid={props.gclid}
       msclkid={props.msclkid}
@@ -66,6 +71,7 @@ export const MultiCourseBrevoForm: FC<Props> = props => {
       placeholders={props.placeholders}
       courseCodes={[ course ]}
       referrer={props.referrer}
+      countryCode={props.countryCode}
     />
   );
 };
