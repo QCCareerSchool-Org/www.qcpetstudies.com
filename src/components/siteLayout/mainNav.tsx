@@ -43,7 +43,7 @@ export const MainNav: FC<Props> = ({ countryCode }) => {
               <Link href="/certification-courses/dog-grooming-kit" onClick={handleClick} className="dropdown-item"><FaCut className="text-primary me-2" /> Dog Grooming Kit</Link>
             </NavDropdown>
             <Link href="/diy-grooming" onClick={handleClick} className="nav-link">DIY Grooming</Link>
-            <Link href="/get-a-course-preview" onClick={handleClick} className="nav-link">Request Info</Link>
+            <Link href="/get-a-course-preview" onClick={handleClick} className="nav-link">Free Preview</Link>
             <NavDropdown title="About" id="about-dropdown">
               <Link href="/about/about-qc-pet-studies" onClick={handleClick} className="dropdown-item">About QC Pet Studies</Link>
               <Link href="/about/student-experience" onClick={handleClick} className="dropdown-item">Student Experience</Link>
