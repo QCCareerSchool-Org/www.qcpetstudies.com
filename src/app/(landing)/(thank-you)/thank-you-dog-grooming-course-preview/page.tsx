@@ -60,8 +60,8 @@ const ThankYouCoursePreviewPage: PageComponent = async ({ searchParams }) => {
       <Header />
       <ThankYouSection course="dg" heroSrc={HeroBackground} emailAddress={emailAddress} />
       {date < Date.UTC(2025, 9, 18, 7) && <ThreeHundredOff countryCode={countryCode} />}
-      <WhyChooseQCSection />
-      <TestimonialWallSection testimonialIds={testimonialIds} className="bg-light" />
+      <WhyChooseQCSection className="bg-light" />
+      <TestimonialWallSection testimonialIds={testimonialIds} />
       <SupportSection />
     </>
   );

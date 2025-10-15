@@ -1,8 +1,12 @@
 import type { FC } from 'react';
 import { FaBriefcase, FaChalkboardTeacher, FaHandHoldingUsd, FaLaptopHouse, FaRegCalendarCheck } from 'react-icons/fa';
 
-export const WhyChooseQCSection: FC = () => (
-  <section>
+type Props = {
+  className?: string;
+};
+
+export const WhyChooseQCSection: FC<Props> = ({ className }) => (
+  <section className={className}>
     <div className="container">
       <div className="row">
         <div className="col-12 col-lg-10 offset-lg-1 col-xl-8 offset-xl-2 text-center">
