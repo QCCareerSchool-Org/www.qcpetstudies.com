@@ -6,6 +6,7 @@ import { Header } from '../../_components/header';
 import { ThankYouSection } from '../../_components/thankYouSection';
 import type { PageComponent } from '@/app/serverComponent';
 import { LeadProcessing } from '@/components/leadProcessing';
+import { ThreeHundredOff } from '@/components/promos/ThreeHundredOff';
 import { SupportSection } from '@/components/supportSection';
 import { TestimonialWallSection } from '@/components/testimonialWallSection';
 import { WhyChooseQCSection } from '@/components/whyChooseQCSection';
@@ -34,6 +35,8 @@ const ThankYouCoursePreviewPage: PageComponent = async ({ searchParams }) => {
   const fbc = cookieStore.get('_fbc')?.value;
   const fbp = cookieStore.get('_fbp')?.value;
 
+  const date = new Date().getTime();
+
   if (leadId && emailAddress) {
     try {
       await fbPostLead(leadId, new Date(), emailAddress, firstName, lastName, countryCode, provinceCode, ipAddress, userAgent, fbc, fbp);
@@ -56,6 +59,7 @@ const ThankYouCoursePreviewPage: PageComponent = async ({ searchParams }) => {
       />
       <Header />
       <ThankYouSection course="dg" heroSrc={HeroBackground} emailAddress={emailAddress} />
+      {date < Date.UTC(2025, 9, 18, 7) && <ThreeHundredOff countryCode={countryCode} />}
       <WhyChooseQCSection />
       <TestimonialWallSection testimonialIds={testimonialIds} className="bg-light" />
       <SupportSection />
