@@ -45,6 +45,7 @@
     { "source": "/terms.html", "destination": "/terms", "permanent": true },
     { "source": "/terms-gb.html", "destination": "/terms-gb", "permanent": true },
     { "source": "/enrollment-agreement.html", "destination": "/enrollment-agreement", "permanent": true },
-    { "source": "/enrollment-agreement-gb.html", "destination": "/enrollment-agreement-gb", "permanent": true }
+    { "source": "/enrollment-agreement-gb.html", "destination": "/enrollment-agreement-gb", "permanent": true },
+    { "source": "/blog/2022/10/positive-reinforcement-in-dog-training", "destination": "/blog/2025/10/positive-reinforcement-dog-training-guide", "permanent": true }
   ]
 }
