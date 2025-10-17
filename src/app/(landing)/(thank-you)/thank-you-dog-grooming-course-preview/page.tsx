@@ -59,7 +59,7 @@ const ThankYouCoursePreviewPage: PageComponent = async ({ searchParams }) => {
       />
       <Header />
       <ThankYouSection course="dg" heroSrc={HeroBackground} emailAddress={emailAddress} />
-      {date < Date.UTC(2025, 9, 18, 7) && <ThreeHundredOff countryCode={countryCode} />}
+      {date < Date.UTC(2025, 9, 22, 16) && <ThreeHundredOff countryCode={countryCode} />}
       <WhyChooseQCSection className="bg-light" />
       <TestimonialWallSection testimonialIds={testimonialIds} />
       <SupportSection />
