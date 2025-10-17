@@ -25,7 +25,7 @@ const NotFoundPage: PageComponent = () => {
               <div className="col-12 col-lg-10 offset-lg-1">
                 <h1>Whoops!</h1>
                 <p className="lead">We couldn't find the page you were looking for.</p>
-                <p>Try our <Link href="/">homepage</Link> or <Link href="/blog/sniffin-around-blog">blog</Link> instead.</p>
+                <p>Try our <Link href="/">homepage</Link> or <Link href="/blog/">blog</Link> instead.</p>
               </div>
             </div>
           </div>
