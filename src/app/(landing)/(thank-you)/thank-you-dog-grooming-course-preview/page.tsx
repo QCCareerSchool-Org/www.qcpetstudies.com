@@ -3,8 +3,8 @@ import { cookies, headers } from 'next/headers';
 
 import HeroBackground from './grooming-bg.jpg';
 import { CurrentPromotion } from '../../_components/currentPromotion';
+import { GroomingThankYouSection } from '../../_components/groomingThankYouSection';
 import { Header } from '../../_components/header';
-import { ThankYouSection } from '../../_components/thankYouSection';
 import type { PageComponent } from '@/app/serverComponent';
 import { LeadProcessing } from '@/components/leadProcessing';
 import { SupportSection } from '@/components/supportSection';
@@ -59,7 +59,7 @@ const ThankYouCoursePreviewPage: PageComponent = async ({ searchParams }) => {
         conversionId="AW-1071836607/yZtFCL_BpW8Qv9uL_wM"
       />
       <Header />
-      <ThankYouSection course="dg" heroSrc={HeroBackground} emailAddress={emailAddress} />
+      <GroomingThankYouSection course="dg" heroSrc={HeroBackground} emailAddress={emailAddress} />
       <CurrentPromotion date={date} countryCode={countryCode} />
       <WhyChooseQCSection className="bg-light" />
       <TestimonialWallSection testimonialIds={testimonialIds} />
