@@ -37,6 +37,7 @@ const ThankYouCoursePreviewPage: PageComponent = async ({ searchParams }) => {
   const cookieStore = cookies();
   const fbc = cookieStore.get('_fbc')?.value;
   const fbp = cookieStore.get('_fbp')?.value;
+  const quizURL = `https://ng295qu8zyk.typeform.com/to/a7b3Ue5I#email_address=${emailAddress}&country_code=${countryCode}&province_code=${provinceCode}`;
 
   const date = new Date().getTime();
 
@@ -62,7 +63,7 @@ const ThankYouCoursePreviewPage: PageComponent = async ({ searchParams }) => {
       />
       <Header />
       <GroomingThankYouSection course="dg" heroSrc={HeroBackground} mobileHeroSrc={HeroMobile} emailAddress={emailAddress} />
-      <QuizCTACard header="Get Your Personalized Career Path in Dog Grooming!" url="https://www.qcpetstudies.com/" />
+      <QuizCTACard header="Get Your Personalized Career Path in Dog Grooming!" url={quizURL} />
       <CurrentPromotion date={date} countryCode={countryCode} />
       <WhyChooseQCSection className="bg-light" />
       <TestimonialWallSection testimonialIds={testimonialIds} />
