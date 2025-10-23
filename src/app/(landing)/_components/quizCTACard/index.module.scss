@@ -1,8 +1,8 @@
 .quizCardContainer {
     position: relative;
-    margin-top: -100px;
+    margin-top: -70px;
     z-index: 100;
-    max-width: 600px;
+    max-width: 1000px;
     margin-left: auto;
     margin-right: auto;
     transform: translateY(50px);
@@ -10,13 +10,12 @@
     transition: transform 0.8s ease-out, opacity 0.8s ease-out;
 }
 
-.animate-in {
+.animateIn {
     transform: translateY(0);
     opacity: 1;
 }
 
 .quizCard {
-    max-width: 1000px;
     margin: 0 auto;
     border-radius: 1rem !important;
     z-index: 2;

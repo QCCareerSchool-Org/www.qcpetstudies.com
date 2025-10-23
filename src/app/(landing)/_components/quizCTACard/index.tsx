@@ -1,4 +1,6 @@
+'use client';
 import type { FC } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 
 import styles from './index.module.scss';
 
@@ -8,8 +10,42 @@ type Props = {
 };
 
 export const QuizCTACard: FC<Props> = ({ header, url }) => {
+  const [ isVisible, setIsVisible ] = useState(false);
+  const cardRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if(!('IntersectionObserver' in window)) {
+      setIsVisible(true);
+    }
+    const observer = new IntersectionObserver(
+      entries => {
+        entries.forEach(entry => {
+          if(entry.isIntersecting) {
+            setIsVisible(true);
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.1,
+      },
+    );
+    if(cardRef.current) {
+      observer.observe(cardRef.current);
+    }
+    return() => {
+      if(cardRef.current) {
+        observer.unobserve(cardRef.current);
+      }
+    };
+  }, []);
+
+  const containerClasses = `${styles.quizCardContainer} ${isVisible ? styles.animateIn : ''}`;
+
   return (
-    <div>
+    <div ref={cardRef} className={containerClasses}>
       <div className={`${styles.quizCard} p-4 rounded bg-qhite text-center`}>
         <div className={`${styles.pulseDot} mt-4`} aria-hidden="true" />
         <h3 className="mb-3 text-navy">{header}</h3>
