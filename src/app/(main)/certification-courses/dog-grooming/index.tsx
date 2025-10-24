@@ -171,13 +171,13 @@ export const DogGroomingBase: FC<Props> = ({ dgPrice, dePrice, enrollPath }) => 
           <div className="container">
             <div className="row justify-content-center">
               <div className="col-12 col-lg-10 mb-4">
-                <h2 className="mb-3 text-center">Frequently Asked Questions</h2>
+                <h2 className="mb-5 text-center">Frequently Asked Questions</h2>
                 <Accordion>
                   <AccordionItem eventKey={eventKey++} heading="How can I learn dog grooming online?" isFAQ={true}>
                     <div className="row text-left">
                       <p>QC Pet Studies makes it easy to learn dog grooming from home through step-by-step video tutorials, reading materials, and hands-on grooming assignments. You&apos;ll practice techniques on real dogs, upload photos and videos of your work, and receive personalized feedback from professional groomers. QC&apos;s comprehensive course covers every aspect of grooming from canine anatomy and behavior to bathing, clipping, styling, and working with different coat types.</p>
                       <p>Now, QC Pet Studies offers two flexible ways to learn <strong>dog grooming</strong>, so you can customize your training to fit your needs:</p>
-                      <ol className="ps-4">
+                      <ol className="ps-5">
                         <li><strong>Online Track</strong>: Learn from home through step-by-step video tutorials, reading materials, and hands-on grooming assignments. Practice techniques on real dogs, upload photos or videos of your work, and receive personalized feedback from professional groomers.</li>
                         <li><strong>Externship Track</strong>: Gain real-world experience by completing part of your training in a professional grooming salon under the guidance of experienced groomers, while still completing your online coursework.</li>
                       </ol>
