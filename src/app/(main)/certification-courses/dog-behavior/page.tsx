@@ -9,6 +9,8 @@ import HeroBackgroundImage from './hero-bg.jpg';
 import { OutlineSection } from './outlineSection';
 import SusanReadImage from './susan-read.jpg';
 import type { PageComponent } from '@/app/serverComponent';
+import { Accordion } from '@/components/accordion';
+import { AccordionItem } from '@/components/accordion/accordionItem';
 import { BackgroundImage } from '@/components/backgroundImage';
 import CertificationGoldImage from '@/components/certifications/IDBS-certification-gold.svg';
 import { GuaranteeSection } from '@/components/guaranteeSection';
@@ -35,6 +37,7 @@ export const metadata: Metadata = {
 };
 
 const DogBehaviorPage: PageComponent = async () => {
+  let eventKey = 0;
   const { countryCode, provinceCode } = getData();
   const priceQuery: PriceQuery = { countryCode, provinceCode: provinceCode ?? undefined, courses: courseCodes };
   const price = await fetchPrice(priceQuery);
@@ -154,6 +157,41 @@ const DogBehaviorPage: PageComponent = async () => {
       <GuaranteeSection className="bg-light" />
 
       <VirtualCommunitySection />
+
+      <section>
+        <div itemScope itemType="https://schema.org/FAQPage">
+          <div className="container">
+            <div className="row justify-content-center">
+              <div className="col-12 col-lg-10 mb-4">
+                <h2 className="mb-5 text-center">Frequently Asked Questions</h2>
+                <Accordion>
+                  <AccordionItem eventKey={eventKey++} heading="Do I need to have prior training or experience with dogs before taking this course?" isFAQ={true}>
+                    <div className="row text-left">
+                      <p>To enroll in the Dog Behavior course, you must first complete QC&apos;s Dog Trainer course or have equivalent experience working with dogs. This foundational course teaches the essential knowledge and skills needed to work safely with dogs.</p>
+                      <p>After completing Dog Training, the Dog Behavior course allows you to advance your skills in behavioral analysis, problem-solving, and behavior modification techniques. For more information, <a href="https://calendly.com/qccareerschool/pet">book a call</a> with our friendly student advisors to find out if the Dog Behavior course is right for you.</p>
+                    </div>
+                  </AccordionItem>
+                </Accordion>
+                <Accordion>
+                  <AccordionItem eventKey={eventKey++} heading="Why should I study dog behavior and behavior modification?" isFAQ={true}>
+                    <div className="row text-left">
+                      <p>Studying dog behavior and behavior modification equips you with the skills to understand why dogs act the way they do and to effectively address behavioral challenges, including separation anxiety, aggression, and reactivity. This expertise enables you to help any dog and their owner achieve better training outcomes.</p>
+                      <p>Completing QC&apos;s Behavior Modification course positions you as a skilled, professional dog trainer, enhancing your credibility and making you more attractive to employers and clients.</p>
+                    </div>
+                  </AccordionItem>
+                </Accordion>
+                <Accordion>
+                  <AccordionItem eventKey={eventKey++} heading="What methods do you teach as part of the dog behavior course?" isFAQ={true}>
+                    <div className="row text-left">
+                      <p>QC&apos;s Dog Behavior course follows the same science-based, positive reinforcement methods as QC&apos;s Dog Training program. Students learn to analyze a dog&apos;s behavior and choose the safest, most effective approach for each individual dog. QC always prioritizes force-free, humane techniques, ensuring the safety and well-being of both the dog and the handler throughout the course.</p>
+                    </div>
+                  </AccordionItem>
+                </Accordion>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </>
   );
 };
