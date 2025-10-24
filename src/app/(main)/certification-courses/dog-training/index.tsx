@@ -148,7 +148,7 @@ export const DogTrainingBase: FC<Props> = ({ price, enrollPath, courseCodes, cou
 
     <VirtualCommunitySection />
 
-    <section className="bg-light">
+    <section>
       <div itemScope itemType="https://schema.org/FAQPage">
         <div className="container">
           <div className="row justify-content-center">
@@ -158,7 +158,7 @@ export const DogTrainingBase: FC<Props> = ({ price, enrollPath, courseCodes, cou
                 <AccordionItem eventKey={eventKey++} heading="How can I learn dog training online?" isFAQ={true}>
                   <div className="row text-left">
                     <p>QC Pet Studies makes it easy to learn dog training from home with a flexible, self-paced online program. You&apos;ll study through:</p>
-                    <ul>
+                    <ul className="ps-5">
                       <li>Step-by-step video tutorials</li>
                       <li>Interactive reading materials</li>
                       <li>Hands-on assignments with real dogs</li>
@@ -187,7 +187,7 @@ export const DogTrainingBase: FC<Props> = ({ price, enrollPath, courseCodes, cou
                 <AccordionItem eventKey={eventKey++} heading="How can I learn dog training online?" isFAQ={true}>
                   <div className="row text-left">
                     <p>QC&apos;s dog training program is based on science-backed, humane training techniques. You&apos;ll learn to:</p>
-                    <ul>
+                    <ul className="ps-5">
                       <li>Analyze canine behavior and teach dogs effectively</li>
                       <li>Train with positive reinforcement</li>
                       <li>Build trust and respect between handler and dog</li>
@@ -199,7 +199,7 @@ export const DogTrainingBase: FC<Props> = ({ price, enrollPath, courseCodes, cou
                 <AccordionItem eventKey={eventKey++} heading="Where can I work as a dog trainer after I finish this course?" isFAQ={true}>
                   <div className="row text-left">
                     <p>QC&apos;s Dog Trainer course prepares you for success in various career paths, including:</p>
-                    <ul>
+                    <ul className="ps-5">
                       <li>Working alongside experienced trainers</li>
                       <li>Establishing an independent dog training business</li>
                       <li>Teaching obedience or puppy classes</li>
