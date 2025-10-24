@@ -121,7 +121,7 @@ const DogCarePage: PageComponent = async () => {
 
       <VirtualCommunitySection />
 
-      <TutorSectionDD />
+      <TutorSectionDD className="bg-light" />
 
       <section>
         <div itemScope itemType="https://schema.org/FAQPage">
