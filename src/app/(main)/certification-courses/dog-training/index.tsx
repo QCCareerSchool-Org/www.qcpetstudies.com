@@ -184,7 +184,7 @@ export const DogTrainingBase: FC<Props> = ({ price, enrollPath, courseCodes, cou
                 </AccordionItem>
               </Accordion>
               <Accordion>
-                <AccordionItem eventKey={eventKey++} heading="How can I learn dog training online?" isFAQ={true}>
+                <AccordionItem eventKey={eventKey++} heading="What methods will I learn in QC’s online dog trainer course?" isFAQ={true}>
                   <div className="row text-left">
                     <p>QC&apos;s dog training program is based on science-backed, humane training techniques. You&apos;ll learn to:</p>
                     <ul className="ps-5">
