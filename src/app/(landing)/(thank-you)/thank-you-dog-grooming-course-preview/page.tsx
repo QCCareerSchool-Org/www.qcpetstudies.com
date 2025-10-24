@@ -2,9 +2,11 @@ import type { Metadata } from 'next';
 import { cookies, headers } from 'next/headers';
 
 import HeroBackground from './grooming-bg.jpg';
+import HeroMobile from './hero-mobile.jpg';
 import { CurrentPromotion } from '../../_components/currentPromotion';
+import { GroomingThankYouSection } from '../../_components/groomingThankYouSection';
 import { Header } from '../../_components/header';
-import { ThankYouSection } from '../../_components/thankYouSection';
+import { QuizCTACard } from '../../_components/quizCTACard';
 import type { PageComponent } from '@/app/serverComponent';
 import { LeadProcessing } from '@/components/leadProcessing';
 import { SupportSection } from '@/components/supportSection';
@@ -35,6 +37,7 @@ const ThankYouCoursePreviewPage: PageComponent = async ({ searchParams }) => {
   const cookieStore = cookies();
   const fbc = cookieStore.get('_fbc')?.value;
   const fbp = cookieStore.get('_fbp')?.value;
+  const quizURL = `https://ng295qu8zyk.typeform.com/to/a7b3Ue5I#email_address=${emailAddress}&country_code=${countryCode}&province_code=${provinceCode}`;
 
   const date = new Date().getTime();
 
@@ -59,7 +62,8 @@ const ThankYouCoursePreviewPage: PageComponent = async ({ searchParams }) => {
         conversionId="AW-1071836607/yZtFCL_BpW8Qv9uL_wM"
       />
       <Header />
-      <ThankYouSection course="dg" heroSrc={HeroBackground} emailAddress={emailAddress} />
+      <GroomingThankYouSection course="dg" heroSrc={HeroBackground} mobileHeroSrc={HeroMobile} emailAddress={emailAddress} />
+      <QuizCTACard header="Get Your Personalized Career Path in Dog Grooming!" url={quizURL} />
       <CurrentPromotion date={date} countryCode={countryCode} />
       <WhyChooseQCSection className="bg-light" />
       <TestimonialWallSection testimonialIds={testimonialIds} />
