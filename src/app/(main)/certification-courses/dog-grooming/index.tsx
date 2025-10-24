@@ -170,8 +170,8 @@ export const DogGroomingBase: FC<Props> = ({ dgPrice, dePrice, enrollPath }) => 
         <div itemScope itemType="https://schema.org/FAQPage">
           <div className="container">
             <div className="row justify-content-center">
-              <div className="col-12 col-lg-10 mb-4 text-center">
-                <h2>Frequently Asked Questions</h2>
+              <div className="col-12 col-lg-10 mb-4">
+                <h2 className="mb-3">Frequently Asked Questions</h2>
                 <Accordion>
                   <AccordionItem eventKey={eventKey++} heading="How can I learn dog grooming online?" isFAQ={true}>
                     <div className="row text-left">
