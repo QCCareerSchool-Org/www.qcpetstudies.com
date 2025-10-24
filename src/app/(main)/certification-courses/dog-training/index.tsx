@@ -148,7 +148,7 @@ export const DogTrainingBase: FC<Props> = ({ price, enrollPath, courseCodes, cou
 
     <VirtualCommunitySection />
 
-    <section>
+    <section className="bg-light">
       <div itemScope itemType="https://schema.org/FAQPage">
         <div className="container">
           <div className="row justify-content-center">
