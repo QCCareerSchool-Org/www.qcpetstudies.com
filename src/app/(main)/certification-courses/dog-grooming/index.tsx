@@ -165,6 +165,55 @@ export const DogGroomingBase: FC<Props> = ({ dgPrice, dePrice, enrollPath }) => 
       <VirtualCommunitySection />
 
       <GuaranteeSection className="bg-light" double />
+
+      <section>
+        <div itemScope itemType="https://schema.org/FAQPage">
+          <Accordion>
+            <AccordionItem eventKey={eventKey++} heading="How can I learn dog grooming online?" isFAQ={true}>
+              <div className="row text-left">
+                <p>QC Pet Studies makes it easy to learn dog grooming from home through step-by-step video tutorials, reading materials, and hands-on grooming assignments. You&apos;ll practice techniques on real dogs, upload photos and videos of your work, and receive personalized feedback from professional groomers. QC&apos;s comprehensive course covers every aspect of grooming from canine anatomy and behavior to bathing, clipping, styling, and working with different coat types.</p>
+                <p>Now, QC Pet Studies offers two flexible ways to learn <strong>dog grooming</strong>, so you can customize your training to fit your needs:</p>
+                <ol>
+                  <li><strong>Online Track</strong>: Learn from home through step-by-step video tutorials, reading materials, and hands-on grooming assignments. Practice techniques on real dogs, upload photos or videos of your work, and receive personalized feedback from professional groomers.</li>
+                  <li><strong>Externship Track</strong>: Gain real-world experience by completing part of your training in a professional grooming salon under the guidance of experienced groomers, while still completing your online coursework.</li>
+                </ol>
+                <p>When you graduate, you&apos;ll earn a professional dog grooming certificate that proves your skills and helps you stand out in the industry.</p>
+              </div>
+            </AccordionItem>
+          </Accordion>
+          <Accordion>
+            <AccordionItem eventKey={eventKey++} heading="Do I need prior training or experience as a dog groomer before taking this course?" isFAQ={true}>
+              <div className="row text-left">
+                <p>No previous experience is required! QC Pet Studies&apos; online Dog Grooming course is beginner-friendly and designed to teach you everything from the fundamentals of dog grooming to advanced styling techniques.</p>
+                <p>You&apos;ll gain practical skills, industry knowledge, and confidence to start your dog grooming business or salon career after graduation.</p>
+              </div>
+            </AccordionItem>
+          </Accordion>
+          <Accordion>
+            <AccordionItem eventKey={eventKey++} heading="How long does it take to become a dog groomer?" isFAQ={true}>
+              <div className="row text-left">
+                <p>With QC&apos;s self-paced online training, you decide how quickly you complete your studies. You can complete your training and start booking clients in under six months. If you&apos;d prefer to take your time, you have a full year to complete your training.</p>
+              </div>
+            </AccordionItem>
+          </Accordion>
+          <Accordion>
+            <AccordionItem eventKey={eventKey++} heading="How much do dog groomers make?" isFAQ={true}>
+              <div className="row text-left">
+                <p>According to ZipRecruiter, the average dog groomer salary is around $50,000 per year, though earnings vary based on location, experience, and the number of dogs groomed daily. Salon groomers often earn a steady hourly wage plus tips or commissions. Freelance or mobile groomers can set their own prices and schedule, often earning more as they build a loyal client base.</p>
+                <p>A career in dog grooming offers flexibility, job security, and the opportunity to turn your love of animals into a rewarding profession.</p>
+              </div>
+            </AccordionItem>
+          </Accordion>
+          <Accordion>
+            <AccordionItem eventKey={eventKey++} heading="Is QC Pet Studies an accredited online school?" isFAQ={true}>
+              <div className="row text-left">
+                <p>Yes! QC Pet Studies is a faculty of QC Career School, an accredited online education provider with an A+ rating from the Better Business Bureau (BBB).</p>
+                <p>Since 1984, QC has helped students around the world build successful careers through high-quality, career-focused online training. When you enroll in QC&apos;s Dog Grooming course, you can trust that you&apos;re learning from experienced grooming professionals to develop practical, hands-on skills.</p>
+              </div>
+            </AccordionItem>
+          </Accordion>
+        </div>
+      </section>
     </>
   );
 };
