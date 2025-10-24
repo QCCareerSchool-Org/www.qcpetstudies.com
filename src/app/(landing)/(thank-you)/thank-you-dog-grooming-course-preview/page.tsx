@@ -37,7 +37,7 @@ const ThankYouCoursePreviewPage: PageComponent = async ({ searchParams }) => {
   const cookieStore = cookies();
   const fbc = cookieStore.get('_fbc')?.value;
   const fbp = cookieStore.get('_fbp')?.value;
-  const quizURL = `https://ng295qu8zyk.typeform.com/to/a7b3Ue5I#email_address=${emailAddress}&country_code=${countryCode}&province_code=${provinceCode}`;
+  const quizURL = getQuizUrl(emailAddress, countryCode, provinceCode);
 
   const date = new Date().getTime();
 
@@ -70,6 +70,35 @@ const ThankYouCoursePreviewPage: PageComponent = async ({ searchParams }) => {
       <SupportSection />
     </>
   );
+};
+
+const getQuizUrl = (emailAddress?: string, countryCode?: string, provinceCode?: string): string => {
+  const baseURL = 'https://ng295qu8zyk.typeform.com/to/a7b3Ue5I';
+
+  if (typeof emailAddress !== 'undefined' || typeof countryCode !== 'undefined' || typeof provinceCode !== 'undefined') {
+    const data: Record<string, string> = {};
+
+    if (emailAddress) {
+      // eslint-disable-next-line camelcase
+      data.email_address = emailAddress;
+    }
+
+    if (countryCode) {
+      // eslint-disable-next-line camelcase
+      data.country_code = countryCode;
+    }
+
+    if (provinceCode) {
+      // eslint-disable-next-line camelcase
+      data.province_code = provinceCode;
+    }
+
+    const queryString = new URLSearchParams(data).toString();
+
+    return `${baseURL}#${queryString}`;
+  }
+
+  return baseURL;
 };
 
 export default ThankYouCoursePreviewPage;
