@@ -1,7 +1,7 @@
 import type { FC } from 'react';
 
 import { MasterIcon } from './masterIcon';
-import { lisaDay, mariKusanagi, paddyGaffney } from './tutors';
+import { lisaDay, paddyGaffney } from './tutors';
 
 type Props = {
   className?: string;
@@ -20,7 +20,6 @@ export const TutorSectionDG: FC<Props> = ({ className, id = 'tutors' }) => (
           </div>
         </div>
         <div className="row mt-2 g-5">
-          <MasterIcon {...mariKusanagi} />
           <MasterIcon {...lisaDay} />
           <MasterIcon {...paddyGaffney} />
         </div>
