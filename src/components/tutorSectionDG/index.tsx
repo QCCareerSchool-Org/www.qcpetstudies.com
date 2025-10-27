@@ -19,13 +19,9 @@ export const TutorSectionDG: FC<Props> = ({ className, id = 'tutors' }) => (
             <p>When you enroll with QC Pet Studies, you'll be paired with an expert grooming mentor who will review your work and provide detailed audio feedback on each assignment. With decades of industry experience, your mentor will offer valuable advice to help you succeed and improve as you progress through the course.</p>
           </div>
         </div>
-        <div className="row mt-4 justify-content-center">
-          <div className="col-12 col-md-6 col-lg-4 text-center">
-            <MasterIcon {...lisaDay} />
-          </div>
-          <div className="col-12 col-md-6 col-lg-4 text-center">
-            <MasterIcon {...paddyGaffney} />
-          </div>
+        <div className="row justify-content-center text-center mt-4">
+          <MasterIcon {...lisaDay} />
+          <MasterIcon {...paddyGaffney} />
         </div>
       </div>
     </section>
