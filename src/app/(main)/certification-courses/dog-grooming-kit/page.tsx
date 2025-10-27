@@ -21,7 +21,7 @@ const DogGroomingKitPage: PageComponent = () => (
       <div className="container text-center">
         <div className="row justify-content-center">
           <div className="col-12 col-md-10 col-lg-8">
-            <h1>Dog grooming kit</h1>
+            <h1>Dog Grooming Kit</h1>
             <p className="lead mb-0">Included with your online course!</p>
           </div>
           <div className="col-12 col-xl-10">
@@ -29,7 +29,7 @@ const DogGroomingKitPage: PageComponent = () => (
           </div>
           <div className="col-12 col-md-10 col-lg-8">
             <p className="lead">When you enroll in QC's online <Link href="/certification-courses/dog-grooming">dog grooming course</Link>, you'll receive a dog grooming kit with the essential items you need to get started. These items will be shipped to you when you successfully complete Unit B before you begin your practical work in Unit C.</p>
-            <p className="lead">Your kit includes a WAHL ARCO 5-in-1 cordless clipper, a stainless steel attachment guide comb kit, professional-grade grooming scissors, brushes, combs, and nail clippers. This kit will go a long way not only to help you complete your online course but also to enter the industry as a fully equipped dog grooming professional!</p>
+            <p className="lead">Your kit includes professional-grade grooming scissors, brushes, combs, and nail clippers. This kit will go a long way not only to help you complete your online course but also to enter the industry as a fully equipped dog grooming professional!</p>
             <p className="lead fw-bold mb-0">The dog grooming kit has an estimated value of over $200!</p>
           </div>
         </div>
