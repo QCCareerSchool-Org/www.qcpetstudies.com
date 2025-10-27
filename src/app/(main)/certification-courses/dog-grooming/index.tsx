@@ -69,8 +69,8 @@ export const DogGroomingBase: FC<Props> = ({ dgPrice, dePrice, enrollPath }) => 
           <div className="row justify-content-center">
             <div className="col-12 col-lg-10 mb-4">
               <h2 className="mb-3 mb-md-4">Why Choose QC?</h2>
-              <h3>Get Your Professional-Grade 36-Piece Grooming Kit</h3>
-              <p>When you enroll, you'll receive dog grooming tools to help you complete your studies and start your career. This kit includes cordless WAHL clippers and combs, three grooming scissors, an assortment of brushes and combs, and more!</p>
+              <h3>Get Your Professional-Grade Grooming Kit</h3>
+              <p>When you enroll, you&apos;ll receive dog grooming tools to help you complete your studies and start your career. This kit includes a 3-piece set of grooming scissors, an assortment of brushes and combs for all coat types, and more!</p>
               <div className="mb-3">
                 <KitDetailsButton countryCode={countryCode} />
               </div>
