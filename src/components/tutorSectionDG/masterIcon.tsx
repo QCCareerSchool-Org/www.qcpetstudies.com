@@ -6,7 +6,7 @@ import { ImageCircle } from '../ImageCircle';
 type Props = Tutor;
 
 export const MasterIcon: FC<Props> = props => (
-  <div className="col-12 col-lg-4">
+  <div className="text-center">
     <ImageCircle src={props.image} alt="" size={200} />
     <div className="mt-4">
       <h3>{props.name}</h3>
