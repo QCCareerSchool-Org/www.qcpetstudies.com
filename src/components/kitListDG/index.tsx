@@ -12,10 +12,10 @@ const GroomingKitList: React.FC = () => {
           <p>This kit includes a straight blade, a curved blade, and thinning scissors, wrapped in a beautiful leather case for portability and convenience</p>
         </div>
       </div>
+      <h4>Grooming Tools Starter Kit</h4>
       <div className={`${styles.listItem}`}>
         <div className={`${styles.circleNumber}`}>2</div>
         <div className={`${styles.listContent}`}>
-          <h4>Grooming Tools Starter Kit</h4>
           <p>A Fine-Toothed Comb</p>
         </div>
       </div>
