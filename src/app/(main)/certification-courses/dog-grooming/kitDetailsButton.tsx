@@ -4,7 +4,7 @@ import Image from 'next/image';
 import type { FC } from 'react';
 import { Modal } from 'react-bootstrap';
 
-import GroomingKitDetailImage from './dog-grooming-kit-white.jpg';
+import GroomingKitDetailImage from './kit-labelled.jpg';
 import GroomingKitList from '@/components/kitListDG';
 import { useToggle } from '@/hooks/useToggle';
 import { gbpCountry } from '@/lib/currencies';
