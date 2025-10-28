@@ -12,19 +12,21 @@ export const TutorSectionDG: FC<Props> = ({ className, id = 'tutors' }) => (
   <>
     <div id={id} className="sectionAnchor" />
     <section className={className}>
-      <div className="container">
+      <div className="container text-center">
         <div className="row justify-content-center">
           <div className="col-12 col-md-8 text-center">
             <h2>Meet Your Grooming Mentors</h2>
             <p>When you enroll with QC Pet Studies, you'll be paired with an expert grooming mentor who will review your work and provide detailed audio feedback on each assignment. With decades of industry experience, your mentor will offer valuable advice to help you succeed and improve as you progress through the course.</p>
-          </div>
-        </div>
-        <div className="row justify-content-center mt-4">
-          <div className="col-12 col-lg-4">
-            <MasterIcon {...lisaDay} />
-          </div>
-          <div className="col-12 col-lg-4">
-            <MasterIcon {...paddyGaffney} />
+            <div className="row justify-content-center g-5 g-lg-4">
+              <div className="col-12 col-lg-4" style={{ marginRight: '30px' }}>
+                <MasterIcon {...lisaDay} />
+              </div>
+            </div>
+            <div className="row justify-content-center g-5 g-lg-4">
+              <div className="col-12 col-lg-4" style={{ marginRight: '30px' }}>
+                <MasterIcon {...paddyGaffney} />
+              </div>
+            </div>
           </div>
         </div>
       </div>
