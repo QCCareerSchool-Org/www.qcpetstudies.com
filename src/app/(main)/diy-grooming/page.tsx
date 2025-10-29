@@ -133,7 +133,7 @@ const HomePage: PageComponent = () => {
           <div className="col-12 col-lg-10">
             <h2 className="text-center mb-5">Frequently Asked Questions</h2>
             <Accordion>
-              <AccordionItem eventKey={eventKey++} heading="How do I know whether Paw Parent Academy or QC Pet Studies is right for me?">
+              <AccordionItem eventKey={eventKey++} heading="How do I know whether Paw Parent Academy or QC Pet Studies is right for me?" isFAQ={true}>
                 <div className="row text-left">
                   <p>If your goal is to safely and confidently groom your own dog at home, Paw Parent Academy is designed for you. Their DIY grooming courses are coat-specific, focused on practical &quot;pet cuts&quot; and easy-to-follow maintenance techniques.</p>
                   <p>If you&apos;d like to learn professional grooming skills, master breed-standard cuts, or plan to groom dogs beyond your own, QC Pet Studies&apos; Dog Grooming Certification Course is the better choice.</p>
@@ -141,21 +141,21 @@ const HomePage: PageComponent = () => {
               </AccordionItem>
             </Accordion>
             <Accordion>
-              <AccordionItem eventKey={eventKey++} heading="Can I really learn dog grooming online?">
+              <AccordionItem eventKey={eventKey++} heading="Can I really learn dog grooming online?" isFAQ={true}>
                 <div className="row text-left">
                   <p>Absolutely. Both Paw Parent Academy and QC Pet Studies are designed with step-by-step video tutorials and detailed guides you can follow at your own pace. You&apos;ll learn by watching experienced groomers demonstrate techniques and then practicing them on your own dog. With QC Pet Studies, you&apos;ll also complete hands-on assignments and receive personalized feedback from certified groomers to refine your skills.</p>
                 </div>
               </AccordionItem>
             </Accordion>
             <Accordion>
-              <AccordionItem eventKey={eventKey++} heading="Do I need grooming experience or special equipment to start?">
+              <AccordionItem eventKey={eventKey++} heading="Do I need grooming experience or special equipment to start?" isFAQ={true}>
                 <div className="row text-left">
                   <p>No prior experience is needed for either program. Paw Parent Academy will walk you through the basic tools and techniques you&apos;ll need for at-home care. QC Pet Studies also includes a bonus professional grooming kit to help you complete your coursework and start your career.</p>
                 </div>
               </AccordionItem>
             </Accordion>
             <Accordion>
-              <AccordionItem eventKey={eventKey++} heading="What will I be able to do after completing the course?">
+              <AccordionItem eventKey={eventKey++} heading="What will I be able to do after completing the course?" isFAQ={true}>
                 <div className="row text-left">
                   <p>With Paw Parent Academy, you&apos;ll gain the skills and confidence to keep your own dog healthy, comfortable, and looking their best—whether that means regular brushing, trimming, or full pet cuts.</p>
                   <p>With QC Pet Studies, you&apos;ll graduate with professional-level expertise, ready to groom multiple breeds, perform advanced styles, and even launch a grooming career.</p>
@@ -163,7 +163,7 @@ const HomePage: PageComponent = () => {
               </AccordionItem>
             </Accordion>
             <Accordion>
-              <AccordionItem eventKey={eventKey++} heading="What if I start with DIY grooming and later decide to make it my career?">
+              <AccordionItem eventKey={eventKey++} heading="What if I start with DIY grooming and later decide to make it my career?" isFAQ={true}>
                 <div className="row text-left">
                   <p>You can begin with Paw Parent Academy to build confidence grooming your own dog. If you later decide to pursue professional training, your Paw Parent Academy tuition can be applied toward QC Pet Studies&apos; Dog Grooming Certification Course. You won&apos;t lose your initial investment, and you&apos;ll have a smooth transition into career-level training.</p>
                 </div>

@@ -5,6 +5,8 @@ import { IoMdInfinite } from 'react-icons/io';
 import DTBackgroundImage from './australian-shepherd-attentive.jpg';
 import { OntarioOnlySection } from './ontarioOnlySection';
 import { CourseOutlineSection } from './outlineSection';
+import { Accordion } from '@/components/accordion';
+import { AccordionItem } from '@/components/accordion/accordionItem';
 import { BackgroundImage } from '@/components/backgroundImage';
 import CertificationGoldImage from '@/components/certifications/IDTP-certification-yellow.svg';
 import { GuaranteeSection } from '@/components/guaranteeSection';
@@ -32,6 +34,7 @@ type Props = {
 
 const headerIconSize = 20;
 const iconSize = 36;
+let eventKey = 0;
 
 export const DogTrainingBase: FC<Props> = ({ price, enrollPath, courseCodes, countryCode, provinceCode }) => (
   <>
@@ -144,5 +147,72 @@ export const DogTrainingBase: FC<Props> = ({ price, enrollPath, courseCodes, cou
     <GuaranteeSection className="bg-light" />
 
     <VirtualCommunitySection />
+
+    <section>
+      <div itemScope itemType="https://schema.org/FAQPage">
+        <div className="container">
+          <div className="row justify-content-center">
+            <div className="col-12 col-lg-10 mb-4">
+              <h2 className="mb-5 text-center">Frequently Asked Questions</h2>
+              <Accordion>
+                <AccordionItem eventKey={eventKey++} heading="How can I learn dog training online?" isFAQ={true}>
+                  <div className="row text-left">
+                    <p>QC Pet Studies makes it easy to learn dog training from home with a flexible, self-paced online program. You&apos;ll study through:</p>
+                    <ul className="ps-5">
+                      <li>Step-by-step video tutorials</li>
+                      <li>Interactive reading materials</li>
+                      <li>Hands-on assignments with real dogs</li>
+                    </ul>
+                    <p>Students upload assignment videos that demonstrate their dog training skills, and receive personalized feedback from professional dog trainers. The course covers everything from canine behavior to obedience training, correcting behavior and using positive reinforcement techniques.</p>
+                    <p>When you graduate, you&apos;ll earn a professional Dog Trainer certificate that demonstrates your skills and prepares you for a career in the pet industry.</p>
+                  </div>
+                </AccordionItem>
+              </Accordion>
+              <Accordion>
+                <AccordionItem eventKey={eventKey++} heading="Do I need prior training or experience as a dog trainer before taking this course?" isFAQ={true}>
+                  <div className="row text-left">
+                    <p>No prior professional experience is required! QC&apos;s online Dog Trainer course teaches everything you need to know from the ground up. While having experience with your own dog(s) can be helpful, it&apos;s not necessary to succeed.</p>
+                    <p>You&apos;ll learn science-based training methods, canine behavior, and techniques to teach dogs effectively and humanely.</p>
+                  </div>
+                </AccordionItem>
+              </Accordion>
+              <Accordion>
+                <AccordionItem eventKey={eventKey++} heading="How long will it take to complete my online dog training class?" isFAQ={true}>
+                  <div className="row text-left">
+                    <p>With QC's online courses, you work at your own pace. You decide how much time per week you want to spend developing your training skills. You can complete your dog trainer course and begin booking clients within three months. If you prefer to take your time, you have a full year to complete the course.</p>
+                  </div>
+                </AccordionItem>
+              </Accordion>
+              <Accordion>
+                <AccordionItem eventKey={eventKey++} heading="What methods will I learn in QC’s online dog trainer course?" isFAQ={true}>
+                  <div className="row text-left">
+                    <p>QC&apos;s dog training program is based on science-backed, humane training techniques. You&apos;ll learn to:</p>
+                    <ul className="ps-5">
+                      <li>Analyze canine behavior and teach dogs effectively</li>
+                      <li>Train with positive reinforcement</li>
+                      <li>Build trust and respect between handler and dog</li>
+                    </ul>
+                  </div>
+                </AccordionItem>
+              </Accordion>
+              <Accordion>
+                <AccordionItem eventKey={eventKey++} heading="Where can I work as a dog trainer after I finish this course?" isFAQ={true}>
+                  <div className="row text-left">
+                    <p>QC&apos;s Dog Trainer course prepares you for success in various career paths, including:</p>
+                    <ul className="ps-5">
+                      <li>Working alongside experienced trainers</li>
+                      <li>Establishing an independent dog training business</li>
+                      <li>Teaching obedience or puppy classes</li>
+                      <li>Contributing to dog daycares, boarding facilities, or animal shelters</li>
+                    </ul>
+                    <p>According to the Bureau of Labor Statistics, the average annual salary for a dog trainer is approximately $45,000, with experienced trainers earning more than $65,000 per year.</p>
+                  </div>
+                </AccordionItem>
+              </Accordion>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
   </>
 );
