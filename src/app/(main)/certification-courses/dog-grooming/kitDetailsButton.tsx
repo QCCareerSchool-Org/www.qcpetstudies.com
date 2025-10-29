@@ -4,7 +4,8 @@ import Image from 'next/image';
 import type { FC } from 'react';
 import { Modal } from 'react-bootstrap';
 
-import GroomingKitDetailImage from './grooming-kit-details.jpg';
+import GroomingKitDetailImage from './kit-labelled.jpg';
+import GroomingKitList from '@/components/kitListDG';
 import { useToggle } from '@/hooks/useToggle';
 import { gbpCountry } from '@/lib/currencies';
 
@@ -28,6 +29,7 @@ export const KitDetailsButton: FC<Props> = ({ countryCode }) => {
         <Modal.Header closeButton>Dog Grooming Kit</Modal.Header>
         <Modal.Body>
           <Image src={GroomingKitDetailImage} alt="grooming kit details" sizes="100vw" style={{ width: '100%', height: 'auto' }} />
+          <GroomingKitList />
         </Modal.Body>
         <Modal.Footer>
           <small>The kit will be sent to students with accounts in good standing after completing Submission B. Items in the kit are subject to change. <a href={url} target="_blank" rel="noreferrer">Learn more</a></small>

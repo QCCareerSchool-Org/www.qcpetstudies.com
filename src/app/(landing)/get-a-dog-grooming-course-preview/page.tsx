@@ -149,7 +149,7 @@ const DogGroomingCatalogPage: PageComponent = ({ searchParams }) => {
         </div>
       </section>
 
-      <section className="bg-light pb-0">
+      <section className="pb-0" style={{ backgroundColor: '#E5E5E5' }}>
         <div className="container text-center">
           <div className="row justify-content-center">
             <div className="col-12 col-lg-10">
