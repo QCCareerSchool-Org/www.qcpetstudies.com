@@ -1,6 +1,6 @@
 import type { EducationalOrganization, WithContext } from 'schema-dts';
 
-import { getTelephoneNumber } from './lib/telephone';
+import { getTelephoneNumber } from '../../lib/telephone';
 
 export const qcPetStudiesEducationalOrganization: WithContext<EducationalOrganization> = {
   '@context': 'https://schema.org',
