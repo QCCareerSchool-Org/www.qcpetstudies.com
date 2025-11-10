@@ -42,6 +42,7 @@ export const BrevoForm: FC<Props> = props => {
   const emailAddressRef = useRef<HTMLInputElement>(null);
   const [ firstName, setFirstName ] = useState('');
   const [ lastName, setLastName ] = useState('');
+  const [ city, setCity ] = useState('');
   const [ telephoneNumber, setTelephoneNumber ] = useState<Value>();
   const [ emailAddress, setEmailAddress ] = useState('');
   const [ token, setToken ] = useState<string>();
@@ -58,6 +59,10 @@ export const BrevoForm: FC<Props> = props => {
 
   const handleLastNameChange: ChangeEventHandler<HTMLInputElement> = e => {
     setLastName(e.target.value);
+  };
+
+  const handleCityChange: ChangeEventHandler<HTMLInputElement> = e => {
+    setCity(e.target.value);
   };
 
   const handleTelephoneNumberChange = (value?: Value): void => {
@@ -172,7 +177,8 @@ export const BrevoForm: FC<Props> = props => {
         {!props.placeholders && <label htmlFor={`${id}firstName`} className="form-label">Name</label>}
         <input onChange={handleFirstNameChange} value={firstName} type="text" name="firstName" id={`${id}firstName`} className="form-control" placeholder={props.placeholders ? 'Name' : undefined} autoComplete="given-name" autoCapitalize="words" />
       </div>
-      <input onChange={handleLastNameChange} value={lastName} type="hidden" name="lastName" id={`${id}lastName`} />
+      <input onChange={handleLastNameChange} value={lastName} type="hidden" name="lastName" id={`${id}lastName`} tabIndex={-1} autoComplete="off" />
+      <input onChange={handleCityChange} value={city} type="text" name="city" id={`${id}city`} style={{ display: 'none' }} tabIndex={-1} autoComplete="off" />
       <div className="mb-3">
         {!props.placeholders && <label htmlFor={`${id}emailAddress`} className="form-label">Email <span className="text-primary">*</span></label>}
         <input ref={emailAddressRef} onChange={handleEmailAddressChange} value={emailAddress} type="email" name="emailAddress" id={`${id}emailAddress`} className={`form-control ${styles.emailAddressInput}`} placeholder={props.placeholders ? 'Email *' : undefined} required autoComplete="email" autoCapitalize="none" />
