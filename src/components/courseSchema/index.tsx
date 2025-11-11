@@ -25,7 +25,10 @@ export const CourseSchema: FC<Props> = async ({ courseID, courseCode }) => {
     'url': course.url,
     'name': course.name,
     'description': course.description,
-    'educationalCredentialAwarded': course.certificate,
+    'educationalCredentialAwarded': {
+      '@type': 'EducationalOccupationalCredential',
+      'name': course.certificate,
+    },
     'hasCourseInstance': {
       '@type': 'CourseInstance',
       'courseMode': 'Online',

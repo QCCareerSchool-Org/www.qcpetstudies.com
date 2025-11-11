@@ -50,7 +50,7 @@ const HomePage: PageComponent = () => {
           'description': course.description,
           ...(course.certificate && {
             educationalCredentialAwarded: {
-              '@type': 'EducationalCredential',
+              '@type': 'EducationalOccupationalCredential',
               'name': course.certificate,
             },
           }),
