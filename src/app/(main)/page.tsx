@@ -56,12 +56,11 @@ const HomePage: PageComponent = () => {
           }),
           'provider': {
             '@type': 'EducationalOrganization',
-            'name': 'QC Design School',
+            'name': 'QC Pet Studies',
             'sameAs': [
-              'https://www.linkedin.com/company/qc-career-school',
-              'https://www.facebook.com/QCDesign',
-              'https://www.instagram.com/qcdesignschool',
-              'https://www.youtube.com/@QCDesign',
+              'https://www.facebook.com/qcpetstudies',
+              'https://www.instagram.com/qcpetstudies',
+              'https://www.youtube.com/@qcpetstudies',
             ],
           },
         } as Course,
