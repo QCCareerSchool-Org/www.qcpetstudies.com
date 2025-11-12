@@ -19,7 +19,7 @@ export const CourseSchema: FC<Props> = async ({ courseID, courseCode }) => {
     return null;
   }
 
-  const courseJsonLD = (coursePrice: number): WithContext<Course> => ({
+  const courseJsonLD: WithContext<Course> = {
     '@context': 'https://schema.org',
     '@type': 'Course',
     'url': course.url,
@@ -36,7 +36,7 @@ export const CourseSchema: FC<Props> = async ({ courseID, courseCode }) => {
         '@type': 'Offer',
         'category': 'Course',
         'url': 'https://enroll.qcpetstudies.com/',
-        'price': coursePrice.toFixed(2),
+        'price': price.discountedCost.toFixed(2),
         'priceCurrency': 'USD',
         'availability': 'https://schema.org/InStock',
       },
@@ -50,9 +50,9 @@ export const CourseSchema: FC<Props> = async ({ courseID, courseCode }) => {
         'https://www.youtube.com/@qcpetstudies',
       ],
     },
-  });
+  };
 
   return (
-    <script id={`course-schema-${courseID}`} type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(courseJsonLD(price.cost)) }} />
+    <script id={`course-schema-${courseID}`} type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(courseJsonLD) }} />
   );
 };
