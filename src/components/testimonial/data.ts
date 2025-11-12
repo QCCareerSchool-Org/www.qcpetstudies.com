@@ -6,6 +6,7 @@ import type { CourseCode } from '@/domain/courseCode';
 export type Testimonial = {
   name: string;
   courses: CourseCode[];
+  provinceCode?: string;
   short: string[];
   long: string[];
   image: StaticImageData;

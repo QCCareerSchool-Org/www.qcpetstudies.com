@@ -2,26 +2,26 @@ import type { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 import type { FC, PropsWithChildren } from 'react';
-import type { Course, ItemList, WithContext } from 'schema-dts';
+import type { ItemList, WithContext } from 'schema-dts';
 
 import HowItWorks from './how-it-works.png';
 import MaltipuBegging from './maltipu-begging.jpg';
 import MaltipuJumping from './maltipu-jumping.jpg';
 import styles from './page.module.scss';
-import { qcPetStudiesEducationalOrganization } from './qcPetStudiesEducationalOrganization';
+import { qcPetStudiesEducationalOrganization } from '../../qcPetStudiesEducationalOrganization';
 import type { PageComponent } from '@/app/serverComponent';
 import { BackgroundImage } from '@/components/backgroundImage';
 import IDBSCertificationGold from '@/components/certifications/IDBS-certification-gold.svg';
 import IDCPCertificationGold from '@/components/certifications/IDCP-certification-gold.svg';
 import IDGPCertificationGold from '@/components/certifications/IDGP-certification-gold.svg';
 import IDTPCertificationGold from '@/components/certifications/IDTP-certification-gold.svg';
-import { courses } from '@/components/courseSchema/courseSchemaData';
 import { RibbonInCircle } from '@/components/ribbonInCircle';
 import { TestimonialKaylaTorraville } from '@/components/testimonials/kaylaTorraville';
 import { TestimonialLucaCoppola } from '@/components/testimonials/lucaCoppola';
 import { TestimonialMelodyMason } from '@/components/testimonials/melodyMason';
 import { VirtualCommunitySection } from '@/components/virtualCommunitySection';
 import { WhyChooseQCSection } from '@/components/whyChooseQCSection';
+import { activeCourseCodes, getCourseCertification, getCourseDescription, getCourseName, getCourseUrl } from '@/domain/courseCode';
 import { externship } from '@/lib/externship';
 import { getData } from '@/lib/getData';
 
@@ -36,34 +36,27 @@ export const metadata: Metadata = {
 const HomePage: PageComponent = () => {
   const { countryCode, provinceCode } = getData();
 
-  const jsonLD: WithContext<ItemList> = {
+  const coursesJsonLD: WithContext<ItemList> = {
     '@context': 'https://schema.org',
     '@type': 'ItemList',
-    'itemListElement': Object.values(courses).map(course => {
+    'itemListElement': activeCourseCodes.map((c, i) => {
+      const certification = getCourseCertification(c);
       return {
         '@type': 'ListItem',
-        'position': course.position,
+        'position': i + 1,
         'item': {
           '@type': 'Course',
-          'url': course.url,
-          'name': course.name,
-          'description': course.description,
-          ...(course.certificate && {
-            educationalCredentialAwarded: {
+          'url': getCourseUrl(c),
+          'name': getCourseName(c),
+          'description': getCourseDescription(c),
+          'educationalCredentialAwarded': certification
+            ? {
               '@type': 'EducationalOccupationalCredential',
-              'name': course.certificate,
-            },
-          }),
-          'provider': {
-            '@type': 'EducationalOrganization',
-            'name': 'QC Pet Studies',
-            'sameAs': [
-              'https://www.facebook.com/qcpetstudies',
-              'https://www.instagram.com/qcpetstudies',
-              'https://www.youtube.com/@qcpetstudies',
-            ],
-          },
-        } as Course,
+              'name': certification,
+            }
+            : undefined,
+          'provider': { '@id': '#school' },
+        },
       };
     }),
   };
@@ -71,7 +64,8 @@ const HomePage: PageComponent = () => {
   return (
     <>
       <div>
-        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLD) }} />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(qcPetStudiesEducationalOrganization) }} />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(coursesJsonLD) }} />
         <section className="bg-light">
           <BackgroundImage src={MaltipuJumping} objectPosition="100% 30%" mobile={{ src: MaltipuBegging, breakpoint: 'lg', objectPosition: '50% 100%' }} />
           <div className={`container ${styles.hero}`}>
@@ -202,7 +196,6 @@ const HomePage: PageComponent = () => {
           </div>
         </section>
         <VirtualCommunitySection />
-        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(qcPetStudiesEducationalOrganization) }} />
       </div>
     </>
   );

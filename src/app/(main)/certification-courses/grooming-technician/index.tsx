@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import type { FC } from 'react';
+import { type FC, Suspense } from 'react';
 import { BsCardChecklist, BsPeopleFill, BsScissors } from 'react-icons/bs';
 import { IoMdInfinite } from 'react-icons/io';
 
@@ -9,17 +9,19 @@ import HeroBackgroundImage from './hero-bg.jpg';
 import { KitDetailsButton } from './kitDetailsButton';
 import { OutlineSection } from './outlineSection';
 import { BackgroundImage } from '@/components/backgroundImage';
+import { CourseSchema } from '@/components/courseSchema';
 import { GuaranteeSection } from '@/components/guaranteeSection';
 import { PriceSection } from '@/components/priceSection';
 import { TutorSectionDG } from '@/components/tutorSectionDG';
 import { VirtualCommunitySection } from '@/components/virtualCommunitySection';
+import type { CourseCode } from '@/domain/courseCode';
 import type { Price } from '@/domain/price';
 import GuaranteeIcon from '@/images/course-overview-icons/guarantee.svg';
 import OutlineIcon from '@/images/course-overview-icons/outline.svg';
 import TutorIcon from '@/images/course-overview-icons/tutor.svg';
 import { formatPrice } from '@/lib/formatPrice';
 
-const courseCodes = [ 'gt' ];
+const courseCodes: CourseCode[] = [ 'gt' ];
 const headerIconSize = 20;
 const iconSize = 36;
 
@@ -31,6 +33,7 @@ export type Props = {
 
 export const GroomingTechnicianBase: FC<Props> = ({ gtPrice, dgPrice, enrollPath = '/' }) => (
   <>
+    <Suspense><CourseSchema courseCode={courseCodes[0]} /></Suspense>
     <section className="bg-dark">
       <BackgroundImage src={HeroBackgroundImage} priority objectPosition="right" />
       <div className="container text-center">
