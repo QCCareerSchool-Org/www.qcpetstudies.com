@@ -1,5 +1,4 @@
 import type { Metadata } from 'next';
-import { Suspense } from 'react';
 import { BsCardChecklist, BsPeopleFill } from 'react-icons/bs';
 import { IoMdInfinite } from 'react-icons/io';
 
@@ -46,7 +45,7 @@ const DogCarePage: PageComponent = async () => {
 
   return (
     <>
-      <Suspense><CourseSchema courseCode={courseCodes[0] as CourseCode} /></Suspense>
+      <CourseSchema courseCode={courseCodes[0] as CourseCode} />
       <section id="top" className="bg-dark">
         <BackgroundImage src={HeroBackgroundImage} priority />
         <div className="container text-center">

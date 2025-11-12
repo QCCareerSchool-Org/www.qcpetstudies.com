@@ -5,6 +5,7 @@ import { type CourseCode, getCourseCertification, getCourseDescription, getCours
 import type { PriceQuery } from '@/lib/fetch';
 import { fetchPrice } from '@/lib/fetch';
 import { qcPetStudiesEducationalOrganization } from '@/qcPetStudiesEducationalOrganization';
+import { withSuspense } from '@/withSuspense';
 
 interface Props {
   courseCode: CourseCode;
@@ -12,7 +13,7 @@ interface Props {
   providerId?: string;
 }
 
-export const CourseSchema: FC<Props> = async ({ courseCode, id = '#course', providerId }) => {
+const CourseSchemaInner: FC<Props> = async ({ courseCode, id = '#course', providerId }) => {
   const priceQuery: PriceQuery = { countryCode: 'US', provinceCode: 'MD', courses: [ courseCode ] };
   const price = await fetchPrice(priceQuery);
   if (!price) {
@@ -59,3 +60,6 @@ export const CourseSchema: FC<Props> = async ({ courseCode, id = '#course', prov
 
   return <script id={`course-schema-${courseCode}`} type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(courseJsonLD) }} />;
 };
+
+/** Automatically wrapped in a Suspense boundary */
+export const CourseSchema = withSuspense(CourseSchemaInner);

@@ -1,5 +1,4 @@
 import type { FC } from 'react';
-import { Suspense } from 'react';
 import { BsCardChecklist, BsPeopleFill } from 'react-icons/bs';
 import { IoMdInfinite } from 'react-icons/io';
 
@@ -40,7 +39,7 @@ let eventKey = 0;
 
 export const DogTrainingBase: FC<Props> = ({ price, enrollPath, courseCodes, countryCode, provinceCode }) => (
   <>
-    <Suspense><CourseSchema courseCode={courseCodes[0]} /></Suspense>
+    <CourseSchema courseCode={courseCodes[0] as CourseCode} />
     <section className="bg-dark">
       <BackgroundImage src={DTBackgroundImage} priority />
       <div className="image-overlay-gradient" />

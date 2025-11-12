@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import { type FC, Suspense } from 'react';
+import type { FC } from 'react';
 import { BsCardChecklist, BsPeopleFill, BsScissors } from 'react-icons/bs';
 import { IoMdInfinite } from 'react-icons/io';
 
@@ -33,7 +33,7 @@ export type Props = {
 
 export const GroomingTechnicianBase: FC<Props> = ({ gtPrice, dgPrice, enrollPath = '/' }) => (
   <>
-    <Suspense><CourseSchema courseCode={courseCodes[0]} /></Suspense>
+    <CourseSchema courseCode={courseCodes[0] as CourseCode} />
     <section className="bg-dark">
       <BackgroundImage src={HeroBackgroundImage} priority objectPosition="right" />
       <div className="container text-center">

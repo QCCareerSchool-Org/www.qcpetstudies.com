@@ -1,7 +1,6 @@
 import type { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
-import { Suspense } from 'react';
 import { BsCardChecklist, BsPeopleFill } from 'react-icons/bs';
 import { IoMdInfinite } from 'react-icons/io';
 
@@ -50,7 +49,7 @@ const DogBehaviorPage: PageComponent = async () => {
 
   return (
     <>
-      <Suspense><CourseSchema courseCode={courseCodes[0] as CourseCode} /></Suspense>
+      <CourseSchema courseCode={courseCodes[0] as CourseCode} />
       <section className="bg-dark">
         <BackgroundImage src={HeroBackgroundImage} priority />
         <div className="image-overlay-gradient" />

@@ -1,7 +1,6 @@
 import type { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
-import { Suspense } from 'react';
 
 import StylingBackground from './black-medium-size-poodle.jpg';
 import BreedStylingCertificateImage from './breed-styling-certificate.png';
@@ -35,7 +34,7 @@ const BreedStylingPage: PageComponent = async () => {
   }
 
   return <>
-    <Suspense><CourseSchema courseCode={courseCodes[0] as CourseCode} /></Suspense>
+    <CourseSchema courseCode={courseCodes[0] as CourseCode} />
     <section className="bg-dark">
       <BackgroundImage src={StylingBackground} priority />
       <div className="image-overlay-gradient" />

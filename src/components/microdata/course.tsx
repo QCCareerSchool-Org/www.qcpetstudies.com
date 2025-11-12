@@ -4,13 +4,14 @@ import type { CourseCode } from '@/domain/courseCode';
 import { getCourseDescription, getCourseName, getCourseUrl, getCourseWorkload } from '@/domain/courseCode';
 import type { PriceQuery } from '@/lib/fetch';
 import { fetchPrice } from '@/lib/fetch';
+import { withSuspense } from '@/withSuspense';
 
 type Props = {
   courseCode: CourseCode;
   itemProp?: string;
 };
 
-export const CourseMicrodata: FC<Props> = async ({ courseCode, itemProp }) => {
+const CourseMicrodataInner: FC<Props> = async ({ courseCode, itemProp }) => {
   const priceQuery: PriceQuery = { countryCode: 'US', provinceCode: 'MD', courses: [ courseCode ] };
   const price = await fetchPrice(priceQuery);
   if (!price) {
@@ -41,3 +42,6 @@ export const CourseMicrodata: FC<Props> = async ({ courseCode, itemProp }) => {
     </span>
   );
 };
+
+/** Automatically wrapped in a Suspense boundary */
+export const CourseMicrodata = withSuspense(CourseMicrodataInner);
