@@ -8,7 +8,7 @@ import ReadMore from './readMore';
 import styles from '@/components/testimonial/index.module.css';
 import { Star } from '@/components/testimonial/star';
 import type { CourseCode } from '@/domain/courseCode';
-import { getCourseDescription } from '@/domain/courseCode';
+import { getCourseName } from '@/domain/courseCode';
 
 interface ShowcaseProps {
   id?: string;
@@ -30,7 +30,7 @@ export const StudentShowcaseSection: FC<{ student: ShowcaseProps }> = ({ student
         <div className="col-12 col-sm-10 col-md-8 col-lg-6 mb-2 d-flex flex-column">
           <div>
             <h3 className="mb-1">{student.name}</h3>
-            <h5 className="mb-4">{getCourseDescription(student.courses[0])}</h5>
+            <h5 className="mb-4">{getCourseName(student.courses[0])}</h5>
           </div>
           <div className={`${styles.stars}`}>
             {Array(5).fill(null).map((_, i) => <Star key={i} filled={i < student.stars} />)}

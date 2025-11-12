@@ -1,55 +1,61 @@
 import type { FC } from 'react';
 import type { Course, WithContext } from 'schema-dts';
 
-import { courses } from './courseSchemaData';
-import type { CourseCode } from '@/domain/courseCode';
+import { type CourseCode, getCourseCertification, getCourseDescription, getCourseName, getCourseSubjects, getCourseUrl, getCourseWorkload } from '@/domain/courseCode';
 import type { PriceQuery } from '@/lib/fetch';
 import { fetchPrice } from '@/lib/fetch';
+import { qcPetStudiesEducationalOrganization } from '@/qcPetStudiesEducationalOrganization';
 
 interface Props {
-  courseID: string;
   courseCode: CourseCode;
+  id?: string;
+  providerId?: string;
 }
 
-export const CourseSchema: FC<Props> = async ({ courseID, courseCode }) => {
-  const course = courses[courseID];
+export const CourseSchema: FC<Props> = async ({ courseCode, id = '#course', providerId }) => {
   const priceQuery: PriceQuery = { countryCode: 'US', provinceCode: 'MD', courses: [ courseCode ] };
   const price = await fetchPrice(priceQuery);
   if (!price) {
     return null;
   }
 
-  const courseJsonLD = (coursePrice: number): WithContext<Course> => ({
+  const certification = getCourseCertification(courseCode);
+
+  const courseJsonLD: WithContext<Course> = {
     '@context': 'https://schema.org',
     '@type': 'Course',
-    'url': course.url,
-    'name': course.name,
-    'description': course.description,
-    'educationalCredentialAwarded': course.certificate,
+    '@id': id,
+    courseCode,
+    'url': getCourseUrl(courseCode),
+    'name': getCourseName(courseCode),
+    'description': getCourseDescription(courseCode),
+    'educationalCredentialAwarded': certification ? {
+      '@type': 'EducationalOccupationalCredential',
+      'name': certification,
+    } : undefined,
+    'availableLanguage': 'en',
+    'teaches': getCourseSubjects(courseCode),
     'hasCourseInstance': {
       '@type': 'CourseInstance',
-      'courseMode': 'Online',
-      'offers': {
-        '@type': 'Offer',
-        'category': 'Course',
-        'url': 'https://enroll.qcpetstudies.com/',
-        'price': coursePrice.toFixed(2),
-        'priceCurrency': 'USD',
-        'availability': 'https://schema.org/InStock',
+      'courseMode': 'online',
+      'courseWorkload': getCourseWorkload(courseCode),
+    },
+    'offers': {
+      '@type': 'Offer',
+      'price': price.discountedCost.toFixed(2),
+      'priceCurrency': price.currency.code,
+      'availability': 'https://schema.org/InStock',
+      'url': 'https://enroll.qcpetstudies.com',
+    },
+    'provider': providerId
+      ? { '@id': providerId }
+      : {
+        '@type': 'EducationalOrganization',
+        '@id': 'https://www.qcpetstudies.com/#school',
+        'name': 'QC Pet Studies',
+        'sameAs': 'sameAs' in qcPetStudiesEducationalOrganization ? qcPetStudiesEducationalOrganization.sameAs : undefined,
       },
-    },
-    'provider': {
-      '@type': 'EducationalOrganization',
-      'name': 'QC Pet Studies',
-      'sameAs': [
-        'https://www.facebook.com/qcpetstudies',
-        'https://www.instagram.com/qcpetstudies',
-        'https://www.youtube.com/@qcpetstudies',
-      ],
-    },
-  });
+  };
 
-  return (
-    <script id={`course-schema-${courseID}`} type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(courseJsonLD(price.cost)) }} />
-  );
+  return <script id={`course-schema-${courseCode}`} type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(courseJsonLD) }} />;
 };
