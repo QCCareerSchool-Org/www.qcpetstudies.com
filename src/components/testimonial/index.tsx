@@ -1,5 +1,5 @@
 import type { FC } from 'react';
-import { memo, useMemo } from 'react';
+import { memo, Suspense, useMemo } from 'react';
 
 import { testimonials } from './data';
 import styles from './index.module.css';
@@ -7,13 +7,16 @@ import { Star } from './star';
 import { Title } from './title';
 import { ImageCircle } from '@/components/ImageCircle';
 import { CourseMicrodata } from '@/components/microdata/course';
-import type { CourseCode } from '@/domain/courseCode';
+import { type CourseCode, getCourseName } from '@/domain/courseCode';
 
 type Props = {
   id: string;
-  courseCodes?: string[];
+  courseCodes?: CourseCode[];
+  showProvinceCode?: boolean;
+  schemaCourseId?: string;
 };
 
+/** sort in alphabetical order, except dg is always first */
 export const courseSort = (a: CourseCode, b: CourseCode): number => {
   if (a === b) {
     return 0;
@@ -27,7 +30,7 @@ export const courseSort = (a: CourseCode, b: CourseCode): number => {
   return a.localeCompare(b);
 };
 
-export const Testimonial: FC<Props> = memo(({ id, courseCodes }) => {
+export const Testimonial: FC<Props> = memo(({ id, courseCodes, showProvinceCode = false, schemaCourseId }) => {
   const testimonial = useMemo(() => {
     const found = testimonials[id];
     if (!found) {
@@ -56,15 +59,20 @@ export const Testimonial: FC<Props> = memo(({ id, courseCodes }) => {
 
   return (
     <blockquote className={styles.testimonial} itemScope itemType="https://schema.org/Review">
-      {testimonial.courses.length > 0
-        ? <CourseMicrodata itemProp="itemReviewed" courseCode={testimonial.courses[0]} />
-        : (
-          <span itemProp="itemReviewed" itemScope itemType="https://schema.org/EducationalOrganization">
-            <meta itemProp="@id" content="https://www.qceventplanning.com/#school" />
-            <meta itemProp="url" content="https://www.qceventplanning.com" />
-            <meta itemProp="name" content="QC Event School" />
+      {schemaCourseId
+        ? (
+          <span itemProp="itemReviewed" itemScope itemType="https://schema.org/Course" itemID={schemaCourseId}>
+            <meta itemProp="name" content={getCourseName(courseCodes?.[0] ?? 'dg')} />
           </span>
-        )}
+        )
+        : testimonial.courses.length > 0
+          ? <Suspense><CourseMicrodata itemProp="itemReviewed" courseCode={testimonial.courses[0]} /></Suspense>
+          : (
+            <span itemProp="itemReviewed" itemScope itemType="https://schema.org/EducationalOrganization" itemID="https://www.qcpetstudies.com/#school">
+              <link itemProp="url" href="https://www.qceventplanning.com" />
+              <meta itemProp="name" content="QC Event School" />
+            </span>
+          )}
       <span itemProp="reviewRating" itemScope itemType="https://schema.org/Rating">
         <meta itemProp="ratingValue" content={testimonial.stars.toString()} />
         <meta itemProp="worstRating" content="0" />
@@ -84,7 +92,7 @@ export const Testimonial: FC<Props> = memo(({ id, courseCodes }) => {
           <ImageCircle itemProp src={testimonial.image} alt={testimonial.name} imagePositionX={testimonial.imagePositionX} imagePositionY={testimonial.imagePositionY} />
         </div>
         <cite>
-          <span className={styles.attribution} itemProp="name">{testimonial.name}</span>{testimonial.courses.length > 0 && <><br /><Title testimonial={testimonial} /></>}
+          <span className={styles.attribution} itemProp="name">{testimonial.name}</span>{showProvinceCode && typeof testimonial.provinceCode !== 'undefined' && <>, {testimonial.provinceCode}</>}{testimonial.courses.length > 0 && <><br /><Title testimonial={testimonial} /></>}
         </cite>
       </footer>
     </blockquote>

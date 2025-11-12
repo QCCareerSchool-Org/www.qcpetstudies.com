@@ -9,12 +9,13 @@ import FirstAidBackground from './hero-first-aid-bg.jpg';
 import type { PageComponent } from '@/app/serverComponent';
 import { BackgroundImage } from '@/components/backgroundImage';
 import { PriceSection } from '@/components/priceSection';
+import type { CourseCode } from '@/domain/courseCode';
 import FirstAidLogo from '@/images/first-aid-logo.svg';
 import type { PriceQuery } from '@/lib/fetch';
 import { fetchPrice } from '@/lib/fetch';
 import { getData } from '@/lib/getData';
 
-const courseCodes = [ 'fa' ];
+const courseCodes: CourseCode[] = [ 'fa' ];
 
 export const metadata: Metadata = {
   title: 'First Aid for Groomers Course',
@@ -31,7 +32,6 @@ const FirstAidForGroomersPage: PageComponent = async () => {
   }
 
   return <>
-
     <section className="bg-dark">
       <BackgroundImage src={FirstAidBackground} priority />
       <div className="image-overlay-gradient" />

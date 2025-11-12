@@ -1,7 +1,7 @@
 import type { FC } from 'react';
 
 import type { CourseCode } from '@/domain/courseCode';
-import { getCourseDescription, getCourseName, getCourseUrl } from '@/domain/courseCode';
+import { getCourseDescription, getCourseName, getCourseUrl, getCourseWorkload } from '@/domain/courseCode';
 import type { PriceQuery } from '@/lib/fetch';
 import { fetchPrice } from '@/lib/fetch';
 
@@ -17,25 +17,26 @@ export const CourseMicrodata: FC<Props> = async ({ courseCode, itemProp }) => {
     return null;
   }
 
+  const workload = getCourseWorkload(courseCode);
+
   return (
-    <span itemProp={itemProp} itemScope itemType="https://schema.org/Course">
-      <meta itemProp="@id" content={`https://www.qceventplanning.com/courses/#${courseCode}`} />
-      <meta itemProp="url" content={getCourseUrl(courseCode)} />
+    <span itemProp={itemProp} itemScope itemType="https://schema.org/Course" itemID="#course">
+      <link itemProp="url" href={getCourseUrl(courseCode)} />
       <meta itemProp="name" content={getCourseName(courseCode)} />
       <meta itemProp="description" content={getCourseDescription(courseCode)} />
-      <span itemProp="provider" itemScope itemType="https://schema.org/EducationalOrganization">
-        <meta itemProp="@id" content="https://www.qceventplanning.com/#school" />
-        <meta itemProp="url" content="https://www.qceventplanning.com" />
+      <span itemProp="provider" itemScope itemType="https://schema.org/EducationalOrganization" itemID="https://www.qceventplanning.com/#school">
+        <link itemProp="url" href="https://www.qceventplanning.com" />
         <meta itemProp="name" content="QC Event School" />
       </span>
       <span itemProp="offers" itemScope itemType="https://schema.org/Offer">
-        <meta itemProp="category" content="Paid" />
-        <meta itemProp="priceCurrency" content="USD" />
-        <meta itemProp="price" content={price.cost.toFixed(2)} />
+        <meta itemProp="priceCurrency" content={price.currency.code} />
+        <meta itemProp="price" content={price.discountedCost.toFixed(2)} />
+        <link itemProp="url" href="https://enroll.qcpetstudies.com" />
+        <meta itemProp="availability" content="https://schema.org/InStock" />
       </span>
       <span itemProp="hasCourseInstance" itemScope itemType="https://schema.org/CourseInstance">
-        <meta itemProp="courseMode" content="Online" />
-        <meta itemProp="courseWorkload" content="PT40H" />
+        <meta itemProp="courseMode" content="online" />
+        {workload && <meta itemProp="courseWorkload" content={workload} />}
       </span>
     </span>
   );
