@@ -32,7 +32,7 @@ export const metadata: Metadata = {
 
 const headerIconSize = 20;
 const iconSize = 36;
-const courseCodes = [ 'dd' ];
+const courseCodes: CourseCode[] = [ 'dd' ];
 
 const DogCarePage: PageComponent = async () => {
   let eventKey = 0;
@@ -45,7 +45,7 @@ const DogCarePage: PageComponent = async () => {
 
   return (
     <>
-      <CourseSchema courseCode={courseCodes[0] as CourseCode} />
+      <CourseSchema courseCode={courseCodes[0]} showPrice />
       <section id="top" className="bg-dark">
         <BackgroundImage src={HeroBackgroundImage} priority />
         <div className="container text-center">

@@ -33,7 +33,7 @@ export type Props = {
 
 export const GroomingTechnicianBase: FC<Props> = ({ gtPrice, dgPrice, enrollPath = '/' }) => (
   <>
-    <CourseSchema courseCode={courseCodes[0] as CourseCode} />
+    <CourseSchema courseCode={courseCodes[0]} showPrice />
     <section className="bg-dark">
       <BackgroundImage src={HeroBackgroundImage} priority objectPosition="right" />
       <div className="container text-center">

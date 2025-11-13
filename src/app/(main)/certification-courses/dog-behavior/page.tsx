@@ -29,8 +29,8 @@ import { getData } from '@/lib/getData';
 const headerIconSize = 20;
 const iconSize = 36;
 
-const courseCodes = [ 'dc' ];
-const linkCourseCodes = [ 'dt', 'dc' ];
+const courseCodes: CourseCode[] = [ 'dc' ];
+const linkCourseCodes: CourseCode[] = [ 'dt', 'dc' ];
 
 export const metadata: Metadata = {
   title: 'Dog Behavior Course',
@@ -49,7 +49,7 @@ const DogBehaviorPage: PageComponent = async () => {
 
   return (
     <>
-      <CourseSchema courseCode={courseCodes[0] as CourseCode} />
+      <CourseSchema courseCode={courseCodes[0]} showPrice />
       <section className="bg-dark">
         <BackgroundImage src={HeroBackgroundImage} priority />
         <div className="image-overlay-gradient" />

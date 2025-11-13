@@ -39,7 +39,7 @@ let eventKey = 0;
 
 export const DogTrainingBase: FC<Props> = ({ price, enrollPath, courseCodes, countryCode, provinceCode }) => (
   <>
-    <CourseSchema courseCode={courseCodes[0] as CourseCode} />
+    <CourseSchema courseCode={courseCodes[0]} showPrice />
     <section className="bg-dark">
       <BackgroundImage src={DTBackgroundImage} priority />
       <div className="image-overlay-gradient" />

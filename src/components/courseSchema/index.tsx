@@ -2,6 +2,7 @@ import type { FC } from 'react';
 import type { Course, WithContext } from 'schema-dts';
 
 import { type CourseCode, getCourseCertification, getCourseDescription, getCourseName, getCourseSubjects, getCourseUrl, getCourseWorkload } from '@/domain/courseCode';
+import type { Price } from '@/domain/price';
 import type { PriceQuery } from '@/lib/fetch';
 import { fetchPrice } from '@/lib/fetch';
 import { qcPetStudiesEducationalOrganization } from '@/qcPetStudiesEducationalOrganization';
@@ -11,13 +12,17 @@ interface Props {
   courseCode: CourseCode;
   id?: string;
   providerId?: string;
+  showPrice?: boolean;
 }
 
-const CourseSchemaInner: FC<Props> = async ({ courseCode, id = '#course', providerId }) => {
-  const priceQuery: PriceQuery = { countryCode: 'US', provinceCode: 'MD', courses: [ courseCode ] };
-  const price = await fetchPrice(priceQuery);
-  if (!price) {
-    return null;
+const CourseSchemaInner: FC<Props> = async ({ courseCode, id = '#course', providerId, showPrice }) => {
+  let price: Price | undefined;
+  if (showPrice) {
+    const priceQuery: PriceQuery = { countryCode: 'US', provinceCode: 'MD', courses: [ courseCode ] };
+    price = await fetchPrice(priceQuery);
+    if (!price) {
+      return null;
+    }
   }
 
   const certification = getCourseCertification(courseCode);
@@ -41,13 +46,6 @@ const CourseSchemaInner: FC<Props> = async ({ courseCode, id = '#course', provid
       'courseMode': 'online',
       'courseWorkload': getCourseWorkload(courseCode),
     },
-    'offers': {
-      '@type': 'Offer',
-      'price': price.discountedCost.toFixed(2),
-      'priceCurrency': price.currency.code,
-      'availability': 'https://schema.org/InStock',
-      'url': 'https://enroll.qcpetstudies.com',
-    },
     'provider': providerId
       ? { '@id': providerId }
       : {
@@ -57,6 +55,16 @@ const CourseSchemaInner: FC<Props> = async ({ courseCode, id = '#course', provid
         'sameAs': 'sameAs' in qcPetStudiesEducationalOrganization ? qcPetStudiesEducationalOrganization.sameAs : undefined,
       },
   };
+
+  if (price) {
+    courseJsonLD.offers = {
+      '@type': 'Offer',
+      'price': price.discountedCost.toFixed(2),
+      'priceCurrency': price.currency.code,
+      'availability': 'https://schema.org/InStock',
+      'url': 'https://enroll.qcpetstudies.com',
+    };
+  }
 
   return <script id={`course-schema-${courseCode}`} type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(courseJsonLD) }} />;
 };

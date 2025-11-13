@@ -17,7 +17,7 @@ import type { PriceQuery } from '@/lib/fetch';
 import { fetchPrice } from '@/lib/fetch';
 import { getData } from '@/lib/getData';
 
-const courseCodes = [ 'ds' ];
+const courseCodes: CourseCode[] = [ 'ds' ];
 
 export const metadata: Metadata = {
   title: 'Breed Styling Workshop',
@@ -34,7 +34,7 @@ const BreedStylingPage: PageComponent = async () => {
   }
 
   return <>
-    <CourseSchema courseCode={courseCodes[0] as CourseCode} />
+    <CourseSchema courseCode={courseCodes[0]} showPrice />
     <section className="bg-dark">
       <BackgroundImage src={StylingBackground} priority />
       <div className="image-overlay-gradient" />
