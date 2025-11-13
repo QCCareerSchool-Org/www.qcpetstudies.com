@@ -1,7 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import type { FC } from 'react';
-import { Suspense } from 'react';
 import { BsCalendar, BsChatSquare } from 'react-icons/bs';
 import { IoMdInfinite } from 'react-icons/io';
 
@@ -43,7 +42,7 @@ export const DogGroomingBase: FC<Props> = ({ dgPrice, dePrice, enrollPath, cours
 
   return (
     <>
-      <Suspense><CourseSchema courseCode={courseCode} /></Suspense>
+      <CourseSchema courseCode={courseCode} showPrice />
       <section id="top" className="bg-dark" style={{ paddingTop: '6rem', paddingBottom: '6rem' }}>
         <BackgroundImage src={DesktopHero} objectPosition="50% 50%" mobile={{ src: MobileHero, breakpoint: 'md' }} priority />
         <div className="container text-center text-md-start">
