@@ -79,7 +79,7 @@ export const Testimonial: FC<Props> = memo(({ id, courseCodes, showProvinceCode 
         <meta itemProp="bestRating" content="5" />
       </span>
       <div className={styles.stars}>{Array(5).fill(null).map((_, i) => <Star key={i} filled={i < testimonial.stars} />)}</div>
-      <div>
+      <div itemProp="reviewBody">
         {testimonial.short.map((q, i, a) => {
           if (i < a.length - 1) {
             return <p key={i} className={styles.quotation}>&ldquo;{q}</p>;
