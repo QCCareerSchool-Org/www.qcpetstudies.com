@@ -7,7 +7,7 @@ import { Star } from './star';
 import { Title } from './title';
 import { ImageCircle } from '@/components/ImageCircle';
 import { CourseMicrodata } from '@/components/microdata/course';
-import { type CourseCode, getCourseName } from '@/domain/courseCode';
+import type { CourseCode } from '@/domain/courseCode';
 
 type Props = {
   id: string;
@@ -61,9 +61,7 @@ export const Testimonial: FC<Props> = memo(({ id, courseCodes, showProvinceCode 
     <blockquote className={styles.testimonial} itemScope itemType="https://schema.org/Review">
       {schemaCourseId
         ? (
-          <span itemProp="itemReviewed" itemScope itemType="https://schema.org/Course" itemID={schemaCourseId}>
-            <meta itemProp="name" content={getCourseName(courseCodes?.[0] ?? 'dg')} />
-          </span>
+          <meta itemProp="itemReviewed" itemScope itemID={schemaCourseId} />
         )
         : testimonial.courses.length > 0
           ? <CourseMicrodata itemProp="itemReviewed" courseCode={testimonial.courses[0]} />
