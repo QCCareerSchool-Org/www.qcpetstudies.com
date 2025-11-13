@@ -11,9 +11,12 @@ import type { CourseCode } from '@/domain/courseCode';
 
 type Props = {
   id: string;
-  courseCodes?: string[];
+  courseCodes?: CourseCode[];
+  showProvinceCode?: boolean;
+  schemaCourseId?: string;
 };
 
+/** sort in alphabetical order, except dg is always first */
 export const courseSort = (a: CourseCode, b: CourseCode): number => {
   if (a === b) {
     return 0;
@@ -27,7 +30,7 @@ export const courseSort = (a: CourseCode, b: CourseCode): number => {
   return a.localeCompare(b);
 };
 
-export const Testimonial: FC<Props> = memo(({ id, courseCodes }) => {
+export const Testimonial: FC<Props> = memo(({ id, courseCodes, showProvinceCode = false, schemaCourseId }) => {
   const testimonial = useMemo(() => {
     const found = testimonials[id];
     if (!found) {
@@ -58,7 +61,7 @@ export const Testimonial: FC<Props> = memo(({ id, courseCodes }) => {
 
   return (
     <blockquote className={styles.testimonial}>
-      <Suspense><TestimonialSchemaData courseCode={testimonialCourseCode} name={testimonial.name} rating={testimonial.stars} reviewText={testimonial.short?.[0] ?? ''} /></Suspense>
+      <Suspense><TestimonialSchemaData courseCode={testimonialCourseCode} name={testimonial.name} rating={testimonial.stars} reviewText={testimonial.short?.[0] ?? ''} schemaCourseId={schemaCourseId} /></Suspense>
       <div className={styles.stars}>{Array(5).fill(null).map((_, i) => <Star key={i} filled={i < testimonial.stars} />)}</div>
       <div>
         {testimonial.short.map((q, i, a) => {
@@ -73,7 +76,7 @@ export const Testimonial: FC<Props> = memo(({ id, courseCodes }) => {
           <ImageCircle itemProp src={testimonial.image} alt={testimonial.name} imagePositionX={testimonial.imagePositionX} imagePositionY={testimonial.imagePositionY} />
         </div>
         <cite>
-          <span className={styles.attribution}>{testimonial.name}</span>{testimonial.courses.length > 0 && <><br /><Title testimonial={testimonial} /></>}
+          <span className={styles.attribution}>{testimonial.name}</span>{showProvinceCode && typeof testimonial.provinceCode !== 'undefined' && <>, {testimonial.provinceCode}</>}{testimonial.courses.length > 0 && <><br /><Title testimonial={testimonial} /></>}
         </cite>
       </footer>
     </blockquote>

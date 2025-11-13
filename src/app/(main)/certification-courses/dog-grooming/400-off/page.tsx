@@ -8,7 +8,7 @@ import type { PriceQuery } from '@/lib/fetch';
 import { fetchPrice } from '@/lib/fetch';
 import { getData } from '@/lib/getData';
 
-const courseCodes: CourseCode[] = [ 'dg' ];
+const courseCode: CourseCode = 'dg';
 
 export const metadata: Metadata = {
   title: 'Dog Grooming Course',
@@ -32,7 +32,7 @@ const DogGrooming400OffPage: PageComponent = async () => {
   return (
     <>
       <DeadlineFunnelScript />
-      <DogGroomingBase dgPrice={dgPrice} dePrice={dePrice} enrollPath="/grooming-400-off" courseCodes={courseCodes} />
+      <DogGroomingBase dgPrice={dgPrice} dePrice={dePrice} enrollPath="/grooming-400-off" courseCode={courseCode} />
     </>
   );
 };

@@ -1,11 +1,11 @@
 import type { EducationalOrganization, WithContext } from 'schema-dts';
 
-import { getTelephoneNumber } from '../../lib/telephone';
+import { getTelephoneNumber } from './lib/telephone';
 
 export const qcPetStudiesEducationalOrganization: WithContext<EducationalOrganization> = {
   '@context': 'https://schema.org',
   '@type': 'EducationalOrganization',
-  '@id': 'https://www.qcpetstudies.com/#school',
+  '@id': '#school',
   'url': 'https://www.qcpetstudies.com',
   'name': 'QC Pet Studies',
   'logo': 'https://www.qcpetstudies.com/logo.svg',
@@ -13,11 +13,13 @@ export const qcPetStudiesEducationalOrganization: WithContext<EducationalOrganiz
   'foundingDate': '2017-03-13T09:00:00-05:00',
   'parentOrganization': {
     '@id': 'https://www.qccareerschool.com/#school',
+    'name': 'QC Career School',
     'url': 'https://www.qccareerschool.com',
   },
   'sameAs': [
     'https://www.facebook.com/qcpetstudies',
-    'https://twitter.com/qcpetstudies',
+    'https://www.tiktok.com/@qcpetstudies',
+    'https://www.youtube.com/@qcpetstudies',
     'https://www.instagram.com/qcpetstudies',
   ],
   'address': [
