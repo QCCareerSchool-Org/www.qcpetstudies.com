@@ -50,8 +50,6 @@ const AgreementGBPage: PageComponent = () => (
       <li>Returned items must be unused and in their original condition. A full refund cannot be issued if any items have been used or are not in their original condition.</li>
     </ul>
     <p>A full refund cannot be granted if you have already submitted course work to your tutor for grading. In this case, a partial tuition refund may be offered instead.</p>
-    <h3>Non-Refundable Materials</h3>
-    <p>If you are enrolled in Dog Grooming, please note that the clippers and attachment combs that are provided as part of the Professional Dog Grooming Course cannot be refunded if the box has been opened (seal broken).  These have a value of $200 (US). If you wish to withdraw from the course but have opened these materials, you will be required to pay the cost of those materials (and keep them), while returning all other unused items.</p>
     <h3>1-Year Money-Back Guarantee</h3>
     <p>QC Pet Studies offers a 1-year money-back guarantee on the Dog Grooming course. If, after graduation, you do not earn the equivalent of your course tuition in professional fees, you will be eligible for a full refund of your tuition. In order to qualify for this refund, you must demonstrate that you have made a reasonable effort to obtain clients.</p>
     <p>Graduates who request a refund under the 1-year guarantee must contact the School <strong>at least 13 months and no later than 18 months after graduation</strong> and provide proof that they</p>

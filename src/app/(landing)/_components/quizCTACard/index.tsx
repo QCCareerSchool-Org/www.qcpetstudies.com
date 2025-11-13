@@ -1,5 +1,5 @@
 'use client';
-import type { FC } from 'react';
+import type { FC, MouseEventHandler } from 'react';
 import React, { useEffect, useRef, useState } from 'react';
 
 import styles from './index.module.scss';
@@ -11,7 +11,13 @@ type Props = {
 
 export const QuizCTACard: FC<Props> = ({ header, url }) => {
   const [ isVisible, setIsVisible ] = useState(false);
+  const [ showIFrame, setShowIFrame ] = useState(false);
   const cardRef = useRef<HTMLDivElement>(null);
+
+  const handleClick: MouseEventHandler = e => {
+    e.preventDefault();
+    setShowIFrame(true);
+  };
 
   useEffect(() => {
     if(!('IntersectionObserver' in window)) {
@@ -51,8 +57,11 @@ export const QuizCTACard: FC<Props> = ({ header, url }) => {
         <div className={`${styles.pulseDot} mt-4`} aria-hidden="true" />
         <h3 className="mb-3 text-navy">{header}</h3>
         <p className="mb-3">Take this 30-second quiz to unlock offers and advice tailored to your goals.</p>
-        <a href={url} className="btn btn-secondary mb-4" target="_blank" rel="noopener noreferrer">Take the 30-Second Quiz</a>
+        <a onClick={handleClick} href={url} className="btn btn-secondary mb-4" target="_blank" rel="noopener noreferrer">Take the 30-Second Quiz</a>
       </div>
+      {showIFrame && (
+        <iframe src={url} width="100%" height="860" />
+      )}
     </div>
   );
 };
