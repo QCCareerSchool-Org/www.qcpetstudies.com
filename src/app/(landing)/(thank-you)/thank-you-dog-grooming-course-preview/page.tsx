@@ -72,33 +72,33 @@ const ThankYouCoursePreviewPage: PageComponent = async ({ searchParams }) => {
   );
 };
 
-const getQuizUrl = (emailAddress?: string, countryCode?: string, provinceCode?: string): string => {
-  const baseURL = 'https://ng295qu8zyk.typeform.com/to/a7b3Ue5I';
+// const getQuizUrl = (emailAddress?: string, countryCode?: string, provinceCode?: string): string => {
+//   const baseURL = 'https://ng295qu8zyk.typeform.com/to/a7b3Ue5I';
 
-  if (typeof emailAddress !== 'undefined' || typeof countryCode !== 'undefined' || typeof provinceCode !== 'undefined') {
-    const data: Record<string, string> = {};
+//   if (typeof emailAddress !== 'undefined' || typeof countryCode !== 'undefined' || typeof provinceCode !== 'undefined') {
+//     const data: Record<string, string> = {};
 
-    if (emailAddress) {
-      // eslint-disable-next-line camelcase
-      data.email_address = emailAddress;
-    }
+//     if (emailAddress) {
+//       // eslint-disable-next-line camelcase
+//       data.email_address = emailAddress;
+//     }
 
-    if (countryCode) {
-      // eslint-disable-next-line camelcase
-      data.country_code = countryCode;
-    }
+//     if (countryCode) {
+//       // eslint-disable-next-line camelcase
+//       data.country_code = countryCode;
+//     }
 
-    if (provinceCode) {
-      // eslint-disable-next-line camelcase
-      data.province_code = provinceCode;
-    }
+//     if (provinceCode) {
+//       // eslint-disable-next-line camelcase
+//       data.province_code = provinceCode;
+//     }
 
-    const queryString = new URLSearchParams(data).toString();
+//     const queryString = new URLSearchParams(data).toString();
 
-    return `${baseURL}#${queryString}`;
-  }
+//     return `${baseURL}#${queryString}`;
+//   }
 
-  return baseURL;
-};
+//   return baseURL;
+// };
 
 export default ThankYouCoursePreviewPage;
