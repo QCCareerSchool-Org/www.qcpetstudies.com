@@ -1,5 +1,5 @@
 import { randomInt } from 'crypto';
-import { cookies, headers } from 'next/headers';
+import { cookies, headers, type UnsafeUnwrappedCookies, type UnsafeUnwrappedHeaders } from 'next/headers';
 
 type Data = {
   testGroup: number;
@@ -8,11 +8,11 @@ type Data = {
 };
 
 export const getData = (): Data => {
-  const headerList = headers();
+  const headerList = (headers() as unknown as UnsafeUnwrappedHeaders);
   const countryCode = headerList.get('x-vercel-ip-country') ?? 'US';
   const provinceCode = headerList.get('x-vercel-ip-country-region');
 
-  const cookieStore = cookies();
+  const cookieStore = (cookies() as unknown as UnsafeUnwrappedCookies);
   const testGroupCookie = parseInt(cookieStore.get('testGroup')?.value ?? '', 10);
 
   const testGroup = isNaN(testGroupCookie) ? randomInt(1, 12) : testGroupCookie;

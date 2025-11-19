@@ -34,7 +34,8 @@ export const metadata: Metadata = {
   alternates: { canonical: '/get-a-dog-training-course-preview' },
 };
 
-const DogTrainingCatalogPage: PageComponent = ({ searchParams }) => {
+const DogTrainingCatalogPage: PageComponent = async props => {
+  const searchParams = await props.searchParams;
   const { countryCode } = getData();
   const gclid = getParam(searchParams.gclid);
   const msclkid = getParam(searchParams.msclkid);
@@ -43,7 +44,7 @@ const DogTrainingCatalogPage: PageComponent = ({ searchParams }) => {
   const utmCampaign = getParam(searchParams.utm_campaign);
   const utmContent = getParam(searchParams.utm_content);
   const utmTerm = getParam(searchParams.utm_term);
-  const headerList = headers();
+  const headerList = await headers();
   const referrer = headerList.get('referer');
 
   return (

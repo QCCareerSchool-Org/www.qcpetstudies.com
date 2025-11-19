@@ -30,7 +30,8 @@ const brevoListId = 31;
 const brevoEmailTemplateId = 1660;
 const brevoTelephoneListId = 55;
 
-const DogGroomingCatalogPage: PageComponent = ({ searchParams }) => {
+const DogGroomingCatalogPage: PageComponent = async props => {
+  const searchParams = await props.searchParams;
   const gclid = getParam(searchParams.gclid);
   const msclkid = getParam(searchParams.msclkid);
   const utmSource = getParam(searchParams.utm_source);
@@ -38,7 +39,7 @@ const DogGroomingCatalogPage: PageComponent = ({ searchParams }) => {
   const utmCampaign = getParam(searchParams.utm_campaign);
   const utmContent = getParam(searchParams.utm_content);
   const utmTerm = getParam(searchParams.utm_term);
-  const headerList = headers();
+  const headerList = await headers();
   const referrer = headerList.get('referer');
 
   const { countryCode, provinceCode } = getData();

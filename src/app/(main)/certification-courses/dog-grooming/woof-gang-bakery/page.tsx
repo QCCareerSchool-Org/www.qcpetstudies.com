@@ -38,7 +38,8 @@ export const metadata: Metadata = {
   alternates: { canonical: '/certification-courses/dog-grooming/woof-gang-bakery' },
 };
 
-const Page: PageComponent = async ({ searchParams }) => {
+const Page: PageComponent = async props => {
+  const searchParams = await props.searchParams;
   const { countryCode, provinceCode } = getData();
   const priceQuery: PriceQuery = { countryCode, provinceCode: provinceCode ?? undefined, courses: courseCodes, options: { promoCode: 'WOOFGANG', school: 'QC Pet Studies' } };
   const price = await fetchPrice(priceQuery);

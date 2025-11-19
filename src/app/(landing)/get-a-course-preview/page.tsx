@@ -22,7 +22,8 @@ export const metadata: Metadata = {
   alternates: { canonical: '/get-a-course-preview' },
 };
 
-const DogGroomingCatalogPage: PageComponent = ({ searchParams }) => {
+const DogGroomingCatalogPage: PageComponent = async props => {
+  const searchParams = await props.searchParams;
   const { countryCode } = getData();
   const gclid = getParam(searchParams.gclid);
   const msclkid = getParam(searchParams.msclkid);
@@ -31,7 +32,7 @@ const DogGroomingCatalogPage: PageComponent = ({ searchParams }) => {
   const utmCampaign = getParam(searchParams.utm_campaign);
   const utmContent = getParam(searchParams.utm_content);
   const utmTerm = getParam(searchParams.utm_term);
-  const headerList = headers();
+  const headerList = await headers();
   const referrer = headerList.get('referer');
 
   return (
