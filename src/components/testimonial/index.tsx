@@ -1,12 +1,12 @@
 import type { FC } from 'react';
-import { memo, useMemo } from 'react';
+import { memo, Suspense, useMemo } from 'react';
 
 import { testimonials } from './data';
 import styles from './index.module.css';
+import { TestimonialSchemaData } from './jsonLD';
 import { Star } from './star';
 import { Title } from './title';
 import { ImageCircle } from '@/components/ImageCircle';
-import { CourseMicrodata } from '@/components/microdata/course';
 import type { CourseCode } from '@/domain/courseCode';
 
 type Props = {
@@ -57,27 +57,13 @@ export const Testimonial: FC<Props> = memo(({ id, courseCodes, showProvinceCode 
     return;
   }
 
+  const testimonialCourseCode = testimonial.courses.length > 0 ? testimonial.courses[0] : undefined;
+
   return (
-    <blockquote className={styles.testimonial} itemScope itemType="https://schema.org/Review">
-      {schemaCourseId
-        ? (
-          <meta itemProp="itemReviewed" itemScope itemID={schemaCourseId} />
-        )
-        : testimonial.courses.length > 0
-          ? <CourseMicrodata itemProp="itemReviewed" courseCode={testimonial.courses[0]} />
-          : (
-            <span itemProp="itemReviewed" itemScope itemType="https://schema.org/EducationalOrganization" itemID="https://www.qcpetstudies.com/#school">
-              <link itemProp="url" href="https://www.qcpetstudies.com" />
-              <meta itemProp="name" content="QC Pet Studies" />
-            </span>
-          )}
-      <span itemProp="reviewRating" itemScope itemType="https://schema.org/Rating">
-        <meta itemProp="ratingValue" content={testimonial.stars.toString()} />
-        <meta itemProp="worstRating" content="0" />
-        <meta itemProp="bestRating" content="5" />
-      </span>
+    <blockquote className={styles.testimonial}>
+      <Suspense><TestimonialSchemaData courseCode={testimonialCourseCode} name={testimonial.name} rating={testimonial.stars} reviewText={testimonial.short?.[0] ?? ''} schemaCourseId={schemaCourseId} /></Suspense>
       <div className={styles.stars}>{Array(5).fill(null).map((_, i) => <Star key={i} filled={i < testimonial.stars} />)}</div>
-      <div itemProp="reviewBody">
+      <div>
         {testimonial.short.map((q, i, a) => {
           if (i < a.length - 1) {
             return <p key={i} className={styles.quotation}>&ldquo;{q}</p>;
@@ -85,12 +71,12 @@ export const Testimonial: FC<Props> = memo(({ id, courseCodes, showProvinceCode 
           return <p key={i} className={styles.quotation}>&ldquo;{q}&rdquo;</p>;
         })}
       </div>
-      <footer className={styles.footer} itemProp="author" itemScope itemType="https://schema.org/Person">
+      <footer className={styles.footer}>
         <div className={styles.imageWrapper}>
           <ImageCircle itemProp src={testimonial.image} alt={testimonial.name} imagePositionX={testimonial.imagePositionX} imagePositionY={testimonial.imagePositionY} />
         </div>
         <cite>
-          <span className={styles.attribution} itemProp="name">{testimonial.name}</span>{showProvinceCode && typeof testimonial.provinceCode !== 'undefined' && <>, {testimonial.provinceCode}</>}{testimonial.courses.length > 0 && <><br /><Title testimonial={testimonial} /></>}
+          <span className={styles.attribution}>{testimonial.name}</span>{showProvinceCode && typeof testimonial.provinceCode !== 'undefined' && <>, {testimonial.provinceCode}</>}{testimonial.courses.length > 0 && <><br /><Title testimonial={testimonial} /></>}
         </cite>
       </footer>
     </blockquote>
