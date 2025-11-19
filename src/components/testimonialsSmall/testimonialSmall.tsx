@@ -4,6 +4,7 @@ import type { FC } from 'react';
 import { ImageCircle } from '../ImageCircle';
 import FiveStarsPrimary from '@/images/five-stars-primary.svg';
 import FiveStarsSecondary from '@/images/five-stars-secondary.svg';
+import Image from 'next/image';
 
 type Props = {
   size?: number;
@@ -24,8 +25,8 @@ export const TestimonialSmall: FC<Props> = ({ size = 192, starSize = 180, quotat
     </div>
     <div className="mb-2">
       {variant === 'secondary'
-        ? <FiveStarsSecondary width="183" height="31" alt="5 out of 5" style={{ maxWidth: '100%', width: starSize, height: 'auto' }} />
-        : <FiveStarsPrimary width="183" height="31" alt="5 out of 5" style={{ maxWidth: '100%', width: starSize, height: 'auto' }} />
+        ? <Image src={FiveStarsSecondary} width="183" height="31" alt="5 out of 5" style={{ maxWidth: '100%', width: starSize, height: 'auto' }} />
+        : <Image src={FiveStarsPrimary} width="183" height="31" alt="5 out of 5" style={{ maxWidth: '100%', width: starSize, height: 'auto' }} />
       }
     </div>
     <p className="lead strong mb-2"><strong>&ldquo;{quotation}&rdquo;</strong></p>

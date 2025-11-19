@@ -11,9 +11,9 @@ export const metadata: Metadata = {
   title: 'Page Not Found',
 };
 
-const NotFoundPage: PageComponent = () => {
+const NotFoundPage: PageComponent = async () => {
   const date = new Date().getTime();
-  const { countryCode } = getData();
+  const { countryCode } = await getData();
 
   return (
     <>

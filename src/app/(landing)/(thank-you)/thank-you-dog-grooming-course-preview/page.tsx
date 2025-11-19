@@ -30,7 +30,7 @@ const ThankYouCoursePreviewPage: PageComponent = async props => {
   const firstName = getParam(searchParams.firstName);
   const lastName = getParam(searchParams.lastName);
   const emailAddress = getParam(searchParams.emailAddress);
-  const countryCode = getParam(searchParams.countryCode) ?? getData().countryCode;
+  const countryCode = getParam(searchParams.countryCode) ?? (await getData()).countryCode;
   const provinceCode = getParam(searchParams.provinceCode);
   const headerList = await headers();
   const ipAddress = headerList.get('x-real-ip') ?? undefined;

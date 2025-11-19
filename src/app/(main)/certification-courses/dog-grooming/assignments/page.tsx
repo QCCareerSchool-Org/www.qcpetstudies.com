@@ -8,6 +8,7 @@ import { Bar } from '@/components/bar';
 import CameraIcon from '@/images/camera.svg';
 import CheckedIcon from '@/images/checked.svg';
 import RedDesktopIcon from '@/images/desktop-red.svg';
+import Image from 'next/image';
 
 export const metadata = {
   title: 'Your Grooming Assignments',
@@ -44,21 +45,21 @@ const DogGroomingAssignmentsPage: PageComponent = () => (
         <div className="row justify-content-center g-4">
           <div className="col-12 col-md-4">
             <div className="mb-2">
-              <RedDesktopIcon alt="Desktop icon" style={{ maxWidth: '100%', height: 'auto', objectFit: 'cover', objectPosition: 'center' }} />
+              <Image src={RedDesktopIcon} alt="Desktop icon" style={{ maxWidth: '100%', height: 'auto', objectFit: 'cover', objectPosition: 'center' }} />
             </div>
             <h3>Study <br className="d-none d-md-inline d-lg-none" />Online</h3>
             <p className="mb-0">Study your material online. Master the course theory and develop an understanding of proper practices, techniques, and industry knowledge.</p>
           </div>
           <div className="col-12 col-md-4">
             <div className="mb-2">
-              <CameraIcon alt="Camera icon" style={{ maxWidth: '100%', height: 'auto', objectFit: 'cover', objectPosition: 'center' }} />
+              <Image src={CameraIcon} alt="Camera icon" style={{ maxWidth: '100%', height: 'auto', objectFit: 'cover', objectPosition: 'center' }} />
             </div>
             <h3>Complete <br className="d-none d-md-inline d-lg-none" />Assignments</h3>
             <p className="mb-0">Your theory assignments are completed online by simply filling out the assignment template. For practical assignments, you'll submit clear photos and videos of your work.</p>
           </div>
           <div className="col-12 col-md-4">
             <div className="mb-2">
-              <CheckedIcon alt="Checked icon" style={{ maxWidth: '100%', height: 'auto', objectFit: 'cover', objectPosition: 'center' }} />
+              <Image src={CheckedIcon} alt="Checked icon" style={{ maxWidth: '100%', height: 'auto', objectFit: 'cover', objectPosition: 'center' }} />
             </div>
             <h3>Receive <br className="d-none d-md-inline d-lg-none" />Feedback</h3>
             <p className="mb-0">Your tutor reviews your work and provides detailed feedback, which you'll use to improve on your next unit. you'll receive a letter grade for each unit based on your knowledge and technical skills.</p>

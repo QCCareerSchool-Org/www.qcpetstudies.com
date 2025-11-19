@@ -16,6 +16,7 @@ import { Logo } from '@/components/logo';
 import { getAddress } from '@/lib/address';
 import { gbpCountry } from '@/lib/currencies';
 import { getTelephoneNumber } from '@/lib/telephone';
+import Image from 'next/image';
 
 type Props = {
   countryCode: string;
@@ -52,16 +53,16 @@ export const Footer: FC<Props> = ({ countryCode }) => {
           <div className={`${styles.contactCol} col-12 col-sm-4 col-lg-2 mb-4 mb-sm-0 text-center text-lg-start`}>
             <h2 className="h4 text-primary mb-sm-4">Contact Us</h2>
             <ul className={styles.spacedList}>
-              <li><Link href="/about/about-qc-pet-studies"><InfoIcon width={16} height={16} className={styles.icon} />About QC</Link></li>
-              <li><a href="mailto:info@qcpetstudies.com"><EmailIcon width={16} height={16} className={styles.icon} />Email Us</a></li>
-              <li><ChatLink><ChatIcon width={16} height={16} className={styles.icon} />Chat</ChatLink></li>
-              <li><a href={`tel:${phoneNumber}`}><PhoneIcon width={16} height={16} className={styles.icon} />{phoneNumber}</a></li>
+              <li><Link href="/about/about-qc-pet-studies"><Image src={InfoIcon} width={16} height={16} className={styles.icon} alt="" />About QC</Link></li>
+              <li><a href="mailto:info@qcpetstudies.com"><Image src={EmailIcon} width={16} height={16} className={styles.icon} alt="" />Email Us</a></li>
+              <li><ChatLink><Image src={ChatIcon} width={16} height={16} className={styles.icon} alt="" />Chat</ChatLink></li>
+              <li><a href={`tel:${phoneNumber}`}><Image src={PhoneIcon} width={16} height={16} className={styles.icon} alt="" />{phoneNumber}</a></li>
             </ul>
           </div>
           <div className={`${styles.stayInformedCol} col-12 col-sm-4 col-lg-2 text-center text-lg-start`}>
             <h2 className="h4 text-primary">Stay Informed</h2>
             <div className={styles.blogLogoWrapper}>
-              <SniffinArroundLogo width={155} height={40} alt="Sniffin' Around Blog" style={{ maxWidth: '100%', height: 'auto' }} />
+              <Image src={SniffinArroundLogo} width={155} height={40} alt="Sniffin' Around Blog" style={{ maxWidth: '100%', height: 'auto' }} />
             </div>
             <ul>
               <li><Link href="/blog/category/grooming">Grooming</Link></li>

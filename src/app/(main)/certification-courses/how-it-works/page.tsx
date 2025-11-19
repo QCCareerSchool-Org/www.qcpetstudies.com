@@ -117,7 +117,7 @@ const HowItWorksPage: PageComponent = () => (
         <div className="row justify-content-center">
           <div className="col-12 col-lg-8">
             <div className="mb-2">
-              <GraduationCertificateImage alt="IDTP™ Certification logo" height="180" width="180" style={{ maxWidth: '100%', height: 'auto' }} />
+              <Image src={GraduationCertificateImage} alt="IDTP™ Certification logo" height="180" width="180" style={{ maxWidth: '100%', height: 'auto' }} />
             </div>
             <h2>Your <strong>Graduation</strong></h2>
             <p>Once you've completed your course and your tuition has been paid in full, you'll be all set to graduate. Your professional certificate will be sent straight to your home!</p>

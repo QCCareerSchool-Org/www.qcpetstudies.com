@@ -14,6 +14,7 @@ import { TutorSectionDT } from '@/components/tutorSectionDT';
 import type { PriceQuery } from '@/lib/fetch';
 import { fetchPrice } from '@/lib/fetch';
 import { getData } from '@/lib/getData';
+import Image from 'next/image';
 
 export const metadata: Metadata = {
   title: 'Professional Dog Trainer Course',
@@ -23,7 +24,7 @@ export const metadata: Metadata = {
 const courseCodes = [ 'dt' ];
 
 const DogTrainingCoursePreviewPage: PageComponent = async () => {
-  const { countryCode, provinceCode } = getData();
+  const { countryCode, provinceCode } = await getData();
   const priceQuery: PriceQuery = { countryCode, provinceCode: provinceCode ?? undefined, courses: courseCodes };
   const price = await fetchPrice(priceQuery);
   if (!price) {
@@ -79,7 +80,7 @@ const DogTrainingCoursePreviewPage: PageComponent = async () => {
       <div className="container">
         <div className="d-flex flex-column flex-md-row justify-contents-center align-items-center">
           <div className="flex-shrink-0 mb-4 mb-md-0 me-md-4">
-            <IDTPCertificationLogo width={200} height={200} alt="IDTP International Dog Training Professional logo" style={{ maxWidth: '100%', height: 'auto' }} />
+            <Image src={IDTPCertificationLogo} width={200} height={200} alt="IDTP International Dog Training Professional logo" style={{ maxWidth: '100%', height: 'auto' }} />
           </div>
           <div className="text-center text-md-start">
             <h2>Your <strong>Certification</strong></h2>

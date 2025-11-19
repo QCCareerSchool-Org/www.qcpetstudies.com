@@ -15,8 +15,8 @@ export const metadata: Metadata = {
   alternates: { canonical: '/about/faq' },
 };
 
-const FAQPage: PageComponent = () => {
-  const { countryCode, provinceCode } = getData();
+const FAQPage: PageComponent = async () => {
+  const { countryCode, provinceCode } = await getData();
 
   return (
     <>

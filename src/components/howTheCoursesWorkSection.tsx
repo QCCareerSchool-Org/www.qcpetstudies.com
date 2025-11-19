@@ -2,6 +2,7 @@ import type { FC } from 'react';
 import { BsCalendarCheck, BsCheckCircle, BsFillCloudArrowDownFill } from 'react-icons/bs';
 
 import MagnifyingGLassImage from '@/images/icon-magnifying-glass-2.svg';
+import Image from 'next/image';
 
 type Props = {
   className?: string;
@@ -24,7 +25,7 @@ export const HowTheCoursesWorkSection: FC<Props> = ({ className }) => (
         </div>
         <div className="col-12 col-sm-8 col-md-6 col-lg-3 mb-4 mb-md-0">
           <div className="mb-3">
-            <MagnifyingGLassImage alt="Magnifying Glass Icon" height="50" width="50" style={{ maxWidth: '100%', height: 'auto' }} />
+            <Image src={MagnifyingGLassImage} alt="Magnifying Glass Icon" height="50" width="50" style={{ maxWidth: '100%', height: 'auto' }} />
           </div>
           <h3>Review Your <br className="d-none d-lg-inline" /><strong>Feedback</strong></h3>
           <p className="mb-0">Get audio feedback from your tutor, a professional dog groomer, after each unit you submit.</p>

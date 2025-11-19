@@ -42,7 +42,7 @@ const DogGroomingCatalogPage: PageComponent = async props => {
   const headerList = await headers();
   const referrer = headerList.get('referer');
 
-  const { countryCode, provinceCode } = getData();
+  const { countryCode, provinceCode } = await getData();
 
   return (
     <>
@@ -102,17 +102,17 @@ const DogGroomingCatalogPage: PageComponent = async props => {
               <h2>How the Courses Work</h2>
             </div>
             <div className="col-12 col-sm-10 col-md-8 col-lg-4 mb-4 mb-lg-0">
-              <Step1EnrollImage alt="Enroll today" style={{ maxWidth: '100%', height: 'auto' }} />
+              <Image src={Step1EnrollImage} alt="Enroll today" style={{ maxWidth: '100%', height: 'auto' }} />
               <p className="lead mb-2">Enroll Today &amp; Access Your Course Materials</p>
               <p className="mb-0">Your course materials are always available online and are always being updated with the latest industry standards. Refer to your updated training guides throughout your career!</p>
             </div>
             <div className="col-12 col-sm-10 col-md-8 col-lg-4 mb-4 mb-lg-0">
-              <Step2SubmitImage alt="Complete assignment and submit" style={{ maxWidth: '100%', height: 'auto' }} />
+              <Image src={Step2SubmitImage} alt="Complete assignment and submit" style={{ maxWidth: '100%', height: 'auto' }} />
               <p className="lead mb-2">Complete Assignments &amp; Review Feedback</p>
               <p className="mb-0">Complete your theoretical and practical assignments. Receive advice and detailed feedback from your tutor after every unit you complete. Review your tutor's advice to improve your skills for the next unit.</p>
             </div>
             <div className="col-12 col-sm-10 col-md-8 col-lg-4">
-              <Step3CertificateImage alt="Get your certificate" style={{ maxWidth: '100%', height: 'auto' }} />
+              <Image src={Step3CertificateImage} alt="Get your certificate" style={{ maxWidth: '100%', height: 'auto' }} />
               <p className="lead mb-2">Graduate as an International Dog Grooming Professional&trade;</p>
               <p className="mb-0">Receive your IDGP&trade; certification and your career as a professional dog groomer. Enjoy lifetime access to your course materials. Be protected by our 1-year money-back guarantee.</p>
             </div>
@@ -141,7 +141,7 @@ const DogGroomingCatalogPage: PageComponent = async props => {
         <div className="container text-center">
           <div className="row justify-content-center">
             <div className="col-12 col-lg-10">
-              <FirstAidLogo alt="First Aid course logo" style={{ maxWidth: '100%', height: 'auto' }} />
+              <Image src={FirstAidLogo} alt="First Aid course logo" style={{ maxWidth: '100%', height: 'auto' }} />
               <h2>Free First Aid Course</h2>
               <p className="lead">Enroll in the Dog Grooming course and get the First Aid for Dog Groomers course <strong>FREE! ($348 value)</strong></p>
               <p className="mb-0">Being trained in pet first aid prepares you to respond to emergencies and to maintain a safe grooming environment. In this course, you'll learn how to prevent injuries and how to respond to emergency situations in your grooming salon.</p>

@@ -6,6 +6,7 @@ import { Modal } from 'react-bootstrap';
 import styles from './index.module.scss';
 import MapleLeafIcon from '@/components/icons/maple-leaf.svg';
 import { useTaxCreditPopup } from '@/hooks/useTaxCreditPopup';
+import Image from 'next/image';
 
 export const TaxCreditsModal: FC = () => {
   const [ show, toggle ] = useTaxCreditPopup();
@@ -16,7 +17,7 @@ export const TaxCreditsModal: FC = () => {
 
   return (
     <Modal show={show} onHide={handleHide}>
-      <Modal.Header closeButton><strong><MapleLeafIcon height="22" className="me-2" />Canadian Tax Credits</strong></Modal.Header>
+      <Modal.Header closeButton><strong><Image src={MapleLeafIcon} height="22" className="me-2" alt="" />Canadian Tax Credits</strong></Modal.Header>
       <Modal.Body>
         <p>QC has proudly been in business since 1984.</p>
         <p><strong>As a certified educational institution</strong> with Employment and Social Development Canada (ESDC), we'll be sending you a T2202 tax receipt for the course fees you paid during the year.</p>

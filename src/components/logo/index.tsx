@@ -1,7 +1,9 @@
 import type { FC } from 'react';
+import Image from 'next/image';
 
 import LogoInverseImage from './logo-inverse.svg';
 import LogoImage from './logo.svg';
+
 
 type Props = {
   height: number;
@@ -14,8 +16,8 @@ export const Logo: FC<Props> = ({ height, inverse }) => {
   return (
     <>
       {inverse
-        ? <LogoInverseImage alt="QC Pet Studies" style={style} />
-        : <LogoImage alt="QC Pet Studies" style={style} />
+        ? <Image src={LogoInverseImage} alt="QC Pet Studies" style={style} />
+        : <Image src={LogoImage} alt="QC Pet Studies" style={style} />
       }
     </>
   );

@@ -5,6 +5,7 @@ import { BackgroundImage } from '@/components/backgroundImage';
 import { FormCard } from '@/components/formCard';
 import { FormWrapper } from '@/components/formWrapper';
 import LockIcon from '@/components/icons/q-lock.svg';
+import Image from 'next/image';
 
 type Props = {
   course?: string;
@@ -34,7 +35,7 @@ export const ThankYouSection: FC<Props> = ({ course, heroSrc, mobileHeroSrc, ema
             <FormCard>
               <div style={{ margin: '3rem 0' }}>
                 <div className="text-primary" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: 100, height: 100, borderRadius: 50, border: '1px solid #E5E7EB', background: 'white', margin: '0 auto 2rem' }}>
-                  <LockIcon height="50" />
+                  <Image src={LockIcon} height="50" alt="" />
                 </div>
                 <h1 className="h4 mb-4 text-navy">You Unlocked Your Preview!</h1>
                 <FormWrapper>

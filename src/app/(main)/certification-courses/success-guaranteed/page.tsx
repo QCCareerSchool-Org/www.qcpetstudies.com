@@ -24,7 +24,7 @@ export const metadata: Metadata = {
 };
 
 const SuccessGuaranteedPage: PageComponent = async () => {
-  const { countryCode, provinceCode } = getData();
+  const { countryCode, provinceCode } = await getData();
   const priceQuery: PriceQuery = { countryCode, provinceCode: provinceCode ?? undefined, courses: courseCodes };
   const price = await fetchPrice(priceQuery);
   if (!price) {
@@ -53,18 +53,10 @@ const SuccessGuaranteedPage: PageComponent = async () => {
               <Link href="/about/about-qc-pet-studies#guarantee" className="btn btn-outline-light">Find Out More</Link>
             </div>
             <div className="col-12 col-lg-3 mb-4">
-              <Image
-                src={QcDayGuaratnteeLogo as StaticImageData}
-                alt="21-day money-back guaratntee logo"
-                style={{ maxWidth: '100%', height: 'auto' }}
-              />
+              <Image src={QcDayGuaratnteeLogo} alt="21-day money-back guaratntee logo" style={{ maxWidth: '100%', height: 'auto' }} />
             </div>
             <div className="col-12 col-lg-3 mb-4">
-              <Image
-                src={QcYearGuaratnteeLogo as StaticImageData}
-                alt="1-year money-back guaratntee logo"
-                style={{ maxWidth: '100%', height: 'auto' }}
-              />
+              <Image src={QcYearGuaratnteeLogo} alt="1-year money-back guaratntee logo" style={{ maxWidth: '100%', height: 'auto' }} />
             </div>
           </div>
           <a href="https://enroll.qcpetstudies.com" className="btn btn-light">Enroll Today</a>

@@ -36,7 +36,7 @@ export const metadata: Metadata = {
 
 const DogTrainingCatalogPage: PageComponent = async props => {
   const searchParams = await props.searchParams;
-  const { countryCode } = getData();
+  const { countryCode } = await getData();
   const gclid = getParam(searchParams.gclid);
   const msclkid = getParam(searchParams.msclkid);
   const utmSource = getParam(searchParams.utm_source);
@@ -113,42 +113,42 @@ const DogTrainingCatalogPage: PageComponent = async props => {
           <div className="row justify-content-center g-4">
             <div className="col-6 col-md-4">
               <div className="mb-3">
-                <BookmarkIcon />
+                <Image src={BookmarkIcon} alt="" />
               </div>
               <h3 className="h5">Study at Your Own Pace</h3>
               Learn online anytime, from anywhere. Start with a 21-day money-back guarantee.
             </div>
             <div className="col-6 col-md-4">
               <div className="mb-3">
-                <HomeSmileIcon />
+                <Image src={HomeSmileIcon} alt="" />
               </div>
               <h3 className="h5">Train Real Dogs at Home</h3>
               Complete hands-on assignments and receive personalized feedback from expert mentors.
             </div>
             <div className="col-6 col-md-4">
               <div className="mb-3">
-                <MessageCheckIcon />
+                <Image src={MessageCheckIcon} alt="" />
               </div>
               <h3 className="h5">Learn from Industry Experts</h3>
               Master proven, science-backed techniques used by today's top professional dog trainers.
             </div>
             <div className="col-6 col-md-4">
               <div className="mb-3">
-                <CertificationIcon />
+                <Image src={CertificationIcon} alt="" />
               </div>
               <h3 className="h5">Earn a Recognized Certification</h3>
               Graduate with your IDTP™ designation and start your career as a professional dog trainer.
             </div>
             <div className="col-6 col-md-4">
               <div className="mb-3">
-                <BarChartIcon />
+                <Image src={BarChartIcon} alt="" />
               </div>
               <h3 className="h5">Build Your Business Skills</h3>
               Discover how to market your services, attract clients, and grow a thriving dog training business.
             </div>
             <div className="col-6 col-md-4">
               <div className="mb-3">
-                <LoopIcon />
+                <Image src={LoopIcon} alt="" />
               </div>
               <h3 className="h5">Access Lifetime Support</h3>
               Stay connected with lifetime access, continuous updates, and a virtual student community.
