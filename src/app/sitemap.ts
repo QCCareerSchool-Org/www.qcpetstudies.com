@@ -11,7 +11,7 @@ const getAppDirectoryPages = async (filePath: string = 'src/app'): Promise<Metad
     const fullname = path.join(filePath, f);
     const stat = await fs.stat(fullname);
     if (stat.isDirectory() && !stat.isSymbolicLink()) {
-      result.push(...await getAppDirectoryPages(fullname));
+      result.push(...(await getAppDirectoryPages(fullname)));
     }
     if (stat.isFile() && (f.endsWith('page.tsx') || f.endsWith('page.jsx'))) {
       const url = getUrl(filePath);
