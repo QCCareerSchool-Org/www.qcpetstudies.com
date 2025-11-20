@@ -2,7 +2,7 @@ import type { School } from '@/domain/school';
 import { isSchool } from '@/domain/school';
 
 export type RawAward = {
-  submissionId: string;
+  submissionId: string | number;
   courseName: string;
   schoolName: School;
   unitLetter: string;
@@ -10,11 +10,11 @@ export type RawAward = {
   /** student name */
   name: string;
   /** string date */
-  created: string;
+  created: string | null;
 };
 
 export type Award = {
-  submissionId: string;
+  submissionId: string | number;
   courseName: string;
   schoolName: School;
   unitLetter: string;
@@ -22,16 +22,16 @@ export type Award = {
   /** student name */
   name: string;
   /** string date */
-  created: Date;
+  created: Date | null;
 };
 
 export const isRawAward = (obj: unknown): obj is RawAward => {
   return typeof obj === 'object' && obj !== null &&
-    'submissionId' in obj && typeof obj.submissionId === 'string' &&
+    'submissionId' in obj && (typeof obj.submissionId === 'string' || typeof obj.submissionId === 'number') &&
     'courseName' in obj && typeof obj.courseName === 'string' &&
     'schoolName' in obj && typeof obj.schoolName === 'string' && isSchool(obj.schoolName) &&
     'unitLetter' in obj && typeof obj.unitLetter === 'string' &&
     'grade' in obj && typeof obj.grade === 'string' &&
     'name' in obj && typeof obj.name === 'string' &&
-    'created' in obj && typeof obj.created === 'string';
+    'created' in obj && (typeof obj.created === 'string' || obj.created === null);
 };
