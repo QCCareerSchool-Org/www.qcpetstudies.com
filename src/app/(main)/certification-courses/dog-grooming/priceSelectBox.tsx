@@ -5,10 +5,10 @@ import { useId } from 'react';
 
 import styles from './priceSelectBox.module.scss';
 
-type Props = {
+interface Props {
   checked: boolean;
   onChecked: () => void;
-};
+}
 
 export const PriceSelectBox: FC<PropsWithChildren<Props>> = ({ checked, onChecked, children }) => {
   const id = useId();

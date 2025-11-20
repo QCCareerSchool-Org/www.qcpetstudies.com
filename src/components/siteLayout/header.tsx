@@ -5,10 +5,10 @@ import { SecondaryNav } from './secondaryNav';
 import { CountDownTimer } from '@/components/countDownTimer';
 import { MainNav } from '@/components/siteLayout/mainNav';
 
-type Props = {
+interface Props {
   date: number;
   countryCode: string;
-};
+}
 
 export const Header: FC<Props> = ({ date, countryCode }) => {
   return (

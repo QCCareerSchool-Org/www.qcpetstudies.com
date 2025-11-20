@@ -7,12 +7,12 @@ import type { PriceQuery } from '@/lib/fetch';
 import { fetchPrice } from '@/lib/fetch';
 import { withSuspense } from '@/withSuspense';
 
-type Props = {
+interface Props {
   courseCode: CourseCode;
   itemProp?: string;
   showPrice?: boolean;
   itemID?: string;
-};
+}
 
 const CourseMicrodataInner: FC<Props> = async ({ courseCode, itemProp, showPrice, itemID = '#course' }) => {
   let price: Price | undefined;

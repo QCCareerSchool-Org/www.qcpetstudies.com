@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Image from 'next/image';
 import Link from 'next/link';
 import { BsBook } from 'react-icons/bs';
 
@@ -14,7 +15,6 @@ import { TutorSectionDT } from '@/components/tutorSectionDT';
 import type { PriceQuery } from '@/lib/fetch';
 import { fetchPrice } from '@/lib/fetch';
 import { getData } from '@/lib/getData';
-import Image from 'next/image';
 
 export const metadata: Metadata = {
   title: 'Professional Dog Trainer Course',

@@ -9,9 +9,9 @@ import { FaCog, FaCut, FaFolderOpen } from 'react-icons/fa';
 import { Flag } from '@/components/flag';
 import { Logo } from '@/components/logo';
 
-type Props = {
+interface Props {
   countryCode: string;
-};
+}
 
 export const MainNav: FC<Props> = ({ countryCode }) => {
   const [ key, setKey ] = useState(0);

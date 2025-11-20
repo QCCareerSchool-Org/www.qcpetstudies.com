@@ -151,7 +151,7 @@ const normalizeZipCode = (zipCode: string, countryCode: string): string => {
 
 type ActionSource = 'email' | 'website' | 'app' | 'phone_call' | 'chat' | 'physical_store' | 'system_generated' | 'business_messaging' | 'other';
 
-type UserData = {
+interface UserData {
   /** email address (hashing required) */
   em: string | string[];
   /** telephone number (hashing required) */
@@ -182,23 +182,23 @@ type UserData = {
   fbc?: string;
   /** Facebook browser id (do not hash) */
   fbp?: string;
-};
+}
 
-type LeadConversion = {
+interface LeadConversion {
   event_name: 'Lead';
   event_time: number;
   action_source: ActionSource;
   user_data: UserData;
   event_source_url?: string;
   event_id: string;
-};
+}
 
-type CustomData = {
+interface CustomData {
   value: number;
   currency: 'CAD' | 'USD' | 'GBP' | 'AUD' | 'NZD';
-};
+}
 
-type PurchaseConversion = {
+interface PurchaseConversion {
   event_name: 'Purchase';
   event_time: number;
   action_source: ActionSource;
@@ -206,4 +206,4 @@ type PurchaseConversion = {
   custom_data: CustomData;
   event_source_url?: string;
   event_id: string;
-};
+}

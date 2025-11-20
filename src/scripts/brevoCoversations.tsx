@@ -1,9 +1,9 @@
 import Script from 'next/script';
 import type { FC } from 'react';
 
-type Props = {
+interface Props {
   conversationsId: string;
-};
+}
 
 export const BrevoConversations: FC<Props> = ({ conversationsId }) => (
   <Script id="brevoConversations" dangerouslySetInnerHTML={{ __html: getScript(conversationsId) }} />

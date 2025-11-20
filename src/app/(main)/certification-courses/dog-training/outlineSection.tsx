@@ -10,9 +10,9 @@ import DogTrainingBusinessImage from './part-4.jpg';
 import { Accordion } from '@/components/accordion';
 import { AccordionItem } from '@/components/accordion/accordionItem';
 
-type Props = {
+interface Props {
   className?: string;
-};
+}
 
 export const CourseOutlineSection: FC<Props> = ({ className }) => {
   let eventKey = 0;

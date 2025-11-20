@@ -9,10 +9,9 @@ export const ScrollPositionProvider: FC<PropsWithChildren> = ({ children }) => {
   const [ state, dispatch ] = useState(0);
 
   useEffect(() => {
-    queueMicrotask(() => {
-      dispatch(window.scrollY);
-    });
-    const handleScroll = (): void => dispatch(window.scrollY);
+    // eslint-disable-next-line react-hooks/set-state-in-effect
+    dispatch(window.scrollY);
+    const handleScroll = (): void => { dispatch(window.scrollY); };
     window.addEventListener('scroll', handleScroll);
     return () => {
       window.removeEventListener('scroll', handleScroll);

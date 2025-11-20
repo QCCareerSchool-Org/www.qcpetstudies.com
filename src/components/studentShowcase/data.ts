@@ -3,14 +3,14 @@ import type { StaticImageData } from 'next/image';
 import * as Images from './images';
 import type { CourseCode } from '@/domain/courseCode';
 
-export type Student = {
+export interface Student {
   id?: string;
   name: string;
   courses: CourseCode[];
   description: string;
   image: StaticImageData;
   stars: 0 | 1 | 2 | 3 | 4 | 5;
-};
+}
 
 export const students: Record<string, Student> = {
   'casey-bechard': {

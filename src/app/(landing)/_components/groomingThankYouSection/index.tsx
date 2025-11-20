@@ -3,12 +3,12 @@ import type { FC } from 'react';
 
 import { BackgroundImage } from '@/components/backgroundImage';
 
-type Props = {
+interface Props {
   course?: string;
   heroSrc: StaticImageData;
   mobileHeroSrc: StaticImageData;
   emailAddress?: string;
-};
+}
 
 export const GroomingThankYouSection: FC<Props> = ({ heroSrc, mobileHeroSrc, emailAddress }) => {
   const downloadUrl = '/certification-courses/dog-grooming/course-preview';

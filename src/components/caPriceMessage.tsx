@@ -1,11 +1,11 @@
 'use client';
 
+import Image from 'next/image';
 import type { FC, MouseEventHandler } from 'react';
 
 import MapleLeaf from '@/components/icons/maple-leaf.svg';
 import { useTaxCreditPopup } from '@/hooks/useTaxCreditPopup';
 import { gaEvent } from '@/lib/gtag';
-import Image from 'next/image';
 
 export const CAPriceMessage: FC = () => {
   const [ , toggle ] = useTaxCreditPopup();

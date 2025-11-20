@@ -2,10 +2,10 @@
 
 import type { FC, MouseEventHandler, PropsWithChildren } from 'react';
 
-type Props = {
+interface Props {
   className?: string;
   focus?: boolean;
-};
+}
 
 export const ChatLink: FC<PropsWithChildren<Props>> = ({ className, focus, children }) => {
   const handleChatLinkClick: MouseEventHandler<HTMLAnchorElement> = e => {

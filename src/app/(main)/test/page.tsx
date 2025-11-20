@@ -18,9 +18,9 @@ export default TestPage;
 
 const delay = async (ms: number): Promise<void> => new Promise(res => setTimeout(res, ms));
 
-type AsyncComponentProps = {
+interface AsyncComponentProps {
   wait: number;
-};
+}
 
 const AsyncComponentBase: FC<AsyncComponentProps> = async ({ wait }) => {
   await delay(wait);

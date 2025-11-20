@@ -1,9 +1,9 @@
 import Script from 'next/script';
 import type { FC } from 'react';
 
-type Props = {
+interface Props {
   suggestedText: string;
-};
+}
 
 export const TwitterShare: FC<Props> = ({ suggestedText: text }) => (
   <>

@@ -2,9 +2,9 @@ import type { FC } from 'react';
 
 import type { CTAType } from './cta';
 
-type Props = {
+interface Props {
   type?: CTAType;
-};
+}
 
 export const CTAHeading: FC<Props> = ({ type }) => {
   switch (type) {

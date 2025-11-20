@@ -1,12 +1,12 @@
 'use client';
 
+import Image from 'next/image';
 import type { FC } from 'react';
 import { Modal } from 'react-bootstrap';
 
 import styles from './index.module.scss';
 import MapleLeafIcon from '@/components/icons/maple-leaf.svg';
 import { useTaxCreditPopup } from '@/hooks/useTaxCreditPopup';
-import Image from 'next/image';
 
 export const TaxCreditsModal: FC = () => {
   const [ show, toggle ] = useTaxCreditPopup();

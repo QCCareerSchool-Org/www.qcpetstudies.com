@@ -1,9 +1,9 @@
+import Image from 'next/image';
 import type { FC } from 'react';
 
 import styles from './index.module.scss';
 import { LearnMore } from './learnMore';
 import MapleLeafIcon from '@/components/icons/maple-leaf.svg';
-import Image from 'next/image';
 
 export const CanadaHeader: FC = () => (
   <div className={styles.wrapper}>

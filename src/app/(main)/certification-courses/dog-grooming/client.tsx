@@ -11,13 +11,13 @@ import type { Price } from '@/domain/price';
 import { useToggle } from '@/hooks/useToggle';
 import { externship } from '@/lib/externship';
 
-type Props = {
+interface Props {
   dgPrice: Price;
   dePrice: Price;
   countryCode: string;
   provinceCode: string | null;
   enrollPath: string;
-};
+}
 
 const courses: CourseCode[] = [ 'dg' ];
 

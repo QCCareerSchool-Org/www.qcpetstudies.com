@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import Link from 'next/link';
 import { BsBook } from 'react-icons/bs';
 
@@ -8,7 +9,6 @@ import { Bar } from '@/components/bar';
 import CameraIcon from '@/images/camera.svg';
 import CheckedIcon from '@/images/checked.svg';
 import RedDesktopIcon from '@/images/desktop-red.svg';
-import Image from 'next/image';
 
 export const metadata = {
   title: 'Your Grooming Assignments',

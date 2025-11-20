@@ -15,13 +15,13 @@ const VideosIcon = (): ReactElement => (
   <div className="me-2"><BsPlayCircle title="Videos" /></div>
 );
 
-type Props = {
+interface Props {
   assignmentsCount?: number;
   assignmentsTime?: string;
   readingsTime?: string;
   videosCount?: number;
   videosTime?: string;
-};
+}
 
 export const UnitStats: FC<Props> = props => (
   <div className="d-flex flex-column flex-sm-row mb-3">

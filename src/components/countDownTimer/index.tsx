@@ -7,10 +7,10 @@ import { Banner } from './banner';
 import { getParts } from './getParts';
 import { gbpCountry } from '@/lib/currencies';
 
-type Props = {
+interface Props {
   date: number;
   countryCode: string;
-};
+}
 
 const bannerStartDate = Date.UTC(2025, 10, 17, 15); // 2025-11-17T10:00 (15:00 UTC)
 const countDownStartDate = Date.UTC(2025, 10, 28, 8); // 2025-11-28T03:00 (08:00 UTC)
@@ -33,7 +33,7 @@ export const CountDownTimer: FC<Props> = ({ date, countryCode }) => {
       setCurrentDate(d => d + 1000);
     }, 1000);
 
-    return () => clearInterval(id);
+    return () => { clearInterval(id); };
   }, []);
 
   if (currentDate === 0) {

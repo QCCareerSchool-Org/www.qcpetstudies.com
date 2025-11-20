@@ -7,10 +7,10 @@ import { Accordion } from '@/components/accordion';
 import { AccordionItem } from '@/components/accordion/accordionItem';
 import type { Price } from '@/domain/price';
 
-type Props = {
+interface Props {
   dgPrice: Price;
   gtPrice: Price;
-};
+}
 
 export const OutlineSection: FC<Props> = ({ dgPrice, gtPrice }) => {
   let eventKey = 0;

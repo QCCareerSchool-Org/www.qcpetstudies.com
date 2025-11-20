@@ -4,9 +4,9 @@ import type { FC } from 'react';
 import CourseMaterials from './course-materials-first-aid.jpg';
 import FirstAidLogo from '@/images/first-aid-logo.svg';
 
-type Props = {
+interface Props {
   className?: string;
-};
+}
 
 export const FreeFirstAidSection: FC<Props> = ({ className }) => (
   <section className={className}>

@@ -3,11 +3,11 @@
 import type { FC, PropsWithChildren, ReactNode } from 'react';
 import { Accordion } from 'react-bootstrap';
 
-type Props = {
+interface Props {
   eventKey: number;
   heading: ReactNode;
   isFAQ?: boolean;
-};
+}
 
 export const AccordionItem: FC<PropsWithChildren<Props>> = ({ eventKey, heading, children, isFAQ }) => (
   <Accordion.Item eventKey={eventKey.toString()} itemScope={isFAQ ? true : undefined} itemType={isFAQ ? 'https://schema.org/Question' : undefined} itemProp={isFAQ ? 'mainEntity' : undefined}>

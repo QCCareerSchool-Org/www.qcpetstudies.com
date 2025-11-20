@@ -3,10 +3,10 @@ import type { FC } from 'react';
 
 import SamanthaMichaelsImage from './samantha-michaels.jpg';
 
-type Props = {
+interface Props {
   className?: string;
   id?: string;
-};
+}
 
 export const TutorSectionDD: FC<Props> = ({ className, id = 'tutors' }) => {
 

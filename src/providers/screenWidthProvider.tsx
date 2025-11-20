@@ -9,10 +9,9 @@ export const ScreenWidthProvider: FC<PropsWithChildren> = ({ children }) => {
   const [ state, dispatch ] = useState(0);
 
   useEffect(() => {
-    queueMicrotask(() => {
-      dispatch(window.innerWidth);
-    });
-    const handleResize = (): void => dispatch(window.innerWidth);
+    // eslint-disable-next-line react-hooks/set-state-in-effect
+    dispatch(window.innerWidth);
+    const handleResize = (): void => { dispatch(window.innerWidth); };
     window.addEventListener('resize', handleResize);
     return () => {
       window.removeEventListener('resize', handleResize);

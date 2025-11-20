@@ -2,10 +2,10 @@ import type { FC } from 'react';
 
 import { BlackFriday2025 } from '@/components/promos/blackFriday2025';
 
-type Props = {
+interface Props {
   date: number;
   countryCode: string;
-};
+}
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 export const CurrentPromotion: FC<Props> = ({ date, countryCode }) => {

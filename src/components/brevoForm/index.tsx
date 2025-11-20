@@ -14,7 +14,7 @@ import DownloadIcon from '../download.svg';
 import styles from './index.module.scss';
 import type { CourseCode } from '@/domain/courseCode';
 
-type Props = {
+interface Props {
   onCourseChange?: (e: ChangeEvent<HTMLInputElement>, courseCode: CourseCode) => void;
   successLocation: string;
   listId: number;
@@ -34,7 +34,7 @@ type Props = {
   button?: ReactElement;
   referrer: string | null;
   countryCode?: string | null;
-};
+}
 
 export const BrevoForm: FC<Props> = props => {
   const id = useId();
@@ -209,11 +209,11 @@ export const BrevoForm: FC<Props> = props => {
   );
 };
 
-type InputProps = {
+interface InputProps {
   value: Value;
   onChange: ChangeEventHandler;
   name: string;
-};
+}
 
 const InputComponent = forwardRef<HTMLInputElement, DefaultInputComponentProps>((props, ref) => {
   const { value, onChange, name } = props as InputProps;

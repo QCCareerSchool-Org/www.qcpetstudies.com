@@ -5,10 +5,10 @@ import { toast } from 'react-toastify';
 
 import styles from './index.module.scss';
 
-type Props = {
+interface Props {
   emailAddress: string;
   firstName?: string;
-};
+}
 
 export const EmailSentToast: FC<Props> = ({ emailAddress, firstName }) => {
   useEffect(() => {

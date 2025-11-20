@@ -4,9 +4,9 @@ import type { FC } from 'react';
 import DesktopImage from './desktop.jpg';
 import MobileImage from './mobile.jpg';
 
-type Props = {
+interface Props {
   className?: string;
-};
+}
 
 export const VirtualCommunitySection: FC<Props> = ({ className }) => (
   <section className={`pb-0 ${className}`}>

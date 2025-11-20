@@ -8,10 +8,10 @@ import { formatPrice } from '@/lib/formatPrice';
 const dgColor = '#ff0074';
 const gtColor = '#061F3A';
 
-type Props = {
+interface Props {
   gtPrice: Price;
   dgPrice: Price;
-};
+}
 
 export const ComparisonTable: FC<Props> = ({ gtPrice, dgPrice }) => (
   <>

@@ -12,7 +12,7 @@ export const SecondaryNav: FC = () => {
 
   const subnav = subnavs.find(s => {
     if (s.includeChildren) {
-      return pathname?.startsWith(s.pathname);
+      return pathname.startsWith(s.pathname);
     }
     return pathname === s.pathname;
   });

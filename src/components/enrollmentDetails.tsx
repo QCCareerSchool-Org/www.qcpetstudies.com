@@ -4,9 +4,9 @@ import { Fragment } from 'react';
 import type { Enrollment } from '@/domain/enrollment';
 import { formatDate } from '@/lib/formatDate';
 
-type Props = {
+interface Props {
   enrollment: Enrollment;
-};
+}
 
 export const EnrollmentDetails: FC<Props> = ({ enrollment }) => (
   <section className="bg-light">

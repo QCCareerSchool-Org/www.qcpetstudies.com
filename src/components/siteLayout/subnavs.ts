@@ -1,14 +1,14 @@
-export type SubnavLink = {
+export interface SubnavLink {
   title: string;
   href: string;
-};
+}
 
-export type Subnav = {
+export interface Subnav {
   pathname: string;
   includeChildren?: boolean;
   title: string;
   links: SubnavLink[];
-};
+}
 
 export const subnavs: Subnav[] = [
   {

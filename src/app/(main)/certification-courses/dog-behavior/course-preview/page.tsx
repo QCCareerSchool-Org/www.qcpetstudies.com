@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Image from 'next/image';
 import { BsBook } from 'react-icons/bs';
 
 import { OutlineSection } from '../outlineSection';
@@ -10,7 +11,6 @@ import { PriceSectionWithDiscount } from '@/components/priceSectionWithDiscount'
 import type { PriceQuery } from '@/lib/fetch';
 import { fetchPrice } from '@/lib/fetch';
 import { getData } from '@/lib/getData';
-import Image from 'next/image';
 
 const courseCodes = [ 'dc' ];
 

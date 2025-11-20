@@ -1,12 +1,12 @@
 import type { StaticImageData } from 'next/image';
+import Image from 'next/image';
 import type { FC } from 'react';
 
 import { ImageCircle } from '../ImageCircle';
 import FiveStarsPrimary from '@/images/five-stars-primary.svg';
 import FiveStarsSecondary from '@/images/five-stars-secondary.svg';
-import Image from 'next/image';
 
-type Props = {
+interface Props {
   size?: number;
   starSize?: number;
   quotation: string;
@@ -16,7 +16,7 @@ type Props = {
   imagePositionX?: number;
   imagePositionY?: number;
   variant?: 'primary' | 'secondary';
-};
+}
 
 export const TestimonialSmall: FC<Props> = ({ size = 192, starSize = 180, quotation, name, certification, imageSrc, imagePositionX, imagePositionY, variant = 'primary' }) => (
   <>

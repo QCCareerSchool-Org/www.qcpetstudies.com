@@ -8,14 +8,14 @@ import { PriceSelectBox } from './priceSelectBox';
 import type { Price } from '@/domain/price';
 import { formatPrice } from '@/lib/formatPrice';
 
-type Props = {
+interface Props {
   title: string;
   price: Price;
   selected: boolean;
   onSelected: () => void;
   cartUrl: string;
   onPopupLinkClick?: MouseEventHandler<HTMLAnchorElement>;
-};
+}
 
 type Plan = 'full' | 'part';
 

@@ -3,10 +3,10 @@ import type { FC } from 'react';
 import HailieSavage from './images/hailie-savage.jpg';
 import { TestimonialSmall } from './testimonialSmall';
 
-type Props = {
+interface Props {
   size?: number;
   starSize?: number;
-};
+}
 
 export const TestimonialSmHailieSavage: FC<Props> = ({ size, starSize }) => (
   <TestimonialSmall

@@ -2,7 +2,7 @@ export {};
 
 type PositionCode = 'bl' & 'bc' & 'br' & 'lt' & 'lm' & 'lb' & 'rt' & 'rm' & 'rb';
 
-type Colors = {
+interface Colors {
   /** chat button text/icon color */
   buttonText: string;
   /** chat button background color */
@@ -11,7 +11,7 @@ type Colors = {
   visitorBubbleBg: string;
   /** agent’s message bubble color */
   agentBubbleBg: string;
-};
+}
 
 type BrevoConversationsFunction =
  & ((command: 'sendAutoMessage', text: string) => void)

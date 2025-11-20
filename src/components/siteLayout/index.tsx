@@ -5,10 +5,10 @@ import { Header } from './header';
 import { TaxCreditsModal } from '../taxCreditsModal';
 import { BrevoConversations } from '@/scripts/brevoCoversations';
 
-type Props = {
+interface Props {
   date: number;
   countryCode: string;
-};
+}
 
 export const SiteLayout: FC<PropsWithChildren<Props>> = ({ date, countryCode, children }) => (
   <>

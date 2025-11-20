@@ -1,9 +1,9 @@
+import Image from 'next/image';
 import type { FC } from 'react';
 
 import BBBLogo from './bbb-icon.svg';
 import styles from './bbbGuarantee.module.scss';
 import GuaranteeIcon from './guarantee-icon.svg';
-import Image from 'next/image';
 
 export const BBBGuarantee: FC = () => (
   <div className="row text-center sm-gutters mb-4">
