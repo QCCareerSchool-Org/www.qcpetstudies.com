@@ -1,5 +1,4 @@
 import type { Metadata } from 'next';
-import type { StaticImageData } from 'next/image';
 import Image from 'next/image';
 import Link from 'next/link';
 

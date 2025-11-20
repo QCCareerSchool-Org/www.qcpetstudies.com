@@ -93,7 +93,7 @@ type SupplierProps = {
 };
 
 const Supplier: FC<PropsWithChildren<SupplierProps>> = ({ className, image, children }) => (
-  <div className={`d-flex flex-column flex-lg-row align-items-center ${className ? className : ''}`}>
+  <div className={`d-flex flex-column flex-lg-row align-items-center ${className ?? ''}`}>
     <div className="mb-2 mb-lg-0 me-lg-5 flex-shrink-0">
       {image}
     </div>

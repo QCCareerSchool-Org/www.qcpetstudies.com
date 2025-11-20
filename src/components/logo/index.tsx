@@ -4,7 +4,6 @@ import Image from 'next/image';
 import LogoInverseImage from './logo-inverse.svg';
 import LogoImage from './logo.svg';
 
-
 type Props = {
   height: number;
   inverse?: boolean;

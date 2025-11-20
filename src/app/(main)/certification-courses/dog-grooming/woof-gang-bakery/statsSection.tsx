@@ -1,7 +1,7 @@
 'use client';
 
 import type { FC } from 'react';
-import { useEffect, useRef, useState } from 'react';
+import { useRef } from 'react';
 import { FaBook, FaFilm, FaLaptop } from 'react-icons/fa';
 import { useCountUp } from 'react-use-count-up';
 
@@ -14,39 +14,15 @@ const easingFunction = 'easeOutQuad';
 export const StatsSection: FC = () => {
   const videosRef = useRef(null);
   const videosIntersection = useIntersectionObserver(videosRef);
-  const [ videosStarted, setVideosStarted ] = useState(false);
-
-  useEffect(() => {
-    if (videosIntersection) {
-      setVideosStarted(true);
-    }
-  }, [ videosIntersection ]);
-
-  const videosCount = useCountUp({ start: 0, end: 43, duration: countUpDuration, started: videosStarted, easingFunction });
+  const videosCount = useCountUp({ start: 0, end: 43, duration: countUpDuration, started: videosIntersection, easingFunction });
 
   const lessonsRef = useRef(null);
-  const lessonsIntersection = useIntersectionObserver(videosRef);
-  const [ lessonsStarted, setLessonsStarted ] = useState(false);
-
-  useEffect(() => {
-    if (lessonsIntersection) {
-      setLessonsStarted(true);
-    }
-  }, [ lessonsIntersection ]);
-
-  const lessonsCount = useCountUp({ start: 0, end: 25, duration: countUpDuration, started: lessonsStarted, easingFunction });
+  const lessonsIntersection = useIntersectionObserver(lessonsRef);
+  const lessonsCount = useCountUp({ start: 0, end: 25, duration: countUpDuration, started: lessonsIntersection, easingFunction });
 
   const assignmentsRef = useRef(null);
-  const assignmentsIntersection = useIntersectionObserver(videosRef);
-  const [ assignmentsStarted, setAssignmentsStarted ] = useState(false);
-
-  useEffect(() => {
-    if (assignmentsIntersection) {
-      setAssignmentsStarted(true);
-    }
-  }, [ assignmentsIntersection ]);
-
-  const assignmentsCount = useCountUp({ start: 0, end: 34, duration: countUpDuration, started: assignmentsStarted, easingFunction });
+  const assignmentsIntersection = useIntersectionObserver(assignmentsRef);
+  const assignmentsCount = useCountUp({ start: 0, end: 34, duration: countUpDuration, started: assignmentsIntersection, easingFunction });
 
   return (
     <>

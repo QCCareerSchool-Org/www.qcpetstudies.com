@@ -1,7 +1,6 @@
 'use client';
 
 import 'react-phone-number-input/style.css';
-import type { StaticImageData } from 'next/image';
 import Image from 'next/image';
 import Link from 'next/link';
 import type { ChangeEvent, ChangeEventHandler, FC, FormEventHandler, ReactElement } from 'react';
@@ -49,7 +48,7 @@ export const BrevoForm: FC<Props> = props => {
   const [ refreshReCaptcha, setRefreshReCaptcha ] = useState(false);
   const submitting = useRef(false);
   const [ disabled, setDisabled ] = useState(true);
-  const [ telephoneNumberE164, setTelephoneNumberE164 ] = useState('');
+  // const [ telephoneNumberE164, setTelephoneNumberE164 ] = useState('');
 
   const showTelephone = props.countryCode === 'CA' || props.countryCode === 'US';
 
@@ -130,9 +129,10 @@ export const BrevoForm: FC<Props> = props => {
   // if we try to use telephoneNumber directly there is an issue:
   // removing the telephone number from the visible field doesn't remove the value from the hidden field
   // if we try to use the <PhoneInput /> component directly, we don't get the correct format in the back end
-  useEffect(() => {
-    setTelephoneNumberE164(telephoneNumber ?? '');
-  }, [ telephoneNumber ]);
+  // useEffect(() => {
+  //   setTelephoneNumberE164(telephoneNumber ?? '');
+  // }, [ telephoneNumber ]);
+  const telephoneNumberE164 = telephoneNumber ?? '';
 
   const handleDGSelection: ChangeEventHandler<HTMLInputElement> = e => {
     props.onCourseChange?.(e, 'dg');

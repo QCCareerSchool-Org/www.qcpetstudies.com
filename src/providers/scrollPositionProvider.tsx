@@ -6,10 +6,9 @@ import { createContext, useEffect, useState } from 'react';
 export const ScrollPositionContext = createContext<number | undefined>(undefined);
 
 export const ScrollPositionProvider: FC<PropsWithChildren> = ({ children }) => {
-  const [ state, dispatch ] = useState(0);
+  const [ state, dispatch ] = useState(() => window.scrollY);
 
   useEffect(() => {
-    dispatch(window.scrollY);
     const handleScroll = (): void => dispatch(window.scrollY);
     window.addEventListener('scroll', handleScroll);
     return () => {

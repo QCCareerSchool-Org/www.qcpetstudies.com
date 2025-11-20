@@ -93,7 +93,7 @@ const Page: PageComponent = async props => {
         <div className="container">
           <div className="d-flex flex-column flex-md-row justify-contents-center align-items-center">
             <div className="flex-shrink-0 mb-4 mb-md-0 me-md-4">
-              <IDGPCertificationLogo width={200} height={200} alt="IDGP International Dog Grooming Professional logo" style={{ maxWidth: '100%', height: 'auto' }} />
+              <Image src={IDGPCertificationLogo} width={200} height={200} alt="IDGP International Dog Grooming Professional logo" style={{ maxWidth: '100%', height: 'auto' }} />
             </div>
             <div className="text-center text-md-start">
               <h2>Your <strong>Certification</strong></h2>

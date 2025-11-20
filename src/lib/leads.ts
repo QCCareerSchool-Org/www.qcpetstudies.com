@@ -33,7 +33,7 @@ export const addLead = async (payload: LeadPayload, clientData?: ClientData): Pr
     payload.marketing = undefined;
   }
 
-  if (payload.courses && payload.courses.length === 0) {
+  if (payload.courses?.length === 0) {
     // no courses were supplied
     payload.courses = undefined;
   }

@@ -18,7 +18,7 @@ export const CourseOutlineSection: FC<Props> = ({ className }) => {
   let eventKey = 0;
 
   return (
-    <section className={`bg-lighter ${className ? className : ''}`}>
+    <section className={`bg-lighter ${className ?? ''}`}>
       <div className="container">
         <div className="row justify-content-center mb-4">
           <div className="col12 col-lg-10 text-center">
