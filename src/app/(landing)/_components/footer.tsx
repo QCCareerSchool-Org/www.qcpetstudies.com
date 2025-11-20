@@ -5,8 +5,8 @@ import { TelephoneLink } from '@/components/telephoneLink';
 import { gbpCountry } from '@/lib/currencies';
 import { getData } from '@/lib/getData';
 
-export const Footer: FC = () => {
-  const { countryCode } = getData();
+export const Footer: FC = async () => {
+  const { countryCode } = await getData();
   const termsLink = gbpCountry(countryCode) ? '/terms-gb' : '/terms';
 
   return (

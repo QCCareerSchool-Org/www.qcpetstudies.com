@@ -22,17 +22,18 @@ export const metadata: Metadata = {
 
 const testimonialIds = [ 'TD-0004', 'TD-0005', 'TD-0007', 'TD-0008', 'TD-0009', 'TD-0010' ];
 
-const ThankYouCoursePreviewPage: PageComponent = async ({ searchParams }) => {
+const ThankYouCoursePreviewPage: PageComponent = async props => {
+  const searchParams = await props.searchParams;
   const leadId = getParam(searchParams.leadId);
   const firstName = getParam(searchParams.firstName);
   const lastName = getParam(searchParams.lastName);
   const emailAddress = getParam(searchParams.emailAddress);
-  const countryCode = getParam(searchParams.countryCode) ?? getData().countryCode;
+  const countryCode = getParam(searchParams.countryCode) ?? (await getData()).countryCode;
   const provinceCode = getParam(searchParams.provinceCode);
-  const headerList = headers();
+  const headerList = await headers();
   const ipAddress = headerList.get('x-real-ip') ?? undefined;
   const userAgent = headerList.get('user-agent') ?? undefined;
-  const cookieStore = cookies();
+  const cookieStore = await cookies();
   const fbc = cookieStore.get('_fbc')?.value;
   const fbp = cookieStore.get('_fbp')?.value;
 

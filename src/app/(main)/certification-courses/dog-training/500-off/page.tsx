@@ -17,7 +17,7 @@ export const metadata: Metadata = {
 const courseCodes: CourseCode[] = [ 'dt' ];
 
 const DogTraining500OffPage: PageComponent = async () => {
-  const { countryCode, provinceCode } = getData();
+  const { countryCode, provinceCode } = await getData();
   const priceQuery: PriceQuery = { countryCode, provinceCode: provinceCode ?? undefined, courses: courseCodes, options: { promoCode: 'DT500', school: 'QC Pet Studies' } };
   const price = await fetchPrice(priceQuery);
   if (!price) {

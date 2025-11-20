@@ -11,6 +11,7 @@ import { ChatLink } from '@/components/chatLink';
 import { EmailLink } from '@/components/emailLink';
 import { TelephoneLink } from '@/components/telephoneLink';
 import { getData } from '@/lib/getData';
+import Image from 'next/image';
 
 export const metadata: Metadata = {
   title: 'Contact Us',
@@ -18,8 +19,8 @@ export const metadata: Metadata = {
   alternates: { canonical: '/contact-us' },
 };
 
-const ContactUsPage: PageComponent = () => {
-  const { countryCode } = getData();
+const ContactUsPage: PageComponent = async () => {
+  const { countryCode } = await getData();
 
   return (
     <>
@@ -39,7 +40,7 @@ const ContactUsPage: PageComponent = () => {
             </div>
             <div className="col-12 col-sm-10 col-md-8 col-lg-4 mb-4 mb-lg-0">
               <div className="px-lg-4">
-                <ContactByPhoneImage height="80" width="64" alt="telephone icon" style={{ maxWidth: '100%' }} />
+                <Image src={ContactByPhoneImage} height="80" width="64" alt="telephone icon" style={{ maxWidth: '100%' }} />
                 <h3>By Phone</h3>
                 <p className="mb-lg-4"><TelephoneLink countryCode={countryCode} /></p>
                 <p className="mb-0">Speak with a student advisor about enrolling with QC or for assistance with your courses and assignments.</p>
@@ -47,7 +48,7 @@ const ContactUsPage: PageComponent = () => {
             </div>
             <div className="col-12 col-sm-10 col-md-8 col-lg-4 mb-4 mb-lg-0">
               <div className="px-lg-4">
-                <ContactByEmailImage height="80" width="64" alt="email icon" style={{ maxWidth: '100%' }} />
+                <Image src={ContactByEmailImage} height="80" width="64" alt="email icon" style={{ maxWidth: '100%' }} />
                 <h3>By Email</h3>
                 <p className="mb-lg-4"><EmailLink /></p>
                 <p className="mb-0">Send us an email at any time and we'll get back to you as soon as possible!</p>
@@ -55,7 +56,7 @@ const ContactUsPage: PageComponent = () => {
             </div>
             <div className="col-12 col-sm-10 col-md-8 col-lg-4">
               <div className="px-lg-4">
-                <ContactByChatImage height="80" width="64" alt="chat icon" style={{ maxWidth: '100%' }} />
+                <Image src={ContactByChatImage} height="80" width="64" alt="chat icon" style={{ maxWidth: '100%' }} />
                 <h3>By Live Chat</h3>
                 <p className="mb-lg-4"><ChatLink>Click here to chat</ChatLink></p>
                 <p className="mb-0">Do you have a question you want to be answered right away? Our student support specialists are ready to chat!</p>

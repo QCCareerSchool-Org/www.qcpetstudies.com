@@ -33,8 +33,8 @@ export const metadata: Metadata = {
   alternates: { canonical: '/' },
 };
 
-const HomePage: PageComponent = () => {
-  const { countryCode, provinceCode } = getData();
+const HomePage: PageComponent = async () => {
+  const { countryCode, provinceCode } = await getData();
 
   const coursesJsonLD: WithContext<ItemList> = {
     '@context': 'https://schema.org',
@@ -91,7 +91,7 @@ const HomePage: PageComponent = () => {
                 <CertificationCard>
                   <div>
                     <div className="mb-3">
-                      <IDGPCertificationGold height={iconSize} width={iconSize} alt="IDGP Certification" style={{ maxWidth: '100%', height: 'auto' }} />
+                      <Image src={IDGPCertificationGold} height={iconSize} width={iconSize} alt="IDGP Certification" style={{ maxWidth: '100%', height: 'auto' }} />
                     </div>
                     <h3>Professional Dog Grooming | <em className="gold">IDGP&trade;</em></h3>
                     <p>Master every level of dog grooming from bathing, brushing and pet cuts to advanced breed styling. In this course, you'll learn all about dog anatomy and behavior, how to use grooming tools safely and effectively, and how to expertly groom any breed. You'll get plenty of hands-on training with personalized guidance from your grooming mentor. Plus, learn to run a successful grooming business.</p>
@@ -105,7 +105,7 @@ const HomePage: PageComponent = () => {
                 <CertificationCard>
                   <div>
                     <div className="mb-3">
-                      <IDTPCertificationGold height={iconSize} width={iconSize} alt="IDTP Certification" style={{ maxWidth: '100%', height: 'auto' }} />
+                      <Image src={IDTPCertificationGold} height={iconSize} width={iconSize} alt="IDTP Certification" style={{ maxWidth: '100%', height: 'auto' }} />
                     </div>
                     <h3>Dog Training | <em className="gold">IDTP&trade;</em></h3>
                     <p>Dog trainers have never been in higher demand! It's the best time to launch a rewarding and lucrative career as a dog trainer. This course uses scientifically proven methods of dog training derived from learning theory and industry best practices. You'll gain a thorough understanding of how dogs learn, how to modify unwanted behaviors, and how to create new behaviors in all types of dogs. Don't miss out on your chance to learn from the best!</p>
@@ -118,7 +118,7 @@ const HomePage: PageComponent = () => {
                 <CertificationCard>
                   <div>
                     <div className="mb-3">
-                      <IDCPCertificationGold height={iconSize} width={iconSize} alt="IDCP Certification" style={{ maxWidth: '100%', height: 'auto' }} />
+                      <Image src={IDCPCertificationGold} height={iconSize} width={iconSize} alt="IDCP Certification" style={{ maxWidth: '100%', height: 'auto' }} />
                     </div>
                     <h3>Dog Daycare | <em className="gold">IDCP&trade;</em></h3>
                     <p>Dog walkers and daycare facilities are booked solid! Demand is high which means it&apos;s an incredible time to launch a rewarding and lucrative career as a dog care professional. This course will teach you everything from basic dog behavior and communication to business and marketing tips that will help you grow your clientele. You&apos;ll gain a thorough understanding of proper handling, hygiene, and safety techniques to become a trusted expert in your field. Don&apos;t miss out on your chance to launch a lucrative new career!</p>
@@ -131,7 +131,7 @@ const HomePage: PageComponent = () => {
                 <CertificationCard>
                   <div>
                     <div className="mb-3">
-                      <IDBSCertificationGold height={iconSize} width={iconSize} alt="IDBS Certification" style={{ maxWidth: '100%', height: 'auto' }} />
+                      <Image src={IDBSCertificationGold} height={iconSize} width={iconSize} alt="IDBS Certification" style={{ maxWidth: '100%', height: 'auto' }} />
                     </div>
                     <h3>Dog Behavior | <em className="gold">IDBS&trade;</em></h3>
                     <p>Once you have successfully completed QC's Dog Training course you can advance your education with the Dog Behavior course. You'll build on your excellent foundation in dog training and learn how to deal with advanced concerns like anxiety, phobias, reactivity, and even aggression. Learn specialized behavior modification skills so you'll be ready to help any dog that comes your way.</p>

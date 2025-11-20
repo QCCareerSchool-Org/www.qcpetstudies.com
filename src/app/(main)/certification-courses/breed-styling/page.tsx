@@ -26,7 +26,7 @@ export const metadata: Metadata = {
 };
 
 const BreedStylingPage: PageComponent = async () => {
-  const { countryCode, provinceCode } = getData();
+  const { countryCode, provinceCode } = await getData();
   const priceQuery: PriceQuery = { countryCode, provinceCode: provinceCode ?? undefined, courses: courseCodes };
   const price = await fetchPrice(priceQuery);
   if (!price) {
@@ -39,7 +39,7 @@ const BreedStylingPage: PageComponent = async () => {
       <BackgroundImage src={StylingBackground} priority />
       <div className="image-overlay-gradient" />
       <div className="container text-center">
-        <CourseIconBadge alt="Breed Styling Course badge" className="mb-2" style={{ maxWidth: '100%', height: 'auto' }} />
+        <Image src={CourseIconBadge} alt="Breed Styling Course badge" className="mb-2" style={{ maxWidth: '100%', height: 'auto' }} />
         <h1>Breed Styling Workshop</h1>
         <div className="row justify-content-center">
           <div className="col-12 col-lg-10">

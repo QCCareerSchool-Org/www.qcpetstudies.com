@@ -6,8 +6,8 @@ import HeroImageDefault from './desktop.jpg';
 import { gbpCountry } from '@/lib/currencies';
 import { getData } from '@/lib/getData';
 
-export const BlackFriday2025: FC = () => {
-  const { countryCode } = getData();
+export const BlackFriday2025: FC = async () => {
+  const { countryCode } = await getData();
   const heroImageSrc = gbpCountry(countryCode) ? HeroImageUK : HeroImageDefault;
 
   return (

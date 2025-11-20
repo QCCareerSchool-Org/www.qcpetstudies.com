@@ -28,7 +28,7 @@ export const metadata: Metadata = {
 let eventKey = 0;
 
 const HomePage: PageComponent = () => {
-  // const { countryCode, provinceCode } = getData();
+  // const { countryCode, provinceCode } = await getData();
   return (
     <>
       <section className={styles.heroSection}>

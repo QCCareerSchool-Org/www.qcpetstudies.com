@@ -9,7 +9,9 @@ export const ScrollPositionProvider: FC<PropsWithChildren> = ({ children }) => {
   const [ state, dispatch ] = useState(0);
 
   useEffect(() => {
-    dispatch(window.scrollY);
+    queueMicrotask(() => {
+      dispatch(window.scrollY);
+    });
     const handleScroll = (): void => dispatch(window.scrollY);
     window.addEventListener('scroll', handleScroll);
     return () => {

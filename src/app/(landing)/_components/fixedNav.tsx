@@ -9,6 +9,7 @@ import QCIcon from './qc.svg';
 import { Logo } from '@/components/logo';
 import { useScreenWidth } from '@/hooks/useScreenWidth';
 import { useScrollPosition } from '@/hooks/useScrollPosition';
+import Image from 'next/image';
 
 type Props = {
   buttonHref?: string;
@@ -41,7 +42,7 @@ const HeaderLogo: FC = () => (
       <Logo inverse height={16} />
     </div>
     <div className={styles.smallLogo}>
-      <SmallLogo height={18} className="me-2" /><QCIcon height={16} />
+      <Image src={SmallLogo} height={18} className="me-2" alt="" /><Image src={QCIcon} height={16} alt="" />
     </div>
   </div>
 );

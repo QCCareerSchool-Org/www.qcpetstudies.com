@@ -23,6 +23,7 @@ import type { PriceQuery } from '@/lib/fetch';
 import { fetchPrice } from '@/lib/fetch';
 import { formatPrice } from '@/lib/formatPrice';
 import { getData } from '@/lib/getData';
+import Image from 'next/image';
 
 export const metadata: Metadata = {
   title: 'Dog Daycare Course',
@@ -36,7 +37,7 @@ const courseCodes: CourseCode[] = [ 'dd' ];
 
 const DogCarePage: PageComponent = async () => {
   let eventKey = 0;
-  const { countryCode, provinceCode } = getData();
+  const { countryCode, provinceCode } = await getData();
   const priceQuery: PriceQuery = { countryCode, provinceCode: provinceCode ?? undefined, courses: courseCodes };
   const price = await fetchPrice(priceQuery);
   if (!price) {
@@ -51,7 +52,7 @@ const DogCarePage: PageComponent = async () => {
         <div className="container text-center">
           <div className="row mb-4">
             <div className="mb-4">
-              <CertificationGoldImage alt="International Dog Grooming Professional IDGP certification" height="125" width="125" style={{ maxWidth: '100%', height: 'auto' }} />
+              <Image src={CertificationGoldImage} alt="International Dog Grooming Professional IDGP certification" height="125" width="125" style={{ maxWidth: '100%', height: 'auto' }} />
             </div>
             <h1>Dog Daycare Course</h1>
             {price.plans.part.deposit > 0 && <h4>Get Started for Only <strong>{price.currency.symbol}{formatPrice(price.plans.part.deposit)}</strong></h4>}
@@ -61,15 +62,15 @@ const DogCarePage: PageComponent = async () => {
           <div className="row justify-content-center">
             <div className="col-12 col-md-6 d-flex">
               <div className="col text-uppercase">
-                <a href="#outline"><OutlineIcon alt="outline" width={headerIconSize} height={headerIconSize} style={{ maxWidth: '100%', height: 'auto' }} /></a>
+                <a href="#outline"><Image src={OutlineIcon} alt="outline" width={headerIconSize} height={headerIconSize} style={{ maxWidth: '100%', height: 'auto' }} /></a>
                 <p><strong>Outline</strong></p>
               </div>
               <div className="col text-uppercase">
-                <a href="#guarantee"><GuaranteeIcon alt="play button" width={headerIconSize} height={headerIconSize} style={{ maxWidth: '100%', height: 'auto' }} /></a>
+                <a href="#guarantee"><Image src={GuaranteeIcon} alt="play button" width={headerIconSize} height={headerIconSize} style={{ maxWidth: '100%', height: 'auto' }} /></a>
                 <p><strong>Guarantee</strong></p>
               </div>
               <div className="col text-uppercase">
-                <a href="#tutors"><TutorIcon alt="play button" width={headerIconSize} height={headerIconSize} style={{ maxWidth: '100%', height: 'auto' }} /></a>
+                <a href="#tutors"><Image src={TutorIcon} alt="play button" width={headerIconSize} height={headerIconSize} style={{ maxWidth: '100%', height: 'auto' }} /></a>
                 <p><strong>Tutors</strong></p>
               </div>
             </div>

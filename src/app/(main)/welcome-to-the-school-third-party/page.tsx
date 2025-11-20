@@ -23,7 +23,8 @@ export const metadata: Metadata = {
   robots: { index: false },
 };
 
-const WelcomeToTheSchoolThirdPartyPage: PageComponent = async ({ searchParams }) => {
+const WelcomeToTheSchoolThirdPartyPage: PageComponent = async props => {
+  const searchParams = await props.searchParams;
   const enrollmentIdParam = getParam(searchParams.enrollmentId);
   const codeParam = getParam(searchParams.code);
 
@@ -43,11 +44,11 @@ const WelcomeToTheSchoolThirdPartyPage: PageComponent = async ({ searchParams })
   }
 
   if (!enrollment.emailed) {
-    const headerList = headers();
+    const headerList = await headers();
     const ipAddress = headerList.get('x-real-ip');
     const userAgent = headerList.get('user-agent');
 
-    const cookieStore = cookies();
+    const cookieStore = await cookies();
     const fbc = cookieStore.get('_fbc')?.value;
     const fbp = cookieStore.get('_fbp')?.value;
 

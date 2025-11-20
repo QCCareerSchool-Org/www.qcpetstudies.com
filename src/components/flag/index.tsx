@@ -3,6 +3,7 @@ import type { FC } from 'react';
 import AUIcon from './images/au.svg';
 import CAIcon from './images/ca.svg';
 import USIcon from './images/us.svg';
+import Image from 'next/image';
 
 type Props = {
   countryCode: string;
@@ -12,10 +13,10 @@ type Props = {
 export const Flag: FC<Props> = ({ countryCode, height }) => {
   switch (countryCode) {
     case 'CA':
-      return <CAIcon height={height} alt="Canada" />;
+      return <Image src={CAIcon} height={height} alt="Canada" />;
     case 'US':
-      return <USIcon height={height} alt="United States" />;
+      return <Image src={USIcon} height={height} alt="United States" />;
     case 'AU':
-      return <AUIcon height={height} alt="Australia" />;
+      return <Image src={AUIcon} height={height} alt="Australia" />;
   }
 };
