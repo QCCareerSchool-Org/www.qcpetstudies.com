@@ -1,10 +1,10 @@
 import type { StaticImageData } from 'next/image';
+import Image from 'next/image';
 import type { FC } from 'react';
 
 import { ImageCircle } from '../ImageCircle';
 import FiveStarsPrimary from '@/images/five-stars-primary.svg';
 import FiveStarsSecondary from '@/images/five-stars-secondary.svg';
-import Image from 'next/image';
 
 interface Props {
   size?: number;

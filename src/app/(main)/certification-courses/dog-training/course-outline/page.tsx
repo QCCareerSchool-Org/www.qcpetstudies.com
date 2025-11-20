@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Image from 'next/image';
 import { FaBars } from 'react-icons/fa';
 
 import CourseOutlineBackground from './aki-with-man.jpg';
@@ -16,7 +17,6 @@ import { AccordionItem } from '@/components/accordion/accordionItem';
 import { BackgroundImage } from '@/components/backgroundImage';
 import CalendarIcon from '@/images/calendar.svg';
 import IconTime from '@/images/clock.svg';
-import Image from 'next/image';
 
 const iconSize = 50;
 

@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import Link from 'next/link';
 import type { FC, JSX } from 'react';
 
@@ -9,7 +10,6 @@ import QCIcon from './qc.svg';
 import { Logo } from '@/components/logo';
 import { useScreenWidth } from '@/hooks/useScreenWidth';
 import { useScrollPosition } from '@/hooks/useScrollPosition';
-import Image from 'next/image';
 
 interface Props {
   buttonHref?: string;

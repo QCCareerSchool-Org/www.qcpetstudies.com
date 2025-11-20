@@ -1,8 +1,8 @@
+import Image from 'next/image';
 import type { FC } from 'react';
 import { BsCalendarCheck, BsCheckCircle, BsFillCloudArrowDownFill } from 'react-icons/bs';
 
 import MagnifyingGLassImage from '@/images/icon-magnifying-glass-2.svg';
-import Image from 'next/image';
 
 interface Props {
   className?: string;

@@ -2,6 +2,7 @@ import Image from 'next/image';
 
 import AwardImage from './award-of-excellence.png';
 import { fetchAward } from './fetchAward';
+import { fetchOldAward } from './fetchOldAward';
 import { formatDate } from './formatDate';
 import { SuggestedText } from './suggestedText';
 import type { GenerateMetadata, PageComponent } from '@/app/serverComponent';
@@ -11,7 +12,6 @@ import { LinkedInShare } from '@/components/share/linkedIn';
 import { ThreadsShare } from '@/components/share/threads';
 import { TwitterShare } from '@/components/share/twitter';
 import type { School } from '@/domain/school';
-import { fetchOldAward } from './fetchOldAward';
 
 interface RouteParams {
   submissionId: string;

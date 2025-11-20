@@ -1,5 +1,5 @@
-import type { FC } from 'react';
 import Image from 'next/image';
+import type { FC } from 'react';
 
 import LogoInverseImage from './logo-inverse.svg';
 import LogoImage from './logo.svg';

@@ -1,9 +1,9 @@
+import Image from 'next/image';
 import Link from 'next/link';
 import type { FC } from 'react';
 
 import TwentyOneDayGuaranteeIcon from './21-day-guarantee-outlined.svg';
 import DoubleGuaranteeIcon from './double-guarantee.svg';
-import Image from 'next/image';
 
 interface Props {
   className?: string;

@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import Link from 'next/link';
 import type { FC, MouseEventHandler } from 'react';
 import { useState } from 'react';
@@ -9,7 +10,6 @@ import { ChatLink } from '@/components/chatLink';
 import type { CourseCode } from '@/domain/courseCode';
 import type { Price } from '@/domain/price';
 import MapleLeaf from '@/images/maple-leaf.svg';
-import Image from 'next/image';
 
 interface Props {
   dgPrice: Price;

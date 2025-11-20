@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import Link from 'next/link';
 import type { FC } from 'react';
 import { FaFacebookF, FaInstagram, FaTiktok, FaYoutube } from 'react-icons/fa';
@@ -16,7 +17,6 @@ import { Logo } from '@/components/logo';
 import { getAddress } from '@/lib/address';
 import { gbpCountry } from '@/lib/currencies';
 import { getTelephoneNumber } from '@/lib/telephone';
-import Image from 'next/image';
 
 interface Props {
   countryCode: string;

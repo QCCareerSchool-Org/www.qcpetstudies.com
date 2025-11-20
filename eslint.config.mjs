@@ -1,11 +1,11 @@
 import eslint from '@eslint/js';
-import tseslint from 'typescript-eslint';
+import stylistic from '@stylistic/eslint-plugin';
 import { defineConfig, globalIgnores } from 'eslint/config';
 import nextVitals from 'eslint-config-next/core-web-vitals';
 import nextTs from 'eslint-config-next/typescript';
-import reactPlugin from 'eslint-plugin-react';
-import stylistic from '@stylistic/eslint-plugin';
 import importPlugin from 'eslint-plugin-import';
+import reactPlugin from 'eslint-plugin-react';
+import tseslint from 'typescript-eslint';
 
 const eslintConfig = defineConfig([
   ...nextVitals,
@@ -118,7 +118,7 @@ const eslintConfig = defineConfig([
         max: 1,
         maxEOF: 0,
         maxBOF: 0,
-      }],
+      } ],
       'no-tabs': 'error',
       'no-trailing-spaces': 'error',
       'no-unneeded-ternary': 'error',
@@ -127,14 +127,14 @@ const eslintConfig = defineConfig([
       'object-curly-spacing': 'off',
       'object-property-newline': [ 'error', {
         allowAllPropertiesOnSameLine: true,
-      }],
+      } ],
       'object-shorthand': 'error',
       'one-var': [ 'error', 'never' ],
       'padding-line-between-statements': [ 'error', {
         blankLine: 'always',
         prev: '*',
         next: 'function',
-      }],
+      } ],
       'quote-props': [ 'error', 'consistent-as-needed' ],
       'quotes': 'off',
       'semi': 'off',
@@ -159,7 +159,7 @@ const eslintConfig = defineConfig([
         ignoreDeclarationSort: true,
         ignoreMemberSort: false,
         memberSyntaxSortOrder: [ 'none', 'all', 'multiple', 'single' ],
-      }],
+      } ],
       'template-curly-spacing': 'error',
       'yield-star-spacing': 'error',
 
@@ -180,7 +180,7 @@ const eslintConfig = defineConfig([
       '@typescript-eslint/promise-function-async': 'error',
       '@typescript-eslint/prefer-reduce-type-parameter': 'error',
       '@typescript-eslint/prefer-string-starts-ends-with': 'error',
-      '@typescript-eslint/restrict-template-expressions': [ 'error', { allowNumber: true }],
+      '@typescript-eslint/restrict-template-expressions': [ 'error', { allowNumber: true } ],
 
       // @typescript-eslint rules
       '@typescript-eslint/dot-notation': 'error',
@@ -195,33 +195,33 @@ const eslintConfig = defineConfig([
       // @stylistic rules
       '@stylistic/brace-style': [ 'error', '1tbs', {
         allowSingleLine: true,
-      }],
+      } ],
       '@stylistic/comma-dangle': [ 'error', 'always-multiline' ],
       '@stylistic/comma-spacing': 'error',
-      '@stylistic/indent': [ 'error', 2],
+      '@stylistic/indent': [ 'error', 2 ],
       '@stylistic/function-call-spacing': 'error',
       '@stylistic/lines-between-class-members': [ 'error', 'always', {
         exceptAfterSingleLine: true,
-      }],
+      } ],
       '@stylistic/member-delimiter-style': 'error',
       '@stylistic/object-curly-spacing': [ 'error', 'always' ],
       '@stylistic/type-annotation-spacing': 'error',
       '@stylistic/quotes': [ 'error', 'single', {
         avoidEscape: true,
         allowTemplateLiterals: 'always',
-      }],
+      } ],
       '@stylistic/semi': 'error',
       '@stylistic/space-before-function-paren': [ 'error', {
         anonymous: 'always',
         named: 'never',
         asyncArrow: 'always',
-      }],
+      } ],
       '@stylistic/space-infix-ops': 'error',
 
       // react rules
       'react/jsx-closing-bracket-location': [ 'error', {
         location: 'line-aligned',
-      }],
+      } ],
       'react/jsx-curly-spacing': 'error',
       'react/jsx-equals-spacing': 'error',
       'react/jsx-first-prop-new-line': [ 'error', 'multiline' ],
@@ -231,42 +231,42 @@ const eslintConfig = defineConfig([
         eventHandlerPropPrefix: 'on',
         checkLocalVariables: true,
         checkInlineFunction: true,
-      }],
+      } ],
       'react/jsx-indent': [ 'error', 2, {
         checkAttributes: true,
         indentLogicalExpressions: true,
-      }],
-      'react/jsx-indent-props': [ 'error', 2],
+      } ],
+      'react/jsx-indent-props': [ 'error', 2 ],
       'react/jsx-pascal-case': [ 'error', {
         allowAllCaps: true,
         allowNamespace: true,
-      }],
+      } ],
       'react/jsx-props-no-multi-spaces': 'error',
       'react/jsx-tag-spacing': [ 'error', {
         beforeClosing: 'never',
-      }],
+      } ],
       'react/no-unescaped-entities': [ 'error', {
         forbid: [ '>', '"', '}', '“', '”', '‘', '’' ],
-      }],
+      } ],
       'react/no-unknown-property': [ 'error', {
         ignore: [ 'jsx' ],
-      }],
+      } ],
       'react/prop-types': 'off',
       'react/react-in-jsx-scope': 'off',
       'react/self-closing-comp': 'error',
 
-      "import/order": ["error", {
-        "alphabetize": {
-          order: "asc",
-          orderImportKind: "asc",
+      'import/order': [ 'error', {
+        'alphabetize': {
+          order: 'asc',
+          orderImportKind: 'asc',
           caseInsensitive: true,
         },
-        "groups": [
-          ["builtin", "external"],
-          ["internal", "parent", "sibling", "index", "object", "unknown"],
+        'groups': [
+          [ 'builtin', 'external' ],
+          [ 'internal', 'parent', 'sibling', 'index', 'object', 'unknown' ],
         ],
-        "newlines-between": "always",
-      }],
+        'newlines-between': 'always',
+      } ],
     },
   },
 ]);

@@ -1,6 +1,7 @@
 import { promises as fs } from 'fs';
 import type { MetadataRoute } from 'next';
 import path from 'path';
+
 import { siteVideos } from './videos';
 
 const prefix = 'https://www.qcpetstudies.com';

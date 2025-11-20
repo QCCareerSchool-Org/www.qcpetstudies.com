@@ -1,10 +1,10 @@
+import Image from 'next/image';
 import Link from 'next/link';
 import type { FC } from 'react';
 
 import styles from './index.module.scss';
 import { AuxNavBar } from '@/components/auxNavBar';
 import MapleLeaf from '@/images/maple-leaf.svg';
-import Image from 'next/image';
 
 export const CanadaAuxNavBar: FC = () => (
   <AuxNavBar background="#061F3A" color="white" className={styles.bar}>

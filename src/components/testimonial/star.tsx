@@ -1,8 +1,8 @@
+import Image from 'next/image';
 import type { FC } from 'react';
 
 import StarIcon from './star-icon.svg';
 import styles from './star.module.css';
-import Image from 'next/image';
 
 interface Props {
   filled?: boolean;
