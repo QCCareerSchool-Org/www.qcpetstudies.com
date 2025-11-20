@@ -112,12 +112,12 @@ const ClassVsOnlineLearning: PageComponent = () => (
 
 export default ClassVsOnlineLearning;
 
-type ComparisonSectionProps = {
+interface ComparisonSectionProps {
   title: string;
   inClass: string | ReactElement;
   online: string | ReactElement;
   className?: string;
-};
+}
 
 const ComparisonSection: FC<ComparisonSectionProps> = ({ title, inClass, online, className }) => (
   <section className={className}>

@@ -20,7 +20,7 @@ export const gaEvent = (action: string, params?: unknown): void => {
   window.gtag?.('event', action, params);
 };
 
-type GAUserData = {
+interface GAUserData {
   email: string;
   // phone_number: string; // can't include phone_number because it must be in E.164 format and we don't explicitly ask for a telephone country code
   address?: {
@@ -33,7 +33,7 @@ type GAUserData = {
     postal_code: string;
     country: string;
   };
-};
+}
 
 export const gaUserData = (userData: GAUserData): void => {
   window.gtag?.('set', 'user_data', userData);

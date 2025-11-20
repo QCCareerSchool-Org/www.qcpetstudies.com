@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import type { FC } from 'react';
+import type { FC, JSX } from 'react';
 
 import { FixedNav } from './fixedNav';
 import styles from './header.module.scss';
@@ -7,12 +7,12 @@ import { CountDownTimer } from '@/components/countDownTimer';
 import { Logo } from '@/components/logo';
 import { getData } from '@/lib/getData';
 
-type Props = {
+interface Props {
   logoLink?: boolean;
   showBanner?: boolean;
   buttonHref?: string;
   buttonContent?: JSX.Element | string;
-};
+}
 
 export const Header: FC<Props> = async ({ logoLink, buttonHref, buttonContent, showBanner }) => {
   const { countryCode } = await getData();

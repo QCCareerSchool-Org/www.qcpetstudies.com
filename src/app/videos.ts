@@ -1,6 +1,6 @@
 /* eslint-disable camelcase */
 
-export type Video = {
+export interface Video {
   /** unique identifier */
   slug: string;
   /** the pages this video appears on */
@@ -30,13 +30,13 @@ export type Video = {
   };
   live?: 'yes' | 'no';
   tag?: string;
-};
+}
 
 import KimCooperImage from '@/app/(main)/certification-courses/dog-training/kim-cooper.jpg';
 
 const baseUrl = 'https://www.qcpetstudies.com';
 
-export const siteVideos: Video[] = ([
+export const siteVideos = ([
   {
     slug: 'dog-training',
     pages: [
@@ -123,10 +123,10 @@ export const siteVideos: Video[] = ([
     family_friendly: 'yes',
     requires_subscription: 'no',
   },
-] as Video[]).map(v => ({
+]).map(v => ({
   ...v,
-  player_loc: v.player_loc ?? `${baseUrl}/videos/${v.slug}`,
-}));
+  player_loc: ('player_loc' in v && v.player_loc) ?? `${baseUrl}/videos/${v.slug}`,
+})) as Readonly<Video>[] as readonly Readonly<Video>[];
 
 // check for duplicate slugs
 const slugs: string[] = [];

@@ -16,7 +16,7 @@ const iconSize = 24;
 
 type Variant = 'dark' | 'light';
 
-type Props = {
+interface Props {
   courses: string[];
   price: Price;
   doubleGuarantee: boolean;
@@ -25,7 +25,7 @@ type Props = {
   /** custom path for the shopping cart (include leading slash) */
   enrollPath?: string;
   message?: ReactNode;
-};
+}
 
 export const PriceSectionWithDiscount: FC<Props> = ({ courses, price, doubleGuarantee, variant = 'dark', id = 'tuition', enrollPath = '/', message }) => {
   const [ popup, toggle ] = useToggle();

@@ -1,11 +1,11 @@
-import type { MutableRefObject } from 'react';
+import type { RefObject } from 'react';
 import { useEffect, useState } from 'react';
 
-export const useOnScreen = <T = unknown>(ref: MutableRefObject<T>, rootMargin = '0px', fallbackValue = false): boolean => {
+export const useOnScreen = <T = unknown>(ref: RefObject<T>, rootMargin = '0px', fallbackValue = false): boolean => {
   const [ isIntersecting, setIntersecting ] = useState(false);
 
   useEffect(() => {
-    if (('IntersectionObserver' in window)) {
+    if (!('IntersectionObserver' in window)) {
       // use the fallback value if we don't have IntersectionObserver available
       // eslint-disable-next-line react-hooks/set-state-in-effect
       setIntersecting(fallbackValue);
@@ -25,7 +25,7 @@ export const useOnScreen = <T = unknown>(ref: MutableRefObject<T>, rootMargin = 
     const element = ref.current;
     if (element && element instanceof Element) {
       observer.observe(element);
-      return () => observer.unobserve(element);
+      return () => { observer.unobserve(element); };
     }
   }, [ ref, rootMargin, fallbackValue ]);
 

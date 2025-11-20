@@ -2,9 +2,9 @@ import type { FC, PropsWithChildren } from 'react';
 
 import styles from './questionAndAnswer.module.scss';
 
-type Props = {
+interface Props {
   header: string;
-};
+}
 
 export const QuestionAndAnswer: FC<PropsWithChildren<Props>> = ({ header, children }) => (
   <div itemScope itemProp="mainEntity" itemType="https://schema.org/Question">

@@ -3,10 +3,10 @@
 import type { FC, ReactNode } from 'react';
 import { Tab, Tabs } from 'react-bootstrap';
 
-type Props = {
+interface Props {
   videoContent: ReactNode;
   assignmentContent: ReactNode;
-};
+}
 
 export const TabGroup: FC<Props> = ({ videoContent, assignmentContent }) => (
   <>

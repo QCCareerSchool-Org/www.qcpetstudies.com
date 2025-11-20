@@ -5,10 +5,10 @@ import type { FC, MouseEventHandler } from 'react';
 import styles from './index.module.css';
 import globalStyles from '../global.module.css';
 
-type Props = {
+interface Props {
   url: string;
   text: string;
-};
+}
 
 export const TwitterShare: FC<Props> = ({ url, text }) => {
   const handleClick: MouseEventHandler<HTMLAnchorElement> = e => {

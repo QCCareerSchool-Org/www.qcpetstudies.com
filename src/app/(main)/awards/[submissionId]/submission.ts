@@ -1,7 +1,7 @@
 import type { School } from '@/domain/school';
 import { isSchool } from '@/domain/school';
 
-export type RawAward = {
+export interface RawAward {
   submissionId: string | number;
   courseName: string;
   schoolName: School;
@@ -11,9 +11,9 @@ export type RawAward = {
   name: string;
   /** string date */
   created: string | null;
-};
+}
 
-export type Award = {
+export interface Award {
   submissionId: string | number;
   courseName: string;
   schoolName: School;
@@ -23,7 +23,7 @@ export type Award = {
   name: string;
   /** string date */
   created: Date | null;
-};
+}
 
 export const isRawAward = (obj: unknown): obj is RawAward => {
   return typeof obj === 'object' && obj !== null &&

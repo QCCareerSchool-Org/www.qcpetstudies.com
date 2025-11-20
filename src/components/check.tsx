@@ -1,8 +1,8 @@
 import type { CSSProperties, FC } from 'react';
 
-type Props = {
+interface Props {
   color: CSSProperties['color'];
-};
+}
 
 export const Check: FC<Props> = ({ color }) => {
   return (

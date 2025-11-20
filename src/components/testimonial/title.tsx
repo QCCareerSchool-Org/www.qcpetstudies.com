@@ -6,10 +6,11 @@ import { OverlayTrigger, Tooltip } from 'react-bootstrap';
 import type { Testimonial } from './data';
 import styles from './index.module.css';
 import { getCourseName } from '@/domain/courseCode';
+import type { OverlayChildren } from 'react-bootstrap/esm/Overlay';
 
-type Props = {
+interface Props {
   testimonial: Testimonial;
-};
+}
 
 export const Title: FC<Props> = ({ testimonial }) => {
   if (testimonial.courses.length === 0) {
@@ -20,7 +21,7 @@ export const Title: FC<Props> = ({ testimonial }) => {
     return <span className={styles.title}>{getCourseName(testimonial.courses[0])}</span>;
   }
 
-  const tooltip: FC = props => (
+  const tooltip: OverlayChildren = props => (
     <Tooltip id="button-tooltip" {...props}>
       Also a graduate of:
       <ul className="m-0 ps-3">

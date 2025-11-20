@@ -3,10 +3,10 @@ import type { FC } from 'react';
 import { MasterIcon } from './masterIcon';
 import { lisaDay, paddyGaffney } from './tutors';
 
-type Props = {
+interface Props {
   className?: string;
   id?: string;
-};
+}
 
 export const TutorSectionDG: FC<Props> = ({ className, id = 'tutors' }) => (
   <>

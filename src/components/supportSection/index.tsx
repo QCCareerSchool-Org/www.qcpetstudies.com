@@ -7,9 +7,9 @@ import StudentSupportImage from './student-support.jpg';
 import CalIcon from '@/components/icons/calendar-check.svg';
 import ChatIcon from '@/components/icons/chat-white.svg';
 
-type Props = {
+interface Props {
   showLink?: boolean;
-};
+}
 
 export const SupportSection: FC<Props> = ({ showLink }) => (
   <section className={`${styles.section} text-white`}>

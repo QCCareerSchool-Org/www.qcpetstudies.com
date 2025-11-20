@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Image from 'next/image';
 import type { FC, PropsWithChildren, ReactNode } from 'react';
 import { FaBookOpen, FaHeadphones, FaLightbulb, FaStar } from 'react-icons/fa';
 
@@ -8,7 +9,6 @@ import SPCALogo from './spca-full-color-logo.svg';
 import type { PageComponent } from '@/app/serverComponent';
 import { BackgroundImage } from '@/components/backgroundImage';
 import { GuaranteeSection } from '@/components/guaranteeSection';
-import Image from 'next/image';
 
 export const metadata: Metadata = {
   title: 'About the School',

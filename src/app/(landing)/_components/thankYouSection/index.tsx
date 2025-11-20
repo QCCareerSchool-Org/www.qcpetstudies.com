@@ -1,18 +1,18 @@
 import type { StaticImageData } from 'next/image';
+import Image from 'next/image';
 import type { FC } from 'react';
 
 import { BackgroundImage } from '@/components/backgroundImage';
 import { FormCard } from '@/components/formCard';
 import { FormWrapper } from '@/components/formWrapper';
 import LockIcon from '@/components/icons/q-lock.svg';
-import Image from 'next/image';
 
-type Props = {
+interface Props {
   course?: string;
   heroSrc: StaticImageData;
   mobileHeroSrc?: StaticImageData;
   emailAddress?: string;
-};
+}
 
 export const ThankYouSection: FC<Props> = ({ course, heroSrc, mobileHeroSrc, emailAddress }) => {
   const downloadUrl = course === 'dt'

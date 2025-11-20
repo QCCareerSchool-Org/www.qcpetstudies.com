@@ -4,10 +4,10 @@ import * as brevo from '@getbrevo/brevo';
 
 const brevoApiKey = process.env.BREVO_API_KEY ?? '';
 
-type Attributes = {
+interface Attributes {
   STATUS_PET_LEAD?: boolean;
   STATUS_PET_STUDENT?: boolean;
-};
+}
 
 export const createBrevoContact = async (emailAddress: string, firstName?: string, lastName?: string, countryCode?: string, provinceCode?: string | null, attributes?: Attributes, listIds?: number[]): Promise<boolean> => {
   const contactsApi = new brevo.ContactsApi();

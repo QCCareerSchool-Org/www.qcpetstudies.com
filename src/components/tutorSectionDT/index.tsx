@@ -4,10 +4,10 @@ import type { FC } from 'react';
 import BrunoBakerImage from './bruno-baker.jpg';
 import SusanReadImage from './susan-read.jpg';
 
-type Props = {
+interface Props {
   className?: string;
   id?: string;
-};
+}
 
 export const TutorSectionDT: FC<Props> = ({ className, id = 'tutors' }) => {
 

@@ -2,9 +2,9 @@
 
 import type { FC, ReactNode } from 'react';
 
-type Props = {
+interface Props {
   children: ReactNode;
-};
+}
 
 export const CardBody: FC<Props> = ({ children }) => (
   <>

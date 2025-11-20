@@ -4,9 +4,9 @@ import type { FC } from 'react';
 import Desktop from './$400-off.jpg';
 import DesktopUK from './£400-off.jpg';
 
-type Props = {
+interface Props {
   countryCode?: string;
-};
+}
 
 export const Halloween2025: FC<Props> = ({ countryCode }) => {
   const discount = countryCode === 'GB' ? '£400' : '$400';

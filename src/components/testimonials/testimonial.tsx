@@ -2,13 +2,13 @@ import type { StaticImageData } from 'next/image';
 import Image from 'next/image';
 import type { FC, PropsWithChildren } from 'react';
 
-type Props = {
+interface Props {
   name: string;
   certification?: string;
   imageSrc: StaticImageData;
   imageWidth: number;
   imageHeight: number;
-};
+}
 
 export const Testimonial: FC<PropsWithChildren<Props>> = ({ name, certification, imageSrc, imageWidth, imageHeight, children }) => (
   <>

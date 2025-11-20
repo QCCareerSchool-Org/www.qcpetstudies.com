@@ -2,7 +2,7 @@ import type { StaticImageData } from 'next/image';
 import Image from 'next/image';
 import type { FC } from 'react';
 
-export type Props = {
+export interface Props {
   title: string;
   subtitle?: string;
   imgSrc: StaticImageData;
@@ -10,7 +10,7 @@ export type Props = {
   text: string;
   extraText?: string;
   className?: string;
-};
+}
 
 export const CareerSection: FC<Props> = ({ title, subtitle, imgSrc, imgAlt, text, extraText, className }) => (
   <section className={className}>

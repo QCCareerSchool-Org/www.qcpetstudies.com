@@ -32,7 +32,7 @@ export const StudentShowcaseSection: FC<{ student: ShowcaseProps }> = ({ student
             <h3 className="mb-1">{student.name}</h3>
             <h5 className="mb-4">{getCourseName(student.courses[0])}</h5>
           </div>
-          <div className={`${styles.stars}`}>
+          <div className={styles.stars}>
             {Array(5).fill(null).map((_, i) => <Star key={i} filled={i < student.stars} />)}
           </div>
           <div>

@@ -2,11 +2,11 @@ import type { FC } from 'react';
 
 import styles from './countDownElement.module.scss';
 
-type Props = {
+interface Props {
   name: string;
   number: number;
   disabled: boolean;
-};
+}
 
 export const CountDownElement: FC<Props> = ({ name, number, disabled }) => (
   <div className="text-center d-flex flex-column justify-content-center align-items-center" style={{ width: 40 }}>

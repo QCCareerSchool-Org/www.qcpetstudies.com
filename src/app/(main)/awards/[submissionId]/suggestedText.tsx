@@ -3,9 +3,9 @@
 import type { FC, MouseEventHandler } from 'react';
 import { useEffect, useState } from 'react';
 
-type Params = {
+interface Params {
   text: string;
-};
+}
 
 export const SuggestedText: FC<Params> = ({ text }) => {
   const [ clicks, setClicks ] = useState(0);
@@ -14,8 +14,8 @@ export const SuggestedText: FC<Params> = ({ text }) => {
     if (!clicks) {
       return;
     }
-    const id = setTimeout(() => setClicks(0), 1000);
-    return () => clearTimeout(id);
+    const id = setTimeout(() => { setClicks(0); }, 1000);
+    return () => { clearTimeout(id); };
   }, [ clicks ]);
 
   const handleTextAreaClick: MouseEventHandler<HTMLTextAreaElement> = () => {

@@ -1,9 +1,9 @@
 import type { FC } from 'react';
 import { FaBriefcase, FaChalkboardTeacher, FaHandHoldingUsd, FaLaptopHouse, FaRegCalendarCheck } from 'react-icons/fa';
 
-type Props = {
+interface Props {
   className?: string;
-};
+}
 
 export const WhyChooseQCSection: FC<Props> = ({ className }) => (
   <section className={className}>

@@ -4,14 +4,14 @@ import LisaImage from './lisa.jpg';
 import MariImage from './mari.jpg';
 import PaddyImage from './paddy.jpg';
 
-export type Tutor = {
+export interface Tutor {
   name: string;
   title: string;
   yearsExperience: number;
   description: string;
   image: StaticImageData;
   video?: string; // currently unused, but kept in case we want them in the future
-};
+}
 
 export const mariKusanagi: Tutor = {
   name: 'Mari Kusanagi',

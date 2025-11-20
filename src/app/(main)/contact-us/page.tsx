@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Image from 'next/image';
 
 import ContactByChatImage from './contact-chat.svg';
 import ContactByEmailImage from './contact-email.svg';
@@ -11,7 +12,6 @@ import { ChatLink } from '@/components/chatLink';
 import { EmailLink } from '@/components/emailLink';
 import { TelephoneLink } from '@/components/telephoneLink';
 import { getData } from '@/lib/getData';
-import Image from 'next/image';
 
 export const metadata: Metadata = {
   title: 'Contact Us',

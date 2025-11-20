@@ -5,9 +5,9 @@ import type { FC, MouseEventHandler } from 'react';
 import styles from './index.module.css';
 import globalStyles from '../global.module.css';
 
-type Props = {
+interface Props {
   url: string;
-};
+}
 
 export const FacebookShare: FC<Props> = ({ url }) => {
   const handleClick: MouseEventHandler<HTMLAnchorElement> = e => {

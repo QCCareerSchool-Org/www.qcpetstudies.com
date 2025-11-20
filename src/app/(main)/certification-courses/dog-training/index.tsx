@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import type { FC } from 'react';
 import { BsCardChecklist, BsPeopleFill } from 'react-icons/bs';
 import { IoMdInfinite } from 'react-icons/io';
@@ -24,15 +25,14 @@ import GuaranteeIcon from '@/images/course-overview-icons/guarantee.svg';
 import OutlineIcon from '@/images/course-overview-icons/outline.svg';
 import TutorIcon from '@/images/course-overview-icons/tutor.svg';
 import { formatPrice } from '@/lib/formatPrice';
-import Image from 'next/image';
 
-type Props = {
+interface Props {
   price: Price;
   enrollPath: string;
   courseCodes: CourseCode[];
   countryCode: string;
   provinceCode: string | null;
-};
+}
 
 const headerIconSize = 20;
 const iconSize = 36;

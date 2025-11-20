@@ -1,19 +1,20 @@
 import eslint from '@eslint/js';
-import tseslint from 'typescript-eslint';
+import stylistic from '@stylistic/eslint-plugin';
 import { defineConfig, globalIgnores } from 'eslint/config';
 import nextVitals from 'eslint-config-next/core-web-vitals';
 import nextTs from 'eslint-config-next/typescript';
 import reactPlugin from 'eslint-plugin-react';
-import stylistic from '@stylistic/eslint-plugin';
+import tseslint from 'typescript-eslint';
 
 const eslintConfig = defineConfig([
   ...nextVitals,
   ...nextTs,
   eslint.configs.recommended,
-  tseslint.configs.recommended,
-  tseslint.configs.recommendedTypeChecked,
+  tseslint.configs.strictTypeChecked,
+  tseslint.configs.stylisticTypeChecked,
   {
     languageOptions: {
+      parser: tseslint.parser,
       parserOptions: {
         projectService: true,
       },
@@ -26,6 +27,7 @@ const eslintConfig = defineConfig([
     'out/**',
     'build/**',
     'next-env.d.ts',
+    // custom
     'public',
   ]),
   {
@@ -107,11 +109,7 @@ const eslintConfig = defineConfig([
       'no-lonely-if': 'off',
       'no-mixed-operators': 'error',
       'no-multi-assign': 'error',
-      'no-multiple-empty-lines': [ 'error', {
-        max: 1,
-        maxEOF: 0,
-        maxBOF: 0,
-      } ],
+      'no-multiple-empty-lines': [ 'error', { max: 1, maxEOF: 0, maxBOF: 0 } ],
       'no-tabs': 'error',
       'no-trailing-spaces': 'error',
       'no-unneeded-ternary': 'error',
@@ -152,6 +150,7 @@ const eslintConfig = defineConfig([
         ignoreDeclarationSort: true,
         ignoreMemberSort: false,
         memberSyntaxSortOrder: [ 'none', 'all', 'multiple', 'single' ],
+        allowSeparatedGroups: true,
       } ],
       'template-curly-spacing': 'error',
       'yield-star-spacing': 'error',
@@ -173,6 +172,7 @@ const eslintConfig = defineConfig([
       '@typescript-eslint/promise-function-async': 'error',
       '@typescript-eslint/prefer-reduce-type-parameter': 'error',
       '@typescript-eslint/prefer-string-starts-ends-with': 'error',
+      '@typescript-eslint/restrict-template-expressions': [ 'error', { allowNumber: true } ],
 
       // @typescript-eslint rules
       '@typescript-eslint/dot-notation': 'error',
@@ -247,20 +247,18 @@ const eslintConfig = defineConfig([
       'react/react-in-jsx-scope': 'off',
       'react/self-closing-comp': 'error',
 
-      // "import/order": ["error", {
-      //     "alphabetize": {
-      //         order: "asc",
-      //         orderImportKind: "asc",
-      //         caseInsensitive: true,
-      //     },
-
-      //     "groups": [
-      //         ["builtin", "external"],
-      //         ["internal", "parent", "sibling", "index", "object", "unknown"],
-      //     ],
-
-      //     "newlines-between": "always",
-      // }],
+      // 'import/order': [ 'error', {
+      //   'alphabetize': {
+      //     order: 'asc',
+      //     orderImportKind: 'asc',
+      //     caseInsensitive: true,
+      //   },
+      //   'groups': [
+      //     [ 'builtin', 'external' ],
+      //     [ 'internal', 'parent', 'sibling', 'index', 'object', 'unknown' ],
+      //   ],
+      //   'newlines-between': 'always',
+      // } ],
     },
   },
 ]);

@@ -9,9 +9,9 @@ import GroomingKitList from '@/components/kitListDG';
 import { useToggle } from '@/hooks/useToggle';
 import { gbpCountry } from '@/lib/currencies';
 
-type Props = {
+interface Props {
   countryCode: string;
-};
+}
 
 export const KitDetailsButton: FC<Props> = ({ countryCode }) => {
   const [ show, toggle ] = useToggle();

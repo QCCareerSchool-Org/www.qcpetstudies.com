@@ -1,7 +1,8 @@
 'use client';
 
+import Image from 'next/image';
 import Link from 'next/link';
-import type { FC } from 'react';
+import type { FC, JSX } from 'react';
 
 import styles from './fixedNav.module.scss';
 import SmallLogo from './logo-sm.svg';
@@ -9,12 +10,11 @@ import QCIcon from './qc.svg';
 import { Logo } from '@/components/logo';
 import { useScreenWidth } from '@/hooks/useScreenWidth';
 import { useScrollPosition } from '@/hooks/useScrollPosition';
-import Image from 'next/image';
 
-type Props = {
+interface Props {
   buttonHref?: string;
   buttonContent?: JSX.Element | string;
-};
+}
 
 export const FixedNav: FC<Props> = ({ buttonHref = '#', buttonContent }) => {
   const scrollPosition = useScrollPosition();
