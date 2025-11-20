@@ -26,12 +26,12 @@ import { externship } from '@/lib/externship';
 import { formatPrice } from '@/lib/formatPrice';
 import { getData } from '@/lib/getData';
 
-type Props = {
+interface Props {
   dgPrice: Price;
   dePrice: Price;
   enrollPath: string;
   courseCode: CourseCode;
-};
+}
 
 const iconSize = 36;
 const testimonialIds = [ 'TD-0004', 'TD-0005', 'TD-0007', 'TD-0008', 'TD-0009', 'TD-0010' ];

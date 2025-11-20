@@ -5,10 +5,10 @@ import { useEffect, useRef, useState } from 'react';
 
 import styles from './index.module.scss';
 
-type Props = {
+interface Props {
   header: string;
   url: string;
-};
+}
 
 export const QuizCTACard: FC<Props> = ({ header, url }) => {
   const [ isVisible, setIsVisible ] = useState(() => !('IntersectionObserver' in window));

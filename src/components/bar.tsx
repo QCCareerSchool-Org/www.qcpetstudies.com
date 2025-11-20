@@ -5,10 +5,10 @@ import { useEffect, useRef } from 'react';
 
 import { useOnScreen } from '@/hooks/useOnScreen';
 
-type Props = {
+interface Props {
   variant: 'primary' | 'secondary' | 'dark' | 'light';
   align?: 'start' | 'center' | 'end';
-};
+}
 
 export const Bar: FC<Props> = ({ variant, align = 'center' }) => {
   const ref = useRef(null);

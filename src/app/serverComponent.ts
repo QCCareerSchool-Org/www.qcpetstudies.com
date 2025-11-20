@@ -3,14 +3,14 @@ import type { FC, ReactNode } from 'react';
 
 type EmptyRecord = Record<never, string>;
 
-type PageProps<RouteParams extends Record<string, string> = EmptyRecord> = {
+interface PageProps<RouteParams extends Record<string, string> = EmptyRecord> {
   params: Promise<RouteParams>;
-  searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
-};
+  searchParams: Promise<Record<string, string | string[] | undefined>>;
+}
 
-type LayoutProps = {
+interface LayoutProps {
   children: ReactNode;
-};
+}
 
 export type PageComponent<RouteParams extends Record<string, string> = EmptyRecord> = FC<PageProps<RouteParams>>;
 

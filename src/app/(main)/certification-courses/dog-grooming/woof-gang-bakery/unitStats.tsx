@@ -6,11 +6,11 @@ import { useMemo } from 'react';
 import styles from './unitStats.module.scss';
 import { useScreenWidth } from '@/hooks/useScreenWidth';
 
-type Props = {
+interface Props {
   readings: string;
   videos?: string;
   assignments: string;
-};
+}
 
 const shorten = (t: string): string => {
   return t.replace(/hours/gu, 'hrs.')

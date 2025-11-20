@@ -25,7 +25,7 @@ export const useOnScreen = <T = unknown>(ref: MutableRefObject<T>, rootMargin = 
     const element = ref.current;
     if (element && element instanceof Element) {
       observer.observe(element);
-      return () => observer.unobserve(element);
+      return () => { observer.unobserve(element); };
     }
   }, [ ref, rootMargin, fallbackValue ]);
 

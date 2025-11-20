@@ -2,10 +2,10 @@ import type { FC } from 'react';
 
 type Variant = 'dark' | 'light';
 
-type Props = {
+interface Props {
   variant?: Variant;
   id?: string;
-};
+}
 
 export const PriceSectionDisabled: FC<Props> = ({ variant = 'dark', id = 'tuition' }) => (
   <>

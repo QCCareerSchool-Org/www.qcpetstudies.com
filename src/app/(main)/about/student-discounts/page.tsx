@@ -87,10 +87,10 @@ const StudentDiscountsPage: PageComponent = () => (
   </>
 );
 
-type SupplierProps = {
+interface SupplierProps {
   className?: string;
   image: ReactNode;
-};
+}
 
 const Supplier: FC<PropsWithChildren<SupplierProps>> = ({ className, image, children }) => (
   <div className={`d-flex flex-column flex-lg-row align-items-center ${className ?? ''}`}>

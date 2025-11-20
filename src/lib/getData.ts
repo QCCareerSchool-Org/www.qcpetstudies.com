@@ -1,11 +1,11 @@
 import { randomInt } from 'crypto';
 import { cookies, headers } from 'next/headers';
 
-type Data = {
+interface Data {
   testGroup: number;
   countryCode: string;
   provinceCode: string | null;
-};
+}
 
 export const getData = async (): Promise<Data> => {
   const headerList = await headers();

@@ -4,9 +4,9 @@ import { BsCalendarCheck, BsCheckCircle, BsFillCloudArrowDownFill } from 'react-
 import MagnifyingGLassImage from '@/images/icon-magnifying-glass-2.svg';
 import Image from 'next/image';
 
-type Props = {
+interface Props {
   className?: string;
-};
+}
 
 export const HowTheCoursesWorkSection: FC<Props> = ({ className }) => (
   <section className={className}>

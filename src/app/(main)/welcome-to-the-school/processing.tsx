@@ -9,9 +9,9 @@ import { fbqSale } from '@/lib/fbq';
 import { gaSale } from '@/lib/gtag';
 import { uetSale } from '@/lib/uet';
 
-type Props = {
+interface Props {
   enrollment: Enrollment;
-};
+}
 
 export const Processing: FC<Props> = ({ enrollment }) => {
   useEffect(() => {

@@ -7,7 +7,7 @@ import { isSchool } from './school';
 import type { Title } from './title';
 import { isTitle } from './title';
 
-export type Course = {
+export interface Course {
   code: string;
   baseCost: number;
   planDiscount: number;
@@ -15,9 +15,9 @@ export type Course = {
   deposit: number;
   installment: number;
   name: string;
-};
+}
 
-type Base = {
+interface Base {
   id: number;
   school: School;
   noShipping: boolean;
@@ -52,7 +52,7 @@ type Base = {
   currencyName: string | null;
   currencyExchangeRate: number | null;
   courses: Course[];
-};
+}
 
 type RawEnrollment = Base & {
   /** string date */

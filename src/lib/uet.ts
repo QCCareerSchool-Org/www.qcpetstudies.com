@@ -12,10 +12,10 @@ export const uetPageview = (url: string): void => {
   window.uetq.push('event', 'page_view', { page_path: url }); // eslint-disable-line camelcase
 };
 
-export type UETUserData = {
+export interface UETUserData {
   em?: string;
   ph?: string;
-};
+}
 
 export const uetUserData = (emailAddress?: string, telephoneNumber?: string): void => {
   window.uetq = window.uetq ?? [];

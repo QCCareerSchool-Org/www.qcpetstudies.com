@@ -13,7 +13,7 @@ const pricesUrl = process.env.PRICES_ENDPOINT;
 
 export const fetchPrice = async (priceQuery: PriceQuery, controller?: AbortController): Promise<Price | undefined> => {
   try {
-    const url = pricesUrl + '?' + qs.stringify(priceQuery);
+    const url = `${pricesUrl}?${qs.stringify(priceQuery)}`;
     const response = await fetch(url, {
       headers: { 'X-API-Version': '2' },
       signal: controller?.signal,
@@ -39,18 +39,18 @@ export interface PriceQuery {
   options?: PriceQueryOptions;
 }
 
-type PriceQueryOptions = {
+interface PriceQueryOptions {
   noShipping?: boolean;
   discountAll?: boolean;
-  discount?: { [d in CurrencyCode]?: number } & { default: number };
+  discount?: Partial<Record<CurrencyCode, number>> & { default: number };
   discountSignature?: string;
-  depositOverrides?: { [code: string]: number };
+  depositOverrides?: Record<string, number>;
   installmentsOverride?: number;
   studentDiscount?: boolean;
   school?: School;
   promoCode?: string;
   dateOverride?: Date;
-};
+}
 
 export const getEnrollment = async (id: number, code: string): Promise<Enrollment> => {
   const url = `${process.env.ENROLLMENT_ENDPOINT}/${id}?code=${encodeURIComponent(code)}`;

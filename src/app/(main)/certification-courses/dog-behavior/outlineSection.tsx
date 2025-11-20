@@ -3,10 +3,10 @@ import type { FC } from 'react';
 import { Accordion } from '@/components/accordion';
 import { AccordionItem } from '@/components/accordion/accordionItem';
 
-type Props = {
+interface Props {
   className?: string;
   defaultActiveKey?: number;
-};
+}
 
 export const OutlineSection: FC<Props> = ({ className, defaultActiveKey }) => {
   let index = 0;

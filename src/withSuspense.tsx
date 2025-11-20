@@ -1,9 +1,9 @@
 import type { FC, ReactNode } from 'react';
 import { Suspense } from 'react';
 
-type ExtraProps = {
+interface ExtraProps {
   suspenseFallback?: ReactNode;
-};
+}
 
 /** HOC to automatically wrap a component in a Suspense boundary */
 export const withSuspense = <P extends object>(Component: FC<P>, fallback?: ReactNode): FC<P & ExtraProps> => {
@@ -13,7 +13,7 @@ export const withSuspense = <P extends object>(Component: FC<P>, fallback?: Reac
     </Suspense>
   );
 
-  Inner.displayName = `withSuspense(${Component.displayName ?? Component.name ?? 'Component'})`;
+  Inner.displayName = `withSuspense(${Component.displayName ?? Component.name})`;
 
   return Inner;
 };

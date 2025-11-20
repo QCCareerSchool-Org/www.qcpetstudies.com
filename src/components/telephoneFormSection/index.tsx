@@ -14,12 +14,12 @@ import { FormCard } from '@/components/formCard';
 import { FormWrapper } from '@/components/formWrapper';
 import { Overlay } from '@/components/overlay';
 
-type Props = {
+interface Props {
   countryCode?: string;
   leadId: string;
   brevoListId: number;
   backgroundSrc: StaticImageData;
-};
+}
 
 type State = 'ready' | 'submitting' | 'success' | 'error';
 
@@ -45,7 +45,7 @@ export const TelephoneFormSection: FC<Props> = ({ countryCode, leadId, brevoList
     }).then(responseBody => {
       setState('success');
       console.log(responseBody);
-    }).catch(err => {
+    }).catch((err: unknown) => {
       setState('error');
       console.error(err);
     });
@@ -92,10 +92,10 @@ export const TelephoneFormSection: FC<Props> = ({ countryCode, leadId, brevoList
   );
 };
 
-type InputProps = {
+interface InputProps {
   value: Value;
   onChange: ChangeEventHandler;
-};
+}
 
 const InputComponent = forwardRef<HTMLInputElement, InputProps>((props, ref) => {
   return <input ref={ref} type="tel" value={props.value} onChange={props.onChange} className="form-control" placeholder="Telephone Number" required />;

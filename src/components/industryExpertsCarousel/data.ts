@@ -2,13 +2,13 @@ import type { StaticImageData } from 'next/image';
 
 import * as Images from './images';
 
-export type Expert = {
+export interface Expert {
   id?: string;
   name: string;
   title: string;
   description: string;
   image: StaticImageData;
-};
+}
 
 export const experts: Record<string, Expert> = {
   'lisa-day': {

@@ -5,11 +5,11 @@ import TwentyOneDayGuaranteeIcon from './21-day-guarantee-outlined.svg';
 import DoubleGuaranteeIcon from './double-guarantee.svg';
 import Image from 'next/image';
 
-type Props = {
+interface Props {
   className?: string;
   double?: boolean;
   id?: string;
-};
+}
 
 export const GuaranteeSection: FC<Props> = ({ className, double = false, id = 'guarantee' }) => (
   <>

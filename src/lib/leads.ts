@@ -1,6 +1,6 @@
 import type { School } from '@/domain/school';
 
-export type LeadPayload = {
+export interface LeadPayload {
   school: School;
   emailAddress: string;
   firstName?: string;
@@ -18,12 +18,12 @@ export type LeadPayload = {
     term: string | null;
   };
   courses?: string[];
-};
+}
 
-type ClientData = {
+interface ClientData {
   ipAddress: string | null;
   userAgent: string | null;
-};
+}
 
 export const addLead = async (payload: LeadPayload, clientData?: ClientData): Promise<AddLeadResponse> => {
   const url = 'https://leads.qccareerschool.com/';
@@ -63,7 +63,7 @@ export const addLead = async (payload: LeadPayload, clientData?: ClientData): Pr
   return responseBody;
 };
 
-type AddLeadResponse = { leadId: string };
+interface AddLeadResponse { leadId: string }
 
 const isAddLeadResponse = (obj: unknown): obj is AddLeadResponse => {
   return obj !== null && typeof obj === 'object' && 'leadId' in obj && typeof obj.leadId === 'string';

@@ -25,11 +25,11 @@ const courseCodes: CourseCode[] = [ 'gt' ];
 const headerIconSize = 20;
 const iconSize = 36;
 
-export type Props = {
+export interface Props {
   gtPrice: Price;
   dgPrice: Price;
   enrollPath?: string;
-};
+}
 
 export const GroomingTechnicianBase: FC<Props> = ({ gtPrice, dgPrice, enrollPath = '/' }) => (
   <>
@@ -42,7 +42,7 @@ export const GroomingTechnicianBase: FC<Props> = ({ gtPrice, dgPrice, enrollPath
             <Image src={CertificationGoldImage} alt="Certified Grooming Technician CGT" height="125" width="125" style={{ maxWidth: '100%', height: 'auto' }} />
           </div>
           <h1>Grooming Technician Course</h1>
-          {gtPrice && gtPrice.plans.part.deposit > 0 && <h4>Get Started for Only <strong>{gtPrice.currency.symbol}{formatPrice(gtPrice.plans.part.deposit)}</strong></h4>}
+          {gtPrice.plans.part.deposit > 0 && <h4>Get Started for Only <strong>{gtPrice.currency.symbol}{formatPrice(gtPrice.plans.part.deposit)}</strong></h4>}
           <p><em><a href="#tuition" className="text-white">See tuition details</a></em></p>
           <a href={`https://enroll.qcpetstudies.com${enrollPath}?c=gt`}><button className="btn btn-secondary btn-lg">Enroll Online</button></a>
         </div>

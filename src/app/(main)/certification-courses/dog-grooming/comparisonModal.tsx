@@ -6,12 +6,12 @@ import { Modal, ModalBody, ModalHeader, ModalTitle } from 'react-bootstrap';
 import type { Price } from '@/domain/price';
 import { formatPrice } from '@/lib/formatPrice';
 
-type Props = {
+interface Props {
   show: boolean;
   onHide: () => void;
   dgPrice: Price;
   dePrice: Price;
-};
+}
 
 export const ComparisonModal: FC<Props> = props => {
   return (

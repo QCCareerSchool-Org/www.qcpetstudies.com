@@ -19,7 +19,7 @@ const names = {
   dd: 'Dog Daycare',
   gt: 'Grooming Technician',
   de: 'Dog Grooming Externship',
-} as const satisfies { readonly [c in CourseCode]: string };
+} as const satisfies Readonly<Record<CourseCode, string>>;
 
 const baseUrl = 'https://www.qcpetstudies.com';
 
@@ -32,7 +32,7 @@ const urls = {
   dd: `${baseUrl}/certification-courses/dog-daycare`,
   gt: `${baseUrl}/certification-courses/grooming-technician`,
   de: `${baseUrl}/certification-courses/dog-grooming`,
-} as const satisfies { readonly [c in CourseCode]: string };
+} as const satisfies Readonly<Record<CourseCode, string>>;
 
 const descriptions = {
   dg: 'Learn professional dog grooming from basic care to advanced breed styling, gain hands-on experience, and build a successful grooming business.',
@@ -43,7 +43,7 @@ const descriptions = {
   dd: 'Learn dog behavior, handling, hygiene, and safety skills to start and grow a successful dog walking or daycare business.',
   gt: 'Become a Certified Grooming Technician with interactive online training!',
   de: 'Learn professional dog grooming from basic care to advanced breed styling, gain hands-on experience, and build a successful grooming business.',
-} as const satisfies { readonly [c in CourseCode]: string };
+} as const satisfies Readonly<Record<CourseCode, string>>;
 
 const certifications = {
   dg: 'International Dog Grooming Professional™',
@@ -54,7 +54,7 @@ const certifications = {
   dd: 'International Dog Care Professional™',
   gt: 'Certified Grooming Technician™',
   de: 'International Dog Grooming Professional™',
-} as const satisfies { readonly [c in CourseCode]: string | undefined };
+} as const satisfies Readonly<Record<CourseCode, string | undefined>>;
 
 const subjects = {
   dg: undefined,
@@ -65,7 +65,7 @@ const subjects = {
   dd: undefined,
   gt: undefined,
   de: undefined,
-} as const satisfies { readonly [c in CourseCode]: readonly string[] | undefined };
+} as const satisfies Readonly<Record<CourseCode, readonly string[] | undefined>>;
 
 const workloads = {
   dg: undefined,
@@ -76,7 +76,7 @@ const workloads = {
   dd: undefined,
   gt: undefined,
   de: undefined,
-} as const satisfies { readonly [c in CourseCode]: string | undefined };
+} as const satisfies Readonly<Record<CourseCode, string | undefined>>;
 
 export const getCourseName = (c: CourseCode): string => {
   return names[c];

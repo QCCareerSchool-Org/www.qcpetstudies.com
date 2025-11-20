@@ -18,9 +18,9 @@ import { gbpCountry } from '@/lib/currencies';
 import { getTelephoneNumber } from '@/lib/telephone';
 import Image from 'next/image';
 
-type Props = {
+interface Props {
   countryCode: string;
-};
+}
 
 export const Footer: FC<Props> = ({ countryCode }) => {
   const address = getAddress(countryCode);

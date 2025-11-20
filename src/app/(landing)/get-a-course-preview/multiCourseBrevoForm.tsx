@@ -6,12 +6,12 @@ import { useState } from 'react';
 import { BrevoForm } from '@/components/brevoForm';
 import type { CourseCode } from '@/domain/courseCode';
 
-type FormFields = {
+interface FormFields {
   successLocation: string;
   brevoListId: number;
   brevoEmailTemplateId: number;
   telephoneListId: number;
-};
+}
 
 const formFieldsDictionary: Record<string, FormFields> = {
   dg: {
@@ -26,9 +26,9 @@ const formFieldsDictionary: Record<string, FormFields> = {
     brevoEmailTemplateId: 1635,
     telephoneListId: 57,
   },
-};
+} as const;
 
-type Props = {
+interface Props {
   buttonText?: string;
   buttonClassName?: string;
   placeholders?: boolean;
@@ -41,14 +41,14 @@ type Props = {
   utmTerm?: string;
   referrer: string | null;
   countryCode?: string | null;
-};
+}
 
 export const MultiCourseBrevoForm: FC<Props> = props => {
   const [ course, setCourse ] = useState<CourseCode>('dg');
   const [ formFields, setFormFields ] = useState<FormFields>(formFieldsDictionary.dg);
 
   const handleCourseChange = (e: ChangeEvent<HTMLInputElement>, courseCode: CourseCode): void => {
-    if (formFieldsDictionary[courseCode]) {
+    if (Object.hasOwn(formFieldsDictionary, courseCode)) {
       setCourse(courseCode);
       setFormFields(formFieldsDictionary[courseCode]);
     }

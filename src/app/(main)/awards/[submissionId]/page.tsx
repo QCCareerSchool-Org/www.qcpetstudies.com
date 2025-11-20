@@ -13,9 +13,9 @@ import { TwitterShare } from '@/components/share/twitter';
 import type { School } from '@/domain/school';
 import { fetchOldAward } from './fetchOldAward';
 
-type RouteParams = {
+interface RouteParams {
   submissionId: string;
-};
+}
 
 const schooolName: School = 'QC Pet Studies';
 

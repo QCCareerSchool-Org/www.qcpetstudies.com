@@ -11,13 +11,13 @@ import type { Price } from '@/domain/price';
 import MapleLeaf from '@/images/maple-leaf.svg';
 import Image from 'next/image';
 
-type Props = {
+interface Props {
   dgPrice: Price;
   dePrice: Price;
   className?: string;
   onPopupLinkClick?: MouseEventHandler;
   countryCode: string;
-};
+}
 
 export const PriceSection: FC<Props> = ({ dgPrice, dePrice, className, onPopupLinkClick, countryCode }) => {
   const [ selection, setSelection ] = useState<CourseCode>('dg');

@@ -7,9 +7,9 @@ import type { Testimonial } from './data';
 import styles from './index.module.css';
 import { getCourseName } from '@/domain/courseCode';
 
-type Props = {
+interface Props {
   testimonial: Testimonial;
-};
+}
 
 export const Title: FC<Props> = ({ testimonial }) => {
   if (testimonial.courses.length === 0) {

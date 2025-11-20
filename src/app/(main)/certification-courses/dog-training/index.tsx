@@ -26,13 +26,13 @@ import TutorIcon from '@/images/course-overview-icons/tutor.svg';
 import { formatPrice } from '@/lib/formatPrice';
 import Image from 'next/image';
 
-type Props = {
+interface Props {
   price: Price;
   enrollPath: string;
   courseCodes: CourseCode[];
   countryCode: string;
   provinceCode: string | null;
-};
+}
 
 const headerIconSize = 20;
 const iconSize = 36;

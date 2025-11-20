@@ -5,11 +5,11 @@ import Guarantee1Year from './1-year-guarantee-outlined.svg';
 import Guarantee21Days from './21-day-guarantee-outlined.svg';
 import Image from 'next/image';
 
-type Props = {
+interface Props {
   show: boolean;
   doubleGuarantee?: boolean;
   onToggle: () => void;
-};
+}
 
 export const GuaranteeModal: FC<Props> = props => (
   <Modal show={props.show} onHide={props.onToggle} size={props.doubleGuarantee ? 'lg' : undefined}>

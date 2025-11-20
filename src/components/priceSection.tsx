@@ -16,7 +16,7 @@ const iconSize = 24;
 
 type Variant = 'dark' | 'light';
 
-type Props = {
+interface Props {
   /** the cousre(s) to base the shopping cart link on */
   courses: string[];
   price: Price;
@@ -26,7 +26,7 @@ type Props = {
   /** custom path for the shopping cart (include leading slash) */
   enrollPath?: string;
   message?: ReactNode;
-};
+}
 
 export const PriceSection: FC<Props> = ({ courses, price, doubleGuarantee, variant = 'dark', id = 'tuition', enrollPath = '/', message }) => {
   const [ popup, handleToggle ] = useToggle();
@@ -79,7 +79,7 @@ export const PriceSection: FC<Props> = ({ courses, price, doubleGuarantee, varia
                     ? (
                       <>
                         <p className="mb-3">Get Started for Only<br />{price.promoDiscount > 0 && <br />}<span className="h2 font-family-open-sans">{price.currency.symbol}{formatPrice(price.plans.part.deposit)}</span></p>
-                        <p className="mb-3"><span className="lead">Deposit of {price?.currency.symbol}{formatPrice(price.plans.part.deposit)}</span><br /><small>{price.plans.part.installments} monthly payments of {price.promoDiscount > 0 && <><span className="text-secondary text-decoration-line-through">{price.currency.symbol}{formatPrice(originalInstallmentSize)}</span> </>}{price.currency.symbol}{formatPrice(price.plans.part.installmentSize)}</small></p>
+                        <p className="mb-3"><span className="lead">Deposit of {price.currency.symbol}{formatPrice(price.plans.part.deposit)}</span><br /><small>{price.plans.part.installments} monthly payments of {price.promoDiscount > 0 && <><span className="text-secondary text-decoration-line-through">{price.currency.symbol}{formatPrice(originalInstallmentSize)}</span> </>}{price.currency.symbol}{formatPrice(price.plans.part.installmentSize)}</small></p>
                         <p className="mb-0"><a href={enrollLink} className="btn btn-outline-dark">Enroll Now</a></p>
                       </>
                     )
