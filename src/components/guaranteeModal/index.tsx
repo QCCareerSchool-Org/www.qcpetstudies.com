@@ -35,7 +35,7 @@ export const GuaranteeModal: FC<Props> = props => (
         )
         : (
           <div className="text-center">
-            <p><Guarantee21Days alt="21-day guarantee" style={{ maxWidth: '100%', height: 'auto' }} /></p>
+            <p><Image src={Guarantee21Days} alt="21-day guarantee" style={{ maxWidth: '100%', height: 'auto' }} /></p>
             <h3 className="text-dark">21-Day Guarantee</h3>
             <p>Once your enrollment has been processed, you have 21 days to review the course materials and decide whether you want to take the course. If you decide this course isn't the right course for you, simply contact the school for a refund! As long as you haven't submitted any work to your tutor yet, your tuition will be refunded in full!</p>
           </div>
