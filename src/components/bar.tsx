@@ -1,7 +1,7 @@
 'use client';
 
 import type { FC } from 'react';
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 import { useOnScreen } from '@/hooks/useOnScreen';
 
@@ -13,11 +13,12 @@ interface Props {
 export const Bar: FC<Props> = ({ variant, align = 'center' }) => {
   const ref = useRef(null);
   const onScreen = useOnScreen(ref);
-  const onScreenOnce = useRef(false);
+  const [ onScreenOnce, setOnScreenOnce ] = useState(false);
 
   useEffect(() => {
     if (onScreen) {
-      onScreenOnce.current = true;
+      // eslint-disable-next-line react-hooks/set-state-in-effect
+      setOnScreenOnce(true);
     }
   }, [ onScreen ]);
 

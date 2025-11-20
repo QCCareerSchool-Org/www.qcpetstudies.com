@@ -3,7 +3,6 @@ import stylistic from '@stylistic/eslint-plugin';
 import { defineConfig, globalIgnores } from 'eslint/config';
 import nextVitals from 'eslint-config-next/core-web-vitals';
 import nextTs from 'eslint-config-next/typescript';
-import importPlugin from 'eslint-plugin-import';
 import reactPlugin from 'eslint-plugin-react';
 import tseslint from 'typescript-eslint';
 
@@ -15,6 +14,7 @@ const eslintConfig = defineConfig([
   tseslint.configs.stylisticTypeChecked,
   {
     languageOptions: {
+      parser: tseslint.parser,
       parserOptions: {
         projectService: true,
       },
@@ -31,12 +31,7 @@ const eslintConfig = defineConfig([
     'public',
   ]),
   {
-    // extends: [
-    //   importPlugin.flatConfigs.recommended,
-    //   importPlugin.flatConfigs.typescript,
-    // ],
     plugins: {
-      'import': importPlugin,
       'react': reactPlugin,
       '@stylistic': stylistic,
     },
@@ -114,11 +109,7 @@ const eslintConfig = defineConfig([
       'no-lonely-if': 'off',
       'no-mixed-operators': 'error',
       'no-multi-assign': 'error',
-      'no-multiple-empty-lines': [ 'error', {
-        max: 1,
-        maxEOF: 0,
-        maxBOF: 0,
-      } ],
+      'no-multiple-empty-lines': [ 'error', { max: 1, maxEOF: 0, maxBOF: 0 } ],
       'no-tabs': 'error',
       'no-trailing-spaces': 'error',
       'no-unneeded-ternary': 'error',
@@ -159,6 +150,7 @@ const eslintConfig = defineConfig([
         ignoreDeclarationSort: true,
         ignoreMemberSort: false,
         memberSyntaxSortOrder: [ 'none', 'all', 'multiple', 'single' ],
+        allowSeparatedGroups: true,
       } ],
       'template-curly-spacing': 'error',
       'yield-star-spacing': 'error',
@@ -255,18 +247,18 @@ const eslintConfig = defineConfig([
       'react/react-in-jsx-scope': 'off',
       'react/self-closing-comp': 'error',
 
-      'import/order': [ 'error', {
-        'alphabetize': {
-          order: 'asc',
-          orderImportKind: 'asc',
-          caseInsensitive: true,
-        },
-        'groups': [
-          [ 'builtin', 'external' ],
-          [ 'internal', 'parent', 'sibling', 'index', 'object', 'unknown' ],
-        ],
-        'newlines-between': 'always',
-      } ],
+      // 'import/order': [ 'error', {
+      //   'alphabetize': {
+      //     order: 'asc',
+      //     orderImportKind: 'asc',
+      //     caseInsensitive: true,
+      //   },
+      //   'groups': [
+      //     [ 'builtin', 'external' ],
+      //     [ 'internal', 'parent', 'sibling', 'index', 'object', 'unknown' ],
+      //   ],
+      //   'newlines-between': 'always',
+      // } ],
     },
   },
 ]);
