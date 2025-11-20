@@ -14,8 +14,8 @@ type Props = {
   buttonContent?: JSX.Element | string;
 };
 
-export const Header: FC<Props> = ({ logoLink, buttonHref, buttonContent, showBanner }) => {
-  const { countryCode } = getData();
+export const Header: FC<Props> = async ({ logoLink, buttonHref, buttonContent, showBanner }) => {
+  const { countryCode } = await getData();
   const date = new Date().getTime();
 
   return (

@@ -14,6 +14,7 @@ import { externship } from '@/lib/externship';
 import type { PriceQuery } from '@/lib/fetch';
 import { fetchPrice } from '@/lib/fetch';
 import { getData } from '@/lib/getData';
+import Image from 'next/image';
 
 const courseCodes = [ 'dg' ];
 
@@ -23,7 +24,7 @@ export const metadata: Metadata = {
 };
 
 const GroomingCoursePreviewPage: PageComponent = async () => {
-  const { countryCode, provinceCode } = getData();
+  const { countryCode, provinceCode } = await getData();
   const dgPriceQuery: PriceQuery = { countryCode, provinceCode: provinceCode ?? undefined, courses: courseCodes };
   const dePriceQuery: PriceQuery = { countryCode, provinceCode: provinceCode ?? undefined, courses: [ 'de' ] };
 
@@ -86,7 +87,7 @@ const GroomingCoursePreviewPage: PageComponent = async () => {
         <div className="container">
           <div className="d-flex flex-column flex-md-row justify-contents-center align-items-center">
             <div className="flex-shrink-0 mb-4 mb-md-0 me-md-4">
-              <IDGPCertificationLogo width={200} height={200} alt="IDGP International Dog Grooming Professional logo" style={{ maxWidth: '100%', height: 'auto' }} />
+              <Image src={IDGPCertificationLogo} width={200} height={200} alt="IDGP International Dog Grooming Professional logo" style={{ maxWidth: '100%', height: 'auto' }} />
             </div>
             <div className="text-center text-md-start">
               <h2>Your <strong>Certification</strong></h2>

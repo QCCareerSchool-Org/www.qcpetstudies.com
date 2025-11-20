@@ -17,7 +17,7 @@ export const metadata: Metadata = {
 };
 
 const DogGrooming200OffPage: PageComponent = async () => {
-  const { countryCode, provinceCode } = getData();
+  const { countryCode, provinceCode } = await getData();
   const dgPriceQuery: PriceQuery = { countryCode, provinceCode: provinceCode ?? undefined, courses: [ 'dg' ] };
   const dePriceQuery: PriceQuery = { countryCode, provinceCode: provinceCode ?? undefined, courses: [ 'de' ] };
   const [ dgPrice, dePrice ] = await Promise.all([

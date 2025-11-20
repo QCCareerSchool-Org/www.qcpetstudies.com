@@ -100,7 +100,7 @@ const RequiredDogBreeds: PageComponent = () => (
           <div className="col-12 col-md-6 mb-g d-flex align-items-center">
             <div className="card-body text-center">
               <div className="mb-2">
-                <IconFirstAidLogo width={iconSize} height={iconSize} alt="first aid" style={{ maxWidth: '100%', height: 'auto' }} />
+                <Image src={IconFirstAidLogo} width={iconSize} height={iconSize} alt="first aid" style={{ maxWidth: '100%', height: 'auto' }} />
               </div>
               <h3 className="mb-4">First Aid Training</h3>
               <p>Before you can move onto the practical units of the dog grooming course, you will need to complete the First Aid for Groomer's course. This course is included at no extra charge with every Dog Grooming Course enrollment. You will learn how to work safely with dogs and deal with any potential complications during the grooming appointment.</p>

@@ -25,6 +25,7 @@ export const useOnScreen = <T = unknown>(ref: MutableRefObject<T>, rootMargin = 
 
     } else {
       // use the fallback value if we don't have IntersectionObserver available
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setIntersecting(fallbackValue);
     }
   }, [ ref, rootMargin, fallbackValue ]);

@@ -2,8 +2,8 @@ import type { FC } from 'react';
 
 import { getData } from '@/lib/getData';
 
-export const OklahomaDisclaimer: FC = () => {
-  const { countryCode, provinceCode } = getData();
+export const OklahomaDisclaimer: FC = async () => {
+  const { countryCode, provinceCode } = await getData();
 
   if (countryCode === 'US' && provinceCode === 'OK') {
     return (

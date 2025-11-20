@@ -30,9 +30,9 @@ export const metadata: Metadata = {
   alternates: { canonical: '/certification-courses/dog-grooming/course-outline' },
 };
 
-const DogGroomingCourseOutlinePage: PageComponent = () => {
+const DogGroomingCourseOutlinePage: PageComponent = async () => {
   let eventKey = 0;
-  const { countryCode, provinceCode } = getData();
+  const { countryCode, provinceCode } = await getData();
 
   return (
     <>
@@ -57,7 +57,7 @@ const DogGroomingCourseOutlinePage: PageComponent = () => {
               <div className="card">
                 <div className="card-body">
                   <div className="mb-2">
-                    <TimeIcon width={iconSize} height={iconSize} alt="clock icon" style={{ maxWidth: '100%', height: 'auto' }} />
+                    <Image src={TimeIcon} width={iconSize} height={iconSize} alt="clock icon" style={{ maxWidth: '100%', height: 'auto' }} />
                   </div>
                   <p>The course should take between <strong>80 and 130 hours</strong> to study and complete assignments from start to finish.  This time does not include the time you will take to practice and develop your skills before you complete an assignment.</p>
                 </div>
@@ -67,7 +67,7 @@ const DogGroomingCourseOutlinePage: PageComponent = () => {
               <div className="card">
                 <div className="card-body">
                   <div className="mb-2">
-                    <CalendarIcon width={iconSize} height={iconSize} alt="calendar icon" style={{ maxWidth: '100%', height: 'auto' }} />
+                    <Image src={CalendarIcon} width={iconSize} height={iconSize} alt="calendar icon" style={{ maxWidth: '100%', height: 'auto' }} />
                   </div>
                   <p>On average, most QC students work on their course for a few hours per week, and complete the online dog grooming course within about <strong>6 months to a year.</strong>  You'll have up to a year to complete the program, so lots of time!</p>
                 </div>

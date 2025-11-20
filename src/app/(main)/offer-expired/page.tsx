@@ -13,8 +13,8 @@ export const metadata: Metadata = {
   alternates: { canonical: '/offer-expired' },
 };
 
-const OfferExpiredPage: PageComponent = () => {
-  const { countryCode } = getData();
+const OfferExpiredPage: PageComponent = async () => {
+  const { countryCode } = await getData();
   const telephoneNumber = getTelephoneNumber(countryCode);
 
   return (

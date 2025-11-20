@@ -24,7 +24,7 @@ export const metadata: Metadata = {
 };
 
 const FirstAidForGroomersPage: PageComponent = async () => {
-  const { countryCode, provinceCode } = getData();
+  const { countryCode, provinceCode } = await getData();
   const priceQuery: PriceQuery = { countryCode, provinceCode: provinceCode ?? undefined, courses: courseCodes };
   const price = await fetchPrice(priceQuery);
   if (!price) {
@@ -36,7 +36,7 @@ const FirstAidForGroomersPage: PageComponent = async () => {
       <BackgroundImage src={FirstAidBackground} priority />
       <div className="image-overlay-gradient" />
       <div className="container text-center">
-        <FirstAidLogo alt="First Aid Course logo" width={60} height={60} style={{ maxWidth: '100%', height: 'auto' }} />
+        <Image src={FirstAidLogo} alt="First Aid Course logo" width={60} height={60} style={{ maxWidth: '100%', height: 'auto' }} />
         <h1><strong>First Aid</strong> Course for Groomers</h1>
         <div className="row">
           <div className="col-12 col-lg-10 offset-lg-1">

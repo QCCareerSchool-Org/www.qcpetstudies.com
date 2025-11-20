@@ -14,6 +14,7 @@ import { AccordionItem } from '@/components/accordion/accordionItem';
 import { BackgroundImage } from '@/components/backgroundImage';
 import CalendarIcon from '@/images/calendar.svg';
 import TimeIcon from '@/images/clock.svg';
+import Image from 'next/image';
 
 const iconSize = 50;
 
@@ -49,7 +50,7 @@ const DDCourseOutlinePage: PageComponent = () => {
               <div className="card">
                 <div className="card-body">
                   <div className="mb-2">
-                    <TimeIcon width={iconSize} height={iconSize} alt="Clock Icon" style={{ maxWidth: '100%', height: 'auto' }} />
+                    <Image src={TimeIcon} width={iconSize} height={iconSize} alt="Clock Icon" style={{ maxWidth: '100%', height: 'auto' }} />
                   </div>
                   <p className="card-text">The course should take about <strong>20 hours</strong> to study and complete assignments from start to finish. This time does not include the time you will take to practice and develop your skills before you complete an assignment.</p>
                 </div>
@@ -59,7 +60,7 @@ const DDCourseOutlinePage: PageComponent = () => {
               <div className="card">
                 <div className="card-body">
                   <div className="mb-2">
-                    <CalendarIcon width={iconSize} height={iconSize} alt="Calendar Icon" style={{ maxWidth: '100%', height: 'auto' }} />
+                    <Image src={CalendarIcon} width={iconSize} height={iconSize} alt="Calendar Icon" style={{ maxWidth: '100%', height: 'auto' }} />
                   </div>
                   <p className="card-text">On average, most QC Students work on their course for a few hours per week, and complete the online dog training course within <strong>three to six months</strong>. You&apos;ll have up to a year to complete the program&mdash;lots of time!</p>
                 </div>

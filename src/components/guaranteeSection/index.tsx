@@ -3,6 +3,7 @@ import type { FC } from 'react';
 
 import TwentyOneDayGuaranteeIcon from './21-day-guarantee-outlined.svg';
 import DoubleGuaranteeIcon from './double-guarantee.svg';
+import Image from 'next/image';
 
 type Props = {
   className?: string;
@@ -19,8 +20,8 @@ export const GuaranteeSection: FC<Props> = ({ className, double = false, id = 'g
           <div className="col-12 col-lg-10 justify-content-center">
             <div className="mb-2">
               {double
-                ? <DoubleGuaranteeIcon alt="qc guarantee" width="140" height="140" style={{ maxWidth: '100%', height: 'auto' }} />
-                : <TwentyOneDayGuaranteeIcon alt="21 Day Money Back Guarantee" width="140" height="140" style={{ maxWidth: '100%', height: 'auto' }} />
+                ? <Image src={DoubleGuaranteeIcon} alt="qc guarantee" width="140" height="140" style={{ maxWidth: '100%', height: 'auto' }} />
+                : <Image src={TwentyOneDayGuaranteeIcon} alt="21 Day Money Back Guarantee" width="140" height="140" style={{ maxWidth: '100%', height: 'auto' }} />
               }
             </div>
             <h2>QC Pet Studies' <strong>Guarantee{double ? 's' : ''}</strong></h2>

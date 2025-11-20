@@ -38,8 +38,9 @@ export const metadata: Metadata = {
   alternates: { canonical: '/certification-courses/dog-grooming/woof-gang-bakery' },
 };
 
-const Page: PageComponent = async ({ searchParams }) => {
-  const { countryCode, provinceCode } = getData();
+const Page: PageComponent = async props => {
+  const searchParams = await props.searchParams;
+  const { countryCode, provinceCode } = await getData();
   const priceQuery: PriceQuery = { countryCode, provinceCode: provinceCode ?? undefined, courses: courseCodes, options: { promoCode: 'WOOFGANG', school: 'QC Pet Studies' } };
   const price = await fetchPrice(priceQuery);
   if (!price) {
@@ -92,7 +93,7 @@ const Page: PageComponent = async ({ searchParams }) => {
         <div className="container">
           <div className="d-flex flex-column flex-md-row justify-contents-center align-items-center">
             <div className="flex-shrink-0 mb-4 mb-md-0 me-md-4">
-              <IDGPCertificationLogo width={200} height={200} alt="IDGP International Dog Grooming Professional logo" style={{ maxWidth: '100%', height: 'auto' }} />
+              <Image src={IDGPCertificationLogo} width={200} height={200} alt="IDGP International Dog Grooming Professional logo" style={{ maxWidth: '100%', height: 'auto' }} />
             </div>
             <div className="text-center text-md-start">
               <h2>Your <strong>Certification</strong></h2>

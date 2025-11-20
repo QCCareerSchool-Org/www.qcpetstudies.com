@@ -36,8 +36,8 @@ type Props = {
 const iconSize = 36;
 const testimonialIds = [ 'TD-0004', 'TD-0005', 'TD-0007', 'TD-0008', 'TD-0009', 'TD-0010' ];
 
-export const DogGroomingBase: FC<Props> = ({ dgPrice, dePrice, enrollPath, courseCode }) => {
-  const { countryCode, provinceCode } = getData();
+export const DogGroomingBase: FC<Props> = async ({ dgPrice, dePrice, enrollPath, courseCode }) => {
+  const { countryCode, provinceCode } = await getData();
   let eventKey = 0;
 
   return (
@@ -103,7 +103,7 @@ export const DogGroomingBase: FC<Props> = ({ dgPrice, dePrice, enrollPath, cours
           <div className="row justify-content-center">
             <div className="col-12 col-lg-8">
               <div className="mb-4">
-                <CertificationLogo />
+                <Image src={CertificationLogo} alt="IDGP Certification Logo" />
               </div>
               <h2 className="text-white">Your International Dog Grooming Professional Certification</h2>
               <p>Once you graduate from your online dog grooming course, you'll receive a certification and be able to use the designation of International Dog Grooming Professional (IDGP).</p>

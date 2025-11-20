@@ -1,17 +1,19 @@
 'use client';
 
 import type { FC } from 'react';
-import { useEffect, useState } from 'react';
+import { useEffect, useRef } from 'react';
 
 export const EmailLink: FC = () => {
-  const [ emailAddress, setEmailAddress ] = useState('');
+  const ref = useRef<HTMLAnchorElement>(null);
 
   useEffect(() => {
-    // eslint-disable-next-line no-useless-concat
-    setEmailAddress('info' + '@' + 'qcpetstudies.com');
+    if (ref.current) {
+      // eslint-disable-next-line no-useless-concat
+      const emailAddress = 'info' + '@' + 'qcpetstudies.com';
+      ref.current.href = `mailto:${emailAddress}`;
+      ref.current.innerHTML = emailAddress;
+    }
   }, []);
 
-  if (emailAddress) {
-    return <a href={`mailto:${emailAddress}`}>{emailAddress}</a>;
-  }
+  return <a ref={ref} />;
 };

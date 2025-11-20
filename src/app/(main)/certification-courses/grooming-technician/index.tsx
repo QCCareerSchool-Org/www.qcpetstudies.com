@@ -39,7 +39,7 @@ export const GroomingTechnicianBase: FC<Props> = ({ gtPrice, dgPrice, enrollPath
       <div className="container text-center">
         <div className="row mb-4">
           <div className="mb-4">
-            <CertificationGoldImage alt="Certified Grooming Technician CGT" height="125" width="125" style={{ maxWidth: '100%', height: 'auto' }} />
+            <Image src={CertificationGoldImage} alt="Certified Grooming Technician CGT" height="125" width="125" style={{ maxWidth: '100%', height: 'auto' }} />
           </div>
           <h1>Grooming Technician Course</h1>
           {gtPrice && gtPrice.plans.part.deposit > 0 && <h4>Get Started for Only <strong>{gtPrice.currency.symbol}{formatPrice(gtPrice.plans.part.deposit)}</strong></h4>}
@@ -49,15 +49,15 @@ export const GroomingTechnicianBase: FC<Props> = ({ gtPrice, dgPrice, enrollPath
         <div className="row justify-content-center">
           <div className="col-12 col-md-6 d-flex">
             <div className="col text-uppercase">
-              <a href="#outline"><OutlineIcon alt="outline" width={headerIconSize} height={headerIconSize} style={{ maxWidth: '100%', height: 'auto' }} /></a>
+              <a href="#outline"><Image src={OutlineIcon} alt="outline" width={headerIconSize} height={headerIconSize} style={{ maxWidth: '100%', height: 'auto' }} /></a>
               <p><strong>Outline</strong></p>
             </div>
             <div className="col text-uppercase">
-              <a href="#guarantee"><GuaranteeIcon alt="play button" width={headerIconSize} height={headerIconSize} style={{ maxWidth: '100%', height: 'auto' }} /></a>
+              <a href="#guarantee"><Image src={GuaranteeIcon} alt="play button" width={headerIconSize} height={headerIconSize} style={{ maxWidth: '100%', height: 'auto' }} /></a>
               <p><strong>Guarantee</strong></p>
             </div>
             <div className="col text-uppercase">
-              <a href="#tutors"><TutorIcon alt="play button" width={headerIconSize} height={headerIconSize} style={{ maxWidth: '100%', height: 'auto' }} /></a>
+              <a href="#tutors"><Image src={TutorIcon} alt="play button" width={headerIconSize} height={headerIconSize} style={{ maxWidth: '100%', height: 'auto' }} /></a>
               <p><strong>Tutors</strong></p>
             </div>
           </div>

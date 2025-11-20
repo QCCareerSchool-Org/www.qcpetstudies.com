@@ -9,7 +9,9 @@ export const ScreenWidthProvider: FC<PropsWithChildren> = ({ children }) => {
   const [ state, dispatch ] = useState(0);
 
   useEffect(() => {
-    dispatch(window.innerWidth);
+    queueMicrotask(() => {
+      dispatch(window.innerWidth);
+    });
     const handleResize = (): void => dispatch(window.innerWidth);
     window.addEventListener('resize', handleResize);
     return () => {

@@ -14,7 +14,7 @@ export const FreeFirstAidSection: FC<Props> = ({ className }) => (
       <div className="row align-items-center">
         <div className="col-12 col-lg-6 mb-4 mb-lg-0 text-lg-start">
           <div className="text-center mb-2">
-            <FirstAidLogo alt="First Aid plus Logo" style={{ maxWidth: '100%', height: 'auto' }} />
+            <Image src={FirstAidLogo} alt="First Aid plus Logo" style={{ maxWidth: '100%', height: 'auto' }} />
           </div>
           <h2>Get a <strong>FREE</strong> First Aid Course</h2>
           <p className="lead">Enroll in Dog Grooming &amp; receive the First Aid for Dog Groomers course to take your career to the next level!</p>

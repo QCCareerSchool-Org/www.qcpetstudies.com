@@ -39,12 +39,12 @@ const StudentDiscountsPage: PageComponent = () => (
         <div className="row justify-content-center">
           <div className="col-12 col-lg-10">
             <h2 className="mb-4">Pet Business <strong>Discounts</strong></h2>
-            <Supplier image={<DaySmartPetLogo width={170} height={46} alt="DaySmart Pet" />} className="mb-5">
+            <Supplier image={<Image src={DaySmartPetLogo} width={170} height={46} alt="DaySmart Pet" />} className="mb-5">
               <h3>DaySmart Pet</h3>
               <p>DaySmart Pet develops, delivers, and supports powerful business management software that runs thousands of pet businesses around the world. You'll be able to run your dog grooming business efficiently and grow your business with unique software features!</p>
               <p className="mb-0"><em>QC Pet Studies students receive a 50% off discount for 2 months</em></p>
             </Supplier>
-            <Supplier image={<MyTimeLogo width={170} height={69} alt="MyTime" />} className="mb-5">
+            <Supplier image={<Image src={MyTimeLogo} width={170} height={69} alt="MyTime" />} className="mb-5">
               <h3>MyTime</h3>
               <p>MyTime is the leading cloud based scheduling and marketing application for local businesses. Features include online booking, automated email and SMS marketing, full point of sale, reputation management, reports and analytics, and real time messaging with clients. Use MyTime to engage and retain customers, drive operational efficiency and grow your business!</p>
               <p className="mb-0"><em>QC Pet Studies students receive 30% off their purchase</em></p>
@@ -93,7 +93,7 @@ type SupplierProps = {
 };
 
 const Supplier: FC<PropsWithChildren<SupplierProps>> = ({ className, image, children }) => (
-  <div className={`d-flex flex-column flex-lg-row align-items-center ${className ? className : ''}`}>
+  <div className={`d-flex flex-column flex-lg-row align-items-center ${className ?? ''}`}>
     <div className="mb-2 mb-lg-0 me-lg-5 flex-shrink-0">
       {image}
     </div>

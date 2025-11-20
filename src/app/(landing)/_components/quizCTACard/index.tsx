@@ -1,6 +1,7 @@
 'use client';
+
 import type { FC, MouseEventHandler } from 'react';
-import React, { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 import styles from './index.module.scss';
 
@@ -10,7 +11,7 @@ type Props = {
 };
 
 export const QuizCTACard: FC<Props> = ({ header, url }) => {
-  const [ isVisible, setIsVisible ] = useState(false);
+  const [ isVisible, setIsVisible ] = useState(() => !('IntersectionObserver' in window));
   const [ showIFrame, setShowIFrame ] = useState(false);
   const cardRef = useRef<HTMLDivElement>(null);
 
@@ -20,8 +21,8 @@ export const QuizCTACard: FC<Props> = ({ header, url }) => {
   };
 
   useEffect(() => {
-    if(!('IntersectionObserver' in window)) {
-      setIsVisible(true);
+    if (!('IntersectionObserver' in window)) {
+      return;
     }
     const observer = new IntersectionObserver(
       entries => {
