@@ -104,7 +104,7 @@ const DogTrainingCoursePreviewPage: PageComponent = async () => {
                 <div className="row">
                   <div className="col-12 col-lg-6 mb-4 mb-lg-0">
                     <h3 className="fw-normal"><strong>Part 1:</strong> Units A&ndash;D</h3>
-                    <p>The first part of the dog training course is largely theory-based.  Before you start learning specific training methods and techniques, you must first become an expert in canine behavior, communication, and learning theory.  In these first four units you'll build those foundations with your tutor.</p>
+                    <p>The first part of the dog training course is largely theory-based. Before you start learning specific training methods and techniques, you must first become an expert in canine behavior, communication, and learning theory. In these first four units you'll build those foundations with your tutor.</p>
                     <p>Once you have a fundamental understanding of how dogs learn, why dogs do the things they do, and what behaviors are normal/abnormal, you'll be able to better understand and appreciate the training techniques and methods in Part 2 of the course!</p>
                     <p className="mb-0">Even though these units deal in theory, don't worry! You'll have plenty of video content and fun hands-on assignments along the way!</p>
                   </div>
@@ -162,9 +162,9 @@ const DogTrainingCoursePreviewPage: PageComponent = async () => {
                 <div className="row">
                   <div className="col-12 col-lg-6 mb-4 mb-lg-0">
                     <h3 className="fw-normal"><strong>Part 2:</strong> Units E-F</h3>
-                    <p>Now that you understand the fundamentals of dog communication and learning theory, you're ready to learn all about training principles.  In this section of the course you'll learn the six core training methods used to create new behaviors: luring, targeting, shaping, modeling, capturing, and mimicry.  You'll discover how different types of dogs can react to different methods, and how it'll be your job to utilize the best method to suit each dog.</p>
-                    <p>You'll learn about how to motivate dogs to learn, and how to properly use reinforcement schedules to achieve the best (and quickest) outcome.  You'll also get a crash course in different training tools and how to use them safely.</p>
-                    <p>In the last section of the course you'll learn methods and techniques you can use to address unwanted behaviors.  Always remember, the goal in any situation is to use tools and techniques designed to encourage a dog to make good choices!</p>
+                    <p>Now that you understand the fundamentals of dog communication and learning theory, you're ready to learn all about training principles  In this section of the course you'll learn the six core training methods used to create new behaviors: luring, targeting, shaping, modeling, capturing, and mimicry. You'll discover how different types of dogs can react to different methods, and how it'll be your job to utilize the best method to suit each dog.</p>
+                    <p>You'll learn about how to motivate dogs to learn, and how to properly use reinforcement schedules to achieve the best (and quickest) outcome. You'll also get a crash course in different training tools and how to use them safely.</p>
+                    <p>In the last section of the course you'll learn methods and techniques you can use to address unwanted behaviors. Always remember, the goal in any situation is to use tools and techniques designed to encourage a dog to make good choices!</p>
                   </div>
                   <div className="col-12 col-lg-6">
                     <TabGroup
