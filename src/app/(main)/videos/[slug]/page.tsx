@@ -4,11 +4,7 @@ import type { VideoObject, WithContext } from 'schema-dts';
 import { getVideo } from '..';
 import type { GenerateMetadata, PageComponent } from '@/app/serverComponent';
 
-interface Props {
-  slug: string;
-}
-
-export const generateMetadata: GenerateMetadata<Props> = async ({ params }) => {
+export const generateMetadata: GenerateMetadata<{ slug: string }> = async ({ params }) => {
   const p = await params;
   const video = getVideo(p.slug);
 
@@ -23,7 +19,7 @@ export const generateMetadata: GenerateMetadata<Props> = async ({ params }) => {
   };
 };
 
-const VideoPlayerPage: PageComponent<Props> = async ({ params }) => {
+const VideoPlayerPage: PageComponent<{ slug: string }> = async ({ params }) => {
   const p = await params;
   const video = getVideo(p.slug);
 
