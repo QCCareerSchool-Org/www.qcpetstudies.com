@@ -125,8 +125,10 @@ export const siteVideos = ([
   },
 ]).map(v => ({
   ...v,
-  player_loc: ('player_loc' in v && v.player_loc) ?? `${baseUrl}/videos/${v.slug}`,
+  player_loc: 'player_loc' in v && v.player_loc ? v.player_loc : `${baseUrl}/videos/${v.slug}`,
 })) as Readonly<Video>[] as readonly Readonly<Video>[];
+
+console.log(siteVideos);
 
 // check for duplicate slugs
 const slugs: string[] = [];
