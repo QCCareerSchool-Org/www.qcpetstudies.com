@@ -53,7 +53,7 @@ export const PriceSection: FC<Props> = ({ dgPrice, dePrice, className, onPopupLi
           </div>
         </div>
         {countryCode === 'CA' && (
-          <p className="text-center mt-5"><Image src={MapleLeaf} alt="maple leaf" style={{ width: 26, marginRight: '0.25rem' }} /> Canadian Students Save! You could save more than 50% on your course fees. <Link style={{ textDecoration: 'underline' }} href="/canadian-tax-credits">Learn More</Link></p>
+          <p className="text-center mt-5"><Image src={MapleLeaf} alt="maple leaf" style={{ width: 26, height: 'auto', marginRight: '0.25rem' }} /> Canadian Students Save! You could save more than 50% on your course fees. <Link style={{ textDecoration: 'underline' }} href="/canadian-tax-credits">Learn More</Link></p>
         )}
         <div className="row justify-content-center mt-5">
           <div className="col-12 col-md-10 col-lg-8 text-center">
