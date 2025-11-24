@@ -2,6 +2,7 @@ import type { FC } from 'react';
 
 import type { PageComponent } from '@/app/serverComponent';
 import { withSuspense } from '@/withSuspense';
+import { Counter } from './counter';
 
 const TestPage: PageComponent = () => {
   return (
@@ -10,6 +11,8 @@ const TestPage: PageComponent = () => {
       <AsyncComponent wait={2000} />
       <AsyncComponent wait={3000} />
       <AsyncComponent wait={5000} suspenseFallback={<>This one might take a while...</>} />
+      <Counter />
+      <Counter initialCount={9} increment={3} />
     </div>
   );
 };
