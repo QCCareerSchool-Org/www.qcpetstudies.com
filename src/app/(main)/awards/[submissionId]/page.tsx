@@ -12,15 +12,14 @@ import { LinkedInShare } from '@/components/share/linkedIn';
 import { ThreadsShare } from '@/components/share/threads';
 import { TwitterShare } from '@/components/share/twitter';
 import type { School } from '@/domain/school';
+import type { Award } from './submission';
 
 const schooolName: School = 'QC Pet Studies';
 
 export const generateMetadata: GenerateMetadata<{ submissionId: string }> = async ({ params }) => {
   const { submissionId } = await params;
 
-  const submissionIdNumber = parseInt(submissionId, 10);
-
-  const award = !isNaN(submissionIdNumber) ? await fetchOldAward(submissionIdNumber) : await fetchAward(submissionId);
+  const award = await getAward(submissionId);
 
   if (award.schoolName !== schooolName) {
     return { robots: { index: false } };
@@ -52,9 +51,7 @@ export const generateMetadata: GenerateMetadata<{ submissionId: string }> = asyn
 const AwardPage: PageComponent<{ submissionId: string }> = async ({ params }) => {
   const { submissionId } = await params;
 
-  const submissionIdNumber = parseInt(submissionId, 10);
-
-  const award = !isNaN(submissionIdNumber) ? await fetchOldAward(submissionIdNumber) : await fetchAward(submissionId);
+  const award = await getAward(submissionId);
 
   if (award.schoolName !== schooolName) {
     throw Error('Bad request');
@@ -112,3 +109,12 @@ const AwardPage: PageComponent<{ submissionId: string }> = async ({ params }) =>
 };
 
 export default AwardPage;
+
+const getAward = async (submissionId: string): Promise<Award> => {
+  if (/^\d+$/u.test(submissionId)) {
+    const submissionIdNumber = parseInt(submissionId, 10);
+    return fetchOldAward(submissionIdNumber);
+  }
+
+  return fetchAward(submissionId);
+};
