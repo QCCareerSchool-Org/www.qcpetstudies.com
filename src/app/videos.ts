@@ -73,7 +73,7 @@ export const siteVideos = ([
       `${baseUrl}/certification-courses/dog-training/`,
     ],
     title: 'Behavior Modification',
-    thumbnail_loc: KimCooperImage.src,
+    thumbnail_loc: `${baseUrl}${KimCooperImage.src}`,
     description: 'There\'s never been a better time to start a career as a professional dog groomer. Across the country, grooming salons and pet stylists have waiting lists—or are turning away new clients entirely. It\'s the perfect opportunity to launch a rewarding and in-demand career you\'ll love. Get your International Dog Groomer Certification with QC\'s comprehensive online training.',
     content_loc: 'https://89b45d42c17e11dd3d57-62a1fc0bf60a98e1d5e980348a7de3b7.ssl.cf1.rackcdn.com/why-should-students-study-training-and-behavior-modification.mp4',
     duration: 66,
@@ -127,8 +127,6 @@ export const siteVideos = ([
   ...v,
   player_loc: 'player_loc' in v && v.player_loc ? v.player_loc : `${baseUrl}/videos/${v.slug}`,
 })) as Readonly<Video>[] as readonly Readonly<Video>[];
-
-console.log(siteVideos);
 
 // check for duplicate slugs
 const slugs: string[] = [];
