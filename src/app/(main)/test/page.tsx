@@ -12,7 +12,7 @@ const TestPage: PageComponent = () => {
       <AsyncComponent wait={3000} />
       <AsyncComponent wait={5000} suspenseFallback={<>This one might take a while...</>} />
       <Counter />
-      <Counter initialCount={9} increment={3} />
+      <Counter initialCount={9} increment={-3} />
     </div>
   );
 };
