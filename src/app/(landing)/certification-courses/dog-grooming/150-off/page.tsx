@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 
-import { DogGroomingBase } from '..';
+import { DogGroomingBase } from '@/app/(main)/certification-courses/dog-grooming';
 import type { PageComponent } from '@/app/serverComponent';
 import { DeadlineFunnelScript } from '@/components/deadlineFunnelScript';
 import type { CourseCode } from '@/domain/courseCode';
@@ -13,10 +13,10 @@ const courseCode: CourseCode = 'dg';
 export const metadata: Metadata = {
   title: 'Dog Grooming Course',
   description: 'Become a Certified Dog Groomer with Interactive Online Training!',
-  alternates: { canonical: '/certification-courses/dog-grooming/500-off' },
+  alternates: { canonical: '/certification-courses/dog-grooming/150-off' },
 };
 
-const DogGrooming500OffPage: PageComponent = async () => {
+const DogGrooming150OffPage: PageComponent = async () => {
   const { countryCode, provinceCode } = await getData();
   const dgPriceQuery: PriceQuery = { countryCode, provinceCode: provinceCode ?? undefined, courses: [ 'dg' ] };
   const dePriceQuery: PriceQuery = { countryCode, provinceCode: provinceCode ?? undefined, courses: [ 'de' ] };
@@ -32,9 +32,9 @@ const DogGrooming500OffPage: PageComponent = async () => {
   return (
     <>
       <DeadlineFunnelScript />
-      <DogGroomingBase dgPrice={dgPrice} dePrice={dePrice} enrollPath="/grooming-500-off" courseCode={courseCode} />
+      <DogGroomingBase dgPrice={dgPrice} dePrice={dePrice} enrollPath="/grooming-150-off" courseCode={courseCode} />
     </>
   );
 };
 
-export default DogGrooming500OffPage;
+export default DogGrooming150OffPage;
