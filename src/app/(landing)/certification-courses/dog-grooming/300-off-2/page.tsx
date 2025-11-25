@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 
-import { DogGroomingBase } from '..';
+import { DogGroomingBase } from '@/app/(main)/certification-courses/dog-grooming';
 import type { PageComponent } from '@/app/serverComponent';
 import { DeadlineFunnelScript } from '@/components/deadlineFunnelScript';
 import type { CourseCode } from '@/domain/courseCode';
@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   alternates: { canonical: '/certification-courses/dog-grooming/300-off' },
 };
 
-const DogGrooming300OffPage: PageComponent = async () => {
+const DogGrooming300Off2Page: PageComponent = async () => {
   const { countryCode, provinceCode } = await getData();
   const dgPriceQuery: PriceQuery = { countryCode, provinceCode: provinceCode ?? undefined, courses: [ 'dg' ] };
   const dePriceQuery: PriceQuery = { countryCode, provinceCode: provinceCode ?? undefined, courses: [ 'de' ] };
@@ -37,4 +37,4 @@ const DogGrooming300OffPage: PageComponent = async () => {
   );
 };
 
-export default DogGrooming300OffPage;
+export default DogGrooming300Off2Page;
