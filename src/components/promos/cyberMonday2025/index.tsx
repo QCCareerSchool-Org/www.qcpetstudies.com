@@ -4,10 +4,12 @@ import type { FC } from 'react';
 import HeroImageUK from './desktop-uk.jpg';
 import HeroImageDefault from './desktop.jpg';
 import { gbpCountry } from '@/lib/currencies';
-import { getData } from '@/lib/getData';
 
-export const CyberMonday2025: FC = async () => {
-  const { countryCode } = await getData();
+interface Props {
+  countryCode: string;
+}
+
+export const CyberMonday2025: FC<Props> = ({ countryCode }) => {
   const heroImageSrc = gbpCountry(countryCode) ? HeroImageUK : HeroImageDefault;
 
   return (
