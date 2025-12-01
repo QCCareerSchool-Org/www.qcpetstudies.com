@@ -1,6 +1,6 @@
 {
   "name": "www.petstudies.com",
-  "version": "1.6.10",
+  "version": "1.6.11",
   "license": "UNLICENSED",
   "private": true,
   "scripts": {
@@ -15,11 +15,11 @@
   },
   "dependencies": {
     "@getbrevo/brevo": "^3.0.1",
-    "@next/third-parties": "^16.0.3",
+    "@next/third-parties": "^16.0.6",
     "@qccareerschool/http-status": "^2.1.1",
     "@types/qs": "^6.14.0",
     "big.js": "^6.2.2",
-    "next": "^16.0.3",
+    "next": "^16.0.6",
     "qs": "^6.14.0",
     "react": "^19.2.0",
     "react-bootstrap": "^2.10.10",
@@ -27,7 +27,7 @@
     "react-google-recaptcha-v3": "^1.11.0",
     "react-icons": "^4.12.0",
     "react-multi-carousel": "^2.8.6",
-    "react-phone-number-input": "^3.4.12",
+    "react-phone-number-input": "^3.4.14",
     "react-toastify": "^11.0.5",
     "react-use-count-up": "^1.0.2",
     "schema-dts": "^1.1.5",
@@ -36,23 +36,24 @@
   },
   "devDependencies": {
     "@eslint/compat": "^1.4.1",
-    "@eslint/eslintrc": "^3.3.1",
+    "@eslint/eslintrc": "^3.3.3",
     "@eslint/js": "^9.39.1",
     "@stylistic/eslint-plugin": "^5.6.1",
     "@svgr/webpack": "^8.1.0",
     "@types/big.js": "^6.2.2",
     "@types/node": "^24.10.1",
-    "@types/react": "^19.2.6",
+    "@types/react": "^19.2.7",
     "@types/react-dom": "^19.2.3",
     "@types/uuid": "^10.0.0",
     "babel-jest": "^27.5.1",
+    "baseline-browser-mapping": "^2.8.32",
     "bootstrap": "^5.3.8",
     "eslint": "^9.39.1",
-    "eslint-config-next": "^16.0.3",
+    "eslint-config-next": "^16.0.6",
     "eslint-plugin-react": "^7.37.5",
     "globals": "^16.5.0",
-    "sass": "^1.94.1",
+    "sass": "^1.94.2",
     "typescript": "^5.9.3",
-    "typescript-eslint": "^8.47.0"
+    "typescript-eslint": "^8.48.0"
   }
 }

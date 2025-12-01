@@ -1,11 +1,11 @@
-import type { FC, ReactElement } from 'react';
+import type { FC, ReactNode } from 'react';
 
 import styles from './banner.module.scss';
 import { CountDownElement } from './countDownElement';
 
 interface Props {
   url: string;
-  message: ReactElement;
+  message: ReactNode;
   showTimer: boolean;
   days: number;
   hours: number;
