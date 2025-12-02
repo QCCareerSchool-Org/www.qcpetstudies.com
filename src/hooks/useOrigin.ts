@@ -1,6 +1,12 @@
 import { usePathname } from 'next/navigation';
 
-export const useOrigin = (): string => {
+export const useOrigin = (): string | undefined => {
   const path = usePathname();
-  return `${window.location.protocol}//${window.location.host}${path}`;
+
+  if (typeof window === 'undefined') {
+    return path;
+  }
+
+  const { protocol, host } = window.location;
+  return `${protocol}//${host}${path}`;
 };
