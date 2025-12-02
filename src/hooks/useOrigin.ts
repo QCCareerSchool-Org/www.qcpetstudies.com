@@ -1,7 +1,6 @@
-import { useState } from 'react';
+import { usePathname } from 'next/navigation';
 
 export const useOrigin = (): string => {
-  const [ origin ] = useState(window.location.origin);
-
-  return origin;
+  const path = usePathname();
+  return `${window.location.protocol}://${window.location.host}${path}`;
 };
