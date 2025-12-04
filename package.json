@@ -1,6 +1,6 @@
 {
   "name": "www.petstudies.com",
-  "version": "1.6.17",
+  "version": "1.6.18",
   "license": "UNLICENSED",
   "private": true,
   "scripts": {
@@ -52,7 +52,6 @@
     "eslint": "^9.39.1",
     "eslint-config-next": "^16.0.6",
     "eslint-plugin-react": "^7.37.5",
-    "globals": "^16.5.0",
     "jest": "^30.2.0",
     "sass": "^1.94.2",
     "typescript": "^5.9.3",
