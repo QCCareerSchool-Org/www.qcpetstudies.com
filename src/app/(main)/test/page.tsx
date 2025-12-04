@@ -1,8 +1,8 @@
 import type { FC } from 'react';
 
+import { Counter } from './counter';
 import type { PageComponent } from '@/app/serverComponent';
 import { withSuspense } from '@/withSuspense';
-import { Counter } from './counter';
 
 const TestPage: PageComponent = () => {
   return (
