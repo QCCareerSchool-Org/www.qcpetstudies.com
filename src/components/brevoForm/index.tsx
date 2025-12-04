@@ -11,9 +11,9 @@ import PhoneInput from 'react-phone-number-input/input';
 import { v1 } from 'uuid';
 
 import DownloadIcon from '../download.svg';
+import { CurrentPageInput } from './currentPageInput';
 import styles from './index.module.scss';
 import type { CourseCode } from '@/domain/courseCode';
-import { CurrentPageInput } from './currentPageInput';
 
 interface Props {
   onCourseChange?: (e: ChangeEvent<HTMLInputElement>, courseCode: CourseCode) => void;

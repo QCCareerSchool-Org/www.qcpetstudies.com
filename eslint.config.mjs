@@ -3,6 +3,7 @@ import stylistic from '@stylistic/eslint-plugin';
 import { defineConfig, globalIgnores } from 'eslint/config';
 import nextVitals from 'eslint-config-next/core-web-vitals';
 import nextTs from 'eslint-config-next/typescript';
+import importPlugin from 'eslint-plugin-import';
 import reactPlugin from 'eslint-plugin-react';
 import tseslint from 'typescript-eslint';
 
@@ -34,6 +35,18 @@ const eslintConfig = defineConfig([
     plugins: {
       'react': reactPlugin,
       '@stylistic': stylistic,
+      'import': importPlugin,
+    },
+    settings: {
+      // Needed for TS path + extension resolution
+      'import/resolver': {
+        typescript: {
+          alwaysTryTypes: true,
+        },
+        node: {
+          extensions: [ '.js', '.jsx', '.ts', '.tsx' ],
+        },
+      },
     },
     rules: {
       'array-callback-return': 'error',
@@ -249,18 +262,18 @@ const eslintConfig = defineConfig([
       'react/react-in-jsx-scope': 'off',
       'react/self-closing-comp': 'error',
 
-      // 'import/order': [ 'error', {
-      //   'alphabetize': {
-      //     order: 'asc',
-      //     orderImportKind: 'asc',
-      //     caseInsensitive: true,
-      //   },
-      //   'groups': [
-      //     [ 'builtin', 'external' ],
-      //     [ 'internal', 'parent', 'sibling', 'index', 'object', 'unknown' ],
-      //   ],
-      //   'newlines-between': 'always',
-      // } ],
+      'import/order': [ 'error', {
+        'alphabetize': {
+          order: 'asc',
+          orderImportKind: 'asc',
+          caseInsensitive: true,
+        },
+        'groups': [
+          [ 'builtin', 'external' ],
+          [ 'internal', 'parent', 'sibling', 'index', 'object', 'unknown' ],
+        ],
+        'newlines-between': 'always',
+      } ],
     },
   },
 ]);

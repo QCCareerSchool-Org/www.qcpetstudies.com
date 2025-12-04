@@ -2,11 +2,11 @@
 
 import type { FC } from 'react';
 import { OverlayTrigger, Tooltip } from 'react-bootstrap';
+import type { OverlayChildren } from 'react-bootstrap/esm/Overlay';
 
 import type { Testimonial } from './data';
 import styles from './index.module.css';
 import { getCourseName } from '@/domain/courseCode';
-import type { OverlayChildren } from 'react-bootstrap/esm/Overlay';
 
 interface Props {
   testimonial: Testimonial;
