@@ -13,6 +13,7 @@ import { WhyChooseQCSection } from '@/components/whyChooseQCSection';
 import { fbPostLead } from '@/lib/facebookConversionAPI';
 import { getData } from '@/lib/getData';
 import { getParam } from '@/lib/getParam';
+import { gbpCountry } from '@/lib/currencies';
 
 export const metadata: Metadata = {
   title: 'Course Preview',
@@ -41,6 +42,7 @@ const ThankYouCoursePreviewPage: PageComponent = async props => {
 
   const date = new Date().getTime();
   const isBoxingDayWindow = date >= BOXING_DAY_START && date < BOXING_DAY_END;
+  const discountBoxingDay = gbpCountry(countryCode) ? '£300' : '$300';
 
   if (leadId && emailAddress) {
     try {
@@ -64,7 +66,7 @@ const ThankYouCoursePreviewPage: PageComponent = async props => {
       />
       <Header />
       <ThankYouSection course="dt" heroSrc={HeroBackground} emailAddress={emailAddress} />
-      <CurrentPromotion date={date} countryCode={countryCode} />
+      <CurrentPromotion date={date} countryCode={countryCode} sectionParagraph={`Start the new year by investing in your future. For a limited time, enroll in any pet course and save ${discountBoxingDay} on your tuition—so you can build in-demand skills and move forward with confidence. Start today and begin taking on clients by spring!`}/>
       <WhyChooseQCSection className="bg-light" />
       <TestimonialWallSection testimonialIds={testimonialIds} />
       <SupportSection boxingDay={isBoxingDayWindow} />

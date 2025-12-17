@@ -42,10 +42,10 @@ const ThankYouCoursePreviewPage: PageComponent = async props => {
   const fbc = cookieStore.get('_fbc')?.value;
   const fbp = cookieStore.get('_fbp')?.value;
   // const quizURL = getQuizUrl(emailAddress, countryCode, provinceCode);
-  const discountBoxingDay = gbpCountry(countryCode) ? '£300' : '$300';
 
   const date = new Date().getTime();
   const isBoxingDayWindow = date >= BOXING_DAY_START && date < BOXING_DAY_END;
+  const discountBoxingDay = gbpCountry(countryCode) ? '£300' : '$300';
 
   if (leadId && emailAddress) {
     try {
