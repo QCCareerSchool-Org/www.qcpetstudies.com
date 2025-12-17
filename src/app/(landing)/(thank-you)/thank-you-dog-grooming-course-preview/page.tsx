@@ -15,6 +15,7 @@ import { WhyChooseQCSection } from '@/components/whyChooseQCSection';
 import { fbPostLead } from '@/lib/facebookConversionAPI';
 import { getData } from '@/lib/getData';
 import { getParam } from '@/lib/getParam';
+import { gbpCountry } from '@/lib/currencies';
 
 export const metadata: Metadata = {
   title: 'Course Preview',
@@ -41,6 +42,7 @@ const ThankYouCoursePreviewPage: PageComponent = async props => {
   const fbc = cookieStore.get('_fbc')?.value;
   const fbp = cookieStore.get('_fbp')?.value;
   // const quizURL = getQuizUrl(emailAddress, countryCode, provinceCode);
+  const discountBoxingDay = gbpCountry(countryCode) ? '£300' : '$300';
 
   const date = new Date().getTime();
   const isBoxingDayWindow = date >= BOXING_DAY_START && date < BOXING_DAY_END;
@@ -68,7 +70,7 @@ const ThankYouCoursePreviewPage: PageComponent = async props => {
       <Header />
       <GroomingThankYouSection course="dg" heroSrc={HeroBackground} mobileHeroSrc={HeroMobile} emailAddress={emailAddress} />
       {/* <QuizCTACard header="Get Your Personalized Career Path in Dog Grooming!" url={quizURL} /> */}
-      <CurrentPromotion date={date} countryCode={countryCode} />
+      <CurrentPromotion date={date} countryCode={countryCode} sectionParagraph={`Start the new year by investing in your future. For a limited time, enroll in dog grooming and save ${discountBoxingDay} on your tuition. Start today and become a certified pet professional this spring.`}/>
       <WhyChooseQCSection className="bg-light" />
       <TestimonialWallSection testimonialIds={testimonialIds} />
       <SupportSection boxingDay={isBoxingDayWindow} />
