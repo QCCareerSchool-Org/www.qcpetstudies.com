@@ -23,6 +23,8 @@ export const metadata: Metadata = {
 };
 
 const testimonialIds = [ 'TD-0004', 'TD-0005', 'TD-0007', 'TD-0008', 'TD-0009', 'TD-0010' ];
+const BOXING_DAY_START = Date.UTC(2025, 11, 26, 8);
+const BOXING_DAY_END = Date.UTC(2026, 0, 3, 8);
 
 const ThankYouCoursePreviewPage: PageComponent = async props => {
   const searchParams = await props.searchParams;
@@ -41,6 +43,7 @@ const ThankYouCoursePreviewPage: PageComponent = async props => {
   // const quizURL = getQuizUrl(emailAddress, countryCode, provinceCode);
 
   const date = new Date().getTime();
+  const isBoxingDayWindow = date >= BOXING_DAY_START && date < BOXING_DAY_END;
 
   if (leadId && emailAddress) {
     try {
@@ -68,7 +71,7 @@ const ThankYouCoursePreviewPage: PageComponent = async props => {
       <CurrentPromotion date={date} countryCode={countryCode} />
       <WhyChooseQCSection className="bg-light" />
       <TestimonialWallSection testimonialIds={testimonialIds} />
-      <SupportSection />
+      <SupportSection boxingDay={isBoxingDayWindow} />
     </>
   );
 };
