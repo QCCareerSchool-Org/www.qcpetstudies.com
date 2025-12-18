@@ -10,6 +10,8 @@ interface PageProps<RouteParams extends Record<string, string> = EmptyRecord> {
 
 interface LayoutProps {
   children: ReactNode;
+  footer?: ReactNode;
+  [parallelRouteKey: string]: ReactNode | undefined;
 }
 
 export type PageComponent<RouteParams extends Record<string, string> = EmptyRecord> = FC<PageProps<RouteParams>>;
