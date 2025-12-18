@@ -24,8 +24,8 @@ export const metadata: Metadata = {
 };
 
 const testimonialIds = [ 'TD-0004', 'TD-0005', 'TD-0007', 'TD-0008', 'TD-0009', 'TD-0010' ];
-const BOXING_DAY_START = Date.UTC(2025, 11, 26, 8);
-const BOXING_DAY_END = Date.UTC(2026, 0, 3, 8);
+const NEW_YEARS_START = Date.UTC(2025, 11, 26, 8);
+const NEW_YEARS_END = Date.UTC(2026, 0, 3, 8);
 
 const ThankYouCoursePreviewPage: PageComponent = async props => {
   const searchParams = await props.searchParams;
@@ -44,8 +44,8 @@ const ThankYouCoursePreviewPage: PageComponent = async props => {
   // const quizURL = getQuizUrl(emailAddress, countryCode, provinceCode);
 
   const date = new Date().getTime();
-  const isBoxingDayWindow = date >= BOXING_DAY_START && date < BOXING_DAY_END;
-  const discountBoxingDay = gbpCountry(countryCode) ? '£300' : '$300';
+  const isNewYearsWindow = date >= NEW_YEARS_START && date < NEW_YEARS_END;
+  const discountNewYears = gbpCountry(countryCode) ? '£300' : '$300';
 
   if (leadId && emailAddress) {
     try {
@@ -70,10 +70,10 @@ const ThankYouCoursePreviewPage: PageComponent = async props => {
       <Header />
       <GroomingThankYouSection course="dg" heroSrc={HeroBackground} mobileHeroSrc={HeroMobile} emailAddress={emailAddress} />
       {/* <QuizCTACard header="Get Your Personalized Career Path in Dog Grooming!" url={quizURL} /> */}
-      <CurrentPromotion date={date} countryCode={countryCode} sectionParagraph={`Start the new year by investing in your future. For a limited time, enroll in dog grooming and save ${discountBoxingDay} on your tuition. Start today and become a certified pet professional this spring.`}/>
+      <CurrentPromotion date={date} countryCode={countryCode} sectionParagraph={`Start the new year by investing in your future. For a limited time, enroll in dog grooming and save ${discountNewYears} on your tuition. Start today and become a certified pet professional this spring.`}/>
       <WhyChooseQCSection className="bg-light" />
       <TestimonialWallSection testimonialIds={testimonialIds} />
-      <SupportSection boxingDay={isBoxingDayWindow} />
+      <SupportSection newYears={isNewYearsWindow} />
     </>
   );
 };

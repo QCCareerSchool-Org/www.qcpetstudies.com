@@ -1,4 +1,4 @@
-import { BoxingDayFooter } from '../../../../_components/boxingDayFooter';
+import { NewYearsFooter } from '../../../../_components/newYearsFooter';
 import { Footer } from '../../../../_components/footer';
 
 const PROMO_START = Date.UTC(2025, 11, 26, 8);
@@ -10,7 +10,7 @@ const Grooming400OffFooter = () => {
   const now = Date.now();
   const showPromoFooter = now >= PROMO_START && now < PROMO_END;
 
-  return showPromoFooter ? <BoxingDayFooter course="dg" /> : <Footer />;
+  return showPromoFooter ? <NewYearsFooter course="dg" /> : <Footer />;
 };
 
 export default Grooming400OffFooter;

@@ -20,7 +20,7 @@ interface Props {
   course: Course;
 }
 
-export const BoxingDayFooter: FC<Props> = ({ course }) => {
+export const NewYearsFooter: FC<Props> = ({ course }) => {
   const copy = copyByCourse[course];
 
   return (
