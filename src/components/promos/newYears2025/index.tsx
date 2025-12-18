@@ -2,7 +2,7 @@ import Image from 'next/image';
 import type { FC } from 'react';
 
 import HeroImageUK from './desktop-uk.jpg';
-import HeroImageDefault from './landing-thank-you-placeholder.png';
+import HeroImageDefault from './desktop.jpg';
 import { gbpCountry } from '@/lib/currencies';
 
 interface Props {
