@@ -10,7 +10,7 @@ interface Props {
   sectionParagraph?: string;
 }
 
-export const NewYears2025: FC<Props> = ({ countryCode, sectionParagraph }) => {
+export const FourHundredGroomingTraining: FC<Props> = ({ countryCode, sectionParagraph }) => {
   const heroImageSrc = gbpCountry(countryCode) ? HeroImageUK : HeroImageDefault;
 
   return (
