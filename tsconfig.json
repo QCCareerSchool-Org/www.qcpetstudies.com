@@ -30,7 +30,6 @@
     "**/*.js",
     "**/*.jsx",
     "**/*.mts",
-    "eslint.config.mjs",
     ".next/types/**/*.ts",
     ".next/dev/types/**/*.ts",
   ],
