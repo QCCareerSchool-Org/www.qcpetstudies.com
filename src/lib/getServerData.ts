@@ -35,7 +35,7 @@ export async function getServerData(
 
   const testGroup = isTestGroup(testGroupCookie) ? testGroupCookie : randomInt(1, 12) as TestGroup;
 
-  if (searchParams) {
+  if (searchParams && process.env.VERCEL_ENV !== 'production') {
     const parameters = await searchParams;
     const dateOverrideParameter = getParam(parameters.date);
     if (dateOverrideParameter) {
