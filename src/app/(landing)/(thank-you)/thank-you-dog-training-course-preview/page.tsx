@@ -10,6 +10,7 @@ import { LeadProcessing } from '@/components/leadProcessing';
 import { SupportSection } from '@/components/supportSection';
 import { TestimonialWallSection } from '@/components/testimonialWallSection';
 import { WhyChooseQCSection } from '@/components/whyChooseQCSection';
+import { gbpCountry } from '@/lib/currencies';
 import { fbPostLead } from '@/lib/facebookConversionAPI';
 import { getParam } from '@/lib/getParam';
 import { getServerData } from '@/lib/getServerData';
@@ -21,6 +22,9 @@ export const metadata: Metadata = {
 };
 
 const testimonialIds = [ 'TD-0004', 'TD-0005', 'TD-0007', 'TD-0008', 'TD-0009', 'TD-0010' ];
+const NEW_YEARS_START = Date.UTC(2025, 11, 26, 8);
+const FOUR_HUNDRED_START = Date.UTC(2026, 0, 7, 8);
+const FOUR_HUNDRED_END = Date.UTC(2026, 0, 17, 8);
 
 const ThankYouCoursePreviewPage: PageComponent = async props => {
   const serverData = await getServerData(props.searchParams);
@@ -38,6 +42,12 @@ const ThankYouCoursePreviewPage: PageComponent = async props => {
   const cookieStore = await cookies();
   const fbc = cookieStore.get('_fbc')?.value;
   const fbp = cookieStore.get('_fbp')?.value;
+
+  const isNewYearsWindow = date >= NEW_YEARS_START && date < FOUR_HUNDRED_END;
+  const isFourHundredWindow = date >= FOUR_HUNDRED_START && date < FOUR_HUNDRED_END;
+  const discountAmount = gbpCountry(countryCode)
+    ? (isFourHundredWindow ? '£400' : '£300')
+    : (isFourHundredWindow ? '$400' : '$300');
 
   if (leadId && emailAddress) {
     try {
@@ -61,10 +71,10 @@ const ThankYouCoursePreviewPage: PageComponent = async props => {
       />
       <Header />
       <ThankYouSection course="dt" heroSrc={HeroBackground} emailAddress={emailAddress} />
-      <CurrentPromotion date={date} countryCode={countryCode} />
+      <CurrentPromotion date={date} countryCode={countryCode} sectionParagraph={`Start the new year by investing in your future. For a limited time, enroll in any pet course and save ${discountAmount} on your tuition—so you can build in-demand skills and move forward with confidence. Start today and begin taking on clients by spring!`} />
       <WhyChooseQCSection className="bg-light" />
       <TestimonialWallSection testimonialIds={testimonialIds} />
-      <SupportSection />
+      <SupportSection newYears={isNewYearsWindow} />
     </>
   );
 };

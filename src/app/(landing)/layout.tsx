@@ -5,10 +5,10 @@ import './landing.scss';
 /**
  * The header, if any, should be included on the page
  */
-const LandingLayout: LayoutComponent = ({ children }) => (
+const LandingLayout: LayoutComponent = ({ children, footer }) => (
   <>
     <main className="flex-shrink-0">{children}</main>
-    <Footer />
+    {footer ?? <Footer />}
   </>
 );
 
