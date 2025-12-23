@@ -1,16 +1,20 @@
-import { Footer } from '../../../_components/footer';
-import { NewYearsFooter } from '../../../_components/newYearsFooter';
+import { Footer } from '@/app/(landing)/_components/footer';
+import { NewYearsFooter } from '@/app/(landing)/_components/newYearsFooter';
+import type { PageComponent } from '@/app/serverComponent';
+import { getServerData } from '@/lib/getServerData';
+import { endOfYear2025, newYear2026 } from '@/lib/promotionPeriods';
+import { PromotionPeriodSet } from '@/lib/promotionPeriodSet';
 
-const NEW_YEARS_START = Date.UTC(2025, 11, 26, 8);
-const NEW_YEARS_END = Date.UTC(2026, 0, 17, 8);
+const promoSet = new PromotionPeriodSet([ endOfYear2025, newYear2026 ]);
 
 export const dynamic = 'force-dynamic';
 
-const now = Date.now();
-const isNewYearsWindow = now >= NEW_YEARS_START && now < NEW_YEARS_END;
+const ThankYouGroomingFooter: PageComponent = async props => {
+  const { date } = await getServerData(props.searchParams);
 
-const GroomingThankYouFooter = () => {
-  return isNewYearsWindow ? <NewYearsFooter course="dg" /> : <Footer />;
+  return promoSet.contains(date)
+    ? <NewYearsFooter course="dt" />
+    : <Footer />;
 };
 
-export default GroomingThankYouFooter;
+export default ThankYouGroomingFooter;
