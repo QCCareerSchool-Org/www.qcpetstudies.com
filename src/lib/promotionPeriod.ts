@@ -7,6 +7,11 @@ export class PromotionPeriod {
     }
   }
 
+  /**
+   * Creates a new range spanning from the earliest start date to the latest end date
+   * @param ranges the ranges to conside
+   * @returns the new range
+   */
   public static span(...ranges: readonly PromotionPeriod[]): PromotionPeriod {
     if (ranges.length === 0) {
       throw new Error('Need at least one range');
