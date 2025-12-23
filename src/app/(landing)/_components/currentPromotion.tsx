@@ -17,10 +17,7 @@ interface Props {
 export const CurrentPromotion: FC<Props> = ({ date, countryCode, sectionParagraph }) => {
   if (date >= NEW_YEARS_START && date < NEW_YEARS_END) {
     return <NewYears2025 countryCode={countryCode} sectionParagraph={sectionParagraph} />;
-
   } else if (date >= FOUR_HUNDRED_START && date < FOUR_HUNDRED_END) {
     return <FourHundredGroomingTraining countryCode={countryCode} sectionParagraph={sectionParagraph} />;
   }
-
-  return null;
 };
