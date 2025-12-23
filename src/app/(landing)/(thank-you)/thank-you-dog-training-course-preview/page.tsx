@@ -64,7 +64,7 @@ const ThankYouCoursePreviewPage: PageComponent = async props => {
       <CurrentPromotion date={date} countryCode={countryCode} courseCode="dt" />
       <WhyChooseQCSection className="bg-light" />
       <TestimonialWallSection testimonialIds={testimonialIds} />
-      <SupportSection date={date} />
+      <SupportSection date={date} showLink />
     </>
   );
 };
