@@ -65,7 +65,7 @@ const ThankYouCoursePreviewPage: PageComponent = async props => {
       <Header />
       <GroomingThankYouSection course="dg" heroSrc={HeroBackground} mobileHeroSrc={HeroMobile} emailAddress={emailAddress} />
       {/* <QuizCTACard header="Get Your Personalized Career Path in Dog Grooming!" url={quizURL} /> */}
-      <CurrentPromotion date={date} countryCode={countryCode} />
+      <CurrentPromotion date={date} countryCode={countryCode} courseCode="dg" />
       <WhyChooseQCSection className="bg-light" />
       <TestimonialWallSection testimonialIds={testimonialIds} />
       <SupportSection date={date} />
