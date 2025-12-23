@@ -4,7 +4,7 @@ import EnglishCockerSpanielPosing from './english-cocker-spaniel-posing.jpg';
 import type { PageComponent } from '@/app/serverComponent';
 import { BackgroundImage } from '@/components/backgroundImage';
 import { ChatLink } from '@/components/chatLink';
-import { getData } from '@/lib/getData';
+import { getServerData } from '@/lib/getServerData';
 import { getTelephoneNumber } from '@/lib/telephone';
 
 export const metadata: Metadata = {
@@ -13,8 +13,8 @@ export const metadata: Metadata = {
   alternates: { canonical: '/offer-expired' },
 };
 
-const OfferExpiredPage: PageComponent = async () => {
-  const { countryCode } = await getData();
+const OfferExpiredPage: PageComponent = async props => {
+  const { countryCode } = await getServerData(props.searchParams);
   const telephoneNumber = getTelephoneNumber(countryCode);
 
   return (

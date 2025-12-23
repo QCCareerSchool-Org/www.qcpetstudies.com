@@ -16,8 +16,8 @@ import Step1EnrollImage from '@/images/step-1-enroll.svg';
 import Step2SubmitImage from '@/images/step-2-submit.svg';
 import Step3CertificateImage from '@/images/step-3-certificate.svg';
 import { externship } from '@/lib/externship';
-import { getData } from '@/lib/getData';
 import { getParam } from '@/lib/getParam';
+import { getServerData } from '@/lib/getServerData';
 
 export const metadata: Metadata = {
   title: 'Become a Professional Dog Groomer',
@@ -31,6 +31,7 @@ const brevoEmailTemplateId = 1660;
 const brevoTelephoneListId = 55;
 
 const DogGroomingCatalogPage: PageComponent = async props => {
+  const { countryCode, provinceCode } = await getServerData(props.searchParams);
   const searchParams = await props.searchParams;
   const gclid = getParam(searchParams.gclid);
   const msclkid = getParam(searchParams.msclkid);
@@ -41,8 +42,6 @@ const DogGroomingCatalogPage: PageComponent = async props => {
   const utmTerm = getParam(searchParams.utm_term);
   const headerList = await headers();
   const referrer = headerList.get('referer');
-
-  const { countryCode, provinceCode } = await getData();
 
   return (
     <>

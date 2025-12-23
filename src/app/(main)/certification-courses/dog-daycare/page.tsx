@@ -23,7 +23,7 @@ import TutorIcon from '@/images/course-overview-icons/tutor.svg';
 import type { PriceQuery } from '@/lib/fetch';
 import { fetchPrice } from '@/lib/fetch';
 import { formatPrice } from '@/lib/formatPrice';
-import { getData } from '@/lib/getData';
+import { getServerData } from '@/lib/getServerData';
 
 export const metadata: Metadata = {
   title: 'Dog Daycare Course',
@@ -35,9 +35,9 @@ const headerIconSize = 20;
 const iconSize = 36;
 const courseCodes: CourseCode[] = [ 'dd' ];
 
-const DogCarePage: PageComponent = async () => {
+const DogCarePage: PageComponent = async props => {
   let eventKey = 0;
-  const { countryCode, provinceCode } = await getData();
+  const { countryCode, provinceCode } = await getServerData(props.searchParams);
   const priceQuery: PriceQuery = { countryCode, provinceCode: provinceCode ?? undefined, courses: courseCodes };
   const price = await fetchPrice(priceQuery);
   if (!price) {

@@ -24,9 +24,10 @@ import type { CourseCode } from '@/domain/courseCode';
 import type { Price } from '@/domain/price';
 import { externship } from '@/lib/externship';
 import { formatPrice } from '@/lib/formatPrice';
-import { getData } from '@/lib/getData';
 
 interface Props {
+  countryCode: string;
+  provinceCode: string | null;
   dgPrice: Price;
   dePrice: Price;
   enrollPath: string;
@@ -36,8 +37,7 @@ interface Props {
 const iconSize = 36;
 const testimonialIds = [ 'TD-0004', 'TD-0005', 'TD-0007', 'TD-0008', 'TD-0009', 'TD-0010' ];
 
-export const DogGroomingBase: FC<Props> = async ({ dgPrice, dePrice, enrollPath, courseCode }) => {
-  const { countryCode, provinceCode } = await getData();
+export const DogGroomingBase: FC<Props> = async ({ countryCode, provinceCode, dgPrice, dePrice, enrollPath, courseCode }) => {
   let eventKey = 0;
 
   return (

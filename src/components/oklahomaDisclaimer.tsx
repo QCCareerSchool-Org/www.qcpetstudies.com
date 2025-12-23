@@ -1,9 +1,11 @@
 import type { FC } from 'react';
 
-import { getData } from '@/lib/getData';
+interface Props {
+  countryCode: string;
+  provinceCode: string | null;
+}
 
-export const OklahomaDisclaimer: FC = async () => {
-  const { countryCode, provinceCode } = await getData();
+export const OklahomaDisclaimer: FC<Props> = ({ countryCode, provinceCode }) => {
 
   if (countryCode === 'US' && provinceCode === 'OK') {
     return (

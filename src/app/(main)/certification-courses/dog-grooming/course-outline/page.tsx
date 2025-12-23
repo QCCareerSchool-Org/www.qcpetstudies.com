@@ -20,7 +20,7 @@ import { BackgroundImage } from '@/components/backgroundImage';
 import CalendarIcon from '@/images/calendar.svg';
 import TimeIcon from '@/images/clock.svg';
 import { externship } from '@/lib/externship';
-import { getData } from '@/lib/getData';
+import { getServerData } from '@/lib/getServerData';
 
 const iconSize = 50;
 
@@ -30,9 +30,9 @@ export const metadata: Metadata = {
   alternates: { canonical: '/certification-courses/dog-grooming/course-outline' },
 };
 
-const DogGroomingCourseOutlinePage: PageComponent = async () => {
+const DogGroomingCourseOutlinePage: PageComponent = async props => {
   let eventKey = 0;
-  const { countryCode, provinceCode } = await getData();
+  const { countryCode, provinceCode } = await getServerData(props.searchParams);
 
   return (
     <>

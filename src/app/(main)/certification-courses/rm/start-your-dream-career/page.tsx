@@ -12,7 +12,7 @@ import { HowTheCoursesWorkSection } from '@/components/howTheCoursesWorkSection'
 import { PriceSection } from '@/components/priceSection';
 import type { PriceQuery } from '@/lib/fetch';
 import { fetchPrice } from '@/lib/fetch';
-import { getData } from '@/lib/getData';
+import { getServerData } from '@/lib/getServerData';
 
 const courseCodes = [ 'dg' ];
 
@@ -21,8 +21,8 @@ export const metadata: Metadata = {
   alternates: { canonical: '/certification-courses/rm/start-your-dream-career' },
 };
 
-const StartYourDreamCareerPage: PageComponent = async () => {
-  const { countryCode, provinceCode } = await getData();
+const StartYourDreamCareerPage: PageComponent = async props => {
+  const { countryCode, provinceCode } = await getServerData(props.searchParams);
   const priceQuery: PriceQuery = { countryCode, provinceCode: provinceCode ?? undefined, courses: courseCodes };
   const price = await fetchPrice(priceQuery);
   if (!price) {

@@ -11,8 +11,8 @@ import { SupportSection } from '@/components/supportSection';
 import { TestimonialWallSection } from '@/components/testimonialWallSection';
 import { WhyChooseQCSection } from '@/components/whyChooseQCSection';
 import { fbPostLead } from '@/lib/facebookConversionAPI';
-import { getData } from '@/lib/getData';
 import { getParam } from '@/lib/getParam';
+import { getServerData } from '@/lib/getServerData';
 
 export const metadata: Metadata = {
   title: 'Course Preview',
@@ -23,12 +23,14 @@ export const metadata: Metadata = {
 const testimonialIds = [ 'TD-0004', 'TD-0005', 'TD-0007', 'TD-0008', 'TD-0009', 'TD-0010' ];
 
 const ThankYouCoursePreviewPage: PageComponent = async props => {
+  const serverData = await getServerData(props.searchParams);
+  const date = serverData.date;
   const searchParams = await props.searchParams;
   const leadId = getParam(searchParams.leadId);
   const firstName = getParam(searchParams.firstName);
   const lastName = getParam(searchParams.lastName);
   const emailAddress = getParam(searchParams.emailAddress);
-  const countryCode = getParam(searchParams.countryCode) ?? (await getData()).countryCode;
+  const countryCode = getParam(searchParams.countryCode) ?? serverData.countryCode;
   const provinceCode = getParam(searchParams.provinceCode);
   const headerList = await headers();
   const ipAddress = headerList.get('x-real-ip') ?? undefined;
@@ -37,11 +39,9 @@ const ThankYouCoursePreviewPage: PageComponent = async props => {
   const fbc = cookieStore.get('_fbc')?.value;
   const fbp = cookieStore.get('_fbp')?.value;
 
-  const date = new Date().getTime();
-
   if (leadId && emailAddress) {
     try {
-      await fbPostLead(leadId, new Date(), emailAddress, firstName, lastName, countryCode, provinceCode, ipAddress, userAgent, fbc, fbp);
+      await fbPostLead(leadId, new Date(date), emailAddress, firstName, lastName, countryCode, provinceCode, ipAddress, userAgent, fbc, fbp);
     } catch (err) {
       console.error(err);
     }
@@ -61,10 +61,10 @@ const ThankYouCoursePreviewPage: PageComponent = async props => {
       />
       <Header />
       <ThankYouSection course="dt" heroSrc={HeroBackground} emailAddress={emailAddress} />
-      <CurrentPromotion date={date} countryCode={countryCode} />
+      <CurrentPromotion date={date} countryCode={countryCode} courseCode="dt" />
       <WhyChooseQCSection className="bg-light" />
       <TestimonialWallSection testimonialIds={testimonialIds} />
-      <SupportSection />
+      <SupportSection date={date} />
     </>
   );
 };

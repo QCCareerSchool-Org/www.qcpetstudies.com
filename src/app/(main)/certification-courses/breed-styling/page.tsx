@@ -15,7 +15,7 @@ import type { CourseCode } from '@/domain/courseCode';
 import CourseIconBadge from '@/images/course-icon-badge.svg';
 import type { PriceQuery } from '@/lib/fetch';
 import { fetchPrice } from '@/lib/fetch';
-import { getData } from '@/lib/getData';
+import { getServerData } from '@/lib/getServerData';
 
 const courseCodes: CourseCode[] = [ 'ds' ];
 
@@ -25,8 +25,8 @@ export const metadata: Metadata = {
   alternates: { canonical: '/certification-courses/breed-styling' },
 };
 
-const BreedStylingPage: PageComponent = async () => {
-  const { countryCode, provinceCode } = await getData();
+const BreedStylingPage: PageComponent = async props => {
+  const { countryCode, provinceCode } = await getServerData(props.searchParams);
   const priceQuery: PriceQuery = { countryCode, provinceCode: provinceCode ?? undefined, courses: courseCodes };
   const price = await fetchPrice(priceQuery);
   if (!price) {

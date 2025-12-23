@@ -23,7 +23,7 @@ import { VirtualCommunitySection } from '@/components/virtualCommunitySection';
 import { WhyChooseQCSection } from '@/components/whyChooseQCSection';
 import { activeCourseCodes, getCourseCertification, getCourseDescription, getCourseName, getCourseUrl } from '@/domain/courseCode';
 import { externship } from '@/lib/externship';
-import { getData } from '@/lib/getData';
+import { getServerData } from '@/lib/getServerData';
 
 const iconSize = 145;
 
@@ -33,8 +33,8 @@ export const metadata: Metadata = {
   alternates: { canonical: '/' },
 };
 
-const HomePage: PageComponent = async () => {
-  const { countryCode, provinceCode } = await getData();
+const HomePage: PageComponent = async props => {
+  const { countryCode, provinceCode } = await getServerData(props.searchParams);
 
   const coursesJsonLD: WithContext<ItemList> = {
     '@context': 'https://schema.org',

@@ -6,7 +6,7 @@ import { DeadlineFunnelScript } from '@/components/deadlineFunnelScript';
 import type { CourseCode } from '@/domain/courseCode';
 import type { PriceQuery } from '@/lib/fetch';
 import { fetchPrice } from '@/lib/fetch';
-import { getData } from '@/lib/getData';
+import { getServerData } from '@/lib/getServerData';
 
 const courseCode: CourseCode = 'dg';
 
@@ -16,8 +16,8 @@ export const metadata: Metadata = {
   alternates: { canonical: '/certification-courses/dog-grooming/200-off' },
 };
 
-const DogGrooming200OffPage: PageComponent = async () => {
-  const { countryCode, provinceCode } = await getData();
+const DogGrooming200OffPage: PageComponent = async props => {
+  const { countryCode, provinceCode } = await getServerData(props.searchParams);
   const dgPriceQuery: PriceQuery = { countryCode, provinceCode: provinceCode ?? undefined, courses: [ 'dg' ] };
   const dePriceQuery: PriceQuery = { countryCode, provinceCode: provinceCode ?? undefined, courses: [ 'de' ] };
   const [ dgPrice, dePrice ] = await Promise.all([
@@ -32,7 +32,7 @@ const DogGrooming200OffPage: PageComponent = async () => {
   return (
     <>
       <DeadlineFunnelScript />
-      <DogGroomingBase dgPrice={dgPrice} dePrice={dePrice} enrollPath="/grooming-200-off" courseCode={courseCode} />
+      <DogGroomingBase countryCode={countryCode} provinceCode={provinceCode} dgPrice={dgPrice} dePrice={dePrice} enrollPath="/grooming-200-off" courseCode={courseCode} />
     </>
   );
 };

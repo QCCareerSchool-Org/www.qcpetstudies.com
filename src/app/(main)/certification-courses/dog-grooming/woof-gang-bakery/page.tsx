@@ -28,8 +28,8 @@ import { PriceSectionWithDiscount } from '@/components/priceSectionWithDiscount'
 import { TutorSectionDG } from '@/components/tutorSectionDG';
 import type { PriceQuery } from '@/lib/fetch';
 import { fetchPrice } from '@/lib/fetch';
-import { getData } from '@/lib/getData';
 import { getParam } from '@/lib/getParam';
+import { getServerData } from '@/lib/getServerData';
 
 const courseCodes = [ 'dg' ];
 
@@ -40,7 +40,7 @@ export const metadata: Metadata = {
 
 const Page: PageComponent = async props => {
   const searchParams = await props.searchParams;
-  const { countryCode, provinceCode } = await getData();
+  const { countryCode, provinceCode } = await getServerData(props.params);
   const priceQuery: PriceQuery = { countryCode, provinceCode: provinceCode ?? undefined, courses: courseCodes, options: { promoCode: 'WOOFGANG', school: 'QC Pet Studies' } };
   const price = await fetchPrice(priceQuery);
   if (!price) {

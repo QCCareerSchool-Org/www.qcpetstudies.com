@@ -13,7 +13,7 @@ import type { CourseCode } from '@/domain/courseCode';
 import FirstAidLogo from '@/images/first-aid-logo.svg';
 import type { PriceQuery } from '@/lib/fetch';
 import { fetchPrice } from '@/lib/fetch';
-import { getData } from '@/lib/getData';
+import { getServerData } from '@/lib/getServerData';
 
 const courseCodes: CourseCode[] = [ 'fa' ];
 
@@ -23,8 +23,8 @@ export const metadata: Metadata = {
   description: 'Learn how to create a safe environment and how to respond to emergencies. The First Aid for Groomers course is for new and experienced groomers alike!',
 };
 
-const FirstAidForGroomersPage: PageComponent = async () => {
-  const { countryCode, provinceCode } = await getData();
+const FirstAidForGroomersPage: PageComponent = async props => {
+  const { countryCode, provinceCode } = await getServerData(props.searchParams);
   const priceQuery: PriceQuery = { countryCode, provinceCode: provinceCode ?? undefined, courses: courseCodes };
   const price = await fetchPrice(priceQuery);
   if (!price) {

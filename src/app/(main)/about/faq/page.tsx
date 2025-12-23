@@ -7,7 +7,7 @@ import { QuizAnswer } from './quizAnswer';
 import type { PageComponent } from '@/app/serverComponent';
 import { BackgroundImage } from '@/components/backgroundImage';
 import { externship } from '@/lib/externship';
-import { getData } from '@/lib/getData';
+import { getServerData } from '@/lib/getServerData';
 
 export const metadata: Metadata = {
   title: 'FAQ',
@@ -15,8 +15,8 @@ export const metadata: Metadata = {
   alternates: { canonical: '/about/faq' },
 };
 
-const FAQPage: PageComponent = async () => {
-  const { countryCode, provinceCode } = await getData();
+const FAQPage: PageComponent = async props => {
+  const { countryCode, provinceCode } = await getServerData(props.searchParams);
 
   return (
     <>
