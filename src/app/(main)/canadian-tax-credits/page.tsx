@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 
 import type { PageComponent } from '@/app/serverComponent';
+import { getServerData } from '@/lib/getServerData';
 
 export const metadata: Metadata = {
   title: 'Canadian Tax Credits',
@@ -8,8 +9,9 @@ export const metadata: Metadata = {
   alternates: { canonical: '/canadian-tax-credits' },
 };
 
-const CanadianTaxCreditsPage: PageComponent = () => {
-  const year = new Date().getFullYear();
+const CanadianTaxCreditsPage: PageComponent = async props => {
+  const { date } = await getServerData(props.searchParams);
+  const year = new Date(date).getFullYear();
 
   return (
     <>

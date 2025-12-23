@@ -5,15 +5,14 @@ import DoGInBedWithStick from './dog-in-bed-with-stick.jpg';
 import type { PageComponent } from './serverComponent';
 import { BackgroundImage } from '@/components/backgroundImage';
 import { SiteLayout } from '@/components/siteLayout';
-import { getData } from '@/lib/getData';
+import { getServerData } from '@/lib/getServerData';
 
 export const metadata: Metadata = {
   title: 'Page Not Found',
 };
 
-const NotFoundPage: PageComponent = async () => {
-  const date = new Date().getTime();
-  const { countryCode } = await getData();
+const NotFoundPage: PageComponent = async props => {
+  const { countryCode, date } = await getServerData(props.searchParams);
 
   return (
     <>

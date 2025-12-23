@@ -3,7 +3,7 @@ import type { Metadata } from 'next';
 import { GroomingTechnicianBase } from '.';
 import type { PageComponent } from '@/app/serverComponent';
 import { fetchPrice, type PriceQuery } from '@/lib/fetch';
-import { getData } from '@/lib/getData';
+import { getServerData } from '@/lib/getServerData';
 
 const courseCodes = [ 'gt' ];
 
@@ -13,8 +13,8 @@ export const metadata: Metadata = {
   description: 'Become a Certified Grooming Technician with interactive online training!',
 };
 
-const GroomingTechnicianPage: PageComponent = async () => {
-  const { countryCode, provinceCode } = await getData();
+const GroomingTechnicianPage: PageComponent = async props => {
+  const { countryCode, provinceCode } = await getServerData(props.searchParams);
 
   const gtPriceQuery: PriceQuery = { countryCode, provinceCode: provinceCode ?? undefined, courses: courseCodes };
   const dgPriceQuery: PriceQuery = { countryCode, provinceCode: provinceCode ?? undefined, courses: [ 'dg' ] };

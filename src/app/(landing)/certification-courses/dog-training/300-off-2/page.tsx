@@ -6,7 +6,7 @@ import { DeadlineFunnelScript } from '@/components/deadlineFunnelScript';
 import type { CourseCode } from '@/domain/courseCode';
 import type { PriceQuery } from '@/lib/fetch';
 import { fetchPrice } from '@/lib/fetch';
-import { getData } from '@/lib/getData';
+import { getServerData } from '@/lib/getServerData';
 
 export const metadata: Metadata = {
   title: 'Dog Training Course',
@@ -16,8 +16,8 @@ export const metadata: Metadata = {
 
 const courseCodes: CourseCode[] = [ 'dt' ];
 
-const DogTraining300Off2Page: PageComponent = async () => {
-  const { countryCode, provinceCode } = await getData();
+const DogTraining300Off2Page: PageComponent = async props => {
+  const { countryCode, provinceCode } = await getServerData(props.searchParams);
   const priceQuery: PriceQuery = { countryCode, provinceCode: provinceCode ?? undefined, courses: courseCodes, options: { promoCode: 'DT300', school: 'QC Pet Studies' } };
   const price = await fetchPrice(priceQuery);
   if (!price) {

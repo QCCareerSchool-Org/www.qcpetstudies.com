@@ -3,10 +3,10 @@ import type { FC } from 'react';
 
 import { TelephoneLink } from '@/components/telephoneLink';
 import { gbpCountry } from '@/lib/currencies';
-import { getData } from '@/lib/getData';
+import { getServerData } from '@/lib/getServerData';
 
 export const Footer: FC = async () => {
-  const { countryCode } = await getData();
+  const { countryCode } = await getServerData();
   const termsLink = gbpCountry(countryCode) ? '/terms-gb' : '/terms';
 
   return (

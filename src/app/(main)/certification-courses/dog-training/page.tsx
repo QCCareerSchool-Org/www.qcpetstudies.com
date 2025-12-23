@@ -5,7 +5,7 @@ import type { PageComponent } from '@/app/serverComponent';
 import type { CourseCode } from '@/domain/courseCode';
 import type { PriceQuery } from '@/lib/fetch';
 import { fetchPrice } from '@/lib/fetch';
-import { getData } from '@/lib/getData';
+import { getServerData } from '@/lib/getServerData';
 
 export const metadata: Metadata = {
   title: 'Dog Training Course',
@@ -15,8 +15,8 @@ export const metadata: Metadata = {
 
 const courseCodes: CourseCode[] = [ 'dt' ];
 
-const DogTrainingPage: PageComponent = async () => {
-  const { countryCode, provinceCode } = await getData();
+const DogTrainingPage: PageComponent = async props => {
+  const { countryCode, provinceCode } = await getServerData(props.searchParams);
   const priceQuery: PriceQuery = { countryCode, provinceCode: provinceCode ?? undefined, courses: courseCodes };
   const price = await fetchPrice(priceQuery);
   if (!price) {

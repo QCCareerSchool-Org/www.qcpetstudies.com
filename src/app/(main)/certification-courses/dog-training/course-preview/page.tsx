@@ -14,7 +14,7 @@ import { TabGroup } from '@/components/tabGroup';
 import { TutorSectionDT } from '@/components/tutorSectionDT';
 import type { PriceQuery } from '@/lib/fetch';
 import { fetchPrice } from '@/lib/fetch';
-import { getData } from '@/lib/getData';
+import { getServerData } from '@/lib/getServerData';
 
 export const metadata: Metadata = {
   title: 'Professional Dog Trainer Course',
@@ -23,8 +23,8 @@ export const metadata: Metadata = {
 
 const courseCodes = [ 'dt' ];
 
-const DogTrainingCoursePreviewPage: PageComponent = async () => {
-  const { countryCode, provinceCode } = await getData();
+const DogTrainingCoursePreviewPage: PageComponent = async props => {
+  const { countryCode, provinceCode } = await getServerData(props.searchParams);
   const priceQuery: PriceQuery = { countryCode, provinceCode: provinceCode ?? undefined, courses: courseCodes };
   const price = await fetchPrice(priceQuery);
   if (!price) {

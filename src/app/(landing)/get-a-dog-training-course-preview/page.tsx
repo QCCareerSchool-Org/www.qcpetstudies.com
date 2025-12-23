@@ -18,8 +18,8 @@ import SusanImage from './susan.jpg';
 import type { PageComponent } from '@/app/serverComponent';
 import { BrevoForm } from '@/components/brevoForm';
 import { TestimonialWallSection } from '@/components/testimonialWallSection';
-import { getData } from '@/lib/getData';
 import { getParam } from '@/lib/getParam';
+import { getServerData } from '@/lib/getServerData';
 
 const courses = [ 'dt' ];
 const brevoListId = 30;
@@ -35,8 +35,8 @@ export const metadata: Metadata = {
 };
 
 const DogTrainingCatalogPage: PageComponent = async props => {
+  const { countryCode } = await getServerData(props.searchParams);
   const searchParams = await props.searchParams;
-  const { countryCode } = await getData();
   const gclid = getParam(searchParams.gclid);
   const msclkid = getParam(searchParams.msclkid);
   const utmSource = getParam(searchParams.utm_source);

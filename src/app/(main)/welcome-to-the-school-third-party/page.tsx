@@ -14,6 +14,7 @@ import { createBrevoContact } from '@/lib/brevoAPI';
 import { fbPostPurchase } from '@/lib/facebookConversionAPI';
 import { getEnrollment } from '@/lib/fetch';
 import { getParam } from '@/lib/getParam';
+import { getServerData } from '@/lib/getServerData';
 import { sendEnrollmentEmail } from '@/lib/sendEnrollmentEmail';
 
 export const metadata: Metadata = {
@@ -24,6 +25,7 @@ export const metadata: Metadata = {
 };
 
 const WelcomeToTheSchoolThirdPartyPage: PageComponent = async props => {
+  const { date } = await getServerData(props.searchParams);
   const searchParams = await props.searchParams;
   const enrollmentIdParam = getParam(searchParams.enrollmentId);
   const codeParam = getParam(searchParams.code);
@@ -74,7 +76,7 @@ const WelcomeToTheSchoolThirdPartyPage: PageComponent = async props => {
     }
 
     // Facebook
-    if (enrollment.transactionTime === null || new Date().getTime() - enrollment.transactionTime.getTime() < 7 * 24 * 60 * 60 * 1000) {
+    if (enrollment.transactionTime === null || new Date(date).getTime() - enrollment.transactionTime.getTime() < 7 * 24 * 60 * 60 * 1000) {
       try {
         const source = 'https://www.qcpetstudies.com/welcome-to-the-school';
         await fbPostPurchase(enrollment, source, ipAddress, userAgent, fbc, fbp);

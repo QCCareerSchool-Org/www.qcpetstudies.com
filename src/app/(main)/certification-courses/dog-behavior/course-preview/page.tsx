@@ -10,7 +10,7 @@ import IDGPCertificationLogo from '@/components/certifications/IDGP-certificatio
 import { PriceSectionWithDiscount } from '@/components/priceSectionWithDiscount';
 import type { PriceQuery } from '@/lib/fetch';
 import { fetchPrice } from '@/lib/fetch';
-import { getData } from '@/lib/getData';
+import { getServerData } from '@/lib/getServerData';
 
 const courseCodes = [ 'dc' ];
 
@@ -19,8 +19,8 @@ export const metadata: Metadata = {
   alternates: { canonical: '/certification-courses/dog-behavior/course-preview' },
 };
 
-const BehaviorCoursePreviewPage: PageComponent = async () => {
-  const { countryCode, provinceCode } = await getData();
+const BehaviorCoursePreviewPage: PageComponent = async props => {
+  const { countryCode, provinceCode } = await getServerData(props.searchParams);
   const priceQuery: PriceQuery = { countryCode, provinceCode: provinceCode ?? undefined, courses: courseCodes };
   const price = await fetchPrice(priceQuery);
   if (!price) {

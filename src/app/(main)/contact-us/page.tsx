@@ -11,7 +11,7 @@ import { BackgroundImage } from '@/components/backgroundImage';
 import { ChatLink } from '@/components/chatLink';
 import { EmailLink } from '@/components/emailLink';
 import { TelephoneLink } from '@/components/telephoneLink';
-import { getData } from '@/lib/getData';
+import { getServerData } from '@/lib/getServerData';
 
 export const metadata: Metadata = {
   title: 'Contact Us',
@@ -19,8 +19,8 @@ export const metadata: Metadata = {
   alternates: { canonical: '/contact-us' },
 };
 
-const ContactUsPage: PageComponent = async () => {
-  const { countryCode } = await getData();
+const ContactUsPage: PageComponent = async props => {
+  const { countryCode } = await getServerData(props.searchParams);
 
   return (
     <>

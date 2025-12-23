@@ -14,7 +14,7 @@ import { TutorSectionDG } from '@/components/tutorSectionDG';
 import { externship } from '@/lib/externship';
 import type { PriceQuery } from '@/lib/fetch';
 import { fetchPrice } from '@/lib/fetch';
-import { getData } from '@/lib/getData';
+import { getServerData } from '@/lib/getServerData';
 
 const courseCodes = [ 'dg' ];
 
@@ -23,8 +23,8 @@ export const metadata: Metadata = {
   alternates: { canonical: '/certification-courses/dog-grooming/course-preview' },
 };
 
-const GroomingCoursePreviewPage: PageComponent = async () => {
-  const { countryCode, provinceCode } = await getData();
+const GroomingCoursePreviewPage: PageComponent = async props => {
+  const { countryCode, provinceCode } = await getServerData(props.searchParams);
   const dgPriceQuery: PriceQuery = { countryCode, provinceCode: provinceCode ?? undefined, courses: courseCodes };
   const dePriceQuery: PriceQuery = { countryCode, provinceCode: provinceCode ?? undefined, courses: [ 'de' ] };
 
