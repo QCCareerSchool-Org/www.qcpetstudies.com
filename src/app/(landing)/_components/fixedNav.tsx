@@ -30,7 +30,7 @@ export const FixedNav: FC<Props> = ({ buttonHref, buttonContent, buttonClass }) 
         <HeaderLogo />
         {buttonHref
           ? <Link href={buttonHref} className={`btn btn-primary ${styles.button} ${buttonClass}`}>{buttonContent}</Link>
-          : <ScrollLink to="top" smooth className={`btn btn-primary ${styles.button} ${buttonClass}`}>{buttonContent}</ScrollLink>
+          : <ScrollLink to="top" smooth duration={300} className={`btn btn-primary ${styles.button} ${buttonClass}`}>{buttonContent}</ScrollLink>
         }
       </div>
     </div>
