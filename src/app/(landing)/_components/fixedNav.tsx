@@ -2,7 +2,8 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
-import type { FC, JSX } from 'react';
+import type { FC, ReactNode } from 'react';
+import { Link as ScrollLink } from 'react-scroll';
 
 import styles from './fixedNav.module.scss';
 import SmallLogo from './logo-sm.svg';
@@ -13,10 +14,11 @@ import { useScrollPosition } from '@/hooks/useScrollPosition';
 
 interface Props {
   buttonHref?: string;
-  buttonContent?: JSX.Element | string;
+  buttonContent: ReactNode | string;
+  buttonClass?: string;
 }
 
-export const FixedNav: FC<Props> = ({ buttonHref = '#', buttonContent }) => {
+export const FixedNav: FC<Props> = ({ buttonHref, buttonContent, buttonClass }) => {
   const scrollPosition = useScrollPosition();
   const screenWidth = useScreenWidth();
 
@@ -26,7 +28,10 @@ export const FixedNav: FC<Props> = ({ buttonHref = '#', buttonContent }) => {
     <div className={`${styles.wrapper} ${show ? styles.show : undefined}`}>
       <div className={`container ${styles.container}`}>
         <HeaderLogo />
-        <Link href={buttonHref} className={`btn btn-primary ${styles.button}`}>{buttonContent ?? <><span className="d-none d-sm-inline">Get the </span>Free Course Preview</>}</Link>
+        {buttonHref
+          ? <Link href={buttonHref} className={`btn btn-primary ${styles.button} ${buttonClass}`}>{buttonContent}</Link>
+          : <ScrollLink to="top" smooth className={`btn btn-primary ${styles.button} ${buttonClass}`}>{buttonContent}</ScrollLink>
+        }
       </div>
     </div>
   );

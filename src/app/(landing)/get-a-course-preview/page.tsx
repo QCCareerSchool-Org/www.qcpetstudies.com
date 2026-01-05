@@ -1,10 +1,10 @@
 import type { Metadata } from 'next';
 import { headers } from 'next/headers';
 import Image from 'next/image';
-import Link from 'next/link';
 
 import CatalogImage from './dog-and-scissors.jpg';
 import { MultiCourseBrevoForm } from './multiCourseBrevoForm';
+import { BottomSection } from '../_components/bottomSection';
 import { Header } from '../_components/header';
 import type { PageComponent } from '@/app/serverComponent';
 import { TestimonialSmCaseyBechard } from '@/components/testimonialsSmall/caseyBechard';
@@ -122,16 +122,7 @@ const DogGroomingCatalogPage: PageComponent = async props => {
         </div>
       </section>
 
-      <section className="bg-secondary">
-        <div className="container text-center">
-          <div className="row justify-content-center">
-            <div className="col-12 col-lg-10">
-              <h2 className="text-white mb-4">Take the First Step Towards a New and Exciting Career</h2>
-              <Link href="#" className="btn btn-outline-light">Preview the Course</Link>
-            </div>
-          </div>
-        </div>
-      </section>
+      <BottomSection />
     </>
   );
 };

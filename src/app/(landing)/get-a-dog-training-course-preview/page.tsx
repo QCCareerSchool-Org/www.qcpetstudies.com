@@ -1,7 +1,6 @@
 import type { Metadata } from 'next';
 import { headers } from 'next/headers';
 import Image from 'next/image';
-import Link from 'next/link';
 
 import GraphImage from './jack-russel-graphic.jpg';
 import PosterImage from './poster.jpg';
@@ -15,6 +14,7 @@ import MessageCheckIcon from './_icons/message-alt-check.svg';
 import BrunoImage from './bruno.jpg';
 import KimImage from './kim.jpg';
 import SusanImage from './susan.jpg';
+import { BottomSection } from '../_components/bottomSection';
 import type { PageComponent } from '@/app/serverComponent';
 import { BrevoForm } from '@/components/brevoForm';
 import { TestimonialWallSection } from '@/components/testimonialWallSection';
@@ -190,17 +190,9 @@ const DogTrainingCatalogPage: PageComponent = async props => {
         </div>
       </section>
 
-      <section className="bg-navy">
-        <div className="container text-center">
-          <div className="row justify-content-center">
-            <div className="col-12 col-lg-10">
-              <h2 className="text-white mb-4">Start Your Dog Training Career Today!</h2>
-              <p className="text-white">Request a free course preview today to learn more about how you can become a professional dog trainer with QC's online training! The preview includes a course curriculum, tuition information, and your career outlook.</p>
-              <Link href="#" className="btn btn-secondary">Get the Course Preview</Link>
-            </div>
-          </div>
-        </div>
-      </section>
+      <BottomSection className="bg-navy" heading="Start Your Dog Training Career Today!" buttonClass="btn-secondary">
+        <p className="text-white">Request a free course preview today to learn more about how you can become a professional dog trainer with QC's online training! The preview includes a course curriculum, tuition information, and your career outlook.</p>
+      </BottomSection>
     </>
   );
 };
