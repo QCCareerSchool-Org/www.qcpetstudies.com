@@ -22,7 +22,7 @@ export const BottomSection: FC<PropsWithChildren<Props>> = ({ className = 'bg-se
             {children}
             {buttonHref
               ? <Link href={buttonHref} className={`btn ${buttonClass}`}>{buttonContent}</Link>
-              : <ScrollLink to="top" smooth className={`btn ${buttonClass}`}>{buttonContent}</ScrollLink>
+              : <ScrollLink to="top" smooth duration={300} className={`btn ${buttonClass}`}>{buttonContent}</ScrollLink>
             }
           </div>
         </div>
