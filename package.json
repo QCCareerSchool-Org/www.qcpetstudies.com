@@ -34,11 +34,11 @@
     "uuid": "^13.0.0"
   },
   "devDependencies": {
-    "@eslint/compat": "^2.0.0",
+    "@eslint/compat": "^2.0.1",
     "@eslint/eslintrc": "^3.3.3",
     "@eslint/js": "^9.39.1",
     "@faker-js/faker": "^9.9.0",
-    "@stylistic/eslint-plugin": "^5.6.1",
+    "@stylistic/eslint-plugin": "^5.7.0",
     "@svgr/webpack": "^8.1.0",
     "@swc/jest": "^0.2.39",
     "@testing-library/dom": "^10.4.1",
@@ -47,13 +47,13 @@
     "@types/big.js": "^6.2.2",
     "@types/jest": "^30.0.0",
     "@types/jest-axe": "^3.5.9",
-    "@types/node": "^24.10.4",
+    "@types/node": "^24.10.8",
     "@types/qs": "^6.14.0",
     "@types/react": "19.2.7",
     "@types/react-dom": "19.2.3",
     "@types/react-scroll": "^1.8.10",
     "@types/uuid": "^10.0.0",
-    "baseline-browser-mapping": "^2.9.11",
+    "baseline-browser-mapping": "^2.9.14",
     "eslint": "^9.39.2",
     "eslint-config-next": "16.1.1",
     "eslint-import-resolver-typescript": "^4.4.4",
@@ -63,10 +63,10 @@
     "jest-axe": "^10.0.0",
     "jest-environment-jsdom": "^30.2.0",
     "jiti": "^2.6.1",
-    "sass": "^1.97.1",
+    "sass": "^1.97.2",
     "schema-dts": "^1.1.5",
     "typescript": "^5.9.3",
-    "typescript-eslint": "^8.51.0"
+    "typescript-eslint": "^8.53.0"
   },
   "overrides": {
     "@types/react": "19.2.7",
