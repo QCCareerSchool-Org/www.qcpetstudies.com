@@ -1,6 +1,6 @@
 const addresses = {
   ca: [ '38 McArthur Avenue', 'Ottawa ON K1L 6R2' ],
-  us: [ 'Suite 450', '1 Research Court', 'Rockville MD 20850' ],
+  us: [ '402 King Farm Blvd', 'Ste 125 #1148', 'Rockville, MD 20850' ],
   gb: [ 'Suite 18', '186 St. Albans Road', 'Watford WD24 4AS' ],
   au: [ 'Suite 23', '78 Williams Street', 'Sydney NSW 2011' ],
 };
