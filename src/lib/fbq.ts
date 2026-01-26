@@ -17,25 +17,24 @@ declare global {
   }
 }
 
-// log the page view with a specific URL
 export const fbqPageview = (url?: string): void => {
   if (typeof url !== 'undefined') {
+    // log the page view with a specific URL
     window.fbq?.('track', 'PageView', { page_url: url }); // eslint-disable-line camelcase
     return;
   }
   window.fbq?.('track', 'PageView');
 };
 
-// log the conversion
 export const fbqLead = (eventId?: string): void => {
   if (typeof eventId !== 'undefined') {
+    // log the conversion with a specfic eventID
     window.fbq?.('track', 'Lead', undefined, { eventID: eventId });
     return;
   }
   window.fbq?.('track', 'Lead');
 };
 
-// log a sale
 export const fbqSale = (enrollment: Enrollment): void => {
   window.fbq?.('track', 'Purchase', { value: enrollment.cost, currency: enrollment.currencyCode }, { eventID: enrollment.id.toString() });
 };
