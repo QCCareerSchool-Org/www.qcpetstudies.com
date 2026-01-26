@@ -1,22 +1,23 @@
 'use client';
 
 import type { FC } from 'react';
-import { useEffect, useRef } from 'react';
+import { useLayoutEffect, useState } from 'react';
 
 interface Props {
   name?: string;
 }
 
-export const JavasciptInput: FC<Props> = ({ name }) => {
-  const ref = useRef<HTMLInputElement>(null);
+type Value = 'enabled' | 'disabled';
 
-  useEffect(() => {
-    if (ref.current) {
-      ref.current.value = 'enabled';
-    }
+export const JavasciptInput: FC<Props> = ({ name }) => {
+  const [ value, setValue ] = useState<Value>('disabled');
+
+  useLayoutEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
+    setValue('enabled');
   }, []);
 
   return (
-    <input ref={ref} type="hidden" name={name ?? 'javascript'} value="disabled" />
+    <input type="hidden" name={name ?? 'javascript'} value={value} />
   );
 };
