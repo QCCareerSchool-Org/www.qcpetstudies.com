@@ -51,18 +51,7 @@ export const fbPostPurchase = async (
     ],
   };
 
-  const response = await fetch(url, {
-    method: 'post',
-    body: JSON.stringify(body),
-    headers: { 'content-type': 'application/json' },
-    cache: 'no-cache',
-  });
-
-  if (!response.ok) {
-    throw Error(JSON.stringify(await response.json()));
-  }
-
-  return response.json();
+  return postJSON(url, body);
 };
 
 export const fbPostLead = async (
@@ -111,6 +100,10 @@ export const fbPostLead = async (
     body.data[0].user_data.country = hash(countryCode.toLowerCase());
   }
 
+  return postJSON(url, body);
+};
+
+const postJSON = async (url: string, body: object): Promise<unknown> => {
   const response = await fetch(url, {
     method: 'post',
     body: JSON.stringify(body),
