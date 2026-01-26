@@ -4,7 +4,7 @@ import { createHash } from 'crypto';
 
 import type { Enrollment } from '@/domain/enrollment';
 
-const apiVersion = 'v20.0';
+const apiVersion = 'v24.0';
 const datasetId = '3226622604235515';
 const accessToken = 'EAAMUT7XQ1g0BO5wBaKj6vPYKLZBz0GZBsyGoFaGe6DMK9noiEvjUWfxNy0PKwloAqn7Lpuvi2ZCPwZAENgb2Ie5bwW7Y9ctPhP0MyY7S6ZBlvSuJ6bWHor6DPG7gbZB0FHPeWE7uHLu3WgxYPATgv9aT2H54sPmYMISUyynQxhxRBWvAHmekQyy7tVvOb7QPhvrwZDZD';
 
@@ -88,9 +88,6 @@ export const fbPostLead = async (
         action_source: 'website', // eslint-disable-line camelcase
         user_data: { // eslint-disable-line camelcase
           em: hash(normalizeEmailAddress(emailAddress)),
-          fn: typeof firstName === 'undefined' ? undefined : hash(normalizeName(firstName)),
-          ln: typeof lastName === 'undefined' ? undefined : hash(normalizeName(lastName)),
-          country: typeof countryCode === 'undefined' ? undefined : hash(countryCode.toLowerCase()),
           client_ip_address: clientIPAddress, // eslint-disable-line camelcase
           client_user_agent: clientUserAgent, // eslint-disable-line camelcase
           fbc,
@@ -101,6 +98,18 @@ export const fbPostLead = async (
       },
     ],
   };
+
+  if (typeof firstName !== 'undefined') {
+    body.data[0].user_data.fn = hash(normalizeName(firstName));
+  }
+
+  if (typeof lastName !== 'undefined') {
+    body.data[0].user_data.ln = hash(normalizeName(lastName));
+  }
+
+  if (typeof countryCode !== 'undefined') {
+    body.data[0].user_data.country = hash(countryCode.toLowerCase());
+  }
 
   const response = await fetch(url, {
     method: 'post',
