@@ -32,9 +32,9 @@ export const LeadProcessing: FC<Props> = props => {
     effectCalled.current = true;
     gaUserData({ email: props.emailAddress });
     uetUserData(props.emailAddress);
-    fbqLead(props.leadId);
+    fbqLead(props.leadId, { emailAddress: props.emailAddress, firstName: props.firstName, lastName: props.lastName });
     // eslint-disable-next-line camelcase
-    gaEvent('conversion', { send_to: props.conversionId });
+    gaEvent('conversion', { send_to: props.conversionId, transaction_id: props.leadId });
     brevoIdentifyLead(props.emailAddress, props.countryCode, props.provinceCode, props.firstName, props.lastName);
   }, [ props.emailAddress, props.countryCode, props.provinceCode, props.firstName, props.lastName, props.ipAddress, props.leadId, props.conversionId ]);
 

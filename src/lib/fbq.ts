@@ -4,8 +4,15 @@ interface Options {
   eventID?: string;
 }
 
+interface InitParams {
+  em?: string;
+  fn?: string;
+  ln?: string;
+}
+
 interface FBQ {
-  (action: 'track', type: 'Lead', params?: Record<string, never>, options?: Options): void;
+  (action: 'init', pixelId: string, params?: InitParams): void;
+  (action: 'track', type: 'Lead', params?: Record<never, string>, options?: Options): void;
   (action: 'track', type: 'PageView', params?: { page_url?: string }, options?: Options): void;
   (action: 'track', type: 'Purchase', params: { value: number; currency: string }, options: Options): void;
   (action: 'trackCustom', type: 'VirtualPageView', params: { url: string }): void;
@@ -26,7 +33,29 @@ export const fbqPageview = (url?: string): void => {
   window.fbq?.('track', 'PageView');
 };
 
-export const fbqLead = (eventId?: string): void => {
+interface AdditionalData {
+  emailAddress?: string;
+  firstName?: string;
+  lastName?: string;
+}
+
+export const fbqLead = (eventId?: string, additionalData?: AdditionalData): void => {
+  const facebookId = process.env.FACEBOOK_ID;
+
+  if (facebookId && additionalData) {
+    const params: InitParams = {};
+    if (additionalData.emailAddress) {
+      params.em = additionalData.emailAddress;
+    }
+    if (additionalData.firstName) {
+      params.fn = additionalData.firstName;
+    }
+    if (additionalData.lastName) {
+      params.ln = additionalData.lastName;
+    }
+    window.fbq?.('init', facebookId, params);
+  }
+
   if (typeof eventId !== 'undefined') {
     // log the conversion with a specfic eventID
     window.fbq?.('track', 'Lead', undefined, { eventID: eventId });
@@ -36,5 +65,9 @@ export const fbqLead = (eventId?: string): void => {
 };
 
 export const fbqSale = (enrollment: Enrollment): void => {
+  const facebookId = process.env.FACEBOOK_ID;
+  if (facebookId) {
+    window.fbq?.('init', facebookId, { em: enrollment.emailAddress });
+  }
   window.fbq?.('track', 'Purchase', { value: enrollment.cost, currency: enrollment.currencyCode }, { eventID: enrollment.id.toString() });
 };

@@ -13,6 +13,7 @@ import { SupportSection } from '@/components/supportSection';
 import { TestimonialWallSection } from '@/components/testimonialWallSection';
 import { WhyChooseQCSection } from '@/components/whyChooseQCSection';
 import { fbPostLead } from '@/lib/facebookConversionAPI';
+import { getLead } from '@/lib/getLead';
 import { getParam } from '@/lib/getParam';
 import { getServerData } from '@/lib/getServerData';
 
@@ -29,11 +30,6 @@ const ThankYouCoursePreviewPage: PageComponent = async props => {
   const date = serverData.date;
   const searchParams = await props.searchParams;
   const leadId = getParam(searchParams.leadId);
-  const firstName = getParam(searchParams.firstName);
-  const lastName = getParam(searchParams.lastName);
-  const emailAddress = getParam(searchParams.emailAddress);
-  const countryCode = getParam(searchParams.countryCode) ?? serverData.countryCode;
-  const provinceCode = getParam(searchParams.provinceCode);
   const headerList = await headers();
   const ipAddress = headerList.get('x-real-ip') ?? undefined;
   const userAgent = headerList.get('user-agent') ?? undefined;
@@ -41,6 +37,12 @@ const ThankYouCoursePreviewPage: PageComponent = async props => {
   const fbc = cookieStore.get('_fbc')?.value;
   const fbp = cookieStore.get('_fbp')?.value;
   // const quizURL = getQuizUrl(emailAddress, countryCode, provinceCode);
+
+  const lead = leadId ? await getLead(leadId) : undefined;
+
+  const [ emailAddress, firstName, lastName, countryCode, provinceCode ] = lead?.success
+    ? [ lead.value.emailAddress, lead.value.firstName ?? undefined, lead.value.lastName ?? undefined, lead.value.countryCode ?? 'US', lead.value.provinceCode ?? undefined ]
+    : [];
 
   if (leadId && emailAddress) {
     try {
@@ -65,7 +67,7 @@ const ThankYouCoursePreviewPage: PageComponent = async props => {
       <Header />
       <GroomingThankYouSection course="dg" heroSrc={HeroBackground} mobileHeroSrc={HeroMobile} emailAddress={emailAddress} />
       {/* <QuizCTACard header="Get Your Personalized Career Path in Dog Grooming!" url={quizURL} /> */}
-      <CurrentPromotion date={date} countryCode={countryCode} courseCode="dg" />
+      <CurrentPromotion date={date} countryCode={countryCode ?? 'US'} courseCode="dg" />
       <WhyChooseQCSection className="bg-light" />
       <TestimonialWallSection testimonialIds={testimonialIds} />
       <SupportSection date={date} showLink />
