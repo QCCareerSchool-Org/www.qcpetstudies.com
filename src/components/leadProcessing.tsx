@@ -33,7 +33,7 @@ export const LeadProcessing: FC<Props> = props => {
     }
     effectCalled.current = true;
     gaUserData(props.emailAddress, props.telephoneNumber, props.firstName, props.lastName, props.city, props.provinceCode, props.countryCode);
-    uetUserData(props.emailAddress);
+    uetUserData(props.emailAddress, props.telephoneNumber);
     fbqLead(props.leadId, { emailAddress: props.emailAddress, telephoneNumber: props.telephoneNumber, city: props.city, province: props.provinceCode, country: props.countryCode, firstName: props.firstName, lastName: props.lastName });
     gaEvent('conversion', { send_to: props.conversionId });
     brevoIdentifyLead(props.emailAddress, props.countryCode, props.provinceCode, props.firstName, props.lastName);
