@@ -1,22 +1,24 @@
 import Script from 'next/script';
 import type { FC } from 'react';
 
+import type { UserValues } from '@/domain/userValues';
+
 interface Props {
   clientKey: string;
+  userValues?: UserValues;
 }
 
-export const Brevo: FC<Props> = ({ clientKey }) => (
-  <Script id="brevo" dangerouslySetInnerHTML={{ __html: getScript(clientKey) }} />
+export const Brevo: FC<Props> = ({ clientKey, userValues }) => (
+  <Script id="brevo" dangerouslySetInnerHTML={{ __html: getScript(clientKey, userValues?.emailAddress) }} />
 );
 
-const getScript = (clientKey: string): string => `
+const getScript = (clientKey: string, emailAddress?: string): string => `
 (function() {
   window.sib = {
     equeue: [],
     client_key: \`${clientKey.replace(/`/ug, '\\`')}\`
   };
-  /* OPTIONAL: email for identify request*/
-  // window.sib.email_id = 'example@domain.com';
+  ${emailAddress ? `window.sib.email_id = ${JSON.stringify(emailAddress)};\n` : ``}
   window.sendinblue = {};
   for (var j = ['track', 'identify', 'trackLink', 'page'], i = 0; i < j.length; i++) {
     (function(k) {
