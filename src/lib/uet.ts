@@ -17,7 +17,7 @@ export interface UETUserData {
   ph?: string;
 }
 
-export const uetUserData = (emailAddress?: string, telephoneNumber?: string): void => {
+export const uetUserData = (emailAddress: string | null, telephoneNumber: string | null): void => {
   window.uetq = window.uetq ?? [];
   const pid: UETUserData = {};
   if (emailAddress) {
@@ -37,7 +37,7 @@ export const uetSale = (enrollment: Enrollment): void => {
   });
 };
 
-const uetStandardizeEmailAddress = (emailAddress: string): string => {
+export const uetStandardizeEmailAddress = (emailAddress: string): string => {
   emailAddress = stripFinalPeriod(stripWhitespace(stripAccents(emailAddress))).toLowerCase();
 
   const parts = emailAddress.split('@');
