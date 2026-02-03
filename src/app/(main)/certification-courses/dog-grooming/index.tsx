@@ -51,7 +51,7 @@ export const DogGroomingBase: FC<Props> = async ({ countryCode, provinceCode, dg
               <h1 className="mb-4">Dog Grooming Course</h1>
               {dgPrice.plans.part.deposit > 0 && <h4 className="mb-5">Get Started for Only <strong>{dgPrice.currency.symbol}{formatPrice(dgPrice.plans.part.deposit)}</strong></h4>}
               <div className="d-flex justify-content-center justify-content-md-start">
-                <Link href={enrollPath}><button className="btn btn-primary me-3">Enroll Now</button></Link>
+                <Link href={`https://enroll.qcpetstudies.com${enrollPath}`}><button className="btn btn-primary me-3">Enroll Now</button></Link>
                 <Link href="#tuition"><button className="btn btn-outline-light">Tuition & Payment Plans</button></Link>
               </div>
             </div>

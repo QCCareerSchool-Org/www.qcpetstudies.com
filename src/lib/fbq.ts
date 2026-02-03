@@ -4,10 +4,14 @@ interface Options {
   eventID?: string;
 }
 
-interface InitParams {
+export interface InitParams {
   em?: string;
   fn?: string;
   ln?: string;
+  ct?: string;
+  st?: string;
+  country?: string;
+  ph?: string;
 }
 
 interface FBQ {
@@ -34,9 +38,13 @@ export const fbqPageview = (url?: string): void => {
 };
 
 interface AdditionalData {
-  emailAddress?: string;
-  firstName?: string;
-  lastName?: string;
+  emailAddress: string;
+  telephoneNumber: string | null;
+  firstName: string | null;
+  lastName: string | null;
+  city: string | null;
+  province: string | null;
+  country: string | null;
 }
 
 export const fbqLead = (eventId?: string, additionalData?: AdditionalData): void => {
@@ -45,13 +53,25 @@ export const fbqLead = (eventId?: string, additionalData?: AdditionalData): void
   if (facebookId && additionalData) {
     const params: InitParams = {};
     if (additionalData.emailAddress) {
-      params.em = additionalData.emailAddress;
+      params.em = additionalData.emailAddress.toLowerCase();
+    }
+    if (additionalData.telephoneNumber) {
+      params.ph = additionalData.telephoneNumber.replace(/\D/gu, '');
     }
     if (additionalData.firstName) {
-      params.fn = additionalData.firstName;
+      params.fn = additionalData.firstName.toLowerCase();
     }
     if (additionalData.lastName) {
-      params.ln = additionalData.lastName;
+      params.ln = additionalData.lastName.toLowerCase();
+    }
+    if (additionalData.city) {
+      params.ct = additionalData.city.toLowerCase();
+    }
+    if (additionalData.province) {
+      params.st = additionalData.province.toLowerCase();
+    }
+    if (additionalData.country) {
+      params.country = additionalData.country.toLowerCase();
     }
     window.fbq?.('init', facebookId, params);
   }

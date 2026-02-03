@@ -58,12 +58,12 @@ export const fbPostLead = async (
   eventId: string,
   eventTime: Date,
   emailAddress: string,
-  firstName: string | undefined,
-  lastName: string | undefined,
-  countryCode: string | undefined,
-  eventSourceUrl: string | undefined,
-  clientIPAddress: string | undefined,
-  clientUserAgent: string | undefined,
+  firstName: string | null,
+  lastName: string | null,
+  countryCode: string | null,
+  eventSourceUrl: string | null,
+  clientIPAddress: string | null,
+  clientUserAgent: string | null,
   fbc?: string,
   fbp?: string,
 ): Promise<unknown> => {
@@ -77,26 +77,26 @@ export const fbPostLead = async (
         action_source: 'website', // eslint-disable-line camelcase
         user_data: { // eslint-disable-line camelcase
           em: hash(normalizeEmailAddress(emailAddress)),
-          client_ip_address: clientIPAddress, // eslint-disable-line camelcase
-          client_user_agent: clientUserAgent, // eslint-disable-line camelcase
+          client_ip_address: clientIPAddress ?? undefined, // eslint-disable-line camelcase
+          client_user_agent: clientUserAgent ?? undefined, // eslint-disable-line camelcase
           fbc,
           fbp,
         },
-        event_source_url: eventSourceUrl, // eslint-disable-line camelcase
+        event_source_url: eventSourceUrl ?? undefined, // eslint-disable-line camelcase
         event_id: eventId, // eslint-disable-line camelcase
       },
     ],
   };
 
-  if (typeof firstName !== 'undefined') {
+  if (firstName) {
     body.data[0].user_data.fn = hash(normalizeName(firstName));
   }
 
-  if (typeof lastName !== 'undefined') {
+  if (lastName) {
     body.data[0].user_data.ln = hash(normalizeName(lastName));
   }
 
-  if (typeof countryCode !== 'undefined') {
+  if (countryCode) {
     body.data[0].user_data.country = hash(countryCode.toLowerCase());
   }
 

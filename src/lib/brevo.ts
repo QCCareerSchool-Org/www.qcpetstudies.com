@@ -24,18 +24,19 @@ export const brevoPageview = (title: string, url: string, path: string): void =>
     ma_path: path, // eslint-disable-line camelcase
   });
 };
-
-export const brevoIdentifyLead = (emailAddress: string, countryCode?: string, provinceCode?: string, firstName?: string, lastName?: string): void => {
-  const properties: Properties = {
-    FIRSTNAME: firstName,
-    LASTNAME: lastName,
-    STATUS_PET_LEAD: true,
-  };
+export const brevoIdentifyLead = (emailAddress: string, countryCode: string | null, provinceCode: string | null, firstName: string | null, lastName: string | null): void => {
+  const properties: Properties = { STATUS_PET_LEAD: true };
   if (countryCode) {
     properties.COUNTRY_CODE = countryCode;
   }
   if (provinceCode) {
     properties.PROVINCE_CODE = provinceCode;
+  }
+  if (firstName) {
+    properties.FIRSTNAME = firstName;
+  }
+  if (lastName) {
+    properties.LASTNAME = lastName;
   }
   window.sendinblue?.identify(emailAddress, properties);
 };
