@@ -16,13 +16,13 @@ export const SetCookie: FC<CookieData> = ({ name, value, domain, path, secure, h
       // credentials: 'include',
     }).then(async response => {
       if (!response.ok) {
-        console.error(response.statusText);
+        throw Error(response.statusText);
       }
       return response.json() as Promise<unknown>;
     }).then((json: unknown) => {
       console.log(json);
     }).catch((err: unknown) => {
-      console.error(err);
+      console.error(err instanceof Error ? err.message : String(err));
     });
   }, [ name, value, domain, path, secure, httpOnly, sameSite, maxAge ]);
 
