@@ -11,7 +11,7 @@ if (secret.length !== 32) {
   throw new Error('JWE_DIR_KEY_B64 must decode to 32 bytes');
 }
 
-const urn = 'urn:www.qcdesignschool.com:';
+const urn = 'urn:qcpetstudies.com:';
 const issuer = `${urn}issuer`;
 const audience = `${urn}audience`;
 
