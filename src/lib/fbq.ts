@@ -1,3 +1,4 @@
+import { normalizeCity, normalizeEmailAddress, normalizeName, normalizeState, normalizeTelephoneNumber } from './hash';
 import type { Enrollment } from '@/domain/enrollment';
 
 interface Options {
@@ -87,7 +88,20 @@ export const fbqLead = (eventId?: string, additionalData?: AdditionalData): void
 export const fbqSale = (enrollment: Enrollment): void => {
   const facebookId = process.env.FACEBOOK_ID;
   if (facebookId) {
-    window.fbq?.('init', facebookId, { em: enrollment.emailAddress });
+    const initParams: InitParams = {
+      em: normalizeEmailAddress(enrollment.emailAddress),
+      fn: normalizeName(enrollment.firstName),
+      ln: normalizeName(enrollment.lastName),
+      ph: normalizeTelephoneNumber(enrollment.telephoneNumber),
+      ct: normalizeCity(enrollment.city),
+      country: enrollment.countryCode.toLowerCase(),
+    };
+
+    if (enrollment.provinceCode) {
+      initParams.st = normalizeState(enrollment.provinceCode);
+    }
+
+    window.fbq?.('init', facebookId, initParams);
   }
   window.fbq?.('track', 'Purchase', { value: enrollment.cost, currency: enrollment.currencyCode }, { eventID: enrollment.id.toString() });
 };

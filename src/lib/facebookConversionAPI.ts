@@ -1,7 +1,6 @@
 'server only';
 
-import { createHash } from 'crypto';
-
+import { hash, normalizeCity, normalizeEmailAddress, normalizeName, normalizeState, normalizeTelephoneNumber, normalizeZipCode } from './hash';
 import type { Enrollment } from '@/domain/enrollment';
 
 const apiVersion = 'v24.0';
@@ -116,39 +115,6 @@ const postJSON = async (url: string, body: object): Promise<unknown> => {
   }
 
   return response.json();
-};
-
-const hash = (input: string): string => {
-  return createHash('sha256').update(input).digest('hex');
-};
-
-const removePunctuation = (input: string): string => input.replace(/[^\p{L}\s]/ug, '').replace(/\s+/ug, ' ');
-
-const normalizeEmailAddress = (emailAddress: string): string => {
-  return emailAddress.toLowerCase().trim();
-};
-
-const normalizeTelephoneNumber = (telephoneNumber: string): string => {
-  return telephoneNumber.trim().replace(/[^0-9]/ug, '').replace(/^0+/ug, ''); // remove anything that's not a number, and leading zeros
-};
-
-const normalizeName = (name: string): string => {
-  return removePunctuation(name.trim().toLowerCase());
-};
-
-const normalizeCity = (city: string): string => {
-  return removePunctuation(city.trim().toLowerCase().replace(/\s+/ug, ''));
-};
-
-const normalizeState = (state: string): string => {
-  return state.toLowerCase().replace(/[^a-z]/ug, '');
-};
-
-const normalizeZipCode = (zipCode: string, countryCode: string): string => {
-  if (countryCode === 'US') {
-    return zipCode.trim().substring(0, 4);
-  }
-  return zipCode.trim().toLowerCase().replace(/\s+/ug, '');
 };
 
 type ActionSource = 'email' | 'website' | 'app' | 'phone_call' | 'chat' | 'physical_store' | 'system_generated' | 'business_messaging' | 'other';
