@@ -1,4 +1,4 @@
-interface Properties {
+export interface Properties {
   FIRSTNAME?: string;
   LASTNAME?: string;
   COUNTRY_CODE?: string;
@@ -24,6 +24,7 @@ export const brevoPageview = (title: string, url: string, path: string): void =>
     ma_path: path, // eslint-disable-line camelcase
   });
 };
+
 export const brevoIdentifyLead = (emailAddress: string, countryCode: string | null, provinceCode: string | null, firstName: string | null, lastName: string | null): void => {
   const properties: Properties = { STATUS_PET_LEAD: true };
   if (countryCode) {

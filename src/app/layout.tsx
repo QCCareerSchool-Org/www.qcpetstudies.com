@@ -39,7 +39,7 @@ const RootLayout: LayoutComponent = async ({ children }) => {
       <head>
         {process.env.GOOGLE_ANALYTICS_ID && <GoogleAnalytics id={process.env.GOOGLE_ANALYTICS_ID} adsId={process.env.GOOGLE_ADS_ID} userValues={userValues} />}
         {process.env.VWO_ID && <VWO id={parseInt(process.env.VWO_ID, 10)} />}
-        {process.env.BREVO_CLIENT_KEY && <Brevo clientKey={process.env.BREVO_CLIENT_KEY} />}
+        {process.env.BREVO_CLIENT_KEY && <Brevo clientKey={process.env.BREVO_CLIENT_KEY} userValues={userValues} />}
         {process.env.FACEBOOK_ID && <Facebook id={process.env.FACEBOOK_ID} userValues={userValues} />}
         {process.env.TIKTOK_ID && <Tiktok id={process.env.TIKTOK_ID} />}
         {process.env.BING_ID && <Bing id={process.env.BING_ID} userValues={userValues} />}
