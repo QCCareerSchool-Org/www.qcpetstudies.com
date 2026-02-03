@@ -30,9 +30,6 @@ export const decodeJwt = async (jwt: string): Promise<Result<Record<string, unkn
     const { payload } = await jose.jwtDecrypt<Record<string, unknown>>(jwt, secret, { issuer, audience });
     return success(payload);
   } catch (err) {
-    if (err instanceof Error) {
-      return failure(err);
-    }
-    return failure(Error('Unknown error'));
+    return failure(err instanceof Error ? err : Error(String(err)));
   }
 };

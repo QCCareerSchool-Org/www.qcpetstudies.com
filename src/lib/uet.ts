@@ -17,12 +17,11 @@ export interface UETUserData {
   ph?: string;
 }
 
-export const uetUserData = (emailAddress: string | null, telephoneNumber: string | null): void => {
+export const uetUserData = (emailAddress: string, telephoneNumber: string | null): void => {
   window.uetq = window.uetq ?? [];
-  const pid: UETUserData = {};
-  if (emailAddress) {
-    pid.em = uetStandardizeEmailAddress(emailAddress);
-  }
+  const pid: UETUserData = {
+    em: uetStandardizeEmailAddress(emailAddress),
+  };
   if (telephoneNumber) {
     pid.ph = telephoneNumber;
   }
