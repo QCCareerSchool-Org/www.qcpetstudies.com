@@ -24,7 +24,7 @@ export const getThankyouData = async (props: PageProps): Promise<ThankyouPageDat
   let recent = false;
 
   if (lead?.success) {
-    recent = lead.value.created > date - 604800000; // 7 days
+    recent = lead.value.created > date - 604_800_000; // 7 days
     if (recent) {
       try {
         await fbPostLead(lead.value.leadId, new Date(lead.value.created), lead.value.emailAddress, lead.value.firstName, lead.value.lastName, lead.value.countryCode, data.url, lead.value.ip ?? data.serverIp, data.userAgent, data.fbc, data.fbp);
