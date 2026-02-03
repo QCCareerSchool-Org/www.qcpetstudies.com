@@ -54,22 +54,22 @@ export const fbqLead = (eventId?: string, additionalData?: AdditionalData): void
   if (facebookId && additionalData) {
     const params: InitParams = {};
     if (additionalData.emailAddress) {
-      params.em = additionalData.emailAddress.toLowerCase();
+      params.em = normalizeEmailAddress(additionalData.emailAddress);
     }
     if (additionalData.telephoneNumber) {
-      params.ph = additionalData.telephoneNumber.replace(/\D/gu, '');
+      params.ph = normalizeTelephoneNumber(additionalData.telephoneNumber);
     }
     if (additionalData.firstName) {
-      params.fn = additionalData.firstName.toLowerCase();
+      params.fn = normalizeName(additionalData.firstName);
     }
     if (additionalData.lastName) {
-      params.ln = additionalData.lastName.toLowerCase();
+      params.ln = normalizeName(additionalData.lastName);
     }
     if (additionalData.city) {
-      params.ct = additionalData.city.toLowerCase();
+      params.ct = normalizeCity(additionalData.city);
     }
     if (additionalData.province) {
-      params.st = additionalData.province.toLowerCase();
+      params.st = normalizeState(additionalData.province);
     }
     if (additionalData.country) {
       params.country = additionalData.country.toLowerCase();

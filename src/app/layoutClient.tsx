@@ -23,10 +23,8 @@ export const LayoutClient: FC = () => {
     }
 
     if (countRef.current > 0) { // don't run the first time because it's already being tracked in the snippet
-      if (pathname) {
-        const title = document.title;
-        brevoPageview(title, url, pathname);
-      }
+      const title = document.title;
+      brevoPageview(title, url, pathname);
 
       resetOptInMonster();
     }
