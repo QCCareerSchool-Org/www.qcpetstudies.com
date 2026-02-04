@@ -36,3 +36,17 @@ export class PromotionPeriod {
 
   public toString = (): string => `[${PromotionPeriod.formatter.format(this.start)}, ${PromotionPeriod.formatter.format(this.end)})`;
 }
+
+export class PromotionPeriodWithLastChance extends PromotionPeriod {
+
+  constructor(readonly start: number, public readonly lastChance: number, readonly end: number) {
+    super(start, end);
+    if (lastChance > end) {
+      throw new Error('Last chance date must be <= end date');
+    }
+  }
+
+  public PreLastChanceContains = (d: number) => d >= this.start && d < this.lastChance;
+
+  public PostLastChanceContains = (d: number) => d >= this.lastChance && d < this.end;
+};

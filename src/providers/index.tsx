@@ -14,12 +14,12 @@ const reCaptchaKey = process.env.NEXT_PUBLIC_RECAPTCHA_KEY;
 
 interface Props {
   userValues?: UserValues;
-  serverIp: string | null;
+  clientIp: string | null;
 }
 
-export const Provider: FC<PropsWithChildren<Props>> = ({ userValues, serverIp, children }) => (
+export const Provider: FC<PropsWithChildren<Props>> = ({ userValues, clientIp, children }) => (
   <UserValuesProvider {...userValues}>
-    <IPProvider serverIp={serverIp}>
+    <IPProvider clientIp={clientIp}>
       <ScreenWidthProvider>
         <ScrollPositionProvider>
           <CaptchaProvider reCaptchaKey={reCaptchaKey}>
