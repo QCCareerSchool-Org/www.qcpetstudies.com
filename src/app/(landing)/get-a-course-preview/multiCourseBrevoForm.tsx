@@ -15,13 +15,13 @@ interface FormFields {
 
 const formFieldsDictionary: Record<string, FormFields> = {
   dg: {
-    successLocation: `${process.env.HOST ?? 'https://www.qcpetstudies.com'}/thank-you-dog-grooming-course-preview`,
+    successLocation: `${process.env.NEXT_PUBLIC_HOST ?? 'https://www.qcpetstudies.com'}/thank-you-dog-grooming-course-preview`,
     brevoListId: 31,
     brevoEmailTemplateId: 1660,
     telephoneListId: 55,
   },
   dt: {
-    successLocation: `${process.env.HOST ?? 'https://www.qcpetstudies.com'}/thank-you-dog-training-course-preview`,
+    successLocation: `${process.env.NEXT_PUBLIC_HOST ?? 'https://www.qcpetstudies.com'}/thank-you-dog-training-course-preview`,
     brevoListId: 30,
     brevoEmailTemplateId: 1635,
     telephoneListId: 57,

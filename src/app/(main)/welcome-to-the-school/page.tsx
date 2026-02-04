@@ -1,5 +1,4 @@
 import type { Metadata } from 'next';
-import { cookies, headers } from 'next/headers';
 import Image from 'next/image';
 import { redirect } from 'next/navigation';
 
@@ -10,13 +9,16 @@ import type { PageComponent } from '@/app/serverComponent';
 import { BackgroundImage } from '@/components/backgroundImage';
 import { EmailLink } from '@/components/emailLink';
 import { EnrollmentDetails } from '@/components/enrollmentDetails';
+import { SetCookie } from '@/components/setCookie';
 import { TelephoneLink } from '@/components/telephoneLink';
+import type { UserValues } from '@/domain/userValues';
 import { addToIDevAffiliate } from '@/lib/addToIDevAffiliate';
 import { createBrevoContact } from '@/lib/brevoAPI';
 import { fbPostPurchase } from '@/lib/facebookConversionAPI';
 import { getEnrollment } from '@/lib/fetch';
 import { getParam } from '@/lib/getParam';
 import { getServerData } from '@/lib/getServerData';
+import { createJwt } from '@/lib/jwt';
 import { sendEnrollmentEmail } from '@/lib/sendEnrollmentEmail';
 
 const brevoStudentListId = 17;
@@ -29,7 +31,7 @@ export const metadata: Metadata = {
 };
 
 const WelcomeToTheSchoolPage: PageComponent = async props => {
-  const { date } = await getServerData(props.searchParams);
+  const { date, clientIp, fbc, fbp, userAgent, userValues } = await getServerData(props.searchParams);
   const searchParams = await props.searchParams;
   const enrollmentIdParam = getParam(searchParams.enrollmentId);
   const codeParam = getParam(searchParams.code);
@@ -49,15 +51,9 @@ const WelcomeToTheSchoolPage: PageComponent = async props => {
     redirect('/');
   }
 
+  let jwt: string | null = null;
+
   if (!enrollment.emailed) {
-    const headerList = await headers();
-    const ipAddress = headerList.get('x-real-ip');
-    const userAgent = headerList.get('user-agent');
-
-    const cookieStore = await cookies();
-    const fbc = cookieStore.get('_fbc')?.value;
-    const fbp = cookieStore.get('_fbp')?.value;
-
     // send email
     try {
       await sendEnrollmentEmail(enrollmentId, codeParam);
@@ -74,7 +70,7 @@ const WelcomeToTheSchoolPage: PageComponent = async props => {
 
     // iDevAffiliate
     try {
-      await addToIDevAffiliate(enrollment, ipAddress);
+      await addToIDevAffiliate(enrollment, clientIp);
     } catch (err) {
       console.error(err);
     }
@@ -83,15 +79,30 @@ const WelcomeToTheSchoolPage: PageComponent = async props => {
     if (enrollment.transactionTime === null || new Date(date).getTime() - enrollment.transactionTime.getTime() < 7 * 24 * 60 * 60 * 1000) {
       try {
         const source = 'https://www.qcpetstudies.com/welcome-to-the-school';
-        await fbPostPurchase(enrollment, source, ipAddress, userAgent, fbc, fbp);
+        await fbPostPurchase(enrollment, source, clientIp, userAgent, fbc, fbp);
       } catch (err) {
         console.error(err);
       }
     }
+
+    const newUserValues: UserValues = {
+      ...userValues,
+      emailAddress: enrollment.emailAddress,
+      firstName: enrollment.firstName,
+      lastName: enrollment.lastName,
+      telephoneNumber: enrollment.telephoneNumber,
+      city: enrollment.city,
+      countryCode: enrollment.countryCode,
+    };
+    if (enrollment.provinceCode) {
+      newUserValues.provinceCode = enrollment.provinceCode;
+    }
+    jwt = await createJwt(newUserValues);
   }
 
   return (
     <>
+      {jwt && <SetCookie name="user" value={jwt} domain="qcpetstudies.com" />}
       <section id="top" className="bg-dark">
         <BackgroundImage src={HappyPuppyRunning} />
         <div className="container text-center">

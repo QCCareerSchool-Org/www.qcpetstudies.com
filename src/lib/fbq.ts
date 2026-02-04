@@ -29,6 +29,8 @@ declare global {
   }
 }
 
+const facebookId = process.env.NEXT_PUBLIC_FACEBOOK_ID;
+
 export const fbqPageview = (url?: string): void => {
   if (typeof url !== 'undefined') {
     // log the page view with a specific URL
@@ -49,8 +51,6 @@ interface AdditionalData {
 }
 
 export const fbqLead = (eventId?: string, additionalData?: AdditionalData): void => {
-  const facebookId = process.env.FACEBOOK_ID;
-
   if (facebookId && additionalData) {
     const params: InitParams = {};
     if (additionalData.emailAddress) {
@@ -86,7 +86,6 @@ export const fbqLead = (eventId?: string, additionalData?: AdditionalData): void
 };
 
 export const fbqSale = (enrollment: Enrollment): void => {
-  const facebookId = process.env.FACEBOOK_ID;
   if (facebookId) {
     const initParams: InitParams = {
       em: normalizeEmailAddress(enrollment.emailAddress),
