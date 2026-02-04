@@ -9,7 +9,7 @@ import { isUserValues } from '@/domain/userValues';
 interface BaseData {
   countryCode: string;
   provinceCode: string | null;
-  serverIp: string | null;
+  clientIp: string | null;
   userAgent: string | null;
   url: string | null;
   userValues: UserValues | null;
@@ -34,7 +34,7 @@ export async function getServerData(
   const [ headersList, cookieStore ] = await Promise.all([ headers(), cookies() ]);
   const countryCode = headersList.get('x-vercel-ip-country') ?? 'US';
   const provinceCode = headersList.get('x-vercel-ip-country-region');
-  const serverIp = headersList.get('x-vercel-ip');
+  const clientIp = headersList.get('x-vercel-ip');
   const userAgent = headersList.get('user-agent');
   const url = headersList.get('next-url');
   let date = Date.now();
@@ -45,7 +45,7 @@ export async function getServerData(
   const userValues = isUserValues(userCookie) ? userCookie : null;
 
   if (!searchParams) {
-    return { countryCode, provinceCode, serverIp, userAgent, url, userValues, fbc, fbp };
+    return { countryCode, provinceCode, clientIp, userAgent, url, userValues, fbc, fbp };
   }
 
   const parameters = await searchParams;
@@ -59,5 +59,5 @@ export async function getServerData(
     }
   }
 
-  return { countryCode, provinceCode, serverIp, userAgent, url, userValues, fbc, fbp, date, leadId };
+  return { countryCode, provinceCode, clientIp, userAgent, url, userValues, fbc, fbp, date, leadId };
 };

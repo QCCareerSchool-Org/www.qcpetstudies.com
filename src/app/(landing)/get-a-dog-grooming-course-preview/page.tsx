@@ -58,7 +58,7 @@ const DogGroomingCatalogPage: PageComponent = async props => {
                 <div className="card-body">
                   <p className="text-center lead">Get Started with a <strong>Free Course Preview</strong></p>
                   <BrevoForm
-                    successLocation={`${process.env.HOST ?? 'https://www.qcpetstudies.com'}/thank-you-dog-grooming-course-preview`}
+                    successLocation={`${process.env.NEXT_PUBLIC_HOST ?? 'https://www.qcpetstudies.com'}/thank-you-dog-grooming-course-preview`}
                     listId={brevoListId}
                     emailTemplateId={brevoEmailTemplateId}
                     telephoneListId={brevoTelephoneListId}

@@ -59,7 +59,7 @@ const ProfessionalDogGroomerPage: PageComponent = async props => {
                   <li>Learn how you can't go wrong with QC's money back guarantee!</li>
                 </ul>
                 <BrevoForm
-                  successLocation={`${process.env.HOST ?? 'https://www.qcpetstudies.com'}/thank-you-dog-grooming-course-preview`}
+                  successLocation={`${process.env.NEXT_PUBLIC_HOST ?? 'https://www.qcpetstudies.com'}/thank-you-dog-grooming-course-preview`}
                   listId={brevoListId}
                   // emailTemplateId={brevoEmailTemplateId}
                   gclid={gclid}
@@ -103,7 +103,7 @@ const ProfessionalDogGroomerPage: PageComponent = async props => {
         <div className="row justify-content-center bg-desaturated-blue text-white">
           <div className="col-12 col-lg-6 mb-4 px-5" style={{ marginTop: '50px' }}>
             <BrevoForm
-              successLocation={`${process.env.HOST ?? 'https://www.qcpetstudies.com'}/thank-you-dog-grooming-course-preview`}
+              successLocation={`${process.env.NEXT_PUBLIC_HOST ?? 'https://www.qcpetstudies.com'}/thank-you-dog-grooming-course-preview`}
               listId={brevoListId}
               // emailTemplateId={brevoEmailTemplateId}
               gclid={gclid}
