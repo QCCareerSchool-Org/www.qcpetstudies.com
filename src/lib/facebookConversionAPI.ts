@@ -4,8 +4,8 @@ import { hash, normalizeCity, normalizeEmailAddress, normalizeName, normalizeSta
 import type { Enrollment } from '@/domain/enrollment';
 
 const apiVersion = 'v24.0';
-const datasetId = '3226622604235515';
-const accessToken = 'EAAMUT7XQ1g0BO5wBaKj6vPYKLZBz0GZBsyGoFaGe6DMK9noiEvjUWfxNy0PKwloAqn7Lpuvi2ZCPwZAENgb2Ie5bwW7Y9ctPhP0MyY7S6ZBlvSuJ6bWHor6DPG7gbZB0FHPeWE7uHLu3WgxYPATgv9aT2H54sPmYMISUyynQxhxRBWvAHmekQyy7tVvOb7QPhvrwZDZD';
+const datasetId = process.env.NEXT_PUBLIC_FACEBOOK_ID;
+const accessToken = process.env.FACEBOOK_ACCESS_TOKEN;
 
 export const fbPostPurchase = async (
   enrollment: Enrollment,
