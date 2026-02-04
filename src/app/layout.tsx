@@ -28,7 +28,7 @@ export const metadata: Metadata = {
 };
 
 const RootLayout: LayoutComponent = async ({ children }) => {
-  const { clientIp: serverIp } = await getServerData();
+  const { clientIp } = await getServerData();
   const jwt = (await cookies()).get('user')?.value;
   const result = jwt ? await decodeJwt(jwt) : undefined;
   const raw = result?.success ? result.value : undefined;
@@ -46,7 +46,7 @@ const RootLayout: LayoutComponent = async ({ children }) => {
         <FaviconMeta />
       </head>
       <body className="d-flex flex-column">
-        <Provider userValues={userValues} serverIp={serverIp}>
+        <Provider userValues={userValues} clientIp={clientIp}>
           {children}
         </Provider>
         <OptInMonster />
