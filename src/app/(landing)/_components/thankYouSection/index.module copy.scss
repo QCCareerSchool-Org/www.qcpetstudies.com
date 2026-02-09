@@ -1,0 +1,26 @@
+.brochure {
+  margin-top: -3.780%;
+  margin-left: -3.522%;
+  margin-bottom: -15.893%;
+  margin-right: -15.636%;
+}
+
+.limitedTimeOffer {
+  font-size: 1rem;
+  @media screen and (min-width: 576px) {
+    font-size: 1.2rem;
+    &.long { font-size: 1rem }
+  }
+  @media screen and (min-width: 768px) {
+    font-size: 1rem;
+    &.long { font-size: 1rem }
+  }
+  @media screen and (min-width: 992px) {
+    font-size: 1.2rem;
+    &.long { font-size: 1rem }
+  }
+  @media screen and (min-width: 1200px) {
+    font-size: 1.2rem;
+    &.long { font-size: 1rem }
+  }
+}

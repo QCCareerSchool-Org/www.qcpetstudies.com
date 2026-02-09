@@ -6,6 +6,8 @@ import { CurrentPromotion } from '../../_components/currentPromotion';
 import { Header } from '../../_components/header';
 import { ThankYouSection } from '../../_components/thankYouSection';
 import type { PageComponent } from '@/app/serverComponent';
+import { GetStartedSection } from '@/components/getStartedSection';
+import { GuaranteeSection } from '@/components/guaranteeSection';
 import { LeadProcessing } from '@/components/leadProcessing';
 import { SetCookie } from '@/components/setCookie';
 import { SupportSection } from '@/components/supportSection';
@@ -45,6 +47,11 @@ const ThankYouCoursePreviewPage: PageComponent = async props => {
       <WhyChooseQCSection className="bg-light" />
       <TestimonialWallSection testimonialIds={testimonialIds} />
       <SupportSection date={date} showLink />
+      <GuaranteeSection />
+      <GetStartedSection
+        title="Ready to start your dog training career?"
+        text="Become professionally certified with QC\'s online training today and start earning!"
+      />
     </>
   );
 };

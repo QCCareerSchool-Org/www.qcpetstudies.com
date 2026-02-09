@@ -4,10 +4,12 @@ import { getThankyouData } from '..';
 import HeroBackground from './grooming-bg.jpg';
 import HeroMobile from './hero-mobile.jpg';
 import { CurrentPromotion } from '../../_components/currentPromotion';
-import { GroomingThankYouSection } from '../../_components/groomingThankYouSection';
 import { Header } from '../../_components/header';
 // import { QuizCTACard } from '../../_components/quizCTACard';
+import { ThankYouSection } from '../../_components/thankYouSection';
 import type { PageComponent } from '@/app/serverComponent';
+import { GetStartedSection } from '@/components/getStartedSection';
+import { GuaranteeSection } from '@/components/guaranteeSection';
 import { LeadProcessing } from '@/components/leadProcessing';
 import { SetCookie } from '@/components/setCookie';
 import { SupportSection } from '@/components/supportSection';
@@ -43,12 +45,17 @@ const ThankYouCoursePreviewPage: PageComponent = async props => {
         />
       )}
       <Header />
-      <GroomingThankYouSection course="dg" heroSrc={HeroBackground} mobileHeroSrc={HeroMobile} emailAddress={emailAddress} />
+      <ThankYouSection course="dg" heroSrc={HeroBackground} mobileHeroSrc={HeroMobile} emailAddress={emailAddress} />
       {/* <QuizCTACard header="Get Your Personalized Career Path in Dog Grooming!" url={quizURL} /> */}
       <CurrentPromotion date={date} countryCode={countryCode} courseCode="dg" />
       <WhyChooseQCSection className="bg-light" />
       <TestimonialWallSection testimonialIds={testimonialIds} />
       <SupportSection date={date} showLink />
+      <GuaranteeSection />
+      <GetStartedSection
+        title="Ready to start your dog grooming career?"
+        text="Become professionally certified with QC\'s online training today and start earning!"
+      />
     </>
   );
 };

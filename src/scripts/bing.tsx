@@ -2,7 +2,8 @@ import Script from 'next/script';
 import type { FC } from 'react';
 
 import type { UserValues } from '@/domain/userValues';
-import { uetStandardizeEmailAddress, type UETUserData } from '@/lib/uet';
+import type { UETUserData } from '@/lib/uet';
+import { uetStandardizeEmailAddress } from '@/lib/uet';
 
 interface Props {
   id: string;
