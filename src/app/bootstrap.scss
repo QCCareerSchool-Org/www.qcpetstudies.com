@@ -51,14 +51,16 @@ $headings-font-family: Raleway, -apple-system, BlinkMacSystemFont, "Segoe UI", R
 $font-weight-bolder: 600;
 // $lead-font-weight: 300;
 
-$border-radius:    0; //.25rem;
-$border-radius-lg: 0; // .75rem;
-$border-radius-sm: 0; // .2rem;
+// $border-radius:    0; //.25rem;
+// $border-radius-lg: 0; // .75rem;
+// $border-radius-sm: 0; // .2rem;
+$border-radius:  .25rem;
 
 $btn-font-weight: 400;
 // $btn-border-radius: 0;
 // $btn-border-radius-sm: 0;
 // $btn-border-radius-lg: 0;
+$btn-border-radius: 1.5;
 $input-btn-padding-x: 1rem;
 $input-btn-padding-x-sm: 0.875rem;
 $input-btn-padding-x-lg: 1.5rem;
@@ -69,7 +71,7 @@ $navbar-dark-hover-color:           rgba(white, 1); // rgba($white, 0.75);
 $navbar-dark-active-color:          white;
 $navbar-dark-disabled-color:        rgba(white, .25);
 $navbar-dark-toggler-border-color:  rgba(white, 0.9); // rgba($white, 0.1);
-$navbar-toggler-border-radius:      $border-radius;
+// $navbar-toggler-border-radius:      $border-radius;
 
 // $dropdown-padding-y: 1rem; // might be needed if we have a larger border radius
 
@@ -86,6 +88,8 @@ $accordion-button-active-bg: #ededed;
 $accordion-border-color: #ddd;
 $accordion-button-padding-x: 1.625rem;
 $accordion-button-padding-y: 1rem;
+
+$card-border-radius: 1.5rem;
 
 // 3. Include remainder of required Bootstrap stylesheets (including any separate color mode stylesheets)
 @import "../../node_modules/bootstrap/scss/variables";
@@ -151,11 +155,6 @@ body {
 }
 
 .navbar-nav .nav-link { font-weight: 400; text-transform: uppercase; }
-
-.card.rounded-lg .card-img-top {
-  border-top-left-radius: $border-radius-lg;
-  border-top-right-radius: $border-radius-lg;
-}
 
 h1, .h1 {
   color: #122022;

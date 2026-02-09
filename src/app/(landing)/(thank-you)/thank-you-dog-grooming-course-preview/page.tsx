@@ -4,9 +4,9 @@ import { getThankyouData } from '..';
 import HeroBackground from './grooming-bg.jpg';
 import HeroMobile from './hero-mobile.jpg';
 import { CurrentPromotion } from '../../_components/currentPromotion';
-import { GroomingThankYouSection } from '../../_components/groomingThankYouSection';
 import { Header } from '../../_components/header';
 // import { QuizCTACard } from '../../_components/quizCTACard';
+import { ThankYouSection } from '../../_components/thankYouSection';
 import type { PageComponent } from '@/app/serverComponent';
 import { LeadProcessing } from '@/components/leadProcessing';
 import { SetCookie } from '@/components/setCookie';
@@ -43,7 +43,7 @@ const ThankYouCoursePreviewPage: PageComponent = async props => {
         />
       )}
       <Header />
-      <GroomingThankYouSection course="dg" heroSrc={HeroBackground} mobileHeroSrc={HeroMobile} emailAddress={emailAddress} />
+      <ThankYouSection course="dg" heroSrc={HeroBackground} mobileHeroSrc={HeroMobile} emailAddress={emailAddress} />
       {/* <QuizCTACard header="Get Your Personalized Career Path in Dog Grooming!" url={quizURL} /> */}
       <CurrentPromotion date={date} countryCode={countryCode} courseCode="dg" />
       <WhyChooseQCSection className="bg-light" />

@@ -16,7 +16,7 @@ export const fbPostPurchase = async (
   fbp?: string,
 ): Promise<unknown> => {
   const url = `https://graph.facebook.com/${apiVersion}/${datasetId}/events?access_token=${accessToken}`;
-
+  console.log(url);
   const eventTime = enrollment.transactionTime ?? new Date();
 
   const body: { data: PurchaseConversion[] } = {
