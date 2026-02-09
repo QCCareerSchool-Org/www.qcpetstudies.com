@@ -4,6 +4,11 @@ doesn't then resolve relative imports from inside those files.
 */
 :root {
   --qc-color-gold: #e1bc93;
+  --qc-color-dark-gold: #ca9d6b;
+  --qc-color-navy: #010025;
+  --qc-color-navy-gradient-start: #0a2540;
+  --qc-color-navy-gradient-end: #010025;
+
 
   --qc-section-padding: 2rem;
   @media only screen and (min-width: 576px) {
