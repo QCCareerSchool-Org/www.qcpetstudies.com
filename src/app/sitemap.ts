@@ -3,6 +3,7 @@ import type { MetadataRoute } from 'next';
 import path from 'path';
 
 import { siteVideos } from './videos';
+import { escapeXmlObject } from '@/lib/xml';
 
 const prefix = 'https://www.qcpetstudies.com';
 
@@ -25,7 +26,9 @@ const getAppDirectoryPages = async (filePath = 'src/app'): Promise<MetadataRoute
         url,
         lastModified: stat.mtime,
         priority: getPriority(url),
-        videos: siteVideos.filter(v => v.pages.includes(url)),
+        videos: siteVideos
+          .filter(v => v.pages.includes(url))
+          .map(escapeXmlObject),
       });
     }
   }

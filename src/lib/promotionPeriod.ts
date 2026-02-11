@@ -1,5 +1,5 @@
 export class PromotionPeriod {
-  private static readonly formatter = new Intl.DateTimeFormat('en-CA', { year: 'numeric', month: '2-digit', day: '2-digit' });
+  protected static readonly formatter = new Intl.DateTimeFormat('en-CA', { year: 'numeric', month: '2-digit', day: '2-digit' });
 
   constructor(public readonly start: number, public readonly end: number) {
     if (start > end) {
@@ -35,6 +35,8 @@ export class PromotionPeriod {
   public contains = (d: number): boolean => d >= this.start && d < this.end;
 
   public toString = (): string => `[${PromotionPeriod.formatter.format(this.start)}, ${PromotionPeriod.formatter.format(this.end)})`;
+
+  public toObject = (): PromotionPeriodObject => ({ start: this.start, end: this.end });
 }
 
 export class PromotionPeriodWithLastChance extends PromotionPeriod {
@@ -49,4 +51,19 @@ export class PromotionPeriodWithLastChance extends PromotionPeriod {
   public PreLastChanceContains = (d: number) => d >= this.start && d < this.lastChance;
 
   public PostLastChanceContains = (d: number) => d >= this.lastChance && d < this.end;
+
+  public toString = (): string => `[${PromotionPeriod.formatter.format(this.start)}, ${PromotionPeriod.formatter.format(this.lastChance)}, ${PromotionPeriod.formatter.format(this.end)})`;
+
+  public toObject = (): PromotionPeriodWithLastChanceObject => ({ start: this.start, end: this.end, lastChance: this.lastChance });
+};
+
+export interface PromotionPeriodObject {
+  start: number;
+  end: number;
+};
+
+export interface PromotionPeriodWithLastChanceObject {
+  start: number;
+  end: number;
+  lastChance: number;
 };

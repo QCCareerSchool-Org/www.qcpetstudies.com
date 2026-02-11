@@ -15,3 +15,9 @@ export const feb04 = new PromotionPeriodWithLastChance(
   Date.UTC(2026, 1, 12, 8), // 2026-02-12T03:00:00-0500 (08:00 UTC)
   Date.UTC(2026, 1, 13, 8), // 2026-02-13T03:00:00-0500 (08:00 UTC)
 );
+
+export const feb13 = new PromotionPeriodWithLastChance(
+  Date.UTC(2026, 1, 13, 8), // 2026-02-13T03:00 (08:00 UTC)
+  Date.UTC(2026, 1, 16, 8), // 2026-02-16T03:00 (08:00 UTC)
+  Date.UTC(2026, 1, 17, 8), // 2026-02-17T03:00 (08:00 UTC)
+);
