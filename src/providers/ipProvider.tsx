@@ -15,12 +15,16 @@ export const IPProvider: FC<PropsWithChildren<Props>> = ({ clientIp, children })
   const [ ip, setIp ] = useState(clientIp);
 
   useEffect(() => {
+    const controller = new AbortController();
+
     // doesn't throw
-    void fetchIpAddress().then(result => {
+    void fetchIpAddress(controller.signal).then(result => {
       if (result.success) {
         setIp(result.value);
       }
     });
+
+    return () => { controller.abort(); };
   }, []);
 
   return (
