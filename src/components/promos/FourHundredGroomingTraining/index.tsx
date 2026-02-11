@@ -5,7 +5,7 @@ import HeroImageUK from './desktop-uk.jpg';
 import HeroImageDefault from './desktop.jpg';
 import type { CourseCode } from '@/domain/courseCode';
 import { gbpCountry } from '@/lib/currencies';
-import { endOfYear2025, newYear2026 } from '@/lib/promotionPeriods';
+import { endOfYear2025, newYear2026 } from '@/lib/periods';
 
 interface Props {
   date: number;
