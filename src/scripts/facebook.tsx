@@ -4,6 +4,7 @@ import type { FC } from 'react';
 import type { UserValues } from '@/domain/userValues';
 import type { InitParams } from '@/lib/fbq';
 import { normalizeCity, normalizeEmailAddress, normalizeName, normalizeState, normalizeTelephoneNumber } from '@/lib/hash';
+import { safeJSON } from '@/lib/safeJSON';
 
 interface Props {
   id: string;
@@ -50,7 +51,7 @@ n.queue=[];t=b.createElement(e);t.async=!0;
 t.src=v;s=b.getElementsByTagName(e)[0];
 s.parentNode.insertBefore(t,s)}(window, document,'script',
 'https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', \`${id.replace(/`/ug, '\\`')}\`, ${JSON.stringify(params)});
+fbq('init', ${safeJSON(id)}, ${safeJSON(params)});
 fbq('track', 'PageView');
 `;
 };
