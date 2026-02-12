@@ -6,6 +6,7 @@ import type { FC } from 'react';
 
 import type { UserValues } from '@/domain/userValues';
 import type { GAUserData } from '@/lib/gtag';
+import { safeJSON } from '@/lib/safeJSON';
 
 interface Props {
   id: string;
@@ -22,7 +23,7 @@ export const GoogleAnalytics: FC<Props> = ({ id, adsId, userValues }) => (
 );
 
 const getAdsScript = (adsId: string): string => {
-  return `gtag('config', \`${adsId.replace(/`/ug, '\\`')}\`, { allow_enhanced_conversions: true });\n`;
+  return `gtag('config', ${safeJSON(adsId)}, { allow_enhanced_conversions: true });\n`;
 };
 
 const getSetScript = (userValues: UserValues): string => {
@@ -59,5 +60,5 @@ const getSetScript = (userValues: UserValues): string => {
     }
   }
 
-  return `gtag('set', 'user_data', ${JSON.stringify(params)})`;
+  return `gtag('set', 'user_data', ${safeJSON(params)})\n`;
 };

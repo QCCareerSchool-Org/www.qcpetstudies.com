@@ -2,6 +2,7 @@ import Script from 'next/script';
 import type { FC } from 'react';
 
 import type { UserValues } from '@/domain/userValues';
+import { safeJSON } from '@/lib/safeJSON';
 import type { UETUserData } from '@/lib/uet';
 import { uetStandardizeEmailAddress } from '@/lib/uet';
 
@@ -21,7 +22,7 @@ const getScript = (id: string): string => `
 (function(w,d,t,r,u) {
   var f,n,i;
   w[u]=w[u]||[],f=function() {
-    var o={ti:\`${id.replace(/`/ug, '\\`')}\`, enableAutoSpaTracking: true};
+    var o={ti:${safeJSON(id)}\`, enableAutoSpaTracking: true};
     o.q=w[u],w[u]=new UET(o),w[u].push("pageLoad")
   },
   n=d.createElement(t),n.src=r,n.async=1,n.onload=n.onreadystatechange=function() {
@@ -43,7 +44,7 @@ const getEnchancedScript = (userValues: UserValues) => {
   return `
 window.uetq = window.uetq || [];
 window.uetq.push('set', {
-  pid: ${JSON.stringify(enhancedData)},
+  pid: ${safeJSON(enhancedData)},
 });
 `;
 };

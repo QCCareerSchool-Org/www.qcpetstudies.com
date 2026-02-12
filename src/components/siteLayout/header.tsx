@@ -5,7 +5,7 @@ import { PromoBanner } from './promoBanner';
 import { SecondaryNav } from './secondaryNav';
 import { MainNav } from '@/components/siteLayout/mainNav';
 import { gbpCountry } from '@/lib/currencies';
-import { feb04, feb13 } from '@/lib/promotionPeriods';
+import { feb04, feb13 } from '@/lib/periods';
 
 interface Props {
   date: number;

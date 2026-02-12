@@ -2,6 +2,7 @@ import Script from 'next/script';
 import type { FC } from 'react';
 
 import type { UserValues } from '@/domain/userValues';
+import { safeJSON } from '@/lib/safeJSON';
 
 interface Props {
   clientKey: string;
@@ -14,11 +15,8 @@ export const Brevo: FC<Props> = ({ clientKey, userValues }) => (
 
 const getScript = (clientKey: string, emailAddress?: string): string => `
 (function() {
-  window.sib = {
-    equeue: [],
-    client_key: \`${clientKey.replace(/`/ug, '\\`')}\`
-  };
-  ${emailAddress ? `window.sib.email_id = ${JSON.stringify(emailAddress)};\n` : ``}
+  window.sib = { equeue: [], client_key: ${safeJSON(clientKey)} };
+  ${emailAddress ? `window.sib.email_id = ${safeJSON(emailAddress)};\n` : ``}
   window.sendinblue = {};
   for (var j = ['track', 'identify', 'trackLink', 'page'], i = 0; i < j.length; i++) {
     (function(k) {

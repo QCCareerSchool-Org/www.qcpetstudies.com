@@ -11,4 +11,5 @@ const script = `
   s.dataset.user=u;
   s.dataset.account=ac;
   d.getElementsByTagName('head')[0].appendChild(s);
-})(document,42601,48459);`;
+})(document,42601,48459);
+`;

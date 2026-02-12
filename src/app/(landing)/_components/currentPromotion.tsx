@@ -3,7 +3,7 @@ import type { FC } from 'react';
 import { FourHundredGroomingTraining } from '@/components/promos/FourHundredGroomingTraining';
 import { NewYears2025 } from '@/components/promos/newYears2025';
 import type { CourseCode } from '@/domain/courseCode';
-import { endOfYear2025, newYear2026 } from '@/lib/promotionPeriods';
+import { endOfYear2025, newYear2026 } from '@/lib/periods';
 
 interface Props {
   date: number;

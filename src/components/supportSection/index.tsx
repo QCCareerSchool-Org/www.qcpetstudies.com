@@ -6,15 +6,15 @@ import styles from './index.module.scss';
 import StudentSupportImage from './student-support.jpg';
 import CalIcon from '@/components/icons/calendar-check.svg';
 import ChatIcon from '@/components/icons/chat-white.svg';
-import { PromotionPeriod } from '@/lib/promotionPeriod';
-import { endOfYear2025, newYear2026 } from '@/lib/promotionPeriods';
+import { Period } from '@/lib/period';
+import { endOfYear2025, newYear2026 } from '@/lib/periods';
 
 interface Props {
   showLink?: boolean;
   date: number;
 }
 
-const span = PromotionPeriod.span(endOfYear2025, newYear2026);
+const span = Period.span(endOfYear2025, newYear2026);
 
 export const SupportSection: FC<Props> = ({ date, showLink }) => (
   <section className={`${styles.section} text-white`}>

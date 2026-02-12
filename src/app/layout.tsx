@@ -17,7 +17,6 @@ import { Facebook } from '@/scripts/facebook';
 import { GoogleAnalytics } from '@/scripts/googleAnalytics';
 import { OptInMonster } from '@/scripts/optInMonster';
 import { Tiktok } from '@/scripts/tiktok';
-import { VWO } from '@/scripts/vwo';
 
 import './bootstrap.scss';
 import './global.scss';
@@ -38,7 +37,6 @@ const RootLayout: LayoutComponent = async ({ children }) => {
     <html lang="en">
       <head>
         {process.env.GOOGLE_ANALYTICS_ID && <GoogleAnalytics id={process.env.GOOGLE_ANALYTICS_ID} adsId={process.env.GOOGLE_ADS_ID} userValues={userValues} />}
-        {process.env.VWO_ID && <VWO id={parseInt(process.env.VWO_ID, 10)} />}
         {process.env.BREVO_CLIENT_KEY && <Brevo clientKey={process.env.BREVO_CLIENT_KEY} userValues={userValues} />}
         {process.env.NEXT_PUBLIC_FACEBOOK_ID && <Facebook id={process.env.NEXT_PUBLIC_FACEBOOK_ID} userValues={userValues} />}
         {process.env.TIKTOK_ID && <Tiktok id={process.env.TIKTOK_ID} />}
