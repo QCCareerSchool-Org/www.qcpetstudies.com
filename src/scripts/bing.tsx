@@ -14,7 +14,7 @@ interface Props {
 export const Bing: FC<Props> = ({ id, userValues }) => (
   <>
     <Script id="bing-uet" dangerouslySetInnerHTML={{ __html: getScript(id) }} />
-    {userValues && <Script id="bing-uet-enhanced" dangerouslySetInnerHTML={{ __html: getEnchancedScript(userValues) }} />}
+    {userValues && <Script id="bing-uet-enhanced" dangerouslySetInnerHTML={{ __html: getEnhancedScript(userValues) }} />}
   </>
 );
 
@@ -33,7 +33,7 @@ const getScript = (id: string): string => `
 })(window,document,"script","//bat.bing.com/bat.js","uetq");
 `;
 
-const getEnchancedScript = (userValues: UserValues) => {
+const getEnhancedScript = (userValues: UserValues) => {
   const enhancedData: UETUserData = {};
   if (userValues.emailAddress) {
     enhancedData.em = uetStandardizeEmailAddress(userValues.emailAddress);

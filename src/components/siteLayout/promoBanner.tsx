@@ -1,11 +1,11 @@
 import type { FC, PropsWithChildren } from 'react';
 
 import { CountDownTimer } from '../countDownTimer';
-import type { BaseLastChancePeriod } from '@/lib/period';
+import type { LastChancePeriodDTO } from '@/lib/period';
 
 interface Props {
   date: number;
-  promotionPeriod: BaseLastChancePeriod;
+  promotionPeriod: LastChancePeriodDTO;
 }
 
 export const PromoBanner: FC<PropsWithChildren<Props>> = ({ date, promotionPeriod, children }) => (

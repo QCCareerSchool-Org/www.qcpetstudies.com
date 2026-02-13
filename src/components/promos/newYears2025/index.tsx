@@ -5,7 +5,6 @@ import HeroImageUK from './desktop-uk.jpg';
 import HeroImageDefault from './desktop.jpg';
 import type { CourseCode } from '@/domain/courseCode';
 import { gbpCountry } from '@/lib/currencies';
-import { endOfYear2025, newYear2026 } from '@/lib/periods';
 
 interface Props {
   date: number;
@@ -13,17 +12,11 @@ interface Props {
   courseCode: CourseCode;
 }
 
-export const NewYears2025: FC<Props> = ({ date, countryCode, courseCode }) => {
+export const NewYears2025: FC<Props> = ({ countryCode, courseCode }) => {
   const heroImageSrc = gbpCountry(countryCode) ? HeroImageUK : HeroImageDefault;
 
   let discountAmount: string;
-  if (endOfYear2025.contains(date)) {
-    discountAmount = gbpCountry(countryCode) ? '£300' : '$300';
-  } else if (newYear2026.contains(date)) {
-    discountAmount = gbpCountry(countryCode) ? '£400' : '$400';
-  } else {
-    throw Error('Invalid date');
-  }
+  throw Error('Invalid date');
 
   return (
     <section>
