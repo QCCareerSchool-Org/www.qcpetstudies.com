@@ -12,7 +12,7 @@ import IDTPCertificationLogo from '@/components/certifications/IDTP-certificatio
 import { PriceSectionWithDiscount } from '@/components/priceSectionWithDiscount';
 import { TabGroup } from '@/components/tabGroup';
 import { TutorSectionDT } from '@/components/tutorSectionDT';
-import type { PriceQuery } from '@/lib/fetch';
+import type { CourseCode } from '@/domain/courseCode';
 import { fetchPrice } from '@/lib/fetch';
 import { getServerData } from '@/lib/getServerData';
 
@@ -21,13 +21,13 @@ export const metadata: Metadata = {
   alternates: { canonical: '/certification-courses/dog-training/course-preview' },
 };
 
-const courseCodes = [ 'dt' ];
+const courseCodes: CourseCode[] = [ 'dt' ];
 
 const DogTrainingCoursePreviewPage: PageComponent = async props => {
   const { countryCode, provinceCode } = await getServerData(props.searchParams);
-  const priceQuery: PriceQuery = { countryCode, provinceCode: provinceCode ?? undefined, courses: courseCodes };
-  const price = await fetchPrice(priceQuery);
-  if (!price) {
+
+  const price = await fetchPrice(courseCodes, countryCode, provinceCode);
+  if (!price.success) {
     return null;
   }
 
@@ -305,7 +305,7 @@ const DogTrainingCoursePreviewPage: PageComponent = async props => {
       </div>
     </section>
 
-    <PriceSectionWithDiscount courses={courseCodes} price={price} doubleGuarantee />
+    <PriceSectionWithDiscount courses={courseCodes} price={price.value} doubleGuarantee />
 
     <TutorSectionDT className="bg-light" />
 

@@ -11,7 +11,6 @@ import { BackgroundImage } from '@/components/backgroundImage';
 import { PriceSection } from '@/components/priceSection';
 import type { CourseCode } from '@/domain/courseCode';
 import FirstAidLogo from '@/images/first-aid-logo.svg';
-import type { PriceQuery } from '@/lib/fetch';
 import { fetchPrice } from '@/lib/fetch';
 import { getServerData } from '@/lib/getServerData';
 
@@ -25,11 +24,13 @@ export const metadata: Metadata = {
 
 const FirstAidForGroomersPage: PageComponent = async props => {
   const { countryCode, provinceCode } = await getServerData(props.searchParams);
-  const priceQuery: PriceQuery = { countryCode, provinceCode: provinceCode ?? undefined, courses: courseCodes };
-  const price = await fetchPrice(priceQuery);
-  if (!price) {
+
+  const priceResult = await fetchPrice(courseCodes, countryCode, provinceCode);
+  if (!priceResult.success) {
     return null;
   }
+
+  const price = priceResult.value;
 
   return <>
     <section className="bg-dark">

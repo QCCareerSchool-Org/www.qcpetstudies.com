@@ -4,7 +4,6 @@ import { DogTrainingBase } from '@/app/(main)/certification-courses/dog-training
 import type { PageComponent } from '@/app/serverComponent';
 import { DeadlineFunnelScript } from '@/components/deadlineFunnelScript';
 import type { CourseCode } from '@/domain/courseCode';
-import type { PriceQuery } from '@/lib/fetch';
 import { fetchPrice } from '@/lib/fetch';
 import { getServerData } from '@/lib/getServerData';
 
@@ -18,16 +17,16 @@ const courseCodes: CourseCode[] = [ 'dt' ];
 
 const DogTraining300Off2Page: PageComponent = async props => {
   const { countryCode, provinceCode } = await getServerData(props.searchParams);
-  const priceQuery: PriceQuery = { countryCode, provinceCode: provinceCode ?? undefined, courses: courseCodes, options: { promoCode: 'DT300', school: 'QC Pet Studies' } };
-  const price = await fetchPrice(priceQuery);
-  if (!price) {
+
+  const price = await fetchPrice(courseCodes, countryCode, provinceCode, { promoCode: 'DT300', school: 'QC Pet Studies' });
+  if (!price.success) {
     return null;
   }
 
   return (
     <>
       <DeadlineFunnelScript />
-      <DogTrainingBase price={price} enrollPath="/training-300-off" courseCodes={courseCodes} countryCode={countryCode} provinceCode={provinceCode} />;
+      <DogTrainingBase price={price.value} enrollPath="/training-300-off" courseCodes={courseCodes} countryCode={countryCode} provinceCode={provinceCode} />;
     </>
   );
 };

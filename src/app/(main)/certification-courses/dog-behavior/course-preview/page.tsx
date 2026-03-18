@@ -8,11 +8,11 @@ import type { PageComponent } from '@/app/serverComponent';
 import { BackgroundImage } from '@/components/backgroundImage';
 import IDGPCertificationLogo from '@/components/certifications/IDGP-certification-gold.svg';
 import { PriceSectionWithDiscount } from '@/components/priceSectionWithDiscount';
-import type { PriceQuery } from '@/lib/fetch';
+import type { CourseCode } from '@/domain/courseCode';
 import { fetchPrice } from '@/lib/fetch';
 import { getServerData } from '@/lib/getServerData';
 
-const courseCodes = [ 'dc' ];
+const courseCodes: CourseCode[] = [ 'dc' ];
 
 export const metadata: Metadata = {
   title: 'Dog Behavior Certification Course',
@@ -21,11 +21,13 @@ export const metadata: Metadata = {
 
 const BehaviorCoursePreviewPage: PageComponent = async props => {
   const { countryCode, provinceCode } = await getServerData(props.searchParams);
-  const priceQuery: PriceQuery = { countryCode, provinceCode: provinceCode ?? undefined, courses: courseCodes };
-  const price = await fetchPrice(priceQuery);
-  if (!price) {
+
+  const priceResult = await fetchPrice(courseCodes, countryCode, provinceCode);
+  if (!priceResult.success) {
     return null;
   }
+
+  const price = priceResult.value;
 
   return (
     <>

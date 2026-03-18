@@ -3,7 +3,6 @@ import type { Metadata } from 'next';
 import { DogTrainingBase } from '.';
 import type { PageComponent } from '@/app/serverComponent';
 import type { CourseCode } from '@/domain/courseCode';
-import type { PriceQuery } from '@/lib/fetch';
 import { fetchPrice } from '@/lib/fetch';
 import { getServerData } from '@/lib/getServerData';
 
@@ -17,13 +16,13 @@ const courseCodes: CourseCode[] = [ 'dt' ];
 
 const DogTrainingPage: PageComponent = async props => {
   const { countryCode, provinceCode } = await getServerData(props.searchParams);
-  const priceQuery: PriceQuery = { countryCode, provinceCode: provinceCode ?? undefined, courses: courseCodes };
-  const price = await fetchPrice(priceQuery);
-  if (!price) {
+
+  const price = await fetchPrice(courseCodes, countryCode, provinceCode);
+  if (!price.success) {
     return null;
   }
 
-  return <DogTrainingBase price={price} enrollPath="/" courseCodes={courseCodes} countryCode={countryCode} provinceCode={provinceCode} />;
+  return <DogTrainingBase price={price.value} enrollPath="/" courseCodes={courseCodes} countryCode={countryCode} provinceCode={provinceCode} />;
 };
 
 export default DogTrainingPage;

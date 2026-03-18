@@ -3,7 +3,6 @@ import type { FC } from 'react';
 import type { CourseCode } from '@/domain/courseCode';
 import { getCourseCertification, getCourseDescription, getCourseName, getCourseSubjects, getCourseUrl, getCourseWorkload } from '@/domain/courseCode';
 import type { Price } from '@/domain/price';
-import type { PriceQuery } from '@/lib/fetch';
 import { fetchPrice } from '@/lib/fetch';
 import { withSuspense } from '@/withSuspense';
 
@@ -17,11 +16,11 @@ interface Props {
 const CourseMicrodataInner: FC<Props> = async ({ courseCode, itemProp, showPrice, itemID = '#course' }) => {
   let price: Price | undefined;
   if (showPrice) {
-    const priceQuery: PriceQuery = { countryCode: 'US', provinceCode: 'MD', courses: [ courseCode ] };
-    price = await fetchPrice(priceQuery);
-    if (!price) {
+    const priceResult = await fetchPrice([ courseCode ], 'US', 'MD');
+    if (!priceResult.success) {
       return null;
     }
+    price = priceResult.value;
   }
 
   const certification = getCourseCertification(courseCode);

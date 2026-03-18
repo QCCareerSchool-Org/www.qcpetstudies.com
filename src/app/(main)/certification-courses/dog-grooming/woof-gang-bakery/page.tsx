@@ -26,12 +26,12 @@ import { AccordionItem } from '@/components/accordion/accordionItem';
 import IDGPCertificationLogo from '@/components/certifications/IDGP-certification-gold.svg';
 import { PriceSectionWithDiscount } from '@/components/priceSectionWithDiscount';
 import { TutorSectionDG } from '@/components/tutorSectionDG';
-import type { PriceQuery } from '@/lib/fetch';
+import type { CourseCode } from '@/domain/courseCode';
 import { fetchPrice } from '@/lib/fetch';
 import { getParam } from '@/lib/getParam';
 import { getServerData } from '@/lib/getServerData';
 
-const courseCodes = [ 'dg' ];
+const courseCodes: CourseCode[] = [ 'dg' ];
 
 export const metadata: Metadata = {
   title: 'Dog Grooming Certification Course',
@@ -41,9 +41,9 @@ export const metadata: Metadata = {
 const Page: PageComponent = async props => {
   const searchParams = await props.searchParams;
   const { countryCode, provinceCode } = await getServerData(props.params);
-  const priceQuery: PriceQuery = { countryCode, provinceCode: provinceCode ?? undefined, courses: courseCodes, options: { promoCode: 'WOOFGANG', school: 'QC Pet Studies' } };
-  const price = await fetchPrice(priceQuery);
-  if (!price) {
+
+  const price = await fetchPrice(courseCodes, countryCode, provinceCode, { promoCode: 'WOOFGANG', school: 'QC Pet Studies' });
+  if (!price.success) {
     return null;
   }
 
@@ -286,7 +286,7 @@ const Page: PageComponent = async props => {
 
       <PriceSectionWithDiscount
         courses={courseCodes}
-        price={price}
+        price={price.value}
         doubleGuarantee={true}
         enrollPath={enrollPath}
         message={<>Includes everything you need to get started with a <strong className="text-primary">WGB-exclusive $500 discount!</strong></>}

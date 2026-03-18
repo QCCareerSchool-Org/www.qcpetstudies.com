@@ -5,16 +5,17 @@ import Link from 'next/link';
 import DogGroomingKit from './dog-grooming-kit-white.jpg';
 import DryingDogBg from './drying-dog-bg.jpg';
 import type { PageComponent } from '@/app/serverComponent';
+import { BackgroundImage } from '@/components/backgroundImage';
 import { FreeFirstAidSection } from '@/components/freeFirstAidSection';
 import QcYearGuaratnteeLogo from '@/components/guaranteeModal/1-year-guarantee-outlined.svg';
 import QcDayGuaratnteeLogo from '@/components/guaranteeModal/21-day-guarantee-outlined.svg';
 import { HowTheCoursesWorkSection } from '@/components/howTheCoursesWorkSection';
 import { PriceSection } from '@/components/priceSection';
-import type { PriceQuery } from '@/lib/fetch';
+import type { CourseCode } from '@/domain/courseCode';
 import { fetchPrice } from '@/lib/fetch';
 import { getServerData } from '@/lib/getServerData';
 
-const courseCodes = [ 'dg' ];
+const courseCodes: CourseCode[] = [ 'dg' ];
 
 export const metadata: Metadata = {
   title: 'Success Guaranteed',
@@ -24,23 +25,16 @@ export const metadata: Metadata = {
 
 const SuccessGuaranteedPage: PageComponent = async props => {
   const { countryCode, provinceCode } = await getServerData(props.searchParams);
-  const priceQuery: PriceQuery = { countryCode, provinceCode: provinceCode ?? undefined, courses: courseCodes };
-  const price = await fetchPrice(priceQuery);
-  if (!price) {
+
+  const price = await fetchPrice(courseCodes, countryCode, provinceCode);
+  if (!price.success) {
     return null;
   }
 
   return (
     <>
       <section id="top" className="bg-dark">
-        <Image
-          src={DryingDogBg}
-          alt="Person drying dog with dryer"
-          priority
-          fill
-          sizes="100vw"
-          style={{ objectFit: 'cover', objectPosition: 'center' }}
-        />
+        <BackgroundImage src={DryingDogBg} />
         <div className="image-overlay-gradient" />
         <div className="container text-center">
           <div className="row justify-content-center">
@@ -83,7 +77,7 @@ const SuccessGuaranteedPage: PageComponent = async props => {
         </div>
       </section>
 
-      <PriceSection courses={courseCodes} price={price} doubleGuarantee={true} />
+      <PriceSection courses={courseCodes} price={price.value} doubleGuarantee={true} />
 
       <HowTheCoursesWorkSection className="bg-light" />
 

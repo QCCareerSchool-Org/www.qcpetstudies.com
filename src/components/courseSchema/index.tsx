@@ -3,7 +3,6 @@ import type { Course, WithContext } from 'schema-dts';
 
 import { type CourseCode, getCourseCertification, getCourseDescription, getCourseName, getCourseSubjects, getCourseUrl, getCourseWorkload } from '@/domain/courseCode';
 import type { Price } from '@/domain/price';
-import type { PriceQuery } from '@/lib/fetch';
 import { fetchPrice } from '@/lib/fetch';
 import { qcPetStudiesEducationalOrganization } from '@/qcPetStudiesEducationalOrganization';
 import { withSuspense } from '@/withSuspense';
@@ -18,11 +17,11 @@ interface Props {
 const CourseSchemaInner: FC<Props> = async ({ courseCode, id = '#course', providerId, showPrice }) => {
   let price: Price | undefined;
   if (showPrice) {
-    const priceQuery: PriceQuery = { countryCode: 'US', provinceCode: 'MD', courses: [ courseCode ] };
-    price = await fetchPrice(priceQuery);
-    if (!price) {
+    const priceResult = await fetchPrice([ courseCode ], 'US', 'MD');
+    if (!priceResult.success) {
       return null;
     }
+    price = priceResult.value;
   }
 
   const certification = getCourseCertification(courseCode);
