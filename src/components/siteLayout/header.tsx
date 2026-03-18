@@ -5,7 +5,7 @@ import { PromoBanner } from './promoBanner';
 import { SecondaryNav } from './secondaryNav';
 import { MainNav } from '@/components/siteLayout/mainNav';
 import { gbpCountry } from '@/lib/currencies';
-import { mar04 } from '@/periods';
+import { mar18 } from '@/periods';
 
 interface Props {
   date: number;
@@ -14,10 +14,10 @@ interface Props {
 
 export const Header: FC<Props> = ({ date, countryCode }) => (
   <div className={`${styles.wrapper} shadow-lg`}>
-    {mar04.contains(date)
+    {mar18.contains(date)
       ? (
-        <PromoBanner date={date} promotionPeriod={mar04.toDTO()}>
-          <span className="d-none d-lg-inline">Limited-Time Offer—</span>Save {gbpCountry(countryCode) ? '£300' : '$300'} on tuition + start for just {gbpCountry(countryCode) ? '£99' : '$99'}!
+        <PromoBanner date={date} promotionPeriod={mar18.toDTO()}>
+          <span className="d-none d-lg-inline">Don't Miss Out!</span>Enroll Today and Save $400 {gbpCountry(countryCode) ? '£400' : '$400'}!
         </PromoBanner>
       )
       : null
