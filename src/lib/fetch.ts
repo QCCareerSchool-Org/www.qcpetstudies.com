@@ -1,7 +1,10 @@
 import 'server-only';
 
+import type { Result } from 'generic-result-type';
+import { failure, success } from 'generic-result-type';
 import qs from 'qs';
 
+import type { CourseCode } from '@/domain/courseCode';
 import type { CurrencyCode } from '@/domain/currencyCode';
 import type { Enrollment } from '@/domain/enrollment';
 import { isRawEnrollment } from '@/domain/enrollment';
@@ -11,24 +14,31 @@ import type { School } from '@/domain/school';
 
 const pricesUrl = process.env.PRICES_ENDPOINT;
 
-export const fetchPrice = async (priceQuery: PriceQuery, controller?: AbortController): Promise<Price | undefined> => {
+export const fetchPrice = async (courses: CourseCode[], countryCode: string, provinceCode: string | null, options?: PriceQueryOptions, signal?: AbortSignal): Promise<Result<Price>> => {
   try {
+    const priceQuery: PriceQuery = { countryCode, provinceCode: provinceCode ?? undefined, courses, options };
+
     const url = `${pricesUrl}?${qs.stringify(priceQuery)}`;
     const response = await fetch(url, {
       headers: { 'X-API-Version': '2' },
-      signal: controller?.signal,
+      signal,
     });
+
     if (!response.ok) {
       throw Error(response.statusText);
     }
+
     const responseBody: unknown = await response.json();
-    if (isPrice(responseBody)) {
-      return responseBody;
+    if (!isPrice(responseBody)) {
+      throw Error('Unexpected response');
     }
+
+    return success(responseBody);
   } catch (err) {
-    if (!controller?.signal.aborted) {
+    if (!signal?.aborted) {
       console.error(err);
     }
+    return failure(err instanceof Error ? err : Error(String(err)));
   }
 };
 

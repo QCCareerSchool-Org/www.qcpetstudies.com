@@ -20,7 +20,6 @@ import type { CourseCode } from '@/domain/courseCode';
 import GuaranteeIcon from '@/images/course-overview-icons/guarantee.svg';
 import OutlineIcon from '@/images/course-overview-icons/outline.svg';
 import TutorIcon from '@/images/course-overview-icons/tutor.svg';
-import type { PriceQuery } from '@/lib/fetch';
 import { fetchPrice } from '@/lib/fetch';
 import { formatPrice } from '@/lib/formatPrice';
 import { getServerData } from '@/lib/getServerData';
@@ -38,11 +37,13 @@ const courseCodes: CourseCode[] = [ 'dd' ];
 const DogCarePage: PageComponent = async props => {
   let eventKey = 0;
   const { countryCode, provinceCode } = await getServerData(props.searchParams);
-  const priceQuery: PriceQuery = { countryCode, provinceCode: provinceCode ?? undefined, courses: courseCodes };
-  const price = await fetchPrice(priceQuery);
-  if (!price) {
+
+  const priceResult = await fetchPrice(courseCodes, countryCode, provinceCode);
+  if (!priceResult.success) {
     return null;
   }
+
+  const price = priceResult.value;
 
   return (
     <>

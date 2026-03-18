@@ -3,11 +3,11 @@ import type { Metadata } from 'next';
 import { GroomingTechnicianBase } from '..';
 import type { PageComponent } from '@/app/serverComponent';
 import { DeadlineFunnelScript } from '@/components/deadlineFunnelScript';
-import type { PriceQuery } from '@/lib/fetch';
+import type { CourseCode } from '@/domain/courseCode';
 import { fetchPrice } from '@/lib/fetch';
 import { getServerData } from '@/lib/getServerData';
 
-const courseCodes = [ 'gt' ];
+const courseCodes: CourseCode[] = [ 'gt' ];
 
 export const metadata: Metadata = {
   title: 'Grooming Technician Course',
@@ -18,21 +18,19 @@ export const metadata: Metadata = {
 const GroomingTechnicianPageAlt2: PageComponent = async props => {
   const { countryCode, provinceCode } = await getServerData(props.searchParams);
 
-  const gtPriceQuery: PriceQuery = { countryCode, provinceCode: provinceCode ?? undefined, courses: courseCodes };
-  const dgPriceQuery: PriceQuery = { countryCode, provinceCode: provinceCode ?? undefined, courses: [ 'dg' ] };
   const [ gtPrice, dgPrice ] = await Promise.all([
-    fetchPrice(gtPriceQuery),
-    fetchPrice(dgPriceQuery),
+    fetchPrice(courseCodes, countryCode, provinceCode),
+    fetchPrice([ 'dg' ], countryCode, provinceCode),
   ]);
 
-  if (!gtPrice || !dgPrice) {
+  if (!gtPrice.success || !dgPrice.success) {
     return null;
   }
 
   return (
     <>
       <DeadlineFunnelScript />
-      <GroomingTechnicianBase gtPrice={gtPrice} dgPrice={dgPrice} enrollPath="/grooming-200-off" />;
+      <GroomingTechnicianBase gtPrice={gtPrice.value} dgPrice={dgPrice.value} enrollPath="/grooming-200-off" />;
     </>
   );
 };

@@ -10,11 +10,11 @@ import QcYearGuaratnteeLogo from '@/components/guaranteeModal/1-year-guarantee-o
 import QcDayGuaratnteeLogo from '@/components/guaranteeModal/21-day-guarantee-outlined.svg';
 import { HowTheCoursesWorkSection } from '@/components/howTheCoursesWorkSection';
 import { PriceSection } from '@/components/priceSection';
-import type { PriceQuery } from '@/lib/fetch';
+import type { CourseCode } from '@/domain/courseCode';
 import { fetchPrice } from '@/lib/fetch';
 import { getServerData } from '@/lib/getServerData';
 
-const courseCodes = [ 'dg' ];
+const courseCodes: CourseCode[] = [ 'dg' ];
 
 export const metadata: Metadata = {
   title: 'Start Your Dream Career',
@@ -23,11 +23,13 @@ export const metadata: Metadata = {
 
 const StartYourDreamCareerPage: PageComponent = async props => {
   const { countryCode, provinceCode } = await getServerData(props.searchParams);
-  const priceQuery: PriceQuery = { countryCode, provinceCode: provinceCode ?? undefined, courses: courseCodes };
-  const price = await fetchPrice(priceQuery);
-  if (!price) {
+
+  const priceResult = await fetchPrice(courseCodes, countryCode, provinceCode);
+  if (!priceResult.success) {
     return null;
   }
+
+  const price = priceResult.value;
 
   return (
     <>

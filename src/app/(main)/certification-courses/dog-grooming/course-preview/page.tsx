@@ -11,12 +11,12 @@ import IDGPCertificationLogo from '@/components/certifications/IDGP-certificatio
 import { PriceSectionWithDiscount } from '@/components/priceSectionWithDiscount';
 import { TabGroup } from '@/components/tabGroup';
 import { TutorSectionDG } from '@/components/tutorSectionDG';
+import type { CourseCode } from '@/domain/courseCode';
 import { externship } from '@/lib/externship';
-import type { PriceQuery } from '@/lib/fetch';
 import { fetchPrice } from '@/lib/fetch';
 import { getServerData } from '@/lib/getServerData';
 
-const courseCodes = [ 'dg' ];
+const courseCodes: CourseCode[] = [ 'dg' ];
 
 export const metadata: Metadata = {
   title: 'Dog Grooming Certification Course',
@@ -25,15 +25,13 @@ export const metadata: Metadata = {
 
 const GroomingCoursePreviewPage: PageComponent = async props => {
   const { countryCode, provinceCode } = await getServerData(props.searchParams);
-  const dgPriceQuery: PriceQuery = { countryCode, provinceCode: provinceCode ?? undefined, courses: courseCodes };
-  const dePriceQuery: PriceQuery = { countryCode, provinceCode: provinceCode ?? undefined, courses: [ 'de' ] };
 
   const [ dgPrice, dePrice ] = await Promise.all([
-    fetchPrice(dgPriceQuery),
-    fetchPrice(dePriceQuery),
+    fetchPrice(courseCodes, countryCode, provinceCode),
+    fetchPrice([ 'de' ], countryCode, provinceCode),
   ]);
 
-  if (!dgPrice || !dePrice) {
+  if (!dgPrice.success || !dePrice.success) {
     return null;
   }
 
@@ -368,8 +366,8 @@ const GroomingCoursePreviewPage: PageComponent = async props => {
       </section>
 
       {externship(countryCode, provinceCode)
-        ? <PriceSection dgPrice={dgPrice} dePrice={dePrice} countryCode={countryCode} />
-        : <PriceSectionWithDiscount courses={courseCodes} price={dgPrice} doubleGuarantee={true} />
+        ? <PriceSection dgPrice={dgPrice.value} dePrice={dePrice.value} countryCode={countryCode} />
+        : <PriceSectionWithDiscount courses={courseCodes} price={dgPrice.value} doubleGuarantee={true} />
       }
 
       <TutorSectionDG className="bg-light" />

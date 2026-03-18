@@ -4,7 +4,6 @@ import { DogGroomingBase } from '@/app/(main)/certification-courses/dog-grooming
 import type { PageComponent } from '@/app/serverComponent';
 import { DeadlineFunnelScript } from '@/components/deadlineFunnelScript';
 import type { CourseCode } from '@/domain/courseCode';
-import type { PriceQuery } from '@/lib/fetch';
 import { fetchPrice } from '@/lib/fetch';
 import { getServerData } from '@/lib/getServerData';
 
@@ -18,21 +17,20 @@ export const metadata: Metadata = {
 
 const DogGrooming150OffPage: PageComponent = async props => {
   const { countryCode, provinceCode } = await getServerData(props.searchParams);
-  const dgPriceQuery: PriceQuery = { countryCode, provinceCode: provinceCode ?? undefined, courses: [ 'dg' ] };
-  const dePriceQuery: PriceQuery = { countryCode, provinceCode: provinceCode ?? undefined, courses: [ 'de' ] };
+
   const [ dgPrice, dePrice ] = await Promise.all([
-    fetchPrice(dgPriceQuery),
-    fetchPrice(dePriceQuery),
+    fetchPrice([ 'dg' ], countryCode, provinceCode, { promoCode: 'DG150', school: 'QC Pet Studies' }),
+    fetchPrice([ 'de' ], countryCode, provinceCode, { promoCode: 'DG150', school: 'QC Pet Studies' }),
   ]);
 
-  if (!dgPrice || !dePrice) {
+  if (!dgPrice.success || !dePrice.success) {
     return null;
   }
 
   return (
     <>
       <DeadlineFunnelScript />
-      <DogGroomingBase countryCode={countryCode} provinceCode={provinceCode} dgPrice={dgPrice} dePrice={dePrice} enrollPath="/grooming-150-off" courseCode={courseCode} />
+      <DogGroomingBase countryCode={countryCode} provinceCode={provinceCode} dgPrice={dgPrice.value} dePrice={dePrice.value} enrollPath="/grooming-150-off" courseCode={courseCode} />
     </>
   );
 };

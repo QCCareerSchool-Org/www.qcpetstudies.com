@@ -3,7 +3,6 @@ import type { Metadata } from 'next';
 import { DogGroomingBase } from '.';
 import type { PageComponent } from '@/app/serverComponent';
 import type { CourseCode } from '@/domain/courseCode';
-import type { PriceQuery } from '@/lib/fetch';
 import { fetchPrice } from '@/lib/fetch';
 import { getServerData } from '@/lib/getServerData';
 
@@ -17,18 +16,17 @@ export const metadata: Metadata = {
 
 const DogGroomingPage: PageComponent = async props => {
   const { countryCode, provinceCode } = await getServerData(props.searchParams);
-  const dgPriceQuery: PriceQuery = { countryCode, provinceCode: provinceCode ?? undefined, courses: [ 'dg' ] };
-  const dePriceQuery: PriceQuery = { countryCode, provinceCode: provinceCode ?? undefined, courses: [ 'de' ] };
+
   const [ dgPrice, dePrice ] = await Promise.all([
-    fetchPrice(dgPriceQuery),
-    fetchPrice(dePriceQuery),
+    fetchPrice([ 'dg' ], countryCode, provinceCode),
+    fetchPrice([ 'de' ], countryCode, provinceCode),
   ]);
 
-  if (!dgPrice || !dePrice) {
+  if (!dgPrice.success || !dePrice.success) {
     return null;
   }
 
-  return <DogGroomingBase countryCode={countryCode} provinceCode={provinceCode} dgPrice={dgPrice} dePrice={dePrice} enrollPath="/" courseCode={courseCode} />;
+  return <DogGroomingBase countryCode={countryCode} provinceCode={provinceCode} dgPrice={dgPrice.value} dePrice={dePrice.value} enrollPath="/" courseCode={courseCode} />;
 };
 
 export default DogGroomingPage;
