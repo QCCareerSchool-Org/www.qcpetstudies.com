@@ -17,7 +17,7 @@ export const Header: FC<Props> = ({ date, countryCode }) => (
     {mar18.contains(date)
       ? (
         <PromoBanner date={date} promotionPeriod={mar18.toDTO()}>
-          <span className="d-none d-lg-inline">Don't Miss Out!</span> Enroll Today and Save $400 {gbpCountry(countryCode) ? '£400' : '$400'}!
+          <span className="d-none d-lg-inline">Don't Miss Out!</span> Enroll Today and Save {gbpCountry(countryCode) ? '£400' : '$400'}!
         </PromoBanner>
       )
       : null
