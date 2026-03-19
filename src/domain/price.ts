@@ -100,8 +100,8 @@ const isPriceDetails = (obj: unknown): obj is PriceDetails => {
 
 const isPlans = (obj: unknown): obj is { full: Plan; part: Plan } => {
   return obj !== null && typeof obj === 'object' &&
-    'full' in obj && isPlan(obj.full) &&
-    'part' in obj && isPlan(obj.part);
+    (('full' in obj && isPlan(obj.full)) || !('full' in obj)) &&
+    (('part' in obj && isPlan(obj.part)) || !('part' in obj));
 };
 
 const isPlan = (obj: unknown): obj is Plan => {
