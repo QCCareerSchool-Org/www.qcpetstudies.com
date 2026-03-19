@@ -2,10 +2,10 @@ import { dataMap } from './courseData';
 
 export const courseCodes = [ 'dg', 'dt', 'fa', 'dc', 'ds', 'dd', 'gt', 'de' ] as const;
 
-export type CourseCode = typeof courseCodes[number];
-
+/** The courses to display on the homepage */
 export const activeCourseCodes: CourseCode[] = [ 'dg', 'dt', 'dd', 'dc' ] as const;
 
+export type CourseCode = typeof courseCodes[number];
 export type ActiveCourseCode = typeof activeCourseCodes[number];
 
 const courseCodeSet = new Set<CourseCode>(courseCodes);
