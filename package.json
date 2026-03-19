@@ -1,6 +1,6 @@
 {
   "name": "www.petstudies.com",
-  "version": "1.6.68",
+  "version": "1.6.69",
   "license": "UNLICENSED",
   "private": true,
   "scripts": {
@@ -19,7 +19,7 @@
     "big.js": "^7.0.1",
     "bootstrap": "^5.3.8",
     "generic-result-type": "^2.3.0",
-    "jose": "^6.2.1",
+    "jose": "^6.2.2",
     "lottie-react": "^2.4.1",
     "next": "16.2.0",
     "qs": "^6.15.0",
@@ -57,7 +57,7 @@
     "@types/react-dom": "19.2.3",
     "@types/react-scroll": "^1.8.10",
     "@types/uuid": "^10.0.0",
-    "baseline-browser-mapping": "^2.10.0",
+    "baseline-browser-mapping": "^2.10.9",
     "eslint": "^9.39.4",
     "eslint-config-next": "16.2.0",
     "eslint-import-resolver-typescript": "^4.4.4",
@@ -71,10 +71,10 @@
     "postcss-import": "^16.1.1",
     "postcss-load-config": "^6.0.1",
     "postcss-preset-env": "^11.2.0",
-    "sass": "^1.97.3",
+    "sass": "^1.98.0",
     "schema-dts": "^1.1.5",
     "typescript": "^5.9.3",
-    "typescript-eslint": "^8.57.0"
+    "typescript-eslint": "^8.57.1"
   },
   "overrides": {
     "@types/react": "19.2.14",
