@@ -29,7 +29,3 @@ export const getAddress = (countryCode: string): string[] => {
       return [ ...addresses.ca, 'Canada' ];
   }
 };
-
-export const needsProvince = (countryCode: string): boolean => {
-  return [ 'CA', 'US', 'AU' ].includes(countryCode);
-};

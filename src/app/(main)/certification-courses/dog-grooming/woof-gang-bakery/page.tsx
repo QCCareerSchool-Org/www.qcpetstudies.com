@@ -27,7 +27,7 @@ import IDGPCertificationLogo from '@/components/certifications/IDGP-certificatio
 import { PriceSectionWithDiscount } from '@/components/priceSectionWithDiscount';
 import { TutorSectionDG } from '@/components/tutorSectionDG';
 import type { CourseCode } from '@/domain/courseCode';
-import { fetchPrice } from '@/lib/fetch';
+import { fetchPrice } from '@/lib/fetchPrice';
 import { getParam } from '@/lib/getParam';
 import { getServerData } from '@/lib/getServerData';
 

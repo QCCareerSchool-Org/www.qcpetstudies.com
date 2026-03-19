@@ -14,8 +14,8 @@ import SniffinArroundLogo from './sniffin-around-logo-white.svg';
 import { ChatLink } from '@/components/chatLink';
 import { Flag } from '@/components/flag';
 import { Logo } from '@/components/logo';
+import { gbpCountry } from '@/domain/currency';
 import { getAddress } from '@/lib/address';
-import { gbpCountry } from '@/lib/currencies';
 import { getTelephoneNumber } from '@/lib/telephone';
 
 interface Props {

@@ -1,4 +1,4 @@
-export interface Properties {
+interface Properties {
   FIRSTNAME?: string;
   LASTNAME?: string;
   COUNTRY_CODE?: string;
@@ -39,20 +39,16 @@ export const brevoIdentifyLead = (emailAddress: string, countryCode: string | nu
   if (lastName) {
     properties.LASTNAME = lastName;
   }
+
   window.sendinblue?.identify(emailAddress, properties);
 };
 
 export const brevoIdentifyStudent = (emailAddress: string, countryCode?: string, provinceCode?: string, firstName?: string, lastName?: string): void => {
-  const properties: Properties = {
+  window.sendinblue?.identify(emailAddress, {
     FIRSTNAME: firstName,
     LASTNAME: lastName,
+    COUNTRY_CODE: countryCode,
+    PROVINCE_CODE: provinceCode,
     STATUS_PET_STUDENT: true,
-  };
-  if (countryCode) {
-    properties.COUNTRY_CODE = countryCode;
-  }
-  if (provinceCode) {
-    properties.PROVINCE_CODE = provinceCode;
-  }
-  window.sendinblue?.identify(emailAddress, properties);
+  });
 };

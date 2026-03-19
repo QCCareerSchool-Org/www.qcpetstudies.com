@@ -12,7 +12,7 @@ import { TelephoneLink } from '@/components/telephoneLink';
 import { addToIDevAffiliate } from '@/lib/addToIDevAffiliate';
 import { createBrevoContact } from '@/lib/brevoAPI';
 import { fbPostPurchase } from '@/lib/facebookConversionAPI';
-import { getEnrollment } from '@/lib/fetch';
+import { fetchEnrollment } from '@/lib/fetchEnrollment';
 import { getParam } from '@/lib/getParam';
 import { getServerData } from '@/lib/getServerData';
 import { sendEnrollmentEmail } from '@/lib/sendEnrollmentEmail';
@@ -39,8 +39,12 @@ const WelcomeToTheSchoolThirdPartyPage: PageComponent = async props => {
     redirect('/');
   }
 
-  const enrollment = await getEnrollment(enrollmentId, codeParam);
+  const enrollmentResult = await fetchEnrollment(enrollmentId, codeParam);
+  if (!enrollmentResult.success) {
+    redirect('/');
+  }
 
+  const enrollment = enrollmentResult.value;
   if (!enrollment.success) {
     redirect('/');
   }

@@ -11,7 +11,7 @@ import { BackgroundImage } from '@/components/backgroundImage';
 import { PriceSection } from '@/components/priceSection';
 import type { CourseCode } from '@/domain/courseCode';
 import FirstAidLogo from '@/images/first-aid-logo.svg';
-import { fetchPrice } from '@/lib/fetch';
+import { fetchPrice } from '@/lib/fetchPrice';
 import { getServerData } from '@/lib/getServerData';
 
 const courseCodes: CourseCode[] = [ 'fa' ];

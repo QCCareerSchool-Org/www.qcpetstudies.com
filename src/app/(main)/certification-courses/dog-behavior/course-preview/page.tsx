@@ -9,7 +9,7 @@ import { BackgroundImage } from '@/components/backgroundImage';
 import IDGPCertificationLogo from '@/components/certifications/IDGP-certification-gold.svg';
 import { PriceSectionWithDiscount } from '@/components/priceSectionWithDiscount';
 import type { CourseCode } from '@/domain/courseCode';
-import { fetchPrice } from '@/lib/fetch';
+import { fetchPrice } from '@/lib/fetchPrice';
 import { getServerData } from '@/lib/getServerData';
 
 const courseCodes: CourseCode[] = [ 'dc' ];

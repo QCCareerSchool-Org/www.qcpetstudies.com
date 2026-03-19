@@ -1,5 +1,12 @@
-import type { GetServerSidePropsContext } from 'next';
+import type { NextApiRequest } from 'next';
 
-export const getIpAddress = (context: GetServerSidePropsContext): string | undefined => {
-  return (Array.isArray(context.req.headers['x-real-ip']) ? context.req.headers['x-real-ip'][0] : context.req.headers['x-real-ip']) ?? context.req.socket.remoteAddress;
+export const getIPAddress = (req: NextApiRequest): string | undefined => {
+  const forwardedFor = req.headers['x-forwarded-for'];
+  if (Array.isArray(forwardedFor) && forwardedFor.length) {
+    return forwardedFor[0].split(',')[0].trim();
+  } else if (typeof forwardedFor === 'string') {
+    return forwardedFor.split(',')[0].trim();
+  } else if (req.socket.remoteAddress) {
+    return req.socket.remoteAddress;
+  }
 };

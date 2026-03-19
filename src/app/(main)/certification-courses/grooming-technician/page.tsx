@@ -3,7 +3,7 @@ import type { Metadata } from 'next';
 import { GroomingTechnicianBase } from '.';
 import type { PageComponent } from '@/app/serverComponent';
 import type { CourseCode } from '@/domain/courseCode';
-import { fetchPrice } from '@/lib/fetch';
+import { fetchPrice } from '@/lib/fetchPrice';
 import { getServerData } from '@/lib/getServerData';
 
 const courseCodes: CourseCode[] = [ 'gt' ];

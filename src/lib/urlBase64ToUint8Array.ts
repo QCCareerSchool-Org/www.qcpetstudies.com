@@ -1,9 +1,9 @@
 /**
  * urlBase64ToUint8Array
  *
- * @param {string} base64String a public VAPID key
+ * @param base64String a public VAPID key
  */
-export function urlBase64ToUint8Array(base64String: string): Uint8Array {
+export const urlBase64ToUint8Array = (base64String: string): Uint8Array => {
   const padding = '='.repeat((4 - (base64String.length % 4)) % 4);
   const base64 = (base64String + padding)
     .replace(/-/gu, '+')
@@ -16,4 +16,4 @@ export function urlBase64ToUint8Array(base64String: string): Uint8Array {
     outputArray[i] = rawData.charCodeAt(i);
   }
   return outputArray;
-}
+};

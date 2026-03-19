@@ -22,5 +22,6 @@ export const isLead = (obj: unknown): obj is Lead => {
     'city' in obj && (typeof obj.city === 'string' || obj.city === null) &&
     'countryCode' in obj && (typeof obj.countryCode === 'string' || obj.countryCode === null) &&
     'provinceCode' in obj && (typeof obj.provinceCode === 'string' || obj.provinceCode === null) &&
-    'ip' in obj && (typeof obj.ip === 'string' || obj.ip === null);
+    'ip' in obj && (typeof obj.ip === 'string' || obj.ip === null) &&
+    'created' in obj && typeof obj.created === 'number';
 };

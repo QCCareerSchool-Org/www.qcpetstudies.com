@@ -4,7 +4,7 @@ import type { FC } from 'react';
 import HeroImageUK from './desktop-uk.jpg';
 import HeroImageDefault from './desktop.jpg';
 import type { CourseCode } from '@/domain/courseCode';
-import { gbpCountry } from '@/lib/currencies';
+import { gbpCountry } from '@/domain/currency';
 
 interface Props {
   date: number;

@@ -18,10 +18,11 @@ interface Props {
   firstName: string | null;
   lastName: string | null;
   leadId: string;
-  conversionId: string;
+  googleAdsConversionId?: string;
 }
 
 export const LeadProcessing: FC<Props> = props => {
+  const googleAdsConversionId = props.googleAdsConversionId ?? 'AW-1071836607/yZtFCL_BpW8Qv9uL_wM';
   const effectCalled = useRef(false);
 
   useEffect(() => {
@@ -35,9 +36,9 @@ export const LeadProcessing: FC<Props> = props => {
     gaUserData(props.emailAddress, props.telephoneNumber, props.firstName, props.lastName, props.city, props.provinceCode, props.countryCode);
     uetUserData(props.emailAddress, props.telephoneNumber);
     fbqLead(props.leadId, { emailAddress: props.emailAddress, telephoneNumber: props.telephoneNumber, city: props.city, province: props.provinceCode, country: props.countryCode, firstName: props.firstName, lastName: props.lastName });
-    gaEvent('conversion', { send_to: props.conversionId, transaction_id: props.leadId });
+    gaEvent('conversion', { send_to: googleAdsConversionId, transaction_id: props.leadId });
     brevoIdentifyLead(props.emailAddress, props.countryCode, props.provinceCode, props.firstName, props.lastName);
-  }, [ props.emailAddress, props.telephoneNumber, props.city, props.countryCode, props.provinceCode, props.firstName, props.lastName, props.leadId, props.conversionId ]);
+  }, [ props.emailAddress, props.telephoneNumber, props.city, props.countryCode, props.provinceCode, props.firstName, props.lastName, props.leadId, googleAdsConversionId ]);
 
   return null;
 };

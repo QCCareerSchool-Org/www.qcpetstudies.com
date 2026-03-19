@@ -6,8 +6,8 @@ import { Modal } from 'react-bootstrap';
 
 import GroomingKitDetailImage from './kit-labelled.jpg';
 import GroomingKitList from '@/components/kitListDG';
+import { gbpCountry } from '@/domain/currency';
 import { useToggle } from '@/hooks/useToggle';
-import { gbpCountry } from '@/lib/currencies';
 
 interface Props {
   countryCode: string;

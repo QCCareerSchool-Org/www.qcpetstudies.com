@@ -13,7 +13,7 @@ import { TabGroup } from '@/components/tabGroup';
 import { TutorSectionDG } from '@/components/tutorSectionDG';
 import type { CourseCode } from '@/domain/courseCode';
 import { externship } from '@/lib/externship';
-import { fetchPrice } from '@/lib/fetch';
+import { fetchPrice } from '@/lib/fetchPrice';
 import { getServerData } from '@/lib/getServerData';
 
 const courseCodes: CourseCode[] = [ 'dg' ];

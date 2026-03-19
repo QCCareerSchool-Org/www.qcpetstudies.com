@@ -3,7 +3,7 @@ import type { FC } from 'react';
 
 import HeroImageUK from './desktop-uk.jpg';
 import HeroImageDefault from './desktop.jpg';
-import { gbpCountry } from '@/lib/currencies';
+import { gbpCountry } from '@/domain/currency';
 
 interface Props {
   countryCode: string;

@@ -2,7 +2,7 @@ import Link from 'next/link';
 import type { FC } from 'react';
 
 import { TelephoneLink } from '@/components/telephoneLink';
-import { gbpCountry } from '@/lib/currencies';
+import { gbpCountry } from '@/domain/currency';
 import { getServerData } from '@/lib/getServerData';
 
 export const Footer: FC = async () => {
