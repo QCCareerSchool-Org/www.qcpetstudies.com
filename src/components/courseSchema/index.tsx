@@ -1,9 +1,10 @@
 import type { FC } from 'react';
 import type { Course, WithContext } from 'schema-dts';
 
-import { type CourseCode, getCourseCertification, getCourseDescription, getCourseName, getCourseSubjects, getCourseUrl, getCourseWorkload } from '@/domain/courseCode';
+import type { CourseCode } from '@/domain/courseCode';
+import { getCourseCertification, getCourseDescription, getCourseName, getCourseSubjects, getCourseUrl, getCourseWorkload } from '@/domain/courseCode';
 import type { Price } from '@/domain/price';
-import { fetchPrice } from '@/lib/fetch';
+import { fetchPrice } from '@/lib/fetchPrice';
 import { qcPetStudiesEducationalOrganization } from '@/qcPetStudiesEducationalOrganization';
 import { withSuspense } from '@/withSuspense';
 

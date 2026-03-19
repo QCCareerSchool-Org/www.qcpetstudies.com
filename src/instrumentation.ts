@@ -1,6 +1,9 @@
 const isDev = process.env.NODE_MODE === 'production';
 
 const expectedVariables = [
+  // QC
+  'PRICES_ENDPONT',
+  'ENROLLMENT_ENDPOINT',
   // Google
   'GOOGLE_ANALYTICS_ID',
   'GOOGLE_ADS_ID',

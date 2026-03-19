@@ -12,7 +12,7 @@ import QcDayGuaratnteeLogo from '@/components/guaranteeModal/21-day-guarantee-ou
 import { HowTheCoursesWorkSection } from '@/components/howTheCoursesWorkSection';
 import { PriceSection } from '@/components/priceSection';
 import type { CourseCode } from '@/domain/courseCode';
-import { fetchPrice } from '@/lib/fetch';
+import { fetchPrice } from '@/lib/fetchPrice';
 import { getServerData } from '@/lib/getServerData';
 
 const courseCodes: CourseCode[] = [ 'dg' ];

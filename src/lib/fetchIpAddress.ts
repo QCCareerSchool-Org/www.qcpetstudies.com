@@ -6,19 +6,21 @@ const url = 'https://api64.ipify.org/?format=json';
 export const fetchIpAddress = async (signal?: AbortSignal): Promise<Result<string>> => {
   try {
     const response = await fetch(url, { signal });
-
     if (!response.ok) {
-      return failure(Error(response.statusText));
+      throw Error(response.statusText);
     }
 
     const json = await response.json() as unknown;
     if (!isApiResponse(json)) {
-      return failure(Error('Unexpected response'));
+      throw Error('Unexpected response');
     }
 
     return success(json.ip);
 
-  } catch (err: unknown) {
+  } catch (err) {
+    if (!signal?.aborted) {
+      console.error(err);
+    }
     return err instanceof Error ? failure(err) : failure(Error(String(err)));
   }
 };

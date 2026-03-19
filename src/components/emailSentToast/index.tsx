@@ -1,6 +1,7 @@
 'use client';
 
-import { type FC, useEffect } from 'react';
+import type { FC } from 'react';
+import { useEffect } from 'react';
 import { toast } from 'react-toastify';
 
 import styles from './index.module.scss';

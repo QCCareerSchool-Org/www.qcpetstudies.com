@@ -37,7 +37,7 @@ interface Props {
 const iconSize = 36;
 const testimonialIds = [ 'TD-0004', 'TD-0005', 'TD-0007', 'TD-0008', 'TD-0009', 'TD-0010' ];
 
-export const DogGroomingBase: FC<Props> = async ({ countryCode, provinceCode, dgPrice, dePrice, enrollPath, courseCode }) => {
+export const DogGroomingBase: FC<Props> = ({ countryCode, provinceCode, dgPrice, dePrice, enrollPath, courseCode }) => {
   let eventKey = 0;
 
   return (

@@ -13,7 +13,7 @@ import { GuaranteeSection } from '@/components/guaranteeSection';
 import { PriceSection } from '@/components/priceSection';
 import type { CourseCode } from '@/domain/courseCode';
 import CourseIconBadge from '@/images/course-icon-badge.svg';
-import { fetchPrice } from '@/lib/fetch';
+import { fetchPrice } from '@/lib/fetchPrice';
 import { getServerData } from '@/lib/getServerData';
 
 const courseCodes: CourseCode[] = [ 'ds' ];

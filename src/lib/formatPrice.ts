@@ -1,7 +1,8 @@
 const defaultPrecision = 2;
-export const formatPrice = (value?: number, precision = defaultPrecision): string => {
-  if (typeof value === 'undefined') {
-    return '';
+
+export const formatPrice = (price: number, precision = defaultPrecision): string => {
+  if (Math.floor(price) === price) {
+    return price.toString();
   }
-  return Math.round(value) === value ? value.toString() : value.toFixed(precision);
+  return price.toFixed(precision);
 };

@@ -38,7 +38,6 @@ const ThankYouCoursePreviewPage: PageComponent = async props => {
           firstName={lead.firstName}
           lastName={lead.lastName}
           leadId={lead.leadId}
-          conversionId="AW-1071836607/yZtFCL_BpW8Qv9uL_wM"
         />
       )}
       <Header />

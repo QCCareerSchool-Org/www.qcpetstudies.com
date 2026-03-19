@@ -75,19 +75,19 @@ export const gaSale = (enrollment: Enrollment): void => {
       : enrollment.postalCode;
 
   const userData: GAUserData = {
-    email: enrollment.emailAddress,
+    email: enrollment.emailAddress.toLowerCase(),
     address: {
-      first_name: enrollment.firstName, // eslint-disable-line camelcase
-      last_name: enrollment.lastName, // eslint-disable-line camelcase
-      street: enrollment.address1,
-      city: enrollment.city,
-      postal_code: postalCode, // eslint-disable-line camelcase
-      country: enrollment.countryCode,
+      first_name: enrollment.firstName.toLowerCase(), // eslint-disable-line camelcase
+      last_name: enrollment.lastName.toLowerCase(), // eslint-disable-line camelcase
+      street: enrollment.address1.toLowerCase(),
+      city: enrollment.city.toLowerCase(),
+      postal_code: postalCode.toLowerCase(), // eslint-disable-line camelcase
+      country: enrollment.countryCode.toLowerCase(),
     },
   };
 
   if (enrollment.provinceCode && userData.address) {
-    userData.address.region = enrollment.provinceCode;
+    userData.address.region = enrollment.provinceCode.toLowerCase();
   }
 
   gaUserData(enrollment.emailAddress, null, enrollment.firstName, enrollment.lastName, enrollment.city, enrollment.provinceCode, enrollment.countryCode);

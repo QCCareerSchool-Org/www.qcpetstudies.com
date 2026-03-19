@@ -4,7 +4,7 @@ import { DogTrainingBase } from '@/app/(main)/certification-courses/dog-training
 import type { PageComponent } from '@/app/serverComponent';
 import { DeadlineFunnelScript } from '@/components/deadlineFunnelScript';
 import type { CourseCode } from '@/domain/courseCode';
-import { fetchPrice } from '@/lib/fetch';
+import { fetchPrice } from '@/lib/fetchPrice';
 import { getServerData } from '@/lib/getServerData';
 
 export const metadata: Metadata = {

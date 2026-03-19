@@ -1,4 +1,5 @@
-import { failure, type Result, success } from 'generic-result-type';
+import type { Result } from 'generic-result-type';
+import { failure, success } from 'generic-result-type';
 import * as jose from 'jose';
 
 const base64Secret = process.env.JWT_SECRET_BASE64;

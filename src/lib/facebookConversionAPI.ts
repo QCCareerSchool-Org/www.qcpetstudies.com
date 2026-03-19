@@ -7,23 +7,27 @@ const apiVersion = 'v24.0';
 const datasetId = process.env.NEXT_PUBLIC_FACEBOOK_ID;
 const accessToken = process.env.FACEBOOK_ACCESS_TOKEN;
 
+if (!accessToken) {
+  throw Error('Access token not found');
+}
+
 export const fbPostPurchase = async (
   enrollment: Enrollment,
-  eventSourceUrl: string | undefined,
+  eventSourceUrl: string,
   clientIPAddress: string | null,
   clientUserAgent: string | null,
   fbc?: string,
   fbp?: string,
 ): Promise<unknown> => {
   const url = `https://graph.facebook.com/${apiVersion}/${datasetId}/events?access_token=${accessToken}`;
-  console.log(url);
+
   const eventTime = enrollment.transactionTime ?? new Date();
 
   const body: { data: PurchaseConversion[] } = {
     data: [
       {
         event_name: 'Purchase', // eslint-disable-line camelcase
-        event_time: Math.floor(new Date(eventTime).getTime() / 1000), // eslint-disable-line camelcase
+        event_time: Math.floor(eventTime.getTime() / 1000), // eslint-disable-line camelcase
         action_source: 'website', // eslint-disable-line camelcase
         user_data: { // eslint-disable-line camelcase
           em: hash(normalizeEmailAddress(enrollment.emailAddress)),

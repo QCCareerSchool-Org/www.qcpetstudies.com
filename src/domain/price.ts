@@ -1,5 +1,7 @@
-import { type Currency, isCurrency } from './currency';
-import { isNoShipping, type NoShipping } from './noShipping';
+import type { Currency } from './currency';
+import { isCurrency } from './currency';
+import type { NoShipping } from './noShipping';
+import { isNoShipping } from './noShipping';
 
 interface Plan {
   /** the discount based on the payment plan */

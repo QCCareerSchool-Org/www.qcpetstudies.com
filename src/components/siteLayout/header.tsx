@@ -4,7 +4,7 @@ import styles from './header.module.scss';
 import { PromoBanner } from './promoBanner';
 import { SecondaryNav } from './secondaryNav';
 import { MainNav } from '@/components/siteLayout/mainNav';
-import { gbpCountry } from '@/lib/currencies';
+import { gbpCountry } from '@/domain/currency';
 import { mar18 } from '@/periods';
 
 interface Props {
