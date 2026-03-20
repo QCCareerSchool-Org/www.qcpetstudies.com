@@ -1,5 +1,3 @@
-import 'server-only';
-
 import type { Result } from 'generic-result-type';
 import { failure, success } from 'generic-result-type';
 import qs from 'qs';
