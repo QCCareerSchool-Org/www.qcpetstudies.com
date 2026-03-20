@@ -59,10 +59,9 @@ const WelcomeToTheSchoolPage: PageComponent = async props => {
 
   if (!enrollment.emailed) {
     // send email
-    try {
-      await sendEnrollmentEmail(enrollmentId, codeParam);
-    } catch (err) {
-      console.error(err);
+    const sendEmailResult = await sendEnrollmentEmail(enrollmentId, codeParam);
+    if (!sendEmailResult.success) {
+      console.error(sendEmailResult.error);
     }
 
     // create Brevo contact
