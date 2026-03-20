@@ -35,6 +35,7 @@
     "react-toastify": "^11.0.5",
     "react-use-count-up": "^1.0.2",
     "server-only": "^0.0.1",
+    "use-window-listener": "^1.1.1",
     "uuid": "^13.0.0"
   },
   "devDependencies": {
