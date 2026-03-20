@@ -12,7 +12,8 @@ export const sendEnrollmentEmail = async (
   signal?: AbortSignal,
 ): Promise<Result> => {
   try {
-    const url = `${process.env.ENROLLMENT_ENDPOINT}/enrollments/${encodeURIComponent(enrollmentId)}/email`;
+    const url = `${process.env.ENROLLMENT_ENDPOINT}/${encodeURIComponent(enrollmentId)}/email`;
+    console.log(url);
     const body = JSON.stringify({ code });
 
     const response = await fetch(url, { method: 'post', headers, body, signal });

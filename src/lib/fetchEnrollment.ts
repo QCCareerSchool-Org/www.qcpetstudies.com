@@ -4,11 +4,9 @@ import { failure, success } from 'generic-result-type';
 import type { Enrollment } from '@/domain/enrollment';
 import { isRawEnrollment } from '@/domain/enrollment';
 
-const enrollmentsUrl = process.env.ENROLLMENT_ENDPOINT;
-
 export const fetchEnrollment = async (id: number, code: string, signal?: AbortSignal): Promise<Result<Enrollment>> => {
   try {
-    const url = `${enrollmentsUrl}/${id}?code=${encodeURIComponent(code)}`;
+    const url = `${process.env.ENROLLMENT_ENDPOINT}/${id}?code=${encodeURIComponent(code)}`;
 
     const response = await fetch(url, { signal });
     if (!response.ok) {
