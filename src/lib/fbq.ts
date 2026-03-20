@@ -1,3 +1,4 @@
+/* eslint-disable custom/no-window-outside-effects */
 import { normalizeCity, normalizeEmailAddress, normalizeName, normalizeState, normalizeTelephoneNumber } from './hash';
 import type { Enrollment } from '@/domain/enrollment';
 

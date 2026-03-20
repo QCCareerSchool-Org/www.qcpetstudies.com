@@ -1,27 +1,23 @@
 'use client';
 
+import { useIntersectionObserver } from '@davewelsh79/use-intersection-observer';
 import type { FC } from 'react';
-import { useRef } from 'react';
 import { FaBook, FaFilm, FaLaptop } from 'react-icons/fa';
 import { useCountUp } from 'react-use-count-up';
 
 import { Bar } from '@/components/bar';
-import { useIntersectionObserver } from '@/hooks/useIntersectionObserver';
 
 const countUpDuration = 3000;
 const easingFunction = 'easeOutQuad';
 
 export const StatsSection: FC = () => {
-  const videosRef = useRef(null);
-  const videosIntersection = useIntersectionObserver(videosRef);
+  const [ videosIntersection, videosRef ] = useIntersectionObserver();
   const videosCount = useCountUp({ start: 0, end: 43, duration: countUpDuration, started: videosIntersection, easingFunction });
 
-  const lessonsRef = useRef(null);
-  const lessonsIntersection = useIntersectionObserver(lessonsRef);
+  const [ lessonsIntersection, lessonsRef ] = useIntersectionObserver();
   const lessonsCount = useCountUp({ start: 0, end: 25, duration: countUpDuration, started: lessonsIntersection, easingFunction });
 
-  const assignmentsRef = useRef(null);
-  const assignmentsIntersection = useIntersectionObserver(assignmentsRef);
+  const [ assignmentsIntersection, assignmentsRef ] = useIntersectionObserver();
   const assignmentsCount = useCountUp({ start: 0, end: 34, duration: countUpDuration, started: assignmentsIntersection, easingFunction });
 
   return (

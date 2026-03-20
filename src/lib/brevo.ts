@@ -1,3 +1,4 @@
+/* eslint-disable custom/no-window-outside-effects */
 interface Properties {
   FIRSTNAME?: string;
   LASTNAME?: string;

@@ -1,10 +1,10 @@
 'use client';
 
+import { useIntersectionObserver } from '@davewelsh79/use-intersection-observer';
 import type { SVGProps } from 'react';
-import { forwardRef, useRef } from 'react';
+import { forwardRef } from 'react';
 
 import styles from './index.module.scss';
-import { useIntersectionObserver } from '@/hooks/useIntersectionObserver';
 import { mergeRefs } from '@/lib/mergeRefs';
 
 type Variant = 'straight' | 'tapered';
@@ -15,8 +15,7 @@ type Props = SVGProps<SVGSVGElement> & {
 };
 
 export const Squiggle = forwardRef<SVGSVGElement, Props>(({ variant, className, pathWidth = 10, ...props }, parentRef) => {
-  const localRef = useRef<SVGSVGElement>(null);
-  const intersected = useIntersectionObserver(localRef, undefined, true);
+  const [ intersected, localRef ] = useIntersectionObserver(true);
 
   // include caller className last so it can win in CSS specificity/tie-breaks if needed
   const classList = `${styles.squiggle} ${intersected ? styles.show : ''} ${className ?? ''}`;

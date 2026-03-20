@@ -7,12 +7,15 @@ import importPlugin from 'eslint-plugin-import';
 import reactPlugin from 'eslint-plugin-react';
 import tseslint from 'typescript-eslint';
 
+import customPlugin from './eslint-rules';
+
 const eslintConfig = defineConfig([
   ...nextVitals,
   ...nextTs,
   eslint.configs.recommended,
   tseslint.configs.strictTypeChecked,
   tseslint.configs.stylisticTypeChecked,
+  customPlugin.configs.recommended,
   {
     languageOptions: {
       parser: tseslint.parser,
@@ -36,6 +39,7 @@ const eslintConfig = defineConfig([
       'react': reactPlugin,
       '@stylistic': stylistic,
       'import': importPlugin,
+      'custom': customPlugin,
     },
     settings: {
       // Needed for TS path + extension resolution

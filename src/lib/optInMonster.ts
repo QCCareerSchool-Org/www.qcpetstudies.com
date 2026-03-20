@@ -1,3 +1,4 @@
+/* eslint-disable custom/no-window-outside-effects */
 declare global {
   interface Window {
     om48459_42601?: {
