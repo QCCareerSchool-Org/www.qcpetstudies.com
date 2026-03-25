@@ -1,9 +1,7 @@
 'use client';
 
+import { useIntersectionObserver } from '@davewelsh79/use-intersection-observer';
 import type { FC } from 'react';
-import { useEffect, useRef, useState } from 'react';
-
-import { useOnScreen } from '@/hooks/useOnScreen';
 
 interface Props {
   variant: 'primary' | 'secondary' | 'dark' | 'light';
@@ -11,18 +9,9 @@ interface Props {
 }
 
 export const Bar: FC<Props> = ({ variant, align = 'center' }) => {
-  const ref = useRef(null);
-  const onScreen = useOnScreen(ref);
-  const [ onScreenOnce, setOnScreenOnce ] = useState(false);
+  const [ onScreen, ref ] = useIntersectionObserver(true);
 
-  useEffect(() => {
-    if (onScreen) {
-      // eslint-disable-next-line react-hooks/set-state-in-effect
-      setOnScreenOnce(true);
-    }
-  }, [ onScreen ]);
-
-  const className = `bar ${onScreenOnce ? 'expanded' : 'collapsed'} bg-${variant}`;
+  const className = `bar ${onScreen ? 'expanded' : 'collapsed'} bg-${variant}`;
 
   return (
     <>

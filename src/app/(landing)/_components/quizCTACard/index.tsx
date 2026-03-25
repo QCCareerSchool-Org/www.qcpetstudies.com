@@ -1,7 +1,8 @@
 'use client';
 
+import { useIntersectionObserver } from '@davewelsh79/use-intersection-observer';
 import type { FC, MouseEventHandler } from 'react';
-import { useEffect, useRef, useState } from 'react';
+import { useState } from 'react';
 
 import styles from './index.module.scss';
 
@@ -10,47 +11,22 @@ interface Props {
   url: string;
 }
 
+const options = {
+  root: null,
+  rootMargin: '0px 0px -150px 0px',
+  threshold: 0.1,
+};
+
 export const QuizCTACard: FC<Props> = ({ header, url }) => {
-  const [ isVisible, setIsVisible ] = useState(() => !('IntersectionObserver' in window));
   const [ showIFrame, setShowIFrame ] = useState(false);
-  const cardRef = useRef<HTMLDivElement>(null);
+  const [ intesecting, cardRef ] = useIntersectionObserver(false, options);
 
   const handleClick: MouseEventHandler = e => {
     e.preventDefault();
     setShowIFrame(true);
   };
 
-  useEffect(() => {
-    if (!('IntersectionObserver' in window)) {
-      return;
-    }
-    const observer = new IntersectionObserver(
-      entries => {
-        entries.forEach(entry => {
-          if(entry.isIntersecting) {
-            setIsVisible(true);
-            observer.unobserve(entry.target);
-          }
-        });
-      },
-      {
-        root: null,
-        rootMargin: '0px 0px -150px 0px',
-        threshold: 0.1,
-      },
-    );
-    const currentCard = cardRef.current;
-    if(currentCard) {
-      observer.observe(currentCard);
-    }
-    return() => {
-      if(currentCard) {
-        observer.unobserve(currentCard);
-      }
-    };
-  }, []);
-
-  const containerClasses = `${styles.quizCardContainer} ${isVisible ? styles.animateIn : ''}`;
+  const containerClasses = `${styles.quizCardContainer} ${intesecting ? styles.animateIn : ''}`;
 
   return (
     <div ref={cardRef} className={containerClasses}>

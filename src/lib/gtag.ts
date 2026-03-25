@@ -1,3 +1,4 @@
+/* eslint-disable custom/no-window-outside-effects */
 import { Big } from 'big.js';
 
 import type { Enrollment } from '@/domain/enrollment';

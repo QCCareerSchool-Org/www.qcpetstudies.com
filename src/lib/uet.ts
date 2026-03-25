@@ -1,3 +1,4 @@
+/* eslint-disable custom/no-window-outside-effects */
 import type { Enrollment } from '@/domain/enrollment';
 
 declare global {
