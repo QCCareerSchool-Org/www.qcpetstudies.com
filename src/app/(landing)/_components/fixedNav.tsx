@@ -9,8 +9,8 @@ import styles from './fixedNav.module.scss';
 import SmallLogo from './logo-sm.svg';
 import QCIcon from './qc.svg';
 import { Logo } from '@/components/logo';
-import { useScreenWidth } from '@/hooks/useScreenWidth';
-import { useScrollPosition } from '@/hooks/useScrollPosition';
+import { useScreenWidthContext } from '@/hooks/useScreenWidthContext';
+import { useScrollPositionContext } from '@/hooks/useScrollPositionContext';
 
 interface Props {
   buttonHref?: string;
@@ -19,8 +19,8 @@ interface Props {
 }
 
 export const FixedNav: FC<Props> = ({ buttonHref, buttonContent, buttonClass }) => {
-  const scrollPosition = useScrollPosition();
-  const screenWidth = useScreenWidth();
+  const scrollPosition = useScrollPositionContext() ?? 0;
+  const screenWidth = useScreenWidthContext() ?? 0;
 
   const show = shouldShow(screenWidth, scrollPosition);
 

@@ -4,7 +4,7 @@ import type { FC } from 'react';
 import { useMemo } from 'react';
 
 import styles from './unitStats.module.scss';
-import { useScreenWidth } from '@/hooks/useScreenWidth';
+import { useScreenWidthContext } from '@/hooks/useScreenWidthContext';
 
 interface Props {
   readings: string;
@@ -20,7 +20,7 @@ const shorten = (t: string): string => {
 };
 
 export const UnitStats: FC<Props> = ({ readings, videos, assignments }) => {
-  const screenWidth = useScreenWidth();
+  const screenWidth = useScreenWidthContext() ?? 0;
   const [ r, v, a ] = useMemo(() => {
     return screenWidth >= 768
       ? [ readings, videos, assignments ]
