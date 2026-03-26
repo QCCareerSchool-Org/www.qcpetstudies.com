@@ -4,10 +4,10 @@ import type { FC, PropsWithChildren } from 'react';
 import { createContext } from 'react';
 import { useWindowListener } from 'use-window-listener';
 
-export const ScreenWidthContext = createContext<number | undefined>(undefined);
+export const ScreenWidthContext = createContext<number | null | undefined>(undefined);
 
 export const ScreenWidthProvider: FC<PropsWithChildren> = ({ children }) => {
-  const state = useWindowListener('resize', w => w.innerWidth);
+  const state = useWindowListener('resize', w => w.innerWidth, null);
 
   return (
     <ScreenWidthContext.Provider value={state}>
