@@ -37,7 +37,7 @@ export const createBrevoContact = async (
 
   const response = await brevo.contacts.createContact(request, { abortSignal });
 
-  return typeof response.id !== 'undefined';
+  return typeof response?.id !== 'undefined';
 };
 
 export const sendBrevoEmail = async (
