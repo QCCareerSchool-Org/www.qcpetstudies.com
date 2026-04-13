@@ -14,7 +14,7 @@ import OwnDogGroomingSaloon from './run-your-own-dog-grooming-salon.jpg';
 import WorkFromHomeImage from './work-as-a-dog-groomer-from-home.jpg';
 import WorkSaloonImage from './work-for-a-grooming-salon-or-pet-retailer.jpg';
 import CareerBackground from './your-dog-grooming-carrer.jpg';
-import type { PageComponent } from '@/app/serverComponent';
+import type { PageComponent } from '@/serverComponent';
 import { BackgroundImage } from '@/components/backgroundImage';
 import CompassIcon from '@/images/compass.svg';
 

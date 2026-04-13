@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 
-import type { PageComponent } from '../../serverComponent';
+import type { PageComponent } from '../../../serverComponent';
 import styles from '../terms.module.scss';
 import { EmailLink } from '@/components/emailLink';
 

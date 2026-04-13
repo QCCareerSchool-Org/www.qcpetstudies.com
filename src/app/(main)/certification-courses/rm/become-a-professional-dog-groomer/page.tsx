@@ -5,7 +5,7 @@ import Image from 'next/image';
 import CourseCatalogImage from './bottom-ipad-shepard.jpg';
 import FullKitImage from './Kit-Blue-bg.jpg';
 import styles from './page.module.scss';
-import type { PageComponent } from '@/app/serverComponent';
+import type { PageComponent } from '@/serverComponent';
 import { BrevoForm } from '@/components/brevoForm';
 import { FreeFirstAidSection } from '@/components/freeFirstAidSection';
 import { HowTheCoursesWorkSection } from '@/components/howTheCoursesWorkSection';

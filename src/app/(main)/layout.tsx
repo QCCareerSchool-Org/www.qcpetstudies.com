@@ -1,4 +1,4 @@
-import type { LayoutComponent } from '@/app/serverComponent';
+import type { LayoutComponent } from '@/serverComponent';
 import { SiteLayout } from '@/components/siteLayout';
 import { getServerData } from '@/lib/getServerData';
 

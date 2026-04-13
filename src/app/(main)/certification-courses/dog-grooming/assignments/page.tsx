@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { BsBook } from 'react-icons/bs';
 
 import AssignmentBackground from './your-career-bg.jpg';
-import type { PageComponent } from '@/app/serverComponent';
+import type { PageComponent } from '@/serverComponent';
 import { BackgroundImage } from '@/components/backgroundImage';
 import { Bar } from '@/components/bar';
 import CameraIcon from '@/images/camera.svg';

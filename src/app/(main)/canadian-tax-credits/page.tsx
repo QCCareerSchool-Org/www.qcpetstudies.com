@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 
-import type { PageComponent } from '@/app/serverComponent';
+import type { PageComponent } from '@/serverComponent';
 import { getServerData } from '@/lib/getServerData';
 
 export const metadata: Metadata = {

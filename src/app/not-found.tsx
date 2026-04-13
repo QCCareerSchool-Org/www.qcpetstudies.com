@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 
 import DoGInBedWithStick from './dog-in-bed-with-stick.jpg';
-import type { PageComponent } from './serverComponent';
+import type { PageComponent } from '../serverComponent';
 import { BackgroundImage } from '@/components/backgroundImage';
 import { SiteLayout } from '@/components/siteLayout';
 import { getServerData } from '@/lib/getServerData';

@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 
 import EnglishCockerSpanielPosing from './english-cocker-spaniel-posing.jpg';
-import type { PageComponent } from '@/app/serverComponent';
+import type { PageComponent } from '@/serverComponent';
 import { BackgroundImage } from '@/components/backgroundImage';
 import { ChatLink } from '@/components/chatLink';
 import { getServerData } from '@/lib/getServerData';

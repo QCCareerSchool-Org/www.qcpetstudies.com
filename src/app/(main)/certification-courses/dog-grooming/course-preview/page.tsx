@@ -4,7 +4,7 @@ import { BsBook } from 'react-icons/bs';
 
 import AssignmentBackground from './your-career-bg.jpg';
 import { PriceSection } from '../priceSection';
-import type { PageComponent } from '@/app/serverComponent';
+import type { PageComponent } from '@/serverComponent';
 import { BackgroundImage } from '@/components/backgroundImage';
 import { Bar } from '@/components/bar';
 import IDGPCertificationLogo from '@/components/certifications/IDGP-certification-gold.svg';

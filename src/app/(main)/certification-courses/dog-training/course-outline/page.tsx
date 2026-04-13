@@ -11,7 +11,7 @@ import { UnitE } from './unitE';
 import { UnitF } from './unitF';
 import { UnitG } from './unitG';
 import { UnitH } from './unitH';
-import type { PageComponent } from '@/app/serverComponent';
+import type { PageComponent } from '@/serverComponent';
 import { Accordion } from '@/components/accordion';
 import { AccordionItem } from '@/components/accordion/accordionItem';
 import { BackgroundImage } from '@/components/backgroundImage';

@@ -6,7 +6,7 @@ import ContactByEmailImage from './contact-email.svg';
 import ContactByPhoneImage from './contact-headset.svg';
 import ContactUsBackground from './hero-bg.jpg';
 // import ScheduleCallImage from './schedule-call-contact.png';
-import type { PageComponent } from '@/app/serverComponent';
+import type { PageComponent } from '@/serverComponent';
 import { BackgroundImage } from '@/components/backgroundImage';
 import { ChatLink } from '@/components/chatLink';
 import { EmailLink } from '@/components/emailLink';

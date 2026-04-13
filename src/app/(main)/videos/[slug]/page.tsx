@@ -2,7 +2,7 @@ import { notFound } from 'next/navigation';
 import type { VideoObject, WithContext } from 'schema-dts';
 
 import { getVideo } from '..';
-import type { GenerateMetadata, PageComponent } from '@/app/serverComponent';
+import type { GenerateMetadata, PageComponent } from '@/serverComponent';
 
 export const generateMetadata: GenerateMetadata<{ slug: string }> = async ({ params }) => {
   const p = await params;

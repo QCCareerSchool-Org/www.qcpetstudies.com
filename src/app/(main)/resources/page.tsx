@@ -6,7 +6,7 @@ import LearningInClassOnline from './learning-in-class-online.jpg';
 import StudentGrad from './student-grad.jpg';
 import VirtualClassroom from './virtual-classroom.jpg';
 import DogTrainingResourcesBackground from './working-at-home-office-with-dog.jpg';
-import type { PageComponent } from '@/app/serverComponent';
+import type { PageComponent } from '@/serverComponent';
 import { BackgroundImage } from '@/components/backgroundImage';
 
 export const metadata: Metadata = {

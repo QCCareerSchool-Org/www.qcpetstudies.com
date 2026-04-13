@@ -6,7 +6,7 @@ import React from 'react';
 import GroomingScissorsImage from './Pro-Grooming-Scissors-550x550.jpg';
 import ToolsStarterSetImage from './tools-starter-set.jpg';
 import FullKitImage from '@/app/(landing)/get-a-dog-grooming-course-preview/dog-grooming-kit.jpg';
-import type { PageComponent } from '@/app/serverComponent';
+import type { PageComponent } from '@/serverComponent';
 
 export const metadata: Metadata = {
   title: 'Dog Grooming Kit',

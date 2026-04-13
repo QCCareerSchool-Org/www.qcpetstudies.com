@@ -9,7 +9,7 @@ import DogSittingOnTowel from './dog-sitting-on-towel.jpg';
 import DogToy from './dog-toy.jpg';
 import GroomerDemattingBackground from './license-vs-certification-bg.jpg';
 import styles from './page.module.scss';
-import type { PageComponent } from '@/app/serverComponent';
+import type { PageComponent } from '@/serverComponent';
 import { BackgroundImage } from '@/components/backgroundImage';
 
 export const metadata: Metadata = {

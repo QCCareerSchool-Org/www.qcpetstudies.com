@@ -1,5 +1,5 @@
 import { Footer } from '@/app/(landing)/_components/footer';
-import type { PageComponent } from '@/app/serverComponent';
+import type { PageComponent } from '@/serverComponent';
 
 export const dynamic = 'force-dynamic';
 
