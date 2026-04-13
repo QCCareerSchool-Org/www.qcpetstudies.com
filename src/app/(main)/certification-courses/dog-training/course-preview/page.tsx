@@ -5,7 +5,6 @@ import { BsBook } from 'react-icons/bs';
 
 import KimCooperImage from '../kim-cooper.jpg';
 import GoldenRetrieverComputerBackground from './golden-retriever-sitting-next-to-computer.jpg';
-import type { PageComponent } from '@/serverComponent';
 import { BackgroundImage } from '@/components/backgroundImage';
 import { Bar } from '@/components/bar';
 import IDTPCertificationLogo from '@/components/certifications/IDTP-certification-gold.svg';
@@ -15,6 +14,7 @@ import { TutorSectionDT } from '@/components/tutorSectionDT';
 import type { CourseCode } from '@/domain/courseCode';
 import { fetchPrice } from '@/lib/fetchPrice';
 import { getServerData } from '@/lib/getServerData';
+import type { PageComponent } from '@/serverComponent';
 
 export const metadata: Metadata = {
   title: 'Professional Dog Trainer Course',
@@ -112,8 +112,8 @@ const DogTrainingCoursePreviewPage: PageComponent = async props => {
                     <TabGroup
                       videoContent={(
                         <div className="ratio ratio-16x9">
-                          <video controls preload="metadata" poster="https://89b45d42c17e11dd3d57-62a1fc0bf60a98e1d5e980348a7de3b7.ssl.cf1.rackcdn.com/dog-training-preview/guiding-principles.jpg">
-                            <source src="https://89b45d42c17e11dd3d57-62a1fc0bf60a98e1d5e980348a7de3b7.ssl.cf1.rackcdn.com/dog-training-preview/guiding-principles.mp4" type="video/mp4" />
+                          <video controls preload="metadata" poster="https://cdn.qccareerschool.com/pet/dog-training-preview/guiding-principles.jpg">
+                            <source src="https://cdn.qccareerschool.com/pet/dog-training-preview/guiding-principles.mp4" type="video/mp4" />
                           </video>
                         </div>
                       )}
@@ -170,8 +170,8 @@ const DogTrainingCoursePreviewPage: PageComponent = async props => {
                     <TabGroup
                       videoContent={(
                         <div className="ratio ratio-16x9">
-                          <video controls preload="metadata" poster="https://89b45d42c17e11dd3d57-62a1fc0bf60a98e1d5e980348a7de3b7.ssl.cf1.rackcdn.com/dog-training-preview/luring.jpg">
-                            <source src="https://89b45d42c17e11dd3d57-62a1fc0bf60a98e1d5e980348a7de3b7.ssl.cf1.rackcdn.com/dog-training-preview/luring.mp4" type="video/mp4" />
+                          <video controls preload="metadata" poster="https://cdn.qccareerschool.com/pet/dog-training-preview/luring.jpg">
+                            <source src="https://cdn.qccareerschool.com/pet/dog-training-preview/luring.mp4" type="video/mp4" />
                           </video>
                         </div>
                       )}
@@ -218,8 +218,8 @@ const DogTrainingCoursePreviewPage: PageComponent = async props => {
                     <TabGroup
                       videoContent={(
                         <div className="ratio ratio-16x9">
-                          <video controls preload="metadata" poster="https://89b45d42c17e11dd3d57-62a1fc0bf60a98e1d5e980348a7de3b7.ssl.cf1.rackcdn.com/dog-training-preview/teaching-people.jpg">
-                            <source src="https://89b45d42c17e11dd3d57-62a1fc0bf60a98e1d5e980348a7de3b7.ssl.cf1.rackcdn.com/dog-training-preview/teaching-people.mp4" type="video/mp4" />
+                          <video controls preload="metadata" poster="https://cdn.qccareerschool.com/pet/dog-training-preview/teaching-people.jpg">
+                            <source src="https://cdn.qccareerschool.com/pet/dog-training-preview/teaching-people.mp4" type="video/mp4" />
                           </video>
                         </div>
                       )}
@@ -255,8 +255,8 @@ const DogTrainingCoursePreviewPage: PageComponent = async props => {
                     <TabGroup
                       videoContent={(
                         <div className="ratio ratio-16x9">
-                          <video controls preload="metadata" poster="https://89b45d42c17e11dd3d57-62a1fc0bf60a98e1d5e980348a7de3b7.ssl.cf1.rackcdn.com/dog-training-preview/marketing-dog-training-services.jpg">
-                            <source src="https://89b45d42c17e11dd3d57-62a1fc0bf60a98e1d5e980348a7de3b7.ssl.cf1.rackcdn.com/dog-training-preview/marketing-dog-training-services.mp4" type="video/mp4" />
+                          <video controls preload="metadata" poster="https://cdn.qccareerschool.com/pet/dog-training-preview/marketing-dog-training-services.jpg">
+                            <source src="https://cdn.qccareerschool.com/pet/dog-training-preview/marketing-dog-training-services.mp4" type="video/mp4" />
                           </video>
                         </div>
                       )}
@@ -318,7 +318,7 @@ const DogTrainingCoursePreviewPage: PageComponent = async props => {
             <p>Would you like to upgrade your dog training education? Learn the behavior modification and consultation skills you need to identify and change your pup clients' most disruptive behaviors. You'll build on your foundation in dog training and learn how to deal with advanced concerns like anxiety, phobias, reactivity, and even aggression.</p>
             <p>You'll complete loads of hands-on assignments designed to enhance your training experience. You'll take the time to learn and develop a deeper understanding of dog communication so you can effectively decipher the best methods to help any dog overcome their problem behaviors.</p>
             <p className="fw-bold">Hear why instructor Kim Cooper believes the Behavior Modification course is a great way to advance your dog-training career.</p>
-            <video src="https://89b45d42c17e11dd3d57-62a1fc0bf60a98e1d5e980348a7de3b7.ssl.cf1.rackcdn.com/why-should-students-study-training-and-behavior-modification.mp4" poster={KimCooperImage.src} controls className="w-100 img-fluid mb-3" />
+            <video src="https://cdn.qccareerschool.com/pet/why-should-students-study-training-and-behavior-modification.mp4" poster={KimCooperImage.src} controls className="w-100 img-fluid mb-3" />
             <p>Whether your goal is to launch your own business or work for an established training school, you'll gain all the skills and knowledge you need to feel confident in your new career!  QC's advanced online dog behavior course teaches specialized behavior modification skills so you'll be ready to help any dog that comes your way.</p>
             <p className="fst-italic">Please note, Dog Behavior is an advanced certification program and requires students to have successfully completed QC's Dog Training course as a prerequisite. <Link href="/certification-courses/dog-training#behaviorOutline">View the course outline for the Dog Behaviour Course</Link>.</p>
           </div>
