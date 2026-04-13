@@ -3,10 +3,10 @@ import { cookies } from 'next/headers';
 import { Suspense } from 'react';
 import { ToastContainer } from 'react-toastify';
 
+import type { LayoutComponent } from '../serverComponent';
 import { FaviconMeta } from './favicon';
 import styles from './layout.module.scss';
 import { LayoutClient } from './layoutClient';
-import type { LayoutComponent } from '../serverComponent';
 import { isUserValues } from '@/domain/userValues';
 import { getServerData } from '@/lib/getServerData';
 import { decodeJwt } from '@/lib/jwt';

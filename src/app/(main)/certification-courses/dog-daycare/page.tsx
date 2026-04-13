@@ -6,7 +6,6 @@ import { IoMdInfinite } from 'react-icons/io';
 import HeroBackgroundImage from './hero-bg.jpg';
 import { CourseOutlineSection } from './outlineSection';
 import styles from './page.module.scss';
-import type { PageComponent } from '@/serverComponent';
 import { Accordion } from '@/components/accordion';
 import { AccordionItem } from '@/components/accordion/accordionItem';
 import { BackgroundImage } from '@/components/backgroundImage';
@@ -23,6 +22,7 @@ import TutorIcon from '@/images/course-overview-icons/tutor.svg';
 import { fetchPrice } from '@/lib/fetchPrice';
 import { formatPrice } from '@/lib/formatPrice';
 import { getServerData } from '@/lib/getServerData';
+import type { PageComponent } from '@/serverComponent';
 
 export const metadata: Metadata = {
   title: 'Dog Daycare Course',

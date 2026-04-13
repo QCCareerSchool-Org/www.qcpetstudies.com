@@ -9,8 +9,8 @@ import DogSittingOnTowel from './dog-sitting-on-towel.jpg';
 import DogToy from './dog-toy.jpg';
 import GroomerDemattingBackground from './license-vs-certification-bg.jpg';
 import styles from './page.module.scss';
-import type { PageComponent } from '@/serverComponent';
 import { BackgroundImage } from '@/components/backgroundImage';
+import type { PageComponent } from '@/serverComponent';
 
 export const metadata: Metadata = {
   title: 'Dog Grooming License vs. Certification',

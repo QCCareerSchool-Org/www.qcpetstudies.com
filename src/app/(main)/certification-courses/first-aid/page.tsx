@@ -6,13 +6,13 @@ import CourseMaterials from './course-materials-first-aid.jpg';
 import dogLooking from './dog-looking.jpg';
 import FaCertificateImage from './fa-certificate-desktop.jpg';
 import FirstAidBackground from './hero-first-aid-bg.jpg';
-import type { PageComponent } from '@/serverComponent';
 import { BackgroundImage } from '@/components/backgroundImage';
 import { PriceSection } from '@/components/priceSection';
 import type { CourseCode } from '@/domain/courseCode';
 import FirstAidLogo from '@/images/first-aid-logo.svg';
 import { fetchPrice } from '@/lib/fetchPrice';
 import { getServerData } from '@/lib/getServerData';
+import type { PageComponent } from '@/serverComponent';
 
 const courseCodes: CourseCode[] = [ 'fa' ];
 

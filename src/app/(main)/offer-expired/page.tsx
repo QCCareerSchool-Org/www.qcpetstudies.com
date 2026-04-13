@@ -1,11 +1,11 @@
 import type { Metadata } from 'next';
 
 import EnglishCockerSpanielPosing from './english-cocker-spaniel-posing.jpg';
-import type { PageComponent } from '@/serverComponent';
 import { BackgroundImage } from '@/components/backgroundImage';
 import { ChatLink } from '@/components/chatLink';
 import { getServerData } from '@/lib/getServerData';
 import { getTelephoneNumber } from '@/lib/telephone';
+import type { PageComponent } from '@/serverComponent';
 
 export const metadata: Metadata = {
   title: 'Offer Expired',

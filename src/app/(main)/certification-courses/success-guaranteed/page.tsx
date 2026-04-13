@@ -4,7 +4,6 @@ import Link from 'next/link';
 
 import DogGroomingKit from './dog-grooming-kit-white.jpg';
 import DryingDogBg from './drying-dog-bg.jpg';
-import type { PageComponent } from '@/serverComponent';
 import { BackgroundImage } from '@/components/backgroundImage';
 import { FreeFirstAidSection } from '@/components/freeFirstAidSection';
 import QcYearGuaratnteeLogo from '@/components/guaranteeModal/1-year-guarantee-outlined.svg';
@@ -14,6 +13,7 @@ import { PriceSection } from '@/components/priceSection';
 import type { CourseCode } from '@/domain/courseCode';
 import { fetchPrice } from '@/lib/fetchPrice';
 import { getServerData } from '@/lib/getServerData';
+import type { PageComponent } from '@/serverComponent';
 
 const courseCodes: CourseCode[] = [ 'dg' ];
 

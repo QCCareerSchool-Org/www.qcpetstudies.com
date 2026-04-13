@@ -6,7 +6,6 @@ import CatalogImage from './dog-and-scissors.jpg';
 import { MultiCourseBrevoForm } from './multiCourseBrevoForm';
 import { BottomSection } from '../_components/bottomSection';
 import { Header } from '../_components/header';
-import type { PageComponent } from '@/serverComponent';
 import { TestimonialSmCaseyBechard } from '@/components/testimonialsSmall/caseyBechard';
 import { TestimonialSmKaylaTorraville } from '@/components/testimonialsSmall/kaylaTorraville';
 import { TestimonialSmMelodyMason } from '@/components/testimonialsSmall/melodyMason';
@@ -15,6 +14,7 @@ import Step2SubmitImage from '@/images/step-2-submit.svg';
 import Step3CertificateImage from '@/images/step-3-certificate.svg';
 import { getParam } from '@/lib/getParam';
 import { getServerData } from '@/lib/getServerData';
+import type { PageComponent } from '@/serverComponent';
 
 export const metadata: Metadata = {
   title: 'Become a Professional Dog Groomer',

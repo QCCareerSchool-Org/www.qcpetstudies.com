@@ -11,10 +11,10 @@ import MeaghanAubin from './meaghan-aubin.png';
 import styles from './page.module.scss';
 import PPAImg from './ppa-image-2.jpg';
 // import HowItWorks from './how-it-works.png';
-import type { PageComponent } from '@/serverComponent';
 import { Accordion } from '@/components/accordion';
 import { AccordionItem } from '@/components/accordion/accordionItem';
 import { BackgroundImage } from '@/components/backgroundImage';
+import type { PageComponent } from '@/serverComponent';
 // import { getData } from '@/lib/getData';
 
 // const iconSize = 145;

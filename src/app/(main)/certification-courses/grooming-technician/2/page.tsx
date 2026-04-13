@@ -1,11 +1,11 @@
 import type { Metadata } from 'next';
 
 import { GroomingTechnicianBase } from '..';
-import type { PageComponent } from '@/serverComponent';
 import { DeadlineFunnelScript } from '@/components/deadlineFunnelScript';
 import type { CourseCode } from '@/domain/courseCode';
 import { fetchPrice } from '@/lib/fetchPrice';
 import { getServerData } from '@/lib/getServerData';
+import type { PageComponent } from '@/serverComponent';
 
 const courseCodes: CourseCode[] = [ 'gt' ];
 

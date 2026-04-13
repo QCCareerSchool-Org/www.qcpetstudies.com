@@ -13,7 +13,6 @@ import UnitGImage from './_images/unit-g.jpg';
 import UnitHImage from './_images/unit-h.jpg';
 import AshliImage from './ashli.jpg';
 import CourseOutlineBackground from './course-outline.jpg';
-import type { PageComponent } from '@/serverComponent';
 import { Accordion } from '@/components/accordion';
 import { AccordionItem } from '@/components/accordion/accordionItem';
 import { BackgroundImage } from '@/components/backgroundImage';
@@ -21,6 +20,7 @@ import CalendarIcon from '@/images/calendar.svg';
 import TimeIcon from '@/images/clock.svg';
 import { externship } from '@/lib/externship';
 import { getServerData } from '@/lib/getServerData';
+import type { PageComponent } from '@/serverComponent';
 
 const iconSize = 50;
 

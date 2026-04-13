@@ -5,7 +5,6 @@ import { redirect } from 'next/navigation';
 import AlexSignature from './alex-myers.png';
 import HappyPuppyRunning from './happy-puppy-running.jpg';
 import { Processing } from './processing';
-import type { PageComponent } from '@/serverComponent';
 import { BackgroundImage } from '@/components/backgroundImage';
 import { EmailLink } from '@/components/emailLink';
 import { EnrollmentDetails } from '@/components/enrollmentDetails';
@@ -20,6 +19,7 @@ import { getParam } from '@/lib/getParam';
 import { getServerData } from '@/lib/getServerData';
 import { createJwt } from '@/lib/jwt';
 import { sendEnrollmentEmail } from '@/lib/sendEnrollmentEmail';
+import type { PageComponent } from '@/serverComponent';
 
 const brevoStudentListId = 17;
 

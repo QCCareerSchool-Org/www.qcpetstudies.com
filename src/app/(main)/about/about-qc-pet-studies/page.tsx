@@ -6,9 +6,9 @@ import { FaBookOpen, FaHeadphones, FaLightbulb, FaStar } from 'react-icons/fa';
 import Qc35Year from './35-year-emblem.svg';
 import HeroBackgroundImage from './hero-bg.jpg';
 import SPCALogo from './spca-full-color-logo.svg';
-import type { PageComponent } from '@/serverComponent';
 import { BackgroundImage } from '@/components/backgroundImage';
 import { GuaranteeSection } from '@/components/guaranteeSection';
+import type { PageComponent } from '@/serverComponent';
 
 export const metadata: Metadata = {
   title: 'About the School',
