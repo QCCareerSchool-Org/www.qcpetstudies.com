@@ -4,7 +4,7 @@ import React from 'react';
 
 import StudentExperienceBackground from './hero-bg.jpg';
 import LineOfDogsImage from './line-of-dogs.jpg';
-import type { PageComponent } from '@/app/serverComponent';
+import type { PageComponent } from '@/serverComponent';
 import { BackgroundImage } from '@/components/backgroundImage';
 import ExpertCarousel from '@/components/industryExpertsCarousel/expertCarouselSection';
 import { StudentShowcaseSection } from '@/components/studentShowcase';

@@ -6,7 +6,7 @@ import { fetchOldAward } from './fetchOldAward';
 import { formatDate } from './formatDate';
 import type { Award } from './submission';
 import { SuggestedText } from './suggestedText';
-import type { GenerateMetadata, PageComponent } from '@/app/serverComponent';
+import type { GenerateMetadata, PageComponent } from '@/serverComponent';
 import { BlueskyShare } from '@/components/share/bluesky';
 import { FacebookShare } from '@/components/share/facebook';
 import { LinkedInShare } from '@/components/share/linkedIn';

@@ -6,7 +6,7 @@ import StylingBackground from './black-medium-size-poodle.jpg';
 import BreedStylingCertificateImage from './breed-styling-certificate.png';
 import CourseMaterials from './course-materials-breed-styling.jpg';
 import { OutlineSection } from './outlineSection';
-import type { PageComponent } from '@/app/serverComponent';
+import type { PageComponent } from '@/serverComponent';
 import { BackgroundImage } from '@/components/backgroundImage';
 import { CourseSchema } from '@/components/courseSchema';
 import { GuaranteeSection } from '@/components/guaranteeSection';

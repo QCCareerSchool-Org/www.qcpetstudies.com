@@ -9,7 +9,7 @@ import { UnitC } from './unitC';
 import { UnitD } from './unitD';
 import { UnitE } from './unitE';
 import { UnitF } from './unitF';
-import type { PageComponent } from '@/app/serverComponent';
+import type { PageComponent } from '@/serverComponent';
 import { Accordion } from '@/components/accordion';
 import { AccordionItem } from '@/components/accordion/accordionItem';
 import { BackgroundImage } from '@/components/backgroundImage';

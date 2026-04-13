@@ -6,7 +6,7 @@ import CatalogImage from './dog-and-scissors.jpg';
 import GroomingKitImage from './dog-grooming-kit.jpg';
 import { BottomSection } from '../_components/bottomSection';
 import { Header } from '../_components/header';
-import type { PageComponent } from '@/app/serverComponent';
+import type { PageComponent } from '@/serverComponent';
 import { BrevoForm } from '@/components/brevoForm';
 import { TestimonialSmCaseyBechard } from '@/components/testimonialsSmall/caseyBechard';
 import { TestimonialSmKaylaTorraville } from '@/components/testimonialsSmall/kaylaTorraville';

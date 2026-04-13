@@ -5,7 +5,7 @@ import { BsBook } from 'react-icons/bs';
 
 import KimCooperImage from '../kim-cooper.jpg';
 import GoldenRetrieverComputerBackground from './golden-retriever-sitting-next-to-computer.jpg';
-import type { PageComponent } from '@/app/serverComponent';
+import type { PageComponent } from '@/serverComponent';
 import { BackgroundImage } from '@/components/backgroundImage';
 import { Bar } from '@/components/bar';
 import IDTPCertificationLogo from '@/components/certifications/IDTP-certification-gold.svg';

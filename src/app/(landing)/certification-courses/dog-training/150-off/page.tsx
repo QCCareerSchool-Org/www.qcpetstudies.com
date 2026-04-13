@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 
 import { DogTrainingBase } from '@/app/(main)/certification-courses/dog-training';
-import type { PageComponent } from '@/app/serverComponent';
+import type { PageComponent } from '@/serverComponent';
 import { DeadlineFunnelScript } from '@/components/deadlineFunnelScript';
 import type { CourseCode } from '@/domain/courseCode';
 import { fetchPrice } from '@/lib/fetchPrice';

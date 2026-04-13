@@ -6,7 +6,7 @@ import CourseMaterials from './course-materials-first-aid.jpg';
 import dogLooking from './dog-looking.jpg';
 import FaCertificateImage from './fa-certificate-desktop.jpg';
 import FirstAidBackground from './hero-first-aid-bg.jpg';
-import type { PageComponent } from '@/app/serverComponent';
+import type { PageComponent } from '@/serverComponent';
 import { BackgroundImage } from '@/components/backgroundImage';
 import { PriceSection } from '@/components/priceSection';
 import type { CourseCode } from '@/domain/courseCode';

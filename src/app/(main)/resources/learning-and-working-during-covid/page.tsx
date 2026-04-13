@@ -7,7 +7,7 @@ import HeroBackgroundImage from './hero-bg.jpg';
 import TipsCardBackground from './pet-covid-bg-light-gray.jpg';
 import PetWithMaskImage from './pet-covid-image.jpg';
 import CovidCareTools from './pet-covid-img-wide.jpg';
-import type { PageComponent } from '@/app/serverComponent';
+import type { PageComponent } from '@/serverComponent';
 import { BackgroundImage } from '@/components/backgroundImage';
 
 export const metadata: Metadata = {

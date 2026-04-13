@@ -7,7 +7,7 @@ import { CurrentPromotion } from '../../_components/currentPromotion';
 import { Header } from '../../_components/header';
 // import { QuizCTACard } from '../../_components/quizCTACard';
 import { ThankYouSection } from '../../_components/thankYouSection';
-import type { PageComponent } from '@/app/serverComponent';
+import type { PageComponent } from '@/serverComponent';
 import { GetStartedSection } from '@/components/getStartedSection';
 import { GuaranteeSection } from '@/components/guaranteeSection';
 import { LeadProcessing } from '@/components/leadProcessing';

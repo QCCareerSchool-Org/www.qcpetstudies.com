@@ -8,7 +8,7 @@ import BrunoBakerImage from './bruno-baker.jpg';
 import HeroBackgroundImage from './hero-bg.jpg';
 import { OutlineSection } from './outlineSection';
 import SusanReadImage from './susan-read.jpg';
-import type { PageComponent } from '@/app/serverComponent';
+import type { PageComponent } from '@/serverComponent';
 import { Accordion } from '@/components/accordion';
 import { AccordionItem } from '@/components/accordion/accordionItem';
 import { BackgroundImage } from '@/components/backgroundImage';

@@ -4,7 +4,7 @@ import type { FC, ReactElement } from 'react';
 import { FaGraduationCap, FaLaptop, FaUniversity } from 'react-icons/fa';
 
 import FirstSectionBackground from './inclass_vs_online_bg.jpg';
-import type { PageComponent } from '@/app/serverComponent';
+import type { PageComponent } from '@/serverComponent';
 
 export const metadata: Metadata = {
   title: 'In-Class vs. Online Dog Grooming Schools',

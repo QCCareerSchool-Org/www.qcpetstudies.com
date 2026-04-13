@@ -6,7 +6,7 @@ import CatalogImage from './dog-and-scissors.jpg';
 import { MultiCourseBrevoForm } from './multiCourseBrevoForm';
 import { BottomSection } from '../_components/bottomSection';
 import { Header } from '../_components/header';
-import type { PageComponent } from '@/app/serverComponent';
+import type { PageComponent } from '@/serverComponent';
 import { TestimonialSmCaseyBechard } from '@/components/testimonialsSmall/caseyBechard';
 import { TestimonialSmKaylaTorraville } from '@/components/testimonialsSmall/kaylaTorraville';
 import { TestimonialSmMelodyMason } from '@/components/testimonialsSmall/melodyMason';

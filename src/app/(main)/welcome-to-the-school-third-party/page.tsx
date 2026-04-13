@@ -4,7 +4,7 @@ import { redirect } from 'next/navigation';
 
 import HappyPuppyRunning from '../welcome-to-the-school/happy-puppy-running.jpg';
 import { Processing } from '../welcome-to-the-school/processing';
-import type { PageComponent } from '@/app/serverComponent';
+import type { PageComponent } from '@/serverComponent';
 import { BackgroundImage } from '@/components/backgroundImage';
 import { EmailLink } from '@/components/emailLink';
 import { EnrollmentDetails } from '@/components/enrollmentDetails';

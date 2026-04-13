@@ -20,7 +20,7 @@ import { KitSection } from './kitSection';
 import styles from './page.module.scss';
 import { StatsSection } from './statsSection';
 import { UnitStats } from './unitStats';
-import type { PageComponent } from '@/app/serverComponent';
+import type { PageComponent } from '@/serverComponent';
 import { Accordion } from '@/components/accordion';
 import { AccordionItem } from '@/components/accordion/accordionItem';
 import IDGPCertificationLogo from '@/components/certifications/IDGP-certification-gold.svg';

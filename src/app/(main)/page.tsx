@@ -9,7 +9,7 @@ import MaltipuBegging from './maltipu-begging.jpg';
 import MaltipuJumping from './maltipu-jumping.jpg';
 import styles from './page.module.scss';
 import { qcPetStudiesEducationalOrganization } from '../../qcPetStudiesEducationalOrganization';
-import type { PageComponent } from '@/app/serverComponent';
+import type { PageComponent } from '@/serverComponent';
 import { BackgroundImage } from '@/components/backgroundImage';
 import IDBSCertificationGold from '@/components/certifications/IDBS-certification-gold.svg';
 import IDCPCertificationGold from '@/components/certifications/IDCP-certification-gold.svg';

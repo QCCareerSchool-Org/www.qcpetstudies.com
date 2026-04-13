@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 
 import styles from '../terms.module.scss';
-import type { PageComponent } from '@/app/serverComponent';
+import type { PageComponent } from '@/serverComponent';
 import { EmailLink } from '@/components/emailLink';
 
 export const metadata: Metadata = {

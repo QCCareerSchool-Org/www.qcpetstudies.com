@@ -1,4 +1,4 @@
-import type { PageProps } from '@/app/serverComponent';
+import type { PageProps } from '@/serverComponent';
 import type { Lead } from '@/domain/lead';
 import type { UserValues } from '@/domain/userValues';
 import { fbPostLead } from '@/lib/facebookConversionAPI';

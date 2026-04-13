@@ -15,7 +15,7 @@ import BrunoImage from './bruno.jpg';
 import KimImage from './kim.jpg';
 import SusanImage from './susan.jpg';
 import { BottomSection } from '../_components/bottomSection';
-import type { PageComponent } from '@/app/serverComponent';
+import type { PageComponent } from '@/serverComponent';
 import { BrevoForm } from '@/components/brevoForm';
 import { TestimonialWallSection } from '@/components/testimonialWallSection';
 import { getParam } from '@/lib/getParam';
