@@ -5,10 +5,10 @@ import Dachshund from './dachshund-sitting-grey-background.png';
 import HandReachingTowardDog from './hand-reaching-toward-dog.jpg';
 import ManAndDogWalking from './man-and-white-dog-walking-in-a-field.jpg';
 import PuppyOnBack from './puppy-lying-on-back.jpg';
-import type { PageComponent } from '@/serverComponent';
 import { BackgroundImage } from '@/components/backgroundImage';
 import { Bar } from '@/components/bar';
 import GraduationCertificateImage from '@/components/certifications/IDTP-certification-gold.svg';
+import type { PageComponent } from '@/serverComponent';
 
 export const metadata: Metadata = {
   title: 'How QC\'s Online Courses Work',

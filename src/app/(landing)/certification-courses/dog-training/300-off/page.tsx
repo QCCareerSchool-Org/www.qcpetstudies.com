@@ -1,11 +1,11 @@
 import type { Metadata } from 'next';
 
 import { DogTrainingBase } from '@/app/(main)/certification-courses/dog-training';
-import type { PageComponent } from '@/serverComponent';
 import { DeadlineFunnelScript } from '@/components/deadlineFunnelScript';
 import type { CourseCode } from '@/domain/courseCode';
 import { fetchPrice } from '@/lib/fetchPrice';
 import { getServerData } from '@/lib/getServerData';
+import type { PageComponent } from '@/serverComponent';
 
 export const metadata: Metadata = {
   title: 'Dog Training Course',

@@ -9,9 +9,9 @@ import PracticumImage2 from './practicum-2.jpg';
 import PracticumImage3 from './practicum-3.jpg';
 import PracticumImage4 from './practicum-4.jpg';
 import PracticumImage5 from './practicum-5.jpg';
-import type { PageComponent } from '@/serverComponent';
 import { BackgroundImage } from '@/components/backgroundImage';
 import IconFirstAidLogo from '@/images/first-aid-logo.svg';
+import type { PageComponent } from '@/serverComponent';
 
 const iconSize = 50;
 

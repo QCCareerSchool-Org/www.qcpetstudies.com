@@ -76,8 +76,8 @@ export const Client: FC<Props> = ({ dgPrice, dePrice, countryCode, provinceCode,
           <div className="row justify-content-center">
             <div className="col-12 col-lg-10">
               <div className="ratio ratio-16x9">
-                <video controls poster="https://89b45d42c17e11dd3d57-62a1fc0bf60a98e1d5e980348a7de3b7.ssl.cf1.rackcdn.com/dog-grooming-teaser.jpg">
-                  <source src="https://89b45d42c17e11dd3d57-62a1fc0bf60a98e1d5e980348a7de3b7.ssl.cf1.rackcdn.com/dog-grooming-teaser.mp4" type="video/mp4" />
+                <video controls poster="https://cdn.qccareerschool.com/pet/dog-grooming-teaser.jpg">
+                  <source src="https://cdn.qccareerschool.com/pet/dog-grooming-teaser.mp4" type="video/mp4" />
                 </video>
               </div>
             </div>

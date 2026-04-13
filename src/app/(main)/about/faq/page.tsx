@@ -4,10 +4,10 @@ import Link from 'next/link';
 import DogInBedWithStick from './dog-in-bed-with-stick.jpg';
 import { QuestionAndAnswer } from './questionAndAnswer';
 import { QuizAnswer } from './quizAnswer';
-import type { PageComponent } from '@/serverComponent';
 import { BackgroundImage } from '@/components/backgroundImage';
 import { externship } from '@/lib/externship';
 import { getServerData } from '@/lib/getServerData';
+import type { PageComponent } from '@/serverComponent';
 
 export const metadata: Metadata = {
   title: 'FAQ',

@@ -4,7 +4,6 @@ import { BsBook } from 'react-icons/bs';
 
 import AssignmentBackground from './your-career-bg.jpg';
 import { PriceSection } from '../priceSection';
-import type { PageComponent } from '@/serverComponent';
 import { BackgroundImage } from '@/components/backgroundImage';
 import { Bar } from '@/components/bar';
 import IDGPCertificationLogo from '@/components/certifications/IDGP-certification-gold.svg';
@@ -15,6 +14,7 @@ import type { CourseCode } from '@/domain/courseCode';
 import { externship } from '@/lib/externship';
 import { fetchPrice } from '@/lib/fetchPrice';
 import { getServerData } from '@/lib/getServerData';
+import type { PageComponent } from '@/serverComponent';
 
 const courseCodes: CourseCode[] = [ 'dg' ];
 
@@ -117,8 +117,8 @@ const GroomingCoursePreviewPage: PageComponent = async props => {
                       <TabGroup
                         videoContent={(
                           <div className="ratio ratio-16x9">
-                            <video controls preload="metadata" poster="https://89b45d42c17e11dd3d57-62a1fc0bf60a98e1d5e980348a7de3b7.ssl.cf1.rackcdn.com/unit-screenshots-a.jpg">
-                              <source src="https://89b45d42c17e11dd3d57-62a1fc0bf60a98e1d5e980348a7de3b7.ssl.cf1.rackcdn.com/unit-a.mp4" type="video/mp4" />
+                            <video controls preload="metadata" poster="https://cdn.qccareerschool.com/pet/unit-screenshots-a.jpg">
+                              <source src="https://cdn.qccareerschool.com/pet/unit-a.mp4" type="video/mp4" />
                             </video>
                           </div>
                         )}
@@ -169,8 +169,8 @@ const GroomingCoursePreviewPage: PageComponent = async props => {
                       <TabGroup
                         videoContent={(
                           <div className="ratio ratio-16x9">
-                            <video controls preload="metadata" poster="https://89b45d42c17e11dd3d57-62a1fc0bf60a98e1d5e980348a7de3b7.ssl.cf1.rackcdn.com/unit-screenshots-fa.jpg">
-                              <source src="https://89b45d42c17e11dd3d57-62a1fc0bf60a98e1d5e980348a7de3b7.ssl.cf1.rackcdn.com/unit-first-aid.mp4" type="video/mp4" />
+                            <video controls preload="metadata" poster="https://cdn.qccareerschool.com/pet/unit-screenshots-fa.jpg">
+                              <source src="https://cdn.qccareerschool.com/pet/unit-first-aid.mp4" type="video/mp4" />
                             </video>
                           </div>
                         )}
@@ -205,8 +205,8 @@ const GroomingCoursePreviewPage: PageComponent = async props => {
                       <TabGroup
                         videoContent={(
                           <div className="ratio ratio-16x9">
-                            <video controls preload="metadata" poster="https://89b45d42c17e11dd3d57-62a1fc0bf60a98e1d5e980348a7de3b7.ssl.cf1.rackcdn.com/unit-screenshots-d.jpg">
-                              <source src="https://89b45d42c17e11dd3d57-62a1fc0bf60a98e1d5e980348a7de3b7.ssl.cf1.rackcdn.com/unit-d.mp4" type="video/mp4" />
+                            <video controls preload="metadata" poster="https://cdn.qccareerschool.com/pet/unit-screenshots-d.jpg">
+                              <source src="https://cdn.qccareerschool.com/pet/unit-d.mp4" type="video/mp4" />
                             </video>
                           </div>
                         )}
@@ -264,8 +264,8 @@ const GroomingCoursePreviewPage: PageComponent = async props => {
                       <TabGroup
                         videoContent={(
                           <div className="ratio ratio-16x9">
-                            <video controls preload="metadata" poster="https://89b45d42c17e11dd3d57-62a1fc0bf60a98e1d5e980348a7de3b7.ssl.cf1.rackcdn.com/unit-screenshots-practicum.jpg">
-                              <source src="https://89b45d42c17e11dd3d57-62a1fc0bf60a98e1d5e980348a7de3b7.ssl.cf1.rackcdn.com/practicum.mp4" type="video/mp4" />
+                            <video controls preload="metadata" poster="https://cdn.qccareerschool.com/pet/unit-screenshots-practicum.jpg">
+                              <source src="https://cdn.qccareerschool.com/pet/practicum.mp4" type="video/mp4" />
                             </video>
                           </div>
                         )}

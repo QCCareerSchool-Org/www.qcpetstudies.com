@@ -7,7 +7,6 @@ import { CurrentPromotion } from '../../_components/currentPromotion';
 import { Header } from '../../_components/header';
 // import { QuizCTACard } from '../../_components/quizCTACard';
 import { ThankYouSection } from '../../_components/thankYouSection';
-import type { PageComponent } from '@/serverComponent';
 import { GetStartedSection } from '@/components/getStartedSection';
 import { GuaranteeSection } from '@/components/guaranteeSection';
 import { LeadProcessing } from '@/components/leadProcessing';
@@ -15,6 +14,7 @@ import { SetCookie } from '@/components/setCookie';
 import { SupportSection } from '@/components/supportSection';
 import { TestimonialWallSection } from '@/components/testimonialWallSection';
 import { WhyChooseQCSection } from '@/components/whyChooseQCSection';
+import type { PageComponent } from '@/serverComponent';
 
 export const metadata: Metadata = {
   title: 'Course Preview',

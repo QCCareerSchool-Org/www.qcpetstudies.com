@@ -15,11 +15,11 @@ import BrunoImage from './bruno.jpg';
 import KimImage from './kim.jpg';
 import SusanImage from './susan.jpg';
 import { BottomSection } from '../_components/bottomSection';
-import type { PageComponent } from '@/serverComponent';
 import { BrevoForm } from '@/components/brevoForm';
 import { TestimonialWallSection } from '@/components/testimonialWallSection';
 import { getParam } from '@/lib/getParam';
 import { getServerData } from '@/lib/getServerData';
+import type { PageComponent } from '@/serverComponent';
 
 const courses = [ 'dt' ];
 const brevoListId = 30;
@@ -83,7 +83,7 @@ const DogTrainingCatalogPage: PageComponent = async props => {
             <div className="col-12 col-sm-11 col-md-10 col-lg-6 col-xl-5">
               <div className="ratio ratio-16x9">
                 <video controls preload="metadata" poster={PosterImage.src}>
-                  <source src="https://89b45d42c17e11dd3d57-62a1fc0bf60a98e1d5e980348a7de3b7.ssl.cf1.rackcdn.com/dog-training-trailer.mp4" type="video/mp4" />
+                  <source src="https://cdn.qccareerschool.com/pet/dog-training-trailer.mp4" type="video/mp4" />
                 </video>
               </div>
             </div>

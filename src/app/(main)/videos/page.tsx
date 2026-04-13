@@ -1,8 +1,8 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 
-import type { PageComponent } from '@/serverComponent';
 import { siteVideos } from '@/app/videos';
+import type { PageComponent } from '@/serverComponent';
 
 export const metadata: Metadata = {
   title: 'Videos',

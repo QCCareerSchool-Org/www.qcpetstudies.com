@@ -11,8 +11,8 @@ import MyTimeLogo from './logos/mytime.svg';
 import SenseiLogo from './logos/sensei-shear-systems.jpg';
 import SharkFinLogo from './logos/shark-fin.jpg';
 import ZenDogLogo from './logos/zen-dog.jpg';
-import type { PageComponent } from '@/serverComponent';
 import { BackgroundImage } from '@/components/backgroundImage';
+import type { PageComponent } from '@/serverComponent';
 
 export const metadata: Metadata = {
   title: 'Student Discounts',

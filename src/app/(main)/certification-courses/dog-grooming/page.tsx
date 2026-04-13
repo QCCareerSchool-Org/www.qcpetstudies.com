@@ -1,10 +1,10 @@
 import type { Metadata } from 'next';
 
 import { DogGroomingBase } from '.';
-import type { PageComponent } from '@/serverComponent';
 import type { CourseCode } from '@/domain/courseCode';
 import { fetchPrice } from '@/lib/fetchPrice';
 import { getServerData } from '@/lib/getServerData';
+import type { PageComponent } from '@/serverComponent';
 
 const courseCode: CourseCode = 'dg';
 

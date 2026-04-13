@@ -4,7 +4,6 @@ import React from 'react';
 
 import StudentExperienceBackground from './hero-bg.jpg';
 import LineOfDogsImage from './line-of-dogs.jpg';
-import type { PageComponent } from '@/serverComponent';
 import { BackgroundImage } from '@/components/backgroundImage';
 import ExpertCarousel from '@/components/industryExpertsCarousel/expertCarouselSection';
 import { StudentShowcaseSection } from '@/components/studentShowcase';
@@ -12,6 +11,7 @@ import { students } from '@/components/studentShowcase/data';
 import { SupportSection } from '@/components/supportSection';
 import { TestimonialWallSection } from '@/components/testimonialWallSection';
 import { getServerData } from '@/lib/getServerData';
+import type { PageComponent } from '@/serverComponent';
 
 export const metadata: Metadata = {
   title: 'Student Experience',

@@ -20,7 +20,6 @@ import { KitSection } from './kitSection';
 import styles from './page.module.scss';
 import { StatsSection } from './statsSection';
 import { UnitStats } from './unitStats';
-import type { PageComponent } from '@/serverComponent';
 import { Accordion } from '@/components/accordion';
 import { AccordionItem } from '@/components/accordion/accordionItem';
 import IDGPCertificationLogo from '@/components/certifications/IDGP-certification-gold.svg';
@@ -30,6 +29,7 @@ import type { CourseCode } from '@/domain/courseCode';
 import { fetchPrice } from '@/lib/fetchPrice';
 import { getParam } from '@/lib/getParam';
 import { getServerData } from '@/lib/getServerData';
+import type { PageComponent } from '@/serverComponent';
 
 const courseCodes: CourseCode[] = [ 'dg' ];
 

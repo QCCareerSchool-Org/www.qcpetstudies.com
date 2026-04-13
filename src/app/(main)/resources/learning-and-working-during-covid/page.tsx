@@ -7,8 +7,8 @@ import HeroBackgroundImage from './hero-bg.jpg';
 import TipsCardBackground from './pet-covid-bg-light-gray.jpg';
 import PetWithMaskImage from './pet-covid-image.jpg';
 import CovidCareTools from './pet-covid-img-wide.jpg';
-import type { PageComponent } from '@/serverComponent';
 import { BackgroundImage } from '@/components/backgroundImage';
+import type { PageComponent } from '@/serverComponent';
 
 export const metadata: Metadata = {
   title: 'Learning & Working During COVID-19',

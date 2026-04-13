@@ -6,12 +6,12 @@ import ContactByEmailImage from './contact-email.svg';
 import ContactByPhoneImage from './contact-headset.svg';
 import ContactUsBackground from './hero-bg.jpg';
 // import ScheduleCallImage from './schedule-call-contact.png';
-import type { PageComponent } from '@/serverComponent';
 import { BackgroundImage } from '@/components/backgroundImage';
 import { ChatLink } from '@/components/chatLink';
 import { EmailLink } from '@/components/emailLink';
 import { TelephoneLink } from '@/components/telephoneLink';
 import { getServerData } from '@/lib/getServerData';
+import type { PageComponent } from '@/serverComponent';
 
 export const metadata: Metadata = {
   title: 'Contact Us',

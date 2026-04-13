@@ -8,7 +8,6 @@ import BrunoBakerImage from './bruno-baker.jpg';
 import HeroBackgroundImage from './hero-bg.jpg';
 import { OutlineSection } from './outlineSection';
 import SusanReadImage from './susan-read.jpg';
-import type { PageComponent } from '@/serverComponent';
 import { Accordion } from '@/components/accordion';
 import { AccordionItem } from '@/components/accordion/accordionItem';
 import { BackgroundImage } from '@/components/backgroundImage';
@@ -24,6 +23,7 @@ import TutorIcon from '@/images/course-overview-icons/tutor.svg';
 import { fetchPrice } from '@/lib/fetchPrice';
 import { formatPrice } from '@/lib/formatPrice';
 import { getServerData } from '@/lib/getServerData';
+import type { PageComponent } from '@/serverComponent';
 
 const headerIconSize = 20;
 const iconSize = 36;

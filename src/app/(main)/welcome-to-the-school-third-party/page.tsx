@@ -4,7 +4,6 @@ import { redirect } from 'next/navigation';
 
 import HappyPuppyRunning from '../welcome-to-the-school/happy-puppy-running.jpg';
 import { Processing } from '../welcome-to-the-school/processing';
-import type { PageComponent } from '@/serverComponent';
 import { BackgroundImage } from '@/components/backgroundImage';
 import { EmailLink } from '@/components/emailLink';
 import { EnrollmentDetails } from '@/components/enrollmentDetails';
@@ -16,6 +15,7 @@ import { fetchEnrollment } from '@/lib/fetchEnrollment';
 import { getParam } from '@/lib/getParam';
 import { getServerData } from '@/lib/getServerData';
 import { sendEnrollmentEmail } from '@/lib/sendEnrollmentEmail';
+import type { PageComponent } from '@/serverComponent';
 
 export const metadata: Metadata = {
   title: 'Welcome to the School',
