@@ -27,7 +27,7 @@ export const metadata: Metadata = {
 const BreedStylingPage: PageComponent = async props => {
   const { countryCode, provinceCode } = await getServerData(props.searchParams);
 
-  const price = await fetchPrice(courseCodes, countryCode, provinceCode);
+  const price = await fetchPrice(courseCodes, countryCode, provinceCode, undefined, undefined, process.env.FIREWALL_BYPASS_SECRET);
   if (!price.success) {
     return null;
   }

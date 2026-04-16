@@ -18,8 +18,8 @@ const GroomingTechnicianPage: PageComponent = async props => {
   const { countryCode, provinceCode } = await getServerData(props.searchParams);
 
   const [ gtPrice, dgPrice ] = await Promise.all([
-    fetchPrice(courseCodes, countryCode, provinceCode),
-    fetchPrice([ 'dg' ], countryCode, provinceCode),
+    fetchPrice(courseCodes, countryCode, provinceCode, undefined, undefined, process.env.FIREWALL_BYPASS_SECRET),
+    fetchPrice([ 'dg' ], countryCode, provinceCode, undefined, undefined, process.env.FIREWALL_BYPASS_SECRET),
   ]);
 
   if (!gtPrice.success || !dgPrice.success) {

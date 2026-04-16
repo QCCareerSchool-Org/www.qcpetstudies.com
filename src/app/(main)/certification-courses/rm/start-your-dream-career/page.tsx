@@ -24,7 +24,7 @@ export const metadata: Metadata = {
 const StartYourDreamCareerPage: PageComponent = async props => {
   const { countryCode, provinceCode } = await getServerData(props.searchParams);
 
-  const priceResult = await fetchPrice(courseCodes, countryCode, provinceCode);
+  const priceResult = await fetchPrice(courseCodes, countryCode, provinceCode, undefined, undefined, process.env.FIREWALL_BYPASS_SECRET);
   if (!priceResult.success) {
     return null;
   }
