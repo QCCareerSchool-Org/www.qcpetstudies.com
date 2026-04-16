@@ -18,8 +18,8 @@ const DogGroomingPage: PageComponent = async props => {
   const { countryCode, provinceCode } = await getServerData(props.searchParams);
 
   const [ dgPrice, dePrice ] = await Promise.all([
-    fetchPrice([ 'dg' ], countryCode, provinceCode),
-    fetchPrice([ 'de' ], countryCode, provinceCode),
+    fetchPrice([ 'dg' ], countryCode, provinceCode, undefined, undefined, process.env.FIREWALL_BYPASS_SECRET),
+    fetchPrice([ 'de' ], countryCode, provinceCode, undefined, undefined, process.env.FIREWALL_BYPASS_SECRET),
   ]);
 
   if (!dgPrice.success || !dePrice.success) {

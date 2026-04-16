@@ -16,7 +16,7 @@ interface Props {
 const CourseMicrodataInner: FC<Props> = async ({ courseCode, itemProp, showPrice, itemID = '#course' }) => {
   let price: Price | undefined;
   if (showPrice) {
-    const priceResult = await fetchPrice([ courseCode ], 'US', 'MD');
+    const priceResult = await fetchPrice([ courseCode ], 'US', 'MD', undefined, undefined, process.env.FIREWALL_BYPASS_SECRET);
     if (!priceResult.success) {
       return null;
     }

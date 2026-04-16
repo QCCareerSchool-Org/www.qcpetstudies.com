@@ -19,8 +19,8 @@ const DogGrooming150OffPage: PageComponent = async props => {
   const { countryCode, provinceCode } = await getServerData(props.searchParams);
 
   const [ dgPrice, dePrice ] = await Promise.all([
-    fetchPrice([ 'dg' ], countryCode, provinceCode, { promoCode: 'DG150', school: 'QC Pet Studies' }),
-    fetchPrice([ 'de' ], countryCode, provinceCode, { promoCode: 'DG150', school: 'QC Pet Studies' }),
+    fetchPrice([ 'dg' ], countryCode, provinceCode, { promoCode: 'DG150', school: 'QC Pet Studies' }, undefined, process.env.FIREWALL_BYPASS_SECRET),
+    fetchPrice([ 'de' ], countryCode, provinceCode, { promoCode: 'DG150', school: 'QC Pet Studies' }, undefined, process.env.FIREWALL_BYPASS_SECRET),
   ]);
 
   if (!dgPrice.success || !dePrice.success) {

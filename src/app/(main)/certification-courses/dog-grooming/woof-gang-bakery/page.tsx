@@ -42,7 +42,7 @@ const Page: PageComponent = async props => {
   const searchParams = await props.searchParams;
   const { countryCode, provinceCode } = await getServerData(props.params);
 
-  const price = await fetchPrice(courseCodes, countryCode, provinceCode, { promoCode: 'WOOFGANG', school: 'QC Pet Studies' });
+  const price = await fetchPrice(courseCodes, countryCode, provinceCode, { promoCode: 'WOOFGANG', school: 'QC Pet Studies' }, undefined, process.env.FIREWALL_BYPASS_SECRET);
   if (!price.success) {
     return null;
   }

@@ -6,11 +6,12 @@ import { isUUID } from './uuid';
 import type { Lead } from '@/domain/lead';
 import { isLead } from '@/domain/lead';
 
-export const fetchLead = async (leadId: UUID): Promise<Result<Lead>> => {
+export const fetchLead = async (leadId: UUID, signal?: AbortSignal, firewallBypassSecret?: string): Promise<Result<Lead>> => {
   try {
     const url = `https://leads.qccareerschool.com/leads/${encodeURIComponent(leadId)}`;
+    const headers = firewallBypassSecret ? { 'X-Firewall-Bypass-Secret': firewallBypassSecret } : undefined;
 
-    const response = await fetch(url);
+    const response = await fetch(url, { headers, signal });
     if (!response.ok) {
       return failure(Error('Unable to fetch lead'));
     }

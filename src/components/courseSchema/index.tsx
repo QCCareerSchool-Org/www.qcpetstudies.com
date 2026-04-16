@@ -18,7 +18,7 @@ interface Props {
 const CourseSchemaInner: FC<Props> = async ({ courseCode, id = '#course', providerId, showPrice }) => {
   let price: Price | undefined;
   if (showPrice) {
-    const priceResult = await fetchPrice([ courseCode ], 'US', 'MD');
+    const priceResult = await fetchPrice([ courseCode ], 'US', 'MD', undefined, undefined, process.env.FIREWALL_BYPASS_SECRET);
     if (!priceResult.success) {
       return null;
     }

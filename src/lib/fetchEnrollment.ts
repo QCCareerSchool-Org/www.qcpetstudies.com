@@ -4,11 +4,12 @@ import { failure, success } from 'generic-result-type';
 import type { Enrollment } from '@/domain/enrollment';
 import { isRawEnrollment } from '@/domain/enrollment';
 
-export const fetchEnrollment = async (id: number, code: string, signal?: AbortSignal): Promise<Result<Enrollment>> => {
+export const fetchEnrollment = async (id: number, code: string, signal?: AbortSignal, firewallBypassSecret?: string): Promise<Result<Enrollment>> => {
   try {
     const url = `${process.env.ENROLLMENT_ENDPOINT}/${id}?code=${encodeURIComponent(code)}`;
+    const headers = firewallBypassSecret ? { 'X-Firewall-Bypass-Secret': firewallBypassSecret } : undefined;
 
-    const response = await fetch(url, { signal });
+    const response = await fetch(url, { signal, headers });
     if (!response.ok) {
       throw Error(response.statusText);
     }

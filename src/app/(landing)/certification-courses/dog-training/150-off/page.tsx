@@ -18,7 +18,7 @@ const courseCodes: CourseCode[] = [ 'dt' ];
 const DogTraining150OffPage: PageComponent = async props => {
   const { countryCode, provinceCode } = await getServerData(props.searchParams);
 
-  const price = await fetchPrice(courseCodes, countryCode, provinceCode, { promoCode: 'DT150', school: 'QC Pet Studies' });
+  const price = await fetchPrice(courseCodes, countryCode, provinceCode, { promoCode: 'DT150', school: 'QC Pet Studies' }, undefined, process.env.FIREWALL_BYPASS_SECRET);
   if (!price.success) {
     return null;
   }

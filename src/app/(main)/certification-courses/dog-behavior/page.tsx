@@ -41,7 +41,7 @@ const DogBehaviorPage: PageComponent = async props => {
   let eventKey = 0;
   const { countryCode, provinceCode } = await getServerData(props.searchParams);
 
-  const priceResult = await fetchPrice(courseCodes, countryCode, provinceCode);
+  const priceResult = await fetchPrice(courseCodes, countryCode, provinceCode, undefined, undefined, process.env.FIREWALL_BYPASS_SECRET);
   if (!priceResult.success) {
     return null;
   }

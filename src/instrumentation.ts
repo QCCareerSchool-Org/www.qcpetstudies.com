@@ -20,6 +20,9 @@ const expectedVariables = [
   'BREVO_GROUP_ID',
   // cookies
   'JWT_SECRET_BASE64',
+  // network
+  'FIREWALL_BYPASS_SECRET',
+  'PROXY_SECRET',
 ] as const;
 
 // eslint-disable-next-line @typescript-eslint/require-await

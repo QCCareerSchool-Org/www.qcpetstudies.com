@@ -8,18 +8,22 @@ import type { Price } from '@/domain/price';
 import { isPrice } from '@/domain/price';
 import type { School } from '@/domain/school';
 
-const headers = { 'X-API-Version': '2' };
-
 export const fetchPrice = async (
   courses: CourseCode[],
   countryCode: string,
   provinceCode: string | null,
   options?: PriceQueryOptions,
   signal?: AbortSignal,
+  firewallBypassSecret?: string,
 ): Promise<Result<Price>> => {
   try {
     const priceQuery: PriceQuery = { countryCode, provinceCode: provinceCode ?? undefined, courses, options };
     const url = `${process.env.PRICES_ENDPOINT}?${qs.stringify(priceQuery)}`;
+
+    const headers: Record<string, string> = { 'X-API-Version': '2' };
+    if (firewallBypassSecret) {
+      headers['X-Firewall-Bypass-Secret'] = firewallBypassSecret;
+    }
 
     const response = await fetch(url, { headers, signal });
     if (!response.ok) {
