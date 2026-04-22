@@ -1,19 +1,23 @@
 import type { Result } from 'generic-result-type';
 import { failure, success } from 'generic-result-type';
 
-const headers = {
-  'X-API-Version': '2',
-  'Content-Type': 'application/json',
-};
-
 export const sendEnrollmentEmail = async (
   enrollmentId: number,
   code: string,
   signal?: AbortSignal,
+  firewallBypassSecret?: string,
 ): Promise<Result> => {
   try {
     const url = `${process.env.ENROLLMENT_ENDPOINT}/${encodeURIComponent(enrollmentId)}/email`;
     const body = JSON.stringify({ code });
+
+    const headers: Record<string, string> = {
+      'X-API-Version': '2',
+      'Content-Type': 'application/json',
+    };
+    if (firewallBypassSecret) {
+      headers['X-Firewall-Bypass-Secret'] = firewallBypassSecret;
+    }
 
     const response = await fetch(url, { method: 'post', headers, body, signal });
     if (!response.ok) {
