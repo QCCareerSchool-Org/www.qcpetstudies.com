@@ -80,7 +80,7 @@ export const EmailPreferencesNoSection: FC<Props> = ({ heroSrc, mobileHeroSrc, e
                   <Squiggle variant="tapered" className="text-primary mb-4" style={{ margin: '0 2rem', maxWidth: squiggleWidth }} />
                   <p className="mb-4">If you ever have questions about our courses or career training, our team is always happy to help.</p>
                   <a><button className="btn btn-primary mb-4gu"><TelephoneLink countryCode={countryCode ?? ''} className="text-white" /> <Image src={PhoneIcon} height="16" style={{ position: 'relative', top: -2, marginRight: '0.5rem' }} alt="" /></button></a>
-                  <p><b>Want to leave us for good?</b> You can find the 'Unsubscribe' link at the bottom of your last email.</p>
+                  <p className="mt-4"><b>Want to leave us for good?</b> You can find the 'Unsubscribe' link at the bottom of your last email.</p>
                 </FormWrapper>
               </div>
             </FormCard>
