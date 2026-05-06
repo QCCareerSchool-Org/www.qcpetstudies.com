@@ -1,10 +1,10 @@
 import type { Metadata } from 'next';
 
-import HeroBackground from './training-bg.jpg';
 import { getThankyouData } from '../../(thank-you)';
 import { CurrentPromotion } from '../../_components/currentPromotion';
 import { EmailPreferencesYesSection } from '../../_components/emailPreferencesSection';
 import { Header } from '../../_components/header';
+import HeroBackground from '../training-bg.jpg';
 import { GetStartedSection } from '@/components/getStartedSection';
 import { GuaranteeSection } from '@/components/guaranteeSection';
 import { LeadProcessing } from '@/components/leadProcessing';
@@ -16,7 +16,7 @@ import type { PageComponent } from '@/serverComponent';
 
 export const metadata: Metadata = {
   title: 'Course Preview',
-  alternates: { canonical: '/thank-you-dog-training-course-preview' },
+  alternates: { canonical: '/email-preferences-yes-dog-training-course' },
   robots: { index: false },
 };
 

@@ -2,11 +2,9 @@ import type { Metadata } from 'next';
 
 import { getThankyouData } from '../../(thank-you)';
 import { CurrentPromotion } from '../../_components/currentPromotion';
-import { EmailPreferencesYesSection } from '../../_components/emailPreferencesSection';
+import { EmailPreferencesNoSection } from '../../_components/emailPreferencesSection';
 import { Header } from '../../_components/header';
-import HeroBackground from '../grooming-bg.jpg';
-import HeroMobile from '../hero-mobile.jpg';
-// import { QuizCTACard } from '../../_components/quizCTACard';
+import HeroBackground from '../training-bg.jpg';
 import { GetStartedSection } from '@/components/getStartedSection';
 import { GuaranteeSection } from '@/components/guaranteeSection';
 import { LeadProcessing } from '@/components/leadProcessing';
@@ -18,15 +16,14 @@ import type { PageComponent } from '@/serverComponent';
 
 export const metadata: Metadata = {
   title: 'Course Preview',
-  alternates: { canonical: '/email-preferences-yes-dog-grooming-course' },
+  alternates: { canonical: '/email-preferences-no-dog-training-course' },
   robots: { index: false },
 };
 
 const testimonialIds = [ 'TD-0004', 'TD-0005', 'TD-0007', 'TD-0008', 'TD-0009', 'TD-0010' ];
 
-const EmailPreferencesYesPage: PageComponent = async props => {
+const ThankYouCoursePreviewPage: PageComponent = async props => {
   const { countryCode, emailAddress, lead, jwt, recent, date } = await getThankyouData(props);
-  // const quizURL = getQuizUrl(emailAddress, countryCode, provinceCode);
 
   return (
     <>
@@ -44,48 +41,18 @@ const EmailPreferencesYesPage: PageComponent = async props => {
         />
       )}
       <Header />
-      <EmailPreferencesYesSection course="dg" heroSrc={HeroBackground} mobileHeroSrc={HeroMobile} emailAddress={emailAddress} countryCode={lead?.countryCode} />
-      {/* <QuizCTACard header="Get Your Personalized Career Path in Dog Grooming!" url={quizURL} /> */}
-      <CurrentPromotion date={date} countryCode={countryCode} courseCode="dg" />
+      <EmailPreferencesNoSection course="dt" heroSrc={HeroBackground} emailAddress={emailAddress} countryCode={lead?.countryCode} />
+      <CurrentPromotion date={date} countryCode={countryCode} courseCode="dt" />
       <WhyChooseQCSection className="bg-light" />
       <TestimonialWallSection testimonialIds={testimonialIds} />
       <SupportSection date={date} showLink />
       <GuaranteeSection />
       <GetStartedSection
-        title="Ready to start your dog grooming career?"
+        title="Ready to start your dog training career?"
         text="Become professionally certified with QC\'s online training today and start earning!"
       />
     </>
   );
 };
 
-// const getQuizUrl = (emailAddress?: string, countryCode?: string, provinceCode?: string): string => {
-//   const baseURL = 'https://ng295qu8zyk.typeform.com/to/a7b3Ue5I';
-
-//   if (typeof emailAddress !== 'undefined' || typeof countryCode !== 'undefined' || typeof provinceCode !== 'undefined') {
-//     const data: Record<string, string> = {};
-
-//     if (emailAddress) {
-//       // eslint-disable-next-line camelcase
-//       data.email_address = emailAddress;
-//     }
-
-//     if (countryCode) {
-//       // eslint-disable-next-line camelcase
-//       data.country_code = countryCode;
-//     }
-
-//     if (provinceCode) {
-//       // eslint-disable-next-line camelcase
-//       data.province_code = provinceCode;
-//     }
-
-//     const queryString = new URLSearchParams(data).toString();
-
-//     return `${baseURL}#${queryString}`;
-//   }
-
-//   return baseURL;
-// };
-
-export default EmailPreferencesYesPage;
+export default ThankYouCoursePreviewPage;

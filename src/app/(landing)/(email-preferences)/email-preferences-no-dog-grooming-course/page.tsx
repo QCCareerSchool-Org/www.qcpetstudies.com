@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 
 import { getThankyouData } from '../../(thank-you)';
 import { CurrentPromotion } from '../../_components/currentPromotion';
-import { EmailPreferencesYesSection } from '../../_components/emailPreferencesSection';
+import { EmailPreferencesNoSection } from '../../_components/emailPreferencesSection';
 import { Header } from '../../_components/header';
 import HeroBackground from '../grooming-bg.jpg';
 import HeroMobile from '../hero-mobile.jpg';
@@ -18,13 +18,13 @@ import type { PageComponent } from '@/serverComponent';
 
 export const metadata: Metadata = {
   title: 'Course Preview',
-  alternates: { canonical: '/email-preferences-yes-dog-grooming-course' },
+  alternates: { canonical: '/email-preferences-no-dog-grooming-course' },
   robots: { index: false },
 };
 
 const testimonialIds = [ 'TD-0004', 'TD-0005', 'TD-0007', 'TD-0008', 'TD-0009', 'TD-0010' ];
 
-const EmailPreferencesYesPage: PageComponent = async props => {
+const EmailPreferencesNoPage: PageComponent = async props => {
   const { countryCode, emailAddress, lead, jwt, recent, date } = await getThankyouData(props);
   // const quizURL = getQuizUrl(emailAddress, countryCode, provinceCode);
 
@@ -44,7 +44,7 @@ const EmailPreferencesYesPage: PageComponent = async props => {
         />
       )}
       <Header />
-      <EmailPreferencesYesSection course="dg" heroSrc={HeroBackground} mobileHeroSrc={HeroMobile} emailAddress={emailAddress} countryCode={lead?.countryCode} />
+      <EmailPreferencesNoSection course="dg" heroSrc={HeroBackground} mobileHeroSrc={HeroMobile} emailAddress={emailAddress} countryCode={lead?.countryCode} />
       {/* <QuizCTACard header="Get Your Personalized Career Path in Dog Grooming!" url={quizURL} /> */}
       <CurrentPromotion date={date} countryCode={countryCode} courseCode="dg" />
       <WhyChooseQCSection className="bg-light" />
@@ -88,4 +88,4 @@ const EmailPreferencesYesPage: PageComponent = async props => {
 //   return baseURL;
 // };
 
-export default EmailPreferencesYesPage;
+export default EmailPreferencesNoPage;
