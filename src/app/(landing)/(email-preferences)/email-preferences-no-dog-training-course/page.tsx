@@ -9,7 +9,7 @@ import { GuaranteeSection } from '@/components/guaranteeSection';
 import { SupportSection } from '@/components/supportSection';
 import { TestimonialWallSection } from '@/components/testimonialWallSection';
 import { WhyChooseQCSection } from '@/components/whyChooseQCSection';
-import { addToBrevoList, getBrevoContactId } from '@/lib/brevoAPI';
+import { addToBrevoList, getBrevoContact, getBrevoContactId } from '@/lib/brevoAPI';
 import { getServerData } from '@/lib/getServerData';
 import type { PageComponent } from '@/serverComponent';
 
@@ -29,11 +29,22 @@ const EmailPreferencesNoPage: PageComponent = async props => {
   const sc = searchParamsList._sc;
 
   if (typeof sc === 'string') {
-    const contactId = getBrevoContactId(sc) ?? 0;
-    try {
-      await addToBrevoList(contactId, listId);
-    } catch (err) {
-      console.log(err);
+    const contactId = getBrevoContactId(sc);
+    if(contactId) {
+      try {
+        await addToBrevoList(contactId, listId);
+      } catch (err) {
+        console.log(err);
+      }
+
+      try {
+        const contact = await getBrevoContact(contactId);
+        const email = contact?.email;
+      } catch (err) {
+        console.log(err);
+      }
+
+      // display email
     }
   }
 
