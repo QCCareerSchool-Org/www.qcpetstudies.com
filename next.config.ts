@@ -6,13 +6,6 @@ const nextConfig: NextConfig = {
     // If your sass-loader / Sass version supports it, you can also do:
     silenceDeprecations: [ 'import', 'global-builtin' ],
   },
-  webpack(config) {
-    config.module.rules.push({
-      test: /\.svg$/,
-      use: [ '@svgr/webpack' ],
-    });
-    return config;
-  },
 };
 
 export default nextConfig;
