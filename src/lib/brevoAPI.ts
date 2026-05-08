@@ -2,6 +2,8 @@ import 'server-only';
 
 import type { Brevo } from '@getbrevo/brevo';
 import { BrevoClient } from '@getbrevo/brevo';
+import type { Result } from 'generic-result-type';
+import { failure, success } from 'generic-result-type';
 
 const apiKey = process.env.BREVO_API_KEY ?? '';
 
@@ -21,7 +23,7 @@ export const createBrevoContact = async (
   attributes?: CustomAttributes,
   listIds?: number[],
   abortSignal?: AbortSignal,
-): Promise<boolean> => {
+): Promise<Result> => {
   const request: Brevo.CreateContactRequest = {
     email: emailAddress,
     listIds,
@@ -34,10 +36,18 @@ export const createBrevoContact = async (
       ...(typeof provinceCode !== 'undefined' ? { PROVINCE_CODE: provinceCode?.toLocaleUpperCase() ?? '' } : undefined),
     },
   };
-
-  const response = await brevo.contacts.createContact(request, { abortSignal });
-
-  return typeof response?.id !== 'undefined';
+  try {
+    const response = await brevo.contacts.createContact(request, { abortSignal });
+    if (typeof response?.id !== 'undefined') {
+      return success();
+    }
+    return failure(Error('Failed to create contact'));
+  } catch (err) {
+    if (abortSignal?.aborted) {
+      return failure(Error('Aborted'));
+    }
+    return failure(err instanceof Error ? err : Error(String(err)));
+  }
 };
 
 export const sendBrevoEmail = async (
@@ -46,7 +56,7 @@ export const sendBrevoEmail = async (
   firstName?: string,
   lastName?: string,
   abortSignal?: AbortSignal,
-): Promise<string | undefined> => {
+): Promise<Result<string>> => {
   const name = firstName && `${firstName}${lastName ? ` ${lastName}` : ''}`;
 
   const request: Brevo.SendTransacEmailRequest = {
@@ -54,31 +64,36 @@ export const sendBrevoEmail = async (
     templateId,
   };
 
-  const response = await brevo.transactionalEmails.sendTransacEmail(request, { abortSignal });
-
-  return response.messageId;
-};
-
-export const getBrevoContactId = (encoded: string): number | undefined => {
-  const decoded = Buffer.from(encoded, 'base64').toString('utf8');
-  const parts = decoded.split('#');
-  if (parts.length === 2) {
-    const contactId = Number(parts[1]);
-
-    if (Number.isInteger(contactId)) {
-      return contactId;
+  try {
+    const response = await brevo.transactionalEmails.sendTransacEmail(request, { abortSignal });
+    if (response.messageId) {
+      return success(response.messageId);
     }
+    return failure(Error('Message ID is undefined'));
+  } catch (err) {
+    if (abortSignal?.aborted) {
+      return failure(Error('Aborted'));
+    }
+    return failure(err instanceof Error ? err : Error(String(err)));
   }
 };
 
-export const addToBrevoList = async (contactId: number, listId: number, abortSignal?: AbortSignal): Promise<void> => {
+export const addToBrevoList = async (contactId: number, listId: number, abortSignal?: AbortSignal): Promise<Result> => {
   const request: Brevo.UpdateContactRequest = {
     identifier: contactId,
     identifierType: 'contact_id',
     listIds: [ listId ],
   };
 
-  await brevo.contacts.updateContact(request, { abortSignal });
+  try {
+    await brevo.contacts.updateContact(request, { abortSignal });
+    return success();
+  } catch (err) {
+    if (abortSignal?.aborted) {
+      return failure(Error('Aborted'));
+    }
+    return failure(err instanceof Error ? err : Error(String(err)));
+  }
 };
 
 interface BrevoContact {
@@ -88,25 +103,26 @@ interface BrevoContact {
   lastName?: string;
 }
 
-interface BrevoContactAttributes {
-  FIRSTNAME?: string;
-  LASTNAME?: string;
-}
-
-export const getBrevoContact = async (contactId: number, abortSignal?: AbortSignal): Promise<BrevoContact | undefined> => {
+export const getBrevoContact = async (contactId: number, abortSignal?: AbortSignal): Promise<Result<BrevoContact>> => {
   const request: Brevo.contacts.GetContactInfoRequest = {
     identifier: contactId,
     identifierType: 'contact_id',
   };
 
-  const response = await brevo.contacts.getContactInfo(request, { abortSignal });
+  try {
+    const response = await brevo.contacts.getContactInfo(request, { abortSignal });
+    const attributes = response.attributes as { FIRSTNAME?: string; LASTNAME?: string };
 
-  const attributes = response.attributes as BrevoContactAttributes;
-
-  return {
-    id: contactId,
-    emailAddress: response.email ?? '',
-    firstName: attributes.FIRSTNAME,
-    lastName: attributes.LASTNAME,
-  };
+    return success({
+      id: contactId,
+      emailAddress: response.email ?? '',
+      firstName: attributes.FIRSTNAME,
+      lastName: attributes.LASTNAME,
+    });
+  } catch (err) {
+    if (abortSignal?.aborted) {
+      return failure(Error('Aborted'));
+    }
+    return failure(err instanceof Error ? err : Error(String(err)));
+  }
 };
