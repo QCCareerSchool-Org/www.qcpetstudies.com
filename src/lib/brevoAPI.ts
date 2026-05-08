@@ -83,7 +83,7 @@ export const addToBrevoList = async (contactId: number, listId: number, abortSig
 
 interface BrevoContact {
   id: number;
-  email: string;
+  emailAddress: string;
   firstName?: string;
   lastName?: string;
 }
@@ -93,17 +93,19 @@ interface BrevoContactAttributes {
   LASTNAME?: string;
 }
 
-export const getBrevoContact = async (contactId: number, abortSignal?: AbortSignal):
-Promise<BrevoContact | undefined> => {
-  const response = await brevo.contacts.getContactInfo(
-    { identifier: contactId, identifierType: 'contact_id' },
-    { abortSignal },
-  );
+export const getBrevoContact = async (contactId: number, abortSignal?: AbortSignal): Promise<BrevoContact | undefined> => {
+  const request: Brevo.contacts.GetContactInfoRequest = {
+    identifier: contactId,
+    identifierType: 'contact_id',
+  };
+
+  const response = await brevo.contacts.getContactInfo(request, { abortSignal });
+
   const attributes = response.attributes as BrevoContactAttributes;
 
   return {
     id: contactId,
-    email: response.email ?? '',
+    emailAddress: response.email ?? '',
     firstName: attributes.FIRSTNAME,
     lastName: attributes.LASTNAME,
   };

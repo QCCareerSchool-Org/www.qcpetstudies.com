@@ -11,7 +11,7 @@ import { GuaranteeSection } from '@/components/guaranteeSection';
 import { SupportSection } from '@/components/supportSection';
 import { TestimonialWallSection } from '@/components/testimonialWallSection';
 import { WhyChooseQCSection } from '@/components/whyChooseQCSection';
-import { addToBrevoList, getBrevoContactId } from '@/lib/brevoAPI';
+import { addToBrevoList, getBrevoContact, getBrevoContactId } from '@/lib/brevoAPI';
 import { getServerData } from '@/lib/getServerData';
 import type { PageComponent } from '@/serverComponent';
 
@@ -30,12 +30,17 @@ const EmailPreferencesNoPage: PageComponent = async props => {
   const searchParamsList = await props.searchParams;
   const sc = searchParamsList._sc;
 
+  let emailAddress: string | undefined;
+
   if (typeof sc === 'string') {
-    const contactId = getBrevoContactId(sc) ?? 0;
-    try {
-      await addToBrevoList(contactId, listId);
-    } catch (err) {
-      console.log(err);
+    const contactId = getBrevoContactId(sc);
+    if(contactId) {
+      const [ , contact ] = await Promise.all([
+        addToBrevoList(contactId, listId).catch((err: unknown) => console.log(err)),
+        getBrevoContact(contactId).catch((err: unknown) => console.error(err)),
+      ]);
+
+      emailAddress = contact?.emailAddress;
     }
   }
 
