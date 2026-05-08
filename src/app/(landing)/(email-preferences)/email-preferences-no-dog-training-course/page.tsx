@@ -28,23 +28,22 @@ const EmailPreferencesNoPage: PageComponent = async props => {
   const searchParamsList = await props.searchParams;
   const sc = searchParamsList._sc;
 
-  let emailAddress: string | undefined;
+  const getEmailAddress = async (): Promise<string | undefined> => {
+    if (typeof sc === 'string') {
+      const contactId = getBrevoContactId(sc);
+      if(contactId) {
+        const [ , contact ] = await Promise.all([
+          addToBrevoList(contactId, listId).catch((err: unknown) => console.log(err)),
+          getBrevoContact(contactId).catch((err: unknown) => console.error(err)),
+        ]);
 
-  if (typeof sc === 'string') {
-    const contactId = getBrevoContactId(sc);
-    if(contactId) {
-      const [ , contact ] = await Promise.all([
-        addToBrevoList(contactId, listId).catch((err: unknown) => console.log(err)),
-        getBrevoContact(contactId).catch((err: unknown) => console.error(err)),
-      ]);
-
-      emailAddress = contact?.emailAddress;
+        return contact?.emailAddress;
+      }
     }
-  }
+  };
 
   return (
     <>
-      Your email is {emailAddress}.
       <Header logoLink />
       <EmailPreferencesNoSection course="dt" heroSrc={HeroBackground} countryCode={countryCode} />
       <CurrentPromotion date={date} countryCode={countryCode} courseCode="dt" />
