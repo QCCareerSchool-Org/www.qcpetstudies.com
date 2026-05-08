@@ -10,8 +10,6 @@ import { GuaranteeSection } from '@/components/guaranteeSection';
 import { SupportSection } from '@/components/supportSection';
 import { TestimonialWallSection } from '@/components/testimonialWallSection';
 import { WhyChooseQCSection } from '@/components/whyChooseQCSection';
-import { getBrevoContact } from '@/lib/brevoAPI';
-import { getBrevoContactId } from '@/lib/getBrevoContactId';
 import { getServerData } from '@/lib/getServerData';
 import type { PageComponent } from '@/serverComponent';
 
@@ -26,21 +24,11 @@ const testimonialIds = [ 'TD-0004', 'TD-0005', 'TD-0007', 'TD-0008', 'TD-0009', 
 
 const EmailPreferencesYesPage: PageComponent = async props => {
   const { countryCode, date } = await getServerData(props.searchParams);
-  const searchParamsList = await props.searchParams;
-
-  let emailAddress: string | undefined;
-  const contactId = typeof searchParamsList._sc === 'string' ? getBrevoContactId(searchParamsList._sc) : undefined;
-  if (contactId) {
-    const contact = await getBrevoContact(contactId);
-    if (contact.success) {
-      emailAddress = contact.value.emailAddress;
-    }
-  }
 
   return (
     <>
       <Header logoLink />
-      <EmailPreferencesYesSection course="dg" heroSrc={HeroBackground} mobileHeroSrc={HeroMobile} countryCode={countryCode} emailAddress={emailAddress} />
+      <EmailPreferencesYesSection course="dg" heroSrc={HeroBackground} mobileHeroSrc={HeroMobile} countryCode={countryCode} />
       <CurrentPromotion date={date} countryCode={countryCode} courseCode="dg" />
       <WhyChooseQCSection className="bg-light" />
       <TestimonialWallSection testimonialIds={testimonialIds} />
