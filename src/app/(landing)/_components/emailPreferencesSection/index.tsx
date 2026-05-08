@@ -7,7 +7,6 @@ import type { FC } from 'react';
 
 import EmailIcon from './Email.json';
 import styles from './index.module.scss';
-import { TelephoneFormPopup } from '../../_components/telephoneFormPopup';
 import { BackgroundImage } from '@/components/backgroundImage';
 import { FormCard } from '@/components/formCard';
 import { FormWrapper } from '@/components/formWrapper';
@@ -19,16 +18,10 @@ interface Props {
   course?: string;
   heroSrc: StaticImageData;
   mobileHeroSrc?: StaticImageData;
-  emailAddress?: string;
   countryCode: string;
-  leadId?: string;
-  telephoneListId?: number;
 }
 
-export const EmailPreferencesYesSection: FC<Props> = ({ course, heroSrc, mobileHeroSrc, emailAddress, countryCode, leadId, telephoneListId }) => {
-  const showTelephone = countryCode === 'CA' || countryCode === 'US';
-  const squiggleWidth = emailAddress ? `${Math.round(emailAddress.length * 0.5)}em` : 220;
-
+export const EmailPreferencesYesSection: FC<Props> = ({ course, heroSrc, mobileHeroSrc, countryCode }) => {
   return (
     <section className="text-white">
       {mobileHeroSrc
@@ -45,10 +38,10 @@ export const EmailPreferencesYesSection: FC<Props> = ({ course, heroSrc, mobileH
                 </div>
                 <h1 className="h3 mb-4 text-navy">You're officially back in the loop!</h1>
                 <FormWrapper>
-                  <p className={`${styles.limitedTimeOffer} ${(emailAddress && emailAddress.length > 35) ? styles.long : ''}`}><i>
+                  <p className={styles.limitedTimeOffer}><i>
                     { course === 'dg' ? "Thanks for updating your preferences. We'll keep sending you dog grooming tips, student success stories, exclusive offers, and updates from QC Pet Studies." : "Thanks for updating your preferences. We'll keep sending you dog training tips, student success stories, exclusive offers, and updates from QC Pet Studies." }
                   </i></p>
-                  <Squiggle variant="tapered" className="text-primary mb-4" style={{ margin: '0 2rem', maxWidth: squiggleWidth }} />
+                  <Squiggle variant="tapered" className="text-primary mb-4" style={{ marginInline: '2rem' }} />
                   <p className="mb-4">If you ever have questions about our courses or career training, our team is always happy to help.</p>
                 </FormWrapper>
                 <TelephoneLink countryCode={countryCode} className="btn btn-primary btn-lg fw-bold" linkText={<Image src={PhoneIcon} height="20" style={{ position: 'relative', top: -2, marginLeft: '0.5rem' }} alt="" />} />
@@ -57,17 +50,11 @@ export const EmailPreferencesYesSection: FC<Props> = ({ course, heroSrc, mobileH
           </div>
         </div>
       </div>
-      {telephoneListId && leadId && showTelephone && (
-        <TelephoneFormPopup countryCode={countryCode} leadId={leadId} telephoneListId={telephoneListId} delay={3000} />
-      )}
     </section>
   );
 };
 
-export const EmailPreferencesNoSection: FC<Props> = ({ heroSrc, mobileHeroSrc, emailAddress, leadId, telephoneListId, countryCode }) => {
-  const squiggleWidth = emailAddress ? `${Math.round(emailAddress.length * 0.5)}em` : 220;
-  const showTelephone = countryCode === 'CA' || countryCode === 'US';
-
+export const EmailPreferencesNoSection: FC<Props> = ({ heroSrc, mobileHeroSrc }) => {
   return (
     <section className="text-white">
       <BackgroundImage src={heroSrc} mobile={mobileHeroSrc ? { src: mobileHeroSrc, breakpoint: 'lg', objectPosition: '50% 100%' } : undefined} priority />
@@ -81,8 +68,8 @@ export const EmailPreferencesNoSection: FC<Props> = ({ heroSrc, mobileHeroSrc, e
                 </div>
                 <h1 className="h3 mb-4 text-navy">No problem, we'll update your email preferences!</h1>
                 <FormWrapper>
-                  <p className={`${styles.limitedTimeOffer} ${(emailAddress && emailAddress.length > 35) ? styles.long : ''}`}><i>From now on, we'll only reach out with specific course updates or offers when you're actively engaging with QC.</i></p>
-                  <Squiggle variant="tapered" className="text-primary mb-4" style={{ margin: '0 2rem', maxWidth: squiggleWidth }} />
+                  <p className={styles.limitedTimeOffer}><i>From now on, we'll only reach out with specific course updates or offers when you're actively engaging with QC.</i></p>
+                  <Squiggle variant="tapered" className="text-primary mb-4" style={{ marginInline: '2rem' }} />
                   <p><strong> Want to leave us for good?</strong> You can find the 'Unsubscribe' link at the bottom of your last email.</p>
                 </FormWrapper>
               </div>
@@ -90,9 +77,6 @@ export const EmailPreferencesNoSection: FC<Props> = ({ heroSrc, mobileHeroSrc, e
           </div>
         </div>
       </div>
-      {telephoneListId && leadId && showTelephone && (
-        <TelephoneFormPopup countryCode={countryCode} leadId={leadId} telephoneListId={telephoneListId} delay={3000} />
-      )}
     </section>
   );
 };

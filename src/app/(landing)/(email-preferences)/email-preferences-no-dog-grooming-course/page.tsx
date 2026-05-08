@@ -1,6 +1,5 @@
 import type { Metadata } from 'next';
 
-import { markNotInterested } from '../../../../lib/markNotInterested';
 import { CurrentPromotion } from '../../_components/currentPromotion';
 import { EmailPreferencesNoSection } from '../../_components/emailPreferencesSection';
 import { Header } from '../../_components/header';
@@ -11,6 +10,7 @@ import { GuaranteeSection } from '@/components/guaranteeSection';
 import { SupportSection } from '@/components/supportSection';
 import { TestimonialWallSection } from '@/components/testimonialWallSection';
 import { WhyChooseQCSection } from '@/components/whyChooseQCSection';
+import { addToBrevoList } from '@/lib/brevoAPI';
 import { getBrevoContactId } from '@/lib/getBrevoContactId';
 import { getServerData } from '@/lib/getServerData';
 import type { PageComponent } from '@/serverComponent';
@@ -38,12 +38,15 @@ const EmailPreferencesNoPage: PageComponent = async props => {
     throw new Error('Invalid contact id.');
   }
 
-  const brevoData = await markNotInterested(contactId, brevoListId);
+  const addResult = await addToBrevoList(contactId, brevoListId);
+  if (!addResult.success) {
+    console.error(addResult.error);
+  }
 
   return (
     <>
       <Header logoLink />
-      <EmailPreferencesNoSection course="dg" heroSrc={HeroBackground} mobileHeroSrc={HeroMobile} countryCode={countryCode} emailAddress={brevoData?.emailAddress} />
+      <EmailPreferencesNoSection course="dg" heroSrc={HeroBackground} mobileHeroSrc={HeroMobile} countryCode={countryCode} />
       <CurrentPromotion date={date} countryCode={countryCode} courseCode="dg" />
       <WhyChooseQCSection className="bg-light" />
       <TestimonialWallSection testimonialIds={testimonialIds} />
