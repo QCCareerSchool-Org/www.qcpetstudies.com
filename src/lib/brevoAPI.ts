@@ -58,3 +58,44 @@ export const sendBrevoEmail = async (
 
   return response.messageId;
 };
+
+export const getBrevoContactId = (encoded: string): number | undefined => {
+  const decoded = Buffer.from(encoded, 'base64').toString('utf8');
+  const parts = decoded.split('#');
+  if (parts.length === 2) {
+    const contactId = Number(parts[1]);
+
+    if (Number.isInteger(contactId)) {
+      return contactId;
+    }
+  }
+};
+
+export const addToBrevoList = async (contactId: number, listId: number, abortSignal?: AbortSignal): Promise<void> => {
+  const request: Brevo.UpdateContactRequest = {
+    identifier: contactId,
+    identifierType: 'contact_id',
+    listIds: [ listId ],
+  };
+
+  await brevo.contacts.updateContact(request, { abortSignal });
+};
+
+export const getBrevoContact = async (contactId: number, abortSignal?: AbortSignal):
+Promise<{ id: number; email: string; firstName?: string; lastName?: string } | undefined> => {
+  const response = await brevo.contacts.getContactInfo(
+    { identifier: contactId, identifierType: 'contact_id' },
+    { abortSignal },
+  );
+  const attributes = response.attributes as {
+    FIRSTNAME?: string;
+    LASTNAME?: string;
+  };
+
+  return {
+    id: contactId,
+    email: response.email,
+    firstName: attributes.FIRSTNAME,
+    lastName: attributes.LASTNAME,
+  };
+};

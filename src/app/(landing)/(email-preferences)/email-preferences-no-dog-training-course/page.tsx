@@ -1,47 +1,46 @@
 import type { Metadata } from 'next';
 
-import { getThankyouData } from '../../(thank-you)';
 import { CurrentPromotion } from '../../_components/currentPromotion';
 import { EmailPreferencesNoSection } from '../../_components/emailPreferencesSection';
 import { Header } from '../../_components/header';
 import HeroBackground from '../training-bg.jpg';
 import { GetStartedSection } from '@/components/getStartedSection';
 import { GuaranteeSection } from '@/components/guaranteeSection';
-import { LeadProcessing } from '@/components/leadProcessing';
-import { SetCookie } from '@/components/setCookie';
 import { SupportSection } from '@/components/supportSection';
 import { TestimonialWallSection } from '@/components/testimonialWallSection';
 import { WhyChooseQCSection } from '@/components/whyChooseQCSection';
+import { addToBrevoList, getBrevoContactId } from '@/lib/brevoAPI';
+import { getServerData } from '@/lib/getServerData';
 import type { PageComponent } from '@/serverComponent';
 
 export const metadata: Metadata = {
-  title: 'Course Preview',
+  title: "No problem, we'll update your email preferences!",
+  description: "From now on, we'll only reach out with specific course updates or offers when you're actively engaging with QC.",
   alternates: { canonical: '/email-preferences-no-dog-training-course' },
   robots: { index: false },
 };
 
 const testimonialIds = [ 'TD-0004', 'TD-0005', 'TD-0007', 'TD-0008', 'TD-0009', 'TD-0010' ];
 
-const ThankYouCoursePreviewPage: PageComponent = async props => {
-  const { countryCode, emailAddress, lead, jwt, recent, date } = await getThankyouData(props);
+const EmailPreferencesNoPage: PageComponent = async props => {
+  const { countryCode, date } = await getServerData(props.searchParams);
+  const listId = 100;
+  const searchParamsList = await props.searchParams;
+  const sc = searchParamsList._sc;
+
+  if (typeof sc === 'string') {
+    const contactId = getBrevoContactId(sc) ?? 0;
+    try {
+      await addToBrevoList(contactId, listId);
+    } catch (err) {
+      console.log(err);
+    }
+  }
 
   return (
     <>
-      {jwt && <SetCookie name="user" value={jwt} domain="qcpetstudies.com" />}
-      {lead && recent && (
-        <LeadProcessing
-          emailAddress={lead.emailAddress}
-          telephoneNumber={lead.telephoneNumber}
-          city={lead.city}
-          countryCode={lead.countryCode}
-          provinceCode={lead.provinceCode}
-          firstName={lead.firstName}
-          lastName={lead.lastName}
-          leadId={lead.leadId}
-        />
-      )}
-      <Header />
-      <EmailPreferencesNoSection course="dt" heroSrc={HeroBackground} emailAddress={emailAddress} countryCode={lead?.countryCode} />
+      <Header logoLink />
+      <EmailPreferencesNoSection course="dt" heroSrc={HeroBackground} countryCode={countryCode} />
       <CurrentPromotion date={date} countryCode={countryCode} courseCode="dt" />
       <WhyChooseQCSection className="bg-light" />
       <TestimonialWallSection testimonialIds={testimonialIds} />
@@ -55,4 +54,4 @@ const ThankYouCoursePreviewPage: PageComponent = async props => {
   );
 };
 
-export default ThankYouCoursePreviewPage;
+export default EmailPreferencesNoPage;

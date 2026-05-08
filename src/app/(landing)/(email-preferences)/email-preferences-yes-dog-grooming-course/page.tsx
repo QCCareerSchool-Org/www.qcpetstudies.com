@@ -1,6 +1,5 @@
 import type { Metadata } from 'next';
 
-import { getThankyouData } from '../../(thank-you)';
 import { CurrentPromotion } from '../../_components/currentPromotion';
 import { EmailPreferencesYesSection } from '../../_components/emailPreferencesSection';
 import { Header } from '../../_components/header';
@@ -9,15 +8,15 @@ import HeroMobile from '../hero-mobile.jpg';
 // import { QuizCTACard } from '../../_components/quizCTACard';
 import { GetStartedSection } from '@/components/getStartedSection';
 import { GuaranteeSection } from '@/components/guaranteeSection';
-import { LeadProcessing } from '@/components/leadProcessing';
-import { SetCookie } from '@/components/setCookie';
 import { SupportSection } from '@/components/supportSection';
 import { TestimonialWallSection } from '@/components/testimonialWallSection';
 import { WhyChooseQCSection } from '@/components/whyChooseQCSection';
+import { getServerData } from '@/lib/getServerData';
 import type { PageComponent } from '@/serverComponent';
 
 export const metadata: Metadata = {
-  title: 'Course Preview',
+  title: "You're officially back in the loop!",
+  description: "Thanks for updating your preferences. We'll keep sending you dog grooming tips, student success stories, exclusive offers, and updates from QC Pet Studies.",
   alternates: { canonical: '/email-preferences-yes-dog-grooming-course' },
   robots: { index: false },
 };
@@ -25,26 +24,12 @@ export const metadata: Metadata = {
 const testimonialIds = [ 'TD-0004', 'TD-0005', 'TD-0007', 'TD-0008', 'TD-0009', 'TD-0010' ];
 
 const EmailPreferencesYesPage: PageComponent = async props => {
-  const { countryCode, emailAddress, lead, jwt, recent, date } = await getThankyouData(props);
-  // const quizURL = getQuizUrl(emailAddress, countryCode, provinceCode);
+  const { countryCode, date } = await getServerData(props.searchParams);
 
   return (
     <>
-      {jwt && <SetCookie name="user" value={jwt} domain="qcpetstudies.com" />}
-      {lead && recent && (
-        <LeadProcessing
-          emailAddress={lead.emailAddress}
-          telephoneNumber={lead.telephoneNumber}
-          city={lead.city}
-          countryCode={lead.countryCode}
-          provinceCode={lead.provinceCode}
-          firstName={lead.firstName}
-          lastName={lead.lastName}
-          leadId={lead.leadId}
-        />
-      )}
-      <Header />
-      <EmailPreferencesYesSection course="dg" heroSrc={HeroBackground} mobileHeroSrc={HeroMobile} emailAddress={emailAddress} countryCode={lead?.countryCode} />
+      <Header logoLink />
+      <EmailPreferencesYesSection course="dg" heroSrc={HeroBackground} mobileHeroSrc={HeroMobile} countryCode={countryCode} />
       {/* <QuizCTACard header="Get Your Personalized Career Path in Dog Grooming!" url={quizURL} /> */}
       <CurrentPromotion date={date} countryCode={countryCode} courseCode="dg" />
       <WhyChooseQCSection className="bg-light" />
