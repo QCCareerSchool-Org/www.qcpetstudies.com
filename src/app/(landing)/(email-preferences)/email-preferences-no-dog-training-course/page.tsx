@@ -10,6 +10,7 @@ import { GuaranteeSection } from '@/components/guaranteeSection';
 import { SupportSection } from '@/components/supportSection';
 import { TestimonialWallSection } from '@/components/testimonialWallSection';
 import { WhyChooseQCSection } from '@/components/whyChooseQCSection';
+import { getBrevoContactId } from '@/lib/getBrevoContactId';
 import { getServerData } from '@/lib/getServerData';
 import type { PageComponent } from '@/serverComponent';
 
@@ -27,7 +28,16 @@ const EmailPreferencesNoPage: PageComponent = async props => {
   const { countryCode, date } = await getServerData(props.searchParams);
   const searchParamsList = await props.searchParams;
 
-  const brevoData = await markNotInterested(searchParamsList._sc, brevoListId);
+  if (typeof searchParamsList._sc !== 'string') {
+    throw new Error('Contact id missing.');
+  }
+
+  const contactId = getBrevoContactId(searchParamsList._sc);
+  if (!contactId) {
+    throw new Error('Invalid contact id.');
+  }
+
+  const brevoData = await markNotInterested(contactId, brevoListId);
 
   return (
     <>
