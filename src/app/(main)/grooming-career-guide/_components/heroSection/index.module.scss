@@ -1,0 +1,29 @@
+.hero {
+  min-height: 42rem;
+  display: flex;
+  align-items: center;
+}
+
+.overlay {
+  background:
+    linear-gradient(90deg, rgba(1, 0, 37, 0.95) 0%, rgba(1, 0, 37, 0.74) 42%, rgba(1, 0, 37, 0.18) 100%),
+    linear-gradient(0deg, rgba(1, 0, 37, 0.25), rgba(1, 0, 37, 0.25));
+}
+
+@media (max-width: 767.98px) {
+  .hero {
+    min-height: 38rem;
+  }
+
+  .overlay {
+    background:
+      linear-gradient(0deg, rgba(1, 0, 37, 0.92) 0%, rgba(1, 0, 37, 0.78) 54%, rgba(1, 0, 37, 0.36) 100%),
+      linear-gradient(0deg, rgba(1, 0, 37, 0.24), rgba(1, 0, 37, 0.24));
+  }
+}
+
+@media (min-width: 992px) {
+  .hero {
+    min-height: 46rem;
+  }
+}

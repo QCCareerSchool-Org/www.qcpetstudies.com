@@ -1,0 +1,201 @@
+.tableWrapper {
+  --highlight-border-color: #ebecee;
+  --highlight-background-color: #fbfbfb;
+  --highlight-header-background-color: #f9f8fd;
+  --text-color: #4a5565;
+  --heading-color: black;
+  // border: var(--qc-border);
+  border-radius: var(--chos-border-radius);
+}
+
+.mobileSwitcherSticky {
+  position: sticky;
+  top: calc(4.25rem + 0.75rem);
+  z-index: 100;
+  display: flex;
+  justify-content: center;
+}
+
+.mobileSwitcher {
+  width: fit-content;
+  max-width: 100%;
+  border: var(--bs-border-width) var(--bs-border-style) var(--bs-border-color);
+  background: #fff;
+  box-shadow: var(--bs-box-shadow-sm);
+}
+
+.mobileSwitcherButton {
+  flex: 0 1 auto;
+  min-width: 0;
+  padding-right: 1rem;
+  padding-left: 1rem;
+  border-color: transparent;
+  color: var(--bs-secondary-color);
+  transition: background-color 0.2s ease, box-shadow 0.2s ease, color 0.2s ease;
+  white-space: normal;
+}
+
+.mobileSwitcherButton[aria-pressed='true'] {
+  background-color: var(--qc-color-primary);
+  box-shadow: var(--bs-box-shadow-sm);
+  color: #fff;
+}
+
+.mobileSwitcherButton:hover,
+.mobileSwitcherButton:focus-visible {
+  background-color: var(--bs-light);
+  border-color: transparent;
+  color: var(--bs-body-color) !important;
+}
+
+.mobileSwitcherButton[aria-pressed='true']:hover,
+.mobileSwitcherButton[aria-pressed='true']:focus-visible {
+  background-color: var(--qc-color-primary);
+  color: #fff !important;
+}
+
+.headerEyebrow {
+  min-height: 1.5rem;
+  color: var(--qc-color-primary);
+  font-size: 0.875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.table {
+  border-collapse: separate;
+  border-spacing: 0 1rem;
+
+  thead { display: none; }
+
+  tbody,
+  tr,
+  th,
+  td {
+    display: block;
+  }
+
+  tbody {
+    display: grid;
+    gap: 1rem;
+  }
+
+  tbody tr {
+    overflow: hidden;
+    border: var(--bs-border-width) var(--bs-border-style) var(--bs-border-color);
+    border-radius: var(--chos-border-radius);
+    background-color: #fff;
+    box-shadow: var(--bs-box-shadow-sm);
+  }
+
+  tbody tr th,
+  tbody tr td {
+    padding: 1.25rem 1.5rem;
+    border-bottom: var(--bs-border-width) var(--bs-border-style) var(--highlight-border-color);
+    color: var(--text-color);
+    vertical-align: top;
+  }
+
+  tbody tr td { font-size: 0.875rem; }
+
+  tbody tr th {
+    background-color: var(--highlight-background-color);
+    color: var(--heading-color);
+    font-size: 1.125rem;
+    font-weight: 700;
+  }
+
+  tbody tr td {
+    background-color: #fff;
+  }
+
+  tbody tr td[data-mobile-visible='false'] { display: none; }
+
+  tbody tr td[data-mobile-visible='true']:not(:first-of-type) { border-bottom: 0; }
+
+  tbody tr td::before {
+    content: attr(data-label);
+    display: block;
+    margin-bottom: 0.5rem;
+    color: var(--heading-color);
+    font-weight: 700;
+  }
+
+  tbody tr td:first-of-type::before { color: var(--qc-color-primary); }
+}
+
+@media (min-width: 992px) {
+  .tableWrapper {
+    box-shadow: var(--bs-box-shadow-sm);
+    border: var(--bs-border-width) var(--bs-border-style) var(--bs-border-color);
+  }
+
+  .table {
+    border-spacing: 0;
+    table-layout: fixed;
+    width: 100%;
+
+    thead { display: table-header-group; }
+
+    tbody { display: table-row-group; }
+
+    tr { display: table-row; }
+
+    th,
+    td {
+      display: table-cell;
+      padding: 2rem;
+    }
+
+    td,
+    th {
+      border: 0;
+    }
+
+    tbody tr {
+      border: 0;
+      border-radius: 0;
+      background-color: transparent;
+      box-shadow: none;
+    }
+
+    tbody tr td:nth-of-type(n + 3) { display: table-cell; }
+
+    tbody tr td[data-mobile-visible='false'] { display: table-cell; }
+
+    tbody tr td:nth-of-type(2)[data-mobile-visible] {
+      border-bottom: var(--bs-border-width) var(--bs-border-style) var(--highlight-border-color);
+    }
+
+    tbody tr td::before { content: none; }
+
+    tbody tr td:first-of-type { background-color: var(--highlight-background-color); }
+
+    tbody tr:last-of-type td:first-of-type,
+    thead tr th:nth-of-type(2) { background-color: var(--highlight-header-background-color); }
+
+    thead tr th:nth-of-type(2) { border-top: 4px var(--bs-border-style) var(--qc-color-primary); }
+
+    thead tr th {
+      border-bottom: var(--bs-border-width) var(--bs-border-style) var(--highlight-border-color);
+      vertical-align: top;
+
+      h3 {
+        margin-top: 0;
+        font-size: 1.5rem;
+      }
+    }
+
+    tbody tr th {
+      background-color: #fff;
+      color: var(--heading-color);
+      font-size: 0.875rem;
+      font-weight: 600;
+    }
+
+    thead tr th:first-child,
+    tbody tr th {
+      width: 22%;
+    }
+  }
+}

@@ -9,6 +9,8 @@ interface Props {
   courseCodes?: string[];
   buttonText?: string | JSX.Element;
   buttonHref?: string;
+  additionalButtonText?: string | JSX.Element;
+  additionalButtonHref?: string;
 }
 
 export const GetStartedSection: FC<Props> = ({ title, text, courseCodes, buttonText = 'Enroll Today', buttonHref }) => {
@@ -29,6 +31,10 @@ export const GetStartedSection: FC<Props> = ({ title, text, courseCodes, buttonT
             <h2 className="mb-4">{title}</h2>
             {text && <p className="mb-4">{text}</p>}
             <Link href={href} className={`btn btn-lg btn-primary ${styles.button}`}>{buttonText}</Link>
+            if (additionalButtonText) {
+              <Link href={href} className={`btn btn-lg btn-primary ${styles.button}`}>{buttonText}</Link>
+
+            }
           </div>
         </div>
       </div>
