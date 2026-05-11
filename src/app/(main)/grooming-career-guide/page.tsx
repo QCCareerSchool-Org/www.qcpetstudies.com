@@ -19,7 +19,7 @@ export const metadata: Metadata = {
   title: 'How to Become a Professional Dog Groomer',
   description: 'Launch your career with the professional dog grooming certification and industry standards required to maximize your earning potential in the booming pet care market. Discover the 2026 benchmarks for salary, required training and paths to career growth, including salon ownership, mobile grooming and lead grooming roles.',
   alternates: {
-    canonical: '/how-it-works',
+    canonical: '/grooming-career-guide',
   },
 };
 const testimonialIds = [ 'TD-0004', 'TD-0005', 'TD-0007', 'TD-0008', 'TD-0009', 'TD-0010' ];
@@ -48,7 +48,7 @@ const HowItWorksPage: PageComponent = () => {
               <p className="mb-4">Take the first step toward a new and exciting career in the booming pet industry. </p>
               <div className="d-flex justify-content-center gap-3">
                 <Link href="/certification-courses/dog-grooming" className={`btn btn-lg btn-primary ${styles.button}`}>Explore Certification Programs</Link>
-                <Link href="/" className={`btn btn-lg btn-primary ${styles.button}`}>Speak with a Career Advisor</Link>
+                <Link href="/contact-us" className={`btn btn-lg btn-primary ${styles.button}`}>Speak with a Career Advisor</Link>
               </div>
             </div>
           </div>
