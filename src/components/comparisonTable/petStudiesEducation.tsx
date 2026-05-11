@@ -9,7 +9,7 @@ const columns = [
   {
     key: 'qc',
     eyebrow: 'QC Pet School',
-    mobileLabel: 'QC Pet School IEWP™ Certification',
+    mobileLabel: 'QC Pet School IDGP™ Certification',
     heading: <h3>IEWP&trade; Certification</h3>,
   },
   {
