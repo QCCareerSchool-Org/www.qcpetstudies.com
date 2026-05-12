@@ -36,6 +36,7 @@ export const createBrevoContact = async (
       ...(typeof provinceCode !== 'undefined' ? { PROVINCE_CODE: provinceCode?.toLocaleUpperCase() ?? '' } : undefined),
     },
   };
+
   try {
     const response = await brevo.contacts.createContact(request, { abortSignal });
     if (typeof response?.id !== 'undefined') {
