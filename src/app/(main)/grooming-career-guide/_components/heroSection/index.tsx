@@ -1,7 +1,7 @@
 import type { FC } from 'react';
 
+import HeroImage from './hero.jpg';
 import styles from './index.module.scss';
-import HeroImage from '../../../certification-courses/dog-grooming/hero.jpg';
 import { BackgroundImage } from '@/components/backgroundImage';
 import { Overlay } from '@/components/overlay';
 
