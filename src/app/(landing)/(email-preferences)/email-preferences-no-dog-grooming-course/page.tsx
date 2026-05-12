@@ -1,6 +1,5 @@
 import type { Metadata } from 'next';
 
-import { CurrentPromotion } from '../../_components/currentPromotion';
 import { EmailPreferencesNoSection } from '../../_components/emailPreferencesSection';
 import { Header } from '../../_components/header';
 import HeroBackground from '../grooming-bg.jpg';
@@ -47,7 +46,6 @@ const EmailPreferencesNoPage: PageComponent = async props => {
     <>
       <Header logoLink />
       <EmailPreferencesNoSection course="dg" heroSrc={HeroBackground} mobileHeroSrc={HeroMobile} countryCode={countryCode} />
-      <CurrentPromotion date={date} countryCode={countryCode} courseCode="dg" />
       <WhyChooseQCSection className="bg-light" />
       <TestimonialWallSection testimonialIds={testimonialIds} />
       <SupportSection date={date} showLink />
