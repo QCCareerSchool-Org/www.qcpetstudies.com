@@ -1,15 +1,13 @@
-import Image from 'next/image';
 import type { FC } from 'react';
 import { BsCardChecklist, BsPeopleFill } from 'react-icons/bs';
 import { IoMdInfinite } from 'react-icons/io';
 
-import DTBackgroundImage from './australian-shepherd-attentive.jpg';
+import DTBackgroundImage from './hero-lrg.jpg';
 import { OntarioOnlySection } from './ontarioOnlySection';
 import { CourseOutlineSection } from './outlineSection';
 import { Accordion } from '@/components/accordion';
 import { AccordionItem } from '@/components/accordion/accordionItem';
 import { BackgroundImage } from '@/components/backgroundImage';
-import CertificationGoldImage from '@/components/certifications/IDTP-certification-yellow.svg';
 import { CourseSchema } from '@/components/courseSchema';
 import { GuaranteeSection } from '@/components/guaranteeSection';
 import { PriceSection } from '@/components/priceSection';
@@ -21,10 +19,6 @@ import { TutorSectionDT } from '@/components/tutorSectionDT';
 import { VirtualCommunitySection } from '@/components/virtualCommunitySection';
 import type { CourseCode } from '@/domain/courseCode';
 import type { Price } from '@/domain/price';
-import GuaranteeIcon from '@/images/course-overview-icons/guarantee.svg';
-import OutlineIcon from '@/images/course-overview-icons/outline.svg';
-import TutorIcon from '@/images/course-overview-icons/tutor.svg';
-import { formatPrice } from '@/lib/formatPrice';
 
 interface Props {
   price: Price;
@@ -34,7 +28,6 @@ interface Props {
   provinceCode: string | null;
 }
 
-const headerIconSize = 20;
 const iconSize = 36;
 let eventKey = 0;
 
@@ -43,32 +36,12 @@ export const DogTrainingBase: FC<Props> = ({ price, enrollPath, courseCodes, cou
     <CourseSchema courseCode={courseCodes[0]} showPrice />
     <section className="bg-dark">
       <BackgroundImage src={DTBackgroundImage} priority />
-      <div className="image-overlay-gradient" />
-      <div className="container text-center">
+      <div className="container text-start">
         <div className="row mb-4">
-          <div className="mb-4">
-            <Image src={CertificationGoldImage} alt="International Dog Training Professional IDTP Certification" height="125" width="125" style={{ maxWidth: '100%', height: 'auto' }} />
-          </div>
-          <h1>Dog Training Course</h1>
-          {price.plans.part.deposit > 0 && <h4>Get Started for Only <strong>{price.currency.symbol}{formatPrice(price.plans.part.deposit)}</strong></h4>}
-          <p><em><a href="#tuition" className="text-white">See tuition details</a></em></p>
-          <a href={`https://enroll.qcpetstudies.com${enrollPath}`}><button className="btn btn-secondary btn-lg">Enroll Online</button></a>
-        </div>
-        <div className="row justify-content-center">
-          <div className="col-12 col-md-6 col-lg-6 d-flex">
-            <div className="col text-uppercase">
-              <a href="#outline"><Image src={OutlineIcon} alt="outline" width={headerIconSize} height={headerIconSize} style={{ maxWidth: '100%', height: 'auto' }} /></a>
-              <p><strong>Outline</strong></p>
-            </div>
-            <div className="col text-uppercase">
-              <a href="#guarantee"><Image src={GuaranteeIcon} alt="play button" width={headerIconSize} height={headerIconSize} style={{ maxWidth: '100%', height: 'auto' }} /></a>
-              <p><strong>Guarantee</strong></p>
-            </div>
-            <div className="col text-uppercase">
-              <a href="#tutors"><Image src={TutorIcon} alt="play button" width={headerIconSize} height={headerIconSize} style={{ maxWidth: '100%', height: 'auto' }} /></a>
-              <p><strong>Tutors</strong></p>
-            </div>
-          </div>
+          <h1>Dog Training</h1>
+          <h2 className="h1">Course</h2>
+          <h3 className="mb-5">Become a Certified Dog Trainer</h3>
+          <a href={`https://enroll.qcpetstudies.com${enrollPath}`}><button className="btn btn-primary btn-lg">Enroll Online</button></a>
         </div>
       </div>
     </section>
