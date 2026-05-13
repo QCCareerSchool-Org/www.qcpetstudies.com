@@ -36,9 +36,9 @@
 }
 
 .mobileSwitcherButton[aria-pressed='true'] {
-  background-color: var(--qc-color-primary);
+  background-color: rgb(225, 225, 225);
   box-shadow: var(--bs-box-shadow-sm);
-  color: #fff;
+  color: var(--bs-secondary-color);
 }
 
 .mobileSwitcherButton:hover,
@@ -48,11 +48,6 @@
   color: var(--bs-body-color) !important;
 }
 
-.mobileSwitcherButton[aria-pressed='true']:hover,
-.mobileSwitcherButton[aria-pressed='true']:focus-visible {
-  background-color: var(--qc-color-primary);
-  color: #fff !important;
-}
 
 .headerEyebrow {
   min-height: 1.5rem;
