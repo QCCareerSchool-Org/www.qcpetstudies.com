@@ -24,7 +24,7 @@ export const metadata: Metadata = {
 };
 const testimonialIds = [ 'TD-0004', 'TD-0005', 'TD-0007', 'TD-0008', 'TD-0009', 'TD-0010' ];
 
-const HowItWorksPage: PageComponent = () => {
+const CareerGuidePage: PageComponent = () => {
   return (
     <div className="chos">
       <HeroSection />
@@ -59,4 +59,4 @@ const HowItWorksPage: PageComponent = () => {
   );
 };
 
-export default HowItWorksPage;
+export default CareerGuidePage;
