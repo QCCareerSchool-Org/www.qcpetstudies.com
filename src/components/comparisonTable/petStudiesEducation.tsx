@@ -50,7 +50,7 @@ const rows: ComparisonTableRow<ColumnKey>[] = [
   {
     feature: 'Grooming Kit',
     qc: <><Heading>Included:</Heading> Professional 11-piece set, 3-piece shear kit & leather case included for every student </>,
-    tradeschools: <><Heading>Often Extra::</Heading> Usually requires a separate purchase of $500 to $1,000+</>,
+    tradeschools: <><Heading>Often Extra:</Heading> Usually requires a separate purchase of $500 to $1,000+</>,
     other: <><Heading>Often Extra:</Heading> Some include basic kits; others require a separate purchase</>,
   },
   {
