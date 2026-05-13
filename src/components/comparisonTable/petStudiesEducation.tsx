@@ -77,8 +77,8 @@ const rows: ComparisonTableRow<ColumnKey>[] = [
       <p>3-6 Months</p>
       <p> *Self-paced with up to a year to complete your course</p>
     </>,
-    tradeschools: '3-12 Months',
-    other: ' 6 weeks - 12 months',
+    tradeschools: '3 to 12 Months',
+    other: ' 6 weeks to 12 months',
   },
   {
     feature: 'Total Investment',
