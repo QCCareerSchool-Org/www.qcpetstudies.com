@@ -4,7 +4,7 @@ import Link from 'next/link';
 import type { FC } from 'react';
 import { useState } from 'react';
 import { Nav, Navbar, NavDropdown } from 'react-bootstrap';
-import { FaCog, FaCut, FaFolderOpen } from 'react-icons/fa';
+import { FaBook, FaFolderOpen, FaGear, FaScissors } from 'react-icons/fa6';
 
 import { Flag } from '@/components/flag';
 import { Logo } from '@/components/logo';
@@ -38,9 +38,10 @@ export const MainNav: FC<Props> = ({ countryCode }) => {
               <Link href="/certification-courses/dog-daycare" onClick={handleClick} className="dropdown-item">Dog Daycare</Link>
               <Link href="/certification-courses/dog-behavior" onClick={handleClick} className="dropdown-item">Dog Behavior</Link>
               <hr />
-              <Link href="/certification-courses/how-it-works" onClick={handleClick} className="dropdown-item"><FaCog className="text-primary me-2" /> How It Works</Link>
+              <Link href="/certification-courses/how-it-works" onClick={handleClick} className="dropdown-item"><FaGear className="text-primary me-2" /> How It Works</Link>
+              <Link href="/grooming-career-guide" onClick={handleClick} className="dropdown-item"><FaBook className="text-primary me-2" /> Grooming Career Guide</Link>
               <Link href="/resources" onClick={handleClick} className="dropdown-item"><FaFolderOpen className="text-primary me-2" /> Learning Resources</Link>
-              <Link href="/certification-courses/dog-grooming-kit" onClick={handleClick} className="dropdown-item"><FaCut className="text-primary me-2" /> Dog Grooming Kit</Link>
+              <Link href="/certification-courses/dog-grooming-kit" onClick={handleClick} className="dropdown-item"><FaScissors className="text-primary me-2" /> Dog Grooming Kit</Link>
             </NavDropdown>
             <Link href="/diy-grooming" onClick={handleClick} className="nav-link">DIY Grooming</Link>
             <Link href="/get-a-course-preview" onClick={handleClick} className="nav-link">Free Preview</Link>
