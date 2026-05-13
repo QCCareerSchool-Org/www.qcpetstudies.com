@@ -83,8 +83,8 @@ const rows: ComparisonTableRow<ColumnKey>[] = [
   {
     feature: 'Total Investment',
     qc: <><Heading>High Value:</Heading> $2,498 to $3,648 (Flexible Plans)</>,
-    tradeschools: <><Heading>High Cost:</Heading> $6,000-$15,000+</>,
-    other: <><Heading>Broad Investment:</Heading> $500-$5,000+ (Varies by school)</>,
+    tradeschools: <><Heading>High Cost:</Heading> $6,000 to $15,000+</>,
+    other: <><Heading>Broad Investment:</Heading> $500 to $5,000+ (Varies by school)</>,
   },
 ];
 
