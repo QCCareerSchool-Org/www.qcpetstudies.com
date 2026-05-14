@@ -63,13 +63,6 @@ export const DogTrainingBase: FC<Props> = ({ price, enrollPath, courseCodes, cou
       <div className="container text-center">
         <div className="row justify-content-center">
           <Client countryCode={countryCode} provinceCode={provinceCode} dtPrice={dtPrice} dePrice={dePrice} enrollPath={enrollPath} />
-          <div className="col-12 col-lg-8 mb-4">
-            <div className="ratio ratio-16x9">
-              <video controls preload="metadata" poster="https://cdn.qccareerschool.com/pet/dog-training-trailer-poster.png">
-                <source src="https://cdn.qccareerschool.com/pet/dog-training-trailer.mp4" type="video/mp4" />
-              </video>
-            </div>
-          </div>
         </div>
       </div>
     </section>
