@@ -7,3 +7,6 @@ export { default as Kayla } from './kayla.jpg';
 export { default as Kloe } from './kloe.jpg';
 export { default as Melody } from './melody.jpg';
 export { default as Nicki } from './nicki.jpg';
+export { default as Lauren } from './lauren.jpg';
+export { default as Tessa } from './tessa.jpg';
+export { default as Janai } from './janai.jpg';

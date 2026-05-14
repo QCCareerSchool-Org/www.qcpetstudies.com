@@ -35,12 +35,21 @@ export const Client: FC<Props> = ({ dtPrice, dePrice, countryCode, provinceCode,
     <>
       <section>
         <div className="container text-center">
+          <div className="row justify-content-center">
+            <div className="col-12 col-lg-8 mb-4">
+              <div className="ratio ratio-16x9">
+                <video controls preload="metadata" poster="https://cdn.qccareerschool.com/pet/dog-training-trailer-poster.png">
+                  <source src="https://cdn.qccareerschool.com/pet/dog-training-trailer.mp4" type="video/mp4" />
+                </video>
+              </div>
+            </div>
+          </div>
           {externship(countryCode, provinceCode)
             ? (
               <>
                 <div className="row justify-content-center">
                   <div className="col-12 col-lg-8 col-xl-7">
-                    <h2>Become a <strong>Certified Professional Dog Groomer</strong></h2>
+                    <h2>Become a <strong>Certified Professional Dog Trainer</strong></h2>
                     <p className="lead"><strong>International Dog Training Professional&trade;</strong> | <i>IDTP&trade;</i></p>
                     <p>Dog training is a booming industry! Owners need help to turn their dogs into well-behaved members of the family, and they want someone qualified to help them achieve this goal.  Whether you want to work in a training school, launch your own dog training business, or freelance as a private dog trainer, you'll graduate with all the knowledge and skills you need to succeed in the dog training industry!</p>
                   </div>
@@ -67,40 +76,33 @@ export const Client: FC<Props> = ({ dtPrice, dePrice, countryCode, provinceCode,
             : (
               <div className="row justify-content-center">
                 <div className="col-12 col-lg-8 col-xl-7">
+                  <p className="lead text-warning"><strong>International Dog Training Professional&trade;</strong> | <i>IDTP&trade;</i></p>
                   <h2>Become a <strong>Certified Professional Dog Trainer</strong></h2>
-                  <p className="lead"><strong>International Dog Training Professional&trade;</strong> | <i>IDTP&trade;</i></p>
                   <p>Dog training is a booming industry! Owners need help to turn their dogs into well-behaved members of the family, and they want someone qualified to help them achieve this goal.  Whether you want to work in a training school, launch your own dog training business, or freelance as a private dog trainer, you'll graduate with all the knowledge and skills you need to succeed in the dog training industry!</p>
                 </div>
               </div>
             )}
-          <div className="row justify-content-center">
-            <div className="col-12 col-lg-10">
-              <div className="ratio ratio-16x9">
-                <video controls poster="https://cdn.qccareerschool.com/pet/dog-grooming-teaser.jpg">
-                  <source src="https://cdn.qccareerschool.com/pet/dog-grooming-teaser.mp4" type="video/mp4" />
-                </video>
-              </div>
-            </div>
-          </div>
         </div>
       </section>
 
-      {externship(countryCode, provinceCode)
-        ? (
-          <>
-            <ComparisonModal dtPrice={dtPrice} dePrice={dePrice} show={popup} onHide={handleHide} />
+      <section>
+        {externship(countryCode, provinceCode)
+          ? (
+            <>
+              <ComparisonModal dtPrice={dtPrice} dePrice={dePrice} show={popup} onHide={handleHide} />
 
-            <PriceSection className="bg-light" dtPrice={dtPrice} dePrice={dePrice} onPopupLinkClick={handlePopupLinkClick} countryCode={countryCode} />
-          </>
-        )
-        : (
-          <>
-            {dtPrice.promoDiscount > 0
-              ? <PriceSectionWithDiscount courses={courses} price={dtPrice} doubleGuarantee enrollPath={enrollPath} />
-              : <OldPriceSection courses={courses} price={dtPrice} doubleGuarantee enrollPath={enrollPath} />
-            }
-          </>
-        )}
+              <PriceSection className="bg-light" dtPrice={dtPrice} dePrice={dePrice} onPopupLinkClick={handlePopupLinkClick} countryCode={countryCode} />
+            </>
+          )
+          : (
+            <>
+              {dtPrice.promoDiscount > 0
+                ? <PriceSectionWithDiscount courses={courses} price={dtPrice} doubleGuarantee enrollPath={enrollPath} />
+                : <OldPriceSection courses={courses} price={dtPrice} doubleGuarantee enrollPath={enrollPath} />
+              }
+            </>
+          )}
+      </section>
     </>
   );
 };

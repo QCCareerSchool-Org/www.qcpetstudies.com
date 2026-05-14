@@ -66,7 +66,7 @@ export const ComparisonModal: FC<Props> = props => {
             </tr>
             <tr>
               <td>Training to Lead a Group Class</td>
-              <td className="text-center">-</td>
+              <td className="text-center">✅</td>
               <td className="text-center">✅</td>
             </tr>
             <tr>

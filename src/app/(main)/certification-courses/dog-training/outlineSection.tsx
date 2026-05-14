@@ -9,12 +9,15 @@ import TeachingPeopleImage from './part-3.jpg';
 import DogTrainingBusinessImage from './part-4.jpg';
 import { Accordion } from '@/components/accordion';
 import { AccordionItem } from '@/components/accordion/accordionItem';
+import { externship } from '@/lib/externship';
 
 interface Props {
   className?: string;
+  countryCode: string;
+  provinceCode: string | null;
 }
 
-export const CourseOutlineSection: FC<Props> = ({ className }) => {
+export const CourseOutlineSection: FC<Props> = ({ className, countryCode, provinceCode }) => {
   let eventKey = 0;
 
   return (
@@ -23,7 +26,7 @@ export const CourseOutlineSection: FC<Props> = ({ className }) => {
         <div className="row justify-content-center mb-4">
           <div className="col12 col-lg-10 text-center">
             <h2>Dog Training <strong>Course Outline</strong></h2>
-            <p className="lead mb-0">The Dog Training Course is split into four parts, each containing individual training units.</p>
+            <p className="lead mb-0">The Dog Training Course is split into six parts, each containing individual training units.</p>
           </div>
         </div>
         <Accordion>
@@ -111,7 +114,7 @@ export const CourseOutlineSection: FC<Props> = ({ className }) => {
           <AccordionItem eventKey={eventKey++} heading="Starting your Dog Training Business">
             <div className="row">
               <div className="col-12 col-lg-6 col-xl-7">
-                <p>You've learned and practiced all the skills you need to successfully work as a dog trainer. Now it's time to turn your finely honed skills into a business! The business training offered in this course is optional. However, this training will be hugely beneficial to your career if you intend to start your own training business, or if you're looking to get a job working for an established trainer.</p>
+                <p>You've learned and practiced all the skills you need to successfully work as a dog trainer. Now it's time to turn your finely honed skills into a business! The business training offered in this course is optional. However, this training will be hugely beneficial to your career if you intend to start your own dog training business, or if you're looking to get a job working for an established trainer. Business training is optional for the Online Track students, but includes mandatory components for those in the Externship Track. We encourage all students to take full advantage of this training to build valuable skills for running a successful dog training business.</p>
                 <p>What you'll learn:</p>
                 <ul>
                   <li>how to get your business started</li>
@@ -145,6 +148,15 @@ export const CourseOutlineSection: FC<Props> = ({ className }) => {
               </div>
             </div>
           </AccordionItem>
+          {externship(countryCode, provinceCode) && (
+            <AccordionItem eventKey={eventKey++} heading={<strong>NEW: Optional Externship Placement</strong>}>
+              <p>If you choose the Externship Track, you'll be matched with a professional dog trainer in your area once you've completed the online portion of your course and paid your fees. Spend 40 hours working alongside an experienced trainer, honing your skills in a professional dog training environment, and gaining valuable industry insight as you complete your unpaid externship. Track your hours, receive mentorship and feedback from your host, and graduate with a certificate that showcases both your knowledge and hands-on experience.</p>
+              <p>As an Externship Track student, you'll also earn an additional professional certificate showcasing your advanced training and hands-on experience.</p>
+              <p>Note: Students who choose the Online Track will graduate with their International Dog Training Professional™ (IDTP) Certification upon completing the course.</p>
+              <p className="mb-0"><Link href="/certification-courses/dog-grooming/course-outline">View a More Detailed Breakdown of the Externship</Link></p>
+            </AccordionItem>
+          )}
+
         </Accordion>
       </div>
     </section>

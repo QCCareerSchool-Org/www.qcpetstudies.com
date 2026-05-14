@@ -16,6 +16,7 @@ const courseCodes: CourseCode[] = [ 'dt' ];
 
 const DogTrainingPage: PageComponent = async props => {
   const { countryCode, provinceCode } = await getServerData(props.searchParams);
+
   const [ dtPrice, dePrice ] = await Promise.all([
     fetchPrice([ 'dt' ], countryCode, provinceCode, undefined, undefined, process.env.FIREWALL_BYPASS_SECRET),
     fetchPrice([ 'de' ], countryCode, provinceCode, undefined, undefined, process.env.FIREWALL_BYPASS_SECRET),

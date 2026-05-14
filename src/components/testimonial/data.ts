@@ -96,4 +96,28 @@ export const testimonials: Record<string, Testimonial | undefined> = {
     image: Images.Kloe,
     stars: 5,
   },
+  'TD-0011': {
+    name: 'Tessa Gorissen',
+    courses: [ 'dt' ],
+    short: [ 'What makes the Dog Training course interesting is the videos you have to submit. Instead of only writing about what you learned and how you would handle a situation, you also had to show that you could do it. This also gave me more confidence for the future! In October 2025 I started my own business, Connecting K9 in Alexandria (Louisiana)' ],
+    long: [ 'What makes the Dog Training course interesting is the videos you have to submit. Instead of only writing about what you learned and how you would handle a situation, you also had to show that you could do it. This also gave me more confidence for the future! In October 2025 I started my own business, Connecting K9 in Alexandria (Louisiana)' ],
+    image: Images.Tessa,
+    stars: 5,
+  },
+  'TD-0012': {
+    name: 'Janai Havis',
+    courses: [ 'dt' ],
+    short: [ 'I love QC Pet Studies. I love that you can work at your own pace, and that you can pay off the classes monthly or faster if you\'d like. The tutors give valuable insight and knowledge, and I feel like I\'m going to be prepared for the working world. Since graduating from QC Pet Studies, I\'ve obtained a job as a dog trainer at a major pet store. I have also started my own pet training business and have obtained clientele.' ],
+    long: [ 'I love QC Pet Studies. I love that you can work at your own pace, be it fast or slow. I also love that you can pay off the classes monthly or faster if you\'d like. I also love the format and the teachers and tutors. They give valuable insight and knowledge. It makes me reflect on my work and I feel like I\'m going to be prepared for the working world. Since graduating from QC Pet Studies, I\'ve obtained a job as a dog trainer at a major pet store. I have also started my own pet training business and have obtained clientele. I learned so much from QC Pet Studies, and I plan to further my education. (added from grad survey)' ],
+    image: Images.Janai,
+    stars: 5,
+  },
+  'TD-0013': {
+    name: 'Lauren Bolton',
+    courses: [ 'dt' ],
+    short: [ 'I had been thinking about dog training school for awhile but couldn\'t take the plunge until I found QC  Pet Studies Dog Training Course. I decided to take the leap and I\'m so glad that I did! I\'ve learned so much and I\'ve really enjoyed being able to study here to be a certified Dog Trainer. A dream I\'ve had for years, now coming true' ],
+    long: [ 'I had been thinking about dog training school for awhile but couldn\'t take the plunge until I found QC  Pet Studies Dog Training Course. I decided to take the leap and I’m so glad that I did! I\'ve learned so much and even though I was never the best student in previous schooling, they made it easy for me to accomplish all of my goals. Since the course was self paced if something came up in life (as it always does) there was no pressure to turn something in by midnight. The personal tutors are great and really knowledgeable. Everyone in the community is super friendly and helpful as well. I’ve really enjoyed being able to study here to be a certified Dog Trainer. A dream I\'ve had for years, now coming true.' ],
+    image: Images.Lauren,
+    stars: 5,
+  },
 };
