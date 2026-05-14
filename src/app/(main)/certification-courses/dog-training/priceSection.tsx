@@ -46,10 +46,10 @@ export const PriceSection: FC<Props> = ({ dtPrice, dePrice, className, onPopupLi
         </div>
         <div className="row justify-content-center g-4">
           <div className="col-12 col-sm-10 col-md-6 col-lg-5 col-xl-4">
-            <PriceBox title="Grooming Online Track" price={dtPrice} selected={selection === 'dg'} onSelected={handleDGSelect} cartUrl="https://enroll.qcpetstudies.com?c=dg" onPopupLinkClick={handlePopupLinkClick} />
+            <PriceBox title="Dog Training Online Track" price={dtPrice} selected={selection === 'dg'} onSelected={handleDGSelect} cartUrl="https://enroll.qcpetstudies.com?c=dt" onPopupLinkClick={handlePopupLinkClick} />
           </div>
           <div className="col-12 col-sm-10 col-md-6 col-lg-5 col-xl-4">
-            <PriceBox title="Grooming Externship Track" price={dePrice} selected={selection === 'de'} onSelected={handleDESelect} cartUrl="https://enroll.qcpetstudies.com?c=de" onPopupLinkClick={handlePopupLinkClick} />
+            <PriceBox title="Dog Training Externship Track" price={dePrice} selected={selection === 'de'} onSelected={handleDESelect} cartUrl="https://enroll.qcpetstudies.com?c=de" onPopupLinkClick={handlePopupLinkClick} />
           </div>
         </div>
         {countryCode === 'CA' && (
