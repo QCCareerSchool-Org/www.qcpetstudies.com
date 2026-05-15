@@ -18,10 +18,10 @@ export const UnitH: FC = () => {
   return (
     <div className="row">
       <div className="col-12 col-lg-6 col-xl-7">
-        <div className="alert alert-primary mb-4">Unit Total: 3 hours</div>
+        <div className="alert alert-primary mb-4">Unit Total: 9 to 16 Hours</div>
         <UnitStats assignmentsCount={5} assignmentsTime="2 hours" readingsTime="1 hour" videosCount={3} videosTime="20 minutes" />
-        <p>You've learned and practiced all the skills you need to successfully work as a dog trainer. Now it's time to turn your finely honed skills into a business! The business training offered in this course is optional. However, this training will be hugely beneficial to your career if you intend to start your own training business, or if you're looking to get a job working for an established trainer.</p>
-        <p>In this unit, you'll learn to get your business off the ground. We'll cover important first steps, such as naming your business, finding insurance and creating a business plan. You'll learn all about different marketing techniques and how to use them effectively. You'll read up on essential skills for working with clients and selling your services. Even if launching your business isn't in your immediate future, take advantage of wonderful opportunity to kickstart your business when you're ready to take that step.</p>
+        <p>By this point in the dog training class, you've completed all your theoretical and practical work, and are feeling pretty confident in your training skills! Now it's time to use those abilities in the real-world and turn your passion into a career. Business training is optional for the Online Track students, but includes mandatory components for those in the Externship Track. We encourage all students to take full advantage of this training to build valuable skills for running a successful training business.</p>
+        <p>You'll work with your mentor to name your business and establish a business plan. You'll learn all about different marketing techniques and how to use them effectively. You'll also read up on the most effective networking techniques and find out how to apply them to your business or job search. Even if launching your business isn't in your immediate future, take advantage of this wonderful opportunity and complete this optional unit of your course!</p>
         <button onClick={handleClick} className="btn btn-primary">View Details</button>
         <Modal show={show} onHide={handleClick} size="lg">
           <Modal.Header closeButton>Unit H Details</Modal.Header>
