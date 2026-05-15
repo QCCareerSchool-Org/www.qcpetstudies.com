@@ -50,7 +50,7 @@ export const DogTrainingBase: FC<Props> = ({ enrollPath, courseCodes, dtPrice, d
         <div className="row mb-4">
           <div className="col-12 col-md-8 col-lg-6 offset-lg-1">
             <h1 className="mb-4 text-shadow">Dog Training Course</h1>
-            {dtPrice.plans.part.deposit > 0 && <h4 className="mb-5">Get Started for Only <strong>{dtPrice.currency.symbol}{formatPrice(dtPrice.plans.part.deposit)}</strong></h4>}
+            {dtPrice.plans.part.deposit > 0 && <h2 className="h4 text-shadow mb-5">Get Started for Only <strong>{dtPrice.currency.symbol}{formatPrice(dtPrice.plans.part.deposit)}</strong></h2>}
             <div className="d-flex flex-column flex-sm-row gap-2">
               <a href={`https://enroll.qcpetstudies.com${enrollPath}`} className="btn btn-primary">Enroll Now</a>
               <a href="#tuition" className="btn btn-light">Tuition & Payment Plans</a>
