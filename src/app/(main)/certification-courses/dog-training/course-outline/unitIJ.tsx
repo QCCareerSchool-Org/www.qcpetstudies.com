@@ -10,7 +10,6 @@ export const UnitIJ: FC = () => {
   return (
     <div className="row">
       <div className="col-12 col-lg-6 col-xl-7">
-        <div className="alert alert-primary mb-4" />
         <p>In the Externship Track, you'll apply everything you've learned from the Online Track by completing your externship application and starting your in-person placement in a professional dog training environment. Here is a detailed breakdown of how the externship track course works.</p>
         <p className="mb-0"><strong>1. Submit Your Externship Application</strong></p>
         <p> After completing the online training with a grade of A- or higher in your practical units (Units D-G) and paying your course fees in full, you'll fill out an externship application. This is your opportunity to share your preferences with your facilitator, such as location or type of training facility.</p>
@@ -25,7 +24,7 @@ export const UnitIJ: FC = () => {
         <p className="mb-0"><strong>6. Receive Your Certificate of Completion</strong></p>
         <p>Once all externship requirements are met—including your hours log and evaluations—you'll receive your official QC Certificate of Completion, recognizing both your coursework and real-world training.</p>
       </div>
-      <div className="col-12 col-lg-6 col-xl-5 d-none d-lg-block">
+      <div className="col-12 col-lg-6 col-xl-5 d-lg-block">
         <Image src={UnitIJImage} alt="dog and a trainer shaking hands" sizes="100vw" style={{ width: '100%', height: 'auto' }} className="mb-3" />
         <p><strong>Meet Ashli, Your Externship Facilitator</strong></p>
         <p>Ashli is dedicated to ensuring every student has a smooth and successful externship experience. She'll personally guide you through the placement process, help match you with a professional dog trainer, and provide ongoing support until your training is complete. With Ashli's expertise and commitment to student success, you can feel confident knowing you'll have guidance every step of the way as you transition from online learning to hands-on experience.</p>
