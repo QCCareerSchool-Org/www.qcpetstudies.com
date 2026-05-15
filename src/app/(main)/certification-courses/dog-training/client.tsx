@@ -63,14 +63,8 @@ export const Client: FC<Props> = ({ dtPrice, dePrice, countryCode }) => {
           </div>
         </div>
       </section>
-
-      <section>
-        <>
-          <ComparisonModal dtPrice={dtPrice} dePrice={dePrice} show={popup} onHide={handleHide} />
-
-          <PriceSection className="bg-light" dtPrice={dtPrice} dePrice={dePrice} onPopupLinkClick={handlePopupLinkClick} countryCode={countryCode} />
-        </>
-      </section>
+      <ComparisonModal dtPrice={dtPrice} dePrice={dePrice} show={popup} onHide={handleHide} />
+      <PriceSection className="bg-light" dtPrice={dtPrice} dePrice={dePrice} onPopupLinkClick={handlePopupLinkClick} countryCode={countryCode} />
     </>
   );
 };

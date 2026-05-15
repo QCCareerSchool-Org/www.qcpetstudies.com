@@ -14,11 +14,13 @@ import { AccordionItem } from '@/components/accordion/accordionItem';
 import { BackgroundImage } from '@/components/backgroundImage';
 import { CourseSchema } from '@/components/courseSchema';
 import { GuaranteeSection } from '@/components/guaranteeSection';
+import { Overlay } from '@/components/overlay';
 import { TestimonialWallSection } from '@/components/testimonialWallSection';
 import { TutorSectionDT } from '@/components/tutorSectionDT';
 import { VirtualCommunitySection } from '@/components/virtualCommunitySection';
 import type { CourseCode } from '@/domain/courseCode';
 import type { Price } from '@/domain/price';
+import { formatPrice } from '@/lib/formatPrice';
 
 interface Props {
   price: Price;
@@ -41,16 +43,18 @@ export const DogTrainingBase: FC<Props> = ({ enrollPath, courseCodes, dtPrice, d
         <p className="lead fw-normal mb-0">NEW: Now Available with an In-Person Externship!</p>
       </div>
     </div>
-    <section className="bg-dark">
+    <section id="#top" className="bg-dark">
       <BackgroundImage src={DTBackgroundImage} priority />
-      <div className="container text-start">
-        <div className="row">
-          <h1>Dog Training</h1>
-          <h2 className="h1 mb-5">Course</h2>
-          <h3 className="mb-5">Become a Certified Dog Trainer</h3>
-          <div className="d-flex gap-1">
-            <a href={`https://enroll.qcpetstudies.com${enrollPath}`}><button className="btn btn-primary me-3 btn-lg">Enroll Now</button></a>
-            <a href="#tuition"><button className="btn btn-outline-light btn-lg">Tuition & Payment Plans</button></a>
+      <Overlay backgroundColor="rgba(0,0,0,0.4)" className="d-md-none" />
+      <div className="container text-center text-md-start">
+        <div className="row mb-4">
+          <div className="col-12 col-md-8 col-lg-6 offset-lg-1">
+            <h1 className="mb-4 text-shadow">Dog Training Course</h1>
+            {dtPrice.plans.part.deposit > 0 && <h4 className="mb-5">Get Started for Only <strong>{dtPrice.currency.symbol}{formatPrice(dtPrice.plans.part.deposit)}</strong></h4>}
+            <div className="d-flex flex-column flex-sm-row gap-2">
+              <a href={`https://enroll.qcpetstudies.com${enrollPath}`} className="btn btn-primary">Enroll Now</a>
+              <a href="#tuition" className="btn btn-light">Tuition & Payment Plans</a>
+            </div>
           </div>
         </div>
       </div>
@@ -59,20 +63,20 @@ export const DogTrainingBase: FC<Props> = ({ enrollPath, courseCodes, dtPrice, d
     <Client countryCode={countryCode} dtPrice={dtPrice} dePrice={dePrice} />
     <section>
       <div className="container">
-        <div className="row">
-          <div className="col">
-            <Image src={WhyQCImage} className="img-fluid" alt="" />
+        <div className="row g-4">
+          <div className="col-12 col-lg-6 text-center">
+            <Image src={WhyQCImage} className="img-fluid" style={{ width: 480, marginTop: '-10%' }} alt="" />
           </div>
-          <div className="col">
-            <h2 className="mb-2 mb-md-4">Why Choose QC Pet Studies</h2>
+          <div className="col-12 col-lg-6">
+            <h2 className="mb-3">Why Choose QC Pet Studies</h2>
             <h3>Master a Science-Backed Approach to Training</h3>
-            <p className="mb-3">Develop professional-level skills with comprehensive, expert-designed training that teaches proven, science-backed dog training methods you can confidently apply in real-world situations.</p>
+            <p>Develop professional-level skills with comprehensive, expert-designed training that teaches proven, science-backed dog training methods you can confidently apply in real-world situations.</p>
             <h3>Personalized Learn with One-on-One Mentorship</h3>
-            <p className="mb-3">At QC, you'll never learn alone. Your professional dog training mentor will provide personalized audio feedback and guidance on your assignments to help you build confidence and refine your skills.</p>
+            <p>At QC, you'll never learn alone. Your professional dog training mentor will provide personalized audio feedback and guidance on your assignments to help you build confidence and refine your skills.</p>
             <h3>Lifetime Enjoy Lifetime Access to Your Course</h3>
-            <p className="mb-3">Revisit your training whenever you need it. As a QC student, you'll receive lifetime access to your course materials, business templates, student resources, and exclusive industry discounts.</p>
+            <p>Revisit your training whenever you need it. As a QC student, you'll receive lifetime access to your course materials, business templates, student resources, and exclusive industry discounts.</p>
             <h3>Choose a Payment Plan that Works for You</h3>
-            <p className="mb-3">With affordable tuition and flexible payment options, QC makes it easy to pursue your dog training education on a schedule and budget that work for you.</p>
+            <p className="mb-0">With affordable tuition and flexible payment options, QC makes it easy to pursue your dog training education on a schedule and budget that work for you.</p>
           </div>
         </div>
       </div>
@@ -95,7 +99,7 @@ export const DogTrainingBase: FC<Props> = ({ enrollPath, courseCodes, dtPrice, d
     </section>
     <TestimonialWallSection testimonialIds={testimonialIds} />
     <div id="outline" className="sectionAnchor" />
-    <CourseOutlineSection className="bg-white" />
+    <CourseOutlineSection className="bg-light" />
     <KimSection />
     <TutorSectionDT className="bg-lighter" />
 
