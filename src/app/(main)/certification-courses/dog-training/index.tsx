@@ -1,30 +1,24 @@
 import Image from 'next/image';
 import type { FC } from 'react';
-import { BsCardChecklist, BsPeopleFill } from 'react-icons/bs';
-import { IoMdInfinite } from 'react-icons/io';
 
-import DTBackgroundImage from './australian-shepherd-attentive.jpg';
+import CertificationBgImage from './cert-bg.jpg';
+import { Client } from './client';
+import DTBackgroundImage from './hero-lrg.jpg';
+import CertificationLogo from './IDGP-certification-gold.svg';
+import { KimSection } from './kimSection';
 import { OntarioOnlySection } from './ontarioOnlySection';
 import { CourseOutlineSection } from './outlineSection';
+import WhyQCImage from './why-choose-qc.jpg';
 import { Accordion } from '@/components/accordion';
 import { AccordionItem } from '@/components/accordion/accordionItem';
 import { BackgroundImage } from '@/components/backgroundImage';
-import CertificationGoldImage from '@/components/certifications/IDTP-certification-yellow.svg';
 import { CourseSchema } from '@/components/courseSchema';
 import { GuaranteeSection } from '@/components/guaranteeSection';
-import { PriceSection } from '@/components/priceSection';
-import { PriceSectionWithDiscount } from '@/components/priceSectionWithDiscount';
-import { TestimonialAlexaAnnCesari } from '@/components/testimonials/alexaAnnCesari';
-import { TestimonialCherylLovette } from '@/components/testimonials/cherylLovette';
-import { TestimonialLorisTiede } from '@/components/testimonials/lorisTiede';
+import { TestimonialWallSection } from '@/components/testimonialWallSection';
 import { TutorSectionDT } from '@/components/tutorSectionDT';
 import { VirtualCommunitySection } from '@/components/virtualCommunitySection';
 import type { CourseCode } from '@/domain/courseCode';
 import type { Price } from '@/domain/price';
-import GuaranteeIcon from '@/images/course-overview-icons/guarantee.svg';
-import OutlineIcon from '@/images/course-overview-icons/outline.svg';
-import TutorIcon from '@/images/course-overview-icons/tutor.svg';
-import { formatPrice } from '@/lib/formatPrice';
 
 interface Props {
   price: Price;
@@ -32,123 +26,81 @@ interface Props {
   courseCodes: CourseCode[];
   countryCode: string;
   provinceCode: string | null;
+  dtPrice: Price;
+  dePrice: Price;
 }
 
-const headerIconSize = 20;
-const iconSize = 36;
 let eventKey = 0;
+const testimonialIds = [ 'TD-0001', 'TD-0002', 'TD-0003', 'TD-0011', 'TD-0012', 'TD-0013' ];
 
-export const DogTrainingBase: FC<Props> = ({ price, enrollPath, courseCodes, countryCode, provinceCode }) => (
+export const DogTrainingBase: FC<Props> = ({ enrollPath, courseCodes, dtPrice, dePrice, countryCode, provinceCode }) => (
   <>
     <CourseSchema courseCode={courseCodes[0]} showPrice />
+    <div style={{ background: 'red', color: 'white', width: '100%', padding: '0.5rem' }}>
+      <div className="container text-center">
+        <p className="lead fw-normal mb-0">NEW: Now Available with an In-Person Externship!</p>
+      </div>
+    </div>
     <section className="bg-dark">
       <BackgroundImage src={DTBackgroundImage} priority />
-      <div className="image-overlay-gradient" />
-      <div className="container text-center">
-        <div className="row mb-4">
-          <div className="mb-4">
-            <Image src={CertificationGoldImage} alt="International Dog Training Professional IDTP Certification" height="125" width="125" style={{ maxWidth: '100%', height: 'auto' }} />
-          </div>
-          <h1>Dog Training Course</h1>
-          {price.plans.part.deposit > 0 && <h4>Get Started for Only <strong>{price.currency.symbol}{formatPrice(price.plans.part.deposit)}</strong></h4>}
-          <p><em><a href="#tuition" className="text-white">See tuition details</a></em></p>
-          <a href={`https://enroll.qcpetstudies.com${enrollPath}`}><button className="btn btn-secondary btn-lg">Enroll Online</button></a>
-        </div>
-        <div className="row justify-content-center">
-          <div className="col-12 col-md-6 col-lg-6 d-flex">
-            <div className="col text-uppercase">
-              <a href="#outline"><Image src={OutlineIcon} alt="outline" width={headerIconSize} height={headerIconSize} style={{ maxWidth: '100%', height: 'auto' }} /></a>
-              <p><strong>Outline</strong></p>
-            </div>
-            <div className="col text-uppercase">
-              <a href="#guarantee"><Image src={GuaranteeIcon} alt="play button" width={headerIconSize} height={headerIconSize} style={{ maxWidth: '100%', height: 'auto' }} /></a>
-              <p><strong>Guarantee</strong></p>
-            </div>
-            <div className="col text-uppercase">
-              <a href="#tutors"><Image src={TutorIcon} alt="play button" width={headerIconSize} height={headerIconSize} style={{ maxWidth: '100%', height: 'auto' }} /></a>
-              <p><strong>Tutors</strong></p>
-            </div>
+      <div className="container text-start">
+        <div className="row">
+          <h1>Dog Training</h1>
+          <h2 className="h1 mb-5">Course</h2>
+          <h3 className="mb-5">Become a Certified Dog Trainer</h3>
+          <div className="d-flex gap-1">
+            <a href={`https://enroll.qcpetstudies.com${enrollPath}`}><button className="btn btn-primary me-3 btn-lg">Enroll Now</button></a>
+            <a href="#tuition"><button className="btn btn-outline-light btn-lg">Tuition & Payment Plans</button></a>
           </div>
         </div>
       </div>
     </section>
 
+    <Client countryCode={countryCode} dtPrice={dtPrice} dePrice={dePrice} />
     <section>
-      <div className="container text-center">
-        <div className="row justify-content-center">
-          <div className="col-12 col-lg-8 mb-4">
-            <div className="ratio ratio-16x9">
-              <video controls preload="metadata" poster="https://cdn.qccareerschool.com/pet/dog-training-trailer-poster.png">
-                <source src="https://cdn.qccareerschool.com/pet/dog-training-trailer.mp4" type="video/mp4" />
-              </video>
-            </div>
+      <div className="container">
+        <div className="row">
+          <div className="col">
+            <Image src={WhyQCImage} className="img-fluid" alt="" />
           </div>
-          <div className="col-12 col-lg-10">
-            <h2>Become a <strong>Certified Dog Trainer</strong></h2>
-            <p className="lead"><strong>International Dog Training Professional&trade;</strong> | <i>IDTP&trade;</i></p>
-            <p>Dog training is a booming industry! Owners need help to turn their dogs into well-behaved members of the family, and they want someone qualified to help them achieve this goal.  Whether you want to work in a training school, launch your own dog training business, or freelance as a private dog trainer, you'll graduate with all the knowledge and skills you need to succeed in the dog training industry!</p>
-            <p className="lead mb-0">Are you ready to start an amazing career?</p>
+          <div className="col">
+            <h2 className="mb-2 mb-md-4">Why Choose QC Pet Studies</h2>
+            <h3>Master a Science-Backed Approach to Training</h3>
+            <p className="mb-3">Develop professional-level skills with comprehensive, expert-designed training that teaches proven, science-backed dog training methods you can confidently apply in real-world situations.</p>
+            <h3>Personalized Learn with One-on-One Mentorship</h3>
+            <p className="mb-3">At QC, you'll never learn alone. Your professional dog training mentor will provide personalized audio feedback and guidance on your assignments to help you build confidence and refine your skills.</p>
+            <h3>Lifetime Enjoy Lifetime Access to Your Course</h3>
+            <p className="mb-3">Revisit your training whenever you need it. As a QC student, you'll receive lifetime access to your course materials, business templates, student resources, and exclusive industry discounts.</p>
+            <h3>Choose a Payment Plan that Works for You</h3>
+            <p className="mb-3">With affordable tuition and flexible payment options, QC makes it easy to pursue your dog training education on a schedule and budget that work for you.</p>
           </div>
         </div>
       </div>
     </section>
-
-    {price.promoDiscount > 0
-      ? <PriceSectionWithDiscount courses={courseCodes} price={price} doubleGuarantee enrollPath={enrollPath} />
-      : <PriceSection courses={courseCodes} price={price} doubleGuarantee enrollPath={enrollPath} />
-    }
-
     <section>
-      <div className="container text-center">
+      <BackgroundImage src={CertificationBgImage} />
+      <div className="container text-white text-center">
         <div className="row justify-content-center">
-          <div className="col-12 col-lg-10 mb-4">
-            <h2 className="mb-2 mb-md-4">Included in <strong>Your Course</strong></h2>
-          </div>
-          <div className="col-12 col-md-4 mb-4 mb-md-0">
-            <div className="courseContentIcon"><BsCardChecklist size={iconSize} /></div>
-            <h3>Newest <br className="d-none d-md-inline d-lg-none" />Course Materials</h3>
-            <p className="mb-0">Your course materials are always available online and are always being updated with the latest science-based industry standards. Refer to your updated training guides throughout your career!</p>
-          </div>
-          <div className="col-12 col-md-4 mb-4 mb-md-0">
-            <div className="courseContentIcon"><BsPeopleFill size={iconSize} /></div>
-            <h3>Personalized <br className="d-none d-md-inline d-lg-none" />Feedback</h3>
-            <p className="mb-0">Just because you're learning online doesn't mean you're learning alone. You'll receive personalized audio feedback from your tutor on every dog training assignment you submit. Use this feedback to improve and succeed!</p>
-          </div>
-          <div className="col-12 col-md-4">
-            <div className="courseContentIcon"><IoMdInfinite size={iconSize} /></div>
-            <h3>Lifetime <br className="d-none d-md-inline d-lg-none" />Access</h3>
-            <p className="mb-0">Once you're a member of the QC family you'll have lifetime access to all the tools and resources available to QC students. This includes discounts on industry products and so much more!</p>
+          <div className="col-12 col-lg-8">
+            <div className="mb-4">
+              <Image src={CertificationLogo} alt="IDGP Certification Logo" />
+            </div>
+            <h2 className="text-white">Your International Dog Training Professional Certification</h2>
+            <p>Once you graduate from your online dog training course, you'll earn your International Dog Training Professional (IDTP) certification — a professional credential that demonstrates your training, knowledge, and ability to safely work with dogs and deliver effective, professional training services. Your certification never expires, and you'll have lifetime access with no renewal fees or annual dues required.</p>
+            <p>If you complete the <strong>Externship Track</strong>, you'll also receive an <strong>additional certificate of completion</strong> recognizing your additional hands-on training and real-world salon experience!</p>
+            <p className="text-warning mt-4"><strong>International Dog Training Professional&trade;</strong> | <i>IDTP&trade;</i></p>
           </div>
         </div>
       </div>
     </section>
-
-    <section className="bg-lighter">
-      <div className="container text-center">
-        <h2 className="text-center mb-4">QC Success Stories</h2>
-        <div className="row justify-content-center g-4">
-          <div className="col-12 col-md-9 col-lg-6 col-xl-4">
-            <TestimonialAlexaAnnCesari />
-          </div>
-          <div className="col-12 col-md-9 col-lg-6 col-xl-4">
-            <TestimonialCherylLovette />
-          </div>
-          <div className="col-12 col-md-9 col-lg-6 col-xl-4">
-            <TestimonialLorisTiede />
-          </div>
-        </div>
-      </div>
-    </section>
-
+    <TestimonialWallSection testimonialIds={testimonialIds} />
     <div id="outline" className="sectionAnchor" />
     <CourseOutlineSection className="bg-white" />
-
+    <KimSection />
     <TutorSectionDT className="bg-lighter" />
 
-    {countryCode === 'CA' && provinceCode === 'ON' && <OntarioOnlySection />}
-
     <GuaranteeSection className="bg-light" />
-
+    {countryCode === 'CA' && provinceCode === 'ON' && <OntarioOnlySection />}
     <VirtualCommunitySection />
 
     <section>
@@ -167,6 +119,11 @@ export const DogTrainingBase: FC<Props> = ({ price, enrollPath, courseCodes, cou
                       <li>Hands-on assignments with real dogs</li>
                     </ul>
                     <p>Students upload assignment videos that demonstrate their dog training skills, and receive personalized feedback from professional dog trainers. The course covers everything from canine behavior to obedience training, correcting behavior and using positive reinforcement techniques.</p>
+                    <p>Now, QC Pet Studies offers two flexible ways to learn dog training, so you can customize your training to fit your needs:</p>
+                    <ol className="ms-3">
+                      <li><strong>Online Track:</strong> Learn from home through step-by-step video tutorials, reading materials, and hands-on assignments working with dogs. Practice techniques on real dogs, upload photos or videos of your work, and receive personalized feedback from professional groomers.</li>
+                      <li><strong>Externship Track:</strong> Gain real-world experience by completing part of your training working in a professional setting and gaining practical experience under the guidance of experienced trainers, while still completing your online coursework.</li>
+                    </ol>
                     <p>When you graduate, you&apos;ll earn a professional Dog Trainer certificate that demonstrates your skills and prepares you for a career in the pet industry.</p>
                   </div>
                 </AccordionItem>
@@ -187,7 +144,7 @@ export const DogTrainingBase: FC<Props> = ({ price, enrollPath, courseCodes, cou
                 </AccordionItem>
               </Accordion>
               <Accordion>
-                <AccordionItem eventKey={eventKey++} heading="What methods will I learn in QC’s online dog trainer course?" isFAQ={true}>
+                <AccordionItem eventKey={eventKey++} heading="What methods will I learn in QC's online dog trainer course?" isFAQ={true}>
                   <div className="row text-left">
                     <p>QC&apos;s dog training program is based on science-backed, humane training techniques. You&apos;ll learn to:</p>
                     <ul className="ps-5">
