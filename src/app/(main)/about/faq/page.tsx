@@ -168,11 +168,11 @@ const FAQPage: PageComponent = async props => {
 
                 <QuestionAndAnswer header="How long will it take to complete my online dog training class?">
                   <p>With QC's online courses, you work at your own pace. You decide how much time per week you want to spend developing your training skills. QC's flexible dog trainer course has no deadlines for completing course assignments. Typically, students who work on their training assignments for a short period each week will complete their online course within about three months.</p>
-                  <p>Keep in mind that you have a full year to complete your course, so you can schedule your training around your lifestyle! If you enroll in the Externship Track you’ll have an additional 8 weeks to complete your program. </p>
+                  <p>Keep in mind that you have a full year to complete your course, so you can schedule your training around your lifestyle! If you enroll in the Externship Track you'll have an additional 8 weeks to complete your program. </p>
                 </QuestionAndAnswer>
 
-                <QuestionAndAnswer header="I’m not sure if an externship will benefit me. What should I do?">
-                  <p>If you’re unsure, we suggest enrolling in the Dog Training course without the externship first. You’ll have the opportunity to work with dogs and dog owners and receive ongoing guidance from your Training Mentor. If, after completing the course, you feel you'd benefit from additional in-person coaching with a professional trainer, you can purchase the externship separately. Just contact the school for instructions on how to proceed.</p>
+                <QuestionAndAnswer header="I'm not sure if an externship will benefit me. What should I do?">
+                  <p>If you're unsure, we suggest enrolling in the Dog Training course without the externship first. You'll have the opportunity to work with dogs and dog owners and receive ongoing guidance from your Training Mentor. If, after completing the course, you feel you'd benefit from additional in-person coaching with a professional trainer, you can purchase the externship separately. Just contact the school for instructions on how to proceed.</p>
                 </QuestionAndAnswer>
 
                 <QuestionAndAnswer header="What methods do you teach as part of the dog training class?">
