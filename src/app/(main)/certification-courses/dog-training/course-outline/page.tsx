@@ -83,28 +83,28 @@ const CourseOutlinePage: PageComponent = () => {
             </div>
           </div>
           <Accordion>
-            <AccordionItem eventKey={eventKey++} heading="Unit A">
+            <AccordionItem eventKey={eventKey++} heading="Unit A: Fundamentals of Dog Training">
               <UnitA />
             </AccordionItem>
-            <AccordionItem eventKey={eventKey++} heading="Unit B">
+            <AccordionItem eventKey={eventKey++} heading="Unit B: Canine Behavior">
               <UnitB />
             </AccordionItem>
-            <AccordionItem eventKey={eventKey++} heading="Unit C">
+            <AccordionItem eventKey={eventKey++} heading="Unit C: Canine Communication">
               <UnitC />
             </AccordionItem>
-            <AccordionItem eventKey={eventKey++} heading="Unit D">
+            <AccordionItem eventKey={eventKey++} heading="Unit D: Learning Theory ">
               <UnitD />
             </AccordionItem>
-            <AccordionItem eventKey={eventKey++} heading="Unit E">
+            <AccordionItem eventKey={eventKey++} heading="Unit E: Training Methods">
               <UnitE />
             </AccordionItem>
-            <AccordionItem eventKey={eventKey++} heading="Unit F">
+            <AccordionItem eventKey={eventKey++} heading="Unit F: Training Tools">
               <UnitF />
             </AccordionItem>
-            <AccordionItem eventKey={eventKey++} heading="Unit G">
+            <AccordionItem eventKey={eventKey++} heading="Unit G: Teaching Dog Owners">
               <UnitG />
             </AccordionItem>
-            <AccordionItem eventKey={eventKey++} heading="Unit H (Optional)">
+            <AccordionItem eventKey={eventKey++} heading="Unit H: Optional Business Training">
               <UnitH />
             </AccordionItem>
           </Accordion>
