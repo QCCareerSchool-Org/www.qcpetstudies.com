@@ -11,6 +11,7 @@ import { UnitE } from './unitE';
 import { UnitF } from './unitF';
 import { UnitG } from './unitG';
 import { UnitH } from './unitH';
+import { UnitIJ } from './unitIJ';
 import { Accordion } from '@/components/accordion';
 import { AccordionItem } from '@/components/accordion/accordionItem';
 import { BackgroundImage } from '@/components/backgroundImage';
@@ -103,6 +104,9 @@ const CourseOutlinePage: PageComponent = () => {
             </AccordionItem>
             <AccordionItem eventKey={eventKey++} heading="Unit H (Optional)">
               <UnitH />
+            </AccordionItem>
+            <AccordionItem eventKey={eventKey++} heading="Unit I-J">
+              <UnitIJ />
             </AccordionItem>
           </Accordion>
         </div>
