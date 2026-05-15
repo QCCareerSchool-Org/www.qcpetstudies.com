@@ -9,7 +9,7 @@ export const ComparisonSection: FC = () => (
   <section className="bg-light">
     <div className="container">
       <SectionHeader
-        title="Choosing Your Path: Pet Studies School Comparison Chart"
+        title="Grooming School Comparison Chart: The Right Training for Your Goals"
         text="Your journey to becoming a professional groomer is unique. Whether you want to run your own grooming business or secure a position in a salon, your training should fit your life, your timeline and your goals."
       />
       <PetStudiesEducationComparisonTable />
