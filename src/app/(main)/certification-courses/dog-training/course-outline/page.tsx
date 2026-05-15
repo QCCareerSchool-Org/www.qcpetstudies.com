@@ -64,7 +64,10 @@ const CourseOutlinePage: PageComponent = () => {
                   <div className="mb-2">
                     <Image src={CalendarIcon} width={iconSize} height={iconSize} alt="Calendar Icon" style={{ maxWidth: '100%', height: 'auto' }} />
                   </div>
-                  <p className="card-text">On average, most QC Students work on their course for a few hours per week, and complete the online dog training course within <strong>three to six months</strong>. You'll have up to a year to complete the program&mdash;lots of time!</p>
+                  <p className="card-text">On average, most QC students work on their course for a few hours per week, and complete the <strong>online dog training course</strong> within about <strong>6 months to a year</strong>. You'll have up to a year to complete the program, so lots of time!</p>
+                  <div className="alert alert-primary mb-0">
+                    <strong>Note:</strong> Course and unit times indicated on this page are approximate. Since this is a self-paced course, students take as much time as they need to practice their skills and complete each unit.
+                  </div>
                 </div>
               </div>
             </div>
@@ -77,32 +80,32 @@ const CourseOutlinePage: PageComponent = () => {
           <div className="row justify-content-center">
             <div className="col-12 col-lg-10 mb-5 text-center">
               <h2>Unit-by-Unit Breakdown</h2>
-              <p className="mb-0">Below is an outline of each unit of the online dog training course. Expand each section to find out what you'll learn in each unit.</p>
+              <p className="mb-0">Below is an outline of each unit of the online dog training course. Expand each section to find out what you'll learn in each unit, along with each unit's expected length and the required dogs/equipment to complete your assignments. Expand each section to find out what you'll learn in each unit.</p>
             </div>
           </div>
           <Accordion>
-            <AccordionItem eventKey={eventKey++} heading="Unit A">
+            <AccordionItem eventKey={eventKey++} heading="Unit A: Fundamentals of Dog Training">
               <UnitA />
             </AccordionItem>
-            <AccordionItem eventKey={eventKey++} heading="Unit B">
+            <AccordionItem eventKey={eventKey++} heading="Unit B: Canine Behavior">
               <UnitB />
             </AccordionItem>
-            <AccordionItem eventKey={eventKey++} heading="Unit C">
+            <AccordionItem eventKey={eventKey++} heading="Unit C: Canine Communication">
               <UnitC />
             </AccordionItem>
-            <AccordionItem eventKey={eventKey++} heading="Unit D">
+            <AccordionItem eventKey={eventKey++} heading="Unit D: Learning Theory ">
               <UnitD />
             </AccordionItem>
-            <AccordionItem eventKey={eventKey++} heading="Unit E">
+            <AccordionItem eventKey={eventKey++} heading="Unit E: Training Methods">
               <UnitE />
             </AccordionItem>
-            <AccordionItem eventKey={eventKey++} heading="Unit F">
+            <AccordionItem eventKey={eventKey++} heading="Unit F: Training Tools">
               <UnitF />
             </AccordionItem>
-            <AccordionItem eventKey={eventKey++} heading="Unit G">
+            <AccordionItem eventKey={eventKey++} heading="Unit G: Teaching Dog Owners">
               <UnitG />
             </AccordionItem>
-            <AccordionItem eventKey={eventKey++} heading="Unit H (Optional)">
+            <AccordionItem eventKey={eventKey++} heading="Unit H: Optional Business Training">
               <UnitH />
             </AccordionItem>
             <AccordionItem eventKey={eventKey++} heading="Unit I-J">

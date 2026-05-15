@@ -153,7 +153,7 @@ const FAQPage: PageComponent = async props => {
                 <h2 className="text-center mb-4">Questions About Dog Training</h2>
 
                 <QuestionAndAnswer header="Is it possible to learn to become a professional dog trainer online?">
-                  <p>Absolutely! As a QC dog training student, you'll receive the tools you need to learn the theoretical knowledge and practical skills of a dog trainer. Through hands-on assignments and hands-on learning, you'll get to develop your skills in real-life scenarios.</p>
+                  <p>Absolutely! As a QC dog training student, you'll receive the tools you need to learn the theoretical knowledge and practical skills to be a successful of a dog trainer. Through hands-on assignments and mentor feedback hands-on learning, you'll get to develop your professional training skills in real-life scenarios.  If you would like additional hands-on experience working alongside a professional trainer, you can enroll in the Externship Track.</p>
                   <p>As a student of QC's Dog Training Course, you'll enjoy the flexibility of online dog training classes because they'll fit into your own schedule and lifestyle. Remember, just because you're learning from home doesn't mean you're learning alone! You'll work with a personal dog training tutor who will guide you through the course and review all your work, so you'll receive the same feedback as you would in a classroom-based dog training program.</p>
                   <p>QC's Student Support Specialists are also available to answer your questions before, during, and after your online dog training course! <Link href="/contact-us">Contact QC Pet Studies</Link> by phone, email, or Live Chat.</p>
                 </QuestionAndAnswer>
@@ -168,7 +168,11 @@ const FAQPage: PageComponent = async props => {
 
                 <QuestionAndAnswer header="How long will it take to complete my online dog training class?">
                   <p>With QC's online courses, you work at your own pace. You decide how much time per week you want to spend developing your training skills. QC's flexible dog trainer course has no deadlines for completing course assignments. Typically, students who work on their training assignments for a short period each week will complete their online course within about three months.</p>
-                  <p>Keep in mind that you have a full year to complete your course, so you can schedule your training around your lifestyle!</p>
+                  <p>Keep in mind that you have a full year to complete your course, so you can schedule your training around your lifestyle! If you enroll in the Externship Track you’ll have an additional 8 weeks to complete your program. </p>
+                </QuestionAndAnswer>
+
+                <QuestionAndAnswer header="I’m not sure if an externship will benefit me. What should I do?">
+                  <p>If you’re unsure, we suggest enrolling in the Dog Training course without the externship first. You’ll have the opportunity to work with dogs and dog owners and receive ongoing guidance from your Training Mentor. If, after completing the course, you feel you'd benefit from additional in-person coaching with a professional trainer, you can purchase the externship separately. Just contact the school for instructions on how to proceed.</p>
                 </QuestionAndAnswer>
 
                 <QuestionAndAnswer header="What methods do you teach as part of the dog training class?">

@@ -50,7 +50,7 @@ const rows: ComparisonTableRow<ColumnKey>[] = [
   {
     feature: 'Grooming Kit',
     qc: <><Heading>Included:</Heading> Professional 11-piece set, 3-piece shear kit & leather case included for every student </>,
-    tradeschools: <><Heading>Often Extra::</Heading> Usually requires a separate purchase of $500-$1,000+</>,
+    tradeschools: <><Heading>Often Extra:</Heading> Usually requires a separate purchase of $500 to $1,000+</>,
     other: <><Heading>Often Extra:</Heading> Some include basic kits; others require a separate purchase</>,
   },
   {
@@ -74,17 +74,17 @@ const rows: ComparisonTableRow<ColumnKey>[] = [
   {
     feature: 'Duration',
     qc: <>
-      <p>3-6 Months</p>
+      <p>3 to 6 Months</p>
       <p> *Self-paced with up to a year to complete your course</p>
     </>,
-    tradeschools: '3-12 Months',
-    other: ' 6 weeks - 12 months',
+    tradeschools: '3 to 12 Months',
+    other: ' 6 weeks to 12 months',
   },
   {
     feature: 'Total Investment',
     qc: <><Heading>High Value:</Heading> $2,498 to $3,648 (Flexible Plans)</>,
-    tradeschools: <><Heading>High Cost:</Heading> $6,000-$15,000+</>,
-    other: <><Heading>Broad Investment:</Heading> $500-$5,000+ (Varies by school)</>,
+    tradeschools: <><Heading>High Cost:</Heading> $6,000 to $15,000+</>,
+    other: <><Heading>Broad Investment:</Heading> $500 to $5,000+ (Varies by school)</>,
   },
 ];
 
