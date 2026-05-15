@@ -17,6 +17,7 @@ import { AccordionItem } from '@/components/accordion/accordionItem';
 import { BackgroundImage } from '@/components/backgroundImage';
 import { CourseSchema } from '@/components/courseSchema';
 import { GuaranteeSection } from '@/components/guaranteeSection';
+import { Overlay } from '@/components/overlay';
 import { TestimonialWallSection } from '@/components/testimonialWallSection';
 import { TutorSectionDG } from '@/components/tutorSectionDG';
 import { VirtualCommunitySection } from '@/components/virtualCommunitySection';
@@ -45,14 +46,15 @@ export const DogGroomingBase: FC<Props> = ({ countryCode, provinceCode, dgPrice,
       <CourseSchema courseCode={courseCode} showPrice />
       <section id="top" className="bg-dark" style={{ paddingTop: '6rem', paddingBottom: '6rem' }}>
         <BackgroundImage src={DesktopHero} objectPosition="50% 50%" mobile={{ src: MobileHero, breakpoint: 'md' }} priority />
+        <Overlay backgroundColor="rgba(0,0,0,0.4)" className="d-md-none" />
         <div className="container text-center text-md-start">
           <div className="row mb-4">
             <div className="col-12 col-md-8 col-lg-6 offset-lg-1">
-              <h1 className="mb-4">Dog Grooming Course</h1>
-              {dgPrice.plans.part.deposit > 0 && <h4 className="mb-5">Get Started for Only <strong>{dgPrice.currency.symbol}{formatPrice(dgPrice.plans.part.deposit)}</strong></h4>}
-              <div className="d-flex justify-content-center justify-content-md-start">
-                <Link href={`https://enroll.qcpetstudies.com${enrollPath}`}><button className="btn btn-primary me-3">Enroll Now</button></Link>
-                <Link href="#tuition"><button className="btn btn-outline-light">Tuition & Payment Plans</button></Link>
+              <h1 className="mb-4 text-shadow">Dog Grooming Course</h1>
+              {dgPrice.plans.part.deposit > 0 && <h2 className="h4 text-shadow mb-5">Get Started for Only <strong>{dgPrice.currency.symbol}{formatPrice(dgPrice.plans.part.deposit)}</strong></h2>}
+              <div className="d-flex flex-column flex-sm-row gap-2">
+                <a href={`https://enroll.qcpetstudies.com${enrollPath}`} className="btn btn-primary">Enroll Now</a>
+                <a href="#tuition" className="btn btn-light">Tuition & Payment Plans</a>
               </div>
             </div>
           </div>

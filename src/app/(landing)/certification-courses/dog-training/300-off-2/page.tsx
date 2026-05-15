@@ -23,10 +23,18 @@ const DogTraining300Off2Page: PageComponent = async props => {
     return null;
   }
 
+  const [ dtPrice, dePrice ] = await Promise.all([
+    fetchPrice([ 'dt' ], countryCode, provinceCode, { promoCode: 'DT150', school: 'QC Pet Studies' }, undefined, process.env.FIREWALL_BYPASS_SECRET),
+    fetchPrice([ 'de' ], countryCode, provinceCode, { promoCode: 'DT150', school: 'QC Pet Studies' }, undefined, process.env.FIREWALL_BYPASS_SECRET),
+  ]);
+  if (!dtPrice.success || !dePrice.success) {
+    return null;
+  }
+
   return (
     <>
       <DeadlineFunnelScript />
-      <DogTrainingBase price={price.value} enrollPath="/training-300-off" courseCodes={courseCodes} countryCode={countryCode} provinceCode={provinceCode} />;
+      <DogTrainingBase price={price.value} enrollPath="/training-300-off" courseCodes={courseCodes} countryCode={countryCode} provinceCode={provinceCode} dtPrice={dtPrice.value} dePrice={dePrice.value} />;
     </>
   );
 };

@@ -54,7 +54,8 @@ const DogTrainingCatalogPage: PageComponent = async props => {
         <div className="container">
           <div className="row justify-content-center align-items-center">
             <div className="col-12 col-sm-11 col-md-10 col-lg-10 mb-4 mb-lg-5">
-              <h2 className="text-center mb-0">Become a Professional <strong>Dog Trainer</strong></h2>
+              <h1 className="h2 text-center mb-0">Become a Professional <strong>Dog Trainer</strong></h1>
+              <div className="badge bg-secondary">Now Available with Optional Externship!</div>
             </div>
             <div className="col-12 col-sm-11 col-md-8 col-lg-6 col-xl-5 mb-4 mb-lg-0">
               <div className="card">
@@ -123,7 +124,7 @@ const DogTrainingCatalogPage: PageComponent = async props => {
                 <Image src={HomeSmileIcon} alt="" />
               </div>
               <h3 className="h5">Train Real Dogs at Home</h3>
-              Complete hands-on assignments and receive personalized feedback from expert mentors.
+              Receive personalized mentor feedback on practical assignments & gain even more real-world skills with the Externship Track.
             </div>
             <div className="col-6 col-md-4">
               <div className="mb-3">
