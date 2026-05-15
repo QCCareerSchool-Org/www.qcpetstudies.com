@@ -63,14 +63,11 @@ const CourseOutlinePage: PageComponent = () => {
                   <div className="mb-2">
                     <Image src={CalendarIcon} width={iconSize} height={iconSize} alt="Calendar Icon" style={{ maxWidth: '100%', height: 'auto' }} />
                   </div>
-                  <p className="card-text"><p>On average, most QC students work on their course for a few hours per week, and complete the <strong>online dog training course</strong> within about <strong>6 months to a year</strong>. You'll have up to a year to complete the program, so lots of time!</p>
-                  <div style="background-color: #eaf6fa; border: 1px solid #d4ebf2; border-radius: 4px; padding: 24px; text-align: center; color: #446270; font-family: sans-serif; line-height: 1.5; max-width: 800px; margin: 20px auto;">
-  <p style="margin: 0;">
-    <span style="font-style: italic; font-weight: bold;">Note: </span>
-    Course and unit times indicated on this page are approximate. Since this is a self-paced course, students take as much time as they need to practice their skills and complete each unit.
-  </p>
-</div>
+                  <p className="card-text">On average, most QC students work on their course for a few hours per week, and complete the <strong>online dog training course</strong> within about <strong>6 months to a year</strong>. You'll have up to a year to complete the program, so lots of time!</p>
+                  <div className="alert alert-primary mb-0">
+                    <strong>Note:</strong> Course and unit times indicated on this page are approximate. Since this is a self-paced course, students take as much time as they need to practice their skills and complete each unit.
                   </div>
+                </div>
               </div>
             </div>
           </div>
