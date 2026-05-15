@@ -11,7 +11,7 @@ export const KimSection = () => (
           <p>QC's dog training course was developed in collaboration with renowned professional trainer <strong>Kim Cooper</strong>, owner and senior instructor of Best Friends Dog Training. </p>
           <p>With 35 years of training experience, Kim competes in obedience, agility, tracking, and other sports with her own dogs—all using motivational, reward-based training methods. In particular, Kim loves to foster the special partnership that exists between a working dog and its handler, and specializes in training search-and-rescue dogs. Kim and her dogs have earned many search-and-rescue certifications as well as obedience and agility titles.</p>
         </div>
-        <div className="col">
+        <div className="col d-flex align-items-center">
           <Image src={Kim} alt="" className="img-fluid" width={500} />
         </div>
       </div>

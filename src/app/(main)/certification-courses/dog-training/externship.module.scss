@@ -2,3 +2,12 @@
     background: #ff0000;
     font-size: large;
 }
+
+.customYellow {
+    color: #e8d393;
+}
+.whiteAccordion :global(.accordion-item),
+.whiteAccordion :global(.accordion-button),
+.whiteAccordion :global(.accordion-body) {
+  background-color: #fff;
+}
