@@ -9,15 +9,12 @@ import TeachingPeopleImage from './part-3.jpg';
 import DogTrainingBusinessImage from './part-4.jpg';
 import { Accordion } from '@/components/accordion';
 import { AccordionItem } from '@/components/accordion/accordionItem';
-import { externship } from '@/lib/externship';
 
 interface Props {
   className?: string;
-  countryCode: string;
-  provinceCode: string | null;
 }
 
-export const CourseOutlineSection: FC<Props> = ({ className, countryCode, provinceCode }) => {
+export const CourseOutlineSection: FC<Props> = ({ className }) => {
   let eventKey = 0;
 
   return (
@@ -148,14 +145,12 @@ export const CourseOutlineSection: FC<Props> = ({ className, countryCode, provin
               </div>
             </div>
           </AccordionItem>
-          {externship(countryCode, provinceCode) && (
-            <AccordionItem eventKey={eventKey++} heading={<strong>NEW: Optional Externship Placement</strong>}>
-              <p>If you choose the Externship Track, you'll be matched with a professional dog trainer in your area once you've completed the online portion of your course and paid your fees. Spend 40 hours working alongside an experienced trainer, honing your skills in a professional dog training environment, and gaining valuable industry insight as you complete your unpaid externship. Track your hours, receive mentorship and feedback from your host, and graduate with a certificate that showcases both your knowledge and hands-on experience.</p>
-              <p>As an Externship Track student, you'll also earn an additional professional certificate showcasing your advanced training and hands-on experience.</p>
-              <p>Note: Students who choose the Online Track will graduate with their International Dog Training Professional™ (IDTP) Certification upon completing the course.</p>
-              <p className="mb-0"><Link href="/certification-courses/dog-grooming/course-outline">View a More Detailed Breakdown of the Externship</Link></p>
-            </AccordionItem>
-          )}
+          <AccordionItem eventKey={eventKey++} heading={<strong>NEW: Optional Externship Placement</strong>}>
+            <p>If you choose the Externship Track, you'll be matched with a professional dog trainer in your area once you've completed the online portion of your course and paid your fees. Spend 40 hours working alongside an experienced trainer, honing your skills in a professional dog training environment, and gaining valuable industry insight as you complete your unpaid externship. Track your hours, receive mentorship and feedback from your host, and graduate with a certificate that showcases both your knowledge and hands-on experience.</p>
+            <p>As an Externship Track student, you'll also earn an additional professional certificate showcasing your advanced training and hands-on experience.</p>
+            <p>Note: Students who choose the Online Track will graduate with their International Dog Training Professional™ (IDTP) Certification upon completing the course.</p>
+            <p className="mb-0"><Link href="/certification-courses/dog-grooming/course-outline">View a More Detailed Breakdown of the Externship</Link></p>
+          </AccordionItem>
 
         </Accordion>
       </div>

@@ -19,7 +19,6 @@ import { TutorSectionDT } from '@/components/tutorSectionDT';
 import { VirtualCommunitySection } from '@/components/virtualCommunitySection';
 import type { CourseCode } from '@/domain/courseCode';
 import type { Price } from '@/domain/price';
-import { externship } from '@/lib/externship';
 
 interface Props {
   price: Price;
@@ -34,16 +33,14 @@ interface Props {
 let eventKey = 0;
 const testimonialIds = [ 'TD-0001', 'TD-0002', 'TD-0003', 'TD-0011', 'TD-0012', 'TD-0013' ];
 
-export const DogTrainingBase: FC<Props> = ({ enrollPath, courseCodes, countryCode, provinceCode, dtPrice, dePrice }) => (
+export const DogTrainingBase: FC<Props> = ({ enrollPath, courseCodes, dtPrice, dePrice, countryCode, provinceCode }) => (
   <>
     <CourseSchema courseCode={courseCodes[0]} showPrice />
-    {externship(countryCode, provinceCode) && (
-      <div style={{ background: 'red', color: 'white', width: '100%', padding: '0.5rem' }}>
-        <div className="container text-center">
-          <p className="lead fw-normal mb-0">NEW: Now Available with an In-Person Externship!</p>
-        </div>
+    <div style={{ background: 'red', color: 'white', width: '100%', padding: '0.5rem' }}>
+      <div className="container text-center">
+        <p className="lead fw-normal mb-0">NEW: Now Available with an In-Person Externship!</p>
       </div>
-    )}
+    </div>
     <section className="bg-dark">
       <BackgroundImage src={DTBackgroundImage} priority />
       <div className="container text-start">
@@ -59,7 +56,7 @@ export const DogTrainingBase: FC<Props> = ({ enrollPath, courseCodes, countryCod
       </div>
     </section>
 
-    <Client countryCode={countryCode} provinceCode={provinceCode} dtPrice={dtPrice} dePrice={dePrice} enrollPath={enrollPath} />
+    <Client countryCode={countryCode} dtPrice={dtPrice} dePrice={dePrice} />
     <section>
       <div className="container">
         <div className="row">
@@ -90,7 +87,7 @@ export const DogTrainingBase: FC<Props> = ({ enrollPath, courseCodes, countryCod
             </div>
             <h2 className="text-white">Your International Dog Training Professional Certification</h2>
             <p>Once you graduate from your online dog training course, you'll earn your International Dog Training Professional (IDTP) certification — a professional credential that demonstrates your training, knowledge, and ability to safely work with dogs and deliver effective, professional training services. Your certification never expires, and you'll have lifetime access with no renewal fees or annual dues required.</p>
-            {externship(countryCode, provinceCode) && <p>If you complete the <strong>Externship Track</strong>, you'll also receive an <strong>additional certificate of completion</strong> recognizing your additional hands-on training and real-world salon experience!</p>}
+            <p>If you complete the <strong>Externship Track</strong>, you'll also receive an <strong>additional certificate of completion</strong> recognizing your additional hands-on training and real-world salon experience!</p>
             <p className="text-warning mt-4"><strong>International Dog Training Professional&trade;</strong> | <i>IDTP&trade;</i></p>
           </div>
         </div>
@@ -98,7 +95,7 @@ export const DogTrainingBase: FC<Props> = ({ enrollPath, courseCodes, countryCod
     </section>
     <TestimonialWallSection testimonialIds={testimonialIds} />
     <div id="outline" className="sectionAnchor" />
-    <CourseOutlineSection className="bg-white" countryCode={countryCode} provinceCode={provinceCode} />
+    <CourseOutlineSection className="bg-white" />
     <KimSection />
     <TutorSectionDT className="bg-lighter" />
 
