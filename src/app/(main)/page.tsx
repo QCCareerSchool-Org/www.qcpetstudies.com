@@ -108,9 +108,8 @@ const HomePage: PageComponent = async props => {
                       <Image src={IDTPCertificationGold} height={iconSize} width={iconSize} alt="IDTP Certification" style={{ maxWidth: '100%', height: 'auto' }} />
                     </div>
                     <h3>Dog Training | <em className="gold">IDTP&trade;</em></h3>
-                    <p>Dog trainers are in record-breaking demand! Now is the perfect time to launch a lucrative career in professional dog training. This course delivers evidence-based techniques rooted in science and industry best practices. You’ll master canine communication, learn to resolve complex behavior issues, and master obedience training for any breed. Secure your future and learn from the industry’s top professionals today!</p>
-
-<p><span style="background-color: #F60070; color: #ffffff; padding: 2px 6px; border-radius: 4px; font-weight: bold;">NEW</span>: You can choose the Online-Only Track for hands-on training from home, or select the Externship Track to add real-world experience in a professional training environment.</p>
+                    <p>Dog trainers are in record-breaking demand! Now is the perfect time to launch a lucrative career in professional dog training. This course delivers evidence-based techniques rooted in science and industry best practices. You'll master canine communication, learn to resolve complex behavior issues, and master obedience training for any breed. Secure your future and learn from the industry's top professionals today!</p>
+                    <p><span className="badge bg-secondary">NEW</span>: You can choose the Online-Only Track for hands-on training from home, or select the Externship Track to add real-world experience in a professional training environment.</p>
                   </div>
                   <Link href="/certification-courses/dog-training"><button className="btn btn-navy">Course Overview</button></Link>
                 </CertificationCard>
