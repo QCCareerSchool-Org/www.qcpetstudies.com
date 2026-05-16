@@ -86,14 +86,14 @@ const AgreementPage: PageComponent = () => (
     </ul>
     <h2>7. Externship</h2>
     <h3>Eligibility Requirements</h3>
-    <p>Students enrolled in the Dog Grooming course with the Externship track must meet the following criteria before starting their externship:</p>
+    <p>Students enrolled in the Dog Grooming or Dog Training course with the Externship track must meet the following criteria before starting their externship:</p>
     <ol>
       <li>All prior course units have been completed</li>
-      <li>A minimum course average grade of 'B' has been met</li>
+      <li>A minimum grade of B has been met for Dog Grooming for each unit or a minimum grade of A- has been met for each unit</li>
       <li>Tuition is paid in full</li>
     </ol>
     <h3>Finding a Placement</h3>
-    <p>The School will make every reasonable effort to arrange a dog grooming externship placement for the student. However, placement availability depends on factors such as location, timing, and the specific requirements of participating grooming facilities, and therefore cannot be guaranteed. If the School is unable to secure a placement, the student will receive a refund for the externship portion of the course fee. Students will receive a complete list of externship policies upon enrollment.</p>
+    <p>The School will make every reasonable effort to arrange an externship placement for the student. However, placement availability depends on factors such as location, timing, and the specific requirements of participating facilities, and therefore cannot be guaranteed. If the School is unable to secure a placement, the student will receive a refund for the externship portion of the course fee. Students will receive a complete list of externship policies upon enrollment.</p>
     <h2>8. Code of Conduct</h2>
     <p>QC's tutors and support staff are dedicated to providing a top-quality experience to all students. When you communicate with the QC Team, you will be greeted in a courteous, friendly and respectful manner.</p>
     <p>Students who exhibit abusive, threatening or offensive behavior when communicating with any member of the QC team may be placed on academic probation or expelled from the School without a tuition refund.</p>
