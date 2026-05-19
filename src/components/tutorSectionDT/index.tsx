@@ -21,7 +21,7 @@ export const TutorSectionDT: FC<Props> = ({ className, id = 'tutors' }) => {
             <p className="lead mb-0">When you enroll with QC Pet Studies, you'lzbe paired with an expert training mentor who will review your work and provide detailed audio feedback on each assignment. With decades of industry experience, your mentor will offer valuable advice to help you succeed and improve as you progress through the course.</p>
           </div>
           <div className="col-12 col-lg-6 text-lg-start">
-            <div className="mb-2">
+            <div className="mb-3">
               <Image
                 src={SusanReadImage}
                 placeholder="blur"
@@ -35,7 +35,7 @@ export const TutorSectionDT: FC<Props> = ({ className, id = 'tutors' }) => {
             <p className="mb-0">Susan has over 35 years of dog training experience, specializing in Search and Rescue (SAR), obedience, rally, agility, and tracking. She is the head K9 trainer and handler with Georgian Bay SAR, Provincial K9 Coordinator for OSARVA, and the only OPP/OSARVA-certified live find dog handler in Central Ontario with her dog, Zena. A former school teacher and experienced instructor, Susan brings decades of hands-on training and teaching expertise to QC's dog training students. </p>
           </div>
           <div className="col-12 col-lg-6 text-lg-start align-item-center mb-2">
-            <div className="mb-2">
+            <div className="mb-3">
               <Image
                 src={BrunoBakerImage}
                 placeholder="blur"
