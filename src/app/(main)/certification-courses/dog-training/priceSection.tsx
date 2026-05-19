@@ -60,7 +60,7 @@ export const PriceSection: FC<Props> = ({ dtPrice, dePrice, className, onPopupLi
             <h3>Unsure which path is right for you?</h3>
             <p className="lead">Our friendly student advisors are happy to answer your questions and help you choose the plan that best fits your goals and budget.</p>
             <ChatLink><button className="btn btn-primary me-3">Chat with an Advisor</button></ChatLink>
-            <Link href="https://calendly.com/qccareerschool/pet" target="_blank"><button className="btn btn-outline-primary">Book a Call</button></Link>
+            <Link href="https://www.qcpetstudies.com/contact-us" target="_blank"><button className="btn btn-outline-primary">Contact Us</button></Link>
           </div>
         </div>
       </div>
