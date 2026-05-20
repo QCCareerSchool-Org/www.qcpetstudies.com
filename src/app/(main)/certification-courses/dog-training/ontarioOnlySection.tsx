@@ -4,6 +4,7 @@ import styles from './externship.module.scss';
 import KimCooperImage from './kim-cooper.jpg';
 import { Accordion } from '@/components/accordion';
 import { AccordionItem } from '@/components/accordion/accordionItem';
+
 export const OntarioOnlySection: FC = () => {
   let eventKey = 0;
 
