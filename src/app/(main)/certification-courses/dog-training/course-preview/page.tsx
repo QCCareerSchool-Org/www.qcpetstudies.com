@@ -69,6 +69,8 @@ const DogTrainingCoursePreviewPage: PageComponent = async props => {
                 <p className="card-text">This is not a paint-by-numbers course. You will take the time to learn and understand how dogs learn so that you can then decipher the best method to teach any dog. Using a Least Intrusive, Minimally Aversive (LIMA) approach, you'll become an expert problem solver who can handle any training situation.</p>
                 <p className="card-text">Whether your goal is to launch your own dog training business, work for an established training school, freelance your services, or simply become an expert to train your own dog(s), you'll gain all the skills to achieve your goals.</p>
                 <p className="card-text">Even though this is an online course, you'll complete tons of hands-on assignments designed to enhance your training experience. Don't miss out on this amazing opportunity to work with an expert to develop your skills!</p>
+                <p className="card-text"><strong>New! Take your training to the next level with our <strong></strong>Optional Externship Track</strong>—get additional real-world, hands-on experience working side-by-side with a professional dog trainer.</strong> </p> 
+
               </div>
             </div>
           </div>
@@ -288,6 +290,21 @@ const DogTrainingCoursePreviewPage: PageComponent = async props => {
                     <p>The Certification Council of Pet Dog Trainers (CCPDT) is the gold standard organization for dog training certifications. Any dog trainer can write their exam to become a Certified Pet Dog Trainer (CPDT), and as a QC student you are greatly encouraged to pursue this certification! </p>
                     <p>In this final part of the course, you will prepare for the CPDT exam with the help of QC's tutors.  You will gain helpful tips on how to prepare for the exam, get insight on the types of exam questions you'll encounter, and even complete a handy 20-question practice quiz to make sure you're ready for your exam! </p>
                   </div>
+                </div>
+              </div>
+            </div>
+          </div>
+            <div className="col-12">
+            <div className="card bg-lighter border-lighter">
+              <div className="card-body">
+                <div className="row">
+                  <div className="col-12 col-lg-6 mb-4 mb-lg-0">
+                    <h3 className="fw-normal"><strong>Part 6:</strong> Optional Externship</h3>
+                    <p>If you choose the Externship Track, you'll be matched with a professional dog trainer in your area once you've completed the online portion of your course and paid your fees. Spend 40 hours working alongside an experienced trainer, honing your skills in a professional training environment, and gaining valuable industry insight.</p>
+                  </div>
+                  <div className="col-12 col-lg-6">
+                      <h4>Certification</h4>
+                      <p className="mb-4">As an Externship Track student, you'll also earn an additional professional certificate showcasing your advanced training and hands-on experience.</p>
                 </div>
               </div>
             </div>
