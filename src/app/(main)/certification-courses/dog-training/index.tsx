@@ -5,7 +5,7 @@ import CertificationBgImage from './cert-bg.jpg';
 import { Client } from './client';
 import styles from './externship.module.scss';
 import DTBackgroundImage from './hero-lrg.jpg';
-import CertificationLogo from './IDGP-certification-gold.svg';
+import CertificationLogo from './IDTP-certification-yellow.svg';
 import { KimSection } from './kimSection';
 import { OntarioOnlySection } from './ontarioOnlySection';
 import { CourseOutlineSection } from './outlineSection';
