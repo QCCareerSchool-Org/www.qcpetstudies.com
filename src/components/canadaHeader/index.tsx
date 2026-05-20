@@ -9,7 +9,7 @@ export const CanadaHeader: FC = () => (
   <div className={styles.wrapper}>
     <div className="container">
       <div className="d-flex align-items-center justify-content-center">
-        <Image src={MapleLeafIcon} height="22" className="me-2" alt="" /> Proudly Canadian!<span className="ms-3 fw-normal">You could save more than 50% on your course fees <LearnMore /></span>
+        <Image src={MapleLeafIcon} height="22" className="me-2" alt="" /> Proudly Canadian!<span className="ms-3 fw-normal">You could save more than 50% on your course fees <span className="ms-2"><LearnMore /></span></span>
       </div>
     </div>
   </div>
