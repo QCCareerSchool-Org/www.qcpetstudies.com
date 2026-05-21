@@ -5,13 +5,12 @@ import { BsBook } from 'react-icons/bs';
 
 import KimCooperImage from '../kim-cooper.jpg';
 import GoldenRetrieverComputerBackground from './golden-retriever-sitting-next-to-computer.jpg';
+import { Client } from '../client';
 import { BackgroundImage } from '@/components/backgroundImage';
 import { Bar } from '@/components/bar';
 import IDTPCertificationLogo from '@/components/certifications/IDTP-certification-gold.svg';
-import { PriceSectionWithDiscount } from '@/components/priceSectionWithDiscount';
 import { TabGroup } from '@/components/tabGroup';
 import { TutorSectionDT } from '@/components/tutorSectionDT';
-import type { CourseCode } from '@/domain/courseCode';
 import { fetchPrice } from '@/lib/fetchPrice';
 import { getServerData } from '@/lib/getServerData';
 import type { PageComponent } from '@/serverComponent';
@@ -21,16 +20,15 @@ export const metadata: Metadata = {
   alternates: { canonical: '/certification-courses/dog-training/course-preview' },
 };
 
-const courseCodes: CourseCode[] = [ 'dt' ];
-
 const DogTrainingCoursePreviewPage: PageComponent = async props => {
   const { countryCode, provinceCode } = await getServerData(props.searchParams);
-
-  const price = await fetchPrice(courseCodes, countryCode, provinceCode, undefined, undefined, process.env.FIREWALL_BYPASS_SECRET);
-  if (!price.success) {
+  const [ dtPrice, dePrice ] = await Promise.all([
+    fetchPrice([ 'dt' ], countryCode, provinceCode, undefined, undefined, process.env.FIREWALL_BYPASS_SECRET),
+    fetchPrice([ 'de' ], countryCode, provinceCode, undefined, undefined, process.env.FIREWALL_BYPASS_SECRET),
+  ]);
+  if (!dtPrice.success || !dePrice.success) {
     return null;
   }
-
   return (
     <>
       <section className="bg-dark">
@@ -311,11 +309,10 @@ const DogTrainingCoursePreviewPage: PageComponent = async props => {
         </div>
       </section>
 
-      <PriceSectionWithDiscount courses={courseCodes} price={price.value} doubleGuarantee />
+      <Client dtPrice={dtPrice.value} dePrice={dePrice.value} countryCode={countryCode} />
+      <TutorSectionDT />
 
-      <TutorSectionDT className="bg-light" />
-
-      <section>
+      <section className="bg-light">
         <div className="container">
           <div className="row justify-content-center">
             <div className="col-12 col-md-10 col-lg-8 text-center">

@@ -18,7 +18,7 @@ export const TutorSectionDT: FC<Props> = ({ className, id = 'tutors' }) => {
         <div className="row justify-content-center g-5">
           <div className="col-12 col-lg-10">
             <h2>Get Personalized Feedback from Your Mentor</h2>
-            <p className="lead mb-0">When you enroll with QC Pet Studies, you'lzbe paired with an expert training mentor who will review your work and provide detailed audio feedback on each assignment. With decades of industry experience, your mentor will offer valuable advice to help you succeed and improve as you progress through the course.</p>
+            <p className="lead mb-0">When you enroll with QC Pet Studies, you'll be paired with an expert training mentor who will review your work and provide detailed audio feedback on each assignment. With decades of industry experience, your mentor will offer valuable advice to help you succeed and improve as you progress through the course.</p>
           </div>
           <div className="col-12 col-lg-6 text-lg-start">
             <div className="mb-3">

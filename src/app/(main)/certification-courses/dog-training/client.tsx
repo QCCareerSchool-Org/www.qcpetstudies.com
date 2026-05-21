@@ -52,7 +52,7 @@ export const Client: FC<Props> = ({ dtPrice, dePrice, countryCode }) => {
             </div>
             <div className="col-12 col-md-8 col-lg-6">
               <p className="lead mb-3 fw-bold"><span className="text-danger">NEW:</span> Dog Training Externship Track</p>
-              <p className="mb-0">Get all the perks of our Dog Training Course PLUS extra practice with a hands-on externship placement with a professional dog trainer. Complete the online track of your course and start your externship placement working alongside an experienced professional dog trainer. You'll build your confidence and graduate with valuable industry connections</p>
+              <p className="mb-0">Get all the perks of our Dog Training Course PLUS extra practice with a hands-on externship placement with a professional dog trainer. Complete the online track of your course and start your externship placement working alongside an experienced professional dog trainer. You'll build your confidence and graduate with valuable industry connections.</p>
             </div>
           </div>
           <button className="btn btn-primary mb-4" onClick={handlePopupLinkClick}>Compare Course Features</button>
