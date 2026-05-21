@@ -108,7 +108,7 @@ const CourseOutlinePage: PageComponent = () => {
             <AccordionItem eventKey={eventKey++} heading="Unit H: Optional Business Training">
               <UnitH />
             </AccordionItem>
-            <AccordionItem eventKey={eventKey++} heading="Unit I-J">
+            <AccordionItem eventKey={eventKey++} heading="Unit I-J: Optional Externship Track">
               <UnitIJ />
             </AccordionItem>
           </Accordion>
