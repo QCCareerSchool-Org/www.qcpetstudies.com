@@ -5,13 +5,12 @@ import { BsBook } from 'react-icons/bs';
 
 import KimCooperImage from '../kim-cooper.jpg';
 import GoldenRetrieverComputerBackground from './golden-retriever-sitting-next-to-computer.jpg';
+import { Client } from '../client';
 import { BackgroundImage } from '@/components/backgroundImage';
 import { Bar } from '@/components/bar';
 import IDTPCertificationLogo from '@/components/certifications/IDTP-certification-gold.svg';
-import { PriceSectionWithDiscount } from '@/components/priceSectionWithDiscount';
 import { TabGroup } from '@/components/tabGroup';
 import { TutorSectionDT } from '@/components/tutorSectionDT';
-import type { CourseCode } from '@/domain/courseCode';
 import { fetchPrice } from '@/lib/fetchPrice';
 import { getServerData } from '@/lib/getServerData';
 import type { PageComponent } from '@/serverComponent';
@@ -21,16 +20,15 @@ export const metadata: Metadata = {
   alternates: { canonical: '/certification-courses/dog-training/course-preview' },
 };
 
-const courseCodes: CourseCode[] = [ 'dt' ];
-
 const DogTrainingCoursePreviewPage: PageComponent = async props => {
   const { countryCode, provinceCode } = await getServerData(props.searchParams);
-
-  const price = await fetchPrice(courseCodes, countryCode, provinceCode, undefined, undefined, process.env.FIREWALL_BYPASS_SECRET);
-  if (!price.success) {
+  const [ dtPrice, tePrice ] = await Promise.all([
+    fetchPrice([ 'dt' ], countryCode, provinceCode, undefined, undefined, process.env.FIREWALL_BYPASS_SECRET),
+    fetchPrice([ 'te' ], countryCode, provinceCode, undefined, undefined, process.env.FIREWALL_BYPASS_SECRET),
+  ]);
+  if (!dtPrice.success || !tePrice.success) {
     return null;
   }
-
   return (
     <>
       <section className="bg-dark">
@@ -296,7 +294,7 @@ const DogTrainingCoursePreviewPage: PageComponent = async props => {
                 </div>
                 <div className="col-12 col-lg-6">
                   <h4>Certification</h4>
-                  <p className="mb-4">As an Externship Track student, you'll also earn an additional professional certificate showcasing your advanced training and hands-on experience.</p>
+                  <p className="mb-0">As an Externship Track student, you'll also earn an additional professional certificate showcasing your advanced training and hands-on experience.</p>
                 </div>
               </div>
             </div>
@@ -311,8 +309,7 @@ const DogTrainingCoursePreviewPage: PageComponent = async props => {
         </div>
       </section>
 
-      <PriceSectionWithDiscount courses={courseCodes} price={price.value} doubleGuarantee />
-
+      <Client dtPrice={dtPrice.value} tePrice={tePrice.value} countryCode={countryCode} />
       <TutorSectionDT className="bg-light" />
 
       <section>
@@ -326,7 +323,7 @@ const DogTrainingCoursePreviewPage: PageComponent = async props => {
               <p className="fw-bold">Hear why instructor Kim Cooper believes the Behavior Modification course is a great way to advance your dog-training career.</p>
               <video src="https://cdn.qccareerschool.com/pet/why-should-students-study-training-and-behavior-modification.mp4" poster={KimCooperImage.src} controls className="w-100 img-fluid mb-3" />
               <p>Whether your goal is to launch your own business or work for an established training school, you'll gain all the skills and knowledge you need to feel confident in your new career!  QC's advanced online dog behavior course teaches specialized behavior modification skills so you'll be ready to help any dog that comes your way.</p>
-              <p className="fst-italic">Please note, Dog Behavior is an advanced certification program and requires students to have successfully completed QC's Dog Training course as a prerequisite. <Link href="/certification-courses/dog-training#behaviorOutline">View the course outline for the Dog Behaviour Course</Link>.</p>
+              <p className="mb-0 fst-italic">Please note, Dog Behavior is an advanced certification program and requires students to have successfully completed QC's Dog Training course as a prerequisite. <Link href="/certification-courses/dog-training#behaviorOutline">View the course outline for the Dog Behaviour Course</Link>.</p>
             </div>
           </div>
         </div>

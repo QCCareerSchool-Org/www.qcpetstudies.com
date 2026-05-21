@@ -76,4 +76,12 @@ export const dataMap: Readonly<Record<CourseCode, CourseData>> = {
     subjects: undefined,
     workload: undefined,
   },
+  te: {
+    name: 'Dog Training Externship',
+    url: `${baseUrl}/certification-courses/dog-training`,
+    description: '',
+    certification: 'International Dog Training Professional™',
+    subjects: undefined,
+    workload: undefined,
+  },
 };
