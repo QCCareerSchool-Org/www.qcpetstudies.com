@@ -22,11 +22,11 @@ export const metadata: Metadata = {
 
 const DogTrainingCoursePreviewPage: PageComponent = async props => {
   const { countryCode, provinceCode } = await getServerData(props.searchParams);
-  const [ dtPrice, dePrice ] = await Promise.all([
+  const [ dtPrice, tePrice ] = await Promise.all([
     fetchPrice([ 'dt' ], countryCode, provinceCode, undefined, undefined, process.env.FIREWALL_BYPASS_SECRET),
-    fetchPrice([ 'de' ], countryCode, provinceCode, undefined, undefined, process.env.FIREWALL_BYPASS_SECRET),
+    fetchPrice([ 'te' ], countryCode, provinceCode, undefined, undefined, process.env.FIREWALL_BYPASS_SECRET),
   ]);
-  if (!dtPrice.success || !dePrice.success) {
+  if (!dtPrice.success || !tePrice.success) {
     return null;
   }
   return (
@@ -294,7 +294,7 @@ const DogTrainingCoursePreviewPage: PageComponent = async props => {
                 </div>
                 <div className="col-12 col-lg-6">
                   <h4>Certification</h4>
-                  <p className="mb-4">As an Externship Track student, you'll also earn an additional professional certificate showcasing your advanced training and hands-on experience.</p>
+                  <p className="mb-0">As an Externship Track student, you'll also earn an additional professional certificate showcasing your advanced training and hands-on experience.</p>
                 </div>
               </div>
             </div>
@@ -309,10 +309,10 @@ const DogTrainingCoursePreviewPage: PageComponent = async props => {
         </div>
       </section>
 
-      <Client dtPrice={dtPrice.value} dePrice={dePrice.value} countryCode={countryCode} />
-      <TutorSectionDT />
+      <Client dtPrice={dtPrice.value} tePrice={tePrice.value} countryCode={countryCode} />
+      <TutorSectionDT className="bg-light" />
 
-      <section className="bg-light">
+      <section>
         <div className="container">
           <div className="row justify-content-center">
             <div className="col-12 col-md-10 col-lg-8 text-center">
@@ -323,7 +323,7 @@ const DogTrainingCoursePreviewPage: PageComponent = async props => {
               <p className="fw-bold">Hear why instructor Kim Cooper believes the Behavior Modification course is a great way to advance your dog-training career.</p>
               <video src="https://cdn.qccareerschool.com/pet/why-should-students-study-training-and-behavior-modification.mp4" poster={KimCooperImage.src} controls className="w-100 img-fluid mb-3" />
               <p>Whether your goal is to launch your own business or work for an established training school, you'll gain all the skills and knowledge you need to feel confident in your new career!  QC's advanced online dog behavior course teaches specialized behavior modification skills so you'll be ready to help any dog that comes your way.</p>
-              <p className="fst-italic">Please note, Dog Behavior is an advanced certification program and requires students to have successfully completed QC's Dog Training course as a prerequisite. <Link href="/certification-courses/dog-training#behaviorOutline">View the course outline for the Dog Behaviour Course</Link>.</p>
+              <p className="mb-0 fst-italic">Please note, Dog Behavior is an advanced certification program and requires students to have successfully completed QC's Dog Training course as a prerequisite. <Link href="/certification-courses/dog-training#behaviorOutline">View the course outline for the Dog Behaviour Course</Link>.</p>
             </div>
           </div>
         </div>

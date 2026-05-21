@@ -61,7 +61,7 @@ export const DogTrainingBase: FC<Props> = ({ enrollPath, courseCodes, dtPrice, d
       </div>
     </section>
 
-    <Client countryCode={countryCode} dtPrice={dtPrice} dePrice={dePrice} />
+    <Client countryCode={countryCode} dtPrice={dtPrice} tePrice={dePrice} />
     <section>
       <div className="container">
         <div className="row g-4">

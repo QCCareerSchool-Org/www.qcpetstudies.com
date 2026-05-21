@@ -12,6 +12,7 @@ import type { Price } from '@/domain/price';
 import MapleLeaf from '@/images/maple-leaf.svg';
 
 interface Props {
+  courseCodes?: CourseCode[];
   dtPrice: Price;
   dePrice: Price;
   className?: string;
@@ -20,14 +21,14 @@ interface Props {
 }
 
 export const PriceSection: FC<Props> = ({ dtPrice, dePrice, className, onPopupLinkClick, countryCode }) => {
-  const [ selection, setSelection ] = useState<CourseCode>('dg');
+  const [ selection, setSelection ] = useState<CourseCode>('dt');
 
-  const handleDGSelect = (): void => {
-    setSelection('dg');
+  const handleDTSelect = (): void => {
+    setSelection('dt');
   };
 
-  const handleDESelect = (): void => {
-    setSelection('de');
+  const handleTESelect = (): void => {
+    setSelection('te');
   };
 
   const handlePopupLinkClick = onPopupLinkClick;
@@ -46,10 +47,10 @@ export const PriceSection: FC<Props> = ({ dtPrice, dePrice, className, onPopupLi
         </div>
         <div className="row justify-content-center g-4">
           <div className="col-12 col-sm-10 col-md-6 col-lg-5 col-xl-4">
-            <PriceBox title="Dog Training Online Track" price={dtPrice} selected={selection === 'dg'} onSelected={handleDGSelect} cartUrl="https://enroll.qcpetstudies.com?c=dt" onPopupLinkClick={handlePopupLinkClick} />
+            <PriceBox title="Dog Training Online Track" price={dtPrice} selected={selection === 'dt'} onSelected={handleDTSelect} cartUrl="https://enroll.qcpetstudies.com?c=dt" onPopupLinkClick={handlePopupLinkClick} />
           </div>
           <div className="col-12 col-sm-10 col-md-6 col-lg-5 col-xl-4">
-            <PriceBox title="Dog Training Externship Track" price={dePrice} selected={selection === 'de'} onSelected={handleDESelect} cartUrl="https://enroll.qcpetstudies.com?c=de" onPopupLinkClick={handlePopupLinkClick} />
+            <PriceBox title="Dog Training Externship Track" price={dePrice} selected={selection === 'te'} onSelected={handleTESelect} cartUrl="https://enroll.qcpetstudies.com?c=te" onPopupLinkClick={handlePopupLinkClick} />
           </div>
         </div>
         {countryCode === 'CA' && (

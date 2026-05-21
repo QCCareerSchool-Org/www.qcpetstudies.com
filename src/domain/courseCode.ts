@@ -1,6 +1,6 @@
 import { dataMap } from './courseData';
 
-export const courseCodes = [ 'dg', 'dt', 'fa', 'dc', 'ds', 'dd', 'gt', 'de' ] as const;
+export const courseCodes = [ 'dg', 'dt', 'fa', 'dc', 'ds', 'dd', 'gt', 'de', 'te' ] as const;
 
 /** The courses to display on the homepage */
 export const activeCourseCodes: CourseCode[] = [ 'dg', 'dt', 'dd', 'dc' ] as const;
