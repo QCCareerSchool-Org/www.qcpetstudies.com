@@ -53,6 +53,7 @@ export const MainNav: FC<Props> = ({ countryCode }) => {
               <Link href="/about/faq" onClick={handleClick} className="dropdown-item">FAQ</Link>
               <Link href="/contact-us" onClick={handleClick} className="dropdown-item">Contact</Link>
               <Link href="/blog" onClick={handleClick} className="dropdown-item">Blog</Link>
+              {countryCode === 'CA' && <Link href="/canadian-tax-credits" className="dropdown-item" onClick={handleClick}>Canadian Students Save</Link>}
             </NavDropdown>
             {/* <Link href="/contact-us" onClick={handleClick} className="nav-link">Contact</Link> */}
             <a href="https://enroll.qcpetstudies.com" className="nav-link d-lg-none">Enroll Online</a>
