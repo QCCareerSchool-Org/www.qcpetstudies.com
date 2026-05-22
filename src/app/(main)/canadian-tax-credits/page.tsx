@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
-// import { redirect } from 'next/navigation';
 import Image from 'next/image';
+import { redirect } from 'next/navigation';
 import { BiBulb } from 'react-icons/bi';
 import { CiWarning } from 'react-icons/ci';
 
@@ -11,6 +11,7 @@ import { AccordionFAQ } from '@/components/accordionFAQ';
 import { BackgroundImage } from '@/components/backgroundImage';
 import CheckCircleIcon from '@/components/icons/check-circle.svg';
 import MapleLeafIcon from '@/components/icons/maple-leaf.svg';
+import { getServerData } from '@/lib/getServerData';
 import type { PageComponent } from '@/serverComponent';
 
 export const metadata: Metadata = {
@@ -18,13 +19,14 @@ export const metadata: Metadata = {
   description: 'Canadian students can use tax credits to save over 50% of their course fees',
   alternates: { canonical: '/canadian-tax-credits' },
 };
-// const { countryCode } = await getServerData();
 
-// if (countryCode !== 'CA') {
-//   redirect('/');
-// }
+const CanadianTaxCreditsPage: PageComponent = async props => {
+  const { countryCode } = await getServerData(props.searchParams);
 
-const CanadianTaxCreditsPage: PageComponent = async () => {
+  if (countryCode !== 'CA') {
+    redirect('/');
+  }
+
   return (
     <>
       <section>
