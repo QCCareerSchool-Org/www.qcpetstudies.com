@@ -23,7 +23,7 @@ const CanadianTaxCreditsPage: PageComponent = async props => {
   const { countryCode } = await getServerData(props.searchParams);
 
   if (countryCode !== 'CA') {
-    // redirect('/');
+    redirect('/');
   }
 
   return (
