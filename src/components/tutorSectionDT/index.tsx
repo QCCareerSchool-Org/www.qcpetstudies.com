@@ -32,7 +32,7 @@ export const TutorSectionDT: FC<Props> = ({ className, id = 'tutors' }) => {
             </div>
             <h3><strong>Susan Read</strong></h3>
             <p className="lead">Certified Dog Trainer</p>
-            <p className="mb-0">Susan has over 35 years of dog training experience, specializing in Search and Rescue (SAR), obedience, rally, agility, and tracking. She is the head K9 trainer and handler with Georgian Bay SAR, Provincial K9 Coordinator for OSARVA, and the only OPP/OSARVA-certified live find dog handler in Central Ontario with her dog, Zena. A former school teacher and experienced instructor, Susan brings decades of hands-on training and teaching expertise to QC's dog training students. </p>
+            <p className="mb-0">Susan has over 35 years of dog training experience, specializing in Search and Rescue (SAR), obedience, rally, agility, and tracking. She is the head K9 trainer and handler with Georgian Bay SAR, Provincial K9 Coordinator for OSARVA, and the only OPP/OSARVA-certified live find dog handler in Central Ontario with her dog, Zena. A former school teacher and experienced instructor, Susan brings decades of hands-on training and teaching expertise to QC's dog training students.</p>
           </div>
           <div className="col-12 col-lg-6 text-lg-start">
             <div className="mb-3">

@@ -169,7 +169,7 @@ export const BrevoForm: FC<Props> = props => {
         <div className="form-check">
           <input type="checkbox" name="emailOptIn" id={`${id}emailOptIn`} className="form-check-input" />
           <label htmlFor={`${id}emailOptIn`} className="form-check-label small">
-            I agree to receive additional emails from QC, including <span className="d-none d-md-inline">promotions, </span>special offers<span className="d-none d-md-inline"> and more</span>. Unsubscribe anytime!
+            I agree to receive additional emails from QC, including <span className="d-none d-md-inline">promotions,{' '}</span>special offers<span className="d-none d-md-inline"> and more</span>. Unsubscribe anytime!
           </label>
         </div>
       </div>

@@ -79,7 +79,7 @@ const CanadianTaxCreditsPage: PageComponent = async props => {
                     <p>Eligible Canadians accumulate $250 in Canada Training Credit room each year they file a tax return, up to a lifetime maximum of $5,000. Your available balance appears on your CRA Notice of Assessment as your Canada Training Credit Limit (CTCL).</p>
                     <hr style={{ border: 'none', borderTop: '1px solid #ccc' }} />
                     <small className="text-dark fw-bold d-block mb-2">YOU MAY BE ABLE TO CLAIM:</small>
-                    <p><BiCheckCircle size={20} className="text-success me-1" style={{ position: 'relative', top: -1 }} />Up to 50% of eligible tuition fees, or </p>
+                    <p><BiCheckCircle size={20} className="text-success me-1" style={{ position: 'relative', top: -1 }} />Up to 50% of eligible tuition fees, or</p>
                     <p className="mb-0"><BiCheckCircle size={20} className="text-success me-1" style={{ position: 'relative', top: -1 }} />Your available CTCL balance (whichever is lower)</p>
                   </div>
                 </div>

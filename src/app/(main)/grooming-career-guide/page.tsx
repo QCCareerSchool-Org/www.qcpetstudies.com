@@ -45,7 +45,7 @@ const CareerGuidePage: PageComponent = () => {
           <div className="row justify-content-center">
             <div className="col-12 col-lg-8 col-xl-7 text-center">
               <h2 className="mb-4">Ready to Launch Your Professional Grooming Career?</h2>
-              <p className="mb-4">Take the first step toward a new and exciting career in the booming pet industry. </p>
+              <p className="mb-4">Take the first step toward a new and exciting career in the booming pet industry.</p>
               <div className="d-flex justify-content-center gap-3">
                 <Link href="/certification-courses/dog-grooming" className={`btn btn-lg btn-primary ${styles.button}`}>Explore Certification Programs</Link>
                 <Link href="/contact-us" className={`btn btn-lg btn-primary ${styles.button}`}>Speak with a Career Advisor</Link>

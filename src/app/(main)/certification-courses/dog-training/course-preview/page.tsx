@@ -134,17 +134,17 @@ const DogTrainingCoursePreviewPage: PageComponent = async props => {
             <div className="col-12 col-lg-6">
               <Bar variant="primary" align="start" />
               <h4>Unit A</h4>
-              <p className="mb-0">In the first unit of the dog training course, you'll meet your tutor and learn about the fundamentals of dog training. This introductory unit includes on overview of the dog training industry and a background in the fundamentals of ethical and safe training. </p>
+              <p className="mb-0">In the first unit of the dog training course, you'll meet your tutor and learn about the fundamentals of dog training. This introductory unit includes on overview of the dog training industry and a background in the fundamentals of ethical and safe training.</p>
             </div>
             <div className="col-12 col-lg-6">
               <Bar variant="primary" align="start" />
               <h4>Unit B</h4>
-              <p className="mb-0">In this unit, you'll begin to learn about canine behavior. Unit B will introduce you to canine ethology – the study of natural canine behavior. You'll discover how a dog's breeding history and stage of development will affect his behavior. In particular, you'll learn about how effective socialization as a puppy can impact a dog's behavior throughout his whole life.</p>
+              <p className="mb-0">In this unit, you'll begin to learn about canine behavior. Unit B will introduce you to canine ethology&mdash;the study of natural canine behavior. You'll discover how a dog's breeding history and stage of development will affect his behavior. In particular, you'll learn about how effective socialization as a puppy can impact a dog's behavior throughout his whole life.</p>
             </div>
             <div className="col-12 col-lg-6">
               <Bar variant="primary" align="start" />
               <h4>Unit C</h4>
-              <p className="mb-0">Unit C of your dog training course focuses on canine communication. You'll learn all about the signals that dogs use to communicate. Explore how you can use these signals to improve your training methods and provide a safe, comfortable training space for dogs. This unit will also each you how to use canine communication to improve the relationships between dogs and their owners. </p>
+              <p className="mb-0">Unit C of your dog training course focuses on canine communication. You'll learn all about the signals that dogs use to communicate. Explore how you can use these signals to improve your training methods and provide a safe, comfortable training space for dogs. This unit will also each you how to use canine communication to improve the relationships between dogs and their owners.</p>
             </div>
             <div className="col-12 col-lg-6">
               <Bar variant="primary" align="start" />
@@ -191,12 +191,12 @@ const DogTrainingCoursePreviewPage: PageComponent = async props => {
             <div className="col-12 col-lg-6 g-4">
               <Bar variant="primary" align="start" />
               <h4>Unit E</h4>
-              <p className="mb-0">Once you reach Unit E of your online dog training course, you're ready to put everything you've learned into action. You'll learn about the six training methods, all based in positive reinforcement, you can use to teach dogs new behaviors. Discover how to effectively motivate dogs to perform these behaviors and how to use reinforcement schedules in dog training. </p>
+              <p className="mb-0">Once you reach Unit E of your online dog training course, you're ready to put everything you've learned into action. You'll learn about the six training methods, all based in positive reinforcement, you can use to teach dogs new behaviors. Discover how to effectively motivate dogs to perform these behaviors and how to use reinforcement schedules in dog training.</p>
             </div>
             <div className="col-12 col-lg-6">
               <Bar variant="primary" align="start" />
               <h4>Unit F</h4>
-              <p className="mb-0">In Unit F, you'll learn how to safely use common training tools when you work with dogs. You'll discover common tools to help with leash training and crate training and learn how to teach your clients to use these tools at home. You'll also learn how experienced trainers use these tools and other techniques to change a dog's unwanted behaviors. </p>
+              <p className="mb-0">In Unit F, you'll learn how to safely use common training tools when you work with dogs. You'll discover common tools to help with leash training and crate training and learn how to teach your clients to use these tools at home. You'll also learn how experienced trainers use these tools and other techniques to change a dog's unwanted behaviors.</p>
             </div>
           </div>
 
@@ -276,8 +276,8 @@ const DogTrainingCoursePreviewPage: PageComponent = async props => {
               <div className="row g-4">
                 <div className="col-12 col-lg-6">
                   <h3 className="fw-normal"><strong>Part 5:</strong> CPDT Exam Prep (optional)</h3>
-                  <p>The Certification Council of Pet Dog Trainers (CCPDT) is the gold standard organization for dog training certifications. Any dog trainer can write their exam to become a Certified Pet Dog Trainer (CPDT), and as a QC student you are greatly encouraged to pursue this certification! </p>
-                  <p>In this final part of the course, you will prepare for the CPDT exam with the help of QC's tutors.  You will gain helpful tips on how to prepare for the exam, get insight on the types of exam questions you'll encounter, and even complete a handy 20-question practice quiz to make sure you're ready for your exam! </p>
+                  <p>The Certification Council of Pet Dog Trainers (CCPDT) is the gold standard organization for dog training certifications. Any dog trainer can write their exam to become a Certified Pet Dog Trainer (CPDT), and as a QC student you are greatly encouraged to pursue this certification!</p>
+                  <p>In this final part of the course, you will prepare for the CPDT exam with the help of QC's tutors. You will gain helpful tips on how to prepare for the exam, get insight on the types of exam questions you'll encounter, and even complete a handy 20-question practice quiz to make sure you're ready for your exam!</p>
                 </div>
               </div>
             </div>

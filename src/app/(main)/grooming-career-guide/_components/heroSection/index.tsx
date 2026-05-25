@@ -13,7 +13,7 @@ export const HeroSection: FC = () => (
       <div className="row">
         <div className="col-12 col-lg-8 col-xl-7">
           <h1 className="mb-4">How to Become a Professional Dog Groomer</h1>
-          <p className="lead text-shadow mb-0">Launch your career with the professional <strong>dog grooming certification</strong> and industry standards required to maximize your earning potential in the booming pet care market. Discover the <strong>2026 benchmarks</strong> for salary, required training and paths to career growth, including salon ownership, mobile grooming and lead grooming roles. </p>
+          <p className="lead text-shadow mb-0">Launch your career with the professional <strong>dog grooming certification</strong> and industry standards required to maximize your earning potential in the booming pet care market. Discover the <strong>2026 benchmarks</strong> for salary, required training and paths to career growth, including salon ownership, mobile grooming and lead grooming roles.</p>
         </div>
       </div>
     </div>

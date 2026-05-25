@@ -62,7 +62,7 @@ const LearningResourcesPage: PageComponent = () => (
               <Image src={LearningInClassOnline} className="card-img-top" alt="dog resting his chin on a laptop" sizes="100vw" style={{ width: '100%', height: 'auto' }} />
               <div className="card-body">
                 <h3 className="card-title">How It Works</h3>
-                <p className="card-text">At QC Pet Studies, we combine the perks of in-person learning with the convenience of studying online. Get hands-on experience, learn from expert feedback and build a professional community all from the comfort of home. Find out more about how QC's online courses work. </p>
+                <p className="card-text">At QC Pet Studies, we combine the perks of in-person learning with the convenience of studying online. Get hands-on experience, learn from expert feedback and build a professional community all from the comfort of home. Find out more about how QC's online courses work.</p>
                 <Link href="/certification-courses/how-it-works">Learn More</Link>
               </div>
             </div>

@@ -36,6 +36,6 @@ const faqItems = [
   },
   {
     question: 'How long does it take to get certified?',
-    answer: <p>Our program is designed to be completed in <strong>3 to 6 months</strong>. This allows you to enter the professional market and start earning an income much faster than traditional vocational schools. If you need more time, you have a full year to complete the program. </p>,
+    answer: <p>Our program is designed to be completed in <strong>3 to 6 months</strong>. This allows you to enter the professional market and start earning an income much faster than traditional vocational schools. If you need more time, you have a full year to complete the program.</p>,
   },
 ];

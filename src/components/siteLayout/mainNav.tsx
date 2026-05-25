@@ -32,7 +32,7 @@ export const MainNav: FC<Props> = ({ countryCode }) => {
         <Navbar.Toggle aria-controls="main-navbar" />
         <Navbar.Collapse id="main-navbar" className="justify-content-end">
           <Nav>
-            <NavDropdown title={<><span className="d-lg-none d-xl-inline">Certification </span>Courses</>} id="courses-dropdown">
+            <NavDropdown title={<><span className="d-lg-none d-xl-inline">Certification{' '}</span>Courses</>} id="courses-dropdown">
               <Link href="/certification-courses/dog-grooming" onClick={handleClick} className="dropdown-item">Dog Grooming</Link>
               <Link href="/certification-courses/dog-training" onClick={handleClick} className="dropdown-item">Dog Training</Link>
               <Link href="/certification-courses/dog-daycare" onClick={handleClick} className="dropdown-item">Dog Daycare</Link>

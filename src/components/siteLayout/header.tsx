@@ -31,7 +31,7 @@ const InnerBanner: FC<Props> = ({ date, countryCode }) => {
       <PromoBanner date={date} promotionPeriod={may16.toDTO()}>
         {countryCode === 'US'
           ? <>Memorial Week Special: Save {gbpCountry(countryCode) ? '£300' : '$300'}</>
-          : <><span className="d-none d-lg-inline">Limited-time offer: </span>Save {gbpCountry(countryCode) ? '£300' : '$300'} on your tuition when you enroll today!</>
+          : <><span className="d-none d-lg-inline">Limited-time offer:{' '}</span>Save {gbpCountry(countryCode) ? '£300' : '$300'} on your tuition when you enroll today!</>
         }
       </PromoBanner>
     );

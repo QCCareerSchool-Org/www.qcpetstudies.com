@@ -58,7 +58,7 @@ const FAQPage: PageComponent = async props => {
                 </QuestionAndAnswer>
 
                 <QuestionAndAnswer header="What if I miss a tuition payment?">
-                  <p>Sometimes life gets in the way, and that's okay! If you know in advance that you won't be able to make a tuition payment, simply contact your student advisor who will be happy to work with you to update your payment schedule. </p>
+                  <p>Sometimes life gets in the way, and that's okay! If you know in advance that you won't be able to make a tuition payment, simply contact your student advisor who will be happy to work with you to update your payment schedule.</p>
                   <p>If you need to take a break from tuition payments for a month or two, that's perfectly fine! Again, just call your student advisor to make those arrangements ahead of time.</p>
                   <p>If you forget and an attempted monthly payment doesn't go through, a student advisor will contact you to make arrangements to get you back on track.</p>
                   <p><em>Note: students can only access their online student center if their account is in good standing. If payments are missed, the student center is placed &ldquo;on hold&rdquo; until payments are caught up. While you won't lose any work, you won't be able to submit assignments to your tutor during this time.</em></p>
@@ -168,7 +168,7 @@ const FAQPage: PageComponent = async props => {
 
                 <QuestionAndAnswer header="How long will it take to complete my online dog training class?">
                   <p>With QC's online courses, you work at your own pace. You decide how much time per week you want to spend developing your training skills. QC's flexible dog trainer course has no deadlines for completing course assignments. Typically, students who work on their training assignments for a short period each week will complete their online course within about three months.</p>
-                  <p>Keep in mind that you have a full year to complete your course, so you can schedule your training around your lifestyle! If you enroll in the Externship Track you'll have an additional 8 weeks to complete your program. </p>
+                  <p>Keep in mind that you have a full year to complete your course, so you can schedule your training around your lifestyle! If you enroll in the Externship Track you'll have an additional 8 weeks to complete your program.</p>
                 </QuestionAndAnswer>
 
                 <QuestionAndAnswer header="I'm not sure if an externship will benefit me. What should I do?">

@@ -20,7 +20,7 @@ export const UnitA: FC = () => {
       <div className="col-12 col-lg-6 col-xl-7">
         <div className="alert alert-primary mb-4">Unit Total: 4 hours</div>
         <UnitStats assignmentsCount={5} assignmentsTime="2 hours" readingsTime="1 to 2 hours" videosCount={3} videosTime="15 minutes" />
-        <p>In the first unit of the dog training course, you'll meet your tutor and learn about the fundamentals of dog training. This introductory unit includes an overview of the dog training industry and a background in the fundamentals of ethical and safe training. </p>
+        <p>In the first unit of the dog training course, you'll meet your tutor and learn about the fundamentals of dog training. This introductory unit includes an overview of the dog training industry and a background in the fundamentals of ethical and safe training.</p>
         <p><em>You'll have the option to tell your tutor about your dog, or a dog you'll be working with to complete your course work! Then you can practice a safe dog introduction.</em></p>
         <button onClick={handleClick} className="btn btn-primary">View Details</button>
         <Modal show={show} onHide={handleClick} size="lg">

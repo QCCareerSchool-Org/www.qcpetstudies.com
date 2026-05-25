@@ -10,7 +10,7 @@ export const ResponsibilitiesSection: FC = () => (
       <div className="row align-items-center g-s">
         <div className="col-12 col-lg-6">
           <h2 className="mb-4">What Does a Professional Dog Groomer Do?</h2>
-          <p className="lead mb-5">A professional dog groomer is both a stylist and a wellness advocate for pets. Groomers provide essential hygiene care, such as bathing, brushing, nail trimming, and coat maintenance, while also improving a dog's comfort, health, and appearance. Each grooming session helps dogs feel clean, confident, and look their best. </p>
+          <p className="lead mb-5">A professional dog groomer is both a stylist and a wellness advocate for pets. Groomers provide essential hygiene care, such as bathing, brushing, nail trimming, and coat maintenance, while also improving a dog's comfort, health, and appearance. Each grooming session helps dogs feel clean, confident, and look their best.</p>
           <div className="d-grid gap-4">
             <h3 className="h6 mb-0">Your Core Responsibilities &amp; Professional Impact</h3>
             {responsibilities.map(item => (
