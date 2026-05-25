@@ -1,6 +1,7 @@
 'use client';
 
 import Image from 'next/image';
+import Link from 'next/link';
 import type { FC } from 'react';
 import { Modal } from 'react-bootstrap';
 
@@ -26,6 +27,7 @@ export const TaxCreditsModal: FC = () => {
           <li><span className={styles.red}>The Canada Training Credit</span> and</li>
           <li><span className={styles.red}>The Tuition Tax Credit</span></li>
         </ul>
+        <p><Link href="/canadian-tax-credits">See Sample Calculation Button</Link></p>
       </Modal.Body>
       <Modal.Footer>
         <small>Rules for the way the credits work reflect your personal tax situation. Please reach out to your personal accountant for further guidance.</small>
