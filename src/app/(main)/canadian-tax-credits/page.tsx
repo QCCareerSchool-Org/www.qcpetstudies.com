@@ -1,8 +1,7 @@
 import type { Metadata } from 'next';
 import Image from 'next/image';
 import { redirect } from 'next/navigation';
-import { BiBulb, BiCheckCircle } from 'react-icons/bi';
-import { CiWarning } from 'react-icons/ci';
+import { BiBulb, BiCheckCircle, BiError } from 'react-icons/bi';
 
 import styles from './box.module.scss';
 import HeroImage from './hero.jpg';
@@ -170,7 +169,7 @@ const CanadianTaxCreditsPage: PageComponent = async props => {
             </ul>
           </AccordionFAQ>
           <div className={styles.disclaimerBox}>
-            <h2 className={`h6 ${styles.customAmber} mb-3`}><CiWarning className={styles.customAmber} style={{ position: 'relative', top: -1 }} /> Important Disclaimer</h2>
+            <h2 className={`h6 ${styles.customAmber} mb-3`}><BiError className={styles.customAmber} style={{ position: 'relative', top: -1 }} /> Important Disclaimer</h2>
             <p>Tax rules and eligibility requirements can change and may vary based on your income, province, and tax history.</p>
             <p className="mb-0">For official guidance regarding the <a href="https://www.canada.ca/en/revenue-agency/services/tax/individuals/topics/about-your-tax-return/tax-return/completing-a-tax-return/deductions-credits-expenses/line-45350-canada-training-credit.html" target="_blank" rel="noreferrer">Canadian Training Credit</a> and <a href="https://www.canada.ca/en/revenue-agency/services/tax/individuals/topics/about-your-tax-return/tax-return/completing-a-tax-return/deductions-credits-expenses/line-32300-your-tuition-education-textbook-amounts/eligible-tuition-fees.html" target="_blank" rel="noreferrer">Tuition Tax Credit</a>, visit Canada Revenue Agency (CRA) Tuition Information or speak with a CPA or qualified tax professional.</p>
           </div>
