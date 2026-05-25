@@ -157,7 +157,7 @@ export const DogGroomingBase: FC<Props> = ({ countryCode, provinceCode, dgPrice,
                 <p>If you choose the Externship Track, you'll be matched with a professional grooming salon in your area once you've completed the online portion of your course and paid your fees.  Spend 80 hours working alongside an experienced groomer, honing your skills in a real salon environment, and gaining valuable industry insight as you complete your unpaid externship. Track your hours, receive mentorship and feedback from your host, and graduate with a certificate that showcases both your knowledge and hands-on experience.</p>
                 <p>As an Externship Track student, you'll also earn an additional professional certificate showcasing your advanced training and hands-on experience.</p>
                 <p>Note: Students who choose the Online Track will graduate with their International Dog Grooming Professional™ (IDGP) Certification upon completing the course.</p>
-                <p className="mb-0"><Link href="/certification-courses/dog-training/course-outline">View a More Detailed Breakdown of the Externship</Link></p>
+                <p className="mb-0"><Link href="/certification-courses/dog-grooming/course-outline">View a More Detailed Breakdown of the Externship</Link></p>
               </AccordionItem>
             )}
           </Accordion>
