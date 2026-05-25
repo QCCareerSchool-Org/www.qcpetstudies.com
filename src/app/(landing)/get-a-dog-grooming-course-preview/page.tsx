@@ -50,7 +50,7 @@ const DogGroomingCatalogPage: PageComponent = async props => {
         <div className="container">
           <div className="row align-items-center justify-content-center">
             <div className="col-12 col-sm-11 col-md-10 col-lg-10 mb-4 mb-lg-5">
-              <h2 className="text-center mb-0">Become a Professional <strong>Dog Groomer</strong></h2>
+              <h1 className="h2 text-center mb-0">Become a Professional <strong>Dog Groomer</strong></h1>
               {externship(countryCode, provinceCode) && <p className="lead text-center text-secondary">Now Available with Optional Externship!</p>}
             </div>
             <div className="col-12 col-sm-11 col-md-8 col-lg-6 col-xl-5 mb-4 mb-lg-0">

@@ -54,7 +54,7 @@ const DogTrainingCatalogPage: PageComponent = async props => {
         <div className="container">
           <div className="row justify-content-center align-items-center">
             <div className="col-12 col-sm-11 col-md-10 col-lg-10 mb-4 mb-lg-5">
-              <h2 className="text-center mb-0">Become a Professional <strong>Dog Trainer</strong></h2>
+              <h1 className="h2 text-center mb-0">Become a Professional <strong>Dog Trainer</strong></h1>
               <div className="text-center mt-2">
                 <div className="badge bg-secondary">Now Available with Optional Externship!</div>
               </div>
