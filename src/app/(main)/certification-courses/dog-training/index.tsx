@@ -92,7 +92,7 @@ export const DogTrainingBase: FC<Props> = ({ enrollPath, courseCodes, dtPrice, d
             </div>
             <h2 className="text-white">Your International Dog Training Professional Certification</h2>
             <p>Once you graduate from your online dog training course, you'll earn your International Dog Training Professional (IDTP) certification — a professional credential that demonstrates your training, knowledge, and ability to safely work with dogs and deliver effective, professional training services. Your certification never expires, and you'll have lifetime access with no renewal fees or annual dues required.</p>
-            <p>If you complete the <strong>Externship Track</strong>, you'll also receive an <strong>additional certificate of completion</strong> recognizing your additional hands-on training and real-world salon experience!</p>
+            <p>If you complete the <strong>Externship Track</strong>, you'll also receive an <strong>additional certificate of completion</strong> recognizing your additional hands-on training and real-world experience!</p>
             <p className={`${styles.customYellow} mt-4`}><strong>International Dog Training Professional&trade;</strong> | <i>IDTP&trade;</i></p>
           </div>
         </div>
