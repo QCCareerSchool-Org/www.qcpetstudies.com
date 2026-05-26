@@ -42,7 +42,7 @@ export const Client: FC<Props> = ({ dtPrice, tePrice, countryCode }) => {
               <h2>Become a <strong>Certified Dog Trainer</strong></h2>
               <p className="lead"><strong>International Dog Training Professional&trade;</strong> | <i>IDTP&trade;</i></p>
               <p>Dog training is a fast-growing industry, with more pet owners seeking professional help to raise well-behaved, confident dogs. Whether you want to work for a training facility, offer private lessons, or start your own dog training business, you'll graduate with the practical skills and industry knowledge needed to build a rewarding career working with dogs.</p>
-              <p>Get your <strong>International Dog Trainer Certification</strong> with QC's comprehensive online training - now with two ways to train: </p>
+              <p>Get your <strong>International Dog Trainer Certification</strong> with QC's comprehensive online training&mdash;now with two ways to train:</p>
             </div>
           </div>
           <div className="row justify-content-center g-5 mb-5">

@@ -14,7 +14,7 @@ interface Props {
   buttonContent?: ReactNode | string;
 }
 
-export const Header: FC<Props> = ({ logoLink, buttonHref, buttonContent = <><span className="d-none d-sm-inline">Get the </span>Free Course Preview</> }) => (
+export const Header: FC<Props> = ({ logoLink, buttonHref, buttonContent = <><span className="d-none d-sm-inline">Get the{' '}</span>Free Course Preview</> }) => (
   <ScrollElement name="top">
     <div className={styles.wrapper}>
       <header className={styles.header}>
