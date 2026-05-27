@@ -23,7 +23,7 @@ export const TaxCreditsModal: FC = () => {
         <p>QC has proudly been in business since 1984.</p>
         <p><strong>As a certified educational institution</strong> with Employment and Social Development Canada (ESDC), we'll be sending you a T2202 tax receipt for the course fees you paid during the year.</p>
         <p>You'll may be eligible to claim back 50% or more of your course fees through:</p>
-        <ul className="mb-0">
+        <ul>
           <li><span className={styles.red}>The Canada Training Credit</span> and</li>
           <li><span className={styles.red}>The Tuition Tax Credit</span></li>
         </ul>
