@@ -49,7 +49,7 @@ const ThankYouCoursePreviewPage: PageComponent = async props => {
       <GuaranteeSection />
       <GetStartedSection
         title="Ready to start your dog training career?"
-        text="Become professionally certified with QC\'s online training today and start earning!"
+        text="Become professionally certified with QC's online training today and start earning!"
       />
     </>
   );
