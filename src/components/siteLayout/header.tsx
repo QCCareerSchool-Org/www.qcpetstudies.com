@@ -6,7 +6,7 @@ import { SecondaryNav } from './secondaryNav';
 import { CanadaHeader } from '../canadaHeader';
 import { MainNav } from '@/components/siteLayout/mainNav';
 import { gbpCountry } from '@/domain/currency';
-import { may16 } from '@/periods';
+import { june13 } from '@/periods';
 
 interface Props {
   date: number;
@@ -26,12 +26,12 @@ const InnerBanner: FC<Props> = ({ date, countryCode }) => {
     return <CanadaHeader />;
   }
 
-  if (may16.contains(date)) {
+  if (june13.contains(date)) {
     return (
-      <PromoBanner date={date} promotionPeriod={may16.toDTO()}>
+      <PromoBanner date={date} promotionPeriod={june13.toDTO()}>
         {countryCode === 'US'
-          ? <>Memorial Week Special: Save {gbpCountry(countryCode) ? '£300' : '$300'}</>
-          : <><span className="d-none d-lg-inline">Limited-time offer:{' '}</span>Save {gbpCountry(countryCode) ? '£300' : '$300'} on your tuition when you enroll today!</>
+          ? <>Ends Soon: Save $400 On Tuition</>
+          : <><span className="d-none d-lg-inline">Limited-time offer:{' '}</span>Save {gbpCountry(countryCode) ? '£400' : '$400'} on your tuition when you enroll today!</>
         }
       </PromoBanner>
     );
