@@ -131,10 +131,10 @@ export const CourseOutlineSection: FC<Props> = ({ className }) => {
           <AccordionItem eventKey={eventKey++} heading="CPDT Exam Prep">
             <div className="row">
               <div className="col-12 col-lg-6 col-xl-7">
-                <p>Many professional dog trainers strive to pass the Certified Professional Dog Trainer (CPDT) exam from the Certification Council for Professional Dog Trainers. The CPDT is the gold-standard for dog trainers who have the knowledge and skills to train dogs using scientifically-proven methods. Your QC Dog training course teaches you everything you need to know to pass your CPDT exam. As an added bonus, you have access to an extra optional unit to help prepare you to write the CPDT exam!</p>
+                <p>Many professional dog trainers strive to pass the Certified Professional Dog Trainer (CPDT-KA®) exam from the Certification Council for Professional Dog Trainers®. The CCPDT® is the gold standard for dog trainers who have the knowledge and skills to train dogs using scientifically-proven methods. Your QC Dog training course teaches you everything you need to know to pass your CPDT exam. As an added bonus, you have access to an extra optional unit to help prepare you to write the CPDT exam!</p>
                 <p>This optional unit includes:</p>
                 <ul>
-                  <li>Information about the Certified Professional Dog Trainers (CPDT) Exam</li>
+                  <li>Information about the Certified Professional Dog Trainers - Knowledge Assessed (CPDT-KA®) Exam</li>
                   <li>Useful tips to help you prepare for your exam</li>
                   <li>A practice quiz to help make sure you're ready!</li>
                 </ul>
