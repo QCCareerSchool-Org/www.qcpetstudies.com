@@ -13,7 +13,7 @@ interface Props {
   additionalButtonHref?: string;
 }
 
-export const GetStartedSection: FC<Props> = ({ title, text, courseCodes, buttonText = 'Enroll Today', buttonHref }) => {
+export const GetStartedSection: FC<Props> = ({ title, text, courseCodes, buttonText = 'Enroll Today', buttonHref, additionalButtonText, additionalButtonHref }) => {
   let href: string;
   if (buttonHref) {
     href = buttonHref;
@@ -31,10 +31,9 @@ export const GetStartedSection: FC<Props> = ({ title, text, courseCodes, buttonT
             <h2 className="mb-4">{title}</h2>
             {text && <p className="mb-4">{text}</p>}
             <Link href={href} className={`btn btn-lg btn-primary ${styles.button}`}>{buttonText}</Link>
-            if (additionalButtonText) {
-              <Link href={href} className={`btn btn-lg btn-primary ${styles.button}`}>{buttonText}</Link>
-
-            }
+            {additionalButtonText && (
+              <Link href={additionalButtonHref ?? href} className={`btn btn-lg btn-outline-primary ${styles.button}`}>{additionalButtonText}</Link>
+            )}
           </div>
         </div>
       </div>
