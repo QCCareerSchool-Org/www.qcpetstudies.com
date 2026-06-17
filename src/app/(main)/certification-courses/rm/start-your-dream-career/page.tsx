@@ -6,7 +6,7 @@ import DreamCareerBackground from './drying-dog-bg.jpg';
 import { BackgroundImage } from '@/components/backgroundImage';
 import { FreeFirstAidSection } from '@/components/freeFirstAidSection';
 import QcYearGuaratnteeLogo from '@/components/guaranteeModal/1-year-guarantee-outlined.svg';
-import QcDayGuaratnteeLogo from '@/components/guaranteeModal/21-day-guarantee-outlined.svg';
+import QcDayGuaratnteeLogo from '@/components/guaranteeModal/21-day-guarantee-outlined.svg'; // TODO: replace this with a new svg?
 import { HowTheCoursesWorkSection } from '@/components/howTheCoursesWorkSection';
 import { PriceSection } from '@/components/priceSection';
 import type { CourseCode } from '@/domain/courseCode';
@@ -72,8 +72,8 @@ const StartYourDreamCareerPage: PageComponent = async props => {
                     <div className="mb-3">
                       <Image src={QcDayGuaratnteeLogo} alt="21-day money-back guarantee logo" width="150" style={{ maxWidth: '100%', height: 'auto' }} />
                     </div>
-                    <h4>The 21-Day Money-Back Guarantee</h4>
-                    <p className="card-text">Try the course risk-free for 21 days. This gives you time to receive your course materials and evaluate whether the dog grooming course is right for you. If you decide it's not a good fit, simply contact QC to arrange a return of your course materials for a refund. It's that easy! Note: For sanitary reasons, the clippers and attachment combs provided with the course cannot be refunded (value $200 US)</p>
+                    <h4>The 14-Day Money-Back Guarantee</h4>
+                    <p className="card-text">Try the course risk-free for 14 days. This gives you time to receive your course materials and evaluate whether the dog grooming course is right for you. If you decide it's not a good fit, simply contact QC to arrange a return of your course materials for a refund. It's that easy! Note: For sanitary reasons, the clippers and attachment combs provided with the course cannot be refunded (value $200 US)</p>
                   </div>
                 </div>
               </div>
