@@ -17,9 +17,9 @@ export const BBBGuarantee: FC = () => (
     </div>
     <div className="col-4 col-sm-3 col-md-2 col-lg-6">
       <div>
-        <Image src={GuaranteeIcon} width={46} height={48} alt="21-Day Guarantee" style={{ maxWidth: '100%', height: 'auto' }} />
+        <Image src={GuaranteeIcon} width={46} height={48} alt="14-Day Guarantee" style={{ maxWidth: '100%', height: 'auto' }} />
       </div>
-      <small className={styles.logoText}>21-Day Guarantee</small>
+      <small className={styles.logoText}>14-Day Guarantee</small>
     </div>
   </div>
 );
