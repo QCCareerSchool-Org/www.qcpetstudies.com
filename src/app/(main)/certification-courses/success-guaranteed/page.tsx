@@ -7,7 +7,7 @@ import DryingDogBg from './drying-dog-bg.jpg';
 import { BackgroundImage } from '@/components/backgroundImage';
 import { FreeFirstAidSection } from '@/components/freeFirstAidSection';
 import QcYearGuaratnteeLogo from '@/components/guaranteeModal/1-year-guarantee-outlined.svg';
-import QcDayGuaratnteeLogo from '@/components/guaranteeModal/21-day-guarantee-outlined.svg'; // TODO: replace w 14 day svg ?
+import QcDayGuaratnteeLogo from '@/components/guaranteeModal/14-day-guarantee-outlined.svg';
 import { HowTheCoursesWorkSection } from '@/components/howTheCoursesWorkSection';
 import { PriceSection } from '@/components/priceSection';
 import type { CourseCode } from '@/domain/courseCode';
