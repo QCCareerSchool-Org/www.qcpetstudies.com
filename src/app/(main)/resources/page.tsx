@@ -72,7 +72,7 @@ const LearningResourcesPage: PageComponent = () => (
           <div className="col-12 text-start">
             <h3>Additional links</h3>
             <ul>
-              <li><Link href="/about/about-qc-pet-studies#guarantee">Information about QC's 21-day guarantee</Link></li>
+              <li><Link href="/about/about-qc-pet-studies#guarantee">Information about QC's 14-day guarantee</Link></li>
               <li><Link href="/certification-courses/dog-training/course-preview">Preview the Dog Training Course for free</Link></li>
               <li><Link href="/certification-courses/dog-grooming/course-outline">Dog Grooming Course Outline</Link></li>
               <li><Link href="/certification-courses/dog-training/course-outline">Dog Training Course Outline</Link></li>

@@ -3,7 +3,7 @@ import type { FC } from 'react';
 import Modal from 'react-bootstrap/Modal';
 
 import Guarantee1Year from './1-year-guarantee-outlined.svg';
-import Guarantee21Days from './21-day-guarantee-outlined.svg';
+import Guarantee14Days from './14-day-guarantee-outlined.svg';
 
 interface Props {
   show: boolean;
@@ -14,7 +14,7 @@ interface Props {
 export const GuaranteeModal: FC<Props> = props => (
   <Modal show={props.show} onHide={props.onToggle} size={props.doubleGuarantee ? 'lg' : undefined}>
     <Modal.Header closeButton>
-      <Modal.Title>{props.doubleGuarantee ? 'The Double Guarantee' : '21-Day Money-Back Guarantee!'}</Modal.Title>
+      <Modal.Title>{props.doubleGuarantee ? 'The Double Guarantee' : '14-Day Money-Back Guarantee!'}</Modal.Title>
     </Modal.Header>
 
     <Modal.Body>
@@ -22,9 +22,9 @@ export const GuaranteeModal: FC<Props> = props => (
         ? (
           <div className="row text-center">
             <div className="col-12 col-md-6">
-              <p><Image src={Guarantee21Days} alt="21-day guarantee" style={{ maxWidth: '100%', height: 'auto' }} /></p>
-              <h3 className="text-dark">21-Day Guarantee</h3>
-              <p>Try the course risk-free for 21 days. This gives you time to receive your course materials and evaluate whether the dog grooming course is right for you.  If you decide it's not a good fit, simply contact QC to arrange a return of your course materials for a refund. It's that easy! Note: For sanitary reasons, the clippers and attachment combs provided with the course cannot be refunded (value $200 US)</p>
+              <p><Image src={Guarantee14Days} alt="14-day guarantee" style={{ maxWidth: '100%', height: 'auto' }} /></p>
+              <h3 className="text-dark">14-Day Guarantee</h3>
+              <p>Try the course risk-free for 14 days. This gives you time to receive your course materials and evaluate whether the dog grooming course is right for you.  If you decide it's not a good fit, simply contact QC to arrange a return of your course materials for a refund. It's that easy! Note: For sanitary reasons, the clippers and attachment combs provided with the course cannot be refunded (value $200 US)</p>
             </div>
             <div className="col-12 col-md-6">
               <p><Image src={Guarantee1Year} alt="1-year guarantee" style={{ maxWidth: '100%', height: 'auto' }} /></p>
@@ -35,9 +35,9 @@ export const GuaranteeModal: FC<Props> = props => (
         )
         : (
           <div className="text-center">
-            <p><Image src={Guarantee21Days} alt="21-day guarantee" style={{ maxWidth: '100%', height: 'auto' }} /></p>
-            <h3 className="text-dark">21-Day Guarantee</h3>
-            <p>Once your enrollment has been processed, you have 21 days to review the course materials and decide whether you want to take the course. If you decide this course isn't the right course for you, simply contact the school for a refund! As long as you haven't submitted any work to your tutor yet, your tuition will be refunded in full!</p>
+            <p><Image src={Guarantee14Days} alt="14-day guarantee" style={{ maxWidth: '100%', height: 'auto' }} /></p>
+            <h3 className="text-dark">14-Day Guarantee</h3>
+            <p>Once your enrollment has been processed, you have 14 days to review the course materials and decide whether you want to take the course. If you decide this course isn't the right course for you, simply contact the school for a refund! As long as you haven't submitted any work to your tutor yet, your tuition will be refunded in full!</p>
           </div>
         )
       }

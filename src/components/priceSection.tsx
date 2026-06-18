@@ -66,7 +66,7 @@ export const PriceSection: FC<Props> = ({ courses, price, doubleGuarantee, varia
               <hr className="my-4" />
               <ul className="list-style-none">
                 <li className="mb-3 d-flex align-items-center"><FaStar size={iconSize} className="text-primary me-2" />Certification upon graduation</li>
-                <li className="mb-3 d-flex align-items-center"><FaLock size={iconSize} className="text-primary me-2" />21-day money-back guarantee</li>
+                <li className="mb-3 d-flex align-items-center"><FaLock size={iconSize} className="text-primary me-2" />14-day money-back guarantee</li>
                 <li className="d-flex align-items-center"><FaClock size={iconSize} className="text-primary me-2" />Lifetime access</li>
               </ul>
             </div>

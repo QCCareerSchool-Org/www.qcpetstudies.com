@@ -119,7 +119,7 @@ const DogTrainingCatalogPage: PageComponent = async props => {
                 <Image src={BookmarkIcon} alt="" />
               </div>
               <h3 className="h5">Study at Your Own Pace</h3>
-              Learn online anytime, from anywhere. Start with a 21-day money-back guarantee.
+              Learn online anytime, from anywhere. Start with a 14-day money-back guarantee.
             </div>
             <div className="col-6 col-md-4">
               <div className="mb-3">
