@@ -15,6 +15,10 @@ import { externship } from '@/lib/externship';
 import { fetchPrice } from '@/lib/fetchPrice';
 import { getServerData } from '@/lib/getServerData';
 import type { PageComponent } from '@/serverComponent';
+import OnlineLearningIcon from '@/components/icons/online-learning-icon.svg';
+import WorldIcon from '@/components/icons/world-icon.svg';
+import MentorshipIcon from '@/components/icons/mentorship-icon.svg';
+import BusinessIcon from '@/components/icons/business-icon.svg';
 
 const courseCodes: CourseCode[] = [ 'dg' ];
 
@@ -75,6 +79,45 @@ const GroomingCoursePreviewPage: PageComponent = async props => {
                   <p className="card-text">Don't miss out on this amazing opportunity to work with an expert to develop your skills!</p>
                   {externship(countryCode, provinceCode) && <p className="card-text"><strong>New! Take your training to the next level with our <strong>Optional Externship Track</strong>—get additional real-world, hands-on experience working side-by-side with a professional groomer.</strong></p>}
                 </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-light">
+        <div className="container">
+          <div className="row align-items-center justify-content-center g-4 g-xl-5 g-xxl-s">
+            <div className="col-12 col-md-10 col-lg-7 col-xl-6 col-xxl-7 text-center text-lg-start">
+              <h2 className="mb-5 mb-lg-4 mb-xxl-5">How it Works</h2>
+              <div className="row g-5 g-lg-4 g-xxl-5">
+                <div className="col-12 col-lg-6">
+                  <Image src={OnlineLearningIcon} alt="" height={32} className="d-lg-none d-xxl-block mb-3" />
+                  <h3 className="h6 mb-3">Flexible Online Learning</h3>
+                  <p className="mb-0">Learn at your own pace and fit your training around your schedule—not the other way around.</p>
+                </div>
+                <div className="col-12 col-lg-6">
+                  <Image src={WorldIcon} alt="" height={32} className="d-lg-none d-xxl-block mb-3" />
+                  <h3 className="h6 mb-3">Real-World Training</h3>
+                  <p className="mb-0">Work with real dogs through hands-on assignments and practical exercises that help build confidence and experience.</p>
+                </div>
+                <div className="col-12 col-lg-6">
+                  <Image src={MentorshipIcon} alt="" height={32} className="d-lg-none d-xxl-block mb-3" />
+                  <h3 className="h6 mb-3">One-on-One Mentorship</h3>
+                  <p className="mb-0">Receive personalized feedback on every assignment from experienced dog grooming professionals.</p>
+                </div>
+                <div className="col-12 col-lg-6">
+                  <Image src={BusinessIcon} alt="" height={32} className="d-lg-none d-xxl-block mb-3" />
+                  <h3 className="h6 mb-3">Business Skills for Success</h3>
+                  <p className="mb-0">Learn how to promote your services, find clients, and turn your passion for pets into a rewarding career.</p>
+                </div>
+              </div>
+            </div>
+            <div className="d-none d-lg-block col-lg-5 col-xl-6 col-xxl-5">
+              <div className="ratio ratio-16x9">
+                <video controls poster="https://cdn.qccareerschool.com/pet/dog-grooming-teaser.jpg">
+                  <source src="https://cdn.qccareerschool.com/pet/dog-grooming-teaser.mp4" type="video/mp4" />
+                </video>
               </div>
             </div>
           </div>
