@@ -1,7 +1,7 @@
 import type { FC, ReactNode } from 'react';
 import type { IconType } from 'react-icons';
 import { BiGlobe, BiMedal, BiMessageSquareEdit, BiRocket } from 'react-icons/bi';
-import styles from '../index.module.scss';
+import styles from '../../index.module.scss';
 
 import { Pillar } from './pillar';
 import Link from 'next/link';
