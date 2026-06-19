@@ -37,18 +37,6 @@ const CareerGuidePage: PageComponent = () => {
         <TestimonialWallSection testimonialIds={testimonialIds} />
       </section>
       <FAQSection />
-      <section className={styles.section}>
-        <div className="container">
-          <div className="row justify-content-center">
-            <div className="col-12 col-lg-8 col-xl-7 text-center">
-              <h3 className="mb-4">Limited Time Offer</h3>
-              <h2 className="mb-4">Save $400 on Dog Grooming Tuition</h2>
-              <p className="mb-4">Take the first step toward a new and exciting career in the booming pet industry.</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
     </div>
   );
 };
