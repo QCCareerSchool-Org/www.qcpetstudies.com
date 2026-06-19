@@ -12,9 +12,9 @@ interface Props {
 export const Banner: FC<Props> = ({ message, buttonHref, buttonContent }) => (
   <div className={styles.wrapper}>
     <div className={`container ${styles.container}`}>
-      <div className={`${styles.message} text-center`}><strong>{message}</strong></div>
+      <div className={styles.message}><strong>{message}</strong></div>
       { buttonHref && buttonContent && (
-        <Link href={buttonHref} className={`btn btn-primary ${styles.button}`}>{buttonContent}</Link>
+        <Link href={buttonHref} className={`btn btn-primary mx-3 ${styles.button}`}>{buttonContent}</Link>
       )}
     </div>
   </div>
