@@ -2,19 +2,18 @@ import type { Metadata } from 'next';
 import Image from 'next/image';
 import { BsBook } from 'react-icons/bs';
 
+import KitBackground from './kit-v2-e9e9e9.jpg';
 import AssignmentBackground from './your-career-bg.jpg';
-import { PriceSection } from '../priceSection';
 import { Accordion } from '@/components/accordion';
 import { AccordionItem } from '@/components/accordion/accordionItem';
 import { BackgroundImage } from '@/components/backgroundImage';
-import { Bar } from '@/components/bar';
 import IDGPCertificationLogo from '@/components/certifications/IDGP-certification-gold.svg';
 import BusinessIcon from '@/components/icons/business-icon.svg';
 import MentorshipIcon from '@/components/icons/mentorship-icon.svg';
 import OnlineLearningIcon from '@/components/icons/online-learning-icon.svg';
 import WorldIcon from '@/components/icons/world-icon.svg';
+import { PriceSection } from '@/components/priceSection';
 import { PriceSectionWithDiscount } from '@/components/priceSectionWithDiscount';
-import { TabGroup } from '@/components/tabGroup';
 import type { TestimonialId } from '@/components/testimonial/data';
 import { TestimonialCarousel } from '@/components/testimonialCarousel';
 import { TutorSectionDG } from '@/components/tutorSectionDG';
@@ -399,10 +398,16 @@ const GroomingCoursePreviewPage: PageComponent = async props => {
         </div>
       </section>
 
-      {externship(countryCode, provinceCode)
-        ? <PriceSection dgPrice={dgPrice.value} dePrice={dePrice.value} countryCode={countryCode} />
-        : <PriceSectionWithDiscount courses={courseCodes} price={dgPrice.value} doubleGuarantee={true} />
-      }
+      <section className="bg-light">
+        <div className="text-center container">
+          <h2>Dog Grooming Kit</h2>
+          <h3 className="h4 mt-4">Included with your online course!</h3>
+          <Image src={KitBackground} alt="" style={{ display: 'block', margin: '0 auto', maxWidth: '100%', height: 'auto' }} />
+          <a href="/certification-courses/dog-grooming/400-off" className="btn btn-primary">Claim My Kit</a>
+        </div>
+      </section>
+
+      <PriceSection courses={courseCodes} price={dgPrice.value} doubleGuarantee={true} />
 
       <TutorSectionDG className="bg-light" />
     </>
