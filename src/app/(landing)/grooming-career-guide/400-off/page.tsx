@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 
+import styles from './index.module.scss';
 import { CareerStatsSection } from '../../../(main)/grooming-career-guide/_components/careerStatsSection';
 import { FAQSection } from '../../../(main)/grooming-career-guide/_components/faqSection';
 import { HeroSection } from '../../../(main)/grooming-career-guide/_components/heroSection';
@@ -10,7 +11,6 @@ import { SpecializationsSection } from '../../../(main)/grooming-career-guide/_c
 import { TraitsSection } from '../../../(main)/grooming-career-guide/_components/traitsSection';
 import { WhyQCSection } from '../../../(main)/grooming-career-guide/_components/whyQCSection';
 import { GroomingKitSection } from '../../../(main)/grooming-career-guide/groomingKitSection';
-import styles from '../index.module.scss';
 import { TestimonialWallSection } from '@/components/testimonialWallSection';
 import type { PageComponent } from '@/serverComponent';
 
