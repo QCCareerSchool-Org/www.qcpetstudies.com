@@ -27,7 +27,7 @@ const testimonialIds = [ 'TD-0004', 'TD-0005', 'TD-0007', 'TD-0014', 'TD-0009', 
 const CareerGuidePage: PageComponent = () => {
   return (
     <div className="chos">
-      <Banner message="Ends Soon: Save $400 When You Enroll Today" buttonHref="https://enroll.qcpetstudies.com/grooming-400-off" buttonContent="Enroll Now" />
+      <Banner message="Ends Soon: Save $400 on Tuition" buttonHref="https://enroll.qcpetstudies.com/grooming-400-off" buttonContent="Enroll Now" />
       <HeroSection />
       <CareerStatsSection />
       <ResponsibilitiesSection />
