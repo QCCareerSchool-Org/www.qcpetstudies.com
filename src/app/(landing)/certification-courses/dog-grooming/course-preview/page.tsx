@@ -403,14 +403,14 @@ const GroomingCoursePreviewPage: PageComponent = async props => {
         <div className="text-center">
           <h2>Dog Grooming Kit</h2>
           <h3 className="h4 mt-4 mb-5">Included with your online course!</h3>
-          <a href="/certification-courses/dog-grooming/400-off" className="btn btn-lg btn-primary">Claim My Kit</a>
+          <a href="https://enroll.qcpetstudies.com/grooming-400-off" className="btn btn-lg btn-primary">Claim My Kit</a>
           <Image src={KitBackground} alt="" style={{ display: 'block', margin: '0 auto', maxWidth: '100%', height: 'auto' }} />
         </div>
       </section>
 
       <TutorSectionDG id="tutors" />
 
-      <PriceSection id="tuition" courses={courseCodes} price={dgPrice.value} doubleGuarantee={true} />
+      <PriceSection id="tuition" courses={courseCodes} price={dgPrice.value} doubleGuarantee={true} enrollPath="/grooming-400-off" />
 
       <section className={styles.section}>
         <div className="container">
