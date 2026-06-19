@@ -127,5 +127,15 @@ export const testimonials: Record<string, Testimonial | undefined> = {
     long: [ 'QC provided a thorough balance of theory and hands-on learning. My tutor gave honest, constructive feedback throughout the course, and the support staff were always friendly and helpful whenever I needed assistance' ],
     image: Images.Sherri,
     stars: 5,
+  },
+  'TD-0015': {
+    name: 'Jordyn Parker',
+    courses: [ 'dg' ],
+    short: [ 'I would suggest QC Pet Studies to anyone interested in dog grooming. It\'s so convenient to have it right there on your computer so you can work on it wherever you may be. The teachers are also amazing and so helpful - you can message them whenever you have a question and they will get back to you quickly! QC Pet Studies helped me a lot along my journey with answering questions and giving me tips on how to improve my work!' ],
+    long: [ 'I would suggest QC Pet Studies to anyone interested in dog grooming. It\'s so convenient to have it right there on your computer so you can work on it wherever you may be. The teachers are also amazing and so helpful - you can message them whenever you have a question and they will get back to you quickly! QC Pet Studies helped me a lot along my journey with answering questions and giving me tips on how to improve my work!' ],
+    image: Images.Jordyn,
+    stars: 5,
   }
 };
+
+export type TestimonialId = keyof typeof testimonials;

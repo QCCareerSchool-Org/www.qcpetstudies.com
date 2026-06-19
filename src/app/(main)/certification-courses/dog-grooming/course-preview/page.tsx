@@ -4,23 +4,28 @@ import { BsBook } from 'react-icons/bs';
 
 import AssignmentBackground from './your-career-bg.jpg';
 import { PriceSection } from '../priceSection';
+import { Accordion } from '@/components/accordion';
+import { AccordionItem } from '@/components/accordion/accordionItem';
 import { BackgroundImage } from '@/components/backgroundImage';
 import { Bar } from '@/components/bar';
 import IDGPCertificationLogo from '@/components/certifications/IDGP-certification-gold.svg';
+import BusinessIcon from '@/components/icons/business-icon.svg';
+import MentorshipIcon from '@/components/icons/mentorship-icon.svg';
+import OnlineLearningIcon from '@/components/icons/online-learning-icon.svg';
+import WorldIcon from '@/components/icons/world-icon.svg';
 import { PriceSectionWithDiscount } from '@/components/priceSectionWithDiscount';
 import { TabGroup } from '@/components/tabGroup';
+import type { TestimonialId } from '@/components/testimonial/data';
+import { TestimonialCarousel } from '@/components/testimonialCarousel';
 import { TutorSectionDG } from '@/components/tutorSectionDG';
 import type { CourseCode } from '@/domain/courseCode';
 import { externship } from '@/lib/externship';
 import { fetchPrice } from '@/lib/fetchPrice';
 import { getServerData } from '@/lib/getServerData';
 import type { PageComponent } from '@/serverComponent';
-import OnlineLearningIcon from '@/components/icons/online-learning-icon.svg';
-import WorldIcon from '@/components/icons/world-icon.svg';
-import MentorshipIcon from '@/components/icons/mentorship-icon.svg';
-import BusinessIcon from '@/components/icons/business-icon.svg';
 
 const courseCodes: CourseCode[] = [ 'dg' ];
+const testimonialIds: TestimonialId[] = [ 'TD-0015', 'TD-0014', 'TD-0009', 'TD-0007' ];
 
 export const metadata: Metadata = {
   title: 'Dog Grooming Certification Course',
@@ -135,6 +140,9 @@ const GroomingCoursePreviewPage: PageComponent = async props => {
               <p className="lead mb-0">Upon graduation, you'll receive the International Dog Grooming Professional&trade; (IDGP&trade;) Certification. With your certification and professional title, you'll be ready to start your own business or work for an established grooming salon right away!</p>
             </div>
           </div>
+          <div className="text-center">
+            <TestimonialCarousel testimonialIds={testimonialIds} />
+          </div>
         </div>
       </section>
 
@@ -179,21 +187,20 @@ const GroomingCoursePreviewPage: PageComponent = async props => {
                 </div>
               </div>
             </div>
-            <div className="col-12 col-lg-6 mb-4">
+            <Accordion>
               <Bar variant="primary" align="start" />
-              <h4>Unit A</h4>
-              <p className="mb-0">In the first unit of the dog grooming course, you'll meet your tutor and start learning about the fundamentals of dog grooming. This introductory unit includes theoretical studies on the history of dog grooming, and how to protect your health &amp; safety as a dog groomer. You'll also learn about dog anatomy in great detail, and you'll start learning about skincare and esthetics.</p>
-            </div>
-            <div className="col-12 col-lg-6 mb-4">
+              <AccordionItem eventKey={0} heading="Unit A">
+                <p className="mb-0">In the first unit of the dog grooming course, you'll meet your tutor and start learning about the fundamentals of dog grooming. This introductory unit includes theoretical studies on the history of dog grooming, and how to protect your health &amp; safety as a dog groomer. You'll also learn about dog anatomy in great detail, and you'll start learning about skincare and esthetics.</p>
+              </AccordionItem>
               <Bar variant="primary" align="start" />
-              <h4>Unit B</h4>
-              <p className="mb-0">In this second unit, you'll focus on how to work with dogs in a grooming environment. You'll learn about dog behaviors and temperaments, and you'll find out more about how dogs learn and communicate with humans. You'll then learn about how you can keep the dog and yourself safe during a grooming appointment, and how to conduct an effective needs analysis when meeting a dog grooming client for the first time.</p>
-            </div>
-            <div className="col-12 col-lg-6">
+              <AccordionItem eventKey={1} heading="Unit B">
+                <p className="mb-0">In this second unit, you'll focus on how to work with dogs in a grooming environment. You'll learn about dog behaviors and temperaments, and you'll find out more about how dogs learn and communicate with humans. You'll then learn about how you can keep the dog and yourself safe during a grooming appointment, and how to conduct an effective needs analysis when meeting a dog grooming client for the first time.</p>
+              </AccordionItem>
               <Bar variant="primary" align="start" />
-              <h4>Unit C</h4>
-              <p className="mb-0">The third dog grooming unit will help you become intimately familiar with your grooming tools. You'll learn all about brushes, scissors, clippers, and you'll start to practice techniques to use these tools effectively. You'll also learn how to properly set up your grooming environment, and how to keep it clean and safe!</p>
-            </div>
+              <AccordionItem eventKey={2} heading="Unit C">
+                <p className="mb-0">The third dog grooming unit will help you become intimately familiar with your grooming tools. You'll learn all about brushes, scissors, clippers, and you'll start to practice techniques to use these tools effectively. You'll also learn how to properly set up your grooming environment, and how to keep it clean and safe!</p>
+              </AccordionItem>
+            </Accordion>
 
             <div className="col-12">
               <hr className="my-5" />

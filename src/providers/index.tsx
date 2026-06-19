@@ -4,6 +4,7 @@ import type { FC, PropsWithChildren } from 'react';
 
 import { CaptchaProvider } from './captchaProvider';
 import { IPProvider } from './ipProvider';
+import { ScreenSizeProvider } from './screenSizeProvider';
 import { ScreenWidthProvider } from './screenWidthProvider';
 import { ScrollPositionProvider } from './scrollPositionProvider';
 import { TaxCreditPopupProvider } from './taxCreditPopupProvider';
@@ -21,13 +22,15 @@ export const Provider: FC<PropsWithChildren<Props>> = ({ userValues, clientIp, c
   <UserValuesProvider {...userValues}>
     <IPProvider clientIp={clientIp}>
       <ScreenWidthProvider>
-        <ScrollPositionProvider>
-          <CaptchaProvider reCaptchaKey={reCaptchaKey}>
-            <TaxCreditPopupProvider>
-              {children}
-            </TaxCreditPopupProvider>
-          </CaptchaProvider>
-        </ScrollPositionProvider>
+        <ScreenSizeProvider>
+          <ScrollPositionProvider>
+            <CaptchaProvider reCaptchaKey={reCaptchaKey}>
+              <TaxCreditPopupProvider>
+                {children}
+              </TaxCreditPopupProvider>
+            </CaptchaProvider>
+          </ScrollPositionProvider>
+        </ScreenSizeProvider>
       </ScreenWidthProvider>
     </IPProvider>
   </UserValuesProvider>

@@ -10,4 +10,5 @@ export { default as Nicki } from './nicki.jpg';
 export { default as Lauren } from './lauren.jpg';
 export { default as Tessa } from './tessa.jpg';
 export { default as Janai } from './janai.jpg';
-export { default as Sherri } from './sherri.jpg'
+export { default as Sherri } from './sherri.jpg';
+export { default as Jordyn } from './jordyn.jpg';

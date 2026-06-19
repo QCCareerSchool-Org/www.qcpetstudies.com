@@ -4,3 +4,21 @@
 section.Toastify {
   padding: 0;
 }
+
+@import 'react-multi-carousel/lib/styles.css';
+
+.react-multi-carousel-dot button {
+  border: 0;
+  background-color: #bcbccb;
+}
+
+.react-multi-carousel-dot--active button {
+  background-color: #02013f;
+}
+
+.react-multi-carousel-dot-list {
+  position: initial;
+}
+.react-multi-carousel-list .react-multi-carousel-dot-list {
+  position: absolute;
+}
