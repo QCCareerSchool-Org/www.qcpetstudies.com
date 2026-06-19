@@ -1,11 +1,9 @@
 import type { FC, PropsWithChildren } from 'react';
 import { useMemo } from 'react';
 
-import { Testimonial } from '../testimonial';
 import { TestimonialCarouselClient } from './client';
 import type { TestimonialId } from '../testimonial/data';
 import { testimonials } from '../testimonial/data';
-import testImage from '../testimonials/images/nicki-hughes.jpg';
 import { TestimonialSmall } from '../testimonialsSmall/testimonialSmall';
 import type { CourseCode } from '@/domain/courseCode';
 

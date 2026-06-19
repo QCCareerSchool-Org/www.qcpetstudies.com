@@ -13,7 +13,6 @@ import MentorshipIcon from '@/components/icons/mentorship-icon.svg';
 import OnlineLearningIcon from '@/components/icons/online-learning-icon.svg';
 import WorldIcon from '@/components/icons/world-icon.svg';
 import { PriceSection } from '@/components/priceSection';
-import { PriceSectionWithDiscount } from '@/components/priceSectionWithDiscount';
 import type { TestimonialId } from '@/components/testimonial/data';
 import { TestimonialCarousel } from '@/components/testimonialCarousel';
 import { TutorSectionDG } from '@/components/tutorSectionDG';
@@ -409,7 +408,8 @@ const GroomingCoursePreviewPage: PageComponent = async props => {
 
       <PriceSection courses={courseCodes} price={dgPrice.value} doubleGuarantee={true} />
 
-      <TutorSectionDG className="bg-light" />
+      <TutorSectionDG />
+
     </>
   );
 };
