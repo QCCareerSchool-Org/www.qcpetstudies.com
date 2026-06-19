@@ -398,11 +398,11 @@ const GroomingCoursePreviewPage: PageComponent = async props => {
       </section>
 
       <section id="kit" className="bg-light">
-        <div className="text-center container">
+        <div className="text-center">
           <h2>Dog Grooming Kit</h2>
-          <h3 className="h4 mt-4">Included with your online course!</h3>
+          <h3 className="h4 mt-4 mb-5">Included with your online course!</h3>
+          <a href="/certification-courses/dog-grooming/400-off" className="btn btn-lg btn-primary">Claim My Kit</a>
           <Image src={KitBackground} alt="" style={{ display: 'block', margin: '0 auto', maxWidth: '100%', height: 'auto' }} />
-          <a href="/certification-courses/dog-grooming/400-off" className="btn btn-primary">Claim My Kit</a>
         </div>
       </section>
 
