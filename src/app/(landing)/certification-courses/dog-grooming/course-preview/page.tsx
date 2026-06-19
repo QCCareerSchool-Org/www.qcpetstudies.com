@@ -1,7 +1,9 @@
 import type { Metadata } from 'next';
 import Image from 'next/image';
+import Link from 'next/link';
 import { BsBook } from 'react-icons/bs';
 
+import styles from './index.module.scss';
 import KitBackground from './kit-v2-e9e9e9.jpg';
 import AssignmentBackground from './your-career-bg.jpg';
 import { Accordion } from '@/components/accordion';
@@ -407,6 +409,21 @@ const GroomingCoursePreviewPage: PageComponent = async props => {
       <TutorSectionDG id="tutors" />
 
       <PriceSection id="tuition" courses={courseCodes} price={dgPrice.value} doubleGuarantee={true} />
+
+      <section className={styles.section}>
+        <div className="container">
+          <div className="row justify-content-center">
+            <div className="col-12 col-lg-8 col-xl-7 text-center">
+              <h3 className="mb-4">Limited Time Offer</h3>
+              <h2 className="mb-4">Save $400 on Dog Grooming Tuition</h2>
+              <p className="mb-4">Take the first step toward a new and exciting career in the booming pet industry.</p>
+              <div className="d-flex justify-content-center gap-3">
+                <Link href="https://enroll.qcpetstudies.com/grooming-400-off" className={`btn btn-lg btn-primary ${styles.button}`}>Enroll Now</Link>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
     </>
   );
