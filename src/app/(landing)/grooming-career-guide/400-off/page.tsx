@@ -11,6 +11,7 @@ import { SpecializationsSection } from '../../../(main)/grooming-career-guide/_c
 import { TraitsSection } from '../../../(main)/grooming-career-guide/_components/traitsSection';
 import { WhyQCSection } from '../../../(main)/grooming-career-guide/_components/whyQCSection';
 import { GroomingKitSection } from '../../../(main)/grooming-career-guide/groomingKitSection';
+import { Banner } from '../../_components/banner';
 import { TestimonialWallSection } from '@/components/testimonialWallSection';
 import type { PageComponent } from '@/serverComponent';
 
@@ -26,6 +27,7 @@ const testimonialIds = [ 'TD-0004', 'TD-0005', 'TD-0007', 'TD-0014', 'TD-0009', 
 const CareerGuidePage: PageComponent = () => {
   return (
     <div className="chos">
+      <Banner message="Ends Soon: Save $400 When You Enroll Today" buttonHref="https://enroll.qcpetstudies.com/grooming-400-off" buttonContent="Enroll Now" />
       <HeroSection />
       <CareerStatsSection />
       <ResponsibilitiesSection />
