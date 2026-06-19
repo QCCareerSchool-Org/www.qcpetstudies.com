@@ -6,6 +6,7 @@ import { BsBook } from 'react-icons/bs';
 import styles from './index.module.scss';
 import KitBackground from './kit-v2-e9e9e9.jpg';
 import AssignmentBackground from './your-career-bg.jpg';
+import { Banner } from '../../../_components/banner';
 import { Accordion } from '@/components/accordion';
 import { AccordionItem } from '@/components/accordion/accordionItem';
 import { BackgroundImage } from '@/components/backgroundImage';
@@ -46,6 +47,7 @@ const GroomingCoursePreviewPage: PageComponent = async props => {
 
   return (
     <>
+      <Banner message="Ends Soon: Save $400 When You Enroll Today" buttonHref="https://enroll.qcpetstudies.com/grooming-400-off" buttonContent="Enroll Now" />
       <section className="bg-dark">
         <BackgroundImage src={AssignmentBackground} priority />
         <div className="image-overlay-gradient" />

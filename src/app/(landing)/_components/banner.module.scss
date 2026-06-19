@@ -1,0 +1,26 @@
+.wrapper {
+  position: sticky;
+  top: 0;
+  z-index: 1030;
+  background-color: var(--qc-color-navy);
+  padding: 0.75rem 0;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.message {
+  color: white;
+  font-size: 0.875rem;
+
+  @media (min-width: 768px) {
+    font-size: 1rem;
+  }
+}
+
+.button {
+  white-space: nowrap;
+}
