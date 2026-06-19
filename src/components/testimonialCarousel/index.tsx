@@ -5,6 +5,8 @@ import { Testimonial } from '../testimonial';
 import { TestimonialCarouselClient } from './client';
 import type { TestimonialId } from '../testimonial/data';
 import { testimonials } from '../testimonial/data';
+import testImage from '../testimonials/images/nicki-hughes.jpg';
+import { TestimonialSmall } from '../testimonialsSmall/testimonialSmall';
 import type { CourseCode } from '@/domain/courseCode';
 
 interface Props {
@@ -42,11 +44,23 @@ export const TestimonialCarousel: FC<PropsWithChildren<Props>> = ({ testimonialI
   return (
     <div style={{ minHeight: 360 }}>
       <TestimonialCarouselClient>
-        {usedTestimonials.map(t => (
-          <div key={t} className="mx-3 mb-md-5">
-            <Testimonial id={t} />
-          </div>
-        ))}
+        {usedTestimonials.map(t => {
+          const testimonial = testimonials[t];
+
+          if (!testimonial) {
+            return null;
+          }
+
+          return (
+            <div key={t} className="mx-3 mb-md-5">
+              <TestimonialSmall
+                quotation={testimonial.short.join(' ')}
+                name={testimonial.name}
+                imageSrc={testimonial.image}
+              />
+            </div>
+          );
+        })}
         {children}
       </TestimonialCarouselClient>
     </div>
