@@ -9,18 +9,19 @@
 .container {
   display: flex;
   align-items: center;
-  justify-content: flex-end; // button stays right
+  justify-content: flex-end;
   position: relative;
 }
 
 .message {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
   color: white;
   font-size: 0.875rem;
+  text-transform: uppercase;
 
   @media (min-width: 768px) {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
     font-size: 1rem;
   }
 }
