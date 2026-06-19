@@ -47,7 +47,7 @@ const GroomingCoursePreviewPage: PageComponent = async props => {
 
   return (
     <>
-      <Banner message="Ends Soon: Save $400 When You Enroll Today" buttonHref="https://enroll.qcpetstudies.com/grooming-400-off" buttonContent="Enroll Now" />
+      <Banner message="Ends Soon: Save $400 on Tuition" buttonHref="https://enroll.qcpetstudies.com/grooming-400-off" buttonContent="Enroll Now" />
       <section className="bg-dark">
         <BackgroundImage src={AssignmentBackground} priority />
         <div className="image-overlay-gradient" />
