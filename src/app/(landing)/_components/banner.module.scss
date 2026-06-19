@@ -2,17 +2,21 @@
   position: sticky;
   top: 0;
   z-index: 1030;
-  background-color: var(--qc-color-navy);
+  background-color: #e00000;
   padding: 0.75rem 0;
 }
 
 .container {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-end; // button stays right
+  position: relative;
 }
 
 .message {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
   color: white;
   font-size: 0.875rem;
 
