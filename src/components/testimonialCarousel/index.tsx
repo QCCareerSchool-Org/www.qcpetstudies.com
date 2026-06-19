@@ -50,7 +50,7 @@ export const TestimonialCarousel: FC<PropsWithChildren<Props>> = ({ testimonialI
           }
 
           return (
-            <div key={t} className="mx-3 mb-md-5">
+            <div key={t} className="text-center container mb-md-5 px-5">
               <TestimonialSmall
                 quotation={testimonial.short.join(' ')}
                 name={testimonial.name}

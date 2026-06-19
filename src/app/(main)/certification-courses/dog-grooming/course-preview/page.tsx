@@ -142,9 +142,7 @@ const GroomingCoursePreviewPage: PageComponent = async props => {
       </section>
 
       <section className="bg-light">
-        <div className="container">
-          <TestimonialCarousel testimonialIds={testimonialIds} />
-        </div>
+        <TestimonialCarousel testimonialIds={testimonialIds} />
       </section>
 
       <section id="course-syllabus">
