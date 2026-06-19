@@ -88,7 +88,7 @@ const GroomingCoursePreviewPage: PageComponent = async props => {
         </div>
       </section>
 
-      <section className="bg-light">
+      <section id="how-it-works" className="bg-light">
         <div className="container">
           <div className="row align-items-center justify-content-center g-4 g-xl-5 g-xxl-s">
             <div className="col-12 col-md-10 col-lg-7 col-xl-6 col-xxl-7 text-center text-lg-start">
@@ -127,7 +127,7 @@ const GroomingCoursePreviewPage: PageComponent = async props => {
         </div>
       </section>
 
-      <section className="bg-navy">
+      <section id="certification" className="bg-navy">
         <div className="container">
           <div className="d-flex flex-column flex-md-row justify-contents-center align-items-center">
             <div className="flex-shrink-0 mb-4 mb-md-0 me-md-4">
@@ -147,7 +147,7 @@ const GroomingCoursePreviewPage: PageComponent = async props => {
         </div>
       </section>
 
-      <section>
+      <section id="course-syllabus">
         <div className="container">
           <div className="row">
             <div className="col-12 mb-5">
@@ -397,7 +397,7 @@ const GroomingCoursePreviewPage: PageComponent = async props => {
         </div>
       </section>
 
-      <section className="bg-light">
+      <section id="kit" className="bg-light">
         <div className="text-center container">
           <h2>Dog Grooming Kit</h2>
           <h3 className="h4 mt-4">Included with your online course!</h3>
@@ -406,9 +406,9 @@ const GroomingCoursePreviewPage: PageComponent = async props => {
         </div>
       </section>
 
-      <PriceSection courses={courseCodes} price={dgPrice.value} doubleGuarantee={true} />
+      <TutorSectionDG id="tutors" />
 
-      <TutorSectionDG />
+      <PriceSection id="tuition" courses={courseCodes} price={dgPrice.value} doubleGuarantee={true} />
 
     </>
   );
