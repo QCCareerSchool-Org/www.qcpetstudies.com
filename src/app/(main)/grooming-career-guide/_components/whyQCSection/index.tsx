@@ -13,19 +13,21 @@ interface PillarItem {
 }
 
 interface Props {
-  buttonText?: string;
-  href?: string;
+  button?: {
+    text: string;
+    href: string;
+  };
 }
 
-export const WhyQCSection: FC<Props> = ({ buttonText, href }) => (
+export const WhyQCSection: FC<Props> = ({ button }) => (
   <section>
     <div className="container">
       <div className="row align-items-center g-s">
         <div className="col-12 col-lg-5">
           <h2 className="mb-4">Why Aspiring Professionals Choose QC</h2>
           <p className="lead mb-0">QC offers a professional roadmap for mastering both the hands-on skills and business fundamentals needed to succeed in the grooming industry. You'll learn every stage of the grooming process—from understanding dog behavior and health to bathing, brushing, and executing professional pet trims and building your grooming career.</p>
-          { buttonText && href && (
-            <Link href={href} className={`btn btn-lg btn-primary ${styles.button} mt-4`}>{buttonText}</Link>
+          {button && (
+            <Link href={button.href} className={`btn btn-lg btn-primary ${styles.button} mt-4`}>{button.text}</Link>
           )}
         </div>
         <div className="col-12 col-lg-7">
