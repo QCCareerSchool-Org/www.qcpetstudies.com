@@ -22,18 +22,20 @@ export const metadata: Metadata = {
     canonical: '/grooming-career-guide',
   },
 };
+
 const testimonialIds = [ 'TD-0004', 'TD-0005', 'TD-0007', 'TD-0014', 'TD-0009', 'TD-0010' ];
+const href = 'https://enroll.qcpetstudies.com/grooming-400-off';
 
 const CareerGuidePage: PageComponent = () => {
   return (
     <div className="chos">
-      <Banner message="ENDS SOON: Save $400 on Tuition" buttonHref="https://enroll.qcpetstudies.com/grooming-400-off" buttonContent="Enroll Now" />
+      <Banner message="ENDS SOON: Save $400 on Tuition" buttonHref={href} buttonContent="Enroll Now" />
       <HeroSection />
       <CareerStatsSection />
       <ResponsibilitiesSection />
       <JourneySection />
       <GroomingKitSection />
-      <WhyQCSection buttonText="Start My Career" href="https://enroll.qcpetstudies.com/grooming-400-off" />
+      <WhyQCSection buttonText="Start My Career" href={href} />
       <SpecializationsSection />
       <TraitsSection />
       <section className="bg-light">
@@ -48,7 +50,7 @@ const CareerGuidePage: PageComponent = () => {
               <h2 className="mb-4">Save $400 on Dog Grooming Tuition</h2>
               <p className="mb-4">Take the first step toward a new and exciting career in the booming pet industry.</p>
               <div className="d-flex justify-content-center gap-3">
-                <Link href="https://enroll.qcpetstudies.com/grooming-400-off" className={`btn btn-lg btn-primary ${styles.button}`}>Enroll Now</Link>
+                <Link href={href} className={`btn btn-lg btn-primary ${styles.button}`}>Enroll Now</Link>
               </div>
             </div>
           </div>
