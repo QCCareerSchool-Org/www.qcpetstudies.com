@@ -120,4 +120,12 @@ export const testimonials: Record<string, Testimonial | undefined> = {
     image: Images.Lauren,
     stars: 5,
   },
+  'TD-0014': {
+    name: 'Sherri Clark',
+    courses: [ 'dg' ],
+    short: [ 'QC provided a thorough balance of theory and hands-on learning. My tutor gave honest, constructive feedback throughout the course, and the support staff were always friendly and helpful whenever I needed assistance' ],
+    long: [ 'QC provided a thorough balance of theory and hands-on learning. My tutor gave honest, constructive feedback throughout the course, and the support staff were always friendly and helpful whenever I needed assistance' ],
+    image: Images.Sherri,
+    stars: 5,
+  },
 };
