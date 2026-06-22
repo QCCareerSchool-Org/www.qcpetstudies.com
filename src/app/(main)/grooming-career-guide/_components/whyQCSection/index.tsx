@@ -1,8 +1,10 @@
+import Link from 'next/link';
 import type { FC, ReactNode } from 'react';
 import type { IconType } from 'react-icons';
 import { BiGlobe, BiMedal, BiMessageSquareEdit, BiRocket } from 'react-icons/bi';
 
 import { Pillar } from './pillar';
+import styles from '../../index.module.scss';
 
 interface PillarItem {
   icon: IconType;
@@ -10,13 +12,23 @@ interface PillarItem {
   text: ReactNode;
 }
 
-export const WhyQCSection: FC = () => (
+interface Props {
+  button?: {
+    text: string;
+    href: string;
+  };
+}
+
+export const WhyQCSection: FC<Props> = ({ button }) => (
   <section>
     <div className="container">
       <div className="row align-items-center g-s">
         <div className="col-12 col-lg-5">
           <h2 className="mb-4">Why Aspiring Professionals Choose QC</h2>
           <p className="lead mb-0">QC offers a professional roadmap for mastering both the hands-on skills and business fundamentals needed to succeed in the grooming industry. You'll learn every stage of the grooming process—from understanding dog behavior and health to bathing, brushing, and executing professional pet trims and building your grooming career.</p>
+          {button && (
+            <Link href={button.href} className={`btn btn-lg btn-primary ${styles.button} mt-4`}>{button.text}</Link>
+          )}
         </div>
         <div className="col-12 col-lg-7">
           <div className="row g-4">

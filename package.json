@@ -1,10 +1,10 @@
 {
   "name": "www.petstudies.com",
-  "version": "1.6.106",
+  "version": "1.6.107",
   "license": "UNLICENSED",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev --webpack",
     "build": "next build",
     "start": "next start",
     "lint": "eslint src",
