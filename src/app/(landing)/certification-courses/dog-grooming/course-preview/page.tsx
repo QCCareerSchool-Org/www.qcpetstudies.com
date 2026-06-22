@@ -33,6 +33,8 @@ export const metadata: Metadata = {
   alternates: { canonical: '/certification-courses/dog-grooming/course-preview' },
 };
 
+const href = 'https://enroll.qcpetstudies.com/grooming-400-off';
+
 const GroomingCoursePreviewPage: PageComponent = async props => {
   const { countryCode, provinceCode } = await getServerData(props.searchParams);
 
@@ -47,7 +49,7 @@ const GroomingCoursePreviewPage: PageComponent = async props => {
 
   return (
     <>
-      <Banner message="ENDS SOON: Save $400 on Tuition" buttonHref="https://enroll.qcpetstudies.com/grooming-400-off" buttonContent="Enroll Now" />
+      <Banner message="ENDS SOON: Save $400 on Tuition" button={{ href, content: 'Enroll Now' }} />
       <section className="bg-dark">
         <BackgroundImage src={AssignmentBackground} priority />
         <div className="image-overlay-gradient" />
@@ -403,7 +405,7 @@ const GroomingCoursePreviewPage: PageComponent = async props => {
         <div className="text-center">
           <h2>Dog Grooming Kit</h2>
           <h3 className="h4 mt-4 mb-5">Included with your online course!</h3>
-          <a href="https://enroll.qcpetstudies.com/grooming-400-off" className="btn btn-lg btn-primary">Claim My Kit</a>
+          <a href={href} className="btn btn-lg btn-primary">Claim My Kit</a>
           <Image src={KitBackground} alt="" style={{ display: 'block', margin: '0 auto', maxWidth: '100%', height: 'auto' }} />
         </div>
       </section>
@@ -420,7 +422,7 @@ const GroomingCoursePreviewPage: PageComponent = async props => {
               <h2 className="mb-4">Save $400 on Dog Grooming Tuition</h2>
               <p className="mb-4">Take the first step toward a new and exciting career in the booming pet industry.</p>
               <div className="d-flex justify-content-center gap-3">
-                <Link href="https://enroll.qcpetstudies.com/grooming-400-off" className={`btn btn-lg btn-primary ${styles.button}`}>Enroll Now</Link>
+                <Link href={href} className={`btn btn-lg btn-primary ${styles.button}`}>Enroll Now</Link>
               </div>
             </div>
           </div>
