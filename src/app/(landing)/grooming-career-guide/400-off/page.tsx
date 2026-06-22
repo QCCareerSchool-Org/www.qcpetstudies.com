@@ -35,7 +35,7 @@ const CareerGuidePage: PageComponent = () => {
       <ResponsibilitiesSection />
       <JourneySection />
       <GroomingKitSection />
-      <WhyQCSection buttonText="Start My Career" href={href} />
+      <WhyQCSection button={{ text: 'Start My Career', href }} />
       <SpecializationsSection />
       <TraitsSection />
       <section className="bg-light">

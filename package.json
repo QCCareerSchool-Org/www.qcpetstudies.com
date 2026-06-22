@@ -1,6 +1,6 @@
 {
   "name": "www.petstudies.com",
-  "version": "1.6.107",
+  "version": "1.6.108",
   "license": "UNLICENSED",
   "private": true,
   "scripts": {
@@ -58,6 +58,7 @@
     "@types/react-dom": "19.2.3",
     "@types/react-scroll": "^1.8.10",
     "@types/uuid": "^10.0.0",
+    "babel-plugin-react-compiler": "^1.0.0",
     "baseline-browser-mapping": "^2.10.28",
     "eslint": "^9.39.4",
     "eslint-config-next": "16.2.3",
