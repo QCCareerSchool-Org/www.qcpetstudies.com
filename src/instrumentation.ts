@@ -1,4 +1,4 @@
-const isDev = process.env.NODE_ENV === 'production';
+const isDev = process.env.NODE_ENV !== 'production';
 
 const expectedVariables = [
   // QC
@@ -30,7 +30,7 @@ export const register = async () => {
   for (const variable of expectedVariables) {
     const message = `Environment variable ${variable} not found`;
     if (!process.env[variable]) {
-      if (isDev) {
+      if (!isDev) {
         throw Error(message);
       } else {
         console.warn(message);
