@@ -29,7 +29,7 @@ const href = 'https://enroll.qcpetstudies.com/grooming-400-off';
 const CareerGuidePage: PageComponent = () => {
   return (
     <div className="chos">
-      <Banner message="ENDS SOON: Save $400 on Tuition" buttonHref={href} buttonContent="Enroll Now" />
+      <Banner message="ENDS SOON: Save $400 on Tuition" button={{ href, content: 'Enroll Now' }} />
       <HeroSection />
       <CareerStatsSection />
       <ResponsibilitiesSection />

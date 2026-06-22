@@ -4,3 +4,15 @@ declare module '*.svg' {
 
   export default content;
 }
+
+declare module '*.svg?icon' {
+  import type { FC, SVGProps } from 'react';
+
+  interface IconProps extends SVGProps<SVGSVGElement> {
+    title?: string;
+  }
+
+  const content: FC<IconProps>;
+
+  export default content;
+}

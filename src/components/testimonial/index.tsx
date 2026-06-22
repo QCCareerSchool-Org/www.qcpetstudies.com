@@ -14,6 +14,7 @@ interface Props {
   courseCodes?: CourseCode[];
   showProvinceCode?: boolean;
   schemaCourseId?: string;
+  small?: boolean;
 }
 
 /** sort in alphabetical order, except dg is always first */
@@ -30,7 +31,7 @@ export const courseSort = (a: CourseCode, b: CourseCode): number => {
   return a.localeCompare(b);
 };
 
-export const Testimonial: FC<Props> = memo(({ id, courseCodes, showProvinceCode = false, schemaCourseId }) => {
+export const Testimonial: FC<Props> = memo(({ id, courseCodes, showProvinceCode = false, schemaCourseId, small }) => {
   const testimonial = useMemo(() => {
     const found = testimonials[id];
     if (!found) {
@@ -66,9 +67,9 @@ export const Testimonial: FC<Props> = memo(({ id, courseCodes, showProvinceCode 
         : testimonial.courses.length > 0
           ? <CourseMicrodata itemProp="itemReviewed" courseCode={testimonial.courses[0]} />
           : (
-            <span itemProp="itemReviewed" itemScope itemType="https://schema.org/EducationalOrganization" itemID="https://www.qcpetstudies.com/#school">
-              <link itemProp="url" href="https://www.qcpetstudies.com" />
-              <meta itemProp="name" content="QC Pet Studies" />
+            <span itemProp="itemReviewed" itemScope itemType="https://schema.org/EducationalOrganization" itemID="https://www.qcdesignschool.com/#school">
+              <link itemProp="url" href="https://www.qcdesignschool.com" />
+              <meta itemProp="name" content="QC Design School" />
             </span>
           )}
       <span itemProp="reviewRating" itemScope itemType="https://schema.org/Rating">
@@ -79,10 +80,7 @@ export const Testimonial: FC<Props> = memo(({ id, courseCodes, showProvinceCode 
       <div className={styles.stars}>{Array(5).fill(null).map((_, i) => <Star key={i} filled={i < testimonial.stars} />)}</div>
       <div itemProp="reviewBody">
         {testimonial.short.map((q, i, a) => {
-          if (i < a.length - 1) {
-            return <p key={i} className={styles.quotation}>&ldquo;{q}</p>;
-          }
-          return <p key={i} className={styles.quotation}>&ldquo;{q}&rdquo;</p>;
+          return <p key={i} className={`${styles.quotation} ${small ? styles.small : ''}`}>&ldquo;{q}{i === a.length - 1 && <>&rdquo;</>}</p>;
         })}
       </div>
       <footer className={styles.footer} itemProp="author" itemScope itemType="https://schema.org/Person">

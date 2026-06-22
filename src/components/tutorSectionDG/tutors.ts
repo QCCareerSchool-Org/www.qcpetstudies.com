@@ -1,5 +1,6 @@
 import type { StaticImageData } from 'next/image';
 
+import CaseyImage from './casey.jpg';
 import LisaImage from './lisa.jpg';
 import MariImage from './mari.jpg';
 import PaddyImage from './paddy.jpg';
@@ -34,7 +35,15 @@ export const paddyGaffney: Tutor = {
   name: 'Paddy Gaffney',
   title: 'Certified Master Groomer',
   yearsExperience: 20,
-  description: 'Paddy Gaffney is a skilled dog groomer based in Ottawa, known for her expertise in grooming various breeds, particularly Poodles, Poodle mixes, and Samoyeds. As a certified Master Groomer, salon owner and certifier for Canadian Professional Pet Stylists, Paddy is passionate about sharing her skills and experience to train up-and-coming groomers. She is recognized for her dedication to maintaining high standards in grooming and pet care.',
+  description: 'Paddy Gaffney is a skilled dog groomer based in Ottawa, known for her expertise in grooming various breeds, particularly Poodles, Poodle mixes, and Samoyeds. As a certified Master Groomer, salon owner and certifier for Canadian Professional Pet Stylists, Paddy is passionate about sharing her skills and experience to train up-and-coming groomers.',
   image: PaddyImage,
   video: 'https://cdn.qccareerschool.com/pet/interview-paddy.mp4',
+};
+
+export const caseyBechard: Tutor = {
+  name: 'Casey Bechard',
+  title: 'Professional Dog Groomer',
+  yearsExperience: 10,
+  description: 'Casey Bechard is an experienced dog groomer with over 10 years of hands-on experience working with dogs of all breeds, coat types, and temperaments. As a QC Pet Studies graduate, Casey understands the learning process firsthand and is passionate about helping aspiring groomers build confidence, develop practical skills, and succeed in the pet care industry.',
+  image: CaseyImage,
 };
