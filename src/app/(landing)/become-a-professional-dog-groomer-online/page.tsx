@@ -3,18 +3,15 @@ import { headers } from 'next/headers';
 import Image from 'next/image';
 
 import HeroImage from './hero-lrg.jpg';
+import KitImage from './main-kit-white-bg.jpg';
 import styles from './page.module.scss';
 import { BackgroundImage } from '@/components/backgroundImage';
 import { BrevoForm } from '@/components/brevoForm';
 import { Check } from '@/components/check';
 import { FormCard } from '@/components/formCard';
-import BBBLogo from '@/components/siteLayout/footer/bbb-icon.svg';
-import { BBBGuarantee } from '@/components/siteLayout/footer/bbbGuarantee';
-import GuaranteeIcon from '@/components/siteLayout/footer/guarantee-icon.svg';
 import type { TestimonialId } from '@/components/testimonial/data';
 import { TestimonialCarousel } from '@/components/testimonialCarousel';
 import type { CourseCode } from '@/domain/courseCode';
-import type { Price } from '@/domain/price';
 import BriefcaseIcon from '@/images/briefcase.svg';
 import FirstAidIcon from '@/images/first-aid.svg';
 import GlobeIcon from '@/images/globe.svg';
@@ -155,11 +152,11 @@ const Page: PageComponent = async props => {
               </div>
               <div className={styles.ctaTrustRow}>
                 <div className={styles.ctaTrustItem}>
-                  <Image src={BBBLogo} alt="BBB Accredited" className={styles.ctaTrustBadge} />
+                  <img src="/bbb-accredited.svg" alt="BBB Accredited" className={styles.ctaTrustBadge} />
                   <div className={styles.ctaTrustText}>BBB ACCREDITED</div>
                 </div>
                 <div className={styles.ctaTrustItem}>
-                  <Image src={GuaranteeIcon} alt="14-Day Guarantee" className={styles.ctaGuaranteeBadge} />
+                  <img src="/guarantee-section.svg" alt="14-Day Guarantee" className={styles.ctaGuaranteeBadge} />
                   <div className={styles.ctaTrustText}>14-DAY GUARANTEE</div>
                 </div>
               </div>
@@ -176,12 +173,12 @@ const Page: PageComponent = async props => {
               <p className="lead mb-0">QC Pet Studies combines flexible online learning with personalized support, practical training, and career-focused education to help you graduate with the skills and confidence to succeed.</p>
             </div>
           </div>
-          <div className={`row g-4 ${styles.whyGrid}`}>
+          <div className={`row g-4 justify-content-center ${styles.whyGrid}`}>
             <div className="col-12 col-md-6 col-xl-4">
               <div className={`card ${styles.whyCard}`}>
                 <div className="card-body p-4 p-lg-5">
                   <Image src={GroomerIcon} alt="" className={styles.whyIcon} />
-                  <h3 className="h4">Learn From Experienced Professional Groomers</h3>
+                  <h3 className="h3">Learn From Experienced Professional Groomers</h3>
                   <p className="mb-0">Receive personalized feedback on every practical assignment from an experienced instructor who is invested in your success.</p>
                 </div>
               </div>
@@ -190,7 +187,7 @@ const Page: PageComponent = async props => {
               <div className={`card ${styles.whyCard}`}>
                 <div className="card-body p-4 p-lg-5">
                   <Image src={GlobeIcon} alt="" className={styles.whyIcon} />
-                  <h3 className="h4">Optional In-Person Externship</h3>
+                  <h3 className="h3">Optional In-Person Externship</h3>
                   <p className="mb-0">Put your skills into practice alongside experienced professional groomers and gain valuable real-world experience in a grooming environment.</p>
                 </div>
               </div>
@@ -199,16 +196,19 @@ const Page: PageComponent = async props => {
               <div className={`card ${styles.whyCard}`}>
                 <div className="card-body p-4 p-lg-5">
                   <Image src={BriefcaseIcon} alt="" className={styles.whyIcon} />
-                  <h3 className="h4">Be Prepared for More Than Grooming</h3>
+                  <h3 className="h3">Be Prepared for More Than Grooming</h3>
                   <p className="mb-0">Build the business, communication, and client service skills that can help you succeed whether you work in a salon or start your own business.</p>
                 </div>
               </div>
             </div>
+          </div>
+
+          <div className={`row g-4 justify-content-center mt-0 ${styles.whyGrid}`}>
             <div className="col-12 col-md-6 col-xl-4">
               <div className={`card ${styles.whyCard}`}>
                 <div className="card-body p-4 p-lg-5">
                   <Image src={FirstAidIcon} alt="" className={styles.whyIcon} />
-                  <h3 className="h4">Pet First Aid Training Included</h3>
+                  <h3 className="h3">Pet First Aid Training Included</h3>
                   <p className="mb-0">Learn how to recognize emergencies, respond appropriately, and help keep the pets in your care safe.</p>
                 </div>
               </div>
@@ -217,10 +217,20 @@ const Page: PageComponent = async props => {
               <div className={`card ${styles.whyCard}`}>
                 <div className="card-body p-4 p-lg-5">
                   <Image src={LaptopIcon} alt="" className={styles.whyIcon} />
-                  <h3 className="h4">Study Around Your Life</h3>
+                  <h3 className="h3">Study Around Your Life</h3>
                   <p className="mb-0">Study at your own pace, from anywhere, and fit your training around your work, family, and lifestyle.</p>
                 </div>
               </div>
+            </div>
+          </div>
+
+          <div className={`row justify-content-center align-items-center ${styles.kitSection}`}>
+            <div className="col-12 col-lg-10 text-center">
+              <h3 className={styles.kitHeading}>Everything You Need to Start Learning</h3>
+              <p className={styles.kitText}>
+                When you enroll, you&apos;ll receive a FREE professional grooming kit with the essential tools you&apos;ll use throughout your practical training, so you can start building your skills right away.
+              </p>
+              <Image src={KitImage} alt="Professional dog grooming kit" className={styles.kitImage} sizes="100vw" />
             </div>
           </div>
         </div>
@@ -234,53 +244,58 @@ const Page: PageComponent = async props => {
               <p className="lead mb-0">Learn online with support every step of the way.</p>
             </div>
           </div>
-          <div className="row g-4 mb-5">
-            <div className="col-12 col-md-6 col-lg-3">
-              <div className={`card ${styles.stepCard}`}>
-                <div className="card-body p-4">
-                  <div className={styles.stepNumber}>1</div>
-                  <h3 className="h4">Learn Online from Master Groomers</h3>
-                  <p className="mb-0">Build a strong foundation with expert-led online lessons from professional groomers.</p>
+          <div className="row align-items-center g-5">
+            <div className="col-12 col-lg-6">
+              <div className={styles.stepRail}>
+                <div className={`card ${styles.stepCard}`}>
+                  <div className={styles.stepCardInner}>
+                    <div className={styles.stepNumber}>1</div>
+                    <div>
+                      <h3 className="h5">Learn Online from Master Groomers</h3>
+                      <p className="mb-0">Build a strong foundation with expert-led online lessons from professional groomers.</p>
+                    </div>
+                  </div>
+                </div>
+                <div className={`card ${styles.stepCard}`}>
+                  <div className={styles.stepCardInner}>
+                    <div className={styles.stepNumber}>2</div>
+                    <div>
+                      <h3 className="h5">Complete Hands-On Assignments</h3>
+                      <p className="mb-0">Practice real grooming skills at home while receiving support from our team.</p>
+                    </div>
+                  </div>
+                </div>
+                <div className={`card ${styles.stepCard}`}>
+                  <div className={styles.stepCardInner}>
+                    <div className={styles.stepNumber}>3</div>
+                    <div>
+                      <h3 className="h5">Prove Your Skills With Certification</h3>
+                      <p className="mb-0">Show what you&apos;ve learned with a professional certification that reflects your training.</p>
+                    </div>
+                  </div>
+                </div>
+                <div className={`card ${styles.stepCard}`}>
+                  <div className={styles.stepCardInner}>
+                    <div className={styles.stepNumber}>4</div>
+                    <div>
+                      <h3 className="h5">Turn Your Passion for Dogs into a Career</h3>
+                      <p className="mb-0">Use your new skills to start working, launch a business, or grow your current services.</p>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
-            <div className="col-12 col-md-6 col-lg-3">
-              <div className={`card ${styles.stepCard}`}>
-                <div className="card-body p-4">
-                  <div className={styles.stepNumber}>2</div>
-                  <h3 className="h4">Complete Hands-On Assignments</h3>
-                  <p className="mb-0">Practice real grooming skills at home while receiving support from our team.</p>
-                </div>
-              </div>
-            </div>
-            <div className="col-12 col-md-6 col-lg-3">
-              <div className={`card ${styles.stepCard}`}>
-                <div className="card-body p-4">
-                  <div className={styles.stepNumber}>3</div>
-                  <h3 className="h4">Prove Your Skills With Certification</h3>
-                  <p className="mb-0">Show what you&apos;ve learned with a professional certification that reflects your training.</p>
-                </div>
-              </div>
-            </div>
-            <div className="col-12 col-md-6 col-lg-3">
-              <div className={`card ${styles.stepCard}`}>
-                <div className="card-body p-4">
-                  <div className={styles.stepNumber}>4</div>
-                  <h3 className="h4">Turn Your Passion for Dogs into a Career</h3>
-                  <p className="mb-0">Use your new skills to start working, launch a business, or grow your current services.</p>
-                </div>
-              </div>
-            </div>
-          </div>
 
-          <div className="row justify-content-center">
-            <div className="col-12 col-lg-10">
-              <div className={`card ${styles.featureCard}`}>
-                <div className="card-body p-4 p-lg-5">
-                  <h3 className="mb-3">Can You Learn Dog Grooming Online?</h3>
-                  <p className="lead mb-0">Yes - with the right training model.</p>
-                  <p className="mb-0">QC Pet Studies combines online education with hands-on practice and personalized instructor feedback. You don&apos;t just watch lessons-you complete assignments that are reviewed by a professional groomer who guides your progress step by step. This ensures you build real, practical grooming skills from home.</p>
+            <div className="col-12 col-lg-6">
+              <div className={styles.qnaCard}>
+                <div className={styles.qnaQuotes} aria-hidden="true">
+                  <span>&ldquo;</span>
+                  <span>&rdquo;</span>
                 </div>
+                <p className={styles.qnaQuestion}>Can you learn dog grooming online?</p>
+                <h3 className={styles.qnaAnswer}>Yes!</h3>
+                <p className={styles.qnaSubhead}>With the right training model</p>
+                <p className={styles.qnaBody}>QC Pet Studies combines online education with hands-on practice and personalized instructor feedback. You don&apos;t just watch lessons-you complete assignments that are reviewed by a professional groomer who guides your progress step by step. This ensures you build real, practical grooming skills from home.</p>
               </div>
             </div>
           </div>
@@ -302,85 +317,90 @@ const Page: PageComponent = async props => {
         </div>
       </section>
 
-      <section id="tuition" className={styles.sectionSpacing}>
+      <section id="tuition" className={styles.tuitionSection}>
         <div className="container">
           <div className="row justify-content-center mb-5">
-            <div className="col-12 col-lg-10 text-center">
-              <h2 className="mb-3">Tuition &amp; Payment Plans</h2>
-              <p className="lead mb-0">Affordable tuition with flexible payment options makes it easier to start your training.</p>
+            <div className="col-12 col-lg-8 text-center">
+              <h2 className={`mb-3 ${styles.tuitionHeading}`}>Tuition &amp; Payment Plans</h2>
+              <p className={styles.tuitionIntro}>Affordable tuition with flexible payment options makes it easier to start your training.</p>
             </div>
           </div>
 
-          <div className="row justify-content-center g-4">
-            <div className="col-12 col-lg-4">
-              <div className={`card ${styles.statCard}`}>
-                <div className="card-body p-4">
-                  <h3 className="h4 mb-3">Included in Your Tuition</h3>
-                  <ul className="mb-0">
-                    <li>Full dog grooming course</li>
-                    <li>Instructor feedback</li>
-                    <li>Hands-on assignments</li>
-                    <li>Business training</li>
-                    <li>Certification</li>
-                    <li>FREE grooming kit</li>
-                  </ul>
-                </div>
+          <div className="row align-items-start g-5">
+            <div className="col-12 col-xl-3">
+              <div className={styles.tuitionIncludes}>
+                <h3 className={styles.tuitionIncludesHeading}>Your Tuition Includes</h3>
+                <ul className={styles.tuitionIncludesList}>
+                  <li>Full dog grooming course</li>
+                  <li>Instructor feedback</li>
+                  <li>Hands-on assignments</li>
+                  <li>Business training</li>
+                  <li>Certification</li>
+                  <li><strong>FREE</strong> grooming kit</li>
+                </ul>
+                <a href="#request-info" className="btn btn-outline-light btn-lg">Course Details</a>
               </div>
             </div>
 
-            <div className="col-12 col-md-6 col-lg-4 d-flex">
-              <TuitionCard
-                title="Installment Plan"
-                price={price}
-                variant="installment"
-              />
+            <div className="col-12 col-xl-9">
+              <div className="row g-4">
+                <div className="col-12 col-lg-6">
+                  <div className={styles.tuitionPlanCard}>
+                    <div className={styles.tuitionPlanHeader}>GROOMING ONLINE</div>
+                    <div className={styles.tuitionPlanBody}>
+                      <div className={styles.tuitionSavingsRow}>
+                        <h3 className={styles.tuitionPlanLabel}>Pay In Full</h3>
+                        <span className={styles.tuitionBadge}>SAVE $400</span>
+                      </div>
+                      <p className={styles.tuitionSmallLabel}>One Time Payment of</p>
+                      <div className={styles.tuitionStrikePrice}>{price ? `${price.currency.symbol}${formatPrice(price.plans.full.total + 400)}` : '$2498'}</div>
+                      <div className={styles.tuitionPrice}>{price ? `${price.currency.symbol}${formatPrice(price.plans.full.total)}` : '$2098'}</div>
+                    </div>
+                    <div className={styles.tuitionDivider} />
+                    <div className={styles.tuitionPlanBody}>
+                      <h3 className={styles.tuitionPlanLabel}>Installment Plan</h3>
+                      <p className={styles.tuitionInstallmentLead}>Start with a deposit of $99</p>
+                      <p className={styles.tuitionInstallmentText}>+ 18 Monthly Payments of $133.27</p>
+                      <div className={styles.tuitionPrice}>{price ? `${price.currency.symbol}${formatPrice(price.plans.part.total)}` : '$2498'}</div>
+                    </div>
+                  </div>
+                </div>
+                <div className="col-12 col-lg-6">
+                  <div className={styles.tuitionPlanCard}>
+                    <div className={styles.tuitionPlanHeader}>EXTERNSHIP TRACK</div>
+                    <div className={styles.tuitionPlanBody}>
+                      <div className={styles.tuitionSavingsRow}>
+                        <h3 className={styles.tuitionPlanLabel}>Pay In Full</h3>
+                        <span className={styles.tuitionBadge}>SAVE $200</span>
+                      </div>
+                      <p className={styles.tuitionSmallLabel}>One Time Payment of</p>
+                      <div className={styles.tuitionStrikePrice}>{price ? `${price.currency.symbol}${formatPrice(price.plans.full.total + 200)}` : '$3648'}</div>
+                      <div className={styles.tuitionPrice}>{price ? `${price.currency.symbol}${formatPrice(price.plans.full.total)}` : '$3448'}</div>
+                    </div>
+                    <div className={styles.tuitionDivider} />
+                    <div className={styles.tuitionPlanBody}>
+                      <h3 className={styles.tuitionPlanLabel}>Installment Plan</h3>
+                      <p className={styles.tuitionInstallmentLead}>Start with a deposit of $99</p>
+                      <p className={styles.tuitionInstallmentText}>+ 18 Monthly Payments of $197.16</p>
+                      <div className={styles.tuitionPrice}>{price ? `${price.currency.symbol}${formatPrice(price.plans.part.total)}` : '$3648'}</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
-
-            <div className="col-12 col-md-6 col-lg-4 d-flex">
-              <TuitionCard
-                title="Pay in Full"
-                price={price}
-                variant="full"
-              />
-            </div>
-          </div>
-
-          <div className="text-center mt-4">
-            <a href="#request-info" className="btn btn-primary btn-lg">Get Full Course Details</a>
           </div>
         </div>
       </section>
 
-      <section className={`bg-light ${styles.sectionSpacing}`}>
+      <section className={styles.excellenceSection}>
         <div className="container text-center">
           <div className="row justify-content-center">
             <div className="col-12 col-lg-10">
-              <h2 className="mb-3">40+ Years of Educational Excellence</h2>
-              <p className="lead mb-4">QC has been helping students prepare for rewarding careers through flexible online learning for more than four decades.</p>
-            </div>
-          </div>
-          <div className="row justify-content-center g-4 align-items-stretch">
-            <div className="col-12 col-md-4 d-flex">
-              <div className={`card ${styles.trustCard}`}>
-                <div className="card-body p-4">
-                  <h3 className="h4">40+ Years</h3>
-                  <p className="mb-0">QC has a long history of helping students build practical skills and prepare for career growth.</p>
-                </div>
-              </div>
-            </div>
-            <div className="col-12 col-md-4 d-flex">
-              <div className={`card ${styles.trustCard}`}>
-                <div className="card-body p-4 d-flex flex-column justify-content-center align-items-center text-center">
-                  <BBBGuarantee />
-                </div>
-              </div>
-            </div>
-            <div className="col-12 col-md-4 d-flex">
-              <div className={`card ${styles.trustCard}`}>
-                <div className="card-body p-4">
-                  <h3 className="h4">Expert-Backed Programs</h3>
-                  <p className="mb-0">Our courses are developed with industry expertise, practical outcomes, and student success in mind.</p>
-                </div>
+              <h2 className={styles.excellenceHeading}>40+ Years of Educational Excellence</h2>
+              <p className={styles.excellenceIntro}>QC has been helping students prepare for rewarding careers through flexible online learning for more than four decades.</p>
+              <p className={styles.excellenceTrustLine}>BBB ACCREDITED | 14-DAY MONEY-BACK GUARANTEE | EXPERT-BACKED PROGRAMS</p>
+              <div className={styles.excellenceSeal}>
+                <img src="/bbb-accredited.svg" alt="BBB Accredited" className={styles.excellenceBadge} />
               </div>
             </div>
           </div>
@@ -407,56 +427,6 @@ const Page: PageComponent = async props => {
           </div>
         </div>
       </section>
-    </div>
-  );
-};
-
-interface TuitionCardProps {
-  title: string;
-  price: Price | undefined;
-  variant: 'full' | 'installment';
-}
-
-const TuitionCard = ({ title, price, variant }: TuitionCardProps) => {
-  if (!price) {
-    return (
-      <div className={`card ${styles.priceCard} flex-fill`}>
-        <div className="card-body p-4 text-center">
-          <h3 className="h4 mb-3">{title}</h3>
-          <p className="mb-0">Request free course details to see current tuition and payment options.</p>
-        </div>
-      </div>
-    );
-  }
-
-  return (
-    <div className={`card ${styles.priceCard} flex-fill`}>
-      <div className="card-body p-4 text-center d-flex flex-column">
-        <h3 className="h4 mb-3">{title}</h3>
-        {variant === 'installment'
-          ? (
-            <>
-              <p className="mb-3">Start with a deposit of</p>
-              <div className={`${styles.priceAmount} mb-3`}>{price.currency.symbol}{formatPrice(price.plans.part.deposit)}</div>
-              <p className={`mb-3 ${styles.priceFinePrint}`}>{price.plans.part.installments} monthly payments of {price.currency.symbol}{formatPrice(price.plans.part.installmentSize)}</p>
-              <p className="mb-0 small">Total: {price.currency.symbol}{formatPrice(price.plans.part.total)}</p>
-            </>
-          )
-          : (
-            <>
-              <p className="mb-3">One-time payment</p>
-              <div className={`${styles.priceAmount} mb-3`}>{price.currency.symbol}{formatPrice(price.plans.full.total)}</div>
-              <p className={`mb-3 ${styles.priceFinePrint}`}>
-                {price.plans.full.discount > 0
-                  ? <>Save {price.currency.symbol}{formatPrice(price.plans.full.discount)} when you pay in full.</>
-                  : <>Flexible full-payment option.</>
-                }
-              </p>
-              <p className="mb-0 small">Prices are listed in {price.currency.name}.</p>
-            </>
-          )
-        }
-      </div>
     </div>
   );
 };
