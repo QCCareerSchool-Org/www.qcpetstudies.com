@@ -1,0 +1,337 @@
+.page h2 {
+  font-size: clamp(1.68rem, 3.2vw, 2.52rem);
+  line-height: 1.08;
+  font-weight: 400;
+}
+
+.hero {
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at top left, rgba(255, 255, 255, 0.12), transparent 32%),
+    linear-gradient(135deg, #0f1d33 0%, #182c4d 52%, #2c4b66 100%);
+  color: white;
+}
+
+.hero::before,
+.hero::after {
+  content: '';
+  position: absolute;
+  border-radius: 999px;
+  pointer-events: none;
+}
+
+.hero::before {
+  width: 22rem;
+  height: 22rem;
+  background: rgba(255, 255, 255, 0.08);
+  top: -8rem;
+  right: -6rem;
+}
+
+.hero::after {
+  width: 16rem;
+  height: 16rem;
+  background: rgba(255, 200, 98, 0.12);
+  bottom: -6rem;
+  left: -5rem;
+}
+
+.heroInner {
+  position: relative;
+  z-index: 1;
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 999px;
+  padding: 0.45rem 0.9rem;
+  margin-bottom: 1.25rem;
+  background: rgba(255, 255, 255, 0.08);
+  font-size: 0.875rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.heroLead {
+  max-width: 38rem;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.checkList {
+  display: grid;
+  gap: 1rem;
+  padding-left: 0;
+  margin-bottom: 0;
+  list-style: none;
+}
+
+.checkItem {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  color: var(--qc-color-navy);
+  background: rgba(255, 255, 255, 0.92);
+  border-radius: 999px;
+  padding: 0.9rem 1.15rem;
+  box-shadow: 0 0.75rem 1.5rem rgba(15, 29, 51, 0.14);
+  font-weight: 600;
+}
+
+.checkIcon {
+  flex: 0 0 auto;
+  margin-top: 0;
+}
+
+.sectionLabel {
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.8rem;
+  color: var(--qc-color-primary);
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+}
+
+.careerHeading {
+  color: var(--qc-color-navy);
+  margin-bottom: 1rem;
+}
+
+.careerIntro {
+  max-width: 52rem;
+  margin: 0 auto;
+  font-size: clamp(1.1rem, 2vw, 1.55rem);
+  line-height: 1.35;
+  color: #4d4d57;
+  padding-bottom: 20px;
+}
+
+.graduateHeading {
+  font-size: clamp(1.25rem, 1.8vw, 1.7rem);
+  line-height: 1.1;
+  font-weight: 400;
+  color: var(--qc-color-navy);
+  margin-bottom: 0.5rem;
+}
+
+.graduateIntroText {
+  font-size: 1.15rem;
+  line-height: 1.45;
+  color: #4d4d57;
+  margin-bottom: 2rem;
+}
+
+.graduateList {
+  padding-left: 1.25rem;
+  margin-bottom: 0;
+  color: #4d4d57;
+  font-size: 1.15rem;
+  line-height: 1.55;
+  display: grid;
+  gap: 1rem;
+}
+
+.graduateCopy {
+  padding-right: 2rem;
+}
+
+.statCard {
+  border: 0;
+  background: linear-gradient(180deg, rgba(247, 249, 252, 0.98), rgba(237, 241, 246, 0.98));
+  box-shadow: 0 1rem 2rem rgba(15, 29, 51, 0.08);
+  border-radius: 1.5rem;
+}
+
+.statValue {
+  color: var(--qc-color-navy);
+  font-size: clamp(2.4rem, 4vw, 4rem);
+  line-height: 1;
+  font-weight: 800;
+}
+
+.featureCard,
+.stepCard,
+.priceCard,
+.trustCard {
+  height: 100%;
+  border: 0;
+  border-radius: 1.5rem;
+  box-shadow: 0 1rem 2rem rgba(15, 29, 51, 0.07);
+}
+
+.featureCard {
+  background: white;
+}
+
+.whyGrid {
+  max-width: 1100px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.whyCard {
+  height: 100%;
+  border: 0;
+  border-radius: 1.5rem;
+  background: #ffffff;
+  box-shadow: 0 1rem 2rem rgba(15, 29, 51, 0.08);
+}
+
+.whyIcon {
+  width: 3.2rem;
+  height: 3.2rem;
+  object-fit: contain;
+  margin-bottom: 1.1rem;
+}
+
+.whyCard h3 {
+  margin-bottom: 0.75rem;
+}
+
+.whyCard p {
+  color: #4d4d57;
+}
+
+.stepNumber {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 999px;
+  background: var(--qc-color-primary);
+  color: var(--qc-color-navy);
+  font-weight: 800;
+  margin-bottom: 1rem;
+}
+
+.priceCard {
+  background: linear-gradient(180deg, #ffffff 0%, #f7f9fc 100%);
+}
+
+.priceAmount {
+  color: var(--qc-color-navy);
+  font-size: clamp(2rem, 3vw, 3rem);
+  line-height: 1;
+  font-weight: 800;
+}
+
+.priceFinePrint {
+  color: #5a6374;
+}
+
+.trustLogo {
+  max-width: 100%;
+  height: auto;
+}
+
+.ctaBand {
+  background: linear-gradient(90deg, #e21d5d 0%, #8f0032 100%);
+  color: white;
+}
+
+.sectionSpacing {
+  padding-top: 4.5rem;
+  padding-bottom: 4.5rem;
+}
+
+.compactSpacing {
+  padding-top: 3.5rem;
+  padding-bottom: 3.5rem;
+}
+
+.careerTestimonialSpacing {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+.formPerks {
+  display: grid;
+  gap: 0.6rem;
+}
+
+.formPerk {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+  font-size: 0.95rem;
+}
+
+.sliderWrap {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.42), rgba(255, 255, 255, 0.74));
+  border-radius: 1.5rem;
+  padding: 1rem 0;
+  transform: scale(0.81);
+  transform-origin: center top;
+  margin: -1.5rem -9% 0;
+}
+
+.ctaHeading {
+  color: white;
+  margin-bottom: 1.5rem;
+}
+
+.ctaButtons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+}
+
+.ctaTrustRow {
+  display: flex;
+  justify-content: center;
+  gap: 4rem;
+  flex-wrap: wrap;
+}
+
+.ctaTrustItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.35rem;
+  min-width: 7rem;
+}
+
+.ctaTrustIcon {
+  font-size: 1.2rem;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.ctaTrustBadge {
+  width: auto;
+  height: 24px;
+}
+
+.ctaGuaranteeBadge {
+  width: auto;
+  height: 24px;
+}
+
+.ctaTrustText {
+  font-size: 0.8rem;
+  letter-spacing: 0.04em;
+  font-weight: 700;
+}
+
+@media (min-width: 992px) {
+  .sectionSpacing {
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+  }
+
+  .compactSpacing {
+    padding-top: 4.5rem;
+    padding-bottom: 4.5rem;
+  }
+
+  .careerTestimonialSpacing {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+  }
+}

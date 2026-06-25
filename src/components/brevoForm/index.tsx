@@ -1,16 +1,14 @@
 'use client';
 
 import 'react-phone-number-input/style.css';
-import Image from 'next/image';
 import Link from 'next/link';
-import type { ChangeEvent, ChangeEventHandler, FC, ReactElement, SubmitEventHandler } from 'react';
+import type { ChangeEvent, ChangeEventHandler, FC, ReactElement, ReactNode, SubmitEventHandler } from 'react';
 import { forwardRef, useCallback, useEffect, useId, useRef, useState } from 'react';
 import { GoogleReCaptcha } from 'react-google-recaptcha-v3';
 import type { Country, DefaultInputComponentProps, Value } from 'react-phone-number-input';
 import PhoneInput from 'react-phone-number-input/input';
 import { v1 } from 'uuid';
 
-import DownloadIcon from '../download.svg';
 import { CurrentPageInput } from './currentPageInput';
 import styles from './index.module.scss';
 import { JavasciptInput } from './javascriptInput';
@@ -36,6 +34,7 @@ interface Props {
   button?: ReactElement;
   referrer: string | null;
   countryCode?: string | null;
+  footerContent?: ReactNode;
 }
 
 export const BrevoForm: FC<Props> = props => {
@@ -159,6 +158,7 @@ export const BrevoForm: FC<Props> = props => {
         <>
           <input type="hidden" name="telephoneListId" value={props.telephoneListId} />
           <div className="mb-3">
+            {!props.placeholders && <label htmlFor={`${id}telephoneNumber`} className="form-label">Phone</label>}
             <PhoneInput id={`${id}telephoneNumber`} value={telephoneNumber} onChange={handleTelephoneNumberChange} defaultCountry={props.countryCode as Country} inputComponent={InputComponent} />
             <input type="hidden" name="telephoneNumber" value={telephoneNumberE164} />
             {telephoneNumberE164.length > 0 && <p className="p-1"><small>By providing your phone number, you agree to receive exclusive offers from QC Pet Studies. Message frequency varies. Message & data rates may apply. Reply STOP to opt out. <Link href="/terms" target="_blank" rel="noreferrer">Terms & Privacy</Link>.</small></p>}
@@ -173,10 +173,11 @@ export const BrevoForm: FC<Props> = props => {
           </label>
         </div>
       </div>
+      {props.footerContent && <div className="mb-3">{props.footerContent}</div>}
       {props.button
         ? <>{props.button}</>
         : (
-          <button className={`${styles.button} ${props.buttonClassName ?? 'btn btn-primary'}`} disabled={disabled}><span className="text-navy"><Image src={DownloadIcon} alt="" height="14" className="me-2" style={{ position: 'relative', top: -1 }} /></span>{props.buttonText ?? 'Get the Course Preview'}</button>
+          <button className={`${styles.button} ${props.buttonClassName ?? 'btn btn-primary'}`} disabled={disabled}><strong>{props.buttonText ?? 'Get the Course Preview'}</strong></button>
         )
       }
       <GoogleReCaptcha onVerify={handleVerify} refreshReCaptcha={refreshReCaptcha} />

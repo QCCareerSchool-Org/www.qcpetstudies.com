@@ -2,6 +2,7 @@ import type { FC, PropsWithChildren } from 'react';
 import { useMemo } from 'react';
 
 import { TestimonialCarouselClient } from './client';
+import styles from './index.module.scss';
 import type { TestimonialId } from '../testimonial/data';
 import { testimonials } from '../testimonial/data';
 import { TestimonialSmall } from '../testimonialsSmall/testimonialSmall';
@@ -50,7 +51,7 @@ export const TestimonialCarousel: FC<PropsWithChildren<Props>> = ({ testimonialI
           }
 
           return (
-            <div key={t} className="text-center container mb-md-5 px-5">
+            <div key={t} className={`container ${styles.slide}`}>
               <TestimonialSmall
                 quotation={testimonial.short.join(' ')}
                 name={testimonial.name}
