@@ -302,21 +302,6 @@ const Page: PageComponent = async props => {
         </div>
       </section>
 
-      <section className={styles.ctaBand}>
-        <div className="container text-center">
-          <div className="row justify-content-center">
-            <div className="col-12 col-lg-8">
-              <h2 className="text-white mb-3">Launch Your Grooming Career</h2>
-              <p className="lead text-white-50 mb-4">Study from home and get certified online.</p>
-              <div className="d-flex justify-content-center gap-3 flex-wrap">
-                <a href="#request-info" className="btn btn-primary btn-lg">Start Now</a>
-                <a href="#tuition" className="btn btn-outline-light btn-lg">Learn More</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
       <section id="tuition" className={styles.tuitionSection}>
         <div className="container">
           <div className="row justify-content-center mb-5">
@@ -407,22 +392,33 @@ const Page: PageComponent = async props => {
         </div>
       </section>
 
-      <section className={`${styles.ctaBand} ${styles.sectionSpacing}`}>
+      <section className={styles.ctaBand}>
         <div className="container text-center">
           <div className="row justify-content-center">
             <div className="col-12 col-lg-8">
-              <h2 className="text-white mb-4">Ready to Start Your Dog Grooming Career?</h2>
-              <div className="row justify-content-center mb-4">
-                <div className="col-12 col-md-10 col-lg-8">
-                  <ul className={`list-unstyled text-start ${styles.formPerks}`}>
-                    <li className={styles.formPerk}><Check color="var(--qc-color-primary)" /><span>Study from home at your own pace</span></li>
-                    <li className={styles.formPerk}><Check color="var(--qc-color-primary)" /><span>Receive personalized instructor feedback</span></li>
-                    <li className={styles.formPerk}><Check color="var(--qc-color-primary)" /><span>Build real grooming skills through practice</span></li>
-                    <li className={styles.formPerk}><Check color="var(--qc-color-primary)" /><span>FREE professional grooming kit included</span></li>
-                  </ul>
+              <h2 className="text-white mb-3">Launch Your Grooming Career</h2>
+              <p className="lead text-white-50 mb-4">Study from home and get certified online.</p>
+              <div className={styles.ctaPerks}>
+                <div className={styles.ctaPerk}>
+                  <Check color="#ff2d5c" />
+                  <span>Study from home at your own pace</span>
+                </div>
+                <div className={styles.ctaPerk}>
+                  <Check color="#ff2d5c" />
+                  <span>Receive personalized instructor feedback</span>
+                </div>
+                <div className={styles.ctaPerk}>
+                  <Check color="#ff2d5c" />
+                  <span>Build real grooming skills through practice</span>
+                </div>
+                <div className={styles.ctaPerk}>
+                  <Check color="#ff2d5c" />
+                  <span><strong>FREE</strong> professional grooming kit included</span>
                 </div>
               </div>
-              <a href="#request-info" className="btn btn-primary btn-lg">Request Free Course Information</a>
+              <div className="d-flex justify-content-center">
+                <a href="#request-info" className="btn btn-primary btn-lg">REQUEST COURSE INFORMATION</a>
+              </div>
             </div>
           </div>
         </div>

@@ -520,11 +520,6 @@
   height: auto;
 }
 
-.ctaBand {
-  background: linear-gradient(90deg, #e21d5d 0%, #8f0032 100%);
-  color: white;
-}
-
 .sectionSpacing {
   padding-top: 4.5rem;
   padding-bottom: 4.5rem;
@@ -540,18 +535,6 @@
   padding-bottom: 3rem;
 }
 
-.formPerks {
-  display: grid;
-  gap: 0.6rem;
-}
-
-.formPerk {
-  display: flex;
-  align-items: flex-start;
-  gap: 0.6rem;
-  font-size: 0.95rem;
-}
-
 .sliderWrap {
   background: linear-gradient(180deg, rgba(255, 255, 255, 0.42), rgba(255, 255, 255, 0.74));
   border-radius: 1.5rem;
@@ -561,9 +544,40 @@
   margin: -1.5rem -9% 0;
 }
 
+.ctaBand {
+  background: linear-gradient(90deg, #e21d5d 0%, #8f0032 100%);
+  color: white;
+}
+
 .ctaHeading {
   color: white;
   margin-bottom: 1.5rem;
+}
+
+.ctaPerks {
+  display: grid;
+  gap: 1.1rem;
+  margin: 0 auto 2.25rem;
+  max-width: 38rem;
+}
+
+.ctaPerk {
+  display: flex;
+  align-items: center;
+  gap: 1.05rem;
+  background: #f7e8ee;
+  color: var(--qc-color-navy);
+  border-radius: 999px;
+  padding: 0.9rem 1.1rem;
+  box-shadow: 0 1rem 1.5rem rgba(0, 0, 0, 0.12);
+  font-size: 1.08rem;
+  font-weight: 400;
+  line-height: 1.2;
+  text-align: left;
+}
+
+.ctaPerk strong {
+  font-weight: 400;
 }
 
 .ctaButtons {
