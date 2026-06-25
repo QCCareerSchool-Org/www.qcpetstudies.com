@@ -455,48 +455,44 @@
 
 .qnaCard {
   background: white;
-  border-radius: 2rem;
-  box-shadow: 0 1rem 2rem rgba(15, 29, 51, 0.12);
-  padding: 3rem 2.5rem;
+  border-radius: 2.25rem;
+  box-shadow: 0 1.1rem 1.9rem rgba(15, 29, 51, 0.14);
+  padding: 3.2rem 2.2rem 2.9rem;
   text-align: center;
 }
 
 .qnaQuotes {
-  display: flex;
-  justify-content: space-between;
-  color: #d7dce7;
-  font-size: 4rem;
-  line-height: 0.6;
-  margin-bottom: 0.5rem;
+  display: none;
 }
 
 .qnaQuestion {
   font-style: italic;
-  font-size: 1.5rem;
-  line-height: 1.2;
+  font-size: clamp(1.35rem, 2vw, 1.7rem);
+  line-height: 1.15;
   color: var(--qc-color-navy);
-  margin-bottom: 1.25rem;
+  margin: 0 auto 2.05rem;
+  max-width: 16rem;
 }
 
 .qnaAnswer {
   color: #ff2d5c;
-  font-size: clamp(2.2rem, 5vw, 3.5rem);
+  font-size: clamp(2.6rem, 4.8vw, 4rem);
   line-height: 1;
-  margin-bottom: 0.75rem;
+  margin-bottom: 0.8rem;
 }
 
 .qnaSubhead {
   color: var(--qc-color-navy);
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   font-weight: 700;
-  margin-bottom: 1.25rem;
+  margin-bottom: 1.15rem;
 }
 
 .qnaBody {
-  max-width: 28rem;
+  max-width: 24rem;
   margin: 0 auto;
-  font-size: 1.05rem;
-  line-height: 1.55;
+  font-size: 1rem;
+  line-height: 1.48;
   color: #4d4d57;
 }
 
@@ -623,6 +619,63 @@
   font-size: 0.8rem;
   letter-spacing: 0.04em;
   font-weight: 700;
+}
+
+.contactSection {
+  background: #eceff5;
+  color: var(--qc-color-navy);
+  padding-top: 4.75rem;
+}
+
+.contactHeading {
+  margin-bottom: 0.9rem;
+}
+
+.contactSubhead {
+  font-size: clamp(1.1rem, 1.6vw, 1.35rem);
+  font-weight: 700;
+  margin-bottom: 1.35rem;
+}
+
+.contactIconWrap {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 3.25rem;
+  height: 3.25rem;
+  border-radius: 999px;
+  background: #58bfd6;
+  margin-bottom: 1.35rem;
+}
+
+.contactIcon {
+  width: 1.65rem;
+  height: 1.65rem;
+}
+
+.contactPhone {
+  display: inline-block;
+  color: var(--qc-color-navy);
+  font-size: clamp(1.5rem, 2.1vw, 2.15rem);
+  line-height: 1.15;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.contactFooter {
+  margin-top: 4rem;
+  border-top: 1px solid rgba(15, 29, 51, 0.12);
+  padding: 0.9rem 0 1rem;
+}
+
+.contactCopyright,
+.contactPrivacy {
+  font-size: 0.8rem;
+  color: #4d4d57;
+}
+
+.contactPrivacy {
+  text-decoration: underline;
 }
 
 @media (min-width: 992px) {

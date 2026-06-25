@@ -4,6 +4,7 @@ import Image from 'next/image';
 
 import HeroImage from './hero-lrg.jpg';
 import KitImage from './main-kit-white-bg.jpg';
+import PhoneCallIcon from './phone-call.svg';
 import styles from './page.module.scss';
 import { BackgroundImage } from '@/components/backgroundImage';
 import { BrevoForm } from '@/components/brevoForm';
@@ -423,6 +424,28 @@ const Page: PageComponent = async props => {
           </div>
         </div>
       </section>
+
+      <section className={styles.contactSection}>
+        <div className="container text-center">
+          <div className="row justify-content-center">
+            <div className="col-12 col-lg-10">
+              <h2 className={styles.contactHeading}>Have questions?</h2>
+              <p className={styles.contactSubhead}>Give us a call</p>
+              <div className={styles.contactIconWrap}>
+                <Image src={PhoneCallIcon} alt="" className={styles.contactIcon} />
+              </div>
+              <a href="tel:18336003751" className={styles.contactPhone}>1-833-600-3751</a>
+            </div>
+          </div>
+        </div>
+        <div className={styles.contactFooter}>
+          <div className="container d-flex justify-content-between align-items-center">
+            <small className={styles.contactCopyright}>&copy;2026 QC Pet Studies</small>
+            <a href="/privacy-policy" className={styles.contactPrivacy}>Privacy Policy</a>
+          </div>
+        </div>
+      </section>
+
     </div>
   );
 };
