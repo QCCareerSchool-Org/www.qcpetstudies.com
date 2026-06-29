@@ -1,6 +1,3 @@
-export const safeJSON = (obj: unknown): string => {
-  if (obj === undefined) {
-    return '';
-  }
-  return JSON.stringify(obj).replace(/</gu, '\\u003c');
+export const safeJSON = (obj: unknown): string | undefined => {
+  return (JSON.stringify(obj) as string | undefined)?.replace(/</gu, '\\u003c');
 };
