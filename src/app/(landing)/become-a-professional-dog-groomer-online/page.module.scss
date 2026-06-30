@@ -1,9 +1,3 @@
-.page h2 {
-  font-size: clamp(1.68rem, 3.2vw, 2.52rem);
-  line-height: 1.08;
-  font-weight: 400;
-}
-
 .hero {
   position: relative;
   overflow: hidden;
@@ -13,52 +7,13 @@
   color: white;
 }
 
-.hero::before,
-.hero::after {
-  content: '';
-  position: absolute;
-  border-radius: 999px;
-  pointer-events: none;
-}
-
-.hero::before {
-  width: 22rem;
-  height: 22rem;
-  background: rgba(255, 255, 255, 0.08);
-  top: -8rem;
-  right: -6rem;
-}
-
-.hero::after {
-  width: 16rem;
-  height: 16rem;
-  background: rgba(255, 200, 98, 0.12);
-  bottom: -6rem;
-  left: -5rem;
-}
-
 .heroInner {
   position: relative;
   z-index: 1;
 }
 
-.eyebrow {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  border-radius: 999px;
-  padding: 0.45rem 0.9rem;
-  margin-bottom: 1.25rem;
-  background: rgba(255, 255, 255, 0.08);
-  font-size: 0.875rem;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-}
-
 .heroLead {
   max-width: 38rem;
-  color: rgba(255, 255, 255, 0.9);
 }
 
 .checkList {
@@ -86,253 +41,13 @@
   margin-top: 0;
 }
 
-.sectionLabel {
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  font-size: 0.8rem;
-  color: var(--qc-color-primary);
-  font-weight: 700;
-  margin-bottom: 0.75rem;
-}
-
-.careerHeading {
-  color: var(--qc-color-navy);
-  margin-bottom: 1rem;
-}
-
-.careerIntro {
-  max-width: 52rem;
-  margin: 0 auto;
-  font-size: clamp(1.1rem, 2vw, 1.55rem);
-  line-height: 1.35;
-  color: #4d4d57;
-  padding-bottom: 20px;
-}
-
-.graduateHeading {
-  font-size: clamp(1.25rem, 1.8vw, 1.7rem);
-  line-height: 1.1;
-  font-weight: 400;
-  color: var(--qc-color-navy);
-  margin-bottom: 0.5rem;
-}
-
-.graduateIntroText {
-  font-size: 1.15rem;
-  line-height: 1.45;
-  color: #4d4d57;
-  margin-bottom: 2rem;
-}
-
-.graduateList {
-  padding-left: 1.25rem;
-  margin-bottom: 0;
-  color: #4d4d57;
-  font-size: 1.15rem;
-  line-height: 1.55;
-  display: grid;
-  gap: 1rem;
-}
-
-.graduateCopy {
-  padding-right: 2rem;
-}
-
-.statCard {
-  border: 0;
-  background: linear-gradient(180deg, rgba(247, 249, 252, 0.98), rgba(237, 241, 246, 0.98));
-  box-shadow: 0 1rem 2rem rgba(15, 29, 51, 0.08);
-  border-radius: 1.5rem;
-}
-
-.tuitionSection {
-  background: #070035;
-  color: white;
-}
-
-.excellenceSection {
-  background: white;
-  color: var(--qc-color-navy);
-  padding: 5rem 0 4.5rem;
-}
-
-.excellenceHeading {
-  color: var(--qc-color-navy);
-  font-size: clamp(2.3rem, 4.5vw, 4rem);
-  font-weight: 700;
-  margin-bottom: 1rem;
-}
-
-.excellenceIntro {
-  color: #4d4d57;
-  font-size: 1.35rem;
-  line-height: 1.35;
-  max-width: 44rem;
-  margin: 0 auto 2.5rem;
-}
 
 .excellenceTrustLine {
   color: #e1bc94;
-  font-size: 1.05rem;
-  letter-spacing: 0.02em;
-  font-weight: 700;
-  margin-bottom: 2rem;
 }
 
-.excellenceSeal {
-  display: flex;
-  justify-content: center;
-}
 
-.excellenceBadge {
-  width: 72px;
-  height: auto;
-}
-
-.tuitionHeading {
-  color: white;
-  font-size: clamp(2.2rem, 4vw, 3.4rem);
-  font-weight: 700;
-}
-
-.tuitionIntro {
-  color: rgba(255, 255, 255, 0.92);
-  font-size: 1.25rem;
-  line-height: 1.35;
-  max-width: 44rem;
-  margin: 0 auto;
-}
-
-.tuitionIncludes {
-  padding-top: 1rem;
-}
-
-.tuitionIncludesHeading {
-  color: white;
-  font-size: clamp(1.7rem, 2.7vw, 2.2rem);
-  font-weight: 700;
-  margin-bottom: 1rem;
-}
-
-.tuitionIncludesList {
-  list-style: none;
-  padding: 0;
-  margin: 0 0 2rem;
-  display: grid;
-  gap: 0.95rem;
-  color: white;
-  font-size: 1.1rem;
-}
-
-.tuitionIncludesList li {
-  position: relative;
-  padding-left: 1.75rem;
-}
-
-.tuitionIncludesList li::before {
-  content: '✓';
-  position: absolute;
-  left: 0;
-  top: 0;
-  color: #f1c38a;
-  font-weight: 700;
-}
-
-.tuitionPlanCard {
-  overflow: hidden;
-  border-radius: 2rem;
-  background: white;
-  box-shadow: 0 1.25rem 2.5rem rgba(0, 0, 0, 0.18);
-}
-
-.tuitionPlanHeader {
-  background: #dfe4ef;
-  color: var(--qc-color-navy);
-  text-align: center;
-  font-weight: 700;
-  letter-spacing: 0.02em;
-  padding: 1.35rem 1.5rem;
-  font-size: 1.15rem;
-}
-
-.tuitionPlanBody {
-  padding: 1.6rem 1.75rem;
-}
-
-.tuitionSavingsRow {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  margin-bottom: 0.9rem;
-}
-
-.tuitionPlanLabel {
-  color: var(--qc-color-navy);
-  font-size: 1.35rem;
-  font-weight: 700;
-  margin: 0;
-}
-
-.tuitionBadge {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  background: #ef2557;
-  color: white;
-  border-radius: 999px;
-  padding: 0.5rem 0.9rem;
-  font-size: 0.95rem;
-  font-weight: 700;
-}
-
-.tuitionSmallLabel {
-  color: var(--qc-color-navy);
-  margin-bottom: 0.25rem;
-  font-size: 1.05rem;
-}
-
-.tuitionStrikePrice {
-  color: var(--qc-color-navy);
-  font-size: 1.1rem;
-  text-decoration: line-through;
-  text-decoration-thickness: 2px;
-  margin-bottom: 0.5rem;
-}
-
-.tuitionPrice {
-  color: var(--qc-color-navy);
-  font-size: clamp(2.2rem, 4.2vw, 3.3rem);
-  line-height: 1;
-  font-weight: 700;
-}
-
-.tuitionDivider {
-  height: 1px;
-  background: #dfe4ef;
-}
-
-.tuitionInstallmentLead {
-  color: var(--qc-color-navy);
-  font-weight: 700;
-  margin-bottom: 0.3rem;
-}
-
-.tuitionInstallmentText {
-  color: #111111;
-  margin-bottom: 0.8rem;
-  font-size: 1.05rem;
-}
-
-.statValue {
-  color: var(--qc-color-navy);
-  font-size: clamp(2.4rem, 4vw, 4rem);
-  line-height: 1;
-  font-weight: 800;
-}
-
-.featureCard,
 .stepCard,
-.priceCard,
 .trustCard {
   height: 100%;
   border: 0;
@@ -344,11 +59,6 @@
   background: white;
 }
 
-.whyGrid {
-  max-width: 1100px;
-  margin-left: auto;
-  margin-right: auto;
-}
 
 .whyCard {
   height: 100%;
@@ -356,14 +66,6 @@
   border-radius: 1.5rem;
   background: #ffffff;
   box-shadow: 0 1rem 2rem rgba(15, 29, 51, 0.08);
-}
-
-.whyIcon {
-  display: block;
-  width: 2.8rem;
-  height: 2.8rem;
-  object-fit: contain;
-  margin-bottom: 1.1rem;
 }
 
 .whyCard h3 {
@@ -376,17 +78,6 @@
 
 .kitSection {
   margin-top: 4rem;
-}
-
-.kitHeading {
-  color: var(--qc-color-navy);
-  margin-bottom: 0.75rem;
-}
-
-.kitText {
-  max-width: 42rem;
-  margin: 0 auto 1.75rem;
-  color: #4d4d57;
 }
 
 .kitImage {
@@ -402,7 +93,7 @@
   width: 2.95rem;
   height: 2.95rem;
   border-radius: 999px;
-  background: var(--qc-color-primary);
+  background: red;
   color: white;
   font-weight: 700;
   flex: 0 0 auto;
@@ -457,7 +148,7 @@
   background: white;
   border-radius: 2.25rem;
   box-shadow: 0 1.1rem 1.9rem rgba(15, 29, 51, 0.14);
-  padding: 3.2rem 2.2rem 2.9rem;
+  padding: 3.2rem 2.2rem 0rem;
   text-align: center;
 }
 
@@ -465,20 +156,9 @@
   display: none;
 }
 
-.qnaQuestion {
-  font-style: italic;
-  font-size: clamp(1.35rem, 2vw, 1.7rem);
-  line-height: 1.15;
-  color: var(--qc-color-navy);
-  margin: 0 auto 2.05rem;
-  max-width: 16rem;
-}
 
 .qnaAnswer {
   color: #ff2d5c;
-  font-size: clamp(2.6rem, 4.8vw, 4rem);
-  line-height: 1;
-  margin-bottom: 0.8rem;
 }
 
 .qnaSubhead {
@@ -496,186 +176,9 @@
   color: #4d4d57;
 }
 
-.priceCard {
-  background: linear-gradient(180deg, #ffffff 0%, #f7f9fc 100%);
-}
-
-.priceAmount {
-  color: var(--qc-color-navy);
-  font-size: clamp(2rem, 3vw, 3rem);
-  line-height: 1;
-  font-weight: 800;
-}
-
-.priceFinePrint {
-  color: #5a6374;
-}
-
-.trustLogo {
-  max-width: 100%;
-  height: auto;
-}
-
-.sectionSpacing {
-  padding-top: 4.5rem;
-  padding-bottom: 4.5rem;
-}
-
-.compactSpacing {
-  padding-top: 3.5rem;
-  padding-bottom: 3.5rem;
-}
-
-.careerTestimonialSpacing {
-  padding-top: 3rem;
-  padding-bottom: 3rem;
-}
-
 .sliderWrap {
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.42), rgba(255, 255, 255, 0.74));
   border-radius: 1.5rem;
-  padding: 1rem 0;
-  transform: scale(0.81);
-  transform-origin: center top;
-  margin: -1.5rem -9% 0;
-}
-
-.ctaBand {
-  background: linear-gradient(90deg, #e21d5d 0%, #8f0032 100%);
-  color: white;
-}
-
-.ctaHeading {
-  color: white;
-  margin-bottom: 1.5rem;
-}
-
-.ctaPerks {
-  display: grid;
-  gap: 1.1rem;
-  margin: 0 auto 2.25rem;
-  max-width: 38rem;
-}
-
-.ctaPerk {
-  display: flex;
-  align-items: center;
-  gap: 1.05rem;
-  background: #f7e8ee;
-  color: var(--qc-color-navy);
-  border-radius: 999px;
-  padding: 0.9rem 1.1rem;
-  box-shadow: 0 1rem 1.5rem rgba(0, 0, 0, 0.12);
-  font-size: 1.08rem;
-  font-weight: 400;
-  line-height: 1.2;
-  text-align: left;
-}
-
-.ctaPerk strong {
-  font-weight: 400;
-}
-
-.ctaButtons {
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
-  flex-wrap: wrap;
-  margin-bottom: 2rem;
-}
-
-.ctaTrustRow {
-  display: flex;
-  justify-content: center;
-  gap: 4rem;
-  flex-wrap: wrap;
-}
-
-.ctaTrustItem {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.35rem;
-  min-width: 7rem;
-}
-
-.ctaTrustIcon {
-  font-size: 1.2rem;
-  font-weight: 800;
-  line-height: 1;
-}
-
-.ctaTrustBadge {
-  width: auto;
-  height: 24px;
-}
-
-.ctaGuaranteeBadge {
-  width: auto;
-  height: 24px;
-}
-
-.ctaTrustText {
-  font-size: 0.8rem;
-  letter-spacing: 0.04em;
-  font-weight: 700;
-}
-
-.contactSection {
-  background: #eceff5;
-  color: var(--qc-color-navy);
-  padding-top: 4.75rem;
-}
-
-.contactHeading {
-  margin-bottom: 0.9rem;
-}
-
-.contactSubhead {
-  font-size: clamp(1.1rem, 1.6vw, 1.35rem);
-  font-weight: 700;
-  margin-bottom: 1.35rem;
-}
-
-.contactIconWrap {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 3.25rem;
-  height: 3.25rem;
-  border-radius: 999px;
-  background: #58bfd6;
-  margin-bottom: 1.35rem;
-}
-
-.contactIcon {
-  width: 1.65rem;
-  height: 1.65rem;
-}
-
-.contactPhone {
-  display: inline-block;
-  color: var(--qc-color-navy);
-  font-size: clamp(1.5rem, 2.1vw, 2.15rem);
-  line-height: 1.15;
-  font-weight: 700;
-  text-decoration: none;
-}
-
-.contactFooter {
-  margin-top: 4rem;
-  border-top: 1px solid rgba(15, 29, 51, 0.12);
-  padding: 0.9rem 0 1rem;
-}
-
-.contactCopyright,
-.contactPrivacy {
-  font-size: 0.8rem;
-  color: #4d4d57;
-}
-
-.contactPrivacy {
-  text-decoration: underline;
+  box-shadow: 10px 10px 25px rgba(0, 0, 0, 0.15);
 }
 
 @media (min-width: 992px) {
