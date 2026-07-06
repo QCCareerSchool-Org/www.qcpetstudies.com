@@ -11,6 +11,7 @@ import { EnrollmentDetails } from '@/components/enrollmentDetails';
 import { SetCookie } from '@/components/setCookie';
 import { TelephoneLink } from '@/components/telephoneLink';
 import type { UserValues } from '@/domain/userValues';
+import { addActiveCampaignStudent } from '@/lib/activeCampaign/addStudent';
 import { addToIDevAffiliate } from '@/lib/addToIDevAffiliate';
 import { createBrevoContact } from '@/lib/brevoAPI';
 import { fbPostPurchase } from '@/lib/facebookConversionAPI';
@@ -85,6 +86,12 @@ const WelcomeToTheSchoolPage: PageComponent = async props => {
       } catch (err) {
         console.error(err);
       }
+    }
+
+    // ActiveCampaign
+    const addActiveCampaignResult = await addActiveCampaignStudent(enrollment);
+    if (!addActiveCampaignResult.success) {
+      console.error(addActiveCampaignResult.error);
     }
 
     const newUserValues: UserValues = {
