@@ -18,9 +18,11 @@ interface Props {
   heroSrc: StaticImageData;
   mobileHeroSrc?: StaticImageData;
   emailAddress?: string;
+  customHeader?: string;
+  customButtonText?: string;
 }
 
-export const ThankYouSection: FC<Props> = ({ course, heroSrc, mobileHeroSrc, emailAddress }) => {
+export const ThankYouSection: FC<Props> = ({ course, heroSrc, mobileHeroSrc, emailAddress, customHeader, customButtonText }) => {
   const downloadUrl = course === 'dt'
     ? '/certification-courses/dog-training/course-preview'
     : '/certification-courses/dog-grooming/course-preview';
@@ -38,12 +40,12 @@ export const ThankYouSection: FC<Props> = ({ course, heroSrc, mobileHeroSrc, ema
             <FormCard>
               <div style={{ margin: '0 0 1rem' }}>
                 <Lottie animationData={emailNotification} autoplay loop style={{ width: 300, height: 159, margin: '0 auto', paddingLeft: '4%' }} />
-                <h1 className="h4 mb-4 text-navy">Thank You! Your Catalog Is Below</h1>
+                <h1 className="h4 mb-4 text-navy">{customHeader ?? 'Thank You! Your Catalog Is Below'} </h1>
                 <FormWrapper>
                   <p className={`lead ${styles.limitedTimeOffer} ${(emailAddress && emailAddress.length > 35) ? styles.long : ''}`}>We've sent a <strong className="text-primary">limited-time offer</strong> to <strong className="text-black">{emailAddress ?? 'your inbox'}</strong></p>
                   <Squiggle variant="tapered" className="text-primary mb-4" style={{ margin: '0 2rem', maxWidth: squiggleWidth }} />
                   <p className="mb-4">Be sure to check your <strong>spam</strong> or <strong>promotions</strong> folder if you don't see it right away&mdash;you don't want to miss this!</p>
-                  <a href={downloadUrl}><button className="btn btn-primary"><Image src={DownloadIcon} height="16" style={{ position: 'relative', top: -2, marginRight: '0.5rem' }} alt="" /> View Catalog</button></a>
+                  <a href={downloadUrl}><button className="btn btn-primary"><Image src={DownloadIcon} height="16" style={{ position: 'relative', top: -2, marginRight: '0.5rem' }} alt="" /> {customButtonText ?? 'View Catalog'}</button></a>
                 </FormWrapper>
               </div>
             </FormCard>
