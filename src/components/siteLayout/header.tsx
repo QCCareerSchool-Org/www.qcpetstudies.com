@@ -3,7 +3,7 @@ import type { FC } from 'react';
 import styles from './header.module.scss';
 import { PromoBanner } from './promoBanner';
 import { SecondaryNav } from './secondaryNav';
-import { CanadaHeader } from '../canadaHeader';
+// import { CanadaHeader } from '../canadaHeader';
 import { MainNav } from '@/components/siteLayout/mainNav';
 import { gbpCountry } from '@/domain/currency';
 import { july08 } from '@/periods';
@@ -22,9 +22,9 @@ export const Header: FC<Props> = props => (
 );
 
 const InnerBanner: FC<Props> = ({ date, countryCode }) => {
-  if (countryCode === 'CA') {
-    return <CanadaHeader />;
-  }
+  // if (countryCode === 'CA') {
+  //   return <CanadaHeader />;
+  // }
 
   if (july08.contains(date)) {
     return (
