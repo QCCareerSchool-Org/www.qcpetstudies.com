@@ -3,7 +3,6 @@ import type { FC } from 'react';
 import styles from './header.module.scss';
 import { PromoBanner } from './promoBanner';
 import { SecondaryNav } from './secondaryNav';
-import { CanadaHeader } from '../canadaHeader';
 import { MainNav } from '@/components/siteLayout/mainNav';
 import { gbpCountry } from '@/domain/currency';
 import { july08 } from '@/periods';
@@ -22,17 +21,11 @@ export const Header: FC<Props> = props => (
 );
 
 const InnerBanner: FC<Props> = ({ date, countryCode }) => {
-  if (countryCode === 'CA') {
-    return <CanadaHeader />;
-  }
 
   if (july08.contains(date)) {
     return (
       <PromoBanner date={date} promotionPeriod={july08.toDTO()}>
-        {countryCode === 'US' || countryCode === 'CA'
-          ? <>Ends Soon: Save $400 On Tuition</>
-          : <><span className="d-none d-lg-inline">Limited-time offer:{' '}</span>Save {gbpCountry(countryCode) ? '£400' : '$400'} on your tuition when you enroll today!</>
-        }
+        <span className="d-none d-lg-inline">Limited-time offer:{' '}</span>Save {gbpCountry(countryCode) ? '£400' : '$400'} on your tuition when you enroll today!
       </PromoBanner>
     );
   }
