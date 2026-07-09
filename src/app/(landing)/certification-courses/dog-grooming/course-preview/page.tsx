@@ -410,7 +410,7 @@ const GroomingCoursePreviewPage: PageComponent = async props => {
         </div>
       </section>
 
-      <TutorSectionDG id="tutors" />
+      <TutorSectionDG />
 
       <PriceSection id="tuition" courses={courseCodes} price={dgPrice.value} doubleGuarantee={true} enrollPath="/grooming-400-off" />
 
