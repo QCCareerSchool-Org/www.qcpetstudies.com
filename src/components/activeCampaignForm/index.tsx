@@ -122,6 +122,12 @@ export const ActiveCampaginForm: FC<Props> = props => {
       <input type="hidden" name="g-recaptcha-response" value={token} />
       <input type="hidden" name="school" value="QC Pet Studies" />
       <input type="hidden" name="successLocation" value={props.successLocation} />
+      {props.requiredIds?.map(automationId => (
+        <input key={automationId} type="hidden" name="requiredAutomations" value={automationId.toString()} />
+      ))}
+      {props.optionalIds?.map(automationId => (
+        <input key={automationId} type="hidden" name="optionalAutomations" value={automationId.toString()} />
+      ))}
       {props.courseCodes?.map(c => <input key={c} type="hidden" name="courseCodes" value={c} />)}
       {typeof props.emailTemplateId !== 'undefined' && <input type="hidden" name="emailTemplateId" value={props.emailTemplateId} />}
       {props.gclid && <input type="hidden" name="gclid" value={props.gclid} />}
