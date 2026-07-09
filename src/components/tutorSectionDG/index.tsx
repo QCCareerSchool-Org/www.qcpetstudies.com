@@ -10,7 +10,7 @@ interface Props {
   lisa?: string;
 }
 
-export const TutorSectionDG: FC<Props> = ({ className, casey, paddy, lisa }) => (
+export const TutorSectionDG: FC<Props> = ({ className, casey = 'casey', paddy = 'paddy', lisa = 'lisa' }) => (
   <>
     <div className="sectionAnchor" />
     <section className={className}>
