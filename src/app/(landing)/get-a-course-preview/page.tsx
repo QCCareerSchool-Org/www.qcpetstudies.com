@@ -3,7 +3,7 @@ import { headers } from 'next/headers';
 import Image from 'next/image';
 
 import CatalogImage from './dog-and-scissors.jpg';
-import { MultiCourseBrevoForm } from './multiCourseBrevoForm';
+import { MultiCourseForm } from './multiCourseForm';
 import { BottomSection } from '../_components/bottomSection';
 import { Header } from '../_components/header';
 import { TestimonialSmCaseyBechard } from '@/components/testimonialsSmall/caseyBechard';
@@ -48,7 +48,7 @@ const DogGroomingCatalogPage: PageComponent = async props => {
               <div className="card bg-light">
                 <div className="card-body">
                   <p className="text-center lead">Get Started with a <strong>Free Course Preview</strong></p>
-                  <MultiCourseBrevoForm
+                  <MultiCourseForm
                     gclid={gclid}
                     msclkid={msclkid}
                     utmSource={utmSource}
