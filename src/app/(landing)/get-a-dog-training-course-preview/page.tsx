@@ -15,16 +15,13 @@ import BrunoImage from './bruno.jpg';
 import KimImage from './kim.jpg';
 import SusanImage from './susan.jpg';
 import { BottomSection } from '../_components/bottomSection';
-import { BrevoForm } from '@/components/brevoForm';
+import { ActiveCampaginForm } from '@/components/activeCampaignForm';
 import { TestimonialWallSection } from '@/components/testimonialWallSection';
 import { getParam } from '@/lib/getParam';
 import { getServerData } from '@/lib/getServerData';
 import type { PageComponent } from '@/serverComponent';
 
 const courses = [ 'dt' ];
-const brevoListId = 30;
-const brevoEmailTemplateId = 1635;
-const brevoTelephoneListId = 57;
 
 const testimonialIds = [ 'TD-0001', 'TD-0002', 'TD-0003' ];
 
@@ -63,11 +60,10 @@ const DogTrainingCatalogPage: PageComponent = async props => {
               <div className="card">
                 <div className="card-body">
                   <p className="text-center lead">Get Started with a <strong>Free Course Preview</strong></p>
-                  <BrevoForm
+                  <ActiveCampaginForm
                     successLocation={`${process.env.NEXT_PUBLIC_HOST ?? 'https://www.qcpetstudies.com'}/thank-you-dog-training-course-preview`}
-                    listId={brevoListId}
-                    emailTemplateId={brevoEmailTemplateId}
-                    telephoneListId={brevoTelephoneListId}
+                    requiredIds={[ 56n ]}
+                    optionalIds={[ 36n ]}
                     gclid={gclid}
                     msclkid={msclkid}
                     utmSource={utmSource}

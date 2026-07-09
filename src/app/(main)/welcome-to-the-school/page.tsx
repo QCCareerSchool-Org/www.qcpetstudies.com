@@ -13,7 +13,6 @@ import { TelephoneLink } from '@/components/telephoneLink';
 import type { UserValues } from '@/domain/userValues';
 import { addActiveCampaignStudent } from '@/lib/activeCampaign/addStudent';
 import { addToIDevAffiliate } from '@/lib/addToIDevAffiliate';
-import { createBrevoContact } from '@/lib/brevoAPI';
 import { fbPostPurchase } from '@/lib/facebookConversionAPI';
 import { fetchEnrollment } from '@/lib/fetchEnrollment';
 import { getParam } from '@/lib/getParam';
@@ -21,8 +20,6 @@ import { getServerData } from '@/lib/getServerData';
 import { createJwt } from '@/lib/jwt';
 import { sendEnrollmentEmail } from '@/lib/sendEnrollmentEmail';
 import type { PageComponent } from '@/serverComponent';
-
-const brevoStudentListId = 17;
 
 export const metadata: Metadata = {
   title: 'Welcome to the School',
@@ -63,12 +60,6 @@ const WelcomeToTheSchoolPage: PageComponent = async props => {
     const sendEmailResult = await sendEnrollmentEmail(enrollmentId, codeParam);
     if (!sendEmailResult.success) {
       console.error(sendEmailResult.error);
-    }
-
-    // create Brevo contact
-    const createBrevoContactResult = await createBrevoContact(enrollment.emailAddress, enrollment.firstName, enrollment.lastName, enrollment.countryCode, enrollment.provinceCode, { STATUS_PET_STUDENT: true }, [ brevoStudentListId ]);
-    if (!createBrevoContactResult.success) {
-      console.error(createBrevoContactResult.error);
     }
 
     // iDevAffiliate
