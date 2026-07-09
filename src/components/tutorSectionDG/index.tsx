@@ -5,10 +5,12 @@ import { caseyBechard, lisaDay, paddyGaffney } from './tutors';
 
 interface Props {
   className?: string;
-  id?: string;
+  casey?: string;
+  paddy?: string;
+  lisa?: string;
 }
 
-export const TutorSectionDG: FC<Props> = ({ className }) => (
+export const TutorSectionDG: FC<Props> = ({ className, casey, paddy, lisa }) => (
   <>
     <div className="sectionAnchor" />
     <section className={className}>
@@ -18,13 +20,13 @@ export const TutorSectionDG: FC<Props> = ({ className }) => (
             <h2>Meet Your Grooming Mentors</h2>
             <p>When you enroll with QC Pet Studies, you'll be paired with an expert grooming mentor who will review your work and provide detailed audio feedback on each assignment. With decades of industry experience, your mentor will offer valuable advice to help you succeed and improve as you progress through the course.</p>
             <div className="row justify-content-center g-5 g-lg-5 mt-4">
-              <div className="col-12 col-lg-4" id="lisa">
+              <div className="col-12 col-lg-4" id={lisa}>
                 <MasterIcon {...lisaDay} />
               </div>
-              <div className="col-12 col-lg-4" id="paddy">
+              <div className="col-12 col-lg-4" id={paddy}>
                 <MasterIcon {...paddyGaffney} />
               </div>
-              <div className="col-12 col-lg-4" id="casey">
+              <div className="col-12 col-lg-4" id={casey}>
                 <MasterIcon {...caseyBechard} />
               </div>
             </div>
