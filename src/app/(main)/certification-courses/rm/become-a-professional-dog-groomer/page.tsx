@@ -5,7 +5,7 @@ import Image from 'next/image';
 import CourseCatalogImage from './bottom-ipad-shepard.jpg';
 import FullKitImage from './Kit-Blue-bg.jpg';
 import styles from './page.module.scss';
-import { BrevoForm } from '@/components/brevoForm';
+import { ActiveCampaginForm } from '@/components/activeCampaignForm';
 import { FreeFirstAidSection } from '@/components/freeFirstAidSection';
 import { HowTheCoursesWorkSection } from '@/components/howTheCoursesWorkSection';
 import { getParam } from '@/lib/getParam';
@@ -17,7 +17,6 @@ export const metadata: Metadata = {
 };
 
 const courses = [ 'dg' ];
-const brevoListId = 31;
 
 const ProfessionalDogGroomerPage: PageComponent = async props => {
   const searchParams = await props.searchParams;
@@ -58,10 +57,10 @@ const ProfessionalDogGroomerPage: PageComponent = async props => {
                   <li>Find out about tuition information including finding a payment plan that works well for you</li>
                   <li>Learn how you can't go wrong with QC's money back guarantee!</li>
                 </ul>
-                <BrevoForm
+                <ActiveCampaginForm
                   successLocation={`${process.env.NEXT_PUBLIC_HOST ?? 'https://www.qcpetstudies.com'}/thank-you-dog-grooming-course-preview`}
-                  listId={brevoListId}
-                  // emailTemplateId={brevoEmailTemplateId}
+                  requiredIds={[ 55n ]}
+                  optionalIds={[ 2n ]}
                   gclid={gclid}
                   msclkid={msclkid}
                   utmSource={utmSource}
@@ -102,10 +101,10 @@ const ProfessionalDogGroomerPage: PageComponent = async props => {
       <div className="container">
         <div className="row justify-content-center bg-desaturated-blue text-white">
           <div className="col-12 col-lg-6 mb-4 px-5" style={{ marginTop: '50px' }}>
-            <BrevoForm
+            <ActiveCampaginForm
               successLocation={`${process.env.NEXT_PUBLIC_HOST ?? 'https://www.qcpetstudies.com'}/thank-you-dog-grooming-course-preview`}
-              listId={brevoListId}
-              // emailTemplateId={brevoEmailTemplateId}
+              requiredIds={[ 55n ]}
+              optionalIds={[ 2n ]}
               gclid={gclid}
               msclkid={msclkid}
               utmSource={utmSource}

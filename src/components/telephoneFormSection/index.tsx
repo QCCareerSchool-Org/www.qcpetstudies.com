@@ -13,17 +13,19 @@ import { BackgroundImage } from '@/components/backgroundImage';
 import { FormCard } from '@/components/formCard';
 import { FormWrapper } from '@/components/formWrapper';
 import { Overlay } from '@/components/overlay';
+import type { ESP } from '@/domain/esp';
 
 interface Props {
   countryCode?: string;
   leadId: string;
   brevoListId: number;
   backgroundSrc: StaticImageData;
+  esp?: ESP;
 }
 
 type State = 'ready' | 'submitting' | 'success' | 'error';
 
-export const TelephoneFormSection: FC<Props> = ({ countryCode, leadId, brevoListId, backgroundSrc }) => {
+export const TelephoneFormSection: FC<Props> = ({ countryCode, leadId, brevoListId, backgroundSrc, esp }) => {
   const [ telephoneNumber, setTelephoneNumber ] = useState<Value>();
   const [ state, setState ] = useState<State>('ready');
 
@@ -34,10 +36,17 @@ export const TelephoneFormSection: FC<Props> = ({ countryCode, leadId, brevoList
   const handleSubmit: SubmitEventHandler = e => {
     e.preventDefault();
     const url = 'https://leads.qccareerschool.com/telephoneNumber';
-    const body = JSON.stringify({ leadId, telephoneNumber, listId: brevoListId });
+    const body: Record<string, unknown> = { leadId, telephoneNumber, listId: brevoListId };
+    if (esp) {
+      body.esp = esp;
+    }
     const headers = { 'content-type': 'application/json' };
     setState('submitting');
-    fetch(url, { method: 'post', body, headers }).then(async response => {
+    fetch(url, {
+      method: 'post',
+      body: JSON.stringify(body),
+      headers,
+    }).then(async response => {
       if (!response.ok) {
         throw Error(response.statusText);
       }
