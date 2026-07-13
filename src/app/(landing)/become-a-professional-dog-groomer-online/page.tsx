@@ -62,14 +62,15 @@ const Page: PageComponent = async props => {
               FLEXIBLE ONLINE LEARNING WITH HANDS-ON GROOMING PRACTICE
             </div>
             <div>
-              CALL NOW: 1-833-600-3751
+              <a href="#request-info" className="btn btn-primary">REQUEST INFO</a>
             </div>
           </div>
         </div>
       </div>
 
       <section className={styles.hero}>
-        <BackgroundImage src={HeroImage} priority />
+        <BackgroundImage src={HeroImage} priority className={styles.heroImage} />
+        <div className={styles.heroOverlay} aria-hidden="true" />
         <div className={`container ${styles.heroInner}`}>
           <div className="row align-items-center g-5">
             <div className="col-12 col-lg-6">
@@ -384,9 +385,19 @@ const Page: PageComponent = async props => {
             <div className="col-12 col-lg-10">
               <h2 className={styles.excellenceHeading}>40+ Years of Educational Excellence</h2>
               <p className={styles.excellenceIntro}>QC has been helping students prepare for rewarding careers through flexible online learning for more than four decades.</p>
-              <p className={styles.excellenceTrustLine}>BBB ACCREDITED | 14-DAY MONEY-BACK GUARANTEE | EXPERT-BACKED PROGRAMS</p>
-              <div className={styles.excellenceSeal}>
-                <img src="/bbb-accredited.svg" alt="BBB Accredited" className={styles.excellenceBadge} />
+              <div className={styles.excellenceTrustGrid}>
+                <div className={styles.excellenceTrustItem}>
+                  <Image src="/guarantee-section.svg" alt="14-Day Money-Back Guarantee" width={60} height={60} className={styles.excellenceTrustIcon} />
+                  <div className={styles.excellenceTrustText}>14-DAY MONEY-BACK GUARANTEE</div>
+                </div>
+                <div className={styles.excellenceTrustItem}>
+                  <Image src="/bbb-section.svg" alt="BBB A+ Accredited" width={60} height={60} className={styles.excellenceTrustIcon} />
+                  <div className={styles.excellenceTrustText}>BBB A+ ACCREDITED</div>
+                </div>
+                <div className={styles.excellenceTrustItem}>
+                  <Image src={GroomerIcon} alt="Expert-Backed Programs" className={styles.excellenceTrustIcon} />
+                  <div className={styles.excellenceTrustText}>EXPERT-BACKED PROGRAMS</div>
+                </div>
               </div>
             </div>
           </div>

@@ -42,6 +42,18 @@
   z-index: 1;
 }
 
+.heroImage {
+  transform: scaleX(-1);
+}
+
+.heroOverlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.25);
+  z-index: 0;
+  pointer-events: none;
+}
+
 .eyebrow {
   display: inline-flex;
   align-items: center;
@@ -171,12 +183,36 @@
   margin: 0 auto 2.5rem;
 }
 
-.excellenceTrustLine {
+.excellenceTrustGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  justify-items: center;
+  align-items: start;
+  margin-top: 0.5rem;
+}
+
+.excellenceTrustItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.85rem;
+  color: #e1bc94;
+}
+
+.excellenceTrustIcon {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+}
+
+.excellenceTrustText {
   color: #e1bc94;
   font-size: 1.05rem;
-  letter-spacing: 0.02em;
+  line-height: 1.15;
   font-weight: 700;
-  margin-bottom: 2rem;
+  text-align: center;
+  max-width: 10rem;
 }
 
 .excellenceSeal {
@@ -679,6 +715,13 @@
 }
 
 @media (min-width: 992px) {
+  .excellenceTrustGrid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.5rem;
+    max-width: 56rem;
+    margin: 0 auto;
+  }
+
   .sectionSpacing {
     padding-top: 6rem;
     padding-bottom: 6rem;
