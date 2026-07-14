@@ -14,8 +14,11 @@ const expectedVariables = [
   'TIKTOK_ID',
   // Microsoft Ads
   'BING_ID',
+  // ActiveCampaign
+  'ACTIVE_CAMPAIGN_ACCOUNT',
+  'ACTIVE_CAMPAIGN_API_TOKEN',
+  'ACTIVE_CAMPAIGN_ID',
   // Brevo
-  'BREVO_CLIENT_KEY',
   'BREVO_CONVERSATIONS_ID',
   'BREVO_GROUP_ID',
   // cookies

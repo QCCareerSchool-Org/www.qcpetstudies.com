@@ -6,7 +6,7 @@ import CatalogImage from './dog-and-scissors.jpg';
 import GroomingKitImage from './dog-grooming-kit.jpg';
 import { BottomSection } from '../_components/bottomSection';
 import { Header } from '../_components/header';
-import { BrevoForm } from '@/components/brevoForm';
+import { ActiveCampaginForm } from '@/components/activeCampaignForm';
 import { TestimonialSmCaseyBechard } from '@/components/testimonialsSmall/caseyBechard';
 import { TestimonialSmKaylaTorraville } from '@/components/testimonialsSmall/kaylaTorraville';
 import { TestimonialSmMelodyMason } from '@/components/testimonialsSmall/melodyMason';
@@ -26,9 +26,6 @@ export const metadata: Metadata = {
 };
 
 const courses = [ 'dg' ];
-const brevoListId = 31;
-const brevoEmailTemplateId = 1660;
-const brevoTelephoneListId = 55;
 
 const DogGroomingCatalogPage: PageComponent = async props => {
   const { countryCode, provinceCode } = await getServerData(props.searchParams);
@@ -57,11 +54,10 @@ const DogGroomingCatalogPage: PageComponent = async props => {
               <div className="card bg-light">
                 <div className="card-body">
                   <p className="text-center lead">Get Started with a <strong>Free Course Preview</strong></p>
-                  <BrevoForm
+                  <ActiveCampaginForm
                     successLocation={`${process.env.NEXT_PUBLIC_HOST ?? 'https://www.qcpetstudies.com'}/thank-you-dog-grooming-course-preview`}
-                    listId={brevoListId}
-                    emailTemplateId={brevoEmailTemplateId}
-                    telephoneListId={brevoTelephoneListId}
+                    requiredIds={[ 55n ]}
+                    optionalIds={[ 2n ]}
                     gclid={gclid}
                     msclkid={msclkid}
                     utmSource={utmSource}

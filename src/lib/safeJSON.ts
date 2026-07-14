@@ -1,1 +1,5 @@
-export const safeJSON = (obj: unknown): string => JSON.stringify(obj).replace(/</gu, '\\u003c');
+import { stringify } from './json';
+
+export const safeJSON = (obj: unknown): string => {
+  return stringify(obj).replace(/</gu, '\\u003c');
+};

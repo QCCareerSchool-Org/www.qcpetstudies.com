@@ -3,9 +3,9 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { BsBook } from 'react-icons/bs';
 
-import KimCooperImage from '../kim-cooper.jpg';
 import GoldenRetrieverComputerBackground from './golden-retriever-sitting-next-to-computer.jpg';
-import { Client } from '../client';
+import { Client } from '@/app/(main)/certification-courses/dog-training/client';
+import KimCooperImage from '@/app/(main)/certification-courses/dog-training/kim-cooper.jpg';
 import { BackgroundImage } from '@/components/backgroundImage';
 import { Bar } from '@/components/bar';
 import IDTPCertificationLogo from '@/components/certifications/IDTP-certification-gold.svg';

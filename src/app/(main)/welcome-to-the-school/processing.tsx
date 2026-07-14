@@ -7,6 +7,7 @@ import type { Enrollment } from '@/domain/enrollment';
 import { brevoIdentifyStudent } from '@/lib/brevo';
 import { fbqSale } from '@/lib/fbq';
 import { gaSale } from '@/lib/gtag';
+import { oaiqSale } from '@/lib/oaiq';
 import { uetSale } from '@/lib/uet';
 
 interface Props {
@@ -19,6 +20,7 @@ export const Processing: FC<Props> = ({ enrollment }) => {
       gaSale(enrollment);
       uetSale(enrollment);
       fbqSale(enrollment);
+      oaiqSale(enrollment);
     }
     brevoIdentifyStudent(enrollment.emailAddress, enrollment.countryCode, enrollment.provinceCode ?? undefined, enrollment.firstName, enrollment.lastName);
   }, [ enrollment ]);
