@@ -7,14 +7,16 @@ import { CTASection1 } from './CTASections/ctaSection1';
 import { CTASection2 } from './CTASections/ctaSection2';
 import { CTASection3 } from './CTASections/ctaSection3';
 import DogImage from './dog-can-you-learn-online.jpg';
+import FormBgImage from './form-bg-option-1.png';
+import Guarantee from './guarantee.svg';
 import HeroImage from './hero-lrg.jpg';
 import KitImage from './main-kit-white-bg.jpg';
 import styles from './page.module.scss';
+import Person from './person-check.svg';
 import { TuitionSection } from './TuitionSection/tuitionSection';
 import { BackgroundImage } from '@/components/backgroundImage';
 import { BrevoForm } from '@/components/brevoForm';
 import { Check } from '@/components/check';
-import { FormCard } from '@/components/formCard';
 import type { TestimonialId } from '@/components/testimonial/data';
 import { TestimonialCarousel } from '@/components/testimonialCarousel';
 import type { CourseCode } from '@/domain/courseCode';
@@ -89,28 +91,33 @@ const Page: PageComponent = async props => {
               </ul>
             </div>
             <div className="col-12 col-lg-5 offset-lg-1">
-              <FormCard>
-                <div id="request-info" className="sectionAnchor" />
-                <h3 className="mb-3">Get Course Details</h3>
-                <BrevoForm
-                  successLocation={`${process.env.NEXT_PUBLIC_HOST ?? 'https://www.qcpetstudies.com'}/thank-you-dog-grooming-course-preview`}
-                  listId={brevoListId}
-                  telephoneListId={brevoTelephoneListId}
-                  gclid={gclid}
-                  msclkid={msclkid}
-                  utmSource={utmSource}
-                  utmMedium={utmMedium}
-                  utmCampaign={utmCampaign}
-                  utmContent={utmContent}
-                  utmTerm={utmTerm}
-                  courseCodes={courseCodes}
-                  placeholders={false}
-                  referrer={referrer}
-                  countryCode={countryCode}
-                  buttonText="Request Info"
-                  buttonClassName="btn btn-primary btn-lg"
-                />
-              </FormCard>
+              <div className={`card bg-white border-0 ${styles.card}`}>
+                <h3 className="card-header bg-danger text-white px-4 pb-4 pt-5 mb-0 border-0 position-relative overflow-hidden">
+                  <BackgroundImage src={FormBgImage} />
+                  <span className="position-relative">Get Course Details</span>
+                </h3>
+                <div className="card-body">
+                  <div id="request-info" />
+                  <BrevoForm
+                    successLocation={`${process.env.NEXT_PUBLIC_HOST ?? 'https://www.qcpetstudies.com'}/thank-you-dog-grooming-course-preview`}
+                    listId={brevoListId}
+                    telephoneListId={brevoTelephoneListId}
+                    gclid={gclid}
+                    msclkid={msclkid}
+                    utmSource={utmSource}
+                    utmMedium={utmMedium}
+                    utmCampaign={utmCampaign}
+                    utmContent={utmContent}
+                    utmTerm={utmTerm}
+                    courseCodes={courseCodes}
+                    placeholders={false}
+                    referrer={referrer}
+                    countryCode={countryCode}
+                    buttonText="Request Info"
+                    buttonClassName="btn btn-primary btn-lg"
+                  />
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -124,7 +131,7 @@ const Page: PageComponent = async props => {
               <p style={{ fontSize: 'clamp(1.1rem, 2vw, 1.55rem)' }}>84% of QC Pet Studies students enroll to start a grooming business, work in a salon, or build on their existing skills.</p>
             </div>
           </div>
-          <div className="row align-items-center g-5">
+          <div className="row g-5 align-items-center">
             <div className="col-12 col-lg-6">
               <div>
                 <h3>Where Our Graduates Work Today</h3>
@@ -137,7 +144,7 @@ const Page: PageComponent = async props => {
                 </ul>
               </div>
             </div>
-            <div className="col-12 col-lg-6">
+            <div className="col-12 col-lg-6 p-0">
               <div className={styles.sliderWrap}>
                 <TestimonialCarousel testimonialIds={testimonialIds} coursePriority="dg" />
               </div>
@@ -213,7 +220,7 @@ const Page: PageComponent = async props => {
                 <h2 className={`${styles.qnaAnswer} mb-3 fw-bold`}>Yes!</h2>
                 <p className="fw-bold">With the right training model</p>
                 <p className={styles.qnaBody}>QC Pet Studies combines online education with hands-on practice and personalized instructor feedback. You don&apos;t just watch lessons-you complete assignments that are reviewed by a professional groomer who guides your progress step by step. This ensures you build real, practical grooming skills from home.</p>
-                <Image src={DogImage} alt="" />
+                <Image src={DogImage} alt="" className="img-fluid" />
               </div>
             </div>
           </div>
@@ -229,9 +236,19 @@ const Page: PageComponent = async props => {
             <div className="col-12 col-lg-10 text-center">
               <h2 className="mb-4">40+ Years of Educational Excellence</h2>
               <p className="lead mb-4 mx-auto" style={{ maxWidth: '650px' }}>QC has been helping students prepare for rewarding careers through flexible online learning for more than four decades.</p>
-              <p className={`fw-bold ${styles.excellenceTrustLine}`}>BBB ACCREDITED | 14-DAY MONEY-BACK GUARANTEE | EXPERT-BACKED PROGRAMS</p>
-              <div>
-                <Image src={BBB} alt="BBB Accredited" width={40} height={40} />
+              <div className={`d-flex flex-row justify-content-center align-items-center gap-4 gap-md-5 fw-bold ${styles.excellenceTrustLine}`}>
+                <div className="d-flex flex-column align-items-center gap-2">
+                  <Image src={BBB} alt="BBB Accredited" width={40} height={40} />
+                  <span>BBB ACCREDITED</span>
+                </div>
+                <div className="d-flex flex-column align-items-center gap-2">
+                  <Image src={Guarantee} alt="14-day money-back guarantee" width={40} height={40} />
+                  <span>14-DAY MONEY-BACK GUARANTEE</span>
+                </div>
+                <div className="d-flex flex-column align-items-center gap-2">
+                  <Image src={Person} alt="Expert-backed programs" width={40} height={40} />
+                  <span>EXPERT-BACKED PROGRAMS</span>
+                </div>
               </div>
             </div>
           </div>

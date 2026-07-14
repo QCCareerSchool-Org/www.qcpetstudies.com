@@ -12,6 +12,15 @@
   z-index: 1;
 }
 
+.card {
+  @media only screen and (max-width: 767.98px) {
+    --bs-card-spacer-y: 0;
+    --bs-card-spacer-x: 0;
+    --bs-card-border-width: 0;
+    --bs-card-box-shadow: none;
+  }
+}
+
 .heroLead {
   max-width: 38rem;
 }
@@ -101,7 +110,8 @@
 
 .stepRail {
   display: grid;
-  gap: 1.75rem;
+  grid-auto-rows: 1fr;
+  gap: 2.5rem;
   position: relative;
 }
 
@@ -127,8 +137,9 @@
 .stepCardInner {
   display: flex;
   align-items: center;
-  gap: 1.15rem;
+  gap: 1.2rem;
   padding: 1.35rem 1.45rem;
+  height: 100%;
 }
 
 .stepCardInner h3 {
@@ -179,6 +190,16 @@
 .sliderWrap {
   border-radius: 1.5rem;
   box-shadow: 10px 10px 25px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+}
+
+.sliderWrap :global(.react-multi-carousel-list) {
+  padding-bottom: 3rem;
+}
+
+.sliderWrap :global(.react-multi-carousel-dot-list) {
+  position: absolute;
+  bottom: 1rem;
 }
 
 @media (min-width: 992px) {

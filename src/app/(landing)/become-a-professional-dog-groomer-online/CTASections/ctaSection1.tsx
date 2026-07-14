@@ -3,7 +3,7 @@ import type { FC } from 'react';
 
 import BBB from '../bbb.svg';
 import styles from './cta.module.scss';
-import Guarantee from '../guarantee-section.svg';
+import Guarantee from '../guarantee.svg';
 
 export const CTASection1: FC = () => (
   <section className={styles.ctaBand}>
