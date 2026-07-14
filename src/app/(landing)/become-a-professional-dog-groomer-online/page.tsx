@@ -3,6 +3,8 @@ import { headers } from 'next/headers';
 import Image from 'next/image';
 
 import HeroImage from './hero-lrg.jpg';
+import DogCanYouLearnOnlineImage from './dog-can-you-learn-online.jpg';
+import FormBannerImage from './form-bg-option-1.png';
 import KitImage from './main-kit-white-bg.jpg';
 import PhoneCallIcon from './phone-call.svg';
 import styles from './page.module.scss';
@@ -87,26 +89,31 @@ const Page: PageComponent = async props => {
             </div>
             <div className="col-12 col-lg-5 offset-lg-1">
               <FormCard>
-                <div id="request-info" className="sectionAnchor" />
-                <h3 className="sectionLabel mb-3">Get Course Details</h3>
-                <BrevoForm
-                  successLocation={`${process.env.NEXT_PUBLIC_HOST ?? 'https://www.qcpetstudies.com'}/thank-you-dog-grooming-course-preview`}
-                  listId={brevoListId}
-                  telephoneListId={brevoTelephoneListId}
-                  gclid={gclid}
-                  msclkid={msclkid}
-                  utmSource={utmSource}
-                  utmMedium={utmMedium}
-                  utmCampaign={utmCampaign}
-                  utmContent={utmContent}
-                  utmTerm={utmTerm}
-                  courseCodes={courseCodes}
-                  placeholders={false}
-                  referrer={referrer}
-                  countryCode={countryCode}
-                  buttonText="Request Info"
-                  buttonClassName="btn btn-primary btn-lg"
-                />
+                <div className={styles.formBannerWrap}>
+                  <Image src={FormBannerImage} alt="" className={styles.formBannerImage} />
+                  <h3 className={styles.formBannerHeading}>Get Course Details</h3>
+                </div>
+                <div className={styles.formBody}>
+                  <div id="request-info" className="sectionAnchor" />
+                  <BrevoForm
+                    successLocation={`${process.env.NEXT_PUBLIC_HOST ?? 'https://www.qcpetstudies.com'}/thank-you-dog-grooming-course-preview`}
+                    listId={brevoListId}
+                    telephoneListId={brevoTelephoneListId}
+                    gclid={gclid}
+                    msclkid={msclkid}
+                    utmSource={utmSource}
+                    utmMedium={utmMedium}
+                    utmCampaign={utmCampaign}
+                    utmContent={utmContent}
+                    utmTerm={utmTerm}
+                    courseCodes={courseCodes}
+                    placeholders={false}
+                    referrer={referrer}
+                    countryCode={countryCode}
+                    buttonText="Request Info"
+                    buttonClassName="btn btn-primary btn-lg"
+                  />
+                </div>
               </FormCard>
             </div>
           </div>
@@ -246,7 +253,7 @@ const Page: PageComponent = async props => {
               <p className="lead mb-0">Learn online with support every step of the way.</p>
             </div>
           </div>
-          <div className="row align-items-center g-5">
+          <div className="row align-items-stretch g-5">
             <div className="col-12 col-lg-6">
               <div className={styles.stepRail}>
                 <div className={`card ${styles.stepCard}`}>
@@ -298,6 +305,9 @@ const Page: PageComponent = async props => {
                 <h3 className={styles.qnaAnswer}>Yes!</h3>
                 <p className={styles.qnaSubhead}>With the right training model</p>
                 <p className={styles.qnaBody}>QC Pet Studies combines online education with hands-on practice and personalized instructor feedback. You don&apos;t just watch lessons-you complete assignments that are reviewed by a professional groomer who guides your progress step by step. This ensures you build real, practical grooming skills from home.</p>
+                <div className={styles.qnaImageWrap}>
+                  <Image src={DogCanYouLearnOnlineImage} alt="" className={styles.qnaImage} />
+                </div>
               </div>
             </div>
           </div>

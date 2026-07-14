@@ -81,6 +81,35 @@
   list-style: none;
 }
 
+.formBannerWrap {
+  position: relative;
+  margin: 0;
+  overflow: hidden;
+  border-top-left-radius: 1.5rem;
+  border-top-right-radius: 1.5rem;
+}
+
+.formBannerImage {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.formBannerHeading {
+  position: absolute;
+  left: 1.9rem;
+  bottom: 2.35rem;
+  margin: 0;
+  color: #fff;
+  font-size: clamp(1.4rem, 2vw, 1.9rem);
+  font-weight: 400;
+  line-height: 1.1;
+}
+
+.formBody {
+  padding: 1.5rem 1.9rem 1.9rem;
+}
+
 .checkItem {
   display: flex;
   align-items: center;
@@ -438,7 +467,7 @@
   width: 2.95rem;
   height: 2.95rem;
   border-radius: 999px;
-  background: var(--qc-color-primary);
+  background: #ff2d5c;
   color: white;
   font-weight: 700;
   flex: 0 0 auto;
@@ -446,7 +475,7 @@
 
 .stepRail {
   display: grid;
-  gap: 1.75rem;
+  gap: 1.45rem;
   position: relative;
 }
 
@@ -454,8 +483,8 @@
   content: '';
   position: absolute;
   left: 1.475rem;
-  top: 1.7rem;
-  bottom: 1.7rem;
+  top: 1.45rem;
+  bottom: 1.45rem;
   width: 2px;
   background: rgba(15, 29, 51, 0.08);
 }
@@ -473,7 +502,7 @@
   display: flex;
   align-items: center;
   gap: 1.15rem;
-  padding: 1.35rem 1.45rem;
+  padding: 1.2rem 1.35rem;
 }
 
 .stepCardInner h3 {
@@ -493,8 +522,12 @@
   background: white;
   border-radius: 2.25rem;
   box-shadow: 0 1.1rem 1.9rem rgba(15, 29, 51, 0.14);
-  padding: 3.2rem 2.2rem 2.9rem;
+  padding: 3.2rem 2.2rem 0;
   text-align: center;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
 .qnaQuotes {
@@ -530,6 +563,21 @@
   font-size: 1rem;
   line-height: 1.48;
   color: #4d4d57;
+  padding-bottom: 0.4rem;
+}
+
+.qnaImageWrap {
+  display: flex;
+  justify-content: center;
+  margin-top: auto;
+}
+
+.qnaImage {
+  width: min(100%, 25rem);
+  height: auto;
+  object-fit: contain;
+  transform: translateY(1.25rem) scale(1.16);
+  transform-origin: center bottom;
 }
 
 .priceCard {
