@@ -201,7 +201,7 @@ const Page: PageComponent = async props => {
           </div>
           <div className="row align-items-stretch g-5">
             <div className="col-12 col-lg-6">
-              <div className={styles.stepRail}>
+              <div className={`gap-5 ${styles.stepRail}`}>
                 {steps.map(({ number, title, description }) => (
                   <div className={`card ${styles.stepCard}`} key={number}>
                     <div className={styles.stepCardInner}>
@@ -221,7 +221,7 @@ const Page: PageComponent = async props => {
                 <h2 className={`${styles.qnaAnswer} mb-3 fw-bold`}>Yes!</h2>
                 <p className="fw-bold">With the right training model</p>
                 <p className={styles.qnaBody}>QC Pet Studies combines online education with hands-on practice and personalized instructor feedback. You don&apos;t just watch lessons-you complete assignments that are reviewed by a professional groomer who guides your progress step by step. This ensures you build real, practical grooming skills from home.</p>
-                <Image src={DogImage} alt="" className="img-fluid" />
+                <Image src={DogImage} alt="" className="img-fluid d-block mx-auto" />
               </div>
             </div>
           </div>
@@ -240,15 +240,15 @@ const Page: PageComponent = async props => {
               <div className={`d-flex flex-row justify-content-center align-items-center gap-4 gap-md-5 fw-bold ${styles.excellenceTrustLine}`}>
                 <div className="d-flex flex-column align-items-center gap-2">
                   <Image src={BBB} alt="BBB Accredited" width={40} height={40} />
-                  <span>BBB ACCREDITED</span>
+                  <span className={styles.goldText}>BBB ACCREDITED</span>
                 </div>
                 <div className="d-flex flex-column align-items-center gap-2">
                   <Image src={Guarantee} alt="14-day money-back guarantee" width={40} height={40} />
-                  <span>14-DAY MONEY-BACK GUARANTEE</span>
+                  <span className={styles.goldText}>14-DAY MONEY-BACK GUARANTEE</span>
                 </div>
                 <div className="d-flex flex-column align-items-center gap-2">
                   <Image src={Person} alt="Expert-backed programs" width={40} height={40} />
-                  <span>EXPERT-BACKED PROGRAMS</span>
+                  <span className={styles.goldText}>EXPERT-BACKED PROGRAMS</span>
                 </div>
               </div>
             </div>

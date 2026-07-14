@@ -125,6 +125,10 @@
   margin-bottom: 2rem;
 }
 
+.goldText {
+  color: var(--qc-color-gold);
+}
+
 .excellenceSeal {
   display: flex;
   justify-content: center;
@@ -323,7 +327,7 @@
   width: 2.95rem;
   height: 2.95rem;
   border-radius: 999px;
-  background: var(--qc-color-primary);
+  background: var(--bs-primary);
   color: white;
   font-weight: 700;
   flex: 0 0 auto;
@@ -332,7 +336,7 @@
 .stepRail {
   display: grid;
   grid-auto-rows: 1fr;
-  gap: 2.5rem;
+  height: 100%;
   position: relative;
 }
 
