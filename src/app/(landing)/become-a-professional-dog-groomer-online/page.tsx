@@ -68,14 +68,15 @@ const Page: PageComponent = async props => {
               FLEXIBLE ONLINE LEARNING WITH HANDS-ON GROOMING PRACTICE
             </div>
             <div>
-              CALL NOW: 1-833-600-3751
+              <a href="#request-info" className="btn btn-primary">REQUEST INFO</a>
             </div>
           </div>
         </div>
       </div>
 
       <section className={styles.hero}>
-        <BackgroundImage src={HeroImage} priority />
+        <BackgroundImage src={HeroImage} priority className={styles.heroImage} />
+        <div className={styles.heroOverlay} aria-hidden="true" />
         <div className={`container ${styles.heroInner}`}>
           <div className="row align-items-center g-5">
             <div className="col-12 col-lg-6">
@@ -198,7 +199,7 @@ const Page: PageComponent = async props => {
               <p className="lead mb-0">Learn online with support every step of the way.</p>
             </div>
           </div>
-          <div className="row justify-content-center g-5">
+          <div className="row align-items-stretch g-5">
             <div className="col-12 col-lg-6">
               <div className={styles.stepRail}>
                 {steps.map(({ number, title, description }) => (
