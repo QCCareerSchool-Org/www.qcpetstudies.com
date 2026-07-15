@@ -446,13 +446,15 @@
   bottom: 1rem;
 }
 
-.sliderWrap :global(.container) > div {
-  padding-left: 1%;
-  padding-right: 7%;
-}
+@media (min-width: 768px) {
+  .sliderWrap :global(.container) > div {
+    padding-left: 1%;
+    padding-right: 7%;
+  }
 
-.sliderWrap :global(.container) > div > div:first-child {
-  justify-content: flex-start;
+  .sliderWrap :global(.container) > div > div:first-child {
+    justify-content: flex-start;
+  }
 }
 
 @media (min-width: 992px) {

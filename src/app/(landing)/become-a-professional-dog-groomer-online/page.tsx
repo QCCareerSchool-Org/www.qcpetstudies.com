@@ -97,7 +97,7 @@ const Page: PageComponent = async props => {
                   <BackgroundImage src={FormBgImage} />
                   <span className="position-relative">Get Course Details</span>
                 </h3>
-                <div className="card-body">
+                <div className="card-body p-4">
                   <div id="request-info" />
                   <BrevoForm
                     successLocation={`${process.env.NEXT_PUBLIC_HOST ?? 'https://www.qcpetstudies.com'}/thank-you-dog-grooming-course-preview`}
@@ -135,8 +135,8 @@ const Page: PageComponent = async props => {
           <div className="row g-5 align-items-center">
             <div className="col-12 col-lg-6">
               <div>
-                <h3>Where Our Graduates Work Today</h3>
-                <p style={{ fontSize: '1.15rem' }}>QC graduates are building careers in a variety of roles, including:</p>
+                <h3 className="text-center text-lg-start">Where Our Graduates Work Today</h3>
+                <p className="text-center text-lg-start" style={{ fontSize: '1.15rem' }}>QC graduates are building careers in a variety of roles, including:</p>
                 <ul style={{ fontSize: '1.15rem' }}>
                   <li>Professional dog groomers in established salons</li>
                   <li>Mobile grooming business owners</li>
@@ -145,7 +145,7 @@ const Page: PageComponent = async props => {
                 </ul>
               </div>
             </div>
-            <div className="col-12 col-lg-6 p-0 d-flex justify-content-center pe-3">
+            <div className="col-10 col-lg-6 mx-auto mx-lg-0 p-2 p-lg-0 d-flex justify-content-center align-items-center pe-lg-3">
               <div className={styles.sliderWrap}>
                 <TestimonialCarousel testimonialIds={testimonialIds} coursePriority="dg" />
               </div>
@@ -167,10 +167,10 @@ const Page: PageComponent = async props => {
 
           <div className="row g-4 justify-content-center">
             {whyCards.map(card => (
-              <div className="col-12 col-md-6 col-xl-4" key={card.title}>
+              <div className="col-12 col-md-6 col-xl-4 text-center text-lg-start" key={card.title}>
                 <div className={styles.whyCard}>
                   <div className="card-body p-4 p-lg-5">
-                    <Image src={card.icon} alt="" width={40} height={40} className="mb-3" />
+                    <Image src={card.icon} alt="" width={40} height={40} className="mb-3 text-center text-lg-start" />
                     <h3>{card.title}</h3>
                     <p>{card.description}</p>
                   </div>
