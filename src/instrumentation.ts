@@ -11,7 +11,7 @@ const expectedVariables = [
   'NEXT_PUBLIC_FACEBOOK_ID',
   'FACEBOOK_ACCESS_TOKEN',
   // Tiktok
-  'TIKTOK_ID',
+  // 'TIKTOK_ID',
   // Microsoft Ads
   'BING_ID',
   // ActiveCampaign
