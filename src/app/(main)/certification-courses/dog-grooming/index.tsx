@@ -164,7 +164,9 @@ export const DogGroomingBase: FC<Props> = ({ countryCode, provinceCode, dgPrice,
         </div>
       </section>
 
-      <TutorSectionDG className="bg-light" />
+      <div id="expertmentors">
+        <TutorSectionDG className="bg-light" />
+      </div>
 
       <VirtualCommunitySection />
 

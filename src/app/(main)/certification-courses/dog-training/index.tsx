@@ -102,7 +102,9 @@ export const DogTrainingBase: FC<Props> = ({ enrollPath, courseCodes, dtPrice, d
     <div id="outline" className="sectionAnchor" />
     <CourseOutlineSection className="bg-light" />
     <KimSection />
-    <TutorSectionDT className="bg-lighter" />
+    <div id="expertmentors">
+      <TutorSectionDT className="bg-lighter" />
+    </div>
 
     <GuaranteeSection className="bg-light" />
     {countryCode === 'CA' && provinceCode === 'ON' && <OntarioOnlySection />}
