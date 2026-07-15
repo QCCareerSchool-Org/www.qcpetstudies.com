@@ -384,7 +384,7 @@
   background: white;
   border-radius: 2.25rem;
   box-shadow: 0 1.1rem 1.9rem rgba(15, 29, 51, 0.14);
-  padding: 3.2rem 2.2rem 2.9rem;
+  padding: 3.2rem 2.2rem 0;
   text-align: center;
   overflow: hidden;
   display: flex;
@@ -444,6 +444,15 @@
 .sliderWrap :global(.react-multi-carousel-dot-list) {
   position: absolute;
   bottom: 1rem;
+}
+
+.sliderWrap :global(.container) > div {
+  padding-left: 1%;
+  padding-right: 7%;
+}
+
+.sliderWrap :global(.container) > div > div:first-child {
+  justify-content: flex-start;
 }
 
 @media (min-width: 992px) {

@@ -17,11 +17,11 @@ export const CTASection1: FC = () => (
           </div>
           <div className="d-flex justify-content-center gap-4 flex-wrap">
             <div className="d-flex flex-column align-items-center gap-3">
-              <Image src={BBB} alt="BBB Accredited" width={100} height={100} />
+              <Image src={BBB} alt="BBB Accredited" width={50} height={50} />
               <div className="fw-bold">BBB ACCREDITED</div>
             </div>
             <div className="d-flex flex-column align-items-center gap-3">
-              <Image src={Guarantee} alt="14-Day Guarantee" width={100} height={100} />
+              <Image src={Guarantee} alt="14-Day Guarantee" width={50} height={50} />
               <div className="fw-bold">14-DAY GUARANTEE</div>
             </div>
           </div>

@@ -145,7 +145,7 @@ const Page: PageComponent = async props => {
                 </ul>
               </div>
             </div>
-            <div className="col-12 col-lg-6 p-0">
+            <div className="col-12 col-lg-6 p-0 d-flex justify-content-center pe-3">
               <div className={styles.sliderWrap}>
                 <TestimonialCarousel testimonialIds={testimonialIds} coursePriority="dg" />
               </div>
@@ -170,7 +170,7 @@ const Page: PageComponent = async props => {
               <div className="col-12 col-md-6 col-xl-4" key={card.title}>
                 <div className={styles.whyCard}>
                   <div className="card-body p-4 p-lg-5">
-                    <Image src={card.icon} alt="" width={40} height={40} />
+                    <Image src={card.icon} alt="" width={40} height={40} className="mb-3" />
                     <h3>{card.title}</h3>
                     <p>{card.description}</p>
                   </div>
@@ -221,7 +221,9 @@ const Page: PageComponent = async props => {
                 <h2 className={`${styles.qnaAnswer} mb-3 fw-bold`}>Yes!</h2>
                 <p className="fw-bold">With the right training model</p>
                 <p className={styles.qnaBody}>QC Pet Studies combines online education with hands-on practice and personalized instructor feedback. You don&apos;t just watch lessons-you complete assignments that are reviewed by a professional groomer who guides your progress step by step. This ensures you build real, practical grooming skills from home.</p>
-                <Image src={DogImage} alt="" className="img-fluid d-block mx-auto" />
+                <div className={styles.qnaImageWrap}>
+                  <Image src={DogImage} alt="" className={styles.qnaImage} />
+                </div>
               </div>
             </div>
           </div>
@@ -239,12 +241,12 @@ const Page: PageComponent = async props => {
               <p className="lead mb-4 mx-auto" style={{ maxWidth: '650px' }}>QC has been helping students prepare for rewarding careers through flexible online learning for more than four decades.</p>
               <div className={`d-flex flex-row justify-content-center align-items-center gap-4 gap-md-5 fw-bold ${styles.excellenceTrustLine}`}>
                 <div className="d-flex flex-column align-items-center gap-2">
-                  <Image src={BBB} alt="BBB Accredited" width={40} height={40} />
-                  <span className={styles.goldText}>BBB ACCREDITED</span>
-                </div>
-                <div className="d-flex flex-column align-items-center gap-2">
                   <Image src={Guarantee} alt="14-day money-back guarantee" width={40} height={40} />
                   <span className={styles.goldText}>14-DAY MONEY-BACK GUARANTEE</span>
+                </div>
+                <div className="d-flex flex-column align-items-center gap-2">
+                  <Image src={BBB} alt="BBB Accredited" width={40} height={40} />
+                  <span className={styles.goldText}>BBB ACCREDITED</span>
                 </div>
                 <div className="d-flex flex-column align-items-center gap-2">
                   <Image src={Person} alt="Expert-backed programs" width={40} height={40} />
