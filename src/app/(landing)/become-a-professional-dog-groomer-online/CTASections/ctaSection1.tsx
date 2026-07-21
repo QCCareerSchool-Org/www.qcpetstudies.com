@@ -12,8 +12,7 @@ export const CTASection1: FC = () => (
         <div className="col-12 col-lg-10">
           <h2 className="text-white mb-3">Ready to Launch Your Career?</h2>
           <div className="d-flex justify-content-center gap-3 flex-wrap mb-4">
-            <a href="#request-info" className="btn btn-primary btn-lg">Start Now</a>
-            <a href="#why-qc" className="btn btn-outline-light btn-lg">Learn More</a>
+            <a href="#request-info" className="btn btn-primary btn-lg">Preview the Course</a>
           </div>
           <div className="d-flex justify-content-center gap-4 flex-wrap">
             <div className="d-flex flex-column align-items-center gap-3">

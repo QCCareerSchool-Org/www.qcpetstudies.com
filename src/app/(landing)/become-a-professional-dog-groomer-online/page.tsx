@@ -32,7 +32,7 @@ import type { PageComponent } from '@/serverComponent';
 
 export const metadata: Metadata = {
   title: 'Become a Professional Dog Groomer Online',
-  description: 'Turn your love of dogs into a career with affordable online dog grooming training from Master Groomers, hands-on practice, and a professional grooming kit included.',
+  description: 'Build a career you love with flexible online training from Master Groomers, a professional grooming kit to start practicing right away, and personalized instructor feedback that helps you build real-world grooming skills.',
   alternates: {
     canonical: '/become-a-professional-dog-groomer-online',
   },
@@ -82,8 +82,7 @@ const Page: PageComponent = async props => {
             <div className="col-12 col-lg-6">
               <h1 className="mb-4" style={{ color: '#fff' }}>Become a Professional Dog Groomer Online</h1>
               <p className={`lead mb-4 ${styles.heroLead}`}>
-                Turn your love of dogs into your new career with affordable training from Master Groomers,
-                hands-on grooming practice and a professional grooming kit included.
+                Build a career you love with flexible online training from Master Groomers, a professional grooming kit to start practicing right away, and personalized instructor feedback that helps you build real-world grooming skills.
               </p>
               <ul className={styles.checkList}>
                 <li className={styles.checkItem}><span className={styles.checkIcon}><Check color="#ff2d5c" /></span><span>Personalized feedback from professional groomers</span></li>
@@ -91,14 +90,14 @@ const Page: PageComponent = async props => {
                 <li className={styles.checkItem}><span className={styles.checkIcon}><Check color="#ff2d5c" /></span><span>Flexible study at your own pace</span></li>
               </ul>
             </div>
-            <div className="col-12 col-lg-5 offset-lg-1">
+            <div className="col-12 col-lg-5 offset-lg-1" id="request-info">
               <div className={`card bg-white border-0 ${styles.card}`}>
                 <h3 className="card-header bg-danger text-white px-4 pb-4 pt-5 mb-0 border-0 position-relative overflow-hidden">
                   <BackgroundImage src={FormBgImage} />
-                  <span className="position-relative">Get Course Details</span>
+                  <span className="position-relative">Request a Course Preview</span>
                 </h3>
                 <div className="card-body p-4">
-                  <div id="request-info" />
+                  <div />
                   <BrevoForm
                     successLocation={`${process.env.NEXT_PUBLIC_HOST ?? 'https://www.qcpetstudies.com'}/thank-you-dog-grooming-course-preview`}
                     listId={brevoListId}
@@ -114,7 +113,7 @@ const Page: PageComponent = async props => {
                     placeholders={false}
                     referrer={referrer}
                     countryCode={countryCode}
-                    buttonText="Request Info"
+                    buttonText="Get Course Details"
                     buttonClassName="btn btn-primary btn-lg"
                   />
                 </div>
@@ -129,7 +128,7 @@ const Page: PageComponent = async props => {
           <div className="row justify-content-center">
             <div className="col-12 col-lg-10 text-center">
               <h2>Career Paths After Graduation</h2>
-              <p style={{ fontSize: 'clamp(1.1rem, 2vw, 1.55rem)' }}>84% of QC Pet Studies students enroll to start a grooming business, work in a salon, or build on their existing skills.</p>
+              <p style={{ fontSize: 'clamp(1.1rem, 2vw, 1.55rem)' }}>84% of QC Pet Studies students are preparing to start a grooming business or launch a new career in professional dog grooming.</p>
             </div>
           </div>
           <div className="row g-5 align-items-center">
@@ -161,7 +160,9 @@ const Page: PageComponent = async props => {
           <div className="row justify-content-center mb-5">
             <div className="col-12 col-lg-9 text-center">
               <h2 className="mb-3">Why Future Dog Groomers Choose QC Pet Studies</h2>
-              <p className="lead mb-0">QC Pet Studies combines flexible online learning with personalized support, practical training, and career-focused education to help you graduate with the skills and confidence to succeed.</p>
+              <p className="lead mb-0">
+                QC Pet Studies combines flexible online learning with personalized support, practical training, and career-focused education to help you graduate with the skills and confidence to succeed.
+              </p>
             </div>
           </div>
 
@@ -217,12 +218,12 @@ const Page: PageComponent = async props => {
             </div>
             <div className="col-12 col-lg-5">
               <div className={styles.qnaCard}>
-                <h3 className="mb-3"><i>&ldquo;Can you learn dog grooming online?&rdquo;</i></h3>
+                <h3 className="mb-2"><i>&ldquo;Can you learn dog grooming online?&rdquo;</i></h3>
                 <h2 className={`${styles.qnaAnswer} mb-3 fw-bold`}>Yes!</h2>
                 <p className="fw-bold">With the right training model</p>
                 <p className={styles.qnaBody}>QC Pet Studies combines online education with hands-on practice and personalized instructor feedback. You don&apos;t just watch lessons-you complete assignments that are reviewed by a professional groomer who guides your progress step by step. This ensures you build real, practical grooming skills from home.</p>
                 <div className={styles.qnaImageWrap}>
-                  <Image src={DogImage} alt="" className={styles.qnaImage} />
+                  <Image src={DogImage} alt="" className={styles.qnaImage} height={150} />
                 </div>
               </div>
             </div>
@@ -271,29 +272,29 @@ const whyCards = [
     icon: GroomerIcon,
     title: 'Learn From Experienced Professional Groomers',
     description:
-      'Receive personalized feedback on every practical assignment from an experienced instructor who is invested in your success.',
+      'Build the skills and confidence you need to succeed with personalized feedback from an experienced instructor who helps you refine your technique and prepare for a career in professional grooming.',
   },
   {
     icon: GlobeIcon,
-    title: 'Optional In-Person Externship',
+    title: 'Gain Real-World Grooming Experience',
     description:
-      'Put your skills into practice alongside experienced professional groomers and gain valuable real-world experience in a grooming environment.',
+      'Build the skills and confidence you need to succeed with personalized feedback from an experienced instructor who helps you refine your technique and prepare for a career in professional grooming.',
   },
   {
     icon: BriefcaseIcon,
-    title: 'Be Prepared for More Than Grooming',
+    title: 'Build Professional Skills for a Successful Career',
     description:
-      'Build the business, communication, and client service skills that can help you succeed whether you work in a salon or start your own business.',
+      'Develop the professional skills needed to succeed in a salon or start your own business, with business training and ready-to-use resources to help you manage clients, create service packages, and grow your grooming career.',
   },
   {
     icon: FirstAidIcon,
-    title: 'Pet First Aid Training Included',
+    title: 'Be Prepared for Pet Emergencies',
     description:
-      'Learn how to recognize emergencies, respond appropriately, and help keep the pets in your care safe.',
+      'Learn to recognize emergencies, respond appropriately, and help keep the pets in your care safe with first aid training included for free with your enrollment.',
   },
   {
     icon: LaptopIcon,
-    title: 'Study Around Your Life',
+    title: 'Train for Your New Career on Your Schedule',
     description:
       'Study at your own pace, from anywhere, and fit your training around your work, family, and lifestyle.',
   },

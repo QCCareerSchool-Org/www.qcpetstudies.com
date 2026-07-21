@@ -29,7 +29,7 @@ export const TuitionSection: FC<Props> = ({ price }) => (
               <li>Certification</li>
               <li><strong>FREE</strong> grooming kit</li>
             </ul>
-            <a href="#request-info" className="btn btn-outline-light btn-lg">Course Details</a>
+            <a href="#request-info" className="btn btn-outline-light btn-lg">Get Full Course Details</a>
           </div>
         </div>
 
