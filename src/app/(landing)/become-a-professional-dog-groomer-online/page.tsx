@@ -25,13 +25,14 @@ import FirstAidIcon from '@/images/first-aid.svg';
 import GlobeIcon from '@/images/globe.svg';
 import LaptopIcon from '@/images/laptop.svg';
 import GroomerIcon from '@/images/person-check.svg';
+import { externship } from '@/lib/externship';
 import { fetchPrice } from '@/lib/fetchPrice';
 import { getParam } from '@/lib/getParam';
 import { getServerData } from '@/lib/getServerData';
 import type { PageComponent } from '@/serverComponent';
 
 export const metadata: Metadata = {
-  title: 'Become a Professional Dog Groomer Online',
+  title: 'Become a Professional Dog Groomer',
   description: 'Build a career you love with flexible online training from Master Groomers, a professional grooming kit to start practicing right away, and personalized instructor feedback that helps you build real-world grooming skills.',
   alternates: {
     canonical: '/become-a-professional-dog-groomer-online',
@@ -80,7 +81,7 @@ const Page: PageComponent = async props => {
         <div className={`container ${styles.heroInner}`}>
           <div className="row align-items-center g-5">
             <div className="col-12 col-lg-6">
-              <h1 className="mb-4" style={{ color: '#fff' }}>Become a Professional Dog Groomer Online</h1>
+              <h1 className="mb-4" style={{ color: '#fff' }}>Become a Professional Dog Groomer</h1>
               <p className={`lead mb-4 ${styles.heroLead}`}>
                 Build a career you love with flexible online training from Master Groomers, a professional grooming kit to start practicing right away, and personalized instructor feedback that helps you build real-world grooming skills.
               </p>
@@ -167,24 +168,26 @@ const Page: PageComponent = async props => {
           </div>
 
           <div className="row g-4 justify-content-center">
-            {whyCards.map(card => (
-              <div className="col-12 col-md-6 col-xl-4 text-center text-lg-start" key={card.title}>
-                <div className={styles.whyCard}>
-                  <div className="card-body p-4 p-lg-5">
-                    <Image src={card.icon} alt="" width={40} height={40} className="mb-3 text-center text-lg-start" />
-                    <h3>{card.title}</h3>
-                    <p>{card.description}</p>
+            {whyCards
+              .filter(card => card.id !== 'real-world-experience' || externship(countryCode, provinceCode))
+              .map(card => (
+                <div className="col-12 col-md-6 col-xl-4 text-center text-lg-start" key={card.title}>
+                  <div className={styles.whyCard}>
+                    <div className="card-body p-4 p-lg-5">
+                      <Image src={card.icon} alt="" width={40} height={40} className="mb-3 text-center text-lg-start" />
+                      <h3>{card.title}</h3>
+                      <p>{card.description}</p>
+                    </div>
                   </div>
                 </div>
-              </div>
-            ))}
+              ))}
           </div>
 
           <div className={`row justify-content-center align-items-center ${styles.kitSection}`}>
             <div className="col-12 col-lg-6 text-center">
               <h3>Everything You Need to Start Learning</h3>
               <p>
-                When you enroll, you&apos;ll receive a FREE professional grooming kit with the essential tools you&apos;ll use throughout your practical training, so you can start building your skills right away.
+                Start building your grooming skills right away with a FREE professional grooming kit and bonus reference guides designed to help you choose the right tools, understand different coat types, and provide consistent, professional-quality grooming services.
               </p>
               <Image src={KitImage} alt="Professional dog grooming kit" className={styles.kitImage} sizes="100vw" />
             </div>
@@ -275,10 +278,11 @@ const whyCards = [
       'Build the skills and confidence you need to succeed with personalized feedback from an experienced instructor who helps you refine your technique and prepare for a career in professional grooming.',
   },
   {
+    id: 'real-world-experience',
     icon: GlobeIcon,
     title: 'Gain Real-World Grooming Experience',
     description:
-      'Build the skills and confidence you need to succeed with personalized feedback from an experienced instructor who helps you refine your technique and prepare for a career in professional grooming.',
+      'Put your skills into practice with real dogs through hands-on assignments, or gain additional real-world experience working alongside professional groomers through the optional externship program.',
   },
   {
     icon: BriefcaseIcon,
