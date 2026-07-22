@@ -3,19 +3,21 @@ import type { FC, PropsWithChildren } from 'react';
 import { Footer } from './footer';
 import { Header } from './header';
 import { TaxCreditsModal } from '../taxCreditsModal';
-import { BrevoConversations } from '@/scripts/brevoConversations';
+import type { UserValues } from '@/domain/userValues';
+import { LiveChat } from '@/scripts/liveChat';
 
 interface Props {
   date: number;
   countryCode: string;
+  userValues?: UserValues;
 }
 
-export const SiteLayout: FC<PropsWithChildren<Props>> = ({ date, countryCode, children }) => (
+export const SiteLayout: FC<PropsWithChildren<Props>> = ({ date, countryCode, userValues, children }) => (
   <>
     <Header date={date} countryCode={countryCode} />
     <main className="flex-shrink-0">{children}</main>
     <Footer countryCode={countryCode} />
-    {process.env.BREVO_CONVERSATIONS_ID && process.env.BREVO_GROUP_ID && <BrevoConversations conversationsId={process.env.BREVO_CONVERSATIONS_ID} groupId={process.env.BREVO_GROUP_ID} />}
+    {process.env.LIVECHAT_LICENSE && <LiveChat group={process.env.LIVECHAT_GROUP_ID} license={process.env.LIVECHAT_LICENSE} userValues={userValues} />}
     <TaxCreditsModal />
   </>
 );
