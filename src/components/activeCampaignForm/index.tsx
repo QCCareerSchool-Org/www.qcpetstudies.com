@@ -165,7 +165,11 @@ export const ActiveCampaginForm: FC<Props> = props => {
         <div className="mb-3">
           <PhoneInput id={`${id}telephoneNumber`} value={telephoneNumber} onChange={handleTelephoneNumberChange} defaultCountry={props.countryCode as Country} inputComponent={InputComponent} />
           <input type="hidden" name="telephoneNumber" value={telephoneNumberE164} />
-          {telephoneNumberE164.length > 0 && <p className="p-1"><small>By providing your phone number, you agree to receive exclusive offers from QC Pet Studies. Message frequency varies. Message & data rates may apply. Reply STOP to opt out. <Link href="/terms" target="_blank" rel="noreferrer">Terms & Privacy</Link>.</small></p>}
+          {telephoneNumberE164.length > 0 && (
+            <label htmlFor={`${id}smsOptIn`} className="form-check-label small">
+              I agree to receive marketing text messages (e.g. promos) from QC Pet Studies. Message & data rates may apply. Consent is not a condition of purchase. Message frequency varies. Reply HELP for help. Unsubscribe at any time by replying STOP. <Link href="/terms" target="_blank">Terms & Privacy</Link>
+            </label>
+          )}
         </div>
       )}
       <div className="mb-3">
