@@ -166,7 +166,7 @@ export const ActiveCampaginForm: FC<Props> = props => {
           <PhoneInput id={`${id}telephoneNumber`} value={telephoneNumber} onChange={handleTelephoneNumberChange} defaultCountry={props.countryCode as Country} inputComponent={InputComponent} />
           <input type="hidden" name="telephoneNumber" value={telephoneNumberE164} />
           {telephoneNumberE164.length > 0 && (
-            <div className="mb-3">
+            <div className="my-3">
               <div className="form-check">
                 <input type="checkbox" name="smsOptIn" id={`${id}smsOptIn`} className="form-check-input" />
                 <label htmlFor={`${id}smsOptIn`} className="form-check-label small">
