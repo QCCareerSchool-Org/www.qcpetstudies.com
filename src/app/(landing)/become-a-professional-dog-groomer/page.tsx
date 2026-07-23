@@ -123,7 +123,7 @@ const Page: PageComponent = async props => {
 
       <section>
         <div className="container">
-          <div className="row justify-content-center">
+          <div className="row justify-content-center mb-4">
             <div className="col-12 col-lg-10 text-center">
               <h2>Career Paths After Graduation</h2>
               <p style={{ fontSize: 'clamp(1.1rem, 2vw, 1.55rem)' }}>84% of QC Pet Studies students are preparing to start a grooming business or launch a new career in professional dog grooming.</p>
