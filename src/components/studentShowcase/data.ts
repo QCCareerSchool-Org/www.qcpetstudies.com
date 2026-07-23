@@ -51,6 +51,7 @@ export const students: Record<string, Student> = {
     `,
     image: Images.NickiScott,
     stars: 5,
+    id: 'Nicki',
   },
   'kayla-macdonald': {
     name: 'Kayla MacDonald',
