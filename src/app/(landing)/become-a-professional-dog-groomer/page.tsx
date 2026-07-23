@@ -14,6 +14,7 @@ import KitImage from './main-kit-white-bg.jpg';
 import styles from './page.module.scss';
 import Person from './person-check.svg';
 import { TuitionSection } from './TuitionSection/tuitionSection';
+import { ActiveCampaginForm } from '@/components/activeCampaignForm';
 import { BackgroundImage } from '@/components/backgroundImage';
 import { BrevoForm } from '@/components/brevoForm';
 import { Check } from '@/components/check';
@@ -41,8 +42,6 @@ export const metadata: Metadata = {
 
 const courseCodes: CourseCode[] = [ 'dg' ];
 const testimonialIds: TestimonialId[] = [ 'TD-0004', 'TD-0005', 'TD-0007', 'TD-0008', 'TD-0009', 'TD-0010' ];
-const brevoListId = 31;
-const brevoTelephoneListId = 55;
 
 const Page: PageComponent = async props => {
   const { countryCode, provinceCode } = await getServerData(props.searchParams);
@@ -99,10 +98,10 @@ const Page: PageComponent = async props => {
                 </h3>
                 <div className="card-body p-4">
                   <div />
-                  <BrevoForm
+                  <ActiveCampaginForm
                     successLocation={`${process.env.NEXT_PUBLIC_HOST ?? 'https://www.qcpetstudies.com'}/thank-you-dog-grooming-course-preview`}
-                    listId={brevoListId}
-                    telephoneListId={brevoTelephoneListId}
+                    requiredIds={[ 55n ]}
+                    optionalIds={[ 2n ]}
                     gclid={gclid}
                     msclkid={msclkid}
                     utmSource={utmSource}
@@ -110,12 +109,10 @@ const Page: PageComponent = async props => {
                     utmCampaign={utmCampaign}
                     utmContent={utmContent}
                     utmTerm={utmTerm}
-                    courseCodes={courseCodes}
-                    placeholders={false}
+                    courseCodes={[ 'dg' ]}
+                    placeholders
                     referrer={referrer}
                     countryCode={countryCode}
-                    buttonText="Get Course Details"
-                    buttonClassName="btn btn-primary btn-lg"
                   />
                 </div>
               </div>
