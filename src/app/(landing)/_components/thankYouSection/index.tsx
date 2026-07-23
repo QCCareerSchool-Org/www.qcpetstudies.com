@@ -2,7 +2,6 @@
 
 import Lottie from 'lottie-react';
 import type { StaticImageData } from 'next/image';
-import Image from 'next/image';
 import type { FC } from 'react';
 
 import emailNotification from './Email Notification.json';
