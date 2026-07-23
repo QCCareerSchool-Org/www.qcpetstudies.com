@@ -22,7 +22,7 @@ interface ShowcaseProps {
 export const StudentShowcaseSection: FC<{ student: ShowcaseProps }> = ({ student }) => {
 
   return (
-    <div className="container">
+    <div className="container" id={student.id}>
       <div className="row justify-content-center g-s mb-5 mt-4">
         <div className="col-12 col-lg-6 h-100 mb-4 mb-md-0">
           <Image src={student.image} alt="" style={{ borderRadius: '30px' }} className="img-fluid rounded-lg" />
