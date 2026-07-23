@@ -10,7 +10,6 @@ import styles from './index.module.scss';
 import { BackgroundImage } from '@/components/backgroundImage';
 import { FormCard } from '@/components/formCard';
 import { FormWrapper } from '@/components/formWrapper';
-import DownloadIcon from '@/components/icons/download.svg';
 import { Squiggle } from '@/components/squiggle';
 
 interface Props {
@@ -20,10 +19,10 @@ interface Props {
   emailAddress?: string;
 }
 
-export const ThankYouSection: FC<Props> = ({ course, heroSrc, mobileHeroSrc, emailAddress }) => {
-  const downloadUrl = course === 'dt'
-    ? '/certification-courses/dog-training/course-preview'
-    : '/certification-courses/dog-grooming/course-preview';
+export const ThankYouSection: FC<Props> = ({ heroSrc, mobileHeroSrc, emailAddress }) => {
+  // const downloadUrl = course === 'dt'
+  //   ? '/certification-courses/dog-training/course-preview'
+  //   : '/certification-courses/dog-grooming/course-preview';
   const squiggleWidth = emailAddress ? `${Math.round(emailAddress.length * 0.5)}em` : 220;
 
   return (
@@ -38,12 +37,11 @@ export const ThankYouSection: FC<Props> = ({ course, heroSrc, mobileHeroSrc, ema
             <FormCard>
               <div style={{ margin: '0 0 1rem' }}>
                 <Lottie animationData={emailNotification} autoplay loop style={{ width: 300, height: 159, margin: '0 auto', paddingLeft: '4%' }} />
-                <h1 className="h4 mb-4 text-navy">Thank You! Your Catalog Is Below</h1>
+                <h1 className="h4 mb-4 text-navy">Thank You!</h1>
                 <FormWrapper>
-                  <p className={`lead ${styles.limitedTimeOffer} ${(emailAddress && emailAddress.length > 35) ? styles.long : ''}`}>We've sent a <strong className="text-primary">limited-time offer</strong> to <strong className="text-black">{emailAddress ?? 'your inbox'}</strong></p>
+                  <p className={`lead ${styles.limitedTimeOffer} ${(emailAddress && emailAddress.length > 35) ? styles.long : ''}`}>We've sent your catalog plus a <strong className="text-primary">limited-time offer</strong> to <strong className="text-black">{emailAddress ?? 'your inbox'}</strong></p>
                   <Squiggle variant="tapered" className="text-primary mb-4" style={{ margin: '0 2rem', maxWidth: squiggleWidth }} />
                   <p className="mb-4">Be sure to check your <strong>spam</strong> or <strong>promotions</strong> folder if you don't see it right away&mdash;you don't want to miss this!</p>
-                  <a href={downloadUrl}><button className="btn btn-primary"><Image src={DownloadIcon} height="16" style={{ position: 'relative', top: -2, marginRight: '0.5rem' }} alt="" /> View Catalog</button></a>
                 </FormWrapper>
               </div>
             </FormCard>
