@@ -3,11 +3,13 @@
 }
 
 .stars {
+  padding-top: 20px;
   margin-bottom: 2rem;
 }
 
 .quotation {
   font-size: 1.125rem;
+  font-weight: 400;
   margin-bottom: 2rem;
 }
 
