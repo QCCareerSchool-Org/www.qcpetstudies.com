@@ -41,17 +41,17 @@ export const TuitionSection: FC<Props> = ({ price }) => (
                 <div className={styles.tuitionPlanBody}>
                   <div className={styles.tuitionSavingsRow}>
                     <h3 className={styles.tuitionPlanLabel}>Pay In Full</h3>
-                    <span className={styles.tuitionBadge}>SAVE $400</span>
+                    <span className={styles.tuitionBadge}>SAVE {price ? `${price.currency.symbol}${formatPrice(price.plans.full.discount)}` : '$400'}</span>
                   </div>
                   <p className={styles.tuitionSmallLabel}>One Time Payment of</p>
-                  <div className={styles.tuitionStrikePrice}>{price ? `${price.currency.symbol}${formatPrice(price.plans.full.total + 400)}` : '$2498'}</div>
+                  <div className={styles.tuitionStrikePrice}>{price ? `${price.currency.symbol}${formatPrice(price.plans.full.total + price.plans.full.discount)}` : '$2498'}</div>
                   <div className={styles.tuitionPrice}>{price ? `${price.currency.symbol}${formatPrice(price.plans.full.total)}` : '$2098'}</div>
                 </div>
                 <div className={styles.tuitionDivider} />
                 <div className={styles.tuitionPlanBody}>
                   <h3 className={styles.tuitionPlanLabel}>Installment Plan</h3>
-                  <p className={styles.tuitionInstallmentLead}>Start with a deposit of $99</p>
-                  <p className={styles.tuitionInstallmentText}>+ 18 Monthly Payments of $133.27</p>
+                  <p className={styles.tuitionInstallmentLead}>Start with a deposit of {price ? `${price.currency.symbol}${formatPrice(price.plans.part.deposit)}` : '$99'}</p>
+                  <p className={styles.tuitionInstallmentText}>+ {price ? price.plans.part.installments : 18} Monthly Payments of {price ? `${price.currency.symbol}${formatPrice(price.plans.part.installmentSize)}` : '$133.27'}</p>
                   <div className={styles.tuitionPrice}>{price ? `${price.currency.symbol}${formatPrice(price.plans.part.total)}` : '$2498'}</div>
                 </div>
               </div>
@@ -62,17 +62,17 @@ export const TuitionSection: FC<Props> = ({ price }) => (
                 <div className={styles.tuitionPlanBody}>
                   <div className={styles.tuitionSavingsRow}>
                     <h3 className={styles.tuitionPlanLabel}>Pay In Full</h3>
-                    <span className={styles.tuitionBadge}>SAVE $200</span>
+                    <span className={styles.tuitionBadge}>SAVE {price ? `${price.currency.symbol}${formatPrice(price.plans.full.discount)}` : '$200'}</span>
                   </div>
                   <p className={styles.tuitionSmallLabel}>One Time Payment of</p>
-                  <div className={styles.tuitionStrikePrice}>{price ? `${price.currency.symbol}${formatPrice(price.plans.full.total + 200)}` : '$3648'}</div>
+                  <div className={styles.tuitionStrikePrice}>{price ? `${price.currency.symbol}${formatPrice(price.plans.full.total + price.plans.full.discount)}` : '$3648'}</div>
                   <div className={styles.tuitionPrice}>{price ? `${price.currency.symbol}${formatPrice(price.plans.full.total)}` : '$3448'}</div>
                 </div>
                 <div className={styles.tuitionDivider} />
                 <div className={styles.tuitionPlanBody}>
                   <h3 className={styles.tuitionPlanLabel}>Installment Plan</h3>
-                  <p className={styles.tuitionInstallmentLead}>Start with a deposit of $99</p>
-                  <p className={styles.tuitionInstallmentText}>+ 18 Monthly Payments of $197.16</p>
+                  <p className={styles.tuitionInstallmentLead}>Start with a deposit of {price ? `${price.currency.symbol}${formatPrice(price.plans.part.deposit)}` : '$99'}</p>
+                  <p className={styles.tuitionInstallmentText}>+ {price ? price.plans.part.installments : 18} Monthly Payments of {price ? `${price.currency.symbol}${formatPrice(price.plans.part.installmentSize)}` : '$197.16'}</p>
                   <div className={styles.tuitionPrice}>{price ? `${price.currency.symbol}${formatPrice(price.plans.part.total)}` : '$3648'}</div>
                 </div>
               </div>
