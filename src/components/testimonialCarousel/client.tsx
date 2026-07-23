@@ -6,7 +6,7 @@ import type { FC, PropsWithChildren } from 'react';
 import type { ResponsiveType } from 'react-multi-carousel';
 import Carousel from 'react-multi-carousel';
 
-import { useScreenSizeContext } from '@/hooks/useScreenSizeContext';
+import styles from './client.module.scss';
 
 const responsive: ResponsiveType = {
   all: {
@@ -16,11 +16,22 @@ const responsive: ResponsiveType = {
 };
 
 export const TestimonialCarouselClient: FC<PropsWithChildren> = ({ children }) => {
-  const { gte } = useScreenSizeContext();
-
   return (
-    <div style={{ minHeight: 360 }}>
-      <Carousel ssr responsive={responsive} partialVisible infinite showDots={gte('md')}>
+    <div className={styles.carouselShell}>
+      <Carousel
+        ssr
+        responsive={responsive}
+        partialVisible
+        infinite
+        showDots
+        arrows={false}
+        autoPlay
+        autoPlaySpeed={4000}
+        pauseOnHover={false}
+        transitionDuration={500}
+        containerClass={styles.carouselContainer}
+        dotListClass={styles.dotList}
+      >
         {children}
       </Carousel>
     </div>

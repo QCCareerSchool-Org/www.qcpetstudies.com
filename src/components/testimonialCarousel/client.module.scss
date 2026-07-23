@@ -1,0 +1,21 @@
+.carouselShell {
+  min-height: 360px;
+}
+
+.carouselContainer {
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+}
+
+.dotList {
+  position: initial;
+}
+
+.dotList :global(.react-multi-carousel-dot button) {
+  border: 0;
+  background-color: #6aa7ff;
+}
+
+.dotList :global(.react-multi-carousel-dot--active button) {
+  background-color: #0b5ed7;
+}
