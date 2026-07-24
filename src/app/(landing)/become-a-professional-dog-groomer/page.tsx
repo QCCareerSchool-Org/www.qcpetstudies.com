@@ -16,11 +16,9 @@ import Person from './person-check.svg';
 import { TuitionSection } from './TuitionSection/tuitionSection';
 import { ActiveCampaginForm } from '@/components/activeCampaignForm';
 import { BackgroundImage } from '@/components/backgroundImage';
-import { BrevoForm } from '@/components/brevoForm';
 import { Check } from '@/components/check';
 import type { TestimonialId } from '@/components/testimonial/data';
 import { TestimonialCarousel } from '@/components/testimonialCarousel';
-import type { CourseCode } from '@/domain/courseCode';
 import BriefcaseIcon from '@/images/briefcase.svg';
 import FirstAidIcon from '@/images/first-aid.svg';
 import GlobeIcon from '@/images/globe.svg';
@@ -40,7 +38,6 @@ export const metadata: Metadata = {
   },
 };
 
-const courseCodes: CourseCode[] = [ 'dg' ];
 const testimonialIds: TestimonialId[] = [ 'TD-0004', 'TD-0005', 'TD-0007', 'TD-0008', 'TD-0009', 'TD-0010' ];
 
 const Page: PageComponent = async props => {
