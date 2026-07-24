@@ -57,8 +57,12 @@ const Page: PageComponent = async props => {
   const headerList = await headers();
   const referrer = headerList.get('referer');
 
-  const priceResult = await fetchPrice(courseCodes, countryCode, provinceCode, undefined, undefined, process.env.FIREWALL_BYPASS_SECRET);
-  const price = priceResult.success ? priceResult.value : undefined;
+  const [ dgPriceResult, dePriceResult ] = await Promise.all([
+    fetchPrice([ 'dg' ], countryCode, provinceCode, undefined, undefined, process.env.FIREWALL_BYPASS_SECRET),
+    fetchPrice([ 'de' ], countryCode, provinceCode, undefined, undefined, process.env.FIREWALL_BYPASS_SECRET),
+  ]);
+  const dgPrice = dgPriceResult.success ? dgPriceResult.value : undefined;
+  const dePrice = dePriceResult.success ? dePriceResult.value : undefined;
 
   return (
     <div>
@@ -235,7 +239,7 @@ const Page: PageComponent = async props => {
       </section>
 
       <CTASection2 />
-      <TuitionSection price={price} />
+      {dgPrice && dePrice && <TuitionSection dgPrice={dgPrice} dePrice={dePrice} />}
 
       <section>
         <div className="container text-center">
