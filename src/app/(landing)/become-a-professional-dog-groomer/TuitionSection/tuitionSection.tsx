@@ -1,13 +1,15 @@
 import type { FC } from 'react';
 
+import { Breakdown } from './breakdown';
 import styles from './tuition.module.scss';
 import type { Price } from '@/domain/price';
-import { formatPrice } from '@/lib/formatPrice';
 
 interface Props {
-  price: Price | undefined;
+  dgPrice: Price;
+  dePrice: Price;
 }
-export const TuitionSection: FC<Props> = ({ price }) => (
+
+export const TuitionSection: FC<Props> = ({ dgPrice, dePrice }) => (
   <section id="tuition" className={styles.tuitionSection}>
     <div className="container">
       <div className="row justify-content-center mb-5">
@@ -38,43 +40,13 @@ export const TuitionSection: FC<Props> = ({ price }) => (
             <div className="col-12 col-lg-6">
               <div className={styles.tuitionPlanCard}>
                 <div className={styles.tuitionPlanHeader}>GROOMING ONLINE</div>
-                <div className={styles.tuitionPlanBody}>
-                  <div className={styles.tuitionSavingsRow}>
-                    <h3 className={styles.tuitionPlanLabel}>Pay In Full</h3>
-                    <span className={styles.tuitionBadge}>SAVE $400</span>
-                  </div>
-                  <p className={styles.tuitionSmallLabel}>One Time Payment of</p>
-                  <div className={styles.tuitionStrikePrice}>{price ? `${price.currency.symbol}${formatPrice(price.plans.full.total + 400)}` : '$2498'}</div>
-                  <div className={styles.tuitionPrice}>{price ? `${price.currency.symbol}${formatPrice(price.plans.full.total)}` : '$2098'}</div>
-                </div>
-                <div className={styles.tuitionDivider} />
-                <div className={styles.tuitionPlanBody}>
-                  <h3 className={styles.tuitionPlanLabel}>Installment Plan</h3>
-                  <p className={styles.tuitionInstallmentLead}>Start with a deposit of $99</p>
-                  <p className={styles.tuitionInstallmentText}>+ 18 Monthly Payments of $133.27</p>
-                  <div className={styles.tuitionPrice}>{price ? `${price.currency.symbol}${formatPrice(price.plans.part.total)}` : '$2498'}</div>
-                </div>
+                <Breakdown price={dgPrice} />
               </div>
             </div>
             <div className="col-12 col-lg-6">
               <div className={styles.tuitionPlanCard}>
                 <div className={styles.tuitionPlanHeader}>EXTERNSHIP TRACK</div>
-                <div className={styles.tuitionPlanBody}>
-                  <div className={styles.tuitionSavingsRow}>
-                    <h3 className={styles.tuitionPlanLabel}>Pay In Full</h3>
-                    <span className={styles.tuitionBadge}>SAVE $200</span>
-                  </div>
-                  <p className={styles.tuitionSmallLabel}>One Time Payment of</p>
-                  <div className={styles.tuitionStrikePrice}>{price ? `${price.currency.symbol}${formatPrice(price.plans.full.total + 200)}` : '$3648'}</div>
-                  <div className={styles.tuitionPrice}>{price ? `${price.currency.symbol}${formatPrice(price.plans.full.total)}` : '$3448'}</div>
-                </div>
-                <div className={styles.tuitionDivider} />
-                <div className={styles.tuitionPlanBody}>
-                  <h3 className={styles.tuitionPlanLabel}>Installment Plan</h3>
-                  <p className={styles.tuitionInstallmentLead}>Start with a deposit of $99</p>
-                  <p className={styles.tuitionInstallmentText}>+ 18 Monthly Payments of $197.16</p>
-                  <div className={styles.tuitionPrice}>{price ? `${price.currency.symbol}${formatPrice(price.plans.part.total)}` : '$3648'}</div>
-                </div>
+                <Breakdown price={dePrice} />
               </div>
             </div>
           </div>

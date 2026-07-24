@@ -16,11 +16,9 @@ import Person from './person-check.svg';
 import { TuitionSection } from './TuitionSection/tuitionSection';
 import { ActiveCampaginForm } from '@/components/activeCampaignForm';
 import { BackgroundImage } from '@/components/backgroundImage';
-import { BrevoForm } from '@/components/brevoForm';
 import { Check } from '@/components/check';
 import type { TestimonialId } from '@/components/testimonial/data';
 import { TestimonialCarousel } from '@/components/testimonialCarousel';
-import type { CourseCode } from '@/domain/courseCode';
 import BriefcaseIcon from '@/images/briefcase.svg';
 import FirstAidIcon from '@/images/first-aid.svg';
 import GlobeIcon from '@/images/globe.svg';
@@ -40,7 +38,6 @@ export const metadata: Metadata = {
   },
 };
 
-const courseCodes: CourseCode[] = [ 'dg' ];
 const testimonialIds: TestimonialId[] = [ 'TD-0004', 'TD-0005', 'TD-0007', 'TD-0008', 'TD-0009', 'TD-0010' ];
 
 const Page: PageComponent = async props => {
@@ -56,8 +53,12 @@ const Page: PageComponent = async props => {
   const headerList = await headers();
   const referrer = headerList.get('referer');
 
-  const priceResult = await fetchPrice(courseCodes, countryCode, provinceCode, undefined, undefined, process.env.FIREWALL_BYPASS_SECRET);
-  const price = priceResult.success ? priceResult.value : undefined;
+  const [ dgPriceResult, dePriceResult ] = await Promise.all([
+    fetchPrice([ 'dg' ], countryCode, provinceCode, undefined, undefined, process.env.FIREWALL_BYPASS_SECRET),
+    fetchPrice([ 'de' ], countryCode, provinceCode, undefined, undefined, process.env.FIREWALL_BYPASS_SECRET),
+  ]);
+  const dgPrice = dgPriceResult.success ? dgPriceResult.value : undefined;
+  const dePrice = dePriceResult.success ? dePriceResult.value : undefined;
 
   return (
     <div>
@@ -123,7 +124,7 @@ const Page: PageComponent = async props => {
 
       <section>
         <div className="container">
-          <div className="row justify-content-center">
+          <div className="row justify-content-center mb-4">
             <div className="col-12 col-lg-10 text-center">
               <h2>Career Paths After Graduation</h2>
               <p style={{ fontSize: 'clamp(1.1rem, 2vw, 1.55rem)' }}>84% of QC Pet Studies students are preparing to start a grooming business or launch a new career in professional dog grooming.</p>
@@ -232,7 +233,7 @@ const Page: PageComponent = async props => {
       </section>
 
       <CTASection2 />
-      <TuitionSection price={price} />
+      {dgPrice && dePrice && <TuitionSection dgPrice={dgPrice} dePrice={dePrice} />}
 
       <section>
         <div className="container text-center">
