@@ -13,7 +13,7 @@ export const Breakdown: FC<Props> = ({ price }) => (
     <div className={styles.tuitionPlanBody}>
       <div className={styles.tuitionSavingsRow}>
         <h3 className={styles.tuitionPlanLabel}>Pay In Full</h3>
-        <span className={styles.tuitionBadge}>SAVE {price.currency.symbol}${formatPrice(price.plans.full.discount)}</span>
+        <span className={styles.tuitionBadge}>SAVE {price.currency.symbol}{formatPrice(price.plans.full.discount)}</span>
       </div>
       <p className={styles.tuitionSmallLabel}>One Time Payment of</p>
       <div className={styles.tuitionStrikePrice}>{price.currency.symbol}{formatPrice(price.cost)}</div>
