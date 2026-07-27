@@ -16,12 +16,11 @@ interface Props {
   heroSrc: StaticImageData;
   mobileHeroSrc?: StaticImageData;
   emailAddress?: string;
+  customHeader?: string;
+  customButtonText?: string;
 }
 
-export const ThankYouSection: FC<Props> = ({ heroSrc, mobileHeroSrc, emailAddress }) => {
-  // const downloadUrl = course === 'dt'
-  //   ? '/certification-courses/dog-training/course-preview'
-  //   : '/certification-courses/dog-grooming/course-preview';
+export const ThankYouSection: FC<Props> = ({ course, heroSrc, mobileHeroSrc, emailAddress, customHeader }) => {
   const squiggleWidth = emailAddress ? `${Math.round(emailAddress.length * 0.5)}em` : 220;
 
   return (
@@ -36,7 +35,7 @@ export const ThankYouSection: FC<Props> = ({ heroSrc, mobileHeroSrc, emailAddres
             <FormCard>
               <div style={{ margin: '0 0 1rem' }}>
                 <Lottie animationData={emailNotification} autoplay loop style={{ width: 300, height: 159, margin: '0 auto', paddingLeft: '4%' }} />
-                <h1 className="h4 mb-4 text-navy">Thank You!</h1>
+                <h1 className="h4 mb-4 text-navy">{customHeader ?? 'Thank You! Your Catalog Is Below'} </h1>
                 <FormWrapper>
                   <p className={`lead ${styles.limitedTimeOffer} ${(emailAddress && emailAddress.length > 35) ? styles.long : ''}`}>We've sent your catalog plus a <strong className="text-primary">limited-time offer</strong> to <strong className="text-black">{emailAddress ?? 'your inbox'}</strong></p>
                   <Squiggle variant="tapered" className="text-primary mb-4" style={{ margin: '0 2rem', maxWidth: squiggleWidth }} />
