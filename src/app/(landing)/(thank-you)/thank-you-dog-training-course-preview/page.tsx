@@ -41,7 +41,7 @@ const ThankYouCoursePreviewPage: PageComponent = async props => {
         />
       )}
       <Header />
-      <ThankYouSection course="dt" heroSrc={HeroBackground} emailAddress={emailAddress} customHeader="Thank you! Access your course preview below" customButtonText="View preview" />
+      <ThankYouSection course="dt" heroSrc={HeroBackground} emailAddress={emailAddress} />
       <CurrentPromotion date={date} countryCode={countryCode} courseCode="dt" />
       <WhyChooseQCSection className="bg-light" />
       <TestimonialWallSection testimonialIds={testimonialIds} />
