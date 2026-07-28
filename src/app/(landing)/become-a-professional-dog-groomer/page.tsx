@@ -17,6 +17,7 @@ import { TuitionSection } from './TuitionSection/tuitionSection';
 import { ActiveCampaginForm } from '@/components/activeCampaignForm';
 import { BackgroundImage } from '@/components/backgroundImage';
 import { Check } from '@/components/check';
+import { Overlay } from '@/components/overlay';
 import type { TestimonialId } from '@/components/testimonial/data';
 import { TestimonialCarousel } from '@/components/testimonialCarousel';
 import BriefcaseIcon from '@/images/briefcase.svg';
@@ -77,6 +78,7 @@ const Page: PageComponent = async props => {
 
       <section className={styles.hero}>
         <BackgroundImage src={HeroImage} priority className={styles.heroImage} />
+        <Overlay backgroundColor="rgba(1, 0, 37, 0.25)" className={styles.overlay} />
         <div className={styles.heroOverlay} aria-hidden="true" />
         <div className={`container ${styles.heroInner}`}>
           <div className="row align-items-center g-5">
@@ -95,7 +97,9 @@ const Page: PageComponent = async props => {
               <div className={`card bg-white border-0 ${styles.card}`}>
                 <h3 className={`card-header text-white px-4 pb-4 pt-5 mb-0 border-0 position-relative overflow-hidden ${styles.formHeader}`}>
                   <BackgroundImage src={FormBgImage} />
-                  <span className={`position-relative ${styles.formTitle}`}>Request a Course Preview</span>
+                  <span className={`position-relative ${styles.formTitle}`}>Request a</span>
+                  <br />
+                  <span className={`position-relative ${styles.formTitle}`}>Course Preview</span>
                 </h3>
                 <div className="card-body p-4">
                   <div />
