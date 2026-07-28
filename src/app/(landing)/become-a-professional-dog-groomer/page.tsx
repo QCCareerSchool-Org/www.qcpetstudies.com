@@ -93,9 +93,9 @@ const Page: PageComponent = async props => {
             </div>
             <div className="col-12 col-lg-5 offset-lg-1" id="request-info">
               <div className={`card bg-white border-0 ${styles.card}`}>
-                <h3 className="card-header bg-danger text-white px-4 pb-4 pt-5 mb-0 border-0 position-relative overflow-hidden">
+                <h3 className={`card-header text-white px-4 pb-4 pt-5 mb-0 border-0 position-relative overflow-hidden ${styles.formHeader}`}>
                   <BackgroundImage src={FormBgImage} />
-                  <span className="position-relative">Request a Course Preview</span>
+                  <span className={`position-relative ${styles.formTitle}`}>Request a Course Preview</span>
                 </h3>
                 <div className="card-body p-4">
                   <div />
