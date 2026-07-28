@@ -84,7 +84,7 @@ const Page: PageComponent = async props => {
           <div className="row align-items-center g-5">
             <div className="col-12 col-lg-6">
               <h1 className="mb-4" style={{ color: '#fff' }}>Become a Professional Dog Groomer</h1>
-              <p className={`lead mb-4 ${styles.heroLead}`}>
+              <p className={`lead mb-4 fw-semibold ${styles.heroLead}`}>
                 Build a career you love with flexible online training from Master Groomers, a professional grooming kit to start practicing right away, and personalized instructor feedback that helps you build real-world grooming skills.
               </p>
               <ul className={styles.checkList}>
