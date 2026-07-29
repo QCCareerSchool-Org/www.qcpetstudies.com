@@ -4,7 +4,8 @@ import 'react-phone-number-input/style.css';
 import Image from 'next/image';
 import Link from 'next/link';
 import type { ChangeEvent, ChangeEventHandler, FC, ReactElement, SubmitEventHandler } from 'react';
-import { forwardRef, useCallback, useEffect, useId, useRef, useState } from 'react';
+import { forwardRef, useCallback, useEffect, useId, useMemo, useRef, useState } from 'react';
+import { flushSync } from 'react-dom';
 import { GoogleReCaptcha } from 'react-google-recaptcha-v3';
 import type { Country, DefaultInputComponentProps, Value } from 'react-phone-number-input';
 import PhoneInput from 'react-phone-number-input/input';
@@ -15,6 +16,9 @@ import { CurrentPageInput } from './currentPageInput';
 import styles from './index.module.scss';
 import { JavasciptInput } from './javascriptInput';
 import type { CourseCode } from '@/domain/courseCode';
+import { debounce } from '@/lib/debounce';
+
+const TELEPHONE_NUMBER_CHANGE_DEBOUNCE_MS = 300;
 
 interface Props {
   onCourseChange?: (e: ChangeEvent<HTMLInputElement>, courseCode: CourseCode) => void;
@@ -50,9 +54,12 @@ export const ActiveCampaginForm: FC<Props> = props => {
 
   const showTelephone = props.countryCode === 'CA' || props.countryCode === 'US';
 
-  const handleTelephoneNumberChange = (value?: Value): void => {
-    setTelephoneNumber(value);
-  };
+  const handleTelephoneNumberChange = useMemo(
+    () => debounce((value?: Value): void => {
+      setTelephoneNumber(value);
+    }, TELEPHONE_NUMBER_CHANGE_DEBOUNCE_MS),
+    [],
+  );
 
   const handleVerify = useCallback((t: string): void => {
     setToken(t);
@@ -85,11 +92,17 @@ export const ActiveCampaginForm: FC<Props> = props => {
     };
   }, []);
 
+  useEffect(() => {
+    return handleTelephoneNumberChange.cancel;
+  }, [ handleTelephoneNumberChange ]);
+
   const handleSubmit: SubmitEventHandler = e => {
     if (submitting.current || disabled) {
       e.preventDefault();
       return;
     }
+
+    flushSync(handleTelephoneNumberChange.flush);
 
     submitting.current = true;
 

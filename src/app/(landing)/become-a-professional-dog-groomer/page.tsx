@@ -102,7 +102,6 @@ const Page: PageComponent = async props => {
                   <span className={`position-relative ${styles.formTitle}`}>Course Preview</span>
                 </h3>
                 <div className="card-body p-4">
-                  <div />
                   <ActiveCampaginForm
                     successLocation={`${process.env.NEXT_PUBLIC_HOST ?? 'https://www.qcpetstudies.com'}/thank-you-dog-grooming-course-preview`}
                     requiredIds={[ 55n ]}
