@@ -42,7 +42,7 @@ export const Client: FC<Props> = ({ dgPrice, dePrice, countryCode, provinceCode,
                   <div className="col-12 col-lg-8 col-xl-7">
                     <h2>Become a <strong>Certified Professional Dog Groomer</strong></h2>
                     <p className="lead"><strong>International Dog Grooming Professional&trade;</strong> | <i>IDGP&trade;</i></p>
-                    <p className="mb-5">There's never been a better time to start a career as a professional dog groomer. Across the country, grooming salons and pet stylists have waiting lists—or are turning away new clients entirely. It's the perfect opportunity to launch a rewarding and in-demand career you'll love. Get your <strong>International Dog Groomer Certification</strong> with QC's comprehensive online training&mdash;now with two ways to train:</p>
+                    <p className="mb-5">There's never been a better time to start a career as a professional dog groomer. Across the country, grooming salons and pet stylists have waiting lists—or are turning away new clients entirely. It's the perfect opportunity to launch a rewarding and in-demand career you'll love. Get your <strong>International Dog Groomer Certification</strong> with QC's comprehensive online training, plus earn up to six additional skills certificates as you complete each practicum unit!</p>
                   </div>
                 </div>
                 <div className="row justify-content-center g-5 mb-5">
@@ -69,7 +69,7 @@ export const Client: FC<Props> = ({ dgPrice, dePrice, countryCode, provinceCode,
                 <div className="col-12 col-lg-8 col-xl-7">
                   <h2>Become a <strong>Certified Professional Dog Groomer</strong></h2>
                   <p className="lead"><strong>International Dog Grooming Professional&trade;</strong> | <i>IDGP&trade;</i></p>
-                  <p className="mb-5">There's never been a better time to start a career as a professional dog groomer. Across the country, grooming salons and pet stylists have waiting lists—or are turning away new clients entirely. It's the perfect opportunity to launch a rewarding and in-demand career you'll love. Get your <strong>International Dog Groomer Certification</strong> with QC's comprehensive online training.</p>
+                  <p className="mb-5">There's never been a better time to start a career as a professional dog groomer. Across the country, grooming salons and pet stylists have waiting lists—or are turning away new clients entirely. It's the perfect opportunity to launch a rewarding and in-demand career you'll love. Get your <strong>International Dog Groomer Certification</strong> with QC's comprehensive online training, plus earn up to six additional skills certificates as you complete each practicum unit!</p>
                 </div>
               </div>
             )}
