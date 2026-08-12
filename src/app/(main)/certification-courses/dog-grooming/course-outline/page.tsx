@@ -178,7 +178,7 @@ const DogGroomingCourseOutlinePage: PageComponent = async props => {
                   <div className="row">
                     <div className="col-12 col-lg-6 mb-4">
                       <p>Now that you have basic dog grooming theory and First Aid under your belt, you're going to start working on dogs and practicing your practical dog grooming skills!</p>
-                      <p className="mb-0">In Unit D, you'll learn about all the basic preparatory work that goes into a grooming session, from clipping nails to bathing and drying. These skills will form the foundation of all the grooming work you'll perform later in the course and in your career. After successfully completing this practicum unit, you'll earn a <strong>Bathing & Brushing Skills Certificate</strong> recognizing your expertise in the essential prep work behind every professional-quality groom.</p>
+                      <p className="mb-0">In Unit D, you'll learn about all the basic preparatory work that goes into a grooming session, from clipping nails to bathing and drying. These skills will form the foundation of all the grooming work you'll perform later in the course and in your career.</p>
                     </div>
                     <div className="col-12 col-lg-6 mb-4">
                       <div className="alert alert-primary">Unit Total: 8 to 15 Hours + Practice</div>
@@ -340,7 +340,7 @@ const DogGroomingCourseOutlinePage: PageComponent = async props => {
                     <div className="col-12 mb-4 col-lg-6 d-flex">
                       <div className="card bg-light w-100">
                         <div className="card-body">
-                          <h4 className="card-title"><strong>The Bath</strong></h4>
+                          <h4 className="card-title"><strong>Practicum Unit: The Bath</strong></h4>
                           <p className="card-text">In this first practicum unit, you'll bathe a dog from head to tail. This will include prepping the dog for bathing, choosing the right tools for the job, giving the dog a thorough wash, and drying the dog afterward.</p>
                           <h4 className="card-title">Required Equipment:</h4>
                           <ul className="card-text">
@@ -358,7 +358,7 @@ const DogGroomingCourseOutlinePage: PageComponent = async props => {
                     <div className="col-12 col-lg-6 mb-4 d-flex">
                       <div className="card bg-light w-100">
                         <div className="card-body">
-                          <h4 className="card-title"><strong>Grooming a Natural Breed</strong></h4>
+                          <h4 className="card-title"><strong>Practicum Unit: Grooming a Natural Breed</strong></h4>
                           <p className="card-text">This practicum unit will have you groom a natural breed dog, such as a purebred Golden Retriever or Shetland Sheepdog. Throughout 6 individual assignments, you'll go through the process of grooming the entire dog from prep work to grooming each body part and then putting the finishing touches on the dog.</p>
                           <h4 className="card-title">Required Equipment:</h4>
                           <ul className="card-text">
@@ -376,7 +376,7 @@ const DogGroomingCourseOutlinePage: PageComponent = async props => {
                     <div className="col-12 col-lg-6 mb-4 d-flex">
                       <div className="card bg-light w-100">
                         <div className="card-body">
-                          <h4 className="card-title"><strong>The Teddy Bear Cut</strong></h4>
+                          <h4 className="card-title"><strong>Practicum Unit: The Teddy Bear Cut</strong></h4>
                           <p className="card-text">The teddy bear cut will be among the most popular cuts requested by your grooming clients.  This is the type of cut anyone with a cute little fluffy dog will want to have!  So you'll want to take your time and practice to get this one right.  A groomer can make a good living on the teddy bear cut alone!</p>
                           <h4 className="card-title">Required Equipment:</h4>
                           <ul className="card-text">
@@ -394,7 +394,7 @@ const DogGroomingCourseOutlinePage: PageComponent = async props => {
                     <div className="col-12 col-lg-6 mb-4 d-flex">
                       <div className="card bg-light w-100">
                         <div className="card-body">
-                          <h4 className="card-title"><strong>Grooming a Terrier</strong></h4>
+                          <h4 className="card-title"><strong>Practicum Unit: Grooming a Terrier</strong></h4>
                           <p className="card-text">The terrier group hosts a pretty specific range of dog breeds, all of whom require frequent and regular grooming not only to stay looking their best but to stay healthy as well!  In this practicum unit, you'll groom a terrier from start to finish.</p>
                           <h4 className="card-title">Required Equipment:</h4>
                           <ul className="card-text">
@@ -412,7 +412,7 @@ const DogGroomingCourseOutlinePage: PageComponent = async props => {
                     <div className="col-12 col-lg-6 mb-4 mb-lg-0 d-flex">
                       <div className="card bg-light w-100">
                         <div className="card-body">
-                          <h4 className="card-title"><strong>Grooming a Non-Sporting Breed</strong></h4>
+                          <h4 className="card-title"><strong>Practicum Unit: Grooming a Non-Sporting Breed</strong></h4>
                           <p className="card-text">The non-sporting class of dogs is one with a wide range of breeds. For this practicum unit, you'll focus on two non-sporting breeds that are among the most often seen in a grooming salon: the Poodle and the Bichon Frise. You'll groom one of these breeds (or both!) from head to tail. Don't forget your finishing touches!</p>
                           <h4 className="card-title">Required Equipment:</h4>
                           <ul className="card-text">

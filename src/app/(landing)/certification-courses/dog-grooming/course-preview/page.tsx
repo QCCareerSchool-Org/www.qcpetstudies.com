@@ -141,7 +141,7 @@ const GroomingCoursePreviewPage: PageComponent = async props => {
             </div>
             <div className="text-center text-md-start">
               <h2>Your <strong>Certification</strong></h2>
-              <p className="lead mb-0">Upon graduation, you'll receive the International Dog Grooming Professional&trade; (IDGP&trade;) Certification. With your certification and professional title, you'll be ready to start your own business or work for an established grooming salon right away!</p>
+              <p className="lead mb-0">Upon graduation, you'll receive your International Dog Grooming Professional&trade; (IDGP&trade;) Certification, along with up to six additional Skills Certificates earned throughout your practical training. These credentials recognize the professional grooming skills you've developed and showcase your expertise in these key areas. With your certification and professional credentials, you'll be ready to start your own business or pursue opportunities with an established grooming salon.</p>
             </div>
           </div>
         </div>
