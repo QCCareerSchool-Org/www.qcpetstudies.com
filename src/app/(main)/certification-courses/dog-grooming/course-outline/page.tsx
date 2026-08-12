@@ -395,6 +395,7 @@ const DogGroomingCourseOutlinePage: PageComponent = async props => {
                       <div className="card bg-light w-100">
                         <div className="card-body">
                           <h4 className="card-title"><strong>Practicum Unit: Grooming a Terrier</strong></h4>
+                          <p className="card-text lead">Optional</p>
                           <p className="card-text">The terrier group hosts a pretty specific range of dog breeds, all of whom require frequent and regular grooming not only to stay looking their best but to stay healthy as well!  In this practicum unit, you'll groom a terrier from start to finish.</p>
                           <h4 className="card-title">Required Equipment:</h4>
                           <ul className="card-text">
@@ -413,6 +414,7 @@ const DogGroomingCourseOutlinePage: PageComponent = async props => {
                       <div className="card bg-light w-100">
                         <div className="card-body">
                           <h4 className="card-title"><strong>Practicum Unit: Grooming a Non-Sporting Breed</strong></h4>
+                          <p className="card-text lead">Optional</p>
                           <p className="card-text">The non-sporting class of dogs is one with a wide range of breeds. For this practicum unit, you'll focus on two non-sporting breeds that are among the most often seen in a grooming salon: the Poodle and the Bichon Frise. You'll groom one of these breeds (or both!) from head to tail. Don't forget your finishing touches!</p>
                           <h4 className="card-title">Required Equipment:</h4>
                           <ul className="card-text">
