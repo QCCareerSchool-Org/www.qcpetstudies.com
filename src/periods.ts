@@ -1,7 +1,7 @@
 import { lastChancePeriod } from './lib/period';
 
 export const august14 = lastChancePeriod(
-  Date.UTC(2026, 7, 14, 7), // 2026-08-14T03:00 (07:00 UTC)
+  Date.UTC(2026, 7, 13, 7), // 2026-08-14T03:00 (07:00 UTC) // launch 1 day early
   Date.UTC(2026, 7, 21, 7), // 2026-08-21T03:00 (07:00 UTC)
   Date.UTC(2026, 7, 22, 7), // 2026-08-22T03:00 (07:00 UTC)
 );
