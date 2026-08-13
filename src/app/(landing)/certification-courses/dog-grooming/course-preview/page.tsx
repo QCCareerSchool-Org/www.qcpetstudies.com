@@ -141,7 +141,7 @@ const GroomingCoursePreviewPage: PageComponent = async props => {
             </div>
             <div className="text-center text-md-start">
               <h2>Your <strong>Certification</strong></h2>
-              <p className="lead mb-0">Upon graduation, you'll receive the International Dog Grooming Professional&trade; (IDGP&trade;) Certification. With your certification and professional title, you'll be ready to start your own business or work for an established grooming salon right away!</p>
+              <p className="lead mb-0">Upon graduation, you'll receive your International Dog Grooming Professional&trade; (IDGP&trade;) Certification, along with up to six additional Skills Certificates earned throughout your practical training. These credentials recognize the professional grooming skills you've developed and showcase your expertise in these key areas. With your certification and professional credentials, you'll be ready to start your own business or pursue opportunities with an established grooming salon.</p>
             </div>
           </div>
         </div>
@@ -214,8 +214,8 @@ const GroomingCoursePreviewPage: PageComponent = async props => {
                   <div className="row">
                     <div className="col-12 col-lg-6 mb-4 mb-lg-0">
                       <h3 className="fw-normal"><strong>Part 2:</strong> First Aid</h3>
-                      <p>In order to provide you with the resources to learn your craft safely, your grooming course also comes with a two-unit course on dog first aid. This course covers emergency situations that may occur in a grooming environment and prepares you to respond calmly and effectively in any emergency.</p>
-                      <p className="mb-0">In two units of the First Aid course, you'll learn how to deal with a number of injuries or accidents that might occur while grooming dogs, but you'll also learn how to do everything you can to prevent those emergencies from occurring!</p>
+                      <p>In order to provide you with the resources to learn your craft safely, your grooming course also comes with a two-unit course on dog first aid, which you'll complete in Unit D before beginning your practical grooming assignments. These lessons cover emergency situations that may occur in a grooming environment and prepares you to respond calmly and effectively in any emergency.</p>
+                      <p className="mb-0">You'll learn how to deal with a number of injuries or accidents that might occur while grooming dogs, but you'll also learn how to do everything you can to prevent those emergencies from occurring! After successfully completing this training, you'll also earn a <strong>First Aid for Dog Groomers Skills Certificate</strong> recognizing your ability to apply essential safety and emergency response skills.</p>
                     </div>
                     <div className="col-12 col-lg-6">
                       <div className="ratio ratio-16x9">
@@ -298,7 +298,8 @@ const GroomingCoursePreviewPage: PageComponent = async props => {
                     <div className="col-12 col-lg-6 mb-4 mb-lg-0">
                       <h3 className="fw-normal"><strong>Part 4:</strong> Practicum</h3>
                       <p>Dog grooming as a profession requires a lot of background knowledge, but ultimately your success will depend on your ability to safely and skillfully groom dogs.</p>
-                      <p className="mb-0">Your practicum is designed to allow you to practice and receive feedback on these essential skills. The units within the practicum involve intensive practical assignments that draw on the content you've mastered throughout the course. You'll have a chance to receive feedback from your tutors on your bathing and drying skills, in addition to the pet cuts and breed cuts you'll create throughout your career.</p>
+                      <p>Your practicum is designed to allow you to practice and receive feedback on these essential skills. Some practicum units are required to complete your certification, while others are optional and allow you to further develop advanced grooming skills. The units within the practicum involve intensive practical assignments that draw on the content you've mastered throughout the course. You'll have a chance to receive feedback from your tutors on your bathing and drying skills, in addition to the pet cuts and breed cuts you'll create throughout your career.</p>
+                      {externship(countryCode, provinceCode) && <p className="mb-0">Please note that students enrolled in the externship program must complete all practicum units.</p>}
                       <Accordion>
                         <div className="mt-5">
                           <AccordionItem eventKey={0} heading="PRACTICUM A - The Bath">
@@ -316,12 +317,12 @@ const GroomingCoursePreviewPage: PageComponent = async props => {
                           </AccordionItem>
                         </div>
                         <div className="mt-4">
-                          <AccordionItem eventKey={3} heading="PRACTICUM D - Grooming a Terrier">
+                          <AccordionItem eventKey={3} heading="PRACTICUM D - Grooming a Terrier (Optional)">
                             <p className="mb-0">Grooming a terrier is a requirement for many dog grooming certification exams. Create the breed standard on a Miniature Schnauzer, Standard Schnauzer, Airedale Terrier or West Highland White Terrier. Use the best tools and techniques to achieve the desired shapes and styles.</p>
                           </AccordionItem>
                         </div>
                         <div className="mt-4">
-                          <AccordionItem eventKey={3} heading="PRACTICUM E - Grooming a Non-Sporting Breed">
+                          <AccordionItem eventKey={4} heading="PRACTICUM E - Grooming a Non-Sporting Breed (Optional)">
                             <p className="mb-0">Grooming a Non-sporting breed is a requirement for many dog grooming certification exams. Create the breed standard on either a Poodle or a Bichon Frise. Use the best tools and techniques to make stylized breeds look sleek and polished.</p>
                           </AccordionItem>
                         </div>
