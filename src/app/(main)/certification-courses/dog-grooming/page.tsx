@@ -26,7 +26,7 @@ const DogGroomingPage: PageComponent = async props => {
     return null;
   }
 
-  return <DogGroomingBase countryCode={countryCode} provinceCode={provinceCode} dgPrice={dgPrice.value} dePrice={dePrice.value} enrollPath="/" courseCode={courseCode} />;
+  return <DogGroomingBase countryCode={countryCode} provinceCode={provinceCode} dgPrice={dgPrice.value} dePrice={dePrice.value} enrollPath="/grooming" courseCode={courseCode} />;
 };
 
 export default DogGroomingPage;
