@@ -110,6 +110,7 @@ export const DogGroomingBase: FC<Props> = ({ countryCode, provinceCode, dgPrice,
               <h2 className="text-white">Your International Dog Grooming Professional Certification</h2>
               <p>Once you graduate from your online dog grooming course, you'll receive a certification and be able to use the designation of International Dog Grooming Professional (IDGP).</p>
               <p>This certification demonstrates that you have successfully completed professional training and that you possess all the skills and knowledge required to safely handle dogs and deliver top-notch, professional grooms.</p>
+              <p>Throughout your training, you'll also earn up to six additional skills certificates as you complete each practicum unit. These credentials recognize your mastery of key grooming techniques and allow you to showcase your progress as you build your professional expertise.</p>
               {externship(countryCode, provinceCode) && <p>If you complete the <strong>Externship Track</strong>, you'll also receive an <strong>additional certificate of completion</strong> recognizing your additional hands-on training and real-world salon experience!</p>}
             </div>
           </div>
@@ -219,6 +220,14 @@ export const DogGroomingBase: FC<Props> = ({ countryCode, provinceCode, dgPrice,
                     <div className="row text-left">
                       <p>Yes! QC Pet Studies is a faculty of QC Career School, an accredited online education provider with an A+ rating from the Better Business Bureau (BBB).</p>
                       <p>Since 1984, QC has helped students around the world build successful careers through high-quality, career-focused online training. When you enroll in QC&apos;s Dog Grooming course, you can trust that you&apos;re learning from experienced grooming professionals to develop practical, hands-on skills.</p>
+                    </div>
+                  </AccordionItem>
+                </Accordion>
+                <Accordion>
+                  <AccordionItem eventKey={eventKey++} heading="What certification will I earn from this dog grooming course?" isFAQ={true}>
+                    <div className="row text-left">
+                      <p>After graduating, you'll receive your International Dog Grooming Professional (IDGP) certification, demonstrating that you've successfully completed professional training and developed the skills to safely handle dogs and deliver high-quality grooms.</p>
+                      <p>As you progress through the course, you'll also earn up to six Skills Certificates for successfully completing each practicum unit. These additional credentials recognize your mastery of each individual skill and prove your expertise to future clients.</p>
                     </div>
                   </AccordionItem>
                 </Accordion>
