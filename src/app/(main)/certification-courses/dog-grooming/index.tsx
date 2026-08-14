@@ -4,12 +4,11 @@ import type { FC } from 'react';
 import { BsCalendar, BsChatSquare } from 'react-icons/bs';
 import { IoMdInfinite } from 'react-icons/io';
 
-import CertificationBgImage from './cert-bg.jpg';
+import { CertificationSection } from './_components/certificationSection';
 import { Client } from './client';
 import DogGroomingKit from './dog-grooming-kit-white.jpg';
 import MobileHero from './hero-mobile.jpg';
 import DesktopHero from './hero.jpg';
-import CertificationLogo from './IDGP-certification-gold.svg';
 import styles from './index.module.scss';
 import { KitDetailsButton } from './kitDetailsButton';
 import { Accordion } from '@/components/accordion';
@@ -99,23 +98,7 @@ export const DogGroomingBase: FC<Props> = ({ countryCode, provinceCode, dgPrice,
         </div>
       </section>
 
-      <section>
-        <BackgroundImage src={CertificationBgImage} />
-        <div className="container text-white text-center">
-          <div className="row justify-content-center">
-            <div className="col-12 col-lg-8">
-              <div className="mb-4">
-                <Image src={CertificationLogo} alt="IDGP Certification Logo" />
-              </div>
-              <h2 className="text-white">Your International Dog Grooming Professional Certification</h2>
-              <p>Once you graduate from your online dog grooming course, you'll receive a certification and be able to use the designation of International Dog Grooming Professional (IDGP).</p>
-              <p>This certification demonstrates that you have successfully completed professional training and that you possess all the skills and knowledge required to safely handle dogs and deliver top-notch, professional grooms.</p>
-              <p>Throughout your training, you'll also earn up to six additional skills certificates as you complete each practicum unit. These credentials recognize your mastery of key grooming techniques and allow you to showcase your progress as you build your professional expertise.</p>
-              {externship(countryCode, provinceCode) && <p>If you complete the <strong>Externship Track</strong>, you'll also receive an <strong>additional certificate of completion</strong> recognizing your additional hands-on training and real-world salon experience!</p>}
-            </div>
-          </div>
-        </div>
-      </section>
+      <CertificationSection countryCode={countryCode} provinceCode={provinceCode} />
 
       <TestimonialWallSection className="bg-light" testimonialIds={testimonialIds} />
 
