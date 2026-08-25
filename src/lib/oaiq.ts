@@ -36,7 +36,7 @@ export const oaiqLead = (): void => {
 export const oaiqSale = (enrollment: Enrollment): void => {
   window.oaiq?.('measure', 'registration_completed', {
     type: 'customer_action',
-    amount: enrollment.cost,
+    amount: Math.round(enrollment.cost * 100),
     currency: enrollment.currencyCode,
   });
 };
