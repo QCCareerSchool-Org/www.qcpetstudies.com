@@ -5,7 +5,7 @@ import { PromoBanner } from './promoBanner';
 import { SecondaryNav } from './secondaryNav';
 import { MainNav } from '@/components/siteLayout/mainNav';
 import { gbpCountry } from '@/domain/currency';
-import { sept23 } from '@/periods';
+import { october07 } from '@/periods';
 
 interface Props {
   date: number;
@@ -21,10 +21,10 @@ export const Header: FC<Props> = props => (
 );
 
 const InnerBanner: FC<Props> = ({ date, countryCode }) => {
-  if (sept23.contains(date)) {
+  if (october07.contains(date)) {
     return (
-      <PromoBanner date={date} promotionPeriod={sept23.toDTO()}>
-        <span className="d-none d-lg-inline">Ends Soon:</span> Start Today and Save {gbpCountry(countryCode) ? '£400' : '$400'} on Tuition!
+      <PromoBanner date={date} promotionPeriod={october07.toDTO()}>
+        <span className="d-none d-lg-inline">Ends Soon:</span> Start Today and Save {gbpCountry(countryCode) ? '£300' : '$300'} on Tuition!
       </PromoBanner>
     );
   }
