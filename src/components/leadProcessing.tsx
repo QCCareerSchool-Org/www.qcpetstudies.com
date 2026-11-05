@@ -7,6 +7,7 @@ import { useEffect, useRef } from 'react';
 import { fbqLead } from '@/lib/fbq';
 import { gaEvent, gaUserData } from '@/lib/gtag';
 import { oaiqLead } from '@/lib/oaiq';
+import { pintrkLead } from '@/lib/pintrk';
 import { uetUserData } from '@/lib/uet';
 
 interface Props {
@@ -36,6 +37,7 @@ export const LeadProcessing: FC<Props> = props => {
     gaUserData(props.emailAddress, props.telephoneNumber, props.firstName, props.lastName, props.city, props.provinceCode, props.countryCode);
     uetUserData(props.emailAddress, props.telephoneNumber);
     fbqLead(props.leadId, { emailAddress: props.emailAddress, telephoneNumber: props.telephoneNumber, city: props.city, province: props.provinceCode, country: props.countryCode, firstName: props.firstName, lastName: props.lastName });
+    pintrkLead(props.leadId, { emailAddress: props.emailAddress, telephoneNumber: props.telephoneNumber, city: props.city, provinceCode: props.provinceCode, countryCode: props.countryCode, firstName: props.firstName, lastName: props.lastName });
     gaEvent('conversion', { send_to: googleAdsConversionId, transaction_id: props.leadId });
     oaiqLead();
   }, [ props.emailAddress, props.telephoneNumber, props.city, props.countryCode, props.provinceCode, props.firstName, props.lastName, props.leadId, googleAdsConversionId ]);

@@ -14,6 +14,7 @@ import { SetCookie } from '@/components/setCookie';
 import { SupportSection } from '@/components/supportSection';
 import { TestimonialWallSection } from '@/components/testimonialWallSection';
 import { WhyChooseQCSection } from '@/components/whyChooseQCSection';
+import { getServerData } from '@/lib/getServerData';
 import type { PageComponent } from '@/serverComponent';
 
 export const metadata: Metadata = {
@@ -25,7 +26,8 @@ export const metadata: Metadata = {
 const testimonialIds = [ 'TD-0004', 'TD-0005', 'TD-0007', 'TD-0008', 'TD-0009', 'TD-0010' ];
 
 const ThankYouCoursePreviewPage: PageComponent = async props => {
-  const { countryCode, emailAddress, lead, jwt, recent, date } = await getThankyouData(props);
+  const data = await getServerData(props.searchParams);
+  const { countryCode, emailAddress, lead, jwt, recent, date } = await getThankyouData(data);
   // const quizURL = getQuizUrl(emailAddress, countryCode, provinceCode);
 
   return (
