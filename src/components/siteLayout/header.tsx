@@ -24,7 +24,7 @@ const InnerBanner: FC<Props> = ({ date, countryCode }) => {
   if (november04.contains(date)) {
     return (
       <PromoBanner date={date} promotionPeriod={november04.toDTO()}>
-        <span className="d-none d-lg-inline">Ends Soon:</span> Start Today and Save {gbpCountry(countryCode) ? '£400' : '$400'} on Tuition!
+        <span className="d-none d-lg-inline">Black Friday Offer:</span> Save {gbpCountry(countryCode) ? '£400' : '$400'} on Tuition!
       </PromoBanner>
     );
   }
