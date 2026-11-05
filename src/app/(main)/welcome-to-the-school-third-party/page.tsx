@@ -14,6 +14,7 @@ import { fbPostPurchase } from '@/lib/facebookConversionAPI';
 import { fetchEnrollment } from '@/lib/fetchEnrollment';
 import { getParam } from '@/lib/getParam';
 import { getServerData } from '@/lib/getServerData';
+import { pinterestPostPurchase } from '@/lib/pinterestConversionAPI';
 import { sendEnrollmentEmail } from '@/lib/sendEnrollmentEmail';
 import type { PageComponent } from '@/serverComponent';
 
@@ -57,6 +58,7 @@ const WelcomeToTheSchoolThirdPartyPage: PageComponent = async props => {
     const cookieStore = await cookies();
     const fbc = cookieStore.get('_fbc')?.value;
     const fbp = cookieStore.get('_fbp')?.value;
+    const epik = cookieStore.get('_eipk')?.value;
 
     // send email
     try {
@@ -78,11 +80,19 @@ const WelcomeToTheSchoolThirdPartyPage: PageComponent = async props => {
       console.error(err);
     }
 
-    // Facebook
     if (enrollment.transactionTime === null || new Date(date).getTime() - enrollment.transactionTime.getTime() < 7 * 24 * 60 * 60 * 1000) {
+      const source = 'https://www.qcpetstudies.com/welcome-to-the-school';
+
+      // Facebook
       try {
-        const source = 'https://www.qcpetstudies.com/welcome-to-the-school';
         await fbPostPurchase(enrollment, source, ipAddress, userAgent, fbc, fbp);
+      } catch (err) {
+        console.error(err);
+      }
+
+      // Pinterest
+      try {
+        await pinterestPostPurchase(enrollment, source, ipAddress, userAgent, epik);
       } catch (err) {
         console.error(err);
       }

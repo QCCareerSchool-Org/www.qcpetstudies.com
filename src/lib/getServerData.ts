@@ -15,6 +15,7 @@ interface BaseData {
   userValues: UserValues | null;
   fbc?: string;
   fbp?: string;
+  epik?: string;
 }
 
 interface DataWithDate extends BaseData {
@@ -41,11 +42,12 @@ export async function getServerData(
 
   const fbc = cookieStore.get('_fbc')?.value;
   const fbp = cookieStore.get('_fbp')?.value;
+  const epik = cookieStore.get('_epik')?.value;
   const userCookie = cookieStore.get('user')?.value;
   const userValues = isUserValues(userCookie) ? userCookie : null;
 
   if (!searchParams) {
-    return { countryCode, provinceCode, clientIp, userAgent, url, userValues, fbc, fbp };
+    return { countryCode, provinceCode, clientIp, userAgent, url, userValues, fbc, fbp, epik };
   }
 
   const parameters = await searchParams;
@@ -59,5 +61,5 @@ export async function getServerData(
     }
   }
 
-  return { countryCode, provinceCode, clientIp, userAgent, url, userValues, fbc, fbp, date, leadId };
+  return { countryCode, provinceCode, clientIp, userAgent, url, userValues, fbc, fbp, epik, date, leadId };
 };
