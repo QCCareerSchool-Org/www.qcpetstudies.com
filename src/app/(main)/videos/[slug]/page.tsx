@@ -46,10 +46,10 @@ const VideoPlayerPage: PageComponent<{ slug: string }> = async ({ params }) => {
       <section className="bg-light pt-4">
         <div className="container">
           <h1 className="mb-3">{video.title}</h1>
-          <p className="lead mb-3">{video.description}</p>
-          <div className="ratio ratio-16x9">
+          <div className="ratio ratio-16x9 mb-3">
             <video src={video.content_loc} poster={video.thumbnail_loc} controls preload="metadata" />
           </div>
+          <p className="lead mb-0">{video.description}</p>
         </div>
       </section>
     </>

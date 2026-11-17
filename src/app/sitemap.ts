@@ -2,26 +2,28 @@ import { promises as fs } from 'fs';
 import type { MetadataRoute } from 'next';
 import path from 'path';
 
-import { siteVideos } from './videos';
+import { siteVideos } from '../videos';
+import { siteUrl } from '@/lib/siteUrl';
 import { escapeXmlObject } from '@/lib/xml';
 
-const prefix = 'https://www.qcpetstudies.com';
+// Folders that never map 1:1 to a URL segment
+const isNonRouteSegment = (name: string): boolean => /^(\[|_|@)/u.test(name);
 
 const getAppDirectoryPages = async (filePath = 'src/app'): Promise<MetadataRoute.Sitemap> => {
   const result: MetadataRoute.Sitemap = [];
-  const files = await fs.readdir(filePath);
+  // sitemap is prerendered at build time, so don't let Turbopack trace src/app into the server bundle
+  const files = await fs.readdir(/* turbopackIgnore: true */ filePath);
   for (const f of files) {
-    const fullname = path.join(filePath, f);
-    const url = getUrl(filePath);
-    if (url.endsWith('/videos/[slug]')) {
-      result.push(...getVideoPages());
-      continue;
-    }
-    const stat = await fs.stat(fullname);
+    const fullname = path.join(/* turbopackIgnore: true */ filePath, f);
+    const stat = await fs.stat(/* turbopackIgnore: true */ fullname);
     if (stat.isDirectory() && !stat.isSymbolicLink()) {
-      result.push(...(await getAppDirectoryPages(fullname)));
-    }
-    if (stat.isFile() && (f.endsWith('page.tsx') || f.endsWith('page.jsx'))) {
+      if (getUrl(fullname).endsWith('/videos/[slug]')) {
+        result.push(...getVideoPages());
+      } else if (!isNonRouteSegment(f)) {
+        result.push(...await getAppDirectoryPages(fullname));
+      }
+    } else if (stat.isFile() && /^page\.(tsx|jsx)$/u.test(f)) {
+      const url = getUrl(filePath);
       result.push({
         url,
         lastModified: stat.mtime,
@@ -40,23 +42,23 @@ const getUrl = (filePath: string): string => {
     .replaceAll('\\', '/')
     .substring(7)
     .replace(/\/\(.*\)/u, '');
-  return `${prefix}${urlPath}`;
+  return `${siteUrl}${urlPath}`;
 };
 
 const getPriority = (url: string): number => {
-  if (url === prefix) {
+  if (url === siteUrl) {
     return 1;
   }
-  if (url === `${prefix}/get-a-course-preview`) {
+  if (url === `${siteUrl}/get-a-course-preview`) {
     return 1;
   }
-  if (url.startsWith(`${prefix}/certification-courses`)) {
+  if (url.startsWith(`${siteUrl}/certification-courses`)) {
     return 0.9;
   }
-  if (url === `${prefix}/about/about-qc-pet-studies`) {
+  if (url === `${siteUrl}/about/about-qc-pet-studies`) {
     return 0.8;
   }
-  if (url === `${prefix}/contact-us`) {
+  if (url === `${siteUrl}/contact-us`) {
     return 0.8;
   }
   return 0.5;
@@ -64,9 +66,11 @@ const getPriority = (url: string): number => {
 
 const getVideoPages = (): MetadataRoute.Sitemap => {
   return siteVideos.map(v => ({
-    url: v.player_loc,
+    url: v.watch_loc,
     lastModified: v.publication_date,
     priority: 0.5,
+    images: [ v.thumbnail_loc ],
+    videos: [ escapeXmlObject(v) ],
   }));
 };
 
