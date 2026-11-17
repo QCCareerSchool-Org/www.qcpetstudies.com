@@ -11,10 +11,11 @@ const isNonRouteSegment = (name: string): boolean => /^(\[|_|@)/u.test(name);
 
 const getAppDirectoryPages = async (filePath = 'src/app'): Promise<MetadataRoute.Sitemap> => {
   const result: MetadataRoute.Sitemap = [];
-  const files = await fs.readdir(filePath);
+  // sitemap is prerendered at build time, so don't let Turbopack trace src/app into the server bundle
+  const files = await fs.readdir(/* turbopackIgnore: true */ filePath);
   for (const f of files) {
-    const fullname = path.join(filePath, f);
-    const stat = await fs.stat(fullname);
+    const fullname = path.join(/* turbopackIgnore: true */ filePath, f);
+    const stat = await fs.stat(/* turbopackIgnore: true */ fullname);
     if (stat.isDirectory() && !stat.isSymbolicLink()) {
       if (getUrl(fullname).endsWith('/videos/[slug]')) {
         result.push(...getVideoPages());
