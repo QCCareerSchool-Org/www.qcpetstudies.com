@@ -10,8 +10,10 @@ export interface Video {
   description: string;
   /** Direct URL to the video file */
   content_loc: string;
-  /** URL to the player page (leave undefined for default) */
-  player_loc: string;
+  /** URL to an embeddable player, if there is one (must not be the watch page) */
+  player_loc?: string;
+  /** URL to the watch page (generated from the slug) */
+  watch_loc: string;
   /** Duration in seconds */
   duration: number;
   expiration_date?: string | Date;
@@ -33,15 +35,14 @@ export interface Video {
 }
 
 import KimCooperImage from '@/app/(main)/certification-courses/dog-training/kim-cooper.jpg';
-
-const baseUrl = 'https://www.qcpetstudies.com';
+import { siteUrl } from '@/lib/siteUrl';
 
 export const siteVideos = ([
   {
     slug: 'dog-training',
     pages: [
-      `${baseUrl}/certification-courses/dog-training`,
-      `${baseUrl}/get-a-dog-training-course-preview`,
+      `${siteUrl}/certification-courses/dog-training`,
+      `${siteUrl}/get-a-dog-training-course-preview`,
     ],
     title: 'Dog Training',
     thumbnail_loc: 'https://cdn.qccareerschool.com/pet/dog-training-trailer-poster.png',
@@ -55,7 +56,7 @@ export const siteVideos = ([
   {
     slug: 'dog-grooming',
     pages: [
-      `${baseUrl}/certification-courses/dog-grooming`,
+      `${siteUrl}/certification-courses/dog-grooming`,
     ],
     title: 'Dog Grooming',
     thumbnail_loc: 'https://cdn.qccareerschool.com/pet/dog-grooming-teaser.jpg',
@@ -69,11 +70,11 @@ export const siteVideos = ([
   {
     slug: 'behavior-modification',
     pages: [
-      `${baseUrl}/certification-courses/dog-training/course-preview`,
-      `${baseUrl}/certification-courses/dog-training/`,
+      `${siteUrl}/certification-courses/dog-training/course-preview`,
+      `${siteUrl}/certification-courses/dog-training/`,
     ],
     title: 'Behavior Modification',
-    thumbnail_loc: `${baseUrl}${KimCooperImage.src}`,
+    thumbnail_loc: `${siteUrl}${KimCooperImage.src}`,
     description: 'There\'s never been a better time to start a career as a professional dog groomer. Across the country, grooming salons and pet stylists have waiting lists—or are turning away new clients entirely. It\'s the perfect opportunity to launch a rewarding and in-demand career you\'ll love. Get your International Dog Groomer Certification with QC\'s comprehensive online training.',
     content_loc: 'https://cdn.qccareerschool.com/pet/why-should-students-study-training-and-behavior-modification.mp4',
     duration: 66,
@@ -84,7 +85,7 @@ export const siteVideos = ([
   {
     slug: 'guiding-principles',
     pages: [
-      `${baseUrl}/certification-courses/dog-training/course-preview`,
+      `${siteUrl}/certification-courses/dog-training/course-preview`,
     ],
     title: 'Guiding Principles',
     thumbnail_loc: 'https://cdn.qccareerschool.com/pet/dog-training-preview/guiding-principles.jpg',
@@ -98,7 +99,7 @@ export const siteVideos = ([
   {
     slug: 'luring',
     pages: [
-      `${baseUrl}/certification-courses/dog-training/course-preview`,
+      `${siteUrl}/certification-courses/dog-training/course-preview`,
     ],
     title: 'Luring',
     thumbnail_loc: 'https://cdn.qccareerschool.com/pet/dog-training-preview/luring.jpg',
@@ -112,7 +113,7 @@ export const siteVideos = ([
   {
     slug: 'dog-grooming-unit-a',
     pages: [
-      `${baseUrl}/certification-courses/dog-grooming/course-preview`,
+      `${siteUrl}/certification-courses/dog-grooming/course-preview`,
     ],
     title: 'Dog Grooming Unit A',
     thumbnail_loc: 'https://cdn.qccareerschool.com/pet/unit-screenshots-a.jpg',
@@ -123,9 +124,9 @@ export const siteVideos = ([
     family_friendly: 'yes',
     requires_subscription: 'no',
   },
-]).map(v => ({
+] as Omit<Video, 'watch_loc'>[]).map(v => ({
   ...v,
-  player_loc: 'player_loc' in v && v.player_loc ? v.player_loc : `${baseUrl}/videos/${v.slug}`,
+  watch_loc: `${siteUrl}/videos/${v.slug}`,
 })) as Readonly<Video>[] as readonly Readonly<Video>[];
 
 // check for duplicate slugs

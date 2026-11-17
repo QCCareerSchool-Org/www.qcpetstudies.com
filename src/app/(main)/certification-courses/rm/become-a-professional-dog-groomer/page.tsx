@@ -9,6 +9,7 @@ import { ActiveCampaginForm } from '@/components/activeCampaignForm';
 import { FreeFirstAidSection } from '@/components/freeFirstAidSection';
 import { HowTheCoursesWorkSection } from '@/components/howTheCoursesWorkSection';
 import { getParam } from '@/lib/getParam';
+import { getServerData } from '@/lib/getServerData';
 import type { PageComponent } from '@/serverComponent';
 
 export const metadata: Metadata = {
@@ -19,6 +20,7 @@ export const metadata: Metadata = {
 const courses = [ 'dg' ];
 
 const ProfessionalDogGroomerPage: PageComponent = async props => {
+  const { countryCode } = await getServerData(props.searchParams);
   const searchParams = await props.searchParams;
   const gclid = getParam(searchParams.gclid);
   const msclkid = getParam(searchParams.msclkid);
@@ -71,6 +73,7 @@ const ProfessionalDogGroomerPage: PageComponent = async props => {
                   courseCodes={courses}
                   placeholders
                   referrer={referrer}
+                  countryCode={countryCode}
                 />
               </div>
             </div>
@@ -115,6 +118,7 @@ const ProfessionalDogGroomerPage: PageComponent = async props => {
               courseCodes={courses}
               placeholders
               referrer={referrer}
+              countryCode={countryCode}
             />
           </div>
         </div>

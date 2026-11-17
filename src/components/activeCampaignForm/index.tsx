@@ -1,32 +1,27 @@
 'use client';
 
-import 'react-phone-number-input/style.css';
 import Image from 'next/image';
 import Link from 'next/link';
-import type { ChangeEvent, ChangeEventHandler, FC, ReactElement, SubmitEventHandler } from 'react';
-import { forwardRef, useCallback, useEffect, useId, useMemo, useRef, useState } from 'react';
-import { flushSync } from 'react-dom';
+import type { ChangeEvent, ChangeEventHandler, FC, ReactElement, ReactNode, SubmitEventHandler } from 'react';
+import { forwardRef, useCallback, useEffect, useId, useRef, useState } from 'react';
 import { GoogleReCaptcha } from 'react-google-recaptcha-v3';
 import type { Country, DefaultInputComponentProps, Value } from 'react-phone-number-input';
 import PhoneInput from 'react-phone-number-input/input';
 import { v1 } from 'uuid';
 
 import DownloadIcon from '../download.svg';
-import { CurrentPageInput } from './currentPageInput';
 import styles from './index.module.scss';
 import { JavasciptInput } from './javascriptInput';
+import { CurrentPageInput } from '@/components/currentPageInput';
 import type { CourseCode } from '@/domain/courseCode';
-import { debounce } from '@/lib/debounce';
-
-const TELEPHONE_NUMBER_CHANGE_DEBOUNCE_MS = 300;
+import { useIp } from '@/hooks/useIp';
 
 interface Props {
   onCourseChange?: (e: ChangeEvent<HTMLInputElement>, courseCode: CourseCode) => void;
   successLocation: string;
   requiredIds?: bigint[];
   optionalIds?: bigint[];
-  emailTemplateId?: number;
-  buttonText?: string;
+  buttonText?: string | ReactNode;
   buttonClassName?: string;
   placeholders?: boolean;
   gclid?: string;
@@ -39,7 +34,8 @@ interface Props {
   courseCodes?: string[];
   button?: ReactElement;
   referrer: string | null;
-  countryCode?: string | null;
+  countryCode: string;
+  implicitOptIn?: boolean;
 }
 
 export const ActiveCampaginForm: FC<Props> = props => {
@@ -47,19 +43,17 @@ export const ActiveCampaginForm: FC<Props> = props => {
   const [ nonce, setNonce ] = useState(() => v1());
   const randomName = useId();
   const [ telephoneNumber, setTelephoneNumber ] = useState<Value>();
-  const [ token, setToken ] = useState<string>('');
+  const [ token, setToken ] = useState(' ');
   const [ refreshReCaptcha, setRefreshReCaptcha ] = useState(false);
   const submitting = useRef(false);
   const [ disabled, setDisabled ] = useState(true);
+  const ip = useIp();
 
   const showTelephone = props.countryCode === 'CA' || props.countryCode === 'US';
 
-  const handleTelephoneNumberChange = useMemo(
-    () => debounce((value?: Value): void => {
-      setTelephoneNumber(value);
-    }, TELEPHONE_NUMBER_CHANGE_DEBOUNCE_MS),
-    [],
-  );
+  const handleTelephoneNumberChange = (value?: Value): void => {
+    setTelephoneNumber(value);
+  };
 
   const handleVerify = useCallback((t: string): void => {
     setToken(t);
@@ -92,17 +86,11 @@ export const ActiveCampaginForm: FC<Props> = props => {
     };
   }, []);
 
-  useEffect(() => {
-    return handleTelephoneNumberChange.cancel;
-  }, [ handleTelephoneNumberChange ]);
-
   const handleSubmit: SubmitEventHandler = e => {
     if (submitting.current || disabled) {
       e.preventDefault();
       return;
     }
-
-    flushSync(handleTelephoneNumberChange.flush);
 
     submitting.current = true;
 
@@ -129,6 +117,7 @@ export const ActiveCampaginForm: FC<Props> = props => {
     <form action="https://leads.qccareerschool.com" method="post" className={styles.brochureForm} onSubmit={handleSubmit}>
       <CurrentPageInput />
       <JavasciptInput />
+      {ip && <input type="hidden" name="ip" value={ip} />}
       <input type="hidden" name="forward" value="0" />
       <input type="hidden" name="esp" value="ActiveCampaign" />
       <input type="hidden" name="nonce" value={nonce} />
@@ -142,7 +131,7 @@ export const ActiveCampaginForm: FC<Props> = props => {
         <input key={automationId} type="hidden" name="optionalAutomations" value={automationId.toString()} />
       ))}
       {props.courseCodes?.map(c => <input key={c} type="hidden" name="courseCodes" value={c} />)}
-      {typeof props.emailTemplateId !== 'undefined' && <input type="hidden" name="emailTemplateId" value={props.emailTemplateId} />}
+      <input type="text" defaultValue="" name={`hp_${randomName}`} style={{ position: 'absolute', left: -9999, top: 'auto', width: 1, height: 1, overflow: 'hidden' }} tabIndex={-1} autoComplete="one-time-code" />
       {props.gclid && <input type="hidden" name="gclid" value={props.gclid} />}
       {props.msclkid && <input type="hidden" name="msclkid" value={props.msclkid} />}
       {props.utmSource && <input type="hidden" name="utmSource" value={props.utmSource} />}
@@ -169,7 +158,6 @@ export const ActiveCampaginForm: FC<Props> = props => {
         <input type="text" name="firstName" id={`${id}firstName`} className="form-control" placeholder={props.placeholders ? 'Name' : undefined} autoComplete="given-name" autoCapitalize="words" />
       </div>
       <input type="hidden" name="lastName" id={`${id}lastName`} tabIndex={-1} autoComplete="off" />
-      <input type="text" name={`hp_${randomName}`} style={{ position: 'absolute', left: -9999, top: 'auto', width: 1, height: 1, overflow: 'hidden' }} tabIndex={-1} autoComplete="off" />
       <div className="mb-3">
         {!props.placeholders && <label htmlFor={`${id}emailAddress`} className="form-label">Email <span className="text-primary">*</span></label>}
         <input type="email" name="emailAddress" id={`${id}emailAddress`} className={`form-control ${styles.emailAddressInput}`} placeholder={props.placeholders ? 'Email *' : undefined} required autoComplete="email" autoCapitalize="none" />
@@ -178,26 +166,30 @@ export const ActiveCampaginForm: FC<Props> = props => {
         <div className="mb-3">
           <PhoneInput id={`${id}telephoneNumber`} value={telephoneNumber} onChange={handleTelephoneNumberChange} defaultCountry={props.countryCode as Country} inputComponent={InputComponent} />
           <input type="hidden" name="telephoneNumber" value={telephoneNumberE164} />
-          {telephoneNumberE164.length > 0 && (
-            <div className="my-3">
-              <div className="form-check">
-                <input type="checkbox" name="smsOptIn" id={`${id}smsOptIn`} className="form-check-input" />
-                <label htmlFor={`${id}smsOptIn`} className="form-check-label small">
-                  I agree to receive marketing text messages (e.g. promos) from QC Pet Studies. Message & data rates may apply. Consent is not a condition of purchase. Message frequency varies. Reply HELP for help. Unsubscribe at any time by replying STOP. <Link href="/terms" target="_blank">Terms & Privacy</Link>
-                </label>
-              </div>
-            </div>
-          )}
         </div>
       )}
-      <div className="mb-3">
-        <div className="form-check">
-          <input type="checkbox" name="emailOptIn" id={`${id}emailOptIn`} className="form-check-input" />
-          <label htmlFor={`${id}emailOptIn`} className="form-check-label small">
-            I agree to receive additional emails from QC, including <span className="d-none d-md-inline">promotions,{' '}</span>special offers<span className="d-none d-md-inline"> and more</span>. Unsubscribe anytime!
-          </label>
+      {props.implicitOptIn
+        ? <input type="hidden" name="emailOptIn" value="on" />
+        : (
+          <div className="mb-3">
+            <div className="form-check">
+              <input type="checkbox" name="emailOptIn" id={`${id}emailOptIn`} className="form-check-input" />
+              <label htmlFor={`${id}emailOptIn`} className="form-check-label small">
+                I agree to receive additional emails from QC, including <span className="d-none d-md-inline">promotions,</span>special offers<span className="d-none d-md-inline"> and more</span>. Unsubscribe anytime!
+              </label>
+            </div>
+          </div>
+        )}
+      {showTelephone && (
+        <div className="mb-3">
+          <div className="form-check">
+            <input type="checkbox" name="smsOptIn" id={`${id}smsOptIn`} className="form-check-input" />
+            <label htmlFor={`${id}smsOptIn`} className="form-check-label small">
+              I agree to receive marketing text messages (e.g. promos) from QC Pet Studies. Message & data rates may apply. Consent is not a condition of purchase. Message frequency varies. Reply HELP for help. Unsubscribe at any time by replying STOP. <Link href="/terms" target="_blank">Terms & Privacy</Link>
+            </label>
+          </div>
         </div>
-      </div>
+      )}
       {props.button
         ? <>{props.button}</>
         : (
@@ -216,8 +208,7 @@ interface InputProps {
 }
 
 const InputComponent = forwardRef<HTMLInputElement, DefaultInputComponentProps>((props, ref) => {
-  const { value, onChange, name } = props as InputProps;
-  const handleChange = onChange;
+  const { value, onChange: handleChange, name } = props as InputProps;
   return <input ref={ref} name={name} type="tel" value={value} onChange={handleChange} className="form-control" placeholder="Phone (Optional)" />;
 });
 

@@ -37,7 +37,7 @@ interface Props {
   utmContent?: string;
   utmTerm?: string;
   referrer: string | null;
-  countryCode?: string | null;
+  countryCode: string;
 }
 
 export const MultiCourseForm: FC<Props> = props => {
