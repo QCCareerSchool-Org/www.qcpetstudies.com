@@ -19,6 +19,11 @@ export const generateMetadata: GenerateMetadata<{ slug: string }> = async ({ par
     title: video.title,
     description: video.description,
     alternates: { canonical: video.player_loc },
+    openGraph: {
+      images: [
+        { url: video.thumbnail_loc },
+      ],
+    },
   };
 };
 
