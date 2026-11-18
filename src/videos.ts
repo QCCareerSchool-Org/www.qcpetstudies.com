@@ -3,8 +3,6 @@
 export interface Video {
   /** unique identifier */
   slug: string;
-  /** the pages this video appears on */
-  pages: string[];
   title: string;
   thumbnail_loc: string;
   description: string;
@@ -32,6 +30,8 @@ export interface Video {
   };
   live?: 'yes' | 'no';
   tag?: string;
+  vtt?: string;
+  transcript?: string[];
 }
 
 import KimCooperImage from '@/app/(main)/certification-courses/dog-training/kim-cooper.jpg';
@@ -40,10 +40,6 @@ import { siteUrl } from '@/lib/siteUrl';
 export const siteVideos = ([
   {
     slug: 'dog-training',
-    pages: [
-      `${siteUrl}/certification-courses/dog-training`,
-      `${siteUrl}/get-a-dog-training-course-preview`,
-    ],
     title: 'Dog Training',
     thumbnail_loc: 'https://cdn.qccareerschool.com/pet/dog-training-trailer-poster.png',
     description: 'Dog training is a booming industry! Owners need help to turn their dogs into well-behaved members of the family, and they want someone qualified to help them achieve this goal.  Whether you want to work in a training school, launch your own dog training business, or freelance as a private dog trainer, you\'ll graduate with all the knowledge and skills you need to succeed in the dog training industry!',
@@ -55,9 +51,6 @@ export const siteVideos = ([
   },
   {
     slug: 'dog-grooming',
-    pages: [
-      `${siteUrl}/certification-courses/dog-grooming`,
-    ],
     title: 'Dog Grooming',
     thumbnail_loc: 'https://cdn.qccareerschool.com/pet/dog-grooming-teaser.jpg',
     description: 'There\'s never been a better time to start a career as a professional dog groomer. Across the country, grooming salons and pet stylists have waiting lists—or are turning away new clients entirely. It\'s the perfect opportunity to launch a rewarding and in-demand career you\'ll love. Get your International Dog Groomer Certification with QC\'s comprehensive online training.',
@@ -69,10 +62,6 @@ export const siteVideos = ([
   },
   {
     slug: 'behavior-modification',
-    pages: [
-      `${siteUrl}/certification-courses/dog-training/course-preview`,
-      `${siteUrl}/certification-courses/dog-training/`,
-    ],
     title: 'Behavior Modification',
     thumbnail_loc: `${siteUrl}${KimCooperImage.src}`,
     description: 'There\'s never been a better time to start a career as a professional dog groomer. Across the country, grooming salons and pet stylists have waiting lists—or are turning away new clients entirely. It\'s the perfect opportunity to launch a rewarding and in-demand career you\'ll love. Get your International Dog Groomer Certification with QC\'s comprehensive online training.',
@@ -84,9 +73,6 @@ export const siteVideos = ([
   },
   {
     slug: 'guiding-principles',
-    pages: [
-      `${siteUrl}/certification-courses/dog-training/course-preview`,
-    ],
     title: 'Guiding Principles',
     thumbnail_loc: 'https://cdn.qccareerschool.com/pet/dog-training-preview/guiding-principles.jpg',
     description: 'The first part of the dog training course is largely theory-based. Before you start learning specific training methods and techniques, you must first become an expert in canine behavior, communication, and learning theory. In these first four units you\'ll build those foundations with your tutor.',
@@ -98,9 +84,6 @@ export const siteVideos = ([
   },
   {
     slug: 'luring',
-    pages: [
-      `${siteUrl}/certification-courses/dog-training/course-preview`,
-    ],
     title: 'Luring',
     thumbnail_loc: 'https://cdn.qccareerschool.com/pet/dog-training-preview/luring.jpg',
     description: 'Now that you understand the fundamentals of dog communication and learning theory, you\'re ready to learn all about training principles  In this section of the course you\'ll learn the six core training methods used to create new behaviors: luring, targeting, shaping, modeling, capturing, and mimicry. You\'ll discover how different types of dogs can react to different methods, and how it\'ll be your job to utilize the best method to suit each dog.',
@@ -112,9 +95,6 @@ export const siteVideos = ([
   },
   {
     slug: 'dog-grooming-unit-a',
-    pages: [
-      `${siteUrl}/certification-courses/dog-grooming/course-preview`,
-    ],
     title: 'Dog Grooming Unit A',
     thumbnail_loc: 'https://cdn.qccareerschool.com/pet/unit-screenshots-a.jpg',
     description: 'The first few units in this course will introduce you to the fundamental concepts of dog grooming. In these units, you\'ll cover health and safety, basic dog anatomy, skincare, behavior, the tools of the trade, and more.',
