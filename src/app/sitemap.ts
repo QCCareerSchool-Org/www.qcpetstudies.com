@@ -9,6 +9,11 @@ import { escapeXmlObject } from '@/lib/xml';
 // Folders that never map 1:1 to a URL segment
 const isNonRouteSegment = (name: string): boolean => /^(\[|_|@)/u.test(name);
 
+const isNoIndex = async (file: string): Promise<boolean> => {
+  const source = await fs.readFile(file, 'utf8');
+  return /robots:\s*\{[^}]*\bindex:\s*false/u.test(source);
+};
+
 const getAppDirectoryPages = async (filePath = 'src/app'): Promise<MetadataRoute.Sitemap> => {
   const result: MetadataRoute.Sitemap = [];
   // sitemap is prerendered at build time, so don't let Turbopack trace src/app into the server bundle
@@ -23,6 +28,9 @@ const getAppDirectoryPages = async (filePath = 'src/app'): Promise<MetadataRoute
         result.push(...await getAppDirectoryPages(fullname));
       }
     } else if (stat.isFile() && /^page\.(tsx|jsx)$/u.test(f)) {
+      if (await isNoIndex(fullname)) {
+        continue;
+      }
       const url = getUrl(filePath);
       result.push({
         url,
