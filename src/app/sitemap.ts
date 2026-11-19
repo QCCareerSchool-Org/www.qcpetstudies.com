@@ -10,7 +10,7 @@ import { escapeXmlObject } from '@/lib/xml';
 const isNonRouteSegment = (name: string): boolean => /^(\[|_|@)/u.test(name);
 
 const isNoIndex = async (file: string): Promise<boolean> => {
-  const source = await fs.readFile(file, 'utf8');
+  const source = await fs.readFile(/* turbopackIgnore: true */ file, 'utf8');
   return /robots:\s*\{[^}]*\bindex:\s*false/u.test(source);
 };
 
